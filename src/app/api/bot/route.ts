@@ -73,11 +73,13 @@ export async function POST(request: NextRequest) {
       const issue = await getIssueById(issueId);
       if (!issue) return err('Issue not found', 404);
 
-      const health = await getCommunityHealth(issue.id);
-      const countries = await getCountryBreakdown(issue.id);
-      const pivotOrgs = await getOrgsForIssue(issue.id);
-      const actionCount = await getActionCountForIssue(issue.id);
-      const synonyms = await getSynonymsForIssue(issue.id);
+      const [health, countries, pivotOrgs, actionCount, synonyms] = await Promise.all([
+        getCommunityHealth(issue.id),
+        getCountryBreakdown(issue.id),
+        getOrgsForIssue(issue.id),
+        getActionCountForIssue(issue.id),
+        getSynonymsForIssue(issue.id),
+      ]);
       return ok({ issue, health, countries, pivotOrgs, actionCount, synonyms });
     }
 
@@ -99,10 +101,12 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!issueId) return err('issue_id is required');
 
-      const health = await getCommunityHealth(issueId);
-      const feed = await getFeedPosts(issueId, 5);
-      const experts = await getExpertProfiles(issueId);
-      const countries = await getCountryBreakdown(issueId);
+      const [health, feed, experts, countries] = await Promise.all([
+        getCommunityHealth(issueId),
+        getFeedPosts(issueId, 5),
+        getExpertProfiles(issueId),
+        getCountryBreakdown(issueId),
+      ]);
       return ok({ health, feed, experts, countries });
     }
 
@@ -153,8 +157,10 @@ export async function POST(request: NextRequest) {
       const org = await getOrganisationById(orgId);
       if (!org) return err('Organisation not found', 404);
 
-      const issues = await getIssuesForOrg(org.id);
-      const totalRioters = await getTotalRiotersForOrg(org.id);
+      const [issues, totalRioters] = await Promise.all([
+        getIssuesForOrg(org.id),
+        getTotalRiotersForOrg(org.id),
+      ]);
       return ok({ org, issues, totalRioters });
     }
 
