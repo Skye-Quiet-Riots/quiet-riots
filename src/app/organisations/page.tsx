@@ -12,7 +12,16 @@ interface Props {
 export default async function OrganisationsPage({ searchParams }: Props) {
   const params = await searchParams;
   const category = params.category as Category | undefined;
-  const orgs = getAllOrganisations(category);
+  const orgs = await getAllOrganisations(category);
+
+  // Pre-fetch counts for all orgs in parallel
+  const orgData = await Promise.all(
+    orgs.map(async (org) => ({
+      org,
+      issueCount: await getIssueCountForOrg(org.id),
+      totalRioters: await getTotalRiotersForOrg(org.id),
+    }))
+  );
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -27,20 +36,16 @@ export default async function OrganisationsPage({ searchParams }: Props) {
         </Suspense>
       </div>
 
-      {orgs.length > 0 ? (
+      {orgData.length > 0 ? (
         <div className="grid gap-3 sm:grid-cols-2">
-          {orgs.map((org) => {
-            const issueCount = getIssueCountForOrg(org.id);
-            const totalRioters = getTotalRiotersForOrg(org.id);
-            return (
+          {orgData.map(({ org, issueCount, totalRioters }) => (
               <OrgCard
                 key={org.id}
                 org={org}
                 issueCount={issueCount}
                 totalRioters={totalRioters}
               />
-            );
-          })}
+          ))}
         </div>
       ) : (
         <div className="py-12 text-center">

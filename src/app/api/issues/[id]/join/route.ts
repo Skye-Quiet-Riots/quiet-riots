@@ -8,7 +8,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
   if (!userId) {
     return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
   }
-  joinIssue(userId, Number(id));
+  await joinIssue(userId, Number(id));
   return NextResponse.json({ success: true });
 }
 
@@ -18,6 +18,6 @@ export async function DELETE(_request: Request, { params }: { params: Promise<{ 
   if (!userId) {
     return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
   }
-  leaveIssue(userId, Number(id));
+  await leaveIssue(userId, Number(id));
   return NextResponse.json({ success: true });
 }

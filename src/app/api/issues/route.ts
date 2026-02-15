@@ -7,6 +7,6 @@ export async function GET(request: NextRequest) {
   const category = searchParams.get('category') as Category | undefined;
   const search = searchParams.get('search') || undefined;
 
-  const issues = getAllIssues(category || undefined, search);
+  const issues = await getAllIssues(category || undefined, search);
   return NextResponse.json(issues);
 }

@@ -1,23 +1,27 @@
 import { getDb } from '../db';
 import type { Organisation, Category, IssuePivotRow, OrgPivotRow } from '@/types';
 
-export function getAllOrganisations(category?: Category): Organisation[] {
+export async function getAllOrganisations(category?: Category): Promise<Organisation[]> {
   const db = getDb();
   if (category) {
-    return db.prepare('SELECT * FROM organisations WHERE category = ? ORDER BY name').all(category) as Organisation[];
+    const result = await db.execute({ sql: 'SELECT * FROM organisations WHERE category = ? ORDER BY name', args: [category] });
+    return result.rows as unknown as Organisation[];
   }
-  return db.prepare('SELECT * FROM organisations ORDER BY name').all() as Organisation[];
+  const result = await db.execute('SELECT * FROM organisations ORDER BY name');
+  return result.rows as unknown as Organisation[];
 }
 
-export function getOrganisationById(id: number): Organisation | null {
+export async function getOrganisationById(id: number): Promise<Organisation | null> {
   const db = getDb();
-  return db.prepare('SELECT * FROM organisations WHERE id = ?').get(id) as Organisation | null;
+  const result = await db.execute({ sql: 'SELECT * FROM organisations WHERE id = ?', args: [id] });
+  return (result.rows[0] as unknown as Organisation) ?? null;
 }
 
 // Issue Pivot: given an issue, show all orgs where this issue exists
-export function getOrgsForIssue(issueId: number): IssuePivotRow[] {
+export async function getOrgsForIssue(issueId: number): Promise<IssuePivotRow[]> {
   const db = getDb();
-  return db.prepare(`
+  const result = await db.execute({
+    sql: `
     SELECT
       o.id as organisation_id,
       o.name as organisation_name,
@@ -28,13 +32,17 @@ export function getOrgsForIssue(issueId: number): IssuePivotRow[] {
     JOIN organisations o ON io.organisation_id = o.id
     WHERE io.issue_id = ?
     ORDER BY io.rioter_count DESC
-  `).all(issueId) as IssuePivotRow[];
+  `,
+    args: [issueId],
+  });
+  return result.rows as unknown as IssuePivotRow[];
 }
 
 // Org Pivot: given an org, show all issues (Pareto-ranked)
-export function getIssuesForOrg(orgId: number): OrgPivotRow[] {
+export async function getIssuesForOrg(orgId: number): Promise<OrgPivotRow[]> {
   const db = getDb();
-  return db.prepare(`
+  const result = await db.execute({
+    sql: `
     SELECT
       i.id as issue_id,
       i.name as issue_name,
@@ -44,19 +52,22 @@ export function getIssuesForOrg(orgId: number): OrgPivotRow[] {
     JOIN issues i ON io.issue_id = i.id
     WHERE io.organisation_id = ?
     ORDER BY io.rioter_count DESC
-  `).all(orgId) as OrgPivotRow[];
+  `,
+    args: [orgId],
+  });
+  return result.rows as unknown as OrgPivotRow[];
 }
 
 // Count of issues per org (for org cards)
-export function getIssueCountForOrg(orgId: number): number {
+export async function getIssueCountForOrg(orgId: number): Promise<number> {
   const db = getDb();
-  const row = db.prepare('SELECT COUNT(*) as count FROM issue_organisation WHERE organisation_id = ?').get(orgId) as { count: number };
-  return row.count;
+  const result = await db.execute({ sql: 'SELECT COUNT(*) as count FROM issue_organisation WHERE organisation_id = ?', args: [orgId] });
+  return (result.rows[0]?.count as number) ?? 0;
 }
 
 // Get total rioters for an org across all issues
-export function getTotalRiotersForOrg(orgId: number): number {
+export async function getTotalRiotersForOrg(orgId: number): Promise<number> {
   const db = getDb();
-  const row = db.prepare('SELECT SUM(rioter_count) as total FROM issue_organisation WHERE organisation_id = ?').get(orgId) as { total: number | null };
-  return row.total ?? 0;
+  const result = await db.execute({ sql: 'SELECT SUM(rioter_count) as total FROM issue_organisation WHERE organisation_id = ?', args: [orgId] });
+  return (result.rows[0]?.total as number) ?? 0;
 }

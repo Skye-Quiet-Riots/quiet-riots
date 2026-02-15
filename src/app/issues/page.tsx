@@ -15,8 +15,8 @@ export default async function IssuesPage({ searchParams }: Props) {
   const category = params.category as Category | undefined;
   const search = params.search || undefined;
 
-  const issues = getAllIssues(category, search);
-  const counts = getIssueCountsByCategory();
+  const issues = await getAllIssues(category, search);
+  const counts = await getIssueCountsByCategory();
   const totalIssues = Object.values(counts).reduce((sum, c) => sum + c, 0);
 
   return (

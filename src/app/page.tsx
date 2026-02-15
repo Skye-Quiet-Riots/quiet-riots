@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getTrendingIssues } from '@/lib/queries/issues';
 import { IssueCard } from '@/components/cards/issue-card';
 
-export default function Home() {
-  const trending = getTrendingIssues(6);
+export default async function Home() {
+  const trending = await getTrendingIssues(6);
 
   return (
     <div className="flex flex-col">

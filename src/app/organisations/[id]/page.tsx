@@ -11,13 +11,13 @@ interface Props {
 
 export default async function OrgDetailPage({ params }: Props) {
   const { id } = await params;
-  const org = getOrganisationById(Number(id));
+  const org = await getOrganisationById(Number(id));
   if (!org) notFound();
 
-  const orgPivotRows = getIssuesForOrg(org.id);
+  const orgPivotRows = await getIssuesForOrg(org.id);
   const firstIssue = orgPivotRows[0];
-  const issuePivotRows = firstIssue ? getOrgsForIssue(firstIssue.issue_id) : [];
-  const totalRioters = getTotalRiotersForOrg(org.id);
+  const issuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
+  const totalRioters = await getTotalRiotersForOrg(org.id);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

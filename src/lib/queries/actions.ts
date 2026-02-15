@@ -1,47 +1,50 @@
 import { getDb } from '../db';
 import type { Action } from '@/types';
 
-export function getActionsForIssue(issueId: number): Action[] {
+export async function getActionsForIssue(issueId: number): Promise<Action[]> {
   const db = getDb();
-  return db.prepare('SELECT * FROM actions WHERE issue_id = ? ORDER BY type, time_required').all(issueId) as Action[];
+  const result = await db.execute({ sql: 'SELECT * FROM actions WHERE issue_id = ? ORDER BY type, time_required', args: [issueId] });
+  return result.rows as unknown as Action[];
 }
 
-export function getActionsByType(issueId: number, type: 'idea' | 'action' | 'together'): Action[] {
+export async function getActionsByType(issueId: number, type: 'idea' | 'action' | 'together'): Promise<Action[]> {
   const db = getDb();
-  return db.prepare('SELECT * FROM actions WHERE issue_id = ? AND type = ? ORDER BY time_required').all(issueId, type) as Action[];
+  const result = await db.execute({ sql: 'SELECT * FROM actions WHERE issue_id = ? AND type = ? ORDER BY time_required', args: [issueId, type] });
+  return result.rows as unknown as Action[];
 }
 
-export function getFilteredActions(
+export async function getFilteredActions(
   issueId: number,
   options?: { type?: string; time?: string; skills?: string }
-): Action[] {
+): Promise<Action[]> {
   const db = getDb();
   let query = 'SELECT * FROM actions WHERE issue_id = ?';
-  const params: (string | number)[] = [issueId];
+  const args: (string | number)[] = [issueId];
 
   if (options?.type) {
     query += ' AND type = ?';
-    params.push(options.type);
+    args.push(options.type);
   }
   if (options?.time) {
     query += ' AND time_required = ?';
-    params.push(options.time);
+    args.push(options.time);
   }
   if (options?.skills) {
     const skillList = options.skills.split(',');
     const conditions = skillList.map(() => "skills_needed LIKE ?");
     query += ` AND (skills_needed = '' OR ${conditions.join(' OR ')})`;
     for (const skill of skillList) {
-      params.push(`%${skill.trim()}%`);
+      args.push(`%${skill.trim()}%`);
     }
   }
 
   query += ' ORDER BY type, time_required';
-  return db.prepare(query).all(...params) as Action[];
+  const result = await db.execute({ sql: query, args });
+  return result.rows as unknown as Action[];
 }
 
-export function getActionCountForIssue(issueId: number): number {
+export async function getActionCountForIssue(issueId: number): Promise<number> {
   const db = getDb();
-  const row = db.prepare('SELECT COUNT(*) as count FROM actions WHERE issue_id = ?').get(issueId) as { count: number };
-  return row.count;
+  const result = await db.execute({ sql: 'SELECT COUNT(*) as count FROM actions WHERE issue_id = ?', args: [issueId] });
+  return (result.rows[0]?.count as number) ?? 0;
 }

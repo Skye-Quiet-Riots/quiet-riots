@@ -8,11 +8,11 @@ export async function GET() {
     return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
   }
 
-  const user = getUserById(userId);
+  const user = await getUserById(userId);
   if (!user) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  const issues = getUserIssues(userId);
+  const issues = await getUserIssues(userId);
   return NextResponse.json({ user, issues });
 }

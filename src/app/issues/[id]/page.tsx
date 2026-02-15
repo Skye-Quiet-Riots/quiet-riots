@@ -28,23 +28,23 @@ interface Props {
 
 export default async function IssueDetailPage({ params }: Props) {
   const { id } = await params;
-  const issue = getIssueById(Number(id));
+  const issue = await getIssueById(Number(id));
   if (!issue) notFound();
 
   const userId = await getSession();
-  const joined = userId ? hasJoinedIssue(userId, issue.id) : false;
+  const joined = userId ? await hasJoinedIssue(userId, issue.id) : false;
 
   // Load all data in parallel
-  const issuePivotRows = getOrgsForIssue(issue.id);
+  const issuePivotRows = await getOrgsForIssue(issue.id);
   const firstOrg = issuePivotRows[0];
-  const orgPivotRows = firstOrg ? getIssuesForOrg(firstOrg.organisation_id) : [];
-  const actions = getActionsForIssue(issue.id);
-  const actionCount = getActionCountForIssue(issue.id);
-  const health = getCommunityHealth(issue.id);
-  const experts = getExpertProfiles(issue.id);
-  const feedPosts = getFeedPosts(issue.id);
-  const countries = getCountryBreakdown(issue.id);
-  const synonyms = getSynonymsForIssue(issue.id);
+  const orgPivotRows = firstOrg ? await getIssuesForOrg(firstOrg.organisation_id) : [];
+  const actions = await getActionsForIssue(issue.id);
+  const actionCount = await getActionCountForIssue(issue.id);
+  const health = await getCommunityHealth(issue.id);
+  const experts = await getExpertProfiles(issue.id);
+  const feedPosts = await getFeedPosts(issue.id);
+  const countries = await getCountryBreakdown(issue.id);
+  const synonyms = await getSynonymsForIssue(issue.id);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

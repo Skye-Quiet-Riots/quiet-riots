@@ -41,14 +41,14 @@ export async function POST(request: NextRequest) {
       const phone = params.phone as string;
       if (!phone) return err('phone is required');
 
-      let user = getUserByPhone(phone);
+      let user = await getUserByPhone(phone);
       if (!user) {
         const digits = phone.replace(/\D/g, '');
         const email = `wa-${digits}@whatsapp.quietriots.com`;
         const name = (params.name as string) || 'WhatsApp User';
-        user = createUser({ name, email, phone });
+        user = await createUser({ name, email, phone });
       }
-      const issues = getUserIssues(user.id);
+      const issues = await getUserIssues(user.id);
       return ok({ user, issues });
     }
 
@@ -56,13 +56,13 @@ export async function POST(request: NextRequest) {
     case 'search_issues': {
       const query = params.query as string;
       if (!query) return err('query is required');
-      const issues = getAllIssues(undefined, query);
+      const issues = await getAllIssues(undefined, query);
       return ok({ issues });
     }
 
     case 'get_trending': {
       const limit = (params.limit as number) || 6;
-      const issues = getTrendingIssues(limit);
+      const issues = await getTrendingIssues(limit);
       return ok({ issues });
     }
 
@@ -70,14 +70,14 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!issueId) return err('issue_id is required');
 
-      const issue = getIssueById(issueId);
+      const issue = await getIssueById(issueId);
       if (!issue) return err('Issue not found', 404);
 
-      const health = getCommunityHealth(issue.id);
-      const countries = getCountryBreakdown(issue.id);
-      const pivotOrgs = getOrgsForIssue(issue.id);
-      const actionCount = getActionCountForIssue(issue.id);
-      const synonyms = getSynonymsForIssue(issue.id);
+      const health = await getCommunityHealth(issue.id);
+      const countries = await getCountryBreakdown(issue.id);
+      const pivotOrgs = await getOrgsForIssue(issue.id);
+      const actionCount = await getActionCountForIssue(issue.id);
+      const synonyms = await getSynonymsForIssue(issue.id);
       return ok({ issue, health, countries, pivotOrgs, actionCount, synonyms });
     }
 
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!issueId) return err('issue_id is required');
 
-      const actions = getFilteredActions(issueId, {
+      const actions = await getFilteredActions(issueId, {
         type: params.type as string | undefined,
         time: params.time as string | undefined,
         skills: params.skills as string | undefined,
@@ -99,10 +99,10 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!issueId) return err('issue_id is required');
 
-      const health = getCommunityHealth(issueId);
-      const feed = getFeedPosts(issueId, 5);
-      const experts = getExpertProfiles(issueId);
-      const countries = getCountryBreakdown(issueId);
+      const health = await getCommunityHealth(issueId);
+      const feed = await getFeedPosts(issueId, 5);
+      const experts = await getExpertProfiles(issueId);
+      const countries = await getCountryBreakdown(issueId);
       return ok({ health, feed, experts, countries });
     }
 
@@ -112,10 +112,10 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!phone || !issueId) return err('phone and issue_id are required');
 
-      const user = getUserByPhone(phone);
+      const user = await getUserByPhone(phone);
       if (!user) return err('User not found — call identify first', 404);
 
-      joinIssue(user.id, issueId);
+      await joinIssue(user.id, issueId);
       return ok({ joined: true, user_id: user.id, issue_id: issueId });
     }
 
@@ -124,10 +124,10 @@ export async function POST(request: NextRequest) {
       const issueId = params.issue_id as number;
       if (!phone || !issueId) return err('phone and issue_id are required');
 
-      const user = getUserByPhone(phone);
+      const user = await getUserByPhone(phone);
       if (!user) return err('User not found', 404);
 
-      leaveIssue(user.id, issueId);
+      await leaveIssue(user.id, issueId);
       return ok({ left: true, user_id: user.id, issue_id: issueId });
     }
 
@@ -138,10 +138,10 @@ export async function POST(request: NextRequest) {
       const content = params.content as string;
       if (!phone || !issueId || !content) return err('phone, issue_id, and content are required');
 
-      const user = getUserByPhone(phone);
+      const user = await getUserByPhone(phone);
       if (!user) return err('User not found — call identify first', 404);
 
-      const post = createFeedPost(issueId, user.id, content);
+      const post = await createFeedPost(issueId, user.id, content);
       return ok({ post });
     }
 
@@ -150,17 +150,17 @@ export async function POST(request: NextRequest) {
       const orgId = params.org_id as number;
       if (!orgId) return err('org_id is required');
 
-      const org = getOrganisationById(orgId);
+      const org = await getOrganisationById(orgId);
       if (!org) return err('Organisation not found', 404);
 
-      const issues = getIssuesForOrg(org.id);
-      const totalRioters = getTotalRiotersForOrg(org.id);
+      const issues = await getIssuesForOrg(org.id);
+      const totalRioters = await getTotalRiotersForOrg(org.id);
       return ok({ org, issues, totalRioters });
     }
 
     case 'get_orgs': {
       const category = params.category as string | undefined;
-      const orgs = getAllOrganisations(category as never);
+      const orgs = await getAllOrganisations(category as never);
       return ok({ orgs });
     }
 
@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
       const term = params.term as string;
       if (!issueId || !term) return err('issue_id and term are required');
 
-      const synonym = addSynonym(issueId, term);
+      const synonym = await addSynonym(issueId, term);
       return ok({ synonym });
     }
 
@@ -179,10 +179,10 @@ export async function POST(request: NextRequest) {
       const phone = params.phone as string;
       if (!phone) return err('phone is required');
 
-      const user = getUserByPhone(phone);
+      const user = await getUserByPhone(phone);
       if (!user) return err('User not found — call identify first', 404);
 
-      const updated = updateUser(user.id, {
+      const updated = await updateUser(user.id, {
         name: params.name as string | undefined,
         time_available: params.time_available as string | undefined,
         skills: params.skills as string | undefined,

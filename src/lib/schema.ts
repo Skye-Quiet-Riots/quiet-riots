@@ -1,9 +1,9 @@
 import { getDb } from './db';
 
-export function createTables() {
+export async function createTables() {
   const db = getDb();
 
-  db.exec(`
+  await db.executeMultiple(`
     CREATE TABLE IF NOT EXISTS issues (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -106,9 +106,9 @@ export function createTables() {
   `);
 }
 
-export function dropTables() {
+export async function dropTables() {
   const db = getDb();
-  db.exec(`
+  await db.executeMultiple(`
     DROP TABLE IF EXISTS country_breakdown;
     DROP TABLE IF EXISTS expert_profiles;
     DROP TABLE IF EXISTS community_health;

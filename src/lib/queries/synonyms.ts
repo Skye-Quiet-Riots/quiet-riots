@@ -1,13 +1,15 @@
 import { getDb } from '../db';
 import type { Synonym } from '@/types';
 
-export function getSynonymsForIssue(issueId: number): Synonym[] {
+export async function getSynonymsForIssue(issueId: number): Promise<Synonym[]> {
   const db = getDb();
-  return db.prepare('SELECT * FROM synonyms WHERE issue_id = ?').all(issueId) as Synonym[];
+  const result = await db.execute({ sql: 'SELECT * FROM synonyms WHERE issue_id = ?', args: [issueId] });
+  return result.rows as unknown as Synonym[];
 }
 
-export function addSynonym(issueId: number, term: string): Synonym {
+export async function addSynonym(issueId: number, term: string): Promise<Synonym> {
   const db = getDb();
-  const result = db.prepare('INSERT INTO synonyms (issue_id, term) VALUES (?, ?)').run(issueId, term);
-  return db.prepare('SELECT * FROM synonyms WHERE id = ?').get(result.lastInsertRowid) as Synonym;
+  const insertResult = await db.execute({ sql: 'INSERT INTO synonyms (issue_id, term) VALUES (?, ?)', args: [issueId, term] });
+  const result = await db.execute({ sql: 'SELECT * FROM synonyms WHERE id = ?', args: [Number(insertResult.lastInsertRowid)] });
+  return result.rows[0] as unknown as Synonym;
 }

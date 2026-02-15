@@ -1,15 +1,16 @@
-import Database from 'better-sqlite3';
-import path from 'path';
+import { createClient, type Client } from '@libsql/client';
 
-const DB_PATH = path.join(process.cwd(), 'quiet-riots.db');
+let client: Client | null = null;
 
-let db: Database.Database | null = null;
+export function getDb(): Client {
+  if (!client) {
+    const url = process.env.TURSO_DATABASE_URL || 'file:quiet-riots.db';
+    const authToken = process.env.TURSO_AUTH_TOKEN;
 
-export function getDb(): Database.Database {
-  if (!db) {
-    db = new Database(DB_PATH);
-    db.pragma('journal_mode = WAL');
-    db.pragma('foreign_keys = ON');
+    client = createClient({
+      url,
+      authToken,
+    });
   }
-  return db;
+  return client;
 }

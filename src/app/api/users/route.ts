@@ -10,13 +10,13 @@ export async function POST(request: Request) {
   }
 
   // Check if user already exists
-  const existing = getUserByEmail(body.email.trim());
+  const existing = await getUserByEmail(body.email.trim());
   if (existing) {
     await setSession(existing.id);
     return NextResponse.json(existing);
   }
 
-  const user = createUser({
+  const user = await createUser({
     name: body.name.trim(),
     email: body.email.trim(),
     time_available: body.time_available || '10min',

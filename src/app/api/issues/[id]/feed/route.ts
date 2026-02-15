@@ -4,7 +4,7 @@ import { getSession } from '@/lib/session';
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const posts = getFeedPosts(Number(id));
+  const posts = await getFeedPosts(Number(id));
   return NextResponse.json(posts);
 }
 
@@ -20,6 +20,6 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return NextResponse.json({ error: 'Content required' }, { status: 400 });
   }
 
-  const post = createFeedPost(Number(id), userId, body.content.trim());
+  const post = await createFeedPost(Number(id), userId, body.content.trim());
   return NextResponse.json(post);
 }

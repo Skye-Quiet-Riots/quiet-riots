@@ -1,45 +1,49 @@
 import { getDb } from '../db';
 import type { Issue, Category } from '@/types';
 
-export function getAllIssues(category?: Category, search?: string): Issue[] {
+export async function getAllIssues(category?: Category, search?: string): Promise<Issue[]> {
   const db = getDb();
   let query = 'SELECT * FROM issues WHERE 1=1';
-  const params: (string | number)[] = [];
+  const args: (string | number)[] = [];
 
   if (category) {
     query += ' AND category = ?';
-    params.push(category);
+    args.push(category);
   }
   if (search) {
     query += ' AND (name LIKE ? OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ?))';
-    params.push(`%${search}%`, `%${search}%`);
+    args.push(`%${search}%`, `%${search}%`);
   }
 
   query += ' ORDER BY rioter_count DESC';
-  return db.prepare(query).all(...params) as Issue[];
+  const result = await db.execute({ sql: query, args });
+  return result.rows as unknown as Issue[];
 }
 
-export function getIssueById(id: number): Issue | null {
+export async function getIssueById(id: number): Promise<Issue | null> {
   const db = getDb();
-  return db.prepare('SELECT * FROM issues WHERE id = ?').get(id) as Issue | null;
+  const result = await db.execute({ sql: 'SELECT * FROM issues WHERE id = ?', args: [id] });
+  return (result.rows[0] as unknown as Issue) ?? null;
 }
 
-export function getIssuesByCategory(category: Category): Issue[] {
+export async function getIssuesByCategory(category: Category): Promise<Issue[]> {
   const db = getDb();
-  return db.prepare('SELECT * FROM issues WHERE category = ? ORDER BY rioter_count DESC').all(category) as Issue[];
+  const result = await db.execute({ sql: 'SELECT * FROM issues WHERE category = ? ORDER BY rioter_count DESC', args: [category] });
+  return result.rows as unknown as Issue[];
 }
 
-export function getTrendingIssues(limit: number = 6): Issue[] {
+export async function getTrendingIssues(limit: number = 6): Promise<Issue[]> {
   const db = getDb();
-  return db.prepare('SELECT * FROM issues ORDER BY trending_delta DESC LIMIT ?').all(limit) as Issue[];
+  const result = await db.execute({ sql: 'SELECT * FROM issues ORDER BY trending_delta DESC LIMIT ?', args: [limit] });
+  return result.rows as unknown as Issue[];
 }
 
-export function getIssueCountsByCategory(): Record<string, number> {
+export async function getIssueCountsByCategory(): Promise<Record<string, number>> {
   const db = getDb();
-  const rows = db.prepare('SELECT category, COUNT(*) as count FROM issues GROUP BY category').all() as { category: string; count: number }[];
-  const result: Record<string, number> = {};
-  for (const row of rows) {
-    result[row.category] = row.count;
+  const result = await db.execute('SELECT category, COUNT(*) as count FROM issues GROUP BY category');
+  const counts: Record<string, number> = {};
+  for (const row of result.rows) {
+    counts[row.category as string] = row.count as number;
   }
-  return result;
+  return counts;
 }
