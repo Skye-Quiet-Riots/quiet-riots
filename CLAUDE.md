@@ -17,7 +17,8 @@ Quiet Riots is a web application bringing the 2014 book *Quiet Riots* to life. T
 - **Framework:** Next.js 16 with React 19
 - **Language:** TypeScript (strict mode)
 - **Styling:** Tailwind CSS 4 (mobile-first, responsive)
-- **Database:** SQLite via better-sqlite3 (WAL mode, foreign keys enabled)
+- **Database:** Turso (libSQL) — hosted at `quietriots-skye.turso.io` (region: aws-eu-west-1, Ireland)
+- **Hosting:** Vercel — custom domain `quietriots.com`, functions in `lhr1` (London)
 - **Package manager:** npm
 - **Bot integration:** OpenClaw WhatsApp agent via `/api/bot` endpoint
 
@@ -69,7 +70,7 @@ src/components/
 ### Data Layer
 ```
 src/lib/
-├── db.ts           # Singleton SQLite connection
+├── db.ts           # Singleton Turso/libSQL connection (was better-sqlite3)
 ├── schema.ts       # Table creation/drop
 ├── session.ts      # Cookie-based auth
 ├── seed.ts         # 19 issues, 18 orgs, actions, feed, experts, health, countries
@@ -104,16 +105,37 @@ src/lib/
 - **Workspace:** `~/.openclaw/workspace/` (AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md)
 - **Gateway:** macOS LaunchAgent on port 18789
 - **Binary:** `/opt/homebrew/bin/openclaw`
+- **Model:** `anthropic/claude-sonnet-4-20250514` (set in openclaw.json as `agents.defaults.model.primary`)
 - **Key fix:** BOOTSTRAP.md must NOT exist in workspace (overrides skill loading)
 - **Session scope:** `per-channel-peer` (each WhatsApp user gets own context)
 - **PATH note:** In sandbox environments, use `/opt/homebrew/bin/node` and `/opt/homebrew/bin/npm` directly
+- **URL note:** SKILL.md and TOOLS.md must use `https://www.quietriots.com` (with www) — bare domain 307 redirects break POST requests
+- **Session cache:** If SKILL.md URLs or behaviour change significantly, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway to clear stale context
+- **Polls/buttons:** Do NOT use — Baileys doesn't support them. Use plain numbered text choices instead
+
+## Deployment
+
+- **Vercel project:** deployed from GitHub repo `Skye-Quiet-Riots/quiet-riots`
+- **Domain:** `quietriots.com` (DNS via GoDaddy → Vercel)
+- **Function region:** `lhr1` (London) — set in `vercel.json` to minimise latency to Turso in Ireland
+- **Database:** Turso at `quietriots-skye.turso.io` — env vars `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` in Vercel
+- **Bot API:** production URL is `https://www.quietriots.com/api/bot` (must use `www.` — bare domain redirects 307 and curl doesn't follow POST redirects)
+
+## WhatsApp Bot UX
+
+- **Numbered choices:** Bot uses plain numbered text options (1, 2, 3) — NOT polls or buttons (Baileys doesn't support them reliably)
+- **Always 3 choices:** Every message ends with exactly 3 numbered choices, preceded by "choose 1, 2 or 3:"
+- **First message exception:** The welcome message has no choices — lets the user speak freely first
+- **Terminology:** Always "Quiet Riot" (never "movement"), always "Quiet Rioters" (never "rioters" alone)
+- **Conversation flow:** Welcome → Search/Match → Join/Pivot → Actions → Community → Experts → Mission
+- **Model:** Claude Sonnet (changed from Opus for speed — ~10s vs ~67s response time)
 
 ## Known Issues
 
 - No test suite exists yet — needs unit and integration tests
 - Profile page is minimal (placeholder implementation)
-- No production deployment configured (Vercel/.env.production)
 - Bot API has no rate limiting
+- WhatsApp polls and interactive buttons don't work via Baileys — use numbered text choices instead
 
 ## End of Session Protocol
 

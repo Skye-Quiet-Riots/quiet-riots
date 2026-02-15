@@ -29,3 +29,68 @@
 - Set up production deployment (Vercel)
 - Add rate limiting to bot API
 - Consider adding authentication beyond cookie sessions (for sensitive operations)
+
+---
+
+## 2026-02-15 (Session 2) — Production Deployment & WhatsApp Bot UX
+
+### What was worked on
+
+1. **Database migration: better-sqlite3 → Turso (@libsql/client)**
+   - Migrated all query files from synchronous better-sqlite3 to async Turso client
+   - Database hosted at `quietriots-skye.turso.io` (aws-eu-west-1, Ireland)
+   - Committed 32 files in migration commit `4dd32bb`
+
+2. **Vercel deployment & custom domain**
+   - Deployed to Vercel from GitHub repo
+   - Set up `quietriots.com` domain via GoDaddy DNS (A record + CNAME pointing to Vercel)
+   - Important: Vercel gave project-specific DNS values, not generic ones
+
+3. **WhatsApp bot production URL fix**
+   - SKILL.md and TOOLS.md were pointing at `localhost:3000` — bot said "service offline"
+   - Updated to `https://www.quietriots.com/api/bot` (must use `www.` because bare domain 307 redirects break POST)
+   - Had to delete cached sessions (`~/.openclaw/agents/main/sessions/*.jsonl`) because old URLs were baked into session context
+
+4. **Bot model change: Opus → Sonnet**
+   - Bot was taking ~67s per response on Opus
+   - Changed to Sonnet via `openclaw config set agents.defaults.model.primary` — response time dropped to ~10s
+   - Config requires object format (`agents.defaults.model.primary`), not string
+
+5. **WhatsApp bot UX overhaul**
+   - Tried polls first — don't work on Baileys (WhatsApp Web emulation)
+   - Rewrote SKILL.md completely with plain numbered text choices (1, 2, 3)
+   - Always exactly 3 choices, always preceded by "choose 1, 2 or 3:"
+   - First welcome message is the exception — lets user vent freely, no choices
+   - Full conversation flow: Welcome → Search/Match → Join/Pivot → Actions → Community → Experts → Mission
+   - Terminology rules: "Quiet Riot" not "movement", "Quiet Rioters" not "rioters"
+   - No emoji icons next to numbered choices
+
+6. **API performance optimisation**
+   - Parallelised database queries with `Promise.all` in bot route (get_issue: 5 queries, get_community: 4 queries, get_org_pivot: 2 queries)
+   - Set Vercel function region to `lhr1` (London) via `vercel.json` to reduce cross-Atlantic latency to Turso in Ireland
+   - get_issue: 665ms → 342ms, get_community: 350ms → 130ms
+
+7. **Claude Code permissions**
+   - Changed `~/.claude/settings.json` from individual command allowlist to `Bash(*)` to allow all commands
+
+### Key decisions
+- **Use `www.` for API URLs** — bare `quietriots.com` returns 307 redirect, and curl doesn't follow POST redirects automatically
+- **Numbered choices over polls/buttons** — Baileys (WhatsApp Web protocol) doesn't support interactive buttons or polls reliably. Plain text is the most compatible
+- **Sonnet over Opus for bot** — 7x faster response time, quality is sufficient for conversational bot
+- **London region for Vercel functions** — closest to Turso in Ireland, halved query latency
+- **Promise.all for independent queries** — simple win, no code complexity, significant latency reduction
+
+### Discoveries
+- Vercel `regions` in vercel.json controls where serverless functions run, not where static content is served
+- OpenClaw model config must be set as an object path (`agents.defaults.model.primary`), not a flat string — validation rejects strings
+- Cached OpenClaw sessions bake in the skill file content at session creation time — URL changes require clearing sessions
+- GoDaddy `_domainconnect` CNAME record is for domain management features — leave it alone when adding Vercel records
+- WhatsApp gateway restart (SIGTERM) kills in-flight message processing — messages received in the ~2s before restart are lost
+
+### Next steps
+- Add unit and integration tests (still none — this is the biggest gap)
+- Flesh out profile page
+- Add rate limiting to bot API
+- Consider adding a `create_issue` action to the bot API (currently users can only join existing issues)
+- Monitor Turso latency in production and consider read replicas if needed
+- Test WhatsApp bot with real users beyond the developer

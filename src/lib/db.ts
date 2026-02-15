@@ -14,3 +14,12 @@ export function getDb(): Client {
   }
   return client;
 }
+
+// Test helpers — inject/reset the database singleton for isolated testing
+export function _setTestDb(testClient: Client): void {
+  client = testClient;
+}
+
+export function _resetDb(): void {
+  client = null;
+}
