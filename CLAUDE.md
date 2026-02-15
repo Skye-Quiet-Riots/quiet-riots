@@ -6,9 +6,11 @@ Quiet Riots is a web application bringing the 2014 book *Quiet Riots* to life. T
 
 ## Agent Identity
 
-- **Name:** Skye
-- **Email:** skye@quietriots.com
-- **GitHub:** Skye-Quiet-Riots
+- **Name:** Simon Darling
+- **Email:** simon@quietriots.com
+- **GitHub:** Simon-Quiet-Riots
+- **Twitter:** @simondarling
+- **Project Twitter:** @quietriots
 
 ## Tech Stack
 
