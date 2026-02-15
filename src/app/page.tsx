@@ -1,65 +1,131 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <div className="flex min-h-screen flex-col">
+      {/* Header */}
+      <header className="flex items-center justify-between px-6 py-4">
+        <span className="text-lg font-semibold tracking-tight">
+          Quiet Riots
+        </span>
+        <nav className="flex gap-4 text-sm">
+          <a href="#about" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+            About
+          </a>
+          <a href="#how" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+            How It Works
+          </a>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-zinc-500">
+          From the book to the movement
+        </p>
+        <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+          Change doesn&apos;t have to be loud to be&nbsp;powerful
+        </h1>
+        <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Quiet Riots helps people organise around shared issues and take
+          collective action — together, on their own terms.
+        </p>
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#join"
+            className="rounded-full bg-black px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-white dark:text-black"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Get Involved
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#about"
+            className="rounded-full border border-zinc-300 px-8 py-3 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
           >
-            Documentation
+            Learn More
           </a>
         </div>
       </main>
+
+      {/* About */}
+      <section id="about" className="border-t border-zinc-200 px-6 py-20 dark:border-zinc-800">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            What is Quiet Riots?
+          </h2>
+          <p className="mt-4 text-zinc-600 leading-relaxed dark:text-zinc-400">
+            Based on the 2014 book, Quiet Riots is built on a simple idea:
+            meaningful change doesn&apos;t always start with loud protest. It starts
+            when people quietly find each other, align on what matters, and act
+            together. This platform brings that idea to life.
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section id="how" className="px-6 py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+            How It Works
+          </h2>
+          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-lg font-bold dark:bg-zinc-800">
+                1
+              </div>
+              <h3 className="mt-4 font-semibold">Name Your Issue</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Identify what matters to you — local or global, big or small.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-lg font-bold dark:bg-zinc-800">
+                2
+              </div>
+              <h3 className="mt-4 font-semibold">Find Your People</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Connect with others who share the same concern and want to act.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-lg font-bold dark:bg-zinc-800">
+                3
+              </div>
+              <h3 className="mt-4 font-semibold">Take Action</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Organise, coordinate, and move together — on your own terms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Join */}
+      <section id="join" className="border-t border-zinc-200 px-6 py-20 dark:border-zinc-800">
+        <div className="mx-auto max-w-md text-center">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Ready to start?
+          </h2>
+          <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+            Leave your email and we&apos;ll let you know when Quiet Riots launches.
+          </p>
+          <form className="mt-8 flex flex-col gap-3 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className="flex-1 rounded-full border border-zinc-300 px-5 py-3 text-sm outline-none focus:border-black dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-white"
+            />
+            <button
+              type="submit"
+              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-white dark:text-black"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-200 px-6 py-8 text-center text-sm text-zinc-500 dark:border-zinc-800">
+        Quiet Riots &mdash; Collective action starts here.
+      </footer>
     </div>
   );
 }
