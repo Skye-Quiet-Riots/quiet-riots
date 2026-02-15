@@ -15,9 +15,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quiet Riots — Collective Action Starts Here",
+  title: "Quiet Riots — Change. Finally.",
   description:
     "Organise around shared issues. Find your people. Take action together.",
+  openGraph: {
+    title: "Quiet Riots — Change. Finally.",
+    description:
+      "Organise around shared issues. Find your people. Take action together.",
+    url: "https://www.quietriots.com",
+    siteName: "Quiet Riots",
+    images: [
+      {
+        url: "https://www.quietriots.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Quiet Riots — Change. Finally.",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quiet Riots — Change. Finally.",
+    description:
+      "Organise around shared issues. Find your people. Take action together.",
+    images: ["https://www.quietriots.com/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo-192.png",
+  },
 };
 
 export default function RootLayout({
