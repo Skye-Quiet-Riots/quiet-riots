@@ -94,3 +94,71 @@
 - Consider adding a `create_issue` action to the bot API (currently users can only join existing issues)
 - Monitor Turso latency in production and consider read replicas if needed
 - Test WhatsApp bot with real users beyond the developer
+
+---
+
+## 2026-02-15 (Session 3) — Tests, Branding, DevOps & Sleep Prevention
+
+### What was worked on
+
+1. **Comprehensive test suite (126 tests)**
+   - Installed Vitest 4 + @vitest/coverage-v8
+   - Created `vitest.config.ts` with `@/*` path alias and coverage config
+   - Built test infrastructure: `src/test/setup-db.ts` (in-memory libSQL), `src/test/seed-test-data.ts` (minimal seed data), `src/test/api-helpers.ts` (request builders)
+   - Added `_setTestDb()` / `_resetDb()` exports to `src/lib/db.ts` for test database injection
+   - 6 query test files (70 tests): issues, organisations, users, actions, community, synonyms
+   - 6 API route test files (56 tests): bot (24 tests covering all 13 actions + auth), issues, feed, join, organisations, users
+   - Session-authenticated routes tested via `vi.mock('next/headers')` with `mockLoggedIn`/`mockLoggedOut` helpers
+   - All 126 tests pass in ~550ms
+   - Committed as `7f29de7`
+
+2. **Branding overhaul**
+   - Replaced default Next.js favicon with chicken icon (multi-size .ico from `Chicken QR logo.jpeg`)
+   - Changed browser tab title: "Quiet Riots — Collective Action Starts Here" → "Quiet Riots — Change. Finally."
+   - Added complete Open Graph meta tags (og:title, og:image, og:description, og:url, og:site_name, og:type)
+   - Added Twitter card meta tags (summary_large_image)
+   - Created `public/og-image.jpg` (1200×630, chicken on blue background, filling full height)
+   - Created `public/logo-192.png` and `public/logo-512.png` for apple-touch-icon and PWA
+   - Iterated OG image 3 times: dark background → blue with small chicken → blue with full-height chicken (per user feedback on WhatsApp preview appearance)
+   - Committed across commits `8231048`, `cc3b697`, `0a33d50`
+
+3. **Sleep prevention (24/7 operation)**
+   - Created macOS LaunchAgent at `~/Library/LaunchAgents/com.quietriots.nosleep.plist`
+   - Runs `caffeinate -s` (prevents system sleep including lid close)
+   - `KeepAlive` + `RunAtLoad` ensures it starts on boot and restarts if killed
+   - Loaded and verified running (PID confirmed via `launchctl list`)
+
+4. **Vercel GitHub integration (auto-deploy)**
+   - Discovered pushes to GitHub were NOT triggering Vercel deployments — no webhooks on the repo
+   - Root cause: Vercel GitHub App was not installed on the `Skye-Quiet-Riots` GitHub account
+   - Installed Vercel GitHub App via GitHub settings (granted access to all repositories)
+   - Connected `Skye-Quiet-Riots/quiet-riots` repo to Vercel project via Git settings page
+   - Verified auto-deploy: test push triggered build automatically ("Automatically created for pushes to Skye-Quiet-Riots/quiet-riots")
+   - No more need for manual `npx vercel --prod`
+
+5. **Developer experience fixes**
+   - Fixed Claude Code permissions: project-level `settings.local.json` had an old granular allowlist overriding global `Bash(*)`
+   - Recommended best practices: .env.example, GitHub Actions CI, pre-commit hooks, security headers, README, database migrations, error monitoring
+
+### Key decisions
+- **In-memory libSQL for test isolation** — each test file gets a fresh `file::memory:` database rather than using mocks. Tests run against real SQL, catching query bugs that mocks would miss
+- **`_setTestDb()` injection pattern** — chosen over `vi.mock` (fragile across 6 query modules) and env vars (doesn't support parallel test files)
+- **Full-height chicken OG image** — iterated 3 times based on WhatsApp preview feedback. WhatsApp shows a small square crop, so maximising the chicken in the frame makes it recognisable
+- **caffeinate -s over pmset** — simpler, no sudo required, LaunchAgent pattern ensures persistence across reboots
+
+### Discoveries
+- **WhatsApp uses Open Graph tags for link previews**, not `<title>` or `favicon.ico`. Without `og:` meta tags, WhatsApp shows whatever it can scrape (often the old cached version)
+- **WhatsApp aggressively caches link previews** — old previews in existing messages won't update. Must send link in a new message to see changes
+- **Vercel GitHub App must be installed on the GitHub account** (not just having the repo connected). Without it, there are no webhooks and pushes are silently ignored
+- **Vercel CDN caches static pages** — after deployment, pages can still serve stale HTML until the cache age expires. `x-vercel-cache: HIT` with high `age` header confirms this
+- **Pillow `.save()` for .ico** — use `append_images` parameter with the largest image first to get proper multi-size favicon. The `sizes` parameter alone doesn't embed multiple sizes
+- **Next.js 16 TypeScript strictness** — `RequestInit` type from standard lib is incompatible with Next.js `RequestInit` for `NextRequest` constructor. Must construct headers/body separately
+
+### Next steps
+- Flesh out profile page
+- Add rate limiting to bot API
+- Consider `create_issue` bot action (users can currently only join existing issues)
+- Set up GitHub Actions CI (run tests on PR/push)
+- Add `.env.example` for developer onboarding
+- Monitor WhatsApp bot with real users
+- Consider adding security headers (CSP, HSTS) to `next.config.ts`

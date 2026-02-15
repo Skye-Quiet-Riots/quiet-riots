@@ -116,10 +116,12 @@ src/lib/
 ## Deployment
 
 - **Vercel project:** deployed from GitHub repo `Skye-Quiet-Riots/quiet-riots`
+- **Auto-deploy:** Vercel GitHub App installed on `Skye-Quiet-Riots` org — pushes to `main` trigger automatic production deployments
 - **Domain:** `quietriots.com` (DNS via GoDaddy → Vercel)
 - **Function region:** `lhr1` (London) — set in `vercel.json` to minimise latency to Turso in Ireland
 - **Database:** Turso at `quietriots-skye.turso.io` — env vars `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` in Vercel
 - **Bot API:** production URL is `https://www.quietriots.com/api/bot` (must use `www.` — bare domain redirects 307 and curl doesn't follow POST redirects)
+- **Manual deploy fallback:** `npx vercel --prod` from project root (used before GitHub App was connected)
 
 ## WhatsApp Bot UX
 
@@ -130,12 +132,39 @@ src/lib/
 - **Conversation flow:** Welcome → Search/Match → Join/Pivot → Actions → Community → Experts → Mission
 - **Model:** Claude Sonnet (changed from Opus for speed — ~10s vs ~67s response time)
 
+## Testing
+
+- **Framework:** Vitest 4 with `@vitest/coverage-v8`
+- **Config:** `vitest.config.ts` — node environment, `@/*` path alias, coverage for `src/lib/**` and `src/app/api/**`
+- **Test count:** 126 tests across 12 files (~550ms)
+- **Database isolation:** In-memory libSQL (`file::memory:`) injected via `_setTestDb()` in `db.ts` — each test file gets its own clean database
+- **Session mocking:** `vi.mock('next/headers')` with `mockLoggedIn(userId)` / `mockLoggedOut()` helpers for cookie-based auth routes
+- **Test helpers:** `src/test/setup-db.ts` (create/teardown), `src/test/seed-test-data.ts` (minimal seed), `src/test/api-helpers.ts` (request builders)
+- **Scripts:** `npm test` (run once), `npm run test:watch` (watch mode), `npm run test:coverage` (with V8 coverage)
+
+## Branding & Social
+
+- **Favicon:** Custom chicken icon with "QR" text (`src/app/favicon.ico`, multi-size .ico generated from `/Users/skye/Documents/Chicken QR logo.jpeg`)
+- **Browser tab title:** "Quiet Riots — Change. Finally."
+- **Open Graph tags:** `og:title`, `og:image` (1200×630 chicken on blue), `og:description`, `og:url`, `og:site_name`, Twitter card — all in `layout.tsx` metadata
+- **OG image:** `public/og-image.jpg` — chicken filling full height on blue background, served at `https://www.quietriots.com/og-image.jpg`
+- **Logo assets:** `public/logo-192.png`, `public/logo-512.png` — chicken icon at standard sizes
+- **Apple touch icon:** `public/logo-192.png` (set via `metadata.icons.apple` in layout.tsx)
+
+## Sleep Prevention (24/7 Operation)
+
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.nosleep.plist`
+- **Command:** `caffeinate -s` (prevents system sleep including lid close)
+- **Persistence:** `KeepAlive` + `RunAtLoad` — starts on boot, restarts if killed
+- **Purpose:** Keeps laptop running 24/7 for WhatsApp bot (OpenClaw gateway)
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.nosleep.plist`
+
 ## Known Issues
 
-- No test suite exists yet — needs unit and integration tests
 - Profile page is minimal (placeholder implementation)
 - Bot API has no rate limiting
 - WhatsApp polls and interactive buttons don't work via Baileys — use numbered text choices instead
+- Vercel auto-deploy webhook was missing until Session 3 — now connected via GitHub App
 
 ## End of Session Protocol
 
