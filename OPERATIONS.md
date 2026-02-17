@@ -59,6 +59,33 @@
 - **Log:** `~/.openclaw/logs/log-rotate.log`
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-logrotate.plist`
 
+## Daily Backup (Private GitHub Repo)
+- **Repo:** `Skye-Quiet-Riots/quiet-riots-backup` (private)
+- **Script:** `~/.openclaw/scripts/backup.sh` — copies config, encrypts secrets, pushes to GitHub
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.backup.plist` — daily at 03:00
+- **Encryption:** AES-256-CBC via openssl, passphrase at `~/.openclaw/.backup-passphrase`
+- **IMPORTANT:** Store the passphrase somewhere safe outside this laptop (password manager)
+- **Log:** `~/.openclaw/logs/backup.log`
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.backup.plist`
+- **Manual backup:** `bash ~/.openclaw/scripts/backup.sh`
+- **Restore guide:** See `RESTORE.md` in the backup repo
+
+### What's backed up
+| Directory | Contents | Encrypted? |
+|-----------|----------|------------|
+| `openclaw-config/` | openclaw.json (gateway auth token) | Yes |
+| `openclaw-workspace/` | AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md | No |
+| `openclaw-skills/` | SKILL.md (bot conversation flows) | No |
+| `openclaw-scripts/` | watchdog, auto-update, log-rotate, backup scripts | No |
+| `launchagents/` | All 6 .plist files | No |
+| `secrets/` | .env.local (Turso credentials, API keys) | Yes |
+| `claude-settings/` | Claude Code settings.json | No |
+
+### What's NOT backed up (and why)
+- **WhatsApp credentials** — session-based, re-scan QR code to restore (~10 min)
+- **OpenClaw sessions** — ephemeral user conversations, regenerated on use
+- **Gateway logs** — operational, not worth preserving
+
 ## All LaunchAgents Summary
 
 | Agent | Label | Schedule | Purpose |
@@ -66,5 +93,6 @@
 | Sleep prevention | `com.quietriots.nosleep` | Always (KeepAlive) | `caffeinate -s` |
 | OpenClaw gateway | `ai.openclaw.gateway` | Always (KeepAlive) | WhatsApp bot |
 | Watchdog | `com.quietriots.openclaw-watchdog` | Every 120s | Restart gateway after WiFi drops |
+| Backup | `com.quietriots.backup` | Daily 03:00 | Encrypted backup to GitHub |
 | Log rotation | `com.quietriots.openclaw-logrotate` | Daily 03:30 | Rotate logs over 10MB |
 | Auto-update | `com.quietriots.openclaw-update` | Daily 04:00 | Update OpenClaw + restart gateway |
