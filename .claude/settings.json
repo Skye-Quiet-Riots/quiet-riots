@@ -1,4 +1,22 @@
 {
+  "permissions": {
+    "allow": ["Edit", "Bash(*)", "Read(*)", "Write(*)", "WebFetch(*)", "Glob", "Grep"],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.production)",
+      "Read(**/.env.development)",
+      "Read(**/*secret*)",
+      "Read(**/.ssh/**)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout . *)",
+      "Bash(git clean -f *)"
+    ]
+  },
+  "defaultMode": "bypassPermissions",
   "hooks": {
     "PostToolUse": [
       {
@@ -6,7 +24,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "FILE_PATH=$(echo \"$TOOL_INPUT\" | jq -r '.file_path // .filePath // empty') && if [ -n \"$FILE_PATH\" ] && echo \"$FILE_PATH\" | grep -qE '\\.(ts|tsx|js|jsx|mjs)$'; then cd /Users/skye/Projects/quiet-riots/.claude/worktrees/adoring-yonath && npx eslint --fix \"$FILE_PATH\" 2>/dev/null || true; fi"
+            "command": "FILE_PATH=$(echo \"$TOOL_INPUT\" | jq -r '.file_path // .filePath // empty') && if [ -n \"$FILE_PATH\" ] && echo \"$FILE_PATH\" | grep -qE '\\.(ts|tsx|js|jsx|mjs)$'; then npx eslint --fix \"$FILE_PATH\" 2>/dev/null || true; fi"
           }
         ]
       }
