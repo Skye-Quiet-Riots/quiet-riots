@@ -7,8 +7,8 @@ import { PivotTable } from '@/components/data/pivot-table';
 interface PivotToggleProps {
   issuePivotRows: IssuePivotRow[];
   orgPivotRows: OrgPivotRow[];
-  currentOrgId?: number;
-  currentIssueId?: number;
+  currentOrgId?: string;
+  currentIssueId?: string;
   issueName?: string;
   orgName?: string;
 }

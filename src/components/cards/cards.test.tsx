@@ -28,8 +28,8 @@ vi.mock('@/components/data/trending-indicator', () => ({
 
 describe('ActionCard', () => {
   const action = {
-    id: 1,
-    issue_id: 1,
+    id: 'action-1',
+    issue_id: 'issue-1',
     title: 'Sign the petition',
     description: 'Add your voice',
     type: 'action' as const,
@@ -75,8 +75,8 @@ describe('ActionCard', () => {
 
 describe('ExpertCard', () => {
   const expert = {
-    id: 1,
-    issue_id: 1,
+    id: 'expert-1',
+    issue_id: 'issue-1',
     name: 'Dr. Jane Smith',
     role: 'Researcher',
     speciality: 'Public policy',
@@ -110,9 +110,9 @@ describe('ExpertCard', () => {
 
 describe('FeedPostCard', () => {
   const post = {
-    id: 1,
-    issue_id: 1,
-    user_id: 1,
+    id: 'feed-1',
+    issue_id: 'issue-1',
+    user_id: 'user-1',
     user_name: 'Alice',
     content: 'Great discussion today!',
     likes: 5,
@@ -169,7 +169,7 @@ describe('FeedPostCard', () => {
 
 describe('IssueCard', () => {
   const issue = {
-    id: 1,
+    id: 'issue-1',
     name: 'Train Delays',
     category: 'Transport' as const,
     description: 'Chronic delays on commuter lines',
@@ -188,7 +188,7 @@ describe('IssueCard', () => {
   it('links to issue detail page', () => {
     render(<IssueCard issue={issue} />);
     const link = screen.getByRole('link');
-    expect(link.getAttribute('href')).toBe('/issues/1');
+    expect(link.getAttribute('href')).toBe('/issues/issue-1');
   });
 
   it('renders rioter count with locale formatting', () => {
@@ -216,7 +216,7 @@ describe('IssueCard', () => {
 
 describe('OrgCard', () => {
   const org = {
-    id: 1,
+    id: 'org-1',
     name: 'Network Rail',
     category: 'Transport' as const,
     logo_emoji: '🚂',
@@ -232,7 +232,7 @@ describe('OrgCard', () => {
   it('links to org detail page', () => {
     render(<OrgCard org={org} />);
     const link = screen.getByRole('link');
-    expect(link.getAttribute('href')).toBe('/organisations/1');
+    expect(link.getAttribute('href')).toBe('/organisations/org-1');
   });
 
   it('shows issue count when provided', () => {

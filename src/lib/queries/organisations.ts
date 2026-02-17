@@ -14,14 +14,17 @@ export async function getAllOrganisations(category?: Category): Promise<Organisa
   return result.rows as unknown as Organisation[];
 }
 
-export async function getOrganisationById(id: number): Promise<Organisation | null> {
+export async function getOrganisationById(id: string): Promise<Organisation | null> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM organisations WHERE id = ?', args: [id] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM organisations WHERE id = ?',
+    args: [id],
+  });
   return (result.rows[0] as unknown as Organisation) ?? null;
 }
 
 // Issue Pivot: given an issue, show all orgs where this issue exists
-export async function getOrgsForIssue(issueId: number): Promise<IssuePivotRow[]> {
+export async function getOrgsForIssue(issueId: string): Promise<IssuePivotRow[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -42,7 +45,7 @@ export async function getOrgsForIssue(issueId: number): Promise<IssuePivotRow[]>
 }
 
 // Org Pivot: given an org, show all issues (Pareto-ranked)
-export async function getIssuesForOrg(orgId: number): Promise<OrgPivotRow[]> {
+export async function getIssuesForOrg(orgId: string): Promise<OrgPivotRow[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -62,7 +65,7 @@ export async function getIssuesForOrg(orgId: number): Promise<OrgPivotRow[]> {
 }
 
 // Count of issues per org (for org cards)
-export async function getIssueCountForOrg(orgId: number): Promise<number> {
+export async function getIssueCountForOrg(orgId: string): Promise<number> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT COUNT(*) as count FROM issue_organisation WHERE organisation_id = ?',
@@ -72,7 +75,7 @@ export async function getIssueCountForOrg(orgId: number): Promise<number> {
 }
 
 // Get total rioters for an org across all issues
-export async function getTotalRiotersForOrg(orgId: number): Promise<number> {
+export async function getTotalRiotersForOrg(orgId: string): Promise<number> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT SUM(rioter_count) as total FROM issue_organisation WHERE organisation_id = ?',

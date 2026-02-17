@@ -14,7 +14,7 @@ afterAll(async () => {
 
 describe('getSynonymsForIssue', () => {
   it('returns synonyms for an issue', async () => {
-    const synonyms = await getSynonymsForIssue(1);
+    const synonyms = await getSynonymsForIssue('issue-rail');
     expect(synonyms).toHaveLength(2);
     const terms = synonyms.map((s) => s.term);
     expect(terms).toContain('train cancellations');
@@ -22,20 +22,20 @@ describe('getSynonymsForIssue', () => {
   });
 
   it('returns empty array for issue with no synonyms', async () => {
-    const synonyms = await getSynonymsForIssue(999);
+    const synonyms = await getSynonymsForIssue('nonexistent');
     expect(synonyms).toHaveLength(0);
   });
 });
 
 describe('addSynonym', () => {
   it('creates and returns a synonym', async () => {
-    const synonym = await addSynonym(1, 'delayed trains');
-    expect(synonym.issue_id).toBe(1);
+    const synonym = await addSynonym('issue-rail', 'delayed trains');
+    expect(synonym.issue_id).toBe('issue-rail');
     expect(synonym.term).toBe('delayed trains');
     expect(synonym.id).toBeDefined();
 
     // Verify it was persisted
-    const all = await getSynonymsForIssue(1);
+    const all = await getSynonymsForIssue('issue-rail');
     expect(all.some((s) => s.term === 'delayed trains')).toBe(true);
   });
 });

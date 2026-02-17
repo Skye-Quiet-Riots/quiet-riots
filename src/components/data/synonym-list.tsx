@@ -5,7 +5,7 @@ import type { Synonym } from '@/types';
 
 interface SynonymListProps {
   synonyms: Synonym[];
-  issueId: number;
+  issueId: string;
 }
 
 export function SynonymList({ synonyms, issueId }: SynonymListProps) {

@@ -16,7 +16,7 @@ interface Props {
 
 export default async function OrgDetailPage({ params }: Props) {
   const { id } = await params;
-  const org = await getOrganisationById(Number(id));
+  const org = await getOrganisationById(id);
   if (!org) notFound();
 
   const orgPivotRows = await getIssuesForOrg(org.id);

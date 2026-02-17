@@ -33,7 +33,7 @@ interface Props {
 
 export default async function IssueDetailPage({ params }: Props) {
   const { id } = await params;
-  const issue = await getIssueById(Number(id));
+  const issue = await getIssueById(id);
   if (!issue) notFound();
 
   const userId = await getSession();

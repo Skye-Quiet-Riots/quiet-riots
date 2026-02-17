@@ -2,13 +2,13 @@ import { getDb } from '../db';
 import type { IssueRelation } from '@/types';
 
 export interface RelatedIssue {
-  issue_id: number;
+  issue_id: string;
   issue_name: string;
   relation_type: 'specific_of' | 'related_to' | 'subset_of';
   rioter_count: number;
 }
 
-export async function getRelatedIssues(issueId: number): Promise<RelatedIssue[]> {
+export async function getRelatedIssues(issueId: string): Promise<RelatedIssue[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -26,8 +26,8 @@ export async function getRelatedIssues(issueId: number): Promise<RelatedIssue[]>
 }
 
 export async function getIssueRelation(
-  childId: number,
-  parentId: number,
+  childId: string,
+  parentId: string,
 ): Promise<IssueRelation | null> {
   const db = getDb();
   const result = await db.execute({

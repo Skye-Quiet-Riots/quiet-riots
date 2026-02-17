@@ -7,7 +7,7 @@ import { apiOk, apiError } from '@/lib/api-response';
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const issue = await getIssueById(Number(id));
+  const issue = await getIssueById(id);
   if (!issue) {
     return apiError('Issue not found', 404);
   }

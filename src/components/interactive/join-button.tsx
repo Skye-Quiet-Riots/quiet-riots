@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 interface JoinButtonProps {
-  issueId: number;
+  issueId: string;
   initialJoined: boolean;
 }
 

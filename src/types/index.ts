@@ -17,7 +17,7 @@ export type Category =
   | 'Other';
 
 export interface Issue {
-  id: number;
+  id: string;
   name: string;
   category: Category;
   description: string;
@@ -28,7 +28,7 @@ export interface Issue {
 }
 
 export interface Organisation {
-  id: number;
+  id: string;
   name: string;
   category: Category;
   logo_emoji: string;
@@ -41,21 +41,21 @@ export interface Organisation {
 }
 
 export interface IssueOrganisation {
-  id: number;
-  issue_id: number;
-  organisation_id: number;
+  id: string;
+  issue_id: string;
+  organisation_id: string;
   rioter_count: number;
   rank: number;
 }
 
 export interface Synonym {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   term: string;
 }
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string | null;
@@ -65,15 +65,15 @@ export interface User {
 }
 
 export interface UserIssue {
-  id: number;
-  user_id: number;
-  issue_id: number;
+  id: string;
+  user_id: string;
+  issue_id: string;
   joined_at: string;
 }
 
 export interface Action {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   title: string;
   description: string;
   type: 'idea' | 'action' | 'together';
@@ -84,9 +84,9 @@ export interface Action {
 }
 
 export interface FeedPost {
-  id: number;
-  issue_id: number;
-  user_id: number;
+  id: string;
+  issue_id: string;
+  user_id: string;
   user_name?: string;
   content: string;
   likes: number;
@@ -94,8 +94,8 @@ export interface FeedPost {
 }
 
 export interface CommunityHealth {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   needs_met: number;
   membership: number;
   influence: number;
@@ -103,8 +103,8 @@ export interface CommunityHealth {
 }
 
 export interface ExpertProfile {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   name: string;
   role: string;
   speciality: string;
@@ -113,30 +113,30 @@ export interface ExpertProfile {
 }
 
 export interface CountryBreakdown {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   country_code: string;
   country_name: string;
   rioter_count: number;
 }
 
 export interface SeasonalPattern {
-  id: number;
-  issue_id: number;
+  id: string;
+  issue_id: string;
   peak_months: string;
   description: string;
 }
 
 export interface IssueRelation {
-  id: number;
-  child_id: number;
-  parent_id: number;
+  id: string;
+  child_id: string;
+  parent_id: string;
   relation_type: 'specific_of' | 'related_to' | 'subset_of';
 }
 
 // Pivot types
 export interface IssuePivotRow {
-  organisation_id: number;
+  organisation_id: string;
   organisation_name: string;
   logo_emoji: string;
   rioter_count: number;
@@ -144,7 +144,7 @@ export interface IssuePivotRow {
 }
 
 export interface OrgPivotRow {
-  issue_id: number;
+  issue_id: string;
   issue_name: string;
   rioter_count: number;
   rank: number;

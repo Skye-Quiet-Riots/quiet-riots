@@ -1,10 +1,12 @@
 import { getDb } from './db';
 import { dropTables, createTables } from './schema';
+import { generateId } from './uuid';
 
-async function insertRow(sql: string, args: (string | number | null)[]): Promise<number> {
+async function insertRow(sql: string, args: (string | number | null)[]): Promise<string> {
   const db = getDb();
-  const result = await db.execute({ sql, args });
-  return Number(result.lastInsertRowid);
+  const id = generateId();
+  await db.execute({ sql, args: [id, ...args] });
+  return id;
 }
 
 export async function seed() {
@@ -14,7 +16,7 @@ export async function seed() {
   // =============================
   // ISSUES (50 across 16 categories)
   // =============================
-  const issueSql = `INSERT INTO issues (name, category, description, rioter_count, country_count, trending_delta) VALUES (?, ?, ?, ?, ?, ?)`;
+  const issueSql = `INSERT INTO issues (id, name, category, description, rioter_count, country_count, trending_delta) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
   const issues = [
     // Transport (1-8)
@@ -427,7 +429,7 @@ export async function seed() {
     ],
   ] as const;
 
-  const issueIds: Record<string, number> = {};
+  const issueIds: Record<string, string> = {};
   for (const [name, category, description, rioters, countries, trending] of issues) {
     const id = await insertRow(issueSql, [
       name,
@@ -443,7 +445,7 @@ export async function seed() {
   // =============================
   // ORGANISATIONS (50 with regulator/sector/country data)
   // =============================
-  const orgSql = `INSERT INTO organisations (name, category, logo_emoji, description, sector, country, regulator, ombudsman, website) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const orgSql = `INSERT INTO organisations (id, name, category, logo_emoji, description, sector, country, regulator, ombudsman, website) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   const orgs = [
     // Rail (1-6)
@@ -1009,7 +1011,7 @@ export async function seed() {
     ],
   ] as const;
 
-  const orgIds: Record<string, number> = {};
+  const orgIds: Record<string, string> = {};
   for (const [
     name,
     category,
@@ -1038,7 +1040,7 @@ export async function seed() {
   // =============================
   // ISSUE-ORGANISATION LINKS (150+ pivot links)
   // =============================
-  const linkSql = `INSERT INTO issue_organisation (issue_id, organisation_id, rioter_count, rank) VALUES (?, ?, ?, ?)`;
+  const linkSql = `INSERT INTO issue_organisation (id, issue_id, organisation_id, rioter_count, rank) VALUES (?, ?, ?, ?, ?)`;
 
   // Train Cancellations across all rail companies
   await insertRow(linkSql, [issueIds['Train Cancellations'], orgIds['Avanti West Coast'], 3240, 1]);
@@ -1379,7 +1381,7 @@ export async function seed() {
   // =============================
   // SYNONYMS (80+)
   // =============================
-  const synonymSql = `INSERT INTO synonyms (issue_id, term) VALUES (?, ?)`;
+  const synonymSql = `INSERT INTO synonyms (id, issue_id, term) VALUES (?, ?, ?)`;
 
   const synonyms: [string, string[]][] = [
     [
@@ -1562,7 +1564,7 @@ export async function seed() {
   // =============================
   // SAMPLE USERS
   // =============================
-  const userSql = `INSERT INTO users (name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?)`;
+  const userSql = `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`;
 
   const users = [
     ['Sarah K.', 'sarah@example.com', null, '10min', 'writing,organising'],
@@ -1575,7 +1577,7 @@ export async function seed() {
     ['Priya S.', 'priya@example.com', null, '1hr+', 'organising,languages'],
   ] as const;
 
-  const userIds: Record<string, number> = {};
+  const userIds: Record<string, string> = {};
   for (const [name, email, phone, time, skills] of users) {
     const id = await insertRow(userSql, [name, email, phone, time, skills]);
     userIds[name as string] = id;
@@ -1584,7 +1586,7 @@ export async function seed() {
   // =============================
   // ACTIONS (35+ with real URLs)
   // =============================
-  const actionSql = `INSERT INTO actions (issue_id, title, description, type, time_required, skills_needed, external_url, provider_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+  const actionSql = `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   // Train Cancellations
   await insertRow(actionSql, [
@@ -2078,7 +2080,7 @@ export async function seed() {
   // =============================
   // COMMUNITY HEALTH (top 20 issues)
   // =============================
-  const healthSql = `INSERT INTO community_health (issue_id, needs_met, membership, influence, connection) VALUES (?, ?, ?, ?, ?)`;
+  const healthSql = `INSERT INTO community_health (id, issue_id, needs_met, membership, influence, connection) VALUES (?, ?, ?, ?, ?, ?)`;
 
   await insertRow(healthSql, [issueIds['Train Cancellations'], 82, 71, 68, 75]);
   await insertRow(healthSql, [issueIds['Train Ticket Prices'], 75, 68, 62, 70]);
@@ -2104,7 +2106,7 @@ export async function seed() {
   // =============================
   // EXPERT PROFILES
   // =============================
-  const expertSql = `INSERT INTO expert_profiles (issue_id, name, role, speciality, achievement, avatar_emoji) VALUES (?, ?, ?, ?, ?, ?)`;
+  const expertSql = `INSERT INTO expert_profiles (id, issue_id, name, role, speciality, achievement, avatar_emoji) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
   await insertRow(expertSql, [
     issueIds['Train Cancellations'],
@@ -2218,7 +2220,7 @@ export async function seed() {
   // =============================
   // FEED POSTS
   // =============================
-  const feedSql = `INSERT INTO feed (issue_id, user_id, content, likes, created_at) VALUES (?, ?, ?, ?, ?)`;
+  const feedSql = `INSERT INTO feed (id, issue_id, user_id, content, likes, created_at) VALUES (?, ?, ?, ?, ?, ?)`;
 
   await insertRow(feedSql, [
     issueIds['Train Cancellations'],
@@ -2311,7 +2313,7 @@ export async function seed() {
   // =============================
   // COUNTRY BREAKDOWNS
   // =============================
-  const countrySql = `INSERT INTO country_breakdown (issue_id, country_code, country_name, rioter_count) VALUES (?, ?, ?, ?)`;
+  const countrySql = `INSERT INTO country_breakdown (id, issue_id, country_code, country_name, rioter_count) VALUES (?, ?, ?, ?, ?)`;
 
   await insertRow(countrySql, [issueIds['Train Cancellations'], 'GB', 'United Kingdom', 2134]);
   await insertRow(countrySql, [issueIds['Train Cancellations'], 'FR', 'France', 412]);
@@ -2395,7 +2397,7 @@ export async function seed() {
   // =============================
   // USER-ISSUE MEMBERSHIPS
   // =============================
-  const userIssueSql = `INSERT INTO user_issues (user_id, issue_id) VALUES (?, ?)`;
+  const userIssueSql = `INSERT INTO user_issues (id, user_id, issue_id) VALUES (?, ?, ?)`;
 
   await insertRow(userIssueSql, [userIds['Sarah K.'], issueIds['Train Cancellations']]);
   await insertRow(userIssueSql, [userIds['Marcio R.'], issueIds['Train Cancellations']]);
@@ -2413,7 +2415,7 @@ export async function seed() {
   // =============================
   // SEASONAL PATTERNS
   // =============================
-  const seasonSql = `INSERT INTO seasonal_patterns (issue_id, peak_months, description) VALUES (?, ?, ?)`;
+  const seasonSql = `INSERT INTO seasonal_patterns (id, issue_id, peak_months, description) VALUES (?, ?, ?, ?)`;
 
   await insertRow(seasonSql, [
     issueIds['Flight Delays'],
@@ -2469,7 +2471,7 @@ export async function seed() {
   // =============================
   // ISSUE RELATIONS
   // =============================
-  const relationSql = `INSERT INTO issue_relations (child_id, parent_id, relation_type) VALUES (?, ?, ?)`;
+  const relationSql = `INSERT INTO issue_relations (id, child_id, parent_id, relation_type) VALUES (?, ?, ?, ?)`;
 
   // Train issues are related
   await insertRow(relationSql, [

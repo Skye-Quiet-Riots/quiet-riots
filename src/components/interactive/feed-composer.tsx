@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type { FeedPost } from '@/types';
 
 interface FeedComposerProps {
-  issueId: number;
+  issueId: string;
   onPost?: (post: FeedPost) => void;
 }
 

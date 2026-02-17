@@ -1,7 +1,8 @@
 import { getDb } from '../db';
+import { generateId } from '@/lib/uuid';
 import type { User, UserIssue, Issue } from '@/types';
 
-export async function getUserById(id: number): Promise<User | null> {
+export async function getUserById(id: string): Promise<User | null> {
   const db = getDb();
   const result = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [id] });
   return (result.rows[0] as unknown as User) ?? null;
@@ -27,9 +28,11 @@ export async function createUser(data: {
   skills?: string;
 }): Promise<User> {
   const db = getDb();
-  const result = await db.execute({
-    sql: 'INSERT INTO users (name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?)',
+  const id = generateId();
+  await db.execute({
+    sql: 'INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)',
     args: [
+      id,
       data.name,
       data.email,
       data.phone || null,
@@ -37,15 +40,12 @@ export async function createUser(data: {
       data.skills || '',
     ],
   });
-  const user = await db.execute({
-    sql: 'SELECT * FROM users WHERE id = ?',
-    args: [Number(result.lastInsertRowid)],
-  });
+  const user = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [id] });
   return user.rows[0] as unknown as User;
 }
 
 export async function updateUser(
-  id: number,
+  id: string,
   data: { name?: string; phone?: string; time_available?: string; skills?: string },
 ): Promise<User | null> {
   const db = getDb();
@@ -76,7 +76,7 @@ export async function updateUser(
   return getUserById(id);
 }
 
-export async function getUserIssues(userId: number): Promise<(UserIssue & { issue: Issue })[]> {
+export async function getUserIssues(userId: string): Promise<(UserIssue & { issue: Issue })[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -92,7 +92,7 @@ export async function getUserIssues(userId: number): Promise<(UserIssue & { issu
   return result.rows as unknown as (UserIssue & { issue: Issue })[];
 }
 
-export async function joinIssue(userId: number, issueId: number): Promise<void> {
+export async function joinIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
   await db.execute({
     sql: 'INSERT OR IGNORE INTO user_issues (user_id, issue_id) VALUES (?, ?)',
@@ -100,7 +100,7 @@ export async function joinIssue(userId: number, issueId: number): Promise<void> 
   });
 }
 
-export async function leaveIssue(userId: number, issueId: number): Promise<void> {
+export async function leaveIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
   await db.execute({
     sql: 'DELETE FROM user_issues WHERE user_id = ? AND issue_id = ?',
@@ -108,7 +108,7 @@ export async function leaveIssue(userId: number, issueId: number): Promise<void>
   });
 }
 
-export async function hasJoinedIssue(userId: number, issueId: number): Promise<boolean> {
+export async function hasJoinedIssue(userId: string, issueId: string): Promise<boolean> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT 1 FROM user_issues WHERE user_id = ? AND issue_id = ?',

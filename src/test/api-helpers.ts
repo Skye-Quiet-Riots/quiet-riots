@@ -29,7 +29,7 @@ export function createTestRequest(
 export function createBotRequest(
   action: string,
   params: Record<string, unknown> = {},
-  apiKey: string = 'qr-bot-dev-key-2026',
+  apiKey: string = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026',
 ): NextRequest {
   return createTestRequest('/api/bot', {
     method: 'POST',

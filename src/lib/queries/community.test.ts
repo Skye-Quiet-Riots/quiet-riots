@@ -8,6 +8,8 @@ import {
   createFeedPost,
   likeFeedPost,
   getCountryBreakdown,
+  getUserFeedPostCount,
+  getUserTotalLikes,
 } from './community';
 
 beforeAll(async () => {
@@ -21,7 +23,7 @@ afterAll(async () => {
 
 describe('getCommunityHealth', () => {
   it('returns health data for an issue', async () => {
-    const health = await getCommunityHealth(1);
+    const health = await getCommunityHealth('issue-rail');
     expect(health).not.toBeNull();
     expect(health!.needs_met).toBe(82);
     expect(health!.membership).toBe(71);
@@ -30,14 +32,14 @@ describe('getCommunityHealth', () => {
   });
 
   it('returns null for issue with no health data', async () => {
-    const health = await getCommunityHealth(999);
+    const health = await getCommunityHealth('nonexistent');
     expect(health).toBeNull();
   });
 });
 
 describe('getExpertProfiles', () => {
   it('returns experts for an issue', async () => {
-    const experts = await getExpertProfiles(1);
+    const experts = await getExpertProfiles('issue-rail');
     expect(experts).toHaveLength(2);
     const names = experts.map((e) => e.name);
     expect(names).toContain('Dr. Patel');
@@ -45,14 +47,14 @@ describe('getExpertProfiles', () => {
   });
 
   it('returns empty array for issue with no experts', async () => {
-    const experts = await getExpertProfiles(999);
+    const experts = await getExpertProfiles('nonexistent');
     expect(experts).toHaveLength(0);
   });
 });
 
 describe('getFeedPosts', () => {
   it('returns posts with user_name, ordered by created_at DESC', async () => {
-    const posts = await getFeedPosts(1);
+    const posts = await getFeedPosts('issue-rail');
     expect(posts).toHaveLength(2);
     // Newest first
     expect(posts[0].content).toBe('Just got my refund!');
@@ -62,44 +64,70 @@ describe('getFeedPosts', () => {
   });
 
   it('respects limit parameter', async () => {
-    const posts = await getFeedPosts(1, 1);
+    const posts = await getFeedPosts('issue-rail', 1);
     expect(posts).toHaveLength(1);
   });
 
   it('returns empty array for issue with no posts', async () => {
-    const posts = await getFeedPosts(999);
+    const posts = await getFeedPosts('nonexistent');
     expect(posts).toHaveLength(0);
   });
 });
 
 describe('createFeedPost', () => {
   it('creates a post and returns it with user_name', async () => {
-    const post = await createFeedPost(1, 1, 'This is a test post');
+    const post = await createFeedPost('issue-rail', 'user-sarah', 'This is a test post');
     expect(post.content).toBe('This is a test post');
     expect(post.user_name).toBe('Sarah K.');
-    expect(post.issue_id).toBe(1);
-    expect(post.user_id).toBe(1);
+    expect(post.issue_id).toBe('issue-rail');
+    expect(post.user_id).toBe('user-sarah');
     expect(post.likes).toBe(0);
   });
 });
 
 describe('likeFeedPost', () => {
   it('increments the likes count', async () => {
-    const before = await getFeedPosts(1);
-    const post = before.find((p) => p.id === 1)!;
+    const before = await getFeedPosts('issue-rail');
+    const post = before.find((p) => p.id === 'feed-001')!;
     const likesBefore = post.likes;
 
-    await likeFeedPost(1);
+    await likeFeedPost('feed-001');
 
-    const after = await getFeedPosts(1);
-    const postAfter = after.find((p) => p.id === 1)!;
+    const after = await getFeedPosts('issue-rail');
+    const postAfter = after.find((p) => p.id === 'feed-001')!;
     expect(postAfter.likes).toBe(likesBefore + 1);
+  });
+});
+
+describe('getUserFeedPostCount', () => {
+  it('returns the number of posts by a user', async () => {
+    const count = await getUserFeedPostCount('user-sarah');
+    // Sarah has 1 seeded post + 1 created in createFeedPost test
+    expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  it('returns 0 for user with no posts', async () => {
+    const count = await getUserFeedPostCount('nonexistent');
+    expect(count).toBe(0);
+  });
+});
+
+describe('getUserTotalLikes', () => {
+  it('returns total likes across all posts by a user', async () => {
+    const total = await getUserTotalLikes('user-sarah');
+    // Sarah's seeded post has 24 likes (+ any from likeFeedPost test)
+    expect(total).toBeGreaterThanOrEqual(24);
+  });
+
+  it('returns 0 for user with no posts', async () => {
+    const total = await getUserTotalLikes('nonexistent');
+    expect(total).toBe(0);
   });
 });
 
 describe('getCountryBreakdown', () => {
   it('returns countries ordered by rioter_count DESC', async () => {
-    const countries = await getCountryBreakdown(1);
+    const countries = await getCountryBreakdown('issue-rail');
     expect(countries).toHaveLength(2);
     expect(countries[0].country_name).toBe('United Kingdom');
     expect(countries[0].rioter_count).toBe(2134);
@@ -107,7 +135,7 @@ describe('getCountryBreakdown', () => {
   });
 
   it('returns empty array for issue with no countries', async () => {
-    const countries = await getCountryBreakdown(999);
+    const countries = await getCountryBreakdown('nonexistent');
     expect(countries).toHaveLength(0);
   });
 });

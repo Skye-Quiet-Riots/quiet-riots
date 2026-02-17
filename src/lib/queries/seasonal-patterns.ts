@@ -1,7 +1,7 @@
 import { getDb } from '../db';
 import type { SeasonalPattern } from '@/types';
 
-export async function getSeasonalPattern(issueId: number): Promise<SeasonalPattern | null> {
+export async function getSeasonalPattern(issueId: string): Promise<SeasonalPattern | null> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT * FROM seasonal_patterns WHERE issue_id = ?',

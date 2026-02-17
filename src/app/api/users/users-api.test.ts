@@ -21,7 +21,7 @@ afterAll(async () => {
   await teardownTestDb();
 });
 
-function mockLoggedIn(userId: number) {
+function mockLoggedIn(userId: string) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
       name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
@@ -47,7 +47,7 @@ describe('POST /api/users', () => {
   });
 
   it('creates a new user', async () => {
-    mockLoggedIn(0); // mock for setSession call
+    mockLoggedIn('temp'); // mock for setSession call
     const request = new Request('http://localhost:3000/api/users', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -61,7 +61,7 @@ describe('POST /api/users', () => {
   });
 
   it('returns existing user if email already exists', async () => {
-    mockLoggedIn(0);
+    mockLoggedIn('temp');
     const request = new Request('http://localhost:3000/api/users', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -90,7 +90,7 @@ describe('GET /api/users/me', () => {
   });
 
   it('returns user when logged in', async () => {
-    mockLoggedIn(1);
+    mockLoggedIn('user-sarah');
     const response = await getMe();
     const { data } = await response.json();
     expect(response.status).toBe(200);
@@ -108,7 +108,9 @@ describe('GET /api/users/me', () => {
 describe('GET /api/users/[id]', () => {
   it('returns user with issues', async () => {
     const request = new Request('http://localhost:3000/api/users/1');
-    const response = await getUserDetail(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getUserDetail(request, {
+      params: Promise.resolve({ id: 'user-sarah' }),
+    });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.user.name).toBe('Sarah K.');
@@ -117,7 +119,9 @@ describe('GET /api/users/[id]', () => {
 
   it('returns 404 for missing user', async () => {
     const request = new Request('http://localhost:3000/api/users/999');
-    const response = await getUserDetail(request, { params: Promise.resolve({ id: '999' }) });
+    const response = await getUserDetail(request, {
+      params: Promise.resolve({ id: 'nonexistent' }),
+    });
     expect(response.status).toBe(404);
   });
 });
@@ -129,7 +133,7 @@ describe('PATCH /api/users/[id]', () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ time_available: '1min' }),
     });
-    const response = await patchUser(request, { params: Promise.resolve({ id: '2' }) });
+    const response = await patchUser(request, { params: Promise.resolve({ id: 'user-marcio' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.time_available).toBe('1min');
@@ -141,7 +145,7 @@ describe('PATCH /api/users/[id]', () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ name: 'Ghost' }),
     });
-    const response = await patchUser(request, { params: Promise.resolve({ id: '999' }) });
+    const response = await patchUser(request, { params: Promise.resolve({ id: 'nonexistent' }) });
     expect(response.status).toBe(404);
   });
 });

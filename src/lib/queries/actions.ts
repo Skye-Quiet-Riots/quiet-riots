@@ -1,7 +1,7 @@
 import { getDb } from '../db';
 import type { Action } from '@/types';
 
-export async function getActionsForIssue(issueId: number): Promise<Action[]> {
+export async function getActionsForIssue(issueId: string): Promise<Action[]> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT * FROM actions WHERE issue_id = ? ORDER BY type, time_required',
@@ -11,7 +11,7 @@ export async function getActionsForIssue(issueId: number): Promise<Action[]> {
 }
 
 export async function getActionsByType(
-  issueId: number,
+  issueId: string,
   type: 'idea' | 'action' | 'together',
 ): Promise<Action[]> {
   const db = getDb();
@@ -23,7 +23,7 @@ export async function getActionsByType(
 }
 
 export async function getFilteredActions(
-  issueId: number,
+  issueId: string,
   options?: { type?: string; time?: string; skills?: string },
 ): Promise<Action[]> {
   const db = getDb();
@@ -52,7 +52,7 @@ export async function getFilteredActions(
   return result.rows as unknown as Action[];
 }
 
-export async function getActionCountForIssue(issueId: number): Promise<number> {
+export async function getActionCountForIssue(issueId: string): Promise<number> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT COUNT(*) as count FROM actions WHERE issue_id = ?',

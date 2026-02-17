@@ -18,15 +18,15 @@ afterAll(async () => {
 
 describe('getSeasonalPattern', () => {
   it('returns seasonal pattern for an issue that has one', async () => {
-    const pattern = await getSeasonalPattern(1);
+    const pattern = await getSeasonalPattern('issue-rail');
     expect(pattern).not.toBeNull();
-    expect(pattern!.issue_id).toBe(1);
+    expect(pattern!.issue_id).toBe('issue-rail');
     expect(pattern!.peak_months).toBe('[11,12,1,2]');
     expect(pattern!.description).toContain('winter');
   });
 
   it('returns null for issue without seasonal pattern', async () => {
-    const pattern = await getSeasonalPattern(2);
+    const pattern = await getSeasonalPattern('issue-broadband');
     expect(pattern).toBeNull();
   });
 });
@@ -35,12 +35,12 @@ describe('getSeasonalPatternsByMonth', () => {
   it('returns patterns peaking in a given month', async () => {
     const patterns = await getSeasonalPatternsByMonth(7);
     expect(patterns.length).toBeGreaterThanOrEqual(1);
-    expect(patterns.some((p) => p.issue_id === 3)).toBe(true);
+    expect(patterns.some((p) => p.issue_id === 'issue-flights')).toBe(true);
   });
 
   it('returns patterns peaking in winter', async () => {
     const patterns = await getSeasonalPatternsByMonth(12);
-    expect(patterns.some((p) => p.issue_id === 1)).toBe(true);
+    expect(patterns.some((p) => p.issue_id === 'issue-rail')).toBe(true);
   });
 
   it('returns empty for month with no patterns', async () => {

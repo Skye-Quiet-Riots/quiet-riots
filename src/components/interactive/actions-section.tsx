@@ -6,7 +6,7 @@ import { ActionCard } from '@/components/cards/action-card';
 import { TimeSkillFilter } from '@/components/interactive/time-skill-filter';
 
 interface ActionsSectionProps {
-  issueId: number;
+  issueId: string;
   initialActions: Action[];
 }
 

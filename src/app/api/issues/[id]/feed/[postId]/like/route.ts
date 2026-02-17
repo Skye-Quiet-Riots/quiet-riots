@@ -12,6 +12,6 @@ export async function POST(
     return apiError('Too many requests', 429);
   }
   const { postId } = await params;
-  await likeFeedPost(Number(postId));
+  await likeFeedPost(postId);
   return apiOk({ liked: true });
 }

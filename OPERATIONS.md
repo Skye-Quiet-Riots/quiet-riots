@@ -6,7 +6,9 @@
 - **Auto-deploy:** Vercel GitHub App installed on `Skye-Quiet-Riots` org — pushes to `main` trigger automatic production deployments
 - **Domain:** `quietriots.com` (DNS via GoDaddy → Vercel)
 - **Function region:** `lhr1` (London) — set in `vercel.json` to minimise latency to Turso in Ireland
-- **Database:** Turso at `quietriots-skye.turso.io` — env vars `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` in Vercel
+- **Database (production):** Turso `quiet-riots` at `quiet-riots-skye-quiet-riots.aws-eu-west-1.turso.io` — Vercel Production env vars
+- **Database (staging):** Turso `quiet-riots-staging` at `quiet-riots-staging-skye-quiet-riots.aws-eu-west-1.turso.io` — Vercel Preview env vars + local `.env.local`
+- **Environment separation:** Vercel Preview deployments (PR branches) hit staging DB; Production deployments (`main`) hit prod DB. Local dev should use staging.
 - **Bot API:** production URL is `https://www.quietriots.com/api/bot` (must use `www.` — bare domain redirects 307 and curl doesn't follow POST redirects)
 - **Manual deploy fallback:** `npx vercel --prod` from project root
 
