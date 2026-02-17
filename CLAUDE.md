@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command | Purpose |
 |---------|---------|
 | `npm run build` | Build — ALWAYS run before committing |
-| `npm test` | Run 126 tests (~550ms) |
+| `npm test` | Run 210 tests (~1.3s) |
 | `npm run test:watch` | Watch mode |
 | `npm run test:coverage` | With V8 coverage |
 | `npm run seed` | Reset database with sample data |
@@ -74,6 +74,7 @@ At the start of every session (or when asked to "pick up where we left off"):
 ## During Session
 
 - Run tests after meaningful changes, not just at session end
+- When adding or changing code, check if tests need updating — add tests for new logic
 - Save debugging insights to auto memory as they happen
 - If you discover a new gotcha, add it to CLAUDE.md immediately
 
@@ -82,7 +83,8 @@ At the start of every session (or when asked to "pick up where we left off"):
 At the end of every session (or when asked to "wrap up" / "good night"):
 
 1. Run the full test suite and `npm run build` — report any failures
-2. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
+2. **Test coverage check:** Review all new/changed code in this session — if any logic, API routes, or components were added or modified without corresponding tests, write them now
+3. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
    - Flag that OpenClaw sessions may need clearing: `rm ~/.openclaw/agents/main/sessions/*.jsonl`
    - Flag that gateway may need restarting: `launchctl stop ai.openclaw.gateway && launchctl start ai.openclaw.gateway`
 3. Update this file (CLAUDE.md) with any new decisions, gotchas, or known issues

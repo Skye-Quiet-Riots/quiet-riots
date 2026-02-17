@@ -5,10 +5,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    include: ['src/**/*.test.ts'],
+    include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
     coverage: {
       provider: 'v8',
-      include: ['src/lib/**', 'src/app/api/**'],
+      include: ['src/lib/**', 'src/app/api/**', 'src/components/**'],
       exclude: ['src/lib/seed.ts'],
     },
   },
