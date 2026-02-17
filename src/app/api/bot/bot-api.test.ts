@@ -213,6 +213,49 @@ describe('Bot API: add_synonym', () => {
   });
 });
 
+describe('Bot API: create_issue', () => {
+  it('creates a new issue', async () => {
+    const { status, body } = await callBot('create_issue', {
+      name: 'Water Quality',
+      category: 'Environment',
+      description: 'Poor water quality in rural areas',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.issue.name).toBe('Water Quality');
+    expect(body.data.issue.category).toBe('Environment');
+    expect(body.data.issue.description).toBe('Poor water quality in rural areas');
+    expect(body.data.issue.rioter_count).toBe(0);
+  });
+
+  it('creates issue with defaults when no description', async () => {
+    const { status, body } = await callBot('create_issue', {
+      name: 'School Funding',
+      category: 'Education',
+    });
+    expect(status).toBe(200);
+    expect(body.data.issue.name).toBe('School Funding');
+    expect(body.data.issue.description).toBe('');
+  });
+
+  it('fails without name', async () => {
+    const { status, body } = await callBot('create_issue', {
+      category: 'Health',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('name');
+  });
+
+  it('fails with invalid category', async () => {
+    const { status, body } = await callBot('create_issue', {
+      name: 'Invalid Category Issue',
+      category: 'InvalidCategory',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toBeDefined();
+  });
+});
+
 describe('Bot API: update_user', () => {
   it('updates user fields', async () => {
     const { status, body } = await callBot('update_user', {

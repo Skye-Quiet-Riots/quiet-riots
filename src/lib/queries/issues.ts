@@ -38,6 +38,23 @@ export async function getTrendingIssues(limit: number = 6): Promise<Issue[]> {
   return result.rows as unknown as Issue[];
 }
 
+export async function createIssue(data: {
+  name: string;
+  category: Category;
+  description?: string;
+}): Promise<Issue> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'INSERT INTO issues (name, category, description) VALUES (?, ?, ?)',
+    args: [data.name, data.category, data.description || ''],
+  });
+  const issue = await db.execute({
+    sql: 'SELECT * FROM issues WHERE id = ?',
+    args: [Number(result.lastInsertRowid)],
+  });
+  return issue.rows[0] as unknown as Issue;
+}
+
 export async function getIssueCountsByCategory(): Promise<Record<string, number>> {
   const db = getDb();
   const result = await db.execute('SELECT category, COUNT(*) as count FROM issues GROUP BY category');

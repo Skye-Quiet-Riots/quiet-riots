@@ -53,6 +53,24 @@ export async function likeFeedPost(postId: number): Promise<void> {
   await db.execute({ sql: 'UPDATE feed SET likes = likes + 1 WHERE id = ?', args: [postId] });
 }
 
+export async function getUserFeedPostCount(userId: number): Promise<number> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM feed WHERE user_id = ?',
+    args: [userId],
+  });
+  return Number(result.rows[0]?.count ?? 0);
+}
+
+export async function getUserTotalLikes(userId: number): Promise<number> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT COALESCE(SUM(likes), 0) as total FROM feed WHERE user_id = ?',
+    args: [userId],
+  });
+  return Number(result.rows[0]?.total ?? 0);
+}
+
 export async function getCountryBreakdown(issueId: number): Promise<CountryBreakdown[]> {
   const db = getDb();
   const result = await db.execute({ sql: 'SELECT * FROM country_breakdown WHERE issue_id = ? ORDER BY rioter_count DESC', args: [issueId] });

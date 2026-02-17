@@ -66,7 +66,7 @@ src/lib/
 ## Infrastructure
 
 ```
-src/middleware.ts       # Security headers (CSP, X-Frame-Options) + cache headers for GET APIs
+src/proxy.ts            # Nonce-based CSP, security headers, cache headers for GET APIs
 src/instrumentation.ts  # Env validation + Sentry server/edge init
 sentry.client.config.ts # Sentry browser SDK (replay, performance)
 sentry.server.config.ts # Sentry Node.js SDK

@@ -21,10 +21,12 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                 | Purpose                              |
 | ----------------------- | ------------------------------------ |
 | `npm run build`         | Build — ALWAYS run before committing |
-| `npm test`              | Run 215 tests (~1.3s)                |
+| `npm test`              | Run 230 tests (~1.5s)                |
 | `npm run test:watch`    | Watch mode                           |
 | `npm run test:coverage` | With V8 coverage                     |
 | `npm run seed`          | Reset database with sample data      |
+| `npm run migrate`       | Run pending database migrations      |
+| `npm run migrate:status`| Show applied & pending migrations    |
 | `npm run dev`           | Local dev server                     |
 | `npm run lint`          | ESLint                               |
 | `npm run format`        | Prettier — format all files          |
@@ -54,7 +56,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **Formatting:** Prettier (`.prettierrc`) — semi, singleQuote, trailingComma all, printWidth 100
 - **API validation:** Zod schemas on all mutation endpoints
 - **Rate limiting:** Sliding-window in-memory limiter on all mutation endpoints (`src/lib/rate-limit.ts`)
-- **Security headers:** CSP, X-Frame-Options, etc. in `src/middleware.ts`
+- **Security headers:** Nonce-based CSP, X-Frame-Options, etc. in `src/proxy.ts`
 - **Cache headers:** GET API routes get `Cache-Control: public, max-age=60, s-maxage=300`
 - **Error monitoring:** Sentry (`@sentry/nextjs`) — client/server/edge configs, session replay, source maps
 - **Error pages:** `error.tsx`, `global-error.tsx`, `not-found.tsx` all report to Sentry
@@ -69,11 +71,12 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **Turso queries are async:** All db queries must be awaited
 - **OpenClaw BOOTSTRAP.md kills skills:** Must NOT exist in `~/.openclaw/workspace/`
 - **OpenClaw session cache is sticky:** After changing SKILL.md, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway
-- **CSP allows unsafe-inline/eval:** Required for Next.js — tighten with nonces when possible
+- **CSP uses nonces + strict-dynamic:** `unsafe-eval` only in dev mode; prod eliminates `unsafe-inline`
+- **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
 
 ## Known Issues
 
-- Profile page is minimal (placeholder implementation)
+- None currently tracked
 
 ## Start of Session Protocol
 

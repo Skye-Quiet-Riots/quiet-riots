@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getAllIssues, getIssueById, getTrendingIssues } from '@/lib/queries/issues';
+import { getAllIssues, getIssueById, getTrendingIssues, createIssue } from '@/lib/queries/issues';
 import {
   getAllOrganisations,
   getOrganisationById,
@@ -57,6 +57,11 @@ const actionSchemas = {
     name: z.string().optional(),
     time_available: z.string().optional(),
     skills: z.string().optional(),
+  }),
+  create_issue: z.object({
+    name: z.string().min(1, 'Issue name required'),
+    category: z.enum(['Transport', 'Telecoms', 'Banking', 'Health', 'Education', 'Environment']),
+    description: z.string().optional().default(''),
   }),
 } as const;
 
@@ -255,6 +260,19 @@ export async function POST(request: NextRequest) {
       const term = p.term as string;
       const synonym = await addSynonym(issueId, term);
       return ok({ synonym });
+    }
+
+    // ─── Create Issue ───────────────────────────────────
+    case 'create_issue': {
+      const name = p.name as string;
+      const category = p.category as string;
+      const description = (p.description as string) || '';
+      const issue = await createIssue({
+        name,
+        category: category as import('@/types').Category,
+        description,
+      });
+      return ok({ issue });
     }
 
     // ─── User Profile ────────────────────────────────────

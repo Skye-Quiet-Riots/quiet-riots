@@ -8,6 +8,8 @@ import {
   createFeedPost,
   likeFeedPost,
   getCountryBreakdown,
+  getUserFeedPostCount,
+  getUserTotalLikes,
 } from './community';
 
 beforeAll(async () => {
@@ -94,6 +96,32 @@ describe('likeFeedPost', () => {
     const after = await getFeedPosts(1);
     const postAfter = after.find((p) => p.id === 1)!;
     expect(postAfter.likes).toBe(likesBefore + 1);
+  });
+});
+
+describe('getUserFeedPostCount', () => {
+  it('returns the number of posts by a user', async () => {
+    const count = await getUserFeedPostCount(1);
+    // Sarah has 1 seeded post + 1 created in createFeedPost test
+    expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  it('returns 0 for user with no posts', async () => {
+    const count = await getUserFeedPostCount(999);
+    expect(count).toBe(0);
+  });
+});
+
+describe('getUserTotalLikes', () => {
+  it('returns total likes across all posts by a user', async () => {
+    const total = await getUserTotalLikes(1);
+    // Sarah's seeded post has 24 likes (+ any from likeFeedPost test)
+    expect(total).toBeGreaterThanOrEqual(24);
+  });
+
+  it('returns 0 for user with no posts', async () => {
+    const total = await getUserTotalLikes(999);
+    expect(total).toBe(0);
   });
 });
 

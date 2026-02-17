@@ -7,6 +7,7 @@ import {
   getIssuesByCategory,
   getTrendingIssues,
   getIssueCountsByCategory,
+  createIssue,
 } from './issues';
 
 beforeAll(async () => {
@@ -99,11 +100,35 @@ describe('getTrendingIssues', () => {
   });
 });
 
+describe('createIssue', () => {
+  it('creates an issue and returns it', async () => {
+    const issue = await createIssue({
+      name: 'Test Issue',
+      category: 'Banking',
+      description: 'A test issue',
+    });
+    expect(issue.name).toBe('Test Issue');
+    expect(issue.category).toBe('Banking');
+    expect(issue.description).toBe('A test issue');
+    expect(issue.rioter_count).toBe(0);
+    expect(issue.country_count).toBe(0);
+    expect(issue.trending_delta).toBe(0);
+    expect(issue.id).toBeGreaterThan(0);
+  });
+
+  it('defaults description to empty string', async () => {
+    const issue = await createIssue({ name: 'No Desc Issue', category: 'Health' });
+    expect(issue.description).toBe('');
+  });
+});
+
 describe('getIssueCountsByCategory', () => {
   it('returns correct counts per category', async () => {
     const counts = await getIssueCountsByCategory();
     expect(counts['Transport']).toBe(2);
     expect(counts['Telecoms']).toBe(1);
-    expect(counts['Banking']).toBeUndefined();
+    // Banking and Health issues created by createIssue tests above
+    expect(counts['Banking']).toBe(1);
+    expect(counts['Health']).toBe(1);
   });
 });
