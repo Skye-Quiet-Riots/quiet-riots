@@ -7,7 +7,15 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO issues (id, name, category, description, rioter_count, country_count, trending_delta)
           VALUES (?, ?, ?, ?, ?, ?, ?)`,
-    args: [1, 'Rail Cancellations', 'Transport', 'Train cancellations across the network', 2847, 3, 340],
+    args: [
+      1,
+      'Rail Cancellations',
+      'Transport',
+      'Train cancellations across the network',
+      2847,
+      3,
+      340,
+    ],
   });
   await db.execute({
     sql: `INSERT INTO issues (id, name, category, description, rioter_count, country_count, trending_delta)
@@ -20,16 +28,38 @@ export async function seedTestData() {
     args: [3, 'Flight Delays', 'Transport', 'Airport delays and cancellations', 12340, 28, 890],
   });
 
-  // 2 organisations
+  // 2 organisations (with new columns)
   await db.execute({
-    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description)
-          VALUES (?, ?, ?, ?, ?)`,
-    args: [1, 'Southern Rail', 'Transport', '🚂', 'UK rail operator'],
+    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description, sector, country, regulator, ombudsman, website)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      1,
+      'Southern Rail',
+      'Transport',
+      '🚂',
+      'UK rail operator',
+      'rail',
+      'UK',
+      'ORR',
+      'Rail Ombudsman',
+      'https://www.southernrailway.com',
+    ],
   });
   await db.execute({
-    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description)
-          VALUES (?, ?, ?, ?, ?)`,
-    args: [2, 'BT', 'Telecoms', '📞', 'UK broadband provider'],
+    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description, sector, country, regulator, ombudsman, website)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      2,
+      'BT',
+      'Telecoms',
+      '📞',
+      'UK broadband provider',
+      'telecoms',
+      'UK',
+      'Ofcom',
+      'CISAS',
+      'https://www.bt.com',
+    ],
   });
 
   // Pivot data (issue <-> org links with Pareto ranking)
@@ -88,7 +118,17 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    args: [1, 1, 'Write to Regulator', 'Send a formal complaint', 'action', '10min', 'writing', 'https://example.com', 'Rail Ombudsman'],
+    args: [
+      1,
+      1,
+      'Write to Regulator',
+      'Send a formal complaint',
+      'action',
+      '10min',
+      'writing',
+      'https://example.com',
+      'Rail Ombudsman',
+    ],
   });
   await db.execute({
     sql: `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name)
@@ -103,17 +143,47 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    args: [4, 1, 'Welcome new members', 'Help newcomers get started', 'together', '1min', 'organising', null, null],
+    args: [
+      4,
+      1,
+      'Welcome new members',
+      'Help newcomers get started',
+      'together',
+      '1min',
+      'organising',
+      null,
+      null,
+    ],
   });
   await db.execute({
     sql: `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    args: [5, 2, 'Speed test evidence', 'Document your speeds', 'action', '1min', 'tech', 'https://speedtest.net', 'Speedtest'],
+    args: [
+      5,
+      2,
+      'Speed test evidence',
+      'Document your speeds',
+      'action',
+      '1min',
+      'tech',
+      'https://speedtest.net',
+      'Speedtest',
+    ],
   });
   await db.execute({
     sql: `INSERT INTO actions (id, issue_id, title, description, type, time_required, skills_needed, external_url, provider_name)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    args: [6, 1, 'Film your platform', 'Document overcrowding', 'action', '10min', 'media', null, null],
+    args: [
+      6,
+      1,
+      'Film your platform',
+      'Document overcrowding',
+      'action',
+      '10min',
+      'media',
+      null,
+      null,
+    ],
   });
 
   // Community health
@@ -162,5 +232,21 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO country_breakdown (issue_id, country_code, country_name, rioter_count) VALUES (?, ?, ?, ?)`,
     args: [2, 'US', 'United States', 412],
+  });
+
+  // Seasonal patterns
+  await db.execute({
+    sql: `INSERT INTO seasonal_patterns (issue_id, peak_months, description) VALUES (?, ?, ?)`,
+    args: [1, '[11,12,1,2]', 'Train cancellations worse in winter weather'],
+  });
+  await db.execute({
+    sql: `INSERT INTO seasonal_patterns (issue_id, peak_months, description) VALUES (?, ?, ?)`,
+    args: [3, '[6,7,8]', 'Flight delays peak during summer holiday season'],
+  });
+
+  // Issue relations
+  await db.execute({
+    sql: `INSERT INTO issue_relations (child_id, parent_id, relation_type) VALUES (?, ?, ?)`,
+    args: [1, 2, 'related_to'],
   });
 }
