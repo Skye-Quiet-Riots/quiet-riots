@@ -388,14 +388,6 @@ export async function seed() {
     ],
     // Environment, Education, Employment (46-50)
     [
-      'Plastic Waste',
-      'Environment',
-      'Excessive unnecessary packaging on products, not recyclable',
-      23450,
-      54,
-      1800,
-    ],
-    [
       'Cost of Childcare',
       'Other',
       'Childcare costs prohibitively expensive, limiting ability to work',
@@ -1325,11 +1317,6 @@ export async function seed() {
   // Hospital Parking Charges
   await insertRow(linkSql, [issueIds['Hospital Parking Charges'], orgIds['NHS England'], 1800, 1]);
 
-  // Plastic Waste
-  await insertRow(linkSql, [issueIds['Plastic Waste'], orgIds['Amazon'], 4500, 1]);
-  await insertRow(linkSql, [issueIds['Plastic Waste'], orgIds['Tesco'], 3200, 2]);
-  await insertRow(linkSql, [issueIds['Plastic Waste'], orgIds['Sainsburys'], 2800, 3]);
-
   // Refund Difficulties
   await insertRow(linkSql, [issueIds['Refund Difficulties'], orgIds['Amazon'], 1800, 1]);
   await insertRow(linkSql, [issueIds['Refund Difficulties'], orgIds['Tesco'], 900, 2]);
@@ -1537,10 +1524,6 @@ export async function seed() {
     [
       'Shrinkflation',
       ['smaller portions', 'less for same price', 'package smaller', 'shrinking products'],
-    ],
-    [
-      'Plastic Waste',
-      ['plastic pollution', 'single-use plastics', 'ocean pollution', 'excessive packaging'],
     ],
     ['Pothole Damage', ['potholes', 'road damage', 'pothole car damage']],
     ['Council Tax Rises', ['council tax increase', 'council tax too high', 'local tax']],
@@ -1950,38 +1933,6 @@ export async function seed() {
     null,
   ]);
 
-  // Plastic Waste
-  await insertRow(actionSql, [
-    issueIds['Plastic Waste'],
-    'Audit your plastic use',
-    'Track single-use plastics for one week',
-    'idea',
-    '10min',
-    '',
-    null,
-    null,
-  ]);
-  await insertRow(actionSql, [
-    issueIds['Plastic Waste'],
-    'Beach or park cleanup',
-    'Join or organise a local litter pick',
-    'together',
-    '1hr+',
-    'organising',
-    null,
-    null,
-  ]);
-  await insertRow(actionSql, [
-    issueIds['Plastic Waste'],
-    'Contact manufacturers about packaging',
-    'Write to brands about packaging waste',
-    'action',
-    '10min',
-    'writing',
-    null,
-    null,
-  ]);
-
   // Student Loan Repayment
   await insertRow(actionSql, [
     issueIds['Student Loan Repayment'],
@@ -2099,7 +2050,6 @@ export async function seed() {
   await insertRow(healthSql, [issueIds['Mental Health Service Waits'], 76, 72, 67, 75]);
   await insertRow(healthSql, [issueIds['Prescription Costs'], 71, 65, 60, 66]);
   await insertRow(healthSql, [issueIds['Delivery Problems'], 74, 68, 62, 70]);
-  await insertRow(healthSql, [issueIds['Plastic Waste'], 84, 79, 74, 80]);
   await insertRow(healthSql, [issueIds['Student Loan Repayment'], 81, 75, 70, 76]);
   await insertRow(healthSql, [issueIds['Rent Increases'], 72, 66, 60, 68]);
 
@@ -2208,14 +2158,6 @@ export async function seed() {
     'Helped 1,000+ graduates save money',
     '🎓',
   ]);
-  await insertRow(expertSql, [
-    issueIds['Plastic Waste'],
-    'Dr. Okafor',
-    'Marine Biologist',
-    'Ocean plastic research',
-    'Led 3 beach cleanup campaigns',
-    '🌊',
-  ]);
 
   // =============================
   // FEED POSTS
@@ -2302,14 +2244,6 @@ export async function seed() {
     42,
     '2026-02-15 08:00:00',
   ]);
-  await insertRow(feedSql, [
-    issueIds['Plastic Waste'],
-    userIds['Priya S.'],
-    'Our local supermarket just committed to removing plastic wrapping from fruit. The campaign worked!',
-    103,
-    '2026-02-14 11:00:00',
-  ]);
-
   // =============================
   // COUNTRY BREAKDOWNS
   // =============================
@@ -2341,12 +2275,6 @@ export async function seed() {
   await insertRow(countrySql, [issueIds['Lost Luggage'], 'DE', 'Germany', 1230]);
   await insertRow(countrySql, [issueIds['Lost Luggage'], 'ES', 'Spain', 980]);
   await insertRow(countrySql, [issueIds['Lost Luggage'], 'FR', 'France', 870]);
-
-  await insertRow(countrySql, [issueIds['Plastic Waste'], 'GB', 'United Kingdom', 5600]);
-  await insertRow(countrySql, [issueIds['Plastic Waste'], 'US', 'United States', 4320]);
-  await insertRow(countrySql, [issueIds['Plastic Waste'], 'DE', 'Germany', 3210]);
-  await insertRow(countrySql, [issueIds['Plastic Waste'], 'IN', 'India', 2890]);
-  await insertRow(countrySql, [issueIds['Plastic Waste'], 'AU', 'Australia', 1980]);
 
   await insertRow(countrySql, [issueIds['Sewage in Rivers'], 'GB', 'United Kingdom', 5100]);
   await insertRow(countrySql, [issueIds['Sewage in Rivers'], 'IE', 'Ireland', 200]);
@@ -2406,10 +2334,8 @@ export async function seed() {
   await insertRow(userIssueSql, [userIds['Yuki T.'], issueIds['Broadband Speed']]);
   await insertRow(userIssueSql, [userIds['Dr. Patel'], issueIds['NHS Waiting Times']]);
   await insertRow(userIssueSql, [userIds['Priya S.'], issueIds['NHS Waiting Times']]);
-  await insertRow(userIssueSql, [userIds['Priya S.'], issueIds['Plastic Waste']]);
   await insertRow(userIssueSql, [userIds['Emma W.'], issueIds['NHS Waiting Times']]);
   await insertRow(userIssueSql, [userIds['Emma W.'], issueIds['Train Cancellations']]);
-  await insertRow(userIssueSql, [userIds['Carlos M.'], issueIds['Plastic Waste']]);
   await insertRow(userIssueSql, [userIds['Carlos M.'], issueIds['Sewage in Rivers']]);
 
   // =============================
@@ -2462,12 +2388,6 @@ export async function seed() {
     '[6,7,8]',
     'Roaming charge complaints spike in holiday season',
   ]);
-  await insertRow(seasonSql, [
-    issueIds['Plastic Waste'],
-    '[12]',
-    'Packaging waste complaints peak at Christmas',
-  ]);
-
   // =============================
   // ISSUE RELATIONS
   // =============================
