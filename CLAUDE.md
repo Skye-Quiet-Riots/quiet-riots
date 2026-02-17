@@ -159,12 +159,21 @@ src/lib/
 - **Purpose:** Keeps laptop running 24/7 for WhatsApp bot (OpenClaw gateway)
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.nosleep.plist`
 
+## WhatsApp Watchdog (Auto-Recovery)
+
+- **Problem:** When WiFi drops, the WhatsApp WebSocket dies (`ENOTFOUND web.whatsapp.com`) and the channel exits fatally — the gateway process stays running but the WhatsApp channel inside it is dead and never auto-reconnects
+- **Script:** `~/.openclaw/scripts/watchdog.sh` — checks every 2 minutes if the WhatsApp channel has fatally exited and restarts the gateway once network is back
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.openclaw-watchdog.plist` — runs watchdog every 120s via `StartInterval`
+- **Logic:** Compares timestamp of last `channel exited` in `gateway.err.log` vs last `Listening for personal WhatsApp` in `gateway.log` — if exit is more recent, restarts
+- **Safety:** Skips restart if `web.whatsapp.com` is unresolvable (no point restarting without network)
+- **Log:** `~/.openclaw/logs/watchdog.log`
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-watchdog.plist`
+
 ## Known Issues
 
 - Profile page is minimal (placeholder implementation)
 - Bot API has no rate limiting
 - WhatsApp polls and interactive buttons don't work via Baileys — use numbered text choices instead
-- Vercel auto-deploy webhook was missing until Session 3 — now connected via GitHub App
 
 ## End of Session Protocol
 

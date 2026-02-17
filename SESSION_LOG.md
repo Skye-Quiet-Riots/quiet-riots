@@ -162,3 +162,52 @@
 - Add `.env.example` for developer onboarding
 - Monitor WhatsApp bot with real users
 - Consider adding security headers (CSP, HSTS) to `next.config.ts`
+
+---
+
+## 2026-02-17 (Session 4) — WhatsApp Bot Reliability & Watchdog
+
+### What was worked on
+
+1. **Diagnosed WhatsApp bot not responding**
+   - Bot was silent when a friend messaged it
+   - Root cause: WiFi had dropped, causing `ENOTFOUND web.whatsapp.com` — the WhatsApp WebSocket channel exited fatally but the gateway process stayed running
+   - OpenClaw's gateway doesn't auto-reconnect the WhatsApp channel after a DNS failure — the process looks alive (`launchctl list` shows it) but the channel is dead
+   - Manually restarted gateway to fix immediately
+   - This happened twice in one day (07:42 and 11:02)
+
+2. **Built WhatsApp watchdog for auto-recovery**
+   - Created `~/.openclaw/scripts/watchdog.sh` — a bash script that:
+     - Checks if `web.whatsapp.com` is resolvable (skips if no network)
+     - Compares timestamps of last fatal `channel exited` in `gateway.err.log` vs last `Listening for personal WhatsApp` in `gateway.log`
+     - If exit is more recent than last listen → restarts gateway via `launchctl stop/start`
+     - Logs all actions to `~/.openclaw/logs/watchdog.log`
+   - Created LaunchAgent `~/Library/LaunchAgents/com.quietriots.openclaw-watchdog.plist` running every 120 seconds
+   - Verified with debug trace: correctly identifies healthy vs dead state
+
+3. **Verified production health**
+   - Tests: 126/126 passing
+   - Build: clean
+   - Production site: `quietriots.com` live and serving correct OG tags
+   - WhatsApp bot: responding to messages after restart
+   - Two real users chatted with the bot during this session
+
+### Key decisions
+- **Watchdog over OpenClaw code fix** — the channel exit bug is in OpenClaw's Baileys integration, not our code. A watchdog is the pragmatic fix since we can't modify OpenClaw's source
+- **2-minute interval** — frequent enough to recover quickly, infrequent enough not to waste resources. DNS check prevents pointless restarts while offline
+- **Timestamp comparison over process monitoring** — checking the gateway PID alone isn't enough since the process stays running when the channel dies. Comparing log timestamps catches the specific failure mode
+
+### Discoveries
+- **OpenClaw doesn't auto-reconnect WhatsApp on DNS failure** — the 12-retry mechanism handles temporary WebSocket drops (status 408, 428, 499) but a DNS resolution failure (`ENOTFOUND`) is treated as fatal and the channel exits permanently
+- **The gateway process survives channel death** — `launchctl list` shows the gateway running but WhatsApp is dead inside it. KeepAlive doesn't help because the process hasn't actually exited
+- **Network interface changes cause mDNS crashes** — repeated `AssertionError: Reached illegal state! IPV4 address change from defined to undefined!` in OpenClaw's @homebridge/ciao dependency when WiFi toggles. These are unhandled but don't seem to cause the channel exit directly
+- **Real users are chatting with the bot** — two different phone numbers (+880 and +44) actively conversed during this session
+
+### Next steps
+- Flesh out profile page
+- Add rate limiting to bot API
+- Consider `create_issue` bot action
+- Set up GitHub Actions CI
+- Add `.env.example`
+- Consider upgrading OpenClaw (`v2026.2.15` available) — may fix the reconnection bug
+- Monitor watchdog log to confirm it catches future WiFi drops automatically
