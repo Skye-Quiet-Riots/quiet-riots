@@ -7,7 +7,10 @@ export async function createTables() {
     CREATE TABLE IF NOT EXISTS issues (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
       name TEXT NOT NULL,
-      category TEXT NOT NULL CHECK(category IN ('Transport','Telecoms','Banking','Health','Education','Environment')),
+      category TEXT NOT NULL CHECK(category IN (
+        'Transport','Telecoms','Banking','Health','Education','Environment',
+        'Energy','Water','Insurance','Housing','Shopping','Delivery','Local','Employment','Tech','Other'
+      )),
       description TEXT NOT NULL DEFAULT '',
       rioter_count INTEGER NOT NULL DEFAULT 0,
       country_count INTEGER NOT NULL DEFAULT 0,
@@ -20,7 +23,12 @@ export async function createTables() {
       name TEXT NOT NULL,
       category TEXT NOT NULL,
       logo_emoji TEXT NOT NULL DEFAULT '🏢',
-      description TEXT NOT NULL DEFAULT ''
+      description TEXT NOT NULL DEFAULT '',
+      sector TEXT,
+      country TEXT NOT NULL DEFAULT 'UK',
+      regulator TEXT,
+      ombudsman TEXT,
+      website TEXT
     );
 
     CREATE TABLE IF NOT EXISTS issue_organisation (
@@ -103,12 +111,29 @@ export async function createTables() {
       country_name TEXT NOT NULL,
       rioter_count INTEGER NOT NULL DEFAULT 0
     );
+
+    CREATE TABLE IF NOT EXISTS seasonal_patterns (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      issue_id INTEGER NOT NULL REFERENCES issues(id) UNIQUE,
+      peak_months TEXT NOT NULL,
+      description TEXT NOT NULL DEFAULT ''
+    );
+
+    CREATE TABLE IF NOT EXISTS issue_relations (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      child_id INTEGER NOT NULL REFERENCES issues(id),
+      parent_id INTEGER NOT NULL REFERENCES issues(id),
+      relation_type TEXT NOT NULL CHECK(relation_type IN ('specific_of','related_to','subset_of')),
+      UNIQUE(child_id, parent_id)
+    );
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS issue_relations;
+    DROP TABLE IF EXISTS seasonal_patterns;
     DROP TABLE IF EXISTS country_breakdown;
     DROP TABLE IF EXISTS expert_profiles;
     DROP TABLE IF EXISTS community_health;

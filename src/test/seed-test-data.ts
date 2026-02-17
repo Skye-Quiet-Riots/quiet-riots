@@ -36,16 +36,38 @@ export async function seedTestData() {
     ],
   });
 
-  // 2 organisations
+  // 2 organisations (with new columns)
   await db.execute({
-    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description)
-          VALUES (?, ?, ?, ?, ?)`,
-    args: ['org-southern', 'Southern Rail', 'Transport', '🚂', 'UK rail operator'],
+    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description, sector, country, regulator, ombudsman, website)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'org-southern',
+      'Southern Rail',
+      'Transport',
+      '🚂',
+      'UK rail operator',
+      'rail',
+      'UK',
+      'ORR',
+      'Rail Ombudsman',
+      'https://www.southernrailway.com',
+    ],
   });
   await db.execute({
-    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description)
-          VALUES (?, ?, ?, ?, ?)`,
-    args: ['org-bt', 'BT', 'Telecoms', '📞', 'UK broadband provider'],
+    sql: `INSERT INTO organisations (id, name, category, logo_emoji, description, sector, country, regulator, ombudsman, website)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'org-bt',
+      'BT',
+      'Telecoms',
+      '📞',
+      'UK broadband provider',
+      'telecoms',
+      'UK',
+      'Ofcom',
+      'CISAS',
+      'https://www.bt.com',
+    ],
   });
 
   // Pivot data (issue <-> org links with Pareto ranking)
@@ -275,5 +297,21 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO country_breakdown (id, issue_id, country_code, country_name, rioter_count) VALUES (?, ?, ?, ?, ?)`,
     args: ['country-004', 'issue-broadband', 'US', 'United States', 412],
+  });
+
+  // Seasonal patterns
+  await db.execute({
+    sql: `INSERT INTO seasonal_patterns (issue_id, peak_months, description) VALUES (?, ?, ?)`,
+    args: ['issue-rail', '[11,12,1,2]', 'Train cancellations worse in winter weather'],
+  });
+  await db.execute({
+    sql: `INSERT INTO seasonal_patterns (issue_id, peak_months, description) VALUES (?, ?, ?)`,
+    args: ['issue-flights', '[6,7,8]', 'Flight delays peak during summer holiday season'],
+  });
+
+  // Issue relations
+  await db.execute({
+    sql: `INSERT INTO issue_relations (child_id, parent_id, relation_type) VALUES (?, ?, ?)`,
+    args: ['issue-rail', 'issue-broadband', 'related_to'],
   });
 }

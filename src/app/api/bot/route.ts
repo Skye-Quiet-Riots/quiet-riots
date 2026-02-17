@@ -25,6 +25,8 @@ import {
   getUserIssues,
 } from '@/lib/queries/users';
 import { getSynonymsForIssue, addSynonym } from '@/lib/queries/synonyms';
+import { getSeasonalPattern } from '@/lib/queries/seasonal-patterns';
+import { getRelatedIssues } from '@/lib/queries/issue-relations';
 import { rateLimit } from '@/lib/rate-limit';
 
 const BOT_API_KEY = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026';
@@ -169,14 +171,26 @@ export async function POST(request: NextRequest) {
       const issue = await getIssueById(issueId);
       if (!issue) return err('Issue not found', 404);
 
-      const [health, countries, pivotOrgs, actionCount, synonyms] = await Promise.all([
-        getCommunityHealth(issue.id),
-        getCountryBreakdown(issue.id),
-        getOrgsForIssue(issue.id),
-        getActionCountForIssue(issue.id),
-        getSynonymsForIssue(issue.id),
-      ]);
-      return ok({ issue, health, countries, pivotOrgs, actionCount, synonyms });
+      const [health, countries, pivotOrgs, actionCount, synonyms, seasonalPattern, relatedIssues] =
+        await Promise.all([
+          getCommunityHealth(issue.id),
+          getCountryBreakdown(issue.id),
+          getOrgsForIssue(issue.id),
+          getActionCountForIssue(issue.id),
+          getSynonymsForIssue(issue.id),
+          getSeasonalPattern(issue.id),
+          getRelatedIssues(issue.id),
+        ]);
+      return ok({
+        issue,
+        health,
+        countries,
+        pivotOrgs,
+        actionCount,
+        synonyms,
+        seasonalPattern,
+        relatedIssues,
+      });
     }
 
     // ─── Actions ─────────────────────────────────────────

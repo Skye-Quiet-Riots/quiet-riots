@@ -37,10 +37,20 @@ describe('CategoryBadge', () => {
     const categories = [
       'Transport',
       'Telecoms',
+      'Energy',
+      'Water',
       'Banking',
+      'Insurance',
       'Health',
+      'Housing',
+      'Shopping',
+      'Delivery',
       'Education',
       'Environment',
+      'Local',
+      'Employment',
+      'Tech',
+      'Other',
     ] as const;
     categories.forEach((cat) => {
       const { unmount } = render(<CategoryBadge category={cat} />);
