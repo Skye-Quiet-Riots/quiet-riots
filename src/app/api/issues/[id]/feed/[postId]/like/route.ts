@@ -1,8 +1,17 @@
-import { NextResponse } from 'next/server';
 import { likeFeedPost } from '@/lib/queries/community';
+import { rateLimit } from '@/lib/rate-limit';
+import { apiOk, apiError } from '@/lib/api-response';
 
-export async function POST(_request: Request, { params }: { params: Promise<{ id: string; postId: string }> }) {
+export async function POST(
+  request: Request,
+  { params }: { params: Promise<{ id: string; postId: string }> },
+) {
+  const ip = request.headers.get('x-forwarded-for') ?? 'unknown';
+  const { allowed } = rateLimit(`like:${ip}`);
+  if (!allowed) {
+    return apiError('Too many requests', 429);
+  }
   const { postId } = await params;
   await likeFeedPost(Number(postId));
-  return NextResponse.json({ success: true });
+  return apiOk({ liked: true });
 }

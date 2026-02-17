@@ -24,7 +24,7 @@ afterAll(async () => {
 function mockLoggedIn(userId: number) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
-      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined
+      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
     ),
     set: vi.fn(),
     delete: vi.fn(),
@@ -54,7 +54,7 @@ describe('POST /api/users', () => {
       body: JSON.stringify({ name: 'New User', email: 'newuser@test.com' }),
     });
     const response = await createUserRoute(request);
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.name).toBe('New User');
     expect(data.email).toBe('newuser@test.com');
@@ -68,7 +68,7 @@ describe('POST /api/users', () => {
       body: JSON.stringify({ name: 'Sarah', email: 'sarah@example.com' }),
     });
     const response = await createUserRoute(request);
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.name).toBe('Sarah K.'); // Original name, not 'Sarah'
   });
@@ -92,7 +92,7 @@ describe('GET /api/users/me', () => {
   it('returns user when logged in', async () => {
     mockLoggedIn(1);
     const response = await getMe();
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.user.name).toBe('Sarah K.');
     expect(data.issues).toBeDefined();
@@ -109,7 +109,7 @@ describe('GET /api/users/[id]', () => {
   it('returns user with issues', async () => {
     const request = new Request('http://localhost:3000/api/users/1');
     const response = await getUserDetail(request, { params: Promise.resolve({ id: '1' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.user.name).toBe('Sarah K.');
     expect(data.issues).toBeDefined();
@@ -130,7 +130,7 @@ describe('PATCH /api/users/[id]', () => {
       body: JSON.stringify({ time_available: '1min' }),
     });
     const response = await patchUser(request, { params: Promise.resolve({ id: '2' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.time_available).toBe('1min');
   });

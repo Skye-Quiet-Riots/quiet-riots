@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getTrendingIssues } from '@/lib/queries/issues';
 import { IssueCard } from '@/components/cards/issue-card';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const trending = await getTrendingIssues(6);
 
@@ -16,9 +18,8 @@ export default async function Home() {
           Change doesn&apos;t have to be loud to be&nbsp;powerful
         </h1>
         <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Find others who share your issues. Take action together.
-          Quiet Riots connects people around shared frustrations
-          and turns complaints into collective action.
+          Find others who share your issues. Take action together. Quiet Riots connects people
+          around shared frustrations and turns complaints into collective action.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Link
@@ -71,8 +72,8 @@ export default async function Home() {
               </div>
               <h3 className="mt-4 font-semibold">Find Your Issue</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Search for any frustration — trains, broadband, NHS, climate.
-                If it exists, we&apos;ll show you how many others share it.
+                Search for any frustration — trains, broadband, NHS, climate. If it exists,
+                we&apos;ll show you how many others share it.
               </p>
             </div>
             <div className="text-center">
@@ -81,8 +82,8 @@ export default async function Home() {
               </div>
               <h3 className="mt-4 font-semibold">Use The Pivot</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                See the same issue across all organisations, or all issues at one
-                organisation. Like tango dancers changing direction.
+                See the same issue across all organisations, or all issues at one organisation. Like
+                tango dancers changing direction.
               </p>
             </div>
             <div className="text-center">
@@ -91,8 +92,8 @@ export default async function Home() {
               </div>
               <h3 className="mt-4 font-semibold">Take Action</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Ideas, actions, and community — personalised to your time and
-                skills. Small actions add up to big change.
+                Ideas, actions, and community — personalised to your time and skills. Small actions
+                add up to big change.
               </p>
             </div>
           </div>
@@ -104,7 +105,8 @@ export default async function Home() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-3xl">🐔</p>
           <h2 className="mt-4 text-xl font-bold italic text-zinc-700 dark:text-zinc-300">
-            &ldquo;To change more for the better in our lifetimes than we dare to imagine is possible.&rdquo;
+            &ldquo;To change more for the better in our lifetimes than we dare to imagine is
+            possible.&rdquo;
           </h2>
           <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
             Based on the 2014 book <em>Quiet Riots</em> by Simon Darling

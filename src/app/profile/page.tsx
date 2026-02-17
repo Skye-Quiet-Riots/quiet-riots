@@ -87,8 +87,11 @@ export default function ProfilePage() {
           </p>
           <form onSubmit={handleCreate} className="space-y-4">
             <div>
-              <label className="mb-1 block text-sm font-medium">Name</label>
+              <label htmlFor="profile-name" className="mb-1 block text-sm font-medium">
+                Name
+              </label>
               <input
+                id="profile-name"
                 type="text"
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
@@ -98,8 +101,11 @@ export default function ProfilePage() {
               />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium">Email</label>
+              <label htmlFor="profile-email" className="mb-1 block text-sm font-medium">
+                Email
+              </label>
               <input
+                id="profile-email"
                 type="email"
                 value={formEmail}
                 onChange={(e) => setFormEmail(e.target.value)}
@@ -174,7 +180,9 @@ export default function ProfilePage() {
         </div>
       ) : (
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 text-center dark:border-zinc-700 dark:bg-zinc-800/50">
-          <p className="mb-2 text-zinc-600 dark:text-zinc-400">You haven&apos;t joined any Quiet Riots yet.</p>
+          <p className="mb-2 text-zinc-600 dark:text-zinc-400">
+            You haven&apos;t joined any Quiet Riots yet.
+          </p>
           <Link
             href="/issues"
             className="text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"

@@ -23,7 +23,7 @@ afterAll(async () => {
 function mockLoggedIn(userId: number) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
-      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined
+      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
     ),
     set: vi.fn(),
     delete: vi.fn(),
@@ -42,7 +42,7 @@ describe('GET /api/issues/[id]/feed', () => {
   it('returns feed posts without auth', async () => {
     const request = new Request('http://localhost:3000/api/issues/1/feed');
     const response = await GET(request, { params: Promise.resolve({ id: '1' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data).toHaveLength(2);
   });
@@ -61,7 +61,7 @@ describe('POST /api/issues/[id]/feed', () => {
       body: JSON.stringify({ content: 'New post from test' }),
     });
     const response = await POST(request, { params: Promise.resolve({ id: '1' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.content).toBe('New post from test');
     expect(data.user_name).toBe('Sarah K.');
@@ -98,8 +98,8 @@ describe('POST /api/issues/[id]/feed/[postId]/like', () => {
     const response = await likePOST(request, {
       params: Promise.resolve({ id: '1', postId: '1' }),
     });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
-    expect(data.success).toBe(true);
+    expect(data.liked).toBe(true);
   });
 });

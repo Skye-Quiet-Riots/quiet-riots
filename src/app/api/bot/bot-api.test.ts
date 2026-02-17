@@ -21,7 +21,6 @@ async function callBot(action: string, params: Record<string, unknown> = {}) {
 
 describe('Bot API authentication', () => {
   it('returns 401 without auth header', async () => {
-    const request = createBotRequest('get_trending', {}, '');
     // Override to remove auth
     const noAuthRequest = new Request('http://localhost:3000/api/bot', {
       method: 'POST',

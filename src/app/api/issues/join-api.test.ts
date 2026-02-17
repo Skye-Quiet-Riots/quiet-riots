@@ -22,7 +22,7 @@ afterAll(async () => {
 function mockLoggedIn(userId: number) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
-      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined
+      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
     ),
     set: vi.fn(),
     delete: vi.fn(),
@@ -46,9 +46,9 @@ describe('POST /api/issues/[id]/join', () => {
     mockLoggedIn(1);
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'POST' });
     const response = await POST(request, { params: Promise.resolve({ id: '2' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
-    expect(data.success).toBe(true);
+    expect(data.joined).toBe(true);
   });
 
   it('returns 401 when not logged in', async () => {
@@ -68,9 +68,9 @@ describe('DELETE /api/issues/[id]/join', () => {
     mockLoggedIn(1);
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'DELETE' });
     const response = await DELETE(request, { params: Promise.resolve({ id: '2' }) });
-    const data = await response.json();
+    const { data } = await response.json();
     expect(response.status).toBe(200);
-    expect(data.success).toBe(true);
+    expect(data.left).toBe(true);
   });
 
   it('returns 401 when not logged in', async () => {

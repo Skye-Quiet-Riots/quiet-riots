@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { getAllIssues } from '@/lib/queries/issues';
+import { apiOk } from '@/lib/api-response';
 import type { Category } from '@/types';
 
 export async function GET(request: NextRequest) {
@@ -8,5 +9,5 @@ export async function GET(request: NextRequest) {
   const search = searchParams.get('search') || undefined;
 
   const issues = await getAllIssues(category || undefined, search);
-  return NextResponse.json(issues);
+  return apiOk(issues);
 }

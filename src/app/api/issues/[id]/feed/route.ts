@@ -1,25 +1,44 @@
-import { NextResponse } from 'next/server';
+import { z } from 'zod';
 import { getFeedPosts, createFeedPost } from '@/lib/queries/community';
 import { getSession } from '@/lib/session';
+import { rateLimit } from '@/lib/rate-limit';
+import { apiOk, apiError } from '@/lib/api-response';
+
+const feedPostSchema = z.object({
+  content: z
+    .string()
+    .min(1, 'Content required')
+    .transform((s) => s.trim()),
+});
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const posts = await getFeedPosts(Number(id));
-  return NextResponse.json(posts);
+  return apiOk(posts);
 }
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const userId = await getSession();
   if (!userId) {
-    return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
+    return apiError('Not logged in', 401);
+  }
+
+  const { allowed } = rateLimit(`feed:${userId}`);
+  if (!allowed) {
+    return apiError('Too many requests', 429);
   }
 
   const body = await request.json();
-  if (!body.content?.trim()) {
-    return NextResponse.json({ error: 'Content required' }, { status: 400 });
+  const parsed = feedPostSchema.safeParse(body);
+  if (!parsed.success) {
+    return apiError('Content required');
   }
 
-  const post = await createFeedPost(Number(id), userId, body.content.trim());
-  return NextResponse.json(post);
+  if (!parsed.data.content) {
+    return apiError('Content required');
+  }
+
+  const post = await createFeedPost(Number(id), userId, parsed.data.content);
+  return apiOk(post);
 }

@@ -13,8 +13,14 @@ interface ActionsSectionProps {
 export function ActionsSection({ issueId, initialActions }: ActionsSectionProps) {
   const [actions, setActions] = useState(initialActions);
   const [filters, setFilters] = useState<{ time?: string; type?: string }>({});
+  const hasFilters = Boolean(filters.time || filters.type);
+
+  // Reset to initial actions when filters are cleared (no effect needed)
+  const displayActions = hasFilters ? actions : initialActions;
 
   useEffect(() => {
+    if (!hasFilters) return;
+
     async function fetchFiltered() {
       const params = new URLSearchParams();
       if (filters.time) params.set('time', filters.time);
@@ -27,16 +33,12 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
       }
     }
 
-    if (filters.time || filters.type) {
-      fetchFiltered();
-    } else {
-      setActions(initialActions);
-    }
-  }, [filters, issueId, initialActions]);
+    fetchFiltered();
+  }, [filters, issueId, hasFilters]);
 
-  const ideas = actions.filter((a) => a.type === 'idea');
-  const actionItems = actions.filter((a) => a.type === 'action');
-  const together = actions.filter((a) => a.type === 'together');
+  const ideas = displayActions.filter((a) => a.type === 'idea');
+  const actionItems = displayActions.filter((a) => a.type === 'action');
+  const together = displayActions.filter((a) => a.type === 'together');
 
   return (
     <div>
@@ -49,7 +51,9 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
               💡 Ideas (Variation)
             </h4>
             <div className="space-y-2">
-              {ideas.map((a) => <ActionCard key={a.id} action={a} />)}
+              {ideas.map((a) => (
+                <ActionCard key={a.id} action={a} />
+              ))}
             </div>
           </div>
         )}
@@ -60,7 +64,9 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
               ⚡ Actions (Selection)
             </h4>
             <div className="space-y-2">
-              {actionItems.map((a) => <ActionCard key={a.id} action={a} />)}
+              {actionItems.map((a) => (
+                <ActionCard key={a.id} action={a} />
+              ))}
             </div>
           </div>
         )}
@@ -71,12 +77,14 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
               🤝 Together (Community)
             </h4>
             <div className="space-y-2">
-              {together.map((a) => <ActionCard key={a.id} action={a} />)}
+              {together.map((a) => (
+                <ActionCard key={a.id} action={a} />
+              ))}
             </div>
           </div>
         )}
 
-        {actions.length === 0 && (
+        {displayActions.length === 0 && (
           <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
             No actions match your filters. Try broadening your selection.
           </p>

@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { getFilteredActions } from '@/lib/queries/actions';
+import { apiOk } from '@/lib/api-response';
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -11,5 +12,5 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     skills: searchParams.get('skills') || undefined,
   });
 
-  return NextResponse.json(actions);
+  return apiOk(actions);
 }

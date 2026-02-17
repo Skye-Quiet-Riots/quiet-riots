@@ -1,23 +1,44 @@
-import { NextResponse } from 'next/server';
+import { z } from 'zod';
 import { getUserById, updateUser, getUserIssues } from '@/lib/queries/users';
+import { rateLimit } from '@/lib/rate-limit';
+import { apiOk, apiError } from '@/lib/api-response';
+
+const updateUserSchema = z.object({
+  name: z.string().min(1).optional(),
+  email: z.string().email().optional(),
+  time_available: z.string().optional(),
+  skills: z.string().optional(),
+});
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const user = await getUserById(Number(id));
   if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    return apiError('User not found', 404);
   }
 
   const issues = await getUserIssues(user.id);
-  return NextResponse.json({ user, issues });
+  return apiOk({ user, issues });
 }
 
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const ip = request.headers.get('x-forwarded-for') ?? 'unknown';
+  const { allowed } = rateLimit(`user-patch:${ip}`);
+  if (!allowed) {
+    return apiError('Too many requests', 429);
+  }
+
   const { id } = await params;
   const body = await request.json();
-  const user = await updateUser(Number(id), body);
-  if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+  const parsed = updateUserSchema.safeParse(body);
+  if (!parsed.success) {
+    const msg = parsed.error.issues.map((i) => i.path.join('.') + ': ' + i.message).join(', ');
+    return apiError(msg);
   }
-  return NextResponse.json(user);
+
+  const user = await updateUser(Number(id), parsed.data);
+  if (!user) {
+    return apiError('User not found', 404);
+  }
+  return apiOk(user);
 }
