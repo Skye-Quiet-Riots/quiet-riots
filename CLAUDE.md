@@ -113,7 +113,7 @@ At the start of every session (or when asked to "pick up where we left off"):
 At the end of every session (or when asked to "wrap up" / "good night"):
 
 1. Run the full test suite and `npm run build` — report any failures
-2. **Test coverage check:** Review all new/changed code in this session — if any logic, API routes, or components were added or modified without corresponding tests, write them now
+2. **Test coverage check:** Review all new/changed code in this session — if any logic, API routes, or components were added or modified without corresponding tests, write them now. Then re-run `npm test` to confirm the new tests pass.
 3. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
    - Flag that OpenClaw sessions may need clearing: `rm ~/.openclaw/agents/main/sessions/*.jsonl`
    - Flag that gateway may need restarting: `launchctl stop ai.openclaw.gateway && launchctl start ai.openclaw.gateway`
