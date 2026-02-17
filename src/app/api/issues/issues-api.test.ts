@@ -55,6 +55,8 @@ describe('GET /api/issues/[id]', () => {
     expect(data.health).not.toBeNull();
     expect(data.countries).toBeDefined();
     expect(data.pivotOrgs).toBeDefined();
+    expect(data.seasonalPattern).toBeDefined();
+    expect(data.relatedIssues).toBeDefined();
   });
 
   it('returns 404 for missing issue', async () => {
