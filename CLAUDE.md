@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                  | Purpose                              |
 | ------------------------ | ------------------------------------ |
 | `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 230 tests (~1.5s)                |
+| `npm test`               | Run 241 tests (~1.7s)                |
 | `npm run test:watch`     | Watch mode                           |
 | `npm run test:coverage`  | With V8 coverage                     |
 | `npm run seed`           | Reset database with sample data      |
@@ -74,6 +74,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **OpenClaw session cache is sticky:** After changing SKILL.md, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway
 - **CSP uses nonces + strict-dynamic:** `unsafe-eval` only in dev mode; prod eliminates `unsafe-inline`
 - **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
+- **`tsx` doesn't load `.env.local`:** When running `npm run seed` or `tsx scripts/*.ts`, env vars must be passed explicitly or sourced from `.env.local` — without them, libSQL falls back to `file:quiet-riots.db` (a local SQLite file) instead of the remote Turso database
 
 ## Database ID Convention
 
