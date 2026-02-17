@@ -40,6 +40,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - Skip tests for one-off scripts, styling, and rapid prototypes unless asked
 - Environment variables go in `.env.local` (see `.env.example` for shape)
 - Use feature branches for new work; commit to `main` only when ready
+- IMPORTANT: Never merge to main directly — always push the feature branch, create/update a PR, and let the user review and merge. Vercel auto-deploys a preview for every PR.
 
 ## Conventions
 
