@@ -103,6 +103,8 @@ describe('Bot API: get_issue', () => {
     expect(body.data.pivotOrgs).toBeDefined();
     expect(body.data.actionCount).toBeDefined();
     expect(body.data.synonyms).toBeDefined();
+    expect(body.data.seasonalPattern).toBeDefined();
+    expect(body.data.relatedIssues).toBeDefined();
   });
 
   it('returns 404 for missing issue', async () => {

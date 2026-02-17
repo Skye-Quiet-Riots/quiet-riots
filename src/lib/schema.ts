@@ -113,16 +113,16 @@ export async function createTables() {
     );
 
     CREATE TABLE IF NOT EXISTS seasonal_patterns (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      issue_id INTEGER NOT NULL REFERENCES issues(id) UNIQUE,
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      issue_id TEXT NOT NULL REFERENCES issues(id) UNIQUE,
       peak_months TEXT NOT NULL,
       description TEXT NOT NULL DEFAULT ''
     );
 
     CREATE TABLE IF NOT EXISTS issue_relations (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      child_id INTEGER NOT NULL REFERENCES issues(id),
-      parent_id INTEGER NOT NULL REFERENCES issues(id),
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      child_id TEXT NOT NULL REFERENCES issues(id),
+      parent_id TEXT NOT NULL REFERENCES issues(id),
       relation_type TEXT NOT NULL CHECK(relation_type IN ('specific_of','related_to','subset_of')),
       UNIQUE(child_id, parent_id)
     );
