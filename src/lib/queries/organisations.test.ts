@@ -41,21 +41,21 @@ describe('getAllOrganisations', () => {
 
 describe('getOrganisationById', () => {
   it('returns the organisation when found', async () => {
-    const org = await getOrganisationById(1);
+    const org = await getOrganisationById('org-southern');
     expect(org).not.toBeNull();
     expect(org!.name).toBe('Southern Rail');
     expect(org!.category).toBe('Transport');
   });
 
   it('returns null for missing organisation', async () => {
-    const org = await getOrganisationById(999);
+    const org = await getOrganisationById('nonexistent');
     expect(org).toBeNull();
   });
 });
 
 describe('getOrgsForIssue (Issue → Orgs pivot)', () => {
   it('returns orgs sorted by rioter_count DESC', async () => {
-    const orgs = await getOrgsForIssue(1);
+    const orgs = await getOrgsForIssue('issue-rail');
     expect(orgs).toHaveLength(2);
     expect(orgs[0].organisation_name).toBe('Southern Rail');
     expect(orgs[0].rioter_count).toBe(2847);
@@ -64,14 +64,14 @@ describe('getOrgsForIssue (Issue → Orgs pivot)', () => {
   });
 
   it('returns empty array for issue with no orgs', async () => {
-    const orgs = await getOrgsForIssue(999);
+    const orgs = await getOrgsForIssue('nonexistent');
     expect(orgs).toHaveLength(0);
   });
 });
 
 describe('getIssuesForOrg (Org → Issues pivot)', () => {
   it('returns issues for Southern Rail', async () => {
-    const issues = await getIssuesForOrg(1);
+    const issues = await getIssuesForOrg('org-southern');
     expect(issues).toHaveLength(2);
     // Sorted by rioter_count DESC
     expect(issues[0].issue_name).toBe('Rail Cancellations');
@@ -79,7 +79,7 @@ describe('getIssuesForOrg (Org → Issues pivot)', () => {
   });
 
   it('returns issues for BT', async () => {
-    const issues = await getIssuesForOrg(2);
+    const issues = await getIssuesForOrg('org-bt');
     expect(issues).toHaveLength(2);
     expect(issues[0].issue_name).toBe('Broadband Speed');
     expect(issues[1].issue_name).toBe('Rail Cancellations');
@@ -88,12 +88,12 @@ describe('getIssuesForOrg (Org → Issues pivot)', () => {
 
 describe('getIssueCountForOrg', () => {
   it('returns correct count', async () => {
-    const count = await getIssueCountForOrg(1);
+    const count = await getIssueCountForOrg('org-southern');
     expect(count).toBe(2);
   });
 
   it('returns 0 for unknown org', async () => {
-    const count = await getIssueCountForOrg(999);
+    const count = await getIssueCountForOrg('nonexistent');
     expect(count).toBe(0);
   });
 });
@@ -101,12 +101,12 @@ describe('getIssueCountForOrg', () => {
 describe('getTotalRiotersForOrg', () => {
   it('returns sum of rioter_count across all issues', async () => {
     // Southern Rail: 2847 (Rail Cancellations) + 890 (Flight Delays) = 3737
-    const total = await getTotalRiotersForOrg(1);
+    const total = await getTotalRiotersForOrg('org-southern');
     expect(total).toBe(3737);
   });
 
   it('returns 0 for unknown org', async () => {
-    const total = await getTotalRiotersForOrg(999);
+    const total = await getTotalRiotersForOrg('nonexistent');
     expect(total).toBe(0);
   });
 });

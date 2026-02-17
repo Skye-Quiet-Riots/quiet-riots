@@ -1,6 +1,6 @@
 ---
 paths:
-  - "src/app/api/**/*.ts"
+  - 'src/app/api/**/*.ts'
 ---
 
 # API Route Rules

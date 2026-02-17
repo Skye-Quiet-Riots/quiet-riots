@@ -19,7 +19,7 @@ afterAll(async () => {
   await teardownTestDb();
 });
 
-function mockLoggedIn(userId: number) {
+function mockLoggedIn(userId: string) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
       name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
@@ -43,9 +43,9 @@ describe('POST /api/issues/[id]/join', () => {
   });
 
   it('joins an issue when logged in', async () => {
-    mockLoggedIn(1);
+    mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'POST' });
-    const response = await POST(request, { params: Promise.resolve({ id: '2' }) });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-broadband' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.joined).toBe(true);
@@ -54,7 +54,7 @@ describe('POST /api/issues/[id]/join', () => {
   it('returns 401 when not logged in', async () => {
     mockLoggedOut();
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'POST' });
-    const response = await POST(request, { params: Promise.resolve({ id: '2' }) });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-broadband' }) });
     expect(response.status).toBe(401);
   });
 });
@@ -65,9 +65,9 @@ describe('DELETE /api/issues/[id]/join', () => {
   });
 
   it('leaves an issue when logged in', async () => {
-    mockLoggedIn(1);
+    mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'DELETE' });
-    const response = await DELETE(request, { params: Promise.resolve({ id: '2' }) });
+    const response = await DELETE(request, { params: Promise.resolve({ id: 'issue-broadband' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.left).toBe(true);
@@ -76,7 +76,7 @@ describe('DELETE /api/issues/[id]/join', () => {
   it('returns 401 when not logged in', async () => {
     mockLoggedOut();
     const request = new Request('http://localhost:3000/api/issues/2/join', { method: 'DELETE' });
-    const response = await DELETE(request, { params: Promise.resolve({ id: '2' }) });
+    const response = await DELETE(request, { params: Promise.resolve({ id: 'issue-broadband' }) });
     expect(response.status).toBe(401);
   });
 });

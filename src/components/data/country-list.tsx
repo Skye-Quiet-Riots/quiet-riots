@@ -1,9 +1,21 @@
 import type { CountryBreakdown } from '@/types';
 
 const FLAG_MAP: Record<string, string> = {
-  GB: '🇬🇧', US: '🇺🇸', DE: '🇩🇪', FR: '🇫🇷', IE: '🇮🇪',
-  AU: '🇦🇺', ES: '🇪🇸', IT: '🇮🇹', IN: '🇮🇳', BR: '🇧🇷',
-  JP: '🇯🇵', CA: '🇨🇦', PT: '🇵🇹', NL: '🇳🇱', SE: '🇸🇪',
+  GB: '🇬🇧',
+  US: '🇺🇸',
+  DE: '🇩🇪',
+  FR: '🇫🇷',
+  IE: '🇮🇪',
+  AU: '🇦🇺',
+  ES: '🇪🇸',
+  IT: '🇮🇹',
+  IN: '🇮🇳',
+  BR: '🇧🇷',
+  JP: '🇯🇵',
+  CA: '🇨🇦',
+  PT: '🇵🇹',
+  NL: '🇳🇱',
+  SE: '🇸🇪',
 };
 
 interface CountryListProps {

@@ -9,7 +9,7 @@ export function createTestRequest(
     method?: string;
     body?: unknown;
     headers?: Record<string, string>;
-  }
+  },
 ): NextRequest {
   const fullUrl = `http://localhost:3000${url}`;
   const headers = new Headers(options?.headers || {});
@@ -29,7 +29,7 @@ export function createTestRequest(
 export function createBotRequest(
   action: string,
   params: Record<string, unknown> = {},
-  apiKey: string = 'qr-bot-dev-key-2026'
+  apiKey: string = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026',
 ): NextRequest {
   return createTestRequest('/api/bot', {
     method: 'POST',

@@ -1,5 +1,9 @@
 import { Suspense } from 'react';
-import { getAllOrganisations, getIssueCountForOrg, getTotalRiotersForOrg } from '@/lib/queries/organisations';
+import {
+  getAllOrganisations,
+  getIssueCountForOrg,
+  getTotalRiotersForOrg,
+} from '@/lib/queries/organisations';
 import { PageHeader } from '@/components/layout/page-header';
 import { OrgCard } from '@/components/cards/org-card';
 import { CategoryFilter } from '@/components/interactive/category-filter';
@@ -20,7 +24,7 @@ export default async function OrganisationsPage({ searchParams }: Props) {
       org,
       issueCount: await getIssueCountForOrg(org.id),
       totalRioters: await getTotalRiotersForOrg(org.id),
-    }))
+    })),
   );
 
   return (
@@ -39,12 +43,7 @@ export default async function OrganisationsPage({ searchParams }: Props) {
       {orgData.length > 0 ? (
         <div className="grid gap-3 sm:grid-cols-2">
           {orgData.map(({ org, issueCount, totalRioters }) => (
-              <OrgCard
-                key={org.id}
-                org={org}
-                issueCount={issueCount}
-                totalRioters={totalRioters}
-              />
+            <OrgCard key={org.id} org={org} issueCount={issueCount} totalRioters={totalRioters} />
           ))}
         </div>
       ) : (

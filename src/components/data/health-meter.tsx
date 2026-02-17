@@ -5,10 +5,25 @@ interface HealthMeterProps {
 }
 
 const metrics = [
-  { key: 'needs_met' as const, label: 'Needs Met', emoji: '🎯', description: 'Members feel it\'s worthwhile' },
-  { key: 'membership' as const, label: 'Membership', emoji: '🏷', description: 'Trust & belonging' },
+  {
+    key: 'needs_met' as const,
+    label: 'Needs Met',
+    emoji: '🎯',
+    description: "Members feel it's worthwhile",
+  },
+  {
+    key: 'membership' as const,
+    label: 'Membership',
+    emoji: '🏷',
+    description: 'Trust & belonging',
+  },
   { key: 'influence' as const, label: 'Influence', emoji: '📢', description: 'Your voice matters' },
-  { key: 'connection' as const, label: 'Connection', emoji: '💜', description: 'Shared experiences' },
+  {
+    key: 'connection' as const,
+    label: 'Connection',
+    emoji: '💜',
+    description: 'Shared experiences',
+  },
 ];
 
 function getBarColor(score: number): string {
@@ -54,7 +69,9 @@ export function HealthMeter({ health }: HealthMeterProps) {
                   style={{ width: `${score}%` }}
                 />
               </div>
-              <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">{metric.description}</p>
+              <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">
+                {metric.description}
+              </p>
             </div>
           );
         })}

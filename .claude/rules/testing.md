@@ -1,7 +1,7 @@
 ---
 paths:
-  - "src/**/*.test.ts"
-  - "src/test/**"
+  - 'src/**/*.test.ts'
+  - 'src/test/**'
 ---
 
 # Testing Rules

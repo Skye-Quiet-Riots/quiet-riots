@@ -11,7 +11,9 @@ import { TrendingIndicator } from './trending-indicator';
 // Mock next/link
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => (
-    <a href={href} {...props}>{children}</a>
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }));
 
@@ -32,7 +34,14 @@ describe('CategoryBadge', () => {
   });
 
   it('renders all categories', () => {
-    const categories = ['Transport', 'Telecoms', 'Banking', 'Health', 'Education', 'Environment'] as const;
+    const categories = [
+      'Transport',
+      'Telecoms',
+      'Banking',
+      'Health',
+      'Education',
+      'Environment',
+    ] as const;
     categories.forEach((cat) => {
       const { unmount } = render(<CategoryBadge category={cat} />);
       expect(screen.getByText(cat)).toBeDefined();
@@ -43,8 +52,20 @@ describe('CategoryBadge', () => {
 
 describe('CountryList', () => {
   const countries = [
-    { id: 1, issue_id: 1, country_code: 'GB', country_name: 'United Kingdom', rioter_count: 500 },
-    { id: 2, issue_id: 1, country_code: 'US', country_name: 'United States', rioter_count: 300 },
+    {
+      id: 'country-1',
+      issue_id: 'issue-1',
+      country_code: 'GB',
+      country_name: 'United Kingdom',
+      rioter_count: 500,
+    },
+    {
+      id: 'country-2',
+      issue_id: 'issue-1',
+      country_code: 'US',
+      country_name: 'United States',
+      rioter_count: 300,
+    },
   ];
 
   it('renders country names and counts', () => {
@@ -67,7 +88,15 @@ describe('CountryList', () => {
   });
 
   it('renders fallback flag for unknown country code', () => {
-    const unknown = [{ id: 1, issue_id: 1, country_code: 'ZZ', country_name: 'Unknown', rioter_count: 1 }];
+    const unknown = [
+      {
+        id: 'country-1',
+        issue_id: 'issue-1',
+        country_code: 'ZZ',
+        country_name: 'Unknown',
+        rioter_count: 1,
+      },
+    ];
     render(<CountryList countries={unknown} />);
     expect(screen.getByText('🏳️')).toBeDefined();
   });
@@ -75,13 +104,21 @@ describe('CountryList', () => {
 
 describe('HealthMeter', () => {
   const healthy = {
-    id: 1, issue_id: 1,
-    needs_met: 85, membership: 90, influence: 80, connection: 75,
+    id: 'health-1',
+    issue_id: 'issue-1',
+    needs_met: 85,
+    membership: 90,
+    influence: 80,
+    connection: 75,
   };
 
   const struggling = {
-    id: 1, issue_id: 1,
-    needs_met: 40, membership: 35, influence: 50, connection: 45,
+    id: 'health-1',
+    issue_id: 'issue-1',
+    needs_met: 40,
+    membership: 35,
+    influence: 50,
+    connection: 45,
   };
 
   it('renders all four metric labels', () => {
@@ -111,7 +148,14 @@ describe('HealthMeter', () => {
   });
 
   it('shows Growing status for medium scores', () => {
-    const medium = { id: 1, issue_id: 1, needs_met: 65, membership: 70, influence: 60, connection: 65 };
+    const medium = {
+      id: 'health-1',
+      issue_id: 'issue-1',
+      needs_met: 65,
+      membership: 70,
+      influence: 60,
+      connection: 65,
+    };
     render(<HealthMeter health={medium} />);
     expect(screen.getByText('Growing')).toBeDefined();
   });
@@ -119,13 +163,25 @@ describe('HealthMeter', () => {
 
 describe('PivotTable', () => {
   const issueRows = [
-    { organisation_id: 1, organisation_name: 'Network Rail', logo_emoji: '🚂', rioter_count: 500, rank: 1 },
-    { organisation_id: 2, organisation_name: 'TfL', logo_emoji: '🚇', rioter_count: 300, rank: 2 },
+    {
+      organisation_id: 'org-1',
+      organisation_name: 'Network Rail',
+      logo_emoji: '🚂',
+      rioter_count: 500,
+      rank: 1,
+    },
+    {
+      organisation_id: 'org-2',
+      organisation_name: 'TfL',
+      logo_emoji: '🚇',
+      rioter_count: 300,
+      rank: 2,
+    },
   ];
 
   const orgRows = [
-    { issue_id: 1, issue_name: 'Train Delays', rioter_count: 500, rank: 1 },
-    { issue_id: 2, issue_name: 'Bus Routes', rioter_count: 200, rank: 2 },
+    { issue_id: 'issue-1', issue_name: 'Train Delays', rioter_count: 500, rank: 1 },
+    { issue_id: 'issue-2', issue_name: 'Bus Routes', rioter_count: 200, rank: 2 },
   ];
 
   it('renders issue pivot rows', () => {
@@ -139,11 +195,11 @@ describe('PivotTable', () => {
   it('links to organisation pages in issue mode', () => {
     render(<PivotTable mode="issue" rows={issueRows} />);
     const links = screen.getAllByRole('link');
-    expect(links[0].getAttribute('href')).toBe('/organisations/1');
+    expect(links[0].getAttribute('href')).toBe('/organisations/org-1');
   });
 
   it('shows YOU badge for current org', () => {
-    render(<PivotTable mode="issue" rows={issueRows} currentOrgId={1} />);
+    render(<PivotTable mode="issue" rows={issueRows} currentOrgId={'org-1'} />);
     expect(screen.getByText('YOU')).toBeDefined();
   });
 
@@ -156,11 +212,11 @@ describe('PivotTable', () => {
   it('links to issue pages in org mode', () => {
     render(<PivotTable mode="org" rows={orgRows} />);
     const links = screen.getAllByRole('link');
-    expect(links[0].getAttribute('href')).toBe('/issues/1');
+    expect(links[0].getAttribute('href')).toBe('/issues/issue-1');
   });
 
   it('shows YOU badge for current issue', () => {
-    render(<PivotTable mode="org" rows={orgRows} currentIssueId={2} />);
+    render(<PivotTable mode="org" rows={orgRows} currentIssueId={'issue-2'} />);
     expect(screen.getByText('YOU')).toBeDefined();
   });
 });

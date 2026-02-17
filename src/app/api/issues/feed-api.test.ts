@@ -20,7 +20,7 @@ afterAll(async () => {
   await teardownTestDb();
 });
 
-function mockLoggedIn(userId: number) {
+function mockLoggedIn(userId: string) {
   vi.mocked(cookies).mockResolvedValue({
     get: vi.fn((name: string) =>
       name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
@@ -41,7 +41,7 @@ function mockLoggedOut() {
 describe('GET /api/issues/[id]/feed', () => {
   it('returns feed posts without auth', async () => {
     const request = new Request('http://localhost:3000/api/issues/1/feed');
-    const response = await GET(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await GET(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data).toHaveLength(2);
@@ -54,13 +54,13 @@ describe('POST /api/issues/[id]/feed', () => {
   });
 
   it('creates a post when logged in', async () => {
-    mockLoggedIn(1);
+    mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/issues/1/feed', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ content: 'New post from test' }),
     });
-    const response = await POST(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.content).toBe('New post from test');
@@ -74,18 +74,18 @@ describe('POST /api/issues/[id]/feed', () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ content: 'Should fail' }),
     });
-    const response = await POST(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     expect(response.status).toBe(401);
   });
 
   it('returns 400 with empty content', async () => {
-    mockLoggedIn(1);
+    mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/issues/1/feed', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ content: '   ' }),
     });
-    const response = await POST(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     expect(response.status).toBe(400);
   });
 });
@@ -96,7 +96,7 @@ describe('POST /api/issues/[id]/feed/[postId]/like', () => {
       method: 'POST',
     });
     const response = await likePOST(request, {
-      params: Promise.resolve({ id: '1', postId: '1' }),
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
     });
     const { data } = await response.json();
     expect(response.status).toBe(200);

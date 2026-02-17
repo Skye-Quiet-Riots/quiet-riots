@@ -46,7 +46,9 @@ describe('GET /api/issues', () => {
 describe('GET /api/issues/[id]', () => {
   it('returns issue with health, countries, pivotOrgs', async () => {
     const request = new Request('http://localhost:3000/api/issues/1');
-    const response = await getIssueDetail(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getIssueDetail(request, {
+      params: Promise.resolve({ id: 'issue-rail' }),
+    });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.issue.name).toBe('Rail Cancellations');
@@ -57,7 +59,9 @@ describe('GET /api/issues/[id]', () => {
 
   it('returns 404 for missing issue', async () => {
     const request = new Request('http://localhost:3000/api/issues/999');
-    const response = await getIssueDetail(request, { params: Promise.resolve({ id: '999' }) });
+    const response = await getIssueDetail(request, {
+      params: Promise.resolve({ id: 'nonexistent' }),
+    });
     expect(response.status).toBe(404);
   });
 });
@@ -65,7 +69,7 @@ describe('GET /api/issues/[id]', () => {
 describe('GET /api/issues/[id]/actions', () => {
   it('returns actions for an issue', async () => {
     const request = new NextRequest('http://localhost:3000/api/issues/1/actions');
-    const response = await getActions(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getActions(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.length).toBeGreaterThanOrEqual(1);
@@ -73,7 +77,7 @@ describe('GET /api/issues/[id]/actions', () => {
 
   it('filters by type', async () => {
     const request = new NextRequest('http://localhost:3000/api/issues/1/actions?type=idea');
-    const response = await getActions(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getActions(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(data.every((a: { type: string }) => a.type === 'idea')).toBe(true);
   });
@@ -82,7 +86,7 @@ describe('GET /api/issues/[id]/actions', () => {
 describe('GET/POST /api/issues/[id]/synonyms', () => {
   it('returns synonyms', async () => {
     const request = new Request('http://localhost:3000/api/issues/1/synonyms');
-    const response = await getSynonyms(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getSynonyms(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.length).toBeGreaterThanOrEqual(2);
@@ -94,7 +98,7 @@ describe('GET/POST /api/issues/[id]/synonyms', () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ term: 'train problems' }),
     });
-    const response = await postSynonym(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await postSynonym(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.term).toBe('train problems');
@@ -106,7 +110,7 @@ describe('GET/POST /api/issues/[id]/synonyms', () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ term: '  ' }),
     });
-    const response = await postSynonym(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await postSynonym(request, { params: Promise.resolve({ id: 'issue-rail' }) });
     expect(response.status).toBe(400);
   });
 });

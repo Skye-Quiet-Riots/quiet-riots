@@ -31,9 +31,7 @@ export function PageHeader({ title, subtitle, breadcrumbs }: PageHeaderProps) {
         </nav>
       )}
       <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
-      {subtitle && (
-        <p className="mt-1 text-zinc-600 dark:text-zinc-400">{subtitle}</p>
-      )}
+      {subtitle && <p className="mt-1 text-zinc-600 dark:text-zinc-400">{subtitle}</p>}
     </div>
   );
 }

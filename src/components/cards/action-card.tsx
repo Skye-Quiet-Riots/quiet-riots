@@ -20,7 +20,9 @@ export function ActionCard({ action }: ActionCardProps) {
   const config = TYPE_CONFIG[action.type];
 
   return (
-    <div className={`rounded-lg border-l-4 ${config.color} border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900`}>
+    <div
+      className={`rounded-lg border-l-4 ${config.color} border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900`}
+    >
       <div className="flex items-start gap-3">
         <span className="mt-0.5 text-xl">{config.emoji}</span>
         <div className="flex-1">

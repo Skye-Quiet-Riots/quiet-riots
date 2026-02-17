@@ -1,8 +1,8 @@
 ---
 paths:
-  - "src/components/**/*.tsx"
-  - "src/app/**/*.tsx"
-  - "src/app/**/page.tsx"
+  - 'src/components/**/*.tsx'
+  - 'src/app/**/*.tsx'
+  - 'src/app/**/page.tsx'
 ---
 
 # Component Rules

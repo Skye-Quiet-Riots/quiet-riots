@@ -12,7 +12,7 @@ const synonymSchema = z.object({
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const synonyms = await getSynonymsForIssue(Number(id));
+  const synonyms = await getSynonymsForIssue(id);
   return apiOk(synonyms);
 }
 
@@ -34,6 +34,6 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return apiError('Term required');
   }
 
-  const synonym = await addSynonym(Number(id), parsed.data.term);
+  const synonym = await addSynonym(id, parsed.data.term);
   return apiOk(synonym);
 }

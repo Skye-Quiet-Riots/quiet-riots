@@ -1,6 +1,6 @@
 ---
 paths:
-  - "src/app/api/bot/**"
+  - 'src/app/api/bot/**'
 ---
 
 # Bot API Rules

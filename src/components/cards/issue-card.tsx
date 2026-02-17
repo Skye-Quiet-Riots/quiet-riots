@@ -28,7 +28,9 @@ export function IssueCard({ issue }: IssueCardProps) {
         <CategoryBadge category={issue.category} />
         <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="font-semibold">{issue.rioter_count.toLocaleString()} rioters</span>
-          <span>{issue.country_count} {issue.country_count === 1 ? 'country' : 'countries'}</span>
+          <span>
+            {issue.country_count} {issue.country_count === 1 ? 'country' : 'countries'}
+          </span>
         </div>
       </div>
     </Link>
