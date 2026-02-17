@@ -4,7 +4,10 @@ import type { Organisation, Category, IssuePivotRow, OrgPivotRow } from '@/types
 export async function getAllOrganisations(category?: Category): Promise<Organisation[]> {
   const db = getDb();
   if (category) {
-    const result = await db.execute({ sql: 'SELECT * FROM organisations WHERE category = ? ORDER BY name', args: [category] });
+    const result = await db.execute({
+      sql: 'SELECT * FROM organisations WHERE category = ? ORDER BY name',
+      args: [category],
+    });
     return result.rows as unknown as Organisation[];
   }
   const result = await db.execute('SELECT * FROM organisations ORDER BY name');
@@ -61,13 +64,19 @@ export async function getIssuesForOrg(orgId: number): Promise<OrgPivotRow[]> {
 // Count of issues per org (for org cards)
 export async function getIssueCountForOrg(orgId: number): Promise<number> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT COUNT(*) as count FROM issue_organisation WHERE organisation_id = ?', args: [orgId] });
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM issue_organisation WHERE organisation_id = ?',
+    args: [orgId],
+  });
   return (result.rows[0]?.count as number) ?? 0;
 }
 
 // Get total rioters for an org across all issues
 export async function getTotalRiotersForOrg(orgId: number): Promise<number> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT SUM(rioter_count) as total FROM issue_organisation WHERE organisation_id = ?', args: [orgId] });
+  const result = await db.execute({
+    sql: 'SELECT SUM(rioter_count) as total FROM issue_organisation WHERE organisation_id = ?',
+    args: [orgId],
+  });
   return (result.rows[0]?.total as number) ?? 0;
 }

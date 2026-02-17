@@ -1,11 +1,8 @@
-"use client";
+'use client';
 
 export default function SignupForm() {
   return (
-    <form
-      className="mt-8 flex flex-col gap-3 sm:flex-row"
-      onSubmit={(e) => e.preventDefault()}
-    >
+    <form className="mt-8 flex flex-col gap-3 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
       <input
         type="email"
         placeholder="you@example.com"

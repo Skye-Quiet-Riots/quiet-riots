@@ -28,19 +28,27 @@ export async function getIssueById(id: number): Promise<Issue | null> {
 
 export async function getIssuesByCategory(category: Category): Promise<Issue[]> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM issues WHERE category = ? ORDER BY rioter_count DESC', args: [category] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM issues WHERE category = ? ORDER BY rioter_count DESC',
+    args: [category],
+  });
   return result.rows as unknown as Issue[];
 }
 
 export async function getTrendingIssues(limit: number = 6): Promise<Issue[]> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM issues ORDER BY trending_delta DESC LIMIT ?', args: [limit] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM issues ORDER BY trending_delta DESC LIMIT ?',
+    args: [limit],
+  });
   return result.rows as unknown as Issue[];
 }
 
 export async function getIssueCountsByCategory(): Promise<Record<string, number>> {
   const db = getDb();
-  const result = await db.execute('SELECT category, COUNT(*) as count FROM issues GROUP BY category');
+  const result = await db.execute(
+    'SELECT category, COUNT(*) as count FROM issues GROUP BY category',
+  );
   const counts: Record<string, number> = {};
   for (const row of result.rows) {
     counts[row.category as string] = row.count as number;

@@ -10,7 +10,9 @@ import { TimeSkillFilter } from './time-skill-filter';
 // Mock next/link
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => (
-    <a href={href} {...props}>{children}</a>
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }));
 
@@ -100,7 +102,14 @@ describe('FeedComposer', () => {
   });
 
   it('calls onPost callback after successful submission', async () => {
-    const mockPost = { id: 99, issue_id: 1, user_id: 1, content: 'Hello', likes: 0, created_at: new Date().toISOString() };
+    const mockPost = {
+      id: 99,
+      issue_id: 1,
+      user_id: 1,
+      content: 'Hello',
+      likes: 0,
+      created_at: new Date().toISOString(),
+    };
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockPost),
@@ -132,8 +141,24 @@ describe('FeedComposer', () => {
 
 describe('FeedSection', () => {
   const posts = [
-    { id: 1, issue_id: 1, user_id: 1, user_name: 'Alice', content: 'First post', likes: 3, created_at: new Date().toISOString() },
-    { id: 2, issue_id: 1, user_id: 2, user_name: 'Bob', content: 'Second post', likes: 1, created_at: new Date().toISOString() },
+    {
+      id: 1,
+      issue_id: 1,
+      user_id: 1,
+      user_name: 'Alice',
+      content: 'First post',
+      likes: 3,
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: 2,
+      issue_id: 1,
+      user_id: 2,
+      user_name: 'Bob',
+      content: 'Second post',
+      likes: 1,
+      created_at: new Date().toISOString(),
+    },
   ];
 
   it('renders all feed posts', () => {
@@ -150,11 +175,15 @@ describe('FeedSection', () => {
 
 describe('PivotToggle', () => {
   const issueRows = [
-    { organisation_id: 1, organisation_name: 'Org A', logo_emoji: '🏢', rioter_count: 100, rank: 1 },
+    {
+      organisation_id: 1,
+      organisation_name: 'Org A',
+      logo_emoji: '🏢',
+      rioter_count: 100,
+      rank: 1,
+    },
   ];
-  const orgRows = [
-    { issue_id: 1, issue_name: 'Issue A', rioter_count: 100, rank: 1 },
-  ];
+  const orgRows = [{ issue_id: 1, issue_name: 'Issue A', rioter_count: 100, rank: 1 }];
 
   it('renders with issue pivot by default', () => {
     render(<PivotToggle issuePivotRows={issueRows} orgPivotRows={orgRows} />);

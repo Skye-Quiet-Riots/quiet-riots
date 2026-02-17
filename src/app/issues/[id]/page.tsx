@@ -3,7 +3,12 @@ import { getIssueById } from '@/lib/queries/issues';
 import { getOrgsForIssue } from '@/lib/queries/organisations';
 import { getIssuesForOrg } from '@/lib/queries/organisations';
 import { getActionsForIssue } from '@/lib/queries/actions';
-import { getCommunityHealth, getExpertProfiles, getFeedPosts, getCountryBreakdown } from '@/lib/queries/community';
+import {
+  getCommunityHealth,
+  getExpertProfiles,
+  getFeedPosts,
+  getCountryBreakdown,
+} from '@/lib/queries/community';
 import { getSynonymsForIssue } from '@/lib/queries/synonyms';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getSession } from '@/lib/session';
@@ -79,8 +84,16 @@ export default async function IssueDetailPage({ params }: Props) {
       {/* Stats row */}
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatBadge value={issue.rioter_count} label="rioters" emoji="📊" />
-        <StatBadge value={issue.country_count} label={issue.country_count === 1 ? 'country' : 'countries'} emoji="🌍" />
-        <StatBadge value={`+${issue.trending_delta.toLocaleString()}`} label="this week" emoji="📈" />
+        <StatBadge
+          value={issue.country_count}
+          label={issue.country_count === 1 ? 'country' : 'countries'}
+          emoji="🌍"
+        />
+        <StatBadge
+          value={`+${issue.trending_delta.toLocaleString()}`}
+          label="this week"
+          emoji="📈"
+        />
         <StatBadge value={actionCount} label="actions" emoji="⚡" />
       </div>
 
@@ -105,7 +118,8 @@ export default async function IssueDetailPage({ params }: Props) {
       <section className="mb-8">
         <h2 className="mb-4 text-lg font-bold">⚡ Actions — Your Personalised Toolkit</h2>
         <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
-          Based on evolution — 💡 <strong>Ideas</strong> (variation), ⚡ <strong>Actions</strong> (selection), and 🤝 <strong>Together</strong> (community).
+          Based on evolution — 💡 <strong>Ideas</strong> (variation), ⚡ <strong>Actions</strong>{' '}
+          (selection), and 🤝 <strong>Together</strong> (community).
         </p>
         <ActionsSection issueId={issue.id} initialActions={actions} />
       </section>
@@ -132,7 +146,8 @@ export default async function IssueDetailPage({ params }: Props) {
         <section className="mb-8">
           <h2 className="mb-4 text-lg font-bold">🌟 Experts</h2>
           <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-            Passionate volunteers who go deeper — translators, specialists, media leads, legal advisors.
+            Passionate volunteers who go deeper — translators, specialists, media leads, legal
+            advisors.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {experts.map((expert) => (

@@ -10,13 +10,17 @@ import { OrgCard } from './org-card';
 // Mock next/link
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => (
-    <a href={href} {...props}>{children}</a>
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }));
 
 // Mock child components used by cards
 vi.mock('@/components/data/category-badge', () => ({
-  CategoryBadge: ({ category }: { category: string }) => <span data-testid="category-badge">{category}</span>,
+  CategoryBadge: ({ category }: { category: string }) => (
+    <span data-testid="category-badge">{category}</span>
+  ),
 }));
 vi.mock('@/components/data/trending-indicator', () => ({
   TrendingIndicator: ({ delta }: { delta: number }) => <span data-testid="trending">{delta}</span>,

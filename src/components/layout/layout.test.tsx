@@ -7,8 +7,19 @@ import { PageHeader } from './page-header';
 
 // Mock next/link
 vi.mock('next/link', () => ({
-  default: ({ children, href, onClick, ...props }: { children: React.ReactNode; href: string; onClick?: () => void }) => (
-    <a href={href} onClick={onClick} {...props}>{children}</a>
+  default: ({
+    children,
+    href,
+    onClick,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    onClick?: () => void;
+  }) => (
+    <a href={href} onClick={onClick} {...props}>
+      {children}
+    </a>
   ),
 }));
 
@@ -110,10 +121,7 @@ describe('PageHeader', () => {
   });
 
   it('renders breadcrumb separators', () => {
-    const breadcrumbs = [
-      { label: 'Home', href: '/' },
-      { label: 'Issues' },
-    ];
+    const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'Issues' }];
     render(<PageHeader title="Issues" breadcrumbs={breadcrumbs} />);
     expect(screen.getByText('/')).toBeDefined();
   });
