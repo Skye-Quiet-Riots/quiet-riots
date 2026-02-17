@@ -57,24 +57,40 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - Bot API has no rate limiting
 - No GitHub Actions CI yet
 
-## End of Session Protocol
-
-At the end of every session (or when asked to "wrap up"):
-
-1. Run the full test suite and report any failures
-2. Update this file (CLAUDE.md) with any new decisions, gotchas, or known issues
-3. Append a dated entry to SESSION_LOG.md with:
-   - What was worked on
-   - Decisions made and why
-   - Anything discovered or surprising
-   - Clear next steps
-
-Write everything as if briefing a new version of yourself that has zero context beyond these files.
-
 ## Start of Session Protocol
 
 At the start of every session (or when asked to "pick up where we left off"):
 
 1. Read CLAUDE.md and SESSION_LOG.md
 2. Summarise where we left off and what the priorities are
-3. Run the test suite and flag any issues before starting new work
+3. Run the test suite (`npm test`) and flag any issues
+4. Check OpenClaw health and version:
+   - `openclaw --version` — report current version
+   - `launchctl list | grep ai.openclaw.gateway` — confirm gateway is running
+   - `tail -5 ~/.openclaw/logs/watchdog.log` — check for recent auto-recoveries
+   - `tail -3 ~/.openclaw/logs/auto-update.log` — check if auto-update ran recently
+5. If the watchdog has been restarting frequently, flag it as a connectivity issue
+
+## During Session
+
+- Run tests after meaningful changes, not just at session end
+- Save debugging insights to auto memory as they happen
+- If you discover a new gotcha, add it to CLAUDE.md immediately
+
+## End of Session Protocol
+
+At the end of every session (or when asked to "wrap up"):
+
+1. Run the full test suite and `npm run build` — report any failures
+2. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
+   - Flag that OpenClaw sessions may need clearing: `rm ~/.openclaw/agents/main/sessions/*.jsonl`
+   - Flag that gateway may need restarting: `launchctl stop ai.openclaw.gateway && launchctl start ai.openclaw.gateway`
+3. Update this file (CLAUDE.md) with any new decisions, gotchas, or known issues
+4. Append a dated entry to SESSION_LOG.md with:
+   - What was worked on
+   - Decisions made and why
+   - Anything discovered or surprising
+   - Clear next steps
+5. If SESSION_LOG.md has more than 5 entries, archive older ones to `session-logs/`
+
+Write everything as if briefing a new version of yourself that has zero context beyond these files.

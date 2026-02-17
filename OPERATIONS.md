@@ -43,3 +43,28 @@
 - **Logic:** Compares timestamp of last `channel exited` in `gateway.err.log` vs last `Listening for personal WhatsApp` in `gateway.log`
 - **Log:** `~/.openclaw/logs/watchdog.log`
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-watchdog.plist`
+
+## OpenClaw Auto-Update (Daily)
+- **Script:** `~/.openclaw/scripts/auto-update.sh` — runs `openclaw update --yes` non-interactively
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.openclaw-update.plist` — daily at 04:00
+- **Behaviour:** Checks network first, skips if npm registry unreachable. Logs current→new version. Auto-restarts gateway on successful update.
+- **Log:** `~/.openclaw/logs/auto-update.log`
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-update.plist`
+- **Manual update:** `openclaw update --yes` or `openclaw update wizard` for interactive
+
+## Log Rotation (Daily)
+- **Script:** `~/.openclaw/scripts/log-rotate.sh` — rotates logs over 10MB, keeps 3 copies (.1, .2, .3)
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.openclaw-logrotate.plist` — daily at 03:30
+- **Covers:** gateway.log, gateway.err.log, watchdog.log, auto-update.log
+- **Log:** `~/.openclaw/logs/log-rotate.log`
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-logrotate.plist`
+
+## All LaunchAgents Summary
+
+| Agent | Label | Schedule | Purpose |
+|-------|-------|----------|---------|
+| Sleep prevention | `com.quietriots.nosleep` | Always (KeepAlive) | `caffeinate -s` |
+| OpenClaw gateway | `ai.openclaw.gateway` | Always (KeepAlive) | WhatsApp bot |
+| Watchdog | `com.quietriots.openclaw-watchdog` | Every 120s | Restart gateway after WiFi drops |
+| Log rotation | `com.quietriots.openclaw-logrotate` | Daily 03:30 | Rotate logs over 10MB |
+| Auto-update | `com.quietriots.openclaw-update` | Daily 04:00 | Update OpenClaw + restart gateway |
