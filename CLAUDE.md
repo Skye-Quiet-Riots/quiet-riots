@@ -79,7 +79,7 @@ At the start of every session (or when asked to "pick up where we left off"):
 
 ## End of Session Protocol
 
-At the end of every session (or when asked to "wrap up"):
+At the end of every session (or when asked to "wrap up" / "good night"):
 
 1. Run the full test suite and `npm run build` — report any failures
 2. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
@@ -92,5 +92,8 @@ At the end of every session (or when asked to "wrap up"):
    - Anything discovered or surprising
    - Clear next steps
 5. If SESSION_LOG.md has more than 5 entries, archive older ones to `session-logs/`
+6. **Ensure all code is pushed:** Check `git status` and `git log origin/main..HEAD` — if there are unpushed commits, push to origin. If there are uncommitted changes, commit them first (run build/tests before committing).
+7. **Run backup:** Execute `bash ~/.openclaw/scripts/backup.sh` to sync config/secrets to the private backup repo immediately (don't wait for the 03:00 scheduled run).
+8. **Clean up worktrees:** If this session used a worktree branch that has been merged to main, flag it for cleanup: `git worktree remove <path>` and `git branch -d <branch>`.
 
 Write everything as if briefing a new version of yourself that has zero context beyond these files.
