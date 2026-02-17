@@ -7,7 +7,7 @@ import { apiOk, apiError } from '@/lib/api-response';
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const org = await getOrganisationById(Number(id));
+  const org = await getOrganisationById(id);
   if (!org) {
     return apiError('Organisation not found', 404);
   }

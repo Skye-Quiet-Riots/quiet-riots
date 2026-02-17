@@ -1,7 +1,8 @@
 import { getDb } from '../db';
+import { generateId } from '@/lib/uuid';
 import type { User, UserIssue, Issue } from '@/types';
 
-export async function getUserById(id: number): Promise<User | null> {
+export async function getUserById(id: string): Promise<User | null> {
   const db = getDb();
   const result = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [id] });
   return (result.rows[0] as unknown as User) ?? null;
@@ -19,25 +20,54 @@ export async function getUserByPhone(phone: string): Promise<User | null> {
   return (result.rows[0] as unknown as User) ?? null;
 }
 
-export async function createUser(data: { name: string; email: string; phone?: string; time_available?: string; skills?: string }): Promise<User> {
+export async function createUser(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  time_available?: string;
+  skills?: string;
+}): Promise<User> {
   const db = getDb();
-  const result = await db.execute({
-    sql: 'INSERT INTO users (name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?)',
-    args: [data.name, data.email, data.phone || null, data.time_available || '10min', data.skills || ''],
+  const id = generateId();
+  await db.execute({
+    sql: 'INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)',
+    args: [
+      id,
+      data.name,
+      data.email,
+      data.phone || null,
+      data.time_available || '10min',
+      data.skills || '',
+    ],
   });
-  const user = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [Number(result.lastInsertRowid)] });
+  const user = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [id] });
   return user.rows[0] as unknown as User;
 }
 
-export async function updateUser(id: number, data: { name?: string; phone?: string; time_available?: string; skills?: string }): Promise<User | null> {
+export async function updateUser(
+  id: string,
+  data: { name?: string; phone?: string; time_available?: string; skills?: string },
+): Promise<User | null> {
   const db = getDb();
   const sets: string[] = [];
   const args: (string | number)[] = [];
 
-  if (data.name !== undefined) { sets.push('name = ?'); args.push(data.name); }
-  if (data.phone !== undefined) { sets.push('phone = ?'); args.push(data.phone); }
-  if (data.time_available !== undefined) { sets.push('time_available = ?'); args.push(data.time_available); }
-  if (data.skills !== undefined) { sets.push('skills = ?'); args.push(data.skills); }
+  if (data.name !== undefined) {
+    sets.push('name = ?');
+    args.push(data.name);
+  }
+  if (data.phone !== undefined) {
+    sets.push('phone = ?');
+    args.push(data.phone);
+  }
+  if (data.time_available !== undefined) {
+    sets.push('time_available = ?');
+    args.push(data.time_available);
+  }
+  if (data.skills !== undefined) {
+    sets.push('skills = ?');
+    args.push(data.skills);
+  }
 
   if (sets.length === 0) return getUserById(id);
 
@@ -46,7 +76,7 @@ export async function updateUser(id: number, data: { name?: string; phone?: stri
   return getUserById(id);
 }
 
-export async function getUserIssues(userId: number): Promise<(UserIssue & { issue: Issue })[]> {
+export async function getUserIssues(userId: string): Promise<(UserIssue & { issue: Issue })[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -62,18 +92,27 @@ export async function getUserIssues(userId: number): Promise<(UserIssue & { issu
   return result.rows as unknown as (UserIssue & { issue: Issue })[];
 }
 
-export async function joinIssue(userId: number, issueId: number): Promise<void> {
+export async function joinIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
-  await db.execute({ sql: 'INSERT OR IGNORE INTO user_issues (user_id, issue_id) VALUES (?, ?)', args: [userId, issueId] });
+  await db.execute({
+    sql: 'INSERT OR IGNORE INTO user_issues (user_id, issue_id) VALUES (?, ?)',
+    args: [userId, issueId],
+  });
 }
 
-export async function leaveIssue(userId: number, issueId: number): Promise<void> {
+export async function leaveIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
-  await db.execute({ sql: 'DELETE FROM user_issues WHERE user_id = ? AND issue_id = ?', args: [userId, issueId] });
+  await db.execute({
+    sql: 'DELETE FROM user_issues WHERE user_id = ? AND issue_id = ?',
+    args: [userId, issueId],
+  });
 }
 
-export async function hasJoinedIssue(userId: number, issueId: number): Promise<boolean> {
+export async function hasJoinedIssue(userId: string, issueId: string): Promise<boolean> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT 1 FROM user_issues WHERE user_id = ? AND issue_id = ?', args: [userId, issueId] });
+  const result = await db.execute({
+    sql: 'SELECT 1 FROM user_issues WHERE user_id = ? AND issue_id = ?',
+    args: [userId, issueId],
+  });
   return result.rows.length > 0;
 }

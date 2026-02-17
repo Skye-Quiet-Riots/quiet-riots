@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 interface ProfileEditFormProps {
-  userId: number;
+  userId: string;
   initialName: string;
   initialTimeAvailable: string;
   initialSkills: string;
@@ -81,9 +81,7 @@ export function ProfileEditForm({
 
   return (
     <form onSubmit={handleSave} className="space-y-4">
-      {error && (
-        <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
-      )}
+      {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
       <div>
         <label htmlFor="edit-name" className="mb-1 block text-sm font-medium">
           Name
@@ -114,7 +112,9 @@ export function ProfileEditForm({
               }`}
             >
               <span className="block font-medium">{opt.label}</span>
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400">{opt.description}</span>
+              <span className="block text-xs text-zinc-500 dark:text-zinc-400">
+                {opt.description}
+              </span>
             </button>
           ))}
         </div>

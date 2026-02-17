@@ -13,7 +13,7 @@ const feedPostSchema = z.object({
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const posts = await getFeedPosts(Number(id));
+  const posts = await getFeedPosts(id);
   return apiOk(posts);
 }
 
@@ -39,6 +39,6 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return apiError('Content required');
   }
 
-  const post = await createFeedPost(Number(id), userId, parsed.data.content);
+  const post = await createFeedPost(id, userId, parsed.data.content);
   return apiOk(post);
 }

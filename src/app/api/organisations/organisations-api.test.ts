@@ -36,7 +36,9 @@ describe('GET /api/organisations', () => {
 describe('GET /api/organisations/[id]', () => {
   it('returns org with issues and totalRioters', async () => {
     const request = new Request('http://localhost:3000/api/organisations/1');
-    const response = await getOrgDetail(request, { params: Promise.resolve({ id: '1' }) });
+    const response = await getOrgDetail(request, {
+      params: Promise.resolve({ id: 'org-southern' }),
+    });
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.org.name).toBe('Southern Rail');
@@ -46,7 +48,9 @@ describe('GET /api/organisations/[id]', () => {
 
   it('returns 404 for missing organisation', async () => {
     const request = new Request('http://localhost:3000/api/organisations/999');
-    const response = await getOrgDetail(request, { params: Promise.resolve({ id: '999' }) });
+    const response = await getOrgDetail(request, {
+      params: Promise.resolve({ id: 'nonexistent' }),
+    });
     expect(response.status).toBe(404);
   });
 });

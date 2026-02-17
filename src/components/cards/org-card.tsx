@@ -24,9 +24,7 @@ export function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
         <div className="mt-1 flex items-center gap-2">
           <CategoryBadge category={org.category} showEmoji={false} />
           {issueCount !== undefined && (
-            <span className="text-xs text-zinc-500 dark:text-zinc-400">
-              {issueCount} issues
-            </span>
+            <span className="text-xs text-zinc-500 dark:text-zinc-400">{issueCount} issues</span>
           )}
           {totalRioters !== undefined && (
             <span className="text-xs text-zinc-500 dark:text-zinc-400">

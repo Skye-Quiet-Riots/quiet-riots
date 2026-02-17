@@ -18,19 +18,19 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 ## Commands
 
-| Command                 | Purpose                              |
-| ----------------------- | ------------------------------------ |
-| `npm run build`         | Build — ALWAYS run before committing |
-| `npm test`              | Run 230 tests (~1.5s)                |
-| `npm run test:watch`    | Watch mode                           |
-| `npm run test:coverage` | With V8 coverage                     |
-| `npm run seed`          | Reset database with sample data      |
-| `npm run migrate`       | Run pending database migrations      |
-| `npm run migrate:status`| Show applied & pending migrations    |
-| `npm run dev`           | Local dev server                     |
-| `npm run lint`          | ESLint                               |
-| `npm run format`        | Prettier — format all files          |
-| `npm run format:check`  | Prettier — check formatting (CI)     |
+| Command                  | Purpose                              |
+| ------------------------ | ------------------------------------ |
+| `npm run build`          | Build — ALWAYS run before committing |
+| `npm test`               | Run 230 tests (~1.5s)                |
+| `npm run test:watch`     | Watch mode                           |
+| `npm run test:coverage`  | With V8 coverage                     |
+| `npm run seed`           | Reset database with sample data      |
+| `npm run migrate`        | Run pending database migrations      |
+| `npm run migrate:status` | Show applied & pending migrations    |
+| `npm run dev`            | Local dev server                     |
+| `npm run lint`           | ESLint                               |
+| `npm run format`         | Prettier — format all files          |
+| `npm run format:check`   | Prettier — check formatting (CI)     |
 
 ## Development Rules
 
@@ -73,6 +73,13 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **OpenClaw session cache is sticky:** After changing SKILL.md, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway
 - **CSP uses nonces + strict-dynamic:** `unsafe-eval` only in dev mode; prod eliminates `unsafe-inline`
 - **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
+
+## Database ID Convention
+
+- All 11 entity tables use `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))` — UUIDs generated in JS via `crypto.randomUUID()` and passed explicitly on INSERT (`src/lib/uuid.ts`)
+- The `_migrations` table is the sole exception — keeps `INTEGER PRIMARY KEY AUTOINCREMENT` (internal tooling, no API surface)
+- Tests use short readable string IDs (`'issue-rail'`, `'user-sarah'`) for determinism and clarity
+- Session cookie (`qr_user_id`) stores the UUID string directly — no parseInt needed
 
 ## Known Issues
 

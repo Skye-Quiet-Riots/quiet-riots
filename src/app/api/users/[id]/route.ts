@@ -12,7 +12,7 @@ const updateUserSchema = z.object({
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const user = await getUserById(Number(id));
+  const user = await getUserById(id);
   if (!user) {
     return apiError('User not found', 404);
   }
@@ -36,7 +36,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
     return apiError(msg);
   }
 
-  const user = await updateUser(Number(id), parsed.data);
+  const user = await updateUser(id, parsed.data);
   if (!user) {
     return apiError('User not found', 404);
   }

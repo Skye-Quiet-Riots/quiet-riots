@@ -60,7 +60,7 @@ describe('getAllIssues', () => {
 
 describe('getIssueById', () => {
   it('returns the issue when found', async () => {
-    const issue = await getIssueById(1);
+    const issue = await getIssueById('issue-rail');
     expect(issue).not.toBeNull();
     expect(issue!.name).toBe('Rail Cancellations');
     expect(issue!.category).toBe('Transport');
@@ -68,7 +68,7 @@ describe('getIssueById', () => {
   });
 
   it('returns null for missing issue', async () => {
-    const issue = await getIssueById(999);
+    const issue = await getIssueById('nonexistent');
     expect(issue).toBeNull();
   });
 });
@@ -113,7 +113,7 @@ describe('createIssue', () => {
     expect(issue.rioter_count).toBe(0);
     expect(issue.country_count).toBe(0);
     expect(issue.trending_delta).toBe(0);
-    expect(issue.id).toBeGreaterThan(0);
+    expect(typeof issue.id).toBe('string');
   });
 
   it('defaults description to empty string', async () => {

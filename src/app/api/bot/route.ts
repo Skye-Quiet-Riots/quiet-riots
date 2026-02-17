@@ -31,8 +31,8 @@ const BOT_API_KEY = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026';
 
 // ─── Zod Schemas ──────────────────────────────────────────
 const phoneParam = z.object({ phone: z.string().min(1), name: z.string().optional() });
-const issueIdParam = z.object({ issue_id: z.number().int().positive() });
-const phoneAndIssue = z.object({ phone: z.string().min(1), issue_id: z.number().int().positive() });
+const issueIdParam = z.object({ issue_id: z.string().min(1) });
+const phoneAndIssue = z.object({ phone: z.string().min(1), issue_id: z.string().min(1) });
 const queryParam = z.object({ query: z.string().min(1) });
 
 const actionSchemas = {
@@ -49,9 +49,9 @@ const actionSchemas = {
   join_issue: phoneAndIssue,
   leave_issue: phoneAndIssue,
   post_feed: phoneAndIssue.extend({ content: z.string().min(1) }),
-  get_org_pivot: z.object({ org_id: z.number().int().positive() }),
+  get_org_pivot: z.object({ org_id: z.string().min(1) }),
   get_orgs: z.object({ category: z.string().optional() }),
-  add_synonym: z.object({ issue_id: z.number().int().positive(), term: z.string().min(1) }),
+  add_synonym: z.object({ issue_id: z.string().min(1), term: z.string().min(1) }),
   update_user: z.object({
     phone: z.string().min(1),
     name: z.string().optional(),
@@ -165,7 +165,7 @@ export async function POST(request: NextRequest) {
     }
 
     case 'get_issue': {
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const issue = await getIssueById(issueId);
       if (!issue) return err('Issue not found', 404);
 
@@ -181,7 +181,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Actions ─────────────────────────────────────────
     case 'get_actions': {
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const actions = await getFilteredActions(issueId, {
         type: p.type as string | undefined,
         time: p.time as string | undefined,
@@ -192,7 +192,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Community ───────────────────────────────────────
     case 'get_community': {
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const [health, feed, experts, countries] = await Promise.all([
         getCommunityHealth(issueId),
         getFeedPosts(issueId, 5),
@@ -205,7 +205,7 @@ export async function POST(request: NextRequest) {
     // ─── Join / Leave Issue ──────────────────────────────
     case 'join_issue': {
       const phone = p.phone as string;
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const user = await getUserByPhone(phone);
       if (!user) return err('User not found — call identify first', 404);
 
@@ -215,7 +215,7 @@ export async function POST(request: NextRequest) {
 
     case 'leave_issue': {
       const phone = p.phone as string;
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const user = await getUserByPhone(phone);
       if (!user) return err('User not found', 404);
 
@@ -226,7 +226,7 @@ export async function POST(request: NextRequest) {
     // ─── Feed ────────────────────────────────────────────
     case 'post_feed': {
       const phone = p.phone as string;
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const content = p.content as string;
       const user = await getUserByPhone(phone);
       if (!user) return err('User not found — call identify first', 404);
@@ -237,7 +237,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Organisation Pivot ──────────────────────────────
     case 'get_org_pivot': {
-      const orgId = p.org_id as number;
+      const orgId = p.org_id as string;
       const org = await getOrganisationById(orgId);
       if (!org) return err('Organisation not found', 404);
 
@@ -256,7 +256,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Synonyms ────────────────────────────────────────
     case 'add_synonym': {
-      const issueId = p.issue_id as number;
+      const issueId = p.issue_id as string;
       const term = p.term as string;
       const synonym = await addSynonym(issueId, term);
       return ok({ synonym });

@@ -95,7 +95,7 @@ describe('Bot API: get_trending', () => {
 
 describe('Bot API: get_issue', () => {
   it('returns full issue detail with parallel data', async () => {
-    const { status, body } = await callBot('get_issue', { issue_id: 1 });
+    const { status, body } = await callBot('get_issue', { issue_id: 'issue-rail' });
     expect(status).toBe(200);
     expect(body.data.issue.name).toBe('Rail Cancellations');
     expect(body.data.health).not.toBeNull();
@@ -106,14 +106,14 @@ describe('Bot API: get_issue', () => {
   });
 
   it('returns 404 for missing issue', async () => {
-    const { status } = await callBot('get_issue', { issue_id: 999 });
+    const { status } = await callBot('get_issue', { issue_id: 'nonexistent' });
     expect(status).toBe(404);
   });
 });
 
 describe('Bot API: get_actions', () => {
   it('returns actions for an issue', async () => {
-    const { status, body } = await callBot('get_actions', { issue_id: 1 });
+    const { status, body } = await callBot('get_actions', { issue_id: 'issue-rail' });
     expect(status).toBe(200);
     expect(body.data.actions.length).toBeGreaterThanOrEqual(1);
   });
@@ -121,7 +121,7 @@ describe('Bot API: get_actions', () => {
 
 describe('Bot API: get_community', () => {
   it('returns community data with parallel queries', async () => {
-    const { status, body } = await callBot('get_community', { issue_id: 1 });
+    const { status, body } = await callBot('get_community', { issue_id: 'issue-rail' });
     expect(status).toBe(200);
     expect(body.data.health).not.toBeNull();
     expect(body.data.feed).toBeDefined();
@@ -134,7 +134,7 @@ describe('Bot API: join_issue / leave_issue', () => {
   it('joins a user to an issue', async () => {
     const { status, body } = await callBot('join_issue', {
       phone: '+5511999999999',
-      issue_id: 2,
+      issue_id: 'issue-broadband',
     });
     expect(status).toBe(200);
     expect(body.data.joined).toBe(true);
@@ -143,7 +143,7 @@ describe('Bot API: join_issue / leave_issue', () => {
   it('leaves an issue', async () => {
     const { status, body } = await callBot('leave_issue', {
       phone: '+5511999999999',
-      issue_id: 2,
+      issue_id: 'issue-broadband',
     });
     expect(status).toBe(200);
     expect(body.data.left).toBe(true);
@@ -152,7 +152,7 @@ describe('Bot API: join_issue / leave_issue', () => {
   it('fails for unknown user', async () => {
     const { status } = await callBot('join_issue', {
       phone: '+0000000000',
-      issue_id: 1,
+      issue_id: 'issue-rail',
     });
     expect(status).toBe(404);
   });
@@ -162,7 +162,7 @@ describe('Bot API: post_feed', () => {
   it('creates a feed post', async () => {
     const { status, body } = await callBot('post_feed', {
       phone: '+5511999999999',
-      issue_id: 1,
+      issue_id: 'issue-rail',
       content: 'Hello from the bot!',
     });
     expect(status).toBe(200);
@@ -172,7 +172,7 @@ describe('Bot API: post_feed', () => {
   it('fails for unknown user', async () => {
     const { status } = await callBot('post_feed', {
       phone: '+0000000000',
-      issue_id: 1,
+      issue_id: 'issue-rail',
       content: 'test',
     });
     expect(status).toBe(404);
@@ -181,7 +181,7 @@ describe('Bot API: post_feed', () => {
 
 describe('Bot API: get_org_pivot', () => {
   it('returns org with issues and totalRioters', async () => {
-    const { status, body } = await callBot('get_org_pivot', { org_id: 1 });
+    const { status, body } = await callBot('get_org_pivot', { org_id: 'org-southern' });
     expect(status).toBe(200);
     expect(body.data.org.name).toBe('Southern Rail');
     expect(body.data.issues).toBeDefined();
@@ -189,7 +189,7 @@ describe('Bot API: get_org_pivot', () => {
   });
 
   it('returns 404 for missing org', async () => {
-    const { status } = await callBot('get_org_pivot', { org_id: 999 });
+    const { status } = await callBot('get_org_pivot', { org_id: 'nonexistent' });
     expect(status).toBe(404);
   });
 });
@@ -205,7 +205,7 @@ describe('Bot API: get_orgs', () => {
 describe('Bot API: add_synonym', () => {
   it('creates a synonym', async () => {
     const { status, body } = await callBot('add_synonym', {
-      issue_id: 1,
+      issue_id: 'issue-rail',
       term: 'rail delays',
     });
     expect(status).toBe(200);

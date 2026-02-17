@@ -7,8 +7,8 @@ import { PivotTable } from '@/components/data/pivot-table';
 interface PivotToggleProps {
   issuePivotRows: IssuePivotRow[];
   orgPivotRows: OrgPivotRow[];
-  currentOrgId?: number;
-  currentIssueId?: number;
+  currentOrgId?: string;
+  currentIssueId?: string;
   issueName?: string;
   orgName?: string;
 }
@@ -49,9 +49,7 @@ export function PivotToggle({
           }`}
         >
           🔍 Issue Pivot
-          <span className="mt-0.5 block text-xs font-normal opacity-70">
-            Same issue, all orgs
-          </span>
+          <span className="mt-0.5 block text-xs font-normal opacity-70">Same issue, all orgs</span>
         </button>
         <button
           onClick={() => setMode('org')}
@@ -62,9 +60,7 @@ export function PivotToggle({
           }`}
         >
           🏢 Org Pivot
-          <span className="mt-0.5 block text-xs font-normal opacity-70">
-            All issues, one org
-          </span>
+          <span className="mt-0.5 block text-xs font-normal opacity-70">All issues, one org</span>
         </button>
       </div>
 

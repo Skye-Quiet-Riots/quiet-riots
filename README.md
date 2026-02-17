@@ -1,6 +1,6 @@
 # Quiet Riots
 
-Bringing the *Quiet Riots* book to life.
+Bringing the _Quiet Riots_ book to life.
 
 Quiet Riots is a platform for organising people around shared issues and enabling collective action. It's built on the belief that meaningful change doesn't always start with loud protest — sometimes it begins with people quietly finding each other, aligning on what matters, and acting together.
 
@@ -36,13 +36,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Copy `.env.example` to `.env.local` and fill in the values:
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `TURSO_DATABASE_URL` | Yes | Your Turso database URL (`libsql://your-db.turso.io`) |
-| `TURSO_AUTH_TOKEN` | Yes | Auth token from the Turso dashboard |
-| `BOT_API_KEY` | Yes | API key for the WhatsApp bot endpoint (default: `qr-bot-dev-key-2026` for dev) |
+| Variable             | Required | Description                                                                    |
+| -------------------- | -------- | ------------------------------------------------------------------------------ |
+| `TURSO_DATABASE_URL` | Yes      | Your Turso database URL (`libsql://your-db.turso.io`)                          |
+| `TURSO_AUTH_TOKEN`   | Yes      | Auth token from the Turso dashboard                                            |
+| `BOT_API_KEY`        | Yes      | API key for the WhatsApp bot endpoint (default: `qr-bot-dev-key-2026` for dev) |
 
 **Getting Turso credentials:**
+
 1. Sign up at [turso.tech](https://turso.tech)
 2. Create a database (or use the existing `quietriots-skye`)
 3. Copy the database URL and auth token from the dashboard
@@ -93,23 +94,23 @@ src/
 
 ## API Routes
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/bot` | WhatsApp bot (Bearer token auth, multiplexed actions) |
-| GET | `/api/issues` | List issues (supports `?category=` and `?search=`) |
-| GET | `/api/issues/[id]` | Issue detail with health, countries, pivot orgs |
-| POST | `/api/issues/[id]/join` | Join an issue (requires login) |
-| DELETE | `/api/issues/[id]/join` | Leave an issue |
-| GET | `/api/issues/[id]/feed` | Community feed posts |
-| POST | `/api/issues/[id]/feed` | Create a feed post |
-| POST | `/api/issues/[id]/feed/[postId]/like` | Like a post |
-| GET | `/api/issues/[id]/actions` | Actions (supports `?type=` and `?time=`) |
-| GET | `/api/issues/[id]/synonyms` | Issue synonyms |
-| GET | `/api/organisations` | List organisations (supports `?category=`) |
-| GET | `/api/organisations/[id]` | Organisation detail with issues |
-| POST | `/api/users` | Create or get user |
-| GET | `/api/users/me` | Current logged-in user |
-| GET | `/api/users/[id]` | User by ID |
+| Method | Endpoint                              | Description                                           |
+| ------ | ------------------------------------- | ----------------------------------------------------- |
+| POST   | `/api/bot`                            | WhatsApp bot (Bearer token auth, multiplexed actions) |
+| GET    | `/api/issues`                         | List issues (supports `?category=` and `?search=`)    |
+| GET    | `/api/issues/[id]`                    | Issue detail with health, countries, pivot orgs       |
+| POST   | `/api/issues/[id]/join`               | Join an issue (requires login)                        |
+| DELETE | `/api/issues/[id]/join`               | Leave an issue                                        |
+| GET    | `/api/issues/[id]/feed`               | Community feed posts                                  |
+| POST   | `/api/issues/[id]/feed`               | Create a feed post                                    |
+| POST   | `/api/issues/[id]/feed/[postId]/like` | Like a post                                           |
+| GET    | `/api/issues/[id]/actions`            | Actions (supports `?type=` and `?time=`)              |
+| GET    | `/api/issues/[id]/synonyms`           | Issue synonyms                                        |
+| GET    | `/api/organisations`                  | List organisations (supports `?category=`)            |
+| GET    | `/api/organisations/[id]`             | Organisation detail with issues                       |
+| POST   | `/api/users`                          | Create or get user                                    |
+| GET    | `/api/users/me`                       | Current logged-in user                                |
+| GET    | `/api/users/[id]`                     | User by ID                                            |
 
 ## Database
 
@@ -136,6 +137,7 @@ npm run test:coverage # With V8 coverage report
 ```
 
 **Test architecture:**
+
 - **Backend tests** (126): In-memory libSQL database per test file via `_setTestDb()`
 - **Component tests** (84): React Testing Library with jsdom (via `// @vitest-environment jsdom`)
 - **Session mocking:** `mockLoggedIn(userId)` / `mockLoggedOut()` helpers
@@ -144,14 +146,18 @@ npm run test:coverage # With V8 coverage report
 ## Key Concepts
 
 ### Pivot Tables (Pareto Principle)
+
 Every issue-organisation relationship is ranked by rioter count. You can view data from two perspectives:
+
 - **Issue pivot:** "Which organisations care about this issue?" (ranked)
 - **Org pivot:** "Which issues does this organisation touch?" (ranked)
 
 ### Cookie Sessions
+
 Users are identified by a `qr_user_id` httpOnly cookie (1-year expiry). WhatsApp users get auto-created accounts with phone-based identity.
 
 ### WhatsApp Bot
+
 The bot runs via [OpenClaw](https://openclaw.com) on a local Mac, connecting to the production API. It uses numbered text choices (not polls/buttons) because the underlying WhatsApp library doesn't support them reliably.
 
 ## Deployment
@@ -164,15 +170,15 @@ Pushes to `main` trigger automatic production deployments via the Vercel GitHub 
 
 ## Scripts
 
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Local development server |
-| `npm run build` | Production build |
-| `npm test` | Run test suite |
-| `npm run test:watch` | Watch mode |
-| `npm run test:coverage` | Coverage report |
-| `npm run seed` | Reset database with sample data |
-| `npm run lint` | ESLint |
+| Command                 | Purpose                         |
+| ----------------------- | ------------------------------- |
+| `npm run dev`           | Local development server        |
+| `npm run build`         | Production build                |
+| `npm test`              | Run test suite                  |
+| `npm run test:watch`    | Watch mode                      |
+| `npm run test:coverage` | Coverage report                 |
+| `npm run seed`          | Reset database with sample data |
+| `npm run lint`          | ESLint                          |
 
 ## Further Reading
 

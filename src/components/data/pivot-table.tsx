@@ -4,13 +4,13 @@ import type { IssuePivotRow, OrgPivotRow } from '@/types';
 interface IssuePivotProps {
   mode: 'issue';
   rows: IssuePivotRow[];
-  currentOrgId?: number;
+  currentOrgId?: string;
 }
 
 interface OrgPivotProps {
   mode: 'org';
   rows: OrgPivotRow[];
-  currentIssueId?: number;
+  currentIssueId?: string;
 }
 
 type PivotTableProps = IssuePivotProps | OrgPivotProps;

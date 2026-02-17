@@ -1,19 +1,26 @@
 import { getDb } from '../db';
+import { generateId } from '@/lib/uuid';
 import type { CommunityHealth, ExpertProfile, FeedPost, CountryBreakdown } from '@/types';
 
-export async function getCommunityHealth(issueId: number): Promise<CommunityHealth | null> {
+export async function getCommunityHealth(issueId: string): Promise<CommunityHealth | null> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM community_health WHERE issue_id = ?', args: [issueId] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM community_health WHERE issue_id = ?',
+    args: [issueId],
+  });
   return (result.rows[0] as unknown as CommunityHealth) ?? null;
 }
 
-export async function getExpertProfiles(issueId: number): Promise<ExpertProfile[]> {
+export async function getExpertProfiles(issueId: string): Promise<ExpertProfile[]> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM expert_profiles WHERE issue_id = ?', args: [issueId] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM expert_profiles WHERE issue_id = ?',
+    args: [issueId],
+  });
   return result.rows as unknown as ExpertProfile[];
 }
 
-export async function getFeedPosts(issueId: number, limit: number = 20): Promise<FeedPost[]> {
+export async function getFeedPosts(issueId: string, limit: number = 20): Promise<FeedPost[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `
@@ -29,11 +36,16 @@ export async function getFeedPosts(issueId: number, limit: number = 20): Promise
   return result.rows as unknown as FeedPost[];
 }
 
-export async function createFeedPost(issueId: number, userId: number, content: string): Promise<FeedPost> {
+export async function createFeedPost(
+  issueId: string,
+  userId: string,
+  content: string,
+): Promise<FeedPost> {
   const db = getDb();
-  const insertResult = await db.execute({
-    sql: 'INSERT INTO feed (issue_id, user_id, content) VALUES (?, ?, ?)',
-    args: [issueId, userId, content],
+  const id = generateId();
+  await db.execute({
+    sql: 'INSERT INTO feed (id, issue_id, user_id, content) VALUES (?, ?, ?, ?)',
+    args: [id, issueId, userId, content],
   });
 
   const result = await db.execute({
@@ -43,17 +55,17 @@ export async function createFeedPost(issueId: number, userId: number, content: s
     JOIN users u ON f.user_id = u.id
     WHERE f.id = ?
   `,
-    args: [Number(insertResult.lastInsertRowid)],
+    args: [id],
   });
   return result.rows[0] as unknown as FeedPost;
 }
 
-export async function likeFeedPost(postId: number): Promise<void> {
+export async function likeFeedPost(postId: string): Promise<void> {
   const db = getDb();
   await db.execute({ sql: 'UPDATE feed SET likes = likes + 1 WHERE id = ?', args: [postId] });
 }
 
-export async function getUserFeedPostCount(userId: number): Promise<number> {
+export async function getUserFeedPostCount(userId: string): Promise<number> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT COUNT(*) as count FROM feed WHERE user_id = ?',
@@ -62,7 +74,7 @@ export async function getUserFeedPostCount(userId: number): Promise<number> {
   return Number(result.rows[0]?.count ?? 0);
 }
 
-export async function getUserTotalLikes(userId: number): Promise<number> {
+export async function getUserTotalLikes(userId: string): Promise<number> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT COALESCE(SUM(likes), 0) as total FROM feed WHERE user_id = ?',
@@ -71,8 +83,11 @@ export async function getUserTotalLikes(userId: number): Promise<number> {
   return Number(result.rows[0]?.total ?? 0);
 }
 
-export async function getCountryBreakdown(issueId: number): Promise<CountryBreakdown[]> {
+export async function getCountryBreakdown(issueId: string): Promise<CountryBreakdown[]> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM country_breakdown WHERE issue_id = ? ORDER BY rioter_count DESC', args: [issueId] });
+  const result = await db.execute({
+    sql: 'SELECT * FROM country_breakdown WHERE issue_id = ? ORDER BY rioter_count DESC',
+    args: [issueId],
+  });
   return result.rows as unknown as CountryBreakdown[];
 }

@@ -12,7 +12,7 @@ import { ProfileCreateForm } from '@/components/interactive/profile-create-form'
 import type { Category } from '@/types';
 
 interface UserIssueRow {
-  issue_id: number;
+  issue_id: string;
   issue_name: string;
   category: Category;
   rioter_count: number;
@@ -92,9 +92,15 @@ export default async function ProfilePage() {
 
       {/* Stats */}
       <div className="mb-8 grid grid-cols-3 gap-3">
-        <StatBadge value={issues.length} label={issues.length === 1 ? 'Quiet Riot' : 'Quiet Riots'} />
+        <StatBadge
+          value={issues.length}
+          label={issues.length === 1 ? 'Quiet Riot' : 'Quiet Riots'}
+        />
         <StatBadge value={postCount} label={postCount === 1 ? 'post' : 'posts'} />
-        <StatBadge value={totalLikes} label={totalLikes === 1 ? 'like received' : 'likes received'} />
+        <StatBadge
+          value={totalLikes}
+          label={totalLikes === 1 ? 'like received' : 'likes received'}
+        />
       </div>
 
       {/* Joined issues */}

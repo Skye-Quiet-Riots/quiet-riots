@@ -160,3 +160,48 @@ This was a large "hardening" session — implementing developer best practices a
 - Consider Redis/Upstash rate limiting if traffic grows
 - Consider upgrading OpenClaw (`v2026.2.15` available)
 - Add database migration tooling (currently schema changes are manual)
+
+---
+
+## 2026-02-17 (Session 8) — UUID Migration + Scaling Architecture
+
+### What was worked on
+
+Complete migration of all database IDs from `INTEGER PRIMARY KEY AUTOINCREMENT` to `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))`. This was a 10-phase change across 35+ files:
+
+1. **`src/lib/uuid.ts`** (new) — Central UUID generation: `crypto.randomUUID().replace(/-/g, '')` → 32-char hex
+2. **`src/types/index.ts`** — All 13 interfaces: `id: number` → `id: string`, all FK fields → `string`
+3. **Schema + migration** — `src/lib/schema.ts`, `migrations/001_baseline.sql` updated; new `migrations/002_uuid_ids.sql` for existing databases (parents first, then 8 child tables)
+4. **`src/lib/session.ts`** — Returns string directly, no parseInt
+5. **Query layer** (6 files) — All ID params → string, creates use `generateId()` instead of `lastInsertRowid`
+6. **API routes** (9 files) — Removed all `Number(id)` casts, bot Zod schemas → `z.string().min(1)`
+7. **Page components** (3 files) — Removed `Number(id)` conversions
+8. **Client components** (8 files) — All `issueId: number` → `string`, etc.
+9. **`src/lib/seed.ts`** — `insertRow()` generates UUID, returns string. Fixed arithmetic on IDs → fixed rioter count map
+10. **Test files** (15 files) — Readable string IDs (`'issue-rail'`, `'user-sarah'`), all assertions updated
+
+Also created **`SCALING-ARCHITECTURE.md`** — comprehensive scaling document covering NOW (0-10k), SOON (Turso replicas), 10k+ (FTS5), 50k+ (PostgreSQL), 100k+ (counters), 500k+ (multi-region), bot scaling, and "What NOT to Build Yet" table.
+
+### Thorough verification
+
+- `npm run build` — Clean, no type errors
+- `npm test` — 230/230 passing (1.4s)
+- `npm run seed` — Seeds successfully (19 issues, 20 orgs, 8 users + all child data)
+- `npm run lint` — 0 errors (2 pre-existing warnings in migrate.test.ts)
+- `npm run format:check` — All files pass
+- Grep audit: zero `Number(id)`, `parseInt(id)`, `z.number()` on ID fields, `lastInsertRowid`, or `issueId: number` remaining in `src/`
+- Only `INTEGER PRIMARY KEY AUTOINCREMENT` remaining is in `_migrations` table (correct by design)
+
+### Key decisions
+
+- **32-char hex UUIDs** — `crypto.randomUUID().replace(/-/g, '')` matches SQLite's `lower(hex(randomblob(16)))` format. Valid UUIDs for future Postgres migration.
+- **Readable test IDs** — `'issue-rail'` instead of random UUIDs for test determinism and readability
+- **`_migrations` keeps AUTOINCREMENT** — internal tooling, no API surface, sequential IDs are fine
+- **Seed data uses fixed rioter counts** — replaced arithmetic on integer IDs with a `basicCountryData` map
+
+### Next steps
+
+- Profile page improvements
+- Consider `create_issue` bot action
+- Tighten CSP with nonce-based approach
+- Deploy UUID migration to production (run `npm run seed` to reset with UUID data)

@@ -6,7 +6,7 @@ import { FeedPostCard } from '@/components/cards/feed-post-card';
 import { FeedComposer } from '@/components/interactive/feed-composer';
 
 interface FeedSectionProps {
-  issueId: number;
+  issueId: string;
   initialPosts: FeedPost[];
 }
 

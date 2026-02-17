@@ -6,7 +6,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   const { id } = await params;
   const { searchParams } = request.nextUrl;
 
-  const actions = await getFilteredActions(Number(id), {
+  const actions = await getFilteredActions(id, {
     type: searchParams.get('type') || undefined,
     time: searchParams.get('time') || undefined,
     skills: searchParams.get('skills') || undefined,

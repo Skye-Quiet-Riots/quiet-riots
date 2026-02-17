@@ -13,7 +13,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
   if (!allowed) {
     return apiError('Too many requests', 429);
   }
-  await joinIssue(userId, Number(id));
+  await joinIssue(userId, id);
   return apiOk({ joined: true });
 }
 
@@ -27,6 +27,6 @@ export async function DELETE(_request: Request, { params }: { params: Promise<{ 
   if (!allowed) {
     return apiError('Too many requests', 429);
   }
-  await leaveIssue(userId, Number(id));
+  await leaveIssue(userId, id);
   return apiOk({ left: true });
 }
