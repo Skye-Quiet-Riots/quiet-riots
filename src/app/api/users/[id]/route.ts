@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { getUserById, updateUser, getUserIssues } from '@/lib/queries/users';
 import { rateLimit } from '@/lib/rate-limit';
-import { apiOk, apiError } from '@/lib/api-response';
+import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
 const updateUserSchema = z.object({
   name: z.string().min(1).optional(),
@@ -32,8 +32,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   const body = await request.json();
   const parsed = updateUserSchema.safeParse(body);
   if (!parsed.success) {
-    const msg = parsed.error.issues.map((i) => i.path.join('.') + ': ' + i.message).join(', ');
-    return apiError(msg);
+    return apiValidationError(parsed.error.issues);
   }
 
   const user = await updateUser(id, parsed.data);

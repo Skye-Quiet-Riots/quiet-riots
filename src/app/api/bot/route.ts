@@ -103,7 +103,17 @@ function ok(data: unknown) {
 }
 
 function err(message: string, status = 400) {
-  return NextResponse.json({ ok: false, error: message }, { status });
+  const code =
+    status === 404
+      ? 'NOT_FOUND'
+      : status === 401
+        ? 'UNAUTHORIZED'
+        : status === 429
+          ? 'RATE_LIMITED'
+          : status >= 500
+            ? 'INTERNAL_ERROR'
+            : 'VALIDATION_ERROR';
+  return NextResponse.json({ ok: false, error: message, code }, { status });
 }
 
 function parseParams<T extends ActionName>(action: T, params: Record<string, unknown>) {
