@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { createUser, getUserByEmail } from '@/lib/queries/users';
 import { setSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
-import { apiOk, apiError } from '@/lib/api-response';
+import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
 const createUserSchema = z.object({
   name: z.string().min(1, 'Name required'),
@@ -21,8 +21,7 @@ export async function POST(request: Request) {
   const body = await request.json();
   const parsed = createUserSchema.safeParse(body);
   if (!parsed.success) {
-    const msg = parsed.error.issues.map((i) => i.path.join('.') + ': ' + i.message).join(', ');
-    return apiError(msg);
+    return apiValidationError(parsed.error.issues);
   }
 
   const { name, email, time_available, skills } = parsed.data;
