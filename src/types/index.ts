@@ -252,6 +252,38 @@ export const CATEGORY_COLORS: Record<Category, { bg: string; text: string; borde
   },
 };
 
+// Riot Reels
+export interface RiotReel {
+  id: string;
+  issue_id: string;
+  youtube_url: string;
+  youtube_video_id: string;
+  title: string;
+  thumbnail_url: string;
+  duration_seconds: number | null;
+  caption: string;
+  submitted_by: string | null;
+  source: 'curated' | 'community' | 'ai_suggested';
+  status: 'pending' | 'approved' | 'featured' | 'rejected';
+  upvotes: number;
+  views: number;
+  created_at: string;
+}
+
+export interface ReelVote {
+  reel_id: string;
+  user_id: string;
+  vote: number;
+  voted_at: string;
+}
+
+export interface ReelShownLog {
+  user_id: string;
+  reel_id: string;
+  issue_id: string;
+  shown_at: string;
+}
+
 export const CATEGORY_EMOJIS: Record<Category, string> = {
   Transport: '🚂',
   Telecoms: '📶',

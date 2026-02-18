@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                  | Purpose                              |
 | ------------------------ | ------------------------------------ |
 | `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 283 tests (~2s)                  |
+| `npm test`               | Run 344 tests (~2s)                  |
 | `npm run test:watch`     | Watch mode                           |
 | `npm run test:coverage`  | With V8 coverage                     |
 | `npm run seed`           | Reset database with sample data      |
@@ -87,7 +87,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 ## Database ID Convention
 
-- All 13 entity tables use `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))` — UUIDs generated in JS via `crypto.randomUUID()` and passed explicitly on INSERT (`src/lib/uuid.ts`)
+- All 14 entity tables use `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))` — UUIDs generated in JS via `crypto.randomUUID()` and passed explicitly on INSERT (`src/lib/uuid.ts`)
 - The `_migrations` table is the sole exception — keeps `INTEGER PRIMARY KEY AUTOINCREMENT` (internal tooling, no API surface)
 - Tests use short readable string IDs (`'issue-rail'`, `'user-sarah'`) for determinism and clarity
 - Session cookie (`qr_user_id`) stores the UUID string directly — no parseInt needed

@@ -6,6 +6,7 @@ import { FeedComposer } from './feed-composer';
 import { FeedSection } from './feed-section';
 import { PivotToggle } from './pivot-toggle';
 import { TimeSkillFilter } from './time-skill-filter';
+import { ReelsSection } from './reels-section';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -194,6 +195,59 @@ describe('PivotToggle', () => {
     render(<PivotToggle issuePivotRows={issueRows} orgPivotRows={orgRows} />);
     const buttons = screen.getAllByRole('button');
     expect(buttons.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+describe('ReelsSection', () => {
+  const reels = [
+    {
+      id: 'reel-1',
+      issue_id: 'issue-rail',
+      youtube_url: 'https://www.youtube.com/watch?v=test1',
+      youtube_video_id: 'test1',
+      title: 'Reel One',
+      thumbnail_url: 'https://img.youtube.com/vi/test1/hqdefault.jpg',
+      duration_seconds: null,
+      caption: 'Caption one',
+      submitted_by: null,
+      source: 'curated' as const,
+      status: 'approved' as const,
+      upvotes: 10,
+      views: 50,
+      created_at: '2026-01-01',
+    },
+  ];
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('renders reels from initialReels', () => {
+    render(<ReelsSection issueId="issue-rail" initialReels={reels} />);
+    expect(screen.getByText('Reel One')).toBeDefined();
+  });
+
+  it('shows empty state when no reels', () => {
+    render(<ReelsSection issueId="issue-rail" initialReels={[]} />);
+    expect(screen.getByText(/No reels yet/)).toBeDefined();
+  });
+
+  it('renders submit form with URL and caption inputs', () => {
+    render(<ReelsSection issueId="issue-rail" initialReels={[]} />);
+    expect(screen.getByPlaceholderText(/YouTube URL/i)).toBeDefined();
+    expect(screen.getByPlaceholderText(/caption/i)).toBeDefined();
+    expect(screen.getByText('Submit')).toBeDefined();
+  });
+
+  it('shows success message after submission', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<ReelsSection issueId="issue-rail" initialReels={[]} />);
+    const urlInput = screen.getByPlaceholderText(/YouTube URL/i);
+    fireEvent.change(urlInput, { target: { value: 'https://www.youtube.com/watch?v=abc123' } });
+    fireEvent.click(screen.getByText('Submit'));
+    await waitFor(() => {
+      expect(screen.getByText(/submitted for review/)).toBeDefined();
+    });
   });
 });
 
