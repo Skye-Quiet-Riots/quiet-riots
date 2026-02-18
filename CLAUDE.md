@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                  | Purpose                              |
 | ------------------------ | ------------------------------------ |
 | `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 241 tests (~1.7s)                |
+| `npm test`               | Run 283 tests (~2s)                  |
 | `npm run test:watch`     | Watch mode                           |
 | `npm run test:coverage`  | With V8 coverage                     |
 | `npm run seed`           | Reset database with sample data      |
@@ -63,8 +63,17 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **Error pages:** `error.tsx`, `global-error.tsx`, `not-found.tsx` all report to Sentry
 - **Env validation:** `src/lib/env.ts` — validates required env vars at startup via `src/instrumentation.ts`
 - **Health check:** `GET /api/health` — checks db connectivity
-- **Standardised API responses:** `src/lib/api-response.ts` — `apiSuccess()`, `apiError()`, `apiValidationError()`
+- **Standardised API responses:** `src/lib/api-response.ts` — `apiOk()`, `apiError()` (with error codes), `apiValidationError()` (field-level details)
 - **Editor config:** `.editorconfig` for consistent whitespace across editors
+- **Coverage thresholds:** Vitest enforces 75% statements, 69% branches, 74% functions, 76% lines
+- **Dependabot:** Weekly npm dependency updates, grouped minor/patch, max 5 open PRs (`.github/dependabot.yml`)
+- **Branch protection:** `main` requires 1 PR approval + `test` status check passing + branch up-to-date
+- **DB query timeouts:** `withTimeout()` wrapper in `src/lib/db.ts` — 5s default via `Promise.race`
+- **Structured logging:** pino JSON logger (`src/lib/logger.ts`) with `createRequestLogger()` for per-request context
+- **Schema constraints:** CHECK constraints on all tables — non-negative counters, health 0-100, enum validation, length limits
+- **Input sanitization:** `src/lib/sanitize.ts` — `normalizePhone()` (E.164), `trimAndLimit()`, `sanitizeText()`
+- **Error codes:** All API errors include `code` field (`VALIDATION_ERROR`, `NOT_FOUND`, `UNAUTHORIZED`, `RATE_LIMITED`, `INTERNAL_ERROR`)
+- **Integration tests:** `src/test/integration.test.ts` — full user journey tests crossing multiple API routes
 
 ## Critical Gotchas
 
@@ -78,7 +87,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 ## Database ID Convention
 
-- All 11 entity tables use `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))` — UUIDs generated in JS via `crypto.randomUUID()` and passed explicitly on INSERT (`src/lib/uuid.ts`)
+- All 13 entity tables use `TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16))))` — UUIDs generated in JS via `crypto.randomUUID()` and passed explicitly on INSERT (`src/lib/uuid.ts`)
 - The `_migrations` table is the sole exception — keeps `INTEGER PRIMARY KEY AUTOINCREMENT` (internal tooling, no API surface)
 - Tests use short readable string IDs (`'issue-rail'`, `'user-sarah'`) for determinism and clarity
 - Session cookie (`qr_user_id`) stores the UUID string directly — no parseInt needed

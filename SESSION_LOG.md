@@ -4,37 +4,6 @@
 
 ---
 
-## 2026-02-17 (Session 5) — Claude Code Permissions Fix
-
-### What was worked on
-
-1. **Fixed Claude Code permission prompts**
-   - Updated `~/.claude/settings.json`: changed `defaultMode` from `"acceptEdits"` to `"bypassPermissions"`
-   - Added missing tool permissions: `Read(*)`, `Write(*)`, `WebFetch(*)` to the allow list
-   - Kept deny rules for sensitive files (`.env`, secrets, `.ssh`)
-   - Takes effect in the next Claude Code session
-
-2. **Verified production health**
-   - Tests: 126/126 passing (~666ms)
-   - WhatsApp watchdog: still running, has auto-recovered 3 times today
-   - No code changes to commit — only local config update
-
-### Key decisions
-
-- **bypassPermissions over acceptEdits** — `acceptEdits` still prompts for Read/Write/WebFetch. `bypassPermissions` skips all prompts (with deny rules still enforced for sensitive files)
-
-### Next steps
-
-- Flesh out profile page
-- Add rate limiting to bot API
-- Consider `create_issue` bot action
-- Set up GitHub Actions CI
-- Add `.env.example`
-- Consider upgrading OpenClaw (`v2026.2.15` available) — may fix the reconnection bug
-- Monitor watchdog log to confirm it catches future WiFi drops automatically
-
----
-
 ## 2026-02-17 (Session 6) — Claude Code & OpenClaw Process Improvements
 
 ### What was worked on
@@ -253,4 +222,64 @@ Also created **`SCALING-ARCHITECTURE.md`** — comprehensive scaling document co
 - Remove "Plastic Waste" from `src/lib/seed.ts` so re-seeding doesn't bring it back
 - Profile page improvements
 - Consider `create_issue` bot action
+- Tighten CSP with nonce-based approach
+
+---
+
+## 2026-02-18 (Session 10) — Developer Best Practices (9 Items, 3 Phases)
+
+### What was worked on
+
+Implemented 9 developer best practices across 3 phases, all on the `best-practices` branch (PR #4):
+
+**Phase 1 — Quick Wins:**
+
+1. **Coverage thresholds** — Added to `vitest.config.ts`: 75% statements, 69% branches, 74% functions, 76% lines (based on current coverage so CI enforces it going forward)
+2. **Dependabot** — Created `.github/dependabot.yml` for weekly npm updates, grouped minor/patch, max 5 open PRs
+3. **Branch protection** — Configured via `gh api`: 1 approval required, `test` status check must pass, branch must be up-to-date, stale reviews dismissed
+
+**Phase 2 — Reliability & Data Integrity:** 4. **DB query timeouts** — `withTimeout()` wrapper in `src/lib/db.ts` using `Promise.race` with 5s default. Also added `concurrency: 10` to libSQL client config. 5. **Structured logging** — pino (`src/lib/logger.ts`) with `createRequestLogger()` for per-request context (requestId, action, IP, timing). Added to bot route — logs request entry, completion, errors with duration. 6. **Schema constraints** — CHECK constraints on all 13 entity tables: non-negative counters (`rioter_count >= 0`, `likes >= 0`, `rank >= 0`), health metrics (`0-100`), enum validation (`time_available`, `time_required`), length limits on text fields (`name <= 255`, `content <= 5000`, `description <= 2000`). Fixed `create_issue` Zod schema (had only 6 of 16 categories). Added `time_available` enum validation to `update_user` Zod schema.
+
+**Phase 3 — Hardening:** 7. **Input sanitization** — `src/lib/sanitize.ts`: `normalizePhone()` (E.164 validation), `trimAndLimit()`, `sanitizeText()` (strips control chars, preserves newlines/tabs/emojis). 18 test cases. 8. **Error codes** — `apiError()` now includes `code` field auto-inferred from HTTP status: `VALIDATION_ERROR`, `NOT_FOUND`, `UNAUTHORIZED`, `RATE_LIMITED`, `INTERNAL_ERROR`. New `apiValidationError()` returns field-level details. Bot route `err()` helper also includes codes. Updated users routes to use `apiValidationError` for Zod errors. 9. **Integration tests** — `src/test/integration.test.ts`: 4 test suites covering full user journeys (new user flow, feed flow, bot full cycle, edge cases including idempotent join, safe leave, unknown user errors, error code verification).
+
+### Files created/modified
+
+| File                                 | Action                                         |
+| ------------------------------------ | ---------------------------------------------- |
+| `vitest.config.ts`                   | Edit — coverage thresholds                     |
+| `.github/dependabot.yml`             | Create                                         |
+| `package.json` / `package-lock.json` | Edit — added pino dependency                   |
+| `src/lib/db.ts`                      | Edit — withTimeout, concurrency                |
+| `src/lib/db.test.ts`                 | Create — 4 tests                               |
+| `src/lib/logger.ts`                  | Create                                         |
+| `src/lib/logger.test.ts`             | Create — 3 tests                               |
+| `src/lib/schema.ts`                  | Edit — CHECK constraints on all tables         |
+| `src/lib/sanitize.ts`                | Create                                         |
+| `src/lib/sanitize.test.ts`           | Create — 18 tests                              |
+| `src/lib/api-response.ts`            | Edit — error codes, apiValidationError         |
+| `src/lib/api-response.test.ts`       | Create — 10 tests                              |
+| `src/app/api/bot/route.ts`           | Edit — logging, error codes, Zod fixes         |
+| `src/app/api/users/route.ts`         | Edit — apiValidationError                      |
+| `src/app/api/users/[id]/route.ts`    | Edit — apiValidationError                      |
+| `src/test/integration.test.ts`       | Create — 7 tests                               |
+| `CLAUDE.md`                          | Edit — updated test count, added new practices |
+
+### Key decisions
+
+- **Coverage thresholds set to current levels** — not aspirational. CI will enforce no regressions. Can raise them later.
+- **pino over winston** — lighter, faster, JSON by default, Vercel-friendly (stdout → Vercel log drain)
+- **Error codes auto-inferred from status** — backward compatible, no changes needed to existing apiError calls
+- **Schema constraints on seed-managed tables** — since seed drops and recreates, no migration needed. Just re-seed after merge.
+- **Promise.race for timeouts** — simpler than AbortSignal for libSQL, which doesn't natively support abort
+
+### Test count
+
+283 tests passing across 25 files (~2s) — up from 241 (+42 new tests)
+
+### Next steps
+
+- **Merge PR #4** (best-practices) after CI passes and user reviews
+- **Re-seed staging and production** after merge to apply new schema constraints
+- **Bot route change** — OpenClaw sessions may need clearing after merge since bot route error responses now include `code` field
+- Profile page improvements
 - Tighten CSP with nonce-based approach
