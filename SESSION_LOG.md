@@ -4,37 +4,6 @@
 
 ---
 
-## 2026-02-17 (Session 5) — Claude Code Permissions Fix
-
-### What was worked on
-
-1. **Fixed Claude Code permission prompts**
-   - Updated `~/.claude/settings.json`: changed `defaultMode` from `"acceptEdits"` to `"bypassPermissions"`
-   - Added missing tool permissions: `Read(*)`, `Write(*)`, `WebFetch(*)` to the allow list
-   - Kept deny rules for sensitive files (`.env`, secrets, `.ssh`)
-   - Takes effect in the next Claude Code session
-
-2. **Verified production health**
-   - Tests: 126/126 passing (~666ms)
-   - WhatsApp watchdog: still running, has auto-recovered 3 times today
-   - No code changes to commit — only local config update
-
-### Key decisions
-
-- **bypassPermissions over acceptEdits** — `acceptEdits` still prompts for Read/Write/WebFetch. `bypassPermissions` skips all prompts (with deny rules still enforced for sensitive files)
-
-### Next steps
-
-- Flesh out profile page
-- Add rate limiting to bot API
-- Consider `create_issue` bot action
-- Set up GitHub Actions CI
-- Add `.env.example`
-- Consider upgrading OpenClaw (`v2026.2.15` available) — may fix the reconnection bug
-- Monitor watchdog log to confirm it catches future WiFi drops automatically
-
----
-
 ## 2026-02-17 (Session 6) — Claude Code & OpenClaw Process Improvements
 
 ### What was worked on
