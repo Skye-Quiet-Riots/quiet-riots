@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { extractVideoId, getThumbnailUrl } from './youtube';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { extractVideoId, getThumbnailUrl, getVideoMetadata } from './youtube';
 
 describe('extractVideoId', () => {
   it('extracts from standard watch URL', () => {
@@ -62,5 +62,56 @@ describe('getThumbnailUrl', () => {
     expect(getThumbnailUrl('dQw4w9WgXcQ')).toBe(
       'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
     );
+  });
+});
+
+describe('getVideoMetadata', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('returns metadata on successful oEmbed response', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          title: 'Rick Astley - Never Gonna Give You Up',
+          thumbnail_url: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+          author_name: 'Rick Astley',
+        }),
+    });
+    const result = await getVideoMetadata('dQw4w9WgXcQ');
+    expect(result).toEqual({
+      title: 'Rick Astley - Never Gonna Give You Up',
+      thumbnail_url: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+      author_name: 'Rick Astley',
+    });
+  });
+
+  it('falls back to getThumbnailUrl when thumbnail_url missing', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          title: 'Some Video',
+          author_name: 'Author',
+        }),
+    });
+    const result = await getVideoMetadata('abc12345678');
+    expect(result?.thumbnail_url).toBe(
+      'https://img.youtube.com/vi/abc12345678/hqdefault.jpg',
+    );
+  });
+
+  it('returns null when response is not ok', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: false });
+    const result = await getVideoMetadata('nonexistent1');
+    expect(result).toBeNull();
+  });
+
+  it('returns null on network error', async () => {
+    global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
+    const result = await getVideoMetadata('dQw4w9WgXcQ');
+    expect(result).toBeNull();
   });
 });

@@ -23,6 +23,7 @@ vi.mock('@/lib/youtube', async () => {
 import { cookies } from 'next/headers';
 import { GET, POST } from './[id]/reels/route';
 import { POST as votePOST } from './[id]/reels/[reelId]/vote/route';
+import { GET as trendingGET } from '../reels/trending/route';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -157,5 +158,17 @@ describe('POST /api/issues/[id]/reels/[reelId]/vote', () => {
       params: Promise.resolve({ id: 'issue-rail', reelId: 'reel-001' }),
     });
     expect(response.status).toBe(401);
+  });
+});
+
+describe('GET /api/reels/trending', () => {
+  it('returns trending reels with issue names', async () => {
+    const response = await trendingGET();
+    const { data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(Array.isArray(data)).toBe(true);
+    if (data.length > 0) {
+      expect(data[0].issue_name).toBeDefined();
+    }
   });
 });

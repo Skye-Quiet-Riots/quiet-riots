@@ -6,6 +6,7 @@ import { ExpertCard } from './expert-card';
 import { FeedPostCard } from './feed-post-card';
 import { IssueCard } from './issue-card';
 import { OrgCard } from './org-card';
+import { ReelCard } from './reel-card';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -211,6 +212,72 @@ describe('IssueCard', () => {
     render(<IssueCard issue={issue} />);
     expect(screen.getByTestId('category-badge')).toBeDefined();
     expect(screen.getByTestId('trending')).toBeDefined();
+  });
+});
+
+describe('ReelCard', () => {
+  const reel = {
+    id: 'reel-1',
+    issue_id: 'issue-rail',
+    youtube_url: 'https://www.youtube.com/watch?v=test123',
+    youtube_video_id: 'test123',
+    title: 'When the train is cancelled again',
+    thumbnail_url: 'https://img.youtube.com/vi/test123/hqdefault.jpg',
+    duration_seconds: null,
+    caption: 'Every Monday morning',
+    submitted_by: null,
+    source: 'curated' as const,
+    status: 'approved' as const,
+    upvotes: 42,
+    views: 100,
+    created_at: '2026-01-01',
+  };
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('renders title and caption', () => {
+    render(<ReelCard reel={reel} />);
+    expect(screen.getByText('When the train is cancelled again')).toBeDefined();
+    expect(screen.getByText(/Every Monday morning/)).toBeDefined();
+  });
+
+  it('renders upvote count', () => {
+    render(<ReelCard reel={reel} />);
+    expect(screen.getByText(/42/)).toBeDefined();
+  });
+
+  it('renders source label', () => {
+    render(<ReelCard reel={reel} />);
+    expect(screen.getByText('Curated')).toBeDefined();
+  });
+
+  it('increments upvote on click', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<ReelCard reel={reel} />);
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+    await waitFor(() => {
+      expect(screen.getByText(/43/)).toBeDefined();
+    });
+  });
+
+  it('prevents double voting', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<ReelCard reel={reel} />);
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+    fireEvent.click(button);
+    await waitFor(() => {
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('hides caption when empty', () => {
+    const noCap = { ...reel, caption: '' };
+    render(<ReelCard reel={noCap} />);
+    expect(screen.queryByText(/\u201c/)).toBeNull(); // no opening quote
   });
 });
 
