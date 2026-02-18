@@ -92,30 +92,36 @@ Implemented 9 developer best practices across 3 phases, all on the `best-practic
 Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-banach` branch. Riot Reels are funny/ironic YouTube videos attached to issues — users can browse, submit, and upvote them.
 
 **Phase 1 — Data Layer:**
+
 - Added `RiotReel`, `ReelVote`, `ReelShownLog` interfaces to `src/types/index.ts`
 - Added 3 tables + 4 indexes to `src/lib/schema.ts` (`riot_reels`, `reel_votes`, `reel_shown_log`) with CHECK constraints
 - Created `migrations/003_riot_reels.sql`
 - Created `src/lib/youtube.ts` — `extractVideoId()` (regex for 5 URL formats), `getThumbnailUrl()`, `getVideoMetadata()` (oEmbed, no API key)
 
 **Phase 2 — Query Layer:**
+
 - Created `src/lib/queries/reels.ts` — 9 functions: getReelsForIssue, getReelById, createReel, voteOnReel, hasVoted, getTrendingReels, getUnseenReelForUser, logReelShown, incrementReelViews
 - Updated test seed data with 4 test reels + 1 vote
 
 **Phase 3 — API Routes:**
+
 - `GET/POST /api/issues/[id]/reels` — approved reels list + submit new reel
 - `POST /api/issues/[id]/reels/[reelId]/vote` — upvote (idempotent)
 - `GET /api/reels/trending` — top reels across all issues (last 7 days)
 - Bot actions: `get_riot_reel` (unseen reel + log shown) and `submit_riot_reel` (pending reel from YouTube URL)
 
 **Phase 4 — UI Components:**
+
 - `src/components/cards/reel-card.tsx` — thumbnail, title, caption, optimistic upvote button, source badge
 - `src/components/interactive/reels-section.tsx` — grid of ReelCards + submit form
 - Updated issue detail page and homepage (riot reel of the day widget)
 
 **Phase 5 — Seed Data:**
+
 - 17 placeholder reels across 10 issues in `src/lib/seed.ts`
 
 **Phase 6 — Tests:**
+
 - API route tests (GET/POST reels, vote, trending)
 - Bot tests (get_riot_reel, submit_riot_reel)
 - Integration tests (reel submission + get_riot_reel flow)
@@ -124,6 +130,7 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 - Fixed rate limiter test interference by adding `_resetRateLimitStore()` in bot test `beforeEach`
 
 **Phase 7 — Documentation:**
+
 - Updated ARCHITECTURE.md (pages, routes, tables, components, data layer)
 - Updated CLAUDE.md (test count, entity table count)
 - Updated .claude/rules/bot.md (17 actions, rate limiting, reel descriptions)
@@ -157,3 +164,66 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 - **OpenClaw session clearing** — bot route has 2 new actions, SKILL.md may need updating
 - Profile page improvements
 - Replace placeholder YouTube IDs with real videos
+
+---
+
+## 2026-02-18 (Session 12) — PR Review, Merge, SKILL.md Reels, User Testing
+
+### What was worked on
+
+1. **Visual tour of end-user experience**
+   - Showed production website: homepage, issues page, issue detail (Flight Delays)
+   - Fixed Vercel preview deployment error — staging DB was missing riot_reels tables
+   - Discovered `.env.local` points to **production** DB, not staging — critical gotcha
+   - Pulled Vercel Preview env vars, ran migration 003 directly against staging DB
+   - Seeded 5 real-ish reels into staging; fixed CSP `img-src` for YouTube thumbnails
+   - Showed WhatsApp bot experience via gateway logs and curl examples
+
+2. **CSP fix for YouTube thumbnails**
+   - Added `https://img.youtube.com https://i.ytimg.com` to `img-src` in `src/proxy.ts`
+   - Committed and pushed on `claude/suspicious-banach`
+
+3. **WhatsApp bot Riot Reels support (SKILL.md)**
+   - Added `get_riot_reel` and `submit_riot_reel` to API Actions Reference table
+   - Added Step 4.5: Riot Reels conversation step between Actions and Community
+   - Added Submit Reel sub-flow (YouTube URL → optional caption → submit_riot_reel)
+   - Updated choice sets in Steps 3, 4, 5, 6 to include "Watch a Riot Reel" option
+   - Cleared OpenClaw sessions and restarted gateway
+
+4. **Merged PR #8 (Riot Reels feature) to main**
+   - Used `gh pr merge 8 --squash --admin` to bypass review requirement
+   - CI passed, Vercel deployed successfully
+
+5. **User testing of WhatsApp bot Riot Reels API**
+   - Tested `get_riot_reel` against preview: first call returns reel, second returns different reel, third returns null (unseen tracking works)
+   - Tested `submit_riot_reel`: with caption, without caption, and invalid YouTube URL (all correct)
+   - Confirmed production deploy live after merge
+
+6. **Audited real vs fake YouTube videos**
+   - Seed data uses `placeholder01`-`placeholder17` — all fake
+   - Manually-seeded production reels: 3 of 5 video IDs are also fake (404)
+   - Only 2 real working videos found: `M11SvDtPBhA` (Miley Cyrus) and `Mq_wZE93ZAY` (Randy Gumtree)
+
+### Key decisions
+
+- **Admin merge for PR #8** — branch protection requires 1 approval; used `--admin` bypass at user's request
+- **SKILL.md reel flow** — reels sit between Actions (Step 4) and Community (Step 5); submit flow asks for URL then optional caption
+- **Step 3 choice change** — replaced "See all issues at Southern Rail" with "Watch a Riot Reel" to introduce reels early
+
+### Discoveries
+
+- **`.env.local` is production, not staging** — Vercel Preview env vars are separate; use `npx vercel env pull --environment preview` from the main repo root (not worktree) to get staging creds
+- **libSQL `datetime("now")` default fails** — `SQLITE_UNKNOWN: default value of column is not constant` when creating `_migrations` table on staging
+- **Rate limiting on bot API** — rapid curl calls in a loop hit the sliding-window limiter; need delays between calls for testing
+- **`npx vercel env pull` fails in worktrees** — must run from the linked repo root
+
+### Test count
+
+344 tests passing across 28 files (~2s) — unchanged
+
+### Next steps
+
+- **Find and seed real YouTube videos** for all 17 placeholder reels across 10 issues (started but not completed)
+- Replace fake video IDs in both seed.ts and production DB
+- Profile page improvements
+- Consider updating seed.ts to include real YouTube IDs so re-seeding doesn't regress
