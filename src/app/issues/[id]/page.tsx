@@ -10,6 +10,7 @@ import {
   getCountryBreakdown,
 } from '@/lib/queries/community';
 import { getSynonymsForIssue } from '@/lib/queries/synonyms';
+import { getReelsForIssue } from '@/lib/queries/reels';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getSession } from '@/lib/session';
 
@@ -25,6 +26,7 @@ import { PivotToggle } from '@/components/interactive/pivot-toggle';
 import { JoinButton } from '@/components/interactive/join-button';
 import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
+import { ReelsSection } from '@/components/interactive/reels-section';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
 interface Props {
@@ -50,6 +52,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const feedPosts = await getFeedPosts(issue.id);
   const countries = await getCountryBreakdown(issue.id);
   const synonyms = await getSynonymsForIssue(issue.id);
+  const reels = await getReelsForIssue(issue.id);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -122,6 +125,15 @@ export default async function IssueDetailPage({ params }: Props) {
           (selection), and 🤝 <strong>Together</strong> (community).
         </p>
         <ActionsSection issueId={issue.id} initialActions={actions} />
+      </section>
+
+      {/* Riot Reels */}
+      <section className="mb-8">
+        <h2 className="mb-4 text-lg font-bold">🎬 Riot Reels</h2>
+        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+          Funny and ironic videos that capture the spirit of this Quiet Riot.
+        </p>
+        <ReelsSection issueId={issue.id} initialReels={reels} />
       </section>
 
       {/* Two-column layout for sidebar content */}

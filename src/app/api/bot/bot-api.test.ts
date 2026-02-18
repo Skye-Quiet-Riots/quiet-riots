@@ -1,12 +1,17 @@
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
 import { createBotRequest } from '@/test/api-helpers';
 import { POST } from './route';
+import { _resetRateLimitStore } from '@/lib/rate-limit';
 
 beforeAll(async () => {
   await setupTestDb();
   await seedTestData();
+});
+
+beforeEach(() => {
+  _resetRateLimitStore();
 });
 
 afterAll(async () => {
@@ -271,6 +276,60 @@ describe('Bot API: update_user', () => {
   it('fails for unknown user', async () => {
     const { status } = await callBot('update_user', {
       phone: '+0000000000',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('get_riot_reel', () => {
+  it('returns an unseen reel for the issue', async () => {
+    const { status, body } = await callBot('get_riot_reel', {
+      phone: '+5511999999999', // Marcio
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(200);
+    expect(body.data.reel).not.toBeNull();
+    expect(body.data.reel.issue_id).toBe('issue-rail');
+  });
+
+  it('fails for unknown user', async () => {
+    const { status } = await callBot('get_riot_reel', {
+      phone: '+0000000000',
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('submit_riot_reel', () => {
+  it('creates a pending reel', async () => {
+    const { status, body } = await callBot('submit_riot_reel', {
+      phone: '+5511999999999', // Marcio
+      issue_id: 'issue-broadband',
+      youtube_url: 'https://www.youtube.com/watch?v=botsubmit01',
+      caption: 'When BT said fibre was coming soon',
+    });
+    expect(status).toBe(200);
+    expect(body.data.reel.status).toBe('pending');
+    expect(body.data.reel.source).toBe('community');
+    expect(body.data.reel.caption).toBe('When BT said fibre was coming soon');
+  });
+
+  it('fails for invalid YouTube URL', async () => {
+    const { status, body } = await callBot('submit_riot_reel', {
+      phone: '+5511999999999',
+      issue_id: 'issue-broadband',
+      youtube_url: 'not-a-url',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toBe('Invalid YouTube URL');
+  });
+
+  it('fails for unknown user', async () => {
+    const { status } = await callBot('submit_riot_reel', {
+      phone: '+0000000000',
+      issue_id: 'issue-rail',
+      youtube_url: 'https://www.youtube.com/watch?v=test1234567',
     });
     expect(status).toBe(404);
   });

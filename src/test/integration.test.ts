@@ -180,6 +180,43 @@ describe('Integration: Edge cases', () => {
     expect(post.body.error).toContain('User not found');
   });
 
+  it('riot reel submission via bot creates pending reel', async () => {
+    const phone = '+44700900004';
+    await callBot('identify', { phone, name: 'Reel User' });
+
+    const submit = await callBot('submit_riot_reel', {
+      phone,
+      issue_id: 'issue-rail',
+      youtube_url: 'https://www.youtube.com/watch?v=integ_reel1',
+      caption: 'Integration test reel',
+    });
+    expect(submit.status).toBe(200);
+    expect(submit.body.data.reel.status).toBe('pending');
+    expect(submit.body.data.reel.youtube_video_id).toBe('integ_reel1');
+  });
+
+  it('get_riot_reel returns reel and logs it as shown', async () => {
+    const phone = '+44700900005';
+    await callBot('identify', { phone, name: 'Viewer User' });
+
+    // Get a reel for broadband (has 1 featured reel in seed)
+    const first = await callBot('get_riot_reel', {
+      phone,
+      issue_id: 'issue-broadband',
+    });
+    expect(first.status).toBe(200);
+    expect(first.body.data.reel).not.toBeNull();
+    expect(first.body.data.reel.issue_id).toBe('issue-broadband');
+
+    // Second call — all reels shown, should return null
+    const second = await callBot('get_riot_reel', {
+      phone,
+      issue_id: 'issue-broadband',
+    });
+    expect(second.status).toBe(200);
+    expect(second.body.data.reel).toBeNull();
+  });
+
   it('error responses include error codes', async () => {
     // 401 Unauthorized
     const noAuth = new Request('http://localhost:3000/api/bot', {

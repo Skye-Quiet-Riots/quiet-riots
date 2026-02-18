@@ -27,6 +27,13 @@ import {
 import { getSynonymsForIssue, addSynonym } from '@/lib/queries/synonyms';
 import { getSeasonalPattern } from '@/lib/queries/seasonal-patterns';
 import { getRelatedIssues } from '@/lib/queries/issue-relations';
+import {
+  getUnseenReelForUser,
+  logReelShown,
+  incrementReelViews,
+  createReel,
+} from '@/lib/queries/reels';
+import { extractVideoId, getThumbnailUrl, getVideoMetadata } from '@/lib/youtube';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 
@@ -82,6 +89,13 @@ const actionSchemas = {
       'Other',
     ]),
     description: z.string().optional().default(''),
+  }),
+  get_riot_reel: phoneAndIssue,
+  submit_riot_reel: z.object({
+    phone: z.string().min(1),
+    issue_id: z.string().min(1),
+    youtube_url: z.string().min(1),
+    caption: z.string().optional().default(''),
   }),
 } as const;
 
@@ -346,6 +360,50 @@ export async function POST(request: NextRequest) {
           skills: p.skills as string | undefined,
         });
         return ok({ user: updated });
+      }
+
+      // ─── Riot Reels ──────────────────────────────────────
+      case 'get_riot_reel': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const reel = await getUnseenReelForUser(issueId, user.id);
+        if (!reel) {
+          return ok({ reel: null, message: 'No more unseen reels for this issue' });
+        }
+
+        await logReelShown(user.id, reel.id, issueId);
+        await incrementReelViews(reel.id);
+        return ok({ reel });
+      }
+
+      case 'submit_riot_reel': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const youtubeUrl = p.youtube_url as string;
+        const caption = (p.caption as string) || '';
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const videoId = extractVideoId(youtubeUrl);
+        if (!videoId) return err('Invalid YouTube URL');
+
+        const metadata = await getVideoMetadata(videoId);
+        const reel = await createReel({
+          issueId,
+          youtubeUrl,
+          youtubeVideoId: videoId,
+          title: metadata?.title ?? '',
+          thumbnailUrl: metadata?.thumbnail_url ?? getThumbnailUrl(videoId),
+          durationSeconds: null,
+          caption,
+          submittedBy: user.id,
+          source: 'community',
+          status: 'pending',
+        });
+        return ok({ reel });
       }
 
       default:

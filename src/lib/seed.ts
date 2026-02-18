@@ -2478,10 +2478,211 @@ export async function seed() {
     'related_to',
   ]);
 
+  // =============================
+  // RIOT REELS (2-3 per top issues, curated, placeholder video IDs)
+  // =============================
+  const reelSql = `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  const reelData: [string, string, string, string, string, string, number, number][] = [
+    // Train Cancellations
+    [
+      'Train Cancellations',
+      'placeholder01',
+      'British Rail — We\'re Getting There (1987)',
+      'They were not, in fact, getting there',
+      'curated',
+      'approved',
+      342,
+      1890,
+    ],
+    [
+      'Train Cancellations',
+      'placeholder02',
+      'The Rocket: When trains were the future',
+      'Stephenson would be horrified',
+      'curated',
+      'approved',
+      218,
+      1240,
+    ],
+    // Broadband Speed
+    [
+      'Broadband Speed',
+      'placeholder03',
+      'Dial-up internet sound — 10 hours',
+      'The shared pain of a generation',
+      'curated',
+      'approved',
+      567,
+      3400,
+    ],
+    [
+      'Broadband Speed',
+      'placeholder04',
+      'BT promises broadband for all by 2012',
+      'Irony overload',
+      'curated',
+      'approved',
+      234,
+      1560,
+    ],
+    // Energy Bill Costs
+    [
+      'Energy Bill Costs',
+      'placeholder05',
+      '1970s ad: North Sea gas will make energy cheap forever',
+      'That aged like milk',
+      'curated',
+      'approved',
+      445,
+      2800,
+    ],
+    [
+      'Energy Bill Costs',
+      'placeholder06',
+      'Energy company CEO: "Affordable energy is our mission"',
+      'Their mission was clearly something else',
+      'curated',
+      'approved',
+      189,
+      980,
+    ],
+    // Sewage in Rivers
+    [
+      'Sewage in Rivers',
+      'placeholder07',
+      'Water company CEO: "Crystal clear commitment to the environment"',
+      'The water was definitely not crystal clear',
+      'curated',
+      'featured',
+      892,
+      5600,
+    ],
+    // NHS Waiting Times
+    [
+      'NHS Waiting Times',
+      'placeholder08',
+      'Old NHS recruitment ad: "We\'ll see you right away"',
+      'Unintentional comedy',
+      'curated',
+      'approved',
+      567,
+      3200,
+    ],
+    // Hidden Bank Charges
+    [
+      'Hidden Bank Charges',
+      'placeholder09',
+      'Bank ad from the 90s: "We put our customers first"',
+      'Narrator: they did not',
+      'curated',
+      'approved',
+      312,
+      1780,
+    ],
+    // Delivery Problems
+    [
+      'Delivery Problems',
+      'placeholder10',
+      'CCTV compilation: Delivery drivers vs front doors',
+      'Satisfying anger',
+      'curated',
+      'approved',
+      678,
+      4500,
+    ],
+    [
+      'Delivery Problems',
+      'placeholder11',
+      'Pathé News: The marvellous baggage carousel',
+      'Same energy as the M1 clip',
+      'curated',
+      'approved',
+      234,
+      1340,
+    ],
+    // Self-Checkout Frustration
+    [
+      'Self-Checkout Frustration',
+      'placeholder12',
+      '"Unexpected item in bagging area" — the remix',
+      'Shared pain turned into art',
+      'curated',
+      'approved',
+      789,
+      5100,
+    ],
+    // Flight Delays
+    [
+      'Flight Delays',
+      'placeholder13',
+      'Airline ad: "We get you there on time, every time"',
+      'Confidence of a company that has never met weather',
+      'curated',
+      'approved',
+      345,
+      2100,
+    ],
+    // Pothole Damage
+    [
+      'Pothole Damage',
+      'placeholder14',
+      'Council promo: "Our world-class road maintenance programme"',
+      'The roads would beg to differ',
+      'curated',
+      'approved',
+      456,
+      2900,
+    ],
+    // Mobile Signal Dead Zones
+    [
+      'Mobile Signal Dead Zones',
+      'placeholder15',
+      '1990s Vodafone ad: "Coverage everywhere"',
+      'The promise vs reality',
+      'curated',
+      'featured',
+      1247,
+      8900,
+    ],
+    [
+      'Mobile Signal Dead Zones',
+      'placeholder16',
+      'Pathé News: The first mobile telephone call',
+      'Better reception in 1985 than on the M1 in 2026',
+      'curated',
+      'approved',
+      567,
+      3400,
+    ],
+    // Customer Service Hold Times
+    [
+      'Customer Service Hold Times',
+      'placeholder17',
+      '"Your call is important to us" — 3 hour loop',
+      'If it were important you would answer it',
+      'curated',
+      'approved',
+      432,
+      2600,
+    ],
+  ];
+
+  let reelCount = 0;
+  for (const [issueName, videoId, title, caption, source, status, upvotes, views] of reelData) {
+    const issueId = issueIds[issueName];
+    if (!issueId) continue;
+    const url = `https://www.youtube.com/watch?v=${videoId}`;
+    const thumb = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    await insertRow(reelSql, [issueId, url, videoId, title, thumb, caption, source, status, upvotes, views]);
+    reelCount++;
+  }
+
   console.log('Database seeded successfully!');
   console.log(`   ${issues.length} issues`);
   console.log(`   ${orgs.length} organisations`);
   console.log(`   ${users.length} sample users`);
+  console.log(`   ${reelCount} riot reels`);
   console.log(
     '   150+ pivot links, 80+ synonyms, 35+ actions, seasonal patterns, issue relations — all populated',
   );

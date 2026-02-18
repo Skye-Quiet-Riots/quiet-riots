@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import { getTrendingIssues } from '@/lib/queries/issues';
+import { getTrendingReels } from '@/lib/queries/reels';
 import { IssueCard } from '@/components/cards/issue-card';
 
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const trending = await getTrendingIssues(6);
+  const topReels = await getTrendingReels(1);
+  const topReel = topReels[0];
 
   return (
     <div className="flex flex-col">
@@ -54,6 +57,55 @@ export default async function Home() {
               {trending.map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Riot Reel of the Day */}
+      {topReel && (
+        <section className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="mb-6 text-center text-2xl font-bold tracking-tight">
+              🎬 Riot Reel of the Day
+            </h2>
+            <div className="mx-auto max-w-lg">
+              <a
+                href={topReel.youtube_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block overflow-hidden rounded-lg"
+              >
+                <img
+                  src={topReel.thumbnail_url}
+                  alt={topReel.title}
+                  className="aspect-video w-full object-cover transition-opacity hover:opacity-90"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/60 text-xl text-white">
+                    ▶
+                  </div>
+                </div>
+              </a>
+              <div className="mt-3 text-center">
+                <p className="font-semibold">{topReel.title}</p>
+                {topReel.caption && (
+                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                    &ldquo;{topReel.caption}&rdquo;
+                  </p>
+                )}
+                <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-500">
+                  😂 {topReel.upvotes.toLocaleString()} rioters found this funny
+                  {' · '}
+                  From:{' '}
+                  <Link
+                    href={`/issues/${topReel.issue_id}`}
+                    className="text-purple-600 hover:text-purple-700 dark:text-purple-400"
+                  >
+                    {topReel.issue_name}
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </section>

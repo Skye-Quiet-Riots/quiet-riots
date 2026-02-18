@@ -314,4 +314,80 @@ export async function seedTestData() {
     sql: `INSERT INTO issue_relations (child_id, parent_id, relation_type) VALUES (?, ?, ?)`,
     args: ['issue-rail', 'issue-broadband', 'related_to'],
   });
+
+  // Riot Reels
+  await db.execute({
+    sql: `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'reel-001',
+      'issue-rail',
+      'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      'dQw4w9WgXcQ',
+      'British Rail — We Are Getting There (1987)',
+      'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+      'They were not, in fact, getting there',
+      'curated',
+      'approved',
+      42,
+      156,
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'reel-002',
+      'issue-rail',
+      'https://www.youtube.com/watch?v=abc123test1',
+      'abc123test1',
+      'Platform announcement bingo',
+      'https://img.youtube.com/vi/abc123test1/hqdefault.jpg',
+      'We apologise for the delay to your delay',
+      'community',
+      'approved',
+      18,
+      89,
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'reel-003',
+      'issue-broadband',
+      'https://www.youtube.com/watch?v=xyz789test1',
+      'xyz789test1',
+      'Dial-up internet sound — 10 hours',
+      'https://img.youtube.com/vi/xyz789test1/hqdefault.jpg',
+      'The shared pain of a generation',
+      'curated',
+      'featured',
+      67,
+      234,
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'reel-004',
+      'issue-rail',
+      'https://www.youtube.com/watch?v=pending00001',
+      'pending00001',
+      'Pending reel that should not appear',
+      'https://img.youtube.com/vi/pending00001/hqdefault.jpg',
+      'This should not be visible',
+      'community',
+      'pending',
+      0,
+      0,
+    ],
+  });
+
+  // Reel votes
+  await db.execute({
+    sql: `INSERT INTO reel_votes (reel_id, user_id) VALUES (?, ?)`,
+    args: ['reel-001', 'user-sarah'],
+  });
 }
