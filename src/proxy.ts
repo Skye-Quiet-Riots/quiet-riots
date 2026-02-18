@@ -11,7 +11,7 @@ export function proxy(request: NextRequest) {
     // In dev, unsafe-eval is needed for React debugging; in prod, nonce + strict-dynamic suffices
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''}`,
     `style-src 'self' 'nonce-${nonce}'`,
-    "img-src 'self' data: blob:",
+    "img-src 'self' data: blob: https://img.youtube.com https://i.ytimg.com",
     "font-src 'self'",
     // Allow Sentry ingest for error reporting
     "connect-src 'self' https://*.ingest.us.sentry.io https://*.ingest.sentry.io",
