@@ -22,6 +22,7 @@
 - **Model:** `anthropic/claude-sonnet-4-20250514` (set in openclaw.json as `agents.defaults.model.primary`)
 - **IMPORTANT:** BOOTSTRAP.md must NOT exist in workspace (overrides skill loading)
 - **Session scope:** `per-channel-peer` (each WhatsApp user gets own context)
+- **Session reset:** `mode: "idle"`, `idleMinutes: 1440` — sessions persist until 24h of inactivity (default was `mode: "daily"` which wiped at 4 AM)
 - **PATH note:** In sandbox environments, use `/opt/homebrew/bin/node` and `/opt/homebrew/bin/npm` directly
 - **URL note:** SKILL.md and TOOLS.md must use `https://www.quietriots.com` (with www) — bare domain 307 redirects break POST requests
 - **Session cache:** If SKILL.md URLs or behaviour change significantly, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway to clear stale context

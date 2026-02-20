@@ -4,49 +4,6 @@
 
 ---
 
-## 2026-02-17 (Session 9) — Merge, Seed, and Deploy 50-Issue Expansion
-
-### What was worked on
-
-1. **Vercel preview deployment fixes**
-   - Disabled Deployment Protection (SSO auth) so preview URLs are publicly accessible
-   - Fixed `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` Preview env vars that had trailing newline characters (`%0A`), causing `TypeError: Invalid URL`
-   - Redeployed preview — confirmed it loads correctly with staging data
-
-2. **Merged PR #2 (50-issue expansion) to main**
-   - Resolved 10 merge conflicts between the expanded data branch and the UUID migration from `intelligent-brown`
-   - Fixed `seasonal_patterns` and `issue_relations` tables in `schema.ts` — still had `INTEGER PRIMARY KEY AUTOINCREMENT` instead of TEXT UUIDs (missed during merge)
-   - Updated `seasonal-patterns.ts` and `issue-relations.ts` query files: `number` params → `string`
-   - Updated both test files: integer IDs → string IDs (`'issue-rail'`, `'issue-broadband'`, `'issue-flights'`)
-   - All 241 tests passing, build clean
-
-3. **Seeded production and staging databases**
-   - Both now have 49 issues, 50 organisations across 16 categories (Insurance: Aviva, Admiral, Direct Line etc.)
-   - Discovered `tsx` doesn't load `.env.local` — seed silently went to local `file:quiet-riots.db` instead of remote Turso. Must pass env vars explicitly.
-   - Removed "Plastic Waste" issue from both databases per user request
-
-4. **Added missing test assertions (PR #3)**
-   - `GET /api/issues/[id]` and `POST /api/bot` `get_issue` responses include `seasonalPattern` and `relatedIssues` but tests didn't assert on them
-   - Added assertions, merged to main
-
-### Key decisions
-
-- **Schema fix committed directly to main** — the `seasonal_patterns`/`issue_relations` UUID fix was critical for seeding and couldn't wait for a PR
-- **Env vars passed explicitly for seeding** — `source <(grep -E '^TURSO_' .env.local | sed 's/^/export /')` pattern for reliable remote seeding
-
-### Test count
-
-241 tests passing across 20 files (~1.7s)
-
-### Next steps
-
-- Remove "Plastic Waste" from `src/lib/seed.ts` so re-seeding doesn't bring it back
-- Profile page improvements
-- Consider `create_issue` bot action
-- Tighten CSP with nonce-based approach
-
----
-
 ## 2026-02-18 (Session 10) — Developer Best Practices (9 Items, 3 Phases)
 
 ### What was worked on
@@ -227,3 +184,56 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 - Replace fake video IDs in both seed.ts and production DB
 - Profile page improvements
 - Consider updating seed.ts to include real YouTube IDs so re-seeding doesn't regress
+
+---
+
+## 2026-02-20 (Session 13) — Fix WhatsApp Bot Overnight Memory Loss
+
+### What was worked on
+
+1. **Diagnosed WhatsApp bot memory loss**
+   - Investigated gateway logs, watchdog logs, auto-update logs, and session files
+   - Found that session files DO persist on disk across gateway restarts — the `.jsonl` transcripts and `sessions.json` survive
+   - Discovered a new session was being created every morning: Feb 18 → `067bbeea`, Feb 19 → `0be631b8`, Feb 20 → `8a29c366` — each starting fresh with zero context
+   - Root cause: OpenClaw's default `session.reset.mode: "daily"` resets all sessions at 4 AM local time. The first inbound message after 4 AM triggers a brand new session ID, orphaning the old one
+
+2. **Fixed session persistence**
+   - Set `session.reset.mode` to `"idle"` — no more scheduled 4 AM wipes
+   - Set `session.reset.idleMinutes` to `1440` (24 hours) — sessions only reset after 24h of inactivity from that user
+   - Users can still manually reset with `/new` or `/reset`
+   - Restarted gateway to apply config
+
+3. **Gateway health check**
+   - WiFi dropped ~20:03–20:43 on Feb 19, causing ~40 minutes of failed reconnection attempts
+   - Watchdog correctly detected and restarted gateway at 20:43
+   - Gateway has been stable since, handling messages overnight and this morning
+   - Auto-update on Feb 19 failed (no network), last successful update was Feb 18 (2026.2.15 → 2026.2.17)
+   - Current version 2026.2.17, update available to 2026.2.19-2
+
+4. **Documentation updates**
+   - Added session reset gotcha to CLAUDE.md Critical Gotchas
+   - Added session reset config to OPERATIONS.md WhatsApp Bot section
+   - Archived session 9 to `session-logs/2026-02-sessions-9.md`
+
+### Key decisions
+
+- **24h idle timeout over daily reset** — the bot should remember conversations across days if the user is actively engaged. 24h idle is generous enough that casual users won't hit it, but prevents unbounded session growth
+- **No code changes** — this was purely an OpenClaw config issue, not a Quiet Riots code bug
+
+### Discoveries
+
+- **OpenClaw default session reset is `daily` at 4 AM** — undocumented in our CLAUDE.md until now. This is the default when `session.reset` is not configured. The auto-update LaunchAgent also runs at 04:00 which compounds the issue (gateway restart + session expiry).
+- **Orphaned session files** — old sessions remain on disk after reset but are no longer referenced by `sessions.json`. 7 `.jsonl` files totalling ~780KB from the last 3 days.
+- **OpenClaw `read` tool error** — gateway.err.log shows `ENOENT: no such file or directory, access '/Users/skye/.openclaw/workspace/memory'` — the bot is trying to read/write durable memory but the directory doesn't exist.
+
+### Test count
+
+344 tests passing across 28 files (~2s) — unchanged (no code changes this session)
+
+### Next steps
+
+- **Create `~/.openclaw/workspace/memory/` directory** — the bot's memory flush is failing silently because this directory doesn't exist
+- **Clean up orphaned session files** — 7 old `.jsonl` files can be deleted
+- **Update OpenClaw** — current 2026.2.17, available 2026.2.19-2
+- Find and seed real YouTube videos for placeholder reels
+- Profile page improvements
