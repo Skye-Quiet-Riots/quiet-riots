@@ -284,6 +284,51 @@ export interface ReelShownLog {
   shown_at: string;
 }
 
+// Riot Wallet
+export type CampaignStatus = 'active' | 'funded' | 'disbursed' | 'cancelled';
+export type WalletTransactionType = 'topup' | 'contribute' | 'refund';
+
+export interface Wallet {
+  id: string;
+  user_id: string;
+  balance_pence: number;
+  total_loaded_pence: number;
+  total_spent_pence: number;
+  currency: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface WalletTransaction {
+  id: string;
+  wallet_id: string;
+  type: WalletTransactionType;
+  amount_pence: number;
+  campaign_id: string | null;
+  issue_id: string | null;
+  stripe_payment_id: string | null;
+  description: string;
+  created_at: string;
+}
+
+export interface Campaign {
+  id: string;
+  issue_id: string;
+  org_id: string | null;
+  title: string;
+  description: string;
+  target_pence: number;
+  raised_pence: number;
+  contributor_count: number;
+  recipient: string | null;
+  recipient_url: string | null;
+  status: CampaignStatus;
+  platform_fee_pct: number;
+  funded_at: string | null;
+  disbursed_at: string | null;
+  created_at: string;
+}
+
 export const CATEGORY_EMOJIS: Record<Category, string> = {
   Transport: '🚂',
   Telecoms: '📶',

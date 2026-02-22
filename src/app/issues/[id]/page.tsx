@@ -11,6 +11,7 @@ import {
 } from '@/lib/queries/community';
 import { getSynonymsForIssue } from '@/lib/queries/synonyms';
 import { getReelsForIssue } from '@/lib/queries/reels';
+import { getCampaignsForIssue } from '@/lib/queries/campaigns';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getSession } from '@/lib/session';
 
@@ -27,6 +28,7 @@ import { JoinButton } from '@/components/interactive/join-button';
 import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
 import { ReelsSection } from '@/components/interactive/reels-section';
+import { CampaignProgress } from '@/components/data/campaign-progress';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
 interface Props {
@@ -53,6 +55,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const countries = await getCountryBreakdown(issue.id);
   const synonyms = await getSynonymsForIssue(issue.id);
   const reels = await getReelsForIssue(issue.id);
+  const campaigns = await getCampaignsForIssue(issue.id);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -126,6 +129,13 @@ export default async function IssueDetailPage({ params }: Props) {
         </p>
         <ActionsSection issueId={issue.id} initialActions={actions} />
       </section>
+
+      {/* Campaigns */}
+      {campaigns.length > 0 && (
+        <section className="mb-8">
+          <CampaignProgress campaigns={campaigns} />
+        </section>
+      )}
 
       {/* Riot Reels */}
       <section className="mb-8">

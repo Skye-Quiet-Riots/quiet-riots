@@ -2488,7 +2488,7 @@ export async function seed() {
     [
       'Train Cancellations',
       'placeholder01',
-      'British Rail — We\'re Getting There (1987)',
+      "British Rail — We're Getting There (1987)",
       'They were not, in fact, getting there',
       'curated',
       'approved',
@@ -2674,8 +2674,164 @@ export async function seed() {
     if (!issueId) continue;
     const url = `https://www.youtube.com/watch?v=${videoId}`;
     const thumb = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-    await insertRow(reelSql, [issueId, url, videoId, title, thumb, caption, source, status, upvotes, views]);
+    await insertRow(reelSql, [
+      issueId,
+      url,
+      videoId,
+      title,
+      thumb,
+      caption,
+      source,
+      status,
+      upvotes,
+      views,
+    ]);
     reelCount++;
+  }
+
+  // =============================
+  // CAMPAIGNS (Riot Treasury)
+  // =============================
+  const campaignSql = `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, recipient_url, status, platform_fee_pct) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  const campaigns: [
+    string,
+    string,
+    string,
+    number,
+    number,
+    number,
+    string,
+    string | null,
+    string,
+    number,
+  ][] = [
+    [
+      'Train Cancellations',
+      'Avanti Legal Review',
+      'Fund independent legal review of Avanti West Coast franchise obligations and compensation policies',
+      100000,
+      31000,
+      155,
+      'Transport Focus',
+      'https://www.transportfocus.org.uk/',
+      'active',
+      15,
+    ],
+    [
+      'Train Cancellations',
+      'Season Ticket Refund Toolkit',
+      'Build a free toolkit to help commuters claim back unused season ticket days',
+      50000,
+      29000,
+      145,
+      'Transport Salaried Staffs Association',
+      null,
+      'active',
+      15,
+    ],
+    [
+      'Sewage in Rivers',
+      'Brighton Water Testing',
+      'Fund independent water quality testing at 12 Brighton beach sites',
+      50000,
+      18750,
+      313,
+      'Surfers Against Sewage',
+      'https://www.sas.org.uk/',
+      'active',
+      15,
+    ],
+    [
+      'Sewage in Rivers',
+      'River Testing Kits',
+      'Crowdfund portable water testing kits for 50 volunteer river monitors across England',
+      100000,
+      65000,
+      325,
+      'The Rivers Trust',
+      'https://theriverstrust.org/',
+      'active',
+      15,
+    ],
+    [
+      'Broadband Speed',
+      'Community Speed Map App',
+      'Fund development of a community broadband speed testing and mapping app',
+      75000,
+      58500,
+      293,
+      'Open Rights Group',
+      'https://www.openrightsgroup.org/',
+      'active',
+      15,
+    ],
+    [
+      'GP Appointment Access',
+      'GP Access FOI Requests',
+      'Crowdfund Freedom of Information requests to every NHS trust on GP appointment statistics',
+      45000,
+      5400,
+      54,
+      'Healthwatch England',
+      'https://www.healthwatch.co.uk/',
+      'active',
+      15,
+    ],
+    [
+      'Flight Delays',
+      'Airline Compensation Guide',
+      'Create a comprehensive free guide to claiming EU261/UK261 flight delay compensation',
+      60000,
+      26400,
+      132,
+      'AviationADR',
+      null,
+      'active',
+      15,
+    ],
+    [
+      'Energy Bill Costs',
+      'Smart Meter Audit',
+      'Fund an independent audit of smart meter accuracy across 500 households',
+      80000,
+      80000,
+      400,
+      'Citizens Advice',
+      'https://www.citizensadvice.org.uk/',
+      'funded',
+      15,
+    ],
+  ];
+
+  let campaignCount = 0;
+  for (const [
+    issueName,
+    title,
+    description,
+    target,
+    raised,
+    contributors,
+    recipient,
+    recipientUrl,
+    status,
+    feePct,
+  ] of campaigns) {
+    const issueId = issueIds[issueName];
+    if (!issueId) continue;
+    await insertRow(campaignSql, [
+      issueId,
+      title,
+      description,
+      target,
+      raised,
+      contributors,
+      recipient,
+      recipientUrl,
+      status,
+      feePct,
+    ]);
+    campaignCount++;
   }
 
   console.log('Database seeded successfully!');
@@ -2683,6 +2839,7 @@ export async function seed() {
   console.log(`   ${orgs.length} organisations`);
   console.log(`   ${users.length} sample users`);
   console.log(`   ${reelCount} riot reels`);
+  console.log(`   ${campaignCount} campaigns`);
   console.log(
     '   150+ pivot links, 80+ synonyms, 35+ actions, seasonal patterns, issue relations — all populated',
   );

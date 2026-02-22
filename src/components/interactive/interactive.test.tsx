@@ -7,6 +7,9 @@ import { FeedSection } from './feed-section';
 import { PivotToggle } from './pivot-toggle';
 import { TimeSkillFilter } from './time-skill-filter';
 import { ReelsSection } from './reels-section';
+import { TopUpForm } from './topup-form';
+import { ContributeForm } from './contribute-form';
+import { StatusFilter } from './status-filter';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -273,5 +276,85 @@ describe('TimeSkillFilter', () => {
     fireEvent.click(screen.getByText('1 min'));
     const lastCall = onChange.mock.calls[onChange.mock.calls.length - 1][0];
     expect(lastCall.time).toBeUndefined();
+  });
+});
+
+describe('TopUpForm', () => {
+  it('renders preset amount buttons', () => {
+    render(<TopUpForm />);
+    expect(screen.getByText('£1')).toBeDefined();
+    expect(screen.getByText('£5')).toBeDefined();
+    expect(screen.getByText('£10')).toBeDefined();
+    expect(screen.getByText('£20')).toBeDefined();
+  });
+
+  it('renders custom amount input', () => {
+    render(<TopUpForm />);
+    expect(screen.getByPlaceholderText('Custom amount (£)')).toBeDefined();
+  });
+
+  it('calls API on preset click', async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ data: { paymentUrl: 'https://pay.test/123' } }),
+    });
+    global.fetch = mockFetch;
+    window.open = vi.fn();
+
+    render(<TopUpForm />);
+    fireEvent.click(screen.getByText('£5'));
+
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith(
+        '/api/wallet/topup',
+        expect.objectContaining({
+          method: 'POST',
+        }),
+      );
+    });
+  });
+});
+
+describe('ContributeForm', () => {
+  it('renders balance and preset amounts', () => {
+    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={500} />);
+    expect(screen.getByText(/£5/)).toBeDefined();
+    expect(screen.getByText('50p')).toBeDefined();
+    expect(screen.getByText('£2')).toBeDefined();
+  });
+
+  it('disables buttons when balance is too low', () => {
+    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={0} />);
+    const buttons = screen.getAllByRole('button');
+    // Preset buttons should be disabled
+    const presetButton = buttons.find((b) => b.textContent === '50p');
+    expect(presetButton?.getAttribute('disabled')).toBe('');
+  });
+
+  it('shows low balance message when empty', () => {
+    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={0} />);
+    expect(screen.getByText(/wallet is empty/)).toBeDefined();
+  });
+});
+
+describe('StatusFilter', () => {
+  it('renders all status options', () => {
+    render(<StatusFilter />);
+    expect(screen.getByText('All')).toBeDefined();
+    expect(screen.getByText('Active')).toBeDefined();
+    expect(screen.getByText('Funded')).toBeDefined();
+    expect(screen.getByText('Disbursed')).toBeDefined();
+  });
+
+  it('updates URL on click', () => {
+    render(<StatusFilter />);
+    fireEvent.click(screen.getByText('Active'));
+    expect(mockPush).toHaveBeenCalledWith('?status=active', { scroll: false });
+  });
+
+  it('clears status when All is clicked', () => {
+    render(<StatusFilter />);
+    fireEvent.click(screen.getByText('All'));
+    expect(mockPush).toHaveBeenCalledWith('?', { scroll: false });
   });
 });

@@ -86,9 +86,7 @@ export async function hasVoted(reelId: string, userId: string): Promise<boolean>
   return result.rows.length > 0;
 }
 
-export async function getTrendingReels(
-  limit = 10,
-): Promise<(RiotReel & { issue_name: string })[]> {
+export async function getTrendingReels(limit = 10): Promise<(RiotReel & { issue_name: string })[]> {
   const db = getDb();
   const result = await db.execute({
     sql: `SELECT r.*, i.name as issue_name
@@ -119,11 +117,7 @@ export async function getUnseenReelForUser(
   return (result.rows[0] as unknown as RiotReel) ?? null;
 }
 
-export async function logReelShown(
-  userId: string,
-  reelId: string,
-  issueId: string,
-): Promise<void> {
+export async function logReelShown(userId: string, reelId: string, issueId: string): Promise<void> {
   const db = getDb();
   await db.execute({
     sql: 'INSERT INTO reel_shown_log (user_id, reel_id, issue_id) VALUES (?, ?, ?)',

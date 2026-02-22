@@ -2,11 +2,13 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ActionCard } from './action-card';
+import { CampaignCard } from './campaign-card';
 import { ExpertCard } from './expert-card';
 import { FeedPostCard } from './feed-post-card';
 import { IssueCard } from './issue-card';
 import { OrgCard } from './org-card';
 import { ReelCard } from './reel-card';
+import type { Campaign } from '@/types';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -316,5 +318,55 @@ describe('OrgCard', () => {
     render(<OrgCard org={org} />);
     expect(screen.queryByText(/issues/)).toBeNull();
     expect(screen.queryByText(/rioters/)).toBeNull();
+  });
+});
+
+const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
+  id: 'camp-1',
+  issue_id: 'issue-1',
+  org_id: null,
+  title: 'Avanti Legal Review',
+  description: '',
+  target_pence: 100000,
+  raised_pence: 31000,
+  contributor_count: 155,
+  recipient: null,
+  recipient_url: null,
+  status: 'active',
+  platform_fee_pct: 15,
+  funded_at: null,
+  disbursed_at: null,
+  created_at: '2026-01-01T00:00:00.000Z',
+  ...overrides,
+});
+
+describe('CampaignCard', () => {
+  it('renders campaign title as a link', () => {
+    render(<CampaignCard campaign={makeCampaign()} />);
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/campaigns/camp-1');
+    expect(screen.getByText('Avanti Legal Review')).toBeDefined();
+  });
+
+  it('shows progress and backer count', () => {
+    render(<CampaignCard campaign={makeCampaign()} />);
+    expect(screen.getByText(/£310 of £1000/)).toBeDefined();
+    expect(screen.getByText('155 backers')).toBeDefined();
+  });
+
+  it('shows funded badge', () => {
+    render(<CampaignCard campaign={makeCampaign({ status: 'funded' })} />);
+    expect(screen.getByText('Funded')).toBeDefined();
+  });
+
+  it('shows issue name when provided', () => {
+    render(
+      <CampaignCard
+        campaign={makeCampaign()}
+        issueName="Train Cancellations"
+        issueCategory="Transport"
+      />,
+    );
+    expect(screen.getByText('Train Cancellations')).toBeDefined();
   });
 });
