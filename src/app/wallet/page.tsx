@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getSession } from '@/lib/session';
+import { getUserById } from '@/lib/queries/users';
 import {
   getOrCreateWallet,
   getUserSpendingSummary,
@@ -14,8 +15,9 @@ import { TopUpForm } from '@/components/interactive/topup-form';
 
 export default async function WalletPage() {
   const userId = await getSession();
+  const user = userId ? await getUserById(userId) : null;
 
-  if (!userId) {
+  if (!user) {
     return (
       <div className="mx-auto max-w-md px-4 py-16">
         <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-8 text-center dark:border-zinc-700 dark:bg-zinc-800/50">
@@ -34,9 +36,9 @@ export default async function WalletPage() {
     );
   }
 
-  const wallet = await getOrCreateWallet(userId);
+  const wallet = await getOrCreateWallet(user.id);
   const [summary, transactions, activeCampaigns] = await Promise.all([
-    getUserSpendingSummary(userId),
+    getUserSpendingSummary(user.id),
     getWalletTransactions(wallet.id),
     getCampaigns(undefined, 'active'),
   ]);
