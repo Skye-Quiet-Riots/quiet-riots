@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { getSession } from '@/lib/session';
+import { getUserById } from '@/lib/queries/users';
 import { createContribution, getOrCreateWallet } from '@/lib/queries/wallet';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
@@ -13,6 +14,10 @@ export async function POST(request: Request) {
   const userId = await getSession();
   if (!userId) {
     return apiError('Not logged in', 401);
+  }
+  const user = await getUserById(userId);
+  if (!user) {
+    return apiError('User not found', 401);
   }
   const { allowed } = rateLimit(`contribute:${userId}`);
   if (!allowed) {

@@ -137,6 +137,12 @@ describe('createContribution', () => {
   });
 });
 
+describe('getOrCreateWallet — invalid user', () => {
+  it('throws error for non-existent user ID', async () => {
+    await expect(getOrCreateWallet('user-does-not-exist')).rejects.toThrow('User not found');
+  });
+});
+
 describe('getUserSpendingSummary', () => {
   it('returns spending summary', async () => {
     const summary = await getUserSpendingSummary('user-sarah');

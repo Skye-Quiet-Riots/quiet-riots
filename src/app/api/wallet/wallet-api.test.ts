@@ -73,6 +73,16 @@ describe('GET /api/wallet', () => {
   });
 });
 
+describe('GET /api/wallet — invalid session', () => {
+  it('returns 401 when session cookie has non-existent user ID', async () => {
+    mockLoggedIn('user-does-not-exist');
+    const response = await GET();
+    const body = await response.json();
+    expect(response.status).toBe(401);
+    expect(body.error).toContain('User not found');
+  });
+});
+
 describe('GET /api/wallet/history', () => {
   it('returns transaction history', async () => {
     mockLoggedIn('user-sarah');
@@ -113,6 +123,19 @@ describe('POST /api/wallet/topup', () => {
     expect(body.data.transaction.amount_pence).toBe(500);
   });
 
+  it('returns 401 for non-existent user', async () => {
+    mockLoggedIn('user-does-not-exist');
+    const request = new Request('http://localhost:3000/api/wallet/topup', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ amount_pence: 500 }),
+    });
+    const response = await postTopup(request);
+    const body = await response.json();
+    expect(response.status).toBe(401);
+    expect(body.error).toContain('User not found');
+  });
+
   it('rejects topup below £1', async () => {
     mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/wallet/topup', {
@@ -151,6 +174,19 @@ describe('POST /api/wallet/contribute', () => {
     const body = await response.json();
     expect(response.status).toBe(400);
     expect(body.error).toContain('Insufficient funds');
+  });
+
+  it('returns 401 for non-existent user', async () => {
+    mockLoggedIn('user-does-not-exist');
+    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ campaign_id: 'camp-water-test', amount_pence: 50 }),
+    });
+    const response = await postContribute(request);
+    const body = await response.json();
+    expect(response.status).toBe(401);
+    expect(body.error).toContain('User not found');
   });
 
   it('returns 401 when not logged in', async () => {

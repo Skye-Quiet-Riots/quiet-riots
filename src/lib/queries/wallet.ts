@@ -15,7 +15,16 @@ export async function getOrCreateWallet(userId: string): Promise<Wallet> {
   const existing = await getWalletByUserId(userId);
   if (existing) return existing;
 
+  // Verify user exists before attempting INSERT (FK constraint on user_id)
   const db = getDb();
+  const userCheck = await db.execute({
+    sql: 'SELECT id FROM users WHERE id = ?',
+    args: [userId],
+  });
+  if (userCheck.rows.length === 0) {
+    throw new Error(`User not found: ${userId}`);
+  }
+
   const id = generateId();
   await db.execute({
     sql: 'INSERT INTO wallets (id, user_id) VALUES (?, ?)',
