@@ -109,7 +109,7 @@ describe('GET /api/wallet/history', () => {
 });
 
 describe('POST /api/wallet/topup', () => {
-  it('creates a topup transaction and returns payment URL', async () => {
+  it('instantly credits wallet with simulated top-up', async () => {
     mockLoggedIn('user-sarah');
     const request = new Request('http://localhost:3000/api/wallet/topup', {
       method: 'POST',
@@ -119,8 +119,9 @@ describe('POST /api/wallet/topup', () => {
     const response = await postTopup(request);
     const body = await response.json();
     expect(response.status).toBe(200);
-    expect(body.data.paymentUrl).toContain('https://pay.quietriots.app/topup/');
     expect(body.data.transaction.amount_pence).toBe(500);
+    expect(body.data.wallet).toBeDefined();
+    expect(body.data.wallet.balance_pence).toBeGreaterThan(0);
   });
 
   it('returns 401 for non-existent user', async () => {

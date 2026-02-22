@@ -367,15 +367,16 @@ describe('Bot API: get_wallet', () => {
 });
 
 describe('Bot API: topup_wallet', () => {
-  it('creates topup and returns payment URL', async () => {
+  it('instantly credits wallet with simulated top-up', async () => {
     const { status, body } = await callBot('topup_wallet', {
       phone: '+5511999999999',
       amount_pence: 500,
     });
     expect(status).toBe(200);
-    expect(body.data.paymentUrl).toContain('https://pay.quietriots.app/topup/');
     expect(body.data.transaction.amount_pence).toBe(500);
     expect(body.data.transaction.type).toBe('topup');
+    expect(body.data.wallet).toBeDefined();
+    expect(body.data.wallet.balance_pence).toBeGreaterThan(0);
   });
 
   it('rejects topup below minimum', async () => {
