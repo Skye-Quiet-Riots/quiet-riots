@@ -237,3 +237,74 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 - **Update OpenClaw** — current 2026.2.17, available 2026.2.19-2
 - Find and seed real YouTube videos for placeholder reels
 - Profile page improvements
+
+---
+
+## 2026-02-22 (Session 14) — Riot Wallet Web UI + Production Fixes + Test Coverage
+
+### What was worked on
+
+1. **Riot Wallet Phase 2 — Web UI (PR #9, merged)**
+   - Built full wallet web UI: `/wallet` page, `/campaigns` browse page, `/campaigns/[id]` detail page
+   - New components: WalletBalance, TopUpForm, TransactionList, CampaignCard, ContributeForm, StatusFilter
+   - Extracted `formatPence` to shared `src/lib/format.ts`
+   - Added `getCampaignsWithIssues()` JOIN query to campaigns.ts
+   - Added Wallet link to nav bar
+   - 73 new tests (344 → 417)
+
+2. **Production wallet page crash fix (PR #10, merged)**
+   - Root cause: `qr_user_id` cookie had user ID not in production `users` table → FK violation on wallet INSERT
+   - Fix: Added `getUserById` checks in wallet page, all wallet API routes, and defense in depth in `getOrCreateWallet`
+   - 4 regression tests
+
+3. **Stripe placeholder then simulated top-up (PR #11 → #12, both merged)**
+   - Initially replaced TopUpForm with static Stripe placeholder (PR #11)
+   - Then restored interactive TopUpForm with simulated instant wallet credits (PR #12)
+   - Both web and bot API now do instant credit: `createTopupTransaction` + `completeTopup('simulated')`
+   - Disclaimer shown: "Simulated top-up for testing. Real payments via Stripe coming soon."
+
+4. **Comprehensive test coverage audit + fill (PR #13, merged)**
+   - Added 33 new tests (421 → 454): 19 campaign API route tests, 3 wallet integration journey tests, 3 getCampaignsWithIssues query tests, 2 completeTopup edge cases, 2 contribute error paths, 2 ContributeForm tests, 2 history route auth tests
+   - Fixed bug: `/api/wallet/history` was missing `getUserById` guard
+   - Fixed rate limiter interference in integration tests
+
+5. **WhatsApp bot SKILL.md update**
+   - Updated `topup_wallet` API reference: returns `{ transaction, wallet }` instead of `{ transaction, paymentUrl }`
+   - Updated Step 4.7 top-up flow: shows instant credit confirmation + Stripe placeholder text + useful next choices
+   - Cleared sessions and restarted gateway
+
+6. **Infrastructure cleanup (end of session)**
+   - Created `~/.openclaw/workspace/memory/` directory (bot memory was failing silently)
+   - Updated OpenClaw to 2026.2.21-2 (already latest)
+   - Cleaned up 7 worktrees and all stale claude/\* branches (local + remote)
+
+### Key decisions
+
+- **Defense in depth for stale sessions** — guard at page level, API level, AND query level to prevent FK violations
+- **Simulated instant top-up** — users get real wallet credits without Stripe for testing; easy to swap to real payments later
+- **`completeTopup` double-call risk documented** — test shows double-calling credits twice; no idempotency guard yet (will need for Stripe)
+
+### Discoveries
+
+- **Stale `qr_user_id` cookie** — production users can have cookies pointing to non-existent user IDs, causing FK violations. Must always validate user exists before wallet operations.
+- **Rate limiter bleeds across test suites** — bot tests share IP `unknown`; `_resetRateLimitStore()` needed in `beforeEach` for integration tests
+- **ContributeForm disabled button** — preset amount buttons are disabled when amount > balance, so tests can't click them to test insufficient funds; use custom amount form instead
+
+### Test count
+
+454 tests passing across 33 files (~2.7s) — up from 344 (+110 new tests across sessions)
+
+### PRs created and merged
+
+- PR #9: Add Riot Wallet feature (Phase 1 backend + Phase 2 web UI)
+- PR #10: Fix wallet page crash for stale session cookies
+- PR #11: Replace top-up form with Stripe placeholder
+- PR #12: Add simulated instant top-up for wallet testing
+- PR #13: Add comprehensive wallet and campaign test coverage
+
+### Next steps
+
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
+- Find and seed real YouTube videos for placeholder reels
+- Profile page improvements
