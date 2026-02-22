@@ -35,8 +35,10 @@ import {
 } from '@/lib/queries/reels';
 import { extractVideoId, getThumbnailUrl, getVideoMetadata } from '@/lib/youtube';
 import {
+  getWalletByUserId,
   getOrCreateWallet,
   createTopupTransaction,
+  completeTopup,
   createContribution,
   getUserSpendingSummary,
 } from '@/lib/queries/wallet';
@@ -445,8 +447,11 @@ export async function POST(request: NextRequest) {
         if (!user) return err('User not found — call identify first', 404);
 
         const wallet = await getOrCreateWallet(user.id);
-        const { transaction, paymentUrl } = await createTopupTransaction(wallet.id, amountPence);
-        return ok({ transaction, paymentUrl });
+        const { transaction } = await createTopupTransaction(wallet.id, amountPence);
+        // Simulated: instantly credit the wallet (no Stripe checkout needed)
+        await completeTopup(transaction.id, 'simulated');
+        const updatedWallet = await getWalletByUserId(user.id);
+        return ok({ transaction, wallet: updatedWallet });
       }
 
       case 'contribute': {

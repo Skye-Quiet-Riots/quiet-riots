@@ -1,7 +1,12 @@
 import { z } from 'zod';
 import { getSession } from '@/lib/session';
 import { getUserById } from '@/lib/queries/users';
-import { getOrCreateWallet, createTopupTransaction } from '@/lib/queries/wallet';
+import {
+  getOrCreateWallet,
+  createTopupTransaction,
+  completeTopup,
+  getWalletByUserId,
+} from '@/lib/queries/wallet';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
@@ -30,9 +35,11 @@ export async function POST(request: Request) {
   }
 
   const wallet = await getOrCreateWallet(userId);
-  const { transaction, paymentUrl } = await createTopupTransaction(
-    wallet.id,
-    parsed.data.amount_pence,
-  );
-  return apiOk({ transaction, paymentUrl });
+  const { transaction } = await createTopupTransaction(wallet.id, parsed.data.amount_pence);
+
+  // Simulated: instantly credit the wallet (no Stripe checkout needed)
+  await completeTopup(transaction.id, 'simulated');
+
+  const updatedWallet = await getWalletByUserId(userId);
+  return apiOk({ transaction, wallet: updatedWallet });
 }
