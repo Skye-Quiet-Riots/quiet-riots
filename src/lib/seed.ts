@@ -2479,7 +2479,7 @@ export async function seed() {
   ]);
 
   // =============================
-  // RIOT REELS (2-3 per top issues, curated, placeholder video IDs)
+  // RIOT REELS (2-3 per top issues, curated, real YouTube videos)
   // =============================
   const reelSql = `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, thumbnail_url, caption, source, status, upvotes, views) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
@@ -2487,9 +2487,9 @@ export async function seed() {
     // Train Cancellations
     [
       'Train Cancellations',
-      'placeholder01',
-      "British Rail — We're Getting There (1987)",
-      'They were not, in fact, getting there',
+      'xsxkHfbbApk',
+      'The Famous Train Carriage Sketch | At Last the 1948 Show',
+      'An irritating man ruins a perfectly good British Rail journey',
       'curated',
       'approved',
       342,
@@ -2497,9 +2497,9 @@ export async function seed() {
     ],
     [
       'Train Cancellations',
-      'placeholder02',
-      'The Rocket: When trains were the future',
-      'Stephenson would be horrified',
+      'MXEgkM9eBts',
+      'Big Train - Eagle Line',
+      'A train company so bad they made a sketch show about it',
       'curated',
       'approved',
       218,
@@ -2508,9 +2508,9 @@ export async function seed() {
     // Broadband Speed
     [
       'Broadband Speed',
-      'placeholder03',
-      'Dial-up internet sound — 10 hours',
-      'The shared pain of a generation',
+      'LZ259Jx8MQY',
+      'Pushing Dial-up Modems Further Than We EVER Thought Possible',
+      'When 668kbps feels like a win, UK broadband peaked in 1999',
       'curated',
       'approved',
       567,
@@ -2518,9 +2518,9 @@ export async function seed() {
     ],
     [
       'Broadband Speed',
-      'placeholder04',
-      'BT promises broadband for all by 2012',
-      'Irony overload',
+      'Y_2kFv1QWzU',
+      'Why suffer broadband rage? New unbreakable BT hybrid broadband',
+      'Every Brit who has screamed at a buffering wheel, this is your biopic',
       'curated',
       'approved',
       234,
@@ -2529,9 +2529,9 @@ export async function seed() {
     // Energy Bill Costs
     [
       'Energy Bill Costs',
-      'placeholder05',
-      '1970s ad: North Sea gas will make energy cheap forever',
-      'That aged like milk',
+      'eT_k9JG0IN4',
+      'Cassetteboy vs The Tories May 2022',
+      'We would rather let our people freeze than tax our energy companies',
       'curated',
       'approved',
       445,
@@ -2539,9 +2539,9 @@ export async function seed() {
     ],
     [
       'Energy Bill Costs',
-      'placeholder06',
-      'Energy company CEO: "Affordable energy is our mission"',
-      'Their mission was clearly something else',
+      '3Wtx1HhDfDs',
+      'British Gas shares advert 1986',
+      'If you see Sid, tell him gas costs four grand a year now',
       'curated',
       'approved',
       189,
@@ -2550,9 +2550,9 @@ export async function seed() {
     // Sewage in Rivers
     [
       'Sewage in Rivers',
-      'placeholder07',
-      'Water company CEO: "Crystal clear commitment to the environment"',
-      'The water was definitely not crystal clear',
+      'aZo6vKS0ybI',
+      'BREAKING NEWS: Nish Kumar exposes sewage pollution by water companies',
+      'Welcome to the beach — hazmat suits and turd ice cream included',
       'curated',
       'featured',
       892,
@@ -2561,9 +2561,9 @@ export async function seed() {
     // NHS Waiting Times
     [
       'NHS Waiting Times',
-      'placeholder08',
-      'Old NHS recruitment ad: "We\'ll see you right away"',
-      'Unintentional comedy',
+      'uK7DRJx9nbU',
+      'Cassetteboy vs Jeremy Hunt',
+      'Hunt\'s own words remixed to YMCA — the NHS roast we deserved',
       'curated',
       'approved',
       567,
@@ -2572,9 +2572,9 @@ export async function seed() {
     // Hidden Bank Charges
     [
       'Hidden Bank Charges',
-      'placeholder09',
-      'Bank ad from the 90s: "We put our customers first"',
-      'Narrator: they did not',
+      'R9biM_ZfIdo',
+      'George Agdgdgwngo Series 1 Compilation - Fonejacker',
+      'He just needs your sort code for the steam cleaning',
       'curated',
       'approved',
       312,
@@ -2583,9 +2583,9 @@ export async function seed() {
     // Delivery Problems
     [
       'Delivery Problems',
-      'placeholder10',
-      'CCTV compilation: Delivery drivers vs front doors',
-      'Satisfying anger',
+      'zegud4x4zL0',
+      'Waiting for a Package - Foil Arms and Hog',
+      'Your package is out for delivery. It will stay out for delivery.',
       'curated',
       'approved',
       678,
@@ -2593,9 +2593,9 @@ export async function seed() {
     ],
     [
       'Delivery Problems',
-      'placeholder11',
-      'Pathé News: The marvellous baggage carousel',
-      'Same energy as the M1 clip',
+      'VaaankRbMkY',
+      'Lee Evans-Parcel Force',
+      'Parcelforce! The most stressful word in the English language.',
       'curated',
       'approved',
       234,
@@ -2604,9 +2604,9 @@ export async function seed() {
     // Self-Checkout Frustration
     [
       'Self-Checkout Frustration',
-      'placeholder12',
-      '"Unexpected item in bagging area" — the remix',
-      'Shared pain turned into art',
+      '0n_Ty_72Qds',
+      'Little Britain - Computer says no',
+      'The spiritual ancestor of every self-checkout machine',
       'curated',
       'approved',
       789,
@@ -2615,9 +2615,9 @@ export async function seed() {
     // Flight Delays
     [
       'Flight Delays',
-      'placeholder13',
-      'Airline ad: "We get you there on time, every time"',
-      'Confidence of a company that has never met weather',
+      '6_L_MpgMCMA',
+      "Compilation Of Michael's Best Jokes About Planes And Airports | Michael McIntyre",
+      'Your delayed Ryanair flight, but at least Michael McIntyre gets it',
       'curated',
       'approved',
       345,
@@ -2626,9 +2626,9 @@ export async function seed() {
     // Pothole Damage
     [
       'Pothole Damage',
-      'placeholder14',
-      'Council promo: "Our world-class road maintenance programme"',
-      'The roads would beg to differ',
+      'e01EAS0GUa0',
+      'UK Pothole Epidemic - Resurface Our Roads',
+      'Britain\'s roads: where craters come with free suspension tests',
       'curated',
       'approved',
       456,
@@ -2637,9 +2637,9 @@ export async function seed() {
     // Mobile Signal Dead Zones
     [
       'Mobile Signal Dead Zones',
-      'placeholder15',
-      '1990s Vodafone ad: "Coverage everywhere"',
-      'The promise vs reality',
+      'kAG39jKi0lI',
+      'My blackberry is not working - BBC',
+      'When your network provider says the problem is at your end',
       'curated',
       'featured',
       1247,
@@ -2647,9 +2647,9 @@ export async function seed() {
     ],
     [
       'Mobile Signal Dead Zones',
-      'placeholder16',
-      'Pathé News: The first mobile telephone call',
-      'Better reception in 1985 than on the M1 in 2026',
+      '27aVPqpnL7Y',
+      'Trigger Happy TV - The big phone guy',
+      'UK coverage so good you need a phone the size of a suitcase',
       'curated',
       'approved',
       567,
@@ -2658,9 +2658,9 @@ export async function seed() {
     // Customer Service Hold Times
     [
       'Customer Service Hold Times',
-      'placeholder17',
-      '"Your call is important to us" — 3 hour loop',
-      'If it were important you would answer it',
+      'w2A8q3XIhu0',
+      'Hold music used to sound better. Here\'s why.',
+      'We have all suffered. Now we know why it hurts.',
       'curated',
       'approved',
       432,
