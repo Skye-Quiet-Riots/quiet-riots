@@ -337,6 +337,49 @@ describe('ContributeForm', () => {
     render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={0} />);
     expect(screen.getByText(/wallet is empty/)).toBeDefined();
   });
+
+  it('calls API and shows success on contribution', async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          data: {
+            transaction: { type: 'contribute', amount_pence: 100 },
+            campaign: {},
+            wallet_balance_pence: 400,
+          },
+        }),
+    });
+    global.fetch = mockFetch;
+
+    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={500} />);
+    fireEvent.click(screen.getByText('£1'));
+
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith(
+        '/api/wallet/contribute',
+        expect.objectContaining({ method: 'POST' }),
+      );
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/Contributed £1 to Test Campaign/)).toBeDefined();
+      expect(screen.getByText(/remaining balance: £4/)).toBeDefined();
+    });
+  });
+
+  it('shows insufficient funds error for custom amount over balance', async () => {
+    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={30} />);
+
+    // Preset buttons are disabled, use custom amount form
+    const input = screen.getByPlaceholderText('Custom amount (£)');
+    fireEvent.change(input, { target: { value: '1' } });
+    fireEvent.submit(input.closest('form')!);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Insufficient funds/)).toBeDefined();
+    });
+  });
 });
 
 describe('StatusFilter', () => {

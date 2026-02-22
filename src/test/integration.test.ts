@@ -2,15 +2,20 @@
  * Integration tests — full user journeys crossing multiple API routes.
  * These test realistic sequences of actions, not individual endpoints in isolation.
  */
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
 import { createBotRequest } from '@/test/api-helpers';
+import { _resetRateLimitStore } from '@/lib/rate-limit';
 import { POST as botPost } from '@/app/api/bot/route';
 
 beforeAll(async () => {
   await setupTestDb();
   await seedTestData();
+});
+
+beforeEach(() => {
+  _resetRateLimitStore();
 });
 
 afterAll(async () => {
@@ -236,5 +241,83 @@ describe('Integration: Edge cases', () => {
     const invalid = await callBot('create_issue', { name: '', category: 'InvalidCat' });
     expect(invalid.status).toBe(400);
     expect(invalid.body.code).toBe('VALIDATION_ERROR');
+  });
+});
+
+describe('Integration: Wallet flow', () => {
+  it('identify → topup → verify balance → contribute → verify deducted', async () => {
+    const phone = '+44700900010';
+
+    // Step 1: Identify (creates user)
+    const identify = await callBot('identify', { phone, name: 'Wallet User' });
+    expect(identify.status).toBe(200);
+
+    // Step 2: Check wallet starts at zero
+    const walletBefore = await callBot('get_wallet', { phone });
+    expect(walletBefore.status).toBe(200);
+    expect(walletBefore.body.data.wallet.balance_pence).toBe(0);
+
+    // Step 3: Top up £10
+    const topup = await callBot('topup_wallet', { phone, amount_pence: 1000 });
+    expect(topup.status).toBe(200);
+    expect(topup.body.data.wallet.balance_pence).toBe(1000);
+
+    // Step 4: Verify balance updated
+    const walletAfter = await callBot('get_wallet', { phone });
+    expect(walletAfter.status).toBe(200);
+    expect(walletAfter.body.data.wallet.balance_pence).toBe(1000);
+    expect(walletAfter.body.data.wallet.total_loaded_pence).toBe(1000);
+
+    // Step 5: Contribute to a campaign
+    const contribute = await callBot('contribute', {
+      phone,
+      campaign_id: 'camp-water-test',
+      amount_pence: 300,
+    });
+    expect(contribute.status).toBe(200);
+    expect(contribute.body.data.transaction.type).toBe('contribute');
+    expect(contribute.body.data.wallet_balance_pence).toBe(700);
+
+    // Step 6: Verify final wallet state
+    const walletFinal = await callBot('get_wallet', { phone });
+    expect(walletFinal.status).toBe(200);
+    expect(walletFinal.body.data.wallet.balance_pence).toBe(700);
+    expect(walletFinal.body.data.wallet.total_spent_pence).toBe(300);
+    expect(walletFinal.body.data.summary.totalSpent).toBe(300);
+    expect(walletFinal.body.data.summary.issuesSupported).toBe(1);
+  });
+
+  it('contribute fails with insufficient funds', async () => {
+    const phone = '+44700900011';
+    await callBot('identify', { phone, name: 'Broke User' });
+
+    // Top up a small amount so wallet exists, then try to spend more
+    await callBot('topup_wallet', { phone, amount_pence: 100 });
+
+    const contribute = await callBot('contribute', {
+      phone,
+      campaign_id: 'camp-water-test',
+      amount_pence: 5000,
+    });
+    expect(contribute.status).toBe(400);
+    expect(contribute.body.error).toContain('Insufficient funds');
+  });
+
+  it('contribute fails for inactive campaign', async () => {
+    const phone = '+44700900012';
+    await callBot('identify', { phone, name: 'Funded Campaign User' });
+
+    // Top up first
+    const topup = await callBot('topup_wallet', { phone, amount_pence: 500 });
+    expect(topup.status).toBe(200);
+
+    // Try to contribute to a funded (inactive) campaign
+    const contribute = await callBot('contribute', {
+      phone,
+      campaign_id: 'camp-funded',
+      amount_pence: 100,
+    });
+    expect(contribute.status).toBe(400);
+    expect(contribute.body.error).toContain('not active');
   });
 });
