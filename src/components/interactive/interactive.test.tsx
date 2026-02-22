@@ -280,38 +280,10 @@ describe('TimeSkillFilter', () => {
 });
 
 describe('TopUpForm', () => {
-  it('renders preset amount buttons', () => {
+  it('renders Stripe integration placeholder', () => {
     render(<TopUpForm />);
-    expect(screen.getByText('£1')).toBeDefined();
-    expect(screen.getByText('£5')).toBeDefined();
-    expect(screen.getByText('£10')).toBeDefined();
-    expect(screen.getByText('£20')).toBeDefined();
-  });
-
-  it('renders custom amount input', () => {
-    render(<TopUpForm />);
-    expect(screen.getByPlaceholderText('Custom amount (£)')).toBeDefined();
-  });
-
-  it('calls API on preset click', async () => {
-    const mockFetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve({ data: { paymentUrl: 'https://pay.test/123' } }),
-    });
-    global.fetch = mockFetch;
-    window.open = vi.fn();
-
-    render(<TopUpForm />);
-    fireEvent.click(screen.getByText('£5'));
-
-    await waitFor(() => {
-      expect(mockFetch).toHaveBeenCalledWith(
-        '/api/wallet/topup',
-        expect.objectContaining({
-          method: 'POST',
-        }),
-      );
-    });
+    expect(screen.getByText('Add Funds')).toBeDefined();
+    expect(screen.getByText(/Stripe integration coming soon/)).toBeDefined();
   });
 });
 
