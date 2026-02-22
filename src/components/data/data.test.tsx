@@ -2,11 +2,15 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { CategoryBadge } from './category-badge';
+import { CampaignProgress } from './campaign-progress';
 import { CountryList } from './country-list';
 import { HealthMeter } from './health-meter';
 import { PivotTable } from './pivot-table';
 import { StatBadge } from './stat-badge';
 import { TrendingIndicator } from './trending-indicator';
+import { WalletBalance } from './wallet-balance';
+import { TransactionList } from './transaction-list';
+import type { Campaign, WalletTransaction } from '@/types';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -275,5 +279,126 @@ describe('TrendingIndicator', () => {
   it('formats large numbers', () => {
     render(<TrendingIndicator delta={1500} />);
     expect(screen.getByText('+1,500')).toBeDefined();
+  });
+});
+
+const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
+  id: 'camp-1',
+  issue_id: 'issue-1',
+  org_id: null,
+  title: 'Test Campaign',
+  description: '',
+  target_pence: 10000,
+  raised_pence: 3100,
+  contributor_count: 42,
+  recipient: null,
+  recipient_url: null,
+  status: 'active',
+  platform_fee_pct: 15,
+  funded_at: null,
+  disbursed_at: null,
+  created_at: '2026-01-01T00:00:00.000Z',
+  ...overrides,
+});
+
+describe('CampaignProgress', () => {
+  it('renders nothing when no campaigns', () => {
+    const { container } = render(<CampaignProgress campaigns={[]} />);
+    expect(container.innerHTML).toBe('');
+  });
+
+  it('renders campaign title and progress', () => {
+    render(<CampaignProgress campaigns={[makeCampaign()]} />);
+    expect(screen.getByText('Test Campaign')).toBeDefined();
+    expect(screen.getByText(/£31 of £100/)).toBeDefined();
+    expect(screen.getByText(/31%/)).toBeDefined();
+    expect(screen.getByText('42 backers')).toBeDefined();
+  });
+
+  it('shows funded badge', () => {
+    render(<CampaignProgress campaigns={[makeCampaign({ status: 'funded' })]} />);
+    expect(screen.getByText('Funded')).toBeDefined();
+  });
+
+  it('shows singular backer text', () => {
+    render(<CampaignProgress campaigns={[makeCampaign({ contributor_count: 1 })]} />);
+    expect(screen.getByText('1 backer')).toBeDefined();
+  });
+
+  it('formats pence amounts correctly', () => {
+    render(
+      <CampaignProgress campaigns={[makeCampaign({ raised_pence: 50, target_pence: 500 })]} />,
+    );
+    expect(screen.getByText(/50p of £5/)).toBeDefined();
+  });
+});
+
+describe('WalletBalance', () => {
+  it('renders balance and stats', () => {
+    render(
+      <WalletBalance
+        balance_pence={450}
+        total_loaded_pence={1000}
+        total_spent_pence={550}
+        campaigns_supported={3}
+      />,
+    );
+    expect(screen.getByText('£4.50')).toBeDefined();
+    expect(screen.getByText('£10')).toBeDefined();
+    expect(screen.getByText('£5.50')).toBeDefined();
+    expect(screen.getByText('3')).toBeDefined();
+    expect(screen.getByText('campaigns')).toBeDefined();
+  });
+
+  it('shows singular campaign text', () => {
+    render(
+      <WalletBalance
+        balance_pence={100}
+        total_loaded_pence={100}
+        total_spent_pence={0}
+        campaigns_supported={1}
+      />,
+    );
+    expect(screen.getByText('campaign')).toBeDefined();
+  });
+});
+
+const makeTx = (overrides: Partial<WalletTransaction> = {}): WalletTransaction => ({
+  id: 'tx-1',
+  wallet_id: 'wallet-1',
+  type: 'topup',
+  amount_pence: 500,
+  campaign_id: null,
+  issue_id: null,
+  stripe_payment_id: null,
+  description: 'Top-up via card',
+  created_at: new Date().toISOString(),
+  ...overrides,
+});
+
+describe('TransactionList', () => {
+  it('renders empty state', () => {
+    render(<TransactionList transactions={[]} />);
+    expect(screen.getByText(/No transactions yet/)).toBeDefined();
+  });
+
+  it('renders transactions with correct formatting', () => {
+    render(
+      <TransactionList
+        transactions={[
+          makeTx({ type: 'topup', amount_pence: 500, description: 'Top-up via card' }),
+          makeTx({
+            id: 'tx-2',
+            type: 'contribute',
+            amount_pence: 100,
+            description: 'Avanti Legal Review',
+          }),
+        ]}
+      />,
+    );
+    expect(screen.getByText('Top-up via card')).toBeDefined();
+    expect(screen.getByText('Avanti Legal Review')).toBeDefined();
+    expect(screen.getByText('+£5')).toBeDefined();
+    expect(screen.getByText('-£1')).toBeDefined();
   });
 });

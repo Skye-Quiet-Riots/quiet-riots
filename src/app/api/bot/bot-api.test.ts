@@ -334,3 +334,115 @@ describe('submit_riot_reel', () => {
     expect(status).toBe(404);
   });
 });
+
+describe('Bot API: get_wallet', () => {
+  it('returns wallet for existing user', async () => {
+    const { status, body } = await callBot('get_wallet', {
+      phone: '+5511999999999', // Marcio
+    });
+    expect(status).toBe(200);
+    expect(body.data.wallet).toBeDefined();
+    expect(body.data.wallet.user_id).toBe('user-marcio');
+    expect(body.data.summary).toBeDefined();
+  });
+
+  it('auto-creates wallet for user without one', async () => {
+    // First ensure Marcio has a wallet (from previous test)
+    // Now test with a user identified via bot
+    const { body: idBody } = await callBot('identify', {
+      phone: '+447700900111',
+      name: 'Wallet Test User',
+    });
+    const { status, body } = await callBot('get_wallet', {
+      phone: '+447700900111',
+    });
+    expect(status).toBe(200);
+    expect(body.data.wallet.balance_pence).toBe(0);
+  });
+
+  it('fails for unknown user', async () => {
+    const { status } = await callBot('get_wallet', { phone: '+0000000000' });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: topup_wallet', () => {
+  it('creates topup and returns payment URL', async () => {
+    const { status, body } = await callBot('topup_wallet', {
+      phone: '+5511999999999',
+      amount_pence: 500,
+    });
+    expect(status).toBe(200);
+    expect(body.data.paymentUrl).toContain('https://pay.quietriots.app/topup/');
+    expect(body.data.transaction.amount_pence).toBe(500);
+    expect(body.data.transaction.type).toBe('topup');
+  });
+
+  it('rejects topup below minimum', async () => {
+    const { status, body } = await callBot('topup_wallet', {
+      phone: '+5511999999999',
+      amount_pence: 50,
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Minimum top-up');
+  });
+});
+
+describe('Bot API: contribute', () => {
+  it('deducts from wallet and credits campaign', async () => {
+    // Sarah has wallet with £5 balance (seeded) — contribute 10p
+    const { status, body } = await callBot('contribute', {
+      phone: '+447700900001', // Sarah
+      campaign_id: 'camp-water-test',
+      amount_pence: 10,
+    });
+    expect(status).toBe(200);
+    expect(body.data.transaction.amount_pence).toBe(10);
+    expect(body.data.campaign).toBeDefined();
+  });
+
+  it('returns error for non-existent campaign', async () => {
+    const { status, body } = await callBot('contribute', {
+      phone: '+5511999999999',
+      campaign_id: 'camp-nonexistent',
+      amount_pence: 100,
+    });
+    expect(status).toBe(404);
+    expect(body.error).toContain('Campaign not found');
+  });
+
+  it('fails for unknown user', async () => {
+    const { status } = await callBot('contribute', {
+      phone: '+0000000000',
+      campaign_id: 'camp-water-test',
+      amount_pence: 100,
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: get_campaigns', () => {
+  it('returns all campaigns', async () => {
+    const { status, body } = await callBot('get_campaigns', {});
+    expect(status).toBe(200);
+    expect(body.data.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('filters by issue_id', async () => {
+    const { status, body } = await callBot('get_campaigns', {
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(200);
+    expect(
+      body.data.campaigns.every((c: { issue_id: string }) => c.issue_id === 'issue-rail'),
+    ).toBe(true);
+  });
+
+  it('filters by status', async () => {
+    const { status, body } = await callBot('get_campaigns', {
+      status: 'funded',
+    });
+    expect(status).toBe(200);
+    expect(body.data.campaigns.every((c: { status: string }) => c.status === 'funded')).toBe(true);
+  });
+});

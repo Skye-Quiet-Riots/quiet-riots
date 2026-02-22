@@ -7,9 +7,7 @@ describe('extractVideoId', () => {
   });
 
   it('extracts from watch URL with extra params', () => {
-    expect(extractVideoId('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42')).toBe(
-      'dQw4w9WgXcQ',
-    );
+    expect(extractVideoId('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42')).toBe('dQw4w9WgXcQ');
   });
 
   it('extracts from short URL', () => {
@@ -98,9 +96,7 @@ describe('getVideoMetadata', () => {
         }),
     });
     const result = await getVideoMetadata('abc12345678');
-    expect(result?.thumbnail_url).toBe(
-      'https://img.youtube.com/vi/abc12345678/hqdefault.jpg',
-    );
+    expect(result?.thumbnail_url).toBe('https://img.youtube.com/vi/abc12345678/hqdefault.jpg');
   });
 
   it('returns null when response is not ok', async () => {

@@ -34,6 +34,13 @@ import {
   createReel,
 } from '@/lib/queries/reels';
 import { extractVideoId, getThumbnailUrl, getVideoMetadata } from '@/lib/youtube';
+import {
+  getOrCreateWallet,
+  createTopupTransaction,
+  createContribution,
+  getUserSpendingSummary,
+} from '@/lib/queries/wallet';
+import { getCampaigns } from '@/lib/queries/campaigns';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 
@@ -96,6 +103,20 @@ const actionSchemas = {
     issue_id: z.string().min(1),
     youtube_url: z.string().min(1),
     caption: z.string().optional().default(''),
+  }),
+  get_wallet: phoneParam,
+  topup_wallet: z.object({
+    phone: z.string().min(1),
+    amount_pence: z.number().int().min(100, 'Minimum top-up is £1'),
+  }),
+  contribute: z.object({
+    phone: z.string().min(1),
+    campaign_id: z.string().min(1),
+    amount_pence: z.number().int().min(10, 'Minimum contribution is 10p'),
+  }),
+  get_campaigns: z.object({
+    issue_id: z.string().optional(),
+    status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
   }),
 } as const;
 
@@ -404,6 +425,60 @@ export async function POST(request: NextRequest) {
           status: 'pending',
         });
         return ok({ reel });
+      }
+
+      // ─── Riot Wallet ──────────────────────────────────────
+      case 'get_wallet': {
+        const phone = p.phone as string;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const wallet = await getOrCreateWallet(user.id);
+        const summary = await getUserSpendingSummary(user.id);
+        return ok({ wallet, summary });
+      }
+
+      case 'topup_wallet': {
+        const phone = p.phone as string;
+        const amountPence = p.amount_pence as number;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const wallet = await getOrCreateWallet(user.id);
+        const { transaction, paymentUrl } = await createTopupTransaction(wallet.id, amountPence);
+        return ok({ transaction, paymentUrl });
+      }
+
+      case 'contribute': {
+        const phone = p.phone as string;
+        const campaignId = p.campaign_id as string;
+        const amountPence = p.amount_pence as number;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        try {
+          const result = await createContribution(user.id, campaignId, amountPence);
+          const wallet = await getOrCreateWallet(user.id);
+          return ok({
+            transaction: result.transaction,
+            campaign: result.campaign,
+            wallet_balance_pence: wallet.balance_pence,
+          });
+        } catch (e) {
+          const message = e instanceof Error ? e.message : 'Contribution failed';
+          if (message === 'Insufficient funds') return err(message);
+          if (message === 'Campaign not found') return err(message, 404);
+          if (message === 'Campaign is not active') return err(message);
+          if (message === 'Wallet not found') return err(message, 404);
+          throw e;
+        }
+      }
+
+      case 'get_campaigns': {
+        const issueId = p.issue_id as string | undefined;
+        const status = p.status as import('@/types').CampaignStatus | undefined;
+        const campaigns = await getCampaigns(issueId, status);
+        return ok({ campaigns });
       }
 
       default:

@@ -105,7 +105,14 @@ export async function seedTestData() {
   // 2 users
   await db.execute({
     sql: `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`,
-    args: ['user-sarah', 'Sarah K.', 'sarah@example.com', null, '10min', 'writing,organising'],
+    args: [
+      'user-sarah',
+      'Sarah K.',
+      'sarah@example.com',
+      '+447700900001',
+      '10min',
+      'writing,organising',
+    ],
   });
   await db.execute({
     sql: `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`,
@@ -389,5 +396,77 @@ export async function seedTestData() {
   await db.execute({
     sql: `INSERT INTO reel_votes (reel_id, user_id) VALUES (?, ?)`,
     args: ['reel-001', 'user-sarah'],
+  });
+
+  // Campaigns
+  await db.execute({
+    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'camp-water-test',
+      'issue-rail',
+      'Rail Legal Review',
+      'Fund independent legal review',
+      100000,
+      31000,
+      155,
+      'Transport Focus',
+      'active',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'camp-funded',
+      'issue-broadband',
+      'Speed Map App',
+      'Community speed mapping app',
+      50000,
+      50000,
+      250,
+      'Open Rights Group',
+      'funded',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'camp-almost-funded',
+      'issue-rail',
+      'Season Ticket Toolkit',
+      'Help commuters claim refunds',
+      10000,
+      9950,
+      50,
+      'Transport Salaried Staffs',
+      'active',
+    ],
+  });
+
+  // Wallet for sarah with £5 balance
+  await db.execute({
+    sql: `INSERT INTO wallets (id, user_id, balance_pence, total_loaded_pence, total_spent_pence)
+          VALUES (?, ?, ?, ?, ?)`,
+    args: ['wallet-sarah', 'user-sarah', 500, 1000, 500],
+  });
+  await db.execute({
+    sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, description)
+          VALUES (?, ?, ?, ?, ?)`,
+    args: ['wtx-topup-1', 'wallet-sarah', 'topup', 1000, 'Wallet top-up'],
+  });
+  await db.execute({
+    sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, campaign_id, issue_id, description)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'wtx-contrib-1',
+      'wallet-sarah',
+      'contribute',
+      500,
+      'camp-water-test',
+      'issue-rail',
+      'Rail Legal Review',
+    ],
   });
 }
