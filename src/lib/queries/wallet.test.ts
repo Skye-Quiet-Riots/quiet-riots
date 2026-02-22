@@ -91,6 +91,24 @@ describe('completeTopup', () => {
     expect(walletAfter!.balance_pence).toBe(balanceBefore + 1000);
     expect(walletAfter!.total_loaded_pence).toBeGreaterThan(walletBefore!.total_loaded_pence);
   });
+
+  it('throws for non-existent transaction', async () => {
+    await expect(completeTopup('nonexistent-tx-id')).rejects.toThrow('Transaction not found');
+  });
+
+  it('double-completing a topup credits wallet twice (no idempotency guard)', async () => {
+    // This documents current behaviour — double-call = double-credit.
+    // If we add idempotency later, change this test.
+    const { transaction } = await createTopupTransaction('wallet-sarah', 200);
+    const walletBefore = await getWalletByUserId('user-sarah');
+    const balanceBefore = walletBefore!.balance_pence;
+
+    await completeTopup(transaction.id, 'sim-1');
+    await completeTopup(transaction.id, 'sim-2');
+
+    const walletAfter = await getWalletByUserId('user-sarah');
+    expect(walletAfter!.balance_pence).toBe(balanceBefore + 400); // 200 * 2
+  });
 });
 
 describe('createContribution', () => {

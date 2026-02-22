@@ -92,6 +92,20 @@ describe('GET /api/wallet/history', () => {
     expect(body.data.transactions.length).toBeGreaterThan(0);
   });
 
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
+    const response = await getHistory();
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 401 for non-existent user', async () => {
+    mockLoggedIn('user-does-not-exist');
+    const response = await getHistory();
+    const body = await response.json();
+    expect(response.status).toBe(401);
+    expect(body.error).toContain('User not found');
+  });
+
   it('returns empty for user without wallet', async () => {
     // Create a user with no wallet
     const { getDb } = await import('@/lib/db');
@@ -175,6 +189,32 @@ describe('POST /api/wallet/contribute', () => {
     const body = await response.json();
     expect(response.status).toBe(400);
     expect(body.error).toContain('Insufficient funds');
+  });
+
+  it('returns 404 for non-existent campaign', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ campaign_id: 'camp-nonexistent', amount_pence: 50 }),
+    });
+    const response = await postContribute(request);
+    const body = await response.json();
+    expect(response.status).toBe(404);
+    expect(body.error).toContain('Campaign not found');
+  });
+
+  it('returns error for funded (inactive) campaign', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ campaign_id: 'camp-funded', amount_pence: 50 }),
+    });
+    const response = await postContribute(request);
+    const body = await response.json();
+    expect(response.status).toBe(400);
+    expect(body.error).toContain('not active');
   });
 
   it('returns 401 for non-existent user', async () => {

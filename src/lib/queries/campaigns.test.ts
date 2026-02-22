@@ -1,7 +1,13 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
-import { getCampaigns, getCampaignById, createCampaign, getCampaignsForIssue } from './campaigns';
+import {
+  getCampaigns,
+  getCampaignById,
+  createCampaign,
+  getCampaignsForIssue,
+  getCampaignsWithIssues,
+} from './campaigns';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -78,6 +84,31 @@ describe('createCampaign', () => {
       platformFeePct: 10,
     });
     expect(campaign.platform_fee_pct).toBe(10);
+  });
+});
+
+describe('getCampaignsWithIssues', () => {
+  it('returns campaigns joined with issue data', async () => {
+    const campaigns = await getCampaignsWithIssues();
+    expect(campaigns.length).toBeGreaterThan(0);
+    // Every result should have issue_name and issue_category from the JOIN
+    campaigns.forEach((c) => {
+      expect(c.issue_name).toBeDefined();
+      expect(c.issue_category).toBeDefined();
+      expect(typeof c.issue_name).toBe('string');
+    });
+  });
+
+  it('filters by status', async () => {
+    const funded = await getCampaignsWithIssues('funded');
+    expect(funded.length).toBeGreaterThanOrEqual(1);
+    expect(funded.every((c) => c.status === 'funded')).toBe(true);
+    expect(funded[0].issue_name).toBeDefined();
+  });
+
+  it('returns empty for status with no matching campaigns', async () => {
+    const disbursed = await getCampaignsWithIssues('disbursed');
+    expect(disbursed).toHaveLength(0);
   });
 });
 
