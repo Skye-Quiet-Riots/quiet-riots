@@ -4,44 +4,6 @@
 
 ---
 
-## 2026-02-18 (Session 10) — Developer Best Practices (9 Items, 3 Phases)
-
-### What was worked on
-
-Implemented 9 developer best practices across 3 phases, all on the `best-practices` branch (PR #4):
-
-**Phase 1 — Quick Wins:**
-
-1. **Coverage thresholds** — Added to `vitest.config.ts`: 75% statements, 69% branches, 74% functions, 76% lines (based on current coverage so CI enforces it going forward)
-2. **Dependabot** — Created `.github/dependabot.yml` for weekly npm updates, grouped minor/patch, max 5 open PRs
-3. **Branch protection** — Configured via `gh api`: 1 approval required, `test` status check must pass, branch must be up-to-date, stale reviews dismissed
-
-**Phase 2 — Reliability & Data Integrity:** 4. **DB query timeouts** — `withTimeout()` wrapper in `src/lib/db.ts` using `Promise.race` with 5s default. Also added `concurrency: 10` to libSQL client config. 5. **Structured logging** — pino (`src/lib/logger.ts`) with `createRequestLogger()` for per-request context (requestId, action, IP, timing). Added to bot route — logs request entry, completion, errors with duration. 6. **Schema constraints** — CHECK constraints on all 13 entity tables: non-negative counters (`rioter_count >= 0`, `likes >= 0`, `rank >= 0`), health metrics (`0-100`), enum validation (`time_available`, `time_required`), length limits on text fields (`name <= 255`, `content <= 5000`, `description <= 2000`). Fixed `create_issue` Zod schema (had only 6 of 16 categories). Added `time_available` enum validation to `update_user` Zod schema.
-
-**Phase 3 — Hardening:** 7. **Input sanitization** — `src/lib/sanitize.ts`: `normalizePhone()` (E.164 validation), `trimAndLimit()`, `sanitizeText()` (strips control chars, preserves newlines/tabs/emojis). 18 test cases. 8. **Error codes** — `apiError()` now includes `code` field auto-inferred from HTTP status: `VALIDATION_ERROR`, `NOT_FOUND`, `UNAUTHORIZED`, `RATE_LIMITED`, `INTERNAL_ERROR`. New `apiValidationError()` returns field-level details. Bot route `err()` helper also includes codes. Updated users routes to use `apiValidationError` for Zod errors. 9. **Integration tests** — `src/test/integration.test.ts`: 4 test suites covering full user journeys (new user flow, feed flow, bot full cycle, edge cases including idempotent join, safe leave, unknown user errors, error code verification).
-
-### Key decisions
-
-- **Coverage thresholds set to current levels** — not aspirational. CI will enforce no regressions. Can raise them later.
-- **pino over winston** — lighter, faster, JSON by default, Vercel-friendly (stdout → Vercel log drain)
-- **Error codes auto-inferred from status** — backward compatible, no changes needed to existing apiError calls
-- **Schema constraints on seed-managed tables** — since seed drops and recreates, no migration needed. Just re-seed after merge.
-- **Promise.race for timeouts** — simpler than AbortSignal for libSQL, which doesn't natively support abort
-
-### Test count
-
-283 tests passing across 25 files (~2s) — up from 241 (+42 new tests)
-
-### Next steps
-
-- **Merge PR #4** (best-practices) after CI passes and user reviews
-- **Re-seed staging and production** after merge to apply new schema constraints
-- **Bot route change** — OpenClaw sessions may need clearing after merge since bot route error responses now include `code` field
-- Profile page improvements
-- Tighten CSP with nonce-based approach
-
----
-
 ## 2026-02-18 (Session 11) — Riot Reels Feature
 
 ### What was worked on
@@ -308,3 +270,57 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 - **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
 - Find and seed real YouTube videos for placeholder reels
 - Profile page improvements
+
+---
+
+## 2026-02-22 (Session 15) — Real YouTube Videos for Riot Reels + Production Fix
+
+### What was worked on
+
+1. **Sourced 17 real YouTube videos for riot reels (PR #14, merged)**
+   - Replaced all placeholder video IDs in `src/lib/seed.ts` with real, verified videos
+   - All videos sourced for a UK audience: comedy sketches, satirical mashups, ironic vintage ads
+   - Every video ID verified via YouTube oEmbed API (noembed.com proxy)
+   - Videos: At Last the 1948 Show, Big Train, Cassetteboy (x2), Nish Kumar, Fonejacker, Little Britain, Michael McIntyre, Tom Scott, Trigger Happy TV, Lee Evans, Foil Arms and Hog, and more
+
+2. **Fixed production reels not showing**
+   - Discovered `npm run seed` didn't actually run against production (would have destroyed 49 issues → 19)
+   - Production has 49 issues (vs 19 in seed.ts) — re-seeding would be destructive
+   - Wrote a targeted `scripts/insert-reels.ts` migration script that matches issues by name and inserts reels without dropping data
+   - Ran migration successfully — 17 reels inserted, 0 skipped
+
+3. **Fixed stale Vercel API responses**
+   - After DB update, Vercel functions still returned old reel data
+   - Root cause: Vercel serverless function instances had cached the old DB query results
+   - Fix: `npx vercel --prod` forced a fresh deployment, immediately showing new data
+   - Verified all 17 reels visible via API and on the website
+
+4. **Documentation updates**
+   - Added 2 new gotchas to CLAUDE.md: Vercel redeployment after DB changes, never re-seed production
+   - Archived session 10 to `session-logs/`
+   - Created auto memory for YouTube verification technique and production DB gotchas
+
+### Key decisions
+
+- **Migration script over re-seed** — production has 30 more issues than seed.ts creates; targeted insert preserves all existing data
+- **noembed.com for video verification** — YouTube.com is blocked from WebFetch/WebSearch crawlers; noembed oEmbed proxy returns title + author if video exists, 404 if not
+
+### Discoveries
+
+- **Production DB has diverged from seed.ts** — 49 issues vs 19. `npm run seed` can never be run against production again without data loss. All future data changes need targeted migration scripts.
+- **Vercel functions cache DB results across requests** — after direct DB modifications, a `npx vercel --prod` redeployment is needed to clear stale function instances. The `s-maxage` CDN cache was NOT the issue (headers showed `x-vercel-cache: MISS`).
+- **`npm run seed` silently fails** — when run from the wrong directory or with incorrect env resolution, seed appears to succeed (no output) but doesn't actually modify the target database.
+
+### Test count
+
+454 tests passing across 33 files (~2.2s) — unchanged (seed data only, no logic changes)
+
+### PRs created and merged
+
+- PR #14: Replace placeholder riot reel videos with real YouTube content
+
+### Next steps
+
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
+- **Profile page improvements**
