@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ export function NavBar() {
     <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-          <span className="text-2xl">🐔</span>
+          <Image src="/logo-192.png" alt="Quiet Riots logo" width={28} height={28} />
           <span>Quiet Riots</span>
         </Link>
 

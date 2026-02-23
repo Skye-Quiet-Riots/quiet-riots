@@ -16,7 +16,7 @@ export default function Error({
 
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
-      <p className="mb-4 text-5xl">🐔</p>
+      <img src="/logo-192.png" alt="Quiet Riots" width={64} height={64} className="mb-4" />
       <h1 className="text-2xl font-bold">Something went wrong</h1>
       <p className="mt-2 max-w-md text-zinc-600 dark:text-zinc-400">
         {error.message || 'An unexpected error occurred.'}
