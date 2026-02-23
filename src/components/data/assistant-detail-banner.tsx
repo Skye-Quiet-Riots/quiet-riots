@@ -92,7 +92,7 @@ export function AssistantDetailBanner({
       {/* Link to full profile */}
       <div className="mt-3">
         <Link
-          href={`/assistants/${assistant.category}`}
+          href={`/assistants/${assistant.category.toLowerCase()}`}
           className="text-sm font-medium text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
         >
           Learn more about {assistant.agent_name} & {assistant.human_name} →

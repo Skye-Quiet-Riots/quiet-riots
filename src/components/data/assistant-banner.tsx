@@ -12,7 +12,7 @@ export function AssistantBanner({ assistant }: AssistantBannerProps) {
 
   return (
     <Link
-      href={`/assistants/${assistant.category}`}
+      href={`/assistants/${assistant.category.toLowerCase()}`}
       className="group flex items-center gap-3 rounded-lg border border-purple-100 bg-purple-50/60 px-4 py-3 transition-all hover:border-purple-200 hover:bg-purple-50 dark:border-purple-900/40 dark:bg-purple-950/20 dark:hover:border-purple-800 dark:hover:bg-purple-950/30"
     >
       {/* Dual overlapping gradient icons */}
