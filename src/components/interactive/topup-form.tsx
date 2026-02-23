@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { formatPence } from '@/lib/format';
+import { trackEvent } from '@/lib/analytics';
 
 const PRESET_AMOUNTS = [
   { label: '£1', pence: 100 },
@@ -37,6 +38,7 @@ export function TopUpForm() {
 
       setSuccess(`${formatPence(amountPence)} added to your wallet!`);
       setCustomAmount('');
+      trackEvent('wallet_topup', { amountPence });
 
       // Refresh the page after a short delay to show updated balance
       setTimeout(() => window.location.reload(), 1200);

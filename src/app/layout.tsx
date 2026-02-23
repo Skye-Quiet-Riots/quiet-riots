@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { NavBar } from '@/components/layout/nav-bar';
 import { Footer } from '@/components/layout/footer';
+import { PostHogProvider } from './posthog-provider';
 import './globals.css';
 
 const geistSans = Geist({
@@ -52,9 +54,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Suspense fallback={null}>
+          <PostHogProvider>
+            <NavBar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </PostHogProvider>
+        </Suspense>
       </body>
     </html>
   );

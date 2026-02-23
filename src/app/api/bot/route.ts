@@ -51,6 +51,7 @@ import {
 } from '@/lib/queries/assistants';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
+import { trackBotEvent } from '@/lib/queries/bot-events';
 
 const BOT_API_KEY = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026';
 
@@ -232,17 +233,34 @@ export async function POST(request: NextRequest) {
 
   const p = result.data as Record<string, unknown>;
 
+  // Analytics: track userId and issueId as they're resolved during dispatch
+  let trackedUserId: string | null = null;
+  let trackedIssueId: string | null = (p.issue_id as string) ?? null;
+  let trackedOrgId: string | null = (p.org_id as string) ?? null;
+  let trackedAssistantCategory: string | null = (p.category as string) ?? null;
+  let trackedStatus: 'ok' | 'error' = 'ok';
+  let trackedError: string | null = null;
+
+  // Helper: resolve user by phone and track the user ID for analytics
+  async function resolveUser(phone: string) {
+    const user = await getUserByPhone(phone);
+    if (user) trackedUserId = user.id;
+    return user;
+  }
+
   try {
     switch (action) {
       // ─── User Identity ───────────────────────────────────
       case 'identify': {
         const phone = p.phone as string;
         let user = await getUserByPhone(phone);
+        if (user) trackedUserId = user.id;
         if (!user) {
           const digits = phone.replace(/\D/g, '');
           const email = `wa-${digits}@whatsapp.quietriots.com`;
           const name = (p.name as string) || 'WhatsApp User';
           user = await createUser({ name, email, phone });
+          trackedUserId = user.id;
         }
         const issues = await getUserIssues(user.id);
         return ok({ user, issues });
@@ -321,7 +339,7 @@ export async function POST(request: NextRequest) {
       case 'join_issue': {
         const phone = p.phone as string;
         const issueId = p.issue_id as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         await joinIssue(user.id, issueId);
@@ -331,7 +349,7 @@ export async function POST(request: NextRequest) {
       case 'leave_issue': {
         const phone = p.phone as string;
         const issueId = p.issue_id as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found', 404);
 
         await leaveIssue(user.id, issueId);
@@ -343,7 +361,7 @@ export async function POST(request: NextRequest) {
         const phone = p.phone as string;
         const issueId = p.issue_id as string;
         const content = p.content as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const post = await createFeedPost(issueId, user.id, content);
@@ -393,7 +411,7 @@ export async function POST(request: NextRequest) {
       // ─── User Profile ────────────────────────────────────
       case 'update_user': {
         const phone = p.phone as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const updated = await updateUser(user.id, {
@@ -408,7 +426,7 @@ export async function POST(request: NextRequest) {
       case 'get_riot_reel': {
         const phone = p.phone as string;
         const issueId = p.issue_id as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const reel = await getUnseenReelForUser(issueId, user.id);
@@ -426,7 +444,7 @@ export async function POST(request: NextRequest) {
         const issueId = p.issue_id as string;
         const youtubeUrl = p.youtube_url as string;
         const caption = (p.caption as string) || '';
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const videoId = extractVideoId(youtubeUrl);
@@ -451,7 +469,7 @@ export async function POST(request: NextRequest) {
       // ─── Riot Wallet ──────────────────────────────────────
       case 'get_wallet': {
         const phone = p.phone as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const wallet = await getOrCreateWallet(user.id);
@@ -462,7 +480,7 @@ export async function POST(request: NextRequest) {
       case 'topup_wallet': {
         const phone = p.phone as string;
         const amountPence = p.amount_pence as number;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const wallet = await getOrCreateWallet(user.id);
@@ -477,7 +495,7 @@ export async function POST(request: NextRequest) {
         const phone = p.phone as string;
         const campaignId = p.campaign_id as string;
         const amountPence = p.amount_pence as number;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         try {
@@ -515,7 +533,7 @@ export async function POST(request: NextRequest) {
 
       case 'check_user_met_assistants': {
         const phone = p.phone as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
         const met = await getUserMetAssistants(user.id);
         return ok({ met });
@@ -524,7 +542,7 @@ export async function POST(request: NextRequest) {
       case 'record_assistant_introduction': {
         const phone = p.phone as string;
         const category = (p.category as string).toLowerCase();
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         const assistant = await getAssistantByCategory(category);
@@ -538,7 +556,7 @@ export async function POST(request: NextRequest) {
         const phone = p.phone as string;
         const issueId = p.issue_id as string;
         const suggestionText = p.suggestion_text as string;
-        const user = await getUserByPhone(phone);
+        const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         try {
@@ -556,9 +574,25 @@ export async function POST(request: NextRequest) {
         return err(`Unknown action: ${action}`);
     }
   } catch (error) {
+    trackedStatus = 'error';
+    trackedError = error instanceof Error ? error.message : 'Unknown error';
     log.error({ action, err: error, durationMs: Date.now() - startTime }, 'Bot request failed');
     return err('Internal server error', 500);
   } finally {
-    log.info({ action, durationMs: Date.now() - startTime }, 'Bot request completed');
+    const durationMs = Date.now() - startTime;
+    log.info({ action, durationMs }, 'Bot request completed');
+
+    // Fire-and-forget analytics — don't await, don't let it break the response
+    trackBotEvent({
+      action,
+      userId: trackedUserId,
+      issueId: trackedIssueId,
+      durationMs,
+      status: trackedStatus,
+      errorMessage: trackedError,
+      metadata: trackedOrgId || trackedAssistantCategory
+        ? { orgId: trackedOrgId, assistantCategory: trackedAssistantCategory }
+        : null,
+    }).catch(() => {});
   }
 }

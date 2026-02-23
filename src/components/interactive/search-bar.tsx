@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 interface SearchBarProps {
   placeholder?: string;
@@ -17,6 +18,7 @@ export function SearchBar({ placeholder = 'Search issues...' }: SearchBarProps) 
       const params = new URLSearchParams(searchParams.toString());
       if (value) {
         params.set('search', value);
+        trackEvent('issue_searched', { query: value });
       } else {
         params.delete('search');
       }

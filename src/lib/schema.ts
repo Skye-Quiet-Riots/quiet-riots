@@ -258,6 +258,22 @@ export async function createTables() {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
+    CREATE TABLE IF NOT EXISTS bot_events (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      action TEXT NOT NULL CHECK(length(action) <= 50),
+      user_id TEXT REFERENCES users(id),
+      issue_id TEXT,
+      duration_ms INTEGER CHECK(duration_ms >= 0),
+      status TEXT NOT NULL DEFAULT 'ok' CHECK(status IN ('ok', 'error')),
+      error_message TEXT CHECK(length(error_message) <= 500),
+      metadata TEXT CHECK(length(metadata) <= 2000),
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_bot_events_action ON bot_events(action);
+    CREATE INDEX IF NOT EXISTS idx_bot_events_user ON bot_events(user_id);
+    CREATE INDEX IF NOT EXISTS idx_bot_events_created ON bot_events(created_at DESC);
+
     CREATE INDEX IF NOT EXISTS idx_wallet_user ON wallets(user_id);
     CREATE INDEX IF NOT EXISTS idx_wtx_wallet ON wallet_transactions(wallet_id);
     CREATE INDEX IF NOT EXISTS idx_wtx_campaign ON wallet_transactions(campaign_id);
@@ -273,6 +289,7 @@ export async function createTables() {
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS bot_events;
     DROP TABLE IF EXISTS assistant_claims;
     DROP TABLE IF EXISTS assistant_activity;
     DROP TABLE IF EXISTS user_assistant_introductions;

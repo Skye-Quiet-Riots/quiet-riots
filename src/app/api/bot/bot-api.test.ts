@@ -447,3 +447,33 @@ describe('Bot API: get_campaigns', () => {
     expect(body.data.campaigns.every((c: { status: string }) => c.status === 'funded')).toBe(true);
   });
 });
+
+describe('Bot API: event tracking', () => {
+  it('records bot events in bot_events table after action dispatch', async () => {
+    const { getRecentBotEvents } = await import('@/lib/queries/bot-events');
+
+    // Call an action that resolves a user (identify creates/finds user)
+    await callBot('identify', { phone: '+447700900001', name: 'Sarah K.' });
+
+    // Allow fire-and-forget tracking to complete
+    await new Promise((r) => setTimeout(r, 100));
+
+    const events = await getRecentBotEvents({ action: 'identify' });
+    expect(events.length).toBeGreaterThanOrEqual(1);
+    expect(events[0].action).toBe('identify');
+    expect(events[0].status).toBe('ok');
+    expect(events[0].user_id).toBeTruthy(); // User ID is resolved from phone
+    expect(events[0].duration_ms).toBeGreaterThanOrEqual(0);
+  });
+
+  it('tracks issue_id from params', async () => {
+    const { getRecentBotEvents } = await import('@/lib/queries/bot-events');
+
+    await callBot('get_issue', { issue_id: 'issue-rail' });
+    await new Promise((r) => setTimeout(r, 100));
+
+    const events = await getRecentBotEvents({ action: 'get_issue' });
+    expect(events.length).toBeGreaterThanOrEqual(1);
+    expect(events[0].issue_id).toBe('issue-rail');
+  });
+});
