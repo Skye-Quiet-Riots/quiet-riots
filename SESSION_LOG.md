@@ -1,6 +1,7 @@
 # Session Log
 
 > Older sessions archived in `session-logs/`. Only the last 5 sessions are kept here.
+> Session 12 should be archived next.
 
 ---
 
@@ -290,3 +291,65 @@
 - **Stripe integration** — replace simulated top-up with real Stripe Checkout
 - **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
 - **Profile page improvements**
+
+---
+
+## 2026-02-23 (Session 17) — Category Assistants Deployment + Production Safety + OpenClaw
+
+### What was worked on
+
+1. **Deployed Category Assistants to production and staging**
+   - Merged PR #18 (Category Assistants feature — 25 files, 520 tests) via `gh pr merge --admin`
+   - Ran migration 005 on production: `export $(grep -v '^#' .env.local | xargs) && npx tsx scripts/migrate.ts`
+   - Ran seed-assistants.ts on production: 16 pairs, 80 activity entries, 49 issues updated
+   - Discovered category casing bug: seed script stored title case ('Transport'), API expects lowercase ('transport')
+   - Fixed production data with UPDATE queries, fixed seed script source (PR #19, merged)
+   - Ran `npx vercel --prod` to clear stale Vercel function cache
+   - Deployed staging: pulled preview env vars, ran migration + seed against staging DB
+
+2. **Production safety rearchitecture (PR #20)**
+   - Created `scripts/db-safety.ts` — shared utility for environment detection, confirmation prompts, production blocking
+   - Protected `scripts/seed.ts` — hard-blocks on production unless `--i-know-what-im-doing` flag passed
+   - Simplified `scripts/seed-assistants.ts` — replaced 35 lines of inline confirmation with shared module
+   - Added environment banner to `scripts/migrate.ts`
+   - Added `npm run seed:production` command in package.json
+   - Added 10 tests for db-safety module
+   - Updated vitest.config.ts to include `scripts/**/*.test.ts`
+   - Flipped `.env.local` from production to staging database
+   - Updated CLAUDE.md gotchas and `.env.example` documentation
+
+3. **OpenClaw assistant integration**
+   - Updated SKILL.md: added 4 new API actions, Step 4.8 "Meet Your Assistants" conversation flow, updated Step 3 choices
+   - Updated SOUL.md: added Category Assistants knowledge section
+   - Updated TOOLS.md: added 4 new actions to the list
+   - Cleared sessions and restarted gateway
+
+### Key decisions
+
+- **Hard block over confirmation for production seed** — `npm run seed` exits with error on production; must use `npm run seed:production` (with `--i-know-what-im-doing` flag) to bypass. Designed so an inexperienced user can't accidentally destroy production.
+- **Staging-first local development** — `.env.local` now points to staging DB by default. Production access requires explicit env var override on the command line.
+- **Assistant introduction flow** — bot introduces AI Agent + Human Organiser after user joins an issue (if not previously met). Tracks introductions via `record_assistant_introduction` API.
+
+### Discoveries
+
+- **`source .env.local` doesn't export to tsx subprocesses** — must use `export $(grep -v '^#' .env.local | xargs)` to properly export env vars for `npx tsx` commands
+- **Category casing convention** — `AssistantCategory` type uses lowercase ('transport'), `Category` type uses title case ('Transport'). Seed scripts must use lowercase for assistant tables.
+- **Vercel function caching after DB changes** — after direct DB modifications, `npx vercel --prod` is needed to force fresh deployment. CDN cache headers showed MISS — the stale data was in serverless function instances, not the CDN.
+
+### Test count
+
+530 tests passing across 36 files (~2.4s) — up from 454 (+76 tests: 66 from assistants feature + 10 from db-safety)
+
+### PRs created and merged
+
+- PR #18: Add Category Assistants feature (merged)
+- PR #19: Fix seed-assistants.ts category casing (merged)
+- PR #20: Add production safety guards to database scripts (created, pending review)
+
+### Next steps
+
+- **Merge PR #20** — production safety guards
+- **Test WhatsApp bot assistant flow** — message bot, join an issue, check if assistants are introduced
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Profile page improvements**
+- **Worktree cleanup** — this branch (stoic-poincare) should be cleaned up once PR #20 is merged

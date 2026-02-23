@@ -21,10 +21,11 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                  | Purpose                              |
 | ------------------------ | ------------------------------------ |
 | `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 454 tests (~2s)                  |
+| `npm test`               | Run 530 tests (~2.4s)                |
 | `npm run test:watch`     | Watch mode                           |
 | `npm run test:coverage`  | With V8 coverage                     |
-| `npm run seed`           | Reset database with sample data      |
+| `npm run seed`           | Reset database (blocked on production) |
+| `npm run seed:production`| Reset production DB (requires confirmation) |
 | `npm run migrate`        | Run pending database migrations      |
 | `npm run migrate:status` | Show applied & pending migrations    |
 | `npm run dev`            | Local dev server                     |
@@ -84,11 +85,12 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **CSP uses nonces + strict-dynamic:** `unsafe-eval` only in dev mode; prod eliminates `unsafe-inline`
 - **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
 - **`tsx` doesn't load `.env.local`:** When running `npm run seed` or `tsx scripts/*.ts`, env vars must be passed explicitly or sourced from `.env.local` — without them, libSQL falls back to `file:quiet-riots.db` (a local SQLite file) instead of the remote Turso database
-- **`.env.local` is PRODUCTION, not staging:** Local `.env.local` points to the production Turso DB. Vercel Preview deployments use a separate staging DB. To get staging creds: `npx vercel env pull /tmp/vercel-preview-env --environment preview` (must run from main repo root, not a worktree)
+- **`.env.local` should point to staging:** For day-to-day development, `.env.local` should use the staging Turso DB. Vercel Preview deployments also use staging. To get staging creds: `npx vercel env pull /tmp/vercel-preview-env --environment preview` (must run from main repo root, not a worktree). To run scripts against production, pass env vars explicitly: `TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npx tsx scripts/seed-assistants.ts`
+- **`npm run seed` is blocked on production:** The seed script refuses to run against production unless the `--i-know-what-im-doing` flag is passed (via `npm run seed:production`). This prevents accidental data loss. All scripts show a database banner (LOCAL/STAGING/PRODUCTION) before running.
 - **`npx vercel` commands fail in worktrees:** Vercel CLI doesn't recognise worktrees as linked projects — always run from `/Users/skye/Projects/quiet-riots`
 - **libSQL `datetime("now")` as column default fails:** Use `CURRENT_TIMESTAMP` or omit and set in application code
 - **OpenClaw default session reset wipes memory at 4 AM:** The default `session.reset.mode` is `"daily"` with `atHour: 4`. This creates a brand new session on the first inbound message after 4 AM, so the bot loses all conversational context overnight. Fixed by setting `session.reset.mode: "idle"` with `idleMinutes: 1440` (24h) — sessions now only reset after 24 hours of inactivity. The auto-update LaunchAgent also runs at 04:00 which compounds the issue.
-- **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. Don't use `npm run seed` on production — it drops all tables and regenerates random IDs, destroying any data beyond the 19 seed issues.
+- **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. `npm run seed` is blocked on production by default — use `npm run seed:production` only if you truly need a full reset (drops all tables).
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
 
 ## Database ID Convention

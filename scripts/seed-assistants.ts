@@ -10,9 +10,9 @@
  *   source .env.local && npx tsx scripts/seed-assistants.ts
  */
 
-import * as readline from 'node:readline/promises';
 import { getDb } from '../src/lib/db';
 import { generateId } from '../src/lib/uuid';
+import { printDbBanner, confirmOrAbort } from './db-safety';
 
 // ─────────────────────────────────────────────────────────────────
 // 1. CATEGORY ASSISTANTS — 16 pairs
@@ -1859,37 +1859,19 @@ function daysAgoISO(days: number): string {
 // MAIN
 // ─────────────────────────────────────────────────────────────────
 
-async function confirm(message: string): Promise<boolean> {
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  try {
-    const answer = await rl.question(`${message} [y/N] `);
-    return answer.trim().toLowerCase() === 'y';
-  } finally {
-    rl.close();
-  }
-}
-
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const db = getDb();
 
   // Show which database we're connecting to and require confirmation
-  const dbUrl = process.env.TURSO_DATABASE_URL || process.env.DATABASE_URL || 'file:quiet-riots.db';
-  const isProduction = dbUrl.includes('turso.io') && !dbUrl.includes('staging');
-  const label = isProduction ? '⚠️  PRODUCTION' : dbUrl.includes('staging') ? 'STAGING' : 'LOCAL';
-  console.log(`\nDatabase: ${label}`);
-  console.log(`URL: ${dbUrl}\n`);
+  const env = printDbBanner();
 
   if (!dryRun) {
-    const ok = await confirm(
-      isProduction
+    await confirmOrAbort(
+      env.isProduction
         ? '⚠️  You are about to write to the PRODUCTION database. Continue?'
         : 'Continue with seed?',
     );
-    if (!ok) {
-      console.log('Aborted.');
-      process.exit(0);
-    }
     console.log();
   }
 

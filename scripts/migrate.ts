@@ -7,8 +7,10 @@
  */
 
 import { migrate, getMigrationStatus } from '../src/lib/migrate';
+import { printDbBanner } from './db-safety';
 
 async function main() {
+  printDbBanner();
   const command = process.argv[2] || 'run';
 
   if (command === 'status') {
