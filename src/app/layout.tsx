@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Quiet Riots — Change. Finally.',
+  title: 'Quiet Riots',
   description: 'Organise around shared issues. Find your people. Take action together.',
   openGraph: {
-    title: 'Quiet Riots — Change. Finally.',
+    title: 'Quiet Riots',
     description: 'Organise around shared issues. Find your people. Take action together.',
     url: 'https://www.quietriots.com',
     siteName: 'Quiet Riots',
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
         url: 'https://www.quietriots.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Quiet Riots — Change. Finally.',
+        alt: 'Quiet Riots',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Quiet Riots — Change. Finally.',
+    title: 'Quiet Riots',
     description: 'Organise around shared issues. Find your people. Take action together.',
     images: ['https://www.quietriots.com/og-image.jpg'],
   },

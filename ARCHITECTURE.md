@@ -92,6 +92,6 @@ sentry.edge.config.ts   # Sentry edge runtime SDK
 ## Branding
 
 - **Favicon:** Circular Q logo — blue spiral with red dot (`src/app/favicon.ico`)
-- **Browser tab title:** "Quiet Riots — Change. Finally."
+- **Browser tab title:** "Quiet Riots"
 - **OG image:** `public/og-image.jpg` (1200x630, circular Q logo centred on white)
 - **Logo assets:** `public/logo-192.png`, `public/logo-512.png`
