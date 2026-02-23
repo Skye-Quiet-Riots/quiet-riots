@@ -43,6 +43,12 @@ import {
   getUserSpendingSummary,
 } from '@/lib/queries/wallet';
 import { getCampaigns } from '@/lib/queries/campaigns';
+import {
+  getAssistantByCategory,
+  getUserMetAssistants,
+  recordAssistantIntroduction,
+  createSuggestion,
+} from '@/lib/queries/assistants';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 
@@ -119,6 +125,19 @@ const actionSchemas = {
   get_campaigns: z.object({
     issue_id: z.string().optional(),
     status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
+  }),
+  get_category_assistants: z.object({
+    category: z.string().min(1, 'Category required'),
+  }),
+  check_user_met_assistants: phoneParam,
+  record_assistant_introduction: z.object({
+    phone: z.string().min(1),
+    category: z.string().min(1, 'Category required'),
+  }),
+  log_suggestion: z.object({
+    phone: z.string().min(1),
+    issue_id: z.string().min(1),
+    suggestion_text: z.string().min(1, 'Suggestion text required').max(2000),
   }),
 } as const;
 
@@ -484,6 +503,53 @@ export async function POST(request: NextRequest) {
         const status = p.status as import('@/types').CampaignStatus | undefined;
         const campaigns = await getCampaigns(issueId, status);
         return ok({ campaigns });
+      }
+
+      // ─── Category Assistants ────────────────────────────────
+      case 'get_category_assistants': {
+        const category = (p.category as string).toLowerCase();
+        const assistant = await getAssistantByCategory(category);
+        if (!assistant) return err('Assistant pair not found', 404);
+        return ok({ assistant });
+      }
+
+      case 'check_user_met_assistants': {
+        const phone = p.phone as string;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const met = await getUserMetAssistants(user.id);
+        return ok({ met });
+      }
+
+      case 'record_assistant_introduction': {
+        const phone = p.phone as string;
+        const category = (p.category as string).toLowerCase();
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const assistant = await getAssistantByCategory(category);
+        if (!assistant) return err('Assistant pair not found', 404);
+
+        const intro = await recordAssistantIntroduction(user.id, category);
+        return ok({ introduction: intro, assistant });
+      }
+
+      case 'log_suggestion': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const suggestionText = p.suggestion_text as string;
+        const user = await getUserByPhone(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        try {
+          const result = await createSuggestion(user.id, issueId, suggestionText);
+          return ok(result);
+        } catch (e) {
+          const message = e instanceof Error ? e.message : 'Suggestion failed';
+          if (message === 'Issue not found') return err(message, 404);
+          if (message === 'No assistants found for category') return err(message, 404);
+          throw e;
+        }
       }
 
       default:

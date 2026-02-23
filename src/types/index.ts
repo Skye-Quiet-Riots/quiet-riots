@@ -25,6 +25,10 @@ export interface Issue {
   country_count: number;
   trending_delta: number;
   created_at: string;
+  agent_helps: string | null;
+  human_helps: string | null;
+  agent_focus: string | null;
+  human_focus: string | null;
 }
 
 export interface Organisation {
@@ -347,3 +351,94 @@ export const CATEGORY_EMOJIS: Record<Category, string> = {
   Tech: '💻',
   Other: '📋',
 };
+
+// Category Assistants
+export type AssistantCategory =
+  | 'transport'
+  | 'telecoms'
+  | 'banking'
+  | 'health'
+  | 'education'
+  | 'environment'
+  | 'energy'
+  | 'water'
+  | 'insurance'
+  | 'housing'
+  | 'shopping'
+  | 'delivery'
+  | 'local'
+  | 'employment'
+  | 'tech'
+  | 'other';
+
+export const ASSISTANT_CATEGORIES: AssistantCategory[] = [
+  'transport',
+  'telecoms',
+  'energy',
+  'water',
+  'banking',
+  'insurance',
+  'health',
+  'housing',
+  'shopping',
+  'delivery',
+  'education',
+  'environment',
+  'local',
+  'employment',
+  'tech',
+  'other',
+];
+
+export function toAssistantCategory(category: Category): AssistantCategory {
+  return category.toLowerCase() as AssistantCategory;
+}
+
+export interface CategoryAssistant {
+  id: string;
+  category: AssistantCategory;
+  agent_name: string;
+  agent_icon: string;
+  agent_quote: string | null;
+  agent_bio: string | null;
+  agent_gradient_start: string | null;
+  agent_gradient_end: string | null;
+  human_name: string;
+  human_icon: string;
+  human_quote: string | null;
+  human_bio: string | null;
+  human_gradient_start: string | null;
+  human_gradient_end: string | null;
+  human_user_id: string | null;
+  goal: string | null;
+  focus: string | null;
+  focus_detail: string | null;
+  profile_url: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AssistantActivity {
+  id: string;
+  category: AssistantCategory;
+  assistant_type: 'agent' | 'human';
+  activity_type: string;
+  description: string;
+  stat_value: number | null;
+  stat_label: string | null;
+  created_at: string;
+}
+
+export interface UserAssistantIntroduction {
+  user_id: string;
+  category: AssistantCategory;
+  introduced_at: string;
+}
+
+export interface AssistantClaim {
+  id: string;
+  category: AssistantCategory;
+  user_id: string;
+  message: string | null;
+  created_at: string;
+}
