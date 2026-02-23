@@ -41,7 +41,7 @@ interface CategoryAssistant {
 const categoryAssistants: CategoryAssistant[] = [
   // ── 1. Transport — Jett & Bex ──
   {
-    category: 'Transport',
+    category: 'transport',
     agent_name: 'Jett',
     agent_icon: '🛩️',
     agent_quote:
@@ -66,7 +66,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 2. Telecoms — Pulse & Jin ──
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     agent_name: 'Pulse',
     agent_icon: '💜',
     agent_quote:
@@ -91,7 +91,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 3. Energy — Spark & Dee ──
   {
-    category: 'Energy',
+    category: 'energy',
     agent_name: 'Spark',
     agent_icon: '⚡',
     agent_quote:
@@ -116,7 +116,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 4. Water — Flow & Nia ──
   {
-    category: 'Water',
+    category: 'water',
     agent_name: 'Flow',
     agent_icon: '💧',
     agent_quote:
@@ -141,7 +141,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 5. Banking — Chip & Roz ──
   {
-    category: 'Banking',
+    category: 'banking',
     agent_name: 'Chip',
     agent_icon: '🏦',
     agent_quote:
@@ -166,7 +166,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 6. Health — Cura & Kai ──
   {
-    category: 'Health',
+    category: 'health',
     agent_name: 'Cura',
     agent_icon: '🏥',
     agent_quote:
@@ -191,7 +191,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 7. Housing — Nest & Liv ──
   {
-    category: 'Housing',
+    category: 'housing',
     agent_name: 'Nest',
     agent_icon: '🏠',
     agent_quote:
@@ -216,7 +216,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 8. Shopping — Scout & Pip ──
   {
-    category: 'Shopping',
+    category: 'shopping',
     agent_name: 'Scout',
     agent_icon: '🛒',
     agent_quote:
@@ -241,7 +241,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 9. Local — Link & Taz ──
   {
-    category: 'Local',
+    category: 'local',
     agent_name: 'Link',
     agent_icon: '🏘️',
     agent_quote:
@@ -266,7 +266,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 10. Other — Flex & Gem ──
   {
-    category: 'Other',
+    category: 'other',
     agent_name: 'Flex',
     agent_icon: '📋',
     agent_quote:
@@ -291,7 +291,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 11. Insurance — Shield & Jas ──
   {
-    category: 'Insurance',
+    category: 'insurance',
     agent_name: 'Shield',
     agent_icon: '🛡️',
     agent_quote:
@@ -316,7 +316,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 12. Delivery — Track & Eve ──
   {
-    category: 'Delivery',
+    category: 'delivery',
     agent_name: 'Track',
     agent_icon: '📦',
     agent_quote:
@@ -341,7 +341,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 13. Education — Sage & Drew ──
   {
-    category: 'Education',
+    category: 'education',
     agent_name: 'Sage',
     agent_icon: '🎓',
     agent_quote:
@@ -366,7 +366,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 14. Environment — Fern & Ash ──
   {
-    category: 'Environment',
+    category: 'environment',
     agent_name: 'Fern',
     agent_icon: '🌿',
     agent_quote:
@@ -391,7 +391,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 15. Employment — Forge & Sam ──
   {
-    category: 'Employment',
+    category: 'employment',
     agent_name: 'Forge',
     agent_icon: '💼',
     agent_quote:
@@ -416,7 +416,7 @@ const categoryAssistants: CategoryAssistant[] = [
   },
   // ── 16. Tech — Glitch & Max ──
   {
-    category: 'Tech',
+    category: 'tech',
     agent_name: 'Glitch',
     agent_icon: '💻',
     agent_quote:
@@ -458,7 +458,7 @@ interface ActivityEntry {
 const activityEntries: ActivityEntry[] = [
   // ── Transport (5) ──
   {
-    category: 'Transport',
+    category: 'transport',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 18 new action suggestions for Train Cancellations and Parking Fines',
@@ -467,7 +467,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Transport',
+    category: 'transport',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -477,7 +477,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Transport',
+    category: 'transport',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -487,7 +487,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 5,
   },
   {
-    category: 'Transport',
+    category: 'transport',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 24 new transport rioters and shared the refund claim guide',
@@ -496,7 +496,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Transport',
+    category: 'transport',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Escalated 6 unresolved refund claims to the Rail Ombudsman',
@@ -507,7 +507,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Telecoms (5) ──
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -517,7 +517,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -527,7 +527,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 9 action suggestions for Price Rises Mid-Contract',
@@ -536,7 +536,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description: 'Shared negotiation scripts with 15 rioters dealing with BT mid-contract rises',
@@ -545,7 +545,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Telecoms',
+    category: 'telecoms',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Filed 4 Ofcom complaints on behalf of rioters in mobile dead zones',
@@ -556,7 +556,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Energy (5) ──
   {
-    category: 'Energy',
+    category: 'energy',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -566,7 +566,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Energy',
+    category: 'energy',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 19 new energy rioters and shared hardship fund information',
@@ -575,7 +575,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Energy',
+    category: 'energy',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 14 suggestions for Smart Meter Problems — 8 approved as actions',
@@ -584,7 +584,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 5,
   },
   {
-    category: 'Energy',
+    category: 'energy',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description: 'Helped 28 rioters apply for Warm Home Discount — all 28 approved',
@@ -593,7 +593,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 8,
   },
   {
-    category: 'Energy',
+    category: 'energy',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Submitted billing evidence pack to Ofgem covering 3 energy providers',
@@ -604,7 +604,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Water (5) ──
   {
-    category: 'Water',
+    category: 'water',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -614,7 +614,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Water',
+    category: 'water',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description: 'Organised beach water testing at 12 locations with local rioter groups',
@@ -623,7 +623,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Water',
+    category: 'water',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 7 new actions for Water Bill Increases — 5 approved',
@@ -632,7 +632,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Water',
+    category: 'water',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description: 'Helped 44 rioters apply for WaterSure capped bills — average saving £180/year',
@@ -641,7 +641,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Water',
+    category: 'water',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Submitted sewage evidence pack to the Environment Agency for 3 river outlets',
@@ -652,7 +652,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Banking (5) ──
   {
-    category: 'Banking',
+    category: 'banking',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -662,7 +662,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Banking',
+    category: 'banking',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -672,7 +672,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Banking',
+    category: 'banking',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 11 new action suggestions across Fraud and Scam Losses',
@@ -681,7 +681,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Banking',
+    category: 'banking',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 16 new banking rioters and shared the statement audit checklist',
@@ -690,7 +690,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 8,
   },
   {
-    category: 'Banking',
+    category: 'banking',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Escalated 8 fraud reimbursement refusals to the Financial Ombudsman',
@@ -701,7 +701,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Health (5) ──
   {
-    category: 'Health',
+    category: 'health',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -711,7 +711,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Health',
+    category: 'health',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -721,7 +721,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Health',
+    category: 'health',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 8 new actions for Dentist Availability and Prescription Costs',
@@ -730,7 +730,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Health',
+    category: 'health',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description: 'Shared parking exemption guides with 15 rioters at frequent-visit hospitals',
@@ -739,7 +739,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 10,
   },
   {
-    category: 'Health',
+    category: 'health',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Submitted GP access report to 4 local Integrated Care Boards',
@@ -750,7 +750,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Housing (5) ──
   {
-    category: 'Housing',
+    category: 'housing',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -760,7 +760,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Housing',
+    category: 'housing',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -770,7 +770,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Housing',
+    category: 'housing',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 6 action suggestions for Damp and Mould in Housing',
@@ -779,7 +779,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Housing',
+    category: 'housing',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 11 new housing rioters and shared the evidence pack template',
@@ -788,7 +788,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Housing',
+    category: 'housing',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Submitted 5 damp and mould cases to the Housing Ombudsman',
@@ -799,7 +799,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Shopping (5) ──
   {
-    category: 'Shopping',
+    category: 'shopping',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -809,7 +809,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Shopping',
+    category: 'shopping',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -819,7 +819,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Shopping',
+    category: 'shopping',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 10 suggestions for Fake Reviews and Self-Checkout Frustration',
@@ -828,7 +828,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Shopping',
+    category: 'shopping',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description:
@@ -838,7 +838,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 10,
   },
   {
-    category: 'Shopping',
+    category: 'shopping',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Submitted fake review evidence to Trading Standards for 3 Amazon sellers',
@@ -849,7 +849,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Local (5) ──
   {
-    category: 'Local',
+    category: 'local',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -859,7 +859,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Local',
+    category: 'local',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description: 'Organised a pothole safari with 30 rioters — mapped 847 potholes in one weekend',
@@ -868,7 +868,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Local',
+    category: 'local',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -878,7 +878,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 5,
   },
   {
-    category: 'Local',
+    category: 'local',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 14 new local rioters and shared the FOI request template',
@@ -887,7 +887,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 8,
   },
   {
-    category: 'Local',
+    category: 'local',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description: 'Sent FOI requests to 30 councils on pothole repair response times',
@@ -898,7 +898,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Other (5) ──
   {
-    category: 'Other',
+    category: 'other',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -908,7 +908,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Other',
+    category: 'other',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -918,7 +918,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Other',
+    category: 'other',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description: 'Reviewed 7 suggestions for Subscription Traps and Customer Service Hold Times',
@@ -927,7 +927,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Other',
+    category: 'other',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description:
@@ -937,7 +937,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Other',
+    category: 'other',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -949,7 +949,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Insurance (5) ──
   {
-    category: 'Insurance',
+    category: 'insurance',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -959,7 +959,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Insurance',
+    category: 'insurance',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -969,7 +969,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Insurance',
+    category: 'insurance',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -979,7 +979,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Insurance',
+    category: 'insurance',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description: 'Welcomed 9 new insurance rioters and shared the FOS appeal template',
@@ -988,7 +988,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 8,
   },
   {
-    category: 'Insurance',
+    category: 'insurance',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -1000,7 +1000,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Delivery (5) ──
   {
-    category: 'Delivery',
+    category: 'delivery',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -1010,7 +1010,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Delivery',
+    category: 'delivery',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -1020,7 +1020,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Delivery',
+    category: 'delivery',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -1030,7 +1030,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 5,
   },
   {
-    category: 'Delivery',
+    category: 'delivery',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description:
@@ -1040,7 +1040,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 8,
   },
   {
-    category: 'Delivery',
+    category: 'delivery',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -1052,7 +1052,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Education (5) ──
   {
-    category: 'Education',
+    category: 'education',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -1062,7 +1062,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Education',
+    category: 'education',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -1072,7 +1072,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Education',
+    category: 'education',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -1082,7 +1082,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Education',
+    category: 'education',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description:
@@ -1092,7 +1092,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Education',
+    category: 'education',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -1104,7 +1104,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Environment (5) ──
   {
-    category: 'Environment',
+    category: 'environment',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -1114,7 +1114,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Environment',
+    category: 'environment',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -1124,7 +1124,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 5,
   },
   {
-    category: 'Environment',
+    category: 'environment',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -1134,7 +1134,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Environment',
+    category: 'environment',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description:
@@ -1144,7 +1144,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 10,
   },
   {
-    category: 'Environment',
+    category: 'environment',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -1156,7 +1156,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Employment (5) ──
   {
-    category: 'Employment',
+    category: 'employment',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -1166,7 +1166,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 1,
   },
   {
-    category: 'Employment',
+    category: 'employment',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -1176,7 +1176,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 3,
   },
   {
-    category: 'Employment',
+    category: 'employment',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -1186,7 +1186,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 6,
   },
   {
-    category: 'Employment',
+    category: 'employment',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
     description:
@@ -1196,7 +1196,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 9,
   },
   {
-    category: 'Employment',
+    category: 'employment',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
@@ -1208,7 +1208,7 @@ const activityEntries: ActivityEntry[] = [
 
   // ── Tech (5) ──
   {
-    category: 'Tech',
+    category: 'tech',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
     description:
@@ -1218,7 +1218,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 2,
   },
   {
-    category: 'Tech',
+    category: 'tech',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
     description:
@@ -1228,7 +1228,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 4,
   },
   {
-    category: 'Tech',
+    category: 'tech',
     assistant_type: 'agent',
     activity_type: 'reviewed_actions',
     description:
@@ -1238,7 +1238,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 7,
   },
   {
-    category: 'Tech',
+    category: 'tech',
     assistant_type: 'human',
     activity_type: 'sent_messages',
     description:
@@ -1248,7 +1248,7 @@ const activityEntries: ActivityEntry[] = [
     days_ago: 10,
   },
   {
-    category: 'Tech',
+    category: 'tech',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
     description:
