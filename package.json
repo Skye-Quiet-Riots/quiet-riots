@@ -10,6 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "seed": "tsx scripts/seed.ts",
+    "seed:production": "tsx scripts/seed.ts --i-know-what-im-doing",
     "migrate": "tsx scripts/migrate.ts",
     "migrate:status": "tsx scripts/migrate.ts status",
     "test": "vitest run",
