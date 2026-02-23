@@ -23,6 +23,11 @@ vi.mock('next/link', () => ({
   ),
 }));
 
+// Mock next/image
+vi.mock('next/image', () => ({
+  default: (props: Record<string, unknown>) => <img {...props} />,
+}));
+
 // Mock next/navigation
 vi.mock('next/navigation', () => ({
   usePathname: () => '/issues',
@@ -39,9 +44,9 @@ describe('Footer', () => {
     expect(screen.getByText(/Quiet Riots/)).toBeDefined();
   });
 
-  it('renders chicken emoji', () => {
+  it('renders logo image', () => {
     render(<Footer />);
-    expect(screen.getByText('🐔')).toBeDefined();
+    expect(screen.getByAltText('Quiet Riots logo')).toBeDefined();
   });
 });
 

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTrendingIssues } from '@/lib/queries/issues';
 import { getTrendingReels } from '@/lib/queries/reels';
@@ -15,7 +16,7 @@ export default async function Home() {
       {/* Hero */}
       <section className="flex flex-col items-center justify-center px-6 py-20 text-center sm:py-28">
         <p className="mb-4 text-sm font-medium uppercase tracking-widest text-zinc-500">
-          The Issues One-Stop-Shop 🐔
+          The Issues One-Stop-Shop
         </p>
         <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
           Change doesn&apos;t have to be loud to be&nbsp;powerful
@@ -155,7 +156,7 @@ export default async function Home() {
       {/* Mission */}
       <section className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-3xl">🐔</p>
+          <Image src="/logo-192.png" alt="Quiet Riots" width={48} height={48} />
           <h2 className="mt-4 text-xl font-bold italic text-zinc-700 dark:text-zinc-300">
             &ldquo;To change more for the better in our lifetimes than we dare to imagine is
             possible.&rdquo;

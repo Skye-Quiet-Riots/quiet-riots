@@ -28,7 +28,7 @@ export default function GlobalError({
             padding: '1.5rem',
           }}
         >
-          <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>🐔</p>
+          <img src="/logo-192.png" alt="Quiet Riots" width={64} height={64} style={{ marginBottom: '1rem' }} />
           <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Something went wrong</h1>
           <p style={{ marginTop: '0.5rem', color: '#71717a' }}>
             An unexpected error occurred. Our team has been notified.
