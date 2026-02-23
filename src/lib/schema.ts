@@ -15,7 +15,11 @@ export async function createTables() {
       rioter_count INTEGER NOT NULL DEFAULT 0 CHECK(rioter_count >= 0),
       country_count INTEGER NOT NULL DEFAULT 0 CHECK(country_count >= 0),
       trending_delta INTEGER NOT NULL DEFAULT 0,
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      agent_helps TEXT,
+      human_helps TEXT,
+      agent_focus TEXT,
+      human_focus TEXT
     );
 
     CREATE TABLE IF NOT EXISTS organisations (
@@ -204,17 +208,75 @@ export async function createTables() {
     CREATE INDEX IF NOT EXISTS idx_reels_status ON riot_reels(status);
     CREATE INDEX IF NOT EXISTS idx_reels_upvotes ON riot_reels(upvotes DESC);
     CREATE INDEX IF NOT EXISTS idx_reel_shown_user ON reel_shown_log(user_id, shown_at);
+    CREATE TABLE IF NOT EXISTS category_assistants (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      category TEXT NOT NULL UNIQUE CHECK(length(category) <= 50),
+      agent_name TEXT NOT NULL CHECK(length(agent_name) <= 50),
+      agent_icon TEXT NOT NULL CHECK(length(agent_icon) <= 10),
+      agent_quote TEXT CHECK(length(agent_quote) <= 500),
+      agent_bio TEXT CHECK(length(agent_bio) <= 1000),
+      agent_gradient_start TEXT CHECK(length(agent_gradient_start) <= 10),
+      agent_gradient_end TEXT CHECK(length(agent_gradient_end) <= 10),
+      human_name TEXT NOT NULL CHECK(length(human_name) <= 50),
+      human_icon TEXT NOT NULL CHECK(length(human_icon) <= 10),
+      human_quote TEXT CHECK(length(human_quote) <= 500),
+      human_bio TEXT CHECK(length(human_bio) <= 1000),
+      human_gradient_start TEXT CHECK(length(human_gradient_start) <= 10),
+      human_gradient_end TEXT CHECK(length(human_gradient_end) <= 10),
+      human_user_id TEXT REFERENCES users(id),
+      goal TEXT CHECK(length(goal) <= 500),
+      focus TEXT CHECK(length(focus) <= 255),
+      focus_detail TEXT CHECK(length(focus_detail) <= 1000),
+      profile_url TEXT CHECK(length(profile_url) <= 255),
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS user_assistant_introductions (
+      user_id TEXT NOT NULL REFERENCES users(id),
+      category TEXT NOT NULL CHECK(length(category) <= 50),
+      introduced_at TEXT NOT NULL DEFAULT (datetime('now')),
+      PRIMARY KEY (user_id, category)
+    );
+
+    CREATE TABLE IF NOT EXISTS assistant_activity (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      category TEXT NOT NULL CHECK(length(category) <= 50),
+      assistant_type TEXT NOT NULL CHECK(assistant_type IN ('agent', 'human')),
+      activity_type TEXT NOT NULL CHECK(length(activity_type) <= 50),
+      description TEXT NOT NULL CHECK(length(description) <= 500),
+      stat_value INTEGER,
+      stat_label TEXT CHECK(length(stat_label) <= 50),
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS assistant_claims (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      category TEXT NOT NULL CHECK(length(category) <= 50),
+      user_id TEXT NOT NULL REFERENCES users(id),
+      message TEXT CHECK(length(message) <= 1000),
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
     CREATE INDEX IF NOT EXISTS idx_wallet_user ON wallets(user_id);
     CREATE INDEX IF NOT EXISTS idx_wtx_wallet ON wallet_transactions(wallet_id);
     CREATE INDEX IF NOT EXISTS idx_wtx_campaign ON wallet_transactions(campaign_id);
     CREATE INDEX IF NOT EXISTS idx_campaigns_issue ON campaigns(issue_id);
     CREATE INDEX IF NOT EXISTS idx_campaigns_status ON campaigns(status);
+    CREATE INDEX IF NOT EXISTS idx_assistant_activity_category ON assistant_activity(category);
+    CREATE INDEX IF NOT EXISTS idx_assistant_activity_created ON assistant_activity(created_at DESC);
+    CREATE INDEX IF NOT EXISTS idx_user_introductions_user ON user_assistant_introductions(user_id);
+    CREATE INDEX IF NOT EXISTS idx_assistant_claims_category ON assistant_claims(category);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS assistant_claims;
+    DROP TABLE IF EXISTS assistant_activity;
+    DROP TABLE IF EXISTS user_assistant_introductions;
+    DROP TABLE IF EXISTS category_assistants;
     DROP TABLE IF EXISTS wallet_transactions;
     DROP TABLE IF EXISTS wallets;
     DROP TABLE IF EXISTS campaigns;

@@ -11,10 +11,12 @@
 - `/campaigns` — Browse all campaigns with status filter (active/funded/disbursed)
 - `/campaigns/[id]` — Campaign detail: progress, stats, contribute form
 - `/profile` — User profile page
+- `/assistants` — Browse all 16 category assistant pairs (AI agent + human organiser)
+- `/assistants/[category]` — Assistant pair profile: dual cards, activity feed, riots, claim form
 
 ## API Routes
 
-- `POST /api/bot` — Single multiplexed bot endpoint (Bearer token auth, 12+ actions)
+- `POST /api/bot` — Single multiplexed bot endpoint (Bearer token auth, 20+ actions)
 - `GET/POST /api/issues` — List/search issues
 - `GET /api/issues/[id]` — Issue detail with health, countries, pivots
 - `POST /api/issues/[id]/join` — Join/leave an issue
@@ -36,11 +38,17 @@
 - `POST /api/wallet/contribute` — Contribute to campaign (cookie auth, rate limited)
 - `GET/POST /api/campaigns` — List campaigns (public, cached) / Create campaign (bot auth)
 - `GET /api/campaigns/[id]` — Campaign detail (public, cached)
+- `GET /api/assistants` — All 16 assistant pairs with stats (public, cached)
+- `GET /api/assistants/[category]` — Assistant pair detail (public, cached)
+- `GET /api/assistants/[category]/activity` — Paginated activity feed (public, cached)
+- `POST /api/assistants/[category]/claim` — Express interest in human role (cookie auth, rate limited)
+- `GET/POST /api/users/[id]/met-assistants` — Track which assistants a user has met
+- `POST /api/suggestions` — Submit suggestion (creates idea action + assistant activity)
 - `GET /api/health` — Health check (db connectivity)
 
-## Database (17 tables)
+## Database (21 tables)
 
-`issues`, `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/contribute/refund), `campaigns` (per-issue funding targets)
+`issues` (with per-riot assistant copy fields), `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/contribute/refund), `campaigns` (per-issue funding targets), `category_assistants` (16 pairs, one per issue category), `user_assistant_introductions` (tracks which pairs a user has met), `assistant_activity` (log of assistant actions), `assistant_claims` (humans expressing interest in a role)
 
 ## Key Patterns
 
@@ -51,14 +59,15 @@
 - **Phone Identity** — WhatsApp users identified by E.164 phone, auto-email `wa-{digits}@whatsapp.quietriots.com`
 - **Bot API** — single POST endpoint multiplexing all operations via `{ action, params }`
 - **Riot Wallet** — pre-loaded wallet for micropayments; atomic debit+credit via `db.batch()`
+- **Category Assistants** — every issue category gets an AI agent + human organiser pair
 
 ## Component Structure
 
 ```
 src/components/
-├── cards/          # issue-card, org-card, action-card, expert-card, feed-post-card, reel-card, campaign-card
-├── data/           # health-meter, pivot-table, stat-badge, trending-indicator, country-list, category-badge, synonym-list, campaign-progress, wallet-balance, transaction-list
-├── interactive/    # join-button, search-bar, feed-composer, feed-section, actions-section, category-filter, pivot-toggle, time-skill-filter, reels-section, topup-form, contribute-form, status-filter
+├── cards/          # issue-card, org-card, action-card, expert-card, feed-post-card, reel-card, campaign-card, assistant-card
+├── data/           # health-meter, pivot-table, stat-badge, trending-indicator, country-list, category-badge, synonym-list, campaign-progress, wallet-balance, transaction-list, assistant-profile, assistant-activity-list
+├── interactive/    # join-button, search-bar, feed-composer, feed-section, actions-section, category-filter, pivot-toggle, time-skill-filter, reels-section, topup-form, contribute-form, status-filter, claim-form
 └── layout/         # nav-bar, footer, page-header
 ```
 
@@ -75,7 +84,7 @@ src/lib/
 ├── rate-limit.ts     # Sliding-window in-memory rate limiter
 ├── api-response.ts   # Standardised API response helpers (apiSuccess, apiError, apiValidationError)
 ├── format.ts         # Shared formatting utilities (formatPence)
-└── queries/          # issues.ts, organisations.ts, users.ts, actions.ts, community.ts, synonyms.ts, reels.ts, wallet.ts, campaigns.ts
+└── queries/          # issues.ts, organisations.ts, users.ts, actions.ts, community.ts, synonyms.ts, reels.ts, wallet.ts, campaigns.ts, assistants.ts
 ```
 
 ## Infrastructure

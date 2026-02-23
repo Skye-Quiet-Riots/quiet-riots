@@ -2834,12 +2834,54 @@ export async function seed() {
     campaignCount++;
   }
 
+  // =============================
+  // CATEGORY ASSISTANTS (2 pairs for dev seed — full set via scripts/seed-assistants.ts)
+  // =============================
+  const assistantSql = `INSERT INTO category_assistants (id, category, agent_name, agent_icon, agent_quote, agent_bio, agent_gradient_start, agent_gradient_end, human_name, human_icon, human_quote, human_bio, human_gradient_start, human_gradient_end, goal, focus, focus_detail, profile_url)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  const seedAssistants: [string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string][] = [
+    [
+      'transport', 'Jett', '🛩️',
+      'Once helped a rioter file 6 delay-repay claims during a single journey. Total reclaimed: £94.',
+      'Tracks cancellation patterns, auto-files delay-repay claims, and compiles evidence packs for regulators.',
+      '#8b5cf6', '#7c3aed',
+      'Bex', '👩🏻',
+      'Watching Avanti scramble when 400 of us tweeted at the same time was genuinely beautiful.',
+      'Regular commuter from Manchester who got tired of being a statistic.',
+      '#3b82f6', '#1d4ed8',
+      'Help rioters hold UK transport companies to account — one cancelled train at a time.',
+      'Avanti West Coast cancellation patterns',
+      'Building a dataset of 1,200+ cancellations for the ORR.',
+      '/assistants/transport',
+    ],
+    [
+      'telecoms', 'Pulse', '💜',
+      'Ran speed tests for 200 rioters. Average: 18 Mbps on plans advertising 65.',
+      'Analyses broadband speeds and compiles provider comparison data.',
+      '#a855f7', '#7c3aed',
+      'Jin', '🧑🏻',
+      'A whole street switching broadband together was chaotic — but it worked.',
+      'Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised.',
+      '#06b6d4', '#0891b2',
+      'Help rioters get the broadband and mobile service they actually pay for.',
+      'Mid-contract price rises',
+      'Collecting evidence from rioters hit by CPI+ increases mid-contract.',
+      '/assistants/telecoms',
+    ],
+  ];
+
+  for (const a of seedAssistants) {
+    await insertRow(assistantSql, a);
+  }
+
   console.log('Database seeded successfully!');
   console.log(`   ${issues.length} issues`);
   console.log(`   ${orgs.length} organisations`);
   console.log(`   ${users.length} sample users`);
   console.log(`   ${reelCount} riot reels`);
   console.log(`   ${campaignCount} campaigns`);
+  console.log(`   ${seedAssistants.length} category assistants`);
   console.log(
     '   150+ pivot links, 80+ synonyms, 35+ actions, seasonal patterns, issue relations — all populated',
   );

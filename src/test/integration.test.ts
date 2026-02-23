@@ -321,3 +321,101 @@ describe('Integration: Wallet flow', () => {
     expect(contribute.body.error).toContain('not active');
   });
 });
+
+describe('Integration: Category Assistants flow', () => {
+  it('get_category_assistants returns pair for transport', async () => {
+    const result = await callBot('get_category_assistants', { category: 'transport' });
+    expect(result.status).toBe(200);
+    expect(result.body.data.assistant.agent_name).toBe('Jett');
+    expect(result.body.data.assistant.human_name).toBe('Bex');
+    expect(result.body.data.assistant.category).toBe('transport');
+  });
+
+  it('get_category_assistants returns 404 for unknown category', async () => {
+    const result = await callBot('get_category_assistants', { category: 'nonexistent' });
+    expect(result.status).toBe(404);
+    expect(result.body.error).toContain('Assistant pair not found');
+  });
+
+  it('identify → check_met → record_introduction → check_met verifies introduction', async () => {
+    const phone = '+44700900020';
+
+    // Step 1: Identify user
+    const identify = await callBot('identify', { phone, name: 'Assistant User' });
+    expect(identify.status).toBe(200);
+
+    // Step 2: Check met assistants — should be empty
+    const metBefore = await callBot('check_user_met_assistants', { phone });
+    expect(metBefore.status).toBe(200);
+    expect(metBefore.body.data.met).toHaveLength(0);
+
+    // Step 3: Record introduction to transport assistants
+    const intro = await callBot('record_assistant_introduction', {
+      phone,
+      category: 'transport',
+    });
+    expect(intro.status).toBe(200);
+    expect(intro.body.data.introduction).toBeDefined();
+    expect(intro.body.data.assistant.agent_name).toBe('Jett');
+
+    // Step 4: Check met assistants — should now include transport
+    const metAfter = await callBot('check_user_met_assistants', { phone });
+    expect(metAfter.status).toBe(200);
+    expect(metAfter.body.data.met).toContain('transport');
+
+    // Step 5: Recording again is idempotent
+    const introAgain = await callBot('record_assistant_introduction', {
+      phone,
+      category: 'transport',
+    });
+    expect(introAgain.status).toBe(200);
+
+    // Still just one entry
+    const metFinal = await callBot('check_user_met_assistants', { phone });
+    expect(metFinal.body.data.met).toHaveLength(1);
+  });
+
+  it('log_suggestion creates action and returns assistant info', async () => {
+    const phone = '+447700900001'; // existing user Sarah
+    const result = await callBot('log_suggestion', {
+      phone,
+      issue_id: 'issue-rail',
+      suggestion_text: 'We should organise a commuter protest at Euston',
+    });
+    expect(result.status).toBe(200);
+    expect(result.body.data.actionId).toBeDefined();
+    expect(result.body.data.agentName).toBe('Jett');
+    expect(result.body.data.humanName).toBe('Bex');
+    expect(result.body.data.category).toBe('transport');
+  });
+
+  it('log_suggestion fails for nonexistent issue', async () => {
+    const phone = '+447700900001';
+    const result = await callBot('log_suggestion', {
+      phone,
+      issue_id: 'issue-nonexistent',
+      suggestion_text: 'This should fail',
+    });
+    expect(result.status).toBe(404);
+    expect(result.body.error).toContain('Issue not found');
+  });
+
+  it('record_assistant_introduction fails for unknown user', async () => {
+    const result = await callBot('record_assistant_introduction', {
+      phone: '+44000000000',
+      category: 'transport',
+    });
+    expect(result.status).toBe(404);
+    expect(result.body.error).toContain('User not found');
+  });
+
+  it('record_assistant_introduction fails for invalid category', async () => {
+    const phone = '+447700900001';
+    const result = await callBot('record_assistant_introduction', {
+      phone,
+      category: 'nonexistent',
+    });
+    expect(result.status).toBe(404);
+    expect(result.body.error).toContain('Assistant pair not found');
+  });
+});

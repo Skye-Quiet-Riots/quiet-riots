@@ -445,6 +445,122 @@ export async function seedTestData() {
     ],
   });
 
+  // Category assistants (2 pairs for testing)
+  await db.execute({
+    sql: `INSERT INTO category_assistants (id, category, agent_name, agent_icon, agent_quote, agent_bio, agent_gradient_start, agent_gradient_end, human_name, human_icon, human_quote, human_bio, human_gradient_start, human_gradient_end, goal, focus, focus_detail, profile_url)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'asst-transport',
+      'transport',
+      'Jett',
+      '🛩️',
+      'Once helped a rioter file 6 refund claims during a single delayed journey.',
+      'Tracks cancellation patterns and handles refund paperwork.',
+      '#8b5cf6',
+      '#7c3aed',
+      'Bex',
+      '👩🏻',
+      'Watching Avanti scramble when 400 of us tweeted at the same time.',
+      'Regular commuter from Manchester.',
+      '#3b82f6',
+      '#1d4ed8',
+      'Help rioters hold UK transport companies to account.',
+      'Avanti West Coast cancellation patterns',
+      'Building a dataset of cancellations for the ORR.',
+      '/assistants/transport',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO category_assistants (id, category, agent_name, agent_icon, agent_quote, agent_bio, agent_gradient_start, agent_gradient_end, human_name, human_icon, human_quote, human_bio, human_gradient_start, human_gradient_end, goal, focus, focus_detail, profile_url)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'asst-telecoms',
+      'telecoms',
+      'Pulse',
+      '💜',
+      'Ran speed tests for 200 rioters. Average was 18 Mbps.',
+      'Analyses broadband speeds and compiles provider comparison data.',
+      '#a855f7',
+      '#7c3aed',
+      'Jin',
+      '🧑🏻',
+      'A whole street switched broadband together.',
+      'Tech-savvy Londoner who got fed up paying for broadband speeds.',
+      '#06b6d4',
+      '#0891b2',
+      'Help rioters get the broadband and mobile service they pay for.',
+      'Mid-contract price rises',
+      'Collecting evidence from rioters hit by CPI+ increases.',
+      '/assistants/telecoms',
+    ],
+  });
+
+  // Assistant activity (3 entries)
+  await db.execute({
+    sql: `INSERT INTO assistant_activity (id, category, assistant_type, activity_type, description, stat_value, stat_label, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'act-001',
+      'transport',
+      'agent',
+      'reviewed_actions',
+      'Reviewed 12 new actions this week — 8 approved and now live',
+      12,
+      'actions',
+      '2026-02-22 10:00:00',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO assistant_activity (id, category, assistant_type, activity_type, description, stat_value, stat_label, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'act-002',
+      'transport',
+      'human',
+      'connected_rioters',
+      'Connected 15 rioters on the Manchester–London corridor',
+      15,
+      'rioters',
+      '2026-02-21 14:00:00',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO assistant_activity (id, category, assistant_type, activity_type, description, stat_value, stat_label, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'act-003',
+      'telecoms',
+      'agent',
+      'compiled_data',
+      'Compiled speed test data from 200 rioters for Ofcom submission',
+      200,
+      'rioters',
+      '2026-02-20 09:00:00',
+    ],
+  });
+
+  // Per-riot assistant copy on test issues
+  await db.execute({
+    sql: `UPDATE issues SET agent_helps = ?, human_helps = ?, agent_focus = ?, human_focus = ? WHERE id = ?`,
+    args: [
+      'Tracks cancellation patterns by route and time',
+      'Connects rioters on the same routes',
+      'Analysing Avanti West Coast cancellation data',
+      'Linking up rioters on the Manchester–London corridor',
+      'issue-rail',
+    ],
+  });
+  await db.execute({
+    sql: `UPDATE issues SET agent_helps = ?, human_helps = ?, agent_focus = ?, human_focus = ? WHERE id = ?`,
+    args: [
+      'Runs speed test analysis and helps build Ofcom complaints',
+      'Shares which providers deliver on their promises',
+      'Speed test data from 200 rioters shows average 18 Mbps on 65 Mbps plans',
+      'Organised a street-level broadband switch in Hackney',
+      'issue-broadband',
+    ],
+  });
+
   // Wallet for sarah with £5 balance
   await db.execute({
     sql: `INSERT INTO wallets (id, user_id, balance_pence, total_loaded_pence, total_spent_pence)
