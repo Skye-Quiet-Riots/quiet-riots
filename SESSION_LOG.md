@@ -4,88 +4,6 @@
 
 ---
 
-## 2026-02-18 (Session 11) — Riot Reels Feature
-
-### What was worked on
-
-Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-banach` branch. Riot Reels are funny/ironic YouTube videos attached to issues — users can browse, submit, and upvote them.
-
-**Phase 1 — Data Layer:**
-
-- Added `RiotReel`, `ReelVote`, `ReelShownLog` interfaces to `src/types/index.ts`
-- Added 3 tables + 4 indexes to `src/lib/schema.ts` (`riot_reels`, `reel_votes`, `reel_shown_log`) with CHECK constraints
-- Created `migrations/003_riot_reels.sql`
-- Created `src/lib/youtube.ts` — `extractVideoId()` (regex for 5 URL formats), `getThumbnailUrl()`, `getVideoMetadata()` (oEmbed, no API key)
-
-**Phase 2 — Query Layer:**
-
-- Created `src/lib/queries/reels.ts` — 9 functions: getReelsForIssue, getReelById, createReel, voteOnReel, hasVoted, getTrendingReels, getUnseenReelForUser, logReelShown, incrementReelViews
-- Updated test seed data with 4 test reels + 1 vote
-
-**Phase 3 — API Routes:**
-
-- `GET/POST /api/issues/[id]/reels` — approved reels list + submit new reel
-- `POST /api/issues/[id]/reels/[reelId]/vote` — upvote (idempotent)
-- `GET /api/reels/trending` — top reels across all issues (last 7 days)
-- Bot actions: `get_riot_reel` (unseen reel + log shown) and `submit_riot_reel` (pending reel from YouTube URL)
-
-**Phase 4 — UI Components:**
-
-- `src/components/cards/reel-card.tsx` — thumbnail, title, caption, optimistic upvote button, source badge
-- `src/components/interactive/reels-section.tsx` — grid of ReelCards + submit form
-- Updated issue detail page and homepage (riot reel of the day widget)
-
-**Phase 5 — Seed Data:**
-
-- 17 placeholder reels across 10 issues in `src/lib/seed.ts`
-
-**Phase 6 — Tests:**
-
-- API route tests (GET/POST reels, vote, trending)
-- Bot tests (get_riot_reel, submit_riot_reel)
-- Integration tests (reel submission + get_riot_reel flow)
-- YouTube utility tests (getVideoMetadata with oEmbed mock)
-- Component tests (ReelCard, ReelsSection)
-- Fixed rate limiter test interference by adding `_resetRateLimitStore()` in bot test `beforeEach`
-
-**Phase 7 — Documentation:**
-
-- Updated ARCHITECTURE.md (pages, routes, tables, components, data layer)
-- Updated CLAUDE.md (test count, entity table count)
-- Updated .claude/rules/bot.md (17 actions, rate limiting, reel descriptions)
-
-### Key decisions
-
-- **No `org_id` on `riot_reels`** — reels are per-issue only (simplification from spec)
-- **No `/api/reels/daily`** — trending endpoint with `LIMIT 1` serves the same purpose
-- **No Claude auto-review** — community submissions default to `pending`; curated default to `approved`
-- **Placeholder YouTube IDs** in seed data — swap for real videos later
-- **oEmbed for metadata** — free, no API key needed, returns title + thumbnail
-- **Rate limiter reset in tests** — `_resetRateLimitStore()` in `beforeEach` prevents IP-based rate limiting from cascading across test cases
-
-### Discoveries
-
-- **Rate limiter test interference** — bot tests share the same IP (`unknown`), and after 30+ calls the in-memory rate limiter kicks in. Solution: reset the store before each test.
-
-### Test count
-
-344 tests passing across 28 files (~2s) — up from 283 (+61 new tests)
-
-### Files changed
-
-10 new files created, 12 existing files modified (23 files total, 1,479 insertions in first commit + 188 in test coverage commit)
-
-### Next steps
-
-- **Create PR** for `claude/suspicious-banach` branch
-- **Re-seed staging and production** after merge (new tables + reels data)
-- **Run migration 003** on staging and production before seeding (or seed will handle it via schema.ts)
-- **OpenClaw session clearing** — bot route has 2 new actions, SKILL.md may need updating
-- Profile page improvements
-- Replace placeholder YouTube IDs with real videos
-
----
-
 ## 2026-02-18 (Session 12) — PR Review, Merge, SKILL.md Reels, User Testing
 
 ### What was worked on
@@ -321,6 +239,54 @@ Implemented the entire Riot Reels feature in 7 phases on the `claude/suspicious-
 
 ### Next steps
 
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
+- **Profile page improvements**
+
+---
+
+## 2026-02-23 (Session 16) — New Logo Rebrand
+
+### What was worked on
+
+1. **Replaced chicken logo with new circular Q logo (PR #16, merged)**
+   - User provided new logo: blue spiral Q with red centre dot (1024x1024 PNG)
+   - Processed into all required sizes using ImageMagick: centred, small white border, logo filling ~88% of space
+   - Replaced `src/app/favicon.ico` (multi-size ICO: 16/32/48px), `public/logo-192.png`, `public/logo-512.png`, `public/og-image.jpg` (1200x630)
+   - Replaced chicken emoji with `<Image>` component in nav-bar (28x28), footer (20x20), homepage hero + mission, not-found, error, global-error pages
+   - Added `next/image` mock to layout tests, updated "renders chicken emoji" test to "renders logo image"
+   - Updated ARCHITECTURE.md branding section
+
+2. **Deployed to production**
+   - PR created, CI passed, merged via GitHub API (worktree can't checkout main)
+   - Vercel auto-deployed to production
+
+3. **WhatsApp bot**
+   - No changes needed — SKILL.md is text-only, no image references
+   - Copied centred 1024x1024 logo to `~/Desktop/quiet-riots-logo.png` for manual WhatsApp profile picture update
+
+### Key decisions
+
+- **Image component over emoji** — replaced all `🐔` chicken emoji with `next/image` `<Image>` components (or `<img>` in error boundaries where Next.js Image isn't available)
+- **Admin merge** — used GitHub API PUT to merge since worktree can't checkout main for `gh pr merge`
+- **No bot changes** — WhatsApp bot is text-only; profile picture is set manually via phone
+
+### Discoveries
+
+- **`gh pr merge` fails in worktrees** — `fatal: 'main' is already used by worktree`. Workaround: use `gh api repos/.../pulls/.../merge -X PUT` directly
+- **Direct push to main from worktree** — ARCHITECTURE.md docs update was pushed directly to main from the main repo root, not the worktree
+
+### Test count
+
+454 tests passing across 33 files (~2.4s) — unchanged
+
+### PRs created and merged
+
+- PR #16: Replace chicken logo with new circular Q logo
+
+### Next steps
+
+- **Set WhatsApp profile picture** manually from phone (`~/Desktop/quiet-riots-logo.png`)
 - **Stripe integration** — replace simulated top-up with real Stripe Checkout
 - **Idempotency guard on `completeTopup`** — prevent double-crediting when Stripe webhook retries
 - **Profile page improvements**
