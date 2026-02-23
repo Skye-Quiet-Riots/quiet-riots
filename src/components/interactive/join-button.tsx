@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 interface JoinButtonProps {
   issueId: string;
@@ -19,6 +20,7 @@ export function JoinButton({ issueId, initialJoined }: JoinButtonProps) {
       });
       if (res.ok) {
         setJoined(!joined);
+        trackEvent(joined ? 'issue_left' : 'issue_joined', { issueId });
       }
     } finally {
       setLoading(false);

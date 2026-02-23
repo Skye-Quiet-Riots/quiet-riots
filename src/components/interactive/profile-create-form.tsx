@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { trackEvent } from '@/lib/analytics';
 
 export function ProfileCreateForm() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export function ProfileCreateForm() {
         body: JSON.stringify({ name: formName.trim(), email: formEmail.trim() }),
       });
       if (res.ok) {
+        trackEvent('profile_created');
         router.refresh();
       } else {
         const data = await res.json();

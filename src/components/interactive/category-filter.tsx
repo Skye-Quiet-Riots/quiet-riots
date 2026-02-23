@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { CATEGORIES, CATEGORY_EMOJIS } from '@/types';
 import type { Category } from '@/types';
+import { trackEvent } from '@/lib/analytics';
 
 export function CategoryFilter() {
   const router = useRouter();
@@ -17,6 +18,7 @@ export function CategoryFilter() {
       params.delete('category');
     }
     router.push(`?${params.toString()}`, { scroll: false });
+    if (category) trackEvent('category_filtered', { category });
   }
 
   return (

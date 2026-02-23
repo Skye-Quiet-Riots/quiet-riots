@@ -442,3 +442,16 @@ export interface AssistantClaim {
   message: string | null;
   created_at: string;
 }
+
+// Bot Analytics
+export interface BotEvent {
+  id: string;
+  action: string;
+  user_id: string | null;
+  issue_id: string | null;
+  duration_ms: number | null;
+  status: 'ok' | 'error';
+  error_message: string | null;
+  metadata: string | null;
+  created_at: string;
+}

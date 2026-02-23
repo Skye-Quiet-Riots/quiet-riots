@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { formatPence } from '@/lib/format';
+import { trackEvent } from '@/lib/analytics';
 
 interface ContributeFormProps {
   campaignId: string;
@@ -53,6 +54,7 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
         amount: amountPence,
         newBalance: data.data.wallet_balance_pence,
       });
+      trackEvent('campaign_contributed', { campaignId, amountPence });
     } catch {
       setError('Network error. Please try again.');
     } finally {

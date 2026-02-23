@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { FeedPost } from '@/types';
+import { trackEvent } from '@/lib/analytics';
 
 interface FeedComposerProps {
   issueId: string;
@@ -27,6 +28,7 @@ export function FeedComposer({ issueId, onPost }: FeedComposerProps) {
         const post = await res.json();
         setContent('');
         onPost?.(post);
+        trackEvent('feed_post_created', { issueId });
       }
     } finally {
       setPosting(false);
