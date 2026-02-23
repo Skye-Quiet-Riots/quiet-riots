@@ -23,7 +23,7 @@ export default async function OrganisationsPage({ searchParams }: Props) {
     category ? getAllAssistants() : Promise.resolve([]),
   ]);
   const assistant = category
-    ? allAssistants.find((a) => a.category === category.toLowerCase())
+    ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())
     : undefined;
 
   // Pre-fetch counts for all orgs in parallel

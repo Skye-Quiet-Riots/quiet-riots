@@ -24,7 +24,7 @@ export default async function IssuesPage({ searchParams }: Props) {
   ]);
   const totalIssues = Object.values(counts).reduce((sum, c) => sum + c, 0);
   const assistant = category
-    ? allAssistants.find((a) => a.category === category.toLowerCase())
+    ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())
     : undefined;
 
   return (
