@@ -45,6 +45,7 @@ import {
 import { getCampaigns } from '@/lib/queries/campaigns';
 import {
   getAssistantByCategory,
+  getAssistantDetail,
   getUserMetAssistants,
   recordAssistantIntroduction,
   createSuggestion,
@@ -128,6 +129,9 @@ const actionSchemas = {
     status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
   }),
   get_category_assistants: z.object({
+    category: z.string().min(1, 'Category required'),
+  }),
+  get_assistant_detail: z.object({
     category: z.string().min(1, 'Category required'),
   }),
   check_user_met_assistants: phoneParam,
@@ -529,6 +533,14 @@ export async function POST(request: NextRequest) {
         const assistant = await getAssistantByCategory(category);
         if (!assistant) return err('Assistant pair not found', 404);
         return ok({ assistant });
+      }
+
+      case 'get_assistant_detail': {
+        const category = (p.category as string).toLowerCase();
+        trackedAssistantCategory = category;
+        const detail = await getAssistantDetail(category);
+        if (!detail) return err('Assistant pair not found', 404);
+        return ok({ assistant: detail });
       }
 
       case 'check_user_met_assistants': {
