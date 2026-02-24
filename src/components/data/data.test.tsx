@@ -356,7 +356,7 @@ describe('CampaignProgress', () => {
       campaigns: [makeCampaign({ raised_pence: 50, target_pence: 500 })],
     });
     render(el);
-    expect(screen.getByText(/50p of £5/)).toBeDefined();
+    expect(screen.getByText(/£0\.50.*£5/)).toBeDefined();
   });
 });
 

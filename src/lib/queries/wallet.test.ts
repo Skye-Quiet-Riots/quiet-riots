@@ -9,6 +9,9 @@ import {
   completeTopup,
   createContribution,
   getUserSpendingSummary,
+  getExchangeRate,
+  upsertExchangeRate,
+  getAllExchangeRates,
 } from './wallet';
 
 beforeAll(async () => {
@@ -75,6 +78,7 @@ describe('createTopupTransaction', () => {
     expect(transaction.type).toBe('topup');
     expect(transaction.amount_pence).toBe(500);
     expect(transaction.wallet_id).toBe('wallet-sarah');
+    expect(transaction.completed_at).toBeNull();
     expect(paymentUrl).toContain('https://pay.quietriots.app/topup/');
   });
 });
@@ -96,18 +100,16 @@ describe('completeTopup', () => {
     await expect(completeTopup('nonexistent-tx-id')).rejects.toThrow('Transaction not found');
   });
 
-  it('double-completing a topup credits wallet twice (no idempotency guard)', async () => {
-    // This documents current behaviour — double-call = double-credit.
-    // If we add idempotency later, change this test.
+  it('is idempotent — double-completing a topup credits wallet only once', async () => {
     const { transaction } = await createTopupTransaction('wallet-sarah', 200);
     const walletBefore = await getWalletByUserId('user-sarah');
     const balanceBefore = walletBefore!.balance_pence;
 
     await completeTopup(transaction.id, 'sim-1');
-    await completeTopup(transaction.id, 'sim-2');
+    await completeTopup(transaction.id, 'sim-2'); // Should be a no-op
 
     const walletAfter = await getWalletByUserId('user-sarah');
-    expect(walletAfter!.balance_pence).toBe(balanceBefore + 400); // 200 * 2
+    expect(walletAfter!.balance_pence).toBe(balanceBefore + 200); // Only credited once
   });
 });
 
@@ -124,6 +126,7 @@ describe('createContribution', () => {
     expect(result.transaction.type).toBe('contribute');
     expect(result.transaction.amount_pence).toBe(100);
     expect(result.transaction.campaign_id).toBe('camp-water-test');
+    expect(result.transaction.completed_at).not.toBeNull();
     expect(result.campaign.raised_pence).toBeGreaterThan(31000);
 
     const walletAfter = await getWalletByUserId('user-sarah');
@@ -170,16 +173,47 @@ describe('getUserSpendingSummary', () => {
   });
 
   it('returns zeroes for user with no contributions', async () => {
-    // Create a new user with no wallet history
     const { getDb } = await import('../db');
     const db = getDb();
     await db.execute({
-      sql: `INSERT INTO users (id, name, email) VALUES (?, ?, ?)`,
+      sql: `INSERT OR IGNORE INTO users (id, name, email) VALUES (?, ?, ?)`,
       args: ['user-no-wallet', 'No Wallet', 'nowallet@test.com'],
     });
     const summary = await getUserSpendingSummary('user-no-wallet');
     expect(summary.totalSpent).toBe(0);
     expect(summary.transactionCount).toBe(0);
     expect(summary.issuesSupported).toBe(0);
+  });
+});
+
+describe('exchange rates', () => {
+  it('returns null for non-existent exchange rate', async () => {
+    const rate = await getExchangeRate('GBP', 'XYZ');
+    expect(rate).toBeNull();
+  });
+
+  it('returns 1 for same-currency exchange', async () => {
+    const rate = await getExchangeRate('GBP', 'GBP');
+    expect(rate).toBe(1);
+  });
+
+  it('upserts and retrieves exchange rate', async () => {
+    await upsertExchangeRate('GBP', 'USD', 1.27);
+    const rate = await getExchangeRate('GBP', 'USD');
+    expect(rate).toBe(1.27);
+  });
+
+  it('updates existing exchange rate', async () => {
+    await upsertExchangeRate('GBP', 'EUR', 1.15);
+    await upsertExchangeRate('GBP', 'EUR', 1.18);
+    const rate = await getExchangeRate('GBP', 'EUR');
+    expect(rate).toBe(1.18);
+  });
+
+  it('lists all exchange rates', async () => {
+    const rates = await getAllExchangeRates();
+    expect(rates.length).toBeGreaterThanOrEqual(2);
+    expect(rates[0].from_currency).toBeDefined();
+    expect(rates[0].rate).toBeGreaterThan(0);
   });
 });

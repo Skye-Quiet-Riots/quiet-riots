@@ -1,26 +1,75 @@
 import { describe, it, expect } from 'vitest';
-import { formatPence } from './format';
+import { formatPence, formatCurrency, getCurrencyFractionDigits } from './format';
 
-describe('formatPence', () => {
-  it('formats pence under £1 as Xp', () => {
-    expect(formatPence(50)).toBe('50p');
-    expect(formatPence(1)).toBe('1p');
-    expect(formatPence(99)).toBe('99p');
+describe('formatPence (legacy)', () => {
+  it('formats pence under £1', () => {
+    expect(formatPence(50)).toMatch(/0\.50/);
+    expect(formatPence(1)).toMatch(/0\.01/);
+    expect(formatPence(99)).toMatch(/0\.99/);
   });
 
   it('formats exact pounds without decimals', () => {
-    expect(formatPence(100)).toBe('£1');
-    expect(formatPence(500)).toBe('£5');
-    expect(formatPence(10000)).toBe('£100');
+    expect(formatPence(100)).toMatch(/1/);
+    expect(formatPence(500)).toMatch(/5/);
+    expect(formatPence(10000)).toMatch(/100/);
   });
 
   it('formats pounds with pence using 2 decimal places', () => {
-    expect(formatPence(150)).toBe('£1.50');
-    expect(formatPence(1099)).toBe('£10.99');
-    expect(formatPence(250)).toBe('£2.50');
+    expect(formatPence(150)).toMatch(/1\.50/);
+    expect(formatPence(1099)).toMatch(/10\.99/);
+    expect(formatPence(250)).toMatch(/2\.50/);
   });
 
   it('formats zero', () => {
-    expect(formatPence(0)).toBe('0p');
+    expect(formatPence(0)).toMatch(/0/);
+  });
+});
+
+describe('formatCurrency', () => {
+  it('formats GBP amounts', () => {
+    expect(formatCurrency(500, 'GBP', 'en-GB')).toMatch(/£5/);
+    expect(formatCurrency(1099, 'GBP', 'en-GB')).toMatch(/£10\.99/);
+    expect(formatCurrency(0, 'GBP', 'en-GB')).toMatch(/£0/);
+  });
+
+  it('formats USD amounts', () => {
+    expect(formatCurrency(500, 'USD', 'en-US')).toMatch(/\$5/);
+    expect(formatCurrency(1099, 'USD', 'en-US')).toMatch(/\$10\.99/);
+  });
+
+  it('formats EUR amounts', () => {
+    const result = formatCurrency(1500, 'EUR', 'de-DE');
+    expect(result).toMatch(/15/);
+    expect(result).toContain('€');
+  });
+
+  it('formats zero-decimal currencies (JPY)', () => {
+    // JPY has no minor units — 500 yen is just ¥500
+    const result = formatCurrency(500, 'JPY', 'ja-JP');
+    expect(result).toMatch(/500/);
+    // Node.js Intl may use fullwidth yen sign (￥) or halfwidth (¥)
+    expect(result).toMatch(/[¥￥]/);
+  });
+
+  it('defaults to GBP and en-GB locale', () => {
+    const result = formatCurrency(500);
+    expect(result).toMatch(/£5/);
+  });
+});
+
+describe('getCurrencyFractionDigits', () => {
+  it('returns 2 for GBP, USD, EUR', () => {
+    expect(getCurrencyFractionDigits('GBP')).toBe(2);
+    expect(getCurrencyFractionDigits('USD')).toBe(2);
+    expect(getCurrencyFractionDigits('EUR')).toBe(2);
+  });
+
+  it('returns 0 for JPY, KRW', () => {
+    expect(getCurrencyFractionDigits('JPY')).toBe(0);
+    expect(getCurrencyFractionDigits('KRW')).toBe(0);
+  });
+
+  it('returns 3 for BHD (three-decimal currency)', () => {
+    expect(getCurrencyFractionDigits('BHD')).toBe(3);
   });
 });

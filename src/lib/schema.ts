@@ -19,7 +19,9 @@ export async function createTables() {
       agent_helps TEXT,
       human_helps TEXT,
       agent_focus TEXT,
-      human_focus TEXT
+      human_focus TEXT,
+      country_scope TEXT DEFAULT 'global' CHECK(country_scope IN ('global','country')),
+      primary_country TEXT CHECK(length(primary_country) <= 3)
     );
 
     CREATE TABLE IF NOT EXISTS organisations (
@@ -196,6 +198,8 @@ export async function createTables() {
       issue_id TEXT,
       stripe_payment_id TEXT,
       description TEXT DEFAULT '' CHECK(length(description) <= 500),
+      completed_at TEXT,
+      currency_code TEXT DEFAULT 'GBP' CHECK(length(currency_code) <= 3),
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
@@ -212,6 +216,7 @@ export async function createTables() {
       recipient_url TEXT CHECK(length(recipient_url) <= 500),
       status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','funded','disbursed','cancelled')),
       platform_fee_pct INTEGER NOT NULL DEFAULT 15 CHECK(platform_fee_pct >= 0 AND platform_fee_pct <= 100),
+      currency_code TEXT DEFAULT 'GBP' CHECK(length(currency_code) <= 3),
       funded_at TEXT,
       disbursed_at TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
@@ -404,12 +409,23 @@ export async function createTables() {
     );
 
     CREATE INDEX IF NOT EXISTS idx_user_consents_user ON user_consents(user_id, document_type);
+
+    CREATE TABLE IF NOT EXISTS exchange_rates (
+      from_currency TEXT NOT NULL CHECK(length(from_currency) <= 3),
+      to_currency TEXT NOT NULL CHECK(length(to_currency) <= 3),
+      rate REAL NOT NULL CHECK(rate > 0),
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (from_currency, to_currency)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_issues_country ON issues(country_scope, primary_country);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS exchange_rates;
     DROP TABLE IF EXISTS user_consents;
     DROP TABLE IF EXISTS legal_documents;
     DROP TABLE IF EXISTS verification_tokens;

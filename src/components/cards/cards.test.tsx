@@ -372,7 +372,7 @@ describe('CampaignCard', () => {
   it('shows progress and backer count', async () => {
     const el = await CampaignCard({ campaign: makeCampaign() });
     render(el);
-    expect(screen.getByText(/£310 of £1000/)).toBeDefined();
+    expect(screen.getByText(/£310.*£1,000/)).toBeDefined();
     // ICU plural format is not parsed by the simple mock — check the count is present
     expect(screen.getByText(/155/)).toBeDefined();
   });

@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 import { CategoryBadge } from '@/components/data/category-badge';
 import type { Campaign, Category } from '@/types';
 
@@ -71,7 +71,8 @@ export async function CampaignCard({ campaign, issueName, issueCategory }: Campa
 
       <div className="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
         <span>
-          {formatPence(campaign.raised_pence)} of {formatPence(campaign.target_pence)} ({pct}%)
+          {formatCurrency(campaign.raised_pence, campaign.currency_code)} of{' '}
+          {formatCurrency(campaign.target_pence, campaign.currency_code)} ({pct}%)
         </span>
         <span>
           {campaign.contributor_count} {t('backers', { count: campaign.contributor_count })}

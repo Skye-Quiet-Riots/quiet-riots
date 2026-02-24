@@ -2,10 +2,6 @@ import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { createClient } from '@libsql/client';
 import { _setTestDb, _resetDb, getDb } from './db';
 import { migrate, getMigrationStatus } from './migrate';
-import fs from 'fs';
-import path from 'path';
-
-const MIGRATIONS_DIR = path.join(process.cwd(), 'migrations');
 
 beforeAll(() => {
   const testClient = createClient({ url: 'file::memory:' });
@@ -17,10 +13,14 @@ afterAll(() => {
 });
 
 beforeEach(async () => {
-  // Clean up migrations table between tests
+  // Drop ALL tables so ALTER TABLE migrations don't hit "duplicate column" errors
   const db = getDb();
-  await db.execute('DROP TABLE IF EXISTS _migrations');
-  await db.execute('DROP TABLE IF EXISTS issues');
+  const tables = await db.execute(
+    "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'",
+  );
+  for (const row of tables.rows) {
+    await db.execute(`DROP TABLE IF EXISTS "${row.name as string}"`);
+  }
 });
 
 describe('migrate', () => {

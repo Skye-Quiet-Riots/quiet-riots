@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
 
 const PRESET_AMOUNTS = [
@@ -12,7 +12,11 @@ const PRESET_AMOUNTS = [
   { label: '£20', pence: 2000 },
 ];
 
-export function TopUpForm() {
+interface TopUpFormProps {
+  currency?: string;
+}
+
+export function TopUpForm({ currency = 'GBP' }: TopUpFormProps) {
   const t = useTranslations('TopUp');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,7 +42,7 @@ export function TopUpForm() {
         return;
       }
 
-      setSuccess(t('success', { amount: formatPence(amountPence) }));
+      setSuccess(t('success', { amount: formatCurrency(amountPence, currency) }));
       setCustomAmount('');
       trackEvent('wallet_topup', { amountPence });
 

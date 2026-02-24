@@ -3,13 +3,14 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
 
 interface ContributeFormProps {
   campaignId: string;
   campaignTitle: string;
   userBalance: number;
+  currency?: string;
 }
 
 const PRESET_AMOUNTS = [
@@ -18,7 +19,12 @@ const PRESET_AMOUNTS = [
   { label: '£2', pence: 200 },
 ];
 
-export function ContributeForm({ campaignId, campaignTitle, userBalance }: ContributeFormProps) {
+export function ContributeForm({
+  campaignId,
+  campaignTitle,
+  userBalance,
+  currency = 'GBP',
+}: ContributeFormProps) {
   const t = useTranslations('Contribute');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
@@ -78,10 +84,13 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
     return (
       <div className="rounded-xl border border-green-200 bg-green-50 p-5 dark:border-green-900 dark:bg-green-950/30">
         <p className="mb-2 text-sm font-semibold text-green-700 dark:text-green-300">
-          {t('success', { amount: formatPence(success.amount), campaign: campaignTitle })}
+          {t('success', {
+            amount: formatCurrency(success.amount, currency),
+            campaign: campaignTitle,
+          })}
         </p>
         <p className="text-sm text-green-600 dark:text-green-400">
-          {t('remainingBalance', { balance: formatPence(success.newBalance) })}
+          {t('remainingBalance', { balance: formatCurrency(success.newBalance, currency) })}
         </p>
         {success.newBalance < 100 && (
           <p className="mt-2 text-sm">
@@ -105,7 +114,7 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
       </h3>
       <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-500">
         {t('yourBalance')}
-        {formatPence(userBalance)}
+        {formatCurrency(userBalance, currency)}
       </p>
 
       {error && <p className="mb-3 text-sm text-red-600 dark:text-red-400">{error}</p>}

@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 import type { WalletTransaction } from '@/types';
 
 interface TransactionListProps {
@@ -91,7 +91,7 @@ export async function TransactionList({ transactions }: TransactionListProps) {
               </div>
               <span className={`text-sm font-semibold ${display.colorClass}`}>
                 {sign}
-                {formatPence(tx.amount_pence)}
+                {formatCurrency(tx.amount_pence, tx.currency_code)}
               </span>
             </div>
           );
