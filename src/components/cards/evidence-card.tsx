@@ -42,6 +42,18 @@ function isDirectVideo(url: string): boolean {
   }
 }
 
+/** Infer MIME type from a video URL for the <source type> attribute. */
+function videoMimeType(url: string): string {
+  try {
+    const path = new URL(url).pathname.toLowerCase();
+    if (path.endsWith('.webm')) return 'video/webm';
+    if (path.endsWith('.mov')) return 'video/quicktime';
+  } catch {
+    /* fall through */
+  }
+  return 'video/mp4'; // default — mp4 is the most common upload format
+}
+
 export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
   const [likes, setLikes] = useState(evidence.likes);
   const [liked, setLiked] = useState(false);
@@ -160,12 +172,13 @@ export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
         <div className="mt-3">
           {isDirectVideo(evidence.video_url) ? (
             <video
-              src={evidence.video_url}
               controls
               preload="metadata"
               playsInline
+              crossOrigin="anonymous"
               className="max-h-96 max-w-md rounded-md bg-black"
             >
+              <source src={evidence.video_url} type={videoMimeType(evidence.video_url)} />
               <track kind="captions" />
             </video>
           ) : (

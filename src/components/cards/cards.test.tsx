@@ -412,9 +412,15 @@ describe('EvidenceCard', () => {
     render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
     const video = document.querySelector('video');
     expect(video).not.toBeNull();
-    expect(video?.src).toBe('https://abc.public.blob.vercel-storage.com/evidence/clip.mp4');
     expect(video?.controls).toBe(true);
     expect(video?.playsInline).toBe(true);
+    expect(video?.crossOrigin).toBe('anonymous');
+    // Source element carries the URL and type hint
+    const source = video?.querySelector('source');
+    expect(source?.getAttribute('src')).toBe(
+      'https://abc.public.blob.vercel-storage.com/evidence/clip.mp4',
+    );
+    expect(source?.getAttribute('type')).toBe('video/mp4');
     // Should NOT show "Watch video" link
     expect(screen.queryByText('Watch video')).toBeNull();
   });
@@ -427,7 +433,9 @@ describe('EvidenceCard', () => {
     render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
     const video = document.querySelector('video');
     expect(video).not.toBeNull();
-    expect(video?.src).toBe('https://cdn.example.com/videos/clip.mp4');
+    const source = video?.querySelector('source');
+    expect(source?.getAttribute('src')).toBe('https://cdn.example.com/videos/clip.mp4');
+    expect(source?.getAttribute('type')).toBe('video/mp4');
   });
 
   it('renders "Watch video" link for YouTube URL', () => {
@@ -486,21 +494,25 @@ describe('EvidenceCard', () => {
     expect(document.querySelector('video')).toBeNull();
   });
 
-  it('renders inline video player for .mov URL', () => {
+  it('renders inline video player for .mov URL with quicktime type', () => {
     const evidence = makeEvidence({
       media_type: 'video',
       video_url: 'https://cdn.example.com/clip.mov',
     });
     render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
-    expect(document.querySelector('video')).not.toBeNull();
+    const video = document.querySelector('video');
+    expect(video).not.toBeNull();
+    expect(video?.querySelector('source')?.getAttribute('type')).toBe('video/quicktime');
   });
 
-  it('renders inline video player for .webm URL', () => {
+  it('renders inline video player for .webm URL with webm type', () => {
     const evidence = makeEvidence({
       media_type: 'video',
       video_url: 'https://cdn.example.com/clip.webm',
     });
     render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
-    expect(document.querySelector('video')).not.toBeNull();
+    const video = document.querySelector('video');
+    expect(video).not.toBeNull();
+    expect(video?.querySelector('source')?.getAttribute('type')).toBe('video/webm');
   });
 });
