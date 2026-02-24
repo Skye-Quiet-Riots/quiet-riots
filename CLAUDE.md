@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 530 tests (~2.4s)                       |
+| `npm test`                | Run 651 tests (~2.9s)                       |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -113,6 +113,7 @@ git checkout -b claude/<next-task-name> origin/main
 - **OpenClaw session cache is sticky:** After changing SKILL.md, delete `~/.openclaw/agents/main/sessions/*.jsonl` and restart gateway
 - **CSP uses nonces + strict-dynamic:** `unsafe-eval` only in dev mode; prod eliminates `unsafe-inline`
 - **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
+- **`BOT_API_KEY` is required in production:** The env validation now requires `BOT_API_KEY`. The dev fallback key (`qr-bot-dev-key-2026`) still works locally/in tests but is rejected in production. Vercel production env already has the real key set.
 - **`tsx` doesn't load `.env.local`:** When running `npm run seed` or `tsx scripts/*.ts`, env vars must be passed explicitly or sourced from `.env.local` — without them, libSQL falls back to `file:quiet-riots.db` (a local SQLite file) instead of the remote Turso database
 - **`.env.local` should point to staging:** For day-to-day development, `.env.local` should use the staging Turso DB. Vercel Preview deployments also use staging. To get staging creds: `npx vercel env pull /tmp/vercel-preview-env --environment preview` (must run from main repo root, not a worktree). To run scripts against production, pass env vars explicitly: `TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npx tsx scripts/seed-assistants.ts`
 - **`npm run seed` is blocked on production:** The seed script refuses to run against production unless the `--i-know-what-im-doing` flag is passed (via `npm run seed:production`). This prevents accidental data loss. All scripts show a database banner (LOCAL/STAGING/PRODUCTION) before running.
