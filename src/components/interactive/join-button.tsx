@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { trackEvent } from '@/lib/analytics';
+import { AuthGate } from './auth-gate';
 
 interface JoinButtonProps {
   issueId: string;
@@ -30,16 +31,18 @@ export function JoinButton({ issueId, initialJoined }: JoinButtonProps) {
   }
 
   return (
-    <button
-      onClick={handleToggle}
-      disabled={loading}
-      className={`w-full rounded-xl py-3 text-center text-sm font-bold transition-all ${
-        joined
-          ? 'border-2 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:border-green-600 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/30'
-          : 'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200'
-      }`}
-    >
-      {loading ? '...' : joined ? t('joined') : t('join')}
-    </button>
+    <AuthGate action="join this Quiet Riot">
+      <button
+        onClick={handleToggle}
+        disabled={loading}
+        className={`w-full rounded-xl py-3 text-center text-sm font-bold transition-all ${
+          joined
+            ? 'border-2 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:border-green-600 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/30'
+            : 'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200'
+        }`}
+      >
+        {loading ? '...' : joined ? t('joined') : t('join')}
+      </button>
+    </AuthGate>
   );
 }

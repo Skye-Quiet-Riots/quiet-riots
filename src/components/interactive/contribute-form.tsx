@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { formatCurrency } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
+import { AuthGate } from './auth-gate';
 
 interface ContributeFormProps {
   campaignId: string;
@@ -108,61 +109,63 @@ export function ContributeForm({
   }
 
   return (
-    <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
-      <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        {t('contribute')}
-      </h3>
-      <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-500">
-        {t('yourBalance')}
-        {formatCurrency(userBalance, currency)}
-      </p>
-
-      {error && <p className="mb-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
-
-      <div className="mb-3 grid grid-cols-3 gap-2">
-        {PRESET_AMOUNTS.map((amt) => (
-          <button
-            key={amt.pence}
-            onClick={() => handleContribute(amt.pence)}
-            disabled={loading || amt.pence > userBalance}
-            className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-semibold transition-colors hover:border-zinc-400 hover:bg-zinc-100 disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-500 dark:hover:bg-zinc-700"
-          >
-            {amt.label}
-          </button>
-        ))}
-      </div>
-
-      <form onSubmit={handleCustomSubmit} className="flex gap-2">
-        <input
-          type="number"
-          min="0.10"
-          step="0.01"
-          value={customAmount}
-          onChange={(e) => setCustomAmount(e.target.value)}
-          placeholder={t('customAmount')}
-          className="flex-1 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
-        />
-        <button
-          type="submit"
-          disabled={loading || !customAmount}
-          className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
-        >
-          {loading ? '...' : t('give')}
-        </button>
-      </form>
-
-      {userBalance < 10 && (
-        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-          {t('walletEmpty')}{' '}
-          <Link
-            href="/wallet"
-            className="font-medium text-purple-600 hover:underline dark:text-purple-400"
-          >
-            {t('topUp')}
-          </Link>{' '}
-          {t('toContribute')}
+    <AuthGate action="contribute to this campaign">
+      <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
+        <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+          {t('contribute')}
+        </h3>
+        <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-500">
+          {t('yourBalance')}
+          {formatCurrency(userBalance, currency)}
         </p>
-      )}
-    </div>
+
+        {error && <p className="mb-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
+
+        <div className="mb-3 grid grid-cols-3 gap-2">
+          {PRESET_AMOUNTS.map((amt) => (
+            <button
+              key={amt.pence}
+              onClick={() => handleContribute(amt.pence)}
+              disabled={loading || amt.pence > userBalance}
+              className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-semibold transition-colors hover:border-zinc-400 hover:bg-zinc-100 disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-500 dark:hover:bg-zinc-700"
+            >
+              {amt.label}
+            </button>
+          ))}
+        </div>
+
+        <form onSubmit={handleCustomSubmit} className="flex gap-2">
+          <input
+            type="number"
+            min="0.10"
+            step="0.01"
+            value={customAmount}
+            onChange={(e) => setCustomAmount(e.target.value)}
+            placeholder={t('customAmount')}
+            className="flex-1 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
+          />
+          <button
+            type="submit"
+            disabled={loading || !customAmount}
+            className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
+          >
+            {loading ? '...' : t('give')}
+          </button>
+        </form>
+
+        {userBalance < 10 && (
+          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+            {t('walletEmpty')}{' '}
+            <Link
+              href="/wallet"
+              className="font-medium text-purple-600 hover:underline dark:text-purple-400"
+            >
+              {t('topUp')}
+            </Link>{' '}
+            {t('toContribute')}
+          </p>
+        )}
+      </div>
+    </AuthGate>
   );
 }
