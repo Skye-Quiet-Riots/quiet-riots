@@ -1,20 +1,23 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
-import {
-  getUserMetAssistants,
-  recordAssistantIntroduction,
-} from '@/lib/queries/assistants';
+import { getUserMetAssistants, recordAssistantIntroduction } from '@/lib/queries/assistants';
 import { getUserById } from '@/lib/queries/users';
+import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { ASSISTANT_CATEGORIES } from '@/types';
 import type { AssistantCategory } from '@/types';
 
-export async function GET(
-  _request: Request,
-  { params }: { params: Promise<{ id: string }> },
-) {
+export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const sessionUserId = await getSession();
+  if (!sessionUserId) {
+    return apiError('Not logged in', 401);
+  }
+
   const { id } = await params;
+  if (sessionUserId !== id) {
+    return apiError('Forbidden', 403);
+  }
 
   const user = await getUserById(id);
   if (!user) {
@@ -29,11 +32,16 @@ const introSchema = z.object({
   category: z.string().min(1, 'Category required'),
 });
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const sessionUserId = await getSession();
+  if (!sessionUserId) {
+    return apiError('Not logged in', 401);
+  }
+
   const { id } = await params;
+  if (sessionUserId !== id) {
+    return apiError('Forbidden', 403);
+  }
 
   const user = await getUserById(id);
   if (!user) {

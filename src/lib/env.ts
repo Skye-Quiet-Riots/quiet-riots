@@ -3,7 +3,9 @@ import { z } from 'zod';
 const envSchema = z.object({
   TURSO_DATABASE_URL: z.string().min(1, 'TURSO_DATABASE_URL is required'),
   TURSO_AUTH_TOKEN: z.string().min(1, 'TURSO_AUTH_TOKEN is required'),
-  BOT_API_KEY: z.string().min(1).optional(),
+  BOT_API_KEY: z
+    .string()
+    .min(1, 'BOT_API_KEY is required — bot auth will reject all requests without it'),
 });
 
 /**

@@ -4,11 +4,16 @@ import { createAssistantClaim, getAssistantByCategory } from '@/lib/queries/assi
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { getUserById } from '@/lib/queries/users';
+import { sanitizeText } from '@/lib/sanitize';
 import { ASSISTANT_CATEGORIES } from '@/types';
 import type { AssistantCategory } from '@/types';
 
 const claimSchema = z.object({
-  message: z.string().max(1000).optional(),
+  message: z
+    .string()
+    .max(1000)
+    .transform((s) => sanitizeText(s))
+    .optional(),
 });
 
 export async function POST(

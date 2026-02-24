@@ -106,8 +106,13 @@ describe('GET /api/users/me', () => {
 });
 
 describe('GET /api/users/[id]', () => {
-  it('returns user with issues', async () => {
-    const request = new Request('http://localhost:3000/api/users/1');
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('returns user with issues when session matches', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/users/user-sarah');
     const response = await getUserDetail(request, {
       params: Promise.resolve({ id: 'user-sarah' }),
     });
@@ -117,8 +122,27 @@ describe('GET /api/users/[id]', () => {
     expect(data.issues).toBeDefined();
   });
 
-  it('returns 404 for missing user', async () => {
-    const request = new Request('http://localhost:3000/api/users/999');
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
+    const request = new Request('http://localhost:3000/api/users/user-sarah');
+    const response = await getUserDetail(request, {
+      params: Promise.resolve({ id: 'user-sarah' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 when session does not match requested user', async () => {
+    mockLoggedIn('user-marcio');
+    const request = new Request('http://localhost:3000/api/users/user-sarah');
+    const response = await getUserDetail(request, {
+      params: Promise.resolve({ id: 'user-sarah' }),
+    });
+    expect(response.status).toBe(403);
+  });
+
+  it('returns 404 for missing user when session matches', async () => {
+    mockLoggedIn('nonexistent');
+    const request = new Request('http://localhost:3000/api/users/nonexistent');
     const response = await getUserDetail(request, {
       params: Promise.resolve({ id: 'nonexistent' }),
     });
@@ -127,8 +151,13 @@ describe('GET /api/users/[id]', () => {
 });
 
 describe('PATCH /api/users/[id]', () => {
-  it('updates user fields', async () => {
-    const request = new Request('http://localhost:3000/api/users/2', {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('updates user fields when session matches', async () => {
+    mockLoggedIn('user-marcio');
+    const request = new Request('http://localhost:3000/api/users/user-marcio', {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ time_available: '1min' }),
@@ -139,8 +168,31 @@ describe('PATCH /api/users/[id]', () => {
     expect(data.time_available).toBe('1min');
   });
 
-  it('returns 404 for missing user', async () => {
-    const request = new Request('http://localhost:3000/api/users/999', {
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
+    const request = new Request('http://localhost:3000/api/users/user-marcio', {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ name: 'Test' }),
+    });
+    const response = await patchUser(request, { params: Promise.resolve({ id: 'user-marcio' }) });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 when session does not match requested user', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/users/user-marcio', {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ name: 'Hacked' }),
+    });
+    const response = await patchUser(request, { params: Promise.resolve({ id: 'user-marcio' }) });
+    expect(response.status).toBe(403);
+  });
+
+  it('returns 404 for missing user when session matches', async () => {
+    mockLoggedIn('nonexistent');
+    const request = new Request('http://localhost:3000/api/users/nonexistent', {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ name: 'Ghost' }),

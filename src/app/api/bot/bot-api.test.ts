@@ -158,7 +158,7 @@ describe('Bot API: join_issue / leave_issue', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('join_issue', {
-      phone: '+0000000000',
+      phone: '+19999999999',
       issue_id: 'issue-rail',
     });
     expect(status).toBe(404);
@@ -178,7 +178,7 @@ describe('Bot API: post_feed', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('post_feed', {
-      phone: '+0000000000',
+      phone: '+19999999999',
       issue_id: 'issue-rail',
       content: 'test',
     });
@@ -275,7 +275,7 @@ describe('Bot API: update_user', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('update_user', {
-      phone: '+0000000000',
+      phone: '+19999999999',
     });
     expect(status).toBe(404);
   });
@@ -294,7 +294,7 @@ describe('get_riot_reel', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('get_riot_reel', {
-      phone: '+0000000000',
+      phone: '+19999999999',
       issue_id: 'issue-rail',
     });
     expect(status).toBe(404);
@@ -327,7 +327,7 @@ describe('submit_riot_reel', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('submit_riot_reel', {
-      phone: '+0000000000',
+      phone: '+19999999999',
       issue_id: 'issue-rail',
       youtube_url: 'https://www.youtube.com/watch?v=test1234567',
     });
@@ -361,7 +361,7 @@ describe('Bot API: get_wallet', () => {
   });
 
   it('fails for unknown user', async () => {
-    const { status } = await callBot('get_wallet', { phone: '+0000000000' });
+    const { status } = await callBot('get_wallet', { phone: '+19999999999' });
     expect(status).toBe(404);
   });
 });
@@ -414,7 +414,7 @@ describe('Bot API: contribute', () => {
 
   it('fails for unknown user', async () => {
     const { status } = await callBot('contribute', {
-      phone: '+0000000000',
+      phone: '+19999999999',
       campaign_id: 'camp-water-test',
       amount_pence: 100,
     });

@@ -3,12 +3,14 @@ import { getFeedPosts, createFeedPost } from '@/lib/queries/community';
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
+import { sanitizeText } from '@/lib/sanitize';
 
 const feedPostSchema = z.object({
   content: z
     .string()
     .min(1, 'Content required')
-    .transform((s) => s.trim()),
+    .max(5000)
+    .transform((s) => sanitizeText(s)),
 });
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {

@@ -23,13 +23,15 @@ export function createTestRequest(
   });
 }
 
+const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
+
 /**
  * Create a bot API request with Bearer token auth
  */
 export function createBotRequest(
   action: string,
   params: Record<string, unknown> = {},
-  apiKey: string = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026',
+  apiKey: string = process.env.BOT_API_KEY || DEV_FALLBACK_KEY,
 ): NextRequest {
   return createTestRequest('/api/bot', {
     method: 'POST',
