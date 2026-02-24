@@ -410,6 +410,27 @@ export async function createTables() {
 
     CREATE INDEX IF NOT EXISTS idx_user_consents_user ON user_consents(user_id, document_type);
 
+    CREATE TABLE IF NOT EXISTS notification_preferences (
+      user_id TEXT PRIMARY KEY REFERENCES users(id),
+      security INTEGER NOT NULL DEFAULT 1,
+      product_updates INTEGER NOT NULL DEFAULT 1,
+      campaign_updates INTEGER NOT NULL DEFAULT 1,
+      weekly_digest INTEGER NOT NULL DEFAULT 0
+    );
+
+    CREATE TABLE IF NOT EXISTS login_events (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      user_id TEXT REFERENCES users(id),
+      event_type TEXT NOT NULL CHECK(event_type IN ('login','logout','failed_login','password_reset','account_locked')),
+      ip_address TEXT CHECK(length(ip_address) <= 45),
+      user_agent TEXT CHECK(length(user_agent) <= 500),
+      provider TEXT CHECK(length(provider) <= 50),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_login_events_user ON login_events(user_id, created_at);
+    CREATE INDEX IF NOT EXISTS idx_login_events_type ON login_events(user_id, event_type, created_at);
+
     CREATE TABLE IF NOT EXISTS exchange_rates (
       from_currency TEXT NOT NULL CHECK(length(from_currency) <= 3),
       to_currency TEXT NOT NULL CHECK(length(to_currency) <= 3),
@@ -425,6 +446,8 @@ export async function createTables() {
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS login_events;
+    DROP TABLE IF EXISTS notification_preferences;
     DROP TABLE IF EXISTS exchange_rates;
     DROP TABLE IF EXISTS user_consents;
     DROP TABLE IF EXISTS legal_documents;
