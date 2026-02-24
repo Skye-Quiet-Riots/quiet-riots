@@ -475,4 +475,32 @@ describe('EvidenceCard', () => {
     expect(document.querySelector('video')).toBeNull();
     expect(screen.queryByText('Watch video')).toBeNull();
   });
+
+  it('falls back to "Watch video" link for malformed URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'not-a-valid-url',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(screen.getByText('Watch video')).toBeDefined();
+    expect(document.querySelector('video')).toBeNull();
+  });
+
+  it('renders inline video player for .mov URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://cdn.example.com/clip.mov',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(document.querySelector('video')).not.toBeNull();
+  });
+
+  it('renders inline video player for .webm URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://cdn.example.com/clip.webm',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(document.querySelector('video')).not.toBeNull();
+  });
 });
