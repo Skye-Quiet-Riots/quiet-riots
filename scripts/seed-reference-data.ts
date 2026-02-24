@@ -341,14 +341,14 @@ async function main() {
   console.log('Seeding default legal documents...');
   const legalDocs = [
     {
-      countryCode: 'GLOBAL',
+      countryCode: 'GLO',
       type: 'terms',
       version: '1.0',
       url: '/en/terms',
       date: '2026-03-01',
     },
     {
-      countryCode: 'GLOBAL',
+      countryCode: 'GLO',
       type: 'privacy',
       version: '1.0',
       url: '/en/privacy',
