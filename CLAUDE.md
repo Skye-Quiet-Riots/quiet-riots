@@ -163,8 +163,9 @@ At the start of every session (or when asked to "pick up where we left off"):
 ### Branching & PRs
 
 - Follow the Branching Workflow exactly — fresh branch from `origin/main` for every piece of work
-- After creating a PR, wait for CI to pass before merging
+- After creating a PR: wait for CI → check if production DB needs migration/seed → merge → verify deployment
 - After merging a PR, immediately create a fresh branch if more work follows
+- **Merge PRs within the same session they're created.** A PR left open across sessions will go stale — main moves on, the branch conflicts, and it has to be rebased or recreated. If a PR can't be merged this session (e.g. needs user review), note it in "Next steps" of the session log so the next session deals with it immediately.
 
 ### Deployment verification
 
@@ -187,9 +188,10 @@ At the end of every session (or when asked to "wrap up" / "good night"). Steps a
    - **If there is an open PR for this branch:** the docs are now included — done
    - **If the PR was already merged (stale branch):** create a fresh branch from `origin/main`, cherry-pick or re-apply the docs commit, push, and create a new PR. This is the fallback, not the normal path.
 4. **Check CI passes** on the PR with the session docs. If it fails, fix and push again.
-5. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
-6. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
-7. **Worktree cleanup:** If this session used a worktree branch that has been merged to main, flag it for cleanup
+5. **Audit open PRs:** Run `gh pr list --state open --author Simon-Quiet-Riots`. Any PR created by us should be either merged now (if CI passes and it's ready) or closed with a comment explaining why. Don't leave PRs open across sessions — they go stale and conflict.
+6. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
+7. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
+8. **Worktree cleanup:** If this session used a worktree branch that has been merged to main, flag it for cleanup
 
 **Key rule:** Always do steps 1–3 _before_ the final PR of the session is merged. If the user asks to deploy/merge mid-protocol, finish the docs first, then merge. The session log commit is the last commit on the branch.
 
