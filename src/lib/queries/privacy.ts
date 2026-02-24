@@ -242,6 +242,11 @@ export async function hardDeleteUser(userId: string): Promise<void> {
     { sql: 'DELETE FROM evidence WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM feed WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM user_issues WHERE user_id = ?', args: [userId] },
+    {
+      sql: 'DELETE FROM user_blocks WHERE blocker_id = ? OR blocked_id = ?',
+      args: [userId, userId],
+    },
+    { sql: 'DELETE FROM reports WHERE reporter_id = ?', args: [userId] },
   ];
 
   // Wallet transactions depend on wallet existing

@@ -606,6 +606,28 @@ export interface LoginEvent {
   created_at: string;
 }
 
+// Social Features (Phase 5)
+export type ReportEntityType = 'feed' | 'evidence' | 'reel' | 'user';
+export type ReportReason = 'spam' | 'harassment' | 'misinformation' | 'inappropriate' | 'other';
+export type ReportStatus = 'pending' | 'reviewed' | 'actioned' | 'dismissed';
+
+export interface UserBlock {
+  blocker_id: string;
+  blocked_id: string;
+  created_at: string;
+}
+
+export interface Report {
+  id: string;
+  reporter_id: string;
+  entity_type: ReportEntityType;
+  entity_id: string;
+  reason: ReportReason;
+  description: string | null;
+  status: ReportStatus;
+  created_at: string;
+}
+
 // Bot Analytics
 export interface BotEvent {
   id: string;
