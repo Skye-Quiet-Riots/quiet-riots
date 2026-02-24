@@ -6,20 +6,21 @@
 
 ## Latest Session
 
-**Session 23** (2026-02-24) — Global Rearchitecture Plan + Phase 0 Database Foundation
-→ [`session-logs/2026-02-session-23.md`](session-logs/2026-02-session-23.md)
+**Session 24** (2026-02-24) — Phase 1 (Auth.js) + Phase 2 (i18n) Complete
+→ [`session-logs/2026-02-session-24.md`](session-logs/2026-02-session-24.md)
 
 ## Current Priorities
 
-- **Global rearchitecture Phase 1** — Auth.js v5 + world-class signup/login (Google, Facebook OAuth, email magic links, CSRF, email normalization)
-- **Global rearchitecture Phase 2** — i18n infrastructure (next-intl, `[locale]` routing, 40+ languages, RTL support) — can run in parallel with Phase 1
-- **Run migrations 008-010 on staging** after merging PR #50
-- **Run seed-reference-data.ts on staging** to populate languages/countries
+- **Global rearchitecture Phase 3** — Multi-currency wallets + country-scoped content
+- **Global rearchitecture Phase 4** — Privacy, compliance & account safety (cookie consent, GDPR, data export)
+- **Seed translations** — `scripts/seed-translations.ts` to machine-translate content into 45 locales
+- **Generate locale message files** — `messages/{locale}.json` for all 44 non-English locales
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 24  | 2026-02-24    | Phase 1 (Auth.js) + Phase 2 (i18n) complete           | [`session-24`](session-logs/2026-02-session-24.md)                                                             |
 | 23  | 2026-02-24    | Global rearchitecture plan + Phase 0 DB foundation    | [`session-23`](session-logs/2026-02-session-23.md)                                                             |
 | 22  | 2026-02-24    | Worktree cleanup fix + auto-merge protocol            | [`session-22`](session-logs/2026-02-session-22.md)                                                             |
 | 21  | 2026-02-24    | Session protocol redesign                             | [`session-21`](session-logs/2026-02-session-21.md)                                                             |
