@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
@@ -24,6 +24,7 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
   const { data: session, status } = useSession();
   const [showModal, setShowModal] = useState(false);
   const t = useTranslations('AuthGate');
+  const signInLinkRef = useRef<HTMLAnchorElement>(null);
 
   const handleClick = useCallback(
     (e: React.MouseEvent) => {
@@ -35,6 +36,31 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
     },
     [session],
   );
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (!session?.user?.id && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        e.stopPropagation();
+        setShowModal(true);
+      }
+    },
+    [session],
+  );
+
+  const handleModalKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setShowModal(false);
+    }
+  }, []);
+
+  // Focus the sign-in link when the modal opens
+  useEffect(() => {
+    if (showModal && signInLinkRef.current) {
+      signInLinkRef.current.focus();
+    }
+  }, [showModal]);
 
   // Loading state — show nothing to avoid flash
   if (status === 'loading') {
@@ -64,12 +90,15 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
   // Wrap mode — render children with click interceptor + modal
   return (
     <>
-      <div onClick={handleClick} onKeyDown={() => {}} role="presentation">
+      <div onClick={handleClick} onKeyDown={handleKeyDown} role="presentation">
         {children}
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          onKeyDown={handleModalKeyDown}
+        >
           <div className="w-full max-w-sm rounded-xl bg-white p-6 shadow-xl dark:bg-zinc-900">
             <h2 className="mb-2 text-lg font-bold">{t('signInRequired')}</h2>
             <p className="mb-4 text-sm text-zinc-500 dark:text-zinc-400">
@@ -77,6 +106,7 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
             </p>
             <div className="flex gap-3">
               <Link
+                ref={signInLinkRef}
                 href="/auth/signin"
                 className="flex-1 rounded-lg bg-zinc-900 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
               >

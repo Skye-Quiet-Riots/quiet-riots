@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getSession } from '@/lib/session';
-import { getUserById, getUserIssues } from '@/lib/queries/users';
+import { getUserById, getUserIssues, getUserConnectedAccounts } from '@/lib/queries/users';
 import { getUserFeedPostCount, getUserTotalLikes } from '@/lib/queries/community';
 import { PageHeader } from '@/components/layout/page-header';
 import { StatBadge } from '@/components/data/stat-badge';
@@ -45,10 +45,11 @@ export default async function ProfilePage({ params }: Props) {
     redirect('/');
   }
 
-  const [rawIssues, postCount, totalLikes] = await Promise.all([
+  const [rawIssues, postCount, totalLikes, connectedAccounts] = await Promise.all([
     getUserIssues(userId),
     getUserFeedPostCount(userId),
     getUserTotalLikes(userId),
+    getUserConnectedAccounts(userId),
   ]);
   // getUserIssues returns flat rows with joined issue columns
   const issues = rawIssues as unknown as UserIssueRow[];
@@ -105,6 +106,26 @@ export default async function ProfilePage({ params }: Props) {
         <StatBadge value={postCount} label={t('posts', { count: postCount })} />
         <StatBadge value={totalLikes} label={t('likes', { count: totalLikes })} />
       </div>
+
+      {/* Connected accounts */}
+      <section className="mb-8">
+        <h2 className="mb-4 text-lg font-bold">{t('connectedAccounts')}</h2>
+        {connectedAccounts.length > 0 ? (
+          <div className="flex flex-wrap gap-3">
+            {connectedAccounts.map((account) => (
+              <div
+                key={`${account.provider}-${account.type}`}
+                className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              >
+                <span className="font-medium capitalize">{account.provider}</span>
+                <span className="text-xs text-green-600 dark:text-green-400">Connected</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('noConnectedAccounts')}</p>
+        )}
+      </section>
 
       {/* Joined issues */}
       <section>

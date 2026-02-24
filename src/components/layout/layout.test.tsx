@@ -64,7 +64,8 @@ describe('NavBar', () => {
     render(<NavBar />);
     expect(screen.getAllByText('Issues').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Organisations').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Profile').length).toBeGreaterThan(0);
+    // Profile is now behind the avatar dropdown — check avatar button exists instead
+    expect(screen.getByLabelText('Profile')).toBeDefined();
   });
 
   it('links to home page', () => {
