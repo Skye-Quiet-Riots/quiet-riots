@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import type { FeedPost } from '@/types';
 import { trackEvent } from '@/lib/analytics';
+import { AuthGate } from './auth-gate';
 
 interface FeedComposerProps {
   issueId: string;
@@ -38,21 +39,23 @@ export function FeedComposer({ issueId, onPost }: FeedComposerProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="text"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder={t('composerPlaceholder')}
-        className="flex-1 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
-      />
-      <button
-        type="submit"
-        disabled={posting || !content.trim()}
-        className="rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
-      >
-        {t('post')}
-      </button>
-    </form>
+    <AuthGate action="post to the community feed">
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input
+          type="text"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder={t('composerPlaceholder')}
+          className="flex-1 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
+        />
+        <button
+          type="submit"
+          disabled={posting || !content.trim()}
+          className="rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
+        >
+          {t('post')}
+        </button>
+      </form>
+    </AuthGate>
   );
 }

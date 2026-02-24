@@ -30,6 +30,15 @@ function createTranslator(namespace: string) {
   };
 }
 
+// Mock next-auth/react — default to authenticated so AuthGate renders children
+vi.mock('next-auth/react', () => ({
+  useSession: () => ({
+    data: { user: { id: 'test-user', name: 'Test User', email: 'test@example.com' } },
+    status: 'authenticated' as const,
+  }),
+  SessionProvider: ({ children }: { children: React.ReactNode }) => children,
+}));
+
 // Mock next-intl (client-side hooks)
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => createTranslator(namespace),

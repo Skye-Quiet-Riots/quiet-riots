@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import type { AssistantCategory } from '@/types';
+import { AuthGate } from './auth-gate';
 
 interface ClaimFormProps {
   category: AssistantCategory;
@@ -51,25 +52,27 @@ export function ClaimForm({ category, humanName }: ClaimFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder={t('placeholder', { name: humanName })}
-        maxLength={1000}
-        rows={3}
-        className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm placeholder-zinc-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder-zinc-500"
-      />
-      <button
-        type="submit"
-        disabled={status === 'submitting'}
-        className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
-      >
-        {status === 'submitting' ? t('submitting') : t('expressInterest')}
-      </button>
-      {status === 'error' && (
-        <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
-      )}
-    </form>
+    <AuthGate action="express interest in this role">
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder={t('placeholder', { name: humanName })}
+          maxLength={1000}
+          rows={3}
+          className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm placeholder-zinc-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder-zinc-500"
+        />
+        <button
+          type="submit"
+          disabled={status === 'submitting'}
+          className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
+        >
+          {status === 'submitting' ? t('submitting') : t('expressInterest')}
+        </button>
+        {status === 'error' && (
+          <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+        )}
+      </form>
+    </AuthGate>
   );
 }
