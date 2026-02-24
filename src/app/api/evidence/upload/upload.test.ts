@@ -185,5 +185,32 @@ describe('POST /api/evidence/upload', () => {
       const body = await response.json();
       expect(body.data.mediaType).toBe('video');
     });
+
+    it('returns 500 when Vercel Blob upload fails', async () => {
+      vi.mocked(put).mockRejectedValueOnce(new Error('Blob storage unavailable'));
+      const file = new File(['data'], 'photo.jpg', { type: 'image/jpeg' });
+      const request = createUploadRequest(file, `Bearer ${BOT_API_KEY}`);
+      const response = await POST(request);
+      expect(response.status).toBe(500);
+      const body = await response.json();
+      expect(body.error).toContain('Upload failed');
+      expect(body.error).toContain('Blob storage unavailable');
+    });
+  });
+
+  describe('rate limiting', () => {
+    it('returns 429 when rate limited', async () => {
+      // Default limit is 30 requests per minute — send 31 to trigger
+      const file = new File(['data'], 'photo.jpg', { type: 'image/jpeg' });
+      let response;
+      for (let i = 0; i < 31; i++) {
+        const request = createUploadRequest(file, `Bearer ${BOT_API_KEY}`);
+        response = await POST(request);
+        if (response.status === 429) break;
+      }
+      expect(response!.status).toBe(429);
+      const body = await response!.json();
+      expect(body.error).toContain('Too many requests');
+    });
   });
 });
