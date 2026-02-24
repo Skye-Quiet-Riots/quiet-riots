@@ -10,6 +10,7 @@ import { ReelsSection } from './reels-section';
 import { TopUpForm } from './topup-form';
 import { ContributeForm } from './contribute-form';
 import { StatusFilter } from './status-filter';
+import { EvidenceComposer } from './evidence-composer';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -401,5 +402,264 @@ describe('StatusFilter', () => {
     render(<StatusFilter />);
     fireEvent.click(screen.getByText('All'));
     expect(mockPush).toHaveBeenCalledWith('?', { scroll: false });
+  });
+});
+
+// Mock analytics for EvidenceComposer
+vi.mock('@/lib/analytics', () => ({
+  trackEvent: vi.fn(),
+}));
+
+describe('EvidenceComposer', () => {
+  const defaultProps = {
+    issueId: 'issue-1',
+    organisations: [{ id: 'org-1', name: 'Org A' }],
+  };
+
+  let mockCreateObjectURL: ReturnType<typeof vi.fn>;
+  let mockRevokeObjectURL: ReturnType<typeof vi.fn>;
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    mockCreateObjectURL = vi.fn(() => 'blob:mock-preview-url');
+    mockRevokeObjectURL = vi.fn();
+    global.URL.createObjectURL = mockCreateObjectURL;
+    global.URL.revokeObjectURL = mockRevokeObjectURL;
+  });
+
+  function mockUploadSuccess(url = 'https://blob.vercel-storage.com/evidence/test.jpg') {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ ok: true, data: { url, mediaType: 'photo', size: 1234 } }),
+    });
+  }
+
+  function mockUploadError(error = 'File too large (5.0MB). Maximum is 4MB') {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: false,
+      json: () => Promise.resolve({ ok: false, error }),
+    });
+  }
+
+  it('shows file inputs when media section is toggled open', () => {
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    expect(screen.getByTestId('photo-input')).toBeDefined();
+    expect(screen.getByTestId('video-input')).toBeDefined();
+    expect(screen.getByText('+ Add photos')).toBeDefined();
+    expect(screen.getByText('+ Add video')).toBeDefined();
+  });
+
+  it('photo input has correct accept attribute', () => {
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    const photoInput = screen.getByTestId('photo-input') as HTMLInputElement;
+    expect(photoInput.accept).toBe('image/jpeg,image/png,image/webp,image/gif');
+    expect(photoInput.multiple).toBe(true);
+  });
+
+  it('video input has correct accept attribute', () => {
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    const videoInput = screen.getByTestId('video-input') as HTMLInputElement;
+    expect(videoInput.accept).toBe('video/mp4,video/quicktime,video/webm');
+    expect(videoInput.multiple).toBeFalsy();
+  });
+
+  it('uploads photo and shows preview', async () => {
+    mockUploadSuccess();
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+
+    const file = new File(['photo-data'], 'test.jpg', { type: 'image/jpeg' });
+    const photoInput = screen.getByTestId('photo-input');
+    fireEvent.change(photoInput, { target: { files: [file] } });
+
+    await waitFor(() => {
+      // Preview image should be rendered
+      const images = screen.getAllByRole('img');
+      const preview = images.find((img) => img.getAttribute('alt') === 'test.jpg');
+      expect(preview).toBeDefined();
+    });
+
+    // Upload endpoint was called
+    expect(global.fetch).toHaveBeenCalledWith(
+      '/api/evidence/upload',
+      expect.objectContaining({ method: 'POST' }),
+    );
+  });
+
+  it('shows server error message on upload failure', async () => {
+    mockUploadError('File too large (5.0MB). Maximum is 4MB');
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+
+    const file = new File(['big-data'], 'huge.jpg', { type: 'image/jpeg' });
+    fireEvent.change(screen.getByTestId('photo-input'), { target: { files: [file] } });
+
+    await waitFor(() => {
+      expect(screen.getByText('File too large (5.0MB). Maximum is 4MB')).toBeDefined();
+    });
+  });
+
+  it('removes uploaded photo on remove button click', async () => {
+    mockUploadSuccess();
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+
+    const file = new File(['photo-data'], 'test.jpg', { type: 'image/jpeg' });
+    fireEvent.change(screen.getByTestId('photo-input'), { target: { files: [file] } });
+
+    // Wait for upload to complete
+    await waitFor(() => {
+      expect(screen.getByLabelText('Remove test.jpg')).toBeDefined();
+    });
+
+    // Click remove
+    fireEvent.click(screen.getByLabelText('Remove test.jpg'));
+
+    // Preview should be gone and object URL revoked
+    expect(screen.queryByLabelText('Remove test.jpg')).toBeNull();
+    expect(mockRevokeObjectURL).toHaveBeenCalled();
+  });
+
+  it('disables submit during upload and shows Uploading text', async () => {
+    let resolveUpload: (value: Response) => void;
+    const pendingUpload = new Promise<Response>((resolve) => {
+      resolveUpload = resolve;
+    });
+    global.fetch = vi.fn().mockReturnValue(pendingUpload);
+
+    render(<EvidenceComposer {...defaultProps} />);
+
+    // Type content first so button would normally be enabled
+    fireEvent.change(screen.getByPlaceholderText('Say what you think...'), {
+      target: { value: 'My evidence' },
+    });
+
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    const file = new File(['data'], 'test.jpg', { type: 'image/jpeg' });
+    fireEvent.change(screen.getByTestId('photo-input'), { target: { files: [file] } });
+
+    // Submit should be disabled with "Uploading..." text
+    await waitFor(() => {
+      expect(screen.getByText('Uploading...')).toBeDefined();
+    });
+    const submitBtn = screen.getByText('Uploading...');
+    expect(submitBtn.closest('button')?.disabled).toBe(true);
+
+    // Resolve upload
+    resolveUpload!({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          ok: true,
+          data: { url: 'https://blob.vercel-storage.com/test.jpg', mediaType: 'photo', size: 100 },
+        }),
+    } as Response);
+
+    await waitFor(() => {
+      expect(screen.getByText('Submit Evidence')).toBeDefined();
+    });
+  });
+
+  it('includes blob URLs in evidence submission', async () => {
+    const blobUrl = 'https://blob.vercel-storage.com/evidence/uploaded.jpg';
+
+    // First call = upload, second call = submit evidence
+    const mockFetch = vi
+      .fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({ ok: true, data: { url: blobUrl, mediaType: 'photo', size: 1234 } }),
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: {
+              id: 'ev-1',
+              content: 'test',
+              photo_urls: `["${blobUrl}"]`,
+              media_type: 'photo',
+            },
+          }),
+      });
+    global.fetch = mockFetch;
+
+    render(<EvidenceComposer {...defaultProps} />);
+
+    // Type content
+    fireEvent.change(screen.getByPlaceholderText('Say what you think...'), {
+      target: { value: 'Check this out' },
+    });
+
+    // Upload photo
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    const file = new File(['data'], 'photo.jpg', { type: 'image/jpeg' });
+    fireEvent.change(screen.getByTestId('photo-input'), { target: { files: [file] } });
+
+    // Wait for upload to finish
+    await waitFor(() => {
+      expect(screen.getByLabelText('Remove photo.jpg')).toBeDefined();
+    });
+
+    // Submit
+    fireEvent.click(screen.getByText('Submit Evidence'));
+
+    await waitFor(() => {
+      // Second fetch call should be the evidence submission
+      expect(mockFetch).toHaveBeenCalledTimes(2);
+      const submitCall = mockFetch.mock.calls[1];
+      expect(submitCall[0]).toBe('/api/issues/issue-1/evidence');
+      const body = JSON.parse(submitCall[1].body);
+      expect(body.photo_urls).toEqual([blobUrl]);
+      expect(body.media_type).toBe('photo');
+    });
+  });
+
+  it('uploads video and shows filename preview', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          ok: true,
+          data: {
+            url: 'https://blob.vercel-storage.com/evidence/clip.mp4',
+            mediaType: 'video',
+            size: 2000,
+          },
+        }),
+    });
+
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+
+    const file = new File(['video-data'], 'my-clip.mp4', { type: 'video/mp4' });
+    fireEvent.change(screen.getByTestId('video-input'), { target: { files: [file] } });
+
+    await waitFor(() => {
+      expect(screen.getByText('my-clip.mp4')).toBeDefined();
+      expect(screen.getByLabelText('Remove video')).toBeDefined();
+    });
+
+    // Add video button should be hidden
+    expect(screen.queryByText('+ Add video')).toBeNull();
+  });
+
+  it('keeps external URL input as text input', () => {
+    render(<EvidenceComposer {...defaultProps} />);
+    fireEvent.click(screen.getByText('📎 Add photos, video, links'));
+    const urlInput = screen.getByPlaceholderText(
+      'https://news-article.com/...',
+    ) as HTMLInputElement;
+    expect(urlInput.type).toBe('url');
+  });
+
+  it('renders org selector when organisations provided', () => {
+    render(<EvidenceComposer {...defaultProps} />);
+    expect(screen.getByText('Org A')).toBeDefined();
+    expect(screen.getByText('General (no specific organisation)')).toBeDefined();
   });
 });
