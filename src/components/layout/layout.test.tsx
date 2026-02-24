@@ -25,7 +25,8 @@ vi.mock('next/link', () => ({
 
 // Mock next/image
 vi.mock('next/image', () => ({
-  default: (props: Record<string, unknown>) => <img {...props} />,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: Record<string, unknown>) => <img alt="" {...props} />,
 }));
 
 // Mock next/navigation
@@ -34,18 +35,21 @@ vi.mock('next/navigation', () => ({
 }));
 
 describe('Footer', () => {
-  it('renders mission statement', () => {
-    render(<Footer />);
+  it('renders mission statement', async () => {
+    const el = await Footer();
+    render(el);
     expect(screen.getByText(/change more for the better/i)).toBeDefined();
   });
 
-  it('renders powered by text', () => {
-    render(<Footer />);
+  it('renders powered by text', async () => {
+    const el = await Footer();
+    render(el);
     expect(screen.getByText(/Quiet Riots/)).toBeDefined();
   });
 
-  it('renders logo image', () => {
-    render(<Footer />);
+  it('renders logo image', async () => {
+    const el = await Footer();
+    render(el);
     expect(screen.getByAltText('Quiet Riots logo')).toBeDefined();
   });
 });

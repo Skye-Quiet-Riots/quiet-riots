@@ -1,0 +1,57 @@
+import { defineRouting } from 'next-intl/routing';
+
+export const routing = defineRouting({
+  locales: [
+    'en',
+    'es',
+    'fr',
+    'de',
+    'pt',
+    'pt-BR',
+    'it',
+    'nl',
+    'sv',
+    'da',
+    'no',
+    'fi',
+    'pl',
+    'cs',
+    'sk',
+    'hu',
+    'ro',
+    'bg',
+    'hr',
+    'sl',
+    'uk',
+    'ru',
+    'tr',
+    'ar',
+    'he',
+    'fa',
+    'hi',
+    'bn',
+    'ta',
+    'te',
+    'ml',
+    'th',
+    'vi',
+    'id',
+    'ms',
+    'zh-CN',
+    'zh-TW',
+    'ja',
+    'ko',
+    'tl',
+    'sw',
+    'el',
+    'ca',
+    'eu',
+    'gl',
+  ],
+  defaultLocale: 'en',
+});
+
+export type Locale = (typeof routing.locales)[number];
+
+/** RTL locales — Arabic, Hebrew, Farsi */
+export const rtlLocales = new Set<Locale>(['ar', 'he', 'fa']);

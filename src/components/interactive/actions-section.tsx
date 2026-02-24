@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Action } from '@/types';
 import { ActionCard } from '@/components/cards/action-card';
 import { TimeSkillFilter } from '@/components/interactive/time-skill-filter';
@@ -11,6 +12,7 @@ interface ActionsSectionProps {
 }
 
 export function ActionsSection({ issueId, initialActions }: ActionsSectionProps) {
+  const t = useTranslations('Actions');
   const [actions, setActions] = useState(initialActions);
   const [filters, setFilters] = useState<{ time?: string; type?: string }>({});
   const hasFilters = Boolean(filters.time || filters.type);
@@ -48,7 +50,7 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
         {ideas.length > 0 && (
           <div>
             <h4 className="mb-2 text-sm font-bold text-amber-600 dark:text-amber-400">
-              💡 Ideas (Variation)
+              {t('ideas')}
             </h4>
             <div className="space-y-2">
               {ideas.map((a) => (
@@ -61,7 +63,7 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
         {actionItems.length > 0 && (
           <div>
             <h4 className="mb-2 text-sm font-bold text-blue-600 dark:text-blue-400">
-              ⚡ Actions (Selection)
+              {t('actions')}
             </h4>
             <div className="space-y-2">
               {actionItems.map((a) => (
@@ -74,7 +76,7 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
         {together.length > 0 && (
           <div>
             <h4 className="mb-2 text-sm font-bold text-green-600 dark:text-green-400">
-              🤝 Together (Community)
+              {t('together')}
             </h4>
             <div className="space-y-2">
               {together.map((a) => (
@@ -85,9 +87,7 @@ export function ActionsSection({ issueId, initialActions }: ActionsSectionProps)
         )}
 
         {displayActions.length === 0 && (
-          <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-            No actions match your filters. Try broadening your selection.
-          </p>
+          <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">{t('noResults')}</p>
         )}
       </div>
     </div>

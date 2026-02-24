@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface TimeSkillFilterProps {
   onFilterChange: (filters: { time?: string; type?: string }) => void;
 }
 
 export function TimeSkillFilter({ onFilterChange }: TimeSkillFilterProps) {
+  const t = useTranslations('TimeSkill');
   const [time, setTime] = useState<string>('');
   const [type, setType] = useState<string>('');
 
@@ -26,13 +28,13 @@ export function TimeSkillFilter({ onFilterChange }: TimeSkillFilterProps) {
     <div className="space-y-3">
       <div>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-          How much time do you have?
+          {t('timeQuestion')}
         </p>
         <div className="flex gap-2">
           {[
-            { value: '1min', label: '1 min' },
-            { value: '10min', label: '10 min' },
-            { value: '1hr+', label: '1 hour+' },
+            { value: '1min', key: 'time1min' as const },
+            { value: '10min', key: 'time10min' as const },
+            { value: '1hr+', key: 'time1hour' as const },
           ].map((opt) => (
             <button
               key={opt.value}
@@ -43,20 +45,20 @@ export function TimeSkillFilter({ onFilterChange }: TimeSkillFilterProps) {
                   : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400'
               }`}
             >
-              {opt.label}
+              {t(opt.key)}
             </button>
           ))}
         </div>
       </div>
       <div>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-          What type?
+          {t('typeQuestion')}
         </p>
         <div className="flex gap-2">
           {[
-            { value: 'idea', label: '💡 Ideas' },
-            { value: 'action', label: '⚡ Actions' },
-            { value: 'together', label: '🤝 Together' },
+            { value: 'idea', key: 'ideas' as const },
+            { value: 'action', key: 'actions' as const },
+            { value: 'together', key: 'together' as const },
           ].map((opt) => (
             <button
               key={opt.value}
@@ -67,7 +69,7 @@ export function TimeSkillFilter({ onFilterChange }: TimeSkillFilterProps) {
                   : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400'
               }`}
             >
-              {opt.label}
+              {t(opt.key)}
             </button>
           ))}
         </div>

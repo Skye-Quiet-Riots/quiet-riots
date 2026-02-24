@@ -1,16 +1,15 @@
+import { getTranslations } from 'next-intl/server';
 import type { AssistantActivity } from '@/types';
 
 interface Props {
   activities: AssistantActivity[];
 }
 
-export function AssistantActivityList({ activities }: Props) {
+export async function AssistantActivityList({ activities }: Props) {
+  const t = await getTranslations('Activity');
+
   if (activities.length === 0) {
-    return (
-      <p className="py-4 text-sm text-zinc-500 dark:text-zinc-400">
-        No activity yet.
-      </p>
-    );
+    return <p className="py-4 text-sm text-zinc-500 dark:text-zinc-400">{t('noActivity')}</p>;
   }
 
   return (
@@ -22,17 +21,13 @@ export function AssistantActivityList({ activities }: Props) {
         >
           <span
             className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white ${
-              activity.assistant_type === 'agent'
-                ? 'bg-purple-500'
-                : 'bg-blue-500'
+              activity.assistant_type === 'agent' ? 'bg-purple-500' : 'bg-blue-500'
             }`}
           >
-            {activity.assistant_type === 'agent' ? 'AI' : 'H'}
+            {activity.assistant_type === 'agent' ? t('ai') : t('human')}
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              {activity.description}
-            </p>
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">{activity.description}</p>
             <div className="mt-1 flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
               {activity.stat_value != null && activity.stat_label && (
                 <span className="font-medium">

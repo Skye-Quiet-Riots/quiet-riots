@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { AssistantCategory } from '@/types';
 
 interface ClaimFormProps {
@@ -9,6 +10,7 @@ interface ClaimFormProps {
 }
 
 export function ClaimForm({ category, humanName }: ClaimFormProps) {
+  const t = useTranslations('Claim');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -42,7 +44,7 @@ export function ClaimForm({ category, humanName }: ClaimFormProps) {
     return (
       <div className="rounded-xl border border-green-200 bg-green-50 p-5 dark:border-green-800 dark:bg-green-900/20">
         <p className="font-medium text-green-800 dark:text-green-300">
-          Thanks! We&apos;ve noted your interest in the {humanName} role. We&apos;ll be in touch.
+          {t('success', { name: humanName })}
         </p>
       </div>
     );
@@ -53,7 +55,7 @@ export function ClaimForm({ category, humanName }: ClaimFormProps) {
       <textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder={`Why would you be great as ${humanName}? (optional)`}
+        placeholder={t('placeholder', { name: humanName })}
         maxLength={1000}
         rows={3}
         className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm placeholder-zinc-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder-zinc-500"
@@ -63,7 +65,7 @@ export function ClaimForm({ category, humanName }: ClaimFormProps) {
         disabled={status === 'submitting'}
         className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
       >
-        {status === 'submitting' ? 'Submitting...' : 'Express Interest'}
+        {status === 'submitting' ? t('submitting') : t('expressInterest')}
       </button>
       {status === 'error' && (
         <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>

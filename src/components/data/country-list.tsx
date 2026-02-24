@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import type { CountryBreakdown } from '@/types';
 
 const FLAG_MAP: Record<string, string> = {
@@ -22,13 +23,15 @@ interface CountryListProps {
   countries: CountryBreakdown[];
 }
 
-export function CountryList({ countries }: CountryListProps) {
+export async function CountryList({ countries }: CountryListProps) {
   if (countries.length === 0) return null;
+
+  const t = await getTranslations('Countries');
 
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        🌍 Countries
+        {t('title')}
       </h3>
       <div className="space-y-2">
         {countries.map((c) => (

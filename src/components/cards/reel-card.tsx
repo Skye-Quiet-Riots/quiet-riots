@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { RiotReel } from '@/types';
 
-const SOURCE_LABELS: Record<string, string> = {
-  curated: 'Curated',
-  community: 'Community',
-  ai_suggested: 'AI Pick',
+const SOURCE_LABEL_KEYS: Record<string, 'curated' | 'community' | 'aiPick'> = {
+  curated: 'curated',
+  community: 'community',
+  ai_suggested: 'aiPick',
 };
 
 interface ReelCardProps {
@@ -14,6 +15,7 @@ interface ReelCardProps {
 }
 
 export function ReelCard({ reel }: ReelCardProps) {
+  const t = useTranslations('Cards');
   const [upvotes, setUpvotes] = useState(reel.upvotes);
   const [voted, setVoted] = useState(false);
 
@@ -27,6 +29,8 @@ export function ReelCard({ reel }: ReelCardProps) {
     });
   }
 
+  const sourceLabelKey = SOURCE_LABEL_KEYS[reel.source];
+
   return (
     <div className="rounded-lg border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900">
       {/* Thumbnail */}
@@ -36,6 +40,7 @@ export function ReelCard({ reel }: ReelCardProps) {
         rel="noopener noreferrer"
         className="relative block overflow-hidden rounded-t-lg"
       >
+        {/* eslint-disable-next-line @next/next/no-img-element -- external YouTube thumbnail URL */}
         <img
           src={reel.thumbnail_url}
           alt={reel.title}
@@ -68,7 +73,7 @@ export function ReelCard({ reel }: ReelCardProps) {
             {voted ? '😂' : '🙂'} {upvotes}
           </button>
           <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500">
-            {SOURCE_LABELS[reel.source] || reel.source}
+            {sourceLabelKey ? t(sourceLabelKey) : reel.source}
           </span>
         </div>
       </div>

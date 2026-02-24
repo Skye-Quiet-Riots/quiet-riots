@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { formatPence } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
 
@@ -18,6 +19,7 @@ const PRESET_AMOUNTS = [
 ];
 
 export function ContributeForm({ campaignId, campaignTitle, userBalance }: ContributeFormProps) {
+  const t = useTranslations('Contribute');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -25,11 +27,11 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
 
   async function handleContribute(amountPence: number) {
     if (amountPence > userBalance) {
-      setError('Insufficient funds. Top up your wallet first.');
+      setError(t('insufficientFunds'));
       return;
     }
     if (amountPence < 10) {
-      setError('Minimum contribution is 10p');
+      setError(t('minContribution'));
       return;
     }
 
@@ -56,7 +58,7 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
       });
       trackEvent('campaign_contributed', { campaignId, amountPence });
     } catch {
-      setError('Network error. Please try again.');
+      setError(t('networkError'));
     } finally {
       setLoading(false);
     }
@@ -66,7 +68,7 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
     e.preventDefault();
     const pounds = parseFloat(customAmount);
     if (!pounds || pounds <= 0) {
-      setError('Enter a valid amount');
+      setError(t('invalidAmount'));
       return;
     }
     handleContribute(Math.round(pounds * 100));
@@ -76,10 +78,10 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
     return (
       <div className="rounded-xl border border-green-200 bg-green-50 p-5 dark:border-green-900 dark:bg-green-950/30">
         <p className="mb-2 text-sm font-semibold text-green-700 dark:text-green-300">
-          Contributed {formatPence(success.amount)} to {campaignTitle}!
+          {t('success', { amount: formatPence(success.amount), campaign: campaignTitle })}
         </p>
         <p className="text-sm text-green-600 dark:text-green-400">
-          Your remaining balance: {formatPence(success.newBalance)}
+          {t('remainingBalance', { balance: formatPence(success.newBalance) })}
         </p>
         {success.newBalance < 100 && (
           <p className="mt-2 text-sm">
@@ -87,9 +89,9 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
               href="/wallet"
               className="font-medium text-purple-600 hover:underline dark:text-purple-400"
             >
-              Top up your wallet
+              {t('topUpPrompt')}
             </Link>{' '}
-            to keep supporting campaigns.
+            {t('toKeepSupporting')}
           </p>
         )}
       </div>
@@ -99,10 +101,11 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        Contribute
+        {t('contribute')}
       </h3>
       <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-500">
-        Your balance: {formatPence(userBalance)}
+        {t('yourBalance')}
+        {formatPence(userBalance)}
       </p>
 
       {error && <p className="mb-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
@@ -127,7 +130,7 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
           step="0.01"
           value={customAmount}
           onChange={(e) => setCustomAmount(e.target.value)}
-          placeholder="Custom amount (£)"
+          placeholder={t('customAmount')}
           className="flex-1 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
         />
         <button
@@ -135,20 +138,20 @@ export function ContributeForm({ campaignId, campaignTitle, userBalance }: Contr
           disabled={loading || !customAmount}
           className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
         >
-          {loading ? '...' : 'Give'}
+          {loading ? '...' : t('give')}
         </button>
       </form>
 
       {userBalance < 10 && (
         <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-          Your wallet is empty.{' '}
+          {t('walletEmpty')}{' '}
           <Link
             href="/wallet"
             className="font-medium text-purple-600 hover:underline dark:text-purple-400"
           >
-            Top up
+            {t('topUp')}
           </Link>{' '}
-          to contribute.
+          {t('toContribute')}
         </p>
       )}
     </div>

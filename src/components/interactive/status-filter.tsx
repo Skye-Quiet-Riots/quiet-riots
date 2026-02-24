@@ -1,16 +1,21 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import type { CampaignStatus } from '@/types';
 
-const STATUSES: { value: CampaignStatus | null; label: string }[] = [
-  { value: null, label: 'All' },
-  { value: 'active', label: 'Active' },
-  { value: 'funded', label: 'Funded' },
-  { value: 'disbursed', label: 'Disbursed' },
+const STATUS_KEYS: {
+  value: CampaignStatus | null;
+  key: 'all' | 'active' | 'funded' | 'disbursed';
+}[] = [
+  { value: null, key: 'all' },
+  { value: 'active', key: 'active' },
+  { value: 'funded', key: 'funded' },
+  { value: 'disbursed', key: 'disbursed' },
 ];
 
 export function StatusFilter() {
+  const t = useTranslations('Filter');
   const router = useRouter();
   const searchParams = useSearchParams();
   const active = searchParams.get('status') as CampaignStatus | null;
@@ -27,9 +32,9 @@ export function StatusFilter() {
 
   return (
     <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
-      {STATUSES.map((s) => (
+      {STATUS_KEYS.map((s) => (
         <button
-          key={s.label}
+          key={s.key}
           onClick={() => handleClick(s.value)}
           className={`flex-shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
             active === s.value || (!active && !s.value)
@@ -37,7 +42,7 @@ export function StatusFilter() {
               : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
           }`}
         >
-          {s.label}
+          {t(s.key)}
         </button>
       ))}
     </div>

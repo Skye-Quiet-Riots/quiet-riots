@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 import { CategoryBadge } from '@/components/data/category-badge';
 import type { Category } from '@/types';
 import type { AssistantWithStats } from '@/lib/queries/assistants';
@@ -7,7 +8,8 @@ interface AssistantCardProps {
   assistant: AssistantWithStats;
 }
 
-export function AssistantCard({ assistant }: AssistantCardProps) {
+export async function AssistantCard({ assistant }: AssistantCardProps) {
+  const t = await getTranslations('Cards');
   const category = (assistant.category.charAt(0).toUpperCase() +
     assistant.category.slice(1)) as Category;
 
@@ -40,9 +42,7 @@ export function AssistantCard({ assistant }: AssistantCardProps) {
           <h3 className="font-semibold leading-tight group-hover:text-purple-600 dark:group-hover:text-purple-400">
             {assistant.agent_name} & {assistant.human_name}
           </h3>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            AI Agent & Human Organiser
-          </p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">{t('aiAndHuman')}</p>
         </div>
       </div>
 
@@ -58,10 +58,10 @@ export function AssistantCard({ assistant }: AssistantCardProps) {
         <CategoryBadge category={category} />
         <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="font-semibold">
-            {assistant.rioter_count.toLocaleString()} rioters
+            {assistant.rioter_count.toLocaleString()} {t('rioters')}
           </span>
           <span>
-            {assistant.riot_count} {assistant.riot_count === 1 ? 'riot' : 'riots'}
+            {assistant.riot_count} {t('riots', { count: assistant.riot_count })}
           </span>
         </div>
       </div>

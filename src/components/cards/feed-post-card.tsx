@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { FeedPost } from '@/types';
 
 interface FeedPostCardProps {
@@ -20,6 +21,7 @@ function timeAgo(dateStr: string): string {
 }
 
 export function FeedPostCard({ post }: FeedPostCardProps) {
+  const t = useTranslations('Cards');
   const [likes, setLikes] = useState(post.likes);
   const [liked, setLiked] = useState(false);
 
@@ -36,7 +38,7 @@ export function FeedPostCard({ post }: FeedPostCardProps) {
   return (
     <div className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900">
       <div className="mb-2 flex items-center justify-between">
-        <span className="font-semibold text-sm">{post.user_name || 'Anonymous'}</span>
+        <span className="font-semibold text-sm">{post.user_name || t('anonymous')}</span>
         <span className="text-xs text-zinc-400 dark:text-zinc-500">{timeAgo(post.created_at)}</span>
       </div>
       <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{post.content}</p>

@@ -2,13 +2,16 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { trackEvent } from '@/lib/analytics';
 
 interface SearchBarProps {
   placeholder?: string;
 }
 
-export function SearchBar({ placeholder = 'Search issues...' }: SearchBarProps) {
+export function SearchBar({ placeholder }: SearchBarProps) {
+  const t = useTranslations('Search');
+  const resolvedPlaceholder = placeholder ?? t('placeholder');
   const router = useRouter();
   const searchParams = useSearchParams();
   const [value, setValue] = useState(searchParams.get('search') || '');
@@ -35,7 +38,7 @@ export function SearchBar({ placeholder = 'Search issues...' }: SearchBarProps) 
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder={placeholder}
+        placeholder={resolvedPlaceholder}
         className="w-full rounded-xl border border-zinc-200 bg-white py-2.5 pl-10 pr-4 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
       />
     </div>

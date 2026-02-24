@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Evidence } from '@/types';
 import { trackEvent } from '@/lib/analytics';
 
@@ -31,6 +32,7 @@ export function EvidenceComposer({
   onSubmit,
   onGoLive,
 }: EvidenceComposerProps) {
+  const t = useTranslations('Evidence');
   const [content, setContent] = useState('');
   const [orgId, setOrgId] = useState(preselectedOrgId ?? '');
   const [externalUrl, setExternalUrl] = useState('');
@@ -65,7 +67,7 @@ export function EvidenceComposer({
     const toUpload = files.slice(0, remaining);
 
     if (files.length > remaining) {
-      setUploadError(`Maximum 4 photos. ${files.length - remaining} skipped.`);
+      setUploadError(t('maxPhotos', { count: files.length - remaining }));
     }
 
     // Add to uploading state immediately with local previews
@@ -106,7 +108,7 @@ export function EvidenceComposer({
         results.find((r) => r.status === 'rejected') &&
         (results.find((r) => r.status === 'rejected') as PromiseRejectedResult).reason;
       setUploadError(
-        msg instanceof Error ? msg.message : `Failed to upload: ${failedNames.join(', ')}`,
+        msg instanceof Error ? msg.message : t('uploadFailed', { names: failedNames.join(', ') }),
       );
     }
 
@@ -129,7 +131,7 @@ export function EvidenceComposer({
       setUploadedVideo({ url: data.url, name: file.name, previewUrl });
       setUploadingVideo(null);
     } catch (err) {
-      setUploadError(err instanceof Error ? err.message : 'Video upload failed');
+      setUploadError(err instanceof Error ? err.message : t('videoFailed'));
       URL.revokeObjectURL(previewUrl);
       setUploadingVideo(null);
     }
@@ -217,7 +219,7 @@ export function EvidenceComposer({
             onChange={(e) => setOrgId(e.target.value)}
             className="w-full rounded-md border border-zinc-200 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800"
           >
-            <option value="">General (no specific organisation)</option>
+            <option value="">{t('generalOrg')}</option>
             {organisations.map((org) => (
               <option key={org.id} value={org.id}>
                 {org.name}
@@ -231,7 +233,7 @@ export function EvidenceComposer({
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder="Say what you think..."
+        placeholder={t('placeholder')}
         rows={3}
         className="w-full resize-none rounded-md border border-zinc-200 p-3 text-sm placeholder:text-zinc-400 focus:border-zinc-400 focus:outline-none dark:border-zinc-700 dark:bg-zinc-800 dark:placeholder:text-zinc-500"
       />
@@ -245,7 +247,7 @@ export function EvidenceComposer({
           {/* Photo upload */}
           <div>
             <p className="mb-1 text-xs font-medium text-zinc-500 dark:text-zinc-400">
-              Photos (up to 4)
+              {t('photosLabel')}
             </p>
 
             {/* Preview grid */}
@@ -266,7 +268,7 @@ export function EvidenceComposer({
                       type="button"
                       onClick={() => removePhoto(i)}
                       className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-black/60 text-xs text-white opacity-70 hover:opacity-100"
-                      aria-label={`Remove ${photo.name}`}
+                      aria-label={t('removePhoto', { name: photo.name })}
                     >
                       &times;
                     </button>
@@ -294,7 +296,7 @@ export function EvidenceComposer({
             {/* File picker */}
             {totalPhotoSlots < 4 && (
               <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-dashed border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-500 hover:border-zinc-400 hover:text-zinc-600 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-300">
-                <span>+ Add photos</span>
+                <span>{t('addPhotos')}</span>
                 <input
                   type="file"
                   accept="image/jpeg,image/png,image/webp,image/gif"
@@ -305,15 +307,13 @@ export function EvidenceComposer({
                 />
               </label>
             )}
-            <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">
-              JPEG, PNG, WebP, GIF. Max 4 MB each.
-            </p>
+            <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">{t('photoFormats')}</p>
           </div>
 
           {/* Video upload */}
           <div>
             <p className="mb-1 text-xs font-medium text-zinc-500 dark:text-zinc-400">
-              Video (1 max)
+              {t('videoLabel')}
             </p>
 
             {/* Video preview */}
@@ -331,7 +331,7 @@ export function EvidenceComposer({
                     type="button"
                     onClick={removeVideo}
                     className="text-xs text-zinc-400 hover:text-red-500"
-                    aria-label="Remove video"
+                    aria-label={t('removeVideo')}
                   >
                     &times;
                   </button>
@@ -342,7 +342,7 @@ export function EvidenceComposer({
             {/* File picker */}
             {!uploadedVideo && !uploadingVideo && (
               <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-dashed border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-500 hover:border-zinc-400 hover:text-zinc-600 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-300">
-                <span>+ Add video</span>
+                <span>{t('addVideo')}</span>
                 <input
                   type="file"
                   accept="video/mp4,video/quicktime,video/webm"
@@ -352,21 +352,19 @@ export function EvidenceComposer({
                 />
               </label>
             )}
-            <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">
-              MP4, MOV, WebM. Max 4 MB.
-            </p>
+            <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">{t('videoFormats')}</p>
           </div>
 
           {/* External link (unchanged — manual URL input) */}
           <div>
             <p className="mb-1 text-xs font-medium text-zinc-500 dark:text-zinc-400">
-              External link
+              {t('linkLabel')}
             </p>
             <input
               type="url"
               value={externalUrl}
               onChange={(e) => setExternalUrl(e.target.value)}
-              placeholder="https://news-article.com/..."
+              placeholder={t('linkPlaceholder')}
               className="w-full rounded-md border border-zinc-200 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800"
             />
           </div>
@@ -379,7 +377,7 @@ export function EvidenceComposer({
           onClick={() => setShowMedia(!showMedia)}
           className="rounded-md border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
         >
-          {showMedia ? 'Hide media' : '📎 Add photos, video, links'}
+          {showMedia ? t('hideMedia') : t('addMedia')}
         </button>
 
         <div className="flex-1" />
@@ -389,14 +387,14 @@ export function EvidenceComposer({
           disabled={!content.trim() || posting || isUploading}
           className="rounded-md bg-zinc-900 px-4 py-1.5 text-xs font-bold text-white hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
         >
-          {posting ? 'Posting...' : isUploading ? 'Uploading...' : 'Submit Evidence'}
+          {posting ? t('posting') : isUploading ? t('uploading') : t('submitEvidence')}
         </button>
 
         <button
           onClick={onGoLive}
           className="rounded-md bg-red-600 px-4 py-1.5 text-xs font-bold text-white hover:bg-red-700"
         >
-          🔴 Go Live Now
+          {t('goLive')}
         </button>
       </div>
     </div>

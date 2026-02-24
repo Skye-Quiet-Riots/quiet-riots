@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import type { Campaign } from '@/types';
 import { formatPence } from '@/lib/format';
 
@@ -11,29 +12,25 @@ function getProgressColor(pct: number): string {
   return 'bg-amber-500';
 }
 
-function getStatusBadge(status: string): { label: string; className: string } | null {
+function getStatusBadgeClassName(status: string): string | null {
   if (status === 'funded') {
-    return {
-      label: 'Funded',
-      className: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
-    };
+    return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300';
   }
   if (status === 'disbursed') {
-    return {
-      label: 'Disbursed',
-      className: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
-    };
+    return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300';
   }
   return null;
 }
 
-export function CampaignProgress({ campaigns }: CampaignProgressProps) {
+export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
   if (campaigns.length === 0) return null;
+
+  const t = await getTranslations('CampaignProgress');
 
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        💰 Campaigns
+        {t('title')}
       </h3>
 
       <div className="space-y-4">
@@ -42,17 +39,23 @@ export function CampaignProgress({ campaigns }: CampaignProgressProps) {
             100,
             Math.round((campaign.raised_pence / campaign.target_pence) * 100),
           );
-          const badge = getStatusBadge(campaign.status);
+          const badgeClassName = getStatusBadgeClassName(campaign.status);
+          const badgeLabel =
+            campaign.status === 'funded'
+              ? t('funded')
+              : campaign.status === 'disbursed'
+                ? t('disbursed')
+                : null;
 
           return (
             <div key={campaign.id}>
               <div className="mb-1 flex items-center justify-between text-sm">
                 <span className="font-medium">{campaign.title}</span>
-                {badge && (
+                {badgeClassName && badgeLabel && (
                   <span
-                    className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badge.className}`}
+                    className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badgeClassName}`}
                   >
-                    {badge.label}
+                    {badgeLabel}
                   </span>
                 )}
               </div>
@@ -77,8 +80,7 @@ export function CampaignProgress({ campaigns }: CampaignProgressProps) {
                   %)
                 </span>
                 <span>
-                  {campaign.contributor_count}{' '}
-                  {campaign.contributor_count === 1 ? 'backer' : 'backers'}
+                  {campaign.contributor_count} {t('backers', { count: campaign.contributor_count })}
                 </span>
               </div>
             </div>

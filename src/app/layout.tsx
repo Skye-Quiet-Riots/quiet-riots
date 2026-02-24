@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { NavBar } from '@/components/layout/nav-bar';
-import { Footer } from '@/components/layout/footer';
 import { PostHogProvider } from './posthog-provider';
 import { AuthProvider } from './auth-provider';
 import './globals.css';
@@ -53,15 +51,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
           <Suspense fallback={null}>
-            <PostHogProvider>
-              <NavBar />
-              <main className="min-h-screen">{children}</main>
-              <Footer />
-            </PostHogProvider>
+            <PostHogProvider>{children}</PostHogProvider>
           </Suspense>
         </AuthProvider>
       </body>

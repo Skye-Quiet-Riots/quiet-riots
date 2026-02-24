@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { IssuePivotRow, OrgPivotRow } from '@/types';
 import { PivotTable } from '@/components/data/pivot-table';
 
@@ -21,6 +22,7 @@ export function PivotToggle({
   issueName,
   orgName,
 }: PivotToggleProps) {
+  const t = useTranslations('Pivot');
   const [mode, setMode] = useState<'issue' | 'org'>('issue');
 
   const totalIssuePivot = issuePivotRows.reduce((sum, r) => sum + r.rioter_count, 0);
@@ -29,11 +31,11 @@ export function PivotToggle({
     <div className="rounded-xl border-2 border-purple-200 bg-purple-50/30 p-5 dark:border-purple-800 dark:bg-purple-900/10">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">
-          <span>🔀</span> The Pivot
+          {t('title')}
         </h3>
         {mode === 'issue' && (
           <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
-            {totalIssuePivot.toLocaleString()} people globally
+            {totalIssuePivot.toLocaleString()} {t('peopleGlobally')}
           </span>
         )}
       </div>
@@ -48,8 +50,8 @@ export function PivotToggle({
               : 'text-purple-500 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300'
           }`}
         >
-          🔍 Issue Pivot
-          <span className="mt-0.5 block text-xs font-normal opacity-70">Same issue, all orgs</span>
+          {t('issuePivot')}
+          <span className="mt-0.5 block text-xs font-normal opacity-70">{t('issuePivotDesc')}</span>
         </button>
         <button
           onClick={() => setMode('org')}
@@ -59,16 +61,16 @@ export function PivotToggle({
               : 'text-purple-500 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300'
           }`}
         >
-          🏢 Org Pivot
-          <span className="mt-0.5 block text-xs font-normal opacity-70">All issues, one org</span>
+          {t('orgPivot')}
+          <span className="mt-0.5 block text-xs font-normal opacity-70">{t('orgPivotDesc')}</span>
         </button>
       </div>
 
       {/* Description */}
       <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
         {mode === 'issue'
-          ? `See "${issueName}" across all similar organisations:`
-          : `See all issues at ${orgName || 'this organisation'}:`}
+          ? t('seeIssueAcross', { issueName: issueName || '' })
+          : t('seeOrgIssues', { orgName: orgName || 'this organisation' })}
       </p>
 
       {/* Pivot data */}

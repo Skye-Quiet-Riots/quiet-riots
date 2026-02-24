@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { trackEvent } from '@/lib/analytics';
 
 interface JoinButtonProps {
@@ -9,6 +10,7 @@ interface JoinButtonProps {
 }
 
 export function JoinButton({ issueId, initialJoined }: JoinButtonProps) {
+  const t = useTranslations('Join');
   const [joined, setJoined] = useState(initialJoined);
   const [loading, setLoading] = useState(false);
 
@@ -37,7 +39,7 @@ export function JoinButton({ issueId, initialJoined }: JoinButtonProps) {
           : 'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200'
       }`}
     >
-      {loading ? '...' : joined ? '✅ Joined this Quiet Riot' : '✊ Join this Quiet Riot'}
+      {loading ? '...' : joined ? t('joined') : t('join')}
     </button>
   );
 }

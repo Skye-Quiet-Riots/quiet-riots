@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 import type { IssuePivotRow, OrgPivotRow } from '@/types';
 
 interface IssuePivotProps {
@@ -15,7 +16,9 @@ interface OrgPivotProps {
 
 type PivotTableProps = IssuePivotProps | OrgPivotProps;
 
-export function PivotTable(props: PivotTableProps) {
+export async function PivotTable(props: PivotTableProps) {
+  const t = await getTranslations('Pivot');
+
   if (props.mode === 'issue') {
     return (
       <div className="space-y-2">
@@ -37,12 +40,12 @@ export function PivotTable(props: PivotTableProps) {
                   <span className="font-semibold">{row.organisation_name}</span>
                   {isCurrent && (
                     <span className="rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
-                      YOU
+                      {t('you')}
                     </span>
                   )}
                 </div>
                 <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                  {row.rioter_count.toLocaleString()} rioters
+                  {row.rioter_count.toLocaleString()} {t('rioters')}
                 </span>
               </div>
               <span className="text-sm font-medium text-zinc-400">#{row.rank}</span>
@@ -73,12 +76,12 @@ export function PivotTable(props: PivotTableProps) {
                 <span className="font-semibold">{row.issue_name}</span>
                 {isCurrent && (
                   <span className="rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
-                    YOU
+                    {t('you')}
                   </span>
                 )}
               </div>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                {row.rioter_count.toLocaleString()} rioters
+                {row.rioter_count.toLocaleString()} {t('rioters')}
               </span>
             </div>
             <span className="text-sm font-medium text-zinc-400">#{index + 1}</span>

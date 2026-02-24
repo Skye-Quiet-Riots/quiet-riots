@@ -1,30 +1,16 @@
+import { getTranslations } from 'next-intl/server';
 import type { CommunityHealth } from '@/types';
 
 interface HealthMeterProps {
   health: CommunityHealth;
 }
 
-const metrics = [
-  {
-    key: 'needs_met' as const,
-    label: 'Needs Met',
-    emoji: '🎯',
-    description: "Members feel it's worthwhile",
-  },
-  {
-    key: 'membership' as const,
-    label: 'Membership',
-    emoji: '🏷',
-    description: 'Trust & belonging',
-  },
-  { key: 'influence' as const, label: 'Influence', emoji: '📢', description: 'Your voice matters' },
-  {
-    key: 'connection' as const,
-    label: 'Connection',
-    emoji: '💜',
-    description: 'Shared experiences',
-  },
-];
+const METRIC_KEYS = [
+  { key: 'needs_met' as const, emoji: '🎯', labelKey: 'needsMet', descKey: 'needsMetDesc' },
+  { key: 'membership' as const, emoji: '🏷', labelKey: 'membership', descKey: 'membershipDesc' },
+  { key: 'influence' as const, emoji: '📢', labelKey: 'influence', descKey: 'influenceDesc' },
+  { key: 'connection' as const, emoji: '💜', labelKey: 'connection', descKey: 'connectionDesc' },
+] as const;
 
 function getBarColor(score: number): string {
   if (score >= 75) return 'bg-green-500';
@@ -32,34 +18,38 @@ function getBarColor(score: number): string {
   return 'bg-red-500';
 }
 
-function getOverallStatus(health: CommunityHealth): { label: string; color: string } {
+function getOverallStatusKey(health: CommunityHealth): {
+  key: 'healthy' | 'growing' | 'needsAttention';
+  color: string;
+} {
   const avg = (health.needs_met + health.membership + health.influence + health.connection) / 4;
-  if (avg >= 75) return { label: 'Healthy', color: 'text-green-600 dark:text-green-400' };
-  if (avg >= 60) return { label: 'Growing', color: 'text-amber-600 dark:text-amber-400' };
-  return { label: 'Needs Attention', color: 'text-red-600 dark:text-red-400' };
+  if (avg >= 75) return { key: 'healthy', color: 'text-green-600 dark:text-green-400' };
+  if (avg >= 60) return { key: 'growing', color: 'text-amber-600 dark:text-amber-400' };
+  return { key: 'needsAttention', color: 'text-red-600 dark:text-red-400' };
 }
 
-export function HealthMeter({ health }: HealthMeterProps) {
-  const status = getOverallStatus(health);
+export async function HealthMeter({ health }: HealthMeterProps) {
+  const t = await getTranslations('Health');
+  const status = getOverallStatusKey(health);
 
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-          📊 Sense of Community Index
+          {t('title')}
         </h3>
-        <span className={`text-sm font-bold ${status.color}`}>{status.label}</span>
+        <span className={`text-sm font-bold ${status.color}`}>{t(status.key)}</span>
       </div>
 
       <div className="space-y-3">
-        {metrics.map((metric) => {
+        {METRIC_KEYS.map((metric) => {
           const score = health[metric.key];
           return (
             <div key={metric.key}>
               <div className="mb-1 flex items-center justify-between text-sm">
                 <span className="flex items-center gap-1.5">
                   <span>{metric.emoji}</span>
-                  <span className="font-medium">{metric.label}</span>
+                  <span className="font-medium">{t(metric.labelKey)}</span>
                 </span>
                 <span className="font-bold">{score}/100</span>
               </div>
@@ -69,9 +59,7 @@ export function HealthMeter({ health }: HealthMeterProps) {
                   style={{ width: `${score}%` }}
                 />
               </div>
-              <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">
-                {metric.description}
-              </p>
+              <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">{t(metric.descKey)}</p>
             </div>
           );
         })}
