@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { NavBar } from '@/components/layout/nav-bar';
 import { Footer } from '@/components/layout/footer';
 import { PostHogProvider } from './posthog-provider';
+import { AuthProvider } from './auth-provider';
 import './globals.css';
 
 const geistSans = Geist({
@@ -54,13 +55,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Suspense fallback={null}>
-          <PostHogProvider>
-            <NavBar />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-          </PostHogProvider>
-        </Suspense>
+        <AuthProvider>
+          <Suspense fallback={null}>
+            <PostHogProvider>
+              <NavBar />
+              <main className="min-h-screen">{children}</main>
+              <Footer />
+            </PostHogProvider>
+          </Suspense>
+        </AuthProvider>
       </body>
     </html>
   );

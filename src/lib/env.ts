@@ -6,6 +6,7 @@ const envSchema = z.object({
   BOT_API_KEY: z
     .string()
     .min(1, 'BOT_API_KEY is required — bot auth will reject all requests without it'),
+  AUTH_SECRET: z.string().min(1, 'AUTH_SECRET is required for Auth.js JWT signing'),
 });
 
 /**

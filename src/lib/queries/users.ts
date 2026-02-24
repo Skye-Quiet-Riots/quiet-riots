@@ -10,7 +10,11 @@ export async function getUserById(id: string): Promise<User | null> {
 
 export async function getUserByEmail(email: string): Promise<User | null> {
   const db = getDb();
-  const result = await db.execute({ sql: 'SELECT * FROM users WHERE email = ?', args: [email] });
+  const normalized = email.toLowerCase().trim();
+  const result = await db.execute({
+    sql: 'SELECT * FROM users WHERE LOWER(email) = ?',
+    args: [normalized],
+  });
   return (result.rows[0] as unknown as User) ?? null;
 }
 
@@ -29,12 +33,13 @@ export async function createUser(data: {
 }): Promise<User> {
   const db = getDb();
   const id = generateId();
+  const normalizedEmail = data.email.toLowerCase().trim();
   await db.execute({
     sql: 'INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)',
     args: [
       id,
       data.name,
-      data.email,
+      normalizedEmail,
       data.phone || null,
       data.time_available || '10min',
       data.skills || '',

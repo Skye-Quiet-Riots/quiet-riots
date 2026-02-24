@@ -47,6 +47,18 @@ describe('getUserByEmail', () => {
     const user = await getUserByEmail('nobody@example.com');
     expect(user).toBeNull();
   });
+
+  it('finds users case-insensitively', async () => {
+    const user = await getUserByEmail('SARAH@EXAMPLE.COM');
+    expect(user).not.toBeNull();
+    expect(user!.name).toBe('Sarah K.');
+  });
+
+  it('trims whitespace from email', async () => {
+    const user = await getUserByEmail('  sarah@example.com  ');
+    expect(user).not.toBeNull();
+    expect(user!.name).toBe('Sarah K.');
+  });
 });
 
 describe('getUserByPhone', () => {
@@ -86,6 +98,14 @@ describe('createUser', () => {
     expect(user.phone).toBe('+441234567890');
     expect(user.time_available).toBe('1hr+');
     expect(user.skills).toBe('coding,design');
+  });
+
+  it('normalizes email to lowercase', async () => {
+    const user = await createUser({
+      name: 'Upper Case Email',
+      email: 'UPPER@EXAMPLE.COM',
+    });
+    expect(user.email).toBe('upper@example.com');
   });
 });
 
