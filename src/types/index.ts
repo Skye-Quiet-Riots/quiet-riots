@@ -443,6 +443,38 @@ export interface AssistantClaim {
   created_at: string;
 }
 
+// Evidence
+export type EvidenceMediaType = 'text' | 'photo' | 'video' | 'link' | 'live_stream';
+
+export interface Evidence {
+  id: string;
+  issue_id: string;
+  org_id: string | null;
+  user_id: string;
+  user_name?: string;
+  org_name?: string;
+  issue_name?: string;
+  content: string;
+  media_type: EvidenceMediaType;
+  photo_urls: string;
+  video_url: string | null;
+  external_urls: string;
+  live: number;
+  likes: number;
+  comments_count: number;
+  shares: number;
+  created_at: string;
+}
+
+export interface EvidenceComment {
+  id: string;
+  evidence_id: string;
+  user_id: string;
+  user_name?: string;
+  content: string;
+  created_at: string;
+}
+
 // Bot Analytics
 export interface BotEvent {
   id: string;

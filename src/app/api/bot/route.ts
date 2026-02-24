@@ -50,6 +50,7 @@ import {
   recordAssistantIntroduction,
   createSuggestion,
 } from '@/lib/queries/assistants';
+import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -143,6 +144,25 @@ const actionSchemas = {
     phone: z.string().min(1),
     issue_id: z.string().min(1),
     suggestion_text: z.string().min(1, 'Suggestion text required').max(2000),
+  }),
+  submit_evidence: z.object({
+    phone: z.string().min(1),
+    issue_id: z.string().min(1),
+    content: z.string().min(1),
+    org_id: z.string().optional(),
+    photo_url: z.string().url().optional(),
+    live: z.boolean().optional().default(false),
+  }),
+  get_evidence: z.object({
+    issue_id: z.string().min(1),
+    org_id: z.string().optional(),
+    limit: z.number().int().positive().optional(),
+  }),
+  go_live: z.object({
+    phone: z.string().min(1),
+    issue_id: z.string().min(1),
+    content: z.string().min(1),
+    org_id: z.string().optional(),
   }),
 } as const;
 
@@ -239,8 +259,8 @@ export async function POST(request: NextRequest) {
 
   // Analytics: track userId and issueId as they're resolved during dispatch
   let trackedUserId: string | null = null;
-  let trackedIssueId: string | null = (p.issue_id as string) ?? null;
-  let trackedOrgId: string | null = (p.org_id as string) ?? null;
+  const trackedIssueId: string | null = (p.issue_id as string) ?? null;
+  const trackedOrgId: string | null = (p.org_id as string) ?? null;
   let trackedAssistantCategory: string | null = (p.category as string) ?? null;
   let trackedStatus: 'ok' | 'error' = 'ok';
   let trackedError: string | null = null;
@@ -582,6 +602,50 @@ export async function POST(request: NextRequest) {
         }
       }
 
+      // ─── Evidence ────────────────────────────────────────
+      case 'submit_evidence': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const evidence = await createEvidence({
+          issueId,
+          orgId: (p.org_id as string) ?? null,
+          userId: user.id,
+          content: p.content as string,
+          mediaType: p.photo_url ? 'photo' : 'text',
+          photoUrls: p.photo_url ? [p.photo_url as string] : [],
+          live: (p.live as boolean) ?? false,
+        });
+        return ok({ evidence });
+      }
+
+      case 'get_evidence': {
+        const issueId = p.issue_id as string;
+        const orgId = p.org_id as string | undefined;
+        const limit = (p.limit as number) || 10;
+        const evidence = await getEvidenceForIssue(issueId, orgId, limit);
+        return ok({ evidence });
+      }
+
+      case 'go_live': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const evidence = await createEvidence({
+          issueId,
+          orgId: (p.org_id as string) ?? null,
+          userId: user.id,
+          content: p.content as string,
+          mediaType: 'live_stream',
+          live: true,
+        });
+        return ok({ evidence, message: 'You are live! Be passionate but respectful.' });
+      }
+
       default:
         return err(`Unknown action: ${action}`);
     }
@@ -602,9 +666,10 @@ export async function POST(request: NextRequest) {
       durationMs,
       status: trackedStatus,
       errorMessage: trackedError,
-      metadata: trackedOrgId || trackedAssistantCategory
-        ? { orgId: trackedOrgId, assistantCategory: trackedAssistantCategory }
-        : null,
+      metadata:
+        trackedOrgId || trackedAssistantCategory
+          ? { orgId: trackedOrgId, assistantCategory: trackedAssistantCategory }
+          : null,
     }).catch(() => {});
   }
 }
