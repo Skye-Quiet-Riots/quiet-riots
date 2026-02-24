@@ -9,6 +9,7 @@ import { PageHeader } from '@/components/layout/page-header';
 import { OrgCard } from '@/components/cards/org-card';
 import { CategoryFilter } from '@/components/interactive/category-filter';
 import { AssistantBanner } from '@/components/data/assistant-banner';
+import { AssistantOverviewBanner } from '@/components/data/assistant-overview-banner';
 import type { Category } from '@/types';
 
 interface Props {
@@ -20,7 +21,7 @@ export default async function OrganisationsPage({ searchParams }: Props) {
   const category = params.category as Category | undefined;
   const [orgs, allAssistants] = await Promise.all([
     getAllOrganisations(category),
-    category ? getAllAssistants() : Promise.resolve([]),
+    getAllAssistants(),
   ]);
   const assistant = category
     ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())
@@ -48,9 +49,13 @@ export default async function OrganisationsPage({ searchParams }: Props) {
         </Suspense>
       </div>
 
-      {assistant && (
+      {assistant ? (
         <div className="mb-6">
           <AssistantBanner assistant={assistant} />
+        </div>
+      ) : (
+        <div className="mb-6">
+          <AssistantOverviewBanner assistants={allAssistants} />
         </div>
       )}
 
