@@ -2,7 +2,8 @@
 
 import { useSession } from 'next-auth/react';
 import { useState, useCallback } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 interface AuthGateProps {
   /** The action description shown when not authenticated (e.g., "join this Quiet Riot") */
@@ -22,6 +23,7 @@ interface AuthGateProps {
 export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
   const { data: session, status } = useSession();
   const [showModal, setShowModal] = useState(false);
+  const t = useTranslations('AuthGate');
 
   const handleClick = useCallback(
     (e: React.MouseEvent) => {
@@ -48,12 +50,12 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
   if (mode === 'block') {
     return (
       <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-700 dark:bg-zinc-800/50">
-        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">Sign in to {action}</p>
+        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">{t('signInTo', { action })}</p>
         <Link
           href="/auth/signin"
           className="inline-block rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
         >
-          Sign in
+          {t('signIn')}
         </Link>
       </div>
     );
@@ -69,31 +71,31 @@ export function AuthGate({ action, children, mode = 'block' }: AuthGateProps) {
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
           <div className="w-full max-w-sm rounded-xl bg-white p-6 shadow-xl dark:bg-zinc-900">
-            <h2 className="mb-2 text-lg font-bold">Sign in required</h2>
+            <h2 className="mb-2 text-lg font-bold">{t('signInRequired')}</h2>
             <p className="mb-4 text-sm text-zinc-500 dark:text-zinc-400">
-              You need to sign in to {action}.
+              {t('signInToAction', { action })}
             </p>
             <div className="flex gap-3">
               <Link
                 href="/auth/signin"
                 className="flex-1 rounded-lg bg-zinc-900 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
               >
-                Sign in
+                {t('signIn')}
               </Link>
               <button
                 onClick={() => setShowModal(false)}
                 className="flex-1 rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
               >
-                Cancel
+                {t('cancel')}
               </button>
             </div>
             <p className="mt-3 text-center text-xs text-zinc-400">
-              Don&apos;t have an account?{' '}
+              {t('noAccount')}{' '}
               <Link
                 href="/auth/signup"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                Sign up
+                {t('signUp')}
               </Link>
             </p>
           </div>

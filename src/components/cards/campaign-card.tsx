@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 import { formatPence } from '@/lib/format';
 import { CategoryBadge } from '@/components/data/category-badge';
 import type { Campaign, Category } from '@/types';
@@ -15,25 +16,26 @@ function getProgressColor(pct: number): string {
   return 'bg-amber-500';
 }
 
-function getStatusBadge(status: string): { label: string; className: string } | null {
+function getStatusBadgeClassName(status: string): string | null {
   if (status === 'funded') {
-    return {
-      label: 'Funded',
-      className: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
-    };
+    return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300';
   }
   if (status === 'disbursed') {
-    return {
-      label: 'Disbursed',
-      className: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
-    };
+    return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300';
   }
   return null;
 }
 
-export function CampaignCard({ campaign, issueName, issueCategory }: CampaignCardProps) {
+export async function CampaignCard({ campaign, issueName, issueCategory }: CampaignCardProps) {
+  const t = await getTranslations('Cards');
   const pct = Math.min(100, Math.round((campaign.raised_pence / campaign.target_pence) * 100));
-  const badge = getStatusBadge(campaign.status);
+  const badgeClassName = getStatusBadgeClassName(campaign.status);
+  const badgeLabel =
+    campaign.status === 'funded'
+      ? t('funded')
+      : campaign.status === 'disbursed'
+        ? t('disbursed')
+        : null;
 
   return (
     <Link
@@ -44,11 +46,11 @@ export function CampaignCard({ campaign, issueName, issueCategory }: CampaignCar
         <h3 className="text-sm font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400">
           {campaign.title}
         </h3>
-        {badge && (
+        {badgeClassName && badgeLabel && (
           <span
-            className={`ml-2 flex-shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${badge.className}`}
+            className={`ml-2 flex-shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${badgeClassName}`}
           >
-            {badge.label}
+            {badgeLabel}
           </span>
         )}
       </div>
@@ -72,7 +74,7 @@ export function CampaignCard({ campaign, issueName, issueCategory }: CampaignCar
           {formatPence(campaign.raised_pence)} of {formatPence(campaign.target_pence)} ({pct}%)
         </span>
         <span>
-          {campaign.contributor_count} {campaign.contributor_count === 1 ? 'backer' : 'backers'}
+          {campaign.contributor_count} {t('backers', { count: campaign.contributor_count })}
         </span>
       </div>
     </Link>

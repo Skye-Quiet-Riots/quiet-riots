@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { FeedPost } from '@/types';
 import { trackEvent } from '@/lib/analytics';
 
@@ -10,6 +11,7 @@ interface FeedComposerProps {
 }
 
 export function FeedComposer({ issueId, onPost }: FeedComposerProps) {
+  const t = useTranslations('Feed');
   const [content, setContent] = useState('');
   const [posting, setPosting] = useState(false);
 
@@ -41,7 +43,7 @@ export function FeedComposer({ issueId, onPost }: FeedComposerProps) {
         type="text"
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder="Share your thoughts..."
+        placeholder={t('composerPlaceholder')}
         className="flex-1 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
       />
       <button
@@ -49,7 +51,7 @@ export function FeedComposer({ issueId, onPost }: FeedComposerProps) {
         disabled={posting || !content.trim()}
         className="rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
       >
-        Post
+        {t('post')}
       </button>
     </form>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface ProfileEditFormProps {
   userId: string;
@@ -9,10 +10,10 @@ interface ProfileEditFormProps {
   initialSkills: string;
 }
 
-const TIME_OPTIONS = [
-  { value: '1min', label: '1 minute', description: 'Quick actions only' },
-  { value: '10min', label: '10 minutes', description: 'Most actions' },
-  { value: '1hr+', label: '1 hour+', description: 'Deep involvement' },
+const TIME_OPTION_KEYS = [
+  { value: '1min', labelKey: 'time1min' as const, descKey: 'time1minDesc' as const },
+  { value: '10min', labelKey: 'time10min' as const, descKey: 'time10minDesc' as const },
+  { value: '1hr+', labelKey: 'time1hour' as const, descKey: 'time1hourDesc' as const },
 ];
 
 export function ProfileEditForm({
@@ -21,6 +22,7 @@ export function ProfileEditForm({
   initialTimeAvailable,
   initialSkills,
 }: ProfileEditFormProps) {
+  const t = useTranslations('ProfileEdit');
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
   const [name, setName] = useState(initialName);
@@ -31,7 +33,7 @@ export function ProfileEditForm({
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
     if (!name.trim()) {
-      setError('Name is required');
+      setError(t('nameRequired'));
       return;
     }
     setSaving(true);
@@ -51,10 +53,10 @@ export function ProfileEditForm({
         setEditing(false);
       } else {
         const data = await res.json();
-        setError(data.error || 'Failed to save');
+        setError(data.error || t('saveFailed'));
       }
     } catch {
-      setError('Failed to save');
+      setError(t('saveFailed'));
     } finally {
       setSaving(false);
     }
@@ -74,7 +76,7 @@ export function ProfileEditForm({
         onClick={() => setEditing(true)}
         className="text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
       >
-        Edit profile
+        {t('title')}
       </button>
     );
   }
@@ -84,7 +86,7 @@ export function ProfileEditForm({
       {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
       <div>
         <label htmlFor="edit-name" className="mb-1 block text-sm font-medium">
-          Name
+          {t('nameLabel')}
         </label>
         <input
           id="edit-name"
@@ -97,10 +99,10 @@ export function ProfileEditForm({
       </div>
       <div>
         <label htmlFor="edit-time" className="mb-1 block text-sm font-medium">
-          Time available
+          {t('timeLabel')}
         </label>
         <div className="grid grid-cols-3 gap-2">
-          {TIME_OPTIONS.map((opt) => (
+          {TIME_OPTION_KEYS.map((opt) => (
             <button
               key={opt.value}
               type="button"
@@ -111,9 +113,9 @@ export function ProfileEditForm({
                   : 'border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600'
               }`}
             >
-              <span className="block font-medium">{opt.label}</span>
+              <span className="block font-medium">{t(opt.labelKey)}</span>
               <span className="block text-xs text-zinc-500 dark:text-zinc-400">
-                {opt.description}
+                {t(opt.descKey)}
               </span>
             </button>
           ))}
@@ -121,19 +123,17 @@ export function ProfileEditForm({
       </div>
       <div>
         <label htmlFor="edit-skills" className="mb-1 block text-sm font-medium">
-          Skills
+          {t('skillsLabel')}
         </label>
         <input
           id="edit-skills"
           type="text"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
-          placeholder="e.g. design, writing, legal, coding"
+          placeholder={t('skillsPlaceholder')}
           className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800"
         />
-        <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          Comma-separated. Helps match you with relevant actions.
-        </p>
+        <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">{t('skillsHint')}</p>
       </div>
       <div className="flex gap-2">
         <button
@@ -141,14 +141,14 @@ export function ProfileEditForm({
           disabled={saving}
           className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-bold text-white hover:bg-zinc-800 disabled:opacity-50 dark:bg-white dark:text-zinc-900"
         >
-          {saving ? 'Saving...' : 'Save changes'}
+          {saving ? t('saving') : t('save')}
         </button>
         <button
           type="button"
           onClick={handleCancel}
           className="rounded-lg border border-zinc-200 px-4 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800"
         >
-          Cancel
+          {t('cancel')}
         </button>
       </div>
     </form>

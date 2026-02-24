@@ -1,11 +1,13 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { CATEGORIES, CATEGORY_EMOJIS } from '@/types';
 import type { Category } from '@/types';
 import { trackEvent } from '@/lib/analytics';
 
 export function CategoryFilter() {
+  const t = useTranslations('Filter');
   const router = useRouter();
   const searchParams = useSearchParams();
   const active = searchParams.get('category') as Category | null;
@@ -31,7 +33,7 @@ export function CategoryFilter() {
             : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
         }`}
       >
-        All
+        {t('all')}
       </button>
       {CATEGORIES.map((cat) => (
         <button

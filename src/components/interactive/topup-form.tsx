@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { formatPence } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
 
@@ -12,6 +13,7 @@ const PRESET_AMOUNTS = [
 ];
 
 export function TopUpForm() {
+  const t = useTranslations('TopUp');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -36,14 +38,14 @@ export function TopUpForm() {
         return;
       }
 
-      setSuccess(`${formatPence(amountPence)} added to your wallet!`);
+      setSuccess(t('success', { amount: formatPence(amountPence) }));
       setCustomAmount('');
       trackEvent('wallet_topup', { amountPence });
 
       // Refresh the page after a short delay to show updated balance
       setTimeout(() => window.location.reload(), 1200);
     } catch {
-      setError('Network error. Please try again.');
+      setError(t('networkError'));
     } finally {
       setLoading(false);
     }
@@ -53,7 +55,7 @@ export function TopUpForm() {
     e.preventDefault();
     const pounds = parseFloat(customAmount);
     if (!pounds || pounds < 1) {
-      setError('Minimum top-up is £1');
+      setError(t('minTopUp'));
       return;
     }
     handleTopUp(Math.round(pounds * 100));
@@ -62,7 +64,7 @@ export function TopUpForm() {
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        Add Funds
+        {t('addFunds')}
       </h3>
 
       {error && <p className="mb-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
@@ -88,7 +90,7 @@ export function TopUpForm() {
           step="0.01"
           value={customAmount}
           onChange={(e) => setCustomAmount(e.target.value)}
-          placeholder="Custom amount (£)"
+          placeholder={t('customAmount')}
           className="flex-1 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm outline-none transition-colors focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:focus:border-zinc-500"
         />
         <button
@@ -96,13 +98,11 @@ export function TopUpForm() {
           disabled={loading || !customAmount}
           className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-zinc-900"
         >
-          {loading ? '...' : 'Top Up'}
+          {loading ? '...' : t('topUp')}
         </button>
       </form>
 
-      <p className="mt-3 text-xs text-zinc-400 dark:text-zinc-500">
-        Simulated top-up for testing. Real payments via Stripe coming soon.
-      </p>
+      <p className="mt-3 text-xs text-zinc-400 dark:text-zinc-500">{t('simulated')}</p>
     </div>
   );
 }

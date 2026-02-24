@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Synonym } from '@/types';
 
 interface SynonymListProps {
@@ -9,6 +10,7 @@ interface SynonymListProps {
 }
 
 export function SynonymList({ synonyms, issueId }: SynonymListProps) {
+  const t = useTranslations('Synonyms');
   const [items, setItems] = useState(synonyms);
   const [newTerm, setNewTerm] = useState('');
   const [adding, setAdding] = useState(false);
@@ -53,7 +55,7 @@ export function SynonymList({ synonyms, issueId }: SynonymListProps) {
           type="text"
           value={newTerm}
           onChange={(e) => setNewTerm(e.target.value)}
-          placeholder="Add a synonym..."
+          placeholder={t('placeholder')}
           className="flex-1 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm outline-none focus:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800"
         />
         <button
@@ -61,7 +63,7 @@ export function SynonymList({ synonyms, issueId }: SynonymListProps) {
           disabled={adding || !newTerm.trim()}
           className="rounded-lg bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900"
         >
-          Add
+          {t('add')}
         </button>
       </form>
     </div>

@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 import { CategoryBadge } from '@/components/data/category-badge';
 import type { Organisation } from '@/types';
 
@@ -8,7 +9,9 @@ interface OrgCardProps {
   totalRioters?: number;
 }
 
-export function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
+export async function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
+  const t = await getTranslations('Cards');
+
   return (
     <Link
       href={`/organisations/${org.id}`}
@@ -24,11 +27,13 @@ export function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
         <div className="mt-1 flex items-center gap-2">
           <CategoryBadge category={org.category} showEmoji={false} />
           {issueCount !== undefined && (
-            <span className="text-xs text-zinc-500 dark:text-zinc-400">{issueCount} issues</span>
+            <span className="text-xs text-zinc-500 dark:text-zinc-400">
+              {issueCount} {t('issues')}
+            </span>
           )}
           {totalRioters !== undefined && (
             <span className="text-xs text-zinc-500 dark:text-zinc-400">
-              &middot; {totalRioters.toLocaleString()} rioters
+              &middot; {totalRioters.toLocaleString()} {t('rioters')}
             </span>
           )}
         </div>
