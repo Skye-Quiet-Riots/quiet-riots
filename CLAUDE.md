@@ -188,10 +188,12 @@ At the end of every session (or when asked to "wrap up" / "good night"). Steps a
    - **If there is an open PR for this branch:** the docs are now included — done
    - **If the PR was already merged (stale branch):** create a fresh branch from `origin/main`, cherry-pick or re-apply the docs commit, push, and create a new PR. This is the fallback, not the normal path.
 4. **Check CI passes** on the PR with the session docs. If it fails, fix and push again.
-5. **Audit open PRs:** Run `gh pr list --state open --author Simon-Quiet-Riots`. Any PR created by us should be either merged now (if CI passes and it's ready) or closed with a comment explaining why. Don't leave PRs open across sessions — they go stale and conflict.
+5. **Audit open PRs:** Run `gh pr list --state open`. Handle each:
+   - **Our PRs** (`--author Simon-Quiet-Riots`): merge now if CI passes, or close with a comment. Don't leave PRs open across sessions — they go stale and conflict.
+   - **Dependabot PRs:** Check CI status with `gh pr checks <number>`. Minor/patch with passing CI → merge (`gh pr merge <number> --squash`). Major version bumps → evaluate: close if CI fails or version doesn't match our runtime, otherwise note in session log for dedicated work. If CI is still running, skip — don't block end-of-session on dependabot CI.
 6. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
 7. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
-8. **Worktree cleanup:** If this session used a worktree branch that has been merged to main, flag it for cleanup
+8. **Worktree cleanup:** If this session's branch has been merged to main, print the cleanup commands for the user to run (can't be done from inside the worktree): `cd /Users/skye/Projects/quiet-riots && git worktree remove .claude/worktrees/<name> && git branch -d <branch-names>`. Note: this cannot be automated — `git worktree remove` fails when run from inside the worktree being removed.
 
 **Key rule:** Always do steps 1–3 _before_ the final PR of the session is merged. If the user asks to deploy/merge mid-protocol, finish the docs first, then merge. The session log commit is the last commit on the branch.
 
