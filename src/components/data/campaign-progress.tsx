@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Campaign } from '@/types';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 
 interface CampaignProgressProps {
   campaigns: Campaign[];
@@ -75,8 +75,8 @@ export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
 
               <div className="mt-1 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
                 <span>
-                  {formatPence(campaign.raised_pence)} of {formatPence(campaign.target_pence)} (
-                  {pct}
+                  {formatCurrency(campaign.raised_pence, campaign.currency_code)} of{' '}
+                  {formatCurrency(campaign.target_pence, campaign.currency_code)} ({pct}
                   %)
                 </span>
                 <span>

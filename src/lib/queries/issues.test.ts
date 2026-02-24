@@ -8,6 +8,7 @@ import {
   getTrendingIssues,
   getIssueCountsByCategory,
   createIssue,
+  getIssuesForCountry,
 } from './issues';
 
 beforeAll(async () => {
@@ -120,6 +121,97 @@ describe('createIssue', () => {
     const issue = await createIssue({ name: 'No Desc Issue', category: 'Health' });
     expect(issue.description).toBe('');
   });
+
+  it('creates a country-scoped issue', async () => {
+    const issue = await createIssue({
+      name: 'NHS Waiting Times',
+      category: 'Health',
+      country_scope: 'country',
+      primary_country: 'GB',
+    });
+    expect(issue.country_scope).toBe('country');
+    expect(issue.primary_country).toBe('GB');
+  });
+
+  it('defaults country_scope to global', async () => {
+    const issue = await createIssue({ name: 'Global Health Issue', category: 'Health' });
+    expect(issue.country_scope).toBe('global');
+    expect(issue.primary_country).toBeNull();
+  });
+});
+
+describe('getIssuesForCountry', () => {
+  // At this point we have:
+  // - 3 seed issues (all global): Flight Delays (12340), Broadband Speed (4112), Rail Cancellations (2847)
+  // - 2 createIssue globals: Test Issue (Banking, 0), No Desc Issue (Health, 0), Global Health Issue (Health, 0)
+  // - 1 country-scoped: NHS Waiting Times (Health, GB, 0)
+
+  it('returns global issues plus matching country-scoped issues', async () => {
+    const issues = await getIssuesForCountry('GB');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('Flight Delays'); // global
+    expect(names).toContain('Rail Cancellations'); // global
+    expect(names).toContain('NHS Waiting Times'); // country=GB
+  });
+
+  it('excludes country-scoped issues for a different country', async () => {
+    const issues = await getIssuesForCountry('US');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('Flight Delays'); // global
+    expect(names).not.toContain('NHS Waiting Times'); // country=GB, not US
+  });
+
+  it('returns results ordered by rioter_count DESC', async () => {
+    const issues = await getIssuesForCountry('GB');
+    for (let i = 1; i < issues.length; i++) {
+      expect(issues[i - 1].rioter_count).toBeGreaterThanOrEqual(issues[i].rioter_count);
+    }
+  });
+
+  it('filters by category within country scope', async () => {
+    const issues = await getIssuesForCountry('GB', 'Health');
+    expect(issues.every((i) => i.category === 'Health')).toBe(true);
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('NHS Waiting Times'); // country=GB, Health
+  });
+
+  it('normalises country code to uppercase', async () => {
+    const issues = await getIssuesForCountry('gb');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('NHS Waiting Times');
+  });
+
+  it('returns only global issues for a country with no scoped issues', async () => {
+    const issues = await getIssuesForCountry('JP');
+    expect(issues.every((i) => i.country_scope === 'global')).toBe(true);
+  });
+});
+
+describe('getAllIssues with countryCode', () => {
+  it('filters by country code', async () => {
+    const issues = await getAllIssues(undefined, undefined, 'GB');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('NHS Waiting Times'); // country=GB
+    expect(names).toContain('Flight Delays'); // global
+  });
+
+  it('excludes non-matching country-scoped issues', async () => {
+    const issues = await getAllIssues(undefined, undefined, 'US');
+    const names = issues.map((i) => i.name);
+    expect(names).not.toContain('NHS Waiting Times'); // country=GB
+    expect(names).toContain('Flight Delays'); // global
+  });
+
+  it('combines category, search, and countryCode filters', async () => {
+    const issues = await getAllIssues('Health', 'NHS', 'GB');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('NHS Waiting Times');
+  });
+
+  it('returns no results when search + country exclude everything', async () => {
+    const issues = await getAllIssues('Health', 'NHS', 'JP');
+    expect(issues).toHaveLength(0);
+  });
 });
 
 describe('getIssueCountsByCategory', () => {
@@ -129,6 +221,6 @@ describe('getIssueCountsByCategory', () => {
     expect(counts['Telecoms']).toBe(1);
     // Banking and Health issues created by createIssue tests above
     expect(counts['Banking']).toBe(1);
-    expect(counts['Health']).toBe(1);
+    expect(counts['Health']).toBe(3);
   });
 });

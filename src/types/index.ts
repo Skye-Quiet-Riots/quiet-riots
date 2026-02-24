@@ -29,6 +29,8 @@ export interface Issue {
   human_helps: string | null;
   agent_focus: string | null;
   human_focus: string | null;
+  country_scope: 'global' | 'country';
+  primary_country: string | null;
 }
 
 export interface Organisation {
@@ -331,6 +333,8 @@ export interface WalletTransaction {
   issue_id: string | null;
   stripe_payment_id: string | null;
   description: string;
+  completed_at: string | null;
+  currency_code: string;
   created_at: string;
 }
 
@@ -347,9 +351,17 @@ export interface Campaign {
   recipient_url: string | null;
   status: CampaignStatus;
   platform_fee_pct: number;
+  currency_code: string;
   funded_at: string | null;
   disbursed_at: string | null;
   created_at: string;
+}
+
+export interface ExchangeRate {
+  from_currency: string;
+  to_currency: string;
+  rate: number;
+  updated_at: string;
 }
 
 export const CATEGORY_EMOJIS: Record<Category, string> = {

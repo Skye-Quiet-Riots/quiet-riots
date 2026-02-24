@@ -5,7 +5,7 @@ import { getSession } from '@/lib/session';
 import { getCampaignById } from '@/lib/queries/campaigns';
 import { getIssueById } from '@/lib/queries/issues';
 import { getWalletByUserId } from '@/lib/queries/wallet';
-import { formatPence } from '@/lib/format';
+import { formatCurrency } from '@/lib/format';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { StatBadge } from '@/components/data/stat-badge';
@@ -97,14 +97,20 @@ export default async function CampaignDetailPage({ params }: Props) {
         />
       </div>
       <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-        {formatPence(campaign.raised_pence)} raised of {formatPence(campaign.target_pence)} target (
-        {pct}%)
+        {formatCurrency(campaign.raised_pence, campaign.currency_code)} raised of{' '}
+        {formatCurrency(campaign.target_pence, campaign.currency_code)} target ({pct}%)
       </p>
 
       {/* Stats */}
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatBadge value={formatPence(campaign.target_pence)} label={t('target')} />
-        <StatBadge value={formatPence(campaign.raised_pence)} label={t('raised')} />
+        <StatBadge
+          value={formatCurrency(campaign.target_pence, campaign.currency_code)}
+          label={t('target')}
+        />
+        <StatBadge
+          value={formatCurrency(campaign.raised_pence, campaign.currency_code)}
+          label={t('raised')}
+        />
         <StatBadge
           value={campaign.contributor_count}
           label={t('backers', { count: campaign.contributor_count })}
