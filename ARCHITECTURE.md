@@ -46,9 +46,9 @@
 - `POST /api/suggestions` — Submit suggestion (creates idea action + assistant activity)
 - `GET /api/health` — Health check (db connectivity)
 
-## Database (21 tables)
+## Database (28 tables)
 
-`issues` (with per-riot assistant copy fields), `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/contribute/refund), `campaigns` (per-issue funding targets), `category_assistants` (16 pairs, one per issue category), `user_assistant_introductions` (tracks which pairs a user has met), `assistant_activity` (log of assistant actions), `assistant_claims` (humans expressing interest in a role)
+`issues` (with per-riot assistant copy fields), `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp + profile/i18n/auth fields), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/contribute/refund), `campaigns` (per-issue funding targets), `category_assistants` (16 pairs, one per issue category), `user_assistant_introductions` (tracks which pairs a user has met), `assistant_activity` (log of assistant actions), `assistant_claims` (humans expressing interest in a role), `languages` (i18n reference with RTL support), `countries` (249 countries with currency/phone prefix), `translations` (generic entity translation), `accounts` (OAuth provider linking), `verification_tokens` (magic links), `legal_documents` (country-specific T&Cs), `user_consents` (consent tracking)
 
 ## Key Patterns
 

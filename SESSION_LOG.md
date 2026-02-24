@@ -6,19 +6,21 @@
 
 ## Latest Session
 
-**Session 22** (2026-02-24) — Worktree Cleanup Fix + Auto-Merge Protocol
-→ [`session-logs/2026-02-session-22.md`](session-logs/2026-02-session-22.md)
+**Session 23** (2026-02-24) — Global Rearchitecture Plan + Phase 0 Database Foundation
+→ [`session-logs/2026-02-session-23.md`](session-logs/2026-02-session-23.md)
 
 ## Current Priorities
 
-- **Auth UX overhaul** — 4 interactive components silently fail on 401; need "log in to do X" prompts
-- **Stripe integration** — replace simulated top-up with real Stripe Checkout
-- **Profile page improvements**
+- **Global rearchitecture Phase 1** — Auth.js v5 + world-class signup/login (Google, Facebook OAuth, email magic links, CSRF, email normalization)
+- **Global rearchitecture Phase 2** — i18n infrastructure (next-intl, `[locale]` routing, 40+ languages, RTL support) — can run in parallel with Phase 1
+- **Run migrations 008-010 on staging** after merging PR #50
+- **Run seed-reference-data.ts on staging** to populate languages/countries
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 23  | 2026-02-24    | Global rearchitecture plan + Phase 0 DB foundation    | [`session-23`](session-logs/2026-02-session-23.md)                                                             |
 | 22  | 2026-02-24    | Worktree cleanup fix + auto-merge protocol            | [`session-22`](session-logs/2026-02-session-22.md)                                                             |
 | 21  | 2026-02-24    | Session protocol redesign                             | [`session-21`](session-logs/2026-02-session-21.md)                                                             |
 | 20  | 2026-02-24    | Security hardening (auth, validation, API key safety) | [`session-20`](session-logs/2026-02-session-20.md)                                                             |
