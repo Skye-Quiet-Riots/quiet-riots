@@ -1,60 +1,7 @@
 # Session Log
 
 > Older sessions archived in `session-logs/`. Only the last 5 sessions are kept here.
-> Session 13 should be archived next.
-
----
-
-## 2026-02-20 (Session 13) — Fix WhatsApp Bot Overnight Memory Loss
-
-### What was worked on
-
-1. **Diagnosed WhatsApp bot memory loss**
-   - Investigated gateway logs, watchdog logs, auto-update logs, and session files
-   - Found that session files DO persist on disk across gateway restarts — the `.jsonl` transcripts and `sessions.json` survive
-   - Discovered a new session was being created every morning: Feb 18 → `067bbeea`, Feb 19 → `0be631b8`, Feb 20 → `8a29c366` — each starting fresh with zero context
-   - Root cause: OpenClaw's default `session.reset.mode: "daily"` resets all sessions at 4 AM local time. The first inbound message after 4 AM triggers a brand new session ID, orphaning the old one
-
-2. **Fixed session persistence**
-   - Set `session.reset.mode` to `"idle"` — no more scheduled 4 AM wipes
-   - Set `session.reset.idleMinutes` to `1440` (24 hours) — sessions only reset after 24h of inactivity from that user
-   - Users can still manually reset with `/new` or `/reset`
-   - Restarted gateway to apply config
-
-3. **Gateway health check**
-   - WiFi dropped ~20:03–20:43 on Feb 19, causing ~40 minutes of failed reconnection attempts
-   - Watchdog correctly detected and restarted gateway at 20:43
-   - Gateway has been stable since, handling messages overnight and this morning
-   - Auto-update on Feb 19 failed (no network), last successful update was Feb 18 (2026.2.15 → 2026.2.17)
-   - Current version 2026.2.17, update available to 2026.2.19-2
-
-4. **Documentation updates**
-   - Added session reset gotcha to CLAUDE.md Critical Gotchas
-   - Added session reset config to OPERATIONS.md WhatsApp Bot section
-   - Archived session 9 to `session-logs/2026-02-sessions-9.md`
-
-### Key decisions
-
-- **24h idle timeout over daily reset** — the bot should remember conversations across days if the user is actively engaged. 24h idle is generous enough that casual users won't hit it, but prevents unbounded session growth
-- **No code changes** — this was purely an OpenClaw config issue, not a Quiet Riots code bug
-
-### Discoveries
-
-- **OpenClaw default session reset is `daily` at 4 AM** — undocumented in our CLAUDE.md until now. This is the default when `session.reset` is not configured. The auto-update LaunchAgent also runs at 04:00 which compounds the issue (gateway restart + session expiry).
-- **Orphaned session files** — old sessions remain on disk after reset but are no longer referenced by `sessions.json`. 7 `.jsonl` files totalling ~780KB from the last 3 days.
-- **OpenClaw `read` tool error** — gateway.err.log shows `ENOENT: no such file or directory, access '/Users/skye/.openclaw/workspace/memory'` — the bot is trying to read/write durable memory but the directory doesn't exist.
-
-### Test count
-
-344 tests passing across 28 files (~2s) — unchanged (no code changes this session)
-
-### Next steps
-
-- **Create `~/.openclaw/workspace/memory/` directory** — the bot's memory flush is failing silently because this directory doesn't exist
-- **Clean up orphaned session files** — 7 old `.jsonl` files can be deleted
-- **Update OpenClaw** — current 2026.2.17, available 2026.2.19-2
-- Find and seed real YouTube videos for placeholder reels
-- Profile page improvements
+> Session 14 should be archived next.
 
 ---
 
@@ -342,3 +289,72 @@
 - **Profile page improvements**
 - **Worktree cleanup** — `stoic-poincare` branch should be cleaned up
 - **PostHog env vars** — need to be set in Vercel when ready
+
+---
+
+## 2026-02-24 (Session 19) — Evidence Media Upload Pipeline + Web File Upload UI + Inline Video Player
+
+### What was worked on
+
+This was a continuation session that spanned the full evidence media pipeline from infrastructure to UI.
+
+1. **Provisioned Vercel Blob storage**
+   - Created and linked Vercel Blob store to the project
+   - Added `BLOB_READ_WRITE_TOKEN` to `.env.local` and Vercel environments (Production + Preview)
+   - Tested upload endpoint end-to-end on production — working
+   - Cleaned up 2 duplicate unlinked stores created during initial setup
+
+2. **Web file upload UI (PR #30, merged)**
+   - Rewrote `evidence-composer.tsx` to replace manual URL text inputs with native file pickers
+   - Photos: up to 4 files, preview grid with spinner overlay during upload, remove buttons
+   - Video: single file, filename bar with spinner/remove
+   - External URL input kept as manual text input
+   - Upload function POSTs to `/api/evidence/upload` (session cookie auth sent automatically)
+   - `Promise.allSettled()` for parallel photo uploads with per-file error handling
+   - Proper `URL.createObjectURL()`/`revokeObjectURL()` lifecycle management
+   - Submit button disabled during upload with "Uploading..." text
+   - 11 new EvidenceComposer tests
+
+3. **Evidence test coverage gaps (PR #31, merged)**
+   - Added tests for blob storage failure → 500, rate limiting → 429
+   - Added tests for `GET /api/organisations/[id]/evidence` endpoint
+   - 4 new tests total
+
+4. **Inline video player (PR #32, open — awaiting review)**
+   - Replaced "Watch video" link with native `<video>` element for directly playable URLs
+   - `isDirectVideo()` helper: Vercel Blob URLs (`*.blob.vercel-storage.com`) and URLs ending in `.mp4`/`.mov`/`.webm` get the inline player
+   - YouTube and other external video URLs still fall back to the "Watch video" link
+   - Video element uses `controls`, `preload="metadata"` (loads first frame), `playsInline` (mobile)
+   - 8 new EvidenceCard tests
+
+5. **Updated WhatsApp bot TOOLS.md**
+   - Added Evidence Media Upload section documenting the upload endpoint, accepted types, auth, and usage with `submit_evidence`
+
+### Key decisions
+
+- **Native `<video>` over iframe** — for uploaded videos (Vercel Blob), the browser can play them directly with native controls. No need for a video library or custom player. YouTube URLs can't be played this way, so they keep the link fallback.
+- **`isDirectVideo()` detection** — checks hostname for `*.blob.vercel-storage.com` OR file extension for `.mp4/.mov/.webm`. This covers both Vercel Blob uploads and any direct video CDN URLs.
+- **File upload on same-origin fetch** — the `/api/evidence/upload` endpoint already supported session cookie auth (built for both bot and web). The web UI just sends `fetch('/api/evidence/upload', { method: 'POST', body: formData })` — no auth header needed, browser sends the cookie automatically.
+
+### Discoveries
+
+- **Vercel CLI interactive prompts block store linking** — `vercel blob store add` requires interactive input. Workaround: use `npx vercel api` to call the storage connection API directly with `-F` field params.
+- **`jsx-a11y/label-has-associated-control`** — labels used as section headings (not associated with controls) trigger this ESLint rule. Fixed by changing to `<p>` elements.
+- **Rate limit test needs 31 iterations** — the rate limiter allows 30 requests per minute, so tests need 31 to trigger the 429.
+
+### Test count
+
+639 tests passing across 40 files (~3.5s) — up from 565 (+74 tests: 11 EvidenceComposer + 4 upload/org evidence + 8 EvidenceCard + evidence tests from prior context)
+
+### PRs created and merged
+
+- PR #30: Add file upload UI to evidence composer (merged)
+- PR #31: Add evidence test coverage for upload errors and org endpoint (merged)
+- PR #32: Show inline video player for uploaded evidence (open, awaiting review)
+
+### Next steps
+
+- **Merge PR #32** — inline video player
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Profile page improvements**
+- **Worktree cleanup** — `pedantic-johnson` branch should be cleaned up once PR #32 is merged

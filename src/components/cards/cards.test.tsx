@@ -3,12 +3,13 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ActionCard } from './action-card';
 import { CampaignCard } from './campaign-card';
+import { EvidenceCard } from './evidence-card';
 import { ExpertCard } from './expert-card';
 import { FeedPostCard } from './feed-post-card';
 import { IssueCard } from './issue-card';
 import { OrgCard } from './org-card';
 import { ReelCard } from './reel-card';
-import type { Campaign } from '@/types';
+import type { Campaign, Evidence } from '@/types';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -368,5 +369,110 @@ describe('CampaignCard', () => {
       />,
     );
     expect(screen.getByText('Train Cancellations')).toBeDefined();
+  });
+});
+
+const makeEvidence = (overrides: Partial<Evidence> = {}): Evidence => ({
+  id: 'ev-1',
+  issue_id: 'issue-1',
+  org_id: null,
+  user_id: 'user-1',
+  user_name: 'Sarah',
+  org_name: undefined,
+  issue_name: 'Train Delays',
+  content: 'Platform 4 was empty again',
+  media_type: 'text',
+  photo_urls: '[]',
+  video_url: null,
+  external_urls: '[]',
+  live: 0,
+  likes: 3,
+  comments_count: 1,
+  shares: 0,
+  created_at: new Date(Date.now() - 7200000).toISOString(),
+  ...overrides,
+});
+
+describe('EvidenceCard', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('renders content and user name', () => {
+    render(<EvidenceCard evidence={makeEvidence()} issueId="issue-1" />);
+    expect(screen.getByText('Platform 4 was empty again')).toBeDefined();
+    expect(screen.getByText('Sarah')).toBeDefined();
+  });
+
+  it('renders inline video player for Vercel Blob URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://abc.public.blob.vercel-storage.com/evidence/clip.mp4',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    const video = document.querySelector('video');
+    expect(video).not.toBeNull();
+    expect(video?.src).toBe('https://abc.public.blob.vercel-storage.com/evidence/clip.mp4');
+    expect(video?.controls).toBe(true);
+    expect(video?.playsInline).toBe(true);
+    // Should NOT show "Watch video" link
+    expect(screen.queryByText('Watch video')).toBeNull();
+  });
+
+  it('renders inline video player for direct .mp4 URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://cdn.example.com/videos/clip.mp4',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    const video = document.querySelector('video');
+    expect(video).not.toBeNull();
+    expect(video?.src).toBe('https://cdn.example.com/videos/clip.mp4');
+  });
+
+  it('renders "Watch video" link for YouTube URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://www.youtube.com/watch?v=abc123',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(screen.getByText('Watch video')).toBeDefined();
+    const link = screen.getByText('Watch video').closest('a');
+    expect(link?.getAttribute('href')).toBe('https://www.youtube.com/watch?v=abc123');
+    // Should NOT render a <video> element
+    expect(document.querySelector('video')).toBeNull();
+  });
+
+  it('renders "Watch video" link for non-video external URL', () => {
+    const evidence = makeEvidence({
+      media_type: 'video',
+      video_url: 'https://vimeo.com/123456',
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(screen.getByText('Watch video')).toBeDefined();
+    expect(document.querySelector('video')).toBeNull();
+  });
+
+  it('renders photos in a grid', () => {
+    const evidence = makeEvidence({
+      media_type: 'photo',
+      photo_urls: JSON.stringify(['https://example.com/a.jpg', 'https://example.com/b.jpg']),
+    });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    const images = screen.getAllByRole('img');
+    expect(images).toHaveLength(2);
+    expect(images[0].getAttribute('alt')).toBe('Evidence photo 1');
+  });
+
+  it('shows LIVE badge when live', () => {
+    const evidence = makeEvidence({ live: 1, media_type: 'live_stream' });
+    render(<EvidenceCard evidence={evidence} issueId="issue-1" />);
+    expect(screen.getByText('LIVE')).toBeDefined();
+  });
+
+  it('does not render video section when video_url is null', () => {
+    render(<EvidenceCard evidence={makeEvidence()} issueId="issue-1" />);
+    expect(document.querySelector('video')).toBeNull();
+    expect(screen.queryByText('Watch video')).toBeNull();
   });
 });

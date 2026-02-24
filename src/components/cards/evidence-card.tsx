@@ -29,6 +29,19 @@ function parseJsonArray(json: string): string[] {
   }
 }
 
+/** Check if a URL points to a directly playable video file (e.g. Vercel Blob, S3) vs YouTube/external. */
+function isDirectVideo(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    // Vercel Blob URLs are always direct files
+    if (parsed.hostname.endsWith('.blob.vercel-storage.com')) return true;
+    // Check for common video file extensions in the pathname
+    return /\.(mp4|mov|webm)$/i.test(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
 export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
   const [likes, setLikes] = useState(evidence.likes);
   const [liked, setLiked] = useState(false);
@@ -145,14 +158,26 @@ export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
       {/* Video */}
       {evidence.video_url && (
         <div className="mt-3">
-          <a
-            href={evidence.video_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-zinc-100 px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
-          >
-            <span>&#9654;</span> Watch video
-          </a>
+          {isDirectVideo(evidence.video_url) ? (
+            <video
+              src={evidence.video_url}
+              controls
+              preload="metadata"
+              playsInline
+              className="w-full rounded-md bg-black"
+            >
+              <track kind="captions" />
+            </video>
+          ) : (
+            <a
+              href={evidence.video_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-zinc-100 px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            >
+              <span>&#9654;</span> Watch video
+            </a>
+          )}
         </div>
       )}
 
