@@ -6,12 +6,11 @@
 
 ## Latest Session
 
-**Session 20** (2026-02-24) — Security Hardening
-→ [`session-logs/2026-02-session-20.md`](session-logs/2026-02-session-20.md)
+**Session 21** (2026-02-24) — Session Protocol Redesign
+→ [`session-logs/2026-02-session-21.md`](session-logs/2026-02-session-21.md)
 
 ## Current Priorities
 
-- **Merge PR #38** — session protocol improvements, awaiting review
 - **Auth UX overhaul** — 4 interactive components silently fail on 401; need "log in to do X" prompts
 - **Stripe integration** — replace simulated top-up with real Stripe Checkout
 - **Profile page improvements**
@@ -21,6 +20,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 21  | 2026-02-24    | Session protocol redesign                             | [`session-21`](session-logs/2026-02-session-21.md)                                                             |
 | 20  | 2026-02-24    | Security hardening (auth, validation, API key safety) | [`session-20`](session-logs/2026-02-session-20.md)                                                             |
 | 19  | 2026-02-24    | Evidence media upload pipeline + inline video player  | [`session-19`](session-logs/2026-02-session-19.md)                                                             |
 | 18  | 2026-02-24    | Assistant banners on pages + overview banner          | [`session-18`](session-logs/2026-02-session-18.md)                                                             |
