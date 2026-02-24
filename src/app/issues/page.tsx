@@ -6,6 +6,7 @@ import { IssueCard } from '@/components/cards/issue-card';
 import { SearchBar } from '@/components/interactive/search-bar';
 import { CategoryFilter } from '@/components/interactive/category-filter';
 import { AssistantBanner } from '@/components/data/assistant-banner';
+import { AssistantOverviewBanner } from '@/components/data/assistant-overview-banner';
 import type { Category } from '@/types';
 
 interface Props {
@@ -20,7 +21,7 @@ export default async function IssuesPage({ searchParams }: Props) {
   const [issues, counts, allAssistants] = await Promise.all([
     getAllIssues(category, search),
     getIssueCountsByCategory(),
-    category ? getAllAssistants() : Promise.resolve([]),
+    getAllAssistants(),
   ]);
   const totalIssues = Object.values(counts).reduce((sum, c) => sum + c, 0);
   const assistant = category
@@ -43,9 +44,13 @@ export default async function IssuesPage({ searchParams }: Props) {
         </Suspense>
       </div>
 
-      {assistant && (
+      {assistant ? (
         <div className="mb-6">
           <AssistantBanner assistant={assistant} />
+        </div>
+      ) : (
+        <div className="mb-6">
+          <AssistantOverviewBanner assistants={allAssistants} />
         </div>
       )}
 

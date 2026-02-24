@@ -12,6 +12,7 @@ import { WalletBalance } from './wallet-balance';
 import { TransactionList } from './transaction-list';
 import { AssistantBanner } from './assistant-banner';
 import { AssistantDetailBanner } from './assistant-detail-banner';
+import { AssistantOverviewBanner } from './assistant-overview-banner';
 import type { Campaign, WalletTransaction, CategoryAssistant } from '@/types';
 import type { AssistantWithStats } from '@/lib/queries/assistants';
 
@@ -555,5 +556,52 @@ describe('AssistantDetailBanner', () => {
     render(<AssistantDetailBanner assistant={makeAssistant()} />);
     expect(screen.getByText('🛩️')).toBeDefined();
     expect(screen.getByText('👩🏻')).toBeDefined();
+  });
+});
+
+describe('AssistantOverviewBanner', () => {
+  const assistants = [
+    makeAssistantWithStats(),
+    makeAssistantWithStats({
+      id: 'ast-telecoms',
+      category: 'telecoms',
+      agent_name: 'Ziggy',
+      agent_icon: '📡',
+      agent_gradient_start: '#10b981',
+      agent_gradient_end: '#059669',
+      human_name: 'Priya',
+      human_icon: '👩🏽',
+      human_gradient_start: '#f59e0b',
+      human_gradient_end: '#d97706',
+    }),
+  ];
+
+  it('renders assistant count', () => {
+    render(<AssistantOverviewBanner assistants={assistants} />);
+    expect(screen.getByText('2 AI & Human Assistant Pairs')).toBeDefined();
+  });
+
+  it('renders description text', () => {
+    render(<AssistantOverviewBanner assistants={assistants} />);
+    expect(
+      screen.getByText('Every category has a dedicated AI agent and human organiser to help.'),
+    ).toBeDefined();
+  });
+
+  it('links to assistants page', () => {
+    render(<AssistantOverviewBanner assistants={assistants} />);
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/assistants');
+  });
+
+  it('renders "Meet them" CTA', () => {
+    render(<AssistantOverviewBanner assistants={assistants} />);
+    expect(screen.getByText('Meet them →')).toBeDefined();
+  });
+
+  it('renders preview icons', () => {
+    render(<AssistantOverviewBanner assistants={assistants} />);
+    expect(screen.getByText('🛩️')).toBeDefined();
+    expect(screen.getByText('📡')).toBeDefined();
   });
 });
