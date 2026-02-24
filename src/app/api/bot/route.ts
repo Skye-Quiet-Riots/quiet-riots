@@ -54,14 +54,24 @@ import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
+import { sanitizeText } from '@/lib/sanitize';
 
-const BOT_API_KEY = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026';
+const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
+const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
+const IS_USING_DEV_KEY = !process.env.BOT_API_KEY;
 
 // ─── Zod Schemas ──────────────────────────────────────────
-const phoneParam = z.object({ phone: z.string().min(1), name: z.string().optional() });
-const issueIdParam = z.object({ issue_id: z.string().min(1) });
-const phoneAndIssue = z.object({ phone: z.string().min(1), issue_id: z.string().min(1) });
-const queryParam = z.object({ query: z.string().min(1) });
+const phoneField = z
+  .string()
+  .min(1)
+  .max(20)
+  .refine((s) => /^\+[1-9]\d{6,14}$/.test(s.trim()), { message: 'Invalid E.164 phone number' })
+  .transform((s) => s.trim());
+const idField = z.string().min(1).max(64);
+const phoneParam = z.object({ phone: phoneField, name: z.string().max(255).optional() });
+const issueIdParam = z.object({ issue_id: idField });
+const phoneAndIssue = z.object({ phone: phoneField, issue_id: idField });
+const queryParam = z.object({ query: z.string().min(1).max(500) });
 
 const actionSchemas = {
   identify: phoneParam,
@@ -69,25 +79,50 @@ const actionSchemas = {
   get_trending: z.object({ limit: z.number().int().positive().optional() }),
   get_issue: issueIdParam,
   get_actions: issueIdParam.extend({
-    type: z.string().optional(),
-    time: z.string().optional(),
-    skills: z.string().optional(),
+    type: z.string().max(50).optional(),
+    time: z.string().max(50).optional(),
+    skills: z.string().max(200).optional(),
   }),
   get_community: issueIdParam,
   join_issue: phoneAndIssue,
   leave_issue: phoneAndIssue,
-  post_feed: phoneAndIssue.extend({ content: z.string().min(1) }),
-  get_org_pivot: z.object({ org_id: z.string().min(1) }),
-  get_orgs: z.object({ category: z.string().optional() }),
-  add_synonym: z.object({ issue_id: z.string().min(1), term: z.string().min(1) }),
+  post_feed: phoneAndIssue.extend({
+    content: z
+      .string()
+      .min(1)
+      .max(5000)
+      .transform((s) => sanitizeText(s)),
+  }),
+  get_org_pivot: z.object({ org_id: idField }),
+  get_orgs: z.object({ category: z.string().max(50).optional() }),
+  add_synonym: z.object({
+    issue_id: idField,
+    term: z
+      .string()
+      .min(1)
+      .max(255)
+      .transform((s) => sanitizeText(s)),
+  }),
   update_user: z.object({
-    phone: z.string().min(1),
-    name: z.string().optional(),
+    phone: phoneField,
+    name: z
+      .string()
+      .max(255)
+      .transform((s) => sanitizeText(s))
+      .optional(),
     time_available: z.enum(['1min', '10min', '1hr+']).optional(),
-    skills: z.string().optional(),
+    skills: z
+      .string()
+      .max(500)
+      .transform((s) => sanitizeText(s))
+      .optional(),
   }),
   create_issue: z.object({
-    name: z.string().min(1, 'Issue name required'),
+    name: z
+      .string()
+      .min(1, 'Issue name required')
+      .max(255)
+      .transform((s) => sanitizeText(s)),
     category: z.enum([
       'Transport',
       'Telecoms',
@@ -106,64 +141,86 @@ const actionSchemas = {
       'Tech',
       'Other',
     ]),
-    description: z.string().optional().default(''),
+    description: z
+      .string()
+      .max(5000)
+      .transform((s) => sanitizeText(s))
+      .optional()
+      .default(''),
   }),
   get_riot_reel: phoneAndIssue,
   submit_riot_reel: z.object({
-    phone: z.string().min(1),
-    issue_id: z.string().min(1),
-    youtube_url: z.string().min(1),
-    caption: z.string().optional().default(''),
+    phone: phoneField,
+    issue_id: idField,
+    youtube_url: z.string().min(1).max(500),
+    caption: z
+      .string()
+      .max(1000)
+      .transform((s) => sanitizeText(s))
+      .optional()
+      .default(''),
   }),
   get_wallet: phoneParam,
   topup_wallet: z.object({
-    phone: z.string().min(1),
-    amount_pence: z.number().int().min(100, 'Minimum top-up is £1'),
+    phone: phoneField,
+    amount_pence: z.number().int().min(100, 'Minimum top-up is £1').max(1000000),
   }),
   contribute: z.object({
-    phone: z.string().min(1),
-    campaign_id: z.string().min(1),
-    amount_pence: z.number().int().min(10, 'Minimum contribution is 10p'),
+    phone: phoneField,
+    campaign_id: idField,
+    amount_pence: z.number().int().min(10, 'Minimum contribution is 10p').max(1000000),
   }),
   get_campaigns: z.object({
-    issue_id: z.string().optional(),
+    issue_id: idField.optional(),
     status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
   }),
   get_category_assistants: z.object({
-    category: z.string().min(1, 'Category required'),
+    category: z.string().min(1, 'Category required').max(50),
   }),
   get_assistant_detail: z.object({
-    category: z.string().min(1, 'Category required'),
+    category: z.string().min(1, 'Category required').max(50),
   }),
   check_user_met_assistants: phoneParam,
   record_assistant_introduction: z.object({
-    phone: z.string().min(1),
-    category: z.string().min(1, 'Category required'),
+    phone: phoneField,
+    category: z.string().min(1, 'Category required').max(50),
   }),
   log_suggestion: z.object({
-    phone: z.string().min(1),
-    issue_id: z.string().min(1),
-    suggestion_text: z.string().min(1, 'Suggestion text required').max(2000),
+    phone: phoneField,
+    issue_id: idField,
+    suggestion_text: z
+      .string()
+      .min(1, 'Suggestion text required')
+      .max(2000)
+      .transform((s) => sanitizeText(s)),
   }),
   submit_evidence: z.object({
-    phone: z.string().min(1),
-    issue_id: z.string().min(1),
-    content: z.string().min(1),
-    org_id: z.string().optional(),
-    photo_url: z.string().url().optional(),
-    video_url: z.string().url().optional(),
+    phone: phoneField,
+    issue_id: idField,
+    content: z
+      .string()
+      .min(1)
+      .max(5000)
+      .transform((s) => sanitizeText(s)),
+    org_id: idField.optional(),
+    photo_url: z.string().url().max(2000).optional(),
+    video_url: z.string().url().max(2000).optional(),
     live: z.boolean().optional().default(false),
   }),
   get_evidence: z.object({
-    issue_id: z.string().min(1),
-    org_id: z.string().optional(),
-    limit: z.number().int().positive().optional(),
+    issue_id: idField,
+    org_id: idField.optional(),
+    limit: z.number().int().positive().max(100).optional(),
   }),
   go_live: z.object({
-    phone: z.string().min(1),
-    issue_id: z.string().min(1),
-    content: z.string().min(1),
-    org_id: z.string().optional(),
+    phone: phoneField,
+    issue_id: idField,
+    content: z
+      .string()
+      .min(1)
+      .max(5000)
+      .transform((s) => sanitizeText(s)),
+    org_id: idField.optional(),
   }),
 } as const;
 
@@ -176,6 +233,9 @@ const bodySchema = z.object({
 
 // ─── Helpers ──────────────────────────────────────────────
 function verifyAuth(request: NextRequest): boolean {
+  if (IS_USING_DEV_KEY && process.env.NODE_ENV === 'production') {
+    return false; // Reject all bot requests if no real API key is configured
+  }
   const auth = request.headers.get('authorization');
   return auth === `Bearer ${BOT_API_KEY}`;
 }

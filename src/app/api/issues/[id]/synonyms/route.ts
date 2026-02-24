@@ -2,12 +2,14 @@ import { z } from 'zod';
 import { getSynonymsForIssue, addSynonym } from '@/lib/queries/synonyms';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
+import { sanitizeText } from '@/lib/sanitize';
 
 const synonymSchema = z.object({
   term: z
     .string()
     .min(1, 'Term required')
-    .transform((s) => s.trim()),
+    .max(255)
+    .transform((s) => sanitizeText(s)),
 });
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {

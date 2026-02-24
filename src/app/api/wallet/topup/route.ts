@@ -11,7 +11,7 @@ import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
 const topupSchema = z.object({
-  amount_pence: z.number().int().min(100, 'Minimum top-up is £1'),
+  amount_pence: z.number().int().min(100, 'Minimum top-up is £1').max(1000000),
 });
 
 export async function POST(request: Request) {

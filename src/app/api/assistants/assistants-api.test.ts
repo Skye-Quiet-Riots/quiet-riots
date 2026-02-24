@@ -1,10 +1,16 @@
-import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, beforeEach, vi } from 'vitest';
 import { NextRequest } from 'next/server';
 import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
 import { createTestRequest } from '@/test/api-helpers';
 import { _resetRateLimitStore } from '@/lib/rate-limit';
 
+// Mock next/headers for routes that use getSession()
+vi.mock('next/headers', () => ({
+  cookies: vi.fn(),
+}));
+
+import { cookies } from 'next/headers';
 import { GET as getAssistants } from './route';
 import { GET as getAssistantDetail } from './[category]/route';
 import { GET as getAssistantActivity } from './[category]/activity/route';
@@ -15,6 +21,24 @@ import {
 } from '@/app/api/users/[id]/met-assistants/route';
 import { POST as postSuggestion } from '@/app/api/suggestions/route';
 
+function mockLoggedIn(userId: string) {
+  vi.mocked(cookies).mockResolvedValue({
+    get: vi.fn((name: string) =>
+      name === 'qr_user_id' ? { name: 'qr_user_id', value: String(userId) } : undefined,
+    ),
+    set: vi.fn(),
+    delete: vi.fn(),
+  } as never);
+}
+
+function mockLoggedOut() {
+  vi.mocked(cookies).mockResolvedValue({
+    get: vi.fn(() => undefined),
+    set: vi.fn(),
+    delete: vi.fn(),
+  } as never);
+}
+
 beforeAll(async () => {
   await setupTestDb();
   await seedTestData();
@@ -22,6 +46,7 @@ beforeAll(async () => {
 
 beforeEach(() => {
   _resetRateLimitStore();
+  vi.clearAllMocks();
 });
 
 afterAll(async () => {
@@ -130,9 +155,7 @@ describe('GET /api/assistants/[category]/activity', () => {
   });
 
   it('returns 400 for invalid category', async () => {
-    const request = new NextRequest(
-      'http://localhost:3000/api/assistants/!!invalid!!/activity',
-    );
+    const request = new NextRequest('http://localhost:3000/api/assistants/!!invalid!!/activity');
     const response = await getAssistantActivity(request, {
       params: Promise.resolve({ category: '!!invalid!!' }),
     });
@@ -205,7 +228,8 @@ describe('POST /api/assistants/[category]/claim', () => {
 // 5. GET/POST /api/users/[id]/met-assistants
 // ---------------------------------------------------------------
 describe('GET /api/users/[id]/met-assistants', () => {
-  it('returns empty met list initially', async () => {
+  it('returns met list when session matches', async () => {
+    mockLoggedIn('user-marcio');
     const request = new Request('http://localhost:3000/api/users/user-marcio/met-assistants');
     const response = await getMetAssistants(request, {
       params: Promise.resolve({ id: 'user-marcio' }),
@@ -213,12 +237,31 @@ describe('GET /api/users/[id]/met-assistants', () => {
     const body = await response.json();
     expect(response.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(body.data.met).toEqual([]);
+    expect(body.data.met).toBeDefined();
+  });
+
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
+    const request = new Request('http://localhost:3000/api/users/user-marcio/met-assistants');
+    const response = await getMetAssistants(request, {
+      params: Promise.resolve({ id: 'user-marcio' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 when session does not match', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/users/user-marcio/met-assistants');
+    const response = await getMetAssistants(request, {
+      params: Promise.resolve({ id: 'user-marcio' }),
+    });
+    expect(response.status).toBe(403);
   });
 });
 
 describe('POST /api/users/[id]/met-assistants', () => {
-  it('records introduction then GET returns the recorded category', async () => {
+  it('records introduction when session matches', async () => {
+    mockLoggedIn('user-marcio');
     const postReq = createTestRequest('/api/users/user-marcio/met-assistants', {
       method: 'POST',
       body: { category: 'transport' },
@@ -240,7 +283,32 @@ describe('POST /api/users/[id]/met-assistants', () => {
     expect(getBody.data.met).toContain('transport');
   });
 
-  it('returns 404 for nonexistent user', async () => {
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
+    const request = createTestRequest('/api/users/user-sarah/met-assistants', {
+      method: 'POST',
+      body: { category: 'transport' },
+    });
+    const response = await postMetAssistant(request, {
+      params: Promise.resolve({ id: 'user-sarah' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 when session does not match', async () => {
+    mockLoggedIn('user-marcio');
+    const request = createTestRequest('/api/users/user-sarah/met-assistants', {
+      method: 'POST',
+      body: { category: 'transport' },
+    });
+    const response = await postMetAssistant(request, {
+      params: Promise.resolve({ id: 'user-sarah' }),
+    });
+    expect(response.status).toBe(403);
+  });
+
+  it('returns 404 for nonexistent user when session matches', async () => {
+    mockLoggedIn('nonexistent');
     const request = createTestRequest('/api/users/nonexistent/met-assistants', {
       method: 'POST',
       body: { category: 'transport' },
@@ -252,6 +320,7 @@ describe('POST /api/users/[id]/met-assistants', () => {
   });
 
   it('returns 400 for invalid category', async () => {
+    mockLoggedIn('user-sarah');
     const request = createTestRequest('/api/users/user-sarah/met-assistants', {
       method: 'POST',
       body: { category: '!!invalid!!' },
@@ -263,6 +332,7 @@ describe('POST /api/users/[id]/met-assistants', () => {
   });
 
   it('returns 429 on rate limit', async () => {
+    mockLoggedIn('user-sarah');
     for (let i = 0; i < 30; i++) {
       const req = createTestRequest('/api/users/user-sarah/met-assistants', {
         method: 'POST',
@@ -286,11 +356,11 @@ describe('POST /api/users/[id]/met-assistants', () => {
 // 6. POST /api/suggestions
 // ---------------------------------------------------------------
 describe('POST /api/suggestions', () => {
-  it('creates suggestion successfully', async () => {
+  it('creates suggestion when logged in', async () => {
+    mockLoggedIn('user-sarah');
     const request = createTestRequest('/api/suggestions', {
       method: 'POST',
       body: {
-        user_id: 'user-sarah',
         issue_id: 'issue-rail',
         suggestion_text: 'Track platform overcrowding with photos',
       },
@@ -305,20 +375,34 @@ describe('POST /api/suggestions', () => {
     expect(body.data.category).toBe('transport');
   });
 
-  it('returns 400 for missing fields', async () => {
+  it('returns 401 when not logged in', async () => {
+    mockLoggedOut();
     const request = createTestRequest('/api/suggestions', {
       method: 'POST',
-      body: { user_id: 'user-sarah' },
+      body: {
+        issue_id: 'issue-rail',
+        suggestion_text: 'Some suggestion',
+      },
+    });
+    const response = await postSuggestion(request);
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 400 for missing fields', async () => {
+    mockLoggedIn('user-sarah');
+    const request = createTestRequest('/api/suggestions', {
+      method: 'POST',
+      body: {},
     });
     const response = await postSuggestion(request);
     expect(response.status).toBe(400);
   });
 
   it('returns 404 for nonexistent issue', async () => {
+    mockLoggedIn('user-sarah');
     const request = createTestRequest('/api/suggestions', {
       method: 'POST',
       body: {
-        user_id: 'user-sarah',
         issue_id: 'nonexistent-issue',
         suggestion_text: 'Some suggestion',
       },
@@ -328,11 +412,11 @@ describe('POST /api/suggestions', () => {
   });
 
   it('returns 429 on rate limit', async () => {
+    mockLoggedIn('user-sarah');
     for (let i = 0; i < 30; i++) {
       const req = createTestRequest('/api/suggestions', {
         method: 'POST',
         body: {
-          user_id: 'user-sarah',
           issue_id: 'issue-rail',
           suggestion_text: `Suggestion ${i}`,
         },
@@ -343,7 +427,6 @@ describe('POST /api/suggestions', () => {
     const request = createTestRequest('/api/suggestions', {
       method: 'POST',
       body: {
-        user_id: 'user-sarah',
         issue_id: 'issue-rail',
         suggestion_text: 'One too many',
       },

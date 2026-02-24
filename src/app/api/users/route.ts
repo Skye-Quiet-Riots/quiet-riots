@@ -3,12 +3,22 @@ import { createUser, getUserByEmail } from '@/lib/queries/users';
 import { setSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
+import { sanitizeText } from '@/lib/sanitize';
 
 const createUserSchema = z.object({
-  name: z.string().min(1, 'Name required'),
-  email: z.string().email('Valid email required'),
-  time_available: z.string().optional().default('10min'),
-  skills: z.string().optional().default(''),
+  name: z
+    .string()
+    .min(1, 'Name required')
+    .max(255)
+    .transform((s) => sanitizeText(s)),
+  email: z.string().email('Valid email required').max(255),
+  time_available: z.string().max(50).optional().default('10min'),
+  skills: z
+    .string()
+    .max(500)
+    .transform((s) => sanitizeText(s))
+    .optional()
+    .default(''),
 });
 
 export async function POST(request: Request) {

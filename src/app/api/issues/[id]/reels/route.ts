@@ -6,7 +6,7 @@ import { apiOk, apiError } from '@/lib/api-response';
 import { extractVideoId, getThumbnailUrl, getVideoMetadata } from '@/lib/youtube';
 
 const submitReelSchema = z.object({
-  youtube_url: z.string().min(1, 'YouTube URL required'),
+  youtube_url: z.string().min(1, 'YouTube URL required').max(500),
   caption: z
     .string()
     .max(500)

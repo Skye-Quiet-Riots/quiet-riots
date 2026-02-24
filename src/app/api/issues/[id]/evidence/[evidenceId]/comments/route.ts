@@ -3,12 +3,14 @@ import { getEvidenceComments, addEvidenceComment } from '@/lib/queries/evidence'
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
+import { sanitizeText } from '@/lib/sanitize';
 
 const commentSchema = z.object({
   content: z
     .string()
     .min(1, 'Content required')
-    .transform((s) => s.trim()),
+    .max(2000)
+    .transform((s) => sanitizeText(s)),
 });
 
 export async function GET(

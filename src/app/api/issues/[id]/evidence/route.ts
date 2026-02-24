@@ -3,17 +3,19 @@ import { getEvidenceForIssue, createEvidence } from '@/lib/queries/evidence';
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
+import { sanitizeText } from '@/lib/sanitize';
 
 const evidenceSchema = z.object({
   content: z
     .string()
     .min(1, 'Content required')
-    .transform((s) => s.trim()),
-  org_id: z.string().nullable().optional(),
+    .max(5000)
+    .transform((s) => sanitizeText(s)),
+  org_id: z.string().max(64).nullable().optional(),
   media_type: z.enum(['text', 'photo', 'video', 'link', 'live_stream']).default('text'),
-  photo_urls: z.array(z.string().url()).optional().default([]),
-  video_url: z.string().url().nullable().optional(),
-  external_urls: z.array(z.string().url()).optional().default([]),
+  photo_urls: z.array(z.string().url().max(2000)).max(4).optional().default([]),
+  video_url: z.string().url().max(2000).nullable().optional(),
+  external_urls: z.array(z.string().url().max(2000)).max(10).optional().default([]),
   live: z.boolean().optional().default(false),
 });
 

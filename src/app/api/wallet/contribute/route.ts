@@ -6,8 +6,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
 const contributeSchema = z.object({
-  campaign_id: z.string().min(1, 'Campaign ID required'),
-  amount_pence: z.number().int().min(10, 'Minimum contribution is 10p'),
+  campaign_id: z.string().min(1, 'Campaign ID required').max(64),
+  amount_pence: z.number().int().min(10, 'Minimum contribution is 10p').max(1000000),
 });
 
 export async function POST(request: Request) {
