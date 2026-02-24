@@ -43,6 +43,35 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - Use feature branches for new work; commit to `main` only when ready
 - IMPORTANT: Never merge to main directly — always push the feature branch, create/update a PR, and let the user review and merge. Vercel auto-deploys a preview for every PR.
 
+## Branching Workflow (IMPORTANT — follow exactly)
+
+A merged branch is dead. Never push more commits to a branch after its PR has been merged.
+
+**One PR = one branch. New work = new branch.**
+
+```
+# 1. Always start new work from latest main
+git fetch origin main
+git checkout -b claude/<descriptive-name> origin/main
+
+# 2. Make changes, test, build, commit, push
+npm test && npm run build
+git add <files> && git commit -m "..."
+git push -u origin claude/<descriptive-name>
+
+# 3. Create PR
+gh pr create --title "..." --body "..."
+
+# 4. AFTER PR is merged — IMMEDIATELY switch to a fresh branch before any more work
+git fetch origin main
+git checkout -b claude/<next-task-name> origin/main
+# The old branch is now dead. Never go back to it.
+```
+
+**Why this matters:** In a worktree, you can't checkout `main` directly (it's used by the main repo). If you stay on a merged branch and push more commits, those commits go to a dead branch that main will never see. Every new piece of work — even a one-line follow-up fix — needs a fresh branch from `origin/main`.
+
+**Self-check before every commit:** Run `git log origin/main..HEAD --oneline` — if you see commits that were already part of a merged PR, you're on a stale branch. Stop. Create a fresh branch from `origin/main` and cherry-pick or re-apply your changes.
+
 ## Conventions
 
 - Prefer async server components — only add `"use client"` for interactive parts
@@ -93,6 +122,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. `npm run seed` is blocked on production by default — use `npm run seed:production` only if you truly need a full reset (drops all tables).
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
 - **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
+- **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
 
 ## Database ID Convention
 
