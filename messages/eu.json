@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Antolatu partekatutako gaien inguruan. Aurkitu zure jendea. Ekin elkarrekin."
+  },
+  "Nav": {
+    "issues": "Gaiak",
+    "assistants": "Laguntzaileak",
+    "organisations": "Erakundeak",
+    "wallet": "Zorroa",
+    "profile": "Profila",
+    "signIn": "Hasi saioa",
+    "signOut": "Itxi saioa",
+    "toggleMenu": "Txandakatu menua"
+  },
+  "Footer": {
+    "mission": "Gure bizitzetan posible dela ausartu irudikatzera baino gehiago hobetzera aldatzea.",
+    "powered": "Quiet Riots · OpenClaw AI Agent-ek bultzatuta"
+  },
+  "Home": {
+    "tagline": "Gaien Denda Bakarra",
+    "headline": "Aldaketak ez du zaratatsua izan behar indartsua izateko",
+    "description": "Aurkitu zure gaiak partekatzen dituzten beste batzuk. Ekin elkarrekin. Quiet Riots-ek jendea lotzen du partekatutako frustrazioen inguruan eta kexak ekintza kolektibo bihurtzen ditu.",
+    "browseIssues": "Arakatu Gaiak",
+    "howItWorks": "Nola Funtzionatzen Duen",
+    "trendingIssues": "🔥 Joera-Gaiak",
+    "viewAll": "Ikusi guztiak →",
+    "reelOfTheDay": "🎬 Eguneko Riot Reel-a",
+    "riotersFunny": "{count} partaidek barregarria aurkitu dute",
+    "from": "Nork:",
+    "findYourIssue": "Aurkitu Zure Gaia",
+    "findYourIssueDesc": "Bilatu edozein frustrazio — trenak, banda zabala, osasuna, klima. Existitzen bada, erakutsiko dizugu zenbat bestek partekatzen duten.",
+    "useThePivot": "Erabili Pivot-a",
+    "useThePivotDesc": "Ikusi gai bera erakunde guztietan, edo gai guztiak erakunde batean. Tango dantzariak norabidea aldatzen duten bezala.",
+    "takeAction": "Ekin",
+    "takeActionDesc": "Ideiak, ekintzak eta komunitatea — zure denbora eta trebetasunetara pertsonalizatuta. Ekintza txikiek aldaketa handiak eragiten dituzte.",
+    "missionQuote": "\"Gure bizitzetan posible dela ausartu irudikatzera baino gehiago hobetzera aldatzea.\"",
+    "basedOn": "Simon Darling-en 2014ko <em>Quiet Riots</em> liburuan oinarrituta",
+    "joinMovement": "✊ Batu Mugimenduari"
+  },
+  "Issues": {
+    "title": "Gaiak",
+    "subtitle": "{count} gai {categoryCount} kategoriatan. Aurkitu zurea.",
+    "searchPlaceholder": "Bilatu gaiak edo sinonimoak...",
+    "noResults": "Ez da gairik aurkitu. Saiatu bilaketa edo kategoria ezberdin batekin."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Gaiak",
+    "rioters": "partaide",
+    "country": "{count, plural, one {herrialde} other {herrialde}}",
+    "thisWeek": "aste honetan",
+    "actions": "ekintza",
+    "alsoKnownAs": "Honela ere ezagutua",
+    "actionsTitle": "⚡ Ekintzak — Zure Tresna-Kit Pertsonalizatua",
+    "actionsDesc": "Eboluzioaren arabera — 💡 **Ideiak** (aldakuntza), ⚡ **Ekintzak** (hautapena), eta 🤝 **Elkarrekin** (komunitatea).",
+    "gatherEvidence": "📹 Bildu Frogak",
+    "gatherEvidenceDesc": "Dokumentatu gertatzen ari dena — zuzenean eman edo partekatu argazkiak, bideoak eta estekak.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Quiet Riot honen espiritua jasotzen duten bideo dibertigarri eta ironikoak.",
+    "experts": "🌟 Adituak",
+    "expertsDesc": "Boluntario sutsu sakonago doazenak — itzultzaileak, espezialistak, komunikabide-arduradun eta lege-aholkulariak.",
+    "communityFeed": "💬 Komunitatearen Jarioa"
+  },
+  "Organisations": {
+    "title": "Erakundeak",
+    "subtitle": "Arakatu erakundeak eta ikusi jendeak bakoitzarekin zer gai dituen.",
+    "noResults": "Ez da erakunderik aurkitu kategoria honetarako."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Erakundeak",
+    "totalRioters": "partaide guztira",
+    "issues": "gaiak",
+    "topIssueShare": "gai nagusiaren portzentajea",
+    "paretoTitle": "Pareto Printzipioa:",
+    "paretoDesc": "Gai gutxi batzuek normalean kexa guztien %80 osatzen dute. Azpiko gai nagusiak eragindako pertsona kopuruaren arabera sailkatuta daude.",
+    "gatherEvidence": "📹 Bildu Frogak",
+    "gatherEvidenceDesc": "Dokumentatu {orgName}(r)ekin gertatzen ari dena."
+  },
+  "Campaigns": {
+    "title": "Kanpainak",
+    "subtitle": "{count} {count, plural, one {kanpaina} other {kanpaina}} aldaketarako funtsak biltzen.",
+    "noResults": "Ez da kanpainarik aurkitu. Saiatu iragazki ezberdin batekin."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kanpainak",
+    "fullyFunded": "Guztiz Finantzatua",
+    "disbursed": "Funtsak Banatuta",
+    "cancelled": "Bertan behera utzita",
+    "active": "Aktiboa",
+    "target": "helburua",
+    "raised": "bilduta",
+    "backers": "{count, plural, one {babesleak} other {babesleak}}",
+    "platformFee": "plataforma-kuota",
+    "wantToContribute": "Lagundu nahi duzu?",
+    "topUpFirst": "Birkargatu zure zorroa lehenik laguntzen hasteko.",
+    "createAccountPrompt": "Sortu kontu bat eta kargatu zure zorroa kanpaina hau laguntzeko.",
+    "goToWallet": "Joan zorrora",
+    "createAccount": "Sortu kontua",
+    "completedMessage": "Kanpaina hau {status} izan da. Eskerrik asko {count} babesle guztiei!",
+    "recipient": "Hartzailea"
+  },
+  "Assistants": {
+    "title": "Laguntzaileak",
+    "subtitle": "{count} AI agente eta giza antolatzaile bikote partaideei ekiten laguntzen.",
+    "noResults": "Oraindik ez dago laguntzailerik eskuragarri."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Laguntzaileak",
+    "aiAgent": "AI Agentea",
+    "humanOrganiser": "Giza Antolatzailea",
+    "rioters": "partaide",
+    "riots": "{count, plural, one {riot} other {riot}}",
+    "messages": "mezu",
+    "currentFocus": "Oraingo Fokua",
+    "recentActivity": "Azken Jarduera",
+    "riotsWeHelp": "Laguntzen Ditugun Quiet Riot-ak",
+    "wantToBe": "{name} izan nahi duzu?",
+    "openRole": "Giza antolatzaile rola kategoria honenganako grina duen edonorentzat irekita dago. Adierazi zure interesa behean."
+  },
+  "Wallet": {
+    "title": "Zure Zorroa",
+    "createPromptTitle": "Hasi Kausak Laguntzen",
+    "createPromptDesc": "Sortu doako kontu bat funtsak kargatzeko eta zuri axola zaizkizun kanpainetara laguntzeko.",
+    "createAccount": "Sortu kontua",
+    "activeCampaigns": "Kanpaina Aktiboak",
+    "viewAll": "Ikusi guztiak"
+  },
+  "Profile": {
+    "title": "Zure Profila",
+    "time": "Denbora: ",
+    "skills": "Trebetasunak: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {argitalpena} other {argitalpen}}",
+    "likes": "{count, plural, one {jasotako atsegina} other {jasotako atsegin}}",
+    "yourRiots": "Zure Quiet Riot-ak",
+    "noRiots": "Oraindik ez dago Quiet Riot-ik",
+    "findIssues": "Aurkitu axola zaizkizun gaiak eta batu mugimenduari.",
+    "browseIssues": "Arakatu gaiak",
+    "memberSince": "Kidea noiztik",
+    "rioters": "partaide",
+    "connectedAccounts": "Konektatutako Kontuak",
+    "noConnectedAccounts": "Oraindik ez dago konturik konektatuta. Hasi saioa Google edo Facebook-ekin zure kontua lotzeko.",
+    "deactivateAccount": "Desaktibatu kontua",
+    "deactivateConfirm": "Ziur zaude zure kontua desaktibatu nahi duzula? 30 eguneko epean berraktibatu dezakezu."
+  },
+  "Auth": {
+    "welcomeBack": "Ongi etorri berriro",
+    "signInSubtitle": "Hasi saioa zure Quiet Riots kontuan",
+    "joinTitle": "Batu Quiet Riots-era",
+    "joinSubtitle": "Antolatu partekatutako gaien inguruan. Ekin elkarrekin.",
+    "continueGoogle": "Jarraitu Google-rekin",
+    "continueFacebook": "Jarraitu Facebook-ekin",
+    "connecting": "Konektatzen...",
+    "or": "edo",
+    "emailLabel": "Helbide elektronikoa",
+    "sendMagicLink": "Bidali esteka magikoa",
+    "signUpWithEmail": "Erregistratu posta elektronikoarekin",
+    "sendingLink": "Esteka bidaltzen...",
+    "checkEmail": "Egiaztatu zure posta elektronikoa",
+    "signInLinkSent": "Saioa hasteko esteka bidali dizugu zure helbide elektronikora. Egin klik estekan jarraitzeko.",
+    "signUpLinkSent": "Saioa hasteko esteka bidali dizugu zure helbide elektronikora. Egin klik estekan zure kontua sortzeko.",
+    "noAccount": "Ez duzu konturik?",
+    "signUp": "Erregistratu",
+    "hasAccount": "Dagoeneko kontu bat duzu?",
+    "signIn": "Hasi saioa",
+    "termsAgree": "Erregistratzean, onartzen dituzu gure",
+    "terms": "Baldintzak",
+    "and": "eta",
+    "privacyPolicy": "Pribatutasun Politika",
+    "verifyTitle": "Egiaztatu zure posta elektronikoa",
+    "verifyDesc": "Saioa hasteko esteka bidali da zure helbide elektronikora. Egin klik estekan jarraitzeko.",
+    "backToSignIn": "Itzuli saioa hastera",
+    "errorTitle": "Autentifikazio Errorea",
+    "errorConfig": "Arazoa dago zerbitzariaren konfigurazioan.",
+    "errorAccess": "Sarbidea ukatu da. Agian ez duzu saioa hasteko baimenik.",
+    "errorVerification": "Saioa hasteko esteka iraungi da edo dagoeneko erabili da.",
+    "errorDefault": "Errore bat gertatu da autentifikazioan.",
+    "tryAgain": "Saiatu berriro"
+  },
+  "AuthGate": {
+    "signInTo": "Hasi saioa {action} egiteko",
+    "signIn": "Hasi saioa",
+    "signInRequired": "Saioa hastea beharrezkoa da",
+    "signInToAction": "Saioa hasi behar duzu {action} egiteko.",
+    "cancel": "Utzi",
+    "noAccount": "Ez duzu konturik?",
+    "signUp": "Erregistratu"
+  },
+  "Error": {
+    "title": "Zerbait gaizki joan da",
+    "description": "Ustekabeko errore bat gertatu da.",
+    "tryAgain": "Saiatu berriro"
+  },
+  "GlobalError": {
+    "title": "Zerbait gaizki joan da",
+    "description": "Ustekabeko errore bat gertatu da. Gure taldeari jakinarazi zaio.",
+    "tryAgain": "Saiatu berriro"
+  },
+  "NotFound": {
+    "title": "Orria ez da aurkitu",
+    "description": "Bilatzen ari zaren orria ez dago edo lekuz aldatu da.",
+    "goHome": "Joan hasierara"
+  },
+  "Cards": {
+    "rioters": "partaide",
+    "country": "{count, plural, one {herrialde} other {herrialde}}",
+    "issues": "gaiak",
+    "idea": "Ideia",
+    "action": "Ekintza",
+    "together": "Elkarrekin",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 ordu+",
+    "skills": "Trebetasunak: ",
+    "anonymous": "Anonimoa",
+    "curated": "Hautatua",
+    "community": "Komunitatea",
+    "aiPick": "AI Hautapena",
+    "funded": "Finantzatua",
+    "disbursed": "Banatua",
+    "backers": "{count, plural, one {babesleak} other {babesleak}}",
+    "aiAndHuman": "AI Agentea eta Giza Antolatzailea",
+    "riots": "{count, plural, one {riot} other {riot}}"
+  },
+  "Health": {
+    "title": "📊 Komunitate Sentsazioaren Indizea",
+    "needsMet": "Beharrak Betetuta",
+    "needsMetDesc": "Kideek merezi duela sentitzen dute",
+    "membership": "Kide-izaera",
+    "membershipDesc": "Konfiantza eta partaidetza",
+    "influence": "Eragina",
+    "influenceDesc": "Zure ahotsak garrantzia du",
+    "connection": "Konexioa",
+    "connectionDesc": "Partekatutako esperientziak",
+    "healthy": "Osasuntsua",
+    "growing": "Hazten",
+    "needsAttention": "Arreta Behar Du"
+  },
+  "Pivot": {
+    "title": "🔀 Pivot-a",
+    "peopleGlobally": "pertsona mundu osoan",
+    "issuePivot": "🔍 Gai Pivot-a",
+    "issuePivotDesc": "Gai bera, erakunde guztiak",
+    "orgPivot": "🏢 Erakunde Pivot-a",
+    "orgPivotDesc": "Gai guztiak, erakunde bat",
+    "seeIssueAcross": "Ikusi \"{issueName}\" antzeko erakunde guztietan:",
+    "seeOrgIssues": "Ikusi gai guztiak {orgName}(e)n:",
+    "you": "ZU",
+    "rioters": "partaide"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kanpainak",
+    "funded": "Finantzatua",
+    "disbursed": "Banatua",
+    "backers": "{count, plural, one {babesleak} other {babesleak}}"
+  },
+  "WalletBalance": {
+    "title": "Zure Saldoa",
+    "loaded": "kargatuta",
+    "contributed": "lagunduta",
+    "campaigns": "{count, plural, one {kanpaina} other {kanpaina}}"
+  },
+  "Transactions": {
+    "title": "Azken Transakzioak",
+    "topUp": "Birkarga",
+    "contribution": "Ekarpena",
+    "refund": "Itzulketa",
+    "justNow": "oraintxe",
+    "minutesAgo": "duela {count}min",
+    "hoursAgo": "duela {count}o",
+    "daysAgo": "duela {count}e",
+    "empty": "Oraindik ez dago transakziorik. Birkargatu zorroa hasteko!"
+  },
+  "Activity": {
+    "noActivity": "Oraindik ez dago jarduerarik.",
+    "ai": "AI",
+    "human": "G"
+  },
+  "Countries": {
+    "title": "🌍 Herrialdeak"
+  },
+  "Synonyms": {
+    "placeholder": "Gehitu sinonimo bat...",
+    "add": "Gehitu"
+  },
+  "Join": {
+    "joined": "✅ Quiet Riot honetara batu zara",
+    "join": "✊ Batu Quiet Riot honetara"
+  },
+  "Search": {
+    "placeholder": "Bilatu gaiak..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Partekatu zure pentsamenduak...",
+    "post": "Argitaratu",
+    "empty": "Oraindik ez dago argitalpenik. Izan lehena partekatzen!"
+  },
+  "Actions": {
+    "ideas": "💡 Ideiak (Aldakuntza)",
+    "actions": "⚡ Ekintzak (Hautapena)",
+    "together": "🤝 Elkarrekin (Komunitatea)",
+    "noResults": "Ez dago zure iragazkiekin bat datorren ekintzarik. Saiatu zure hautapena zabaltzen."
+  },
+  "Filter": {
+    "all": "Guztiak",
+    "active": "Aktiboa",
+    "funded": "Finantzatua",
+    "disbursed": "Banatua"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Zenbat denbora duzu?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 ordu+",
+    "typeQuestion": "Zer mota?",
+    "ideas": "💡 Ideiak",
+    "actions": "⚡ Ekintzak",
+    "together": "🤝 Elkarrekin"
+  },
+  "Reels": {
+    "empty": "Oraindik ez dago reel-ik. Izan lehena bidaltzen!",
+    "submitPrompt": "Gai hau laburbiltzen duen bideo dibertigarririk ba al duzu?",
+    "submitSuccess": "Eskerrik asko! Zure reel-a berrikuspenera bidali da.",
+    "urlPlaceholder": "Itsatsi YouTube URL bat...",
+    "captionPlaceholder": "Gehitu oina (aukerakoa)...",
+    "submit": "Bidali"
+  },
+  "TopUp": {
+    "addFunds": "Gehitu Funtsak",
+    "minTopUp": "Gutxieneko birkarga £1 da",
+    "success": "{amount} gehituta zure zorrora!",
+    "networkError": "Sare-errorea. Mesedez, saiatu berriro.",
+    "customAmount": "Zenbateko pertsonalizatua (£)",
+    "topUp": "Birkargatu",
+    "simulated": "Birkarga simulatua probetarako. Benetako ordainketak Stripe bidez laster."
+  },
+  "Contribute": {
+    "insufficientFunds": "Funts nahikorik ez. Birkargatu zure zorroa lehenik.",
+    "minContribution": "Gutxieneko ekarpena 10p da",
+    "contribute": "Lagundu",
+    "yourBalance": "Zure saldoa: ",
+    "networkError": "Sare-errorea. Mesedez, saiatu berriro.",
+    "invalidAmount": "Sartu zenbateko baliogarri bat",
+    "customAmount": "Zenbateko pertsonalizatua (£)",
+    "give": "Eman",
+    "success": "{amount} lagundu da {campaign}(r)a!",
+    "remainingBalance": "Zure gainerako saldoa: {balance}",
+    "topUpPrompt": "Birkargatu zure zorroa",
+    "toKeepSupporting": "kanpainak laguntzen jarraitzeko.",
+    "walletEmpty": "Zure zorroa hutsik dago.",
+    "topUp": "Birkargatu",
+    "toContribute": "laguntzeko."
+  },
+  "Claim": {
+    "success": "Eskerrik asko! {name} rolaren zure interesa jaso dugu. Harremanetan jarriko gara.",
+    "placeholder": "Zergatik izango zinateke bikaina {name} gisa? (aukerakoa)",
+    "submitting": "Bidaltzen...",
+    "expressInterest": "Adierazi Interesa"
+  },
+  "Evidence": {
+    "generalOrg": "Orokorra (erakunde zehatzik gabe)",
+    "placeholder": "Esan pentsatzen duzuna...",
+    "photosLabel": "Argazkiak (4 arte)",
+    "addPhotos": "+ Gehitu argazkiak",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Gehienez 4 MB bakoitza.",
+    "videoLabel": "Bideoa (1 gehienez)",
+    "addVideo": "+ Gehitu bideoa",
+    "videoFormats": "MP4, MOV, WebM. Gehienez 4 MB.",
+    "linkLabel": "Kanpoko esteka",
+    "linkPlaceholder": "https://albiste-artikulua.com/...",
+    "hideMedia": "Ezkutatu multimedia",
+    "addMedia": "📎 Gehitu argazkiak, bideoa, estekak",
+    "posting": "Argitaratzen...",
+    "uploading": "Igotzen...",
+    "submitEvidence": "Bidali Frogak",
+    "goLive": "🔴 Zuzenean Orain",
+    "maxPhotos": "Gehienez 4 argazki. {count} saltatu dira.",
+    "videoFailed": "Bideoaren igotzea huts egin du",
+    "removePhoto": "Kendu {name}",
+    "removeVideo": "Kendu bideoa",
+    "uploadFailed": "Ezin izan da igo: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Editatu profila",
+    "nameLabel": "Izena",
+    "timeLabel": "Denbora eskuragarria",
+    "time1min": "Minutu 1",
+    "time1minDesc": "Ekintza azkarrak bakarrik",
+    "time10min": "10 minutu",
+    "time10minDesc": "Ekintza gehienak",
+    "time1hour": "1 ordu+",
+    "time1hourDesc": "Inplikazio sakona",
+    "skillsLabel": "Trebetasunak",
+    "skillsPlaceholder": "adib. diseinua, idazketa, legea, programazioa",
+    "skillsHint": "Koma bidez bereizita. Ekintza garrantzitsuekin bat etortzen laguntzen du.",
+    "saving": "Gordetzen...",
+    "save": "Gorde aldaketak",
+    "cancel": "Utzi",
+    "nameRequired": "Izena beharrezkoa da",
+    "saveFailed": "Ezin izan da gorde"
+  },
+  "SignupForm": {
+    "placeholder": "zu@adibidea.com",
+    "submit": "Jakinarazi Niri"
+  },
+  "CookieConsent": {
+    "title": "Cookie hobespenak",
+    "description": "Cookieak erabiltzen ditugu saioa hasita mantentzeko eta zure esperientzia hobetzeko. Analitika cookieek gunea nola erabiltzen den ulertzen laguntzen digute.",
+    "acceptAll": "Onartu guztiak",
+    "essentialOnly": "Ezinbestekoak bakarrik",
+    "manage": "Kudeatu hobespenak",
+    "essential": "Ezinbestekoak",
+    "essentialDescription": "Gunea funtzionatzeko beharrezkoak. Ezin dira desgaitu.",
+    "analytics": "Analitika",
+    "analyticsDescription": "Gunea nola erabiltzen duzun ulertzen laguntzen digu, hobetu ahal izateko.",
+    "save": "Gorde hobespenak"
+  }
+}

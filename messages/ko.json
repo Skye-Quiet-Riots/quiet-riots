@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "공통 이슈로 함께 모이세요. 동료를 찾으세요. 함께 행동하세요."
+  },
+  "Nav": {
+    "issues": "이슈",
+    "assistants": "어시스턴트",
+    "organisations": "조직",
+    "wallet": "지갑",
+    "profile": "프로필",
+    "signIn": "로그인",
+    "signOut": "로그아웃",
+    "toggleMenu": "메뉴 전환"
+  },
+  "Footer": {
+    "mission": "우리 생애에, 감히 상상할 수 없을 만큼 더 많은 것을 더 나은 방향으로 바꾸자.",
+    "powered": "Quiet Riots · OpenClaw AI 에이전트 기반"
+  },
+  "Home": {
+    "tagline": "이슈 원스톱 플랫폼",
+    "headline": "변화는 시끄럽지 않아도 강력할 수 있습니다",
+    "description": "당신과 같은 이슈를 가진 사람들을 찾으세요. 함께 행동하세요. Quiet Riots는 공통된 불만으로 사람들을 연결하고, 불평을 집단 행동으로 바꿉니다.",
+    "browseIssues": "이슈 탐색",
+    "howItWorks": "작동 방식",
+    "trendingIssues": "🔥 인기 이슈",
+    "viewAll": "전체 보기 →",
+    "reelOfTheDay": "🎬 오늘의 Riot 릴",
+    "riotersFunny": "{count}명의 참여자가 재미있다고 느꼈습니다",
+    "from": "출처:",
+    "findYourIssue": "당신의 이슈를 찾으세요",
+    "findYourIssueDesc": "어떤 불만이든 검색해보세요 — 교통, 인터넷, 의료, 기후. 이미 존재한다면 얼마나 많은 사람이 같은 생각인지 보여드립니다.",
+    "useThePivot": "피벗 사용하기",
+    "useThePivotDesc": "같은 이슈를 모든 조직에서 보거나, 한 조직의 모든 이슈를 확인하세요. 탱고 댄서가 방향을 바꾸듯이.",
+    "takeAction": "행동하기",
+    "takeActionDesc": "아이디어, 행동, 커뮤니티 — 당신의 시간과 기술에 맞춰 맞춤 제공. 작은 행동이 모여 큰 변화가 됩니다.",
+    "missionQuote": "\"우리 생애에, 감히 상상할 수 없을 만큼 더 많은 것을 더 나은 방향으로 바꾸자.\"",
+    "basedOn": "Simon Darling의 2014년 저서 《<em>Quiet Riots</em>》 기반",
+    "joinMovement": "✊ 운동에 참여하기"
+  },
+  "Issues": {
+    "title": "이슈",
+    "subtitle": "{categoryCount}개 카테고리에 걸친 {count}개 이슈. 당신의 것을 찾으세요.",
+    "searchPlaceholder": "이슈 또는 동의어 검색...",
+    "noResults": "이슈를 찾을 수 없습니다. 다른 검색어나 카테고리를 시도해보세요."
+  },
+  "IssueDetail": {
+    "breadcrumb": "이슈",
+    "rioters": "참여자",
+    "country": "{count, plural, one {개국} other {개국}}",
+    "thisWeek": "이번 주",
+    "actions": "개 액션",
+    "alsoKnownAs": "다른 이름",
+    "actionsTitle": "⚡ 액션 — 나만의 맞춤 도구",
+    "actionsDesc": "진화에 기반 — 💡 **아이디어**(변이), ⚡ **액션**(선택), 🤝 **함께**(커뮤니티).",
+    "gatherEvidence": "📹 증거 수집",
+    "gatherEvidenceDesc": "일어나고 있는 일을 기록하세요 — 라이브 방송 또는 사진, 동영상, 링크 공유.",
+    "riotReels": "🎬 Riot 릴",
+    "riotReelsDesc": "이 Quiet Riot의 정신을 담은 재미있고 풍자적인 영상.",
+    "experts": "🌟 전문가",
+    "expertsDesc": "더 깊이 참여하는 열정적인 자원봉사자 — 번역가, 전문가, 미디어 담당자, 법률 자문.",
+    "communityFeed": "💬 커뮤니티 피드"
+  },
+  "Organisations": {
+    "title": "조직",
+    "subtitle": "조직을 탐색하고 각 조직에 대해 사람들이 어떤 이슈를 가지고 있는지 확인하세요.",
+    "noResults": "이 카테고리에서 조직을 찾을 수 없습니다."
+  },
+  "OrgDetail": {
+    "breadcrumb": "조직",
+    "totalRioters": "총 참여자",
+    "issues": "개 이슈",
+    "topIssueShare": "상위 이슈 비율",
+    "paretoTitle": "파레토 법칙:",
+    "paretoDesc": "소수의 이슈가 전체 불만의 80%를 차지하는 것이 일반적입니다. 아래 상위 이슈는 영향을 받은 사람 수 순으로 정렬되어 있습니다.",
+    "gatherEvidence": "📹 증거 수집",
+    "gatherEvidenceDesc": "{orgName}에서 일어나고 있는 일을 기록하세요."
+  },
+  "Campaigns": {
+    "title": "캠페인",
+    "subtitle": "{count} {count, plural, one {개 캠페인이} other {개 캠페인이}} 변화를 위한 자금을 모으고 있습니다.",
+    "noResults": "캠페인을 찾을 수 없습니다. 다른 필터를 시도해보세요."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "캠페인",
+    "fullyFunded": "목표 달성",
+    "disbursed": "자금 배분 완료",
+    "cancelled": "취소됨",
+    "active": "진행 중",
+    "target": "목표",
+    "raised": "모금액",
+    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
+    "platformFee": "플랫폼 수수료",
+    "wantToContribute": "후원하시겠습니까?",
+    "topUpFirst": "먼저 지갑을 충전한 후 후원을 시작하세요.",
+    "createAccountPrompt": "계정을 만들고 지갑을 충전하여 이 캠페인을 지원하세요.",
+    "goToWallet": "지갑으로 이동",
+    "createAccount": "계정 만들기",
+    "completedMessage": "이 캠페인은 {status}되었습니다. {count}명의 후원자 여러분께 감사드립니다!",
+    "recipient": "수령인"
+  },
+  "Assistants": {
+    "title": "어시스턴트",
+    "subtitle": "{count}쌍의 AI 에이전트와 인간 조직자가 참여자의 행동을 돕습니다.",
+    "noResults": "현재 이용 가능한 어시스턴트가 없습니다."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "어시스턴트",
+    "aiAgent": "AI 에이전트",
+    "humanOrganiser": "인간 조직자",
+    "rioters": "참여자",
+    "riots": "{count, plural, one {개의 Quiet Riot} other {개의 Quiet Riot}}",
+    "messages": "개의 메시지",
+    "currentFocus": "현재 포커스",
+    "recentActivity": "최근 활동",
+    "riotsWeHelp": "우리가 돕는 Quiet Riots",
+    "wantToBe": "{name}이(가) 되고 싶으신가요?",
+    "openRole": "인간 조직자 역할은 이 카테고리에 열정을 가진 누구에게나 열려 있습니다. 아래에서 관심을 표현해주세요."
+  },
+  "Wallet": {
+    "title": "내 지갑",
+    "createPromptTitle": "응원을 시작하세요",
+    "createPromptDesc": "무료 계정을 만들어 자금을 충전하고 관심 있는 캠페인에 기여하세요.",
+    "createAccount": "계정 만들기",
+    "activeCampaigns": "진행 중인 캠페인",
+    "viewAll": "전체 보기"
+  },
+  "Profile": {
+    "title": "내 프로필",
+    "time": "시간: ",
+    "skills": "기술: ",
+    "quietRiot": "{count, plural, one {개의 Quiet Riot} other {개의 Quiet Riot}}",
+    "posts": "{count, plural, one {개의 게시물} other {개의 게시물}}",
+    "likes": "{count, plural, one {개의 좋아요} other {개의 좋아요}}",
+    "yourRiots": "나의 Quiet Riots",
+    "noRiots": "아직 참여한 Quiet Riots가 없습니다",
+    "findIssues": "관심 있는 이슈를 찾고 운동에 참여하세요.",
+    "browseIssues": "이슈 탐색",
+    "memberSince": "가입일",
+    "rioters": "참여자",
+    "connectedAccounts": "연결된 계정",
+    "noConnectedAccounts": "아직 연결된 계정이 없습니다. Google 또는 Facebook으로 로그인하여 계정을 연결하세요.",
+    "deactivateAccount": "계정 비활성화",
+    "deactivateConfirm": "정말로 계정을 비활성화하시겠습니까? 30일 이내에 다시 활성화할 수 있습니다."
+  },
+  "Auth": {
+    "welcomeBack": "다시 오신 것을 환영합니다",
+    "signInSubtitle": "Quiet Riots 계정에 로그인",
+    "joinTitle": "Quiet Riots 가입",
+    "joinSubtitle": "공통 이슈로 함께 모이세요. 함께 행동하세요.",
+    "continueGoogle": "Google로 계속",
+    "continueFacebook": "Facebook으로 계속",
+    "connecting": "연결 중...",
+    "or": "또는",
+    "emailLabel": "이메일 주소",
+    "sendMagicLink": "로그인 링크 보내기",
+    "signUpWithEmail": "이메일로 가입",
+    "sendingLink": "링크 보내는 중...",
+    "checkEmail": "이메일을 확인하세요",
+    "signInLinkSent": "이메일 주소로 로그인 링크를 보냈습니다. 링크를 클릭하여 계속하세요.",
+    "signUpLinkSent": "이메일 주소로 로그인 링크를 보냈습니다. 링크를 클릭하여 계정을 만드세요.",
+    "noAccount": "계정이 없으신가요?",
+    "signUp": "가입",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "signIn": "로그인",
+    "termsAgree": "가입하면 다음에 동의하게 됩니다:",
+    "terms": "이용약관",
+    "and": "및",
+    "privacyPolicy": "개인정보처리방침",
+    "verifyTitle": "이메일을 확인하세요",
+    "verifyDesc": "이메일 주소로 로그인 링크가 발송되었습니다. 링크를 클릭하여 계속하세요.",
+    "backToSignIn": "로그인으로 돌아가기",
+    "errorTitle": "인증 오류",
+    "errorConfig": "서버 설정에 문제가 있습니다.",
+    "errorAccess": "접근이 거부되었습니다. 로그인 권한이 없을 수 있습니다.",
+    "errorVerification": "로그인 링크가 만료되었거나 이미 사용되었습니다.",
+    "errorDefault": "인증 중 오류가 발생했습니다.",
+    "tryAgain": "다시 시도"
+  },
+  "AuthGate": {
+    "signInTo": "로그인하여 {action}",
+    "signIn": "로그인",
+    "signInRequired": "로그인이 필요합니다",
+    "signInToAction": "{action}하려면 로그인이 필요합니다.",
+    "cancel": "취소",
+    "noAccount": "계정이 없으신가요?",
+    "signUp": "가입"
+  },
+  "Error": {
+    "title": "문제가 발생했습니다",
+    "description": "예기치 않은 오류가 발생했습니다.",
+    "tryAgain": "다시 시도"
+  },
+  "GlobalError": {
+    "title": "문제가 발생했습니다",
+    "description": "예기치 않은 오류가 발생했습니다. 팀에 알림이 전송되었습니다.",
+    "tryAgain": "다시 시도"
+  },
+  "NotFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+    "goHome": "홈으로 이동"
+  },
+  "Cards": {
+    "rioters": "참여자",
+    "country": "{count, plural, one {개국} other {개국}}",
+    "issues": "개 이슈",
+    "idea": "아이디어",
+    "action": "액션",
+    "together": "함께",
+    "time1min": "1분",
+    "time10min": "10분",
+    "time1hour": "1시간+",
+    "skills": "기술: ",
+    "anonymous": "익명",
+    "curated": "큐레이션",
+    "community": "커뮤니티",
+    "aiPick": "AI 추천",
+    "funded": "목표 달성",
+    "disbursed": "배분 완료",
+    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
+    "aiAndHuman": "AI 에이전트 & 인간 조직자",
+    "riots": "{count, plural, one {개의 Quiet Riot} other {개의 Quiet Riot}}"
+  },
+  "Health": {
+    "title": "📊 커뮤니티 소속감 지수",
+    "needsMet": "필요 충족",
+    "needsMetDesc": "회원들이 가치 있다고 느낌",
+    "membership": "소속감",
+    "membershipDesc": "신뢰와 소속",
+    "influence": "영향력",
+    "influenceDesc": "당신의 목소리가 중요합니다",
+    "connection": "연결감",
+    "connectionDesc": "공유된 경험",
+    "healthy": "양호",
+    "growing": "성장 중",
+    "needsAttention": "관심 필요"
+  },
+  "Pivot": {
+    "title": "🔀 피벗",
+    "peopleGlobally": "전 세계 참여자",
+    "issuePivot": "🔍 이슈 피벗",
+    "issuePivotDesc": "같은 이슈, 모든 조직",
+    "orgPivot": "🏢 조직 피벗",
+    "orgPivotDesc": "모든 이슈, 하나의 조직",
+    "seeIssueAcross": "모든 유사 조직에서 \"{issueName}\" 보기:",
+    "seeOrgIssues": "{orgName}의 모든 이슈 보기:",
+    "you": "나",
+    "rioters": "참여자"
+  },
+  "CampaignProgress": {
+    "title": "💰 캠페인",
+    "funded": "목표 달성",
+    "disbursed": "배분 완료",
+    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}"
+  },
+  "WalletBalance": {
+    "title": "내 잔액",
+    "loaded": "충전됨",
+    "contributed": "기여함",
+    "campaigns": "{count, plural, one {개 캠페인} other {개 캠페인}}"
+  },
+  "Transactions": {
+    "title": "최근 거래",
+    "topUp": "충전",
+    "contribution": "기여",
+    "refund": "환불",
+    "justNow": "방금",
+    "minutesAgo": "{count}분 전",
+    "hoursAgo": "{count}시간 전",
+    "daysAgo": "{count}일 전",
+    "empty": "아직 거래가 없습니다. 지갑을 충전하여 시작하세요!"
+  },
+  "Activity": {
+    "noActivity": "아직 활동이 없습니다.",
+    "ai": "AI",
+    "human": "인"
+  },
+  "Countries": {
+    "title": "🌍 국가"
+  },
+  "Synonyms": {
+    "placeholder": "동의어 추가...",
+    "add": "추가"
+  },
+  "Join": {
+    "joined": "✅ 이 Quiet Riot에 참여 중",
+    "join": "✊ 이 Quiet Riot에 참여하기"
+  },
+  "Search": {
+    "placeholder": "이슈 검색..."
+  },
+  "Feed": {
+    "composerPlaceholder": "생각을 공유하세요...",
+    "post": "게시",
+    "empty": "아직 게시물이 없습니다. 첫 번째로 공유해보세요!"
+  },
+  "Actions": {
+    "ideas": "💡 아이디어 (변이)",
+    "actions": "⚡ 액션 (선택)",
+    "together": "🤝 함께 (커뮤니티)",
+    "noResults": "필터에 맞는 액션이 없습니다. 조건을 넓혀 시도해보세요."
+  },
+  "Filter": {
+    "all": "전체",
+    "active": "진행 중",
+    "funded": "목표 달성",
+    "disbursed": "배분 완료"
+  },
+  "TimeSkill": {
+    "timeQuestion": "시간이 얼마나 있으세요?",
+    "time1min": "1분",
+    "time10min": "10분",
+    "time1hour": "1시간+",
+    "typeQuestion": "어떤 유형?",
+    "ideas": "💡 아이디어",
+    "actions": "⚡ 액션",
+    "together": "🤝 함께"
+  },
+  "Reels": {
+    "empty": "아직 릴이 없습니다. 첫 번째로 제출해보세요!",
+    "submitPrompt": "이 이슈를 요약하는 재미있는 영상이 있나요?",
+    "submitSuccess": "감사합니다! 릴이 검토를 위해 제출되었습니다.",
+    "urlPlaceholder": "YouTube URL 붙여넣기...",
+    "captionPlaceholder": "캡션 추가 (선택사항)...",
+    "submit": "제출"
+  },
+  "TopUp": {
+    "addFunds": "충전",
+    "minTopUp": "최소 충전 금액은 £1입니다",
+    "success": "지갑에 {amount}이(가) 추가되었습니다!",
+    "networkError": "네트워크 오류입니다. 다시 시도해주세요.",
+    "customAmount": "사용자 지정 금액 (£)",
+    "topUp": "충전",
+    "simulated": "테스트용 시뮬레이션 충전입니다. Stripe 실제 결제가 곧 제공됩니다."
+  },
+  "Contribute": {
+    "insufficientFunds": "잔액이 부족합니다. 먼저 지갑을 충전하세요.",
+    "minContribution": "최소 기여 금액은 10p입니다",
+    "contribute": "기여하기",
+    "yourBalance": "내 잔액: ",
+    "networkError": "네트워크 오류입니다. 다시 시도해주세요.",
+    "invalidAmount": "유효한 금액을 입력하세요",
+    "customAmount": "사용자 지정 금액 (£)",
+    "give": "기부",
+    "success": "{campaign}에 {amount}을(를) 기여했습니다!",
+    "remainingBalance": "남은 잔액: {balance}",
+    "topUpPrompt": "지갑 충전하기",
+    "toKeepSupporting": "캠페인 지원을 계속하세요.",
+    "walletEmpty": "지갑이 비어 있습니다.",
+    "topUp": "충전",
+    "toContribute": "기여하세요."
+  },
+  "Claim": {
+    "success": "감사합니다! {name} 역할에 대한 관심을 기록했습니다. 연락드리겠습니다.",
+    "placeholder": "왜 {name}으로 적합한가요? (선택사항)",
+    "submitting": "제출 중...",
+    "expressInterest": "관심 표현"
+  },
+  "Evidence": {
+    "generalOrg": "일반 (특정 조직 없음)",
+    "placeholder": "생각을 말해주세요...",
+    "photosLabel": "사진 (최대 4장)",
+    "addPhotos": "+ 사진 추가",
+    "photoFormats": "JPEG, PNG, WebP, GIF. 각 최대 4 MB.",
+    "videoLabel": "동영상 (최대 1개)",
+    "addVideo": "+ 동영상 추가",
+    "videoFormats": "MP4, MOV, WebM. 최대 4 MB.",
+    "linkLabel": "외부 링크",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "미디어 숨기기",
+    "addMedia": "📎 사진, 동영상, 링크 추가",
+    "posting": "게시 중...",
+    "uploading": "업로드 중...",
+    "submitEvidence": "증거 제출",
+    "goLive": "🔴 지금 라이브",
+    "maxPhotos": "사진은 최대 4장입니다. {count}장이 건너뛰어졌습니다.",
+    "videoFailed": "동영상 업로드 실패",
+    "removePhoto": "{name} 제거",
+    "removeVideo": "동영상 제거",
+    "uploadFailed": "업로드 실패: {names}"
+  },
+  "ProfileEdit": {
+    "title": "프로필 편집",
+    "nameLabel": "이름",
+    "timeLabel": "가용 시간",
+    "time1min": "1분",
+    "time1minDesc": "빠른 액션만",
+    "time10min": "10분",
+    "time10minDesc": "대부분의 액션",
+    "time1hour": "1시간+",
+    "time1hourDesc": "깊이 있는 참여",
+    "skillsLabel": "기술",
+    "skillsPlaceholder": "예: 디자인, 글쓰기, 법률, 코딩",
+    "skillsHint": "쉼표로 구분. 관련 액션과 매칭하는 데 도움이 됩니다.",
+    "saving": "저장 중...",
+    "save": "변경 사항 저장",
+    "cancel": "취소",
+    "nameRequired": "이름은 필수입니다",
+    "saveFailed": "저장 실패"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "알림 받기"
+  },
+  "CookieConsent": {
+    "title": "쿠키 환경설정",
+    "description": "로그인 상태를 유지하고 경험을 개선하기 위해 쿠키를 사용합니다. 분석 쿠키는 사이트 이용 현황을 파악하는 데 도움이 됩니다.",
+    "acceptAll": "모두 수락",
+    "essentialOnly": "필수만",
+    "manage": "환경설정 관리",
+    "essential": "필수",
+    "essentialDescription": "사이트 기능에 필수적이며 비활성화할 수 없습니다.",
+    "analytics": "분석",
+    "analyticsDescription": "사이트 사용 방식을 이해하여 개선하는 데 도움이 됩니다.",
+    "save": "환경설정 저장"
+  }
+}

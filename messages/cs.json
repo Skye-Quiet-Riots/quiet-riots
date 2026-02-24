@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organizuj se kolem sdilenych problemu. Najdi sve lidi. Jednejte spolecne."
+  },
+  "Nav": {
+    "issues": "Problemy",
+    "assistants": "Asistenti",
+    "organisations": "Organizace",
+    "wallet": "Penezenka",
+    "profile": "Profil",
+    "signIn": "Prihlasit se",
+    "signOut": "Odhlasit se",
+    "toggleMenu": "Prepnout menu"
+  },
+  "Footer": {
+    "mission": "Zmenit vice k lepsimu za naseho zivota, nez se odvazujeme predstavit, ze je mozne.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Centrum problemu",
+    "headline": "Zmena nemusi byt hlasita, aby byla silna",
+    "description": "Najdi ostatni, kteri sdileji tve problemy. Jednejte spolecne. Quiet Riots spojuje lidi kolem sdilenych frustraci a meni stiznosti ve spolecnou akci.",
+    "browseIssues": "Prochazet problemy",
+    "howItWorks": "Jak to funguje",
+    "trendingIssues": "\ud83d\udd25 Trendujici problemy",
+    "viewAll": "Zobrazit vse \u2192",
+    "reelOfTheDay": "\ud83c\udfac Riot Reel dne",
+    "riotersFunny": "{count} ucastniku to povazovalo za vtipne",
+    "from": "Od:",
+    "findYourIssue": "Najdi svuj problem",
+    "findYourIssueDesc": "Hledej jakoukoli frustraci \u2014 vlaky, internet, zdravotnictvi, klima. Pokud existuje, ukazeme ti, kolik dalsich lidi ji sdili.",
+    "useThePivot": "Pouzij Pivot",
+    "useThePivotDesc": "Podivej se na stejny problem ve vsech organizacich, nebo na vsechny problemy v jedne organizaci. Jako tanecnici tanga menici smer.",
+    "takeAction": "Jednej",
+    "takeActionDesc": "Napady, akce a komunita \u2014 prizpusobene tvemu casu a dovednostem. Male akce se scitaji ve velkou zmenu.",
+    "missionQuote": "\"Zmenit vice k lepsimu za naseho zivota, nez se odvazujeme predstavit, ze je mozne.\"",
+    "basedOn": "Na zaklade knihy z roku 2014 <em>Quiet Riots</em> od Simona Darlinga",
+    "joinMovement": "\u270a Pripoj se k hnuti"
+  },
+  "Issues": {
+    "title": "Problemy",
+    "subtitle": "{count} problemu v {categoryCount} kategoriich. Najdi ten svuj.",
+    "searchPlaceholder": "Hledej problemy nebo synonyma...",
+    "noResults": "Zadne problemy nenalezeny. Zkus jine hledani nebo kategorii."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Problemy",
+    "rioters": "ucastniku",
+    "country": "{count, plural, one {zeme} other {zemi}}",
+    "thisWeek": "tento tyden",
+    "actions": "akci",
+    "alsoKnownAs": "Znamo take jako",
+    "actionsTitle": "\u26a1 Akce \u2014 Tvuj personalizovany nastroj",
+    "actionsDesc": "Zalozeno na evoluci \u2014 \ud83d\udca1 **Napady** (variace), \u26a1 **Akce** (selekce) a \ud83e\udd1d **Spolecne** (komunita).",
+    "gatherEvidence": "\ud83d\udcf9 Sbirej dukazy",
+    "gatherEvidenceDesc": "Dokumentuj, co se deje \u2014 vysilej zive nebo sdilej fotky, videa a odkazy.",
+    "riotReels": "\ud83c\udfac Riot Reels",
+    "riotReelsDesc": "Vtipna a ironicka videa zachycujici ducha tohoto Quiet Riot.",
+    "experts": "\ud83c\udf1f Experti",
+    "expertsDesc": "Nadseni dobrovolnici, kteri jdou hloubeji \u2014 prekladatele, specialiste, medialni zastupci, pravni poradci.",
+    "communityFeed": "\ud83d\udcac Komunitni zed"
+  },
+  "Organisations": {
+    "title": "Organizace",
+    "subtitle": "Prochazej organizace a podivej se, jake problemy s nimi lide maji.",
+    "noResults": "Pro tuto kategorii nebyly nalezeny zadne organizace."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organizace",
+    "totalRioters": "ucastniku celkem",
+    "issues": "problemu",
+    "topIssueShare": "podil hlavniho problemu",
+    "paretoTitle": "Paretovo pravidlo:",
+    "paretoDesc": "Hrstka problemu obvykle tvori 80 % vsech stiznosti. Hlavni problemy nize jsou serazeny podle poctu dotcenych lidi.",
+    "gatherEvidence": "\ud83d\udcf9 Sbirej dukazy",
+    "gatherEvidenceDesc": "Dokumentuj, co se deje s {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampane",
+    "subtitle": "{count} {count, plural, one {kampan sbirajici} other {kampani sbirajicich}} prostredky na zmenu.",
+    "noResults": "Zadne kampane nenalezeny. Zkus jiny filtr."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampane",
+    "fullyFunded": "Plne financovano",
+    "disbursed": "Prostredky vyplaceny",
+    "cancelled": "Zruseno",
+    "active": "Aktivni",
+    "target": "cil",
+    "raised": "vybrano",
+    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
+    "platformFee": "poplatek platformy",
+    "wantToContribute": "Chces prispet?",
+    "topUpFirst": "Nejdriv si dobij penezenku, abys mohl prispivat.",
+    "createAccountPrompt": "Vytvor si ucet a dobij penezenku pro podporu teto kampane.",
+    "goToWallet": "Prejit na penezenku",
+    "createAccount": "Vytvorit ucet",
+    "completedMessage": "Tato kampan byla {status}. Dekujeme vsem {count} podporovatelu!",
+    "recipient": "Prijemce"
+  },
+  "Assistants": {
+    "title": "Asistenti",
+    "subtitle": "{count} paru AI agentu a lidskych organizatoru pomahaujicich ucastnikum jednat.",
+    "noResults": "Zadni asistenti zatim nejsou k dispozici."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asistenti",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Organizator",
+    "rioters": "ucastniku",
+    "riots": "{count, plural, one {riot} other {riotu}}",
+    "messages": "zprav",
+    "currentFocus": "Soucasne zamereni",
+    "recentActivity": "Nedavna aktivita",
+    "riotsWeHelp": "Quiet Riots, se kterymi pomahame",
+    "wantToBe": "Chces byt {name}?",
+    "openRole": "Role lidskeho organizatora je otevrena pro kohokoli s vasni pro tuto kategorii. Vyjadri svuj zajem nize."
+  },
+  "Wallet": {
+    "title": "Tvoje penezenka",
+    "createPromptTitle": "Zacni podporovat veci",
+    "createPromptDesc": "Vytvor si bezplatny ucet pro nabiti prostredku a prispivani na kampane, ktere jsou pro tebe dulezite.",
+    "createAccount": "Vytvorit ucet",
+    "activeCampaigns": "Aktivni kampane",
+    "viewAll": "Zobrazit vse"
+  },
+  "Profile": {
+    "title": "Tvuj profil",
+    "time": "Cas: ",
+    "skills": "Dovednosti: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {prispevek} other {prispevku}}",
+    "likes": "{count, plural, one {obdrzeny like} other {obdrzenych liku}}",
+    "yourRiots": "Tvoje Quiet Riots",
+    "noRiots": "Zatim zadne Quiet Riots",
+    "findIssues": "Najdi problemy, ktere te zajimaji, a pripoj se k hnuti.",
+    "browseIssues": "Prochazet problemy",
+    "memberSince": "Clenem od",
+    "rioters": "ucastniku",
+    "connectedAccounts": "Propojene ucty",
+    "noConnectedAccounts": "Zatim zadne propojene ucty. Prihlas se pres Google nebo Facebook pro propojeni uctu.",
+    "deactivateAccount": "Deaktivovat ucet",
+    "deactivateConfirm": "Opravdu chces deaktivovat svuj ucet? Muzes ho reaktivovat behem 30 dnu."
+  },
+  "Auth": {
+    "welcomeBack": "Vitej zpet",
+    "signInSubtitle": "Prihlas se ke svemu uctu Quiet Riots",
+    "joinTitle": "Pripoj se k Quiet Riots",
+    "joinSubtitle": "Organizuj se kolem sdilenych problemu. Jednejte spolecne.",
+    "continueGoogle": "Pokracovat pres Google",
+    "continueFacebook": "Pokracovat pres Facebook",
+    "connecting": "Pripojovani...",
+    "or": "nebo",
+    "emailLabel": "E-mailova adresa",
+    "sendMagicLink": "Poslat magicky odkaz",
+    "signUpWithEmail": "Registrovat se e-mailem",
+    "sendingLink": "Odesilani odkazu...",
+    "checkEmail": "Zkontroluj svuj e-mail",
+    "signInLinkSent": "Poslali jsme prihlasovaci odkaz na tvou e-mailovou adresu. Klikni na odkaz pro pokracovani.",
+    "signUpLinkSent": "Poslali jsme prihlasovaci odkaz na tvou e-mailovou adresu. Klikni na odkaz pro vytvoreni uctu.",
+    "noAccount": "Nemas ucet?",
+    "signUp": "Registrovat se",
+    "hasAccount": "Uz mas ucet?",
+    "signIn": "Prihlasit se",
+    "termsAgree": "Registraci souhlasite s nasimi",
+    "terms": "Podminkami",
+    "and": "a",
+    "privacyPolicy": "Zasadami ochrany soukromi",
+    "verifyTitle": "Zkontroluj svuj e-mail",
+    "verifyDesc": "Prihlasovaci odkaz byl zaslan na tvou e-mailovou adresu. Klikni na odkaz pro pokracovani.",
+    "backToSignIn": "Zpet na prihlaseni",
+    "errorTitle": "Chyba overeni",
+    "errorConfig": "Vyskytl se problem s konfiguraci serveru.",
+    "errorAccess": "Pristup byl odepren. Nemuzete mit opravneni k prihlaseni.",
+    "errorVerification": "Prihlasovaci odkaz vyprsel nebo jiz byl pouzit.",
+    "errorDefault": "Behem overovani doslo k chybe.",
+    "tryAgain": "Zkusit znovu"
+  },
+  "AuthGate": {
+    "signInTo": "Prihlas se pro {action}",
+    "signIn": "Prihlasit se",
+    "signInRequired": "Vyzadovano prihlaseni",
+    "signInToAction": "Pro {action} se musis prihlasit.",
+    "cancel": "Zrusit",
+    "noAccount": "Nemas ucet?",
+    "signUp": "Registrovat se"
+  },
+  "Error": {
+    "title": "Neco se pokazilo",
+    "description": "Doslo k neocekavane chybe.",
+    "tryAgain": "Zkusit znovu"
+  },
+  "GlobalError": {
+    "title": "Neco se pokazilo",
+    "description": "Doslo k neocekavane chybe. Nas tym byl informovan.",
+    "tryAgain": "Zkusit znovu"
+  },
+  "NotFound": {
+    "title": "Stranka nenalezena",
+    "description": "Stranka, kterou hledas, neexistuje nebo byla presunuta.",
+    "goHome": "Na hlavni stranku"
+  },
+  "Cards": {
+    "rioters": "ucastniku",
+    "country": "{count, plural, one {zeme} other {zemi}}",
+    "issues": "problemu",
+    "idea": "Napad",
+    "action": "Akce",
+    "together": "Spolecne",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hod.+",
+    "skills": "Dovednosti: ",
+    "anonymous": "Anonymni",
+    "curated": "Vybirane",
+    "community": "Komunita",
+    "aiPick": "Vyber AI",
+    "funded": "Financovano",
+    "disbursed": "Vyplaceno",
+    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
+    "aiAndHuman": "AI Agent a Organizator",
+    "riots": "{count, plural, one {riot} other {riotu}}"
+  },
+  "Health": {
+    "title": "\ud83d\udcca Index pocitu komunity",
+    "needsMet": "Naplnene potreby",
+    "needsMetDesc": "Clenove citi, ze to stoji za to",
+    "membership": "Clenstvi",
+    "membershipDesc": "Duvera a sounalezitost",
+    "influence": "Vliv",
+    "influenceDesc": "Tvuj hlas je dulezity",
+    "connection": "Propojeni",
+    "connectionDesc": "Sdilene zkusenosti",
+    "healthy": "Zdrava",
+    "growing": "Rostouci",
+    "needsAttention": "Vyzaduje pozornost"
+  },
+  "Pivot": {
+    "title": "\ud83d\udd00 Pivot",
+    "peopleGlobally": "lidi globalne",
+    "issuePivot": "\ud83d\udd0d Pivot problemu",
+    "issuePivotDesc": "Stejny problem, vsechny org.",
+    "orgPivot": "\ud83c\udfe2 Pivot organizace",
+    "orgPivotDesc": "Vsechny problemy, jedna org.",
+    "seeIssueAcross": "Zobraz \"{issueName}\" ve vsech podobnych organizacich:",
+    "seeOrgIssues": "Zobraz vsechny problemy v {orgName}:",
+    "you": "TY",
+    "rioters": "ucastniku"
+  },
+  "CampaignProgress": {
+    "title": "\ud83d\udcb0 Kampane",
+    "funded": "Financovano",
+    "disbursed": "Vyplaceno",
+    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}"
+  },
+  "WalletBalance": {
+    "title": "Tvuj zustatek",
+    "loaded": "nabito",
+    "contributed": "prispeno",
+    "campaigns": "{count, plural, one {kampan} other {kampani}}"
+  },
+  "Transactions": {
+    "title": "Nedavne transakce",
+    "topUp": "Dobiti",
+    "contribution": "Prispevek",
+    "refund": "Vraceni",
+    "justNow": "prave ted",
+    "minutesAgo": "pred {count} min",
+    "hoursAgo": "pred {count} hod.",
+    "daysAgo": "pred {count} dny",
+    "empty": "Zatim zadne transakce. Dobij si penezenku a zacni!"
+  },
+  "Activity": {
+    "noActivity": "Zatim zadna aktivita.",
+    "ai": "AI",
+    "human": "C"
+  },
+  "Countries": {
+    "title": "\ud83c\udf0d Zeme"
+  },
+  "Synonyms": {
+    "placeholder": "Pridej synonymum...",
+    "add": "Pridat"
+  },
+  "Join": {
+    "joined": "\u2705 Pripojeno k tomuto Quiet Riot",
+    "join": "\u270a Pripoj se k tomuto Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Hledat problemy..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Sdilej sve myslenky...",
+    "post": "Odeslat",
+    "empty": "Zatim zadne prispevky. Bud prvni, kdo neco sdili!"
+  },
+  "Actions": {
+    "ideas": "\ud83d\udca1 Napady (Variace)",
+    "actions": "\u26a1 Akce (Selekce)",
+    "together": "\ud83e\udd1d Spolecne (Komunita)",
+    "noResults": "Zadne akce neodpovidaji tvym filtrum. Zkus rozsirit vyber."
+  },
+  "Filter": {
+    "all": "Vse",
+    "active": "Aktivni",
+    "funded": "Financovano",
+    "disbursed": "Vyplaceno"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Kolik mas casu?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hod.+",
+    "typeQuestion": "Jaky typ?",
+    "ideas": "\ud83d\udca1 Napady",
+    "actions": "\u26a1 Akce",
+    "together": "\ud83e\udd1d Spolecne"
+  },
+  "Reels": {
+    "empty": "Zatim zadna videa. Bud prvni, kdo neco prida!",
+    "submitPrompt": "Mas vtipne video vystihujici tento problem?",
+    "submitSuccess": "Dekujeme! Tve video bylo odeslano k posouzeni.",
+    "urlPlaceholder": "Vloz URL z YouTube...",
+    "captionPlaceholder": "Pridej popisek (volitelne)...",
+    "submit": "Odeslat"
+  },
+  "TopUp": {
+    "addFunds": "Pridat prostredky",
+    "minTopUp": "Minimalni dobiti je \u00a31",
+    "success": "{amount} pridano do tve penezenky!",
+    "networkError": "Chyba site. Zkus to znovu.",
+    "customAmount": "Vlastni castka (\u00a3)",
+    "topUp": "Dobit",
+    "simulated": "Simulovane dobiti pro testovani. Prave platby pres Stripe jiz brzy."
+  },
+  "Contribute": {
+    "insufficientFunds": "Nedostatecne prostredky. Nejdriv dobij penezenku.",
+    "minContribution": "Minimalni prispevek je 10p",
+    "contribute": "Prispet",
+    "yourBalance": "Tvuj zustatek: ",
+    "networkError": "Chyba site. Zkus to znovu.",
+    "invalidAmount": "Zadej platnou castku",
+    "customAmount": "Vlastni castka (\u00a3)",
+    "give": "Darovat",
+    "success": "Prispeno {amount} na {campaign}!",
+    "remainingBalance": "Zbyvaujici zustatek: {balance}",
+    "topUpPrompt": "Dobij penezenku",
+    "toKeepSupporting": "pro dalsi podporu kampani.",
+    "walletEmpty": "Tvoje penezenka je prazdna.",
+    "topUp": "Dobit",
+    "toContribute": "pro prispivani."
+  },
+  "Claim": {
+    "success": "Dekujeme! Zaznamenali jsme tvuj zajem o roli {name}. Ozveme se ti.",
+    "placeholder": "Proc bys byl skvely jako {name}? (volitelne)",
+    "submitting": "Odesilani...",
+    "expressInterest": "Vyjadrit zajem"
+  },
+  "Evidence": {
+    "generalOrg": "Obecne (bez konkretni organizace)",
+    "placeholder": "Rekni, co si myslis...",
+    "photosLabel": "Fotky (max 4)",
+    "addPhotos": "+ Pridat fotky",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max 4 MB kazda.",
+    "videoLabel": "Video (max 1)",
+    "addVideo": "+ Pridat video",
+    "videoFormats": "MP4, MOV, WebM. Max 4 MB.",
+    "linkLabel": "Externi odkaz",
+    "linkPlaceholder": "https://clanek.cz/...",
+    "hideMedia": "Skryt media",
+    "addMedia": "\ud83d\udcce Pridat fotky, video, odkazy",
+    "posting": "Publikovani...",
+    "uploading": "Nahravani...",
+    "submitEvidence": "Odeslat dukazy",
+    "goLive": "\ud83d\udd34 Vysilat zive",
+    "maxPhotos": "Maximalne 4 fotky. {count} preskoceno.",
+    "videoFailed": "Nahrani videa selhalo",
+    "removePhoto": "Odebrat {name}",
+    "removeVideo": "Odebrat video",
+    "uploadFailed": "Nepodarilo se nahrat: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Upravit profil",
+    "nameLabel": "Jmeno",
+    "timeLabel": "Dostupny cas",
+    "time1min": "1 minuta",
+    "time1minDesc": "Pouze rychle akce",
+    "time10min": "10 minut",
+    "time10minDesc": "Vetsina akci",
+    "time1hour": "1 hod.+",
+    "time1hourDesc": "Hluboky zapojeni",
+    "skillsLabel": "Dovednosti",
+    "skillsPlaceholder": "napr. design, psani, pravo, programovani",
+    "skillsHint": "Oddelene carkami. Pomaha te propojit s relevantnimi akcemi.",
+    "saving": "Ukladani...",
+    "save": "Ulozit zmeny",
+    "cancel": "Zrusit",
+    "nameRequired": "Jmeno je povinne",
+    "saveFailed": "Ulozeni selhalo"
+  },
+  "SignupForm": {
+    "placeholder": "ty@priklad.cz",
+    "submit": "Upozornit me"
+  },
+  "CookieConsent": {
+    "title": "Predvolby cookies",
+    "description": "Pouzivame cookies, abychom te udrzeli prihlaseneho a zlepsili tvuj zazitek. Analyticke cookies nam pomahaji pochopit, jak je stranka pouzivana.",
+    "acceptAll": "Prijmout vse",
+    "essentialOnly": "Pouze nezbytne",
+    "manage": "Spravovat predvolby",
+    "essential": "Nezbytne",
+    "essentialDescription": "Nutne pro fungovani stranky. Nelze vypnout.",
+    "analytics": "Analyticke",
+    "analyticsDescription": "Pomahaji nam pochopit, jak stranku pouziivas, abychom ji mohli zlepsit.",
+    "save": "Ulozit predvolby"
+  }
+}

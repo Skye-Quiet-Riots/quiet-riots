@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organizeaza-te in jurul problemelor comune. Gaseste-ti oamenii. Actioneaza impreuna."
+  },
+  "Nav": {
+    "issues": "Probleme",
+    "assistants": "Asistenti",
+    "organisations": "Organizatii",
+    "wallet": "Portofel",
+    "profile": "Profil",
+    "signIn": "Conecteaza-te",
+    "signOut": "Deconecteaza-te",
+    "toggleMenu": "Comuta meniul"
+  },
+  "Footer": {
+    "mission": "Sa schimbam mai mult in bine in timpul vietii noastre decat indraznim sa ne imaginam ca e posibil.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Centrul problemelor",
+    "headline": "Schimbarea nu trebuie sa fie zgomotoasa ca sa fie puternica",
+    "description": "Gaseste-i pe cei care impartasesc problemele tale. Actioneaza impreuna. Quiet Riots conecteaza oamenii in jurul frustrarilor comune si transforma plangirile in actiune colectiva.",
+    "browseIssues": "Exploreaza problemele",
+    "howItWorks": "Cum functioneaza",
+    "trendingIssues": "\ud83d\udd25 Probleme in tendinte",
+    "viewAll": "Vezi tot \u2192",
+    "reelOfTheDay": "\ud83c\udfac Riot Reel-ul zilei",
+    "riotersFunny": "{count} participanti au gasit asta amuzant",
+    "from": "De la:",
+    "findYourIssue": "Gaseste-ti problema",
+    "findYourIssueDesc": "Cauta orice frustrare \u2014 trenuri, internet, sanatate, clima. Daca exista, iti aratam cati altii o impartasesc.",
+    "useThePivot": "Foloseste Pivotul",
+    "useThePivotDesc": "Vezi aceeasi problema la toate organizatiile, sau toate problemele la o organizatie. Ca dansatorii de tango care schimba directia.",
+    "takeAction": "Actioneaza",
+    "takeActionDesc": "Idei, actiuni si comunitate \u2014 personalizate pentru timpul si abilitatile tale. Actiunile mici se aduna in schimbari mari.",
+    "missionQuote": "\"Sa schimbam mai mult in bine in timpul vietii noastre decat indraznim sa ne imaginam ca e posibil.\"",
+    "basedOn": "Bazat pe cartea din 2014 <em>Quiet Riots</em> de Simon Darling",
+    "joinMovement": "\u270a Alatura-te miscarii"
+  },
+  "Issues": {
+    "title": "Probleme",
+    "subtitle": "{count} probleme in {categoryCount} categorii. Gaseste-o pe a ta.",
+    "searchPlaceholder": "Cauta probleme sau sinonime...",
+    "noResults": "Nu s-au gasit probleme. Incearca o cautare sau categorie diferita."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Probleme",
+    "rioters": "participanti",
+    "country": "{count, plural, one {tara} other {tari}}",
+    "thisWeek": "saptamana aceasta",
+    "actions": "actiuni",
+    "alsoKnownAs": "Cunoscut si ca",
+    "actionsTitle": "\u26a1 Actiuni \u2014 Setul tau personalizat de instrumente",
+    "actionsDesc": "Bazat pe evolutie \u2014 \ud83d\udca1 **Idei** (variatie), \u26a1 **Actiuni** (selectie) si \ud83e\udd1d **Impreuna** (comunitate).",
+    "gatherEvidence": "\ud83d\udcf9 Aduna dovezi",
+    "gatherEvidenceDesc": "Documenteaza ce se intampla \u2014 transmite live sau partajeaza fotografii, videoclipuri si linkuri.",
+    "riotReels": "\ud83c\udfac Riot Reels",
+    "riotReelsDesc": "Videoclipuri amuzante si ironice care surprind spiritul acestui Quiet Riot.",
+    "experts": "\ud83c\udf1f Experti",
+    "expertsDesc": "Voluntari pasionati care merg mai adanc \u2014 traducatori, specialisti, lideri media, consilieri juridici.",
+    "communityFeed": "\ud83d\udcac Feed-ul comunitatii"
+  },
+  "Organisations": {
+    "title": "Organizatii",
+    "subtitle": "Exploreaza organizatiile si vezi ce probleme au oamenii cu fiecare.",
+    "noResults": "Nu s-au gasit organizatii pentru aceasta categorie."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organizatii",
+    "totalRioters": "participanti in total",
+    "issues": "probleme",
+    "topIssueShare": "ponderea problemei principale",
+    "paretoTitle": "Principiul Pareto:",
+    "paretoDesc": "O mana de probleme reprezinta de obicei 80% din toate plangirile. Problemele principale de mai jos sunt clasificate dupa numarul de persoane afectate.",
+    "gatherEvidence": "\ud83d\udcf9 Aduna dovezi",
+    "gatherEvidenceDesc": "Documenteaza ce se intampla cu {orgName}."
+  },
+  "Campaigns": {
+    "title": "Campanii",
+    "subtitle": "{count} {count, plural, one {campanie care strange} other {campanii care strang}} fonduri pentru schimbare.",
+    "noResults": "Nu s-au gasit campanii. Incearca un filtru diferit."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Campanii",
+    "fullyFunded": "Complet finantata",
+    "disbursed": "Fonduri distribuite",
+    "cancelled": "Anulata",
+    "active": "Activa",
+    "target": "tinta",
+    "raised": "strans",
+    "backers": "{count, plural, one {sustinator} other {sustinatori}}",
+    "platformFee": "taxa platformei",
+    "wantToContribute": "Vrei sa contribui?",
+    "topUpFirst": "Incarca-ti portofelul mai intai pentru a incepe sa contribui.",
+    "createAccountPrompt": "Creaza un cont si incarca-ti portofelul pentru a sustine aceasta campanie.",
+    "goToWallet": "Mergi la portofel",
+    "createAccount": "Creaza cont",
+    "completedMessage": "Aceasta campanie a fost {status}. Multumim tuturor celor {count} sustinatori!",
+    "recipient": "Destinatar"
+  },
+  "Assistants": {
+    "title": "Asistenti",
+    "subtitle": "{count} perechi de agenti AI si organizatori umani care ajuta participantii sa actioneze.",
+    "noResults": "Niciun asistent disponibil inca."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asistenti",
+    "aiAgent": "Agent AI",
+    "humanOrganiser": "Organizator uman",
+    "rioters": "participanti",
+    "riots": "{count, plural, one {riot} other {rioturi}}",
+    "messages": "mesaje",
+    "currentFocus": "Focus actual",
+    "recentActivity": "Activitate recenta",
+    "riotsWeHelp": "Quiet Riots in care ajutam",
+    "wantToBe": "Vrei sa fii {name}?",
+    "openRole": "Rolul de organizator uman este deschis oricui cu pasiune pentru aceasta categorie. Exprima-ti interesul mai jos."
+  },
+  "Wallet": {
+    "title": "Portofelul tau",
+    "createPromptTitle": "Incepe sa sustii cauze",
+    "createPromptDesc": "Creaza un cont gratuit pentru a incarca fonduri si a contribui la campaniile care conteaza pentru tine.",
+    "createAccount": "Creaza cont",
+    "activeCampaigns": "Campanii active",
+    "viewAll": "Vezi tot"
+  },
+  "Profile": {
+    "title": "Profilul tau",
+    "time": "Timp: ",
+    "skills": "Abilitati: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {postare} other {postari}}",
+    "likes": "{count, plural, one {like primit} other {like-uri primite}}",
+    "yourRiots": "Quiet Riots-urile tale",
+    "noRiots": "Niciun Quiet Riot inca",
+    "findIssues": "Gaseste problemele care te intereseaza si alatura-te miscarii.",
+    "browseIssues": "Exploreaza problemele",
+    "memberSince": "Membru din",
+    "rioters": "participanti",
+    "connectedAccounts": "Conturi conectate",
+    "noConnectedAccounts": "Niciun cont conectat inca. Conecteaza-te cu Google sau Facebook pentru a-ti lega contul.",
+    "deactivateAccount": "Dezactiveaza contul",
+    "deactivateConfirm": "Esti sigur ca vrei sa-ti dezactivezi contul? Il poti reactiva in 30 de zile."
+  },
+  "Auth": {
+    "welcomeBack": "Bine ai revenit",
+    "signInSubtitle": "Conecteaza-te la contul tau Quiet Riots",
+    "joinTitle": "Alatura-te Quiet Riots",
+    "joinSubtitle": "Organizeaza-te in jurul problemelor comune. Actioneaza impreuna.",
+    "continueGoogle": "Continua cu Google",
+    "continueFacebook": "Continua cu Facebook",
+    "connecting": "Se conecteaza...",
+    "or": "sau",
+    "emailLabel": "Adresa de e-mail",
+    "sendMagicLink": "Trimite link magic",
+    "signUpWithEmail": "Inscrie-te cu e-mail",
+    "sendingLink": "Se trimite linkul...",
+    "checkEmail": "Verifica-ti e-mailul",
+    "signInLinkSent": "Am trimis un link de conectare la adresa ta de e-mail. Apasa pe link pentru a continua.",
+    "signUpLinkSent": "Am trimis un link de conectare la adresa ta de e-mail. Apasa pe link pentru a-ti crea contul.",
+    "noAccount": "Nu ai cont?",
+    "signUp": "Inscrie-te",
+    "hasAccount": "Ai deja cont?",
+    "signIn": "Conecteaza-te",
+    "termsAgree": "Prin inscriere, accepti",
+    "terms": "Termenii",
+    "and": "si",
+    "privacyPolicy": "Politica de confidentialitate",
+    "verifyTitle": "Verifica-ti e-mailul",
+    "verifyDesc": "Un link de conectare a fost trimis la adresa ta de e-mail. Apasa pe link pentru a continua.",
+    "backToSignIn": "Inapoi la conectare",
+    "errorTitle": "Eroare de autentificare",
+    "errorConfig": "Exista o problema cu configuratia serverului.",
+    "errorAccess": "Acces refuzat. Este posibil sa nu ai permisiunea de a te conecta.",
+    "errorVerification": "Linkul de conectare a expirat sau a fost deja folosit.",
+    "errorDefault": "A aparut o eroare in timpul autentificarii.",
+    "tryAgain": "Incearca din nou"
+  },
+  "AuthGate": {
+    "signInTo": "Conecteaza-te pentru a {action}",
+    "signIn": "Conecteaza-te",
+    "signInRequired": "Conectare necesara",
+    "signInToAction": "Trebuie sa te conectezi pentru a {action}.",
+    "cancel": "Anuleaza",
+    "noAccount": "Nu ai cont?",
+    "signUp": "Inscrie-te"
+  },
+  "Error": {
+    "title": "Ceva nu a functionat",
+    "description": "A aparut o eroare neasteptata.",
+    "tryAgain": "Incearca din nou"
+  },
+  "GlobalError": {
+    "title": "Ceva nu a functionat",
+    "description": "A aparut o eroare neasteptata. Echipa noastra a fost notificata.",
+    "tryAgain": "Incearca din nou"
+  },
+  "NotFound": {
+    "title": "Pagina nu a fost gasita",
+    "description": "Pagina pe care o cauti nu exista sau a fost mutata.",
+    "goHome": "Acasa"
+  },
+  "Cards": {
+    "rioters": "participanti",
+    "country": "{count, plural, one {tara} other {tari}}",
+    "issues": "probleme",
+    "idea": "Idee",
+    "action": "Actiune",
+    "together": "Impreuna",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 ora+",
+    "skills": "Abilitati: ",
+    "anonymous": "Anonim",
+    "curated": "Selectionat",
+    "community": "Comunitate",
+    "aiPick": "Selectia AI",
+    "funded": "Finantat",
+    "disbursed": "Distribuit",
+    "backers": "{count, plural, one {sustinator} other {sustinatori}}",
+    "aiAndHuman": "Agent AI si Organizator uman",
+    "riots": "{count, plural, one {riot} other {rioturi}}"
+  },
+  "Health": {
+    "title": "\ud83d\udcca Indexul sentimentului de comunitate",
+    "needsMet": "Nevoi indeplinite",
+    "needsMetDesc": "Membrii simt ca merita",
+    "membership": "Apartenenta",
+    "membershipDesc": "Incredere si apartenenta",
+    "influence": "Influenta",
+    "influenceDesc": "Vocea ta conteaza",
+    "connection": "Conexiune",
+    "connectionDesc": "Experiente comune",
+    "healthy": "Sanatoasa",
+    "growing": "In crestere",
+    "needsAttention": "Necesita atentie"
+  },
+  "Pivot": {
+    "title": "\ud83d\udd00 Pivotul",
+    "peopleGlobally": "oameni la nivel global",
+    "issuePivot": "\ud83d\udd0d Pivotul problemei",
+    "issuePivotDesc": "Aceeasi problema, toate org.",
+    "orgPivot": "\ud83c\udfe2 Pivotul organizatiei",
+    "orgPivotDesc": "Toate problemele, o org.",
+    "seeIssueAcross": "Vezi \"{issueName}\" la toate organizatiile similare:",
+    "seeOrgIssues": "Vezi toate problemele la {orgName}:",
+    "you": "TU",
+    "rioters": "participanti"
+  },
+  "CampaignProgress": {
+    "title": "\ud83d\udcb0 Campanii",
+    "funded": "Finantat",
+    "disbursed": "Distribuit",
+    "backers": "{count, plural, one {sustinator} other {sustinatori}}"
+  },
+  "WalletBalance": {
+    "title": "Soldul tau",
+    "loaded": "incarcat",
+    "contributed": "contribuit",
+    "campaigns": "{count, plural, one {campanie} other {campanii}}"
+  },
+  "Transactions": {
+    "title": "Tranzactii recente",
+    "topUp": "Incarcare",
+    "contribution": "Contributie",
+    "refund": "Rambursare",
+    "justNow": "chiar acum",
+    "minutesAgo": "acum {count} min",
+    "hoursAgo": "acum {count} ore",
+    "daysAgo": "acum {count} zile",
+    "empty": "Nicio tranzactie inca. Incarca-ti portofelul pentru a incepe!"
+  },
+  "Activity": {
+    "noActivity": "Nicio activitate inca.",
+    "ai": "AI",
+    "human": "U"
+  },
+  "Countries": {
+    "title": "\ud83c\udf0d Tari"
+  },
+  "Synonyms": {
+    "placeholder": "Adauga un sinonim...",
+    "add": "Adauga"
+  },
+  "Join": {
+    "joined": "\u2705 Te-ai alaturat acestui Quiet Riot",
+    "join": "\u270a Alatura-te acestui Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Cauta probleme..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Impartaseste-ti gandurile...",
+    "post": "Posteaza",
+    "empty": "Nicio postare inca. Fii primul care partajeaza ceva!"
+  },
+  "Actions": {
+    "ideas": "\ud83d\udca1 Idei (Variatie)",
+    "actions": "\u26a1 Actiuni (Selectie)",
+    "together": "\ud83e\udd1d Impreuna (Comunitate)",
+    "noResults": "Nicio actiune nu corespunde filtrelor tale. Incearca sa largesti selectia."
+  },
+  "Filter": {
+    "all": "Toate",
+    "active": "Active",
+    "funded": "Finantate",
+    "disbursed": "Distribuite"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Cat timp ai?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 ora+",
+    "typeQuestion": "Ce tip?",
+    "ideas": "\ud83d\udca1 Idei",
+    "actions": "\u26a1 Actiuni",
+    "together": "\ud83e\udd1d Impreuna"
+  },
+  "Reels": {
+    "empty": "Niciun videoclip inca. Fii primul care trimite unul!",
+    "submitPrompt": "Ai un videoclip amuzant care rezuma aceasta problema?",
+    "submitSuccess": "Multumim! Videoclipul tau a fost trimis pentru revizuire.",
+    "urlPlaceholder": "Lipeste un URL YouTube...",
+    "captionPlaceholder": "Adauga o descriere (optional)...",
+    "submit": "Trimite"
+  },
+  "TopUp": {
+    "addFunds": "Adauga fonduri",
+    "minTopUp": "Incarcarea minima este \u00a31",
+    "success": "{amount} adaugat in portofelul tau!",
+    "networkError": "Eroare de retea. Te rugam sa incerci din nou.",
+    "customAmount": "Suma personalizata (\u00a3)",
+    "topUp": "Incarca",
+    "simulated": "Incarcare simulata pentru testare. Platile reale prin Stripe vin in curand."
+  },
+  "Contribute": {
+    "insufficientFunds": "Fonduri insuficiente. Incarca-ti portofelul mai intai.",
+    "minContribution": "Contributia minima este 10p",
+    "contribute": "Contribuie",
+    "yourBalance": "Soldul tau: ",
+    "networkError": "Eroare de retea. Te rugam sa incerci din nou.",
+    "invalidAmount": "Introdu o suma valida",
+    "customAmount": "Suma personalizata (\u00a3)",
+    "give": "Doneaza",
+    "success": "Ai contribuit {amount} la {campaign}!",
+    "remainingBalance": "Sold ramas: {balance}",
+    "topUpPrompt": "Incarca-ti portofelul",
+    "toKeepSupporting": "pentru a continua sa sustii campaniile.",
+    "walletEmpty": "Portofelul tau este gol.",
+    "topUp": "Incarca",
+    "toContribute": "pentru a contribui."
+  },
+  "Claim": {
+    "success": "Multumim! Am notat interesul tau pentru rolul {name}. Te vom contacta.",
+    "placeholder": "De ce ai fi potrivit ca {name}? (optional)",
+    "submitting": "Se trimite...",
+    "expressInterest": "Exprima interes"
+  },
+  "Evidence": {
+    "generalOrg": "General (fara organizatie specifica)",
+    "placeholder": "Spune ce gandesti...",
+    "photosLabel": "Fotografii (pana la 4)",
+    "addPhotos": "+ Adauga fotografii",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max 4 MB fiecare.",
+    "videoLabel": "Video (max 1)",
+    "addVideo": "+ Adauga video",
+    "videoFormats": "MP4, MOV, WebM. Max 4 MB.",
+    "linkLabel": "Link extern",
+    "linkPlaceholder": "https://articol-stiri.ro/...",
+    "hideMedia": "Ascunde media",
+    "addMedia": "\ud83d\udcce Adauga fotografii, video, linkuri",
+    "posting": "Se posteaza...",
+    "uploading": "Se incarca...",
+    "submitEvidence": "Trimite dovezile",
+    "goLive": "\ud83d\udd34 Transmite live acum",
+    "maxPhotos": "Maximum 4 fotografii. {count} omise.",
+    "videoFailed": "Incarcarea videoclipului a esuat",
+    "removePhoto": "Elimina {name}",
+    "removeVideo": "Elimina video",
+    "uploadFailed": "Incarcarea a esuat: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Editeaza profilul",
+    "nameLabel": "Nume",
+    "timeLabel": "Timp disponibil",
+    "time1min": "1 minut",
+    "time1minDesc": "Doar actiuni rapide",
+    "time10min": "10 minute",
+    "time10minDesc": "Majoritatea actiunilor",
+    "time1hour": "1 ora+",
+    "time1hourDesc": "Implicare profunda",
+    "skillsLabel": "Abilitati",
+    "skillsPlaceholder": "ex. design, scriere, juridic, programare",
+    "skillsHint": "Separate prin virgula. Te ajuta sa fii asociat cu actiuni relevante.",
+    "saving": "Se salveaza...",
+    "save": "Salveaza modificarile",
+    "cancel": "Anuleaza",
+    "nameRequired": "Numele este obligatoriu",
+    "saveFailed": "Salvarea a esuat"
+  },
+  "SignupForm": {
+    "placeholder": "tu@exemplu.ro",
+    "submit": "Notifica-ma"
+  },
+  "CookieConsent": {
+    "title": "Preferinte cookie-uri",
+    "description": "Folosim cookie-uri pentru a te mentine conectat si a-ti imbunatati experienta. Cookie-urile analitice ne ajuta sa intelegem cum este folosit site-ul.",
+    "acceptAll": "Accepta toate",
+    "essentialOnly": "Doar esentiale",
+    "manage": "Gestioneaza preferintele",
+    "essential": "Esentiale",
+    "essentialDescription": "Necesare pentru functionarea site-ului. Nu pot fi dezactivate.",
+    "analytics": "Analitice",
+    "analyticsDescription": "Ne ajuta sa intelegem cum folosesti site-ul pentru a-l putea imbunatati.",
+    "save": "Salveaza preferintele"
+  }
+}

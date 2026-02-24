@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "ఉమ్మడి సమస్యల చుట్టూ సంఘటితమవ్వండి. మీ వాళ్ళను కనుగొనండి. కలిసి చర్య తీసుకోండి."
+  },
+  "Nav": {
+    "issues": "సమస్యలు",
+    "assistants": "సహాయకులు",
+    "organisations": "సంస్థలు",
+    "wallet": "వాలెట్",
+    "profile": "ప్రొఫైల్",
+    "signIn": "సైన్ ఇన్",
+    "signOut": "సైన్ అవుట్",
+    "toggleMenu": "మెనూ టాగిల్ చేయి"
+  },
+  "Footer": {
+    "mission": "మన జీవితకాలంలో సాధ్యమని ఊహించగలిగే దానికంటే ఎక్కువ మంచి మార్పు తీసుకురావడం.",
+    "powered": "Quiet Riots · OpenClaw AI Agent ద్వారా నడుస్తోంది"
+  },
+  "Home": {
+    "tagline": "సమస్యల వన్-స్టాప్-షాప్",
+    "headline": "మార్పు శక్తివంతం కావడానికి బిగ్గరగా ఉండాల్సిన అవసరం లేదు",
+    "description": "నీ సమస్యలను పంచుకునే వారిని కనుగొను. కలిసి చర్య తీసుకో. Quiet Riots ఉమ్మడి నిరాశల చుట్టూ ప్రజలను అనుసంధానం చేసి ఫిర్యాదులను సామూహిక చర్యగా మారుస్తుంది.",
+    "browseIssues": "సమస్యలు చూడు",
+    "howItWorks": "ఎలా పని చేస్తుంది",
+    "trendingIssues": "🔥 ట్రెండింగ్ సమస్యలు",
+    "viewAll": "అన్నీ చూడు →",
+    "reelOfTheDay": "🎬 ఈ రోజు Riot Reel",
+    "riotersFunny": "{count} మంది సభ్యులు దీన్ని ఆసక్తికరంగా భావించారు",
+    "from": "నుండి:",
+    "findYourIssue": "నీ సమస్య కనుగొను",
+    "findYourIssueDesc": "ఏదైనా నిరాశను వెతుకు — రైళ్ళు, బ్రాడ్‌బ్యాండ్, NHS, వాతావరణం. ఉంటే, ఎంతమంది పంచుకుంటారో చూపిస్తాం.",
+    "useThePivot": "పివట్ ఉపయోగించు",
+    "useThePivotDesc": "ఒకే సమస్యను అన్ని సంస్థల్లో చూడు, లేదా ఒక సంస్థ యొక్క అన్ని సమస్యలు. టాంగో నర్తకులు దిశ మారినట్లు.",
+    "takeAction": "చర్య తీసుకో",
+    "takeActionDesc": "ఆలోచనలు, చర్యలు, మరియు సమాజం — నీ సమయం మరియు నైపుణ్యాలకు అనుగుణంగా. చిన్న చర్యలు కలిసి పెద్ద మార్పు తీసుకొస్తాయి.",
+    "missionQuote": "\"మన జీవితకాలంలో సాధ్యమని ఊహించగలిగే దానికంటే ఎక్కువ మంచి మార్పు తీసుకురావడం.\"",
+    "basedOn": "సైమన్ డార్లింగ్ రాసిన 2014 పుస్తకం <em>Quiet Riots</em> ఆధారంగా",
+    "joinMovement": "✊ ఉద్యమంలో చేరు"
+  },
+  "Issues": {
+    "title": "సమస్యలు",
+    "subtitle": "{categoryCount} విభాగాల్లో {count} సమస్యలు. నీది కనుగొను.",
+    "searchPlaceholder": "సమస్యలు లేదా పర్యాయపదాలు వెతుకు...",
+    "noResults": "సమస్యలు కనుగొనబడలేదు. వేరే శోధన లేదా విభాగం ప్రయత్నించు."
+  },
+  "IssueDetail": {
+    "breadcrumb": "సమస్యలు",
+    "rioters": "సభ్యులు",
+    "country": "{count, plural, one {దేశం} other {దేశాలు}}",
+    "thisWeek": "ఈ వారం",
+    "actions": "చర్యలు",
+    "alsoKnownAs": "ఇలా కూడా పిలుస్తారు",
+    "actionsTitle": "⚡ చర్యలు — నీ వ్యక్తిగత టూల్‌కిట్",
+    "actionsDesc": "పరిణామం ఆధారంగా — 💡 **ఆలోచనలు** (వైవిధ్యం), ⚡ **చర్యలు** (ఎంపిక), మరియు 🤝 **కలిసి** (సమాజం).",
+    "gatherEvidence": "📹 సాక్ష్యం సేకరించు",
+    "gatherEvidenceDesc": "ఏమి జరుగుతుందో నమోదు చేయి — లైవ్‌కి వెళ్ళు లేదా ఫోటోలు, వీడియోలు మరియు లింకులు షేర్ చేయి.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "ఈ Quiet Riot యొక్క స్ఫూర్తిని చూపించే హాస్య మరియు వ్యంగ్య వీడియోలు.",
+    "experts": "🌟 నిపుణులు",
+    "expertsDesc": "లోతుగా వెళ్ళే అభిరుచి గల వాలంటీర్లు — అనువాదకులు, నిపుణులు, మీడియా లీడ్‌లు, న్యాయ సలహాదారులు.",
+    "communityFeed": "💬 సమాజ ఫీడ్"
+  },
+  "Organisations": {
+    "title": "సంస్థలు",
+    "subtitle": "సంస్థలు చూడు మరియు ప్రజలకు ఏ సమస్యలు ఉన్నాయో తెలుసుకో.",
+    "noResults": "ఈ విభాగంలో సంస్థలు కనుగొనబడలేదు."
+  },
+  "OrgDetail": {
+    "breadcrumb": "సంస్థలు",
+    "totalRioters": "మొత్తం సభ్యులు",
+    "issues": "సమస్యలు",
+    "topIssueShare": "ప్రధాన సమస్య వాటా",
+    "paretoTitle": "పరేటో సూత్రం:",
+    "paretoDesc": "కొన్ని సమస్యలు సాధారణంగా 80% ఫిర్యాదులకు కారణమవుతాయి. కింది ప్రధాన సమస్యలు ప్రభావిత ప్రజల సంఖ్య ఆధారంగా ర్యాంక్ చేయబడ్డాయి.",
+    "gatherEvidence": "📹 సాక్ష్యం సేకరించు",
+    "gatherEvidenceDesc": "{orgName} గురించి ఏమి జరుగుతుందో నమోదు చేయి."
+  },
+  "Campaigns": {
+    "title": "ప్రచారాలు",
+    "subtitle": "{count} {count, plural, one {ప్రచారం} other {ప్రచారాలు}} మార్పు కోసం నిధులు సేకరిస్తున్నాయి.",
+    "noResults": "ప్రచారాలు కనుగొనబడలేదు. వేరే ఫిల్టర్ ప్రయత్నించు."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "ప్రచారాలు",
+    "fullyFunded": "పూర్తిగా నిధులు సమకూరాయి",
+    "disbursed": "నిధులు పంపిణీ చేయబడ్డాయి",
+    "cancelled": "రద్దు చేయబడింది",
+    "active": "సక్రియం",
+    "target": "లక్ష్యం",
+    "raised": "సేకరించబడింది",
+    "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}",
+    "platformFee": "ప్లాట్‌ఫారమ్ ఫీ",
+    "wantToContribute": "సహకరించాలనుకుంటున్నావా?",
+    "topUpFirst": "సహకరించడం మొదలుపెట్టడానికి ముందు నీ వాలెట్ టాప్-అప్ చేయి.",
+    "createAccountPrompt": "ఈ ప్రచారానికి మద్దతు ఇవ్వడానికి ఖాతా సృష్టించి వాలెట్‌లో డబ్బు వేయి.",
+    "goToWallet": "వాలెట్‌కి వెళ్ళు",
+    "createAccount": "ఖాతా సృష్టించు",
+    "completedMessage": "ఈ ప్రచారం {status} అయింది. అందరు {count} మద్దతుదారులకు ధన్యవాదాలు!",
+    "recipient": "గ్రహీత"
+  },
+  "Assistants": {
+    "title": "సహాయకులు",
+    "subtitle": "{count} జంటల AI ఏజెంట్లు మరియు మానవ నిర్వాహకులు సభ్యులకు చర్య తీసుకోవడంలో సహాయం చేస్తారు.",
+    "noResults": "ఇంకా సహాయకులు అందుబాటులో లేరు."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "సహాయకులు",
+    "aiAgent": "AI ఏజెంట్",
+    "humanOrganiser": "మానవ నిర్వాహకుడు",
+    "rioters": "సభ్యులు",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "సందేశాలు",
+    "currentFocus": "ప్రస్తుత దృష్టి",
+    "recentActivity": "ఇటీవలి కార్యకలాపం",
+    "riotsWeHelp": "మేము సహాయం చేసే Quiet Riots",
+    "wantToBe": "{name} అవ్వాలనుకుంటున్నావా?",
+    "openRole": "మానవ నిర్వాహకుడి పాత్ర ఈ విభాగంపై అభిరుచి ఉన్న ఎవరికైనా తెరిచి ఉంది. కింద నీ ఆసక్తిని వ్యక్తం చేయి."
+  },
+  "Wallet": {
+    "title": "నీ వాలెట్",
+    "createPromptTitle": "కారణాలకు మద్దతు ఇవ్వడం మొదలుపెట్టు",
+    "createPromptDesc": "ఉచిత ఖాతా సృష్టించు, డబ్బు వేయి మరియు నీకు ముఖ్యమైన ప్రచారాలకు సహకరించు.",
+    "createAccount": "ఖాతా సృష్టించు",
+    "activeCampaigns": "సక్రియ ప్రచారాలు",
+    "viewAll": "అన్నీ చూడు"
+  },
+  "Profile": {
+    "title": "నీ ప్రొఫైల్",
+    "time": "సమయం: ",
+    "skills": "నైపుణ్యాలు: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {పోస్ట్} other {పోస్ట్‌లు}}",
+    "likes": "{count, plural, one {లైక్ వచ్చింది} other {లైక్‌లు వచ్చాయి}}",
+    "yourRiots": "నీ Quiet Riots",
+    "noRiots": "ఇంకా Quiet Riots లేవు",
+    "findIssues": "నీకు ముఖ్యమైన సమస్యలను కనుగొని ఉద్యమంలో చేరు.",
+    "browseIssues": "సమస్యలు చూడు",
+    "memberSince": "సభ్యుడైన తేదీ",
+    "rioters": "సభ్యులు",
+    "connectedAccounts": "అనుసంధానించిన ఖాతాలు",
+    "noConnectedAccounts": "ఇంకా ఖాతాలు అనుసంధానించబడలేదు. నీ ఖాతాను లింక్ చేయడానికి Google లేదా Facebook తో సైన్ ఇన్ చేయి.",
+    "deactivateAccount": "ఖాతా నిష్క్రియం చేయి",
+    "deactivateConfirm": "నీ ఖాతాను నిజంగా నిష్క్రియం చేయాలనుకుంటున్నావా? 30 రోజుల్లో మళ్ళీ సక్రియం చేయవచ్చు."
+  },
+  "Auth": {
+    "welcomeBack": "తిరిగి స్వాగతం",
+    "signInSubtitle": "నీ Quiet Riots ఖాతాలో సైన్ ఇన్ చేయి",
+    "joinTitle": "Quiet Riots లో చేరు",
+    "joinSubtitle": "ఉమ్మడి సమస్యల చుట్టూ సంఘటితమవ్వు. కలిసి చర్య తీసుకో.",
+    "continueGoogle": "Google తో కొనసాగించు",
+    "continueFacebook": "Facebook తో కొనసాగించు",
+    "connecting": "కనెక్ట్ అవుతోంది...",
+    "or": "లేదా",
+    "emailLabel": "ఇమెయిల్ చిరునామా",
+    "sendMagicLink": "మ్యాజిక్ లింక్ పంపు",
+    "signUpWithEmail": "ఇమెయిల్‌తో సైన్ అప్ చేయి",
+    "sendingLink": "లింక్ పంపుతోంది...",
+    "checkEmail": "నీ ఇమెయిల్ చెక్ చేయి",
+    "signInLinkSent": "నీ ఇమెయిల్ చిరునామాకు సైన్-ఇన్ లింక్ పంపాము. కొనసాగించడానికి లింక్ క్లిక్ చేయి.",
+    "signUpLinkSent": "నీ ఇమెయిల్ చిరునామాకు సైన్-ఇన్ లింక్ పంపాము. నీ ఖాతా సృష్టించడానికి లింక్ క్లిక్ చేయి.",
+    "noAccount": "ఖాతా లేదా?",
+    "signUp": "సైన్ అప్",
+    "hasAccount": "ఇప్పటికే ఖాతా ఉందా?",
+    "signIn": "సైన్ ఇన్",
+    "termsAgree": "సైన్ అప్ చేయడం ద్వారా, నీవు మా నిబంధనలకు అంగీకరిస్తున్నావు",
+    "terms": "నిబంధనలు",
+    "and": "మరియు",
+    "privacyPolicy": "గోప్యతా విధానం",
+    "verifyTitle": "నీ ఇమెయిల్ చెక్ చేయి",
+    "verifyDesc": "నీ ఇమెయిల్ చిరునామాకు సైన్-ఇన్ లింక్ పంపబడింది. కొనసాగించడానికి లింక్ క్లిక్ చేయి.",
+    "backToSignIn": "సైన్ ఇన్‌కు తిరిగి వెళ్ళు",
+    "errorTitle": "ప్రమాణీకరణ లోపం",
+    "errorConfig": "సర్వర్ కాన్ఫిగరేషన్‌లో సమస్య ఉంది.",
+    "errorAccess": "యాక్సెస్ నిరాకరించబడింది. నీకు సైన్ ఇన్ చేయడానికి అనుమతి ఉండకపోవచ్చు.",
+    "errorVerification": "సైన్-ఇన్ లింక్ గడువు ముగిసింది లేదా ఇప్పటికే వాడబడింది.",
+    "errorDefault": "ప్రమాణీకరణ సమయంలో లోపం సంభవించింది.",
+    "tryAgain": "మళ్ళీ ప్రయత్నించు"
+  },
+  "AuthGate": {
+    "signInTo": "{action} కోసం సైన్ ఇన్ చేయి",
+    "signIn": "సైన్ ఇన్",
+    "signInRequired": "సైన్ ఇన్ అవసరం",
+    "signInToAction": "{action} కోసం నీవు సైన్ ఇన్ చేయాలి.",
+    "cancel": "రద్దు",
+    "noAccount": "ఖాతా లేదా?",
+    "signUp": "సైన్ అప్"
+  },
+  "Error": {
+    "title": "ఏదో తప్పు జరిగింది",
+    "description": "ఊహించని లోపం సంభవించింది.",
+    "tryAgain": "మళ్ళీ ప్రయత్నించు"
+  },
+  "GlobalError": {
+    "title": "ఏదో తప్పు జరిగింది",
+    "description": "ఊహించని లోపం సంభవించింది. మా బృందానికి తెలియజేయబడింది.",
+    "tryAgain": "మళ్ళీ ప్రయత్నించు"
+  },
+  "NotFound": {
+    "title": "పేజీ కనుగొనబడలేదు",
+    "description": "నీవు వెతుకుతున్న పేజీ లేదు లేదా తరలించబడింది.",
+    "goHome": "హోమ్‌కు వెళ్ళు"
+  },
+  "Cards": {
+    "rioters": "సభ్యులు",
+    "country": "{count, plural, one {దేశం} other {దేశాలు}}",
+    "issues": "సమస్యలు",
+    "idea": "ఆలోచన",
+    "action": "చర్య",
+    "together": "కలిసి",
+    "time1min": "1 నిమిషం",
+    "time10min": "10 నిమిషాలు",
+    "time1hour": "1 గంట+",
+    "skills": "నైపుణ్యాలు: ",
+    "anonymous": "అనామకం",
+    "curated": "క్యూరేట్ చేసింది",
+    "community": "సమాజం",
+    "aiPick": "AI ఎంపిక",
+    "funded": "నిధులు సమకూరాయి",
+    "disbursed": "పంపిణీ చేయబడింది",
+    "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}",
+    "aiAndHuman": "AI ఏజెంట్ & మానవ నిర్వాహకుడు",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 సమాజ భావన సూచిక",
+    "needsMet": "అవసరాలు తీరాయి",
+    "needsMetDesc": "సభ్యులు ఇది విలువైనదని భావిస్తారు",
+    "membership": "సభ్యత్వం",
+    "membershipDesc": "నమ్మకం & చెందిన భావన",
+    "influence": "ప్రభావం",
+    "influenceDesc": "నీ గొంతు ముఖ్యం",
+    "connection": "అనుసంధానం",
+    "connectionDesc": "పంచుకున్న అనుభవాలు",
+    "healthy": "ఆరోగ్యకరం",
+    "growing": "పెరుగుతోంది",
+    "needsAttention": "శ్రద్ధ అవసరం"
+  },
+  "Pivot": {
+    "title": "🔀 పివట్",
+    "peopleGlobally": "ప్రజలు ప్రపంచవ్యాప్తంగా",
+    "issuePivot": "🔍 సమస్య పివట్",
+    "issuePivotDesc": "అదే సమస్య, అన్ని సంస్థలు",
+    "orgPivot": "🏢 సంస్థ పివట్",
+    "orgPivotDesc": "అన్ని సమస్యలు, ఒక సంస్థ",
+    "seeIssueAcross": "\"{issueName}\" అన్ని సారూప్య సంస్థల్లో చూడు:",
+    "seeOrgIssues": "{orgName} యొక్క అన్ని సమస్యలు చూడు:",
+    "you": "నీవు",
+    "rioters": "సభ్యులు"
+  },
+  "CampaignProgress": {
+    "title": "💰 ప్రచారాలు",
+    "funded": "నిధులు సమకూరాయి",
+    "disbursed": "పంపిణీ చేయబడింది",
+    "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}"
+  },
+  "WalletBalance": {
+    "title": "నీ బ్యాలెన్స్",
+    "loaded": "లోడ్ చేయబడింది",
+    "contributed": "సహకరించబడింది",
+    "campaigns": "{count, plural, one {ప్రచారం} other {ప్రచారాలు}}"
+  },
+  "Transactions": {
+    "title": "ఇటీవలి లావాదేవీలు",
+    "topUp": "టాప్-అప్",
+    "contribution": "సహకారం",
+    "refund": "రీఫండ్",
+    "justNow": "ఇప్పుడే",
+    "minutesAgo": "{count} నిమిషాల క్రితం",
+    "hoursAgo": "{count} గంటల క్రితం",
+    "daysAgo": "{count} రోజుల క్రితం",
+    "empty": "ఇంకా లావాదేవీలు లేవు. ప్రారంభించడానికి నీ వాలెట్ టాప్-అప్ చేయి!"
+  },
+  "Activity": {
+    "noActivity": "ఇంకా కార్యకలాపం లేదు.",
+    "ai": "AI",
+    "human": "మా"
+  },
+  "Countries": {
+    "title": "🌍 దేశాలు"
+  },
+  "Synonyms": {
+    "placeholder": "పర్యాయపదం జోడించు...",
+    "add": "జోడించు"
+  },
+  "Join": {
+    "joined": "✅ ఈ Quiet Riot లో చేరావు",
+    "join": "✊ ఈ Quiet Riot లో చేరు"
+  },
+  "Search": {
+    "placeholder": "సమస్యలు వెతుకు..."
+  },
+  "Feed": {
+    "composerPlaceholder": "నీ ఆలోచనలు పంచుకో...",
+    "post": "పోస్ట్",
+    "empty": "ఇంకా పోస్ట్‌లు లేవు. మొదటిగా షేర్ చేయి!"
+  },
+  "Actions": {
+    "ideas": "💡 ఆలోచనలు (వైవిధ్యం)",
+    "actions": "⚡ చర్యలు (ఎంపిక)",
+    "together": "🤝 కలిసి (సమాజం)",
+    "noResults": "నీ ఫిల్టర్‌లకు చర్యలు సరిపోలలేదు. నీ ఎంపికను విస్తరించి చూడు."
+  },
+  "Filter": {
+    "all": "అన్నీ",
+    "active": "సక్రియం",
+    "funded": "నిధులు సమకూరాయి",
+    "disbursed": "పంపిణీ చేయబడింది"
+  },
+  "TimeSkill": {
+    "timeQuestion": "నీకు ఎంత సమయం ఉంది?",
+    "time1min": "1 నిమిషం",
+    "time10min": "10 నిమిషాలు",
+    "time1hour": "1 గంట+",
+    "typeQuestion": "ఏ రకం?",
+    "ideas": "💡 ఆలోచనలు",
+    "actions": "⚡ చర్యలు",
+    "together": "🤝 కలిసి"
+  },
+  "Reels": {
+    "empty": "ఇంకా రీల్స్ లేవు. మొదటిగా సబ్మిట్ చేయి!",
+    "submitPrompt": "ఈ సమస్యను సంక్షిప్తంగా చూపించే హాస్య వీడియో ఉందా?",
+    "submitSuccess": "ధన్యవాదాలు! నీ రీల్ సమీక్ష కోసం సబ్మిట్ చేయబడింది.",
+    "urlPlaceholder": "YouTube URL పేస్ట్ చేయి...",
+    "captionPlaceholder": "క్యాప్షన్ జోడించు (ఐచ్ఛికం)...",
+    "submit": "సబ్మిట్ చేయి"
+  },
+  "TopUp": {
+    "addFunds": "డబ్బు జోడించు",
+    "minTopUp": "కనీస టాప్-అప్ £1",
+    "success": "నీ వాలెట్‌కి {amount} జోడించబడింది!",
+    "networkError": "నెట్‌వర్క్ లోపం. దయచేసి మళ్ళీ ప్రయత్నించు.",
+    "customAmount": "కస్టమ్ మొత్తం (£)",
+    "topUp": "టాప్-అప్",
+    "simulated": "పరీక్ష కోసం సిమ్యులేటెడ్ టాప్-అప్. త్వరలో Stripe ద్వారా నిజమైన చెల్లింపులు."
+  },
+  "Contribute": {
+    "insufficientFunds": "తగినంత నిధులు లేవు. ముందు నీ వాలెట్ టాప్-అప్ చేయి.",
+    "minContribution": "కనీస సహకారం 10p",
+    "contribute": "సహకరించు",
+    "yourBalance": "నీ బ్యాలెన్స్: ",
+    "networkError": "నెట్‌వర్క్ లోపం. దయచేసి మళ్ళీ ప్రయత్నించు.",
+    "invalidAmount": "చెల్లుబాటయ్యే మొత్తం నమోదు చేయి",
+    "customAmount": "కస్టమ్ మొత్తం (£)",
+    "give": "ఇవ్వు",
+    "success": "{campaign} కి {amount} సహకరించబడింది!",
+    "remainingBalance": "నీ మిగిలిన బ్యాలెన్స్: {balance}",
+    "topUpPrompt": "నీ వాలెట్ టాప్-అప్ చేయి",
+    "toKeepSupporting": "ప్రచారాలకు మద్దతు కొనసాగించడానికి.",
+    "walletEmpty": "నీ వాలెట్ ఖాళీగా ఉంది.",
+    "topUp": "టాప్-అప్ చేయి",
+    "toContribute": "సహకరించడానికి."
+  },
+  "Claim": {
+    "success": "ధన్యవాదాలు! {name} పాత్రలో నీ ఆసక్తి నమోదు చేసుకున్నాము. మేము సంప్రదిస్తాము.",
+    "placeholder": "{name} గా నీవు ఎందుకు గొప్పగా ఉంటావు? (ఐచ్ఛికం)",
+    "submitting": "సబ్మిట్ చేస్తోంది...",
+    "expressInterest": "ఆసక్తి వ్యక్తం చేయి"
+  },
+  "Evidence": {
+    "generalOrg": "సాధారణం (నిర్దిష్ట సంస్థ లేదు)",
+    "placeholder": "నీ అభిప్రాయం చెప్పు...",
+    "photosLabel": "ఫోటోలు (గరిష్టంగా 4)",
+    "addPhotos": "+ ఫోటోలు జోడించు",
+    "photoFormats": "JPEG, PNG, WebP, GIF. గరిష్టంగా 4 MB ఒక్కొక్కటి.",
+    "videoLabel": "వీడియో (గరిష్టంగా 1)",
+    "addVideo": "+ వీడియో జోడించు",
+    "videoFormats": "MP4, MOV, WebM. గరిష్టంగా 4 MB.",
+    "linkLabel": "బాహ్య లింక్",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "మీడియా దాచు",
+    "addMedia": "📎 ఫోటోలు, వీడియో, లింక్‌లు జోడించు",
+    "posting": "పోస్ట్ చేస్తోంది...",
+    "uploading": "అప్‌లోడ్ చేస్తోంది...",
+    "submitEvidence": "సాక్ష్యం సబ్మిట్ చేయి",
+    "goLive": "🔴 ఇప్పుడే లైవ్‌కి వెళ్ళు",
+    "maxPhotos": "గరిష్టంగా 4 ఫోటోలు. {count} వదిలేయబడ్డాయి.",
+    "videoFailed": "వీడియో అప్‌లోడ్ విఫలమైంది",
+    "removePhoto": "{name} తొలగించు",
+    "removeVideo": "వీడియో తొలగించు",
+    "uploadFailed": "అప్‌లోడ్ విఫలం: {names}"
+  },
+  "ProfileEdit": {
+    "title": "ప్రొఫైల్ సవరించు",
+    "nameLabel": "పేరు",
+    "timeLabel": "అందుబాటులో ఉన్న సమయం",
+    "time1min": "1 నిమిషం",
+    "time1minDesc": "త్వరిత చర్యలు మాత్రమే",
+    "time10min": "10 నిమిషాలు",
+    "time10minDesc": "చాలావరకు చర్యలు",
+    "time1hour": "1 గంట+",
+    "time1hourDesc": "లోతైన పాల్గొనడం",
+    "skillsLabel": "నైపుణ్యాలు",
+    "skillsPlaceholder": "ఉదా. డిజైన్, రాయడం, న్యాయ, కోడింగ్",
+    "skillsHint": "కామాతో వేరు చేయి. సంబంధిత చర్యలతో సరిపోల్చడంలో సహాయపడుతుంది.",
+    "saving": "సేవ్ చేస్తోంది...",
+    "save": "మార్పులు సేవ్ చేయి",
+    "cancel": "రద్దు",
+    "nameRequired": "పేరు తప్పనిసరి",
+    "saveFailed": "సేవ్ చేయడం విఫలమైంది"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "నాకు తెలియజేయి"
+  },
+  "CookieConsent": {
+    "title": "కుకీ ప్రాధాన్యతలు",
+    "description": "నిన్ను సైన్ ఇన్ చేసి ఉంచడానికి మరియు అనుభవాన్ని మెరుగుపరచడానికి కుకీలు వాడతాము. అనలిటిక్స్ కుకీలు సైట్ ఎలా వాడబడుతుందో అర్థం చేసుకోవడంలో సహాయపడతాయి.",
+    "acceptAll": "అన్నీ ఆమోదించు",
+    "essentialOnly": "అవసరమైనవి మాత్రమే",
+    "manage": "ప్రాధాన్యతలు నిర్వహించు",
+    "essential": "అవసరమైనవి",
+    "essentialDescription": "సైట్ పని చేయడానికి అవసరం. నిలిపివేయలేము.",
+    "analytics": "అనలిటిక్స్",
+    "analyticsDescription": "నీవు సైట్‌ను ఎలా వాడతావో అర్థం చేసుకోవడంలో సహాయపడు, మేము మెరుగుపరచడానికి.",
+    "save": "ప్రాధాన్యతలు సేవ్ చేయి"
+  }
+}

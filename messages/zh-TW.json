@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "圍繞共同議題組織起來。找到志同道合的人。一起行動。"
+  },
+  "Nav": {
+    "issues": "議題",
+    "assistants": "助手",
+    "organisations": "組織",
+    "wallet": "錢包",
+    "profile": "個人資料",
+    "signIn": "登入",
+    "signOut": "登出",
+    "toggleMenu": "切換選單"
+  },
+  "Footer": {
+    "mission": "在有生之年，改變更多我們不敢想像能實現的美好。",
+    "powered": "Quiet Riots · 由 OpenClaw AI 智慧代理驅動"
+  },
+  "Home": {
+    "tagline": "議題一站式平台",
+    "headline": "改變不必喧嘩，也能充滿力量",
+    "description": "找到和你有共同議題的人。一起行動。Quiet Riots 將人們圍繞共同的不滿連結起來，把抱怨變成集體行動。",
+    "browseIssues": "瀏覽議題",
+    "howItWorks": "運作方式",
+    "trendingIssues": "🔥 熱門議題",
+    "viewAll": "查看全部 →",
+    "reelOfTheDay": "🎬 每日 Riot 短片",
+    "riotersFunny": "{count} 位參與者覺得這很有趣",
+    "from": "來自：",
+    "findYourIssue": "找到你的議題",
+    "findYourIssueDesc": "搜尋任何讓你不滿的事——火車、寬頻、醫療、氣候。如果已有人關注，我們會告訴你有多少人和你有同樣的感受。",
+    "useThePivot": "使用透視功能",
+    "useThePivotDesc": "從所有組織的角度看同一個議題，或從一個組織的角度看所有議題。就像探戈舞者轉換方向。",
+    "takeAction": "採取行動",
+    "takeActionDesc": "創意、行動和社群——根據你的時間和技能量身打造。小行動匯聚成大改變。",
+    "missionQuote": "\"在有生之年，改變更多我們不敢想像能實現的美好。\"",
+    "basedOn": "基於 Simon Darling 2014 年著作《<em>Quiet Riots</em>》",
+    "joinMovement": "✊ 加入運動"
+  },
+  "Issues": {
+    "title": "議題",
+    "subtitle": "{count} 個議題，涵蓋 {categoryCount} 個類別。找到屬於你的。",
+    "searchPlaceholder": "搜尋議題或同義詞...",
+    "noResults": "未找到議題。請嘗試不同的搜尋詞或類別。"
+  },
+  "IssueDetail": {
+    "breadcrumb": "議題",
+    "rioters": "參與者",
+    "country": "{count, plural, one {個國家} other {個國家}}",
+    "thisWeek": "本週",
+    "actions": "項行動",
+    "alsoKnownAs": "又稱為",
+    "actionsTitle": "⚡ 行動——你的個人工具包",
+    "actionsDesc": "基於演化論——💡 **創意**（變異）、⚡ **行動**（選擇）和 🤝 **協作**（社群）。",
+    "gatherEvidence": "📹 蒐集證據",
+    "gatherEvidenceDesc": "記錄正在發生的事——直播或分享照片、影片和連結。",
+    "riotReels": "🎬 Riot 短片",
+    "riotReelsDesc": "有趣且諷刺的影片，捕捉這場 Quiet Riot 的精神。",
+    "experts": "🌟 專家",
+    "expertsDesc": "充滿熱情的志工，深入各個領域——翻譯、專業人士、媒體負責人、法律顧問。",
+    "communityFeed": "💬 社群動態"
+  },
+  "Organisations": {
+    "title": "組織",
+    "subtitle": "瀏覽組織，了解人們對每個組織有哪些議題。",
+    "noResults": "該類別下沒有找到組織。"
+  },
+  "OrgDetail": {
+    "breadcrumb": "組織",
+    "totalRioters": "參與者總數",
+    "issues": "個議題",
+    "topIssueShare": "首要議題佔比",
+    "paretoTitle": "帕累托法則：",
+    "paretoDesc": "少數議題通常佔所有投訴的 80%。以下熱門議題按受影響人數排列。",
+    "gatherEvidence": "📹 蒐集證據",
+    "gatherEvidenceDesc": "記錄 {orgName} 正在發生的事。"
+  },
+  "Campaigns": {
+    "title": "募資活動",
+    "subtitle": "{count} {count, plural, one {個募資活動} other {個募資活動}}正在為改變籌集資金。",
+    "noResults": "未找到募資活動。請嘗試不同的篩選條件。"
+  },
+  "CampaignDetail": {
+    "breadcrumb": "募資活動",
+    "fullyFunded": "已滿額籌集",
+    "disbursed": "資金已撥付",
+    "cancelled": "已取消",
+    "active": "進行中",
+    "target": "目標",
+    "raised": "已籌集",
+    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "platformFee": "平台費用",
+    "wantToContribute": "想要捐款？",
+    "topUpFirst": "請先為錢包儲值，即可開始捐款。",
+    "createAccountPrompt": "建立帳戶並為錢包儲值，支持此募資活動。",
+    "goToWallet": "前往錢包",
+    "createAccount": "建立帳戶",
+    "completedMessage": "此募資活動已{status}。感謝所有 {count} 位支持者！",
+    "recipient": "接收方"
+  },
+  "Assistants": {
+    "title": "助手",
+    "subtitle": "{count} 對 AI 智慧代理和人類組織者，幫助參與者採取行動。",
+    "noResults": "暫無可用助手。"
+  },
+  "AssistantDetail": {
+    "breadcrumb": "助手",
+    "aiAgent": "AI 智慧代理",
+    "humanOrganiser": "人類組織者",
+    "rioters": "參與者",
+    "riots": "{count, plural, one {場 Quiet Riot} other {場 Quiet Riot}}",
+    "messages": "則訊息",
+    "currentFocus": "目前關注",
+    "recentActivity": "近期活動",
+    "riotsWeHelp": "我們協助的 Quiet Riots",
+    "wantToBe": "想成為 {name} 嗎？",
+    "openRole": "人類組織者角色面向所有對此類別充滿熱情的人開放。請在下方表達你的興趣。"
+  },
+  "Wallet": {
+    "title": "你的錢包",
+    "createPromptTitle": "開始支持公益",
+    "createPromptDesc": "建立免費帳戶來儲值資金，為你關心的募資活動捐款。",
+    "createAccount": "建立帳戶",
+    "activeCampaigns": "進行中的募資活動",
+    "viewAll": "查看全部"
+  },
+  "Profile": {
+    "title": "你的個人資料",
+    "time": "時間：",
+    "skills": "技能：",
+    "quietRiot": "{count, plural, one {場 Quiet Riot} other {場 Quiet Riot}}",
+    "posts": "{count, plural, one {篇貼文} other {篇貼文}}",
+    "likes": "{count, plural, one {個獲讚} other {個獲讚}}",
+    "yourRiots": "你的 Quiet Riots",
+    "noRiots": "還沒有加入 Quiet Riots",
+    "findIssues": "找到你關心的議題，加入運動。",
+    "browseIssues": "瀏覽議題",
+    "memberSince": "加入時間",
+    "rioters": "參與者",
+    "connectedAccounts": "已連結帳戶",
+    "noConnectedAccounts": "尚未連結任何帳戶。使用 Google 或 Facebook 登入以連結你的帳戶。",
+    "deactivateAccount": "停用帳戶",
+    "deactivateConfirm": "確定要停用你的帳戶嗎？你可以在 30 天內重新啟用。"
+  },
+  "Auth": {
+    "welcomeBack": "歡迎回來",
+    "signInSubtitle": "登入你的 Quiet Riots 帳戶",
+    "joinTitle": "加入 Quiet Riots",
+    "joinSubtitle": "圍繞共同議題組織起來。一起行動。",
+    "continueGoogle": "使用 Google 繼續",
+    "continueFacebook": "使用 Facebook 繼續",
+    "connecting": "連線中...",
+    "or": "或",
+    "emailLabel": "電子郵件地址",
+    "sendMagicLink": "傳送登入連結",
+    "signUpWithEmail": "使用電子郵件註冊",
+    "sendingLink": "正在傳送連結...",
+    "checkEmail": "請查看你的信箱",
+    "signInLinkSent": "我們已向你的信箱傳送了登入連結。點擊連結即可繼續。",
+    "signUpLinkSent": "我們已向你的信箱傳送了登入連結。點擊連結即可建立帳戶。",
+    "noAccount": "還沒有帳戶？",
+    "signUp": "註冊",
+    "hasAccount": "已有帳戶？",
+    "signIn": "登入",
+    "termsAgree": "註冊即表示你同意我們的",
+    "terms": "服務條款",
+    "and": "和",
+    "privacyPolicy": "隱私權政策",
+    "verifyTitle": "請查看你的信箱",
+    "verifyDesc": "登入連結已傳送至你的信箱。點擊連結即可繼續。",
+    "backToSignIn": "返回登入",
+    "errorTitle": "驗證錯誤",
+    "errorConfig": "伺服器設定出現問題。",
+    "errorAccess": "存取被拒絕。你可能沒有登入權限。",
+    "errorVerification": "登入連結已過期或已被使用。",
+    "errorDefault": "驗證過程中發生錯誤。",
+    "tryAgain": "重試"
+  },
+  "AuthGate": {
+    "signInTo": "登入以{action}",
+    "signIn": "登入",
+    "signInRequired": "需要登入",
+    "signInToAction": "你需要登入才能{action}。",
+    "cancel": "取消",
+    "noAccount": "還沒有帳戶？",
+    "signUp": "註冊"
+  },
+  "Error": {
+    "title": "出了點問題",
+    "description": "發生了意外錯誤。",
+    "tryAgain": "重試"
+  },
+  "GlobalError": {
+    "title": "出了點問題",
+    "description": "發生了意外錯誤。我們的團隊已收到通知。",
+    "tryAgain": "重試"
+  },
+  "NotFound": {
+    "title": "找不到頁面",
+    "description": "你要找的頁面不存在或已被移動。",
+    "goHome": "返回首頁"
+  },
+  "Cards": {
+    "rioters": "參與者",
+    "country": "{count, plural, one {個國家} other {個國家}}",
+    "issues": "個議題",
+    "idea": "創意",
+    "action": "行動",
+    "together": "協作",
+    "time1min": "1 分鐘",
+    "time10min": "10 分鐘",
+    "time1hour": "1 小時+",
+    "skills": "技能：",
+    "anonymous": "匿名",
+    "curated": "精選",
+    "community": "社群",
+    "aiPick": "AI 推薦",
+    "funded": "已籌滿",
+    "disbursed": "已撥付",
+    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "aiAndHuman": "AI 智慧代理和人類組織者",
+    "riots": "{count, plural, one {場 Quiet Riot} other {場 Quiet Riot}}"
+  },
+  "Health": {
+    "title": "📊 社群歸屬感指數",
+    "needsMet": "需求滿足",
+    "needsMetDesc": "成員認為參與是值得的",
+    "membership": "成員感",
+    "membershipDesc": "信任與歸屬",
+    "influence": "影響力",
+    "influenceDesc": "你的聲音很重要",
+    "connection": "連結感",
+    "connectionDesc": "共同的經歷",
+    "healthy": "健康",
+    "growing": "成長中",
+    "needsAttention": "需要關注"
+  },
+  "Pivot": {
+    "title": "🔀 透視功能",
+    "peopleGlobally": "全球參與者",
+    "issuePivot": "🔍 議題透視",
+    "issuePivotDesc": "同一議題，所有組織",
+    "orgPivot": "🏢 組織透視",
+    "orgPivotDesc": "所有議題，一個組織",
+    "seeIssueAcross": "查看「{issueName}」在所有相關組織中的情況：",
+    "seeOrgIssues": "查看 {orgName} 的所有議題：",
+    "you": "你",
+    "rioters": "參與者"
+  },
+  "CampaignProgress": {
+    "title": "💰 募資活動",
+    "funded": "已籌滿",
+    "disbursed": "已撥付",
+    "backers": "{count, plural, one {位支持者} other {位支持者}}"
+  },
+  "WalletBalance": {
+    "title": "你的餘額",
+    "loaded": "已儲值",
+    "contributed": "已捐款",
+    "campaigns": "{count, plural, one {個募資活動} other {個募資活動}}"
+  },
+  "Transactions": {
+    "title": "近期交易",
+    "topUp": "儲值",
+    "contribution": "捐款",
+    "refund": "退款",
+    "justNow": "剛剛",
+    "minutesAgo": "{count}分鐘前",
+    "hoursAgo": "{count}小時前",
+    "daysAgo": "{count}天前",
+    "empty": "暫無交易紀錄。為錢包儲值即可開始！"
+  },
+  "Activity": {
+    "noActivity": "暫無活動。",
+    "ai": "AI",
+    "human": "人"
+  },
+  "Countries": {
+    "title": "🌍 國家"
+  },
+  "Synonyms": {
+    "placeholder": "新增同義詞...",
+    "add": "新增"
+  },
+  "Join": {
+    "joined": "✅ 已加入此 Quiet Riot",
+    "join": "✊ 加入此 Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "搜尋議題..."
+  },
+  "Feed": {
+    "composerPlaceholder": "分享你的想法...",
+    "post": "發佈",
+    "empty": "還沒有貼文。來發第一則吧！"
+  },
+  "Actions": {
+    "ideas": "💡 創意（變異）",
+    "actions": "⚡ 行動（選擇）",
+    "together": "🤝 協作（社群）",
+    "noResults": "沒有符合篩選條件的行動。請嘗試擴大篩選範圍。"
+  },
+  "Filter": {
+    "all": "全部",
+    "active": "進行中",
+    "funded": "已籌滿",
+    "disbursed": "已撥付"
+  },
+  "TimeSkill": {
+    "timeQuestion": "你有多少時間？",
+    "time1min": "1 分鐘",
+    "time10min": "10 分鐘",
+    "time1hour": "1 小時+",
+    "typeQuestion": "什麼類型？",
+    "ideas": "💡 創意",
+    "actions": "⚡ 行動",
+    "together": "🤝 協作"
+  },
+  "Reels": {
+    "empty": "還沒有短片。來提交第一個吧！",
+    "submitPrompt": "有一個能概括這個議題的搞笑影片？",
+    "submitSuccess": "謝謝！你的短片已提交審核。",
+    "urlPlaceholder": "貼上 YouTube 連結...",
+    "captionPlaceholder": "新增標題（可選）...",
+    "submit": "提交"
+  },
+  "TopUp": {
+    "addFunds": "儲值",
+    "minTopUp": "最低儲值 £1",
+    "success": "已向你的錢包新增 {amount}！",
+    "networkError": "網路錯誤，請重試。",
+    "customAmount": "自訂金額（£）",
+    "topUp": "儲值",
+    "simulated": "模擬儲值，僅供測試。Stripe 真實付款即將上線。"
+  },
+  "Contribute": {
+    "insufficientFunds": "餘額不足。請先為錢包儲值。",
+    "minContribution": "最低捐款 10 便士",
+    "contribute": "捐款",
+    "yourBalance": "你的餘額：",
+    "networkError": "網路錯誤，請重試。",
+    "invalidAmount": "請輸入有效金額",
+    "customAmount": "自訂金額（£）",
+    "give": "捐出",
+    "success": "已向 {campaign} 捐款 {amount}！",
+    "remainingBalance": "你的剩餘餘額：{balance}",
+    "topUpPrompt": "為錢包儲值",
+    "toKeepSupporting": "以繼續支持募資活動。",
+    "walletEmpty": "你的錢包是空的。",
+    "topUp": "儲值",
+    "toContribute": "以進行捐款。"
+  },
+  "Claim": {
+    "success": "謝謝！我們已記錄你對 {name} 角色的興趣。我們會與你聯繫。",
+    "placeholder": "為什麼你適合擔任 {name}？（可選）",
+    "submitting": "提交中...",
+    "expressInterest": "表達興趣"
+  },
+  "Evidence": {
+    "generalOrg": "通用（不針對特定組織）",
+    "placeholder": "說出你的想法...",
+    "photosLabel": "照片（最多 4 張）",
+    "addPhotos": "+ 新增照片",
+    "photoFormats": "JPEG、PNG、WebP、GIF。每張最大 4 MB。",
+    "videoLabel": "影片（最多 1 個）",
+    "addVideo": "+ 新增影片",
+    "videoFormats": "MP4、MOV、WebM。最大 4 MB。",
+    "linkLabel": "外部連結",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "隱藏媒體",
+    "addMedia": "📎 新增照片、影片、連結",
+    "posting": "發佈中...",
+    "uploading": "上傳中...",
+    "submitEvidence": "提交證據",
+    "goLive": "🔴 立即直播",
+    "maxPhotos": "最多 4 張照片。已跳過 {count} 張。",
+    "videoFailed": "影片上傳失敗",
+    "removePhoto": "移除 {name}",
+    "removeVideo": "移除影片",
+    "uploadFailed": "上傳失敗：{names}"
+  },
+  "ProfileEdit": {
+    "title": "編輯個人資料",
+    "nameLabel": "姓名",
+    "timeLabel": "可用時間",
+    "time1min": "1 分鐘",
+    "time1minDesc": "僅限快速操作",
+    "time10min": "10 分鐘",
+    "time10minDesc": "大部分行動",
+    "time1hour": "1 小時+",
+    "time1hourDesc": "深度參與",
+    "skillsLabel": "技能",
+    "skillsPlaceholder": "如：設計、寫作、法律、程式設計",
+    "skillsHint": "用逗號分隔。幫助為你配對相關行動。",
+    "saving": "儲存中...",
+    "save": "儲存變更",
+    "cancel": "取消",
+    "nameRequired": "姓名為必填項",
+    "saveFailed": "儲存失敗"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "通知我"
+  },
+  "CookieConsent": {
+    "title": "Cookie 偏好設定",
+    "description": "我們使用 Cookie 來保持你的登入狀態並改善你的體驗。分析 Cookie 幫助我們了解網站的使用情況。",
+    "acceptAll": "全部接受",
+    "essentialOnly": "僅必要",
+    "manage": "管理偏好設定",
+    "essential": "必要",
+    "essentialDescription": "網站正常運作所必需，無法停用。",
+    "analytics": "分析",
+    "analyticsDescription": "幫助我們了解你如何使用網站，以便我們改進。",
+    "save": "儲存偏好設定"
+  }
+}

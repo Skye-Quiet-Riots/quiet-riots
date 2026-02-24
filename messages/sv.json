@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organisera kring gemensamma frågor. Hitta ditt folk. Agera tillsammans."
+  },
+  "Nav": {
+    "issues": "Frågor",
+    "assistants": "Assistenter",
+    "organisations": "Organisationer",
+    "wallet": "Plånbok",
+    "profile": "Profil",
+    "signIn": "Logga in",
+    "signOut": "Logga ut",
+    "toggleMenu": "Visa/dölj meny"
+  },
+  "Footer": {
+    "mission": "Att förändra mer till det bättre under vår livstid än vi vågar tro är möjligt.",
+    "powered": "Quiet Riots · Drivs av OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Allt-i-ett för samhällsfrågor",
+    "headline": "Förändring behöver inte vara högljudd för att vara kraftfull",
+    "description": "Hitta andra som delar dina frågor. Agera tillsammans. Quiet Riots kopplar samman människor kring gemensamma frustrationer och förvandlar klagomål till kollektiv handling.",
+    "browseIssues": "Utforska frågor",
+    "howItWorks": "Så fungerar det",
+    "trendingIssues": "🔥 Trendande frågor",
+    "viewAll": "Visa alla →",
+    "reelOfTheDay": "🎬 Dagens Riot Reel",
+    "riotersFunny": "{count} deltagare tyckte detta var roligt",
+    "from": "Från:",
+    "findYourIssue": "Hitta din fråga",
+    "findYourIssueDesc": "Sök efter valfri frustration — tåg, bredband, sjukvård, klimat. Om den finns visar vi dig hur många andra som delar den.",
+    "useThePivot": "Använd pivoten",
+    "useThePivotDesc": "Se samma fråga hos alla organisationer, eller alla frågor hos en organisation. Som tangodansare som byter riktning.",
+    "takeAction": "Agera",
+    "takeActionDesc": "Idéer, handlingar och gemenskap — anpassade efter din tid och dina färdigheter. Små handlingar leder till stor förändring.",
+    "missionQuote": "\"Att förändra mer till det bättre under vår livstid än vi vågar tro är möjligt.\"",
+    "basedOn": "Baserad på boken <em>Quiet Riots</em> från 2014 av Simon Darling",
+    "joinMovement": "✊ Gå med i rörelsen"
+  },
+  "Issues": {
+    "title": "Frågor",
+    "subtitle": "{count} frågor i {categoryCount} kategorier. Hitta din.",
+    "searchPlaceholder": "Sök frågor eller synonymer...",
+    "noResults": "Inga frågor hittades. Prova en annan sökning eller kategori."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Frågor",
+    "rioters": "deltagare",
+    "country": "{count, plural, one {land} other {länder}}",
+    "thisWeek": "denna vecka",
+    "actions": "handlingar",
+    "alsoKnownAs": "Även känd som",
+    "actionsTitle": "⚡ Handlingar — Din personliga verktygslåda",
+    "actionsDesc": "Baserat på evolution — 💡 **Idéer** (variation), ⚡ **Handlingar** (selektion) och 🤝 **Tillsammans** (gemenskap).",
+    "gatherEvidence": "📹 Samla bevis",
+    "gatherEvidenceDesc": "Dokumentera vad som händer — sänd live eller dela foton, videor och länkar.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Roliga och ironiska videor som fångar andan i denna Quiet Riot.",
+    "experts": "🌟 Experter",
+    "expertsDesc": "Passionerade volontärer som går djupare — översättare, specialister, medieansvariga, juridiska rådgivare.",
+    "communityFeed": "💬 Gemenskapsflöde"
+  },
+  "Organisations": {
+    "title": "Organisationer",
+    "subtitle": "Utforska organisationer och se vilka frågor folk har med varje.",
+    "noResults": "Inga organisationer hittades för denna kategori."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisationer",
+    "totalRioters": "totalt antal deltagare",
+    "issues": "frågor",
+    "topIssueShare": "andel toppfråga",
+    "paretoTitle": "Paretoprincipen:",
+    "paretoDesc": "En handfull frågor står vanligtvis för 80 % av alla klagomål. Toppfrågorna nedan är rangordnade efter antal berörda personer.",
+    "gatherEvidence": "📹 Samla bevis",
+    "gatherEvidenceDesc": "Dokumentera vad som händer med {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanjer",
+    "subtitle": "{count} {count, plural, one {kampanj} other {kampanjer}} samlar in pengar för förändring.",
+    "noResults": "Inga kampanjer hittades. Prova ett annat filter."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanjer",
+    "fullyFunded": "Fullt finansierad",
+    "disbursed": "Medel utbetalda",
+    "cancelled": "Avbruten",
+    "active": "Aktiv",
+    "target": "mål",
+    "raised": "insamlat",
+    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}",
+    "platformFee": "plattformsavgift",
+    "wantToContribute": "Vill du bidra?",
+    "topUpFirst": "Fyll på din plånbok först för att börja bidra.",
+    "createAccountPrompt": "Skapa ett konto och ladda din plånbok för att stödja denna kampanj.",
+    "goToWallet": "Gå till plånbok",
+    "createAccount": "Skapa konto",
+    "completedMessage": "Denna kampanj har {status}. Tack till alla {count} bidragsgivare!",
+    "recipient": "Mottagare"
+  },
+  "Assistants": {
+    "title": "Assistenter",
+    "subtitle": "{count} par av AI-agenter och mänskliga organisatörer som hjälper deltagare att agera.",
+    "noResults": "Inga assistenter tillgängliga ännu."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistenter",
+    "aiAgent": "AI-agent",
+    "humanOrganiser": "Mänsklig organisatör",
+    "rioters": "deltagare",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "meddelanden",
+    "currentFocus": "Nuvarande fokus",
+    "recentActivity": "Senaste aktivitet",
+    "riotsWeHelp": "Quiet Riots vi hjälper med",
+    "wantToBe": "Vill du bli {name}?",
+    "openRole": "Rollen som mänsklig organisatör är öppen för alla med passion för denna kategori. Uttryck ditt intresse nedan."
+  },
+  "Wallet": {
+    "title": "Din plånbok",
+    "createPromptTitle": "Börja stödja saker",
+    "createPromptDesc": "Skapa ett gratis konto för att ladda pengar och bidra till kampanjer som betyder något för dig.",
+    "createAccount": "Skapa konto",
+    "activeCampaigns": "Aktiva kampanjer",
+    "viewAll": "Visa alla"
+  },
+  "Profile": {
+    "title": "Din profil",
+    "time": "Tid: ",
+    "skills": "Färdigheter: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {inlägg} other {inlägg}}",
+    "likes": "{count, plural, one {mottagen gillning} other {mottagna gillningar}}",
+    "yourRiots": "Dina Quiet Riots",
+    "noRiots": "Inga Quiet Riots ännu",
+    "findIssues": "Hitta frågor du bryr dig om och gå med i rörelsen.",
+    "browseIssues": "Utforska frågor",
+    "memberSince": "Medlem sedan",
+    "rioters": "deltagare",
+    "connectedAccounts": "Anslutna konton",
+    "noConnectedAccounts": "Inga konton anslutna ännu. Logga in med Google eller Facebook för att koppla ditt konto.",
+    "deactivateAccount": "Inaktivera konto",
+    "deactivateConfirm": "Är du säker på att du vill inaktivera ditt konto? Du kan återaktivera det inom 30 dagar."
+  },
+  "Auth": {
+    "welcomeBack": "Välkommen tillbaka",
+    "signInSubtitle": "Logga in på ditt Quiet Riots-konto",
+    "joinTitle": "Gå med i Quiet Riots",
+    "joinSubtitle": "Organisera kring gemensamma frågor. Agera tillsammans.",
+    "continueGoogle": "Fortsätt med Google",
+    "continueFacebook": "Fortsätt med Facebook",
+    "connecting": "Ansluter...",
+    "or": "eller",
+    "emailLabel": "E-postadress",
+    "sendMagicLink": "Skicka magisk länk",
+    "signUpWithEmail": "Registrera med e-post",
+    "sendingLink": "Skickar länk...",
+    "checkEmail": "Kolla din e-post",
+    "signInLinkSent": "Vi skickade en inloggningslänk till din e-postadress. Klicka på länken för att fortsätta.",
+    "signUpLinkSent": "Vi skickade en inloggningslänk till din e-postadress. Klicka på länken för att skapa ditt konto.",
+    "noAccount": "Har du inget konto?",
+    "signUp": "Registrera dig",
+    "hasAccount": "Har du redan ett konto?",
+    "signIn": "Logga in",
+    "termsAgree": "Genom att registrera dig godkänner du våra",
+    "terms": "Villkor",
+    "and": "och",
+    "privacyPolicy": "Integritetspolicy",
+    "verifyTitle": "Kolla din e-post",
+    "verifyDesc": "En inloggningslänk har skickats till din e-postadress. Klicka på länken för att fortsätta.",
+    "backToSignIn": "Tillbaka till inloggning",
+    "errorTitle": "Autentiseringsfel",
+    "errorConfig": "Det finns ett problem med serverkonfigurationen.",
+    "errorAccess": "Åtkomst nekad. Du kanske inte har behörighet att logga in.",
+    "errorVerification": "Inloggningslänken har gått ut eller har redan använts.",
+    "errorDefault": "Ett fel uppstod under autentiseringen.",
+    "tryAgain": "Försök igen"
+  },
+  "AuthGate": {
+    "signInTo": "Logga in för att {action}",
+    "signIn": "Logga in",
+    "signInRequired": "Inloggning krävs",
+    "signInToAction": "Du måste logga in för att {action}.",
+    "cancel": "Avbryt",
+    "noAccount": "Har du inget konto?",
+    "signUp": "Registrera dig"
+  },
+  "Error": {
+    "title": "Något gick fel",
+    "description": "Ett oväntat fel inträffade.",
+    "tryAgain": "Försök igen"
+  },
+  "GlobalError": {
+    "title": "Något gick fel",
+    "description": "Ett oväntat fel inträffade. Vårt team har blivit informerat.",
+    "tryAgain": "Försök igen"
+  },
+  "NotFound": {
+    "title": "Sidan hittades inte",
+    "description": "Sidan du letar efter finns inte eller har flyttats.",
+    "goHome": "Gå till startsidan"
+  },
+  "Cards": {
+    "rioters": "deltagare",
+    "country": "{count, plural, one {land} other {länder}}",
+    "issues": "frågor",
+    "idea": "Idé",
+    "action": "Handling",
+    "together": "Tillsammans",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 timme+",
+    "skills": "Färdigheter: ",
+    "anonymous": "Anonym",
+    "curated": "Utvald",
+    "community": "Gemenskap",
+    "aiPick": "AI-val",
+    "funded": "Finansierad",
+    "disbursed": "Utbetald",
+    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}",
+    "aiAndHuman": "AI-agent & mänsklig organisatör",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Gemenskapsindex",
+    "needsMet": "Behov uppfyllda",
+    "needsMetDesc": "Medlemmar tycker det är värt det",
+    "membership": "Medlemskap",
+    "membershipDesc": "Tillit & tillhörighet",
+    "influence": "Inflytande",
+    "influenceDesc": "Din röst spelar roll",
+    "connection": "Samhörighet",
+    "connectionDesc": "Delade upplevelser",
+    "healthy": "Hälsosam",
+    "growing": "Växande",
+    "needsAttention": "Behöver uppmärksamhet"
+  },
+  "Pivot": {
+    "title": "🔀 Pivoten",
+    "peopleGlobally": "människor globalt",
+    "issuePivot": "🔍 Frågepivot",
+    "issuePivotDesc": "Samma fråga, alla organisationer",
+    "orgPivot": "🏢 Organisationspivot",
+    "orgPivotDesc": "Alla frågor, en organisation",
+    "seeIssueAcross": "Se \"{issueName}\" hos alla liknande organisationer:",
+    "seeOrgIssues": "Se alla frågor hos {orgName}:",
+    "you": "DU",
+    "rioters": "deltagare"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampanjer",
+    "funded": "Finansierad",
+    "disbursed": "Utbetald",
+    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}"
+  },
+  "WalletBalance": {
+    "title": "Ditt saldo",
+    "loaded": "laddat",
+    "contributed": "bidragit",
+    "campaigns": "{count, plural, one {kampanj} other {kampanjer}}"
+  },
+  "Transactions": {
+    "title": "Senaste transaktioner",
+    "topUp": "Påfyllning",
+    "contribution": "Bidrag",
+    "refund": "Återbetalning",
+    "justNow": "just nu",
+    "minutesAgo": "{count}m sedan",
+    "hoursAgo": "{count}t sedan",
+    "daysAgo": "{count}d sedan",
+    "empty": "Inga transaktioner ännu. Fyll på din plånbok för att komma igång!"
+  },
+  "Activity": {
+    "noActivity": "Ingen aktivitet ännu.",
+    "ai": "AI",
+    "human": "M"
+  },
+  "Countries": {
+    "title": "🌍 Länder"
+  },
+  "Synonyms": {
+    "placeholder": "Lägg till en synonym...",
+    "add": "Lägg till"
+  },
+  "Join": {
+    "joined": "✅ Gick med i denna Quiet Riot",
+    "join": "✊ Gå med i denna Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Sök frågor..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Dela dina tankar...",
+    "post": "Publicera",
+    "empty": "Inga inlägg ännu. Var den första att dela!"
+  },
+  "Actions": {
+    "ideas": "💡 Idéer (Variation)",
+    "actions": "⚡ Handlingar (Selektion)",
+    "together": "🤝 Tillsammans (Gemenskap)",
+    "noResults": "Inga handlingar matchar dina filter. Prova att bredda ditt urval."
+  },
+  "Filter": {
+    "all": "Alla",
+    "active": "Aktiva",
+    "funded": "Finansierade",
+    "disbursed": "Utbetalda"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Hur mycket tid har du?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 timme+",
+    "typeQuestion": "Vilken typ?",
+    "ideas": "💡 Idéer",
+    "actions": "⚡ Handlingar",
+    "together": "🤝 Tillsammans"
+  },
+  "Reels": {
+    "empty": "Inga reels ännu. Var den första att skicka in en!",
+    "submitPrompt": "Har du en rolig video som sammanfattar denna fråga?",
+    "submitSuccess": "Tack! Din reel har skickats in för granskning.",
+    "urlPlaceholder": "Klistra in en YouTube-URL...",
+    "captionPlaceholder": "Lägg till en bildtext (valfritt)...",
+    "submit": "Skicka in"
+  },
+  "TopUp": {
+    "addFunds": "Lägg till pengar",
+    "minTopUp": "Minsta påfyllning är £1",
+    "success": "{amount} har lagts till i din plånbok!",
+    "networkError": "Nätverksfel. Försök igen.",
+    "customAmount": "Valfritt belopp (£)",
+    "topUp": "Fyll på",
+    "simulated": "Simulerad påfyllning för testning. Riktiga betalningar via Stripe kommer snart."
+  },
+  "Contribute": {
+    "insufficientFunds": "Otillräckligt saldo. Fyll på din plånbok först.",
+    "minContribution": "Minsta bidrag är 10p",
+    "contribute": "Bidra",
+    "yourBalance": "Ditt saldo: ",
+    "networkError": "Nätverksfel. Försök igen.",
+    "invalidAmount": "Ange ett giltigt belopp",
+    "customAmount": "Valfritt belopp (£)",
+    "give": "Ge",
+    "success": "Bidrog med {amount} till {campaign}!",
+    "remainingBalance": "Ditt återstående saldo: {balance}",
+    "topUpPrompt": "Fyll på din plånbok",
+    "toKeepSupporting": "för att fortsätta stödja kampanjer.",
+    "walletEmpty": "Din plånbok är tom.",
+    "topUp": "Fyll på",
+    "toContribute": "för att bidra."
+  },
+  "Claim": {
+    "success": "Tack! Vi har noterat ditt intresse för rollen som {name}. Vi hör av oss.",
+    "placeholder": "Varför skulle du vara bra som {name}? (valfritt)",
+    "submitting": "Skickar...",
+    "expressInterest": "Uttryck intresse"
+  },
+  "Evidence": {
+    "generalOrg": "Allmänt (ingen specifik organisation)",
+    "placeholder": "Säg vad du tycker...",
+    "photosLabel": "Foton (upp till 4)",
+    "addPhotos": "+ Lägg till foton",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max 4 MB styck.",
+    "videoLabel": "Video (max 1)",
+    "addVideo": "+ Lägg till video",
+    "videoFormats": "MP4, MOV, WebM. Max 4 MB.",
+    "linkLabel": "Extern länk",
+    "linkPlaceholder": "https://nyhetsartikel.se/...",
+    "hideMedia": "Dölj media",
+    "addMedia": "📎 Lägg till foton, video, länkar",
+    "posting": "Publicerar...",
+    "uploading": "Laddar upp...",
+    "submitEvidence": "Skicka in bevis",
+    "goLive": "🔴 Sänd live nu",
+    "maxPhotos": "Maximalt 4 foton. {count} hoppades över.",
+    "videoFailed": "Videouppladdning misslyckades",
+    "removePhoto": "Ta bort {name}",
+    "removeVideo": "Ta bort video",
+    "uploadFailed": "Misslyckades att ladda upp: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Redigera profil",
+    "nameLabel": "Namn",
+    "timeLabel": "Tillgänglig tid",
+    "time1min": "1 minut",
+    "time1minDesc": "Bara snabba handlingar",
+    "time10min": "10 minuter",
+    "time10minDesc": "De flesta handlingar",
+    "time1hour": "1 timme+",
+    "time1hourDesc": "Djupt engagemang",
+    "skillsLabel": "Färdigheter",
+    "skillsPlaceholder": "t.ex. design, skrivande, juridik, kodning",
+    "skillsHint": "Kommaseparerade. Hjälper matcha dig med relevanta handlingar.",
+    "saving": "Sparar...",
+    "save": "Spara ändringar",
+    "cancel": "Avbryt",
+    "nameRequired": "Namn krävs",
+    "saveFailed": "Misslyckades att spara"
+  },
+  "SignupForm": {
+    "placeholder": "du@exempel.se",
+    "submit": "Meddela mig"
+  },
+  "CookieConsent": {
+    "title": "Cookie-inställningar",
+    "description": "Vi använder cookies för att hålla dig inloggad och förbättra din upplevelse. Analyticscookies hjälper oss förstå hur webbplatsen används.",
+    "acceptAll": "Acceptera alla",
+    "essentialOnly": "Bara nödvändiga",
+    "manage": "Hantera inställningar",
+    "essential": "Nödvändiga",
+    "essentialDescription": "Krävs för att webbplatsen ska fungera. Kan inte inaktiveras.",
+    "analytics": "Analys",
+    "analyticsDescription": "Hjälper oss förstå hur du använder webbplatsen så vi kan förbättra den.",
+    "save": "Spara inställningar"
+  }
+}

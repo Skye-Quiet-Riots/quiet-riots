@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "รวมพลังรอบประเด็นร่วมกัน ค้นหาเพื่อนร่วมทาง ลงมือทำด้วยกัน"
+  },
+  "Nav": {
+    "issues": "ประเด็น",
+    "assistants": "ผู้ช่วย",
+    "organisations": "องค์กร",
+    "wallet": "กระเป๋าเงิน",
+    "profile": "โปรไฟล์",
+    "signIn": "เข้าสู่ระบบ",
+    "signOut": "ออกจากระบบ",
+    "toggleMenu": "เปิด/ปิดเมนู"
+  },
+  "Footer": {
+    "mission": "เปลี่ยนแปลงสิ่งดีๆ ให้มากกว่าที่เราเคยคิดว่าเป็นไปได้ ภายในช่วงชีวิตของเรา",
+    "powered": "Quiet Riots · ขับเคลื่อนโดย OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "ศูนย์รวมประเด็นครบวงจร",
+    "headline": "การเปลี่ยนแปลงไม่จำเป็นต้องดัง ก็ทรงพลังได้",
+    "description": "ค้นหาคนที่มีประเด็นเดียวกับคุณ ลงมือทำด้วยกัน Quiet Riots เชื่อมผู้คนที่มีความหงุดหงิดร่วมกัน แล้วเปลี่ยนคำบ่นให้เป็นพลังร่วม",
+    "browseIssues": "ดูประเด็นทั้งหมด",
+    "howItWorks": "ทำงานอย่างไร",
+    "trendingIssues": "🔥 ประเด็นมาแรง",
+    "viewAll": "ดูทั้งหมด →",
+    "reelOfTheDay": "🎬 Riot Reel ประจำวัน",
+    "riotersFunny": "{count} สมาชิกเห็นว่าตลกดี",
+    "from": "จาก:",
+    "findYourIssue": "ค้นหาประเด็นของคุณ",
+    "findYourIssueDesc": "ค้นหาสิ่งที่คุณหงุดหงิด — รถไฟ อินเทอร์เน็ต สาธารณสุข สิ่งแวดล้อม ถ้ามีอยู่แล้ว เราจะบอกว่ามีคนอื่นกี่คนที่รู้สึกเหมือนกัน",
+    "useThePivot": "ใช้ The Pivot",
+    "useThePivotDesc": "ดูประเด็นเดียวกันข้ามทุกองค์กร หรือดูทุกประเด็นในองค์กรเดียว เหมือนนักเต้นแทงโก้เปลี่ยนทิศทาง",
+    "takeAction": "ลงมือทำ",
+    "takeActionDesc": "ไอเดีย กิจกรรม และชุมชน — ปรับให้เหมาะกับเวลาและทักษะของคุณ การกระทำเล็กๆ รวมกันเป็นการเปลี่ยนแปลงใหญ่",
+    "missionQuote": "\"เปลี่ยนแปลงสิ่งดีๆ ให้มากกว่าที่เราเคยคิดว่าเป็นไปได้ ภายในช่วงชีวิตของเรา\"",
+    "basedOn": "อิงจากหนังสือปี 2014 <em>Quiet Riots</em> โดย Simon Darling",
+    "joinMovement": "✊ ร่วมขบวนการ"
+  },
+  "Issues": {
+    "title": "ประเด็น",
+    "subtitle": "{count} ประเด็นใน {categoryCount} หมวดหมู่ ค้นหาของคุณ",
+    "searchPlaceholder": "ค้นหาประเด็นหรือคำพ้อง...",
+    "noResults": "ไม่พบประเด็น ลองค้นหาหรือหมวดหมู่อื่นดู"
+  },
+  "IssueDetail": {
+    "breadcrumb": "ประเด็น",
+    "rioters": "สมาชิก",
+    "country": "{count, plural, one {ประเทศ} other {ประเทศ}}",
+    "thisWeek": "สัปดาห์นี้",
+    "actions": "กิจกรรม",
+    "alsoKnownAs": "รู้จักในชื่ออื่นว่า",
+    "actionsTitle": "⚡ กิจกรรม — ชุดเครื่องมือเฉพาะคุณ",
+    "actionsDesc": "อิงจากวิวัฒนาการ — 💡 **ไอเดีย** (ความหลากหลาย), ⚡ **กิจกรรม** (การคัดเลือก), และ 🤝 **ด้วยกัน** (ชุมชน)",
+    "gatherEvidence": "📹 รวบรวมหลักฐาน",
+    "gatherEvidenceDesc": "บันทึกสิ่งที่เกิดขึ้น — ถ่ายทอดสดหรือแชร์รูป วิดีโอ และลิงก์",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "วิดีโอตลกและเสียดสีที่สะท้อนจิตวิญญาณของ Quiet Riot นี้",
+    "experts": "🌟 ผู้เชี่ยวชาญ",
+    "expertsDesc": "อาสาสมัครผู้ทุ่มเท — นักแปล ผู้เชี่ยวชาญเฉพาะทาง หัวหน้าสื่อ ที่ปรึกษาด้านกฎหมาย",
+    "communityFeed": "💬 ฟีดชุมชน"
+  },
+  "Organisations": {
+    "title": "องค์กร",
+    "subtitle": "ดูองค์กรต่างๆ และดูว่าผู้คนมีประเด็นอะไรกับแต่ละองค์กร",
+    "noResults": "ไม่พบองค์กรในหมวดหมู่นี้"
+  },
+  "OrgDetail": {
+    "breadcrumb": "องค์กร",
+    "totalRioters": "สมาชิกทั้งหมด",
+    "issues": "ประเด็น",
+    "topIssueShare": "สัดส่วนประเด็นอันดับแรก",
+    "paretoTitle": "หลักการพาเรโต:",
+    "paretoDesc": "ประเด็นไม่กี่อย่างมักคิดเป็น 80% ของข้อร้องเรียนทั้งหมด ประเด็นอันดับต้นๆ ด้านล่างเรียงตามจำนวนคนที่ได้รับผลกระทบ",
+    "gatherEvidence": "📹 รวบรวมหลักฐาน",
+    "gatherEvidenceDesc": "บันทึกสิ่งที่เกิดขึ้นกับ {orgName}"
+  },
+  "Campaigns": {
+    "title": "แคมเปญ",
+    "subtitle": "{count} {count, plural, one {แคมเปญ} other {แคมเปญ}} ระดมทุนเพื่อการเปลี่ยนแปลง",
+    "noResults": "ไม่พบแคมเปญ ลองเปลี่ยนตัวกรองดู"
+  },
+  "CampaignDetail": {
+    "breadcrumb": "แคมเปญ",
+    "fullyFunded": "ระดมทุนครบแล้ว",
+    "disbursed": "จ่ายเงินแล้ว",
+    "cancelled": "ยกเลิกแล้ว",
+    "active": "กำลังดำเนินการ",
+    "target": "เป้าหมาย",
+    "raised": "ระดมได้",
+    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
+    "platformFee": "ค่าธรรมเนียมแพลตฟอร์ม",
+    "wantToContribute": "ต้องการร่วมสนับสนุนไหม?",
+    "topUpFirst": "เติมเงินในกระเป๋าก่อนเพื่อเริ่มสนับสนุน",
+    "createAccountPrompt": "สร้างบัญชีและเติมเงินเพื่อสนับสนุนแคมเปญนี้",
+    "goToWallet": "ไปที่กระเป๋าเงิน",
+    "createAccount": "สร้างบัญชี",
+    "completedMessage": "แคมเปญนี้{status}แล้ว ขอบคุณผู้สนับสนุนทั้ง {count} คน!",
+    "recipient": "ผู้รับ"
+  },
+  "Assistants": {
+    "title": "ผู้ช่วย",
+    "subtitle": "{count} คู่ของ AI agent และผู้จัดการที่เป็นคน ช่วยสมาชิกลงมือทำ",
+    "noResults": "ยังไม่มีผู้ช่วยในขณะนี้"
+  },
+  "AssistantDetail": {
+    "breadcrumb": "ผู้ช่วย",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "ผู้จัดการที่เป็นคน",
+    "rioters": "สมาชิก",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "ข้อความ",
+    "currentFocus": "จุดสนใจปัจจุบัน",
+    "recentActivity": "กิจกรรมล่าสุด",
+    "riotsWeHelp": "Quiet Riots ที่เราช่วยดูแล",
+    "wantToBe": "อยากเป็น {name} ไหม?",
+    "openRole": "บทบาทผู้จัดการที่เป็นคนเปิดรับทุกคนที่มีใจรักหมวดหมู่นี้ แสดงความสนใจได้ด้านล่าง"
+  },
+  "Wallet": {
+    "title": "กระเป๋าเงินของคุณ",
+    "createPromptTitle": "เริ่มสนับสนุนสิ่งดีๆ",
+    "createPromptDesc": "สร้างบัญชีฟรีเพื่อเติมเงินและสนับสนุนแคมเปญที่คุณสนใจ",
+    "createAccount": "สร้างบัญชี",
+    "activeCampaigns": "แคมเปญที่กำลังดำเนินการ",
+    "viewAll": "ดูทั้งหมด"
+  },
+  "Profile": {
+    "title": "โปรไฟล์ของคุณ",
+    "time": "เวลา: ",
+    "skills": "ทักษะ: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {โพสต์} other {โพสต์}}",
+    "likes": "{count, plural, one {ถูกใจที่ได้รับ} other {ถูกใจที่ได้รับ}}",
+    "yourRiots": "Quiet Riots ของคุณ",
+    "noRiots": "ยังไม่มี Quiet Riots",
+    "findIssues": "ค้นหาประเด็นที่คุณสนใจแล้วร่วมขบวนการ",
+    "browseIssues": "ดูประเด็น",
+    "memberSince": "เป็นสมาชิกตั้งแต่",
+    "rioters": "สมาชิก",
+    "connectedAccounts": "บัญชีที่เชื่อมต่อ",
+    "noConnectedAccounts": "ยังไม่มีบัญชีที่เชื่อมต่อ เข้าสู่ระบบด้วย Google หรือ Facebook เพื่อเชื่อมต่อบัญชี",
+    "deactivateAccount": "ปิดใช้งานบัญชี",
+    "deactivateConfirm": "คุณแน่ใจหรือว่าต้องการปิดใช้งานบัญชี? คุณสามารถเปิดใช้งานอีกครั้งได้ภายใน 30 วัน"
+  },
+  "Auth": {
+    "welcomeBack": "ยินดีต้อนรับกลับมา",
+    "signInSubtitle": "เข้าสู่ระบบบัญชี Quiet Riots ของคุณ",
+    "joinTitle": "เข้าร่วม Quiet Riots",
+    "joinSubtitle": "รวมพลังรอบประเด็นร่วมกัน ลงมือทำด้วยกัน",
+    "continueGoogle": "ดำเนินการต่อด้วย Google",
+    "continueFacebook": "ดำเนินการต่อด้วย Facebook",
+    "connecting": "กำลังเชื่อมต่อ...",
+    "or": "หรือ",
+    "emailLabel": "อีเมล",
+    "sendMagicLink": "ส่งลิงก์เข้าสู่ระบบ",
+    "signUpWithEmail": "สมัครด้วยอีเมล",
+    "sendingLink": "กำลังส่งลิงก์...",
+    "checkEmail": "ตรวจสอบอีเมลของคุณ",
+    "signInLinkSent": "เราส่งลิงก์เข้าสู่ระบบไปยังอีเมลของคุณแล้ว คลิกลิงก์เพื่อดำเนินการต่อ",
+    "signUpLinkSent": "เราส่งลิงก์เข้าสู่ระบบไปยังอีเมลของคุณแล้ว คลิกลิงก์เพื่อสร้างบัญชี",
+    "noAccount": "ยังไม่มีบัญชี?",
+    "signUp": "สมัครสมาชิก",
+    "hasAccount": "มีบัญชีอยู่แล้ว?",
+    "signIn": "เข้าสู่ระบบ",
+    "termsAgree": "การสมัครสมาชิกหมายความว่าคุณยอมรับ",
+    "terms": "ข้อกำหนด",
+    "and": "และ",
+    "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+    "verifyTitle": "ตรวจสอบอีเมลของคุณ",
+    "verifyDesc": "ลิงก์เข้าสู่ระบบถูกส่งไปยังอีเมลของคุณแล้ว คลิกลิงก์เพื่อดำเนินการต่อ",
+    "backToSignIn": "กลับไปเข้าสู่ระบบ",
+    "errorTitle": "ข้อผิดพลาดในการยืนยันตัวตน",
+    "errorConfig": "มีปัญหากับการตั้งค่าเซิร์ฟเวอร์",
+    "errorAccess": "การเข้าถึงถูกปฏิเสธ คุณอาจไม่มีสิทธิ์เข้าสู่ระบบ",
+    "errorVerification": "ลิงก์เข้าสู่ระบบหมดอายุแล้วหรือถูกใช้ไปแล้ว",
+    "errorDefault": "เกิดข้อผิดพลาดระหว่างการยืนยันตัวตน",
+    "tryAgain": "ลองอีกครั้ง"
+  },
+  "AuthGate": {
+    "signInTo": "เข้าสู่ระบบเพื่อ{action}",
+    "signIn": "เข้าสู่ระบบ",
+    "signInRequired": "ต้องเข้าสู่ระบบ",
+    "signInToAction": "คุณต้องเข้าสู่ระบบเพื่อ{action}",
+    "cancel": "ยกเลิก",
+    "noAccount": "ยังไม่มีบัญชี?",
+    "signUp": "สมัครสมาชิก"
+  },
+  "Error": {
+    "title": "เกิดข้อผิดพลาด",
+    "description": "เกิดข้อผิดพลาดที่ไม่คาดคิด",
+    "tryAgain": "ลองอีกครั้ง"
+  },
+  "GlobalError": {
+    "title": "เกิดข้อผิดพลาด",
+    "description": "เกิดข้อผิดพลาดที่ไม่คาดคิด ทีมงานได้รับแจ้งแล้ว",
+    "tryAgain": "ลองอีกครั้ง"
+  },
+  "NotFound": {
+    "title": "ไม่พบหน้า",
+    "description": "หน้าที่คุณกำลังมองหาไม่มีอยู่หรือถูกย้ายแล้ว",
+    "goHome": "กลับหน้าแรก"
+  },
+  "Cards": {
+    "rioters": "สมาชิก",
+    "country": "{count, plural, one {ประเทศ} other {ประเทศ}}",
+    "issues": "ประเด็น",
+    "idea": "ไอเดีย",
+    "action": "กิจกรรม",
+    "together": "ด้วยกัน",
+    "time1min": "1 นาที",
+    "time10min": "10 นาที",
+    "time1hour": "1 ชม.+",
+    "skills": "ทักษะ: ",
+    "anonymous": "ไม่ระบุชื่อ",
+    "curated": "คัดสรร",
+    "community": "ชุมชน",
+    "aiPick": "AI เลือก",
+    "funded": "ระดมทุนแล้ว",
+    "disbursed": "จ่ายเงินแล้ว",
+    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
+    "aiAndHuman": "AI Agent & ผู้จัดการที่เป็นคน",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 ดัชนีความรู้สึกชุมชน",
+    "needsMet": "ความต้องการถูกตอบสนอง",
+    "needsMetDesc": "สมาชิกรู้สึกว่าคุ้มค่า",
+    "membership": "ความเป็นสมาชิก",
+    "membershipDesc": "ความไว้วางใจและความเป็นส่วนหนึ่ง",
+    "influence": "อิทธิพล",
+    "influenceDesc": "เสียงของคุณมีความหมาย",
+    "connection": "การเชื่อมต่อ",
+    "connectionDesc": "ประสบการณ์ร่วม",
+    "healthy": "สุขภาพดี",
+    "growing": "กำลังเติบโต",
+    "needsAttention": "ต้องดูแล"
+  },
+  "Pivot": {
+    "title": "🔀 The Pivot",
+    "peopleGlobally": "คนทั่วโลก",
+    "issuePivot": "🔍 Issue Pivot",
+    "issuePivotDesc": "ประเด็นเดียว ทุกองค์กร",
+    "orgPivot": "🏢 Org Pivot",
+    "orgPivotDesc": "ทุกประเด็น องค์กรเดียว",
+    "seeIssueAcross": "ดู \"{issueName}\" ข้ามทุกองค์กรที่คล้ายกัน:",
+    "seeOrgIssues": "ดูทุกประเด็นที่ {orgName}:",
+    "you": "คุณ",
+    "rioters": "สมาชิก"
+  },
+  "CampaignProgress": {
+    "title": "💰 แคมเปญ",
+    "funded": "ระดมทุนแล้ว",
+    "disbursed": "จ่ายเงินแล้ว",
+    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}"
+  },
+  "WalletBalance": {
+    "title": "ยอดเงินของคุณ",
+    "loaded": "เติมแล้ว",
+    "contributed": "สนับสนุนแล้ว",
+    "campaigns": "{count, plural, one {แคมเปญ} other {แคมเปญ}}"
+  },
+  "Transactions": {
+    "title": "รายการล่าสุด",
+    "topUp": "เติมเงิน",
+    "contribution": "สนับสนุน",
+    "refund": "คืนเงิน",
+    "justNow": "เมื่อกี้",
+    "minutesAgo": "{count} นาทีที่แล้ว",
+    "hoursAgo": "{count} ชม.ที่แล้ว",
+    "daysAgo": "{count} วันที่แล้ว",
+    "empty": "ยังไม่มีรายการ เติมเงินในกระเป๋าเพื่อเริ่มต้น!"
+  },
+  "Activity": {
+    "noActivity": "ยังไม่มีกิจกรรม",
+    "ai": "AI",
+    "human": "คน"
+  },
+  "Countries": {
+    "title": "🌍 ประเทศ"
+  },
+  "Synonyms": {
+    "placeholder": "เพิ่มคำพ้อง...",
+    "add": "เพิ่ม"
+  },
+  "Join": {
+    "joined": "✅ เข้าร่วม Quiet Riot นี้แล้ว",
+    "join": "✊ เข้าร่วม Quiet Riot นี้"
+  },
+  "Search": {
+    "placeholder": "ค้นหาประเด็น..."
+  },
+  "Feed": {
+    "composerPlaceholder": "แบ่งปันความคิดของคุณ...",
+    "post": "โพสต์",
+    "empty": "ยังไม่มีโพสต์ เป็นคนแรกที่แบ่งปัน!"
+  },
+  "Actions": {
+    "ideas": "💡 ไอเดีย (ความหลากหลาย)",
+    "actions": "⚡ กิจกรรม (การคัดเลือก)",
+    "together": "🤝 ด้วยกัน (ชุมชน)",
+    "noResults": "ไม่มีกิจกรรมตรงกับตัวกรอง ลองขยายการเลือกดู"
+  },
+  "Filter": {
+    "all": "ทั้งหมด",
+    "active": "กำลังดำเนินการ",
+    "funded": "ระดมทุนแล้ว",
+    "disbursed": "จ่ายเงินแล้ว"
+  },
+  "TimeSkill": {
+    "timeQuestion": "คุณมีเวลาเท่าไหร่?",
+    "time1min": "1 นาที",
+    "time10min": "10 นาที",
+    "time1hour": "1 ชม.+",
+    "typeQuestion": "ประเภทไหน?",
+    "ideas": "💡 ไอเดีย",
+    "actions": "⚡ กิจกรรม",
+    "together": "🤝 ด้วยกัน"
+  },
+  "Reels": {
+    "empty": "ยังไม่มี Reels เป็นคนแรกที่ส่ง!",
+    "submitPrompt": "มีวิดีโอตลกที่สรุปประเด็นนี้ไหม?",
+    "submitSuccess": "ขอบคุณ! Reel ของคุณถูกส่งเพื่อตรวจสอบแล้ว",
+    "urlPlaceholder": "วาง URL YouTube...",
+    "captionPlaceholder": "เพิ่มคำบรรยาย (ไม่บังคับ)...",
+    "submit": "ส่ง"
+  },
+  "TopUp": {
+    "addFunds": "เติมเงิน",
+    "minTopUp": "เติมขั้นต่ำ £1",
+    "success": "เติม {amount} ในกระเป๋าเงินแล้ว!",
+    "networkError": "เครือข่ายผิดพลาด กรุณาลองอีกครั้ง",
+    "customAmount": "จำนวนอื่น (£)",
+    "topUp": "เติมเงิน",
+    "simulated": "เติมเงินจำลองสำหรับทดสอบ การชำระเงินจริงผ่าน Stripe เร็วๆ นี้"
+  },
+  "Contribute": {
+    "insufficientFunds": "เงินไม่พอ เติมเงินในกระเป๋าก่อน",
+    "minContribution": "สนับสนุนขั้นต่ำ 10p",
+    "contribute": "สนับสนุน",
+    "yourBalance": "ยอดเงินของคุณ: ",
+    "networkError": "เครือข่ายผิดพลาด กรุณาลองอีกครั้ง",
+    "invalidAmount": "กรอกจำนวนเงินที่ถูกต้อง",
+    "customAmount": "จำนวนอื่น (£)",
+    "give": "ให้",
+    "success": "สนับสนุน {amount} ให้ {campaign} แล้ว!",
+    "remainingBalance": "ยอดเงินคงเหลือ: {balance}",
+    "topUpPrompt": "เติมเงินในกระเป๋า",
+    "toKeepSupporting": "เพื่อสนับสนุนแคมเปญต่อไป",
+    "walletEmpty": "กระเป๋าเงินของคุณว่างเปล่า",
+    "topUp": "เติมเงิน",
+    "toContribute": "เพื่อสนับสนุน"
+  },
+  "Claim": {
+    "success": "ขอบคุณ! เราบันทึกความสนใจของคุณในบทบาท {name} แล้ว เราจะติดต่อกลับ",
+    "placeholder": "ทำไมคุณถึงเหมาะกับบทบาท {name}? (ไม่บังคับ)",
+    "submitting": "กำลังส่ง...",
+    "expressInterest": "แสดงความสนใจ"
+  },
+  "Evidence": {
+    "generalOrg": "ทั่วไป (ไม่ระบุองค์กร)",
+    "placeholder": "บอกความคิดของคุณ...",
+    "photosLabel": "รูปภาพ (สูงสุด 4 รูป)",
+    "addPhotos": "+ เพิ่มรูปภาพ",
+    "photoFormats": "JPEG, PNG, WebP, GIF สูงสุด 4 MB ต่อรูป",
+    "videoLabel": "วิดีโอ (สูงสุด 1)",
+    "addVideo": "+ เพิ่มวิดีโอ",
+    "videoFormats": "MP4, MOV, WebM สูงสุด 4 MB",
+    "linkLabel": "ลิงก์ภายนอก",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "ซ่อนสื่อ",
+    "addMedia": "📎 เพิ่มรูป วิดีโอ ลิงก์",
+    "posting": "กำลังโพสต์...",
+    "uploading": "กำลังอัปโหลด...",
+    "submitEvidence": "ส่งหลักฐาน",
+    "goLive": "🔴 ถ่ายทอดสดเลย",
+    "maxPhotos": "สูงสุด 4 รูป ข้าม {count} รูป",
+    "videoFailed": "อัปโหลดวิดีโอล้มเหลว",
+    "removePhoto": "ลบ {name}",
+    "removeVideo": "ลบวิดีโอ",
+    "uploadFailed": "อัปโหลดล้มเหลว: {names}"
+  },
+  "ProfileEdit": {
+    "title": "แก้ไขโปรไฟล์",
+    "nameLabel": "ชื่อ",
+    "timeLabel": "เวลาว่าง",
+    "time1min": "1 นาที",
+    "time1minDesc": "กิจกรรมด่วนเท่านั้น",
+    "time10min": "10 นาที",
+    "time10minDesc": "กิจกรรมส่วนใหญ่",
+    "time1hour": "1 ชม.+",
+    "time1hourDesc": "มีส่วนร่วมอย่างลึกซึ้ง",
+    "skillsLabel": "ทักษะ",
+    "skillsPlaceholder": "เช่น ออกแบบ, เขียน, กฎหมาย, เขียนโค้ด",
+    "skillsHint": "คั่นด้วยจุลภาค ช่วยจับคู่คุณกับกิจกรรมที่เหมาะสม",
+    "saving": "กำลังบันทึก...",
+    "save": "บันทึกการเปลี่ยนแปลง",
+    "cancel": "ยกเลิก",
+    "nameRequired": "ต้องระบุชื่อ",
+    "saveFailed": "บันทึกล้มเหลว"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "แจ้งเตือนฉัน"
+  },
+  "CookieConsent": {
+    "title": "ตั้งค่าคุกกี้",
+    "description": "เราใช้คุกกี้เพื่อให้คุณเข้าสู่ระบบได้และปรับปรุงประสบการณ์ คุกกี้วิเคราะห์ช่วยให้เราเข้าใจว่าเว็บไซต์ถูกใช้งานอย่างไร",
+    "acceptAll": "ยอมรับทั้งหมด",
+    "essentialOnly": "เฉพาะที่จำเป็น",
+    "manage": "จัดการตั้งค่า",
+    "essential": "จำเป็น",
+    "essentialDescription": "จำเป็นสำหรับการทำงานของเว็บไซต์ ไม่สามารถปิดได้",
+    "analytics": "วิเคราะห์",
+    "analyticsDescription": "ช่วยให้เราเข้าใจว่าคุณใช้เว็บไซต์อย่างไร เพื่อปรับปรุงให้ดีขึ้น",
+    "save": "บันทึกตั้งค่า"
+  }
+}

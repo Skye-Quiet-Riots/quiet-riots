@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "حول مسائل مشترک سازمان‌دهی کنید. افرادتان را پیدا کنید. با هم اقدام کنید."
+  },
+  "Nav": {
+    "issues": "مسائل",
+    "assistants": "دستیاران",
+    "organisations": "سازمان‌ها",
+    "wallet": "کیف پول",
+    "profile": "پروفایل",
+    "signIn": "ورود",
+    "signOut": "خروج",
+    "toggleMenu": "تغییر منو"
+  },
+  "Footer": {
+    "mission": "تغییر بیشتر به سوی بهتری در طول عمرمان، بیش از آنچه جرأت تصورش را داریم.",
+    "powered": "Quiet Riots · با پشتیبانی عامل هوشمند OpenClaw"
+  },
+  "Home": {
+    "tagline": "فروشگاه جامع مسائل",
+    "headline": "تغییر لازم نیست پرسروصدا باشد تا قدرتمند باشد",
+    "description": "دیگرانی را پیدا کنید که مسائل مشترکی دارند. با هم اقدام کنید. Quiet Riots افراد را حول ناامیدی‌های مشترک متصل می‌کند و شکایات را به اقدام جمعی تبدیل می‌کند.",
+    "browseIssues": "مرور مسائل",
+    "howItWorks": "چگونه کار می‌کند",
+    "trendingIssues": "🔥 مسائل داغ",
+    "viewAll": "مشاهده همه →",
+    "reelOfTheDay": "🎬 ویدیوی روز",
+    "riotersFunny": "{count} مشارکت‌کننده این را خنده‌دار یافتند",
+    "from": "از:",
+    "findYourIssue": "مسئله‌ات را پیدا کن",
+    "findYourIssueDesc": "هر ناامیدی را جستجو کنید — قطارها، اینترنت، بهداشت، آب‌وهوا. اگر وجود داشته باشد، نشانتان می‌دهیم چند نفر دیگر آن را به اشتراک می‌گذارند.",
+    "useThePivot": "از محور استفاده کن",
+    "useThePivotDesc": "همان مسئله را در همه سازمان‌ها ببینید، یا همه مسائل را در یک سازمان. مثل رقصندگان تانگو که جهت عوض می‌کنند.",
+    "takeAction": "اقدام کن",
+    "takeActionDesc": "ایده‌ها، اقدامات و جامعه — متناسب با زمان و مهارت‌های شما. اقدامات کوچک تغییر بزرگ می‌سازند.",
+    "missionQuote": "\"تغییر بیشتر به سوی بهتری در طول عمرمان، بیش از آنچه جرأت تصورش را داریم.\"",
+    "basedOn": "بر اساس کتاب ۲۰۱۴ <em>Quiet Riots</em> نوشته سایمون دارلینگ",
+    "joinMovement": "✊ به جنبش بپیوندید"
+  },
+  "Issues": {
+    "title": "مسائل",
+    "subtitle": "{count} مسئله در {categoryCount} دسته‌بندی. مال خودت را پیدا کن.",
+    "searchPlaceholder": "جستجوی مسائل یا مترادف‌ها...",
+    "noResults": "مسئله‌ای پیدا نشد. جستجو یا دسته‌بندی دیگری را امتحان کنید."
+  },
+  "IssueDetail": {
+    "breadcrumb": "مسائل",
+    "rioters": "مشارکت‌کنندگان",
+    "country": "{count, plural, one {کشور} other {کشور}}",
+    "thisWeek": "این هفته",
+    "actions": "اقدامات",
+    "alsoKnownAs": "همچنین شناخته شده به",
+    "actionsTitle": "⚡ اقدامات — جعبه‌ابزار شخصی‌سازی شده شما",
+    "actionsDesc": "بر اساس تکامل — 💡 **ایده‌ها** (تنوع)، ⚡ **اقدامات** (انتخاب)، و 🤝 **با هم** (جامعه).",
+    "gatherEvidence": "📹 جمع‌آوری مدارک",
+    "gatherEvidenceDesc": "مستند کنید چه اتفاقی می‌افتد — پخش زنده کنید یا عکس‌ها، ویدیوها و لینک‌ها را به اشتراک بگذارید.",
+    "riotReels": "🎬 ویدیوهای Quiet Riot",
+    "riotReelsDesc": "ویدیوهای خنده‌دار و طنزآمیز که روح این Quiet Riot را به تصویر می‌کشند.",
+    "experts": "🌟 متخصصان",
+    "expertsDesc": "داوطلبان پرشور که عمیق‌تر می‌روند — مترجمان، متخصصان، مسئولان رسانه، مشاوران حقوقی.",
+    "communityFeed": "💬 فید جامعه"
+  },
+  "Organisations": {
+    "title": "سازمان‌ها",
+    "subtitle": "سازمان‌ها را مرور کنید و ببینید مردم چه مسائلی با هرکدام دارند.",
+    "noResults": "سازمانی برای این دسته‌بندی یافت نشد."
+  },
+  "OrgDetail": {
+    "breadcrumb": "سازمان‌ها",
+    "totalRioters": "کل مشارکت‌کنندگان",
+    "issues": "مسائل",
+    "topIssueShare": "سهم مسئله اصلی",
+    "paretoTitle": "اصل پارتو:",
+    "paretoDesc": "معمولاً تعداد کمی از مسائل ۸۰٪ همه شکایات را تشکیل می‌دهند. مسائل اصلی زیر بر اساس تعداد افراد متأثر رتبه‌بندی شده‌اند.",
+    "gatherEvidence": "📹 جمع‌آوری مدارک",
+    "gatherEvidenceDesc": "مستند کنید چه اتفاقی با {orgName} می‌افتد."
+  },
+  "Campaigns": {
+    "title": "کمپین‌ها",
+    "subtitle": "{count} {count, plural, one {کمپین در حال} other {کمپین در حال}} جمع‌آوری بودجه برای تغییر.",
+    "noResults": "کمپینی یافت نشد. فیلتر دیگری را امتحان کنید."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "کمپین‌ها",
+    "fullyFunded": "کاملاً تأمین مالی شده",
+    "disbursed": "وجوه توزیع شده",
+    "cancelled": "لغو شده",
+    "active": "فعال",
+    "target": "هدف",
+    "raised": "جمع‌آوری شده",
+    "backers": "{count, plural, one {حامی} other {حامیان}}",
+    "platformFee": "کارمزد پلتفرم",
+    "wantToContribute": "می‌خواهید مشارکت کنید؟",
+    "topUpFirst": "ابتدا کیف پولتان را شارژ کنید تا بتوانید مشارکت کنید.",
+    "createAccountPrompt": "حساب بسازید و کیف پولتان را شارژ کنید تا از این کمپین حمایت کنید.",
+    "goToWallet": "رفتن به کیف پول",
+    "createAccount": "ساخت حساب",
+    "completedMessage": "این کمپین {status} شده است. از همه {count} حامی متشکریم!",
+    "recipient": "دریافت‌کننده"
+  },
+  "Assistants": {
+    "title": "دستیاران",
+    "subtitle": "{count} جفت از عاملان هوش مصنوعی و سازمان‌دهندگان انسانی که به مشارکت‌کنندگان کمک می‌کنند تا اقدام کنند.",
+    "noResults": "هنوز دستیاری در دسترس نیست."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "دستیاران",
+    "aiAgent": "عامل هوش مصنوعی",
+    "humanOrganiser": "سازمان‌دهنده انسانی",
+    "rioters": "مشارکت‌کنندگان",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "پیام‌ها",
+    "currentFocus": "تمرکز فعلی",
+    "recentActivity": "فعالیت اخیر",
+    "riotsWeHelp": "Quiet Riots که در آنها کمک می‌کنیم",
+    "wantToBe": "می‌خواهید {name} باشید؟",
+    "openRole": "نقش سازمان‌دهنده انسانی برای هر کسی که اشتیاق به این دسته‌بندی دارد باز است. علاقه‌مندی خود را در زیر اعلام کنید."
+  },
+  "Wallet": {
+    "title": "کیف پول شما",
+    "createPromptTitle": "شروع به حمایت از اهداف",
+    "createPromptDesc": "یک حساب رایگان بسازید تا بودجه شارژ کنید و به کمپین‌هایی که برایتان مهم هستند مشارکت کنید.",
+    "createAccount": "ساخت حساب",
+    "activeCampaigns": "کمپین‌های فعال",
+    "viewAll": "مشاهده همه"
+  },
+  "Profile": {
+    "title": "پروفایل شما",
+    "time": "زمان: ",
+    "skills": "مهارت‌ها: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {پست} other {پست‌ها}}",
+    "likes": "{count, plural, one {لایک دریافتی} other {لایک‌های دریافتی}}",
+    "yourRiots": "Quiet Riots شما",
+    "noRiots": "هنوز Quiet Riots ندارید",
+    "findIssues": "مسائلی را که برایتان مهم هستند پیدا کنید و به جنبش بپیوندید.",
+    "browseIssues": "مرور مسائل",
+    "memberSince": "عضو از",
+    "rioters": "مشارکت‌کنندگان",
+    "connectedAccounts": "حساب‌های متصل",
+    "noConnectedAccounts": "هنوز حسابی متصل نشده. با Google یا Facebook وارد شوید تا حسابتان را متصل کنید.",
+    "deactivateAccount": "غیرفعال‌سازی حساب",
+    "deactivateConfirm": "آیا مطمئن هستید که می‌خواهید حسابتان را غیرفعال کنید؟ می‌توانید ظرف ۳۰ روز دوباره فعالش کنید."
+  },
+  "Auth": {
+    "welcomeBack": "خوش برگشتید",
+    "signInSubtitle": "به حساب Quiet Riots خود وارد شوید",
+    "joinTitle": "به Quiet Riots بپیوندید",
+    "joinSubtitle": "حول مسائل مشترک سازمان‌دهی کنید. با هم اقدام کنید.",
+    "continueGoogle": "ادامه با Google",
+    "continueFacebook": "ادامه با Facebook",
+    "connecting": "در حال اتصال...",
+    "or": "یا",
+    "emailLabel": "آدرس ایمیل",
+    "sendMagicLink": "ارسال لینک جادویی",
+    "signUpWithEmail": "ثبت‌نام با ایمیل",
+    "sendingLink": "در حال ارسال لینک...",
+    "checkEmail": "ایمیلتان را بررسی کنید",
+    "signInLinkSent": "لینک ورود به ایمیل شما ارسال شد. روی لینک کلیک کنید تا ادامه دهید.",
+    "signUpLinkSent": "لینک ورود به ایمیل شما ارسال شد. روی لینک کلیک کنید تا حسابتان ساخته شود.",
+    "noAccount": "حساب ندارید؟",
+    "signUp": "ثبت‌نام",
+    "hasAccount": "قبلاً حساب دارید؟",
+    "signIn": "ورود",
+    "termsAgree": "با ثبت‌نام، با موارد زیر موافقت می‌کنید",
+    "terms": "شرایط استفاده",
+    "and": "و",
+    "privacyPolicy": "سیاست حفظ حریم خصوصی",
+    "verifyTitle": "ایمیلتان را بررسی کنید",
+    "verifyDesc": "لینک ورود به آدرس ایمیل شما ارسال شده است. روی لینک کلیک کنید تا ادامه دهید.",
+    "backToSignIn": "بازگشت به ورود",
+    "errorTitle": "خطای احراز هویت",
+    "errorConfig": "مشکلی در تنظیمات سرور وجود دارد.",
+    "errorAccess": "دسترسی رد شد. ممکن است مجوز ورود نداشته باشید.",
+    "errorVerification": "لینک ورود منقضی شده یا قبلاً استفاده شده است.",
+    "errorDefault": "خطایی در حین احراز هویت رخ داد.",
+    "tryAgain": "دوباره تلاش کنید"
+  },
+  "AuthGate": {
+    "signInTo": "برای {action} وارد شوید",
+    "signIn": "ورود",
+    "signInRequired": "ورود الزامی است",
+    "signInToAction": "برای {action} باید وارد شوید.",
+    "cancel": "لغو",
+    "noAccount": "حساب ندارید؟",
+    "signUp": "ثبت‌نام"
+  },
+  "Error": {
+    "title": "مشکلی پیش آمد",
+    "description": "خطای غیرمنتظره‌ای رخ داد.",
+    "tryAgain": "دوباره تلاش کنید"
+  },
+  "GlobalError": {
+    "title": "مشکلی پیش آمد",
+    "description": "خطای غیرمنتظره‌ای رخ داد. تیم ما مطلع شد.",
+    "tryAgain": "دوباره تلاش کنید"
+  },
+  "NotFound": {
+    "title": "صفحه پیدا نشد",
+    "description": "صفحه‌ای که دنبال آن هستید وجود ندارد یا جابه‌جا شده است.",
+    "goHome": "بازگشت به خانه"
+  },
+  "Cards": {
+    "rioters": "مشارکت‌کنندگان",
+    "country": "{count, plural, one {کشور} other {کشور}}",
+    "issues": "مسائل",
+    "idea": "ایده",
+    "action": "اقدام",
+    "together": "با هم",
+    "time1min": "۱ دقیقه",
+    "time10min": "۱۰ دقیقه",
+    "time1hour": "۱ ساعت+",
+    "skills": "مهارت‌ها: ",
+    "anonymous": "ناشناس",
+    "curated": "گلچین",
+    "community": "جامعه",
+    "aiPick": "انتخاب هوش مصنوعی",
+    "funded": "تأمین مالی شده",
+    "disbursed": "توزیع شده",
+    "backers": "{count, plural, one {حامی} other {حامیان}}",
+    "aiAndHuman": "عامل هوش مصنوعی و سازمان‌دهنده انسانی",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 شاخص حس جامعه",
+    "needsMet": "نیازها برآورده شده",
+    "needsMetDesc": "اعضا احساس می‌کنند ارزشش را دارد",
+    "membership": "عضویت",
+    "membershipDesc": "اعتماد و تعلق",
+    "influence": "نفوذ",
+    "influenceDesc": "صدای شما مهم است",
+    "connection": "ارتباط",
+    "connectionDesc": "تجربه‌های مشترک",
+    "healthy": "سالم",
+    "growing": "در حال رشد",
+    "needsAttention": "نیاز به توجه"
+  },
+  "Pivot": {
+    "title": "🔀 محور",
+    "peopleGlobally": "نفر در سراسر جهان",
+    "issuePivot": "🔍 محور مسئله",
+    "issuePivotDesc": "همان مسئله، همه سازمان‌ها",
+    "orgPivot": "🏢 محور سازمان",
+    "orgPivotDesc": "همه مسائل، یک سازمان",
+    "seeIssueAcross": "ببینید \"{issueName}\" در همه سازمان‌های مشابه:",
+    "seeOrgIssues": "همه مسائل در {orgName} را ببینید:",
+    "you": "شما",
+    "rioters": "مشارکت‌کنندگان"
+  },
+  "CampaignProgress": {
+    "title": "💰 کمپین‌ها",
+    "funded": "تأمین مالی شده",
+    "disbursed": "توزیع شده",
+    "backers": "{count, plural, one {حامی} other {حامیان}}"
+  },
+  "WalletBalance": {
+    "title": "موجودی شما",
+    "loaded": "شارژ شده",
+    "contributed": "مشارکت شده",
+    "campaigns": "{count, plural, one {کمپین} other {کمپین‌ها}}"
+  },
+  "Transactions": {
+    "title": "تراکنش‌های اخیر",
+    "topUp": "شارژ",
+    "contribution": "مشارکت",
+    "refund": "بازپرداخت",
+    "justNow": "همین الان",
+    "minutesAgo": "{count} دقیقه پیش",
+    "hoursAgo": "{count} ساعت پیش",
+    "daysAgo": "{count} روز پیش",
+    "empty": "هنوز تراکنشی نیست. کیف پولتان را شارژ کنید تا شروع کنید!"
+  },
+  "Activity": {
+    "noActivity": "هنوز فعالیتی نیست.",
+    "ai": "AI",
+    "human": "ا"
+  },
+  "Countries": {
+    "title": "🌍 کشورها"
+  },
+  "Synonyms": {
+    "placeholder": "مترادف اضافه کنید...",
+    "add": "افزودن"
+  },
+  "Join": {
+    "joined": "✅ به این Quiet Riot پیوستید",
+    "join": "✊ به این Quiet Riot بپیوندید"
+  },
+  "Search": {
+    "placeholder": "جستجوی مسائل..."
+  },
+  "Feed": {
+    "composerPlaceholder": "نظراتتان را به اشتراک بگذارید...",
+    "post": "ارسال",
+    "empty": "هنوز پستی نیست. اولین نفر باشید که به اشتراک می‌گذارد!"
+  },
+  "Actions": {
+    "ideas": "💡 ایده‌ها (تنوع)",
+    "actions": "⚡ اقدامات (انتخاب)",
+    "together": "🤝 با هم (جامعه)",
+    "noResults": "هیچ اقدامی با فیلترهای شما مطابقت ندارد. انتخابتان را گسترده‌تر کنید."
+  },
+  "Filter": {
+    "all": "همه",
+    "active": "فعال",
+    "funded": "تأمین مالی شده",
+    "disbursed": "توزیع شده"
+  },
+  "TimeSkill": {
+    "timeQuestion": "چقدر وقت دارید؟",
+    "time1min": "۱ دقیقه",
+    "time10min": "۱۰ دقیقه",
+    "time1hour": "۱ ساعت+",
+    "typeQuestion": "چه نوعی؟",
+    "ideas": "💡 ایده‌ها",
+    "actions": "⚡ اقدامات",
+    "together": "🤝 با هم"
+  },
+  "Reels": {
+    "empty": "هنوز ویدیویی نیست. اولین نفر باشید که ارسال می‌کند!",
+    "submitPrompt": "ویدیوی خنده‌داری دارید که این مسئله را خلاصه کند؟",
+    "submitSuccess": "ممنون! ویدیوی شما برای بررسی ارسال شد.",
+    "urlPlaceholder": "لینک YouTube بچسبانید...",
+    "captionPlaceholder": "زیرنویس اضافه کنید (اختیاری)...",
+    "submit": "ارسال"
+  },
+  "TopUp": {
+    "addFunds": "افزودن موجودی",
+    "minTopUp": "حداقل شارژ £1 است",
+    "success": "{amount} به کیف پولتان اضافه شد!",
+    "networkError": "خطای شبکه. لطفاً دوباره تلاش کنید.",
+    "customAmount": "مبلغ دلخواه (£)",
+    "topUp": "شارژ",
+    "simulated": "شارژ آزمایشی برای تست. پرداخت‌های واقعی از طریق Stripe به‌زودی."
+  },
+  "Contribute": {
+    "insufficientFunds": "موجودی کافی نیست. ابتدا کیف پولتان را شارژ کنید.",
+    "minContribution": "حداقل مشارکت 10p است",
+    "contribute": "مشارکت",
+    "yourBalance": "موجودی شما: ",
+    "networkError": "خطای شبکه. لطفاً دوباره تلاش کنید.",
+    "invalidAmount": "مبلغ معتبر وارد کنید",
+    "customAmount": "مبلغ دلخواه (£)",
+    "give": "بدهید",
+    "success": "{amount} به کمپین {campaign} مشارکت شد!",
+    "remainingBalance": "موجودی باقیمانده: {balance}",
+    "topUpPrompt": "کیف پولتان را شارژ کنید",
+    "toKeepSupporting": "تا به حمایت از کمپین‌ها ادامه دهید.",
+    "walletEmpty": "کیف پول شما خالی است.",
+    "topUp": "شارژ",
+    "toContribute": "تا مشارکت کنید."
+  },
+  "Claim": {
+    "success": "ممنون! علاقه‌مندی شما به نقش {name} ثبت شد. با شما تماس خواهیم گرفت.",
+    "placeholder": "چرا برای نقش {name} عالی خواهید بود؟ (اختیاری)",
+    "submitting": "در حال ارسال...",
+    "expressInterest": "اعلام علاقه‌مندی"
+  },
+  "Evidence": {
+    "generalOrg": "عمومی (بدون سازمان خاص)",
+    "placeholder": "نظرتان را بگویید...",
+    "photosLabel": "عکس‌ها (تا ۴ عدد)",
+    "addPhotos": "+ افزودن عکس",
+    "photoFormats": "JPEG، PNG، WebP، GIF. حداکثر ۴ مگابایت هر کدام.",
+    "videoLabel": "ویدیو (حداکثر ۱)",
+    "addVideo": "+ افزودن ویدیو",
+    "videoFormats": "MP4، MOV، WebM. حداکثر ۴ مگابایت.",
+    "linkLabel": "لینک خارجی",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "پنهان کردن رسانه",
+    "addMedia": "📎 افزودن عکس، ویدیو، لینک",
+    "posting": "در حال ارسال...",
+    "uploading": "در حال آپلود...",
+    "submitEvidence": "ارسال مدارک",
+    "goLive": "🔴 پخش زنده الان",
+    "maxPhotos": "حداکثر ۴ عکس. {count} مورد رد شد.",
+    "videoFailed": "آپلود ویدیو ناموفق بود",
+    "removePhoto": "حذف {name}",
+    "removeVideo": "حذف ویدیو",
+    "uploadFailed": "آپلود ناموفق: {names}"
+  },
+  "ProfileEdit": {
+    "title": "ویرایش پروفایل",
+    "nameLabel": "نام",
+    "timeLabel": "زمان در دسترس",
+    "time1min": "۱ دقیقه",
+    "time1minDesc": "فقط اقدامات سریع",
+    "time10min": "۱۰ دقیقه",
+    "time10minDesc": "بیشتر اقدامات",
+    "time1hour": "۱ ساعت+",
+    "time1hourDesc": "مشارکت عمیق",
+    "skillsLabel": "مهارت‌ها",
+    "skillsPlaceholder": "مثلاً: طراحی، نویسندگی، حقوق، برنامه‌نویسی",
+    "skillsHint": "با کاما جدا کنید. به تطبیق شما با اقدامات مرتبط کمک می‌کند.",
+    "saving": "در حال ذخیره...",
+    "save": "ذخیره تغییرات",
+    "cancel": "لغو",
+    "nameRequired": "نام الزامی است",
+    "saveFailed": "ذخیره ناموفق بود"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "به من اطلاع بده"
+  },
+  "CookieConsent": {
+    "title": "تنظیمات کوکی",
+    "description": "ما از کوکی‌ها برای حفظ ورود شما و بهبود تجربه‌تان استفاده می‌کنیم. کوکی‌های تحلیلی به ما کمک می‌کنند بفهمیم سایت چگونه استفاده می‌شود.",
+    "acceptAll": "قبول همه",
+    "essentialOnly": "فقط ضروری",
+    "manage": "مدیریت تنظیمات",
+    "essential": "ضروری",
+    "essentialDescription": "برای عملکرد سایت لازم است. نمی‌توان غیرفعال کرد.",
+    "analytics": "تحلیلی",
+    "analyticsDescription": "به ما کمک می‌کنند بفهمیم چگونه از سایت استفاده می‌کنید تا بتوانیم آن را بهبود دهیم.",
+    "save": "ذخیره تنظیمات"
+  }
+}

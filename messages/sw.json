@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Panga pamoja kuhusu masuala yanayoshirikiwa. Pata watu wako. Chukua hatua pamoja."
+  },
+  "Nav": {
+    "issues": "Masuala",
+    "assistants": "Wasaidizi",
+    "organisations": "Mashirika",
+    "wallet": "Mkoba",
+    "profile": "Wasifu",
+    "signIn": "Ingia",
+    "signOut": "Toka",
+    "toggleMenu": "Geuza menyu"
+  },
+  "Footer": {
+    "mission": "Kubadilisha zaidi kwa bora katika maisha yetu kuliko tunavyothubutu kufikiria kuwa inawezekana.",
+    "powered": "Quiet Riots · Inaendeshwa na OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Duka Moja la Masuala",
+    "headline": "Mabadiliko si lazima yawe na kelele ili yawe na nguvu",
+    "description": "Pata wengine wanaoshiriki masuala yako. Chukua hatua pamoja. Quiet Riots inaunganisha watu kupitia malalamiko yanayoshirikiwa na kuyageuza kuwa hatua za pamoja.",
+    "browseIssues": "Vinjari Masuala",
+    "howItWorks": "Jinsi Inavyofanya Kazi",
+    "trendingIssues": "🔥 Masuala Yanayotrendi",
+    "viewAll": "Tazama yote →",
+    "reelOfTheDay": "🎬 Riot Reel ya Leo",
+    "riotersFunny": "Washiriki {count} walipata hii ya kuchekesha",
+    "from": "Kutoka:",
+    "findYourIssue": "Pata Suala Lako",
+    "findYourIssueDesc": "Tafuta malalamiko yoyote — treni, broadband, afya, hali ya hewa. Ikiwa lipo, tutakuonyesha wangapi wengine wanaoshiriki.",
+    "useThePivot": "Tumia Pivot",
+    "useThePivotDesc": "Tazama suala hilohilo katika mashirika yote, au masuala yote katika shirika moja. Kama wachezaji wa tango wanaobadilisha mwelekeo.",
+    "takeAction": "Chukua Hatua",
+    "takeActionDesc": "Mawazo, hatua, na jamii — zilizobinafsishwa kwa wakati na ujuzi wako. Hatua ndogo hujumlishwa kuwa mabadiliko makubwa.",
+    "missionQuote": "\"Kubadilisha zaidi kwa bora katika maisha yetu kuliko tunavyothubutu kufikiria kuwa inawezekana.\"",
+    "basedOn": "Imetokana na kitabu cha 2014 <em>Quiet Riots</em> na Simon Darling",
+    "joinMovement": "✊ Jiunge na Harakati"
+  },
+  "Issues": {
+    "title": "Masuala",
+    "subtitle": "Masuala {count} katika makundi {categoryCount}. Pata lako.",
+    "searchPlaceholder": "Tafuta masuala au visawe...",
+    "noResults": "Hakuna masuala yaliyopatikana. Jaribu utafutaji au kundi tofauti."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Masuala",
+    "rioters": "washiriki",
+    "country": "{count, plural, one {nchi} other {nchi}}",
+    "thisWeek": "wiki hii",
+    "actions": "hatua",
+    "alsoKnownAs": "Pia inajulikana kama",
+    "actionsTitle": "⚡ Hatua — Kifaa Chako Binafsi",
+    "actionsDesc": "Kulingana na mageuzi — 💡 **Mawazo** (tofauti), ⚡ **Hatua** (uchaguzi), na 🤝 **Pamoja** (jamii).",
+    "gatherEvidence": "📹 Kusanya Ushahidi",
+    "gatherEvidenceDesc": "Rekodi kinachoendelea — enda moja kwa moja au shiriki picha, video, na viungo.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Video za kuchekesha na za kejeli zinazoshika roho ya Quiet Riot hii.",
+    "experts": "🌟 Wataalamu",
+    "expertsDesc": "Watu wa kujitolea wenye shauku wanaochimba zaidi — watafsiri, wataalamu, viongozi wa vyombo vya habari, washauri wa kisheria.",
+    "communityFeed": "💬 Mlisho wa Jamii"
+  },
+  "Organisations": {
+    "title": "Mashirika",
+    "subtitle": "Vinjari mashirika na uone watu wana masuala gani na kila moja.",
+    "noResults": "Hakuna mashirika yaliyopatikana kwa kundi hili."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Mashirika",
+    "totalRioters": "washiriki wote",
+    "issues": "masuala",
+    "topIssueShare": "sehemu ya suala kuu",
+    "paretoTitle": "Kanuni ya Pareto:",
+    "paretoDesc": "Masuala machache kawaida yanajumuisha 80% ya malalamiko yote. Masuala ya juu hapa chini yamepangwa kwa idadi ya watu walioathirika.",
+    "gatherEvidence": "📹 Kusanya Ushahidi",
+    "gatherEvidenceDesc": "Rekodi kinachoendelea na {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampeni",
+    "subtitle": "{count} {count, plural, one {kampeni} other {kampeni}} zinazokusanya fedha kwa mabadiliko.",
+    "noResults": "Hakuna kampeni zilizopatikana. Jaribu kichujio tofauti."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampeni",
+    "fullyFunded": "Imefadhiliwa Kikamilifu",
+    "disbursed": "Fedha Zimetolewa",
+    "cancelled": "Imesitishwa",
+    "active": "Hai",
+    "target": "lengo",
+    "raised": "imekusanywa",
+    "backers": "{count, plural, one {mfadhili} other {wafadhili}}",
+    "platformFee": "ada ya jukwaa",
+    "wantToContribute": "Unataka kuchangia?",
+    "topUpFirst": "Jaza mkoba wako kwanza ili uanze kuchangia.",
+    "createAccountPrompt": "Tengeneza akaunti na ujaze mkoba wako ili kusaidia kampeni hii.",
+    "goToWallet": "Nenda kwenye mkoba",
+    "createAccount": "Tengeneza akaunti",
+    "completedMessage": "Kampeni hii imekuwa {status}. Asante kwa wafadhili wote {count}!",
+    "recipient": "Mpokeaji"
+  },
+  "Assistants": {
+    "title": "Wasaidizi",
+    "subtitle": "Jozi {count} za mawakala wa AI na waandaaji wa kibinadamu wanaosaidia washiriki kuchukua hatua.",
+    "noResults": "Hakuna wasaidizi wanaopatikana bado."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Wasaidizi",
+    "aiAgent": "Wakala wa AI",
+    "humanOrganiser": "Mwandaaji Binadamu",
+    "rioters": "washiriki",
+    "riots": "{count, plural, one {riot} other {riot}}",
+    "messages": "ujumbe",
+    "currentFocus": "Mwelekeo wa Sasa",
+    "recentActivity": "Shughuli za Hivi Karibuni",
+    "riotsWeHelp": "Quiet Riots Tunazosaidia",
+    "wantToBe": "Unataka kuwa {name}?",
+    "openRole": "Nafasi ya mwandaaji binadamu iko wazi kwa mtu yeyote mwenye shauku kwa kundi hili. Eleza hamu yako hapa chini."
+  },
+  "Wallet": {
+    "title": "Mkoba Wako",
+    "createPromptTitle": "Anza Kusaidia Dhamira",
+    "createPromptDesc": "Tengeneza akaunti ya bure ili ujaze fedha na uchangie kampeni zinazokuvutia.",
+    "createAccount": "Tengeneza akaunti",
+    "activeCampaigns": "Kampeni Hai",
+    "viewAll": "Tazama zote"
+  },
+  "Profile": {
+    "title": "Wasifu Wako",
+    "time": "Wakati: ",
+    "skills": "Ujuzi: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {chapisho} other {machapisho}}",
+    "likes": "{count, plural, one {kupendwa kulikopokelewa} other {kupendwa kulikopokelewa}}",
+    "yourRiots": "Quiet Riots Zako",
+    "noRiots": "Hakuna Quiet Riots bado",
+    "findIssues": "Pata masuala unayojali na ujiunge na harakati.",
+    "browseIssues": "Vinjari masuala",
+    "memberSince": "Mwanachama tangu",
+    "rioters": "washiriki",
+    "connectedAccounts": "Akaunti Zilizounganishwa",
+    "noConnectedAccounts": "Hakuna akaunti zilizounganishwa bado. Ingia na Google au Facebook ili kuunganisha akaunti yako.",
+    "deactivateAccount": "Zima akaunti",
+    "deactivateConfirm": "Una uhakika unataka kuzima akaunti yako? Unaweza kuirudisha ndani ya siku 30."
+  },
+  "Auth": {
+    "welcomeBack": "Karibu tena",
+    "signInSubtitle": "Ingia kwenye akaunti yako ya Quiet Riots",
+    "joinTitle": "Jiunge na Quiet Riots",
+    "joinSubtitle": "Panga pamoja kuhusu masuala yanayoshirikiwa. Chukua hatua pamoja.",
+    "continueGoogle": "Endelea na Google",
+    "continueFacebook": "Endelea na Facebook",
+    "connecting": "Inaunganisha...",
+    "or": "au",
+    "emailLabel": "Anwani ya barua pepe",
+    "sendMagicLink": "Tuma kiungo cha uchawi",
+    "signUpWithEmail": "Jiandikishe na barua pepe",
+    "sendingLink": "Inatuma kiungo...",
+    "checkEmail": "Angalia barua pepe yako",
+    "signInLinkSent": "Tumetuma kiungo cha kuingia kwenye anwani yako ya barua pepe. Bofya kiungo ili kuendelea.",
+    "signUpLinkSent": "Tumetuma kiungo cha kuingia kwenye anwani yako ya barua pepe. Bofya kiungo ili kutengeneza akaunti yako.",
+    "noAccount": "Huna akaunti?",
+    "signUp": "Jiandikishe",
+    "hasAccount": "Tayari una akaunti?",
+    "signIn": "Ingia",
+    "termsAgree": "Kwa kujiandikisha, unakubali",
+    "terms": "Masharti",
+    "and": "na",
+    "privacyPolicy": "Sera ya Faragha",
+    "verifyTitle": "Angalia barua pepe yako",
+    "verifyDesc": "Kiungo cha kuingia kimetumwa kwenye anwani yako ya barua pepe. Bofya kiungo ili kuendelea.",
+    "backToSignIn": "Rudi kuingia",
+    "errorTitle": "Hitilafu ya Uthibitishaji",
+    "errorConfig": "Kuna tatizo na usanidi wa seva.",
+    "errorAccess": "Ufikiaji umekataliwa. Huenda huna ruhusa ya kuingia.",
+    "errorVerification": "Kiungo cha kuingia kimeisha muda au kimetumika tayari.",
+    "errorDefault": "Hitilafu ilitokea wakati wa uthibitishaji.",
+    "tryAgain": "Jaribu tena"
+  },
+  "AuthGate": {
+    "signInTo": "Ingia ili {action}",
+    "signIn": "Ingia",
+    "signInRequired": "Kuingia kunahitajika",
+    "signInToAction": "Unahitaji kuingia ili {action}.",
+    "cancel": "Ghairi",
+    "noAccount": "Huna akaunti?",
+    "signUp": "Jiandikishe"
+  },
+  "Error": {
+    "title": "Kitu kimeenda vibaya",
+    "description": "Hitilafu isiyotarajiwa imetokea.",
+    "tryAgain": "Jaribu tena"
+  },
+  "GlobalError": {
+    "title": "Kitu kimeenda vibaya",
+    "description": "Hitilafu isiyotarajiwa imetokea. Timu yetu imearifu.",
+    "tryAgain": "Jaribu tena"
+  },
+  "NotFound": {
+    "title": "Ukurasa haujapatikana",
+    "description": "Ukurasa unaoutafuta haupo au umehamishwa.",
+    "goHome": "Nenda nyumbani"
+  },
+  "Cards": {
+    "rioters": "washiriki",
+    "country": "{count, plural, one {nchi} other {nchi}}",
+    "issues": "masuala",
+    "idea": "Wazo",
+    "action": "Hatua",
+    "together": "Pamoja",
+    "time1min": "Dak 1",
+    "time10min": "Dak 10",
+    "time1hour": "Saa 1+",
+    "skills": "Ujuzi: ",
+    "anonymous": "Asiyejulikana",
+    "curated": "Iliyochaguliwa",
+    "community": "Jamii",
+    "aiPick": "Uchaguzi wa AI",
+    "funded": "Imefadhiliwa",
+    "disbursed": "Imetolewa",
+    "backers": "{count, plural, one {mfadhili} other {wafadhili}}",
+    "aiAndHuman": "Wakala wa AI na Mwandaaji Binadamu",
+    "riots": "{count, plural, one {riot} other {riot}}"
+  },
+  "Health": {
+    "title": "📊 Faharasa ya Hisia ya Jamii",
+    "needsMet": "Mahitaji Yametimizwa",
+    "needsMetDesc": "Wanachama wanahisi inafaa",
+    "membership": "Uanachama",
+    "membershipDesc": "Uaminifu na kuhusika",
+    "influence": "Ushawishi",
+    "influenceDesc": "Sauti yako ina umuhimu",
+    "connection": "Uhusiano",
+    "connectionDesc": "Uzoefu unaoshirikiwa",
+    "healthy": "Yenye Afya",
+    "growing": "Inakua",
+    "needsAttention": "Inahitaji Umakini"
+  },
+  "Pivot": {
+    "title": "🔀 Pivot",
+    "peopleGlobally": "watu ulimwenguni kote",
+    "issuePivot": "🔍 Pivot ya Suala",
+    "issuePivotDesc": "Suala hilohilo, mashirika yote",
+    "orgPivot": "🏢 Pivot ya Shirika",
+    "orgPivotDesc": "Masuala yote, shirika moja",
+    "seeIssueAcross": "Tazama \"{issueName}\" katika mashirika yote yanayofanana:",
+    "seeOrgIssues": "Tazama masuala yote katika {orgName}:",
+    "you": "WEWE",
+    "rioters": "washiriki"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampeni",
+    "funded": "Imefadhiliwa",
+    "disbursed": "Imetolewa",
+    "backers": "{count, plural, one {mfadhili} other {wafadhili}}"
+  },
+  "WalletBalance": {
+    "title": "Salio Lako",
+    "loaded": "imejazwa",
+    "contributed": "imechangiwa",
+    "campaigns": "{count, plural, one {kampeni} other {kampeni}}"
+  },
+  "Transactions": {
+    "title": "Miamala ya Hivi Karibuni",
+    "topUp": "Kujaza",
+    "contribution": "Mchango",
+    "refund": "Kurejesha",
+    "justNow": "sasa hivi",
+    "minutesAgo": "dak {count} zilizopita",
+    "hoursAgo": "saa {count} zilizopita",
+    "daysAgo": "siku {count} zilizopita",
+    "empty": "Hakuna miamala bado. Jaza mkoba wako ili kuanza!"
+  },
+  "Activity": {
+    "noActivity": "Hakuna shughuli bado.",
+    "ai": "AI",
+    "human": "B"
+  },
+  "Countries": {
+    "title": "🌍 Nchi"
+  },
+  "Synonyms": {
+    "placeholder": "Ongeza kisawe...",
+    "add": "Ongeza"
+  },
+  "Join": {
+    "joined": "✅ Umejiunga na Quiet Riot hii",
+    "join": "✊ Jiunge na Quiet Riot hii"
+  },
+  "Search": {
+    "placeholder": "Tafuta masuala..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Shiriki mawazo yako...",
+    "post": "Chapisha",
+    "empty": "Hakuna machapisho bado. Kuwa wa kwanza kushiriki!"
+  },
+  "Actions": {
+    "ideas": "💡 Mawazo (Tofauti)",
+    "actions": "⚡ Hatua (Uchaguzi)",
+    "together": "🤝 Pamoja (Jamii)",
+    "noResults": "Hakuna hatua zinazolingana na vichujio vyako. Jaribu kupanua uchaguzi wako."
+  },
+  "Filter": {
+    "all": "Zote",
+    "active": "Hai",
+    "funded": "Imefadhiliwa",
+    "disbursed": "Imetolewa"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Una muda gani?",
+    "time1min": "Dak 1",
+    "time10min": "Dak 10",
+    "time1hour": "Saa 1+",
+    "typeQuestion": "Aina gani?",
+    "ideas": "💡 Mawazo",
+    "actions": "⚡ Hatua",
+    "together": "🤝 Pamoja"
+  },
+  "Reels": {
+    "empty": "Hakuna reel bado. Kuwa wa kwanza kuwasilisha!",
+    "submitPrompt": "Una video ya kuchekesha inayoeleza suala hili?",
+    "submitSuccess": "Asante! Reel yako imewasilishwa kwa ukaguzi.",
+    "urlPlaceholder": "Bandika URL ya YouTube...",
+    "captionPlaceholder": "Ongeza maelezo (hiari)...",
+    "submit": "Wasilisha"
+  },
+  "TopUp": {
+    "addFunds": "Ongeza Fedha",
+    "minTopUp": "Kiwango cha chini cha kujaza ni £1",
+    "success": "{amount} imeongezwa kwenye mkoba wako!",
+    "networkError": "Hitilafu ya mtandao. Tafadhali jaribu tena.",
+    "customAmount": "Kiasi maalum (£)",
+    "topUp": "Jaza",
+    "simulated": "Kujaza kwa majaribio. Malipo halisi kupitia Stripe yanakuja hivi karibuni."
+  },
+  "Contribute": {
+    "insufficientFunds": "Fedha hazitoshi. Jaza mkoba wako kwanza.",
+    "minContribution": "Mchango wa chini ni 10p",
+    "contribute": "Changia",
+    "yourBalance": "Salio lako: ",
+    "networkError": "Hitilafu ya mtandao. Tafadhali jaribu tena.",
+    "invalidAmount": "Weka kiasi halali",
+    "customAmount": "Kiasi maalum (£)",
+    "give": "Toa",
+    "success": "Umechangia {amount} kwa {campaign}!",
+    "remainingBalance": "Salio lako lililobaki: {balance}",
+    "topUpPrompt": "Jaza mkoba wako",
+    "toKeepSupporting": "ili kuendelea kusaidia kampeni.",
+    "walletEmpty": "Mkoba wako ni tupu.",
+    "topUp": "Jaza",
+    "toContribute": "ili kuchangia."
+  },
+  "Claim": {
+    "success": "Asante! Tumesajili hamu yako katika nafasi ya {name}. Tutawasiliana.",
+    "placeholder": "Kwa nini ungekuwa bora kama {name}? (hiari)",
+    "submitting": "Inawasilisha...",
+    "expressInterest": "Eleza Hamu"
+  },
+  "Evidence": {
+    "generalOrg": "Kwa jumla (hakuna shirika maalum)",
+    "placeholder": "Sema unachofikiri...",
+    "photosLabel": "Picha (hadi 4)",
+    "addPhotos": "+ Ongeza picha",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max MB 4 kila moja.",
+    "videoLabel": "Video (1 max)",
+    "addVideo": "+ Ongeza video",
+    "videoFormats": "MP4, MOV, WebM. Max MB 4.",
+    "linkLabel": "Kiungo cha nje",
+    "linkPlaceholder": "https://makala-habari.com/...",
+    "hideMedia": "Ficha media",
+    "addMedia": "📎 Ongeza picha, video, viungo",
+    "posting": "Inachapisha...",
+    "uploading": "Inapakia...",
+    "submitEvidence": "Wasilisha Ushahidi",
+    "goLive": "🔴 Enda Moja kwa Moja Sasa",
+    "maxPhotos": "Picha 4 za juu. {count} zilirukwa.",
+    "videoFailed": "Kupakia video kumeshindikana",
+    "removePhoto": "Ondoa {name}",
+    "removeVideo": "Ondoa video",
+    "uploadFailed": "Imeshindikana kupakia: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Hariri wasifu",
+    "nameLabel": "Jina",
+    "timeLabel": "Wakati unaopatikana",
+    "time1min": "Dakika 1",
+    "time1minDesc": "Hatua za haraka tu",
+    "time10min": "Dakika 10",
+    "time10minDesc": "Hatua nyingi",
+    "time1hour": "Saa 1+",
+    "time1hourDesc": "Ushiriki wa kina",
+    "skillsLabel": "Ujuzi",
+    "skillsPlaceholder": "mfano. usanifu, uandishi, sheria, programu",
+    "skillsHint": "Tenganisha kwa koma. Husaidia kukupatanisha na hatua husika.",
+    "saving": "Inahifadhi...",
+    "save": "Hifadhi mabadiliko",
+    "cancel": "Ghairi",
+    "nameRequired": "Jina linahitajika",
+    "saveFailed": "Imeshindikana kuhifadhi"
+  },
+  "SignupForm": {
+    "placeholder": "wewe@mfano.com",
+    "submit": "Nijulishe"
+  },
+  "CookieConsent": {
+    "title": "Mapendeleo ya cookie",
+    "description": "Tunatumia cookies kukuweka umeingia na kuboresha uzoefu wako. Cookie za uchambuzi hutusaidia kuelewa jinsi tovuti inavyotumika.",
+    "acceptAll": "Kubali zote",
+    "essentialOnly": "Muhimu tu",
+    "manage": "Simamia mapendeleo",
+    "essential": "Muhimu",
+    "essentialDescription": "Inahitajika ili tovuti ifanye kazi. Haiwezi kuzimwa.",
+    "analytics": "Uchambuzi",
+    "analyticsDescription": "Hutusaidia kuelewa jinsi unavyotumia tovuti ili tuweze kuiboresha.",
+    "save": "Hifadhi mapendeleo"
+  }
+}

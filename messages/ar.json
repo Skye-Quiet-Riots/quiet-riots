@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "نظّموا حول قضايا مشتركة. اعثروا على أشخاصكم. اتخذوا إجراءً معاً."
+  },
+  "Nav": {
+    "issues": "القضايا",
+    "assistants": "المساعدون",
+    "organisations": "المنظمات",
+    "wallet": "المحفظة",
+    "profile": "الملف الشخصي",
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "toggleMenu": "تبديل القائمة"
+  },
+  "Footer": {
+    "mission": "أن نغيّر نحو الأفضل في حياتنا أكثر مما نجرؤ على تخيّل أنه ممكن.",
+    "powered": "Quiet Riots · مدعوم من وكيل OpenClaw الذكي"
+  },
+  "Home": {
+    "tagline": "المتجر الشامل للقضايا",
+    "headline": "التغيير لا يحتاج أن يكون صاخباً ليكون مؤثراً",
+    "description": "اعثر على آخرين يشاركونك قضاياك. اتخذوا إجراءً معاً. Quiet Riots تربط الناس حول إحباطات مشتركة وتحوّل الشكاوى إلى عمل جماعي.",
+    "browseIssues": "تصفّح القضايا",
+    "howItWorks": "كيف يعمل",
+    "trendingIssues": "🔥 القضايا الرائجة",
+    "viewAll": "عرض الكل →",
+    "reelOfTheDay": "🎬 فيديو اليوم",
+    "riotersFunny": "{count} مشارك وجدوا هذا مضحكاً",
+    "from": "من:",
+    "findYourIssue": "اعثر على قضيتك",
+    "findYourIssueDesc": "ابحث عن أي إحباط — القطارات، الإنترنت، الصحة، المناخ. إن وُجدت، سنريك كم شخصاً آخر يشاركك إياها.",
+    "useThePivot": "استخدم المحور",
+    "useThePivotDesc": "شاهد نفس القضية عبر جميع المنظمات، أو جميع القضايا في منظمة واحدة. كراقصي التانغو حين يغيّرون الاتجاه.",
+    "takeAction": "اتخذ إجراءً",
+    "takeActionDesc": "أفكار وإجراءات ومجتمع — مخصصة لوقتك ومهاراتك. الإجراءات الصغيرة تصنع تغييراً كبيراً.",
+    "missionQuote": "\"أن نغيّر نحو الأفضل في حياتنا أكثر مما نجرؤ على تخيّل أنه ممكن.\"",
+    "basedOn": "مبني على كتاب 2014 <em>Quiet Riots</em> لسايمون دارلينغ",
+    "joinMovement": "✊ انضم إلى الحركة"
+  },
+  "Issues": {
+    "title": "القضايا",
+    "subtitle": "{count} قضية عبر {categoryCount} فئة. اعثر على قضيتك.",
+    "searchPlaceholder": "ابحث في القضايا أو المرادفات...",
+    "noResults": "لم يتم العثور على قضايا. جرّب بحثاً أو فئة مختلفة."
+  },
+  "IssueDetail": {
+    "breadcrumb": "القضايا",
+    "rioters": "مشاركون",
+    "country": "{count, plural, one {دولة} other {دول}}",
+    "thisWeek": "هذا الأسبوع",
+    "actions": "إجراءات",
+    "alsoKnownAs": "يُعرف أيضاً بـ",
+    "actionsTitle": "⚡ الإجراءات — مجموعة أدواتك المخصصة",
+    "actionsDesc": "مبنية على التطور — 💡 **أفكار** (تنوّع)، ⚡ **إجراءات** (اختيار)، و🤝 **معاً** (مجتمع).",
+    "gatherEvidence": "📹 اجمع الأدلة",
+    "gatherEvidenceDesc": "وثّق ما يحدث — ابث مباشرة أو شارك صوراً وفيديوهات وروابط.",
+    "riotReels": "🎬 فيديوهات Quiet Riot",
+    "riotReelsDesc": "فيديوهات مضحكة وساخرة تلتقط روح هذا الـ Quiet Riot.",
+    "experts": "🌟 الخبراء",
+    "expertsDesc": "متطوعون شغوفون يتعمقون أكثر — مترجمون، متخصصون، مسؤولو إعلام، مستشارون قانونيون.",
+    "communityFeed": "💬 منتدى المجتمع"
+  },
+  "Organisations": {
+    "title": "المنظمات",
+    "subtitle": "تصفّح المنظمات وشاهد ما هي قضايا الناس مع كل منها.",
+    "noResults": "لم يتم العثور على منظمات لهذه الفئة."
+  },
+  "OrgDetail": {
+    "breadcrumb": "المنظمات",
+    "totalRioters": "إجمالي المشاركين",
+    "issues": "قضايا",
+    "topIssueShare": "نسبة القضية الأولى",
+    "paretoTitle": "مبدأ باريتو:",
+    "paretoDesc": "عادةً ما تمثّل حفنة من القضايا 80% من جميع الشكاوى. القضايا الأولى أدناه مرتبة حسب عدد المتأثرين.",
+    "gatherEvidence": "📹 اجمع الأدلة",
+    "gatherEvidenceDesc": "وثّق ما يحدث مع {orgName}."
+  },
+  "Campaigns": {
+    "title": "الحملات",
+    "subtitle": "{count} {count, plural, one {حملة تجمع} other {حملات تجمع}} تبرعات من أجل التغيير.",
+    "noResults": "لم يتم العثور على حملات. جرّب فلتراً مختلفاً."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "الحملات",
+    "fullyFunded": "مموّلة بالكامل",
+    "disbursed": "تم صرف الأموال",
+    "cancelled": "ملغاة",
+    "active": "نشطة",
+    "target": "الهدف",
+    "raised": "تم جمعه",
+    "backers": "{count, plural, one {داعم} other {داعمين}}",
+    "platformFee": "رسوم المنصة",
+    "wantToContribute": "تريد المساهمة؟",
+    "topUpFirst": "اشحن محفظتك أولاً لبدء المساهمة.",
+    "createAccountPrompt": "أنشئ حساباً واشحن محفظتك لدعم هذه الحملة.",
+    "goToWallet": "اذهب إلى المحفظة",
+    "createAccount": "إنشاء حساب",
+    "completedMessage": "تم {status} هذه الحملة. شكراً لجميع الداعمين البالغ عددهم {count}!",
+    "recipient": "المستفيد"
+  },
+  "Assistants": {
+    "title": "المساعدون",
+    "subtitle": "{count} زوج من وكلاء الذكاء الاصطناعي والمنظمين البشريين يساعدون المشاركين على اتخاذ إجراءات.",
+    "noResults": "لا يوجد مساعدون متاحون بعد."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "المساعدون",
+    "aiAgent": "وكيل ذكاء اصطناعي",
+    "humanOrganiser": "منظّم بشري",
+    "rioters": "مشاركون",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "رسائل",
+    "currentFocus": "التركيز الحالي",
+    "recentActivity": "النشاط الأخير",
+    "riotsWeHelp": "Quiet Riots التي نساعد فيها",
+    "wantToBe": "تريد أن تكون {name}؟",
+    "openRole": "دور المنظّم البشري مفتوح لأي شخص لديه شغف بهذه الفئة. عبّر عن اهتمامك أدناه."
+  },
+  "Wallet": {
+    "title": "محفظتك",
+    "createPromptTitle": "ابدأ بدعم القضايا",
+    "createPromptDesc": "أنشئ حساباً مجانياً لشحن الرصيد والمساهمة في الحملات التي تهمك.",
+    "createAccount": "إنشاء حساب",
+    "activeCampaigns": "الحملات النشطة",
+    "viewAll": "عرض الكل"
+  },
+  "Profile": {
+    "title": "ملفك الشخصي",
+    "time": "الوقت: ",
+    "skills": "المهارات: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {منشور} other {منشورات}}",
+    "likes": "{count, plural, one {إعجاب مُستلَم} other {إعجابات مُستلَمة}}",
+    "yourRiots": "Quiet Riots الخاصة بك",
+    "noRiots": "لا توجد Quiet Riots بعد",
+    "findIssues": "اعثر على القضايا التي تهمك وانضم إلى الحركة.",
+    "browseIssues": "تصفّح القضايا",
+    "memberSince": "عضو منذ",
+    "rioters": "مشاركون",
+    "connectedAccounts": "الحسابات المرتبطة",
+    "noConnectedAccounts": "لم يتم ربط أي حسابات بعد. سجّل الدخول بـ Google أو Facebook لربط حسابك.",
+    "deactivateAccount": "تعطيل الحساب",
+    "deactivateConfirm": "هل أنت متأكد أنك تريد تعطيل حسابك؟ يمكنك إعادة تفعيله خلال 30 يوماً."
+  },
+  "Auth": {
+    "welcomeBack": "مرحباً بعودتك",
+    "signInSubtitle": "سجّل الدخول إلى حسابك في Quiet Riots",
+    "joinTitle": "انضم إلى Quiet Riots",
+    "joinSubtitle": "نظّم حول قضايا مشتركة. اتخذوا إجراءً معاً.",
+    "continueGoogle": "المتابعة مع Google",
+    "continueFacebook": "المتابعة مع Facebook",
+    "connecting": "جارٍ الاتصال...",
+    "or": "أو",
+    "emailLabel": "عنوان البريد الإلكتروني",
+    "sendMagicLink": "إرسال رابط سحري",
+    "signUpWithEmail": "التسجيل بالبريد الإلكتروني",
+    "sendingLink": "جارٍ إرسال الرابط...",
+    "checkEmail": "تحقّق من بريدك الإلكتروني",
+    "signInLinkSent": "أرسلنا رابط تسجيل دخول إلى بريدك الإلكتروني. اضغط على الرابط للمتابعة.",
+    "signUpLinkSent": "أرسلنا رابط تسجيل دخول إلى بريدك الإلكتروني. اضغط على الرابط لإنشاء حسابك.",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "signIn": "تسجيل الدخول",
+    "termsAgree": "بالتسجيل، أنت توافق على",
+    "terms": "الشروط",
+    "and": "و",
+    "privacyPolicy": "سياسة الخصوصية",
+    "verifyTitle": "تحقّق من بريدك الإلكتروني",
+    "verifyDesc": "تم إرسال رابط تسجيل الدخول إلى بريدك الإلكتروني. اضغط على الرابط للمتابعة.",
+    "backToSignIn": "العودة إلى تسجيل الدخول",
+    "errorTitle": "خطأ في المصادقة",
+    "errorConfig": "هناك مشكلة في إعدادات الخادم.",
+    "errorAccess": "تم رفض الوصول. قد لا تملك صلاحية تسجيل الدخول.",
+    "errorVerification": "انتهت صلاحية رابط تسجيل الدخول أو تم استخدامه بالفعل.",
+    "errorDefault": "حدث خطأ أثناء المصادقة.",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "AuthGate": {
+    "signInTo": "سجّل الدخول لـ{action}",
+    "signIn": "تسجيل الدخول",
+    "signInRequired": "تسجيل الدخول مطلوب",
+    "signInToAction": "تحتاج إلى تسجيل الدخول لـ{action}.",
+    "cancel": "إلغاء",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب"
+  },
+  "Error": {
+    "title": "حدث خطأ ما",
+    "description": "حدث خطأ غير متوقع.",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "GlobalError": {
+    "title": "حدث خطأ ما",
+    "description": "حدث خطأ غير متوقع. تم إبلاغ فريقنا.",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "NotFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "goHome": "العودة للرئيسية"
+  },
+  "Cards": {
+    "rioters": "مشاركون",
+    "country": "{count, plural, one {دولة} other {دول}}",
+    "issues": "قضايا",
+    "idea": "فكرة",
+    "action": "إجراء",
+    "together": "معاً",
+    "time1min": "1 دقيقة",
+    "time10min": "10 دقائق",
+    "time1hour": "ساعة+",
+    "skills": "المهارات: ",
+    "anonymous": "مجهول",
+    "curated": "مختارة",
+    "community": "مجتمع",
+    "aiPick": "اختيار الذكاء الاصطناعي",
+    "funded": "مموّلة",
+    "disbursed": "تم الصرف",
+    "backers": "{count, plural, one {داعم} other {داعمين}}",
+    "aiAndHuman": "وكيل ذكاء اصطناعي ومنظّم بشري",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 مؤشر الإحساس بالمجتمع",
+    "needsMet": "تلبية الاحتياجات",
+    "needsMetDesc": "يشعر الأعضاء أنه يستحق العناء",
+    "membership": "العضوية",
+    "membershipDesc": "الثقة والانتماء",
+    "influence": "التأثير",
+    "influenceDesc": "صوتك مهم",
+    "connection": "الترابط",
+    "connectionDesc": "تجارب مشتركة",
+    "healthy": "صحي",
+    "growing": "ينمو",
+    "needsAttention": "يحتاج اهتماماً"
+  },
+  "Pivot": {
+    "title": "🔀 المحور",
+    "peopleGlobally": "شخص حول العالم",
+    "issuePivot": "🔍 محور القضية",
+    "issuePivotDesc": "نفس القضية، كل المنظمات",
+    "orgPivot": "🏢 محور المنظمة",
+    "orgPivotDesc": "كل القضايا، منظمة واحدة",
+    "seeIssueAcross": "شاهد \"{issueName}\" عبر جميع المنظمات المشابهة:",
+    "seeOrgIssues": "شاهد جميع القضايا في {orgName}:",
+    "you": "أنت",
+    "rioters": "مشاركون"
+  },
+  "CampaignProgress": {
+    "title": "💰 الحملات",
+    "funded": "مموّلة",
+    "disbursed": "تم الصرف",
+    "backers": "{count, plural, one {داعم} other {داعمين}}"
+  },
+  "WalletBalance": {
+    "title": "رصيدك",
+    "loaded": "مشحون",
+    "contributed": "تم المساهمة",
+    "campaigns": "{count, plural, one {حملة} other {حملات}}"
+  },
+  "Transactions": {
+    "title": "المعاملات الأخيرة",
+    "topUp": "شحن",
+    "contribution": "مساهمة",
+    "refund": "استرداد",
+    "justNow": "الآن",
+    "minutesAgo": "قبل {count} د",
+    "hoursAgo": "قبل {count} س",
+    "daysAgo": "قبل {count} ي",
+    "empty": "لا توجد معاملات بعد. اشحن محفظتك للبدء!"
+  },
+  "Activity": {
+    "noActivity": "لا يوجد نشاط بعد.",
+    "ai": "ذ.ا.",
+    "human": "ب"
+  },
+  "Countries": {
+    "title": "🌍 الدول"
+  },
+  "Synonyms": {
+    "placeholder": "أضف مرادفاً...",
+    "add": "إضافة"
+  },
+  "Join": {
+    "joined": "✅ انضممت إلى هذا الـ Quiet Riot",
+    "join": "✊ انضم إلى هذا الـ Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "ابحث في القضايا..."
+  },
+  "Feed": {
+    "composerPlaceholder": "شارك أفكارك...",
+    "post": "نشر",
+    "empty": "لا توجد منشورات بعد. كن أول من يشارك!"
+  },
+  "Actions": {
+    "ideas": "💡 أفكار (تنوّع)",
+    "actions": "⚡ إجراءات (اختيار)",
+    "together": "🤝 معاً (مجتمع)",
+    "noResults": "لا توجد إجراءات تطابق فلاترك. جرّب توسيع اختيارك."
+  },
+  "Filter": {
+    "all": "الكل",
+    "active": "نشطة",
+    "funded": "مموّلة",
+    "disbursed": "تم الصرف"
+  },
+  "TimeSkill": {
+    "timeQuestion": "كم من الوقت لديك؟",
+    "time1min": "1 دقيقة",
+    "time10min": "10 دقائق",
+    "time1hour": "ساعة+",
+    "typeQuestion": "أي نوع؟",
+    "ideas": "💡 أفكار",
+    "actions": "⚡ إجراءات",
+    "together": "🤝 معاً"
+  },
+  "Reels": {
+    "empty": "لا توجد فيديوهات بعد. كن أول من يرسل واحداً!",
+    "submitPrompt": "لديك فيديو مضحك يلخّص هذه القضية؟",
+    "submitSuccess": "شكراً! تم إرسال الفيديو للمراجعة.",
+    "urlPlaceholder": "الصق رابط YouTube...",
+    "captionPlaceholder": "أضف تعليقاً (اختياري)...",
+    "submit": "إرسال"
+  },
+  "TopUp": {
+    "addFunds": "إضافة رصيد",
+    "minTopUp": "الحد الأدنى للشحن هو £1",
+    "success": "تمت إضافة {amount} إلى محفظتك!",
+    "networkError": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
+    "customAmount": "مبلغ مخصص (£)",
+    "topUp": "شحن",
+    "simulated": "شحن تجريبي للاختبار. المدفوعات الحقيقية عبر Stripe قريباً."
+  },
+  "Contribute": {
+    "insufficientFunds": "رصيد غير كافٍ. اشحن محفظتك أولاً.",
+    "minContribution": "الحد الأدنى للمساهمة هو 10p",
+    "contribute": "ساهم",
+    "yourBalance": "رصيدك: ",
+    "networkError": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
+    "invalidAmount": "أدخل مبلغاً صالحاً",
+    "customAmount": "مبلغ مخصص (£)",
+    "give": "تبرّع",
+    "success": "تم التبرع بـ{amount} لحملة {campaign}!",
+    "remainingBalance": "رصيدك المتبقي: {balance}",
+    "topUpPrompt": "اشحن محفظتك",
+    "toKeepSupporting": "لمواصلة دعم الحملات.",
+    "walletEmpty": "محفظتك فارغة.",
+    "topUp": "اشحن",
+    "toContribute": "للمساهمة."
+  },
+  "Claim": {
+    "success": "شكراً! سجّلنا اهتمامك بدور {name}. سنتواصل معك.",
+    "placeholder": "لماذا ستكون رائعاً كـ{name}؟ (اختياري)",
+    "submitting": "جارٍ الإرسال...",
+    "expressInterest": "أبدِ اهتمامك"
+  },
+  "Evidence": {
+    "generalOrg": "عام (بدون منظمة محددة)",
+    "placeholder": "قل ما تعتقد...",
+    "photosLabel": "صور (حتى 4)",
+    "addPhotos": "+ أضف صوراً",
+    "photoFormats": "JPEG، PNG، WebP، GIF. الحد الأقصى 4 ميغابايت لكل صورة.",
+    "videoLabel": "فيديو (1 كحد أقصى)",
+    "addVideo": "+ أضف فيديو",
+    "videoFormats": "MP4، MOV، WebM. الحد الأقصى 4 ميغابايت.",
+    "linkLabel": "رابط خارجي",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "إخفاء الوسائط",
+    "addMedia": "📎 أضف صوراً وفيديو وروابط",
+    "posting": "جارٍ النشر...",
+    "uploading": "جارٍ الرفع...",
+    "submitEvidence": "أرسل الأدلة",
+    "goLive": "🔴 ابث مباشرة الآن",
+    "maxPhotos": "الحد الأقصى 4 صور. تم تخطّي {count}.",
+    "videoFailed": "فشل رفع الفيديو",
+    "removePhoto": "إزالة {name}",
+    "removeVideo": "إزالة الفيديو",
+    "uploadFailed": "فشل رفع: {names}"
+  },
+  "ProfileEdit": {
+    "title": "تعديل الملف الشخصي",
+    "nameLabel": "الاسم",
+    "timeLabel": "الوقت المتاح",
+    "time1min": "دقيقة واحدة",
+    "time1minDesc": "إجراءات سريعة فقط",
+    "time10min": "10 دقائق",
+    "time10minDesc": "معظم الإجراءات",
+    "time1hour": "ساعة+",
+    "time1hourDesc": "مشاركة عميقة",
+    "skillsLabel": "المهارات",
+    "skillsPlaceholder": "مثلاً: تصميم، كتابة، قانون، برمجة",
+    "skillsHint": "مفصولة بفواصل. تساعد في مطابقتك مع الإجراءات المناسبة.",
+    "saving": "جارٍ الحفظ...",
+    "save": "حفظ التغييرات",
+    "cancel": "إلغاء",
+    "nameRequired": "الاسم مطلوب",
+    "saveFailed": "فشل الحفظ"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "أعلمني"
+  },
+  "CookieConsent": {
+    "title": "تفضيلات ملفات تعريف الارتباط",
+    "description": "نستخدم ملفات تعريف الارتباط لإبقائك مسجّل الدخول وتحسين تجربتك. تساعدنا ملفات التحليل على فهم كيفية استخدام الموقع.",
+    "acceptAll": "قبول الكل",
+    "essentialOnly": "الأساسية فقط",
+    "manage": "إدارة التفضيلات",
+    "essential": "أساسية",
+    "essentialDescription": "مطلوبة لعمل الموقع. لا يمكن تعطيلها.",
+    "analytics": "تحليلات",
+    "analyticsDescription": "تساعدنا على فهم كيفية استخدامك للموقع حتى نتمكن من تحسينه.",
+    "save": "حفظ التفضيلات"
+  }
+}
