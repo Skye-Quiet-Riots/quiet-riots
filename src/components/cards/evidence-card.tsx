@@ -164,7 +164,7 @@ export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
               controls
               preload="metadata"
               playsInline
-              className="w-full rounded-md bg-black"
+              className="max-h-96 max-w-md rounded-md bg-black"
             >
               <track kind="captions" />
             </video>
