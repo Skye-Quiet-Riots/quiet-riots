@@ -57,7 +57,20 @@ export async function createTables() {
       phone TEXT UNIQUE,
       time_available TEXT NOT NULL DEFAULT '10min' CHECK(time_available IN ('1min','10min','1hr+')),
       skills TEXT NOT NULL DEFAULT '' CHECK(length(skills) <= 500),
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      first_name TEXT CHECK(length(first_name) <= 100),
+      last_name TEXT CHECK(length(last_name) <= 100),
+      display_name TEXT CHECK(length(display_name) <= 100),
+      bio TEXT CHECK(length(bio) <= 300),
+      avatar_url TEXT CHECK(length(avatar_url) <= 500),
+      date_of_birth TEXT,
+      country_code TEXT CHECK(length(country_code) <= 3),
+      language_code TEXT DEFAULT 'en' CHECK(length(language_code) <= 10),
+      email_verified INTEGER NOT NULL DEFAULT 0,
+      phone_verified INTEGER NOT NULL DEFAULT 0,
+      status TEXT DEFAULT 'active' CHECK(status IN ('active','deactivated','deleted')),
+      deactivated_at TEXT,
+      session_version INTEGER NOT NULL DEFAULT 1
     );
 
     CREATE TABLE IF NOT EXISTS user_issues (
@@ -315,12 +328,95 @@ export async function createTables() {
     CREATE INDEX IF NOT EXISTS idx_evidence_live ON evidence(live);
     CREATE INDEX IF NOT EXISTS idx_evidence_created ON evidence(created_at DESC);
     CREATE INDEX IF NOT EXISTS idx_evidence_comments_evidence ON evidence_comments(evidence_id);
+
+    CREATE TABLE IF NOT EXISTS languages (
+      code TEXT PRIMARY KEY,
+      name TEXT NOT NULL CHECK(length(name) <= 100),
+      native_name TEXT NOT NULL CHECK(length(native_name) <= 100),
+      direction TEXT NOT NULL DEFAULT 'ltr' CHECK(direction IN ('ltr', 'rtl'))
+    );
+
+    CREATE TABLE IF NOT EXISTS countries (
+      code TEXT PRIMARY KEY,
+      name TEXT NOT NULL CHECK(length(name) <= 100),
+      default_language TEXT REFERENCES languages(code),
+      currency_code TEXT CHECK(length(currency_code) <= 3),
+      phone_prefix TEXT CHECK(length(phone_prefix) <= 10)
+    );
+
+    CREATE TABLE IF NOT EXISTS translations (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      entity_type TEXT NOT NULL CHECK(length(entity_type) <= 50),
+      entity_id TEXT NOT NULL,
+      field TEXT NOT NULL CHECK(length(field) <= 50),
+      language_code TEXT NOT NULL REFERENCES languages(code),
+      value TEXT NOT NULL,
+      source TEXT NOT NULL DEFAULT 'manual' CHECK(source IN ('manual', 'machine', 'reviewed')),
+      UNIQUE(entity_type, entity_id, field, language_code)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_translations_lookup ON translations(entity_type, entity_id, language_code);
+    CREATE INDEX IF NOT EXISTS idx_translations_lang ON translations(language_code, entity_type);
+
+    CREATE TABLE IF NOT EXISTS accounts (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      user_id TEXT NOT NULL REFERENCES users(id),
+      provider TEXT NOT NULL CHECK(length(provider) <= 50),
+      provider_account_id TEXT NOT NULL CHECK(length(provider_account_id) <= 255),
+      type TEXT NOT NULL CHECK(type IN ('oauth', 'oidc', 'email', 'credentials')),
+      access_token TEXT,
+      refresh_token TEXT,
+      expires_at INTEGER,
+      token_type TEXT CHECK(length(token_type) <= 50),
+      scope TEXT CHECK(length(scope) <= 500),
+      id_token TEXT,
+      UNIQUE(provider, provider_account_id)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_accounts_user_id ON accounts(user_id);
+    CREATE INDEX IF NOT EXISTS idx_accounts_provider ON accounts(provider, provider_account_id);
+
+    CREATE TABLE IF NOT EXISTS verification_tokens (
+      identifier TEXT NOT NULL CHECK(length(identifier) <= 255),
+      token TEXT NOT NULL UNIQUE,
+      expires TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS legal_documents (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      country_code TEXT NOT NULL CHECK(length(country_code) <= 3),
+      document_type TEXT NOT NULL CHECK(document_type IN ('terms', 'privacy', 'cookie')),
+      version TEXT NOT NULL CHECK(length(version) <= 20),
+      content_url TEXT NOT NULL CHECK(length(content_url) <= 500),
+      effective_date TEXT NOT NULL,
+      UNIQUE(country_code, document_type, version)
+    );
+
+    CREATE TABLE IF NOT EXISTS user_consents (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      user_id TEXT NOT NULL REFERENCES users(id),
+      document_type TEXT NOT NULL CHECK(document_type IN ('terms', 'privacy', 'cookie', 'analytics')),
+      version TEXT NOT NULL CHECK(length(version) <= 20),
+      country_code TEXT NOT NULL CHECK(length(country_code) <= 3),
+      accepted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      ip_address TEXT CHECK(length(ip_address) <= 45),
+      user_agent TEXT CHECK(length(user_agent) <= 500)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_user_consents_user ON user_consents(user_id, document_type);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS user_consents;
+    DROP TABLE IF EXISTS legal_documents;
+    DROP TABLE IF EXISTS verification_tokens;
+    DROP TABLE IF EXISTS accounts;
+    DROP TABLE IF EXISTS translations;
+    DROP TABLE IF EXISTS countries;
+    DROP TABLE IF EXISTS languages;
     DROP TABLE IF EXISTS evidence_comments;
     DROP TABLE IF EXISTS evidence;
     DROP TABLE IF EXISTS bot_events;
