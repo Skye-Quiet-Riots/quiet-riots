@@ -418,7 +418,7 @@ describe('EvidenceCard', () => {
     // Source element carries the URL and type hint
     const source = video?.querySelector('source');
     expect(source?.getAttribute('src')).toBe(
-      'https://abc.public.blob.vercel-storage.com/evidence/clip.mp4',
+      'https://abc.public.blob.vercel-storage.com/evidence/clip.mp4#t=0.001',
     );
     expect(source?.getAttribute('type')).toBe('video/mp4');
     // Should NOT show "Watch video" link
@@ -434,7 +434,7 @@ describe('EvidenceCard', () => {
     const video = document.querySelector('video');
     expect(video).not.toBeNull();
     const source = video?.querySelector('source');
-    expect(source?.getAttribute('src')).toBe('https://cdn.example.com/videos/clip.mp4');
+    expect(source?.getAttribute('src')).toBe('https://cdn.example.com/videos/clip.mp4#t=0.001');
     expect(source?.getAttribute('type')).toBe('video/mp4');
   });
 

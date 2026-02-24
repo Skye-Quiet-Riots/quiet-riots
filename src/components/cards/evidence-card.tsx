@@ -178,7 +178,10 @@ export function EvidenceCard({ evidence, issueId }: EvidenceCardProps) {
               crossOrigin="anonymous"
               className="max-h-96 max-w-md rounded-md bg-black"
             >
-              <source src={evidence.video_url} type={videoMimeType(evidence.video_url)} />
+              <source
+                src={`${evidence.video_url}#t=0.001`}
+                type={videoMimeType(evidence.video_url)}
+              />
               <track kind="captions" />
             </video>
           ) : (
