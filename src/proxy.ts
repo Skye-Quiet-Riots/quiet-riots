@@ -12,6 +12,7 @@ export function proxy(request: NextRequest) {
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''}`,
     `style-src 'self' 'nonce-${nonce}'`,
     "img-src 'self' data: blob: https://img.youtube.com https://i.ytimg.com https://images.unsplash.com https://*.public.blob.vercel-storage.com",
+    "media-src 'self' https://*.public.blob.vercel-storage.com",
     "font-src 'self'",
     // Allow Sentry ingest for error reporting and PostHog analytics
     "connect-src 'self' https://*.ingest.us.sentry.io https://*.ingest.sentry.io https://us.i.posthog.com https://us.posthog.com https://eu.i.posthog.com https://eu.posthog.com",
