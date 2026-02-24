@@ -58,6 +58,8 @@ export interface Synonym {
   term: string;
 }
 
+export type UserStatus = 'active' | 'deactivated' | 'deleted';
+
 export interface User {
   id: string;
   name: string;
@@ -66,6 +68,23 @@ export interface User {
   time_available: '1min' | '10min' | '1hr+';
   skills: string;
   created_at: string;
+  // Profile fields (Phase 0 — global rearchitecture)
+  first_name: string | null;
+  last_name: string | null;
+  display_name: string | null;
+  bio: string | null;
+  avatar_url: string | null;
+  date_of_birth: string | null;
+  // Global identity
+  country_code: string | null;
+  language_code: string;
+  // Auth
+  email_verified: number;
+  phone_verified: number;
+  // Account management
+  status: UserStatus;
+  deactivated_at: string | null;
+  session_version: number;
 }
 
 export interface UserIssue {
@@ -473,6 +492,80 @@ export interface EvidenceComment {
   user_name?: string;
   content: string;
   created_at: string;
+}
+
+// i18n (Phase 0 — global rearchitecture)
+export type TextDirection = 'ltr' | 'rtl';
+export type TranslationSource = 'manual' | 'machine' | 'reviewed';
+
+export interface Language {
+  code: string;
+  name: string;
+  native_name: string;
+  direction: TextDirection;
+}
+
+export interface Country {
+  code: string;
+  name: string;
+  default_language: string | null;
+  currency_code: string | null;
+  phone_prefix: string | null;
+}
+
+export interface Translation {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  field: string;
+  language_code: string;
+  value: string;
+  source: TranslationSource;
+}
+
+// Auth (Phase 0 — global rearchitecture)
+export type AccountType = 'oauth' | 'oidc' | 'email' | 'credentials';
+export type LegalDocumentType = 'terms' | 'privacy' | 'cookie';
+export type ConsentType = 'terms' | 'privacy' | 'cookie' | 'analytics';
+
+export interface Account {
+  id: string;
+  user_id: string;
+  provider: string;
+  provider_account_id: string;
+  type: AccountType;
+  access_token: string | null;
+  refresh_token: string | null;
+  expires_at: number | null;
+  token_type: string | null;
+  scope: string | null;
+  id_token: string | null;
+}
+
+export interface VerificationToken {
+  identifier: string;
+  token: string;
+  expires: string;
+}
+
+export interface LegalDocument {
+  id: string;
+  country_code: string;
+  document_type: LegalDocumentType;
+  version: string;
+  content_url: string;
+  effective_date: string;
+}
+
+export interface UserConsent {
+  id: string;
+  user_id: string;
+  document_type: ConsentType;
+  version: string;
+  country_code: string;
+  accepted_at: string;
+  ip_address: string | null;
+  user_agent: string | null;
 }
 
 // Bot Analytics
