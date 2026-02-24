@@ -6,20 +6,20 @@
 
 ## Latest Session
 
-**Session 21** (2026-02-24) — Session Protocol Redesign
-→ [`session-logs/2026-02-session-21.md`](session-logs/2026-02-session-21.md)
+**Session 22** (2026-02-24) — Worktree Cleanup Fix + Auto-Merge Protocol
+→ [`session-logs/2026-02-session-22.md`](session-logs/2026-02-session-22.md)
 
 ## Current Priorities
 
 - **Auth UX overhaul** — 4 interactive components silently fail on 401; need "log in to do X" prompts
 - **Stripe integration** — replace simulated top-up with real Stripe Checkout
 - **Profile page improvements**
-- **Worktree cleanup** — `pedantic-johnson` branch should be cleaned up now that all its PRs are merged
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 22  | 2026-02-24    | Worktree cleanup fix + auto-merge protocol            | [`session-22`](session-logs/2026-02-session-22.md)                                                             |
 | 21  | 2026-02-24    | Session protocol redesign                             | [`session-21`](session-logs/2026-02-session-21.md)                                                             |
 | 20  | 2026-02-24    | Security hardening (auth, validation, API key safety) | [`session-20`](session-logs/2026-02-session-20.md)                                                             |
 | 19  | 2026-02-24    | Evidence media upload pipeline + inline video player  | [`session-19`](session-logs/2026-02-session-19.md)                                                             |
