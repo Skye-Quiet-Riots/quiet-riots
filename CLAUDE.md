@@ -139,43 +139,55 @@ git checkout -b claude/<next-task-name> origin/main
 
 At the start of every session (or when asked to "pick up where we left off"):
 
-1. Read CLAUDE.md, then SESSION_LOG.md (lightweight index), then the latest session file linked from it
+1. Read CLAUDE.md → SESSION_LOG.md (lightweight index) → latest session file linked from it
 2. Summarise where we left off and what the priorities are
 3. Run the test suite (`npm test`) and flag any issues
-4. Check OpenClaw health and version:
+4. **OpenClaw health check — only if bot work is planned or user mentions bot issues:**
    - `openclaw --version` — report current version
    - `launchctl list | grep ai.openclaw.gateway` — confirm gateway is running
    - `tail -5 ~/.openclaw/logs/watchdog.log` — check for recent auto-recoveries
    - `tail -3 ~/.openclaw/logs/auto-update.log` — check if auto-update ran recently
-5. If the watchdog has been restarting frequently, flag it as a connectivity issue
+   - If the watchdog has been restarting frequently, flag it as a connectivity issue
+
+**Continuation sessions:** If this session continues a previous one (context compacted or "pick up where we left off"), skip the full start-of-session — just read the latest session file and continue working.
 
 ## During Session
 
-- Run tests after meaningful changes, not just at session end
-- When adding or changing code, check if tests need updating — add tests for new logic
-- Save debugging insights to auto memory as they happen
+### Code quality
+
+- Write tests alongside new code, not as a separate pass at session end
+- Run `npm test` after meaningful changes — don't batch all testing to the end
 - If you discover a new gotcha, add it to CLAUDE.md immediately
+
+### Branching & PRs
+
+- Follow the Branching Workflow exactly — fresh branch from `origin/main` for every piece of work
+- After creating a PR, wait for CI to pass before merging
+- After merging a PR, immediately create a fresh branch if more work follows
+
+### Deployment verification
+
+- After merging to main, verify production health: `curl -s https://www.quietriots.com/api/health`
+- For UI changes, verify the change is visible on production (allow ~30s for Vercel propagation)
+- For CSP or header changes, verify with: `curl -sI https://www.quietriots.com | grep -i <header>`
 
 ## End of Session Protocol
 
-At the end of every session (or when asked to "wrap up" / "good night"):
+At the end of every session (or when asked to "wrap up" / "good night"). Steps are ordered by priority — if context is running low, the most important things happen first:
 
-1. Run the full test suite and `npm run build` — report any failures
-2. **Test coverage check:** Review all new/changed code in this session — if any logic, API routes, or components were added or modified without corresponding tests, write them now. Then re-run `npm test` to confirm the new tests pass.
-3. If any bot-related files were changed (SKILL.md, bot API, OPERATIONS.md):
-   - Flag that OpenClaw sessions may need clearing: `rm ~/.openclaw/agents/main/sessions/*.jsonl`
-   - Flag that gateway may need restarting: `launchctl stop ai.openclaw.gateway && launchctl start ai.openclaw.gateway`
-4. Update this file (CLAUDE.md) with any new decisions, gotchas, or known issues
-5. Create a new session file in `session-logs/` (e.g. `session-logs/2026-02-session-20.md`) with:
+1. **Don't lose work:** Check `git status` and `git log origin/main..HEAD` — commit and push any uncommitted or unpushed changes (run `npm test && npm run build` before committing)
+2. **Verify green:** Run `npm test` and `npm run build` — report any failures
+3. **Write session log:** Create a new file in `session-logs/` (e.g. `session-logs/2026-02-session-20.md`) with:
    - What was worked on
    - Decisions made and why
    - Anything discovered or surprising
    - Test count
    - PRs created/merged
    - Clear next steps
-6. Update `SESSION_LOG.md` index: set the "Latest Session" pointer and "Current Priorities" to the new session, add a row to the "All Sessions" table
-7. **Ensure all code is pushed:** Check `git status` and `git log origin/main..HEAD` — if there are unpushed commits, push to origin. If there are uncommitted changes, commit them first (run build/tests before committing).
-8. **Run backup:** Execute `bash ~/.openclaw/scripts/backup.sh` to sync config/secrets to the private backup repo immediately (don't wait for the 03:00 scheduled run).
-9. **Clean up worktrees:** If this session used a worktree branch that has been merged to main, flag it for cleanup: `git worktree remove <path>` and `git branch -d <branch>`.
+4. **Update index:** Update `SESSION_LOG.md` — set "Latest Session" pointer, "Current Priorities", and add a row to "All Sessions" table
+5. **Update CLAUDE.md** with any new decisions, gotchas, or known issues
+6. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
+7. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
+8. **Worktree cleanup:** If this session used a worktree branch that has been merged to main, flag it for cleanup
 
 Write everything as if briefing a new version of yourself that has zero context beyond these files.
