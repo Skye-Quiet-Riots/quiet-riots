@@ -6,20 +6,22 @@
 
 ## Latest Session
 
-**Session 24** (2026-02-24) — Phase 1 (Auth.js) + Phase 2 (i18n) Complete
-→ [`session-logs/2026-02-session-24.md`](session-logs/2026-02-session-24.md)
+**Session 25** (2026-02-24) — Phases 3-6 Complete: Full Global Rearchitecture
+→ [`session-logs/2026-02-session-25.md`](session-logs/2026-02-session-25.md)
 
 ## Current Priorities
 
-- **Global rearchitecture Phase 3** — Multi-currency wallets + country-scoped content
-- **Global rearchitecture Phase 4** — Privacy, compliance & account safety (cookie consent, GDPR, data export)
 - **Seed translations** — `scripts/seed-translations.ts` to machine-translate content into 45 locales
 - **Generate locale message files** — `messages/{locale}.json` for all 44 non-English locales
+- **Onboarding wizard** — Post-signup interests/language/country selection
+- **SKILL.md updates** — Add language directive for WhatsApp bot
+- **DB migration on staging/production** — Run migrations 011-013
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 25  | 2026-02-24    | Phases 3-6: Full global rearchitecture complete       | [`session-25`](session-logs/2026-02-session-25.md)                                                             |
 | 24  | 2026-02-24    | Phase 1 (Auth.js) + Phase 2 (i18n) complete           | [`session-24`](session-logs/2026-02-session-24.md)                                                             |
 | 23  | 2026-02-24    | Global rearchitecture plan + Phase 0 DB foundation    | [`session-23`](session-logs/2026-02-session-23.md)                                                             |
 | 22  | 2026-02-24    | Worktree cleanup fix + auto-merge protocol            | [`session-22`](session-logs/2026-02-session-22.md)                                                             |
