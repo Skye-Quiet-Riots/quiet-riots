@@ -580,6 +580,32 @@ export interface UserConsent {
   user_agent: string | null;
 }
 
+// Privacy & Compliance (Phase 4)
+export type LoginEventType =
+  | 'login'
+  | 'logout'
+  | 'failed_login'
+  | 'password_reset'
+  | 'account_locked';
+
+export interface NotificationPreferences {
+  user_id: string;
+  security: number;
+  product_updates: number;
+  campaign_updates: number;
+  weekly_digest: number;
+}
+
+export interface LoginEvent {
+  id: string;
+  user_id: string | null;
+  event_type: LoginEventType;
+  ip_address: string | null;
+  user_agent: string | null;
+  provider: string | null;
+  created_at: string;
+}
+
 // Bot Analytics
 export interface BotEvent {
   id: string;

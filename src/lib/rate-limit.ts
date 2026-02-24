@@ -5,19 +5,30 @@
 
 const store = new Map<string, number[]>();
 
-const WINDOW_MS = 60_000; // 1 minute
-const MAX_REQUESTS = 30; // per window
+const DEFAULT_WINDOW_MS = 60_000; // 1 minute
+const DEFAULT_MAX_REQUESTS = 30; // per window
 
-export function rateLimit(key: string): { allowed: boolean; retryAfterMs: number } {
+interface RateLimitOptions {
+  maxRequests?: number;
+  windowMs?: number;
+}
+
+export function rateLimit(
+  key: string,
+  options?: RateLimitOptions,
+): { allowed: boolean; retryAfterMs: number } {
+  const windowMs = options?.windowMs ?? DEFAULT_WINDOW_MS;
+  const maxRequests = options?.maxRequests ?? DEFAULT_MAX_REQUESTS;
+
   const now = Date.now();
   const timestamps = store.get(key) ?? [];
 
   // Drop entries outside the window
-  const recent = timestamps.filter((t) => now - t < WINDOW_MS);
+  const recent = timestamps.filter((t) => now - t < windowMs);
 
-  if (recent.length >= MAX_REQUESTS) {
+  if (recent.length >= maxRequests) {
     const oldest = recent[0];
-    const retryAfterMs = WINDOW_MS - (now - oldest);
+    const retryAfterMs = windowMs - (now - oldest);
     store.set(key, recent);
     return { allowed: false, retryAfterMs };
   }

@@ -5,6 +5,7 @@ import { routing, rtlLocales } from '@/i18n/routing';
 import type { Locale } from '@/i18n/routing';
 import { NavBar } from '@/components/layout/nav-bar';
 import { Footer } from '@/components/layout/footer';
+import { CookieConsent } from '@/components/interactive/cookie-consent';
 
 type Props = {
   children: React.ReactNode;
@@ -31,6 +32,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NavBar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <CookieConsent />
       </NextIntlClientProvider>
     </div>
   );
