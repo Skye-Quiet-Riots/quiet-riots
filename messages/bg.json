@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organizirai se okolo obshti problemi. Nameri svoite hora. Deistvai zaedno."
+  },
+  "Nav": {
+    "issues": "Problemi",
+    "assistants": "Asistenti",
+    "organisations": "Organizatsii",
+    "wallet": "Portfeil",
+    "profile": "Profil",
+    "signIn": "Vhod",
+    "signOut": "Izhod",
+    "toggleMenu": "Prevklyuchvane na menyuto"
+  },
+  "Footer": {
+    "mission": "Da promenym poveche kam dobro prez zhivota si, otkolkoto se osmelvavame da si predstavim, che e vazmozhno.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Tsentarat na problemite",
+    "headline": "Promyanata ne tryabva da e shumna, za da e silna",
+    "description": "Nameri drugi, koito spodelat tvoite problemi. Deistvai zaedno. Quiet Riots svarzva horata okolo obshti frustratsii i prevryashta oplakvaniata v kolektivno deistvie.",
+    "browseIssues": "Razglezhdane na problemi",
+    "howItWorks": "Kak raboti",
+    "trendingIssues": "\ud83d\udd25 Populyarni problemi",
+    "viewAll": "Vizh vsichki \u2192",
+    "reelOfTheDay": "\ud83c\udfac Riot Reel na denya",
+    "riotersFunny": "{count} uchastnitsi namerikha tova za zabavno",
+    "from": "Ot:",
+    "findYourIssue": "Nameri svoya problem",
+    "findYourIssueDesc": "Tarsi kakavto i da e frustratsiya \u2014 vlakove, internet, zdraveopazvanem klima. Ako sashtestvuva, shte ti pokazhem kolko drugi ya spodelat.",
+    "useThePivot": "Izpolzvai Pivota",
+    "useThePivotDesc": "Vizh sashitya problem vav vsichki organizatsii ili vsichki problemi v edna organizatsiya. Kato tangovi tantsyori, koito menyat posoka.",
+    "takeAction": "Deistvai",
+    "takeActionDesc": "Idei, deistviya i obshtnost \u2014 personalizirani spored tvoeto vreme i umeniya. Malkite deistviya se natrupvat v golyama promyana.",
+    "missionQuote": "\"Da promenym poveche kam dobro prez zhivota si, otkolkoto se osmelvavame da si predstavim, che e vazmozhno.\"",
+    "basedOn": "Po knigata ot 2014 g. <em>Quiet Riots</em> ot Saiman Darling",
+    "joinMovement": "\u270a Prisaedini se kam dvizhenieto"
+  },
+  "Issues": {
+    "title": "Problemi",
+    "subtitle": "{count} problemi v {categoryCount} kategorii. Nameri svoya.",
+    "searchPlaceholder": "Tarsi problemi ili sinonimi...",
+    "noResults": "Ne sa namereni problemi. Probvai razlichno tarsene ili kategoriya."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Problemi",
+    "rioters": "uchastnitsi",
+    "country": "{count, plural, one {darzhava} other {darzhavi}}",
+    "thisWeek": "tazi sedmitsa",
+    "actions": "deistviya",
+    "alsoKnownAs": "Izvestno oshte kato",
+    "actionsTitle": "\u26a1 Deistviya \u2014 Tvoiyat personaliziran nabor ot instrumenti",
+    "actionsDesc": "Bazirano na evolyutsiyata \u2014 \ud83d\udca1 **Idei** (variatsiya), \u26a1 **Deistviya** (selektsiya) i \ud83e\udd1d **Zaedno** (obshtnost).",
+    "gatherEvidence": "\ud83d\udcf9 Sabirai dokazatelstva",
+    "gatherEvidenceDesc": "Dokumentirai kakvo se sluchva \u2014 predavai na zhivo ili spodelai snimki, videokliprove i vryzki.",
+    "riotReels": "\ud83c\udfac Riot Reels",
+    "riotReelsDesc": "Zabavni i ironichni videokliprove, koito ulavyat dukha na tozi Quiet Riot.",
+    "experts": "\ud83c\udf1f Eksperti",
+    "expertsDesc": "Straastni dobrovolci, koito navlizat po-dalbok \u2014 prevodachi, spetsialisti, mediini lideri, yuridicheski savetnitsi.",
+    "communityFeed": "\ud83d\udcac Obshtnostna stena"
+  },
+  "Organisations": {
+    "title": "Organizatsii",
+    "subtitle": "Razglezhdai organizatsiite i vizh kakvi problemi imat horata s vsyaka ot tyakh.",
+    "noResults": "Ne sa namereni organizatsii za tazi kategoriya."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organizatsii",
+    "totalRioters": "obshto uchastnitsi",
+    "issues": "problemi",
+    "topIssueShare": "dyal na osnoven problem",
+    "paretoTitle": "Printsipat na Pareto:",
+    "paretoDesc": "Shepa problemi obiknoveno sastavlyavat 80% ot vsichki oplakvaniaya. Osnovnite problemi po-dolu sa klasirani po broya na zasegnatite hora.",
+    "gatherEvidence": "\ud83d\udcf9 Sabirai dokazatelstva",
+    "gatherEvidenceDesc": "Dokumentirai kakvo se sluchva s {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanii",
+    "subtitle": "{count} {count, plural, one {kampaniya sabirashta} other {kampanii sabirashti}} sredstva za promyana.",
+    "noResults": "Ne sa namereni kampanii. Probvai drug filtar."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanii",
+    "fullyFunded": "Napalno finansirana",
+    "disbursed": "Sredstva raspredeleni",
+    "cancelled": "Otmenena",
+    "active": "Aktivna",
+    "target": "tsel",
+    "raised": "sabrano",
+    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}",
+    "platformFee": "taksa na platformata",
+    "wantToContribute": "Iskash li da prineesesh?",
+    "topUpFirst": "Pyrvo zaredi portfeila si, za da zapochnesh da prinasyash.",
+    "createAccountPrompt": "Sazdai akount i zaredi portfeila si, za da podkrepish tazi kampaniya.",
+    "goToWallet": "Kym portfeila",
+    "createAccount": "Sazdavane na akount",
+    "completedMessage": "Tazi kampaniya beshe {status}. Blagodarim na vsichki {count} podkrepyashti!",
+    "recipient": "Poluchatel"
+  },
+  "Assistants": {
+    "title": "Asistenti",
+    "subtitle": "{count} dvoiki AI agenti i choveshki organizatori, pomogashti na uchastnitsite da deistvat.",
+    "noResults": "Vse oshte nyama nalichni asistenti."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asistenti",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Choveshki organizator",
+    "rioters": "uchastnitsi",
+    "riots": "{count, plural, one {riot} other {riota}}",
+    "messages": "saobshteniya",
+    "currentFocus": "Tekusht fokus",
+    "recentActivity": "Skoreshna aktivnost",
+    "riotsWeHelp": "Quiet Riots, na koito pomogame",
+    "wantToBe": "Iskash li da si {name}?",
+    "openRole": "Rolyata na choveshki organizator e otvorena za vseki sas strast kam tazi kategoriya. Izrazi interesa si po-dolu."
+  },
+  "Wallet": {
+    "title": "Tvoiyat portfeil",
+    "createPromptTitle": "Zapochni da podkrepvash kausi",
+    "createPromptDesc": "Sazdai bezplaten akount, za da zaledish sredstva i da prinasyash kam kampanii, koito sa vazhni za teb.",
+    "createAccount": "Sazdavane na akount",
+    "activeCampaigns": "Aktivni kampanii",
+    "viewAll": "Vizh vsichki"
+  },
+  "Profile": {
+    "title": "Tvoiyat profil",
+    "time": "Vreme: ",
+    "skills": "Umeniya: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {publikatsiya} other {publikatsii}}",
+    "likes": "{count, plural, one {poluchen like} other {polucheni laika}}",
+    "yourRiots": "Tvoite Quiet Riots",
+    "noRiots": "Vse oshte nyama Quiet Riots",
+    "findIssues": "Nameri problemite, koito te interesuvat, i se prisaedini kam dvizhenieto.",
+    "browseIssues": "Razglezhdane na problemi",
+    "memberSince": "Chlen ot",
+    "rioters": "uchastnitsi",
+    "connectedAccounts": "Svarzani akounti",
+    "noConnectedAccounts": "Vse oshte nyama svarzani akounti. Vlezi s Google ili Facebook, za da svarzhesha akounta si.",
+    "deactivateAccount": "Deaktivirane na akount",
+    "deactivateConfirm": "Siguren li si, che iskash da deaktivirash akounta si? Mozhesh da go reaktivirash v ramkite na 30 dni."
+  },
+  "Auth": {
+    "welcomeBack": "Dobre doshyal otnovo",
+    "signInSubtitle": "Vlezi v akounta si v Quiet Riots",
+    "joinTitle": "Prisaedini se kam Quiet Riots",
+    "joinSubtitle": "Organizirai se okolo obshti problemi. Deistvai zaedno.",
+    "continueGoogle": "Prodalzhi s Google",
+    "continueFacebook": "Prodalzhi s Facebook",
+    "connecting": "Svarzvanye...",
+    "or": "ili",
+    "emailLabel": "Imeil adres",
+    "sendMagicLink": "Izprati magicheska vryzka",
+    "signUpWithEmail": "Registratsiya s imeil",
+    "sendingLink": "Izprashtane na vryzka...",
+    "checkEmail": "Proveri imeila si",
+    "signInLinkSent": "Izpratikhme vryzka za vkhod na imeila ti. Klikni varhu vryzkata, za da prodalzish.",
+    "signUpLinkSent": "Izpratikhme vryzka za vkhod na imeila ti. Klikni varhu vryzkata, za da sazdadesh akount.",
+    "noAccount": "Nyamash akount?",
+    "signUp": "Registratsiya",
+    "hasAccount": "Veche imash akount?",
+    "signIn": "Vhod",
+    "termsAgree": "S registratsiyata se saglavyavash s nashite",
+    "terms": "Usloviya",
+    "and": "i",
+    "privacyPolicy": "Politika za poveritelnost",
+    "verifyTitle": "Proveri imeila si",
+    "verifyDesc": "Vryzka za vkhod beshe izpratena na tvoya imeil adres. Klikni varhu vryzkata, za da prodalzish.",
+    "backToSignIn": "Obratno kam vkhod",
+    "errorTitle": "Greshka pri udostoveryavane",
+    "errorConfig": "Ima problem s konfiguratsiyata na servera.",
+    "errorAccess": "Dostyapyt beshe otkazan. Vazmoshno e da nyamash razreshenie za vkhod.",
+    "errorVerification": "Vryzkata za vkhod e iztekal ili veche e bila izpolzvana.",
+    "errorDefault": "Vaznikna greshka po vreme na udostoveryavaneto.",
+    "tryAgain": "Probvai otnovo"
+  },
+  "AuthGate": {
+    "signInTo": "Vlezi, za da {action}",
+    "signIn": "Vhod",
+    "signInRequired": "Nuzhna e registratsiya",
+    "signInToAction": "Tryabva da vlezesh, za da {action}.",
+    "cancel": "Otmyana",
+    "noAccount": "Nyamash akount?",
+    "signUp": "Registratsiya"
+  },
+  "Error": {
+    "title": "Neshto se obyrka",
+    "description": "Vaznikna neochavkana greshka.",
+    "tryAgain": "Probvai otnovo"
+  },
+  "GlobalError": {
+    "title": "Neshto se obyrka",
+    "description": "Vaznikna neochavkana greshka. Nashiyat ekip beshe uvedomen.",
+    "tryAgain": "Probvai otnovo"
+  },
+  "NotFound": {
+    "title": "Stranitsata ne e namerana",
+    "description": "Stranitsata, koyato tarsish, ne sashtestvuva ili e bila premestenal.",
+    "goHome": "Kam nachaloto"
+  },
+  "Cards": {
+    "rioters": "uchastnitsi",
+    "country": "{count, plural, one {darzhava} other {darzhavi}}",
+    "issues": "problemi",
+    "idea": "Ideya",
+    "action": "Deistvie",
+    "together": "Zaedno",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 chas+",
+    "skills": "Umeniya: ",
+    "anonymous": "Anonimen",
+    "curated": "Podbirano",
+    "community": "Obshtnost",
+    "aiPick": "Izbor na AI",
+    "funded": "Finansirano",
+    "disbursed": "Raspredeleno",
+    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}",
+    "aiAndHuman": "AI Agent i Choveshki organizator",
+    "riots": "{count, plural, one {riot} other {riota}}"
+  },
+  "Health": {
+    "title": "\ud83d\udcca Indeks na chuvstvo za obshtnost",
+    "needsMet": "Udovletvoreni nuzhdi",
+    "needsMetDesc": "Chlenovete smyatat, che si struva",
+    "membership": "Chlenstvo",
+    "membershipDesc": "Doverie i prinadlezhnost",
+    "influence": "Vliyanie",
+    "influenceDesc": "Glasat ti ima znachenie",
+    "connection": "Vryzka",
+    "connectionDesc": "Spodeleni prezhivyavaniya",
+    "healthy": "Zdrava",
+    "growing": "Rastesha",
+    "needsAttention": "Nuzhdata vnimanie"
+  },
+  "Pivot": {
+    "title": "\ud83d\udd00 Pivotat",
+    "peopleGlobally": "hora po sveta",
+    "issuePivot": "\ud83d\udd0d Pivot na problema",
+    "issuePivotDesc": "Sasht problem, vsichki org.",
+    "orgPivot": "\ud83c\udfe2 Pivot na organizatsiya",
+    "orgPivotDesc": "Vsichki problemi, edna org.",
+    "seeIssueAcross": "Vizh \"{issueName}\" vav vsichki podobni organizatsii:",
+    "seeOrgIssues": "Vizh vsichki problemi v {orgName}:",
+    "you": "TI",
+    "rioters": "uchastnitsi"
+  },
+  "CampaignProgress": {
+    "title": "\ud83d\udcb0 Kampanii",
+    "funded": "Finansirano",
+    "disbursed": "Raspredeleno",
+    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}"
+  },
+  "WalletBalance": {
+    "title": "Tvoeto saldo",
+    "loaded": "zaredeno",
+    "contributed": "prineseno",
+    "campaigns": "{count, plural, one {kampaniya} other {kampanii}}"
+  },
+  "Transactions": {
+    "title": "Skoreshni transaktsii",
+    "topUp": "Zarezhidane",
+    "contribution": "Prinos",
+    "refund": "Vazbrazhdane",
+    "justNow": "tokhu-shto",
+    "minutesAgo": "predi {count} min",
+    "hoursAgo": "predi {count} ch.",
+    "daysAgo": "predi {count} d.",
+    "empty": "Vse oshte nyama transaktsii. Zaredi portfeila si, za da zapochnesh!"
+  },
+  "Activity": {
+    "noActivity": "Vse oshte nyama aktivnost.",
+    "ai": "AI",
+    "human": "Ch"
+  },
+  "Countries": {
+    "title": "\ud83c\udf0d Darzhavi"
+  },
+  "Synonyms": {
+    "placeholder": "Dobavane na sinonim...",
+    "add": "Dobavi"
+  },
+  "Join": {
+    "joined": "\u2705 Prisaedinen kam tozi Quiet Riot",
+    "join": "\u270a Prisaedini se kam tozi Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Tarsene na problemi..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Spodeli misleite si...",
+    "post": "Publikuvai",
+    "empty": "Vse oshte nyama publikatsii. Badi parviyat, koito spodeli neshto!"
+  },
+  "Actions": {
+    "ideas": "\ud83d\udca1 Idei (Variatsiya)",
+    "actions": "\u26a1 Deistviya (Selektsiya)",
+    "together": "\ud83e\udd1d Zaedno (Obshtnost)",
+    "noResults": "Nyama deistviya, otgovarayshti na filtrite ti. Probvai da razshirish izbora."
+  },
+  "Filter": {
+    "all": "Vsichki",
+    "active": "Aktivni",
+    "funded": "Finansirani",
+    "disbursed": "Raspredeleni"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Kolko vreme imash?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 chas+",
+    "typeQuestion": "Kakav tip?",
+    "ideas": "\ud83d\udca1 Idei",
+    "actions": "\u26a1 Deistviya",
+    "together": "\ud83e\udd1d Zaedno"
+  },
+  "Reels": {
+    "empty": "Vse oshte nyama videokliprove. Badi parviyat, koito izprati edin!",
+    "submitPrompt": "Imash li zabavno video, koeto obobshtava tozi problem?",
+    "submitSuccess": "Blagodarim! Tvoeto video beshe izprateno za pregled.",
+    "urlPlaceholder": "Postavi YouTube URL...",
+    "captionPlaceholder": "Dobavi opisanie (po zhelanie)...",
+    "submit": "Izprati"
+  },
+  "TopUp": {
+    "addFunds": "Dobavyane na sredstva",
+    "minTopUp": "Minimalnoto zarezdane e \u00a31",
+    "success": "{amount} dobaveni kam portfeila ti!",
+    "networkError": "Mrezhova greshka. Molya, probvai otnovo.",
+    "customAmount": "Potroitelska suma (\u00a3)",
+    "topUp": "Zaredi",
+    "simulated": "Simulirano zarezdane za testove. Realnite plashitaniya chrez Stripe idvat skoro."
+  },
+  "Contribute": {
+    "insufficientFunds": "Nedostatachni sredstva. Pyrvo zaredi portfeila si.",
+    "minContribution": "Minimalniyat prinos e 10p",
+    "contribute": "Prinesi",
+    "yourBalance": "Tvoeto saldo: ",
+    "networkError": "Mrezhova greshka. Molya, probvai otnovo.",
+    "invalidAmount": "Vavedi validna suma",
+    "customAmount": "Potroitelska suma (\u00a3)",
+    "give": "Dari",
+    "success": "Prineseni {amount} kam {campaign}!",
+    "remainingBalance": "Ostavashto saldo: {balance}",
+    "topUpPrompt": "Zaredi portfeila si",
+    "toKeepSupporting": "za da prodalzish da podkrepvash kampanii.",
+    "walletEmpty": "Portfeilat ti e prazen.",
+    "topUp": "Zaredi",
+    "toContribute": "za da prineesh."
+  },
+  "Claim": {
+    "success": "Blagodarim! Otbelyazakhme interesa ti kam rolyata na {name}. Shte se svarzhem s teb.",
+    "placeholder": "Zashto bi bil chudesen kato {name}? (po zhelanie)",
+    "submitting": "Izprashtane...",
+    "expressInterest": "Izrazi interes"
+  },
+  "Evidence": {
+    "generalOrg": "Obshto (bez konkretna organizatsiya)",
+    "placeholder": "Kazhi kakvo mislish...",
+    "photosLabel": "Snimki (do 4)",
+    "addPhotos": "+ Dobavi snimki",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks. 4 MB vsyaka.",
+    "videoLabel": "Video (maks. 1)",
+    "addVideo": "+ Dobavi video",
+    "videoFormats": "MP4, MOV, WebM. Maks. 4 MB.",
+    "linkLabel": "Vanshna vryzka",
+    "linkPlaceholder": "https://novinen-statiya.bg/...",
+    "hideMedia": "Skrii media",
+    "addMedia": "\ud83d\udcce Dobavi snimki, video, vryzki",
+    "posting": "Publikuvane...",
+    "uploading": "Kachvane...",
+    "submitEvidence": "Izprati dokazatelstva",
+    "goLive": "\ud83d\udd34 Na zhivo sega",
+    "maxPhotos": "Maksimum 4 snimki. {count} propusnati.",
+    "videoFailed": "Kachvaneto na video se provali",
+    "removePhoto": "Premakhni {name}",
+    "removeVideo": "Premakhni video",
+    "uploadFailed": "Neuspeshno kachvane: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Redaktirane na profil",
+    "nameLabel": "Ime",
+    "timeLabel": "Nalichno vreme",
+    "time1min": "1 minuta",
+    "time1minDesc": "Samo byrzi deistviya",
+    "time10min": "10 minuti",
+    "time10minDesc": "Poveche deistviya",
+    "time1hour": "1 chas+",
+    "time1hourDesc": "Zadylbocheno uchastie",
+    "skillsLabel": "Umeniya",
+    "skillsPlaceholder": "napr. dizain, pisane, pravo, programirane",
+    "skillsHint": "Razdeleni sas zaretaiki. Pomagat da te svarzhem s podkhodvashti deistviya.",
+    "saving": "Zapazvane...",
+    "save": "Zapazi promenite",
+    "cancel": "Otmyana",
+    "nameRequired": "Imeto e zadalnitelno",
+    "saveFailed": "Zapaznvaneto se provali"
+  },
+  "SignupForm": {
+    "placeholder": "ti@primer.bg",
+    "submit": "Uvdomi me"
+  },
+  "CookieConsent": {
+    "title": "Nastroiki za biskvitki",
+    "description": "Izpolzvame biskvitki, za da te darzshim vlyazan i da podobrim prezhivyavaneto ti. Analtichnite biskvitki ni pomagat da razberem kak se izpolzva saikat.",
+    "acceptAll": "Priyemi vsichki",
+    "essentialOnly": "Samo neobkhodimite",
+    "manage": "Upravlyavai nastroikite",
+    "essential": "Neobkhodimi",
+    "essentialDescription": "Neobkhodimi za funktsionirvaneto na saita. Ne mogat da badat izklyucheni.",
+    "analytics": "Analytichni",
+    "analyticsDescription": "Pomagat ni da razberem kak izpolzvash saita, za da mozhem da go podobrim.",
+    "save": "Zapazi nastroikite"
+  }
+}

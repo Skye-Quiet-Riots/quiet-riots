@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Tổ chức xung quanh các vấn đề chung. Tìm người cùng chí hướng. Cùng nhau hành động."
+  },
+  "Nav": {
+    "issues": "Vấn đề",
+    "assistants": "Trợ lý",
+    "organisations": "Tổ chức",
+    "wallet": "Ví",
+    "profile": "Hồ sơ",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "toggleMenu": "Bật/tắt menu"
+  },
+  "Footer": {
+    "mission": "Thay đổi nhiều điều tốt đẹp hơn trong cuộc đời chúng ta, hơn cả những gì ta dám mơ tưởng.",
+    "powered": "Quiet Riots · Được hỗ trợ bởi OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Trung tâm giải quyết vấn đề",
+    "headline": "Thay đổi không cần phải ồn ào mới mạnh mẽ",
+    "description": "Tìm những người có cùng vấn đề với bạn. Cùng nhau hành động. Quiet Riots kết nối mọi người xung quanh những bức xúc chung và biến lời phàn nàn thành hành động tập thể.",
+    "browseIssues": "Xem các vấn đề",
+    "howItWorks": "Cách hoạt động",
+    "trendingIssues": "🔥 Vấn đề nổi bật",
+    "viewAll": "Xem tất cả →",
+    "reelOfTheDay": "🎬 Riot Reel trong ngày",
+    "riotersFunny": "{count} thành viên thấy hài hước",
+    "from": "Từ:",
+    "findYourIssue": "Tìm vấn đề của bạn",
+    "findYourIssueDesc": "Tìm kiếm bất kỳ điều gì bạn bức xúc — giao thông, internet, y tế, khí hậu. Nếu nó tồn tại, chúng tôi sẽ cho bạn biết có bao nhiêu người khác cũng nghĩ vậy.",
+    "useThePivot": "Dùng The Pivot",
+    "useThePivotDesc": "Xem cùng một vấn đề ở tất cả các tổ chức, hoặc tất cả vấn đề tại một tổ chức. Giống như vũ công tango đổi hướng.",
+    "takeAction": "Hành động",
+    "takeActionDesc": "Ý tưởng, hành động và cộng đồng — phù hợp với thời gian và kỹ năng của bạn. Hành động nhỏ cộng lại thành thay đổi lớn.",
+    "missionQuote": "\"Thay đổi nhiều điều tốt đẹp hơn trong cuộc đời chúng ta, hơn cả những gì ta dám mơ tưởng.\"",
+    "basedOn": "Dựa trên cuốn sách năm 2014 <em>Quiet Riots</em> của Simon Darling",
+    "joinMovement": "✊ Tham gia phong trào"
+  },
+  "Issues": {
+    "title": "Vấn đề",
+    "subtitle": "{count} vấn đề trong {categoryCount} danh mục. Tìm vấn đề của bạn.",
+    "searchPlaceholder": "Tìm vấn đề hoặc từ đồng nghĩa...",
+    "noResults": "Không tìm thấy vấn đề nào. Thử tìm kiếm hoặc danh mục khác."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Vấn đề",
+    "rioters": "thành viên",
+    "country": "{count, plural, one {quốc gia} other {quốc gia}}",
+    "thisWeek": "tuần này",
+    "actions": "hoạt động",
+    "alsoKnownAs": "Còn được gọi là",
+    "actionsTitle": "⚡ Hoạt động — Bộ công cụ riêng của bạn",
+    "actionsDesc": "Dựa trên tiến hóa — 💡 **Ý tưởng** (biến thể), ⚡ **Hoạt động** (chọn lọc), và 🤝 **Cùng nhau** (cộng đồng).",
+    "gatherEvidence": "📹 Thu thập bằng chứng",
+    "gatherEvidenceDesc": "Ghi lại những gì đang xảy ra — phát trực tiếp hoặc chia sẻ ảnh, video và liên kết.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Video hài hước và châm biếm thể hiện tinh thần của Quiet Riot này.",
+    "experts": "🌟 Chuyên gia",
+    "expertsDesc": "Tình nguyện viên nhiệt huyết đi sâu hơn — phiên dịch, chuyên gia, trưởng nhóm truyền thông, cố vấn pháp lý.",
+    "communityFeed": "💬 Bảng tin cộng đồng"
+  },
+  "Organisations": {
+    "title": "Tổ chức",
+    "subtitle": "Xem các tổ chức và các vấn đề mà mọi người gặp phải với từng tổ chức.",
+    "noResults": "Không tìm thấy tổ chức nào trong danh mục này."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Tổ chức",
+    "totalRioters": "tổng thành viên",
+    "issues": "vấn đề",
+    "topIssueShare": "tỷ lệ vấn đề hàng đầu",
+    "paretoTitle": "Nguyên tắc Pareto:",
+    "paretoDesc": "Một vài vấn đề thường chiếm 80% tổng số khiếu nại. Các vấn đề hàng đầu bên dưới được xếp hạng theo số người bị ảnh hưởng.",
+    "gatherEvidence": "📹 Thu thập bằng chứng",
+    "gatherEvidenceDesc": "Ghi lại những gì đang xảy ra với {orgName}."
+  },
+  "Campaigns": {
+    "title": "Chiến dịch",
+    "subtitle": "{count} {count, plural, one {chiến dịch} other {chiến dịch}} gây quỹ cho sự thay đổi.",
+    "noResults": "Không tìm thấy chiến dịch nào. Thử bộ lọc khác."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Chiến dịch",
+    "fullyFunded": "Đã gây quỹ đủ",
+    "disbursed": "Đã giải ngân",
+    "cancelled": "Đã hủy",
+    "active": "Đang hoạt động",
+    "target": "mục tiêu",
+    "raised": "đã gây quỹ",
+    "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}",
+    "platformFee": "phí nền tảng",
+    "wantToContribute": "Bạn muốn đóng góp?",
+    "topUpFirst": "Nạp tiền vào ví trước để bắt đầu đóng góp.",
+    "createAccountPrompt": "Tạo tài khoản và nạp tiền vào ví để ủng hộ chiến dịch này.",
+    "goToWallet": "Đi đến ví",
+    "createAccount": "Tạo tài khoản",
+    "completedMessage": "Chiến dịch này đã {status}. Cảm ơn tất cả {count} người ủng hộ!",
+    "recipient": "Người nhận"
+  },
+  "Assistants": {
+    "title": "Trợ lý",
+    "subtitle": "{count} cặp AI agent và người tổ chức giúp thành viên hành động.",
+    "noResults": "Chưa có trợ lý nào."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Trợ lý",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Người tổ chức",
+    "rioters": "thành viên",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "tin nhắn",
+    "currentFocus": "Trọng tâm hiện tại",
+    "recentActivity": "Hoạt động gần đây",
+    "riotsWeHelp": "Quiet Riots chúng tôi hỗ trợ",
+    "wantToBe": "Bạn muốn làm {name}?",
+    "openRole": "Vai trò người tổ chức mở cho bất kỳ ai có đam mê với danh mục này. Bày tỏ sự quan tâm bên dưới."
+  },
+  "Wallet": {
+    "title": "Ví của bạn",
+    "createPromptTitle": "Bắt đầu ủng hộ",
+    "createPromptDesc": "Tạo tài khoản miễn phí để nạp tiền và đóng góp cho các chiến dịch bạn quan tâm.",
+    "createAccount": "Tạo tài khoản",
+    "activeCampaigns": "Chiến dịch đang hoạt động",
+    "viewAll": "Xem tất cả"
+  },
+  "Profile": {
+    "title": "Hồ sơ của bạn",
+    "time": "Thời gian: ",
+    "skills": "Kỹ năng: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {bài viết} other {bài viết}}",
+    "likes": "{count, plural, one {lượt thích nhận được} other {lượt thích nhận được}}",
+    "yourRiots": "Quiet Riots của bạn",
+    "noRiots": "Chưa có Quiet Riots nào",
+    "findIssues": "Tìm vấn đề bạn quan tâm và tham gia phong trào.",
+    "browseIssues": "Xem vấn đề",
+    "memberSince": "Thành viên từ",
+    "rioters": "thành viên",
+    "connectedAccounts": "Tài khoản đã liên kết",
+    "noConnectedAccounts": "Chưa có tài khoản nào được liên kết. Đăng nhập bằng Google hoặc Facebook để liên kết tài khoản.",
+    "deactivateAccount": "Vô hiệu hóa tài khoản",
+    "deactivateConfirm": "Bạn có chắc muốn vô hiệu hóa tài khoản? Bạn có thể kích hoạt lại trong vòng 30 ngày."
+  },
+  "Auth": {
+    "welcomeBack": "Chào mừng trở lại",
+    "signInSubtitle": "Đăng nhập vào tài khoản Quiet Riots của bạn",
+    "joinTitle": "Tham gia Quiet Riots",
+    "joinSubtitle": "Tổ chức xung quanh vấn đề chung. Cùng nhau hành động.",
+    "continueGoogle": "Tiếp tục với Google",
+    "continueFacebook": "Tiếp tục với Facebook",
+    "connecting": "Đang kết nối...",
+    "or": "hoặc",
+    "emailLabel": "Địa chỉ email",
+    "sendMagicLink": "Gửi liên kết đăng nhập",
+    "signUpWithEmail": "Đăng ký bằng email",
+    "sendingLink": "Đang gửi liên kết...",
+    "checkEmail": "Kiểm tra email của bạn",
+    "signInLinkSent": "Chúng tôi đã gửi liên kết đăng nhập đến email của bạn. Nhấp vào liên kết để tiếp tục.",
+    "signUpLinkSent": "Chúng tôi đã gửi liên kết đăng nhập đến email của bạn. Nhấp vào liên kết để tạo tài khoản.",
+    "noAccount": "Chưa có tài khoản?",
+    "signUp": "Đăng ký",
+    "hasAccount": "Đã có tài khoản?",
+    "signIn": "Đăng nhập",
+    "termsAgree": "Khi đăng ký, bạn đồng ý với",
+    "terms": "Điều khoản",
+    "and": "và",
+    "privacyPolicy": "Chính sách bảo mật",
+    "verifyTitle": "Kiểm tra email của bạn",
+    "verifyDesc": "Liên kết đăng nhập đã được gửi đến email của bạn. Nhấp vào liên kết để tiếp tục.",
+    "backToSignIn": "Quay lại đăng nhập",
+    "errorTitle": "Lỗi xác thực",
+    "errorConfig": "Có vấn đề với cấu hình máy chủ.",
+    "errorAccess": "Truy cập bị từ chối. Bạn có thể không có quyền đăng nhập.",
+    "errorVerification": "Liên kết đăng nhập đã hết hạn hoặc đã được sử dụng.",
+    "errorDefault": "Đã xảy ra lỗi trong quá trình xác thực.",
+    "tryAgain": "Thử lại"
+  },
+  "AuthGate": {
+    "signInTo": "Đăng nhập để {action}",
+    "signIn": "Đăng nhập",
+    "signInRequired": "Cần đăng nhập",
+    "signInToAction": "Bạn cần đăng nhập để {action}.",
+    "cancel": "Hủy",
+    "noAccount": "Chưa có tài khoản?",
+    "signUp": "Đăng ký"
+  },
+  "Error": {
+    "title": "Đã xảy ra lỗi",
+    "description": "Đã xảy ra lỗi không mong muốn.",
+    "tryAgain": "Thử lại"
+  },
+  "GlobalError": {
+    "title": "Đã xảy ra lỗi",
+    "description": "Đã xảy ra lỗi không mong muốn. Đội ngũ của chúng tôi đã được thông báo.",
+    "tryAgain": "Thử lại"
+  },
+  "NotFound": {
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.",
+    "goHome": "Về trang chủ"
+  },
+  "Cards": {
+    "rioters": "thành viên",
+    "country": "{count, plural, one {quốc gia} other {quốc gia}}",
+    "issues": "vấn đề",
+    "idea": "Ý tưởng",
+    "action": "Hoạt động",
+    "together": "Cùng nhau",
+    "time1min": "1 phút",
+    "time10min": "10 phút",
+    "time1hour": "1 giờ+",
+    "skills": "Kỹ năng: ",
+    "anonymous": "Ẩn danh",
+    "curated": "Được chọn lọc",
+    "community": "Cộng đồng",
+    "aiPick": "AI chọn",
+    "funded": "Đã gây quỹ",
+    "disbursed": "Đã giải ngân",
+    "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}",
+    "aiAndHuman": "AI Agent & Người tổ chức",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 Chỉ số cảm nhận cộng đồng",
+    "needsMet": "Nhu cầu được đáp ứng",
+    "needsMetDesc": "Thành viên cảm thấy xứng đáng",
+    "membership": "Tư cách thành viên",
+    "membershipDesc": "Tin tưởng & thuộc về",
+    "influence": "Ảnh hưởng",
+    "influenceDesc": "Tiếng nói của bạn quan trọng",
+    "connection": "Kết nối",
+    "connectionDesc": "Trải nghiệm chung",
+    "healthy": "Khỏe mạnh",
+    "growing": "Đang phát triển",
+    "needsAttention": "Cần quan tâm"
+  },
+  "Pivot": {
+    "title": "🔀 The Pivot",
+    "peopleGlobally": "người trên toàn cầu",
+    "issuePivot": "🔍 Issue Pivot",
+    "issuePivotDesc": "Cùng vấn đề, mọi tổ chức",
+    "orgPivot": "🏢 Org Pivot",
+    "orgPivotDesc": "Mọi vấn đề, một tổ chức",
+    "seeIssueAcross": "Xem \"{issueName}\" ở tất cả các tổ chức tương tự:",
+    "seeOrgIssues": "Xem tất cả vấn đề tại {orgName}:",
+    "you": "BẠN",
+    "rioters": "thành viên"
+  },
+  "CampaignProgress": {
+    "title": "💰 Chiến dịch",
+    "funded": "Đã gây quỹ",
+    "disbursed": "Đã giải ngân",
+    "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}"
+  },
+  "WalletBalance": {
+    "title": "Số dư của bạn",
+    "loaded": "đã nạp",
+    "contributed": "đã đóng góp",
+    "campaigns": "{count, plural, one {chiến dịch} other {chiến dịch}}"
+  },
+  "Transactions": {
+    "title": "Giao dịch gần đây",
+    "topUp": "Nạp tiền",
+    "contribution": "Đóng góp",
+    "refund": "Hoàn tiền",
+    "justNow": "vừa xong",
+    "minutesAgo": "{count} phút trước",
+    "hoursAgo": "{count} giờ trước",
+    "daysAgo": "{count} ngày trước",
+    "empty": "Chưa có giao dịch nào. Nạp tiền vào ví để bắt đầu!"
+  },
+  "Activity": {
+    "noActivity": "Chưa có hoạt động nào.",
+    "ai": "AI",
+    "human": "Người"
+  },
+  "Countries": {
+    "title": "🌍 Quốc gia"
+  },
+  "Synonyms": {
+    "placeholder": "Thêm từ đồng nghĩa...",
+    "add": "Thêm"
+  },
+  "Join": {
+    "joined": "✅ Đã tham gia Quiet Riot này",
+    "join": "✊ Tham gia Quiet Riot này"
+  },
+  "Search": {
+    "placeholder": "Tìm vấn đề..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Chia sẻ suy nghĩ của bạn...",
+    "post": "Đăng",
+    "empty": "Chưa có bài viết nào. Hãy là người đầu tiên chia sẻ!"
+  },
+  "Actions": {
+    "ideas": "💡 Ý tưởng (Biến thể)",
+    "actions": "⚡ Hoạt động (Chọn lọc)",
+    "together": "🤝 Cùng nhau (Cộng đồng)",
+    "noResults": "Không có hoạt động nào phù hợp với bộ lọc. Thử mở rộng lựa chọn."
+  },
+  "Filter": {
+    "all": "Tất cả",
+    "active": "Đang hoạt động",
+    "funded": "Đã gây quỹ",
+    "disbursed": "Đã giải ngân"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Bạn có bao nhiêu thời gian?",
+    "time1min": "1 phút",
+    "time10min": "10 phút",
+    "time1hour": "1 giờ+",
+    "typeQuestion": "Loại nào?",
+    "ideas": "💡 Ý tưởng",
+    "actions": "⚡ Hoạt động",
+    "together": "🤝 Cùng nhau"
+  },
+  "Reels": {
+    "empty": "Chưa có reel nào. Hãy là người đầu tiên gửi!",
+    "submitPrompt": "Có video hài hước tóm tắt vấn đề này không?",
+    "submitSuccess": "Cảm ơn! Reel của bạn đã được gửi để xem xét.",
+    "urlPlaceholder": "Dán URL YouTube...",
+    "captionPlaceholder": "Thêm chú thích (không bắt buộc)...",
+    "submit": "Gửi"
+  },
+  "TopUp": {
+    "addFunds": "Nạp tiền",
+    "minTopUp": "Nạp tối thiểu £1",
+    "success": "Đã nạp {amount} vào ví!",
+    "networkError": "Lỗi mạng. Vui lòng thử lại.",
+    "customAmount": "Số tiền khác (£)",
+    "topUp": "Nạp tiền",
+    "simulated": "Nạp tiền mô phỏng để thử nghiệm. Thanh toán thật qua Stripe sẽ có sớm."
+  },
+  "Contribute": {
+    "insufficientFunds": "Không đủ tiền. Nạp thêm vào ví trước.",
+    "minContribution": "Đóng góp tối thiểu là 10p",
+    "contribute": "Đóng góp",
+    "yourBalance": "Số dư của bạn: ",
+    "networkError": "Lỗi mạng. Vui lòng thử lại.",
+    "invalidAmount": "Nhập số tiền hợp lệ",
+    "customAmount": "Số tiền khác (£)",
+    "give": "Cho",
+    "success": "Đã đóng góp {amount} cho {campaign}!",
+    "remainingBalance": "Số dư còn lại: {balance}",
+    "topUpPrompt": "Nạp tiền vào ví",
+    "toKeepSupporting": "để tiếp tục ủng hộ các chiến dịch.",
+    "walletEmpty": "Ví của bạn đã hết tiền.",
+    "topUp": "Nạp tiền",
+    "toContribute": "để đóng góp."
+  },
+  "Claim": {
+    "success": "Cảm ơn! Chúng tôi đã ghi nhận sự quan tâm của bạn với vai trò {name}. Chúng tôi sẽ liên hệ.",
+    "placeholder": "Tại sao bạn phù hợp với vai trò {name}? (không bắt buộc)",
+    "submitting": "Đang gửi...",
+    "expressInterest": "Bày tỏ quan tâm"
+  },
+  "Evidence": {
+    "generalOrg": "Chung (không chỉ định tổ chức)",
+    "placeholder": "Nói suy nghĩ của bạn...",
+    "photosLabel": "Ảnh (tối đa 4)",
+    "addPhotos": "+ Thêm ảnh",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Tối đa 4 MB mỗi ảnh.",
+    "videoLabel": "Video (tối đa 1)",
+    "addVideo": "+ Thêm video",
+    "videoFormats": "MP4, MOV, WebM. Tối đa 4 MB.",
+    "linkLabel": "Liên kết bên ngoài",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "Ẩn phương tiện",
+    "addMedia": "📎 Thêm ảnh, video, liên kết",
+    "posting": "Đang đăng...",
+    "uploading": "Đang tải lên...",
+    "submitEvidence": "Gửi bằng chứng",
+    "goLive": "🔴 Phát trực tiếp ngay",
+    "maxPhotos": "Tối đa 4 ảnh. Đã bỏ qua {count}.",
+    "videoFailed": "Tải video lên thất bại",
+    "removePhoto": "Xóa {name}",
+    "removeVideo": "Xóa video",
+    "uploadFailed": "Tải lên thất bại: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Chỉnh sửa hồ sơ",
+    "nameLabel": "Tên",
+    "timeLabel": "Thời gian có thể tham gia",
+    "time1min": "1 phút",
+    "time1minDesc": "Chỉ hoạt động nhanh",
+    "time10min": "10 phút",
+    "time10minDesc": "Hầu hết hoạt động",
+    "time1hour": "1 giờ+",
+    "time1hourDesc": "Tham gia sâu",
+    "skillsLabel": "Kỹ năng",
+    "skillsPlaceholder": "vd: thiết kế, viết lách, luật, lập trình",
+    "skillsHint": "Phân cách bằng dấu phẩy. Giúp ghép bạn với hoạt động phù hợp.",
+    "saving": "Đang lưu...",
+    "save": "Lưu thay đổi",
+    "cancel": "Hủy",
+    "nameRequired": "Tên là bắt buộc",
+    "saveFailed": "Lưu thất bại"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "Thông báo cho tôi"
+  },
+  "CookieConsent": {
+    "title": "Tùy chọn cookie",
+    "description": "Chúng tôi sử dụng cookie để giữ bạn đăng nhập và cải thiện trải nghiệm. Cookie phân tích giúp chúng tôi hiểu cách trang web được sử dụng.",
+    "acceptAll": "Chấp nhận tất cả",
+    "essentialOnly": "Chỉ thiết yếu",
+    "manage": "Quản lý tùy chọn",
+    "essential": "Thiết yếu",
+    "essentialDescription": "Cần thiết để trang web hoạt động. Không thể tắt.",
+    "analytics": "Phân tích",
+    "analyticsDescription": "Giúp chúng tôi hiểu cách bạn sử dụng trang web để cải thiện.",
+    "save": "Lưu tùy chọn"
+  }
+}

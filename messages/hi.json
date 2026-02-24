@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "साझा मुद्दों पर संगठित हो। अपने लोग खोजो। मिलकर कदम उठाओ।"
+  },
+  "Nav": {
+    "issues": "मुद्दे",
+    "assistants": "सहायक",
+    "organisations": "संगठन",
+    "wallet": "वॉलेट",
+    "profile": "प्रोफ़ाइल",
+    "signIn": "साइन इन",
+    "signOut": "साइन आउट",
+    "toggleMenu": "मेनू टॉगल करें"
+  },
+  "Footer": {
+    "mission": "अपने जीवनकाल में जितना बेहतर बदलाव संभव है उससे कहीं ज़्यादा करना।",
+    "powered": "Quiet Riots · OpenClaw AI Agent द्वारा संचालित"
+  },
+  "Home": {
+    "tagline": "मुद्दों की वन-स्टॉप-शॉप",
+    "headline": "बदलाव के लिए शोर मचाना ज़रूरी नहीं",
+    "description": "अपने जैसे मुद्दे साझा करने वालों को खोजो। मिलकर कदम उठाओ। Quiet Riots लोगों को साझा निराशाओं के इर्द-गिर्द जोड़ता है और शिकायतों को सामूहिक कार्रवाई में बदलता है।",
+    "browseIssues": "मुद्दे देखें",
+    "howItWorks": "कैसे काम करता है",
+    "trendingIssues": "🔥 ट्रेंडिंग मुद्दे",
+    "viewAll": "सभी देखें →",
+    "reelOfTheDay": "🎬 आज की Riot Reel",
+    "riotersFunny": "{count} सदस्यों को यह मज़ेदार लगी",
+    "from": "से:",
+    "findYourIssue": "अपना मुद्दा खोजो",
+    "findYourIssueDesc": "कोई भी निराशा खोजो — ट्रेन, ब्रॉडबैंड, NHS, जलवायु। अगर यह मौजूद है, तो हम दिखाएंगे कि कितने और लोग इसे साझा करते हैं।",
+    "useThePivot": "पिवट का उपयोग करो",
+    "useThePivotDesc": "एक ही मुद्दे को सभी संगठनों में देखो, या एक संगठन के सभी मुद्दे। जैसे टैंगो डांसर्स दिशा बदलते हैं।",
+    "takeAction": "कदम उठाओ",
+    "takeActionDesc": "विचार, कार्रवाइयाँ, और समुदाय — तुम्हारे समय और कौशल के अनुसार। छोटे कदम मिलकर बड़ा बदलाव लाते हैं।",
+    "missionQuote": "\"अपने जीवनकाल में जितना बेहतर बदलाव संभव है उससे कहीं ज़्यादा करना।\"",
+    "basedOn": "साइमन डार्लिंग की 2014 की किताब <em>Quiet Riots</em> पर आधारित",
+    "joinMovement": "✊ आंदोलन से जुड़ो"
+  },
+  "Issues": {
+    "title": "मुद्दे",
+    "subtitle": "{categoryCount} श्रेणियों में {count} मुद्दे। अपना खोजो।",
+    "searchPlaceholder": "मुद्दे या पर्यायवाची खोजो...",
+    "noResults": "कोई मुद्दा नहीं मिला। कोई और खोज या श्रेणी आज़माओ।"
+  },
+  "IssueDetail": {
+    "breadcrumb": "मुद्दे",
+    "rioters": "सदस्य",
+    "country": "{count, plural, one {देश} other {देश}}",
+    "thisWeek": "इस हफ़्ते",
+    "actions": "कार्रवाइयाँ",
+    "alsoKnownAs": "इसे यह भी कहते हैं",
+    "actionsTitle": "⚡ कार्रवाइयाँ — तुम्हारी निजी टूलकिट",
+    "actionsDesc": "विकास पर आधारित — 💡 **विचार** (विविधता), ⚡ **कार्रवाइयाँ** (चयन), और 🤝 **मिलकर** (समुदाय)।",
+    "gatherEvidence": "📹 सबूत इकट्ठा करो",
+    "gatherEvidenceDesc": "क्या हो रहा है उसे दर्ज करो — लाइव जाओ या फ़ोटो, वीडियो और लिंक शेयर करो।",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "मज़ेदार और व्यंग्यात्मक वीडियो जो इस Quiet Riot की भावना को दर्शाते हैं।",
+    "experts": "🌟 विशेषज्ञ",
+    "expertsDesc": "जुनूनी स्वयंसेवक जो गहराई में जाते हैं — अनुवादक, विशेषज्ञ, मीडिया प्रमुख, कानूनी सलाहकार।",
+    "communityFeed": "💬 समुदाय फ़ीड"
+  },
+  "Organisations": {
+    "title": "संगठन",
+    "subtitle": "संगठन देखो और जानो कि लोगों को किन मुद्दों पर शिकायत है।",
+    "noResults": "इस श्रेणी में कोई संगठन नहीं मिला।"
+  },
+  "OrgDetail": {
+    "breadcrumb": "संगठन",
+    "totalRioters": "कुल सदस्य",
+    "issues": "मुद्दे",
+    "topIssueShare": "शीर्ष मुद्दा हिस्सेदारी",
+    "paretoTitle": "पारेतो सिद्धांत:",
+    "paretoDesc": "कुछ मुद्दे आमतौर पर 80% शिकायतों का कारण होते हैं। नीचे के शीर्ष मुद्दे प्रभावित लोगों की संख्या के अनुसार क्रमबद्ध हैं।",
+    "gatherEvidence": "📹 सबूत इकट्ठा करो",
+    "gatherEvidenceDesc": "{orgName} के बारे में क्या हो रहा है उसे दर्ज करो।"
+  },
+  "Campaigns": {
+    "title": "अभियान",
+    "subtitle": "{count} {count, plural, one {अभियान} other {अभियान}} बदलाव के लिए धन जुटा रहे हैं।",
+    "noResults": "कोई अभियान नहीं मिला। कोई और फ़िल्टर आज़माओ।"
+  },
+  "CampaignDetail": {
+    "breadcrumb": "अभियान",
+    "fullyFunded": "पूरी तरह वित्तपोषित",
+    "disbursed": "धन वितरित",
+    "cancelled": "रद्द",
+    "active": "सक्रिय",
+    "target": "लक्ष्य",
+    "raised": "जुटाया",
+    "backers": "{count, plural, one {समर्थक} other {समर्थक}}",
+    "platformFee": "प्लेटफ़ॉर्म शुल्क",
+    "wantToContribute": "योगदान करना चाहते हो?",
+    "topUpFirst": "योगदान शुरू करने के लिए पहले अपना वॉलेट टॉप-अप करो।",
+    "createAccountPrompt": "इस अभियान को सहयोग देने के लिए अकाउंट बनाओ और वॉलेट में पैसे डालो।",
+    "goToWallet": "वॉलेट पर जाओ",
+    "createAccount": "अकाउंट बनाओ",
+    "completedMessage": "यह अभियान {status} हो चुका है। सभी {count} समर्थकों का धन्यवाद!",
+    "recipient": "प्राप्तकर्ता"
+  },
+  "Assistants": {
+    "title": "सहायक",
+    "subtitle": "{count} जोड़े AI एजेंट और मानव आयोजकों के जो सदस्यों को कार्रवाई करने में मदद करते हैं।",
+    "noResults": "अभी कोई सहायक उपलब्ध नहीं।"
+  },
+  "AssistantDetail": {
+    "breadcrumb": "सहायक",
+    "aiAgent": "AI एजेंट",
+    "humanOrganiser": "मानव आयोजक",
+    "rioters": "सदस्य",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "संदेश",
+    "currentFocus": "वर्तमान फ़ोकस",
+    "recentActivity": "हाल की गतिविधि",
+    "riotsWeHelp": "Quiet Riots जिनमें हम मदद करते हैं",
+    "wantToBe": "{name} बनना चाहते हो?",
+    "openRole": "मानव आयोजक की भूमिका इस श्रेणी के प्रति जुनून रखने वाले किसी के लिए भी खुली है। नीचे अपनी रुचि व्यक्त करो।"
+  },
+  "Wallet": {
+    "title": "तुम्हारा वॉलेट",
+    "createPromptTitle": "कारणों का समर्थन शुरू करो",
+    "createPromptDesc": "मुफ़्त अकाउंट बनाओ, पैसे डालो और तुम्हें जो अभियान महत्वपूर्ण लगें उनमें योगदान करो।",
+    "createAccount": "अकाउंट बनाओ",
+    "activeCampaigns": "सक्रिय अभियान",
+    "viewAll": "सभी देखें"
+  },
+  "Profile": {
+    "title": "तुम्हारी प्रोफ़ाइल",
+    "time": "समय: ",
+    "skills": "कौशल: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {पोस्ट} other {पोस्ट}}",
+    "likes": "{count, plural, one {लाइक मिली} other {लाइक मिलीं}}",
+    "yourRiots": "तुम्हारे Quiet Riots",
+    "noRiots": "अभी कोई Quiet Riots नहीं",
+    "findIssues": "वो मुद्दे खोजो जो तुम्हें महत्वपूर्ण लगते हैं और आंदोलन से जुड़ो।",
+    "browseIssues": "मुद्दे देखें",
+    "memberSince": "सदस्य बने",
+    "rioters": "सदस्य",
+    "connectedAccounts": "जुड़े हुए अकाउंट",
+    "noConnectedAccounts": "अभी कोई अकाउंट नहीं जुड़ा। अपना अकाउंट लिंक करने के लिए Google या Facebook से साइन इन करो।",
+    "deactivateAccount": "अकाउंट निष्क्रिय करो",
+    "deactivateConfirm": "क्या तुम वाकई अपना अकाउंट निष्क्रिय करना चाहते हो? 30 दिनों के भीतर इसे फिर से सक्रिय कर सकते हो।"
+  },
+  "Auth": {
+    "welcomeBack": "वापसी पर स्वागत है",
+    "signInSubtitle": "अपने Quiet Riots अकाउंट में साइन इन करो",
+    "joinTitle": "Quiet Riots से जुड़ो",
+    "joinSubtitle": "साझा मुद्दों पर संगठित हो। मिलकर कदम उठाओ।",
+    "continueGoogle": "Google से जारी रखें",
+    "continueFacebook": "Facebook से जारी रखें",
+    "connecting": "कनेक्ट हो रहा है...",
+    "or": "या",
+    "emailLabel": "ईमेल पता",
+    "sendMagicLink": "मैजिक लिंक भेजो",
+    "signUpWithEmail": "ईमेल से साइन अप करो",
+    "sendingLink": "लिंक भेज रहे हैं...",
+    "checkEmail": "अपना ईमेल चेक करो",
+    "signInLinkSent": "हमने तुम्हारे ईमेल पते पर साइन-इन लिंक भेजा है। जारी रखने के लिए लिंक पर क्लिक करो।",
+    "signUpLinkSent": "हमने तुम्हारे ईमेल पते पर साइन-इन लिंक भेजा है। अपना अकाउंट बनाने के लिए लिंक पर क्लिक करो।",
+    "noAccount": "अकाउंट नहीं है?",
+    "signUp": "साइन अप",
+    "hasAccount": "पहले से अकाउंट है?",
+    "signIn": "साइन इन",
+    "termsAgree": "साइन अप करके, तुम हमारी इन शर्तों से सहमत हो",
+    "terms": "शर्तें",
+    "and": "और",
+    "privacyPolicy": "गोपनीयता नीति",
+    "verifyTitle": "अपना ईमेल चेक करो",
+    "verifyDesc": "तुम्हारे ईमेल पते पर साइन-इन लिंक भेजा गया है। जारी रखने के लिए लिंक पर क्लिक करो।",
+    "backToSignIn": "साइन इन पर वापस जाओ",
+    "errorTitle": "प्रमाणीकरण त्रुटि",
+    "errorConfig": "सर्वर कॉन्फ़िगरेशन में समस्या है।",
+    "errorAccess": "पहुँच अस्वीकृत। शायद तुम्हें साइन इन करने की अनुमति नहीं है।",
+    "errorVerification": "साइन-इन लिंक की समय सीमा समाप्त हो गई या पहले ही उपयोग हो चुकी है।",
+    "errorDefault": "प्रमाणीकरण के दौरान एक त्रुटि हुई।",
+    "tryAgain": "फिर से कोशिश करो"
+  },
+  "AuthGate": {
+    "signInTo": "{action} के लिए साइन इन करो",
+    "signIn": "साइन इन",
+    "signInRequired": "साइन इन ज़रूरी है",
+    "signInToAction": "{action} के लिए तुम्हें साइन इन करना होगा।",
+    "cancel": "रद्द करो",
+    "noAccount": "अकाउंट नहीं है?",
+    "signUp": "साइन अप"
+  },
+  "Error": {
+    "title": "कुछ गड़बड़ हो गई",
+    "description": "एक अप्रत्याशित त्रुटि हुई।",
+    "tryAgain": "फिर से कोशिश करो"
+  },
+  "GlobalError": {
+    "title": "कुछ गड़बड़ हो गई",
+    "description": "एक अप्रत्याशित त्रुटि हुई। हमारी टीम को सूचित कर दिया गया है।",
+    "tryAgain": "फिर से कोशिश करो"
+  },
+  "NotFound": {
+    "title": "पेज नहीं मिला",
+    "description": "जो पेज तुम ढूंढ रहे हो वह मौजूद नहीं है या स्थानांतरित हो गया है।",
+    "goHome": "होम पर जाओ"
+  },
+  "Cards": {
+    "rioters": "सदस्य",
+    "country": "{count, plural, one {देश} other {देश}}",
+    "issues": "मुद्दे",
+    "idea": "विचार",
+    "action": "कार्रवाई",
+    "together": "मिलकर",
+    "time1min": "1 मिनट",
+    "time10min": "10 मिनट",
+    "time1hour": "1 घंटा+",
+    "skills": "कौशल: ",
+    "anonymous": "गुमनाम",
+    "curated": "क्यूरेटेड",
+    "community": "समुदाय",
+    "aiPick": "AI चुनाव",
+    "funded": "वित्तपोषित",
+    "disbursed": "वितरित",
+    "backers": "{count, plural, one {समर्थक} other {समर्थक}}",
+    "aiAndHuman": "AI एजेंट और मानव आयोजक",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 समुदाय भावना सूचकांक",
+    "needsMet": "ज़रूरतें पूरी",
+    "needsMetDesc": "सदस्यों को लगता है कि यह सार्थक है",
+    "membership": "सदस्यता",
+    "membershipDesc": "विश्वास और अपनापन",
+    "influence": "प्रभाव",
+    "influenceDesc": "तुम्हारी आवाज़ मायने रखती है",
+    "connection": "जुड़ाव",
+    "connectionDesc": "साझा अनुभव",
+    "healthy": "स्वस्थ",
+    "growing": "बढ़ रहा है",
+    "needsAttention": "ध्यान चाहिए"
+  },
+  "Pivot": {
+    "title": "🔀 पिवट",
+    "peopleGlobally": "लोग विश्वभर में",
+    "issuePivot": "🔍 मुद्दा पिवट",
+    "issuePivotDesc": "एक ही मुद्दा, सभी संगठन",
+    "orgPivot": "🏢 संगठन पिवट",
+    "orgPivotDesc": "सभी मुद्दे, एक संगठन",
+    "seeIssueAcross": "\"{issueName}\" को सभी समान संगठनों में देखो:",
+    "seeOrgIssues": "{orgName} के सभी मुद्दे देखो:",
+    "you": "तुम",
+    "rioters": "सदस्य"
+  },
+  "CampaignProgress": {
+    "title": "💰 अभियान",
+    "funded": "वित्तपोषित",
+    "disbursed": "वितरित",
+    "backers": "{count, plural, one {समर्थक} other {समर्थक}}"
+  },
+  "WalletBalance": {
+    "title": "तुम्हारा बैलेंस",
+    "loaded": "लोड किया",
+    "contributed": "योगदान दिया",
+    "campaigns": "{count, plural, one {अभियान} other {अभियान}}"
+  },
+  "Transactions": {
+    "title": "हाल के लेन-देन",
+    "topUp": "टॉप-अप",
+    "contribution": "योगदान",
+    "refund": "रिफ़ंड",
+    "justNow": "अभी",
+    "minutesAgo": "{count} मिनट पहले",
+    "hoursAgo": "{count} घंटे पहले",
+    "daysAgo": "{count} दिन पहले",
+    "empty": "अभी कोई लेन-देन नहीं। शुरू करने के लिए अपना वॉलेट टॉप-अप करो!"
+  },
+  "Activity": {
+    "noActivity": "अभी कोई गतिविधि नहीं।",
+    "ai": "AI",
+    "human": "मा"
+  },
+  "Countries": {
+    "title": "🌍 देश"
+  },
+  "Synonyms": {
+    "placeholder": "पर्यायवाची जोड़ो...",
+    "add": "जोड़ो"
+  },
+  "Join": {
+    "joined": "✅ इस Quiet Riot में शामिल हो",
+    "join": "✊ इस Quiet Riot से जुड़ो"
+  },
+  "Search": {
+    "placeholder": "मुद्दे खोजो..."
+  },
+  "Feed": {
+    "composerPlaceholder": "अपने विचार साझा करो...",
+    "post": "पोस्ट",
+    "empty": "अभी कोई पोस्ट नहीं। पहले शेयर करने वाले बनो!"
+  },
+  "Actions": {
+    "ideas": "💡 विचार (विविधता)",
+    "actions": "⚡ कार्रवाइयाँ (चयन)",
+    "together": "🤝 मिलकर (समुदाय)",
+    "noResults": "तुम्हारे फ़िल्टर से कोई कार्रवाई नहीं मिली। अपना चयन बढ़ाकर देखो।"
+  },
+  "Filter": {
+    "all": "सभी",
+    "active": "सक्रिय",
+    "funded": "वित्तपोषित",
+    "disbursed": "वितरित"
+  },
+  "TimeSkill": {
+    "timeQuestion": "तुम्हारे पास कितना समय है?",
+    "time1min": "1 मिनट",
+    "time10min": "10 मिनट",
+    "time1hour": "1 घंटा+",
+    "typeQuestion": "किस तरह का?",
+    "ideas": "💡 विचार",
+    "actions": "⚡ कार्रवाइयाँ",
+    "together": "🤝 मिलकर"
+  },
+  "Reels": {
+    "empty": "अभी कोई रील नहीं। पहले सबमिट करने वाले बनो!",
+    "submitPrompt": "कोई मज़ेदार वीडियो है जो इस मुद्दे को दर्शाता है?",
+    "submitSuccess": "धन्यवाद! तुम्हारी रील समीक्षा के लिए सबमिट हो गई है।",
+    "urlPlaceholder": "YouTube URL पेस्ट करो...",
+    "captionPlaceholder": "कैप्शन जोड़ो (वैकल्पिक)...",
+    "submit": "सबमिट करो"
+  },
+  "TopUp": {
+    "addFunds": "पैसे जोड़ो",
+    "minTopUp": "न्यूनतम टॉप-अप £1 है",
+    "success": "तुम्हारे वॉलेट में {amount} जोड़ दिए गए!",
+    "networkError": "नेटवर्क त्रुटि। कृपया फिर से कोशिश करो।",
+    "customAmount": "कस्टम राशि (£)",
+    "topUp": "टॉप-अप",
+    "simulated": "परीक्षण के लिए सिम्युलेटेड टॉप-अप। जल्द ही Stripe से असली भुगतान।"
+  },
+  "Contribute": {
+    "insufficientFunds": "पर्याप्त धन नहीं। पहले अपना वॉलेट टॉप-अप करो।",
+    "minContribution": "न्यूनतम योगदान 10p है",
+    "contribute": "योगदान करो",
+    "yourBalance": "तुम्हारा बैलेंस: ",
+    "networkError": "नेटवर्क त्रुटि। कृपया फिर से कोशिश करो।",
+    "invalidAmount": "एक वैध राशि दर्ज करो",
+    "customAmount": "कस्टम राशि (£)",
+    "give": "दो",
+    "success": "{campaign} में {amount} का योगदान दिया!",
+    "remainingBalance": "तुम्हारा शेष बैलेंस: {balance}",
+    "topUpPrompt": "अपना वॉलेट टॉप-अप करो",
+    "toKeepSupporting": "अभियानों का समर्थन जारी रखने के लिए।",
+    "walletEmpty": "तुम्हारा वॉलेट खाली है।",
+    "topUp": "टॉप-अप करो",
+    "toContribute": "योगदान करने के लिए।"
+  },
+  "Claim": {
+    "success": "धन्यवाद! {name} भूमिका में तुम्हारी रुचि नोट कर ली है। हम संपर्क करेंगे।",
+    "placeholder": "{name} के रूप में तुम बेहतरीन क्यों होगे? (वैकल्पिक)",
+    "submitting": "सबमिट हो रहा है...",
+    "expressInterest": "रुचि व्यक्त करो"
+  },
+  "Evidence": {
+    "generalOrg": "सामान्य (कोई विशेष संगठन नहीं)",
+    "placeholder": "अपनी राय बताओ...",
+    "photosLabel": "फ़ोटो (अधिकतम 4)",
+    "addPhotos": "+ फ़ोटो जोड़ो",
+    "photoFormats": "JPEG, PNG, WebP, GIF। अधिकतम 4 MB प्रत्येक।",
+    "videoLabel": "वीडियो (अधिकतम 1)",
+    "addVideo": "+ वीडियो जोड़ो",
+    "videoFormats": "MP4, MOV, WebM। अधिकतम 4 MB।",
+    "linkLabel": "बाहरी लिंक",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "मीडिया छुपाओ",
+    "addMedia": "📎 फ़ोटो, वीडियो, लिंक जोड़ो",
+    "posting": "पोस्ट हो रहा है...",
+    "uploading": "अपलोड हो रहा है...",
+    "submitEvidence": "सबूत सबमिट करो",
+    "goLive": "🔴 अभी लाइव जाओ",
+    "maxPhotos": "अधिकतम 4 फ़ोटो। {count} छोड़ दी गईं।",
+    "videoFailed": "वीडियो अपलोड विफल रहा",
+    "removePhoto": "{name} हटाओ",
+    "removeVideo": "वीडियो हटाओ",
+    "uploadFailed": "अपलोड विफल: {names}"
+  },
+  "ProfileEdit": {
+    "title": "प्रोफ़ाइल संपादित करो",
+    "nameLabel": "नाम",
+    "timeLabel": "उपलब्ध समय",
+    "time1min": "1 मिनट",
+    "time1minDesc": "केवल त्वरित कार्रवाइयाँ",
+    "time10min": "10 मिनट",
+    "time10minDesc": "अधिकांश कार्रवाइयाँ",
+    "time1hour": "1 घंटा+",
+    "time1hourDesc": "गहरी भागीदारी",
+    "skillsLabel": "कौशल",
+    "skillsPlaceholder": "जैसे डिज़ाइन, लेखन, कानूनी, कोडिंग",
+    "skillsHint": "कॉमा से अलग करो। प्रासंगिक कार्रवाइयों से मिलान में मदद करता है।",
+    "saving": "सेव हो रहा है...",
+    "save": "बदलाव सेव करो",
+    "cancel": "रद्द करो",
+    "nameRequired": "नाम ज़रूरी है",
+    "saveFailed": "सेव नहीं हो पाया"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "मुझे सूचित करो"
+  },
+  "CookieConsent": {
+    "title": "कुकी प्राथमिकताएँ",
+    "description": "हम तुम्हें साइन इन रखने और अनुभव बेहतर बनाने के लिए कुकीज़ का उपयोग करते हैं। एनालिटिक्स कुकीज़ हमें समझने में मदद करती हैं कि साइट कैसे उपयोग होती है।",
+    "acceptAll": "सभी स्वीकार करो",
+    "essentialOnly": "केवल आवश्यक",
+    "manage": "प्राथमिकताएँ प्रबंधित करो",
+    "essential": "आवश्यक",
+    "essentialDescription": "साइट के काम करने के लिए ज़रूरी। अक्षम नहीं किया जा सकता।",
+    "analytics": "एनालिटिक्स",
+    "analyticsDescription": "हमें समझने में मदद करो कि तुम साइट का उपयोग कैसे करते हो ताकि हम इसे बेहतर बना सकें।",
+    "save": "प्राथमिकताएँ सेव करो"
+  }
+}

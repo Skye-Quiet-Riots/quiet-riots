@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "共通の課題で団結しよう。仲間を見つけよう。一緒に行動しよう。"
+  },
+  "Nav": {
+    "issues": "課題",
+    "assistants": "アシスタント",
+    "organisations": "組織",
+    "wallet": "ウォレット",
+    "profile": "プロフィール",
+    "signIn": "ログイン",
+    "signOut": "ログアウト",
+    "toggleMenu": "メニュー切替"
+  },
+  "Footer": {
+    "mission": "私たちの生涯で、想像を超えるほど多くのことをより良く変えていこう。",
+    "powered": "Quiet Riots · OpenClaw AI エージェント搭載"
+  },
+  "Home": {
+    "tagline": "課題のワンストップショップ",
+    "headline": "変化は声高でなくても力強い",
+    "description": "あなたと同じ課題を持つ人を見つけよう。一緒に行動しよう。Quiet Riots は共通の不満を持つ人々をつなぎ、不満を集団行動に変えます。",
+    "browseIssues": "課題を見る",
+    "howItWorks": "仕組み",
+    "trendingIssues": "🔥 注目の課題",
+    "viewAll": "すべて見る →",
+    "reelOfTheDay": "🎬 今日の Riot リール",
+    "riotersFunny": "{count} 人の参加者がこれを面白いと感じました",
+    "from": "投稿者：",
+    "findYourIssue": "あなたの課題を見つけよう",
+    "findYourIssueDesc": "どんな不満でも検索できます——電車、通信、医療、気候。すでに存在していれば、同じ思いの人がどれだけいるかをお見せします。",
+    "useThePivot": "ピボットを使う",
+    "useThePivotDesc": "同じ課題をすべての組織で見たり、一つの組織のすべての課題を見たり。タンゴダンサーが方向を変えるように。",
+    "takeAction": "行動する",
+    "takeActionDesc": "アイデア、アクション、コミュニティ——あなたの時間とスキルに合わせてカスタマイズ。小さな行動が大きな変化に。",
+    "missionQuote": "\"私たちの生涯で、想像を超えるほど多くのことをより良く変えていこう。\"",
+    "basedOn": "Simon Darling の2014年の著書《<em>Quiet Riots</em>》に基づく",
+    "joinMovement": "✊ ムーブメントに参加"
+  },
+  "Issues": {
+    "title": "課題",
+    "subtitle": "{categoryCount} カテゴリにわたる {count} 件の課題。あなたのものを見つけよう。",
+    "searchPlaceholder": "課題や同義語を検索...",
+    "noResults": "課題が見つかりません。別の検索ワードやカテゴリをお試しください。"
+  },
+  "IssueDetail": {
+    "breadcrumb": "課題",
+    "rioters": "参加者",
+    "country": "{count, plural, one {か国} other {か国}}",
+    "thisWeek": "今週",
+    "actions": "件のアクション",
+    "alsoKnownAs": "別名",
+    "actionsTitle": "⚡ アクション——あなた専用ツールキット",
+    "actionsDesc": "進化に基づく——💡 **アイデア**（変異）、⚡ **アクション**（選択）、🤝 **つながり**（コミュニティ）。",
+    "gatherEvidence": "📹 証拠を集める",
+    "gatherEvidenceDesc": "今起きていることを記録しよう——ライブ配信や写真・動画・リンクの共有。",
+    "riotReels": "🎬 Riot リール",
+    "riotReelsDesc": "この Quiet Riot の精神を捉えた、面白くて皮肉の効いた動画。",
+    "experts": "🌟 エキスパート",
+    "expertsDesc": "より深く関わる情熱あるボランティア——翻訳者、専門家、メディア担当、法律アドバイザー。",
+    "communityFeed": "💬 コミュニティフィード"
+  },
+  "Organisations": {
+    "title": "組織",
+    "subtitle": "組織を閲覧して、各組織に対して人々がどんな課題を持っているか見てみましょう。",
+    "noResults": "このカテゴリの組織は見つかりませんでした。"
+  },
+  "OrgDetail": {
+    "breadcrumb": "組織",
+    "totalRioters": "参加者合計",
+    "issues": "件の課題",
+    "topIssueShare": "トップ課題の割合",
+    "paretoTitle": "パレートの法則：",
+    "paretoDesc": "少数の課題が全体の苦情の80%を占めるのが一般的です。以下のトップ課題は影響を受けた人数順に並んでいます。",
+    "gatherEvidence": "📹 証拠を集める",
+    "gatherEvidenceDesc": "{orgName} で起きていることを記録しましょう。"
+  },
+  "Campaigns": {
+    "title": "キャンペーン",
+    "subtitle": "{count} {count, plural, one {件のキャンペーン} other {件のキャンペーン}}が変化のための資金を募っています。",
+    "noResults": "キャンペーンが見つかりません。別のフィルターをお試しください。"
+  },
+  "CampaignDetail": {
+    "breadcrumb": "キャンペーン",
+    "fullyFunded": "目標達成",
+    "disbursed": "資金配分済み",
+    "cancelled": "キャンセル済み",
+    "active": "進行中",
+    "target": "目標",
+    "raised": "調達済み",
+    "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
+    "platformFee": "プラットフォーム手数料",
+    "wantToContribute": "支援しませんか？",
+    "topUpFirst": "まずウォレットにチャージしてから支援を始めましょう。",
+    "createAccountPrompt": "アカウントを作成してウォレットにチャージし、このキャンペーンを支援しましょう。",
+    "goToWallet": "ウォレットへ",
+    "createAccount": "アカウント作成",
+    "completedMessage": "このキャンペーンは{status}されました。{count} 人の支援者の皆さん、ありがとうございます！",
+    "recipient": "受取人"
+  },
+  "Assistants": {
+    "title": "アシスタント",
+    "subtitle": "{count} 組の AI エージェントと人間のオーガナイザーが参加者の行動を支援します。",
+    "noResults": "現在利用できるアシスタントはありません。"
+  },
+  "AssistantDetail": {
+    "breadcrumb": "アシスタント",
+    "aiAgent": "AI エージェント",
+    "humanOrganiser": "人間のオーガナイザー",
+    "rioters": "参加者",
+    "riots": "{count, plural, one {件の Quiet Riot} other {件の Quiet Riot}}",
+    "messages": "件のメッセージ",
+    "currentFocus": "現在のフォーカス",
+    "recentActivity": "最近の活動",
+    "riotsWeHelp": "私たちが支援する Quiet Riots",
+    "wantToBe": "{name} になりませんか？",
+    "openRole": "人間のオーガナイザーの役割は、このカテゴリに情熱を持つすべての方に開かれています。下記から興味を表明してください。"
+  },
+  "Wallet": {
+    "title": "あなたのウォレット",
+    "createPromptTitle": "応援を始めよう",
+    "createPromptDesc": "無料アカウントを作成して資金をチャージし、あなたが大切に思うキャンペーンに貢献しましょう。",
+    "createAccount": "アカウント作成",
+    "activeCampaigns": "進行中のキャンペーン",
+    "viewAll": "すべて見る"
+  },
+  "Profile": {
+    "title": "あなたのプロフィール",
+    "time": "時間：",
+    "skills": "スキル：",
+    "quietRiot": "{count, plural, one {件の Quiet Riot} other {件の Quiet Riot}}",
+    "posts": "{count, plural, one {件の投稿} other {件の投稿}}",
+    "likes": "{count, plural, one {件のいいね} other {件のいいね}}",
+    "yourRiots": "あなたの Quiet Riots",
+    "noRiots": "まだ Quiet Riots に参加していません",
+    "findIssues": "あなたが気になる課題を見つけて、ムーブメントに参加しましょう。",
+    "browseIssues": "課題を見る",
+    "memberSince": "参加日",
+    "rioters": "参加者",
+    "connectedAccounts": "連携済みアカウント",
+    "noConnectedAccounts": "まだアカウントが連携されていません。Google または Facebook でログインしてアカウントを連携しましょう。",
+    "deactivateAccount": "アカウントを無効化",
+    "deactivateConfirm": "本当にアカウントを無効化しますか？30日以内であれば再有効化できます。"
+  },
+  "Auth": {
+    "welcomeBack": "おかえりなさい",
+    "signInSubtitle": "Quiet Riots アカウントにログイン",
+    "joinTitle": "Quiet Riots に参加",
+    "joinSubtitle": "共通の課題で団結しよう。一緒に行動しよう。",
+    "continueGoogle": "Google で続ける",
+    "continueFacebook": "Facebook で続ける",
+    "connecting": "接続中...",
+    "or": "または",
+    "emailLabel": "メールアドレス",
+    "sendMagicLink": "ログインリンクを送信",
+    "signUpWithEmail": "メールで登録",
+    "sendingLink": "リンクを送信中...",
+    "checkEmail": "メールを確認してください",
+    "signInLinkSent": "ログインリンクをメールアドレスに送信しました。リンクをクリックして続行してください。",
+    "signUpLinkSent": "ログインリンクをメールアドレスに送信しました。リンクをクリックしてアカウントを作成してください。",
+    "noAccount": "アカウントをお持ちでない方",
+    "signUp": "新規登録",
+    "hasAccount": "すでにアカウントをお持ちの方",
+    "signIn": "ログイン",
+    "termsAgree": "登録すると、以下に同意したことになります：",
+    "terms": "利用規約",
+    "and": "および",
+    "privacyPolicy": "プライバシーポリシー",
+    "verifyTitle": "メールを確認してください",
+    "verifyDesc": "ログインリンクをメールアドレスに送信しました。リンクをクリックして続行してください。",
+    "backToSignIn": "ログインに戻る",
+    "errorTitle": "認証エラー",
+    "errorConfig": "サーバーの設定に問題があります。",
+    "errorAccess": "アクセスが拒否されました。ログインする権限がない可能性があります。",
+    "errorVerification": "ログインリンクの有効期限が切れたか、すでに使用されています。",
+    "errorDefault": "認証中にエラーが発生しました。",
+    "tryAgain": "もう一度試す"
+  },
+  "AuthGate": {
+    "signInTo": "ログインして{action}",
+    "signIn": "ログイン",
+    "signInRequired": "ログインが必要です",
+    "signInToAction": "{action}するにはログインが必要です。",
+    "cancel": "キャンセル",
+    "noAccount": "アカウントをお持ちでない方",
+    "signUp": "新規登録"
+  },
+  "Error": {
+    "title": "問題が発生しました",
+    "description": "予期しないエラーが発生しました。",
+    "tryAgain": "もう一度試す"
+  },
+  "GlobalError": {
+    "title": "問題が発生しました",
+    "description": "予期しないエラーが発生しました。チームに通知済みです。",
+    "tryAgain": "もう一度試す"
+  },
+  "NotFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動されました。",
+    "goHome": "ホームへ戻る"
+  },
+  "Cards": {
+    "rioters": "参加者",
+    "country": "{count, plural, one {か国} other {か国}}",
+    "issues": "件の課題",
+    "idea": "アイデア",
+    "action": "アクション",
+    "together": "つながり",
+    "time1min": "1分",
+    "time10min": "10分",
+    "time1hour": "1時間+",
+    "skills": "スキル：",
+    "anonymous": "匿名",
+    "curated": "厳選",
+    "community": "コミュニティ",
+    "aiPick": "AI おすすめ",
+    "funded": "目標達成",
+    "disbursed": "配分済み",
+    "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
+    "aiAndHuman": "AI エージェント＆人間のオーガナイザー",
+    "riots": "{count, plural, one {件の Quiet Riot} other {件の Quiet Riot}}"
+  },
+  "Health": {
+    "title": "📊 コミュニティ帰属感指数",
+    "needsMet": "ニーズ充足",
+    "needsMetDesc": "メンバーが価値を感じている",
+    "membership": "メンバーシップ",
+    "membershipDesc": "信頼と帰属感",
+    "influence": "影響力",
+    "influenceDesc": "あなたの声は大切です",
+    "connection": "つながり",
+    "connectionDesc": "共有された体験",
+    "healthy": "良好",
+    "growing": "成長中",
+    "needsAttention": "要注目"
+  },
+  "Pivot": {
+    "title": "🔀 ピボット",
+    "peopleGlobally": "世界中の参加者",
+    "issuePivot": "🔍 課題ピボット",
+    "issuePivotDesc": "同じ課題、全組織",
+    "orgPivot": "🏢 組織ピボット",
+    "orgPivotDesc": "全課題、一つの組織",
+    "seeIssueAcross": "「{issueName}」を全ての類似組織で見る：",
+    "seeOrgIssues": "{orgName} の全課題を見る：",
+    "you": "あなた",
+    "rioters": "参加者"
+  },
+  "CampaignProgress": {
+    "title": "💰 キャンペーン",
+    "funded": "目標達成",
+    "disbursed": "配分済み",
+    "backers": "{count, plural, one {人の支援者} other {人の支援者}}"
+  },
+  "WalletBalance": {
+    "title": "あなたの残高",
+    "loaded": "チャージ済み",
+    "contributed": "支援済み",
+    "campaigns": "{count, plural, one {件のキャンペーン} other {件のキャンペーン}}"
+  },
+  "Transactions": {
+    "title": "最近の取引",
+    "topUp": "チャージ",
+    "contribution": "支援",
+    "refund": "返金",
+    "justNow": "たった今",
+    "minutesAgo": "{count}分前",
+    "hoursAgo": "{count}時間前",
+    "daysAgo": "{count}日前",
+    "empty": "まだ取引がありません。ウォレットにチャージして始めましょう！"
+  },
+  "Activity": {
+    "noActivity": "まだ活動がありません。",
+    "ai": "AI",
+    "human": "人"
+  },
+  "Countries": {
+    "title": "🌍 国"
+  },
+  "Synonyms": {
+    "placeholder": "同義語を追加...",
+    "add": "追加"
+  },
+  "Join": {
+    "joined": "✅ この Quiet Riot に参加済み",
+    "join": "✊ この Quiet Riot に参加"
+  },
+  "Search": {
+    "placeholder": "課題を検索..."
+  },
+  "Feed": {
+    "composerPlaceholder": "あなたの考えを共有...",
+    "post": "投稿",
+    "empty": "まだ投稿がありません。最初の投稿をしましょう！"
+  },
+  "Actions": {
+    "ideas": "💡 アイデア（変異）",
+    "actions": "⚡ アクション（選択）",
+    "together": "🤝 つながり（コミュニティ）",
+    "noResults": "フィルターに一致するアクションがありません。条件を広げてお試しください。"
+  },
+  "Filter": {
+    "all": "すべて",
+    "active": "進行中",
+    "funded": "目標達成",
+    "disbursed": "配分済み"
+  },
+  "TimeSkill": {
+    "timeQuestion": "どれくらい時間がありますか？",
+    "time1min": "1分",
+    "time10min": "10分",
+    "time1hour": "1時間+",
+    "typeQuestion": "どのタイプ？",
+    "ideas": "💡 アイデア",
+    "actions": "⚡ アクション",
+    "together": "🤝 つながり"
+  },
+  "Reels": {
+    "empty": "まだリールがありません。最初の一本を投稿しましょう！",
+    "submitPrompt": "この課題を表す面白い動画はありますか？",
+    "submitSuccess": "ありがとうございます！リールが審査に提出されました。",
+    "urlPlaceholder": "YouTube の URL を貼り付け...",
+    "captionPlaceholder": "キャプションを追加（任意）...",
+    "submit": "送信"
+  },
+  "TopUp": {
+    "addFunds": "チャージ",
+    "minTopUp": "最低チャージ額は £1 です",
+    "success": "ウォレットに {amount} を追加しました！",
+    "networkError": "ネットワークエラーです。もう一度お試しください。",
+    "customAmount": "カスタム金額（£）",
+    "topUp": "チャージ",
+    "simulated": "テスト用のシミュレーションチャージです。Stripe による実際の決済は近日公開予定。"
+  },
+  "Contribute": {
+    "insufficientFunds": "残高不足です。まずウォレットにチャージしてください。",
+    "minContribution": "最低支援額は 10p です",
+    "contribute": "支援する",
+    "yourBalance": "あなたの残高：",
+    "networkError": "ネットワークエラーです。もう一度お試しください。",
+    "invalidAmount": "有効な金額を入力してください",
+    "customAmount": "カスタム金額（£）",
+    "give": "支援",
+    "success": "{campaign} に {amount} を支援しました！",
+    "remainingBalance": "残りの残高：{balance}",
+    "topUpPrompt": "ウォレットにチャージ",
+    "toKeepSupporting": "してキャンペーンの支援を続けましょう。",
+    "walletEmpty": "ウォレットが空です。",
+    "topUp": "チャージ",
+    "toContribute": "して支援しましょう。"
+  },
+  "Claim": {
+    "success": "ありがとうございます！{name} の役割への関心を承りました。追ってご連絡いたします。",
+    "placeholder": "{name} としてなぜあなたが最適ですか？（任意）",
+    "submitting": "送信中...",
+    "expressInterest": "興味を表明"
+  },
+  "Evidence": {
+    "generalOrg": "一般（特定の組織なし）",
+    "placeholder": "あなたの考えを述べてください...",
+    "photosLabel": "写真（最大4枚）",
+    "addPhotos": "+ 写真を追加",
+    "photoFormats": "JPEG、PNG、WebP、GIF。各最大 4 MB。",
+    "videoLabel": "動画（最大1本）",
+    "addVideo": "+ 動画を追加",
+    "videoFormats": "MP4、MOV、WebM。最大 4 MB。",
+    "linkLabel": "外部リンク",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "メディアを隠す",
+    "addMedia": "📎 写真・動画・リンクを追加",
+    "posting": "投稿中...",
+    "uploading": "アップロード中...",
+    "submitEvidence": "証拠を提出",
+    "goLive": "🔴 今すぐライブ配信",
+    "maxPhotos": "写真は最大4枚です。{count} 枚がスキップされました。",
+    "videoFailed": "動画のアップロードに失敗しました",
+    "removePhoto": "{name} を削除",
+    "removeVideo": "動画を削除",
+    "uploadFailed": "アップロード失敗：{names}"
+  },
+  "ProfileEdit": {
+    "title": "プロフィール編集",
+    "nameLabel": "名前",
+    "timeLabel": "利用可能な時間",
+    "time1min": "1分",
+    "time1minDesc": "簡単なアクションのみ",
+    "time10min": "10分",
+    "time10minDesc": "ほとんどのアクション",
+    "time1hour": "1時間+",
+    "time1hourDesc": "深い関わり",
+    "skillsLabel": "スキル",
+    "skillsPlaceholder": "例：デザイン、ライティング、法律、プログラミング",
+    "skillsHint": "カンマ区切り。関連するアクションとのマッチングに役立ちます。",
+    "saving": "保存中...",
+    "save": "変更を保存",
+    "cancel": "キャンセル",
+    "nameRequired": "名前は必須です",
+    "saveFailed": "保存に失敗しました"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "通知を受け取る"
+  },
+  "CookieConsent": {
+    "title": "Cookie の設定",
+    "description": "ログイン状態の維持と体験の向上のために Cookie を使用しています。分析 Cookie はサイトの利用状況を理解するのに役立ちます。",
+    "acceptAll": "すべて受け入れる",
+    "essentialOnly": "必須のみ",
+    "manage": "設定を管理",
+    "essential": "必須",
+    "essentialDescription": "サイトの機能に必要です。無効にできません。",
+    "analytics": "分析",
+    "analyticsDescription": "サイトの使い方を理解し、改善に役立てます。",
+    "save": "設定を保存"
+  }
+}

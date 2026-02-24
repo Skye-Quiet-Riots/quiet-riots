@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Järjestäydy yhteisten asioiden ympärille. Löydä oma porukkasi. Toimi yhdessä."
+  },
+  "Nav": {
+    "issues": "Asiat",
+    "assistants": "Assistentit",
+    "organisations": "Organisaatiot",
+    "wallet": "Lompakko",
+    "profile": "Profiili",
+    "signIn": "Kirjaudu sisään",
+    "signOut": "Kirjaudu ulos",
+    "toggleMenu": "Näytä/piilota valikko"
+  },
+  "Footer": {
+    "mission": "Muuttaa elinaikanamme enemmän paremmaksi kuin uskallamme kuvitella olevan mahdollista.",
+    "powered": "Quiet Riots · Voimanlähteenä OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Kaikki yhteiskunta-asiat yhdestä paikasta",
+    "headline": "Muutoksen ei tarvitse olla äänekästä ollakseen voimakasta",
+    "description": "Löydä muita, jotka jakavat huolesi. Toimi yhdessä. Quiet Riots yhdistää ihmisiä yhteisten turhautumisten ympärille ja muuttaa valitukset kollektiiviseksi toiminnaksi.",
+    "browseIssues": "Selaa asioita",
+    "howItWorks": "Näin se toimii",
+    "trendingIssues": "🔥 Trendaavat asiat",
+    "viewAll": "Näytä kaikki →",
+    "reelOfTheDay": "🎬 Päivän Riot Reel",
+    "riotersFunny": "{count} osallistujaa piti tätä hauskana",
+    "from": "Lähde:",
+    "findYourIssue": "Löydä oma asiasi",
+    "findYourIssueDesc": "Hae mitä tahansa turhautumista — junat, laajakaista, terveydenhuolto, ilmasto. Jos se on olemassa, näytämme kuinka moni muu jakaa sen.",
+    "useThePivot": "Käytä pivotia",
+    "useThePivotDesc": "Näe sama asia kaikissa organisaatioissa tai kaikki asiat yhdessä organisaatiossa. Kuin tangotanssijat jotka vaihtavat suuntaa.",
+    "takeAction": "Toimi",
+    "takeActionDesc": "Ideoita, toimia ja yhteisöllisyyttä — räätälöity aikasi ja taitojesi mukaan. Pienet teot johtavat suuriin muutoksiin.",
+    "missionQuote": "\"Muuttaa elinaikanamme enemmän paremmaksi kuin uskallamme kuvitella olevan mahdollista.\"",
+    "basedOn": "Perustuu Simon Darlingin vuoden 2014 kirjaan <em>Quiet Riots</em>",
+    "joinMovement": "✊ Liity mukaan liikkeeseen"
+  },
+  "Issues": {
+    "title": "Asiat",
+    "subtitle": "{count} asiaa {categoryCount} kategoriassa. Löydä omasi.",
+    "searchPlaceholder": "Hae asioita tai synonyymeja...",
+    "noResults": "Asioita ei löytynyt. Kokeile eri hakua tai kategoriaa."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Asiat",
+    "rioters": "osallistujaa",
+    "country": "{count, plural, one {maa} other {maata}}",
+    "thisWeek": "tällä viikolla",
+    "actions": "toimintaa",
+    "alsoKnownAs": "Tunnetaan myös nimellä",
+    "actionsTitle": "⚡ Toiminnot — Henkilökohtainen työkalupakkisi",
+    "actionsDesc": "Perustuu evoluutioon — 💡 **Ideat** (vaihtelu), ⚡ **Toiminnot** (valinta) ja 🤝 **Yhdessä** (yhteisö).",
+    "gatherEvidence": "📹 Kerää todisteita",
+    "gatherEvidenceDesc": "Dokumentoi mitä tapahtuu — lähetä suorana tai jaa kuvia, videoita ja linkkejä.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Hauskoja ja ironisia videoita jotka vangitsevat tämän Quiet Riotin hengen.",
+    "experts": "🌟 Asiantuntijat",
+    "expertsDesc": "Intohimoisia vapaaehtoisia jotka menevät syvemmälle — kääntäjät, asiantuntijat, mediavastuuhenkilöt, oikeudelliset neuvonantajat.",
+    "communityFeed": "💬 Yhteisöfeed"
+  },
+  "Organisations": {
+    "title": "Organisaatiot",
+    "subtitle": "Selaa organisaatioita ja katso mitä asioita ihmisillä on kunkin kanssa.",
+    "noResults": "Organisaatioita ei löytynyt tälle kategorialle."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisaatiot",
+    "totalRioters": "osallistujaa yhteensä",
+    "issues": "asiaa",
+    "topIssueShare": "kärkiasian osuus",
+    "paretoTitle": "Pareto-periaate:",
+    "paretoDesc": "Kourallinen asioita kattaa tyypillisesti 80 % kaikista valituksista. Alla olevat kärkiasiat on järjestetty vaikutettujen ihmisten määrän mukaan.",
+    "gatherEvidence": "📹 Kerää todisteita",
+    "gatherEvidenceDesc": "Dokumentoi mitä tapahtuu organisaatiossa {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanjat",
+    "subtitle": "{count} {count, plural, one {kampanja} other {kampanjaa}} kerää varoja muutokseen.",
+    "noResults": "Kampanjoita ei löytynyt. Kokeile eri suodatinta."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanjat",
+    "fullyFunded": "Täysin rahoitettu",
+    "disbursed": "Varat maksettu",
+    "cancelled": "Peruttu",
+    "active": "Aktiivinen",
+    "target": "tavoite",
+    "raised": "kerätty",
+    "backers": "{count, plural, one {tukija} other {tukijaa}}",
+    "platformFee": "alustamaksu",
+    "wantToContribute": "Haluatko osallistua?",
+    "topUpFirst": "Lataa lompakkoasi ensin aloittaaksesi osallistumisen.",
+    "createAccountPrompt": "Luo tili ja lataa lompakkosi tukeaksesi tätä kampanjaa.",
+    "goToWallet": "Siirry lompakkoon",
+    "createAccount": "Luo tili",
+    "completedMessage": "Tämä kampanja on {status}. Kiitos kaikille {count} tukijalle!",
+    "recipient": "Vastaanottaja"
+  },
+  "Assistants": {
+    "title": "Assistentit",
+    "subtitle": "{count} paria AI-agentteja ja ihmisorganisaattoreita auttamassa osallistujia toimimaan.",
+    "noResults": "Ei assistentteja saatavilla vielä."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistentit",
+    "aiAgent": "AI-agentti",
+    "humanOrganiser": "Ihmisorganisaattori",
+    "rioters": "osallistujaa",
+    "riots": "{count, plural, one {riot} other {riotia}}",
+    "messages": "viestiä",
+    "currentFocus": "Nykyinen painopiste",
+    "recentActivity": "Viimeaikainen toiminta",
+    "riotsWeHelp": "Quiet Riots joissa autamme",
+    "wantToBe": "Haluatko olla {name}?",
+    "openRole": "Ihmisorganisaattorin rooli on avoin kaikille jotka ovat intohimoisia tästä kategoriasta. Ilmaise kiinnostuksesi alla."
+  },
+  "Wallet": {
+    "title": "Lompakkosi",
+    "createPromptTitle": "Aloita asioiden tukeminen",
+    "createPromptDesc": "Luo ilmainen tili ladataksesi varoja ja osallistuaksesi kampanjoihin jotka ovat sinulle tärkeitä.",
+    "createAccount": "Luo tili",
+    "activeCampaigns": "Aktiiviset kampanjat",
+    "viewAll": "Näytä kaikki"
+  },
+  "Profile": {
+    "title": "Profiilisi",
+    "time": "Aika: ",
+    "skills": "Taidot: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riotia}}",
+    "posts": "{count, plural, one {julkaisu} other {julkaisua}}",
+    "likes": "{count, plural, one {saatu tykkäys} other {saatua tykkäystä}}",
+    "yourRiots": "Sinun Quiet Riotisi",
+    "noRiots": "Ei Quiet Rioteja vielä",
+    "findIssues": "Löydä asioita joista välität ja liity mukaan liikkeeseen.",
+    "browseIssues": "Selaa asioita",
+    "memberSince": "Jäsen alkaen",
+    "rioters": "osallistujaa",
+    "connectedAccounts": "Yhdistetyt tilit",
+    "noConnectedAccounts": "Tilejä ei ole yhdistetty vielä. Kirjaudu sisään Googlella tai Facebookilla yhdistääksesi tilisi.",
+    "deactivateAccount": "Poista tili käytöstä",
+    "deactivateConfirm": "Oletko varma että haluat poistaa tilisi käytöstä? Voit aktivoida sen uudelleen 30 päivän kuluessa."
+  },
+  "Auth": {
+    "welcomeBack": "Tervetuloa takaisin",
+    "signInSubtitle": "Kirjaudu Quiet Riots -tilillesi",
+    "joinTitle": "Liity Quiet Riotsiin",
+    "joinSubtitle": "Järjestäydy yhteisten asioiden ympärille. Toimi yhdessä.",
+    "continueGoogle": "Jatka Googlella",
+    "continueFacebook": "Jatka Facebookilla",
+    "connecting": "Yhdistetään...",
+    "or": "tai",
+    "emailLabel": "Sähköpostiosoite",
+    "sendMagicLink": "Lähetä taikaslinkki",
+    "signUpWithEmail": "Rekisteröidy sähköpostilla",
+    "sendingLink": "Lähetetään linkkiä...",
+    "checkEmail": "Tarkista sähköpostisi",
+    "signInLinkSent": "Lähetimme kirjautumislinkin sähköpostiosoitteeseesi. Klikkaa linkkiä jatkaaksesi.",
+    "signUpLinkSent": "Lähetimme kirjautumislinkin sähköpostiosoitteeseesi. Klikkaa linkkiä luodaksesi tilisi.",
+    "noAccount": "Eikö sinulla ole tiliä?",
+    "signUp": "Rekisteröidy",
+    "hasAccount": "Onko sinulla jo tili?",
+    "signIn": "Kirjaudu sisään",
+    "termsAgree": "Rekisteröitymällä hyväksyt meidän",
+    "terms": "Käyttöehdot",
+    "and": "ja",
+    "privacyPolicy": "Tietosuojakäytäntö",
+    "verifyTitle": "Tarkista sähköpostisi",
+    "verifyDesc": "Kirjautumislinkki on lähetetty sähköpostiosoitteeseesi. Klikkaa linkkiä jatkaaksesi.",
+    "backToSignIn": "Takaisin kirjautumiseen",
+    "errorTitle": "Todennusvirhe",
+    "errorConfig": "Palvelimen asetuksissa on ongelma.",
+    "errorAccess": "Pääsy evätty. Sinulla ei ehkä ole oikeutta kirjautua sisään.",
+    "errorVerification": "Kirjautumislinkki on vanhentunut tai sitä on jo käytetty.",
+    "errorDefault": "Todennuksen aikana tapahtui virhe.",
+    "tryAgain": "Yritä uudelleen"
+  },
+  "AuthGate": {
+    "signInTo": "Kirjaudu sisään tehdäksesi {action}",
+    "signIn": "Kirjaudu sisään",
+    "signInRequired": "Kirjautuminen vaaditaan",
+    "signInToAction": "Sinun täytyy kirjautua sisään tehdäksesi {action}.",
+    "cancel": "Peruuta",
+    "noAccount": "Eikö sinulla ole tiliä?",
+    "signUp": "Rekisteröidy"
+  },
+  "Error": {
+    "title": "Jokin meni pieleen",
+    "description": "Odottamaton virhe tapahtui.",
+    "tryAgain": "Yritä uudelleen"
+  },
+  "GlobalError": {
+    "title": "Jokin meni pieleen",
+    "description": "Odottamaton virhe tapahtui. Tiimimme on saanut ilmoituksen.",
+    "tryAgain": "Yritä uudelleen"
+  },
+  "NotFound": {
+    "title": "Sivua ei löytynyt",
+    "description": "Etsimääsi sivua ei ole olemassa tai se on siirretty.",
+    "goHome": "Siirry etusivulle"
+  },
+  "Cards": {
+    "rioters": "osallistujaa",
+    "country": "{count, plural, one {maa} other {maata}}",
+    "issues": "asiaa",
+    "idea": "Idea",
+    "action": "Toiminta",
+    "together": "Yhdessä",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 tunti+",
+    "skills": "Taidot: ",
+    "anonymous": "Anonyymi",
+    "curated": "Kuratoitu",
+    "community": "Yhteisö",
+    "aiPick": "AI-valinta",
+    "funded": "Rahoitettu",
+    "disbursed": "Maksettu",
+    "backers": "{count, plural, one {tukija} other {tukijaa}}",
+    "aiAndHuman": "AI-agentti & ihmisorganisaattori",
+    "riots": "{count, plural, one {riot} other {riotia}}"
+  },
+  "Health": {
+    "title": "📊 Yhteisöindeksi",
+    "needsMet": "Tarpeet täytetty",
+    "needsMetDesc": "Jäsenet kokevat sen arvokkaaksi",
+    "membership": "Jäsenyys",
+    "membershipDesc": "Luottamus & yhteenkuuluvuus",
+    "influence": "Vaikutusvalta",
+    "influenceDesc": "Äänelläsi on merkitystä",
+    "connection": "Yhteenkuuluvuus",
+    "connectionDesc": "Jaetut kokemukset",
+    "healthy": "Terve",
+    "growing": "Kasvava",
+    "needsAttention": "Tarvitsee huomiota"
+  },
+  "Pivot": {
+    "title": "🔀 Pivot",
+    "peopleGlobally": "ihmistä maailmanlaajuisesti",
+    "issuePivot": "🔍 Asiapivot",
+    "issuePivotDesc": "Sama asia, kaikki organisaatiot",
+    "orgPivot": "🏢 Organisaatiopivot",
+    "orgPivotDesc": "Kaikki asiat, yksi organisaatio",
+    "seeIssueAcross": "Näe \"{issueName}\" kaikissa vastaavissa organisaatioissa:",
+    "seeOrgIssues": "Näe kaikki asiat organisaatiossa {orgName}:",
+    "you": "SINÄ",
+    "rioters": "osallistujaa"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampanjat",
+    "funded": "Rahoitettu",
+    "disbursed": "Maksettu",
+    "backers": "{count, plural, one {tukija} other {tukijaa}}"
+  },
+  "WalletBalance": {
+    "title": "Saldosi",
+    "loaded": "ladattu",
+    "contributed": "osallistuttu",
+    "campaigns": "{count, plural, one {kampanja} other {kampanjaa}}"
+  },
+  "Transactions": {
+    "title": "Viimeaikaiset tapahtumat",
+    "topUp": "Lataus",
+    "contribution": "Osallistuminen",
+    "refund": "Hyvitys",
+    "justNow": "juuri nyt",
+    "minutesAgo": "{count} min sitten",
+    "hoursAgo": "{count} t sitten",
+    "daysAgo": "{count} pv sitten",
+    "empty": "Ei tapahtumia vielä. Lataa lompakkoasi päästäksesi alkuun!"
+  },
+  "Activity": {
+    "noActivity": "Ei toimintaa vielä.",
+    "ai": "AI",
+    "human": "I"
+  },
+  "Countries": {
+    "title": "🌍 Maat"
+  },
+  "Synonyms": {
+    "placeholder": "Lisää synonyymi...",
+    "add": "Lisää"
+  },
+  "Join": {
+    "joined": "✅ Liitynyt tähän Quiet Riotiin",
+    "join": "✊ Liity tähän Quiet Riotiin"
+  },
+  "Search": {
+    "placeholder": "Hae asioita..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Jaa ajatuksesi...",
+    "post": "Julkaise",
+    "empty": "Ei julkaisuja vielä. Ole ensimmäinen joka jakaa!"
+  },
+  "Actions": {
+    "ideas": "💡 Ideat (Vaihtelu)",
+    "actions": "⚡ Toiminnot (Valinta)",
+    "together": "🤝 Yhdessä (Yhteisö)",
+    "noResults": "Suodattimiin ei löytynyt toimintoja. Kokeile laajentaa valintaasi."
+  },
+  "Filter": {
+    "all": "Kaikki",
+    "active": "Aktiiviset",
+    "funded": "Rahoitetut",
+    "disbursed": "Maksetut"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Kuinka paljon aikaa sinulla on?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 tunti+",
+    "typeQuestion": "Minkä tyyppinen?",
+    "ideas": "💡 Ideat",
+    "actions": "⚡ Toiminnot",
+    "together": "🤝 Yhdessä"
+  },
+  "Reels": {
+    "empty": "Ei reel-videoita vielä. Ole ensimmäinen joka lähettää!",
+    "submitPrompt": "Onko sinulla hauska video joka tiivistää tämän asian?",
+    "submitSuccess": "Kiitos! Reel-videosi on lähetetty tarkistettavaksi.",
+    "urlPlaceholder": "Liitä YouTube-URL...",
+    "captionPlaceholder": "Lisää kuvateksti (valinnainen)...",
+    "submit": "Lähetä"
+  },
+  "TopUp": {
+    "addFunds": "Lisää varoja",
+    "minTopUp": "Vähimmäislataus on £1",
+    "success": "{amount} lisätty lompakkoosi!",
+    "networkError": "Verkkovirhe. Yritä uudelleen.",
+    "customAmount": "Vapaavalintainen summa (£)",
+    "topUp": "Lataa",
+    "simulated": "Simuloitu lataus testausta varten. Oikeat maksut Stripen kautta tulossa pian."
+  },
+  "Contribute": {
+    "insufficientFunds": "Riittämätön saldo. Lataa lompakkoasi ensin.",
+    "minContribution": "Vähimmäisosallistuminen on 10p",
+    "contribute": "Osallistu",
+    "yourBalance": "Saldosi: ",
+    "networkError": "Verkkovirhe. Yritä uudelleen.",
+    "invalidAmount": "Syötä kelvollinen summa",
+    "customAmount": "Vapaavalintainen summa (£)",
+    "give": "Anna",
+    "success": "Osallistuit summalla {amount} kampanjaan {campaign}!",
+    "remainingBalance": "Jäljellä oleva saldosi: {balance}",
+    "topUpPrompt": "Lataa lompakkoasi",
+    "toKeepSupporting": "jatkaaksesi kampanjoiden tukemista.",
+    "walletEmpty": "Lompakkosi on tyhjä.",
+    "topUp": "Lataa",
+    "toContribute": "osallistuaksesi."
+  },
+  "Claim": {
+    "success": "Kiitos! Olemme merkinneet kiinnostuksesi rooliin {name}. Olemme yhteydessä.",
+    "placeholder": "Miksi olisit loistava roolissa {name}? (valinnainen)",
+    "submitting": "Lähetetään...",
+    "expressInterest": "Ilmaise kiinnostuksesi"
+  },
+  "Evidence": {
+    "generalOrg": "Yleinen (ei tiettyä organisaatiota)",
+    "placeholder": "Kerro mitä ajattelet...",
+    "photosLabel": "Kuvat (enintään 4)",
+    "addPhotos": "+ Lisää kuvia",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Enintään 4 Mt kpl.",
+    "videoLabel": "Video (enintään 1)",
+    "addVideo": "+ Lisää video",
+    "videoFormats": "MP4, MOV, WebM. Enintään 4 Mt.",
+    "linkLabel": "Ulkoinen linkki",
+    "linkPlaceholder": "https://uutisartikkeli.fi/...",
+    "hideMedia": "Piilota media",
+    "addMedia": "📎 Lisää kuvia, video, linkkejä",
+    "posting": "Julkaistaan...",
+    "uploading": "Ladataan...",
+    "submitEvidence": "Lähetä todisteet",
+    "goLive": "🔴 Lähetä suorana nyt",
+    "maxPhotos": "Enintään 4 kuvaa. {count} ohitettu.",
+    "videoFailed": "Videon lataus epäonnistui",
+    "removePhoto": "Poista {name}",
+    "removeVideo": "Poista video",
+    "uploadFailed": "Lataus epäonnistui: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Muokkaa profiilia",
+    "nameLabel": "Nimi",
+    "timeLabel": "Käytettävissä oleva aika",
+    "time1min": "1 minuutti",
+    "time1minDesc": "Vain pikatoiminnot",
+    "time10min": "10 minuuttia",
+    "time10minDesc": "Useimmat toiminnot",
+    "time1hour": "1 tunti+",
+    "time1hourDesc": "Syvä osallistuminen",
+    "skillsLabel": "Taidot",
+    "skillsPlaceholder": "esim. suunnittelu, kirjoittaminen, oikeus, koodaus",
+    "skillsHint": "Pilkuilla erotettu. Auttaa yhdistämään sinut sopiviin toimintoihin.",
+    "saving": "Tallennetaan...",
+    "save": "Tallenna muutokset",
+    "cancel": "Peruuta",
+    "nameRequired": "Nimi vaaditaan",
+    "saveFailed": "Tallennus epäonnistui"
+  },
+  "SignupForm": {
+    "placeholder": "sinä@esimerkki.fi",
+    "submit": "Ilmoita minulle"
+  },
+  "CookieConsent": {
+    "title": "Evästeasetukset",
+    "description": "Käytämme evästeitä pitääksemme sinut kirjautuneena ja parantaaksemme kokemustasi. Analytiikkaevästeet auttavat meitä ymmärtämään miten sivustoa käytetään.",
+    "acceptAll": "Hyväksy kaikki",
+    "essentialOnly": "Vain välttämättömät",
+    "manage": "Hallinnoi asetuksia",
+    "essential": "Välttämättömät",
+    "essentialDescription": "Vaaditaan sivuston toimintaan. Ei voi poistaa käytöstä.",
+    "analytics": "Analytiikka",
+    "analyticsDescription": "Auttaa meitä ymmärtämään miten käytät sivustoa jotta voimme parantaa sitä.",
+    "save": "Tallenna asetukset"
+  }
+}

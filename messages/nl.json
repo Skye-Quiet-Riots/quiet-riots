@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organiseer rond gedeelde kwesties. Vind je mensen. Onderneem samen actie."
+  },
+  "Nav": {
+    "issues": "Kwesties",
+    "assistants": "Assistenten",
+    "organisations": "Organisaties",
+    "wallet": "Portemonnee",
+    "profile": "Profiel",
+    "signIn": "Inloggen",
+    "signOut": "Uitloggen",
+    "toggleMenu": "Menu wisselen"
+  },
+  "Footer": {
+    "mission": "Meer ten goede veranderen in ons leven dan we voor mogelijk durven te houden.",
+    "powered": "Quiet Riots · Mogelijk gemaakt door OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "De Alles-in-één Kwestiewinkel",
+    "headline": "Verandering hoeft niet luid te zijn om krachtig te zijn",
+    "description": "Vind anderen die jouw kwesties delen. Onderneem samen actie. Quiet Riots verbindt mensen rond gedeelde frustraties en verandert klachten in collectieve actie.",
+    "browseIssues": "Bekijk kwesties",
+    "howItWorks": "Hoe het werkt",
+    "trendingIssues": "🔥 Trending kwesties",
+    "viewAll": "Bekijk alles →",
+    "reelOfTheDay": "🎬 Riot Reel van de dag",
+    "riotersFunny": "{count} deelnemers vonden dit grappig",
+    "from": "Van:",
+    "findYourIssue": "Vind jouw kwestie",
+    "findYourIssueDesc": "Zoek naar elke frustratie — treinen, internet, zorg, klimaat. Als het bestaat, laten we je zien hoeveel anderen het delen.",
+    "useThePivot": "Gebruik de Pivot",
+    "useThePivotDesc": "Bekijk dezelfde kwestie bij alle organisaties, of alle kwesties bij één organisatie. Als tangodansers die van richting veranderen.",
+    "takeAction": "Onderneem actie",
+    "takeActionDesc": "Ideeën, acties en community — afgestemd op jouw tijd en vaardigheden. Kleine acties leiden tot grote verandering.",
+    "missionQuote": "\"Meer ten goede veranderen in ons leven dan we voor mogelijk durven te houden.\"",
+    "basedOn": "Gebaseerd op het boek uit 2014 <em>Quiet Riots</em> van Simon Darling",
+    "joinMovement": "✊ Doe mee met de beweging"
+  },
+  "Issues": {
+    "title": "Kwesties",
+    "subtitle": "{count} kwesties in {categoryCount} categorieën. Vind de jouwe.",
+    "searchPlaceholder": "Zoek kwesties of synoniemen...",
+    "noResults": "Geen kwesties gevonden. Probeer een andere zoekterm of categorie."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Kwesties",
+    "rioters": "deelnemers",
+    "country": "{count, plural, one {land} other {landen}}",
+    "thisWeek": "deze week",
+    "actions": "acties",
+    "alsoKnownAs": "Ook bekend als",
+    "actionsTitle": "⚡ Acties — Jouw persoonlijke toolkit",
+    "actionsDesc": "Gebaseerd op evolutie — 💡 **Ideeën** (variatie), ⚡ **Acties** (selectie), en 🤝 **Samen** (community).",
+    "gatherEvidence": "📹 Bewijs verzamelen",
+    "gatherEvidenceDesc": "Documenteer wat er gebeurt — ga live of deel foto's, video's en links.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Grappige en ironische video's die de geest van deze Quiet Riot vastleggen.",
+    "experts": "🌟 Experts",
+    "expertsDesc": "Gepassioneerde vrijwilligers die dieper gaan — vertalers, specialisten, medialeiders, juridisch adviseurs.",
+    "communityFeed": "💬 Communityfeed"
+  },
+  "Organisations": {
+    "title": "Organisaties",
+    "subtitle": "Bekijk organisaties en ontdek welke kwesties mensen ermee hebben.",
+    "noResults": "Geen organisaties gevonden voor deze categorie."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisaties",
+    "totalRioters": "totaal deelnemers",
+    "issues": "kwesties",
+    "topIssueShare": "grootste kwestie-aandeel",
+    "paretoTitle": "Pareto-principe:",
+    "paretoDesc": "Een handvol kwesties is doorgaans goed voor 80% van alle klachten. De topkwesties hieronder zijn gerangschikt op het aantal getroffen mensen.",
+    "gatherEvidence": "📹 Bewijs verzamelen",
+    "gatherEvidenceDesc": "Documenteer wat er gebeurt bij {orgName}."
+  },
+  "Campaigns": {
+    "title": "Campagnes",
+    "subtitle": "{count} {count, plural, one {campagne} other {campagnes}} die geld inzamelen voor verandering.",
+    "noResults": "Geen campagnes gevonden. Probeer een ander filter."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Campagnes",
+    "fullyFunded": "Volledig gefinancierd",
+    "disbursed": "Fondsen uitbetaald",
+    "cancelled": "Geannuleerd",
+    "active": "Actief",
+    "target": "doel",
+    "raised": "opgehaald",
+    "backers": "{count, plural, one {donateur} other {donateurs}}",
+    "platformFee": "platformkosten",
+    "wantToContribute": "Wil je bijdragen?",
+    "topUpFirst": "Laad eerst je portemonnee op om te kunnen bijdragen.",
+    "createAccountPrompt": "Maak een account aan en laad je portemonnee om deze campagne te steunen.",
+    "goToWallet": "Ga naar portemonnee",
+    "createAccount": "Account aanmaken",
+    "completedMessage": "Deze campagne is {status}. Bedankt aan alle {count} donateurs!",
+    "recipient": "Ontvanger"
+  },
+  "Assistants": {
+    "title": "Assistenten",
+    "subtitle": "{count} paren van AI-agents en menselijke organisatoren die deelnemers helpen actie te ondernemen.",
+    "noResults": "Nog geen assistenten beschikbaar."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistenten",
+    "aiAgent": "AI-agent",
+    "humanOrganiser": "Menselijke organisator",
+    "rioters": "deelnemers",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "berichten",
+    "currentFocus": "Huidige focus",
+    "recentActivity": "Recente activiteit",
+    "riotsWeHelp": "Quiet Riots waar we bij helpen",
+    "wantToBe": "Wil jij {name} zijn?",
+    "openRole": "De rol van menselijke organisator staat open voor iedereen met passie voor deze categorie. Geef hieronder je interesse aan."
+  },
+  "Wallet": {
+    "title": "Jouw portemonnee",
+    "createPromptTitle": "Begin met het steunen van goede doelen",
+    "createPromptDesc": "Maak een gratis account aan om geld te laden en bij te dragen aan campagnes die er voor jou toe doen.",
+    "createAccount": "Account aanmaken",
+    "activeCampaigns": "Actieve campagnes",
+    "viewAll": "Bekijk alles"
+  },
+  "Profile": {
+    "title": "Jouw profiel",
+    "time": "Tijd: ",
+    "skills": "Vaardigheden: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {bericht} other {berichten}}",
+    "likes": "{count, plural, one {like ontvangen} other {likes ontvangen}}",
+    "yourRiots": "Jouw Quiet Riots",
+    "noRiots": "Nog geen Quiet Riots",
+    "findIssues": "Vind kwesties die je belangrijk vindt en doe mee met de beweging.",
+    "browseIssues": "Bekijk kwesties",
+    "memberSince": "Lid sinds",
+    "rioters": "deelnemers",
+    "connectedAccounts": "Gekoppelde accounts",
+    "noConnectedAccounts": "Nog geen accounts gekoppeld. Log in met Google of Facebook om je account te koppelen.",
+    "deactivateAccount": "Account deactiveren",
+    "deactivateConfirm": "Weet je zeker dat je je account wilt deactiveren? Je kunt het binnen 30 dagen opnieuw activeren."
+  },
+  "Auth": {
+    "welcomeBack": "Welkom terug",
+    "signInSubtitle": "Log in op je Quiet Riots-account",
+    "joinTitle": "Word lid van Quiet Riots",
+    "joinSubtitle": "Organiseer rond gedeelde kwesties. Onderneem samen actie.",
+    "continueGoogle": "Doorgaan met Google",
+    "continueFacebook": "Doorgaan met Facebook",
+    "connecting": "Verbinden...",
+    "or": "of",
+    "emailLabel": "E-mailadres",
+    "sendMagicLink": "Verstuur inloglink",
+    "signUpWithEmail": "Aanmelden met e-mail",
+    "sendingLink": "Link versturen...",
+    "checkEmail": "Controleer je e-mail",
+    "signInLinkSent": "We hebben een inloglink naar je e-mailadres gestuurd. Klik op de link om door te gaan.",
+    "signUpLinkSent": "We hebben een inloglink naar je e-mailadres gestuurd. Klik op de link om je account aan te maken.",
+    "noAccount": "Heb je nog geen account?",
+    "signUp": "Aanmelden",
+    "hasAccount": "Heb je al een account?",
+    "signIn": "Inloggen",
+    "termsAgree": "Door je aan te melden ga je akkoord met onze",
+    "terms": "Voorwaarden",
+    "and": "en",
+    "privacyPolicy": "Privacybeleid",
+    "verifyTitle": "Controleer je e-mail",
+    "verifyDesc": "Er is een inloglink naar je e-mailadres gestuurd. Klik op de link om door te gaan.",
+    "backToSignIn": "Terug naar inloggen",
+    "errorTitle": "Verificatiefout",
+    "errorConfig": "Er is een probleem met de serverconfiguratie.",
+    "errorAccess": "Toegang geweigerd. Je hebt mogelijk geen toestemming om in te loggen.",
+    "errorVerification": "De inloglink is verlopen of is al gebruikt.",
+    "errorDefault": "Er is een fout opgetreden tijdens de verificatie.",
+    "tryAgain": "Opnieuw proberen"
+  },
+  "AuthGate": {
+    "signInTo": "Log in om {action}",
+    "signIn": "Inloggen",
+    "signInRequired": "Inloggen vereist",
+    "signInToAction": "Je moet inloggen om {action}.",
+    "cancel": "Annuleren",
+    "noAccount": "Heb je nog geen account?",
+    "signUp": "Aanmelden"
+  },
+  "Error": {
+    "title": "Er ging iets mis",
+    "description": "Er is een onverwachte fout opgetreden.",
+    "tryAgain": "Opnieuw proberen"
+  },
+  "GlobalError": {
+    "title": "Er ging iets mis",
+    "description": "Er is een onverwachte fout opgetreden. Ons team is op de hoogte gebracht.",
+    "tryAgain": "Opnieuw proberen"
+  },
+  "NotFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina die je zoekt bestaat niet of is verplaatst.",
+    "goHome": "Ga naar home"
+  },
+  "Cards": {
+    "rioters": "deelnemers",
+    "country": "{count, plural, one {land} other {landen}}",
+    "issues": "kwesties",
+    "idea": "Idee",
+    "action": "Actie",
+    "together": "Samen",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 uur+",
+    "skills": "Vaardigheden: ",
+    "anonymous": "Anoniem",
+    "curated": "Samengesteld",
+    "community": "Community",
+    "aiPick": "AI-keuze",
+    "funded": "Gefinancierd",
+    "disbursed": "Uitbetaald",
+    "backers": "{count, plural, one {donateur} other {donateurs}}",
+    "aiAndHuman": "AI-agent & menselijke organisator",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Gemeenschapsgevoel-index",
+    "needsMet": "Behoeften vervuld",
+    "needsMetDesc": "Leden vinden het de moeite waard",
+    "membership": "Lidmaatschap",
+    "membershipDesc": "Vertrouwen & verbondenheid",
+    "influence": "Invloed",
+    "influenceDesc": "Jouw stem telt",
+    "connection": "Verbinding",
+    "connectionDesc": "Gedeelde ervaringen",
+    "healthy": "Gezond",
+    "growing": "Groeiend",
+    "needsAttention": "Aandacht nodig"
+  },
+  "Pivot": {
+    "title": "🔀 De Pivot",
+    "peopleGlobally": "mensen wereldwijd",
+    "issuePivot": "🔍 Kwestie-pivot",
+    "issuePivotDesc": "Zelfde kwestie, alle organisaties",
+    "orgPivot": "🏢 Organisatie-pivot",
+    "orgPivotDesc": "Alle kwesties, één organisatie",
+    "seeIssueAcross": "Bekijk \"{issueName}\" bij alle vergelijkbare organisaties:",
+    "seeOrgIssues": "Bekijk alle kwesties bij {orgName}:",
+    "you": "JIJ",
+    "rioters": "deelnemers"
+  },
+  "CampaignProgress": {
+    "title": "💰 Campagnes",
+    "funded": "Gefinancierd",
+    "disbursed": "Uitbetaald",
+    "backers": "{count, plural, one {donateur} other {donateurs}}"
+  },
+  "WalletBalance": {
+    "title": "Jouw saldo",
+    "loaded": "geladen",
+    "contributed": "bijgedragen",
+    "campaigns": "{count, plural, one {campagne} other {campagnes}}"
+  },
+  "Transactions": {
+    "title": "Recente transacties",
+    "topUp": "Opwaardering",
+    "contribution": "Bijdrage",
+    "refund": "Terugbetaling",
+    "justNow": "zojuist",
+    "minutesAgo": "{count}m geleden",
+    "hoursAgo": "{count}u geleden",
+    "daysAgo": "{count}d geleden",
+    "empty": "Nog geen transacties. Laad je portemonnee op om te beginnen!"
+  },
+  "Activity": {
+    "noActivity": "Nog geen activiteit.",
+    "ai": "AI",
+    "human": "M"
+  },
+  "Countries": {
+    "title": "🌍 Landen"
+  },
+  "Synonyms": {
+    "placeholder": "Voeg een synoniem toe...",
+    "add": "Toevoegen"
+  },
+  "Join": {
+    "joined": "✅ Deelnemer van deze Quiet Riot",
+    "join": "✊ Doe mee met deze Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Zoek kwesties..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Deel je gedachten...",
+    "post": "Plaatsen",
+    "empty": "Nog geen berichten. Wees de eerste om iets te delen!"
+  },
+  "Actions": {
+    "ideas": "💡 Ideeën (Variatie)",
+    "actions": "⚡ Acties (Selectie)",
+    "together": "🤝 Samen (Community)",
+    "noResults": "Geen acties gevonden voor je filters. Probeer je selectie te verbreden."
+  },
+  "Filter": {
+    "all": "Alles",
+    "active": "Actief",
+    "funded": "Gefinancierd",
+    "disbursed": "Uitbetaald"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Hoeveel tijd heb je?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 uur+",
+    "typeQuestion": "Welk type?",
+    "ideas": "💡 Ideeën",
+    "actions": "⚡ Acties",
+    "together": "🤝 Samen"
+  },
+  "Reels": {
+    "empty": "Nog geen reels. Wees de eerste om er een in te sturen!",
+    "submitPrompt": "Heb je een grappige video die deze kwestie samenvat?",
+    "submitSuccess": "Bedankt! Je reel is ingediend ter beoordeling.",
+    "urlPlaceholder": "Plak een YouTube-URL...",
+    "captionPlaceholder": "Voeg een bijschrift toe (optioneel)...",
+    "submit": "Insturen"
+  },
+  "TopUp": {
+    "addFunds": "Geld toevoegen",
+    "minTopUp": "Minimale opwaardering is £1",
+    "success": "{amount} toegevoegd aan je portemonnee!",
+    "networkError": "Netwerkfout. Probeer het opnieuw.",
+    "customAmount": "Aangepast bedrag (£)",
+    "topUp": "Opwaarderen",
+    "simulated": "Gesimuleerde opwaardering voor testdoeleinden. Echte betalingen via Stripe komen binnenkort."
+  },
+  "Contribute": {
+    "insufficientFunds": "Onvoldoende saldo. Laad eerst je portemonnee op.",
+    "minContribution": "Minimale bijdrage is 10p",
+    "contribute": "Bijdragen",
+    "yourBalance": "Jouw saldo: ",
+    "networkError": "Netwerkfout. Probeer het opnieuw.",
+    "invalidAmount": "Voer een geldig bedrag in",
+    "customAmount": "Aangepast bedrag (£)",
+    "give": "Doneer",
+    "success": "{amount} bijgedragen aan {campaign}!",
+    "remainingBalance": "Je resterende saldo: {balance}",
+    "topUpPrompt": "Laad je portemonnee op",
+    "toKeepSupporting": "om campagnes te blijven steunen.",
+    "walletEmpty": "Je portemonnee is leeg.",
+    "topUp": "Opwaarderen",
+    "toContribute": "om bij te dragen."
+  },
+  "Claim": {
+    "success": "Bedankt! We hebben je interesse in de rol van {name} genoteerd. We nemen contact met je op.",
+    "placeholder": "Waarom zou jij geweldig zijn als {name}? (optioneel)",
+    "submitting": "Versturen...",
+    "expressInterest": "Interesse tonen"
+  },
+  "Evidence": {
+    "generalOrg": "Algemeen (geen specifieke organisatie)",
+    "placeholder": "Zeg wat je denkt...",
+    "photosLabel": "Foto's (maximaal 4)",
+    "addPhotos": "+ Foto's toevoegen",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maximaal 4 MB per stuk.",
+    "videoLabel": "Video (maximaal 1)",
+    "addVideo": "+ Video toevoegen",
+    "videoFormats": "MP4, MOV, WebM. Maximaal 4 MB.",
+    "linkLabel": "Externe link",
+    "linkPlaceholder": "https://nieuwsartikel.nl/...",
+    "hideMedia": "Media verbergen",
+    "addMedia": "📎 Foto's, video, links toevoegen",
+    "posting": "Plaatsen...",
+    "uploading": "Uploaden...",
+    "submitEvidence": "Bewijs indienen",
+    "goLive": "🔴 Nu live gaan",
+    "maxPhotos": "Maximaal 4 foto's. {count} overgeslagen.",
+    "videoFailed": "Video-upload mislukt",
+    "removePhoto": "{name} verwijderen",
+    "removeVideo": "Video verwijderen",
+    "uploadFailed": "Uploaden mislukt: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Profiel bewerken",
+    "nameLabel": "Naam",
+    "timeLabel": "Beschikbare tijd",
+    "time1min": "1 minuut",
+    "time1minDesc": "Alleen snelle acties",
+    "time10min": "10 minuten",
+    "time10minDesc": "De meeste acties",
+    "time1hour": "1 uur+",
+    "time1hourDesc": "Intensieve betrokkenheid",
+    "skillsLabel": "Vaardigheden",
+    "skillsPlaceholder": "bijv. design, schrijven, juridisch, programmeren",
+    "skillsHint": "Kommagescheiden. Helpt je te matchen met relevante acties.",
+    "saving": "Opslaan...",
+    "save": "Wijzigingen opslaan",
+    "cancel": "Annuleren",
+    "nameRequired": "Naam is verplicht",
+    "saveFailed": "Opslaan mislukt"
+  },
+  "SignupForm": {
+    "placeholder": "jij@voorbeeld.nl",
+    "submit": "Houd me op de hoogte"
+  },
+  "CookieConsent": {
+    "title": "Cookievoorkeuren",
+    "description": "We gebruiken cookies om je ingelogd te houden en je ervaring te verbeteren. Analytische cookies helpen ons te begrijpen hoe de site wordt gebruikt.",
+    "acceptAll": "Alles accepteren",
+    "essentialOnly": "Alleen essentieel",
+    "manage": "Voorkeuren beheren",
+    "essential": "Essentieel",
+    "essentialDescription": "Vereist voor het functioneren van de site. Kan niet worden uitgeschakeld.",
+    "analytics": "Analytisch",
+    "analyticsDescription": "Helpt ons te begrijpen hoe je de site gebruikt, zodat we deze kunnen verbeteren.",
+    "save": "Voorkeuren opslaan"
+  }
+}

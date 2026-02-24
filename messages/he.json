@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "התארגנו סביב נושאים משותפים. מצאו את האנשים שלכם. פעלו יחד."
+  },
+  "Nav": {
+    "issues": "נושאים",
+    "assistants": "עוזרים",
+    "organisations": "ארגונים",
+    "wallet": "ארנק",
+    "profile": "פרופיל",
+    "signIn": "התחברות",
+    "signOut": "התנתקות",
+    "toggleMenu": "החלף תפריט"
+  },
+  "Footer": {
+    "mission": "לשנות יותר לטובה בחיינו ממה שאנחנו מעזים לדמיין שאפשרי.",
+    "powered": "Quiet Riots · מופעל על ידי סוכן OpenClaw AI"
+  },
+  "Home": {
+    "tagline": "החנות האחת לכל הנושאים",
+    "headline": "שינוי לא חייב להיות רועש כדי להיות עוצמתי",
+    "description": "מצאו אחרים שחולקים את הנושאים שלכם. פעלו יחד. Quiet Riots מחברת אנשים סביב תסכולים משותפים והופכת תלונות לפעולה קולקטיבית.",
+    "browseIssues": "עיינו בנושאים",
+    "howItWorks": "איך זה עובד",
+    "trendingIssues": "🔥 נושאים חמים",
+    "viewAll": "הצג הכל →",
+    "reelOfTheDay": "🎬 סרטון היום",
+    "riotersFunny": "{count} משתתפים מצאו את זה מצחיק",
+    "from": "מאת:",
+    "findYourIssue": "מצא את הנושא שלך",
+    "findYourIssueDesc": "חפשו כל תסכול — רכבות, אינטרנט, בריאות, אקלים. אם הוא קיים, נראה לכם כמה אחרים חולקים אותו.",
+    "useThePivot": "השתמשו בציר",
+    "useThePivotDesc": "ראו את אותו נושא בכל הארגונים, או את כל הנושאים בארגון אחד. כמו רקדני טנגו שמחליפים כיוון.",
+    "takeAction": "פעלו",
+    "takeActionDesc": "רעיונות, פעולות וקהילה — מותאמים לזמן ולכישורים שלכם. פעולות קטנות מצטברות לשינוי גדול.",
+    "missionQuote": "\"לשנות יותר לטובה בחיינו ממה שאנחנו מעזים לדמיין שאפשרי.\"",
+    "basedOn": "מבוסס על ספר 2014 <em>Quiet Riots</em> מאת סיימון דרלינג",
+    "joinMovement": "✊ הצטרפו לתנועה"
+  },
+  "Issues": {
+    "title": "נושאים",
+    "subtitle": "{count} נושאים ב-{categoryCount} קטגוריות. מצאו את שלכם.",
+    "searchPlaceholder": "חפשו נושאים או מילים נרדפות...",
+    "noResults": "לא נמצאו נושאים. נסו חיפוש או קטגוריה אחרת."
+  },
+  "IssueDetail": {
+    "breadcrumb": "נושאים",
+    "rioters": "משתתפים",
+    "country": "{count, plural, one {מדינה} other {מדינות}}",
+    "thisWeek": "השבוע",
+    "actions": "פעולות",
+    "alsoKnownAs": "ידוע גם בשם",
+    "actionsTitle": "⚡ פעולות — ערכת הכלים האישית שלך",
+    "actionsDesc": "מבוסס על אבולוציה — 💡 **רעיונות** (גיוון), ⚡ **פעולות** (בחירה), ו-🤝 **יחד** (קהילה).",
+    "gatherEvidence": "📹 אספו ראיות",
+    "gatherEvidenceDesc": "תעדו מה קורה — שדרו בשידור חי או שתפו תמונות, סרטונים וקישורים.",
+    "riotReels": "🎬 סרטוני Quiet Riot",
+    "riotReelsDesc": "סרטונים מצחיקים ואירוניים שתופסים את רוח ה-Quiet Riot הזה.",
+    "experts": "🌟 מומחים",
+    "expertsDesc": "מתנדבים נלהבים שמעמיקים — מתרגמים, מומחים, אנשי תקשורת, יועצים משפטיים.",
+    "communityFeed": "💬 פיד הקהילה"
+  },
+  "Organisations": {
+    "title": "ארגונים",
+    "subtitle": "עיינו בארגונים וראו אילו נושאים יש לאנשים עם כל אחד.",
+    "noResults": "לא נמצאו ארגונים לקטגוריה זו."
+  },
+  "OrgDetail": {
+    "breadcrumb": "ארגונים",
+    "totalRioters": "סך המשתתפים",
+    "issues": "נושאים",
+    "topIssueShare": "חלק הנושא המוביל",
+    "paretoTitle": "עקרון פארטו:",
+    "paretoDesc": "בדרך כלל קומץ נושאים מהווים 80% מכל התלונות. הנושאים המובילים למטה מדורגים לפי מספר האנשים המושפעים.",
+    "gatherEvidence": "📹 אספו ראיות",
+    "gatherEvidenceDesc": "תעדו מה קורה עם {orgName}."
+  },
+  "Campaigns": {
+    "title": "קמפיינים",
+    "subtitle": "{count} {count, plural, one {קמפיין מגייס} other {קמפיינים מגייסים}} כספים לשינוי.",
+    "noResults": "לא נמצאו קמפיינים. נסו מסנן אחר."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "קמפיינים",
+    "fullyFunded": "מומן במלואו",
+    "disbursed": "הכספים חולקו",
+    "cancelled": "בוטל",
+    "active": "פעיל",
+    "target": "יעד",
+    "raised": "גויס",
+    "backers": "{count, plural, one {תומך} other {תומכים}}",
+    "platformFee": "עמלת פלטפורמה",
+    "wantToContribute": "רוצה לתרום?",
+    "topUpFirst": "טענו את הארנק שלכם קודם כדי להתחיל לתרום.",
+    "createAccountPrompt": "צרו חשבון וטענו את הארנק שלכם כדי לתמוך בקמפיין הזה.",
+    "goToWallet": "לארנק",
+    "createAccount": "צרו חשבון",
+    "completedMessage": "הקמפיין הזה {status}. תודה לכל {count} התומכים!",
+    "recipient": "מקבל"
+  },
+  "Assistants": {
+    "title": "עוזרים",
+    "subtitle": "{count} זוגות של סוכני AI ומארגנים אנושיים שעוזרים למשתתפים לפעול.",
+    "noResults": "אין עוזרים זמינים עדיין."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "עוזרים",
+    "aiAgent": "סוכן AI",
+    "humanOrganiser": "מארגן אנושי",
+    "rioters": "משתתפים",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "הודעות",
+    "currentFocus": "מוקד נוכחי",
+    "recentActivity": "פעילות אחרונה",
+    "riotsWeHelp": "Quiet Riots שאנחנו עוזרים בהם",
+    "wantToBe": "רוצה להיות {name}?",
+    "openRole": "תפקיד המארגן האנושי פתוח לכל מי שנלהב מהקטגוריה הזו. הביעו עניין למטה."
+  },
+  "Wallet": {
+    "title": "הארנק שלך",
+    "createPromptTitle": "התחילו לתמוך במטרות",
+    "createPromptDesc": "צרו חשבון חינמי כדי לטעון כספים ולתרום לקמפיינים שחשובים לכם.",
+    "createAccount": "צרו חשבון",
+    "activeCampaigns": "קמפיינים פעילים",
+    "viewAll": "הצג הכל"
+  },
+  "Profile": {
+    "title": "הפרופיל שלך",
+    "time": "זמן: ",
+    "skills": "כישורים: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {פוסט} other {פוסטים}}",
+    "likes": "{count, plural, one {לייק שהתקבל} other {לייקים שהתקבלו}}",
+    "yourRiots": "ה-Quiet Riots שלך",
+    "noRiots": "אין Quiet Riots עדיין",
+    "findIssues": "מצאו נושאים שחשובים לכם והצטרפו לתנועה.",
+    "browseIssues": "עיינו בנושאים",
+    "memberSince": "חבר מאז",
+    "rioters": "משתתפים",
+    "connectedAccounts": "חשבונות מקושרים",
+    "noConnectedAccounts": "אין חשבונות מקושרים עדיין. התחברו עם Google או Facebook כדי לקשר את החשבון שלכם.",
+    "deactivateAccount": "השבתת חשבון",
+    "deactivateConfirm": "בטוחים שאתם רוצים להשבית את החשבון? ניתן להפעיל אותו מחדש תוך 30 יום."
+  },
+  "Auth": {
+    "welcomeBack": "ברוכים השבים",
+    "signInSubtitle": "התחברו לחשבון ה-Quiet Riots שלכם",
+    "joinTitle": "הצטרפו ל-Quiet Riots",
+    "joinSubtitle": "התארגנו סביב נושאים משותפים. פעלו יחד.",
+    "continueGoogle": "המשך עם Google",
+    "continueFacebook": "המשך עם Facebook",
+    "connecting": "מתחבר...",
+    "or": "או",
+    "emailLabel": "כתובת אימייל",
+    "sendMagicLink": "שלחו קישור קסם",
+    "signUpWithEmail": "הרשמה עם אימייל",
+    "sendingLink": "שולח קישור...",
+    "checkEmail": "בדקו את האימייל שלכם",
+    "signInLinkSent": "שלחנו קישור התחברות לאימייל שלכם. לחצו על הקישור כדי להמשיך.",
+    "signUpLinkSent": "שלחנו קישור התחברות לאימייל שלכם. לחצו על הקישור כדי ליצור את החשבון.",
+    "noAccount": "אין לכם חשבון?",
+    "signUp": "הרשמה",
+    "hasAccount": "כבר יש לכם חשבון?",
+    "signIn": "התחברות",
+    "termsAgree": "בהרשמה, אתם מסכימים ל",
+    "terms": "תנאי השימוש",
+    "and": "ו",
+    "privacyPolicy": "מדיניות הפרטיות",
+    "verifyTitle": "בדקו את האימייל שלכם",
+    "verifyDesc": "קישור התחברות נשלח לכתובת האימייל שלכם. לחצו על הקישור כדי להמשיך.",
+    "backToSignIn": "חזרה להתחברות",
+    "errorTitle": "שגיאת אימות",
+    "errorConfig": "יש בעיה בהגדרות השרת.",
+    "errorAccess": "הגישה נדחתה. ייתכן שאין לכם הרשאה להתחבר.",
+    "errorVerification": "קישור ההתחברות פג תוקף או כבר נעשה בו שימוש.",
+    "errorDefault": "אירעה שגיאה במהלך האימות.",
+    "tryAgain": "נסו שוב"
+  },
+  "AuthGate": {
+    "signInTo": "התחברו כדי {action}",
+    "signIn": "התחברות",
+    "signInRequired": "נדרשת התחברות",
+    "signInToAction": "צריך להתחבר כדי {action}.",
+    "cancel": "ביטול",
+    "noAccount": "אין לכם חשבון?",
+    "signUp": "הרשמה"
+  },
+  "Error": {
+    "title": "משהו השתבש",
+    "description": "אירעה שגיאה בלתי צפויה.",
+    "tryAgain": "נסו שוב"
+  },
+  "GlobalError": {
+    "title": "משהו השתבש",
+    "description": "אירעה שגיאה בלתי צפויה. הצוות שלנו קיבל התראה.",
+    "tryAgain": "נסו שוב"
+  },
+  "NotFound": {
+    "title": "הדף לא נמצא",
+    "description": "הדף שאתם מחפשים לא קיים או הועבר.",
+    "goHome": "לדף הבית"
+  },
+  "Cards": {
+    "rioters": "משתתפים",
+    "country": "{count, plural, one {מדינה} other {מדינות}}",
+    "issues": "נושאים",
+    "idea": "רעיון",
+    "action": "פעולה",
+    "together": "יחד",
+    "time1min": "דקה",
+    "time10min": "10 דק׳",
+    "time1hour": "שעה+",
+    "skills": "כישורים: ",
+    "anonymous": "אנונימי",
+    "curated": "אוצר",
+    "community": "קהילה",
+    "aiPick": "בחירת AI",
+    "funded": "מומן",
+    "disbursed": "חולק",
+    "backers": "{count, plural, one {תומך} other {תומכים}}",
+    "aiAndHuman": "סוכן AI ומארגן אנושי",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 מדד תחושת הקהילה",
+    "needsMet": "צרכים מסופקים",
+    "needsMetDesc": "החברים מרגישים שזה שווה את זה",
+    "membership": "חברות",
+    "membershipDesc": "אמון ושייכות",
+    "influence": "השפעה",
+    "influenceDesc": "הקול שלך חשוב",
+    "connection": "חיבור",
+    "connectionDesc": "חוויות משותפות",
+    "healthy": "בריא",
+    "growing": "צומח",
+    "needsAttention": "דורש תשומת לב"
+  },
+  "Pivot": {
+    "title": "🔀 הציר",
+    "peopleGlobally": "אנשים ברחבי העולם",
+    "issuePivot": "🔍 ציר נושא",
+    "issuePivotDesc": "אותו נושא, כל הארגונים",
+    "orgPivot": "🏢 ציר ארגון",
+    "orgPivotDesc": "כל הנושאים, ארגון אחד",
+    "seeIssueAcross": "ראו את \"{issueName}\" בכל הארגונים הדומים:",
+    "seeOrgIssues": "ראו את כל הנושאים ב-{orgName}:",
+    "you": "אתה",
+    "rioters": "משתתפים"
+  },
+  "CampaignProgress": {
+    "title": "💰 קמפיינים",
+    "funded": "מומן",
+    "disbursed": "חולק",
+    "backers": "{count, plural, one {תומך} other {תומכים}}"
+  },
+  "WalletBalance": {
+    "title": "היתרה שלך",
+    "loaded": "נטען",
+    "contributed": "תרמתי",
+    "campaigns": "{count, plural, one {קמפיין} other {קמפיינים}}"
+  },
+  "Transactions": {
+    "title": "עסקאות אחרונות",
+    "topUp": "טעינה",
+    "contribution": "תרומה",
+    "refund": "החזר",
+    "justNow": "עכשיו",
+    "minutesAgo": "לפני {count} ד׳",
+    "hoursAgo": "לפני {count} ש׳",
+    "daysAgo": "לפני {count} י׳",
+    "empty": "אין עסקאות עדיין. טענו את הארנק שלכם כדי להתחיל!"
+  },
+  "Activity": {
+    "noActivity": "אין פעילות עדיין.",
+    "ai": "AI",
+    "human": "א"
+  },
+  "Countries": {
+    "title": "🌍 מדינות"
+  },
+  "Synonyms": {
+    "placeholder": "הוסיפו מילה נרדפת...",
+    "add": "הוסף"
+  },
+  "Join": {
+    "joined": "✅ הצטרפת ל-Quiet Riot הזה",
+    "join": "✊ הצטרפו ל-Quiet Riot הזה"
+  },
+  "Search": {
+    "placeholder": "חפשו נושאים..."
+  },
+  "Feed": {
+    "composerPlaceholder": "שתפו את המחשבות שלכם...",
+    "post": "פרסם",
+    "empty": "אין פוסטים עדיין. היו הראשונים לשתף!"
+  },
+  "Actions": {
+    "ideas": "💡 רעיונות (גיוון)",
+    "actions": "⚡ פעולות (בחירה)",
+    "together": "🤝 יחד (קהילה)",
+    "noResults": "אין פעולות שתואמות למסננים שלכם. נסו להרחיב את הבחירה."
+  },
+  "Filter": {
+    "all": "הכל",
+    "active": "פעיל",
+    "funded": "מומן",
+    "disbursed": "חולק"
+  },
+  "TimeSkill": {
+    "timeQuestion": "כמה זמן יש לכם?",
+    "time1min": "דקה",
+    "time10min": "10 דק׳",
+    "time1hour": "שעה+",
+    "typeQuestion": "איזה סוג?",
+    "ideas": "💡 רעיונות",
+    "actions": "⚡ פעולות",
+    "together": "🤝 יחד"
+  },
+  "Reels": {
+    "empty": "אין סרטונים עדיין. היו הראשונים להגיש אחד!",
+    "submitPrompt": "יש לכם סרטון מצחיק שמסכם את הנושא הזה?",
+    "submitSuccess": "תודה! הסרטון שלכם הוגש לבדיקה.",
+    "urlPlaceholder": "הדביקו קישור YouTube...",
+    "captionPlaceholder": "הוסיפו כיתוב (אופציונלי)...",
+    "submit": "שלח"
+  },
+  "TopUp": {
+    "addFunds": "הוספת כספים",
+    "minTopUp": "טעינה מינימלית היא £1",
+    "success": "{amount} נוסף לארנק שלך!",
+    "networkError": "שגיאת רשת. נסו שוב.",
+    "customAmount": "סכום מותאם (£)",
+    "topUp": "טעינה",
+    "simulated": "טעינה מדומה לבדיקה. תשלומים אמיתיים דרך Stripe בקרוב."
+  },
+  "Contribute": {
+    "insufficientFunds": "אין מספיק כספים. טענו את הארנק שלכם קודם.",
+    "minContribution": "תרומה מינימלית היא 10p",
+    "contribute": "תרמו",
+    "yourBalance": "היתרה שלך: ",
+    "networkError": "שגיאת רשת. נסו שוב.",
+    "invalidAmount": "הזינו סכום תקין",
+    "customAmount": "סכום מותאם (£)",
+    "give": "תנו",
+    "success": "תרמתם {amount} לקמפיין {campaign}!",
+    "remainingBalance": "היתרה שנותרה: {balance}",
+    "topUpPrompt": "טענו את הארנק שלכם",
+    "toKeepSupporting": "כדי להמשיך לתמוך בקמפיינים.",
+    "walletEmpty": "הארנק שלכם ריק.",
+    "topUp": "טעינה",
+    "toContribute": "כדי לתרום."
+  },
+  "Claim": {
+    "success": "תודה! רשמנו את ההתעניינות שלך בתפקיד {name}. ניצור קשר.",
+    "placeholder": "למה תהיו מעולים בתור {name}? (אופציונלי)",
+    "submitting": "שולח...",
+    "expressInterest": "הביעו עניין"
+  },
+  "Evidence": {
+    "generalOrg": "כללי (ללא ארגון ספציפי)",
+    "placeholder": "אמרו מה שאתם חושבים...",
+    "photosLabel": "תמונות (עד 4)",
+    "addPhotos": "+ הוסיפו תמונות",
+    "photoFormats": "JPEG, PNG, WebP, GIF. מקסימום 4 MB כל אחד.",
+    "videoLabel": "סרטון (1 מקסימום)",
+    "addVideo": "+ הוסיפו סרטון",
+    "videoFormats": "MP4, MOV, WebM. מקסימום 4 MB.",
+    "linkLabel": "קישור חיצוני",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "הסתר מדיה",
+    "addMedia": "📎 הוסיפו תמונות, סרטון, קישורים",
+    "posting": "מפרסם...",
+    "uploading": "מעלה...",
+    "submitEvidence": "שלחו ראיות",
+    "goLive": "🔴 שידור חי עכשיו",
+    "maxPhotos": "מקסימום 4 תמונות. {count} דולגו.",
+    "videoFailed": "העלאת הסרטון נכשלה",
+    "removePhoto": "הסר {name}",
+    "removeVideo": "הסר סרטון",
+    "uploadFailed": "נכשלה ההעלאה של: {names}"
+  },
+  "ProfileEdit": {
+    "title": "עריכת פרופיל",
+    "nameLabel": "שם",
+    "timeLabel": "זמן זמין",
+    "time1min": "דקה אחת",
+    "time1minDesc": "פעולות מהירות בלבד",
+    "time10min": "10 דקות",
+    "time10minDesc": "רוב הפעולות",
+    "time1hour": "שעה+",
+    "time1hourDesc": "מעורבות עמוקה",
+    "skillsLabel": "כישורים",
+    "skillsPlaceholder": "למשל: עיצוב, כתיבה, משפט, תכנות",
+    "skillsHint": "מופרדים בפסיקים. עוזר להתאים לכם פעולות רלוונטיות.",
+    "saving": "שומר...",
+    "save": "שמור שינויים",
+    "cancel": "ביטול",
+    "nameRequired": "שם הוא שדה חובה",
+    "saveFailed": "השמירה נכשלה"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "הודיעו לי"
+  },
+  "CookieConsent": {
+    "title": "העדפות עוגיות",
+    "description": "אנחנו משתמשים בעוגיות כדי לשמור על ההתחברות שלכם ולשפר את החוויה. עוגיות אנליטיקה עוזרות לנו להבין איך האתר מנוצל.",
+    "acceptAll": "קבלו הכל",
+    "essentialOnly": "חיוניות בלבד",
+    "manage": "ניהול העדפות",
+    "essential": "חיוניות",
+    "essentialDescription": "נדרשות לתפקוד האתר. לא ניתן להשבית.",
+    "analytics": "אנליטיקה",
+    "analyticsDescription": "עוזרות לנו להבין איך אתם משתמשים באתר כדי שנוכל לשפר אותו.",
+    "save": "שמור העדפות"
+  }
+}

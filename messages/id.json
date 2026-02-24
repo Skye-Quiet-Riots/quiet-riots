@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Berorganisasi seputar isu bersama. Temukan komunitasmu. Bertindak bersama."
+  },
+  "Nav": {
+    "issues": "Isu",
+    "assistants": "Asisten",
+    "organisations": "Organisasi",
+    "wallet": "Dompet",
+    "profile": "Profil",
+    "signIn": "Masuk",
+    "signOut": "Keluar",
+    "toggleMenu": "Buka/tutup menu"
+  },
+  "Footer": {
+    "mission": "Mengubah lebih banyak hal menjadi lebih baik dalam hidup kita, melebihi apa yang berani kita bayangkan.",
+    "powered": "Quiet Riots · Didukung oleh OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Pusat Solusi Isu",
+    "headline": "Perubahan tidak harus keras untuk menjadi kuat",
+    "description": "Temukan orang lain yang punya isu yang sama. Bertindak bersama. Quiet Riots menghubungkan orang-orang dengan keluhan yang sama dan mengubah keluhan menjadi aksi kolektif.",
+    "browseIssues": "Lihat Isu",
+    "howItWorks": "Cara Kerja",
+    "trendingIssues": "🔥 Isu Trending",
+    "viewAll": "Lihat semua →",
+    "reelOfTheDay": "🎬 Riot Reel Hari Ini",
+    "riotersFunny": "{count} peserta menganggap ini lucu",
+    "from": "Dari:",
+    "findYourIssue": "Temukan Isumu",
+    "findYourIssueDesc": "Cari apa pun yang membuatmu frustrasi — transportasi, internet, kesehatan, iklim. Kalau ada, kami tunjukkan berapa banyak orang lain yang merasakan hal sama.",
+    "useThePivot": "Gunakan The Pivot",
+    "useThePivotDesc": "Lihat isu yang sama di semua organisasi, atau semua isu di satu organisasi. Seperti penari tango yang berganti arah.",
+    "takeAction": "Ambil Tindakan",
+    "takeActionDesc": "Ide, aksi, dan komunitas — disesuaikan dengan waktu dan keahlianmu. Aksi kecil menjadi perubahan besar.",
+    "missionQuote": "\"Mengubah lebih banyak hal menjadi lebih baik dalam hidup kita, melebihi apa yang berani kita bayangkan.\"",
+    "basedOn": "Berdasarkan buku tahun 2014 <em>Quiet Riots</em> oleh Simon Darling",
+    "joinMovement": "✊ Bergabung dengan Gerakan"
+  },
+  "Issues": {
+    "title": "Isu",
+    "subtitle": "{count} isu dalam {categoryCount} kategori. Temukan milikmu.",
+    "searchPlaceholder": "Cari isu atau sinonim...",
+    "noResults": "Tidak ditemukan isu. Coba pencarian atau kategori lain."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Isu",
+    "rioters": "peserta",
+    "country": "{count, plural, one {negara} other {negara}}",
+    "thisWeek": "minggu ini",
+    "actions": "aksi",
+    "alsoKnownAs": "Dikenal juga sebagai",
+    "actionsTitle": "⚡ Aksi — Peralatan Pribadimu",
+    "actionsDesc": "Berdasarkan evolusi — 💡 **Ide** (variasi), ⚡ **Aksi** (seleksi), dan 🤝 **Bersama** (komunitas).",
+    "gatherEvidence": "📹 Kumpulkan Bukti",
+    "gatherEvidenceDesc": "Dokumentasikan apa yang terjadi — siaran langsung atau bagikan foto, video, dan tautan.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Video lucu dan satir yang menangkap semangat Quiet Riot ini.",
+    "experts": "🌟 Ahli",
+    "expertsDesc": "Relawan berdedikasi yang mendalami — penerjemah, spesialis, pemimpin media, penasihat hukum.",
+    "communityFeed": "💬 Feed Komunitas"
+  },
+  "Organisations": {
+    "title": "Organisasi",
+    "subtitle": "Lihat organisasi dan isu apa saja yang dikeluhkan orang tentang masing-masing.",
+    "noResults": "Tidak ada organisasi ditemukan untuk kategori ini."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisasi",
+    "totalRioters": "total peserta",
+    "issues": "isu",
+    "topIssueShare": "proporsi isu teratas",
+    "paretoTitle": "Prinsip Pareto:",
+    "paretoDesc": "Beberapa isu biasanya mencakup 80% dari semua keluhan. Isu teratas di bawah diurutkan berdasarkan jumlah orang yang terdampak.",
+    "gatherEvidence": "📹 Kumpulkan Bukti",
+    "gatherEvidenceDesc": "Dokumentasikan apa yang terjadi dengan {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanye",
+    "subtitle": "{count} {count, plural, one {kampanye} other {kampanye}} menggalang dana untuk perubahan.",
+    "noResults": "Tidak ditemukan kampanye. Coba filter lain."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanye",
+    "fullyFunded": "Dana Terkumpul Penuh",
+    "disbursed": "Dana Telah Dicairkan",
+    "cancelled": "Dibatalkan",
+    "active": "Aktif",
+    "target": "target",
+    "raised": "terkumpul",
+    "backers": "{count, plural, one {pendukung} other {pendukung}}",
+    "platformFee": "biaya platform",
+    "wantToContribute": "Ingin berkontribusi?",
+    "topUpFirst": "Isi dompetmu dulu untuk mulai berkontribusi.",
+    "createAccountPrompt": "Buat akun dan isi dompetmu untuk mendukung kampanye ini.",
+    "goToWallet": "Ke dompet",
+    "createAccount": "Buat akun",
+    "completedMessage": "Kampanye ini telah {status}. Terima kasih kepada semua {count} pendukung!",
+    "recipient": "Penerima"
+  },
+  "Assistants": {
+    "title": "Asisten",
+    "subtitle": "{count} pasang AI agent dan pengorganisir membantu peserta mengambil tindakan.",
+    "noResults": "Belum ada asisten tersedia."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asisten",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Pengorganisir",
+    "rioters": "peserta",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "messages": "pesan",
+    "currentFocus": "Fokus Saat Ini",
+    "recentActivity": "Aktivitas Terbaru",
+    "riotsWeHelp": "Quiet Riots yang Kami Bantu",
+    "wantToBe": "Ingin menjadi {name}?",
+    "openRole": "Peran pengorganisir terbuka untuk siapa saja yang punya semangat di kategori ini. Nyatakan minatmu di bawah."
+  },
+  "Wallet": {
+    "title": "Dompetmu",
+    "createPromptTitle": "Mulai Mendukung",
+    "createPromptDesc": "Buat akun gratis untuk mengisi dana dan berkontribusi ke kampanye yang kamu pedulikan.",
+    "createAccount": "Buat akun",
+    "activeCampaigns": "Kampanye Aktif",
+    "viewAll": "Lihat semua"
+  },
+  "Profile": {
+    "title": "Profilmu",
+    "time": "Waktu: ",
+    "skills": "Keahlian: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {pos} other {pos}}",
+    "likes": "{count, plural, one {suka diterima} other {suka diterima}}",
+    "yourRiots": "Quiet Riots-mu",
+    "noRiots": "Belum ada Quiet Riots",
+    "findIssues": "Temukan isu yang kamu pedulikan dan bergabung dengan gerakan.",
+    "browseIssues": "Lihat isu",
+    "memberSince": "Anggota sejak",
+    "rioters": "peserta",
+    "connectedAccounts": "Akun Terhubung",
+    "noConnectedAccounts": "Belum ada akun yang terhubung. Masuk dengan Google atau Facebook untuk menghubungkan akunmu.",
+    "deactivateAccount": "Nonaktifkan akun",
+    "deactivateConfirm": "Yakin ingin menonaktifkan akun? Kamu bisa mengaktifkannya kembali dalam 30 hari."
+  },
+  "Auth": {
+    "welcomeBack": "Selamat datang kembali",
+    "signInSubtitle": "Masuk ke akun Quiet Riots-mu",
+    "joinTitle": "Bergabung dengan Quiet Riots",
+    "joinSubtitle": "Berorganisasi seputar isu bersama. Bertindak bersama.",
+    "continueGoogle": "Lanjutkan dengan Google",
+    "continueFacebook": "Lanjutkan dengan Facebook",
+    "connecting": "Menghubungkan...",
+    "or": "atau",
+    "emailLabel": "Alamat email",
+    "sendMagicLink": "Kirim tautan masuk",
+    "signUpWithEmail": "Daftar dengan email",
+    "sendingLink": "Mengirim tautan...",
+    "checkEmail": "Cek emailmu",
+    "signInLinkSent": "Kami telah mengirim tautan masuk ke emailmu. Klik tautan untuk melanjutkan.",
+    "signUpLinkSent": "Kami telah mengirim tautan masuk ke emailmu. Klik tautan untuk membuat akun.",
+    "noAccount": "Belum punya akun?",
+    "signUp": "Daftar",
+    "hasAccount": "Sudah punya akun?",
+    "signIn": "Masuk",
+    "termsAgree": "Dengan mendaftar, kamu menyetujui",
+    "terms": "Ketentuan",
+    "and": "dan",
+    "privacyPolicy": "Kebijakan Privasi",
+    "verifyTitle": "Cek emailmu",
+    "verifyDesc": "Tautan masuk telah dikirim ke alamat emailmu. Klik tautan untuk melanjutkan.",
+    "backToSignIn": "Kembali ke halaman masuk",
+    "errorTitle": "Kesalahan Autentikasi",
+    "errorConfig": "Ada masalah dengan konfigurasi server.",
+    "errorAccess": "Akses ditolak. Kamu mungkin tidak memiliki izin untuk masuk.",
+    "errorVerification": "Tautan masuk telah kedaluwarsa atau sudah digunakan.",
+    "errorDefault": "Terjadi kesalahan saat autentikasi.",
+    "tryAgain": "Coba lagi"
+  },
+  "AuthGate": {
+    "signInTo": "Masuk untuk {action}",
+    "signIn": "Masuk",
+    "signInRequired": "Perlu masuk",
+    "signInToAction": "Kamu perlu masuk untuk {action}.",
+    "cancel": "Batal",
+    "noAccount": "Belum punya akun?",
+    "signUp": "Daftar"
+  },
+  "Error": {
+    "title": "Terjadi kesalahan",
+    "description": "Terjadi kesalahan yang tidak terduga.",
+    "tryAgain": "Coba lagi"
+  },
+  "GlobalError": {
+    "title": "Terjadi kesalahan",
+    "description": "Terjadi kesalahan yang tidak terduga. Tim kami telah diberitahu.",
+    "tryAgain": "Coba lagi"
+  },
+  "NotFound": {
+    "title": "Halaman tidak ditemukan",
+    "description": "Halaman yang kamu cari tidak ada atau telah dipindahkan.",
+    "goHome": "Ke beranda"
+  },
+  "Cards": {
+    "rioters": "peserta",
+    "country": "{count, plural, one {negara} other {negara}}",
+    "issues": "isu",
+    "idea": "Ide",
+    "action": "Aksi",
+    "together": "Bersama",
+    "time1min": "1 menit",
+    "time10min": "10 menit",
+    "time1hour": "1 jam+",
+    "skills": "Keahlian: ",
+    "anonymous": "Anonim",
+    "curated": "Pilihan",
+    "community": "Komunitas",
+    "aiPick": "Pilihan AI",
+    "funded": "Terdanai",
+    "disbursed": "Dicairkan",
+    "backers": "{count, plural, one {pendukung} other {pendukung}}",
+    "aiAndHuman": "AI Agent & Pengorganisir",
+    "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
+  },
+  "Health": {
+    "title": "📊 Indeks Rasa Komunitas",
+    "needsMet": "Kebutuhan Terpenuhi",
+    "needsMetDesc": "Anggota merasa ini bermanfaat",
+    "membership": "Keanggotaan",
+    "membershipDesc": "Kepercayaan & rasa memiliki",
+    "influence": "Pengaruh",
+    "influenceDesc": "Suaramu penting",
+    "connection": "Koneksi",
+    "connectionDesc": "Pengalaman bersama",
+    "healthy": "Sehat",
+    "growing": "Berkembang",
+    "needsAttention": "Perlu Perhatian"
+  },
+  "Pivot": {
+    "title": "🔀 The Pivot",
+    "peopleGlobally": "orang di seluruh dunia",
+    "issuePivot": "🔍 Issue Pivot",
+    "issuePivotDesc": "Isu sama, semua organisasi",
+    "orgPivot": "🏢 Org Pivot",
+    "orgPivotDesc": "Semua isu, satu organisasi",
+    "seeIssueAcross": "Lihat \"{issueName}\" di semua organisasi serupa:",
+    "seeOrgIssues": "Lihat semua isu di {orgName}:",
+    "you": "KAMU",
+    "rioters": "peserta"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampanye",
+    "funded": "Terdanai",
+    "disbursed": "Dicairkan",
+    "backers": "{count, plural, one {pendukung} other {pendukung}}"
+  },
+  "WalletBalance": {
+    "title": "Saldomu",
+    "loaded": "diisi",
+    "contributed": "dikontribusikan",
+    "campaigns": "{count, plural, one {kampanye} other {kampanye}}"
+  },
+  "Transactions": {
+    "title": "Transaksi Terbaru",
+    "topUp": "Isi ulang",
+    "contribution": "Kontribusi",
+    "refund": "Pengembalian",
+    "justNow": "baru saja",
+    "minutesAgo": "{count} menit lalu",
+    "hoursAgo": "{count} jam lalu",
+    "daysAgo": "{count} hari lalu",
+    "empty": "Belum ada transaksi. Isi dompetmu untuk memulai!"
+  },
+  "Activity": {
+    "noActivity": "Belum ada aktivitas.",
+    "ai": "AI",
+    "human": "Manusia"
+  },
+  "Countries": {
+    "title": "🌍 Negara"
+  },
+  "Synonyms": {
+    "placeholder": "Tambah sinonim...",
+    "add": "Tambah"
+  },
+  "Join": {
+    "joined": "✅ Sudah bergabung di Quiet Riot ini",
+    "join": "✊ Bergabung di Quiet Riot ini"
+  },
+  "Search": {
+    "placeholder": "Cari isu..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Bagikan pemikiranmu...",
+    "post": "Kirim",
+    "empty": "Belum ada pos. Jadilah yang pertama berbagi!"
+  },
+  "Actions": {
+    "ideas": "💡 Ide (Variasi)",
+    "actions": "⚡ Aksi (Seleksi)",
+    "together": "🤝 Bersama (Komunitas)",
+    "noResults": "Tidak ada aksi yang cocok dengan filter. Coba perluas pilihanmu."
+  },
+  "Filter": {
+    "all": "Semua",
+    "active": "Aktif",
+    "funded": "Terdanai",
+    "disbursed": "Dicairkan"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Berapa banyak waktu yang kamu punya?",
+    "time1min": "1 menit",
+    "time10min": "10 menit",
+    "time1hour": "1 jam+",
+    "typeQuestion": "Jenis apa?",
+    "ideas": "💡 Ide",
+    "actions": "⚡ Aksi",
+    "together": "🤝 Bersama"
+  },
+  "Reels": {
+    "empty": "Belum ada reel. Jadilah yang pertama mengirim!",
+    "submitPrompt": "Punya video lucu yang merangkum isu ini?",
+    "submitSuccess": "Terima kasih! Reel-mu telah dikirim untuk ditinjau.",
+    "urlPlaceholder": "Tempel URL YouTube...",
+    "captionPlaceholder": "Tambah keterangan (opsional)...",
+    "submit": "Kirim"
+  },
+  "TopUp": {
+    "addFunds": "Isi Dana",
+    "minTopUp": "Isi minimum £1",
+    "success": "{amount} telah ditambahkan ke dompetmu!",
+    "networkError": "Kesalahan jaringan. Silakan coba lagi.",
+    "customAmount": "Jumlah lain (£)",
+    "topUp": "Isi Ulang",
+    "simulated": "Isi ulang simulasi untuk pengujian. Pembayaran nyata via Stripe segera hadir."
+  },
+  "Contribute": {
+    "insufficientFunds": "Dana tidak cukup. Isi dompetmu dulu.",
+    "minContribution": "Kontribusi minimum 10p",
+    "contribute": "Kontribusi",
+    "yourBalance": "Saldomu: ",
+    "networkError": "Kesalahan jaringan. Silakan coba lagi.",
+    "invalidAmount": "Masukkan jumlah yang valid",
+    "customAmount": "Jumlah lain (£)",
+    "give": "Beri",
+    "success": "Berkontribusi {amount} ke {campaign}!",
+    "remainingBalance": "Saldo tersisa: {balance}",
+    "topUpPrompt": "Isi dompetmu",
+    "toKeepSupporting": "untuk terus mendukung kampanye.",
+    "walletEmpty": "Dompetmu kosong.",
+    "topUp": "Isi ulang",
+    "toContribute": "untuk berkontribusi."
+  },
+  "Claim": {
+    "success": "Terima kasih! Kami sudah mencatat minatmu pada peran {name}. Kami akan menghubungimu.",
+    "placeholder": "Mengapa kamu cocok untuk peran {name}? (opsional)",
+    "submitting": "Mengirim...",
+    "expressInterest": "Nyatakan Minat"
+  },
+  "Evidence": {
+    "generalOrg": "Umum (tidak spesifik organisasi)",
+    "placeholder": "Sampaikan pendapatmu...",
+    "photosLabel": "Foto (maksimal 4)",
+    "addPhotos": "+ Tambah foto",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks 4 MB per foto.",
+    "videoLabel": "Video (maks 1)",
+    "addVideo": "+ Tambah video",
+    "videoFormats": "MP4, MOV, WebM. Maks 4 MB.",
+    "linkLabel": "Tautan eksternal",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "Sembunyikan media",
+    "addMedia": "📎 Tambah foto, video, tautan",
+    "posting": "Mengirim...",
+    "uploading": "Mengunggah...",
+    "submitEvidence": "Kirim Bukti",
+    "goLive": "🔴 Siaran Langsung Sekarang",
+    "maxPhotos": "Maksimal 4 foto. {count} dilewati.",
+    "videoFailed": "Gagal mengunggah video",
+    "removePhoto": "Hapus {name}",
+    "removeVideo": "Hapus video",
+    "uploadFailed": "Gagal mengunggah: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Edit profil",
+    "nameLabel": "Nama",
+    "timeLabel": "Waktu tersedia",
+    "time1min": "1 menit",
+    "time1minDesc": "Aksi cepat saja",
+    "time10min": "10 menit",
+    "time10minDesc": "Sebagian besar aksi",
+    "time1hour": "1 jam+",
+    "time1hourDesc": "Keterlibatan mendalam",
+    "skillsLabel": "Keahlian",
+    "skillsPlaceholder": "misal: desain, menulis, hukum, pemrograman",
+    "skillsHint": "Pisahkan dengan koma. Membantu mencocokkanmu dengan aksi yang relevan.",
+    "saving": "Menyimpan...",
+    "save": "Simpan perubahan",
+    "cancel": "Batal",
+    "nameRequired": "Nama wajib diisi",
+    "saveFailed": "Gagal menyimpan"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "Beritahu Saya"
+  },
+  "CookieConsent": {
+    "title": "Preferensi cookie",
+    "description": "Kami menggunakan cookie untuk menjagamu tetap masuk dan meningkatkan pengalamanmu. Cookie analitik membantu kami memahami cara situs digunakan.",
+    "acceptAll": "Terima semua",
+    "essentialOnly": "Hanya yang penting",
+    "manage": "Kelola preferensi",
+    "essential": "Penting",
+    "essentialDescription": "Diperlukan agar situs berfungsi. Tidak dapat dinonaktifkan.",
+    "analytics": "Analitik",
+    "analyticsDescription": "Membantu kami memahami cara kamu menggunakan situs agar kami bisa memperbaikinya.",
+    "save": "Simpan preferensi"
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Mag-organisa sa mga isyung pinaghahatian. Hanapin ang mga kasama mo. Kumilos nang magkasama."
+  },
+  "Nav": {
+    "issues": "Mga Isyu",
+    "assistants": "Mga Katulong",
+    "organisations": "Mga Organisasyon",
+    "wallet": "Wallet",
+    "profile": "Profile",
+    "signIn": "Mag-sign in",
+    "signOut": "Mag-sign out",
+    "toggleMenu": "I-toggle ang menu"
+  },
+  "Footer": {
+    "mission": "Upang magbago ng mas marami para sa ikabubuti sa ating mga buhay kaysa sa maaari nating isiping posible.",
+    "powered": "Quiet Riots · Pinapagana ng OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Ang Issues One-Stop-Shop",
+    "headline": "Hindi kailangang maingay ang pagbabago para maging makapangyarihan",
+    "description": "Humanap ng iba na may parehong mga isyu sa iyo. Kumilos nang magkasama. Ikinokonekta ng Quiet Riots ang mga tao sa mga pinaghahatiang frustrasyon at ginagawang kolektibong aksyon ang mga reklamo.",
+    "browseIssues": "Mag-browse ng mga Isyu",
+    "howItWorks": "Paano Ito Gumagana",
+    "trendingIssues": "🔥 Mga Trending na Isyu",
+    "viewAll": "Tingnan lahat →",
+    "reelOfTheDay": "🎬 Riot Reel ng Araw",
+    "riotersFunny": "{count} kalahok ang natuwa dito",
+    "from": "Mula sa:",
+    "findYourIssue": "Hanapin ang Iyong Isyu",
+    "findYourIssueDesc": "Maghanap ng kahit anong frustrasyon — tren, broadband, kalusugan, klima. Kung umiiral ito, ipapakita namin kung gaano karami ang may parehong isyu.",
+    "useThePivot": "Gamitin ang Pivot",
+    "useThePivotDesc": "Makita ang parehong isyu sa lahat ng organisasyon, o lahat ng isyu sa isang organisasyon. Parang mga mananayaw ng tango na nagpapalit ng direksyon.",
+    "takeAction": "Kumilos",
+    "takeActionDesc": "Mga ideya, aksyon, at komunidad — naka-personalize sa iyong oras at kasanayan. Ang mga maliliit na aksyon ay nagiging malaking pagbabago.",
+    "missionQuote": "\"Upang magbago ng mas marami para sa ikabubuti sa ating mga buhay kaysa sa maaari nating isiping posible.\"",
+    "basedOn": "Batay sa 2014 na aklat na <em>Quiet Riots</em> ni Simon Darling",
+    "joinMovement": "✊ Sumali sa Kilusan"
+  },
+  "Issues": {
+    "title": "Mga Isyu",
+    "subtitle": "{count} isyu sa {categoryCount} kategorya. Hanapin ang sa iyo.",
+    "searchPlaceholder": "Maghanap ng mga isyu o kasingkahulugan...",
+    "noResults": "Walang nahanap na isyu. Subukan ang ibang paghahanap o kategorya."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Mga Isyu",
+    "rioters": "kalahok",
+    "country": "{count, plural, one {bansa} other {bansa}}",
+    "thisWeek": "ngayong linggo",
+    "actions": "aksyon",
+    "alsoKnownAs": "Kilala rin bilang",
+    "actionsTitle": "⚡ Mga Aksyon — Ang Iyong Personal na Toolkit",
+    "actionsDesc": "Batay sa ebolusyon — 💡 **Mga Ideya** (variation), ⚡ **Mga Aksyon** (selection), at 🤝 **Magkasama** (komunidad).",
+    "gatherEvidence": "📹 Mangolekta ng Ebidensya",
+    "gatherEvidenceDesc": "Idokumento ang nangyayari — mag-live o magbahagi ng mga larawan, video, at link.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Mga nakakatawa at ironikong video na kumakatawan sa diwa ng Quiet Riot na ito.",
+    "experts": "🌟 Mga Eksperto",
+    "expertsDesc": "Mga dedikadong boluntaryo na mas malalim ang kaalaman — mga tagasalin, espesyalista, media lead, at legal advisor.",
+    "communityFeed": "💬 Feed ng Komunidad"
+  },
+  "Organisations": {
+    "title": "Mga Organisasyon",
+    "subtitle": "Mag-browse ng mga organisasyon at tingnan kung anong mga isyu ang mayroon ang mga tao sa bawat isa.",
+    "noResults": "Walang nahanap na organisasyon para sa kategoryang ito."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Mga Organisasyon",
+    "totalRioters": "kabuuang kalahok",
+    "issues": "mga isyu",
+    "topIssueShare": "bahagi ng nangungunang isyu",
+    "paretoTitle": "Pareto Principle:",
+    "paretoDesc": "Ang ilang isyu ay karaniwang bumubuo ng 80% ng lahat ng reklamo. Ang mga nangungunang isyu sa ibaba ay niraranggo ayon sa bilang ng mga taong apektado.",
+    "gatherEvidence": "📹 Mangolekta ng Ebidensya",
+    "gatherEvidenceDesc": "Idokumento ang nangyayari sa {orgName}."
+  },
+  "Campaigns": {
+    "title": "Mga Kampanya",
+    "subtitle": "{count} {count, plural, one {kampanya} other {kampanya}} na nangongolekta ng pondo para sa pagbabago.",
+    "noResults": "Walang nahanap na kampanya. Subukan ang ibang filter."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Mga Kampanya",
+    "fullyFunded": "Ganap na Na-fund",
+    "disbursed": "Na-disburse ang Pondo",
+    "cancelled": "Kinansela",
+    "active": "Aktibo",
+    "target": "target",
+    "raised": "nakalap",
+    "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}",
+    "platformFee": "bayad sa platform",
+    "wantToContribute": "Gusto mong mag-ambag?",
+    "topUpFirst": "Mag-top up muna ng iyong wallet upang magsimulang mag-ambag.",
+    "createAccountPrompt": "Gumawa ng account at mag-load ng wallet upang suportahan ang kampanyang ito.",
+    "goToWallet": "Pumunta sa wallet",
+    "createAccount": "Gumawa ng account",
+    "completedMessage": "Ang kampanyang ito ay {status}. Salamat sa lahat ng {count} tagasuporta!",
+    "recipient": "Tatanggap"
+  },
+  "Assistants": {
+    "title": "Mga Katulong",
+    "subtitle": "{count} pares ng AI agent at human organiser na tumutulong sa mga kalahok na kumilos.",
+    "noResults": "Wala pang mga katulong na available."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Mga Katulong",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Human Organiser",
+    "rioters": "kalahok",
+    "riots": "{count, plural, one {riot} other {riot}}",
+    "messages": "mensahe",
+    "currentFocus": "Kasalukuyang Pokus",
+    "recentActivity": "Kamakailang Aktibidad",
+    "riotsWeHelp": "Mga Quiet Riot na Tinutulungan Namin",
+    "wantToBe": "Gusto mo bang maging si {name}?",
+    "openRole": "Ang human organiser role ay bukas sa sinumang may pagmamahal sa kategoryang ito. Ipahayag ang iyong interes sa ibaba."
+  },
+  "Wallet": {
+    "title": "Ang Iyong Wallet",
+    "createPromptTitle": "Magsimulang Sumuporta ng mga Layunin",
+    "createPromptDesc": "Gumawa ng libreng account para mag-load ng pondo at mag-ambag sa mga kampanyang mahalaga sa iyo.",
+    "createAccount": "Gumawa ng account",
+    "activeCampaigns": "Mga Aktibong Kampanya",
+    "viewAll": "Tingnan lahat"
+  },
+  "Profile": {
+    "title": "Ang Iyong Profile",
+    "time": "Oras: ",
+    "skills": "Kasanayan: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {post} other {post}}",
+    "likes": "{count, plural, one {like na natanggap} other {like na natanggap}}",
+    "yourRiots": "Ang Iyong Mga Quiet Riot",
+    "noRiots": "Wala pang Quiet Riot",
+    "findIssues": "Humanap ng mga isyung mahalaga sa iyo at sumali sa kilusan.",
+    "browseIssues": "Mag-browse ng mga isyu",
+    "memberSince": "Miyembro mula noong",
+    "rioters": "kalahok",
+    "connectedAccounts": "Mga Konektadong Account",
+    "noConnectedAccounts": "Wala pang nakakonektang account. Mag-sign in gamit ang Google o Facebook para i-link ang iyong account.",
+    "deactivateAccount": "I-deactivate ang account",
+    "deactivateConfirm": "Sigurado ka bang gusto mong i-deactivate ang iyong account? Maaari mo itong i-reactivate sa loob ng 30 araw."
+  },
+  "Auth": {
+    "welcomeBack": "Maligayang pagbabalik",
+    "signInSubtitle": "Mag-sign in sa iyong Quiet Riots account",
+    "joinTitle": "Sumali sa Quiet Riots",
+    "joinSubtitle": "Mag-organisa sa mga isyung pinaghahatian. Kumilos nang magkasama.",
+    "continueGoogle": "Magpatuloy gamit ang Google",
+    "continueFacebook": "Magpatuloy gamit ang Facebook",
+    "connecting": "Kumokonekta...",
+    "or": "o",
+    "emailLabel": "Email address",
+    "sendMagicLink": "Magpadala ng magic link",
+    "signUpWithEmail": "Mag-sign up gamit ang email",
+    "sendingLink": "Nagpapadala ng link...",
+    "checkEmail": "Tingnan ang iyong email",
+    "signInLinkSent": "Nagpadala kami ng sign-in link sa iyong email address. I-click ang link para magpatuloy.",
+    "signUpLinkSent": "Nagpadala kami ng sign-in link sa iyong email address. I-click ang link para gumawa ng account.",
+    "noAccount": "Wala ka pang account?",
+    "signUp": "Mag-sign up",
+    "hasAccount": "May account ka na?",
+    "signIn": "Mag-sign in",
+    "termsAgree": "Sa pag-sign up, sumasang-ayon ka sa aming",
+    "terms": "Mga Tuntunin",
+    "and": "at",
+    "privacyPolicy": "Patakaran sa Privacy",
+    "verifyTitle": "Tingnan ang iyong email",
+    "verifyDesc": "May sign-in link na ipinadala sa iyong email address. I-click ang link para magpatuloy.",
+    "backToSignIn": "Bumalik sa sign in",
+    "errorTitle": "Error sa Authentication",
+    "errorConfig": "May problema sa configuration ng server.",
+    "errorAccess": "Tinanggihan ang access. Maaaring wala kang pahintulot na mag-sign in.",
+    "errorVerification": "Ang sign-in link ay nag-expire na o nagamit na.",
+    "errorDefault": "May error na nangyari habang nag-authenticate.",
+    "tryAgain": "Subukan muli"
+  },
+  "AuthGate": {
+    "signInTo": "Mag-sign in para {action}",
+    "signIn": "Mag-sign in",
+    "signInRequired": "Kailangan mag-sign in",
+    "signInToAction": "Kailangan mong mag-sign in para {action}.",
+    "cancel": "Kanselahin",
+    "noAccount": "Wala ka pang account?",
+    "signUp": "Mag-sign up"
+  },
+  "Error": {
+    "title": "May nangyaring mali",
+    "description": "May hindi inaasahang error na nangyari.",
+    "tryAgain": "Subukan muli"
+  },
+  "GlobalError": {
+    "title": "May nangyaring mali",
+    "description": "May hindi inaasahang error na nangyari. Naabisuhan na ang aming team.",
+    "tryAgain": "Subukan muli"
+  },
+  "NotFound": {
+    "title": "Hindi nahanap ang pahina",
+    "description": "Ang pahina na hinahanap mo ay wala o inilipat na.",
+    "goHome": "Pumunta sa home"
+  },
+  "Cards": {
+    "rioters": "kalahok",
+    "country": "{count, plural, one {bansa} other {bansa}}",
+    "issues": "mga isyu",
+    "idea": "Ideya",
+    "action": "Aksyon",
+    "together": "Magkasama",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 oras+",
+    "skills": "Kasanayan: ",
+    "anonymous": "Hindi Kilala",
+    "curated": "Pinili",
+    "community": "Komunidad",
+    "aiPick": "Pinili ng AI",
+    "funded": "Na-fund",
+    "disbursed": "Na-disburse",
+    "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}",
+    "aiAndHuman": "AI Agent at Human Organiser",
+    "riots": "{count, plural, one {riot} other {riot}}"
+  },
+  "Health": {
+    "title": "📊 Sense of Community Index",
+    "needsMet": "Natutugunan ang Pangangailangan",
+    "needsMetDesc": "Nararamdaman ng mga miyembro na sulit ito",
+    "membership": "Membership",
+    "membershipDesc": "Tiwala at pagiging kabahagi",
+    "influence": "Impluwensya",
+    "influenceDesc": "Mahalaga ang iyong boses",
+    "connection": "Koneksyon",
+    "connectionDesc": "Mga ibinahaging karanasan",
+    "healthy": "Malusog",
+    "growing": "Lumalaki",
+    "needsAttention": "Nangangailangan ng Atensyon"
+  },
+  "Pivot": {
+    "title": "🔀 Ang Pivot",
+    "peopleGlobally": "tao sa buong mundo",
+    "issuePivot": "🔍 Issue Pivot",
+    "issuePivotDesc": "Parehong isyu, lahat ng org",
+    "orgPivot": "🏢 Org Pivot",
+    "orgPivotDesc": "Lahat ng isyu, isang org",
+    "seeIssueAcross": "Tingnan ang \"{issueName}\" sa lahat ng katulad na organisasyon:",
+    "seeOrgIssues": "Tingnan ang lahat ng isyu sa {orgName}:",
+    "you": "IKAW",
+    "rioters": "kalahok"
+  },
+  "CampaignProgress": {
+    "title": "💰 Mga Kampanya",
+    "funded": "Na-fund",
+    "disbursed": "Na-disburse",
+    "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}"
+  },
+  "WalletBalance": {
+    "title": "Ang Iyong Balanse",
+    "loaded": "na-load",
+    "contributed": "nai-ambag",
+    "campaigns": "{count, plural, one {kampanya} other {kampanya}}"
+  },
+  "Transactions": {
+    "title": "Kamakailang mga Transaksyon",
+    "topUp": "Top-up",
+    "contribution": "Ambag",
+    "refund": "Refund",
+    "justNow": "ngayon lang",
+    "minutesAgo": "{count}m nakalipas",
+    "hoursAgo": "{count}o nakalipas",
+    "daysAgo": "{count}a nakalipas",
+    "empty": "Wala pang transaksyon. Mag-top up ng wallet para makapagsimula!"
+  },
+  "Activity": {
+    "noActivity": "Wala pang aktibidad.",
+    "ai": "AI",
+    "human": "T"
+  },
+  "Countries": {
+    "title": "🌍 Mga Bansa"
+  },
+  "Synonyms": {
+    "placeholder": "Magdagdag ng kasingkahulugan...",
+    "add": "Idagdag"
+  },
+  "Join": {
+    "joined": "✅ Sumali sa Quiet Riot na ito",
+    "join": "✊ Sumali sa Quiet Riot na ito"
+  },
+  "Search": {
+    "placeholder": "Maghanap ng mga isyu..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Ibahagi ang iyong mga iniisip...",
+    "post": "I-post",
+    "empty": "Wala pang mga post. Maging una sa pagbabahagi!"
+  },
+  "Actions": {
+    "ideas": "💡 Mga Ideya (Variation)",
+    "actions": "⚡ Mga Aksyon (Selection)",
+    "together": "🤝 Magkasama (Komunidad)",
+    "noResults": "Walang aksyon na tumutugma sa iyong mga filter. Subukang palawakin ang iyong pinili."
+  },
+  "Filter": {
+    "all": "Lahat",
+    "active": "Aktibo",
+    "funded": "Na-fund",
+    "disbursed": "Na-disburse"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Gaano karaming oras ang mayroon ka?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 oras+",
+    "typeQuestion": "Anong uri?",
+    "ideas": "💡 Mga Ideya",
+    "actions": "⚡ Mga Aksyon",
+    "together": "🤝 Magkasama"
+  },
+  "Reels": {
+    "empty": "Wala pang mga reel. Maging una sa pagsusumite!",
+    "submitPrompt": "May nakakatawang video na bumubuod sa isyung ito?",
+    "submitSuccess": "Salamat! Ang iyong reel ay naisumite na para sa pagsusuri.",
+    "urlPlaceholder": "Mag-paste ng YouTube URL...",
+    "captionPlaceholder": "Magdagdag ng caption (opsyonal)...",
+    "submit": "Isumite"
+  },
+  "TopUp": {
+    "addFunds": "Magdagdag ng Pondo",
+    "minTopUp": "Minimum top-up ay £1",
+    "success": "{amount} naidagdag sa iyong wallet!",
+    "networkError": "Error sa network. Pakisubukan muli.",
+    "customAmount": "Custom na halaga (£)",
+    "topUp": "Mag-top Up",
+    "simulated": "Simulated na top-up para sa testing. Mga tunay na bayad sa pamamagitan ng Stripe ay paparating."
+  },
+  "Contribute": {
+    "insufficientFunds": "Hindi sapat ang pondo. Mag-top up muna ng wallet.",
+    "minContribution": "Minimum na ambag ay 10p",
+    "contribute": "Mag-ambag",
+    "yourBalance": "Ang iyong balanse: ",
+    "networkError": "Error sa network. Pakisubukan muli.",
+    "invalidAmount": "Maglagay ng tamang halaga",
+    "customAmount": "Custom na halaga (£)",
+    "give": "Ibigay",
+    "success": "Nag-ambag ng {amount} sa {campaign}!",
+    "remainingBalance": "Natitirang balanse: {balance}",
+    "topUpPrompt": "Mag-top up ng wallet",
+    "toKeepSupporting": "para patuloy na sumuporta ng mga kampanya.",
+    "walletEmpty": "Walang laman ang iyong wallet.",
+    "topUp": "Mag-top up",
+    "toContribute": "para makapag-ambag."
+  },
+  "Claim": {
+    "success": "Salamat! Nabanggit na namin ang iyong interes sa {name} na role. Makikipag-ugnayan kami.",
+    "placeholder": "Bakit ka magiging magaling bilang {name}? (opsyonal)",
+    "submitting": "Nagsusumite...",
+    "expressInterest": "Ipahayag ang Interes"
+  },
+  "Evidence": {
+    "generalOrg": "Pangkalahatan (walang tukoy na organisasyon)",
+    "placeholder": "Sabihin ang iniisip mo...",
+    "photosLabel": "Mga Larawan (hanggang 4)",
+    "addPhotos": "+ Magdagdag ng mga larawan",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max 4 MB bawat isa.",
+    "videoLabel": "Video (1 max)",
+    "addVideo": "+ Magdagdag ng video",
+    "videoFormats": "MP4, MOV, WebM. Max 4 MB.",
+    "linkLabel": "External na link",
+    "linkPlaceholder": "https://balita-artikulo.com/...",
+    "hideMedia": "Itago ang media",
+    "addMedia": "📎 Magdagdag ng mga larawan, video, link",
+    "posting": "Nagpo-post...",
+    "uploading": "Nag-a-upload...",
+    "submitEvidence": "Isumite ang Ebidensya",
+    "goLive": "🔴 Mag-live Ngayon",
+    "maxPhotos": "Maximum 4 na larawan. {count} hindi naisama.",
+    "videoFailed": "Nabigo ang pag-upload ng video",
+    "removePhoto": "Alisin ang {name}",
+    "removeVideo": "Alisin ang video",
+    "uploadFailed": "Nabigong i-upload: {names}"
+  },
+  "ProfileEdit": {
+    "title": "I-edit ang profile",
+    "nameLabel": "Pangalan",
+    "timeLabel": "Available na oras",
+    "time1min": "1 minuto",
+    "time1minDesc": "Mabilisang aksyon lang",
+    "time10min": "10 minuto",
+    "time10minDesc": "Karamihan ng aksyon",
+    "time1hour": "1 oras+",
+    "time1hourDesc": "Malalim na paglahok",
+    "skillsLabel": "Mga Kasanayan",
+    "skillsPlaceholder": "hal. disenyo, pagsulat, legal, coding",
+    "skillsHint": "Pinaghihiwalay ng kuwit. Tumutulong sa paghahanap ng mga akma na aksyon.",
+    "saving": "Nagse-save...",
+    "save": "I-save ang mga pagbabago",
+    "cancel": "Kanselahin",
+    "nameRequired": "Kailangan ang pangalan",
+    "saveFailed": "Nabigong i-save"
+  },
+  "SignupForm": {
+    "placeholder": "ikaw@halimbawa.com",
+    "submit": "Abisuhan Ako"
+  },
+  "CookieConsent": {
+    "title": "Mga kagustuhan sa cookie",
+    "description": "Gumagamit kami ng cookies para mapanatili kang naka-sign in at mapahusay ang iyong karanasan. Ang analytics cookies ay tumutulong sa amin na maunawaan kung paano ginagamit ang site.",
+    "acceptAll": "Tanggapin lahat",
+    "essentialOnly": "Esensyal lang",
+    "manage": "Pamahalaan ang mga kagustuhan",
+    "essential": "Esensyal",
+    "essentialDescription": "Kailangan para gumana ang site. Hindi maaaring i-disable.",
+    "analytics": "Analytics",
+    "analyticsDescription": "Tumutulong sa amin na maunawaan kung paano mo ginagamit ang site para ma-improve namin ito.",
+    "save": "I-save ang mga kagustuhan"
+  }
+}

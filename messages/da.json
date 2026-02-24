@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organisér omkring fælles problemer. Find dit folk. Tag handling sammen."
+  },
+  "Nav": {
+    "issues": "Sager",
+    "assistants": "Assistenter",
+    "organisations": "Organisationer",
+    "wallet": "Tegnebog",
+    "profile": "Profil",
+    "signIn": "Log ind",
+    "signOut": "Log ud",
+    "toggleMenu": "Vis/skjul menu"
+  },
+  "Footer": {
+    "mission": "At forandre mere til det bedre i vores levetid, end vi tør forestille os er muligt.",
+    "powered": "Quiet Riots · Drevet af OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Alt-i-en for samfundssager",
+    "headline": "Forandring behøver ikke være højlydt for at være kraftfuld",
+    "description": "Find andre der deler dine problemer. Tag handling sammen. Quiet Riots forbinder mennesker omkring fælles frustrationer og forvandler klager til kollektiv handling.",
+    "browseIssues": "Udforsk sager",
+    "howItWorks": "Sådan virker det",
+    "trendingIssues": "🔥 Trending sager",
+    "viewAll": "Vis alle →",
+    "reelOfTheDay": "🎬 Dagens Riot Reel",
+    "riotersFunny": "{count} deltagere fandt dette sjovt",
+    "from": "Fra:",
+    "findYourIssue": "Find din sag",
+    "findYourIssueDesc": "Søg efter enhver frustration — tog, bredbånd, sundhedsvæsen, klima. Hvis den findes, viser vi dig hvor mange andre der deler den.",
+    "useThePivot": "Brug pivotet",
+    "useThePivotDesc": "Se den samme sag på tværs af alle organisationer, eller alle sager hos én organisation. Som tangodansere der skifter retning.",
+    "takeAction": "Tag handling",
+    "takeActionDesc": "Idéer, handlinger og fællesskab — tilpasset din tid og dine færdigheder. Små handlinger fører til store forandringer.",
+    "missionQuote": "\"At forandre mere til det bedre i vores levetid, end vi tør forestille os er muligt.\"",
+    "basedOn": "Baseret på bogen <em>Quiet Riots</em> fra 2014 af Simon Darling",
+    "joinMovement": "✊ Bliv en del af bevægelsen"
+  },
+  "Issues": {
+    "title": "Sager",
+    "subtitle": "{count} sager fordelt på {categoryCount} kategorier. Find din.",
+    "searchPlaceholder": "Søg sager eller synonymer...",
+    "noResults": "Ingen sager fundet. Prøv en anden søgning eller kategori."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Sager",
+    "rioters": "deltagere",
+    "country": "{count, plural, one {land} other {lande}}",
+    "thisWeek": "denne uge",
+    "actions": "handlinger",
+    "alsoKnownAs": "Også kendt som",
+    "actionsTitle": "⚡ Handlinger — Din personlige værktøjskasse",
+    "actionsDesc": "Baseret på evolution — 💡 **Idéer** (variation), ⚡ **Handlinger** (selektion) og 🤝 **Sammen** (fællesskab).",
+    "gatherEvidence": "📹 Saml beviser",
+    "gatherEvidenceDesc": "Dokumentér hvad der sker — gå live eller del fotos, videoer og links.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Sjove og ironiske videoer der fanger ånden i denne Quiet Riot.",
+    "experts": "🌟 Eksperter",
+    "expertsDesc": "Passionerede frivillige der går dybere — oversættere, specialister, medieansvarlige, juridiske rådgivere.",
+    "communityFeed": "💬 Fællesskabsfeed"
+  },
+  "Organisations": {
+    "title": "Organisationer",
+    "subtitle": "Udforsk organisationer og se hvilke sager folk har med hver enkelt.",
+    "noResults": "Ingen organisationer fundet for denne kategori."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisationer",
+    "totalRioters": "deltagere i alt",
+    "issues": "sager",
+    "topIssueShare": "topsag-andel",
+    "paretoTitle": "Pareto-princippet:",
+    "paretoDesc": "En håndfuld sager står typisk for 80 % af alle klager. Topsagerne nedenfor er rangeret efter antal berørte personer.",
+    "gatherEvidence": "📹 Saml beviser",
+    "gatherEvidenceDesc": "Dokumentér hvad der sker med {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampagner",
+    "subtitle": "{count} {count, plural, one {kampagne} other {kampagner}} samler penge ind til forandring.",
+    "noResults": "Ingen kampagner fundet. Prøv et andet filter."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampagner",
+    "fullyFunded": "Fuldt finansieret",
+    "disbursed": "Midler udbetalt",
+    "cancelled": "Annulleret",
+    "active": "Aktiv",
+    "target": "mål",
+    "raised": "indsamlet",
+    "backers": "{count, plural, one {bidragyder} other {bidragydere}}",
+    "platformFee": "platformsgebyr",
+    "wantToContribute": "Vil du bidrage?",
+    "topUpFirst": "Fyld op på din tegnebog først for at begynde at bidrage.",
+    "createAccountPrompt": "Opret en konto og lad din tegnebog op for at støtte denne kampagne.",
+    "goToWallet": "Gå til tegnebog",
+    "createAccount": "Opret konto",
+    "completedMessage": "Denne kampagne er blevet {status}. Tak til alle {count} bidragydere!",
+    "recipient": "Modtager"
+  },
+  "Assistants": {
+    "title": "Assistenter",
+    "subtitle": "{count} par af AI-agenter og menneskelige organisatorer der hjælper deltagere med at handle.",
+    "noResults": "Ingen assistenter tilgængelige endnu."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistenter",
+    "aiAgent": "AI-agent",
+    "humanOrganiser": "Menneskelig organisator",
+    "rioters": "deltagere",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "beskeder",
+    "currentFocus": "Nuværende fokus",
+    "recentActivity": "Seneste aktivitet",
+    "riotsWeHelp": "Quiet Riots vi hjælper med",
+    "wantToBe": "Vil du være {name}?",
+    "openRole": "Rollen som menneskelig organisator er åben for alle med passion for denne kategori. Udtryk din interesse nedenfor."
+  },
+  "Wallet": {
+    "title": "Din tegnebog",
+    "createPromptTitle": "Begynd at støtte sager",
+    "createPromptDesc": "Opret en gratis konto for at indlæse midler og bidrage til kampagner der betyder noget for dig.",
+    "createAccount": "Opret konto",
+    "activeCampaigns": "Aktive kampagner",
+    "viewAll": "Vis alle"
+  },
+  "Profile": {
+    "title": "Din profil",
+    "time": "Tid: ",
+    "skills": "Færdigheder: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {opslag} other {opslag}}",
+    "likes": "{count, plural, one {modtaget like} other {modtagne likes}}",
+    "yourRiots": "Dine Quiet Riots",
+    "noRiots": "Ingen Quiet Riots endnu",
+    "findIssues": "Find sager du går op i og bliv en del af bevægelsen.",
+    "browseIssues": "Udforsk sager",
+    "memberSince": "Medlem siden",
+    "rioters": "deltagere",
+    "connectedAccounts": "Tilknyttede konti",
+    "noConnectedAccounts": "Ingen konti tilknyttet endnu. Log ind med Google eller Facebook for at forbinde din konto.",
+    "deactivateAccount": "Deaktivér konto",
+    "deactivateConfirm": "Er du sikker på at du vil deaktivere din konto? Du kan genaktivere den inden for 30 dage."
+  },
+  "Auth": {
+    "welcomeBack": "Velkommen tilbage",
+    "signInSubtitle": "Log ind på din Quiet Riots-konto",
+    "joinTitle": "Bliv en del af Quiet Riots",
+    "joinSubtitle": "Organisér omkring fælles problemer. Tag handling sammen.",
+    "continueGoogle": "Fortsæt med Google",
+    "continueFacebook": "Fortsæt med Facebook",
+    "connecting": "Forbinder...",
+    "or": "eller",
+    "emailLabel": "E-mailadresse",
+    "sendMagicLink": "Send magisk link",
+    "signUpWithEmail": "Tilmeld med e-mail",
+    "sendingLink": "Sender link...",
+    "checkEmail": "Tjek din e-mail",
+    "signInLinkSent": "Vi har sendt et login-link til din e-mailadresse. Klik på linket for at fortsætte.",
+    "signUpLinkSent": "Vi har sendt et login-link til din e-mailadresse. Klik på linket for at oprette din konto.",
+    "noAccount": "Har du ikke en konto?",
+    "signUp": "Tilmeld dig",
+    "hasAccount": "Har du allerede en konto?",
+    "signIn": "Log ind",
+    "termsAgree": "Ved at tilmelde dig accepterer du vores",
+    "terms": "Vilkår",
+    "and": "og",
+    "privacyPolicy": "Privatlivspolitik",
+    "verifyTitle": "Tjek din e-mail",
+    "verifyDesc": "Et login-link er blevet sendt til din e-mailadresse. Klik på linket for at fortsætte.",
+    "backToSignIn": "Tilbage til login",
+    "errorTitle": "Autentificeringsfejl",
+    "errorConfig": "Der er et problem med serverkonfigurationen.",
+    "errorAccess": "Adgang nægtet. Du har muligvis ikke tilladelse til at logge ind.",
+    "errorVerification": "Login-linket er udløbet eller er allerede blevet brugt.",
+    "errorDefault": "Der opstod en fejl under autentificeringen.",
+    "tryAgain": "Prøv igen"
+  },
+  "AuthGate": {
+    "signInTo": "Log ind for at {action}",
+    "signIn": "Log ind",
+    "signInRequired": "Login påkrævet",
+    "signInToAction": "Du skal logge ind for at {action}.",
+    "cancel": "Annullér",
+    "noAccount": "Har du ikke en konto?",
+    "signUp": "Tilmeld dig"
+  },
+  "Error": {
+    "title": "Noget gik galt",
+    "description": "Der opstod en uventet fejl.",
+    "tryAgain": "Prøv igen"
+  },
+  "GlobalError": {
+    "title": "Noget gik galt",
+    "description": "Der opstod en uventet fejl. Vores team er blevet underrettet.",
+    "tryAgain": "Prøv igen"
+  },
+  "NotFound": {
+    "title": "Siden blev ikke fundet",
+    "description": "Siden du leder efter eksisterer ikke eller er blevet flyttet.",
+    "goHome": "Gå til forsiden"
+  },
+  "Cards": {
+    "rioters": "deltagere",
+    "country": "{count, plural, one {land} other {lande}}",
+    "issues": "sager",
+    "idea": "Idé",
+    "action": "Handling",
+    "together": "Sammen",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 time+",
+    "skills": "Færdigheder: ",
+    "anonymous": "Anonym",
+    "curated": "Udvalgt",
+    "community": "Fællesskab",
+    "aiPick": "AI-valg",
+    "funded": "Finansieret",
+    "disbursed": "Udbetalt",
+    "backers": "{count, plural, one {bidragyder} other {bidragydere}}",
+    "aiAndHuman": "AI-agent & menneskelig organisator",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Fællesskabsindeks",
+    "needsMet": "Behov opfyldt",
+    "needsMetDesc": "Medlemmer synes det er værd det",
+    "membership": "Medlemskab",
+    "membershipDesc": "Tillid & tilhørsforhold",
+    "influence": "Indflydelse",
+    "influenceDesc": "Din stemme tæller",
+    "connection": "Samhørighed",
+    "connectionDesc": "Delte oplevelser",
+    "healthy": "Sund",
+    "growing": "Voksende",
+    "needsAttention": "Behøver opmærksomhed"
+  },
+  "Pivot": {
+    "title": "🔀 Pivotet",
+    "peopleGlobally": "mennesker globalt",
+    "issuePivot": "🔍 Sagspivot",
+    "issuePivotDesc": "Samme sag, alle organisationer",
+    "orgPivot": "🏢 Organisationspivot",
+    "orgPivotDesc": "Alle sager, én organisation",
+    "seeIssueAcross": "Se \"{issueName}\" på tværs af alle lignende organisationer:",
+    "seeOrgIssues": "Se alle sager hos {orgName}:",
+    "you": "DIG",
+    "rioters": "deltagere"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampagner",
+    "funded": "Finansieret",
+    "disbursed": "Udbetalt",
+    "backers": "{count, plural, one {bidragyder} other {bidragydere}}"
+  },
+  "WalletBalance": {
+    "title": "Din saldo",
+    "loaded": "indlæst",
+    "contributed": "bidraget",
+    "campaigns": "{count, plural, one {kampagne} other {kampagner}}"
+  },
+  "Transactions": {
+    "title": "Seneste transaktioner",
+    "topUp": "Opfyldning",
+    "contribution": "Bidrag",
+    "refund": "Refusion",
+    "justNow": "lige nu",
+    "minutesAgo": "{count}m siden",
+    "hoursAgo": "{count}t siden",
+    "daysAgo": "{count}d siden",
+    "empty": "Ingen transaktioner endnu. Fyld op på din tegnebog for at komme i gang!"
+  },
+  "Activity": {
+    "noActivity": "Ingen aktivitet endnu.",
+    "ai": "AI",
+    "human": "M"
+  },
+  "Countries": {
+    "title": "🌍 Lande"
+  },
+  "Synonyms": {
+    "placeholder": "Tilføj et synonym...",
+    "add": "Tilføj"
+  },
+  "Join": {
+    "joined": "✅ Tilsluttet denne Quiet Riot",
+    "join": "✊ Deltag i denne Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Søg sager..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Del dine tanker...",
+    "post": "Slå op",
+    "empty": "Ingen opslag endnu. Vær den første til at dele!"
+  },
+  "Actions": {
+    "ideas": "💡 Idéer (Variation)",
+    "actions": "⚡ Handlinger (Selektion)",
+    "together": "🤝 Sammen (Fællesskab)",
+    "noResults": "Ingen handlinger matcher dine filtre. Prøv at udvide dit udvalg."
+  },
+  "Filter": {
+    "all": "Alle",
+    "active": "Aktive",
+    "funded": "Finansierede",
+    "disbursed": "Udbetalte"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Hvor meget tid har du?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 time+",
+    "typeQuestion": "Hvilken type?",
+    "ideas": "💡 Idéer",
+    "actions": "⚡ Handlinger",
+    "together": "🤝 Sammen"
+  },
+  "Reels": {
+    "empty": "Ingen reels endnu. Vær den første til at indsende en!",
+    "submitPrompt": "Har du en sjov video der opsummerer denne sag?",
+    "submitSuccess": "Tak! Din reel er indsendt til gennemgang.",
+    "urlPlaceholder": "Indsæt en YouTube-URL...",
+    "captionPlaceholder": "Tilføj en billedtekst (valgfrit)...",
+    "submit": "Indsend"
+  },
+  "TopUp": {
+    "addFunds": "Tilføj midler",
+    "minTopUp": "Minimum opfyldning er £1",
+    "success": "{amount} tilføjet til din tegnebog!",
+    "networkError": "Netværksfejl. Prøv venligst igen.",
+    "customAmount": "Valgfrit beløb (£)",
+    "topUp": "Fyld op",
+    "simulated": "Simuleret opfyldning til test. Rigtige betalinger via Stripe kommer snart."
+  },
+  "Contribute": {
+    "insufficientFunds": "Utilstrækkelig saldo. Fyld op på din tegnebog først.",
+    "minContribution": "Minimum bidrag er 10p",
+    "contribute": "Bidrag",
+    "yourBalance": "Din saldo: ",
+    "networkError": "Netværksfejl. Prøv venligst igen.",
+    "invalidAmount": "Indtast et gyldigt beløb",
+    "customAmount": "Valgfrit beløb (£)",
+    "give": "Giv",
+    "success": "Bidrog med {amount} til {campaign}!",
+    "remainingBalance": "Din resterende saldo: {balance}",
+    "topUpPrompt": "Fyld op på din tegnebog",
+    "toKeepSupporting": "for at fortsætte med at støtte kampagner.",
+    "walletEmpty": "Din tegnebog er tom.",
+    "topUp": "Fyld op",
+    "toContribute": "for at bidrage."
+  },
+  "Claim": {
+    "success": "Tak! Vi har noteret din interesse for rollen som {name}. Vi vender tilbage.",
+    "placeholder": "Hvorfor ville du være god som {name}? (valgfrit)",
+    "submitting": "Indsender...",
+    "expressInterest": "Udtryk interesse"
+  },
+  "Evidence": {
+    "generalOrg": "Generelt (ingen specifik organisation)",
+    "placeholder": "Sig hvad du mener...",
+    "photosLabel": "Fotos (op til 4)",
+    "addPhotos": "+ Tilføj fotos",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks. 4 MB pr. stk.",
+    "videoLabel": "Video (maks. 1)",
+    "addVideo": "+ Tilføj video",
+    "videoFormats": "MP4, MOV, WebM. Maks. 4 MB.",
+    "linkLabel": "Eksternt link",
+    "linkPlaceholder": "https://nyhedsartikel.dk/...",
+    "hideMedia": "Skjul medier",
+    "addMedia": "📎 Tilføj fotos, video, links",
+    "posting": "Slår op...",
+    "uploading": "Uploader...",
+    "submitEvidence": "Indsend beviser",
+    "goLive": "🔴 Gå live nu",
+    "maxPhotos": "Maksimalt 4 fotos. {count} sprunget over.",
+    "videoFailed": "Videoupload mislykkedes",
+    "removePhoto": "Fjern {name}",
+    "removeVideo": "Fjern video",
+    "uploadFailed": "Kunne ikke uploade: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Redigér profil",
+    "nameLabel": "Navn",
+    "timeLabel": "Tilgængelig tid",
+    "time1min": "1 minut",
+    "time1minDesc": "Kun hurtige handlinger",
+    "time10min": "10 minutter",
+    "time10minDesc": "De fleste handlinger",
+    "time1hour": "1 time+",
+    "time1hourDesc": "Dybt engagement",
+    "skillsLabel": "Færdigheder",
+    "skillsPlaceholder": "f.eks. design, skrivning, jura, kodning",
+    "skillsHint": "Kommasepareret. Hjælper med at matche dig med relevante handlinger.",
+    "saving": "Gemmer...",
+    "save": "Gem ændringer",
+    "cancel": "Annullér",
+    "nameRequired": "Navn er påkrævet",
+    "saveFailed": "Kunne ikke gemme"
+  },
+  "SignupForm": {
+    "placeholder": "dig@eksempel.dk",
+    "submit": "Giv mig besked"
+  },
+  "CookieConsent": {
+    "title": "Cookie-præferencer",
+    "description": "Vi bruger cookies for at holde dig logget ind og forbedre din oplevelse. Analytiske cookies hjælper os med at forstå hvordan siden bruges.",
+    "acceptAll": "Acceptér alle",
+    "essentialOnly": "Kun nødvendige",
+    "manage": "Administrér præferencer",
+    "essential": "Nødvendige",
+    "essentialDescription": "Påkrævet for at siden kan fungere. Kan ikke deaktiveres.",
+    "analytics": "Analyse",
+    "analyticsDescription": "Hjælper os med at forstå hvordan du bruger siden, så vi kan forbedre den.",
+    "save": "Gem præferencer"
+  }
+}

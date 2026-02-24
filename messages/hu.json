@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Szervezodj kozos ugyek kore. Talald meg az embereidet. Cselekedj egyutt."
+  },
+  "Nav": {
+    "issues": "Ugyek",
+    "assistants": "Asszisztensek",
+    "organisations": "Szervezetek",
+    "wallet": "Penztarca",
+    "profile": "Profil",
+    "signIn": "Bejelentkezes",
+    "signOut": "Kijelentkezes",
+    "toggleMenu": "Menu megnyitasa"
+  },
+  "Footer": {
+    "mission": "Tobbet valtoztatni jobbra az eletunk soran, mint amennyit el merunk kepzelni.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Az ugyek kozpontja",
+    "headline": "A valtozasnak nem kell hangosnak lennie ahhoz, hogy eros legyen",
+    "description": "Talald meg azokat, akik ugyanazokkal a problemakkal kuzdened. Cselekedj egyutt. A Quiet Riots osszekoti az embereket a kozos frusztraciok kore, es a panaszokat kozos cselekvesse alakitja.",
+    "browseIssues": "Ugyek bongeszese",
+    "howItWorks": "Hogyan mukodik",
+    "trendingIssues": "\ud83d\udd25 Felkapo ugyek",
+    "viewAll": "Osszes megtekintese \u2192",
+    "reelOfTheDay": "\ud83c\udfac A nap Riot Reelje",
+    "riotersFunny": "{count} resztvevo viccsesnek talalta",
+    "from": "Tole:",
+    "findYourIssue": "Talald meg az ugyed",
+    "findYourIssueDesc": "Keress barmilyen frusztraciora \u2014 vonatok, internet, egeszsegugy, klima. Ha letezik, megmutatjuk, hanyan osztoznak benne.",
+    "useThePivot": "Hasznald a Pivotot",
+    "useThePivotDesc": "Nezd meg ugyanazt az ugyet az osszes szervezetnel, vagy az osszes ugyet egy szervezetnel. Mint a tangotancosok, akik iranyt valtanak.",
+    "takeAction": "Cselekedj",
+    "takeActionDesc": "Otletek, cselekvesek es kozosseg \u2014 az idodhoz es kepessegeidhez igazitva. A kis lepesek nagy valtozassa allnak ossze.",
+    "missionQuote": "\"Tobbet valtoztatni jobbra az eletunk soran, mint amennyit el merunk kepzelni.\"",
+    "basedOn": "Simon Darling 2014-es <em>Quiet Riots</em> cimu konyve alapjan",
+    "joinMovement": "\u270a Csatlakozz a mozgalomhoz"
+  },
+  "Issues": {
+    "title": "Ugyek",
+    "subtitle": "{count} ugy {categoryCount} kategoriaban. Talald meg a tiedet.",
+    "searchPlaceholder": "Ugyek vagy szinonimak keresese...",
+    "noResults": "Nem talalhatok ugyek. Probalkozz mas keresessel vagy kategoriaval."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Ugyek",
+    "rioters": "resztvevo",
+    "country": "{count, plural, one {orszag} other {orszag}}",
+    "thisWeek": "ezen a heten",
+    "actions": "cselekvest",
+    "alsoKnownAs": "Mas neven is ismert",
+    "actionsTitle": "\u26a1 Cselekvesek \u2014 Szemelyre szabott eszkoztar",
+    "actionsDesc": "Az evolucio alapjan \u2014 \ud83d\udca1 **Otletek** (variacio), \u26a1 **Cselekvesek** (szelekci) es \ud83e\udd1d **Egyutt** (kozosseg).",
+    "gatherEvidence": "\ud83d\udcf9 Gyujts bizonyitekokat",
+    "gatherEvidenceDesc": "Dokumentald, mi tortenik \u2014 kozvetits eloben, vagy ossz meg fotokat, videoakat es linkeket.",
+    "riotReels": "\ud83c\udfac Riot Reels",
+    "riotReelsDesc": "Vicces es ironikus videok, amelyek megragadjak ennek a Quiet Riotnak a szellemiset.",
+    "experts": "\ud83c\udf1f Szakertok",
+    "expertsDesc": "Szenvedely onkentesek, akik melyebbre asnak \u2014 forditok, specialistak, mediavezetok, jogi tanacsadok.",
+    "communityFeed": "\ud83d\udcac Kozossegi hirkozpont"
+  },
+  "Organisations": {
+    "title": "Szervezetek",
+    "subtitle": "Bongesz a szervezetek kozott es nezd meg, milyen ugyeik vannak az embereknek.",
+    "noResults": "Nem talalhatok szervezetek ebben a kategoriaban."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Szervezetek",
+    "totalRioters": "osszes resztvevo",
+    "issues": "ugy",
+    "topIssueShare": "fo ugy aranya",
+    "paretoTitle": "Pareto-elv:",
+    "paretoDesc": "Egy maroknyi ugy jellemzoen az osszes panasz 80%-at teszi ki. Az alabbi fo ugyek az erintett emberek szama szerint vannak rangsorolva.",
+    "gatherEvidence": "\ud83d\udcf9 Gyujts bizonyitekokat",
+    "gatherEvidenceDesc": "Dokumentald, mi tortenik a(z) {orgName} szervezettel."
+  },
+  "Campaigns": {
+    "title": "Kampanyok",
+    "subtitle": "{count} {count, plural, one {kampany gyujt} other {kampany gyujt}} penzt a valtozasert.",
+    "noResults": "Nem talalhatok kampanyok. Probalkozz mas szurovel."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanyok",
+    "fullyFunded": "Teljesen finanszirozott",
+    "disbursed": "Penzeszozk kiutalt",
+    "cancelled": "Torolve",
+    "active": "Aktiv",
+    "target": "cel",
+    "raised": "osszegyujtve",
+    "backers": "{count, plural, one {tamogato} other {tamogato}}",
+    "platformFee": "platformdij",
+    "wantToContribute": "Szeretnel hozzajarulni?",
+    "topUpFirst": "Eloszor toltsd fel a penztarcadat, hogy elkezdj hozzajarulni.",
+    "createAccountPrompt": "Hozz letre egy fiokot es toltsd fel a penztarcadat a kampany tamogatasahoz.",
+    "goToWallet": "Ugrasa penztarcara",
+    "createAccount": "Fiok letrehozasa",
+    "completedMessage": "Ez a kampany {status}. Koszonet az osszes {count} tamogatonak!",
+    "recipient": "Kedvezmenyezett"
+  },
+  "Assistants": {
+    "title": "Asszisztensek",
+    "subtitle": "{count} AI agens es emberi szervezo par segiti a resztvevoket a cselvekvesben.",
+    "noResults": "Meg nincsenek elerheto asszisztensek."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asszisztensek",
+    "aiAgent": "AI Agens",
+    "humanOrganiser": "Szervezo",
+    "rioters": "resztvevo",
+    "riots": "{count, plural, one {riot} other {riot}}",
+    "messages": "uzenet",
+    "currentFocus": "Jelenlegi fokusz",
+    "recentActivity": "Legutobbi tevkenyseg",
+    "riotsWeHelp": "Quiet Riotok, amelyekben segitunk",
+    "wantToBe": "Szeretnel {name} lenni?",
+    "openRole": "Az emberi szervezo szerepkor nyitott barki szamara, aki szenvedlyesen erdeklodik ez a kategoria irant. Fejezd ki erdeklodesedet alabb."
+  },
+  "Wallet": {
+    "title": "Penztarcad",
+    "createPromptTitle": "Kezdj el ugyeket tamogatni",
+    "createPromptDesc": "Hozz letre egy ingyenes fiokot, toltsd fel es jarulj hozza a szamodra fontos kampanyokhoz.",
+    "createAccount": "Fiok letrehozasa",
+    "activeCampaigns": "Aktiv kampanyok",
+    "viewAll": "Osszes megtekintese"
+  },
+  "Profile": {
+    "title": "Profilod",
+    "time": "Ido: ",
+    "skills": "Kepessegek: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {bejegyzes} other {bejegyzes}}",
+    "likes": "{count, plural, one {kapott like} other {kapott like}}",
+    "yourRiots": "Quiet Riotjaid",
+    "noRiots": "Meg nincsenek Quiet Riotjaid",
+    "findIssues": "Talald meg az ugyeket, amelyek erdekelnek, es csatlakozz a mozgalomhoz.",
+    "browseIssues": "Ugyek bongeszese",
+    "memberSince": "Tag mota",
+    "rioters": "resztvevo",
+    "connectedAccounts": "Kapcsolt fiokok",
+    "noConnectedAccounts": "Meg nincsenek kapcsolt fiokok. Jelentkezz be Google-lal vagy Facebookkal a fiokod kapcsolasahoz.",
+    "deactivateAccount": "Fiok deaktivalasa",
+    "deactivateConfirm": "Biztosan deaktivalni szeretned a fiokod? 30 napon belul ujraaktivalhato."
+  },
+  "Auth": {
+    "welcomeBack": "Udv ujra",
+    "signInSubtitle": "Jelentkezz be Quiet Riots fiokodba",
+    "joinTitle": "Csatlakozz a Quiet Riotshoz",
+    "joinSubtitle": "Szervezodj kozos ugyek kore. Cselekedj egyutt.",
+    "continueGoogle": "Folytatas Google-lal",
+    "continueFacebook": "Folytatas Facebookkal",
+    "connecting": "Csatlakozas...",
+    "or": "vagy",
+    "emailLabel": "E-mail cim",
+    "sendMagicLink": "Magikus link kuldese",
+    "signUpWithEmail": "Regisztracio e-maillel",
+    "sendingLink": "Link kuldese...",
+    "checkEmail": "Ellenorizd az e-mailedet",
+    "signInLinkSent": "Bejelentkezesi linket kuldtunk az e-mail cimedre. Kattints a linkre a folytatashoz.",
+    "signUpLinkSent": "Bejelentkezesi linket kuldtunk az e-mail cimedre. Kattints a linkre a fiokod letrehozasahoz.",
+    "noAccount": "Nincs fiokod?",
+    "signUp": "Regisztracio",
+    "hasAccount": "Mar van fiokod?",
+    "signIn": "Bejelentkezes",
+    "termsAgree": "A regisztracioval elfogadod a",
+    "terms": "Felteteleket",
+    "and": "es",
+    "privacyPolicy": "Adatvedelmi iranyelvet",
+    "verifyTitle": "Ellenorizd az e-mailedet",
+    "verifyDesc": "Bejelentkezesi linket kuldtunk az e-mail cimedre. Kattints a linkre a folytatashoz.",
+    "backToSignIn": "Vissza a bejelentkezeshez",
+    "errorTitle": "Hitelesitesi hiba",
+    "errorConfig": "Problema van a szerver beallitasaival.",
+    "errorAccess": "A hozzaferes megtagadva. Lehet, hogy nincs jogosultsagod a bejelentkezeshez.",
+    "errorVerification": "A bejelentkezesi link lejart vagy mar felhasznaltak.",
+    "errorDefault": "Hiba tortent a hitelesites soran.",
+    "tryAgain": "Ujra probalkozes"
+  },
+  "AuthGate": {
+    "signInTo": "Jelentkezz be, hogy {action}",
+    "signIn": "Bejelentkezes",
+    "signInRequired": "Bejelentkezes szukseges",
+    "signInToAction": "Be kell jelentkezned, hogy {action}.",
+    "cancel": "Megse",
+    "noAccount": "Nincs fiokod?",
+    "signUp": "Regisztracio"
+  },
+  "Error": {
+    "title": "Valami nem sikerult",
+    "description": "Varatlan hiba tortent.",
+    "tryAgain": "Ujra probalkozes"
+  },
+  "GlobalError": {
+    "title": "Valami nem sikerult",
+    "description": "Varatlan hiba tortent. A csapatunk ertesitve lett.",
+    "tryAgain": "Ujra probalkozes"
+  },
+  "NotFound": {
+    "title": "Az oldal nem talalhato",
+    "description": "A keresett oldal nem letezik vagy athelyeztek.",
+    "goHome": "Kezdolap"
+  },
+  "Cards": {
+    "rioters": "resztvevo",
+    "country": "{count, plural, one {orszag} other {orszag}}",
+    "issues": "ugy",
+    "idea": "Otlet",
+    "action": "Cselekvest",
+    "together": "Egyutt",
+    "time1min": "1 perc",
+    "time10min": "10 perc",
+    "time1hour": "1 ora+",
+    "skills": "Kepessegek: ",
+    "anonymous": "Nev nelkuli",
+    "curated": "Valogatas",
+    "community": "Kozosseg",
+    "aiPick": "AI valasztas",
+    "funded": "Finanszirozott",
+    "disbursed": "Kiutalva",
+    "backers": "{count, plural, one {tamogato} other {tamogato}}",
+    "aiAndHuman": "AI Agens es Szervezo",
+    "riots": "{count, plural, one {riot} other {riot}}"
+  },
+  "Health": {
+    "title": "\ud83d\udcca Kozossegi erzet index",
+    "needsMet": "Teljesult igenyek",
+    "needsMetDesc": "A tagok ugy erzik, megeri",
+    "membership": "Tagsag",
+    "membershipDesc": "Bizalom es osszetartozas",
+    "influence": "Befolyas",
+    "influenceDesc": "Szamit a hangod",
+    "connection": "Kapcsolodasl",
+    "connectionDesc": "Kozos elmenyek",
+    "healthy": "Egeszseges",
+    "growing": "Novekvo",
+    "needsAttention": "Figyelmet igenyel"
+  },
+  "Pivot": {
+    "title": "\ud83d\udd00 A Pivot",
+    "peopleGlobally": "ember vilagszerte",
+    "issuePivot": "\ud83d\udd0d Ugy Pivot",
+    "issuePivotDesc": "Ugyanaz az ugy, minden szervezet",
+    "orgPivot": "\ud83c\udfe2 Szervezet Pivot",
+    "orgPivotDesc": "Minden ugy, egy szervezet",
+    "seeIssueAcross": "Nezd meg a \"{issueName}\" ugyet az osszes hasonlo szervezetnel:",
+    "seeOrgIssues": "Nezd meg az osszes ugyet itt: {orgName}:",
+    "you": "TE",
+    "rioters": "resztvevo"
+  },
+  "CampaignProgress": {
+    "title": "\ud83d\udcb0 Kampanyok",
+    "funded": "Finanszirozott",
+    "disbursed": "Kiutalva",
+    "backers": "{count, plural, one {tamogato} other {tamogato}}"
+  },
+  "WalletBalance": {
+    "title": "Egyenleged",
+    "loaded": "feltoltve",
+    "contributed": "hozzajarult",
+    "campaigns": "{count, plural, one {kampany} other {kampany}}"
+  },
+  "Transactions": {
+    "title": "Legutobbi tranzakciok",
+    "topUp": "Feltoltes",
+    "contribution": "Hozzajarulas",
+    "refund": "Visszaterites",
+    "justNow": "eppen most",
+    "minutesAgo": "{count} perce",
+    "hoursAgo": "{count} oraja",
+    "daysAgo": "{count} napja",
+    "empty": "Meg nincsenek tranzakciok. Toltsd fel a penztarcadat az indulashoz!"
+  },
+  "Activity": {
+    "noActivity": "Meg nincs tevekenyseg.",
+    "ai": "AI",
+    "human": "E"
+  },
+  "Countries": {
+    "title": "\ud83c\udf0d Orszagok"
+  },
+  "Synonyms": {
+    "placeholder": "Szinonima hozzaadasa...",
+    "add": "Hozzaadas"
+  },
+  "Join": {
+    "joined": "\u2705 Csatlakoztala ehhez a Quiet Riothoz",
+    "join": "\u270a Csatlakozz ehhez a Quiet Riothoz"
+  },
+  "Search": {
+    "placeholder": "Ugyek keresese..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Oszd meg gondolataidat...",
+    "post": "Kozeteves",
+    "empty": "Meg nincsenek bejegyzesek. Legy az elso, aki megoszt valamit!"
+  },
+  "Actions": {
+    "ideas": "\ud83d\udca1 Otletek (Variacio)",
+    "actions": "\u26a1 Cselekvesek (Szelekci)",
+    "together": "\ud83e\udd1d Egyutt (Kozosseg)",
+    "noResults": "Nincs szuroknek megfelelo cselekvest. Probald boviteni a valasztast."
+  },
+  "Filter": {
+    "all": "Mind",
+    "active": "Aktiv",
+    "funded": "Finanszirozott",
+    "disbursed": "Kiutalva"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Mennyi idod van?",
+    "time1min": "1 perc",
+    "time10min": "10 perc",
+    "time1hour": "1 ora+",
+    "typeQuestion": "Milyen tipus?",
+    "ideas": "\ud83d\udca1 Otletek",
+    "actions": "\u26a1 Cselekvesek",
+    "together": "\ud83e\udd1d Egyutt"
+  },
+  "Reels": {
+    "empty": "Meg nincsenek videok. Legy az elso, aki bekuldott egyet!",
+    "submitPrompt": "Van egy vicces videod, ami osszefoglalja ezt az ugyet?",
+    "submitSuccess": "Koszonjuk! A videod elbirialasra benyujtva.",
+    "urlPlaceholder": "Illeszd be a YouTube URL-t...",
+    "captionPlaceholder": "Adj hozza feliratot (opcionalis)...",
+    "submit": "Bekuldes"
+  },
+  "TopUp": {
+    "addFunds": "Penz hozzaadasa",
+    "minTopUp": "A minimalis feltoltes \u00a31",
+    "success": "{amount} hozzaadva a penztarcadhoz!",
+    "networkError": "Halozati hiba. Probald ujra.",
+    "customAmount": "Egyedi osszeg (\u00a3)",
+    "topUp": "Feltoltes",
+    "simulated": "Szimulalt feltoltes teszteleshez. A valos fizetes Stripe-on keresztul hamarosan."
+  },
+  "Contribute": {
+    "insufficientFunds": "Nem eleg fedezet. Eloszor toltsd fel a penztarcadat.",
+    "minContribution": "A minimalis hozzajarulas 10p",
+    "contribute": "Hozzajarulas",
+    "yourBalance": "Egyenleged: ",
+    "networkError": "Halozati hiba. Probald ujra.",
+    "invalidAmount": "Adj meg ervenyes osszeget",
+    "customAmount": "Egyedi osszeg (\u00a3)",
+    "give": "Adomanyozes",
+    "success": "{amount} hozzajarulva a(z) {campaign} kampanyhoz!",
+    "remainingBalance": "Maradek egyenleg: {balance}",
+    "topUpPrompt": "Toltsd fel a penztarcadat",
+    "toKeepSupporting": "a kampanyok tovabi tamogatasahoz.",
+    "walletEmpty": "A penztarcad ures.",
+    "topUp": "Feltoltes",
+    "toContribute": "a hozzajarulashoz."
+  },
+  "Claim": {
+    "success": "Koszonjuk! Feljegyeztuk az erdeklodesedet a {name} szerepkor irant. Felkeresunk.",
+    "placeholder": "Miert lennel remek {name}? (opcionalis)",
+    "submitting": "Kuldes...",
+    "expressInterest": "Erdeklodes kifejezese"
+  },
+  "Evidence": {
+    "generalOrg": "Altalanos (nincs konkret szervezet)",
+    "placeholder": "Mondd el, mit gondolsz...",
+    "photosLabel": "Fotok (max. 4)",
+    "addPhotos": "+ Fotok hozzaadasa",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Max. 4 MB egyenkent.",
+    "videoLabel": "Video (max. 1)",
+    "addVideo": "+ Video hozzaadasa",
+    "videoFormats": "MP4, MOV, WebM. Max. 4 MB.",
+    "linkLabel": "Kulso link",
+    "linkPlaceholder": "https://hircikk.hu/...",
+    "hideMedia": "Media elrejtese",
+    "addMedia": "\ud83d\udcce Fotok, video, linkek hozzaadasa",
+    "posting": "Kozeteves...",
+    "uploading": "Feltoltes...",
+    "submitEvidence": "Bizonyitekok bekuldesed",
+    "goLive": "\ud83d\udd34 Elo kozvetites",
+    "maxPhotos": "Maximum 4 foto. {count} kihagyva.",
+    "videoFailed": "A video feltoltese sikertelen",
+    "removePhoto": "{name} eltavolitasa",
+    "removeVideo": "Video eltavolitasa",
+    "uploadFailed": "Nem sikerult feltolteni: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Profil szerkesztese",
+    "nameLabel": "Nev",
+    "timeLabel": "Elerheto ido",
+    "time1min": "1 perc",
+    "time1minDesc": "Csak gyors cselekvesek",
+    "time10min": "10 perc",
+    "time10minDesc": "A legtobb cselekvest",
+    "time1hour": "1 ora+",
+    "time1hourDesc": "Melyebb bekapcsolodas",
+    "skillsLabel": "Kepessegek",
+    "skillsPlaceholder": "pl. dizajn, iras, jog, programozas",
+    "skillsHint": "Vesszov elvalasztva. Segit a megfelelo cselekvesek pariositasaban.",
+    "saving": "Mentes...",
+    "save": "Valtozasok mentese",
+    "cancel": "Megse",
+    "nameRequired": "A nev megadasa kotelezo",
+    "saveFailed": "A mentes sikertelen"
+  },
+  "SignupForm": {
+    "placeholder": "te@pelda.hu",
+    "submit": "Ertesits"
+  },
+  "CookieConsent": {
+    "title": "Cookie-beallitasok",
+    "description": "Cookie-kat hasznalunk, hogy bejelentkezve tarts es javitsuk az elmenyt. Az analitikai cookie-k segitenek megerteni, hogyan hasznaljak az oldalt.",
+    "acceptAll": "Osszes elfogadasa",
+    "essentialOnly": "Csak a szuksegesek",
+    "manage": "Beallitasok kezelese",
+    "essential": "Szukseges",
+    "essentialDescription": "Az oldal mukodesehez szukseges. Nem kapcsolhato ki.",
+    "analytics": "Analitikai",
+    "analyticsDescription": "Segitenek megerteni, hogyan hasznalod az oldalt, hogy javithassuk.",
+    "save": "Beallitasok mentese"
+  }
+}

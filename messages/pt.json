@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organiza-te em torno de questões partilhadas. Encontra a tua comunidade. Age em conjunto."
+  },
+  "Nav": {
+    "issues": "Questões",
+    "assistants": "Assistentes",
+    "organisations": "Organizações",
+    "wallet": "Carteira",
+    "profile": "Perfil",
+    "signIn": "Entrar",
+    "signOut": "Sair",
+    "toggleMenu": "Alternar menu"
+  },
+  "Footer": {
+    "mission": "Mudar mais para melhor nas nossas vidas do que ousamos imaginar ser possível.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "O Balcão Único das Questões",
+    "headline": "A mudança não precisa de ser barulhenta para ser poderosa",
+    "description": "Encontra outros que partilham as tuas questões. Age em conjunto. O Quiet Riots liga pessoas em torno de frustrações comuns e transforma queixas em ação coletiva.",
+    "browseIssues": "Explorar Questões",
+    "howItWorks": "Como Funciona",
+    "trendingIssues": "🔥 Questões em Destaque",
+    "viewAll": "Ver tudo →",
+    "reelOfTheDay": "🎬 Riot Reel do Dia",
+    "riotersFunny": "{count} participantes acharam isto engraçado",
+    "from": "De:",
+    "findYourIssue": "Encontra a Tua Questão",
+    "findYourIssueDesc": "Pesquisa qualquer frustração — comboios, internet, saúde, clima. Se existir, mostramos-te quantas outras pessoas a partilham.",
+    "useThePivot": "Usa o Pivot",
+    "useThePivotDesc": "Vê a mesma questão em todas as organizações, ou todas as questões numa organização. Como dançarinos de tango a mudar de direção.",
+    "takeAction": "Age",
+    "takeActionDesc": "Ideias, ações e comunidade — personalizadas ao teu tempo e competências. Pequenas ações somam-se a grandes mudanças.",
+    "missionQuote": "\"Mudar mais para melhor nas nossas vidas do que ousamos imaginar ser possível.\"",
+    "basedOn": "Baseado no livro de 2014 <em>Quiet Riots</em> de Simon Darling",
+    "joinMovement": "✊ Junta-te ao Movimento"
+  },
+  "Issues": {
+    "title": "Questões",
+    "subtitle": "{count} questões em {categoryCount} categorias. Encontra a tua.",
+    "searchPlaceholder": "Pesquisar questões ou sinónimos...",
+    "noResults": "Nenhuma questão encontrada. Tenta uma pesquisa ou categoria diferente."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Questões",
+    "rioters": "participantes",
+    "country": "{count, plural, one {país} other {países}}",
+    "thisWeek": "esta semana",
+    "actions": "ações",
+    "alsoKnownAs": "Também conhecido como",
+    "actionsTitle": "⚡ Ações — O Teu Kit Personalizado",
+    "actionsDesc": "Baseado na evolução — 💡 **Ideias** (variação), ⚡ **Ações** (seleção), e 🤝 **Juntos** (comunidade).",
+    "gatherEvidence": "📹 Recolher Provas",
+    "gatherEvidenceDesc": "Documenta o que está a acontecer — transmite em direto ou partilha fotos, vídeos e links.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Vídeos engraçados e irónicos que captam o espírito deste Quiet Riot.",
+    "experts": "🌟 Especialistas",
+    "expertsDesc": "Voluntários apaixonados que vão mais fundo — tradutores, especialistas, responsáveis de media, consultores jurídicos.",
+    "communityFeed": "💬 Feed da Comunidade"
+  },
+  "Organisations": {
+    "title": "Organizações",
+    "subtitle": "Explora organizações e vê que questões as pessoas têm com cada uma.",
+    "noResults": "Nenhuma organização encontrada para esta categoria."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organizações",
+    "totalRioters": "total de participantes",
+    "issues": "questões",
+    "topIssueShare": "quota da questão principal",
+    "paretoTitle": "Princípio de Pareto:",
+    "paretoDesc": "Um punhado de questões normalmente representa 80% de todas as queixas. As questões principais abaixo estão ordenadas pelo número de pessoas afetadas.",
+    "gatherEvidence": "📹 Recolher Provas",
+    "gatherEvidenceDesc": "Documenta o que está a acontecer com {orgName}."
+  },
+  "Campaigns": {
+    "title": "Campanhas",
+    "subtitle": "{count} {count, plural, one {campanha a angariar} other {campanhas a angariar}} fundos para a mudança.",
+    "noResults": "Nenhuma campanha encontrada. Tenta um filtro diferente."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Campanhas",
+    "fullyFunded": "Totalmente Financiada",
+    "disbursed": "Fundos Desembolsados",
+    "cancelled": "Cancelada",
+    "active": "Ativa",
+    "target": "objetivo",
+    "raised": "angariado",
+    "backers": "{count, plural, one {apoiante} other {apoiantes}}",
+    "platformFee": "taxa da plataforma",
+    "wantToContribute": "Queres contribuir?",
+    "topUpFirst": "Carrega a tua carteira primeiro para começar a contribuir.",
+    "createAccountPrompt": "Cria uma conta e carrega a tua carteira para apoiar esta campanha.",
+    "goToWallet": "Ir para a carteira",
+    "createAccount": "Criar conta",
+    "completedMessage": "Esta campanha foi {status}. Obrigado a todos os {count} apoiantes!",
+    "recipient": "Destinatário"
+  },
+  "Assistants": {
+    "title": "Assistentes",
+    "subtitle": "{count} pares de agentes IA e organizadores humanos a ajudar participantes a agir.",
+    "noResults": "Ainda não há assistentes disponíveis."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistentes",
+    "aiAgent": "Agente IA",
+    "humanOrganiser": "Organizador Humano",
+    "rioters": "participantes",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "mensagens",
+    "currentFocus": "Foco Atual",
+    "recentActivity": "Atividade Recente",
+    "riotsWeHelp": "Quiet Riots em que Ajudamos",
+    "wantToBe": "Queres ser {name}?",
+    "openRole": "O papel de organizador humano está aberto a qualquer pessoa com paixão por esta categoria. Manifesta o teu interesse abaixo."
+  },
+  "Wallet": {
+    "title": "A Tua Carteira",
+    "createPromptTitle": "Começa a Apoiar Causas",
+    "createPromptDesc": "Cria uma conta gratuita para carregar fundos e contribuir para campanhas que te interessam.",
+    "createAccount": "Criar conta",
+    "activeCampaigns": "Campanhas Ativas",
+    "viewAll": "Ver tudo"
+  },
+  "Profile": {
+    "title": "O Teu Perfil",
+    "time": "Tempo: ",
+    "skills": "Competências: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {publicação} other {publicações}}",
+    "likes": "{count, plural, one {gosto recebido} other {gostos recebidos}}",
+    "yourRiots": "Os Teus Quiet Riots",
+    "noRiots": "Ainda sem Quiet Riots",
+    "findIssues": "Encontra questões que te importam e junta-te ao movimento.",
+    "browseIssues": "Explorar questões",
+    "memberSince": "Membro desde",
+    "rioters": "participantes",
+    "connectedAccounts": "Contas Ligadas",
+    "noConnectedAccounts": "Ainda sem contas ligadas. Entra com o Google ou Facebook para ligar a tua conta.",
+    "deactivateAccount": "Desativar conta",
+    "deactivateConfirm": "Tens a certeza de que queres desativar a tua conta? Podes reativá-la dentro de 30 dias."
+  },
+  "Auth": {
+    "welcomeBack": "Bem-vindo de volta",
+    "signInSubtitle": "Entra na tua conta Quiet Riots",
+    "joinTitle": "Junta-te ao Quiet Riots",
+    "joinSubtitle": "Organiza-te em torno de questões partilhadas. Age em conjunto.",
+    "continueGoogle": "Continuar com Google",
+    "continueFacebook": "Continuar com Facebook",
+    "connecting": "A ligar...",
+    "or": "ou",
+    "emailLabel": "Endereço de email",
+    "sendMagicLink": "Enviar link mágico",
+    "signUpWithEmail": "Registar com email",
+    "sendingLink": "A enviar link...",
+    "checkEmail": "Verifica o teu email",
+    "signInLinkSent": "Enviámos um link de acesso para o teu email. Clica no link para continuar.",
+    "signUpLinkSent": "Enviámos um link de acesso para o teu email. Clica no link para criar a tua conta.",
+    "noAccount": "Não tens conta?",
+    "signUp": "Registar",
+    "hasAccount": "Já tens conta?",
+    "signIn": "Entrar",
+    "termsAgree": "Ao registares-te, concordas com os nossos",
+    "terms": "Termos",
+    "and": "e",
+    "privacyPolicy": "Política de Privacidade",
+    "verifyTitle": "Verifica o teu email",
+    "verifyDesc": "Foi enviado um link de acesso para o teu endereço de email. Clica no link para continuar.",
+    "backToSignIn": "Voltar ao início de sessão",
+    "errorTitle": "Erro de Autenticação",
+    "errorConfig": "Existe um problema com a configuração do servidor.",
+    "errorAccess": "Acesso negado. Podes não ter permissão para entrar.",
+    "errorVerification": "O link de acesso expirou ou já foi utilizado.",
+    "errorDefault": "Ocorreu um erro durante a autenticação.",
+    "tryAgain": "Tentar novamente"
+  },
+  "AuthGate": {
+    "signInTo": "Entra para {action}",
+    "signIn": "Entrar",
+    "signInRequired": "Início de sessão necessário",
+    "signInToAction": "Precisas de entrar para {action}.",
+    "cancel": "Cancelar",
+    "noAccount": "Não tens conta?",
+    "signUp": "Registar"
+  },
+  "Error": {
+    "title": "Algo correu mal",
+    "description": "Ocorreu um erro inesperado.",
+    "tryAgain": "Tentar novamente"
+  },
+  "GlobalError": {
+    "title": "Algo correu mal",
+    "description": "Ocorreu um erro inesperado. A nossa equipa foi notificada.",
+    "tryAgain": "Tentar novamente"
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "A página que procuras não existe ou foi movida.",
+    "goHome": "Ir para o início"
+  },
+  "Cards": {
+    "rioters": "participantes",
+    "country": "{count, plural, one {país} other {países}}",
+    "issues": "questões",
+    "idea": "Ideia",
+    "action": "Ação",
+    "together": "Juntos",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hora+",
+    "skills": "Competências: ",
+    "anonymous": "Anónimo",
+    "curated": "Curado",
+    "community": "Comunidade",
+    "aiPick": "Escolha IA",
+    "funded": "Financiado",
+    "disbursed": "Desembolsado",
+    "backers": "{count, plural, one {apoiante} other {apoiantes}}",
+    "aiAndHuman": "Agente IA e Organizador Humano",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Índice de Sentido de Comunidade",
+    "needsMet": "Necessidades Satisfeitas",
+    "needsMetDesc": "Os membros sentem que vale a pena",
+    "membership": "Pertença",
+    "membershipDesc": "Confiança e pertença",
+    "influence": "Influência",
+    "influenceDesc": "A tua voz importa",
+    "connection": "Ligação",
+    "connectionDesc": "Experiências partilhadas",
+    "healthy": "Saudável",
+    "growing": "Em Crescimento",
+    "needsAttention": "Precisa de Atenção"
+  },
+  "Pivot": {
+    "title": "🔀 O Pivot",
+    "peopleGlobally": "pessoas globalmente",
+    "issuePivot": "🔍 Pivot de Questão",
+    "issuePivotDesc": "Mesma questão, todas as organizações",
+    "orgPivot": "🏢 Pivot de Organização",
+    "orgPivotDesc": "Todas as questões, uma organização",
+    "seeIssueAcross": "Vê \"{issueName}\" em todas as organizações semelhantes:",
+    "seeOrgIssues": "Vê todas as questões em {orgName}:",
+    "you": "TU",
+    "rioters": "participantes"
+  },
+  "CampaignProgress": {
+    "title": "💰 Campanhas",
+    "funded": "Financiada",
+    "disbursed": "Desembolsada",
+    "backers": "{count, plural, one {apoiante} other {apoiantes}}"
+  },
+  "WalletBalance": {
+    "title": "O Teu Saldo",
+    "loaded": "carregado",
+    "contributed": "contribuído",
+    "campaigns": "{count, plural, one {campanha} other {campanhas}}"
+  },
+  "Transactions": {
+    "title": "Transações Recentes",
+    "topUp": "Carregamento",
+    "contribution": "Contribuição",
+    "refund": "Reembolso",
+    "justNow": "agora mesmo",
+    "minutesAgo": "há {count}m",
+    "hoursAgo": "há {count}h",
+    "daysAgo": "há {count}d",
+    "empty": "Ainda sem transações. Carrega a tua carteira para começar!"
+  },
+  "Activity": {
+    "noActivity": "Ainda sem atividade.",
+    "ai": "IA",
+    "human": "H"
+  },
+  "Countries": {
+    "title": "🌍 Países"
+  },
+  "Synonyms": {
+    "placeholder": "Adicionar sinónimo...",
+    "add": "Adicionar"
+  },
+  "Join": {
+    "joined": "✅ Aderiste a este Quiet Riot",
+    "join": "✊ Junta-te a este Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Pesquisar questões..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Partilha os teus pensamentos...",
+    "post": "Publicar",
+    "empty": "Ainda sem publicações. Sê o primeiro a partilhar!"
+  },
+  "Actions": {
+    "ideas": "💡 Ideias (Variação)",
+    "actions": "⚡ Ações (Seleção)",
+    "together": "🤝 Juntos (Comunidade)",
+    "noResults": "Nenhuma ação corresponde aos teus filtros. Tenta alargar a tua seleção."
+  },
+  "Filter": {
+    "all": "Todas",
+    "active": "Ativas",
+    "funded": "Financiadas",
+    "disbursed": "Desembolsadas"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Quanto tempo tens?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hora+",
+    "typeQuestion": "Que tipo?",
+    "ideas": "💡 Ideias",
+    "actions": "⚡ Ações",
+    "together": "🤝 Juntos"
+  },
+  "Reels": {
+    "empty": "Ainda sem reels. Sê o primeiro a submeter um!",
+    "submitPrompt": "Tens um vídeo engraçado que resume esta questão?",
+    "submitSuccess": "Obrigado! O teu reel foi submetido para revisão.",
+    "urlPlaceholder": "Cola um URL do YouTube...",
+    "captionPlaceholder": "Adiciona uma legenda (opcional)...",
+    "submit": "Submeter"
+  },
+  "TopUp": {
+    "addFunds": "Adicionar Fundos",
+    "minTopUp": "O carregamento mínimo é £1",
+    "success": "{amount} adicionados à tua carteira!",
+    "networkError": "Erro de rede. Por favor tenta novamente.",
+    "customAmount": "Valor personalizado (£)",
+    "topUp": "Carregar",
+    "simulated": "Carregamento simulado para teste. Pagamentos reais via Stripe em breve."
+  },
+  "Contribute": {
+    "insufficientFunds": "Fundos insuficientes. Carrega a tua carteira primeiro.",
+    "minContribution": "A contribuição mínima é 10p",
+    "contribute": "Contribuir",
+    "yourBalance": "O teu saldo: ",
+    "networkError": "Erro de rede. Por favor tenta novamente.",
+    "invalidAmount": "Introduz um valor válido",
+    "customAmount": "Valor personalizado (£)",
+    "give": "Dar",
+    "success": "Contribuíste {amount} para {campaign}!",
+    "remainingBalance": "O teu saldo restante: {balance}",
+    "topUpPrompt": "Carrega a tua carteira",
+    "toKeepSupporting": "para continuar a apoiar campanhas.",
+    "walletEmpty": "A tua carteira está vazia.",
+    "topUp": "Carrega",
+    "toContribute": "para contribuir."
+  },
+  "Claim": {
+    "success": "Obrigado! Registámos o teu interesse no papel de {name}. Entraremos em contacto.",
+    "placeholder": "Porque serias excelente como {name}? (opcional)",
+    "submitting": "A submeter...",
+    "expressInterest": "Manifestar Interesse"
+  },
+  "Evidence": {
+    "generalOrg": "Geral (sem organização específica)",
+    "placeholder": "Diz o que pensas...",
+    "photosLabel": "Fotos (até 4)",
+    "addPhotos": "+ Adicionar fotos",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Máx. 4 MB cada.",
+    "videoLabel": "Vídeo (1 máx.)",
+    "addVideo": "+ Adicionar vídeo",
+    "videoFormats": "MP4, MOV, WebM. Máx. 4 MB.",
+    "linkLabel": "Link externo",
+    "linkPlaceholder": "https://artigo-noticias.com/...",
+    "hideMedia": "Esconder media",
+    "addMedia": "📎 Adicionar fotos, vídeo, links",
+    "posting": "A publicar...",
+    "uploading": "A carregar...",
+    "submitEvidence": "Submeter Prova",
+    "goLive": "🔴 Transmitir em Direto",
+    "maxPhotos": "Máximo 4 fotos. {count} ignoradas.",
+    "videoFailed": "O carregamento do vídeo falhou",
+    "removePhoto": "Remover {name}",
+    "removeVideo": "Remover vídeo",
+    "uploadFailed": "Falha ao carregar: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Editar perfil",
+    "nameLabel": "Nome",
+    "timeLabel": "Tempo disponível",
+    "time1min": "1 minuto",
+    "time1minDesc": "Apenas ações rápidas",
+    "time10min": "10 minutos",
+    "time10minDesc": "A maioria das ações",
+    "time1hour": "1 hora+",
+    "time1hourDesc": "Envolvimento profundo",
+    "skillsLabel": "Competências",
+    "skillsPlaceholder": "ex: design, escrita, jurídico, programação",
+    "skillsHint": "Separadas por vírgula. Ajuda a associar-te a ações relevantes.",
+    "saving": "A guardar...",
+    "save": "Guardar alterações",
+    "cancel": "Cancelar",
+    "nameRequired": "O nome é obrigatório",
+    "saveFailed": "Falha ao guardar"
+  },
+  "SignupForm": {
+    "placeholder": "tu@exemplo.com",
+    "submit": "Notifica-me"
+  },
+  "CookieConsent": {
+    "title": "Preferências de cookies",
+    "description": "Usamos cookies para te manter autenticado e melhorar a tua experiência. Os cookies de análise ajudam-nos a perceber como o site é utilizado.",
+    "acceptAll": "Aceitar todos",
+    "essentialOnly": "Apenas essenciais",
+    "manage": "Gerir preferências",
+    "essential": "Essenciais",
+    "essentialDescription": "Necessários para o funcionamento do site. Não podem ser desativados.",
+    "analytics": "Análise",
+    "analyticsDescription": "Ajudam-nos a perceber como usas o site para o podermos melhorar.",
+    "save": "Guardar preferências"
+  }
+}

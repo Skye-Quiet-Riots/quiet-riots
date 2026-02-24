@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organitza't al voltant de problemes compartits. Troba la teva gent. Actua plegats."
+  },
+  "Nav": {
+    "issues": "Problemes",
+    "assistants": "Assistents",
+    "organisations": "Organitzacions",
+    "wallet": "Cartera",
+    "profile": "Perfil",
+    "signIn": "Inicia sessió",
+    "signOut": "Tanca sessió",
+    "toggleMenu": "Commuta el menú"
+  },
+  "Footer": {
+    "mission": "Canviar més coses per a bé en les nostres vides del que ens atrevim a imaginar que és possible.",
+    "powered": "Quiet Riots · Impulsat per OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "La Botiga Única de Problemes",
+    "headline": "El canvi no ha de ser sorollós per ser poderós",
+    "description": "Troba altres persones que comparteixen els teus problemes. Actua plegats. Quiet Riots connecta persones al voltant de frustracions compartides i converteix les queixes en acció col·lectiva.",
+    "browseIssues": "Explora Problemes",
+    "howItWorks": "Com Funciona",
+    "trendingIssues": "🔥 Problemes en Tendència",
+    "viewAll": "Veure-ho tot →",
+    "reelOfTheDay": "🎬 Riot Reel del Dia",
+    "riotersFunny": "{count} participants han trobat això divertit",
+    "from": "De:",
+    "findYourIssue": "Troba el Teu Problema",
+    "findYourIssueDesc": "Cerca qualsevol frustració — trens, banda ampla, sanitat, clima. Si existeix, et mostrarem quantes persones més el comparteixen.",
+    "useThePivot": "Utilitza el Pivot",
+    "useThePivotDesc": "Mira el mateix problema a totes les organitzacions, o tots els problemes d'una organització. Com ballarins de tango canviant de direcció.",
+    "takeAction": "Actua",
+    "takeActionDesc": "Idees, accions i comunitat — personalitzades al teu temps i habilitats. Les petites accions sumen grans canvis.",
+    "missionQuote": "\"Canviar més coses per a bé en les nostres vides del que ens atrevim a imaginar que és possible.\"",
+    "basedOn": "Basat en el llibre de 2014 <em>Quiet Riots</em> de Simon Darling",
+    "joinMovement": "✊ Uneix-te al Moviment"
+  },
+  "Issues": {
+    "title": "Problemes",
+    "subtitle": "{count} problemes en {categoryCount} categories. Troba el teu.",
+    "searchPlaceholder": "Cerca problemes o sinònims...",
+    "noResults": "No s'han trobat problemes. Prova una cerca o categoria diferent."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Problemes",
+    "rioters": "participants",
+    "country": "{count, plural, one {país} other {països}}",
+    "thisWeek": "aquesta setmana",
+    "actions": "accions",
+    "alsoKnownAs": "També conegut com",
+    "actionsTitle": "⚡ Accions — El Teu Kit Personalitzat",
+    "actionsDesc": "Basat en l'evolució — 💡 **Idees** (variació), ⚡ **Accions** (selecció), i 🤝 **Junts** (comunitat).",
+    "gatherEvidence": "📹 Recopila Proves",
+    "gatherEvidenceDesc": "Documenta el que passa — fes-ho en directe o comparteix fotos, vídeos i enllaços.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Vídeos divertits i irònics que capturen l'esperit d'aquesta Quiet Riot.",
+    "experts": "🌟 Experts",
+    "expertsDesc": "Voluntaris apassionats que aprofundeixen — traductors, especialistes, responsables de premsa, assessors legals.",
+    "communityFeed": "💬 Feed de la Comunitat"
+  },
+  "Organisations": {
+    "title": "Organitzacions",
+    "subtitle": "Explora organitzacions i mira quins problemes té la gent amb cadascuna.",
+    "noResults": "No s'han trobat organitzacions per a aquesta categoria."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organitzacions",
+    "totalRioters": "participants totals",
+    "issues": "problemes",
+    "topIssueShare": "percentatge del problema principal",
+    "paretoTitle": "Principi de Pareto:",
+    "paretoDesc": "Uns pocs problemes normalment representen el 80% de totes les queixes. Els problemes principals a continuació es classifiquen pel nombre de persones afectades.",
+    "gatherEvidence": "📹 Recopila Proves",
+    "gatherEvidenceDesc": "Documenta el que passa amb {orgName}."
+  },
+  "Campaigns": {
+    "title": "Campanyes",
+    "subtitle": "{count} {count, plural, one {campanya} other {campanyes}} recaptant fons pel canvi.",
+    "noResults": "No s'han trobat campanyes. Prova un filtre diferent."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Campanyes",
+    "fullyFunded": "Totalment Finançada",
+    "disbursed": "Fons Desemborsats",
+    "cancelled": "Cancel·lada",
+    "active": "Activa",
+    "target": "objectiu",
+    "raised": "recaptat",
+    "backers": "{count, plural, one {mecenes} other {mecenes}}",
+    "platformFee": "comissió de la plataforma",
+    "wantToContribute": "Vols contribuir?",
+    "topUpFirst": "Recarrega la teva cartera primer per començar a contribuir.",
+    "createAccountPrompt": "Crea un compte i carrega la teva cartera per donar suport a aquesta campanya.",
+    "goToWallet": "Ves a la cartera",
+    "createAccount": "Crea un compte",
+    "completedMessage": "Aquesta campanya ha estat {status}. Gràcies a tots els {count} mecenes!",
+    "recipient": "Destinatari"
+  },
+  "Assistants": {
+    "title": "Assistents",
+    "subtitle": "{count} parelles d'agents d'IA i organitzadors humans ajudant participants a actuar.",
+    "noResults": "Encara no hi ha assistents disponibles."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistents",
+    "aiAgent": "Agent d'IA",
+    "humanOrganiser": "Organitzador Humà",
+    "rioters": "participants",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "missatges",
+    "currentFocus": "Focus Actual",
+    "recentActivity": "Activitat Recent",
+    "riotsWeHelp": "Quiet Riots que Ajudem",
+    "wantToBe": "Vols ser {name}?",
+    "openRole": "El rol d'organitzador humà està obert a qualsevol persona amb passió per aquesta categoria. Expressa el teu interès a continuació."
+  },
+  "Wallet": {
+    "title": "La Teva Cartera",
+    "createPromptTitle": "Comença a Donar Suport a Causes",
+    "createPromptDesc": "Crea un compte gratuït per carregar fons i contribuir a campanyes que t'importen.",
+    "createAccount": "Crea un compte",
+    "activeCampaigns": "Campanyes Actives",
+    "viewAll": "Veure-ho tot"
+  },
+  "Profile": {
+    "title": "El Teu Perfil",
+    "time": "Temps: ",
+    "skills": "Habilitats: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {publicació} other {publicacions}}",
+    "likes": "{count, plural, one {m'agrada rebut} other {m'agrada rebuts}}",
+    "yourRiots": "Les Teves Quiet Riots",
+    "noRiots": "Encara no hi ha Quiet Riots",
+    "findIssues": "Troba problemes que t'importen i uneix-te al moviment.",
+    "browseIssues": "Explora problemes",
+    "memberSince": "Membre des de",
+    "rioters": "participants",
+    "connectedAccounts": "Comptes Connectats",
+    "noConnectedAccounts": "Encara no hi ha comptes connectats. Inicia sessió amb Google o Facebook per vincular el teu compte.",
+    "deactivateAccount": "Desactiva el compte",
+    "deactivateConfirm": "Segur que vols desactivar el teu compte? Pots reactivar-lo en un termini de 30 dies."
+  },
+  "Auth": {
+    "welcomeBack": "Benvingut de nou",
+    "signInSubtitle": "Inicia sessió al teu compte de Quiet Riots",
+    "joinTitle": "Uneix-te a Quiet Riots",
+    "joinSubtitle": "Organitza't al voltant de problemes compartits. Actua plegats.",
+    "continueGoogle": "Continua amb Google",
+    "continueFacebook": "Continua amb Facebook",
+    "connecting": "Connectant...",
+    "or": "o",
+    "emailLabel": "Adreça de correu electrònic",
+    "sendMagicLink": "Envia un enllaç màgic",
+    "signUpWithEmail": "Registra't amb correu electrònic",
+    "sendingLink": "Enviant l'enllaç...",
+    "checkEmail": "Revisa el teu correu electrònic",
+    "signInLinkSent": "Hem enviat un enllaç d'inici de sessió al teu correu electrònic. Fes clic a l'enllaç per continuar.",
+    "signUpLinkSent": "Hem enviat un enllaç d'inici de sessió al teu correu electrònic. Fes clic a l'enllaç per crear el teu compte.",
+    "noAccount": "No tens compte?",
+    "signUp": "Registra't",
+    "hasAccount": "Ja tens un compte?",
+    "signIn": "Inicia sessió",
+    "termsAgree": "En registrar-te, acceptes els nostres",
+    "terms": "Termes",
+    "and": "i",
+    "privacyPolicy": "Política de Privadesa",
+    "verifyTitle": "Revisa el teu correu electrònic",
+    "verifyDesc": "S'ha enviat un enllaç d'inici de sessió al teu correu electrònic. Fes clic a l'enllaç per continuar.",
+    "backToSignIn": "Torna a l'inici de sessió",
+    "errorTitle": "Error d'Autenticació",
+    "errorConfig": "Hi ha un problema amb la configuració del servidor.",
+    "errorAccess": "S'ha denegat l'accés. Potser no tens permís per iniciar sessió.",
+    "errorVerification": "L'enllaç d'inici de sessió ha caducat o ja s'ha utilitzat.",
+    "errorDefault": "S'ha produït un error durant l'autenticació.",
+    "tryAgain": "Torna-ho a provar"
+  },
+  "AuthGate": {
+    "signInTo": "Inicia sessió per {action}",
+    "signIn": "Inicia sessió",
+    "signInRequired": "Cal iniciar sessió",
+    "signInToAction": "Has d'iniciar sessió per {action}.",
+    "cancel": "Cancel·la",
+    "noAccount": "No tens compte?",
+    "signUp": "Registra't"
+  },
+  "Error": {
+    "title": "Alguna cosa ha anat malament",
+    "description": "S'ha produït un error inesperat.",
+    "tryAgain": "Torna-ho a provar"
+  },
+  "GlobalError": {
+    "title": "Alguna cosa ha anat malament",
+    "description": "S'ha produït un error inesperat. El nostre equip ha estat notificat.",
+    "tryAgain": "Torna-ho a provar"
+  },
+  "NotFound": {
+    "title": "Pàgina no trobada",
+    "description": "La pàgina que busques no existeix o s'ha mogut.",
+    "goHome": "Ves a l'inici"
+  },
+  "Cards": {
+    "rioters": "participants",
+    "country": "{count, plural, one {país} other {països}}",
+    "issues": "problemes",
+    "idea": "Idea",
+    "action": "Acció",
+    "together": "Junts",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hora+",
+    "skills": "Habilitats: ",
+    "anonymous": "Anònim",
+    "curated": "Seleccionat",
+    "community": "Comunitat",
+    "aiPick": "Selecció IA",
+    "funded": "Finançada",
+    "disbursed": "Desemborsada",
+    "backers": "{count, plural, one {mecenes} other {mecenes}}",
+    "aiAndHuman": "Agent d'IA i Organitzador Humà",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Índex de Sentit de Comunitat",
+    "needsMet": "Necessitats Cobertes",
+    "needsMetDesc": "Els membres senten que val la pena",
+    "membership": "Pertinença",
+    "membershipDesc": "Confiança i pertinença",
+    "influence": "Influència",
+    "influenceDesc": "La teva veu importa",
+    "connection": "Connexió",
+    "connectionDesc": "Experiències compartides",
+    "healthy": "Saludable",
+    "growing": "Creixent",
+    "needsAttention": "Necessita Atenció"
+  },
+  "Pivot": {
+    "title": "🔀 El Pivot",
+    "peopleGlobally": "persones globalment",
+    "issuePivot": "🔍 Pivot de Problema",
+    "issuePivotDesc": "Mateix problema, totes les orgs",
+    "orgPivot": "🏢 Pivot d'Org",
+    "orgPivotDesc": "Tots els problemes, una org",
+    "seeIssueAcross": "Mira \"{issueName}\" a totes les organitzacions similars:",
+    "seeOrgIssues": "Mira tots els problemes a {orgName}:",
+    "you": "TU",
+    "rioters": "participants"
+  },
+  "CampaignProgress": {
+    "title": "💰 Campanyes",
+    "funded": "Finançada",
+    "disbursed": "Desemborsada",
+    "backers": "{count, plural, one {mecenes} other {mecenes}}"
+  },
+  "WalletBalance": {
+    "title": "El Teu Saldo",
+    "loaded": "carregat",
+    "contributed": "contribuït",
+    "campaigns": "{count, plural, one {campanya} other {campanyes}}"
+  },
+  "Transactions": {
+    "title": "Transaccions Recents",
+    "topUp": "Recàrrega",
+    "contribution": "Contribució",
+    "refund": "Reemborsament",
+    "justNow": "ara mateix",
+    "minutesAgo": "fa {count}min",
+    "hoursAgo": "fa {count}h",
+    "daysAgo": "fa {count}d",
+    "empty": "Encara no hi ha transaccions. Recarrega la teva cartera per començar!"
+  },
+  "Activity": {
+    "noActivity": "Encara no hi ha activitat.",
+    "ai": "IA",
+    "human": "H"
+  },
+  "Countries": {
+    "title": "🌍 Països"
+  },
+  "Synonyms": {
+    "placeholder": "Afegeix un sinònim...",
+    "add": "Afegeix"
+  },
+  "Join": {
+    "joined": "✅ T'has unit a aquesta Quiet Riot",
+    "join": "✊ Uneix-te a aquesta Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Cerca problemes..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Comparteix els teus pensaments...",
+    "post": "Publica",
+    "empty": "Encara no hi ha publicacions. Sigues el primer a compartir!"
+  },
+  "Actions": {
+    "ideas": "💡 Idees (Variació)",
+    "actions": "⚡ Accions (Selecció)",
+    "together": "🤝 Junts (Comunitat)",
+    "noResults": "Cap acció coincideix amb els teus filtres. Prova d'ampliar la teva selecció."
+  },
+  "Filter": {
+    "all": "Tot",
+    "active": "Activa",
+    "funded": "Finançada",
+    "disbursed": "Desemborsada"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Quant de temps tens?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 hora+",
+    "typeQuestion": "Quin tipus?",
+    "ideas": "💡 Idees",
+    "actions": "⚡ Accions",
+    "together": "🤝 Junts"
+  },
+  "Reels": {
+    "empty": "Encara no hi ha reels. Sigues el primer a enviar-ne un!",
+    "submitPrompt": "Tens un vídeo divertit que resumeix aquest problema?",
+    "submitSuccess": "Gràcies! El teu reel s'ha enviat per revisió.",
+    "urlPlaceholder": "Enganxa un URL de YouTube...",
+    "captionPlaceholder": "Afegeix un peu de foto (opcional)...",
+    "submit": "Envia"
+  },
+  "TopUp": {
+    "addFunds": "Afegeix Fons",
+    "minTopUp": "La recàrrega mínima és d'£1",
+    "success": "{amount} afegit a la teva cartera!",
+    "networkError": "Error de xarxa. Si us plau, torna-ho a provar.",
+    "customAmount": "Import personalitzat (£)",
+    "topUp": "Recarrega",
+    "simulated": "Recàrrega simulada per proves. Pagaments reals via Stripe properament."
+  },
+  "Contribute": {
+    "insufficientFunds": "Fons insuficients. Recarrega primer la teva cartera.",
+    "minContribution": "La contribució mínima és de 10p",
+    "contribute": "Contribueix",
+    "yourBalance": "El teu saldo: ",
+    "networkError": "Error de xarxa. Si us plau, torna-ho a provar.",
+    "invalidAmount": "Introdueix un import vàlid",
+    "customAmount": "Import personalitzat (£)",
+    "give": "Dona",
+    "success": "Has contribuït {amount} a {campaign}!",
+    "remainingBalance": "El teu saldo restant: {balance}",
+    "topUpPrompt": "Recarrega la teva cartera",
+    "toKeepSupporting": "per continuar donant suport a campanyes.",
+    "walletEmpty": "La teva cartera està buida.",
+    "topUp": "Recarrega",
+    "toContribute": "per contribuir."
+  },
+  "Claim": {
+    "success": "Gràcies! Hem anotat el teu interès en el rol de {name}. Et contactarem.",
+    "placeholder": "Per què series genial com a {name}? (opcional)",
+    "submitting": "Enviant...",
+    "expressInterest": "Expressa Interès"
+  },
+  "Evidence": {
+    "generalOrg": "General (cap organització específica)",
+    "placeholder": "Digues el que penses...",
+    "photosLabel": "Fotos (fins a 4)",
+    "addPhotos": "+ Afegeix fotos",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Màx 4 MB cadascuna.",
+    "videoLabel": "Vídeo (1 màx)",
+    "addVideo": "+ Afegeix vídeo",
+    "videoFormats": "MP4, MOV, WebM. Màx 4 MB.",
+    "linkLabel": "Enllaç extern",
+    "linkPlaceholder": "https://article-noticies.com/...",
+    "hideMedia": "Amaga contingut multimèdia",
+    "addMedia": "📎 Afegeix fotos, vídeo, enllaços",
+    "posting": "Publicant...",
+    "uploading": "Pujant...",
+    "submitEvidence": "Envia Proves",
+    "goLive": "🔴 En Directe Ara",
+    "maxPhotos": "Màxim 4 fotos. {count} omeses.",
+    "videoFailed": "La pujada del vídeo ha fallat",
+    "removePhoto": "Elimina {name}",
+    "removeVideo": "Elimina vídeo",
+    "uploadFailed": "No s'ha pogut pujar: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Edita el perfil",
+    "nameLabel": "Nom",
+    "timeLabel": "Temps disponible",
+    "time1min": "1 minut",
+    "time1minDesc": "Només accions ràpides",
+    "time10min": "10 minuts",
+    "time10minDesc": "La majoria d'accions",
+    "time1hour": "1 hora+",
+    "time1hourDesc": "Implicació profunda",
+    "skillsLabel": "Habilitats",
+    "skillsPlaceholder": "p.ex. disseny, escriptura, legal, programació",
+    "skillsHint": "Separades per comes. Ajuda a trobar-te accions rellevants.",
+    "saving": "Desant...",
+    "save": "Desa els canvis",
+    "cancel": "Cancel·la",
+    "nameRequired": "El nom és obligatori",
+    "saveFailed": "No s'ha pogut desar"
+  },
+  "SignupForm": {
+    "placeholder": "tu@exemple.com",
+    "submit": "Notifica'm"
+  },
+  "CookieConsent": {
+    "title": "Preferències de cookies",
+    "description": "Utilitzem cookies per mantenir-te connectat i millorar la teva experiència. Les cookies d'analítica ens ajuden a entendre com s'utilitza el lloc.",
+    "acceptAll": "Accepta-ho tot",
+    "essentialOnly": "Només essencials",
+    "manage": "Gestiona preferències",
+    "essential": "Essencials",
+    "essentialDescription": "Necessàries perquè el lloc funcioni. No es poden desactivar.",
+    "analytics": "Analítica",
+    "analyticsDescription": "Ens ajuden a entendre com utilitzes el lloc perquè el puguem millorar.",
+    "save": "Desa preferències"
+  }
+}

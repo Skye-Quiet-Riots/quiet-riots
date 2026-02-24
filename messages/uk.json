@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Об'єднуйся навколо спільних проблем. Знаходь своїх людей. Дій разом."
+  },
+  "Nav": {
+    "issues": "Проблеми",
+    "assistants": "Помічники",
+    "organisations": "Організації",
+    "wallet": "Гаманець",
+    "profile": "Профіль",
+    "signIn": "Увійти",
+    "signOut": "Вийти",
+    "toggleMenu": "Перемкнути меню"
+  },
+  "Footer": {
+    "mission": "Змінити за наше життя більше на краще, ніж ми смієм уявити можливим.",
+    "powered": "Quiet Riots · Працює на OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Усе про проблеми в одному місці",
+    "headline": "Зміни не мають бути гучними, щоб бути потужними",
+    "description": "Знаходь тих, хто розділяє твої проблеми. Дій разом. Quiet Riots об'єднує людей навколо спільних розчарувань і перетворює скарги на колективну дію.",
+    "browseIssues": "Переглянути проблеми",
+    "howItWorks": "Як це працює",
+    "trendingIssues": "🔥 Актуальні проблеми",
+    "viewAll": "Усі →",
+    "reelOfTheDay": "🎬 Riot Reel дня",
+    "riotersFunny": "{count} учасників вважають це смішним",
+    "from": "Від:",
+    "findYourIssue": "Знайди свою проблему",
+    "findYourIssueDesc": "Шукай будь-яке розчарування — потяги, інтернет, медицина, клімат. Якщо воно існує, ми покажемо, скільки інших його поділяють.",
+    "useThePivot": "Використай Pivot",
+    "useThePivotDesc": "Переглянь ту саму проблему в усіх організаціях або всі проблеми однієї організації. Як танцюристи танго, що змінюють напрямок.",
+    "takeAction": "Дій",
+    "takeActionDesc": "Ідеї, дії та спільнота — підібрані під твій час і навички. Маленькі дії складаються у великі зміни.",
+    "missionQuote": "\"Змінити за наше життя більше на краще, ніж ми смієм уявити можливим.\"",
+    "basedOn": "На основі книги 2014 року <em>Quiet Riots</em> Саймона Дарлінга",
+    "joinMovement": "✊ Приєднуйся до руху"
+  },
+  "Issues": {
+    "title": "Проблеми",
+    "subtitle": "{count} проблем у {categoryCount} категоріях. Знайди свою.",
+    "searchPlaceholder": "Шукати проблеми або синоніми...",
+    "noResults": "Проблем не знайдено. Спробуй інший пошук або категорію."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Проблеми",
+    "rioters": "учасників",
+    "country": "{count, plural, one {країна} few {країни} many {країн} other {країн}}",
+    "thisWeek": "цього тижня",
+    "actions": "дій",
+    "alsoKnownAs": "Також відомо як",
+    "actionsTitle": "⚡ Дії — Твій персональний набір",
+    "actionsDesc": "На основі еволюції — 💡 **Ідеї** (варіація), ⚡ **Дії** (відбір) та 🤝 **Разом** (спільнота).",
+    "gatherEvidence": "📹 Збирай докази",
+    "gatherEvidenceDesc": "Документуй, що відбувається — виходь у прямий ефір або ділись фото, відео та посиланнями.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Смішні та іронічні відео, що передають дух цього Quiet Riot.",
+    "experts": "🌟 Експерти",
+    "expertsDesc": "Пристрасні волонтери, що заглиблюються — перекладачі, спеціалісти, медіа-координатори, юридичні консультанти.",
+    "communityFeed": "💬 Стрічка спільноти"
+  },
+  "Organisations": {
+    "title": "Організації",
+    "subtitle": "Переглядай організації та дивись, які проблеми є у людей з кожною.",
+    "noResults": "Організацій для цієї категорії не знайдено."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Організації",
+    "totalRioters": "усього учасників",
+    "issues": "проблем",
+    "topIssueShare": "частка головної проблеми",
+    "paretoTitle": "Принцип Парето:",
+    "paretoDesc": "Кілька проблем зазвичай складають 80% усіх скарг. Головні проблеми нижче ранжовані за кількістю людей, яких вони стосуються.",
+    "gatherEvidence": "📹 Збирай докази",
+    "gatherEvidenceDesc": "Документуй, що відбувається з {orgName}."
+  },
+  "Campaigns": {
+    "title": "Кампанії",
+    "subtitle": "{count} {count, plural, one {кампанія} few {кампанії} many {кампаній} other {кампаній}} збирають кошти на зміни.",
+    "noResults": "Кампаній не знайдено. Спробуй інший фільтр."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Кампанії",
+    "fullyFunded": "Повністю профінансовано",
+    "disbursed": "Кошти виплачено",
+    "cancelled": "Скасовано",
+    "active": "Активна",
+    "target": "ціль",
+    "raised": "зібрано",
+    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}",
+    "platformFee": "комісія платформи",
+    "wantToContribute": "Хочеш зробити внесок?",
+    "topUpFirst": "Спочатку поповни гаманець, щоб почати робити внески.",
+    "createAccountPrompt": "Створи акаунт і поповни гаманець, щоб підтримати цю кампанію.",
+    "goToWallet": "Перейти до гаманця",
+    "createAccount": "Створити акаунт",
+    "completedMessage": "Цю кампанію {status}. Дякуємо всім {count} спонсорам!",
+    "recipient": "Отримувач"
+  },
+  "Assistants": {
+    "title": "Помічники",
+    "subtitle": "{count} пар ШІ-агентів і людей-організаторів, що допомагають учасникам діяти.",
+    "noResults": "Помічників поки немає."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Помічники",
+    "aiAgent": "ШІ-агент",
+    "humanOrganiser": "Людина-організатор",
+    "rioters": "учасників",
+    "riots": "{count, plural, one {riot} few {riots} many {riots} other {riots}}",
+    "messages": "повідомлень",
+    "currentFocus": "Поточний фокус",
+    "recentActivity": "Нещодавня активність",
+    "riotsWeHelp": "Quiet Riots, яким ми допомагаємо",
+    "wantToBe": "Хочеш стати {name}?",
+    "openRole": "Роль людини-організатора відкрита для всіх, хто захоплений цією категорією. Вислови свій інтерес нижче."
+  },
+  "Wallet": {
+    "title": "Твій гаманець",
+    "createPromptTitle": "Почни підтримувати справи",
+    "createPromptDesc": "Створи безкоштовний акаунт, щоб поповнити кошти та робити внески в кампанії, які тобі важливі.",
+    "createAccount": "Створити акаунт",
+    "activeCampaigns": "Активні кампанії",
+    "viewAll": "Переглянути всі"
+  },
+  "Profile": {
+    "title": "Твій профіль",
+    "time": "Час: ",
+    "skills": "Навички: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} few {Quiet Riots} many {Quiet Riots} other {Quiet Riots}}",
+    "posts": "{count, plural, one {пост} few {пости} many {постів} other {постів}}",
+    "likes": "{count, plural, one {вподобання отримано} few {вподобання отримано} many {вподобань отримано} other {вподобань отримано}}",
+    "yourRiots": "Твої Quiet Riots",
+    "noRiots": "Quiet Riots поки немає",
+    "findIssues": "Знайди проблеми, які тобі важливі, і приєднуйся до руху.",
+    "browseIssues": "Переглянути проблеми",
+    "memberSince": "Учасник з",
+    "rioters": "учасників",
+    "connectedAccounts": "Підключені акаунти",
+    "noConnectedAccounts": "Акаунти ще не підключено. Увійди через Google або Facebook, щоб прив'язати свій акаунт.",
+    "deactivateAccount": "Деактивувати акаунт",
+    "deactivateConfirm": "Ти впевнений, що хочеш деактивувати свій акаунт? Ти зможеш відновити його протягом 30 днів."
+  },
+  "Auth": {
+    "welcomeBack": "З поверненням",
+    "signInSubtitle": "Увійди у свій акаунт Quiet Riots",
+    "joinTitle": "Приєднуйся до Quiet Riots",
+    "joinSubtitle": "Об'єднуйся навколо спільних проблем. Дій разом.",
+    "continueGoogle": "Продовжити з Google",
+    "continueFacebook": "Продовжити з Facebook",
+    "connecting": "Підключення...",
+    "or": "або",
+    "emailLabel": "Електронна адреса",
+    "sendMagicLink": "Надіслати магічне посилання",
+    "signUpWithEmail": "Зареєструватися через email",
+    "sendingLink": "Надсилання посилання...",
+    "checkEmail": "Перевір свою пошту",
+    "signInLinkSent": "Ми надіслали посилання для входу на твою електронну адресу. Натисни на нього, щоб продовжити.",
+    "signUpLinkSent": "Ми надіслали посилання для входу на твою електронну адресу. Натисни на нього, щоб створити акаунт.",
+    "noAccount": "Немає акаунта?",
+    "signUp": "Зареєструватися",
+    "hasAccount": "Вже є акаунт?",
+    "signIn": "Увійти",
+    "termsAgree": "Реєструючись, ти погоджуєшся з нашими",
+    "terms": "Умовами",
+    "and": "та",
+    "privacyPolicy": "Політикою конфіденційності",
+    "verifyTitle": "Перевір свою пошту",
+    "verifyDesc": "Посилання для входу надіслано на твою електронну адресу. Натисни на нього, щоб продовжити.",
+    "backToSignIn": "Повернутися до входу",
+    "errorTitle": "Помилка автентифікації",
+    "errorConfig": "Проблема з конфігурацією сервера.",
+    "errorAccess": "Доступ заборонено. Можливо, у тебе немає дозволу на вхід.",
+    "errorVerification": "Посилання для входу застаріло або вже використане.",
+    "errorDefault": "Під час автентифікації сталася помилка.",
+    "tryAgain": "Спробувати знову"
+  },
+  "AuthGate": {
+    "signInTo": "Увійди, щоб {action}",
+    "signIn": "Увійти",
+    "signInRequired": "Потрібен вхід",
+    "signInToAction": "Тобі потрібно увійти, щоб {action}.",
+    "cancel": "Скасувати",
+    "noAccount": "Немає акаунта?",
+    "signUp": "Зареєструватися"
+  },
+  "Error": {
+    "title": "Щось пішло не так",
+    "description": "Сталася непередбачена помилка.",
+    "tryAgain": "Спробувати знову"
+  },
+  "GlobalError": {
+    "title": "Щось пішло не так",
+    "description": "Сталася непередбачена помилка. Нашу команду вже повідомлено.",
+    "tryAgain": "Спробувати знову"
+  },
+  "NotFound": {
+    "title": "Сторінку не знайдено",
+    "description": "Сторінка, яку ти шукаєш, не існує або була переміщена.",
+    "goHome": "На головну"
+  },
+  "Cards": {
+    "rioters": "учасників",
+    "country": "{count, plural, one {країна} few {країни} many {країн} other {країн}}",
+    "issues": "проблем",
+    "idea": "Ідея",
+    "action": "Дія",
+    "together": "Разом",
+    "time1min": "1 хв",
+    "time10min": "10 хв",
+    "time1hour": "1 год+",
+    "skills": "Навички: ",
+    "anonymous": "Анонім",
+    "curated": "Відібрано",
+    "community": "Спільнота",
+    "aiPick": "Вибір ШІ",
+    "funded": "Профінансовано",
+    "disbursed": "Виплачено",
+    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}",
+    "aiAndHuman": "ШІ-агент і людина-організатор",
+    "riots": "{count, plural, one {riot} few {riots} many {riots} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Індекс почуття спільноти",
+    "needsMet": "Потреби задоволено",
+    "needsMetDesc": "Учасники відчувають, що це варте зусиль",
+    "membership": "Членство",
+    "membershipDesc": "Довіра та належність",
+    "influence": "Вплив",
+    "influenceDesc": "Твій голос має значення",
+    "connection": "Зв'язок",
+    "connectionDesc": "Спільний досвід",
+    "healthy": "Здорово",
+    "growing": "Зростає",
+    "needsAttention": "Потребує уваги"
+  },
+  "Pivot": {
+    "title": "🔀 Pivot",
+    "peopleGlobally": "людей по всьому світу",
+    "issuePivot": "🔍 Pivot за проблемою",
+    "issuePivotDesc": "Одна проблема, всі організації",
+    "orgPivot": "🏢 Pivot за організацією",
+    "orgPivotDesc": "Всі проблеми, одна організація",
+    "seeIssueAcross": "Переглянь \"{issueName}\" в усіх подібних організаціях:",
+    "seeOrgIssues": "Переглянь усі проблеми {orgName}:",
+    "you": "ТИ",
+    "rioters": "учасників"
+  },
+  "CampaignProgress": {
+    "title": "💰 Кампанії",
+    "funded": "Профінансовано",
+    "disbursed": "Виплачено",
+    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}"
+  },
+  "WalletBalance": {
+    "title": "Твій баланс",
+    "loaded": "поповнено",
+    "contributed": "внесено",
+    "campaigns": "{count, plural, one {кампанія} few {кампанії} many {кампаній} other {кампаній}}"
+  },
+  "Transactions": {
+    "title": "Останні транзакції",
+    "topUp": "Поповнення",
+    "contribution": "Внесок",
+    "refund": "Повернення",
+    "justNow": "щойно",
+    "minutesAgo": "{count} хв тому",
+    "hoursAgo": "{count} год тому",
+    "daysAgo": "{count} дн тому",
+    "empty": "Транзакцій поки немає. Поповни гаманець, щоб почати!"
+  },
+  "Activity": {
+    "noActivity": "Активності поки немає.",
+    "ai": "ШІ",
+    "human": "Л"
+  },
+  "Countries": {
+    "title": "🌍 Країни"
+  },
+  "Synonyms": {
+    "placeholder": "Додати синонім...",
+    "add": "Додати"
+  },
+  "Join": {
+    "joined": "✅ Ти в цьому Quiet Riot",
+    "join": "✊ Приєднатися до цього Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Шукати проблеми..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Поділися думками...",
+    "post": "Опублікувати",
+    "empty": "Постів поки немає. Будь першим!"
+  },
+  "Actions": {
+    "ideas": "💡 Ідеї (Варіація)",
+    "actions": "⚡ Дії (Відбір)",
+    "together": "🤝 Разом (Спільнота)",
+    "noResults": "Жодна дія не відповідає твоїм фільтрам. Спробуй розширити вибір."
+  },
+  "Filter": {
+    "all": "Всі",
+    "active": "Активні",
+    "funded": "Профінансовані",
+    "disbursed": "Виплачені"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Скільки маєш часу?",
+    "time1min": "1 хв",
+    "time10min": "10 хв",
+    "time1hour": "1 год+",
+    "typeQuestion": "Який тип?",
+    "ideas": "💡 Ідеї",
+    "actions": "⚡ Дії",
+    "together": "🤝 Разом"
+  },
+  "Reels": {
+    "empty": "Reels поки немає. Будь першим, хто надішле!",
+    "submitPrompt": "Є смішне відео, що описує цю проблему?",
+    "submitSuccess": "Дякуємо! Твій reel надіслано на перевірку.",
+    "urlPlaceholder": "Встав посилання на YouTube...",
+    "captionPlaceholder": "Додай підпис (необов'язково)...",
+    "submit": "Надіслати"
+  },
+  "TopUp": {
+    "addFunds": "Додати кошти",
+    "minTopUp": "Мінімальне поповнення — £1",
+    "success": "{amount} додано до гаманця!",
+    "networkError": "Помилка мережі. Спробуй ще раз.",
+    "customAmount": "Довільна сума (£)",
+    "topUp": "Поповнити",
+    "simulated": "Симульоване поповнення для тестування. Справжні платежі через Stripe скоро."
+  },
+  "Contribute": {
+    "insufficientFunds": "Недостатньо коштів. Спочатку поповни гаманець.",
+    "minContribution": "Мінімальний внесок — 10п",
+    "contribute": "Зробити внесок",
+    "yourBalance": "Твій баланс: ",
+    "networkError": "Помилка мережі. Спробуй ще раз.",
+    "invalidAmount": "Введи коректну суму",
+    "customAmount": "Довільна сума (£)",
+    "give": "Внести",
+    "success": "Внесено {amount} у {campaign}!",
+    "remainingBalance": "Залишок на балансі: {balance}",
+    "topUpPrompt": "Поповни гаманець",
+    "toKeepSupporting": "щоб продовжити підтримувати кампанії.",
+    "walletEmpty": "Твій гаманець порожній.",
+    "topUp": "Поповнити",
+    "toContribute": "щоб зробити внесок."
+  },
+  "Claim": {
+    "success": "Дякуємо! Ми зафіксували твій інтерес до ролі {name}. Ми зв'яжемося з тобою.",
+    "placeholder": "Чому ти був би чудовим {name}? (необов'язково)",
+    "submitting": "Надсилання...",
+    "expressInterest": "Висловити інтерес"
+  },
+  "Evidence": {
+    "generalOrg": "Загальне (без конкретної організації)",
+    "placeholder": "Скажи, що думаєш...",
+    "photosLabel": "Фото (до 4)",
+    "addPhotos": "+ Додати фото",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Макс. 4 МБ кожне.",
+    "videoLabel": "Відео (макс. 1)",
+    "addVideo": "+ Додати відео",
+    "videoFormats": "MP4, MOV, WebM. Макс. 4 МБ.",
+    "linkLabel": "Зовнішнє посилання",
+    "linkPlaceholder": "https://news-article.com/...",
+    "hideMedia": "Сховати медіа",
+    "addMedia": "📎 Додати фото, відео, посилання",
+    "posting": "Публікація...",
+    "uploading": "Завантаження...",
+    "submitEvidence": "Надіслати докази",
+    "goLive": "🔴 Прямий ефір",
+    "maxPhotos": "Максимум 4 фото. {count} пропущено.",
+    "videoFailed": "Завантаження відео не вдалося",
+    "removePhoto": "Видалити {name}",
+    "removeVideo": "Видалити відео",
+    "uploadFailed": "Не вдалося завантажити: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Редагувати профіль",
+    "nameLabel": "Ім'я",
+    "timeLabel": "Доступний час",
+    "time1min": "1 хвилина",
+    "time1minDesc": "Тільки швидкі дії",
+    "time10min": "10 хвилин",
+    "time10minDesc": "Більшість дій",
+    "time1hour": "1 година+",
+    "time1hourDesc": "Глибоке залучення",
+    "skillsLabel": "Навички",
+    "skillsPlaceholder": "напр. дизайн, письмо, юриспруденція, кодинг",
+    "skillsHint": "Через кому. Допомагає підібрати відповідні дії.",
+    "saving": "Збереження...",
+    "save": "Зберегти зміни",
+    "cancel": "Скасувати",
+    "nameRequired": "Ім'я обов'язкове",
+    "saveFailed": "Не вдалося зберегти"
+  },
+  "SignupForm": {
+    "placeholder": "you@example.com",
+    "submit": "Повідомити мене"
+  },
+  "CookieConsent": {
+    "title": "Налаштування cookies",
+    "description": "Ми використовуємо cookies, щоб тримати тебе авторизованим та покращувати досвід. Аналітичні cookies допомагають нам зрозуміти, як використовується сайт.",
+    "acceptAll": "Прийняти всі",
+    "essentialOnly": "Тільки необхідні",
+    "manage": "Керувати налаштуваннями",
+    "essential": "Необхідні",
+    "essentialDescription": "Потрібні для роботи сайту. Неможливо вимкнути.",
+    "analytics": "Аналітика",
+    "analyticsDescription": "Допомагають нам зрозуміти, як ти користуєшся сайтом, щоб ми могли його покращити.",
+    "save": "Зберегти налаштування"
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Ortak sorunlar etrafında örgütlen. İnsanlarını bul. Birlikte harekete geç."
+  },
+  "Nav": {
+    "issues": "Sorunlar",
+    "assistants": "Asistanlar",
+    "organisations": "Kuruluşlar",
+    "wallet": "Cüzdan",
+    "profile": "Profil",
+    "signIn": "Giriş yap",
+    "signOut": "Çıkış yap",
+    "toggleMenu": "Menüyü aç/kapat"
+  },
+  "Footer": {
+    "mission": "Hayatımız boyunca, hayal bile edemeyeceğimiz kadar çok şeyi iyiye doğru değiştirmek.",
+    "powered": "Quiet Riots · OpenClaw AI Agent ile güçlendirildi"
+  },
+  "Home": {
+    "tagline": "Sorunlar İçin Tek Adres",
+    "headline": "Değişimin güçlü olması için gürültülü olması gerekmez",
+    "description": "Sorunlarını paylaşan başkalarını bul. Birlikte harekete geç. Quiet Riots, insanları ortak hayal kırıklıkları etrafında birleştirerek şikayetleri kolektif eyleme dönüştürür.",
+    "browseIssues": "Sorunlara Göz At",
+    "howItWorks": "Nasıl Çalışır",
+    "trendingIssues": "🔥 Gündemdeki Sorunlar",
+    "viewAll": "Tümünü gör →",
+    "reelOfTheDay": "🎬 Günün Riot Reeli",
+    "riotersFunny": "{count} katılımcı bunu komik buldu",
+    "from": "Kaynak:",
+    "findYourIssue": "Sorununu Bul",
+    "findYourIssueDesc": "Herhangi bir hayal kırıklığını ara — trenler, internet, sağlık, iklim. Varsa, kaç kişinin aynı şeyi paylaştığını gösteririz.",
+    "useThePivot": "Pivot'u Kullan",
+    "useThePivotDesc": "Aynı sorunu tüm kuruluşlarda veya bir kuruluştaki tüm sorunları gör. Tango dansçılarının yön değiştirmesi gibi.",
+    "takeAction": "Harekete Geç",
+    "takeActionDesc": "Fikirler, eylemler ve topluluk — zamanına ve becerilerine göre kişiselleştirilmiş. Küçük eylemler büyük değişime dönüşür.",
+    "missionQuote": "\"Hayatımız boyunca, hayal bile edemeyeceğimiz kadar çok şeyi iyiye doğru değiştirmek.\"",
+    "basedOn": "Simon Darling'in 2014 tarihli <em>Quiet Riots</em> kitabından esinlenilmiştir",
+    "joinMovement": "✊ Harekete Katıl"
+  },
+  "Issues": {
+    "title": "Sorunlar",
+    "subtitle": "{categoryCount} kategoride {count} sorun. Kendininkini bul.",
+    "searchPlaceholder": "Sorun veya eş anlamlı ara...",
+    "noResults": "Sorun bulunamadı. Farklı bir arama veya kategori dene."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Sorunlar",
+    "rioters": "katılımcılar",
+    "country": "{count, plural, one {ülke} other {ülke}}",
+    "thisWeek": "bu hafta",
+    "actions": "eylemler",
+    "alsoKnownAs": "Şu adlarla da bilinir",
+    "actionsTitle": "⚡ Eylemler — Kişiselleştirilmiş Araç Setin",
+    "actionsDesc": "Evrime dayalı — 💡 **Fikirler** (çeşitlilik), ⚡ **Eylemler** (seçilim) ve 🤝 **Birlikte** (topluluk).",
+    "gatherEvidence": "📹 Kanıt Topla",
+    "gatherEvidenceDesc": "Neler olduğunu belgele — canlı yayına geç veya fotoğraf, video ve bağlantı paylaş.",
+    "riotReels": "🎬 Riot Reelleri",
+    "riotReelsDesc": "Bu Quiet Riot'ın ruhunu yakalayan komik ve ironik videolar.",
+    "experts": "🌟 Uzmanlar",
+    "expertsDesc": "Daha derine inen tutkulu gönüllüler — çevirmenler, uzmanlar, medya sorumluları, hukuk danışmanları.",
+    "communityFeed": "💬 Topluluk Akışı"
+  },
+  "Organisations": {
+    "title": "Kuruluşlar",
+    "subtitle": "Kuruluşlara göz at ve insanların her biriyle ilgili hangi sorunları olduğunu gör.",
+    "noResults": "Bu kategori için kuruluş bulunamadı."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Kuruluşlar",
+    "totalRioters": "toplam katılımcı",
+    "issues": "sorunlar",
+    "topIssueShare": "en büyük sorun payı",
+    "paretoTitle": "Pareto İlkesi:",
+    "paretoDesc": "Birkaç sorun genellikle tüm şikayetlerin %80'ini oluşturur. Aşağıdaki en önemli sorunlar, etkilenen kişi sayısına göre sıralanmıştır.",
+    "gatherEvidence": "📹 Kanıt Topla",
+    "gatherEvidenceDesc": "{orgName} ile ilgili neler olduğunu belgele."
+  },
+  "Campaigns": {
+    "title": "Kampanyalar",
+    "subtitle": "Değişim için fon toplayan {count} {count, plural, one {kampanya} other {kampanya}}.",
+    "noResults": "Kampanya bulunamadı. Farklı bir filtre dene."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanyalar",
+    "fullyFunded": "Tamamen Fonlandı",
+    "disbursed": "Fonlar Dağıtıldı",
+    "cancelled": "İptal Edildi",
+    "active": "Aktif",
+    "target": "hedef",
+    "raised": "toplanan",
+    "backers": "{count, plural, one {destekçi} other {destekçi}}",
+    "platformFee": "platform ücreti",
+    "wantToContribute": "Katkıda bulunmak ister misin?",
+    "topUpFirst": "Katkıda bulunmaya başlamak için önce cüzdanını yükle.",
+    "createAccountPrompt": "Bu kampanyayı desteklemek için hesap oluştur ve cüzdanını yükle.",
+    "goToWallet": "Cüzdana git",
+    "createAccount": "Hesap oluştur",
+    "completedMessage": "Bu kampanya {status}. Tüm {count} destekçiye teşekkürler!",
+    "recipient": "Alıcı"
+  },
+  "Assistants": {
+    "title": "Asistanlar",
+    "subtitle": "Katılımcıların harekete geçmesine yardımcı olan {count} AI ajanı ve insan organizatör çifti.",
+    "noResults": "Henüz asistan yok."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asistanlar",
+    "aiAgent": "AI Ajanı",
+    "humanOrganiser": "İnsan Organizatör",
+    "rioters": "katılımcılar",
+    "riots": "{count, plural, one {riot} other {riot}}",
+    "messages": "mesajlar",
+    "currentFocus": "Mevcut Odak",
+    "recentActivity": "Son Aktivite",
+    "riotsWeHelp": "Yardım Ettiğimiz Quiet Riot'lar",
+    "wantToBe": "{name} olmak ister misin?",
+    "openRole": "İnsan organizatör rolü, bu kategoriye tutkusu olan herkese açıktır. İlgini aşağıda belirt."
+  },
+  "Wallet": {
+    "title": "Cüzdanın",
+    "createPromptTitle": "Amaçları Desteklemeye Başla",
+    "createPromptDesc": "Fon yüklemek ve seni ilgilendiren kampanyalara katkıda bulunmak için ücretsiz bir hesap oluştur.",
+    "createAccount": "Hesap oluştur",
+    "activeCampaigns": "Aktif Kampanyalar",
+    "viewAll": "Tümünü gör"
+  },
+  "Profile": {
+    "title": "Profilin",
+    "time": "Zaman: ",
+    "skills": "Beceriler: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {gönderi} other {gönderi}}",
+    "likes": "{count, plural, one {alınan beğeni} other {alınan beğeni}}",
+    "yourRiots": "Quiet Riot'ların",
+    "noRiots": "Henüz Quiet Riot yok",
+    "findIssues": "Önemsediğin sorunları bul ve harekete katıl.",
+    "browseIssues": "Sorunlara göz at",
+    "memberSince": "Üyelik tarihi",
+    "rioters": "katılımcılar",
+    "connectedAccounts": "Bağlı Hesaplar",
+    "noConnectedAccounts": "Henüz bağlı hesap yok. Hesabını bağlamak için Google veya Facebook ile giriş yap.",
+    "deactivateAccount": "Hesabı devre dışı bırak",
+    "deactivateConfirm": "Hesabını devre dışı bırakmak istediğinden emin misin? 30 gün içinde yeniden etkinleştirebilirsin."
+  },
+  "Auth": {
+    "welcomeBack": "Tekrar hoş geldin",
+    "signInSubtitle": "Quiet Riots hesabına giriş yap",
+    "joinTitle": "Quiet Riots'a Katıl",
+    "joinSubtitle": "Ortak sorunlar etrafında örgütlen. Birlikte harekete geç.",
+    "continueGoogle": "Google ile devam et",
+    "continueFacebook": "Facebook ile devam et",
+    "connecting": "Bağlanıyor...",
+    "or": "veya",
+    "emailLabel": "E-posta adresi",
+    "sendMagicLink": "Sihirli bağlantı gönder",
+    "signUpWithEmail": "E-posta ile kaydol",
+    "sendingLink": "Bağlantı gönderiliyor...",
+    "checkEmail": "E-postanı kontrol et",
+    "signInLinkSent": "E-posta adresine giriş bağlantısı gönderdik. Devam etmek için bağlantıya tıkla.",
+    "signUpLinkSent": "E-posta adresine giriş bağlantısı gönderdik. Hesabını oluşturmak için bağlantıya tıkla.",
+    "noAccount": "Hesabın yok mu?",
+    "signUp": "Kaydol",
+    "hasAccount": "Zaten hesabın var mı?",
+    "signIn": "Giriş yap",
+    "termsAgree": "Kaydolarak şunları kabul etmiş olursun:",
+    "terms": "Şartlar",
+    "and": "ve",
+    "privacyPolicy": "Gizlilik Politikası",
+    "verifyTitle": "E-postanı kontrol et",
+    "verifyDesc": "E-posta adresine giriş bağlantısı gönderildi. Devam etmek için bağlantıya tıkla.",
+    "backToSignIn": "Girişe geri dön",
+    "errorTitle": "Kimlik Doğrulama Hatası",
+    "errorConfig": "Sunucu yapılandırmasında bir sorun var.",
+    "errorAccess": "Erişim reddedildi. Giriş yapma iznin olmayabilir.",
+    "errorVerification": "Giriş bağlantısının süresi dolmuş veya zaten kullanılmış.",
+    "errorDefault": "Kimlik doğrulama sırasında bir hata oluştu.",
+    "tryAgain": "Tekrar dene"
+  },
+  "AuthGate": {
+    "signInTo": "{action} için giriş yap",
+    "signIn": "Giriş yap",
+    "signInRequired": "Giriş gerekli",
+    "signInToAction": "{action} için giriş yapman gerekiyor.",
+    "cancel": "İptal",
+    "noAccount": "Hesabın yok mu?",
+    "signUp": "Kaydol"
+  },
+  "Error": {
+    "title": "Bir şeyler ters gitti",
+    "description": "Beklenmeyen bir hata oluştu.",
+    "tryAgain": "Tekrar dene"
+  },
+  "GlobalError": {
+    "title": "Bir şeyler ters gitti",
+    "description": "Beklenmeyen bir hata oluştu. Ekibimiz bilgilendirildi.",
+    "tryAgain": "Tekrar dene"
+  },
+  "NotFound": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığın sayfa mevcut değil veya taşınmış.",
+    "goHome": "Ana sayfaya git"
+  },
+  "Cards": {
+    "rioters": "katılımcılar",
+    "country": "{count, plural, one {ülke} other {ülke}}",
+    "issues": "sorunlar",
+    "idea": "Fikir",
+    "action": "Eylem",
+    "together": "Birlikte",
+    "time1min": "1 dk",
+    "time10min": "10 dk",
+    "time1hour": "1 saat+",
+    "skills": "Beceriler: ",
+    "anonymous": "Anonim",
+    "curated": "Seçilmiş",
+    "community": "Topluluk",
+    "aiPick": "AI Seçimi",
+    "funded": "Fonlandı",
+    "disbursed": "Dağıtıldı",
+    "backers": "{count, plural, one {destekçi} other {destekçi}}",
+    "aiAndHuman": "AI Ajanı & İnsan Organizatör",
+    "riots": "{count, plural, one {riot} other {riot}}"
+  },
+  "Health": {
+    "title": "📊 Topluluk Duygusu Endeksi",
+    "needsMet": "Karşılanan İhtiyaçlar",
+    "needsMetDesc": "Üyeler bunun değerli olduğunu hissediyor",
+    "membership": "Üyelik",
+    "membershipDesc": "Güven ve aidiyet",
+    "influence": "Etki",
+    "influenceDesc": "Sesin önemli",
+    "connection": "Bağlantı",
+    "connectionDesc": "Paylaşılan deneyimler",
+    "healthy": "Sağlıklı",
+    "growing": "Büyüyor",
+    "needsAttention": "İlgi Gerekli"
+  },
+  "Pivot": {
+    "title": "🔀 Pivot",
+    "peopleGlobally": "dünya genelinde kişi",
+    "issuePivot": "🔍 Sorun Pivotu",
+    "issuePivotDesc": "Aynı sorun, tüm kuruluşlar",
+    "orgPivot": "🏢 Kuruluş Pivotu",
+    "orgPivotDesc": "Tüm sorunlar, bir kuruluş",
+    "seeIssueAcross": "Tüm benzer kuruluşlarda \"{issueName}\" sorununu gör:",
+    "seeOrgIssues": "{orgName} kuruluşundaki tüm sorunları gör:",
+    "you": "SEN",
+    "rioters": "katılımcılar"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampanyalar",
+    "funded": "Fonlandı",
+    "disbursed": "Dağıtıldı",
+    "backers": "{count, plural, one {destekçi} other {destekçi}}"
+  },
+  "WalletBalance": {
+    "title": "Bakiyen",
+    "loaded": "yüklenen",
+    "contributed": "katkıda bulunulan",
+    "campaigns": "{count, plural, one {kampanya} other {kampanya}}"
+  },
+  "Transactions": {
+    "title": "Son İşlemler",
+    "topUp": "Yükleme",
+    "contribution": "Katkı",
+    "refund": "İade",
+    "justNow": "az önce",
+    "minutesAgo": "{count}dk önce",
+    "hoursAgo": "{count}sa önce",
+    "daysAgo": "{count}g önce",
+    "empty": "Henüz işlem yok. Başlamak için cüzdanını yükle!"
+  },
+  "Activity": {
+    "noActivity": "Henüz aktivite yok.",
+    "ai": "AI",
+    "human": "İ"
+  },
+  "Countries": {
+    "title": "🌍 Ülkeler"
+  },
+  "Synonyms": {
+    "placeholder": "Eş anlamlı ekle...",
+    "add": "Ekle"
+  },
+  "Join": {
+    "joined": "✅ Bu Quiet Riot'a katıldın",
+    "join": "✊ Bu Quiet Riot'a katıl"
+  },
+  "Search": {
+    "placeholder": "Sorun ara..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Düşüncelerini paylaş...",
+    "post": "Paylaş",
+    "empty": "Henüz gönderi yok. İlk paylaşan sen ol!"
+  },
+  "Actions": {
+    "ideas": "💡 Fikirler (Çeşitlilik)",
+    "actions": "⚡ Eylemler (Seçilim)",
+    "together": "🤝 Birlikte (Topluluk)",
+    "noResults": "Filtrelerinle eşleşen eylem yok. Seçimini genişletmeyi dene."
+  },
+  "Filter": {
+    "all": "Tümü",
+    "active": "Aktif",
+    "funded": "Fonlandı",
+    "disbursed": "Dağıtıldı"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Ne kadar zamanın var?",
+    "time1min": "1 dk",
+    "time10min": "10 dk",
+    "time1hour": "1 saat+",
+    "typeQuestion": "Ne tür?",
+    "ideas": "💡 Fikirler",
+    "actions": "⚡ Eylemler",
+    "together": "🤝 Birlikte"
+  },
+  "Reels": {
+    "empty": "Henüz reel yok. İlk gönderiyi yapan sen ol!",
+    "submitPrompt": "Bu sorunu özetleyen komik bir videon var mı?",
+    "submitSuccess": "Teşekkürler! Reelin incelenmek üzere gönderildi.",
+    "urlPlaceholder": "YouTube URL'si yapıştır...",
+    "captionPlaceholder": "Açıklama ekle (isteğe bağlı)...",
+    "submit": "Gönder"
+  },
+  "TopUp": {
+    "addFunds": "Bakiye Yükle",
+    "minTopUp": "Minimum yükleme £1",
+    "success": "Cüzdanına {amount} eklendi!",
+    "networkError": "Ağ hatası. Lütfen tekrar dene.",
+    "customAmount": "Özel tutar (£)",
+    "topUp": "Yükle",
+    "simulated": "Test için simüle edilmiş yükleme. Stripe ile gerçek ödemeler yakında."
+  },
+  "Contribute": {
+    "insufficientFunds": "Yetersiz bakiye. Önce cüzdanını yükle.",
+    "minContribution": "Minimum katkı 10p",
+    "contribute": "Katkıda Bulun",
+    "yourBalance": "Bakiyen: ",
+    "networkError": "Ağ hatası. Lütfen tekrar dene.",
+    "invalidAmount": "Geçerli bir tutar gir",
+    "customAmount": "Özel tutar (£)",
+    "give": "Ver",
+    "success": "{campaign} için {amount} katkıda bulunuldu!",
+    "remainingBalance": "Kalan bakiyen: {balance}",
+    "topUpPrompt": "Cüzdanını yükle",
+    "toKeepSupporting": "kampanyaları desteklemeye devam etmek için.",
+    "walletEmpty": "Cüzdanın boş.",
+    "topUp": "Yükle",
+    "toContribute": "katkıda bulunmak için."
+  },
+  "Claim": {
+    "success": "Teşekkürler! {name} rolüne ilgini not ettik. Seninle iletişime geçeceğiz.",
+    "placeholder": "Neden harika bir {name} olurdun? (isteğe bağlı)",
+    "submitting": "Gönderiliyor...",
+    "expressInterest": "İlgini Belirt"
+  },
+  "Evidence": {
+    "generalOrg": "Genel (belirli bir kuruluş yok)",
+    "placeholder": "Ne düşündüğünü söyle...",
+    "photosLabel": "Fotoğraflar (en fazla 4)",
+    "addPhotos": "+ Fotoğraf ekle",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks. 4 MB.",
+    "videoLabel": "Video (en fazla 1)",
+    "addVideo": "+ Video ekle",
+    "videoFormats": "MP4, MOV, WebM. Maks. 4 MB.",
+    "linkLabel": "Harici bağlantı",
+    "linkPlaceholder": "https://haber-makalesi.com/...",
+    "hideMedia": "Medyayı gizle",
+    "addMedia": "📎 Fotoğraf, video, bağlantı ekle",
+    "posting": "Paylaşılıyor...",
+    "uploading": "Yükleniyor...",
+    "submitEvidence": "Kanıt Gönder",
+    "goLive": "🔴 Şimdi Canlı Yayına Geç",
+    "maxPhotos": "Maksimum 4 fotoğraf. {count} atlandı.",
+    "videoFailed": "Video yüklemesi başarısız oldu",
+    "removePhoto": "{name} kaldır",
+    "removeVideo": "Videoyu kaldır",
+    "uploadFailed": "Yüklenemedi: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Profili düzenle",
+    "nameLabel": "Ad",
+    "timeLabel": "Mevcut zaman",
+    "time1min": "1 dakika",
+    "time1minDesc": "Sadece hızlı eylemler",
+    "time10min": "10 dakika",
+    "time10minDesc": "Çoğu eylem",
+    "time1hour": "1 saat+",
+    "time1hourDesc": "Derin katılım",
+    "skillsLabel": "Beceriler",
+    "skillsPlaceholder": "ör. tasarım, yazarlık, hukuk, kodlama",
+    "skillsHint": "Virgülle ayır. İlgili eylemlerle eşleştirmene yardımcı olur.",
+    "saving": "Kaydediliyor...",
+    "save": "Değişiklikleri kaydet",
+    "cancel": "İptal",
+    "nameRequired": "Ad gerekli",
+    "saveFailed": "Kaydetme başarısız oldu"
+  },
+  "SignupForm": {
+    "placeholder": "sen@ornek.com",
+    "submit": "Beni Bilgilendir"
+  },
+  "CookieConsent": {
+    "title": "Çerez tercihleri",
+    "description": "Giriş yapmanı sağlamak ve deneyimini iyileştirmek için çerezler kullanıyoruz. Analiz çerezleri sitenin nasıl kullanıldığını anlamamıza yardımcı olur.",
+    "acceptAll": "Tümünü kabul et",
+    "essentialOnly": "Sadece zorunlu",
+    "manage": "Tercihleri yönet",
+    "essential": "Zorunlu",
+    "essentialDescription": "Sitenin çalışması için gerekli. Devre dışı bırakılamaz.",
+    "analytics": "Analiz",
+    "analyticsDescription": "Siteyi nasıl kullandığını anlamamıza yardımcı olur, böylece geliştirebiliriz.",
+    "save": "Tercihleri kaydet"
+  }
+}

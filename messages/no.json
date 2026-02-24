@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organiser rundt felles saker. Finn ditt folk. Handle sammen."
+  },
+  "Nav": {
+    "issues": "Saker",
+    "assistants": "Assistenter",
+    "organisations": "Organisasjoner",
+    "wallet": "Lommebok",
+    "profile": "Profil",
+    "signIn": "Logg inn",
+    "signOut": "Logg ut",
+    "toggleMenu": "Vis/skjul meny"
+  },
+  "Footer": {
+    "mission": "Å forandre mer til det bedre i vår levetid enn vi tør forestille oss er mulig.",
+    "powered": "Quiet Riots · Drevet av OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Alt-i-ett for samfunnssaker",
+    "headline": "Forandring trenger ikke være høylytt for å være kraftfull",
+    "description": "Finn andre som deler dine saker. Handle sammen. Quiet Riots kobler sammen mennesker rundt felles frustrasjoner og gjør klager om til kollektiv handling.",
+    "browseIssues": "Utforsk saker",
+    "howItWorks": "Slik fungerer det",
+    "trendingIssues": "🔥 Trendende saker",
+    "viewAll": "Vis alle →",
+    "reelOfTheDay": "🎬 Dagens Riot Reel",
+    "riotersFunny": "{count} deltakere syntes dette var morsomt",
+    "from": "Fra:",
+    "findYourIssue": "Finn din sak",
+    "findYourIssueDesc": "Søk etter en hvilken som helst frustrasjon — tog, bredbånd, helsevesen, klima. Hvis den finnes, viser vi deg hvor mange andre som deler den.",
+    "useThePivot": "Bruk pivotet",
+    "useThePivotDesc": "Se den samme saken på tvers av alle organisasjoner, eller alle saker hos én organisasjon. Som tangodansere som skifter retning.",
+    "takeAction": "Handle",
+    "takeActionDesc": "Idéer, handlinger og fellesskap — tilpasset din tid og dine ferdigheter. Små handlinger fører til store forandringer.",
+    "missionQuote": "\"Å forandre mer til det bedre i vår levetid enn vi tør forestille oss er mulig.\"",
+    "basedOn": "Basert på boken <em>Quiet Riots</em> fra 2014 av Simon Darling",
+    "joinMovement": "✊ Bli med i bevegelsen"
+  },
+  "Issues": {
+    "title": "Saker",
+    "subtitle": "{count} saker fordelt på {categoryCount} kategorier. Finn din.",
+    "searchPlaceholder": "Søk saker eller synonymer...",
+    "noResults": "Ingen saker funnet. Prøv et annet søk eller en annen kategori."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Saker",
+    "rioters": "deltakere",
+    "country": "{count, plural, one {land} other {land}}",
+    "thisWeek": "denne uken",
+    "actions": "handlinger",
+    "alsoKnownAs": "Også kjent som",
+    "actionsTitle": "⚡ Handlinger — Din personlige verktøykasse",
+    "actionsDesc": "Basert på evolusjon — 💡 **Idéer** (variasjon), ⚡ **Handlinger** (seleksjon) og 🤝 **Sammen** (fellesskap).",
+    "gatherEvidence": "📹 Samle bevis",
+    "gatherEvidenceDesc": "Dokumenter hva som skjer — gå live eller del bilder, videoer og lenker.",
+    "riotReels": "🎬 Riot Reels",
+    "riotReelsDesc": "Morsomme og ironiske videoer som fanger ånden i denne Quiet Riot.",
+    "experts": "🌟 Eksperter",
+    "expertsDesc": "Engasjerte frivillige som går dypere — oversettere, spesialister, medieansvarlige, juridiske rådgivere.",
+    "communityFeed": "💬 Fellesskapsfeed"
+  },
+  "Organisations": {
+    "title": "Organisasjoner",
+    "subtitle": "Utforsk organisasjoner og se hvilke saker folk har med hver enkelt.",
+    "noResults": "Ingen organisasjoner funnet for denne kategorien."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organisasjoner",
+    "totalRioters": "deltakere totalt",
+    "issues": "saker",
+    "topIssueShare": "andel toppsak",
+    "paretoTitle": "Pareto-prinsippet:",
+    "paretoDesc": "En håndfull saker står vanligvis for 80 % av alle klager. Toppsakene nedenfor er rangert etter antall berørte personer.",
+    "gatherEvidence": "📹 Samle bevis",
+    "gatherEvidenceDesc": "Dokumenter hva som skjer med {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanjer",
+    "subtitle": "{count} {count, plural, one {kampanje} other {kampanjer}} samler inn penger til forandring.",
+    "noResults": "Ingen kampanjer funnet. Prøv et annet filter."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanjer",
+    "fullyFunded": "Fullt finansiert",
+    "disbursed": "Midler utbetalt",
+    "cancelled": "Avlyst",
+    "active": "Aktiv",
+    "target": "mål",
+    "raised": "samlet inn",
+    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}",
+    "platformFee": "plattformavgift",
+    "wantToContribute": "Vil du bidra?",
+    "topUpFirst": "Fyll opp lommeboken din først for å begynne å bidra.",
+    "createAccountPrompt": "Opprett en konto og lad lommeboken for å støtte denne kampanjen.",
+    "goToWallet": "Gå til lommebok",
+    "createAccount": "Opprett konto",
+    "completedMessage": "Denne kampanjen har blitt {status}. Takk til alle {count} bidragsytere!",
+    "recipient": "Mottaker"
+  },
+  "Assistants": {
+    "title": "Assistenter",
+    "subtitle": "{count} par av AI-agenter og menneskelige organisatorer som hjelper deltakere å handle.",
+    "noResults": "Ingen assistenter tilgjengelig ennå."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Assistenter",
+    "aiAgent": "AI-agent",
+    "humanOrganiser": "Menneskelig organisator",
+    "rioters": "deltakere",
+    "riots": "{count, plural, one {riot} other {riots}}",
+    "messages": "meldinger",
+    "currentFocus": "Nåværende fokus",
+    "recentActivity": "Nylig aktivitet",
+    "riotsWeHelp": "Quiet Riots vi hjelper med",
+    "wantToBe": "Vil du bli {name}?",
+    "openRole": "Rollen som menneskelig organisator er åpen for alle med lidenskap for denne kategorien. Uttrykk din interesse nedenfor."
+  },
+  "Wallet": {
+    "title": "Din lommebok",
+    "createPromptTitle": "Begynn å støtte saker",
+    "createPromptDesc": "Opprett en gratis konto for å laste inn midler og bidra til kampanjer som betyr noe for deg.",
+    "createAccount": "Opprett konto",
+    "activeCampaigns": "Aktive kampanjer",
+    "viewAll": "Vis alle"
+  },
+  "Profile": {
+    "title": "Din profil",
+    "time": "Tid: ",
+    "skills": "Ferdigheter: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {innlegg} other {innlegg}}",
+    "likes": "{count, plural, one {mottatt like} other {mottatte likes}}",
+    "yourRiots": "Dine Quiet Riots",
+    "noRiots": "Ingen Quiet Riots ennå",
+    "findIssues": "Finn saker du bryr deg om og bli med i bevegelsen.",
+    "browseIssues": "Utforsk saker",
+    "memberSince": "Medlem siden",
+    "rioters": "deltakere",
+    "connectedAccounts": "Tilkoblede kontoer",
+    "noConnectedAccounts": "Ingen kontoer tilkoblet ennå. Logg inn med Google eller Facebook for å koble kontoen din.",
+    "deactivateAccount": "Deaktiver konto",
+    "deactivateConfirm": "Er du sikker på at du vil deaktivere kontoen din? Du kan reaktivere den innen 30 dager."
+  },
+  "Auth": {
+    "welcomeBack": "Velkommen tilbake",
+    "signInSubtitle": "Logg inn på din Quiet Riots-konto",
+    "joinTitle": "Bli med i Quiet Riots",
+    "joinSubtitle": "Organiser rundt felles saker. Handle sammen.",
+    "continueGoogle": "Fortsett med Google",
+    "continueFacebook": "Fortsett med Facebook",
+    "connecting": "Kobler til...",
+    "or": "eller",
+    "emailLabel": "E-postadresse",
+    "sendMagicLink": "Send magisk lenke",
+    "signUpWithEmail": "Registrer med e-post",
+    "sendingLink": "Sender lenke...",
+    "checkEmail": "Sjekk e-posten din",
+    "signInLinkSent": "Vi sendte en innloggingslenke til e-postadressen din. Klikk på lenken for å fortsette.",
+    "signUpLinkSent": "Vi sendte en innloggingslenke til e-postadressen din. Klikk på lenken for å opprette kontoen din.",
+    "noAccount": "Har du ikke en konto?",
+    "signUp": "Registrer deg",
+    "hasAccount": "Har du allerede en konto?",
+    "signIn": "Logg inn",
+    "termsAgree": "Ved å registrere deg godtar du våre",
+    "terms": "Vilkår",
+    "and": "og",
+    "privacyPolicy": "Personvernregler",
+    "verifyTitle": "Sjekk e-posten din",
+    "verifyDesc": "En innloggingslenke er sendt til e-postadressen din. Klikk på lenken for å fortsette.",
+    "backToSignIn": "Tilbake til innlogging",
+    "errorTitle": "Autentiseringsfeil",
+    "errorConfig": "Det er et problem med serverkonfigurasjonen.",
+    "errorAccess": "Tilgang nektet. Du har kanskje ikke tillatelse til å logge inn.",
+    "errorVerification": "Innloggingslenken har utløpt eller er allerede brukt.",
+    "errorDefault": "Det oppstod en feil under autentiseringen.",
+    "tryAgain": "Prøv igjen"
+  },
+  "AuthGate": {
+    "signInTo": "Logg inn for å {action}",
+    "signIn": "Logg inn",
+    "signInRequired": "Innlogging påkrevd",
+    "signInToAction": "Du må logge inn for å {action}.",
+    "cancel": "Avbryt",
+    "noAccount": "Har du ikke en konto?",
+    "signUp": "Registrer deg"
+  },
+  "Error": {
+    "title": "Noe gikk galt",
+    "description": "En uventet feil oppstod.",
+    "tryAgain": "Prøv igjen"
+  },
+  "GlobalError": {
+    "title": "Noe gikk galt",
+    "description": "En uventet feil oppstod. Teamet vårt er varslet.",
+    "tryAgain": "Prøv igjen"
+  },
+  "NotFound": {
+    "title": "Siden ble ikke funnet",
+    "description": "Siden du leter etter finnes ikke eller har blitt flyttet.",
+    "goHome": "Gå til forsiden"
+  },
+  "Cards": {
+    "rioters": "deltakere",
+    "country": "{count, plural, one {land} other {land}}",
+    "issues": "saker",
+    "idea": "Idé",
+    "action": "Handling",
+    "together": "Sammen",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 time+",
+    "skills": "Ferdigheter: ",
+    "anonymous": "Anonym",
+    "curated": "Utvalgt",
+    "community": "Fellesskap",
+    "aiPick": "AI-valg",
+    "funded": "Finansiert",
+    "disbursed": "Utbetalt",
+    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}",
+    "aiAndHuman": "AI-agent & menneskelig organisator",
+    "riots": "{count, plural, one {riot} other {riots}}"
+  },
+  "Health": {
+    "title": "📊 Fellesskapsindeks",
+    "needsMet": "Behov oppfylt",
+    "needsMetDesc": "Medlemmer synes det er verdt det",
+    "membership": "Medlemskap",
+    "membershipDesc": "Tillit & tilhørighet",
+    "influence": "Innflytelse",
+    "influenceDesc": "Din stemme teller",
+    "connection": "Samhørighet",
+    "connectionDesc": "Delte opplevelser",
+    "healthy": "Sunn",
+    "growing": "Voksende",
+    "needsAttention": "Trenger oppmerksomhet"
+  },
+  "Pivot": {
+    "title": "🔀 Pivotet",
+    "peopleGlobally": "mennesker globalt",
+    "issuePivot": "🔍 Sakspivot",
+    "issuePivotDesc": "Samme sak, alle organisasjoner",
+    "orgPivot": "🏢 Organisasjonspivot",
+    "orgPivotDesc": "Alle saker, én organisasjon",
+    "seeIssueAcross": "Se \"{issueName}\" på tvers av alle lignende organisasjoner:",
+    "seeOrgIssues": "Se alle saker hos {orgName}:",
+    "you": "DEG",
+    "rioters": "deltakere"
+  },
+  "CampaignProgress": {
+    "title": "💰 Kampanjer",
+    "funded": "Finansiert",
+    "disbursed": "Utbetalt",
+    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}"
+  },
+  "WalletBalance": {
+    "title": "Din saldo",
+    "loaded": "lastet inn",
+    "contributed": "bidratt",
+    "campaigns": "{count, plural, one {kampanje} other {kampanjer}}"
+  },
+  "Transactions": {
+    "title": "Nylige transaksjoner",
+    "topUp": "Påfylling",
+    "contribution": "Bidrag",
+    "refund": "Refusjon",
+    "justNow": "akkurat nå",
+    "minutesAgo": "{count}m siden",
+    "hoursAgo": "{count}t siden",
+    "daysAgo": "{count}d siden",
+    "empty": "Ingen transaksjoner ennå. Fyll opp lommeboken din for å komme i gang!"
+  },
+  "Activity": {
+    "noActivity": "Ingen aktivitet ennå.",
+    "ai": "AI",
+    "human": "M"
+  },
+  "Countries": {
+    "title": "🌍 Land"
+  },
+  "Synonyms": {
+    "placeholder": "Legg til et synonym...",
+    "add": "Legg til"
+  },
+  "Join": {
+    "joined": "✅ Ble med i denne Quiet Riot",
+    "join": "✊ Bli med i denne Quiet Riot"
+  },
+  "Search": {
+    "placeholder": "Søk saker..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Del tankene dine...",
+    "post": "Publiser",
+    "empty": "Ingen innlegg ennå. Vær den første til å dele!"
+  },
+  "Actions": {
+    "ideas": "💡 Idéer (Variasjon)",
+    "actions": "⚡ Handlinger (Seleksjon)",
+    "together": "🤝 Sammen (Fellesskap)",
+    "noResults": "Ingen handlinger matcher filtrene dine. Prøv å utvide utvalget."
+  },
+  "Filter": {
+    "all": "Alle",
+    "active": "Aktive",
+    "funded": "Finansierte",
+    "disbursed": "Utbetalte"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Hvor mye tid har du?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 time+",
+    "typeQuestion": "Hvilken type?",
+    "ideas": "💡 Idéer",
+    "actions": "⚡ Handlinger",
+    "together": "🤝 Sammen"
+  },
+  "Reels": {
+    "empty": "Ingen reels ennå. Vær den første til å sende inn en!",
+    "submitPrompt": "Har du en morsom video som oppsummerer denne saken?",
+    "submitSuccess": "Takk! Din reel er sendt inn til vurdering.",
+    "urlPlaceholder": "Lim inn en YouTube-URL...",
+    "captionPlaceholder": "Legg til en bildetekst (valgfritt)...",
+    "submit": "Send inn"
+  },
+  "TopUp": {
+    "addFunds": "Legg til midler",
+    "minTopUp": "Minste påfylling er £1",
+    "success": "{amount} lagt til i lommeboken din!",
+    "networkError": "Nettverksfeil. Vennligst prøv igjen.",
+    "customAmount": "Valgfritt beløp (£)",
+    "topUp": "Fyll opp",
+    "simulated": "Simulert påfylling for testing. Ekte betalinger via Stripe kommer snart."
+  },
+  "Contribute": {
+    "insufficientFunds": "Utilstrekkelig saldo. Fyll opp lommeboken din først.",
+    "minContribution": "Minste bidrag er 10p",
+    "contribute": "Bidra",
+    "yourBalance": "Din saldo: ",
+    "networkError": "Nettverksfeil. Vennligst prøv igjen.",
+    "invalidAmount": "Oppgi et gyldig beløp",
+    "customAmount": "Valgfritt beløp (£)",
+    "give": "Gi",
+    "success": "Bidro med {amount} til {campaign}!",
+    "remainingBalance": "Din gjenværende saldo: {balance}",
+    "topUpPrompt": "Fyll opp lommeboken",
+    "toKeepSupporting": "for å fortsette å støtte kampanjer.",
+    "walletEmpty": "Lommeboken din er tom.",
+    "topUp": "Fyll opp",
+    "toContribute": "for å bidra."
+  },
+  "Claim": {
+    "success": "Takk! Vi har notert din interesse for rollen som {name}. Vi tar kontakt.",
+    "placeholder": "Hvorfor ville du vært bra som {name}? (valgfritt)",
+    "submitting": "Sender inn...",
+    "expressInterest": "Uttrykk interesse"
+  },
+  "Evidence": {
+    "generalOrg": "Generelt (ingen spesifikk organisasjon)",
+    "placeholder": "Si hva du mener...",
+    "photosLabel": "Bilder (opptil 4)",
+    "addPhotos": "+ Legg til bilder",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks 4 MB per stk.",
+    "videoLabel": "Video (maks 1)",
+    "addVideo": "+ Legg til video",
+    "videoFormats": "MP4, MOV, WebM. Maks 4 MB.",
+    "linkLabel": "Ekstern lenke",
+    "linkPlaceholder": "https://nyhetsartikkel.no/...",
+    "hideMedia": "Skjul media",
+    "addMedia": "📎 Legg til bilder, video, lenker",
+    "posting": "Publiserer...",
+    "uploading": "Laster opp...",
+    "submitEvidence": "Send inn bevis",
+    "goLive": "🔴 Gå live nå",
+    "maxPhotos": "Maksimalt 4 bilder. {count} hoppet over.",
+    "videoFailed": "Videoopplasting mislyktes",
+    "removePhoto": "Fjern {name}",
+    "removeVideo": "Fjern video",
+    "uploadFailed": "Kunne ikke laste opp: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Rediger profil",
+    "nameLabel": "Navn",
+    "timeLabel": "Tilgjengelig tid",
+    "time1min": "1 minutt",
+    "time1minDesc": "Bare raske handlinger",
+    "time10min": "10 minutter",
+    "time10minDesc": "De fleste handlinger",
+    "time1hour": "1 time+",
+    "time1hourDesc": "Dypt engasjement",
+    "skillsLabel": "Ferdigheter",
+    "skillsPlaceholder": "f.eks. design, skriving, juss, koding",
+    "skillsHint": "Kommaseparert. Hjelper med å matche deg med relevante handlinger.",
+    "saving": "Lagrer...",
+    "save": "Lagre endringer",
+    "cancel": "Avbryt",
+    "nameRequired": "Navn er påkrevd",
+    "saveFailed": "Kunne ikke lagre"
+  },
+  "SignupForm": {
+    "placeholder": "deg@eksempel.no",
+    "submit": "Varsle meg"
+  },
+  "CookieConsent": {
+    "title": "Cookie-innstillinger",
+    "description": "Vi bruker informasjonskapsler for å holde deg innlogget og forbedre opplevelsen din. Analysecookies hjelper oss å forstå hvordan nettstedet brukes.",
+    "acceptAll": "Godta alle",
+    "essentialOnly": "Bare nødvendige",
+    "manage": "Administrer innstillinger",
+    "essential": "Nødvendige",
+    "essentialDescription": "Påkrevd for at nettstedet skal fungere. Kan ikke deaktiveres.",
+    "analytics": "Analyse",
+    "analyticsDescription": "Hjelper oss å forstå hvordan du bruker nettstedet slik at vi kan forbedre det.",
+    "save": "Lagre innstillinger"
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "Metadata": {
+    "title": "Quiet Riots",
+    "description": "Organiziraj se oko zajednickih problema. Pronadi svoje ljude. Djeluj zajedno."
+  },
+  "Nav": {
+    "issues": "Problemi",
+    "assistants": "Asistenti",
+    "organisations": "Organizacije",
+    "wallet": "Novcanik",
+    "profile": "Profil",
+    "signIn": "Prijava",
+    "signOut": "Odjava",
+    "toggleMenu": "Prebaci izbornik"
+  },
+  "Footer": {
+    "mission": "Promijeniti vise na bolje za naseg zivota nego sto se usudujemo zamisliti da je moguce.",
+    "powered": "Quiet Riots · Powered by OpenClaw AI Agent"
+  },
+  "Home": {
+    "tagline": "Srediste problema",
+    "headline": "Promjena ne mora biti glasna da bi bila mocna",
+    "description": "Pronadi druge koji dijele tvoje probleme. Djeluj zajedno. Quiet Riots povezuje ljude oko zajednickih frustracija i pretvara prituzbe u kolektivno djelovanje.",
+    "browseIssues": "Pregledaj probleme",
+    "howItWorks": "Kako funkcionira",
+    "trendingIssues": "\ud83d\udd25 Popularni problemi",
+    "viewAll": "Pogledaj sve \u2192",
+    "reelOfTheDay": "\ud83c\udfac Riot Reel dana",
+    "riotersFunny": "{count} sudionika smatra ovo smijesnim",
+    "from": "Od:",
+    "findYourIssue": "Pronadi svoj problem",
+    "findYourIssueDesc": "Trazi bilo kakvu frustraciju \u2014 vlakovi, internet, zdravstvo, klima. Ako postoji, pokazat cemo ti koliko drugih ga dijeli.",
+    "useThePivot": "Koristi Pivot",
+    "useThePivotDesc": "Pogledaj isti problem u svim organizacijama ili sve probleme u jednoj organizaciji. Kao plesaci tanga koji mijenjaju smjer.",
+    "takeAction": "Djeluj",
+    "takeActionDesc": "Ideje, akcije i zajednica \u2014 prilagodeno tvom vremenu i vjestinama. Male akcije se zbrajaju u veliku promjenu.",
+    "missionQuote": "\"Promijeniti vise na bolje za naseg zivota nego sto se usudujemo zamisliti da je moguce.\"",
+    "basedOn": "Prema knjizi iz 2014. <em>Quiet Riots</em> Simona Darlinga",
+    "joinMovement": "\u270a Pridruzi se pokretu"
+  },
+  "Issues": {
+    "title": "Problemi",
+    "subtitle": "{count} problema u {categoryCount} kategorija. Pronadi svoj.",
+    "searchPlaceholder": "Trazi probleme ili sinonime...",
+    "noResults": "Nisu pronadeni problemi. Pokusaj s drugom pretragom ili kategorijom."
+  },
+  "IssueDetail": {
+    "breadcrumb": "Problemi",
+    "rioters": "sudionika",
+    "country": "{count, plural, one {drzava} other {drzava}}",
+    "thisWeek": "ovaj tjedan",
+    "actions": "akcija",
+    "alsoKnownAs": "Poznato i kao",
+    "actionsTitle": "\u26a1 Akcije \u2014 Tvoj personalizirani set alata",
+    "actionsDesc": "Temeljeno na evoluciji \u2014 \ud83d\udca1 **Ideje** (varijacija), \u26a1 **Akcije** (selekcija) i \ud83e\udd1d **Zajedno** (zajednica).",
+    "gatherEvidence": "\ud83d\udcf9 Prikupljaj dokaze",
+    "gatherEvidenceDesc": "Dokumentiraj sto se dogada \u2014 emitiraj uzivo ili dijeli fotografije, videa i linkove.",
+    "riotReels": "\ud83c\udfac Riot Reels",
+    "riotReelsDesc": "Smijesni i ironicni videi koji dociravaju duh ovog Quiet Riota.",
+    "experts": "\ud83c\udf1f Strucnjaci",
+    "expertsDesc": "Strastveni volonteri koji idu dublje \u2014 prevoditelji, specijalisti, medijski voditelji, pravni savjetnici.",
+    "communityFeed": "\ud83d\udcac Feed zajednice"
+  },
+  "Organisations": {
+    "title": "Organizacije",
+    "subtitle": "Pregledaj organizacije i pogledaj kakve probleme ljudi imaju sa svakom.",
+    "noResults": "Nisu pronadene organizacije za ovu kategoriju."
+  },
+  "OrgDetail": {
+    "breadcrumb": "Organizacije",
+    "totalRioters": "ukupno sudionika",
+    "issues": "problema",
+    "topIssueShare": "udio glavnog problema",
+    "paretoTitle": "Paretovo pravilo:",
+    "paretoDesc": "Saka problema obicno cini 80% svih prituzbi. Glavni problemi ispod poredani su prema broju pogodenih osoba.",
+    "gatherEvidence": "\ud83d\udcf9 Prikupljaj dokaze",
+    "gatherEvidenceDesc": "Dokumentiraj sto se dogada s {orgName}."
+  },
+  "Campaigns": {
+    "title": "Kampanje",
+    "subtitle": "{count} {count, plural, one {kampanja prikuplja} other {kampanja prikuplja}} sredstva za promjenu.",
+    "noResults": "Nisu pronadene kampanje. Pokusaj s drugim filtrom."
+  },
+  "CampaignDetail": {
+    "breadcrumb": "Kampanje",
+    "fullyFunded": "Potpuno financirano",
+    "disbursed": "Sredstva isplacena",
+    "cancelled": "Otkazano",
+    "active": "Aktivna",
+    "target": "cilj",
+    "raised": "prikupljeno",
+    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}",
+    "platformFee": "naknada platforme",
+    "wantToContribute": "Zelis doprinijeti?",
+    "topUpFirst": "Prvo napuni novcanik da pocnes doprinositi.",
+    "createAccountPrompt": "Kreiraj racun i napuni novcanik za potporu ove kampanje.",
+    "goToWallet": "Idi na novcanik",
+    "createAccount": "Kreiraj racun",
+    "completedMessage": "Ova kampanja je {status}. Hvala svim {count} podrzavateljima!",
+    "recipient": "Primatelj"
+  },
+  "Assistants": {
+    "title": "Asistenti",
+    "subtitle": "{count} parova AI agenata i ljudskih organizatora koji pomazu sudionicima da djeluju.",
+    "noResults": "Zasad nema dostupnih asistenata."
+  },
+  "AssistantDetail": {
+    "breadcrumb": "Asistenti",
+    "aiAgent": "AI Agent",
+    "humanOrganiser": "Organizator",
+    "rioters": "sudionika",
+    "riots": "{count, plural, one {riot} other {riotova}}",
+    "messages": "poruka",
+    "currentFocus": "Trenutni fokus",
+    "recentActivity": "Nedavna aktivnost",
+    "riotsWeHelp": "Quiet Riots u kojima pomazemo",
+    "wantToBe": "Zelis biti {name}?",
+    "openRole": "Uloga ljudskog organizatora otvorena je za svakoga sa strasti za ovu kategoriju. Izrazi svoj interes ispod."
+  },
+  "Wallet": {
+    "title": "Tvoj novcanik",
+    "createPromptTitle": "Pocni podrzavati ciljeve",
+    "createPromptDesc": "Kreiraj besplatan racun za punjenje sredstava i doprinos kampanjama koje su ti vazne.",
+    "createAccount": "Kreiraj racun",
+    "activeCampaigns": "Aktivne kampanje",
+    "viewAll": "Pogledaj sve"
+  },
+  "Profile": {
+    "title": "Tvoj profil",
+    "time": "Vrijeme: ",
+    "skills": "Vjestine: ",
+    "quietRiot": "{count, plural, one {Quiet Riot} other {Quiet Riots}}",
+    "posts": "{count, plural, one {objava} other {objava}}",
+    "likes": "{count, plural, one {primljeni like} other {primljenih lajkova}}",
+    "yourRiots": "Tvoji Quiet Riots",
+    "noRiots": "Zasad nema Quiet Riots",
+    "findIssues": "Pronadi probleme koji te zanimaju i pridruzi se pokretu.",
+    "browseIssues": "Pregledaj probleme",
+    "memberSince": "Clan od",
+    "rioters": "sudionika",
+    "connectedAccounts": "Povezani racuni",
+    "noConnectedAccounts": "Zasad nema povezanih racuna. Prijavi se putem Googlea ili Facebooka za povezivanje racuna.",
+    "deactivateAccount": "Deaktiviraj racun",
+    "deactivateConfirm": "Jesi li siguran da zelis deaktivirati racun? Mozes ga reaktivirati unutar 30 dana."
+  },
+  "Auth": {
+    "welcomeBack": "Dobrodosao natrag",
+    "signInSubtitle": "Prijavi se u svoj Quiet Riots racun",
+    "joinTitle": "Pridruzi se Quiet Riots",
+    "joinSubtitle": "Organiziraj se oko zajednickih problema. Djeluj zajedno.",
+    "continueGoogle": "Nastavi s Googleom",
+    "continueFacebook": "Nastavi s Facebookom",
+    "connecting": "Povezivanje...",
+    "or": "ili",
+    "emailLabel": "E-mail adresa",
+    "sendMagicLink": "Posalji magicni link",
+    "signUpWithEmail": "Registriraj se e-mailom",
+    "sendingLink": "Slanje linka...",
+    "checkEmail": "Provjeri svoj e-mail",
+    "signInLinkSent": "Poslali smo link za prijavu na tvoju e-mail adresu. Klikni na link za nastavak.",
+    "signUpLinkSent": "Poslali smo link za prijavu na tvoju e-mail adresu. Klikni na link za kreiranje racuna.",
+    "noAccount": "Nemas racun?",
+    "signUp": "Registriraj se",
+    "hasAccount": "Vec imas racun?",
+    "signIn": "Prijava",
+    "termsAgree": "Registracijom prihvacas nase",
+    "terms": "Uvjete",
+    "and": "i",
+    "privacyPolicy": "Politiku privatnosti",
+    "verifyTitle": "Provjeri svoj e-mail",
+    "verifyDesc": "Link za prijavu poslan je na tvoju e-mail adresu. Klikni na link za nastavak.",
+    "backToSignIn": "Natrag na prijavu",
+    "errorTitle": "Greska pri autentifikaciji",
+    "errorConfig": "Postoji problem s konfiguracijom posluzitelja.",
+    "errorAccess": "Pristup odbijen. Mozda neamas dopustenje za prijavu.",
+    "errorVerification": "Link za prijavu je istekao ili je vec koristen.",
+    "errorDefault": "Doslo je do greske tijekom autentifikacije.",
+    "tryAgain": "Pokusaj ponovno"
+  },
+  "AuthGate": {
+    "signInTo": "Prijavi se za {action}",
+    "signIn": "Prijava",
+    "signInRequired": "Potrebna prijava",
+    "signInToAction": "Moras se prijaviti za {action}.",
+    "cancel": "Odustani",
+    "noAccount": "Nemas racun?",
+    "signUp": "Registriraj se"
+  },
+  "Error": {
+    "title": "Nesto je poslo po krivu",
+    "description": "Doslo je do neocekivane greske.",
+    "tryAgain": "Pokusaj ponovno"
+  },
+  "GlobalError": {
+    "title": "Nesto je poslo po krivu",
+    "description": "Doslo je do neocekivane greske. Nas tim je obavijesten.",
+    "tryAgain": "Pokusaj ponovno"
+  },
+  "NotFound": {
+    "title": "Stranica nije pronadena",
+    "description": "Stranica koju trazis ne postoji ili je premjestena.",
+    "goHome": "Na pocetnu"
+  },
+  "Cards": {
+    "rioters": "sudionika",
+    "country": "{count, plural, one {drzava} other {drzava}}",
+    "issues": "problema",
+    "idea": "Ideja",
+    "action": "Akcija",
+    "together": "Zajedno",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 sat+",
+    "skills": "Vjestine: ",
+    "anonymous": "Anonimno",
+    "curated": "Odabrano",
+    "community": "Zajednica",
+    "aiPick": "Izbor AI-ja",
+    "funded": "Financirano",
+    "disbursed": "Isplaceno",
+    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}",
+    "aiAndHuman": "AI Agent i Organizator",
+    "riots": "{count, plural, one {riot} other {riotova}}"
+  },
+  "Health": {
+    "title": "\ud83d\udcca Indeks osjecaja zajednistva",
+    "needsMet": "Zadovoljene potrebe",
+    "needsMetDesc": "Clanovi smatraju da vrijedi",
+    "membership": "Clanstvo",
+    "membershipDesc": "Povjerenje i pripadnost",
+    "influence": "Utjecaj",
+    "influenceDesc": "Tvoj glas je vazan",
+    "connection": "Povezanost",
+    "connectionDesc": "Zajednicka iskustva",
+    "healthy": "Zdrava",
+    "growing": "U rastu",
+    "needsAttention": "Zahtijeva paznju"
+  },
+  "Pivot": {
+    "title": "\ud83d\udd00 Pivot",
+    "peopleGlobally": "ljudi globalno",
+    "issuePivot": "\ud83d\udd0d Pivot problema",
+    "issuePivotDesc": "Isti problem, sve org.",
+    "orgPivot": "\ud83c\udfe2 Pivot organizacije",
+    "orgPivotDesc": "Svi problemi, jedna org.",
+    "seeIssueAcross": "Pogledaj \"{issueName}\" u svim slicnim organizacijama:",
+    "seeOrgIssues": "Pogledaj sve probleme u {orgName}:",
+    "you": "TI",
+    "rioters": "sudionika"
+  },
+  "CampaignProgress": {
+    "title": "\ud83d\udcb0 Kampanje",
+    "funded": "Financirano",
+    "disbursed": "Isplaceno",
+    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}"
+  },
+  "WalletBalance": {
+    "title": "Tvoj saldo",
+    "loaded": "napunjeno",
+    "contributed": "doprinijeto",
+    "campaigns": "{count, plural, one {kampanja} other {kampanja}}"
+  },
+  "Transactions": {
+    "title": "Nedavne transakcije",
+    "topUp": "Punjenje",
+    "contribution": "Doprinos",
+    "refund": "Povrat",
+    "justNow": "upravo sada",
+    "minutesAgo": "prije {count} min",
+    "hoursAgo": "prije {count} h",
+    "daysAgo": "prije {count} d",
+    "empty": "Zasad nema transakcija. Napuni novcanik za pocetak!"
+  },
+  "Activity": {
+    "noActivity": "Zasad nema aktivnosti.",
+    "ai": "AI",
+    "human": "Lj"
+  },
+  "Countries": {
+    "title": "\ud83c\udf0d Drzave"
+  },
+  "Synonyms": {
+    "placeholder": "Dodaj sinonim...",
+    "add": "Dodaj"
+  },
+  "Join": {
+    "joined": "\u2705 Pridruzio se ovom Quiet Riotu",
+    "join": "\u270a Pridruzi se ovom Quiet Riotu"
+  },
+  "Search": {
+    "placeholder": "Trazi probleme..."
+  },
+  "Feed": {
+    "composerPlaceholder": "Podijeli svoje misli...",
+    "post": "Objavi",
+    "empty": "Zasad nema objava. Budi prvi koji nesto podijeli!"
+  },
+  "Actions": {
+    "ideas": "\ud83d\udca1 Ideje (Varijacija)",
+    "actions": "\u26a1 Akcije (Selekcija)",
+    "together": "\ud83e\udd1d Zajedno (Zajednica)",
+    "noResults": "Nijedna akcija ne odgovara tvojim filtrima. Pokusaj prosiriti odabir."
+  },
+  "Filter": {
+    "all": "Sve",
+    "active": "Aktivne",
+    "funded": "Financirane",
+    "disbursed": "Isplacene"
+  },
+  "TimeSkill": {
+    "timeQuestion": "Koliko vremena imas?",
+    "time1min": "1 min",
+    "time10min": "10 min",
+    "time1hour": "1 sat+",
+    "typeQuestion": "Koji tip?",
+    "ideas": "\ud83d\udca1 Ideje",
+    "actions": "\u26a1 Akcije",
+    "together": "\ud83e\udd1d Zajedno"
+  },
+  "Reels": {
+    "empty": "Zasad nema videa. Budi prvi koji posalji jedan!",
+    "submitPrompt": "Imas li smijesni video koji sazetno prikazuje ovaj problem?",
+    "submitSuccess": "Hvala! Tvoj video je poslan na pregled.",
+    "urlPlaceholder": "Zalijepi YouTube URL...",
+    "captionPlaceholder": "Dodaj opis (opcionalno)...",
+    "submit": "Posalji"
+  },
+  "TopUp": {
+    "addFunds": "Dodaj sredstva",
+    "minTopUp": "Minimalno punjenje je \u00a31",
+    "success": "{amount} dodano u tvoj novcanik!",
+    "networkError": "Mrezna greska. Pokusaj ponovno.",
+    "customAmount": "Prilagodeni iznos (\u00a3)",
+    "topUp": "Napuni",
+    "simulated": "Simulirano punjenje za testiranje. Prave uplate putem Stripea uskoro."
+  },
+  "Contribute": {
+    "insufficientFunds": "Nedovoljno sredstava. Prvo napuni novcanik.",
+    "minContribution": "Minimalni doprinos je 10p",
+    "contribute": "Doprinesi",
+    "yourBalance": "Tvoj saldo: ",
+    "networkError": "Mrezna greska. Pokusaj ponovno.",
+    "invalidAmount": "Unesi valjani iznos",
+    "customAmount": "Prilagodeni iznos (\u00a3)",
+    "give": "Doniraj",
+    "success": "Doprinijeto {amount} za {campaign}!",
+    "remainingBalance": "Preostali saldo: {balance}",
+    "topUpPrompt": "Napuni novcanik",
+    "toKeepSupporting": "za nastavak podrzavanja kampanja.",
+    "walletEmpty": "Tvoj novcanik je prazan.",
+    "topUp": "Napuni",
+    "toContribute": "za doprinos."
+  },
+  "Claim": {
+    "success": "Hvala! Zabilježili smo tvoj interes za ulogu {name}. Javit cemo ti se.",
+    "placeholder": "Zasto bi bio odlican kao {name}? (opcionalno)",
+    "submitting": "Slanje...",
+    "expressInterest": "Izrazi interes"
+  },
+  "Evidence": {
+    "generalOrg": "Opcenito (bez specificne organizacije)",
+    "placeholder": "Reci sto mislis...",
+    "photosLabel": "Fotografije (do 4)",
+    "addPhotos": "+ Dodaj fotografije",
+    "photoFormats": "JPEG, PNG, WebP, GIF. Maks. 4 MB svaka.",
+    "videoLabel": "Video (maks. 1)",
+    "addVideo": "+ Dodaj video",
+    "videoFormats": "MP4, MOV, WebM. Maks. 4 MB.",
+    "linkLabel": "Vanjski link",
+    "linkPlaceholder": "https://novinski-clanak.hr/...",
+    "hideMedia": "Sakrij medije",
+    "addMedia": "\ud83d\udcce Dodaj fotografije, video, linkove",
+    "posting": "Objavljivanje...",
+    "uploading": "Ucitavanje...",
+    "submitEvidence": "Posalji dokaze",
+    "goLive": "\ud83d\udd34 Uzivo sada",
+    "maxPhotos": "Maksimalno 4 fotografije. {count} preskoceno.",
+    "videoFailed": "Ucitavanje videa neuspjelo",
+    "removePhoto": "Ukloni {name}",
+    "removeVideo": "Ukloni video",
+    "uploadFailed": "Neuspjelo ucitavanje: {names}"
+  },
+  "ProfileEdit": {
+    "title": "Uredi profil",
+    "nameLabel": "Ime",
+    "timeLabel": "Dostupno vrijeme",
+    "time1min": "1 minuta",
+    "time1minDesc": "Samo brze akcije",
+    "time10min": "10 minuta",
+    "time10minDesc": "Vecina akcija",
+    "time1hour": "1 sat+",
+    "time1hourDesc": "Duboka ukljucenost",
+    "skillsLabel": "Vjestine",
+    "skillsPlaceholder": "npr. dizajn, pisanje, pravo, programiranje",
+    "skillsHint": "Odvojeno zarezima. Pomaze u uparivanju s relevantnim akcijama.",
+    "saving": "Spremanje...",
+    "save": "Spremi promjene",
+    "cancel": "Odustani",
+    "nameRequired": "Ime je obavezno",
+    "saveFailed": "Spremanje neuspjelo"
+  },
+  "SignupForm": {
+    "placeholder": "ti@primjer.hr",
+    "submit": "Obavijesti me"
+  },
+  "CookieConsent": {
+    "title": "Postavke kolacica",
+    "description": "Koristimo kolacice kako bismo te odrzali prijavljenim i poboljsali tvoje iskustvo. Analiticki kolacici pomazu nam razumjeti kako se stranica koristi.",
+    "acceptAll": "Prihvati sve",
+    "essentialOnly": "Samo neophodni",
+    "manage": "Upravljaj postavkama",
+    "essential": "Neophodni",
+    "essentialDescription": "Potrebni za funkcioniranje stranice. Ne mogu se onemoguciti.",
+    "analytics": "Analiticki",
+    "analyticsDescription": "Pomazu nam razumjeti kako koristis stranicu kako bismo je mogli poboljsati.",
+    "save": "Spremi postavke"
+  }
+}
