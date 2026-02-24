@@ -2866,7 +2866,7 @@ export async function seed() {
     userIds['James L.'],
     'Five cancellations in a row. This is what the departure board at Manchester Victoria looks like every morning.',
     'photo',
-    '["https://images.unsplash.com/photo-1568402102990-bc541580b59f?w=800&h=600&fit=crop"]',
+    '["/evidence/manchester-victoria-departures.jpg"]',
     null,
     '[]',
     0,
