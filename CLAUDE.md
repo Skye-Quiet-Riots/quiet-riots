@@ -18,20 +18,20 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 ## Commands
 
-| Command                  | Purpose                              |
-| ------------------------ | ------------------------------------ |
-| `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 530 tests (~2.4s)                |
-| `npm run test:watch`     | Watch mode                           |
-| `npm run test:coverage`  | With V8 coverage                     |
-| `npm run seed`           | Reset database (blocked on production) |
-| `npm run seed:production`| Reset production DB (requires confirmation) |
-| `npm run migrate`        | Run pending database migrations      |
-| `npm run migrate:status` | Show applied & pending migrations    |
-| `npm run dev`            | Local dev server                     |
-| `npm run lint`           | ESLint                               |
-| `npm run format`         | Prettier — format all files          |
-| `npm run format:check`   | Prettier — check formatting (CI)     |
+| Command                   | Purpose                                     |
+| ------------------------- | ------------------------------------------- |
+| `npm run build`           | Build — ALWAYS run before committing        |
+| `npm test`                | Run 530 tests (~2.4s)                       |
+| `npm run test:watch`      | Watch mode                                  |
+| `npm run test:coverage`   | With V8 coverage                            |
+| `npm run seed`            | Reset database (blocked on production)      |
+| `npm run seed:production` | Reset production DB (requires confirmation) |
+| `npm run migrate`         | Run pending database migrations             |
+| `npm run migrate:status`  | Show applied & pending migrations           |
+| `npm run dev`             | Local dev server                            |
+| `npm run lint`            | ESLint                                      |
+| `npm run format`          | Prettier — format all files                 |
+| `npm run format:check`    | Prettier — check formatting (CI)            |
 
 ## Development Rules
 
@@ -92,6 +92,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **OpenClaw default session reset wipes memory at 4 AM:** The default `session.reset.mode` is `"daily"` with `atHour: 4`. This creates a brand new session on the first inbound message after 4 AM, so the bot loses all conversational context overnight. Fixed by setting `session.reset.mode: "idle"` with `idleMinutes: 1440` (24h) — sessions now only reset after 24 hours of inactivity. The auto-update LaunchAgent also runs at 04:00 which compounds the issue.
 - **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. `npm run seed` is blocked on production by default — use `npm run seed:production` only if you truly need a full reset (drops all tables).
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
+- **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
 
 ## Database ID Convention
 
@@ -108,7 +109,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 At the start of every session (or when asked to "pick up where we left off"):
 
-1. Read CLAUDE.md and SESSION_LOG.md
+1. Read CLAUDE.md, then SESSION_LOG.md (lightweight index), then the latest session file linked from it
 2. Summarise where we left off and what the priorities are
 3. Run the test suite (`npm test`) and flag any issues
 4. Check OpenClaw health and version:
@@ -135,12 +136,14 @@ At the end of every session (or when asked to "wrap up" / "good night"):
    - Flag that OpenClaw sessions may need clearing: `rm ~/.openclaw/agents/main/sessions/*.jsonl`
    - Flag that gateway may need restarting: `launchctl stop ai.openclaw.gateway && launchctl start ai.openclaw.gateway`
 4. Update this file (CLAUDE.md) with any new decisions, gotchas, or known issues
-5. Append a dated entry to SESSION_LOG.md with:
+5. Create a new session file in `session-logs/` (e.g. `session-logs/2026-02-session-20.md`) with:
    - What was worked on
    - Decisions made and why
    - Anything discovered or surprising
+   - Test count
+   - PRs created/merged
    - Clear next steps
-6. If SESSION_LOG.md has more than 5 entries, archive older ones to `session-logs/`
+6. Update `SESSION_LOG.md` index: set the "Latest Session" pointer and "Current Priorities" to the new session, add a row to the "All Sessions" table
 7. **Ensure all code is pushed:** Check `git status` and `git log origin/main..HEAD` — if there are unpushed commits, push to origin. If there are uncommitted changes, commit them first (run build/tests before committing).
 8. **Run backup:** Execute `bash ~/.openclaw/scripts/backup.sh` to sync config/secrets to the private backup repo immediately (don't wait for the 03:00 scheduled run).
 9. **Clean up worktrees:** If this session used a worktree branch that has been merged to main, flag it for cleanup: `git worktree remove <path>` and `git branch -d <branch>`.
