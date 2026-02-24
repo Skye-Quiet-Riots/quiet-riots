@@ -349,7 +349,7 @@ describe('Bot API: get_wallet', () => {
   it('auto-creates wallet for user without one', async () => {
     // First ensure Marcio has a wallet (from previous test)
     // Now test with a user identified via bot
-    const { body: idBody } = await callBot('identify', {
+    await callBot('identify', {
       phone: '+447700900111',
       name: 'Wallet Test User',
     });
@@ -500,5 +500,85 @@ describe('Bot API: get_assistant_detail', () => {
     });
     expect(status).toBe(404);
     expect(body.error).toContain('not found');
+  });
+});
+
+// ─── Evidence ─────────────────────────────────────────────
+
+describe('Bot API: submit_evidence', () => {
+  it('creates text evidence via bot', async () => {
+    const { status, body } = await callBot('submit_evidence', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Evidence from bot test',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.content).toBe('Evidence from bot test');
+    expect(body.data.evidence.media_type).toBe('text');
+    expect(body.data.evidence.live).toBe(0);
+  });
+
+  it('creates evidence with org_id', async () => {
+    const { status, body } = await callBot('submit_evidence', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Evidence about Southern Rail',
+      org_id: 'org-southern',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.org_name).toBe('Southern Rail');
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('submit_evidence', {
+      phone: '+449999999999',
+      issue_id: 'issue-rail',
+      content: 'Should fail',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: get_evidence', () => {
+  it('returns evidence for an issue', async () => {
+    const { status, body } = await callBot('get_evidence', {
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('filters by org_id', async () => {
+    const { status, body } = await callBot('get_evidence', {
+      issue_id: 'issue-rail',
+      org_id: 'org-southern',
+    });
+    expect(status).toBe(200);
+    body.data.evidence.forEach((e: { org_id: string }) => {
+      expect(e.org_id).toBe('org-southern');
+    });
+  });
+});
+
+describe('Bot API: go_live', () => {
+  it('creates live evidence', async () => {
+    const { status, body } = await callBot('go_live', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Going live from the platform!',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.live).toBe(1);
+    expect(body.data.evidence.media_type).toBe('live_stream');
+  });
+
+  it('returns encouragement message', async () => {
+    const { status, body } = await callBot('go_live', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Live again!',
+    });
+    expect(status).toBe(200);
+    expect(body.data.message).toContain('passionate');
   });
 });

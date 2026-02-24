@@ -561,6 +561,75 @@ export async function seedTestData() {
     ],
   });
 
+  // Evidence
+  await db.execute({
+    sql: `INSERT INTO evidence (id, issue_id, org_id, user_id, content, media_type, photo_urls, video_url, external_urls, live, likes, comments_count, shares, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'ev-001',
+      'issue-rail',
+      'org-southern',
+      'user-sarah',
+      'Platform 4 at Manchester Piccadilly. 17:42 to Leeds cancelled.',
+      'text',
+      '[]',
+      null,
+      '[]',
+      0,
+      10,
+      1,
+      2,
+      '2026-02-22 17:45:00',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO evidence (id, issue_id, org_id, user_id, content, media_type, photo_urls, video_url, external_urls, live, likes, comments_count, shares, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'ev-002',
+      'issue-rail',
+      'org-southern',
+      'user-marcio',
+      'LIVE from Sheffield station. Platform packed.',
+      'live_stream',
+      '[]',
+      null,
+      '[]',
+      1,
+      5,
+      0,
+      1,
+      '2026-02-24 07:30:00',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO evidence (id, issue_id, org_id, user_id, content, media_type, photo_urls, video_url, external_urls, live, likes, comments_count, shares, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'ev-003',
+      'issue-rail',
+      null,
+      'user-sarah',
+      'Departure board showing 5 cancellations.',
+      'photo',
+      '["https://placehold.co/800x600/dc2626/fff?text=Departure+Board"]',
+      null,
+      '[]',
+      0,
+      8,
+      0,
+      3,
+      '2026-02-21 08:15:00',
+    ],
+  });
+
+  // Evidence comments
+  await db.execute({
+    sql: `INSERT INTO evidence_comments (id, evidence_id, user_id, content, created_at)
+          VALUES (?, ?, ?, ?, ?)`,
+    args: ['ev-comment-001', 'ev-001', 'user-marcio', 'Same problem here!', '2026-02-22 18:00:00'],
+  });
+
   // Wallet for sarah with £5 balance
   await db.execute({
     sql: `INSERT INTO wallets (id, user_id, balance_pence, total_loaded_pence, total_spent_pence)

@@ -14,6 +14,7 @@ import { getReelsForIssue } from '@/lib/queries/reels';
 import { getCampaignsForIssue } from '@/lib/queries/campaigns';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
+import { getEvidenceForIssue } from '@/lib/queries/evidence';
 import { getSession } from '@/lib/session';
 import { toAssistantCategory } from '@/types';
 
@@ -31,6 +32,7 @@ import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
 import { ReelsSection } from '@/components/interactive/reels-section';
 import { CampaignProgress } from '@/components/data/campaign-progress';
+import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
@@ -59,6 +61,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const synonyms = await getSynonymsForIssue(issue.id);
   const reels = await getReelsForIssue(issue.id);
   const campaigns = await getCampaignsForIssue(issue.id);
+  const evidence = await getEvidenceForIssue(issue.id);
   const assistant = await getAssistantByCategory(toAssistantCategory(issue.category));
 
   return (
@@ -152,6 +155,22 @@ export default async function IssueDetailPage({ params }: Props) {
           <CampaignProgress campaigns={campaigns} />
         </section>
       )}
+
+      {/* Gather Evidence */}
+      <section className="mb-8">
+        <h2 className="mb-4 text-lg font-bold">📹 Gather Evidence</h2>
+        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+          Document what&apos;s happening — go live or share photos, videos, and links.
+        </p>
+        <EvidenceSection
+          issueId={issue.id}
+          initialEvidence={evidence}
+          organisations={issuePivotRows.map((r) => ({
+            id: r.organisation_id,
+            name: r.organisation_name,
+          }))}
+        />
+      </section>
 
       {/* Riot Reels */}
       <section className="mb-8">

@@ -5,12 +5,14 @@ import {
   getOrgsForIssue,
   getTotalRiotersForOrg,
 } from '@/lib/queries/organisations';
+import { getEvidenceForOrg } from '@/lib/queries/evidence';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { StatBadge } from '@/components/data/stat-badge';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { PivotToggle } from '@/components/interactive/pivot-toggle';
+import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { toAssistantCategory } from '@/types';
 
 interface Props {
@@ -26,6 +28,7 @@ export default async function OrgDetailPage({ params }: Props) {
   const firstIssue = orgPivotRows[0];
   const issuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
   const totalRioters = await getTotalRiotersForOrg(org.id);
+  const evidence = await getEvidenceForOrg(org.id);
   const assistant = await getAssistantByCategory(toAssistantCategory(org.category));
 
   return (
@@ -77,7 +80,7 @@ export default async function OrgDetailPage({ params }: Props) {
       </div>
 
       {/* The Pivot */}
-      <section>
+      <section className="mb-8">
         <PivotToggle
           issuePivotRows={issuePivotRows}
           orgPivotRows={orgPivotRows}
@@ -87,6 +90,22 @@ export default async function OrgDetailPage({ params }: Props) {
           orgName={org.name}
         />
       </section>
+
+      {/* Gather Evidence */}
+      {firstIssue && (
+        <section className="mb-8">
+          <h2 className="mb-4 text-lg font-bold">📹 Gather Evidence</h2>
+          <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+            Document what&apos;s happening with {org.name}.
+          </p>
+          <EvidenceSection
+            issueId={firstIssue.issue_id}
+            initialEvidence={evidence}
+            organisations={[{ id: org.id, name: org.name }]}
+            preselectedOrgId={org.id}
+          />
+        </section>
+      )}
     </div>
   );
 }

@@ -2563,7 +2563,7 @@ export async function seed() {
       'NHS Waiting Times',
       'uK7DRJx9nbU',
       'Cassetteboy vs Jeremy Hunt',
-      'Hunt\'s own words remixed to YMCA — the NHS roast we deserved',
+      "Hunt's own words remixed to YMCA — the NHS roast we deserved",
       'curated',
       'approved',
       567,
@@ -2628,7 +2628,7 @@ export async function seed() {
       'Pothole Damage',
       'e01EAS0GUa0',
       'UK Pothole Epidemic - Resurface Our Roads',
-      'Britain\'s roads: where craters come with free suspension tests',
+      "Britain's roads: where craters come with free suspension tests",
       'curated',
       'approved',
       456,
@@ -2659,7 +2659,7 @@ export async function seed() {
     [
       'Customer Service Hold Times',
       'w2A8q3XIhu0',
-      'Hold music used to sound better. Here\'s why.',
+      "Hold music used to sound better. Here's why.",
       'We have all suffered. Now we know why it hurts.',
       'curated',
       'approved',
@@ -2835,35 +2835,269 @@ export async function seed() {
   }
 
   // =============================
+  // EVIDENCE (10 posts + 4 comments for Train Cancellations / Northern Trains)
+  // =============================
+  const evidenceSql = `INSERT INTO evidence (id, issue_id, org_id, user_id, content, media_type, photo_urls, video_url, external_urls, live, likes, comments_count, shares, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  const trainId = issueIds['Train Cancellations'];
+  const northernId = orgIds['Northern Trains'];
+
+  // 1. Text: Platform cancelled, no announcement (Sarah K.)
+  const ev1 = await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Sarah K.'],
+    'Platform 3 at Leeds just cleared the board — every Northern service cancelled until further notice. No announcement, no staff in sight. Passengers left standing in the cold.',
+    'text',
+    '[]',
+    null,
+    '[]',
+    0,
+    14,
+    2,
+    3,
+    '2025-03-15 08:22:00',
+  ]);
+
+  // 2. Photo: Departure board with 5 cancellations (James L.)
+  const ev2 = await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['James L.'],
+    'Five cancellations in a row. This is what the departure board at Manchester Victoria looks like every morning.',
+    'photo',
+    '["https://images.unsplash.com/photo-1565793298459-11ab4c0beb32?w=800"]',
+    null,
+    '[]',
+    0,
+    22,
+    1,
+    8,
+    '2025-03-14 07:45:00',
+  ]);
+
+  // 3. Text+link: 2-month tracking data (Emma W., no org)
+  await insertRow(evidenceSql, [
+    trainId,
+    null,
+    userIds['Emma W.'],
+    'I have been tracking every cancellation for 2 months. 47 cancellations out of 120 scheduled services on the Leeds-Skipton route. That is a 39% failure rate.',
+    'link',
+    '[]',
+    null,
+    '["https://www.networkrail.co.uk/running-the-railway/performance/"]',
+    0,
+    31,
+    3,
+    12,
+    '2025-03-13 19:30:00',
+  ]);
+
+  // 4. Live stream: Sheffield station packed (Marcio R.)
+  await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Marcio R.'],
+    'Going live from Sheffield station — absolute chaos. Three trains cancelled back-to-back, the platform is heaving.',
+    'live_stream',
+    '[]',
+    null,
+    '[]',
+    0,
+    18,
+    0,
+    5,
+    '2025-03-12 17:55:00',
+  ]);
+
+  // 5. Photo x2: "Minor disruption" reality (Priya S.)
+  await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Priya S.'],
+    'Northern call this "minor disruption". These photos tell a different story. People crammed on a 2-coach train that should be 4.',
+    'photo',
+    '["https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800","https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800"]',
+    null,
+    '[]',
+    0,
+    27,
+    2,
+    7,
+    '2025-03-11 08:10:00',
+  ]);
+
+  // 6. Link: ORR performance data (Dr. Patel)
+  await insertRow(evidenceSql, [
+    trainId,
+    null,
+    userIds['Dr. Patel'],
+    'The Office of Rail and Road just published Q3 performance data. Northern has the worst cancellation rate of any operator — 6.8% of services cancelled versus 3.2% industry average.',
+    'link',
+    '[]',
+    null,
+    '["https://dataportal.orr.gov.uk/"]',
+    0,
+    35,
+    4,
+    15,
+    '2025-03-10 14:20:00',
+  ]);
+
+  // 7. Video: Guard telling passengers to wait (Yuki T.)
+  await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Yuki T.'],
+    'Filmed this at Huddersfield. Guard telling a packed platform there is no information on when the next train will arrive. "Just wait" is not good enough.',
+    'video',
+    '[]',
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    '[]',
+    0,
+    19,
+    1,
+    4,
+    '2025-03-09 18:40:00',
+  ]);
+
+  // 8. Text: Missed daughter school play (Carlos M.)
+  await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Carlos M.'],
+    "Missed my daughter's school play because the 16:45 from Manchester was cancelled with no replacement service. She was looking for me in the audience. This cannot keep happening.",
+    'text',
+    '[]',
+    null,
+    '[]',
+    0,
+    42,
+    5,
+    9,
+    '2025-03-08 20:15:00',
+  ]);
+
+  // 9. Live stream: Day 4 no service (Sarah K.) — simulates "live now"
+  const ev9 = await insertRow(evidenceSql, [
+    trainId,
+    northernId,
+    userIds['Sarah K.'],
+    'Day 4 with no direct service Leeds to Harrogate. Going live from the bus replacement. This is 2025, not 1925.',
+    'live_stream',
+    '[]',
+    null,
+    '[]',
+    1,
+    8,
+    0,
+    2,
+    new Date().toISOString().replace('T', ' ').slice(0, 19),
+  ]);
+
+  // 10. Photo: Replacement bus (James L., no org)
+  await insertRow(evidenceSql, [
+    trainId,
+    null,
+    userIds['James L.'],
+    'The "rail replacement bus" turned up 40 minutes late and only goes to the wrong station. You literally could not make this up.',
+    'photo',
+    '["https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800"]',
+    null,
+    '[]',
+    0,
+    16,
+    2,
+    6,
+    '2025-03-06 09:30:00',
+  ]);
+
+  // Evidence comments
+  const evCommentSql = `INSERT INTO evidence_comments (id, evidence_id, user_id, content, created_at) VALUES (?, ?, ?, ?, ?)`;
+
+  await insertRow(evCommentSql, [
+    ev1,
+    userIds['James L.'],
+    'Same thing at Victoria. They just silently remove services from the board.',
+    '2025-03-15 08:35:00',
+  ]);
+  await insertRow(evCommentSql, [
+    ev1,
+    userIds['Dr. Patel'],
+    'This is exactly the kind of evidence the ORR needs. Keep documenting.',
+    '2025-03-15 09:10:00',
+  ]);
+  await insertRow(evCommentSql, [
+    ev2,
+    userIds['Priya S.'],
+    'I see this every single day. The 07:12 has been cancelled more than it has run this month.',
+    '2025-03-14 08:02:00',
+  ]);
+  await insertRow(evCommentSql, [
+    ev9,
+    userIds['Marcio R.'],
+    'Stay strong Sarah. We are all watching.',
+    new Date().toISOString().replace('T', ' ').slice(0, 19),
+  ]);
+
+  // =============================
   // CATEGORY ASSISTANTS (2 pairs for dev seed — full set via scripts/seed-assistants.ts)
   // =============================
   const assistantSql = `INSERT INTO category_assistants (id, category, agent_name, agent_icon, agent_quote, agent_bio, agent_gradient_start, agent_gradient_end, human_name, human_icon, human_quote, human_bio, human_gradient_start, human_gradient_end, goal, focus, focus_detail, profile_url)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  const seedAssistants: [string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string][] = [
+  const seedAssistants: [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+  ][] = [
     [
-      'transport', 'Jett', '🛩️',
+      'transport',
+      'Jett',
+      '🛩️',
       'Once helped a rioter file 6 delay-repay claims during a single journey. Total reclaimed: £94.',
       'Tracks cancellation patterns, auto-files delay-repay claims, and compiles evidence packs for regulators.',
-      '#8b5cf6', '#7c3aed',
-      'Bex', '👩🏻',
+      '#8b5cf6',
+      '#7c3aed',
+      'Bex',
+      '👩🏻',
       'Watching Avanti scramble when 400 of us tweeted at the same time was genuinely beautiful.',
       'Regular commuter from Manchester who got tired of being a statistic.',
-      '#3b82f6', '#1d4ed8',
+      '#3b82f6',
+      '#1d4ed8',
       'Help rioters hold UK transport companies to account — one cancelled train at a time.',
       'Avanti West Coast cancellation patterns',
       'Building a dataset of 1,200+ cancellations for the ORR.',
       '/assistants/transport',
     ],
     [
-      'telecoms', 'Pulse', '💜',
+      'telecoms',
+      'Pulse',
+      '💜',
       'Ran speed tests for 200 rioters. Average: 18 Mbps on plans advertising 65.',
       'Analyses broadband speeds and compiles provider comparison data.',
-      '#a855f7', '#7c3aed',
-      'Jin', '🧑🏻',
+      '#a855f7',
+      '#7c3aed',
+      'Jin',
+      '🧑🏻',
       'A whole street switching broadband together was chaotic — but it worked.',
       'Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised.',
-      '#06b6d4', '#0891b2',
+      '#06b6d4',
+      '#0891b2',
       'Help rioters get the broadband and mobile service they actually pay for.',
       'Mid-contract price rises',
       'Collecting evidence from rioters hit by CPI+ increases mid-contract.',
@@ -2882,6 +3116,7 @@ export async function seed() {
   console.log(`   ${reelCount} riot reels`);
   console.log(`   ${campaignCount} campaigns`);
   console.log(`   ${seedAssistants.length} category assistants`);
+  console.log('   10 evidence posts + 4 comments');
   console.log(
     '   150+ pivot links, 80+ synonyms, 35+ actions, seasonal patterns, issue relations — all populated',
   );
