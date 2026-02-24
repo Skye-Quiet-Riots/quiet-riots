@@ -1,70 +1,7 @@
 # Session Log
 
 > Older sessions archived in `session-logs/`. Only the last 5 sessions are kept here.
-> Session 12 should be archived next.
-
----
-
-## 2026-02-18 (Session 12) — PR Review, Merge, SKILL.md Reels, User Testing
-
-### What was worked on
-
-1. **Visual tour of end-user experience**
-   - Showed production website: homepage, issues page, issue detail (Flight Delays)
-   - Fixed Vercel preview deployment error — staging DB was missing riot_reels tables
-   - Discovered `.env.local` points to **production** DB, not staging — critical gotcha
-   - Pulled Vercel Preview env vars, ran migration 003 directly against staging DB
-   - Seeded 5 real-ish reels into staging; fixed CSP `img-src` for YouTube thumbnails
-   - Showed WhatsApp bot experience via gateway logs and curl examples
-
-2. **CSP fix for YouTube thumbnails**
-   - Added `https://img.youtube.com https://i.ytimg.com` to `img-src` in `src/proxy.ts`
-   - Committed and pushed on `claude/suspicious-banach`
-
-3. **WhatsApp bot Riot Reels support (SKILL.md)**
-   - Added `get_riot_reel` and `submit_riot_reel` to API Actions Reference table
-   - Added Step 4.5: Riot Reels conversation step between Actions and Community
-   - Added Submit Reel sub-flow (YouTube URL → optional caption → submit_riot_reel)
-   - Updated choice sets in Steps 3, 4, 5, 6 to include "Watch a Riot Reel" option
-   - Cleared OpenClaw sessions and restarted gateway
-
-4. **Merged PR #8 (Riot Reels feature) to main**
-   - Used `gh pr merge 8 --squash --admin` to bypass review requirement
-   - CI passed, Vercel deployed successfully
-
-5. **User testing of WhatsApp bot Riot Reels API**
-   - Tested `get_riot_reel` against preview: first call returns reel, second returns different reel, third returns null (unseen tracking works)
-   - Tested `submit_riot_reel`: with caption, without caption, and invalid YouTube URL (all correct)
-   - Confirmed production deploy live after merge
-
-6. **Audited real vs fake YouTube videos**
-   - Seed data uses `placeholder01`-`placeholder17` — all fake
-   - Manually-seeded production reels: 3 of 5 video IDs are also fake (404)
-   - Only 2 real working videos found: `M11SvDtPBhA` (Miley Cyrus) and `Mq_wZE93ZAY` (Randy Gumtree)
-
-### Key decisions
-
-- **Admin merge for PR #8** — branch protection requires 1 approval; used `--admin` bypass at user's request
-- **SKILL.md reel flow** — reels sit between Actions (Step 4) and Community (Step 5); submit flow asks for URL then optional caption
-- **Step 3 choice change** — replaced "See all issues at Southern Rail" with "Watch a Riot Reel" to introduce reels early
-
-### Discoveries
-
-- **`.env.local` is production, not staging** — Vercel Preview env vars are separate; use `npx vercel env pull --environment preview` from the main repo root (not worktree) to get staging creds
-- **libSQL `datetime("now")` default fails** — `SQLITE_UNKNOWN: default value of column is not constant` when creating `_migrations` table on staging
-- **Rate limiting on bot API** — rapid curl calls in a loop hit the sliding-window limiter; need delays between calls for testing
-- **`npx vercel env pull` fails in worktrees** — must run from the linked repo root
-
-### Test count
-
-344 tests passing across 28 files (~2s) — unchanged
-
-### Next steps
-
-- **Find and seed real YouTube videos** for all 17 placeholder reels across 10 issues (started but not completed)
-- Replace fake video IDs in both seed.ts and production DB
-- Profile page improvements
-- Consider updating seed.ts to include real YouTube IDs so re-seeding doesn't regress
+> Session 13 should be archived next.
 
 ---
 
@@ -353,3 +290,55 @@
 - **Stripe integration** — replace simulated top-up with real Stripe Checkout
 - **Profile page improvements**
 - **Worktree cleanup** — this branch (stoic-poincare) should be cleaned up once PR #20 is merged
+
+---
+
+## 2026-02-24 (Session 18) — Assistant Banners on Pages + Production Bug Fixes + Overview Banner
+
+### What was worked on
+
+1. **Fixed assistant banners not appearing on listing pages (PR #22, merged)**
+   - Root cause: category case mismatch — `category_assistants` table stores "Transport" but code compared with lowercase "transport"
+   - Fixed case-insensitive `.find()` comparison on listing pages
+   - Fixed SQL queries with `WHERE LOWER(category) = LOWER(?)`
+   - Fixed assistant profile links using `.toLowerCase()` in href
+   - Fixed `/assistants/[category]` routes rejecting capitalised URLs — lowercase URL params before validation
+   - All 4 API routes under `/api/assistants/[category]/*` normalised
+
+2. **Added AssistantOverviewBanner for unfiltered pages (PR #23, merged)**
+   - User noticed no assistant info on unfiltered `/issues` and `/organisations` pages
+   - Created `AssistantOverviewBanner` component — shows count of all 16 pairs with overlapping gradient icons, links to `/assistants`
+   - Updated both listing pages: always fetch `getAllAssistants()`, show category-specific `AssistantBanner` when filtered or `AssistantOverviewBanner` when unfiltered
+   - 5 new tests for the component
+   - Both PRs deployed to production via Vercel auto-deploy
+
+3. **PostHog EU region merge (part of PR #22)**
+   - Resolved merge conflicts with PostHog EU region changes (`.env.example`, `posthog-provider.tsx`, `proxy.ts`)
+   - Kept EU PostHog endpoints in all resolved conflicts
+
+### Key decisions
+
+- **Defensive lowercase at boundaries, not DB migration** — rather than migrating all `category_assistants` rows to lowercase, applied `LOWER()` in SQL and `.toLowerCase()` in JS at every comparison point. Safer and handles future mixed-case data.
+- **Always fetch assistants on listing pages** — changed from conditional `category ? getAllAssistants() : Promise.resolve([])` to always `getAllAssistants()`. The 16-row query is negligible and enables the overview banner.
+
+### Discoveries
+
+- **Category casing is inconsistent across the codebase** — `AssistantCategory` type uses lowercase, `Category` type uses title case, DB stores whatever the seed script used. Must always compare case-insensitively.
+- **Shell globbing on `[category]` paths** — zsh interprets brackets in file paths like `src/app/assistants/[category]/page.tsx`. Must quote paths in git commands.
+- **WebFetch can't see server-rendered React content** — used `curl | grep` to verify banners in production HTML.
+
+### Test count
+
+565 tests passing across 37 files (~2.5s) — up from 530 (+35 tests: 30 from assistant banners + 5 from overview banner)
+
+### PRs created and merged
+
+- PR #22: Switch PostHog to EU region (included assistant banner fixes via merge)
+- PR #23: Add AssistantOverviewBanner to unfiltered listing pages
+
+### Next steps
+
+- **Stripe integration** — replace simulated top-up with real Stripe Checkout
+- **Profile page improvements**
+- **Worktree cleanup** — `stoic-poincare` branch should be cleaned up
+- **PostHog env vars** — need to be set in Vercel when ready
