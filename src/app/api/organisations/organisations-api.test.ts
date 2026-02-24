@@ -4,6 +4,7 @@ import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
 import { GET as getOrganisations } from './route';
 import { GET as getOrgDetail } from './[id]/route';
+import { GET as getOrgEvidence } from './[id]/evidence/route';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -52,5 +53,30 @@ describe('GET /api/organisations/[id]', () => {
       params: Promise.resolve({ id: 'nonexistent' }),
     });
     expect(response.status).toBe(404);
+  });
+});
+
+describe('GET /api/organisations/[id]/evidence', () => {
+  it('returns evidence for an organisation', async () => {
+    const request = new Request('http://localhost:3000/api/organisations/org-southern/evidence');
+    const response = await getOrgEvidence(request, {
+      params: Promise.resolve({ id: 'org-southern' }),
+    });
+    const { ok, data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(ok).toBe(true);
+    // ev-001 and ev-002 are linked to org-southern; ev-003 has no org
+    expect(data.length).toBe(2);
+  });
+
+  it('returns empty array for org with no evidence', async () => {
+    const request = new Request('http://localhost:3000/api/organisations/org-northern/evidence');
+    const response = await getOrgEvidence(request, {
+      params: Promise.resolve({ id: 'org-northern' }),
+    });
+    const { ok, data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(ok).toBe(true);
+    expect(data).toHaveLength(0);
   });
 });
