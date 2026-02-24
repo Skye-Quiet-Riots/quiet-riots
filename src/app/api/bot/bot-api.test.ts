@@ -477,3 +477,28 @@ describe('Bot API: event tracking', () => {
     expect(events[0].issue_id).toBe('issue-rail');
   });
 });
+
+describe('Bot API: get_assistant_detail', () => {
+  it('returns full detail for valid category', async () => {
+    const { status, body } = await callBot('get_assistant_detail', {
+      category: 'transport',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant).toBeDefined();
+    expect(body.data.assistant.agent_name).toBeDefined();
+    expect(body.data.assistant.human_name).toBeDefined();
+    expect(body.data.assistant.riot_count).toBeGreaterThanOrEqual(0);
+    expect(body.data.assistant.rioter_count).toBeGreaterThanOrEqual(0);
+    expect(body.data.assistant.riots).toBeDefined();
+    expect(body.data.assistant.recent_activity).toBeDefined();
+    expect(typeof body.data.assistant.messages_sent).toBe('number');
+  });
+
+  it('returns 404 for invalid category', async () => {
+    const { status, body } = await callBot('get_assistant_detail', {
+      category: 'nonexistent',
+    });
+    expect(status).toBe(404);
+    expect(body.error).toContain('not found');
+  });
+});

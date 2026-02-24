@@ -8,7 +8,8 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ category: string }> },
 ) {
-  const { category } = await params;
+  const { category: rawCategory } = await params;
+  const category = rawCategory.toLowerCase();
 
   if (!ASSISTANT_CATEGORIES.includes(category as AssistantCategory)) {
     return apiError('Invalid category', 400);

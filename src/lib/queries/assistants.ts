@@ -65,7 +65,7 @@ export async function getAssistantByCategory(
 ): Promise<CategoryAssistant | null> {
   const db = getDb();
   const result = await db.execute({
-    sql: 'SELECT * FROM category_assistants WHERE category = ?',
+    sql: 'SELECT * FROM category_assistants WHERE LOWER(category) = LOWER(?)',
     args: [category],
   });
   return (result.rows[0] as unknown as CategoryAssistant) ?? null;
@@ -81,7 +81,7 @@ export async function getAssistantDetail(
 
   // Get the assistant pair
   const assistantResult = await db.execute({
-    sql: 'SELECT * FROM category_assistants WHERE category = ?',
+    sql: 'SELECT * FROM category_assistants WHERE LOWER(category) = LOWER(?)',
     args: [category],
   });
   const assistant = assistantResult.rows[0] as unknown as CategoryAssistant;

@@ -13,7 +13,9 @@ import { getSynonymsForIssue } from '@/lib/queries/synonyms';
 import { getReelsForIssue } from '@/lib/queries/reels';
 import { getCampaignsForIssue } from '@/lib/queries/campaigns';
 import { hasJoinedIssue } from '@/lib/queries/users';
+import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { getSession } from '@/lib/session';
+import { toAssistantCategory } from '@/types';
 
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
@@ -29,6 +31,7 @@ import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
 import { ReelsSection } from '@/components/interactive/reels-section';
 import { CampaignProgress } from '@/components/data/campaign-progress';
+import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
 interface Props {
@@ -56,6 +59,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const synonyms = await getSynonymsForIssue(issue.id);
   const reels = await getReelsForIssue(issue.id);
   const campaigns = await getCampaignsForIssue(issue.id);
+  const assistant = await getAssistantByCategory(toAssistantCategory(issue.category));
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -73,6 +77,18 @@ export default async function IssueDetailPage({ params }: Props) {
         <CategoryBadge category={issue.category} size="md" />
         <TrendingIndicator delta={issue.trending_delta} size="md" />
       </div>
+
+      {/* Assistants */}
+      {assistant && (
+        <div className="mb-6">
+          <AssistantDetailBanner
+            assistant={assistant}
+            agentHelps={issue.agent_helps}
+            humanHelps={issue.human_helps}
+            focus={issue.agent_focus ?? assistant.focus}
+          />
+        </div>
+      )}
 
       {/* Description */}
       <p className="mb-6 text-zinc-600 dark:text-zinc-400">{issue.description}</p>

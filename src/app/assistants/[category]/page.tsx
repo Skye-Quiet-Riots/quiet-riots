@@ -17,7 +17,8 @@ interface Props {
 }
 
 export default async function AssistantDetailPage({ params }: Props) {
-  const { category } = await params;
+  const { category: rawCategory } = await params;
+  const category = rawCategory.toLowerCase();
 
   if (!ASSISTANT_CATEGORIES.includes(category as AssistantCategory)) {
     notFound();

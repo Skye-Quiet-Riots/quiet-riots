@@ -5,10 +5,13 @@ import {
   getOrgsForIssue,
   getTotalRiotersForOrg,
 } from '@/lib/queries/organisations';
+import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { StatBadge } from '@/components/data/stat-badge';
+import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { PivotToggle } from '@/components/interactive/pivot-toggle';
+import { toAssistantCategory } from '@/types';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -23,6 +26,7 @@ export default async function OrgDetailPage({ params }: Props) {
   const firstIssue = orgPivotRows[0];
   const issuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
   const totalRioters = await getTotalRiotersForOrg(org.id);
+  const assistant = await getAssistantByCategory(toAssistantCategory(org.category));
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -38,6 +42,13 @@ export default async function OrgDetailPage({ params }: Props) {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <CategoryBadge category={org.category} size="md" />
       </div>
+
+      {/* Assistants */}
+      {assistant && (
+        <div className="mb-6">
+          <AssistantDetailBanner assistant={assistant} />
+        </div>
+      )}
 
       {org.description && (
         <p className="mb-6 text-zinc-600 dark:text-zinc-400">{org.description}</p>

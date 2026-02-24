@@ -1,9 +1,11 @@
 import { Suspense } from 'react';
 import { getAllIssues, getIssueCountsByCategory } from '@/lib/queries/issues';
+import { getAllAssistants } from '@/lib/queries/assistants';
 import { PageHeader } from '@/components/layout/page-header';
 import { IssueCard } from '@/components/cards/issue-card';
 import { SearchBar } from '@/components/interactive/search-bar';
 import { CategoryFilter } from '@/components/interactive/category-filter';
+import { AssistantBanner } from '@/components/data/assistant-banner';
 import type { Category } from '@/types';
 
 interface Props {
@@ -15,9 +17,15 @@ export default async function IssuesPage({ searchParams }: Props) {
   const category = params.category as Category | undefined;
   const search = params.search || undefined;
 
-  const issues = await getAllIssues(category, search);
-  const counts = await getIssueCountsByCategory();
+  const [issues, counts, allAssistants] = await Promise.all([
+    getAllIssues(category, search),
+    getIssueCountsByCategory(),
+    category ? getAllAssistants() : Promise.resolve([]),
+  ]);
   const totalIssues = Object.values(counts).reduce((sum, c) => sum + c, 0);
+  const assistant = category
+    ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())
+    : undefined;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -34,6 +42,12 @@ export default async function IssuesPage({ searchParams }: Props) {
           <CategoryFilter />
         </Suspense>
       </div>
+
+      {assistant && (
+        <div className="mb-6">
+          <AssistantBanner assistant={assistant} />
+        </div>
+      )}
 
       {issues.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

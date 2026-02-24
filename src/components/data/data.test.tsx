@@ -10,7 +10,10 @@ import { StatBadge } from './stat-badge';
 import { TrendingIndicator } from './trending-indicator';
 import { WalletBalance } from './wallet-balance';
 import { TransactionList } from './transaction-list';
-import type { Campaign, WalletTransaction } from '@/types';
+import { AssistantBanner } from './assistant-banner';
+import { AssistantDetailBanner } from './assistant-detail-banner';
+import type { Campaign, WalletTransaction, CategoryAssistant } from '@/types';
+import type { AssistantWithStats } from '@/lib/queries/assistants';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -400,5 +403,157 @@ describe('TransactionList', () => {
     expect(screen.getByText('Avanti Legal Review')).toBeDefined();
     expect(screen.getByText('+£5')).toBeDefined();
     expect(screen.getByText('-£1')).toBeDefined();
+  });
+});
+
+// ─── Assistant components ──────────────────────────────────
+
+const makeAssistant = (
+  overrides: Partial<CategoryAssistant> = {},
+): CategoryAssistant => ({
+  id: 'ast-transport',
+  category: 'transport',
+  agent_name: 'Jett',
+  agent_icon: '🛩️',
+  agent_quote: 'I map delay patterns',
+  agent_bio: 'AI tracking bot',
+  agent_gradient_start: '#8b5cf6',
+  agent_gradient_end: '#6d28d9',
+  human_name: 'Bex',
+  human_icon: '👩🏻',
+  human_quote: 'I organise commuters',
+  human_bio: 'Manchester commuter',
+  human_gradient_start: '#3b82f6',
+  human_gradient_end: '#1d4ed8',
+  human_user_id: null,
+  goal: 'Help rioters hold UK transport companies to account',
+  focus: 'Avanti West Coast cancellation patterns',
+  focus_detail: null,
+  profile_url: '/assistants/transport',
+  created_at: '2026-01-01',
+  updated_at: '2026-01-01',
+  ...overrides,
+});
+
+const makeAssistantWithStats = (
+  overrides: Partial<AssistantWithStats> = {},
+): AssistantWithStats => ({
+  ...makeAssistant(),
+  riot_count: 5,
+  rioter_count: 2847,
+  action_count: 12,
+  ...overrides,
+});
+
+describe('AssistantBanner', () => {
+  it('renders agent and human names', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+    expect(screen.getByText(/Jett & Bex/)).toBeDefined();
+  });
+
+  it('renders category label', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+    expect(screen.getByText(/Your Transport Assistants/)).toBeDefined();
+  });
+
+  it('renders goal text', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+    expect(screen.getByText('Help rioters hold UK transport companies to account')).toBeDefined();
+  });
+
+  it('renders "Meet them" link to assistants page', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/assistants/transport');
+    expect(screen.getByText('Meet them →')).toBeDefined();
+  });
+
+  it('renders both assistant icons', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+    expect(screen.getByText('🛩️')).toBeDefined();
+    expect(screen.getByText('👩🏻')).toBeDefined();
+  });
+
+  it('handles missing goal gracefully', () => {
+    render(<AssistantBanner assistant={makeAssistantWithStats({ goal: null })} />);
+    expect(screen.getByText(/Jett & Bex/)).toBeDefined();
+  });
+});
+
+describe('AssistantDetailBanner', () => {
+  it('renders category heading', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(screen.getByText('Your Transport Assistants')).toBeDefined();
+  });
+
+  it('renders agent and human names with roles', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(screen.getByText('(AI Agent)')).toBeDefined();
+    expect(screen.getByText('(Human Organiser)')).toBeDefined();
+  });
+
+  it('renders goal', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(screen.getByText('Help rioters hold UK transport companies to account')).toBeDefined();
+  });
+
+  it('renders assistant focus', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(
+      screen.getByText(/Avanti West Coast cancellation patterns/),
+    ).toBeDefined();
+  });
+
+  it('prefers focus prop over assistant focus', () => {
+    render(
+      <AssistantDetailBanner
+        assistant={makeAssistant()}
+        focus="Northern Rail punctuality"
+      />,
+    );
+    expect(screen.getByText(/Northern Rail punctuality/)).toBeDefined();
+    expect(screen.queryByText(/Avanti West Coast/)).toBeNull();
+  });
+
+  it('renders agentHelps and humanHelps when provided', () => {
+    render(
+      <AssistantDetailBanner
+        assistant={makeAssistant()}
+        agentHelps="Filing delay-repay claims automatically"
+        humanHelps="Coordinating group complaints"
+      />,
+    );
+    expect(screen.getByText('Filing delay-repay claims automatically')).toBeDefined();
+    expect(screen.getByText('Coordinating group complaints')).toBeDefined();
+    expect(screen.getByText(/Jett helps with/)).toBeDefined();
+    expect(screen.getByText(/Bex helps with/)).toBeDefined();
+  });
+
+  it('omits help sections when not provided', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(screen.queryByText(/helps with/)).toBeNull();
+  });
+
+  it('links to assistant profile', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/assistants/transport');
+    expect(screen.getByText(/Learn more about Jett & Bex/)).toBeDefined();
+  });
+
+  it('handles null goal and focus gracefully', () => {
+    render(
+      <AssistantDetailBanner
+        assistant={makeAssistant({ goal: null, focus: null })}
+      />,
+    );
+    expect(screen.getByText('Your Transport Assistants')).toBeDefined();
+    expect(screen.queryByText(/Current focus/)).toBeNull();
+  });
+
+  it('renders both assistant icons', () => {
+    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+    expect(screen.getByText('🛩️')).toBeDefined();
+    expect(screen.getByText('👩🏻')).toBeDefined();
   });
 });
