@@ -30,12 +30,15 @@ export async function createUser(data: {
   phone?: string;
   time_available?: string;
   skills?: string;
+  language_code?: string;
+  country_code?: string;
 }): Promise<User> {
   const db = getDb();
   const id = generateId();
   const normalizedEmail = data.email.toLowerCase().trim();
   await db.execute({
-    sql: 'INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)',
+    sql: `INSERT INTO users (id, name, email, phone, time_available, skills, language_code, country_code)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       id,
       data.name,
@@ -43,6 +46,8 @@ export async function createUser(data: {
       data.phone || null,
       data.time_available || '10min',
       data.skills || '',
+      data.language_code || 'en',
+      data.country_code || null,
     ],
   });
   const user = await db.execute({ sql: 'SELECT * FROM users WHERE id = ?', args: [id] });
@@ -51,7 +56,14 @@ export async function createUser(data: {
 
 export async function updateUser(
   id: string,
-  data: { name?: string; phone?: string; time_available?: string; skills?: string },
+  data: {
+    name?: string;
+    phone?: string;
+    time_available?: string;
+    skills?: string;
+    language_code?: string;
+    country_code?: string;
+  },
 ): Promise<User | null> {
   const db = getDb();
   const sets: string[] = [];
@@ -72,6 +84,14 @@ export async function updateUser(
   if (data.skills !== undefined) {
     sets.push('skills = ?');
     args.push(data.skills);
+  }
+  if (data.language_code !== undefined) {
+    sets.push('language_code = ?');
+    args.push(data.language_code);
+  }
+  if (data.country_code !== undefined) {
+    sets.push('country_code = ?');
+    args.push(data.country_code);
   }
 
   if (sets.length === 0) return getUserById(id);

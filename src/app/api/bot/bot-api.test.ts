@@ -610,3 +610,97 @@ describe('Bot API: go_live', () => {
     expect(body.data.message).toContain('passionate');
   });
 });
+
+// ─── Language / Country ──────────────────────────────────
+
+describe('Bot API: set_language', () => {
+  it('updates user language preference', async () => {
+    const { status, body } = await callBot('set_language', {
+      phone: '+447700900001',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('es');
+    expect(body.data.language_code).toBe('es');
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('set_language', {
+      phone: '+449999999999',
+      language_code: 'fr',
+    });
+    expect(status).toBe(404);
+  });
+
+  it('validates language_code is required', async () => {
+    const { status } = await callBot('set_language', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(400);
+  });
+});
+
+describe('Bot API: set_country', () => {
+  it('updates user country preference', async () => {
+    const { status, body } = await callBot('set_country', {
+      phone: '+447700900001',
+      country_code: 'GB',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.country_code).toBe('GB');
+    expect(body.data.country_code).toBe('GB');
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('set_country', {
+      phone: '+449999999999',
+      country_code: 'US',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: identify with language', () => {
+  it('creates user with language_code when provided', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+819012345678',
+      name: 'Japanese User',
+      language_code: 'ja',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('ja');
+    expect(body.data.language_code).toBe('ja');
+  });
+
+  it('defaults to en when no language_code provided', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+33612345678',
+      name: 'French User',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('en');
+    expect(body.data.language_code).toBe('en');
+  });
+
+  it('returns existing user language for returning users', async () => {
+    // The Japanese user created above should be returned with their language
+    const { status, body } = await callBot('identify', {
+      phone: '+819012345678',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('ja');
+  });
+});
+
+describe('Bot API: update_user with language and country', () => {
+  it('updates language and country via update_user', async () => {
+    const { status, body } = await callBot('update_user', {
+      phone: '+447700900001',
+      language_code: 'fr',
+      country_code: 'FR',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('fr');
+    expect(body.data.user.country_code).toBe('FR');
+  });
+});
