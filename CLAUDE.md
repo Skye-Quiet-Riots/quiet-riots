@@ -18,20 +18,20 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 
 ## Commands
 
-| Command                  | Purpose                              |
-| ------------------------ | ------------------------------------ |
-| `npm run build`          | Build — ALWAYS run before committing |
-| `npm test`               | Run 530 tests (~2.4s)                |
-| `npm run test:watch`     | Watch mode                           |
-| `npm run test:coverage`  | With V8 coverage                     |
-| `npm run seed`           | Reset database (blocked on production) |
-| `npm run seed:production`| Reset production DB (requires confirmation) |
-| `npm run migrate`        | Run pending database migrations      |
-| `npm run migrate:status` | Show applied & pending migrations    |
-| `npm run dev`            | Local dev server                     |
-| `npm run lint`           | ESLint                               |
-| `npm run format`         | Prettier — format all files          |
-| `npm run format:check`   | Prettier — check formatting (CI)     |
+| Command                   | Purpose                                     |
+| ------------------------- | ------------------------------------------- |
+| `npm run build`           | Build — ALWAYS run before committing        |
+| `npm test`                | Run 530 tests (~2.4s)                       |
+| `npm run test:watch`      | Watch mode                                  |
+| `npm run test:coverage`   | With V8 coverage                            |
+| `npm run seed`            | Reset database (blocked on production)      |
+| `npm run seed:production` | Reset production DB (requires confirmation) |
+| `npm run migrate`         | Run pending database migrations             |
+| `npm run migrate:status`  | Show applied & pending migrations           |
+| `npm run dev`             | Local dev server                            |
+| `npm run lint`            | ESLint                                      |
+| `npm run format`          | Prettier — format all files                 |
+| `npm run format:check`    | Prettier — check formatting (CI)            |
 
 ## Development Rules
 
@@ -42,6 +42,35 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - Environment variables go in `.env.local` (see `.env.example` for shape)
 - Use feature branches for new work; commit to `main` only when ready
 - IMPORTANT: Never merge to main directly — always push the feature branch, create/update a PR, and let the user review and merge. Vercel auto-deploys a preview for every PR.
+
+## Branching Workflow (IMPORTANT — follow exactly)
+
+A merged branch is dead. Never push more commits to a branch after its PR has been merged.
+
+**One PR = one branch. New work = new branch.**
+
+```
+# 1. Always start new work from latest main
+git fetch origin main
+git checkout -b claude/<descriptive-name> origin/main
+
+# 2. Make changes, test, build, commit, push
+npm test && npm run build
+git add <files> && git commit -m "..."
+git push -u origin claude/<descriptive-name>
+
+# 3. Create PR
+gh pr create --title "..." --body "..."
+
+# 4. AFTER PR is merged — IMMEDIATELY switch to a fresh branch before any more work
+git fetch origin main
+git checkout -b claude/<next-task-name> origin/main
+# The old branch is now dead. Never go back to it.
+```
+
+**Why this matters:** In a worktree, you can't checkout `main` directly (it's used by the main repo). If you stay on a merged branch and push more commits, those commits go to a dead branch that main will never see. Every new piece of work — even a one-line follow-up fix — needs a fresh branch from `origin/main`.
+
+**Self-check before every commit:** Run `git log origin/main..HEAD --oneline` — if you see commits that were already part of a merged PR, you're on a stale branch. Stop. Create a fresh branch from `origin/main` and cherry-pick or re-apply your changes.
 
 ## Conventions
 
@@ -92,6 +121,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - **OpenClaw default session reset wipes memory at 4 AM:** The default `session.reset.mode` is `"daily"` with `atHour: 4`. This creates a brand new session on the first inbound message after 4 AM, so the bot loses all conversational context overnight. Fixed by setting `session.reset.mode: "idle"` with `idleMinutes: 1440` (24h) — sessions now only reset after 24 hours of inactivity. The auto-update LaunchAgent also runs at 04:00 which compounds the issue.
 - **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. `npm run seed` is blocked on production by default — use `npm run seed:production` only if you truly need a full reset (drops all tables).
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
+- **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
 
 ## Database ID Convention
 
