@@ -124,6 +124,7 @@ git checkout -b claude/<next-task-name> origin/main
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
 - **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
 - **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
+- **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
 
 ## Database ID Convention
 
@@ -193,7 +194,7 @@ At the end of every session (or when asked to "wrap up" / "good night"). Steps a
    - **Dependabot PRs:** Check CI status with `gh pr checks <number>`. Minor/patch with passing CI → merge (`gh pr merge <number> --squash`). Major version bumps → evaluate: close if CI fails or version doesn't match our runtime, otherwise note in session log for dedicated work. If CI is still running, skip — don't block end-of-session on dependabot CI.
 6. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
 7. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
-8. **Worktree cleanup:** If this session's branch has been merged to main, print the cleanup commands for the user to run (can't be done from inside the worktree): `cd /Users/skye/Projects/quiet-riots && git worktree remove .claude/worktrees/<name> && git branch -d <branch-names>`. Note: this cannot be automated — `git worktree remove` fails when run from inside the worktree being removed.
+8. **Worktree cleanup (MUST be the very last command):** If this session's branch has been merged to main, run a fire-and-forget background cleanup: `nohup bash -c 'sleep 5 && cd /Users/skye/Projects/quiet-riots && git worktree remove .claude/worktrees/<name> 2>/dev/null; git branch -d <branch-names> 2>/dev/null' &>/dev/null &`. The 5-second delay lets the session exit before the worktree directory is removed. **Do not run any other commands after this** — the shell will break once the cwd is deleted.
 
 **Key rule:** Always do steps 1–3 _before_ the final PR of the session is merged. If the user asks to deploy/merge mid-protocol, finish the docs first, then merge. The session log commit is the last commit on the branch.
 
