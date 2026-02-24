@@ -68,7 +68,13 @@ const phoneField = z
   .refine((s) => /^\+[1-9]\d{6,14}$/.test(s.trim()), { message: 'Invalid E.164 phone number' })
   .transform((s) => s.trim());
 const idField = z.string().min(1).max(64);
-const phoneParam = z.object({ phone: phoneField, name: z.string().max(255).optional() });
+const langField = z.string().min(2).max(10).optional();
+const countryField = z.string().min(2).max(3).optional();
+const phoneParam = z.object({
+  phone: phoneField,
+  name: z.string().max(255).optional(),
+  language_code: langField,
+});
 const issueIdParam = z.object({ issue_id: idField });
 const phoneAndIssue = z.object({ phone: phoneField, issue_id: idField });
 const queryParam = z.object({ query: z.string().min(1).max(500) });
@@ -116,6 +122,8 @@ const actionSchemas = {
       .max(500)
       .transform((s) => sanitizeText(s))
       .optional(),
+    language_code: langField,
+    country_code: countryField,
   }),
   create_issue: z.object({
     name: z
@@ -221,6 +229,14 @@ const actionSchemas = {
       .max(5000)
       .transform((s) => sanitizeText(s)),
     org_id: idField.optional(),
+  }),
+  set_language: z.object({
+    phone: phoneField,
+    language_code: z.string().min(2).max(10),
+  }),
+  set_country: z.object({
+    phone: phoneField,
+    country_code: z.string().min(2).max(3),
   }),
 } as const;
 
@@ -344,11 +360,12 @@ export async function POST(request: NextRequest) {
           const digits = phone.replace(/\D/g, '');
           const email = `wa-${digits}@whatsapp.quietriots.com`;
           const name = (p.name as string) || 'WhatsApp User';
-          user = await createUser({ name, email, phone });
+          const languageCode = (p.language_code as string) || undefined;
+          user = await createUser({ name, email, phone, language_code: languageCode });
           trackedUserId = user.id;
         }
         const issues = await getUserIssues(user.id);
-        return ok({ user, issues });
+        return ok({ user, issues, language_code: user.language_code });
       }
 
       // ─── Issue Discovery ─────────────────────────────────
@@ -503,6 +520,8 @@ export async function POST(request: NextRequest) {
           name: p.name as string | undefined,
           time_available: p.time_available as string | undefined,
           skills: p.skills as string | undefined,
+          language_code: p.language_code as string | undefined,
+          country_code: p.country_code as string | undefined,
         });
         return ok({ user: updated });
       }
@@ -714,6 +733,27 @@ export async function POST(request: NextRequest) {
           live: true,
         });
         return ok({ evidence, message: 'You are live! Be passionate but respectful.' });
+      }
+
+      // ─── Language / Country ─────────────────────────────
+      case 'set_language': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const updated = await updateUser(user.id, {
+          language_code: p.language_code as string,
+        });
+        return ok({ user: updated, language_code: updated?.language_code });
+      }
+
+      case 'set_country': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const updated = await updateUser(user.id, {
+          country_code: p.country_code as string,
+        });
+        return ok({ user: updated, country_code: updated?.country_code });
       }
 
       default:
