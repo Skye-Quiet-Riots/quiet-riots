@@ -537,6 +537,32 @@ describe('Bot API: submit_evidence', () => {
     });
     expect(status).toBe(404);
   });
+
+  it('creates video evidence with video_url', async () => {
+    const { status, body } = await callBot('submit_evidence', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Video of overcrowded platform',
+      video_url: 'https://abc.public.blob.vercel-storage.com/evidence/test.mp4',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.media_type).toBe('video');
+    expect(body.data.evidence.video_url).toBe(
+      'https://abc.public.blob.vercel-storage.com/evidence/test.mp4',
+    );
+  });
+
+  it('video_url takes precedence over photo_url for mediaType', async () => {
+    const { status, body } = await callBot('submit_evidence', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+      content: 'Mixed media evidence',
+      photo_url: 'https://example.com/photo.jpg',
+      video_url: 'https://example.com/video.mp4',
+    });
+    expect(status).toBe(200);
+    expect(body.data.evidence.media_type).toBe('video');
+  });
 });
 
 describe('Bot API: get_evidence', () => {

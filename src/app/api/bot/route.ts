@@ -151,6 +151,7 @@ const actionSchemas = {
     content: z.string().min(1),
     org_id: z.string().optional(),
     photo_url: z.string().url().optional(),
+    video_url: z.string().url().optional(),
     live: z.boolean().optional().default(false),
   }),
   get_evidence: z.object({
@@ -609,13 +610,22 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        const photoUrl = p.photo_url as string | undefined;
+        const videoUrl = p.video_url as string | undefined;
+
+        // Determine mediaType from provided URLs (video takes precedence)
+        let mediaType: 'text' | 'photo' | 'video' = 'text';
+        if (videoUrl) mediaType = 'video';
+        else if (photoUrl) mediaType = 'photo';
+
         const evidence = await createEvidence({
           issueId,
           orgId: (p.org_id as string) ?? null,
           userId: user.id,
           content: p.content as string,
-          mediaType: p.photo_url ? 'photo' : 'text',
-          photoUrls: p.photo_url ? [p.photo_url as string] : [],
+          mediaType,
+          photoUrls: photoUrl ? [photoUrl] : [],
+          videoUrl: videoUrl ?? null,
           live: (p.live as boolean) ?? false,
         });
         return ok({ evidence });
