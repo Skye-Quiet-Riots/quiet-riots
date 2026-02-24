@@ -121,3 +121,14 @@ export async function hasJoinedIssue(userId: string, issueId: string): Promise<b
   });
   return result.rows.length > 0;
 }
+
+export async function getUserConnectedAccounts(
+  userId: string,
+): Promise<{ provider: string; type: string }[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT provider, type FROM accounts WHERE user_id = ?',
+    args: [userId],
+  });
+  return result.rows as unknown as { provider: string; type: string }[];
+}
