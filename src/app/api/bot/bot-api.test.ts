@@ -474,7 +474,9 @@ describe('Bot API: event tracking', () => {
 
     const events = await getRecentBotEvents({ action: 'get_issue' });
     expect(events.length).toBeGreaterThanOrEqual(1);
-    expect(events[0].issue_id).toBe('issue-rail');
+    // Find the specific event — earlier tests may have created get_issue events with other issue_ids
+    const railEvent = events.find((e) => e.issue_id === 'issue-rail');
+    expect(railEvent).toBeDefined();
   });
 });
 
