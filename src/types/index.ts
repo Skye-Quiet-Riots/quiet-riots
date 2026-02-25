@@ -87,6 +87,8 @@ export interface User {
   status: UserStatus;
   deactivated_at: string | null;
   session_version: number;
+  // Onboarding
+  onboarding_completed: number;
 }
 
 export interface UserIssue {

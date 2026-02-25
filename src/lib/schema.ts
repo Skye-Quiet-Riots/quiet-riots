@@ -72,7 +72,8 @@ export async function createTables() {
       phone_verified INTEGER NOT NULL DEFAULT 0,
       status TEXT DEFAULT 'active' CHECK(status IN ('active','deactivated','deleted')),
       deactivated_at TEXT,
-      session_version INTEGER NOT NULL DEFAULT 1
+      session_version INTEGER NOT NULL DEFAULT 1,
+      onboarding_completed INTEGER NOT NULL DEFAULT 0
     );
 
     CREATE TABLE IF NOT EXISTS user_issues (
@@ -466,12 +467,25 @@ export async function createTables() {
     );
 
     CREATE INDEX IF NOT EXISTS idx_issues_country ON issues(country_scope, primary_country);
+
+    CREATE TABLE IF NOT EXISTS user_interests (
+      user_id TEXT NOT NULL REFERENCES users(id),
+      category TEXT NOT NULL CHECK(category IN (
+        'Transport','Telecoms','Banking','Health','Education','Environment',
+        'Energy','Water','Insurance','Housing','Shopping','Delivery','Local','Employment','Tech','Other'
+      )),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (user_id, category)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_user_interests_user ON user_interests(user_id);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS user_interests;
     DROP TABLE IF EXISTS reports;
     DROP TABLE IF EXISTS user_blocks;
     DROP TABLE IF EXISTS login_events;
