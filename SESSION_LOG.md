@@ -6,12 +6,11 @@
 
 ## Latest Session
 
-**Session 28** (2026-02-25) — Post-Signup Onboarding Wizard
-→ [`session-logs/2026-02-session-28.md`](session-logs/2026-02-session-28.md)
+**Session 29** (2026-02-25) — Avatar Upload (Vercel Blob)
+→ [`session-logs/2026-02-session-29.md`](session-logs/2026-02-session-29.md)
 
 ## Current Priorities
 
-- **Avatar upload** — Upload to Vercel Blob, display in profile + nav
 - **DB migration on staging/production** — Run migrations 011-014 + seed reference data
 - **OpenClaw session clear** — After SKILL.md language directive changes
 - **Connected accounts management** — Show Google/Facebook links on profile page
@@ -20,6 +19,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 29  | 2026-02-25    | Avatar upload (Vercel Blob)                           | [`session-29`](session-logs/2026-02-session-29.md)                                                             |
 | 28  | 2026-02-25    | Post-signup onboarding wizard                         | [`session-28`](session-logs/2026-02-session-28.md)                                                             |
 | 27  | 2026-02-25    | DB content translations for all 44 locales            | [`session-27`](session-logs/2026-02-session-27.md)                                                             |
 | 26  | 2026-02-24    | Locale message translations for all 44 languages      | [`session-26`](session-logs/2026-02-session-26.md)                                                             |
