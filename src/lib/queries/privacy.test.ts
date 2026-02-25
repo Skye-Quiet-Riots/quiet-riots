@@ -428,6 +428,12 @@ describe('hardDeleteUser', () => {
       args: ['claim-del-1', 'transport', userId, 'I want to help'],
     });
 
+    // Add a user memory
+    await db.execute({
+      sql: "INSERT INTO user_memory (id, user_id, memory_key, memory_value, category) VALUES (?, ?, ?, ?, 'context')",
+      args: ['mem-del-1', userId, 'test_memory', 'Should be deleted'],
+    });
+
     // Add a riot reel and vote to test reel_votes / reel_shown_log cleanup
     await db.execute({
       sql: `INSERT INTO riot_reels (id, issue_id, youtube_url, youtube_video_id, title, source, status)
@@ -456,6 +462,7 @@ describe('hardDeleteUser', () => {
 
     // Verify all related tables are clean
     const checks = [
+      { table: 'user_memory', column: 'user_id' },
       { table: 'user_consents', column: 'user_id' },
       { table: 'notification_preferences', column: 'user_id' },
       { table: 'login_events', column: 'user_id' },
@@ -564,6 +571,10 @@ describe('exportUserData', () => {
       sql: "INSERT INTO accounts (id, user_id, provider, provider_account_id, type) VALUES (?, ?, 'github', 'gh-456', 'oauth')",
       args: ['acc-exp-1', userId],
     });
+    await db.execute({
+      sql: "INSERT INTO user_memory (id, user_id, memory_key, memory_value, category) VALUES (?, ?, ?, ?, 'preference')",
+      args: ['mem-exp-1', userId, 'preferred_language', 'English with brief messages'],
+    });
   });
 
   it('returns comprehensive data export for a user', async () => {
@@ -612,6 +623,12 @@ describe('exportUserData', () => {
     expect(data!.connectedAccounts.length).toBe(1);
     expect(data!.connectedAccounts[0].provider).toBe('github');
     expect(data!.connectedAccounts[0].type).toBe('oauth');
+
+    // Memories
+    expect(data!.memories.length).toBe(1);
+    expect(data!.memories[0].memory_key).toBe('preferred_language');
+    expect(data!.memories[0].memory_value).toBe('English with brief messages');
+    expect(data!.memories[0].category).toBe('preference');
   });
 
   it('returns null for non-existent user', async () => {
@@ -637,6 +654,7 @@ describe('exportUserData', () => {
     expect(data!.evidence).toEqual([]);
     expect(data!.assistantIntroductions).toEqual([]);
     expect(data!.connectedAccounts).toEqual([]);
+    expect(data!.memories).toEqual([]);
     // Notification preferences should be auto-created defaults
     expect(data!.notificationPreferences.security).toBe(1);
     expect(data!.notificationPreferences.weekly_digest).toBe(0);

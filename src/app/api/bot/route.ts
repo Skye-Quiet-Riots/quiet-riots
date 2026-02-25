@@ -58,6 +58,8 @@ import {
   translateIssuePivotRows,
   translateOrgPivotRows,
 } from '@/lib/queries/translate';
+import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
+import type { MemoryCategory } from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -250,6 +252,28 @@ const actionSchemas = {
     phone: phoneField,
     country_code: z.string().min(2).max(3),
   }),
+  save_memory: z.object({
+    phone: phoneField,
+    key: z
+      .string()
+      .min(1)
+      .max(100)
+      .transform((s) => sanitizeText(s)),
+    value: z
+      .string()
+      .min(1)
+      .max(500)
+      .transform((s) => sanitizeText(s)),
+    category: z
+      .enum(['preference', 'context', 'goal', 'emotional', 'general'])
+      .optional()
+      .default('general'),
+  }),
+  get_memories: z.object({ phone: phoneField }),
+  delete_memory: z.object({
+    phone: phoneField,
+    key: z.string().min(1).max(100),
+  }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -377,12 +401,20 @@ export async function POST(request: NextRequest) {
           trackedUserId = user.id;
         }
         const locale = user.language_code || 'en';
-        const issues = await getUserIssues(user.id);
+        const [issues, memories] = await Promise.all([
+          getUserIssues(user.id),
+          getUserMemories(user.id),
+        ]);
         const translatedIssues = await translateOrgPivotRows(
           issues as unknown as { issue_id: string; issue_name: string }[],
           locale,
         );
-        return ok({ user, issues: translatedIssues, language_code: user.language_code });
+        return ok({
+          user,
+          issues: translatedIssues,
+          memories,
+          language_code: user.language_code,
+        });
       }
 
       // ─── Issue Discovery ─────────────────────────────────
@@ -792,6 +824,36 @@ export async function POST(request: NextRequest) {
           country_code: p.country_code as string,
         });
         return ok({ user: updated, country_code: updated?.country_code });
+      }
+
+      // ─── User Memory ──────────────────────────────────────
+      case 'save_memory': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const memory = await saveMemory(
+          user.id,
+          p.key as string,
+          p.value as string,
+          p.category as MemoryCategory,
+        );
+        return ok({ memory });
+      }
+
+      case 'get_memories': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const memories = await getUserMemories(user.id);
+        return ok({ memories });
+      }
+
+      case 'delete_memory': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const deleted = await deleteMemory(user.id, p.key as string);
+        return ok({ deleted });
       }
 
       default:

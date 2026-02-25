@@ -226,6 +226,7 @@ export async function hardDeleteUser(userId: string): Promise<void> {
 
   // Batch delete from all related tables
   const statements: { sql: string; args: (string | null)[] }[] = [
+    { sql: 'DELETE FROM user_memory WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM user_consents WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM notification_preferences WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM login_events WHERE user_id = ?', args: [userId] },
@@ -303,6 +304,12 @@ export interface UserDataExport {
   }[];
   assistantIntroductions: { category: string; introduced_at: string }[];
   connectedAccounts: { provider: string; type: string }[];
+  memories: {
+    memory_key: string;
+    memory_value: string;
+    category: string;
+    updated_at: string;
+  }[];
 }
 
 /**
@@ -330,6 +337,7 @@ export async function exportUserData(userId: string): Promise<UserDataExport | n
     evidenceResult,
     introductionsResult,
     accountsResult,
+    memoriesResult,
   ] = await Promise.all([
     db.execute({
       sql: 'SELECT * FROM user_consents WHERE user_id = ? ORDER BY accepted_at DESC',
@@ -365,6 +373,10 @@ export async function exportUserData(userId: string): Promise<UserDataExport | n
     }),
     db.execute({
       sql: 'SELECT provider, type FROM accounts WHERE user_id = ?',
+      args: [userId],
+    }),
+    db.execute({
+      sql: 'SELECT memory_key, memory_value, category, updated_at FROM user_memory WHERE user_id = ? ORDER BY updated_at DESC',
       args: [userId],
     }),
   ]);
@@ -421,5 +433,6 @@ export async function exportUserData(userId: string): Promise<UserDataExport | n
     assistantIntroductions:
       introductionsResult.rows as unknown as UserDataExport['assistantIntroductions'],
     connectedAccounts: accountsResult.rows as unknown as UserDataExport['connectedAccounts'],
+    memories: memoriesResult.rows as unknown as UserDataExport['memories'],
   };
 }

@@ -630,6 +630,19 @@ export interface Report {
   created_at: string;
 }
 
+// User Memory (persistent bot context across sessions)
+export type MemoryCategory = 'preference' | 'context' | 'goal' | 'emotional' | 'general';
+
+export interface UserMemory {
+  id: string;
+  user_id: string;
+  memory_key: string;
+  memory_value: string;
+  category: MemoryCategory;
+  created_at: string;
+  updated_at: string;
+}
+
 // Bot Analytics
 export interface BotEvent {
   id: string;
