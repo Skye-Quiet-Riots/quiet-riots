@@ -6,18 +6,18 @@
 
 ## Latest Session
 
-**Session 36** (2026-02-25) — Fix WhatsApp Search + Non-English Search Fallback
-→ [`session-logs/2026-02-session-36.md`](session-logs/2026-02-session-36.md)
+**Session 37** (2026-02-25) — Translated Synonym Search for All 44 Locales
+→ [`session-logs/2026-02-session-37.md`](session-logs/2026-02-session-37.md)
 
 ## Current Priorities
 
-- **Test non-English search on WhatsApp** — Send a message in Polish/Spanish and verify translated name search works
 - **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 37  | 2026-02-25    | Translated synonym search for all 44 locales          | [`session-37`](session-logs/2026-02-session-37.md)                                                             |
 | 36  | 2026-02-25    | Fix WhatsApp search + non-English search fallback     | [`session-36`](session-logs/2026-02-session-36.md)                                                             |
 | 35  | 2026-02-25    | Persistent per-user memory for WhatsApp bot           | [`session-35`](session-logs/2026-02-session-35.md)                                                             |
 | 34  | 2026-02-25    | Fix WhatsApp bot returning issues in English          | [`session-34`](session-logs/2026-02-session-34.md)                                                             |
