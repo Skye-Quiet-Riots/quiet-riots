@@ -244,9 +244,10 @@ describe('Bot API: add_synonym', () => {
   });
 });
 
-describe('Bot API: create_issue', () => {
-  it('creates a new issue', async () => {
+describe('Bot API: create_issue (now routes through suggestion pipeline)', () => {
+  it('creates a pending issue + suggestion via phone', async () => {
     const { status, body } = await callBot('create_issue', {
+      phone: '+447700900001',
       name: 'Water Quality',
       category: 'Environment',
       description: 'Poor water quality in rural areas',
@@ -256,29 +257,36 @@ describe('Bot API: create_issue', () => {
     expect(body.data.issue.name).toBe('Water Quality');
     expect(body.data.issue.category).toBe('Environment');
     expect(body.data.issue.description).toBe('Poor water quality in rural areas');
-    expect(body.data.issue.rioter_count).toBe(0);
+    expect(body.data.issue.status).toBe('pending_review');
+    expect(body.data.suggestion).toBeTruthy();
+    expect(body.data.suggestion.suggested_name).toBe('Water Quality');
+    expect(body.data.close_matches).toBeDefined();
   });
 
   it('creates issue with defaults when no description', async () => {
     const { status, body } = await callBot('create_issue', {
+      phone: '+5511999999999',
       name: 'School Funding',
       category: 'Education',
     });
     expect(status).toBe(200);
     expect(body.data.issue.name).toBe('School Funding');
     expect(body.data.issue.description).toBe('');
+    expect(body.data.issue.status).toBe('pending_review');
   });
 
-  it('fails without name', async () => {
+  it('fails without phone', async () => {
     const { status, body } = await callBot('create_issue', {
+      name: 'Some Issue',
       category: 'Health',
     });
     expect(status).toBe(400);
-    expect(body.error).toContain('name');
+    expect(body.error).toBeDefined();
   });
 
   it('fails with invalid category', async () => {
     const { status, body } = await callBot('create_issue', {
+      phone: '+447700900001',
       name: 'Invalid Category Issue',
       category: 'InvalidCategory',
     });
@@ -1240,6 +1248,365 @@ const MEMORY_ACTIONS: { action: string; minParams: Record<string, unknown> }[] =
 
 describe('Bot API: memory structural guards', () => {
   it.each(MEMORY_ACTIONS)(
+    '$action returns 404 for unknown phone',
+    async ({ action, minParams }) => {
+      const { status } = await callBot(action, minParams);
+      expect(status).toBe(404);
+    },
+  );
+});
+
+// ─── Suggestion Pipeline ───────────────────────────────────
+
+describe('Bot API: suggest_riot', () => {
+  it('creates a suggestion + pending issue', async () => {
+    const { status, body } = await callBot('suggest_riot', {
+      phone: '+447700900003', // user-new
+      suggested_name: 'Pothole Crisis',
+      original_text: 'There are too many potholes on my road',
+      category: 'Transport',
+      description: 'Potholes everywhere causing damage',
+      public_recognition: true,
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.suggestion).toBeTruthy();
+    expect(body.data.suggestion.suggested_name).toBe('Pothole Crisis');
+    expect(body.data.suggestion.status).toBe('pending_review');
+    expect(body.data.entity_type).toBe('issue');
+    expect(body.data.entity_id).toBeTruthy();
+    expect(body.data.close_matches).toBeDefined();
+    expect(body.data.message).toContain('limited way');
+  });
+
+  it('creates a suggestion + pending organisation', async () => {
+    const { status, body } = await callBot('suggest_riot', {
+      phone: '+5511999999999', // user-marcio
+      suggested_name: 'MegaTelecom',
+      original_text: 'MegaTelecom is overcharging everyone',
+      suggested_type: 'organisation',
+      category: 'Telecoms',
+    });
+    expect(status).toBe(200);
+    expect(body.data.entity_type).toBe('organisation');
+    expect(body.data.suggestion.suggested_type).toBe('organisation');
+  });
+
+  it('returns 404 for unknown phone', async () => {
+    const { status } = await callBot('suggest_riot', {
+      phone: '+19999999999',
+      suggested_name: 'Test',
+      original_text: 'Test',
+      category: 'Other',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: get_suggestion_status', () => {
+  it('returns suggestions for user', async () => {
+    // user-new created a suggestion above in suggest_riot test
+    const { status, body } = await callBot('get_suggestion_status', {
+      phone: '+447700900003',
+    });
+    expect(status).toBe(200);
+    expect(body.data.suggestions.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('returns 404 for unknown phone', async () => {
+    const { status } = await callBot('get_suggestion_status', {
+      phone: '+19999999999',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: review_suggestion', () => {
+  it('rejects non-guide users', async () => {
+    // user-new has no role
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447700900003',
+      suggestion_id: 'suggestion-mobile',
+      decision: 'approve',
+    });
+    expect(status).toBe(403);
+    expect(body.error).toContain('Setup Guide role required');
+  });
+
+  it('allows setup guide to approve a suggestion', async () => {
+    // user-sarah is a setup_guide
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: 'suggestion-mobile',
+      decision: 'approve',
+      reviewer_notes: 'Looks good — important issue',
+    });
+    expect(status).toBe(200);
+    expect(body.data.decision).toBe('approved');
+    expect(body.data.suggestion.status).toBe('approved');
+  });
+
+  it('allows administrator to reject a suggestion', async () => {
+    // First create a fresh suggestion to reject
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+5511999999999',
+      suggested_name: 'About Bob',
+      original_text: 'Bob is annoying',
+      category: 'Other',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    // user-admin is administrator
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447974766838',
+      suggestion_id: sugId,
+      decision: 'reject',
+      rejection_reason: 'about_people',
+      rejection_detail: 'Quiet Riots are about issues, not people',
+    });
+    expect(status).toBe(200);
+    expect(body.data.decision).toBe('rejected');
+    expect(body.data.suggestion.status).toBe('rejected');
+  });
+
+  it('requires rejection_reason for reject', async () => {
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: 'suggestion-mobile',
+      decision: 'reject',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('rejection_reason');
+  });
+
+  it('allows merge with merge_into_issue_id', async () => {
+    // Create another suggestion to merge
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+447700900003',
+      suggested_name: 'Rail Delays Again',
+      original_text: 'Trains always late',
+      category: 'Transport',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+      decision: 'merge',
+      merge_into_issue_id: 'issue-rail',
+    });
+    expect(status).toBe(200);
+    expect(body.data.decision).toBe('merged');
+    expect(body.data.suggestion.status).toBe('merged');
+  });
+
+  it('allows more_info request with reviewer_notes', async () => {
+    // Create a fresh suggestion
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+447700900003',
+      suggested_name: 'Unclear Issue',
+      original_text: 'Things are bad',
+      category: 'Other',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    const { status, body } = await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+      decision: 'more_info',
+      reviewer_notes: 'Can you be more specific?',
+    });
+    expect(status).toBe(200);
+    expect(body.data.decision).toBe('more_info');
+    expect(body.data.suggestion.status).toBe('more_info_requested');
+  });
+
+  it('returns 404 for non-existent suggestion', async () => {
+    const { status } = await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: 'does-not-exist',
+      decision: 'approve',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: respond_more_info', () => {
+  it('allows first rioter to respond', async () => {
+    // Create a suggestion and request more info
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+5511999999999',
+      suggested_name: 'Internet Speed',
+      original_text: 'Internet too slow',
+      category: 'Telecoms',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    // Guide requests more info
+    await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+      decision: 'more_info',
+      reviewer_notes: 'Which provider?',
+    });
+
+    // First rioter responds
+    const { status, body } = await callBot('respond_more_info', {
+      phone: '+5511999999999',
+      suggestion_id: sugId,
+      response: 'BT Broadband — speeds are terrible in my area',
+    });
+    expect(status).toBe(200);
+    expect(body.data.message).toContain('sent to the Setup Guide');
+  });
+
+  it('rejects response from non-owner', async () => {
+    // user-sarah trying to respond to user-marcio's suggestion
+    const suggestions = await callBot('get_suggestion_status', {
+      phone: '+5511999999999',
+    });
+    const marcioSuggestion = suggestions.body.data.suggestions[0];
+
+    const { status, body } = await callBot('respond_more_info', {
+      phone: '+447700900001', // sarah, not marcio
+      suggestion_id: marcioSuggestion.id,
+      response: 'I am not the owner',
+    });
+    expect(status).toBe(403);
+    expect(body.error).toContain('your own suggestions');
+  });
+});
+
+describe('Bot API: go_live_suggestion', () => {
+  it('rejects non-guide users', async () => {
+    const { status, body } = await callBot('go_live_suggestion', {
+      phone: '+447700900003', // user-new, no role
+      suggestion_id: 'suggestion-mobile',
+    });
+    expect(status).toBe(403);
+    expect(body.error).toContain('Setup Guide role required');
+  });
+
+  it('makes an approved suggestion live', async () => {
+    // suggestion-mobile was approved earlier in review_suggestion test
+    const { status, body } = await callBot('go_live_suggestion', {
+      phone: '+447700900001', // sarah — setup_guide
+      suggestion_id: 'suggestion-mobile',
+    });
+    expect(status).toBe(200);
+    expect(body.data.suggestion.status).toBe('live');
+    expect(body.data.message).toContain('live');
+  });
+
+  it('rejects going live on pending suggestion', async () => {
+    // Create a fresh pending suggestion
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+5511999999999',
+      suggested_name: 'Fresh Pending',
+      original_text: 'Still pending',
+      category: 'Other',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    const { status, body } = await callBot('go_live_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('approved');
+  });
+});
+
+// ─── Inbox / Messages ──────────────────────────────────────
+
+describe('Bot API: get_inbox', () => {
+  it('returns messages for user', async () => {
+    // user-sarah should have messages from seed + suggestion notifications
+    const { status, body } = await callBot('get_inbox', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.data.messages).toBeDefined();
+    expect(body.data.unread_count).toBeDefined();
+    expect(typeof body.data.unread_count).toBe('number');
+  });
+
+  it('returns 404 for unknown phone', async () => {
+    const { status } = await callBot('get_inbox', {
+      phone: '+19999999999',
+    });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: mark_message_read', () => {
+  it('marks a message as read', async () => {
+    // msg-001 is for user-sarah, initially unread in seed
+    const { status, body } = await callBot('mark_message_read', {
+      phone: '+447700900001',
+      message_id: 'msg-001',
+    });
+    expect(status).toBe(200);
+    expect(body.data.marked).toBe(true);
+  });
+
+  it('returns false for wrong recipient', async () => {
+    // msg-003 is for user-marcio, not sarah
+    const { status, body } = await callBot('mark_message_read', {
+      phone: '+447700900001',
+      message_id: 'msg-003',
+    });
+    expect(status).toBe(200);
+    expect(body.data.marked).toBe(false);
+  });
+});
+
+describe('Bot API: mark_all_read', () => {
+  it('marks all messages as read for user', async () => {
+    const { status, body } = await callBot('mark_all_read', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.data.marked_count).toBeGreaterThanOrEqual(0);
+
+    // Verify no unread messages remain
+    const { body: inboxBody } = await callBot('get_inbox', {
+      phone: '+447700900001',
+      unread_only: true,
+    });
+    expect(inboxBody.data.messages).toHaveLength(0);
+  });
+});
+
+// ─── Structural guards for suggestion actions ──────────────
+
+const SUGGESTION_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [
+  {
+    action: 'suggest_riot',
+    minParams: {
+      phone: '+19999999999',
+      suggested_name: 'Test',
+      original_text: 'Test',
+      category: 'Other',
+    },
+  },
+  { action: 'get_suggestion_status', minParams: { phone: '+19999999999' } },
+  {
+    action: 'respond_more_info',
+    minParams: { phone: '+19999999999', suggestion_id: 'x', response: 'y' },
+  },
+  {
+    action: 'review_suggestion',
+    minParams: { phone: '+19999999999', suggestion_id: 'x', decision: 'approve' },
+  },
+  { action: 'go_live_suggestion', minParams: { phone: '+19999999999', suggestion_id: 'x' } },
+  { action: 'get_inbox', minParams: { phone: '+19999999999' } },
+  { action: 'mark_message_read', minParams: { phone: '+19999999999', message_id: 'x' } },
+  { action: 'mark_all_read', minParams: { phone: '+19999999999' } },
+];
+
+describe('Bot API: suggestion/inbox structural guards', () => {
+  it.each(SUGGESTION_ACTIONS)(
     '$action returns 404 for unknown phone',
     async ({ action, minParams }) => {
       const { status } = await callBot(action, minParams);

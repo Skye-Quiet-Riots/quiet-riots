@@ -7,6 +7,7 @@ import {
   getOrgsForIssue,
   getIssuesForOrg,
   getTotalRiotersForOrg,
+  createOrganisation,
 } from '@/lib/queries/organisations';
 import { getFilteredActions, getActionCountForIssue } from '@/lib/queries/actions';
 import {
@@ -18,6 +19,7 @@ import {
 } from '@/lib/queries/community';
 import {
   getUserByPhone,
+  getUserById,
   createUser,
   updateUser,
   joinIssue,
@@ -60,7 +62,28 @@ import {
   translateSynonyms,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
-import type { MemoryCategory } from '@/types';
+import {
+  createSuggestion as createIssueSuggestion,
+  getSuggestionsByUser,
+  getSuggestionById,
+  approveSuggestion,
+  rejectSuggestion,
+  mergeSuggestion,
+  requestMoreInfo as requestSuggestionMoreInfo,
+  goLiveSuggestion,
+  getCloseMatches,
+} from '@/lib/queries/suggestions';
+import { hasRole, getUsersByRole } from '@/lib/queries/roles';
+import {
+  createMessage,
+  getMessages,
+  getUnreadCount,
+  markAsRead,
+  markAllAsRead,
+} from '@/lib/queries/messages';
+import { sendEmail } from '@/lib/email';
+import { sendWhatsAppMessage } from '@/lib/whatsapp';
+import type { MemoryCategory, Category, SuggestedType, RejectionReason } from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -140,6 +163,7 @@ const actionSchemas = {
     country_code: countryField,
   }),
   create_issue: z.object({
+    phone: phoneField,
     name: z
       .string()
       .min(1, 'Issue name required')
@@ -275,6 +299,110 @@ const actionSchemas = {
     phone: phoneField,
     key: z.string().min(1).max(100),
   }),
+
+  // ─── Suggestion Pipeline ───────────────────────────────
+  suggest_riot: z.object({
+    phone: phoneField,
+    suggested_name: z
+      .string()
+      .min(1, 'Name required')
+      .max(255)
+      .transform((s) => sanitizeText(s)),
+    original_text: z
+      .string()
+      .min(1, 'Original text required')
+      .max(1000)
+      .transform((s) => sanitizeText(s)),
+    suggested_type: z.enum(['issue', 'organisation']).optional().default('issue'),
+    category: z.enum([
+      'Transport',
+      'Telecoms',
+      'Banking',
+      'Health',
+      'Education',
+      'Environment',
+      'Energy',
+      'Water',
+      'Insurance',
+      'Housing',
+      'Shopping',
+      'Delivery',
+      'Local',
+      'Employment',
+      'Tech',
+      'Other',
+    ]),
+    description: z
+      .string()
+      .max(2000)
+      .transform((s) => sanitizeText(s))
+      .optional()
+      .default(''),
+    public_recognition: z.boolean().optional().default(true),
+    language_code: langField,
+  }),
+  get_suggestion_status: z.object({
+    phone: phoneField,
+    language_code: langField,
+  }),
+  respond_more_info: z.object({
+    phone: phoneField,
+    suggestion_id: idField,
+    response: z
+      .string()
+      .min(1, 'Response required')
+      .max(2000)
+      .transform((s) => sanitizeText(s)),
+  }),
+  review_suggestion: z.object({
+    phone: phoneField,
+    suggestion_id: idField,
+    decision: z.enum(['approve', 'reject', 'merge', 'more_info']),
+    category: z
+      .enum([
+        'Transport',
+        'Telecoms',
+        'Banking',
+        'Health',
+        'Education',
+        'Environment',
+        'Energy',
+        'Water',
+        'Insurance',
+        'Housing',
+        'Shopping',
+        'Delivery',
+        'Local',
+        'Employment',
+        'Tech',
+        'Other',
+      ])
+      .optional(),
+    rejection_reason: z
+      .enum(['close_to_existing', 'about_people', 'illegal_subject', 'other'])
+      .optional(),
+    rejection_detail: z.string().max(1000).optional(),
+    close_match_ids: z.string().max(2000).optional(),
+    merge_into_issue_id: idField.optional(),
+    merge_into_org_id: idField.optional(),
+    reviewer_notes: z.string().max(2000).optional(),
+  }),
+  go_live_suggestion: z.object({
+    phone: phoneField,
+    suggestion_id: idField,
+  }),
+  get_inbox: z.object({
+    phone: phoneField,
+    unread_only: z.boolean().optional().default(false),
+    limit: z.number().int().positive().max(50).optional(),
+  }),
+  mark_message_read: z.object({
+    phone: phoneField,
+    message_id: idField,
+  }),
+  mark_all_read: z.object({
+    phone: phoneField,
+  }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -314,6 +442,96 @@ function err(message: string, status = 400) {
 function parseParams<T extends ActionName>(action: T, params: Record<string, unknown>) {
   const schema = actionSchemas[action];
   return schema.safeParse(params);
+}
+
+// ─── Notification Helpers ──────────────────────────────────
+
+/**
+ * Notify all Setup Guides about a new suggestion.
+ * Sends WhatsApp push + email + inbox message.
+ * Fire-and-forget — never throws.
+ */
+async function notifySetupGuides(
+  suggestedName: string,
+  category: string,
+  suggestedByName: string,
+  suggestionId: string,
+): Promise<void> {
+  try {
+    const guideRoles = await getUsersByRole('setup_guide');
+    const adminRoles = await getUsersByRole('administrator');
+    const allRoleRows = [...guideRoles, ...adminRoles];
+    // Deduplicate by user_id
+    const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
+
+    for (const userId of uniqueUserIds) {
+      // Inbox message
+      await createMessage({
+        recipientId: userId,
+        senderName: suggestedByName,
+        type: 'suggestion_received',
+        subject: `New suggestion: ${suggestedName}`,
+        body: `A new Quiet Riot suggestion "${suggestedName}" in ${category} has been submitted by ${suggestedByName}. Please review it on the Setup page.`,
+        entityType: 'issue_suggestion',
+        entityId: suggestionId,
+      });
+
+      // WhatsApp push (need to look up user phone)
+      const guideUser = await getUserById(userId);
+      if (guideUser?.phone) {
+        await sendWhatsAppMessage(
+          guideUser.phone,
+          `New Quiet Riot suggestion from ${suggestedByName}: "${suggestedName}" in ${category}. Please review it.`,
+        );
+      }
+      // Email (only if real email)
+      if (guideUser?.email && !guideUser.email.startsWith('wa-')) {
+        await sendEmail(
+          guideUser.email,
+          `New suggestion: ${suggestedName}`,
+          `<p>A new Quiet Riot suggestion <strong>${suggestedName}</strong> in ${category} has been submitted by ${suggestedByName}.</p><p>Please review it on the Setup page.</p>`,
+        );
+      }
+    }
+  } catch (error) {
+    console.error('Failed to notify Setup Guides:', error);
+  }
+}
+
+/**
+ * Send notification to a specific user via all channels.
+ * Fire-and-forget — never throws.
+ */
+async function notifyUser(
+  userId: string,
+  type: import('@/types').MessageType,
+  subject: string,
+  body: string,
+  entityType?: import('@/types').MessageEntityType,
+  entityId?: string,
+  senderName?: string,
+): Promise<void> {
+  try {
+    await createMessage({
+      recipientId: userId,
+      senderName,
+      type,
+      subject,
+      body,
+      entityType,
+      entityId,
+    });
+
+    const user = await getUserById(userId);
+    if (user?.phone) {
+      await sendWhatsAppMessage(user.phone, `${subject}: ${body.slice(0, 500)}`);
+    }
+    if (user?.email && !user.email.startsWith('wa-')) {
+      await sendEmail(user.email, subject, `<p>${body.replace(/\n/g, '</p><p>')}</p>`);
+    }
+  } catch (error) {
+    console.error('Failed to notify user:', error);
+  }
 }
 
 // ─── Route Handler ────────────────────────────────────────
@@ -567,17 +785,45 @@ export async function POST(request: NextRequest) {
         return ok({ synonym });
       }
 
-      // ─── Create Issue ───────────────────────────────────
+      // ─── Create Issue (routes through suggestion pipeline) ───
       case 'create_issue': {
+        const phone = p.phone as string;
         const name = p.name as string;
-        const category = p.category as string;
+        const category = p.category as Category;
         const description = (p.description as string) || '';
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        // Create pending issue
         const issue = await createIssue({
           name,
-          category: category as import('@/types').Category,
+          category,
           description,
+          status: 'pending_review',
+          first_rioter_id: user.id,
         });
-        return ok({ issue });
+
+        // Auto-join user to the pending issue
+        await joinIssue(user.id, issue.id);
+
+        // Create suggestion record
+        const closeMatches = await getCloseMatches(name, category, 'issue');
+        const suggestion = await createIssueSuggestion({
+          suggestedBy: user.id,
+          originalText: name,
+          suggestedName: name,
+          suggestedType: 'issue',
+          category,
+          description,
+          issueId: issue.id,
+          closeMatchIds: closeMatches.map((m) => m.id),
+          publicRecognition: 1,
+        });
+
+        // Notify Setup Guides (fire-and-forget)
+        notifySetupGuides(name, category, user.name ?? 'Anonymous', suggestion.id).catch(() => {});
+
+        return ok({ issue, suggestion, close_matches: closeMatches });
       }
 
       // ─── User Profile ────────────────────────────────────
@@ -856,6 +1102,303 @@ export async function POST(request: NextRequest) {
         if (!user) return err('User not found — call identify first', 404);
         const deleted = await deleteMemory(user.id, p.key as string);
         return ok({ deleted });
+      }
+
+      // ─── Suggestion Pipeline ─────────────────────────────
+      case 'suggest_riot': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const suggestedName = p.suggested_name as string;
+        const suggestedType = p.suggested_type as SuggestedType;
+        const category = p.category as Category;
+        const description = (p.description as string) || '';
+        const publicRecognition = p.public_recognition as boolean;
+
+        // Find close matches
+        const closeMatches = await getCloseMatches(suggestedName, category, suggestedType);
+
+        // Create the pending entity
+        let entityId: string;
+        if (suggestedType === 'issue') {
+          const issue = await createIssue({
+            name: suggestedName,
+            category,
+            description,
+            status: 'pending_review',
+            first_rioter_id: user.id,
+          });
+          entityId = issue.id;
+          // Auto-join user to the pending issue
+          await joinIssue(user.id, issue.id);
+        } else {
+          const org = await createOrganisation({
+            name: suggestedName,
+            category,
+            description,
+            status: 'pending_review',
+            first_rioter_id: user.id,
+          });
+          entityId = org.id;
+        }
+
+        // Create suggestion record
+        const suggestion = await createIssueSuggestion({
+          suggestedBy: user.id,
+          originalText: p.original_text as string,
+          suggestedName,
+          suggestedType,
+          category,
+          description,
+          issueId: suggestedType === 'issue' ? entityId : undefined,
+          organisationId: suggestedType === 'organisation' ? entityId : undefined,
+          closeMatchIds: closeMatches.map((m) => m.id),
+          publicRecognition: publicRecognition ? 1 : 0,
+        });
+
+        // Notify Setup Guides (fire-and-forget)
+        notifySetupGuides(suggestedName, category, user.name ?? 'Anonymous', suggestion.id).catch(
+          () => {},
+        );
+
+        return ok({
+          suggestion,
+          entity_id: entityId,
+          entity_type: suggestedType,
+          close_matches: closeMatches,
+          message:
+            'Your Quiet Riot is up and running now but in a limited way. You can say what you think and gather evidence. It will get a 👍 or 👎 within the next hour.',
+        });
+      }
+
+      case 'get_suggestion_status': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const suggestions = await getSuggestionsByUser(user.id);
+        return ok({ suggestions });
+      }
+
+      case 'respond_more_info': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const suggestionId = p.suggestion_id as string;
+        const response = p.response as string;
+        const suggestion = await getSuggestionById(suggestionId);
+        if (!suggestion) return err('Suggestion not found', 404);
+        if (suggestion.suggested_by !== user.id)
+          return err('You can only respond to your own suggestions', 403);
+        if (suggestion.status !== 'more_info_requested')
+          return err('Suggestion is not waiting for more info');
+
+        // Add the response as a feed post on the linked entity
+        if (suggestion.issue_id) {
+          await createFeedPost(suggestion.issue_id, user.id, `[More info]: ${response}`);
+        }
+
+        // Notify the reviewer
+        if (suggestion.reviewer_id) {
+          notifyUser(
+            suggestion.reviewer_id,
+            'suggestion_progress',
+            `Response from ${user.name ?? 'First Rioter'}: ${suggestion.suggested_name}`,
+            `The First Rioter responded to your question about "${suggestion.suggested_name}": ${response}`,
+            'issue_suggestion',
+            suggestionId,
+            user.name ?? 'First Rioter',
+          ).catch(() => {});
+        }
+
+        return ok({ suggestion, message: 'Your response has been sent to the Setup Guide.' });
+      }
+
+      case 'review_suggestion': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        // Role gate: must be setup_guide or administrator
+        const isGuide = await hasRole(user.id, 'setup_guide');
+        const isAdmin = await hasRole(user.id, 'administrator');
+        if (!isGuide && !isAdmin) return err('Setup Guide role required', 403);
+
+        const suggestionId = p.suggestion_id as string;
+        const decision = p.decision as string;
+        const suggestion = await getSuggestionById(suggestionId);
+        if (!suggestion) return err('Suggestion not found', 404);
+
+        switch (decision) {
+          case 'approve': {
+            const cat = (p.category as Category) || (suggestion.category as Category);
+            const result = await approveSuggestion(
+              suggestionId,
+              user.id,
+              cat,
+              p.reviewer_notes as string | undefined,
+            );
+            // Notify First Rioter
+            notifyUser(
+              suggestion.suggested_by,
+              'suggestion_approved',
+              `Thumbs Up 👍: ${suggestion.suggested_name}`,
+              `Great news — your Quiet Riot "${suggestion.suggested_name}" has been approved! It's now under review for translations.`,
+              'issue_suggestion',
+              suggestionId,
+              user.name ?? 'Setup Guide',
+            ).catch(() => {});
+            return ok({ suggestion: result, decision: 'approved' });
+          }
+          case 'reject': {
+            const reason = p.rejection_reason as RejectionReason;
+            if (!reason) return err('rejection_reason is required for reject decision');
+            const closeMatchIdsStr = p.close_match_ids as string | undefined;
+            const closeMatchIdsArr = closeMatchIdsStr
+              ? closeMatchIdsStr.split(',').map((s) => s.trim())
+              : undefined;
+            const result = await rejectSuggestion(
+              suggestionId,
+              user.id,
+              reason,
+              p.rejection_detail as string | undefined,
+              closeMatchIdsArr,
+            );
+            // Notify First Rioter
+            const reasonTexts: Record<RejectionReason, string> = {
+              close_to_existing: 'It is too similar to an existing Quiet Riot.',
+              about_people: 'Quiet Riots are about issues, not specific people.',
+              illegal_subject: 'The subject matter is not appropriate.',
+              other: (p.rejection_detail as string) || 'The suggestion was not approved.',
+            };
+            notifyUser(
+              suggestion.suggested_by,
+              'suggestion_rejected',
+              `Update on ${suggestion.suggested_name}`,
+              `Your suggestion "${suggestion.suggested_name}" wasn't approved. ${reasonTexts[reason]}`,
+              'issue_suggestion',
+              suggestionId,
+              user.name ?? 'Setup Guide',
+            ).catch(() => {});
+            return ok({ suggestion: result, decision: 'rejected' });
+          }
+          case 'merge': {
+            const mergeIssueId = p.merge_into_issue_id as string | undefined;
+            const mergeOrgId = p.merge_into_org_id as string | undefined;
+            if (!mergeIssueId && !mergeOrgId)
+              return err('merge_into_issue_id or merge_into_org_id required for merge');
+            const result = await mergeSuggestion(suggestionId, user.id, mergeIssueId, mergeOrgId);
+            // Auto-join user into the merge target
+            if (mergeIssueId) {
+              await joinIssue(suggestion.suggested_by, mergeIssueId);
+            }
+            // Notify First Rioter
+            notifyUser(
+              suggestion.suggested_by,
+              'suggestion_merged',
+              `Your suggestion: ${suggestion.suggested_name}`,
+              `Your suggestion "${suggestion.suggested_name}" is similar to an existing Quiet Riot. We've added you to that one instead.`,
+              'issue_suggestion',
+              suggestionId,
+              user.name ?? 'Setup Guide',
+            ).catch(() => {});
+            return ok({ suggestion: result, decision: 'merged' });
+          }
+          case 'more_info': {
+            const notes = p.reviewer_notes as string | undefined;
+            if (!notes) return err('reviewer_notes required when requesting more info');
+            const result = await requestSuggestionMoreInfo(suggestionId, user.id, notes);
+            // Notify First Rioter
+            notifyUser(
+              suggestion.suggested_by,
+              'suggestion_more_info',
+              `${user.name ?? 'Setup Guide'}: Question about ${suggestion.suggested_name}`,
+              `The Setup Guide has a question about your suggestion "${suggestion.suggested_name}": ${notes}`,
+              'issue_suggestion',
+              suggestionId,
+              user.name ?? 'Setup Guide',
+            ).catch(() => {});
+            return ok({ suggestion: result, decision: 'more_info' });
+          }
+          default:
+            return err('Invalid decision — must be approve, reject, merge, or more_info');
+        }
+      }
+
+      case 'go_live_suggestion': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        // Role gate
+        const isGuide = await hasRole(user.id, 'setup_guide');
+        const isAdmin = await hasRole(user.id, 'administrator');
+        if (!isGuide && !isAdmin) return err('Setup Guide role required', 403);
+
+        const suggestionId = p.suggestion_id as string;
+        const suggestion = await getSuggestionById(suggestionId);
+        if (!suggestion) return err('Suggestion not found', 404);
+        if (suggestion.status !== 'approved' && suggestion.status !== 'translations_ready')
+          return err('Suggestion must be approved or have translations ready before going live');
+
+        const result = await goLiveSuggestion(suggestionId);
+
+        // Notify First Rioter about go-live
+        notifyUser(
+          suggestion.suggested_by,
+          'suggestion_live',
+          `${suggestion.suggested_name} is now live!`,
+          `Your Quiet Riot "${suggestion.suggested_name}" has had the 👍! It's now live. Share it with friends who care about this issue.`,
+          'issue_suggestion',
+          suggestionId,
+          user.name ?? 'Setup Guide',
+        ).catch(() => {});
+
+        // Notify guide
+        notifyUser(
+          user.id,
+          'suggestion_live',
+          `${suggestion.suggested_name} is now live!`,
+          `You approved "${suggestion.suggested_name}" and it's now live.`,
+          'issue_suggestion',
+          suggestionId,
+        ).catch(() => {});
+
+        return ok({ suggestion: result, message: `${suggestion.suggested_name} is now live!` });
+      }
+
+      // ─── Inbox / Messages ────────────────────────────────
+      case 'get_inbox': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const unreadOnly = p.unread_only as boolean;
+        const limit = (p.limit as number) || 20;
+        const messages = await getMessages(user.id, { unreadOnly, limit });
+        const unreadCount = await getUnreadCount(user.id);
+        return ok({ messages, unread_count: unreadCount });
+      }
+
+      case 'mark_message_read': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const messageId = p.message_id as string;
+        const result = await markAsRead(messageId, user.id);
+        return ok({ marked: result });
+      }
+
+      case 'mark_all_read': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const count = await markAllAsRead(user.id);
+        return ok({ marked_count: count });
       }
 
       default:
