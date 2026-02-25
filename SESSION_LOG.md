@@ -6,19 +6,19 @@
 
 ## Latest Session
 
-**Session 29** (2026-02-25) — Avatar Upload (Vercel Blob)
-→ [`session-logs/2026-02-session-29.md`](session-logs/2026-02-session-29.md)
+**Session 30** (2026-02-25) — Connected Accounts Management + OpenClaw Session Clear
+→ [`session-logs/2026-02-session-30.md`](session-logs/2026-02-session-30.md)
 
 ## Current Priorities
 
 - **DB migration on staging/production** — Run migrations 011-014 + seed reference data
-- **OpenClaw session clear** — After SKILL.md language directive changes
-- **Connected accounts management** — Show Google/Facebook links on profile page
+- **Verify production deployment** — Check connected accounts feature is visible
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 30  | 2026-02-25    | Connected accounts management + OpenClaw clear        | [`session-30`](session-logs/2026-02-session-30.md)                                                             |
 | 29  | 2026-02-25    | Avatar upload (Vercel Blob)                           | [`session-29`](session-logs/2026-02-session-29.md)                                                             |
 | 28  | 2026-02-25    | Post-signup onboarding wizard                         | [`session-28`](session-logs/2026-02-session-28.md)                                                             |
 | 27  | 2026-02-25    | DB content translations for all 44 locales            | [`session-27`](session-logs/2026-02-session-27.md)                                                             |
