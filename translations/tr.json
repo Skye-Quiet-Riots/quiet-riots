@@ -1,0 +1,421 @@
+{
+  "locale": "tr",
+  "categories": {
+    "Transport": "Ulaşım",
+    "Telecoms": "Telekomünikasyon",
+    "Banking": "Bankacılık",
+    "Health": "Sağlık",
+    "Education": "Eğitim",
+    "Environment": "Çevre",
+    "Energy": "Enerji",
+    "Water": "Su",
+    "Insurance": "Sigorta",
+    "Housing": "Konut",
+    "Shopping": "Alışveriş",
+    "Delivery": "Kargo",
+    "Local": "Yerel",
+    "Employment": "İstihdam",
+    "Tech": "Teknoloji",
+    "Other": "Diğer"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Tren İptalleri",
+      "description": "Trenler yetersiz bildirim veya tazminat ile iptal ediliyor ya da ciddi şekilde gecikiyor"
+    },
+    "Train Ticket Prices": {
+      "name": "Tren Bileti Fiyatları",
+      "description": "Tren ücretleri çok pahalı, enflasyonun üzerinde zamlar, tutarsız fiyatlandırma"
+    },
+    "Flight Delays": {
+      "name": "Uçuş Gecikmeleri",
+      "description": "Uçuşlar gecikiyor veya iptal ediliyor, yetersiz iletişim, tazminat almakta zorluk"
+    },
+    "Lost Luggage": {
+      "name": "Kayıp Bagaj",
+      "description": "Valizler varış noktasına ulaşmıyor, yavaş takip, yetersiz tazminat"
+    },
+    "Bus Route Cuts": {
+      "name": "Otobüs Hattı Kesintileri",
+      "description": "Hatlar iptal ediliyor, sefer sıklığı azaltılıyor, kırsal topluluklar otobüs erişimini kaybediyor"
+    },
+    "Pothole Damage": {
+      "name": "Çukur Hasarı",
+      "description": "Çukurlar araçlara zarar veriyor ve bisikletçileri tehlikeye atıyor, belediyeler onarımda yavaş"
+    },
+    "Parking Fines": {
+      "name": "Park Cezaları",
+      "description": "Haksız özel otopark ücretleri, agresif uygulama, kafa karıştırıcı tabelalar"
+    },
+    "Fuel Prices": {
+      "name": "Yakıt Fiyatları",
+      "description": "Benzin ve motorin fiyatları çok yüksek, toptan fiyat düşünce geç yansıyor"
+    },
+    "Broadband Speed": {
+      "name": "İnternet Hızı",
+      "description": "İnternet hızları reklamı yapılan ve ödenen değerin çok altında"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobil Sinyal Kör Noktaları",
+      "description": "Evlerde, işyerlerinde veya ulaşım güzergahlarında mobil sinyal yok"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Sözleşme Ortasında Fiyat Artışları",
+      "description": "Telefon, internet ve TV faturaları bağlayıcı sözleşmeler sırasında artıyor"
+    },
+    "Customer Service Hold Times": {
+      "name": "Müşteri Hizmetleri Bekleme Süreleri",
+      "description": "Bir insanla konuşmak için saatlerce hatta bekleme"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Abonelik İptal Zorluğu",
+      "description": "Şirketler iptal etmeyi veya abonelikten çıkmayı kasıtlı olarak zorlaştırıyor"
+    },
+    "Roaming Charges": {
+      "name": "Dolaşım Ücretleri",
+      "description": "Yurt dışında seyahat ederken beklenmeyen mobil ücretler, Brexit sonrası fiyat artışları"
+    },
+    "Energy Bill Costs": {
+      "name": "Enerji Fatura Maliyetleri",
+      "description": "Doğalgaz ve elektrik faturaları karşılanamaz düzeyde, fiyat tavanı hâlâ çok yüksek"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Hatalı Enerji Faturaları",
+      "description": "Tahmini okumalar yanlış, fazla faturalandırma, fatura hataları"
+    },
+    "Water Bill Increases": {
+      "name": "Su Faturası Artışları",
+      "description": "Su faturaları hizmet kalitesi düşerken hızla artıyor"
+    },
+    "Sewage in Rivers": {
+      "name": "Nehirlerde Kanalizasyon",
+      "description": "Su şirketleri arıtılmamış kanalizasyonu akarsu ve sahillere boşaltıyor"
+    },
+    "Power Cuts": {
+      "name": "Elektrik Kesintileri",
+      "description": "Elektrik tedarik kesintileri, yavaş restorasyon, yetersiz tazminat"
+    },
+    "Smart Meter Problems": {
+      "name": "Akıllı Sayaç Sorunları",
+      "description": "Akıllı sayaçlar çalışmıyor, tedarikçi değiştirince işlevsellik kaybediliyor"
+    },
+    "Bank Branch Closures": {
+      "name": "Banka Şubesi Kapanışları",
+      "description": "Yerel banka şubeleri kapanıyor, topluluklar erişimsiz kalıyor"
+    },
+    "Hidden Bank Charges": {
+      "name": "Gizli Banka Ücretleri",
+      "description": "Kredili mevduat, yurt dışı işlemler ve hesap bakımı için beklenmeyen ücretler"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Dolandırıcılık ve Sahtekarlık Kayıpları",
+      "description": "Bankalar dolandırıcılık ve yetkili ödeme dolandırıcılığı mağdurlarına geri ödeme yapmayı reddediyor"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Sigorta Talebi Retleri",
+      "description": "Yıllarca prim ödedikten sonra teknik gerekçelerle talepler reddediliyor"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Mortgage Faiz Şoku",
+      "description": "Sabit faiz süresi bitiyor ve çok daha yüksek değişken faize geçiliyor"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Yurt Dışı Havale Ücretleri",
+      "description": "Uluslararası para transferlerinde aşırı ücretler ve kötü döviz kurları"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS Bekleme Süreleri",
+      "description": "Ameliyatlar ve uzman randevuları için aylarca veya yıllarca bekleme"
+    },
+    "GP Appointment Access": {
+      "name": "Aile Hekimi Randevu Erişimi",
+      "description": "Aile hekimi randevusu almak için ulaşılamıyor, haftalarca bekleme"
+    },
+    "Dentist Availability": {
+      "name": "Diş Hekimi Erişilebilirliği",
+      "description": "Yeni hasta kabul eden NHS diş hekimi bulmak imkansız"
+    },
+    "Mental Health Service Waits": {
+      "name": "Ruh Sağlığı Hizmeti Bekleme Süreleri",
+      "description": "Terapi ve ruh sağlığı desteği için aylarca bekleme"
+    },
+    "Prescription Costs": {
+      "name": "Reçete Maliyetleri",
+      "description": "İngiltere'de ilaç başına maliyet çok yüksek, Birleşik Krallık ülkeleri arasında tutarsızlık"
+    },
+    "Hospital Parking Charges": {
+      "name": "Hastane Otopark Ücretleri",
+      "description": "Hastayken veya hasta yakınlarını ziyaret ederken hastane otoparkı için ödeme yapma"
+    },
+    "Rent Increases": {
+      "name": "Kira Artışları",
+      "description": "Özel kiralar enflasyonun çok üzerinde artıyor, haksız tahliye tehdidi"
+    },
+    "Council Tax Rises": {
+      "name": "Belediye Vergisi Artışları",
+      "description": "Yerel hizmetler kötüleşirken yıllık belediye vergisi zamları"
+    },
+    "Noisy Neighbours": {
+      "name": "Gürültücü Komşular",
+      "description": "Sürekli gürültü rahatsızlığı, belediyeler harekete geçmekte yavaş, ruh sağlığını etkiliyor"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Çöp Toplama Değişiklikleri",
+      "description": "Azaltılan çöp toplama, kafa karıştırıcı geri dönüşüm kuralları, taşan çöp kutuları"
+    },
+    "Planning Permission Abuse": {
+      "name": "İmar İzni Suistimali",
+      "description": "İstenmeyen yapılaşmalar onaylanıyor, yeşil alan tehdit altında, topluluk göz ardı ediliyor"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Konutlarda Nem ve Küf",
+      "description": "Ev sahipleri ve konut birlikleri nem ve küfü gidermekte başarısız"
+    },
+    "Delivery Problems": {
+      "name": "Teslimat Sorunları",
+      "description": "Paketler kayboluyor, yağmurda bırakılıyor, teslim edildi olarak işaretleniyor ama alınmıyor"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Ürünler küçülüyor, fiyatlar aynı kalıyor veya artıyor"
+    },
+    "Refund Difficulties": {
+      "name": "İade Zorlukları",
+      "description": "Şirketler iade ve geri ödemeyi gereksiz yere zorlaştırıyor"
+    },
+    "Fake Reviews": {
+      "name": "Sahte Yorumlar",
+      "description": "Çevrimiçi yorumlara güvenilemiyor, sahte olumlu yorumlar tüketicileri yanıltıyor"
+    },
+    "Subscription Traps": {
+      "name": "Abonelik Tuzakları",
+      "description": "Ücretsiz denemeler açık onay olmadan ücretliye dönüşüyor, iptal etmek zor"
+    },
+    "Food Quality Decline": {
+      "name": "Gıda Kalitesinde Düşüş",
+      "description": "Hazır yemeklerde düşük kalite, küçülen porsiyonlar, daha fazla katkı maddesi"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Self-Servis Kasa Hayal Kırıklığı",
+      "description": "Self-servis makineler güvenilmez, insan personelin yerini alıyor"
+    },
+    "Cost of Childcare": {
+      "name": "Çocuk Bakımı Maliyeti",
+      "description": "Çocuk bakımı maliyetleri aşırı pahalı, çalışma kapasitesini sınırlıyor"
+    },
+    "Student Loan Repayment": {
+      "name": "Öğrenim Kredisi Geri Ödemesi",
+      "description": "Mezunlar onlarca yıl geri ödeme yapıyor, eşik ve faiz değişiklikleri"
+    },
+    "Dog Fouling": {
+      "name": "Köpek Pisliği",
+      "description": "Kamusal alanlarda, parklarda ve kaldırımlarda temizlenmeyen köpek pisliği"
+    },
+    "AI Replacing Jobs": {
+      "name": "Yapay Zekanın İşleri Ele Geçirmesi",
+      "description": "Yapay zekanın geçiş desteği olmadan işleri otomatikleştirmesi konusunda endişe"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "West Coast Ana Hattı'nda hizmet veren Birleşik Krallık demiryolu operatörü"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Londra ve güneye hizmet veren Birleşik Krallık demiryolu operatörü"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "İngiltere kuzeyine hizmet veren Birleşik Krallık demiryolu operatörü"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Birleşik Krallık uzun mesafe demiryolu operatörü"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Trans-Pennine güzergahlarında hizmet veren Birleşik Krallık demiryolu operatörü"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "East Coast Ana Hattı'nda hizmet veren Birleşik Krallık demiryolu operatörü"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Düşük maliyetli Avrupa havayolu"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Birleşik Krallık merkezli düşük maliyetli havayolu"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Birleşik Krallık ulusal havayolu"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Tatil ve seyahat şirketi"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Büyük Birleşik Krallık geniş bant ve mobil sağlayıcısı"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Birleşik Krallık geniş bant, TV ve mobil sağlayıcısı"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Birleşik Krallık TV, geniş bant ve mobil sağlayıcısı"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Birleşik Krallık merkezli küresel telekomünikasyon şirketi"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Birleşik Krallık mobil ağ operatörü"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Birleşik Krallık geniş bant ve telefon sağlayıcısı"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Birleşik Krallık enerji tedarikçisi"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Birleşik Krallık enerji tedarikçisi"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Birleşik Krallık enerji tedarikçisi (Fransız sermayeli)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Birleşik Krallık yenilenebilir enerji tedarikçisi"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Birleşik Krallık enerji tedarikçisi"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Birleşik Krallık enerji tedarikçisi (Alman sermayeli)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Londra ve Thames Vadisi su ve kanalizasyon şirketi"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "İngiltere güneyinin su şirketi"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "İngiltere kuzeybatısının su şirketi"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Midlands bölgesinin su şirketi"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Doğu Anglia bölgesinin su şirketi"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "İngiliz çok uluslu bankası"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Küresel bankacılık ve finansal hizmetler"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Birleşik Krallık perakende ve ticari bankası"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Birleşik Krallık bankacılık grubu"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Birleşik Krallık bankası (İspanyol sermayeli)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Dijital bankacılık ve fintek"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Birleşik Krallık sigorta ve finansal hizmetler"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Birleşik Krallık araç ve konut sigortası"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Birleşik Krallık sigorta şirketi"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Küresel e-ticaret ve teknoloji"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Birleşik Krallık posta hizmeti"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Birleşik Krallık kargo teslimat hizmeti (eski adıyla Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Birleşik Krallık kargo teslimat hizmeti"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Birleşik Krallık süpermarket zinciri"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Birleşik Krallık süpermarket zinciri"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "İngiltere Ulusal Sağlık Hizmeti"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS diş hekimliği hizmetleri"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Özel sağlık hizmeti sağlayıcısı"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Birleşik Krallık yerel yönetim birimleri"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Birleşik Krallık konut inşaatçısı"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Birleşik Krallık çevrimiçi kiralama platformu"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Çevrimiçi yayın eğlence hizmeti"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Teknoloji şirketi"
+    }
+  }
+}

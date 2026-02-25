@@ -1,0 +1,421 @@
+{
+  "locale": "fi",
+  "categories": {
+    "Transport": "Liikenne",
+    "Telecoms": "Televiestinta",
+    "Banking": "Pankkipalvelut",
+    "Health": "Terveys",
+    "Education": "Koulutus",
+    "Environment": "Ymparisto",
+    "Energy": "Energia",
+    "Water": "Vesi",
+    "Insurance": "Vakuutus",
+    "Housing": "Asuminen",
+    "Shopping": "Kaupankaynti",
+    "Delivery": "Toimitukset",
+    "Local": "Paikallinen",
+    "Employment": "Tyollisyys",
+    "Tech": "Teknologia",
+    "Other": "Muu"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Junien peruutukset",
+      "description": "Junia perutetaan tai ne myohastyvat pahasti ilman riittavaa ilmoitusta tai korvausta"
+    },
+    "Train Ticket Prices": {
+      "name": "Junalippujen hinnat",
+      "description": "Junaliput liian kalliita, inflaatiota suuremmat korotukset, epayhteneva hinnoittelu"
+    },
+    "Flight Delays": {
+      "name": "Lentojen myohastymiset",
+      "description": "Lennot myohastyneet tai peruttu, huono tiedottaminen, vaikeuksia saada korvausta"
+    },
+    "Lost Luggage": {
+      "name": "Kadonnut matkatavara",
+      "description": "Laukut eivat saavu perille, hidas seuranta, riittamaton korvaus"
+    },
+    "Bus Route Cuts": {
+      "name": "Bussireittien leikkaukset",
+      "description": "Reitteja peruttu, vuorovaleja harvennettu, maaseutuyhteisot menettavat bussiyhteydet"
+    },
+    "Pothole Damage": {
+      "name": "Kuoppavauriot",
+      "description": "Teiden kuopat vahingoittavat ajoneuvoja ja vaarantavat pyorailijat, kunnat hitaita korjauksissa"
+    },
+    "Parking Fines": {
+      "name": "Pysakointimaksut",
+      "description": "Epaoikeudenmukaiset yksityiset pysakointimaksut, aggressiivinen valvonta, harhaanjohtavat kyltit"
+    },
+    "Fuel Prices": {
+      "name": "Polttoainehinnat",
+      "description": "Bensiinin ja dieselin hinnat liian korkeita, hitaita laskemaan tukkuhinnan laskiessa"
+    },
+    "Broadband Speed": {
+      "name": "Laajakaistanopeus",
+      "description": "Internet-nopeudet selkeasti mainostettua ja maksettua hitaammat"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobiiliverkon katvealueet",
+      "description": "Ei mobiiliverkkoa kotona, tyopaikalla tai liikennereittien varrella"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Hinnankorotukset kesken sopimuksen",
+      "description": "Puhelin-, laajakaista- ja TV-laskut nousevat lukittujen sopimusten aikana"
+    },
+    "Customer Service Hold Times": {
+      "name": "Asiakaspalvelun jonotusajat",
+      "description": "Tuntien jonotus puhelimessa paastakseen puhumaan ihmiselle"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Tilausten peruuttamisen vaikeus",
+      "description": "Yritykset tekevat tahallaan vaikeaksi peruuttaa tai irtisanoutua"
+    },
+    "Roaming Charges": {
+      "name": "Verkkovierailumaksut",
+      "description": "Odottamattomat mobiilimaksut ulkomailla, Brexitin jalkeiset hinnankorotukset"
+    },
+    "Energy Bill Costs": {
+      "name": "Energialaskujen kustannukset",
+      "description": "Kaasu- ja sahkolaskut kohtuuttomia, hintakatto yha liian korkealla"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Virheelliset energialaskut",
+      "description": "Arvioidut mittarilukemat vaaria, ylivelottamista, laskutusvirheita"
+    },
+    "Water Bill Increases": {
+      "name": "Vesilaskujen korotukset",
+      "description": "Vesilaskut nousevat jyrkasti samalla kun palvelun laatu heikkenee"
+    },
+    "Sewage in Rivers": {
+      "name": "Jatevedet joissa",
+      "description": "Vesiyhtiot paastavat kasittelematonta jatevetta vesistoihin ja rannoille"
+    },
+    "Power Cuts": {
+      "name": "Sahkokatkot",
+      "description": "Sahkonsyoton keskeytykset, hidas palautus, riittamaton korvaus"
+    },
+    "Smart Meter Problems": {
+      "name": "Alymittariongelmat",
+      "description": "Alymittarit eivat toimi, menettavat toiminnallisuuden palveluntarjoajan vaihdon jalkeen"
+    },
+    "Bank Branch Closures": {
+      "name": "Pankkikonttorien sulkemiset",
+      "description": "Paikalliset pankkikonttorit sulkeutuvat, yhteisot jaavat ilman palvelua"
+    },
+    "Hidden Bank Charges": {
+      "name": "Piilotetut pankkimaksut",
+      "description": "Odottamattomia maksuja tilinylityksista, ulkomaanmaksuista ja tilinhoitopalveluista"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Petosten ja huijausten tappiot",
+      "description": "Pankit kieltaytyvat korvaamasta petosten ja valtuutettujen maksuhuijausten uhreja"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Vakuutuskorvausten hylkaykset",
+      "description": "Korvausvaatimukset hylataan teknisilla perusteilla vuosien maksunsuorituksen jalkeen"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Asuntolainan korkoshokki",
+      "description": "Kiintea korko paattyy ja siirtyy huomattavasti korkeampaan vaihtuvaan korkoon"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Ulkomaansiirtomaksut",
+      "description": "Kohtuuttomat maksut ja huonot valuuttakurssit kansainvalisissa rahansiirroissa"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS:n jonotusajat",
+      "description": "Useiden kuukausien tai vuosien odotus leikkauksiin ja erikoislaakarikaynnille"
+    },
+    "GP Appointment Access": {
+      "name": "Laakariajanvaraus",
+      "description": "Ei paase laakariin varaamaan aikaa, viikkojen odotusajat"
+    },
+    "Dentist Availability": {
+      "name": "Hammaslaakarien saatavuus",
+      "description": "Mahdotonta loytaa julkista hammaslaakaria joka ottaa uusia potilaita"
+    },
+    "Mental Health Service Waits": {
+      "name": "Mielenterveyspalvelujen jonotus",
+      "description": "Kuukausien odotusajat terapiaan ja mielenterveystukeen"
+    },
+    "Prescription Costs": {
+      "name": "Reseptilaaakkeiden kustannukset",
+      "description": "Tuotekohtainen hinta liian korkea Englannissa, epayhteneva eri maiden valilla"
+    },
+    "Hospital Parking Charges": {
+      "name": "Sairaalan pysakointimaksut",
+      "description": "Pysakoinnista maksaminen sairaalassa sairaana ollessa tai sairaita vierailtaessa"
+    },
+    "Rent Increases": {
+      "name": "Vuokrankorotukset",
+      "description": "Yksityiset vuokrat nousevat selkeasti inflaation yli, haidon uhka ilman perustetta"
+    },
+    "Council Tax Rises": {
+      "name": "Kunnallisveron korotukset",
+      "description": "Vuosittaiset kunnallisveron korotukset samalla kun paikalliset palvelut heikkenevat"
+    },
+    "Noisy Neighbours": {
+      "name": "Meluisat naapurit",
+      "description": "Jatkuva meluhairiota, kunta hidas toimimaan, vaikuttaa mielenterveyteen"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Jatteenkeruun muutokset",
+      "description": "Vahennetty jatehuolto, sekavat kierratyssaannot, ylitayttyneet astiat"
+    },
+    "Planning Permission Abuse": {
+      "name": "Rakennuslupien vaarinkaytto",
+      "description": "Ei-toivotut rakennushankkeet hyvaksytty, viheralueet uhattuna, yhteiso sivuutettu"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Kosteus ja home asunnoissa",
+      "description": "Vuokranantajat ja asuntoyhtiot eivat korjaa kosteus- ja homeongelmia"
+    },
+    "Delivery Problems": {
+      "name": "Toimitusongelmat",
+      "description": "Paketteja kadonnut, jatetty sateeseen, merkitty toimitetuksi mutta ei vastaanotettu"
+    },
+    "Shrinkflation": {
+      "name": "Kutistumisinflaatio",
+      "description": "Tuotteet pienenevat hintojen pysyessa ennallaan tai noustessa"
+    },
+    "Refund Difficulties": {
+      "name": "Palautusvaikeudet",
+      "description": "Yritykset tekevat palautuksista ja hyvityksista tarpeettoman vaikeita"
+    },
+    "Fake Reviews": {
+      "name": "Vaarennetyt arvostelut",
+      "description": "Verkkoarvosteluihin ei voi luottaa, vaarennetyt positiiviset arvostelut johtavat kuluttajia harhaan"
+    },
+    "Subscription Traps": {
+      "name": "Tilausansat",
+      "description": "Ilmaiset kokeilujaksot muuttuvat maksullisiksi ilman selvaa suostumusta, vaikea peruuttaa"
+    },
+    "Food Quality Decline": {
+      "name": "Ruoan laadun heikkeneminen",
+      "description": "Valmisruoat huonompilaatuisia, pienemmat annokset, enemman lisaaineita"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Itsepalvelukassojen turhautuminen",
+      "description": "Itsepalveluautomaatit epaluotettavia, korvaavat henkilokuntaa"
+    },
+    "Cost of Childcare": {
+      "name": "Lastenhoidon kustannukset",
+      "description": "Lastenhoito kohtuuttoman kallista, rajoittaa mahdollisuutta kayda toissa"
+    },
+    "Student Loan Repayment": {
+      "name": "Opintolainan takaisinmaksu",
+      "description": "Valmistuneet maksavat takaisin vuosikymmenia, raja-arvojen ja korkojen muutokset"
+    },
+    "Dog Fouling": {
+      "name": "Koirien jatokset",
+      "description": "Koirien jatoksia julkisilla paikoilla, puistoissa ja jalkakayatvilla siivoamatta"
+    },
+    "AI Replacing Jobs": {
+      "name": "Tekoaly korvaa tyopaikkoja",
+      "description": "Huoli tekoalyn automatisoimista tyopaikoista ilman siirtymistukea"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britannialainen junaoperaattori West Coast Main Line -reitilla"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britannialainen junaoperaattori Lontoon ja etelaan reitilla"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britannialainen junaoperaattori Pohjois-Englannissa"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britannialainen kaukoliikenteen junaoperaattori"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britannialainen junaoperaattori trans-Pennine-reiteilla"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britannialainen junaoperaattori East Coast Main Line -reitilla"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Eurooppalainen halpalentoyhtio"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britannialainen halpalentoyhtio"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Britannian kansallinen lentoyhtio"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Loma- ja matkailuyhtio"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Suuri britannialainen laajakaista- ja mobiilioperaattori"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britannialainen laajakaista-, TV- ja mobiilioperaattori"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britannialainen TV-, laajakaista- ja mobiilioperaattori"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Maailmanlaajuinen televiestintayhtio paakonttorilla Britanniassa"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britannialainen matkapuhelinoperaattori"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britannialainen laajakaista- ja puhelinoperaattori"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britannialainen energiantoimittaja"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britannialainen energiantoimittaja"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britannialainen energiantoimittaja (ranskalaisomistuksessa)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britannialainen uusiutuvan energian toimittaja"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britannialainen energiantoimittaja"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britannialainen energiantoimittaja (saksalaisomistuksessa)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Vesi- ja viemarilaitosyhtio Lontoossa ja Thames-laaksossa"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vesiyhtio Etela-Englannissa"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vesiyhtio Luoteis-Englannissa"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vesiyhtio Midlandsissa"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vesiyhtio East Angliassa"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britannialainen kansainvalinen pankki"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Maailmanlaajuinen pankki- ja rahoituspalveluyhtio"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britannialainen vahittais- ja liikepankki"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britannialainen pankkikonserni"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britannialainen pankki (espanjalaisomistuksessa)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitaalinen pankki ja fintech-yhtio"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britannialainen vakuutus- ja rahoituspalveluyhtio"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britannialainen auto- ja kotivakuutusyhtio"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britannialainen vakuutusyhtio"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Maailmanlaajuinen verkkokauppa- ja teknologiayhtio"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britannian postipalvelu"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britannialainen pakettitoimitusyhtio (aiemmin Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britannialainen pakettitoimitusyhtio"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britannialainen supermarketketju"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britannialainen supermarketketju"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Englannin kansallinen terveyspalvelu"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS:n hammashoitopalvelut"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Yksityinen terveydenhuollon tarjoaja"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britannian paikalliset viranomaiset"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britannialainen asuntorakentaja"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britannialainen verkkovuokrauspalvelu"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Suoratoistoviihdepalvelu"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Teknologiayhtio"
+    }
+  }
+}

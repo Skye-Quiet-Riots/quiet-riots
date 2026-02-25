@@ -1,0 +1,421 @@
+{
+  "locale": "zh-CN",
+  "categories": {
+    "Transport": "交通出行",
+    "Telecoms": "电信通讯",
+    "Banking": "银行金融",
+    "Health": "医疗健康",
+    "Education": "教育",
+    "Environment": "环境",
+    "Energy": "能源",
+    "Water": "供水",
+    "Insurance": "保险",
+    "Housing": "住房",
+    "Shopping": "购物消费",
+    "Delivery": "快递物流",
+    "Local": "地方事务",
+    "Employment": "就业",
+    "Tech": "科技",
+    "Other": "其他"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "列车取消",
+      "description": "列车被取消或严重延误，通知不及时，赔偿不到位"
+    },
+    "Train Ticket Prices": {
+      "name": "火车票价格",
+      "description": "铁路票价过高，涨幅超过通胀率，定价标准不一"
+    },
+    "Flight Delays": {
+      "name": "航班延误",
+      "description": "航班延误或取消，沟通不畅，索赔困难"
+    },
+    "Lost Luggage": {
+      "name": "行李丢失",
+      "description": "行李未到达目的地，追踪缓慢，赔偿不足"
+    },
+    "Bus Route Cuts": {
+      "name": "公交线路削减",
+      "description": "线路被取消，班次减少，农村社区失去公交服务"
+    },
+    "Pothole Damage": {
+      "name": "路面坑洞损害",
+      "description": "坑洞损坏车辆、危及骑行者安全，市政修补缓慢"
+    },
+    "Parking Fines": {
+      "name": "停车罚款",
+      "description": "不合理的私人停车收费，执法过激，标识令人困惑"
+    },
+    "Fuel Prices": {
+      "name": "燃油价格",
+      "description": "汽油和柴油价格过高，批发价下降时零售价降速缓慢"
+    },
+    "Broadband Speed": {
+      "name": "宽带速度",
+      "description": "实际网速远低于广告宣传和付费标准"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "手机信号盲区",
+      "description": "在住宅、工作场所或交通沿线没有手机信号"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "合同期内涨价",
+      "description": "手机、宽带和电视账单在锁定合同期内涨价"
+    },
+    "Customer Service Hold Times": {
+      "name": "客服等待时间",
+      "description": "等待人工客服接听需要数小时"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "退订困难",
+      "description": "公司故意设置障碍，使取消订阅或退订变得困难"
+    },
+    "Roaming Charges": {
+      "name": "漫游费用",
+      "description": "出国旅行时产生意外的手机漫游费，脱欧后费用上涨"
+    },
+    "Energy Bill Costs": {
+      "name": "能源账单费用",
+      "description": "燃气和电费难以负担，价格上限仍然过高"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "能源账单不准确",
+      "description": "估算读数错误，多收费用，账单出错"
+    },
+    "Water Bill Increases": {
+      "name": "水费上涨",
+      "description": "水费大幅上涨，而服务质量却在下降"
+    },
+    "Sewage in Rivers": {
+      "name": "河流污水排放",
+      "description": "水务公司向河流和海滩排放未经处理的污水"
+    },
+    "Power Cuts": {
+      "name": "停电",
+      "description": "电力供应中断，恢复缓慢，赔偿不足"
+    },
+    "Smart Meter Problems": {
+      "name": "智能电表问题",
+      "description": "智能电表无法正常工作，更换供应商后失去功能"
+    },
+    "Bank Branch Closures": {
+      "name": "银行网点关闭",
+      "description": "当地银行网点关闭，社区失去银行服务"
+    },
+    "Hidden Bank Charges": {
+      "name": "银行隐性收费",
+      "description": "透支、外币交易和账户维护的意外费用"
+    },
+    "Fraud and Scam Losses": {
+      "name": "诈骗损失",
+      "description": "银行拒绝赔偿欺诈和授权推送支付骗局的受害者"
+    },
+    "Insurance Claim Rejections": {
+      "name": "保险理赔拒绝",
+      "description": "缴纳多年保费后，理赔因技术细节被拒"
+    },
+    "Mortgage Rate Shock": {
+      "name": "房贷利率冲击",
+      "description": "固定利率到期后转为高得多的浮动利率"
+    },
+    "Overseas Transfer Fees": {
+      "name": "跨境转账费用",
+      "description": "国际汇款手续费过高，汇率不佳"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS候诊时间",
+      "description": "手术和专科预约等待数月甚至数年"
+    },
+    "GP Appointment Access": {
+      "name": "全科医生预约难",
+      "description": "无法打通电话预约全科医生，需等待数周"
+    },
+    "Dentist Availability": {
+      "name": "牙医资源短缺",
+      "description": "几乎找不到接收新患者的NHS牙医"
+    },
+    "Mental Health Service Waits": {
+      "name": "心理健康服务等待",
+      "description": "心理治疗和心理健康支持需等待数月"
+    },
+    "Prescription Costs": {
+      "name": "处方药费用",
+      "description": "英格兰每项药品费用过高，各地区标准不一"
+    },
+    "Hospital Parking Charges": {
+      "name": "医院停车收费",
+      "description": "看病或探望病人时还要支付医院停车费"
+    },
+    "Rent Increases": {
+      "name": "房租上涨",
+      "description": "私人租金涨幅远超通胀，面临无过错驱逐威胁"
+    },
+    "Council Tax Rises": {
+      "name": "市政税上涨",
+      "description": "市政税年年上涨，而地方公共服务却越来越差"
+    },
+    "Noisy Neighbours": {
+      "name": "噪音邻居",
+      "description": "持续的噪音干扰，市政处理缓慢，影响心理健康"
+    },
+    "Rubbish Collection Changes": {
+      "name": "垃圾收集变更",
+      "description": "垃圾收集次数减少，回收规则混乱，垃圾桶溢出"
+    },
+    "Planning Permission Abuse": {
+      "name": "规划许可滥用",
+      "description": "不受欢迎的开发项目获批，绿带受威胁，社区意见被忽视"
+    },
+    "Damp and Mould in Housing": {
+      "name": "住房潮湿和霉菌",
+      "description": "房东和住房协会未能修复潮湿和霉菌问题"
+    },
+    "Delivery Problems": {
+      "name": "快递问题",
+      "description": "包裹丢失、被放在雨中、显示已送达但实际未收到"
+    },
+    "Shrinkflation": {
+      "name": "缩水通胀",
+      "description": "产品越来越小，价格却不变或上涨"
+    },
+    "Refund Difficulties": {
+      "name": "退款困难",
+      "description": "公司故意使退货和退款流程变得不必要地复杂"
+    },
+    "Fake Reviews": {
+      "name": "虚假评论",
+      "description": "无法信任在线评论，虚假好评误导消费者"
+    },
+    "Subscription Traps": {
+      "name": "订阅陷阱",
+      "description": "免费试用在未经明确同意的情况下转为付费，难以取消"
+    },
+    "Food Quality Decline": {
+      "name": "食品质量下降",
+      "description": "预制餐品质下降，分量减少，添加剂增多"
+    },
+    "Self-Checkout Frustration": {
+      "name": "自助结账烦恼",
+      "description": "自助结账机不可靠，取代人工收银员"
+    },
+    "Cost of Childcare": {
+      "name": "育儿费用",
+      "description": "托幼费用高得令人望而却步，限制了工作能力"
+    },
+    "Student Loan Repayment": {
+      "name": "助学贷款还款",
+      "description": "毕业生需偿还数十年，起征点和利率不断变化"
+    },
+    "Dog Fouling": {
+      "name": "犬只随地排便",
+      "description": "公共场所、公园和人行道上的狗粪未被清理"
+    },
+    "AI Replacing Jobs": {
+      "name": "人工智能取代工作",
+      "description": "对人工智能在缺乏过渡支持的情况下自动化取代工作的担忧"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "运营西海岸主干线的英国铁路运营商"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "服务伦敦及南部地区的英国铁路运营商"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "服务英格兰北部的英国铁路运营商"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "英国长途铁路运营商"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "服务跨奔宁线路的英国铁路运营商"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "运营东海岸主干线的英国铁路运营商"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "欧洲低成本航空公司"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "英国低成本航空公司"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "英国国家航空公司"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "假日旅游公司"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "英国主要宽带和移动通信供应商"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "英国宽带、电视和移动通信供应商"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "英国电视、宽带和移动通信供应商"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "总部位于英国的全球电信公司"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "英国移动网络运营商"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "英国宽带和电话供应商"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "英国能源供应商"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "英国能源供应商"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "英国能源供应商（法资）"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "英国可再生能源供应商"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "英国能源供应商"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "英国能源供应商（德资）"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "服务伦敦和泰晤士河谷的供水及污水处理公司"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "服务英格兰南部的水务公司"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "服务英格兰西北部的水务公司"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "服务中部地区的水务公司"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "服务东英吉利的水务公司"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "英国跨国银行"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "全球银行和金融服务集团"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "英国零售和商业银行"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "英国银行集团"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "英国银行（西班牙资本）"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "数字银行和金融科技公司"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "英国保险和金融服务公司"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "英国汽车和家庭保险公司"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "英国保险公司"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "全球电子商务和科技公司"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "英国邮政服务"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "英国包裹快递服务（前身为Hermes）"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "英国包裹快递服务"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "英国连锁超市"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "英国连锁超市"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "英格兰国家医疗服务体系"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS牙科服务"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "私立医疗保健供应商"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "英国地方政府机构"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "英国房屋建筑商"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "英国在线租赁平台"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "流媒体娱乐服务"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "科技公司"
+    }
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "locale": "hr",
+  "categories": {
+    "Transport": "Promet",
+    "Telecoms": "Telekomunikacije",
+    "Banking": "Bankarstvo",
+    "Health": "Zdravstvo",
+    "Education": "Obrazovanje",
+    "Environment": "Okoliš",
+    "Energy": "Energetika",
+    "Water": "Vodoopskrba",
+    "Insurance": "Osiguranje",
+    "Housing": "Stanovanje",
+    "Shopping": "Kupovina",
+    "Delivery": "Dostava",
+    "Local": "Lokalno",
+    "Employment": "Zapošljavanje",
+    "Tech": "Tehnologija",
+    "Other": "Ostalo"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Otkazivanje vlakova",
+      "description": "Vlakovi otkazani ili znatno kasne uz nedovoljnu obavijest ili naknadu"
+    },
+    "Train Ticket Prices": {
+      "name": "Cijene željezničkih karata",
+      "description": "Preskupe željezničke karte, poskupljenja iznad inflacije, nedosljedne cijene"
+    },
+    "Flight Delays": {
+      "name": "Kašnjenja letova",
+      "description": "Letovi kasne ili su otkazani, loša komunikacija, poteškoće pri traženju odštete"
+    },
+    "Lost Luggage": {
+      "name": "Izgubljena prtljaga",
+      "description": "Prtljaga ne stiže na odredište, sporo praćenje, nedovoljna naknada"
+    },
+    "Bus Route Cuts": {
+      "name": "Ukidanje autobusnih linija",
+      "description": "Linije ukinute, smanjena učestalost, ruralne zajednice gube pristup autobusu"
+    },
+    "Pothole Damage": {
+      "name": "Oštećenja od rupa na cestama",
+      "description": "Rupe na cestama oštećuju vozila i ugrožavaju bicikliste, općine sporo saniraju"
+    },
+    "Parking Fines": {
+      "name": "Kazne za parkiranje",
+      "description": "Nepravedne privatne parkirne naknade, agresivna kontrola, zbunjujuća signalizacija"
+    },
+    "Fuel Prices": {
+      "name": "Cijene goriva",
+      "description": "Cijene benzina i dizela previsoke, sporo padaju kad padnu veleprodajne cijene"
+    },
+    "Broadband Speed": {
+      "name": "Brzina širokopojasnog interneta",
+      "description": "Brzine interneta daleko ispod oglašavanih i plaćenih"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mrtve zone mobilnog signala",
+      "description": "Nema mobilnog signala u domovima, na radnim mjestima ili duž prometnih pravaca"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Poskupljenja usred ugovora",
+      "description": "Računi za telefon, internet i TV rastu tijekom trajanja ugovora"
+    },
+    "Customer Service Hold Times": {
+      "name": "Čekanje na korisničku službu",
+      "description": "Satima na čekanju da se dođe do živog operatera"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Poteškoće s otkazivanjem pretplata",
+      "description": "Tvrtke namjerno otežavaju otkazivanje ili odjavu pretplate"
+    },
+    "Roaming Charges": {
+      "name": "Roaming naknade",
+      "description": "Neočekivane mobilne naknade na putovanjima u inozemstvo, poskupljenja nakon Brexita"
+    },
+    "Energy Bill Costs": {
+      "name": "Troškovi računa za energiju",
+      "description": "Računi za plin i struju nepriuštivi, cjenovni plafon još uvijek previsok"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Netočni računi za energiju",
+      "description": "Pogrešne procjene potrošnje, prekomjerno naplaćivanje, greške u obračunu"
+    },
+    "Water Bill Increases": {
+      "name": "Poskupljenje računa za vodu",
+      "description": "Računi za vodu naglo rastu dok kvaliteta usluge opada"
+    },
+    "Sewage in Rivers": {
+      "name": "Kanalizacija u rijekama",
+      "description": "Vodoopskrbne tvrtke ispuštaju neobrađene otpadne vode u vodotoke i na plaže"
+    },
+    "Power Cuts": {
+      "name": "Nestanci struje",
+      "description": "Prekidi opskrbe električnom energijom, spor povratak, nedovoljna naknada"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemi s pametnim brojilima",
+      "description": "Pametna brojila ne rade, gube funkcionalnost nakon promjene opskrbljivača"
+    },
+    "Bank Branch Closures": {
+      "name": "Zatvaranje bankovnih poslovnica",
+      "description": "Lokalne bankovne poslovnice se zatvaraju, zajednice ostaju bez pristupa"
+    },
+    "Hidden Bank Charges": {
+      "name": "Skrivene bankovne naknade",
+      "description": "Neočekivane naknade za prekoračenje, inozemne transakcije, održavanje računa"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Gubici od prijevara i prevara",
+      "description": "Banke odbijaju nadoknaditi žrtvama prijevara i odobrenih prijevarnih plaćanja"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Odbijanje zahtjeva za osiguranje",
+      "description": "Zahtjevi odbijeni zbog formalnosti nakon godina plaćanja premija"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Šok od hipotekarnih kamata",
+      "description": "Završetak fiksne kamatne stope i prelazak na znatno višu varijabilnu stopu"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Naknade za međunarodne transfere",
+      "description": "Prekomjerne naknade i loši tečajevi za međunarodne novčane transfere"
+    },
+    "NHS Waiting Times": {
+      "name": "Vrijeme čekanja u NHS-u",
+      "description": "Višemjesečna ili višegodišnja čekanja na operacije i specijalističke preglede"
+    },
+    "GP Appointment Access": {
+      "name": "Pristup liječniku opće prakse",
+      "description": "Nemoguće naručiti se kod liječnika opće prakse, tjednima se čeka"
+    },
+    "Dentist Availability": {
+      "name": "Dostupnost stomatologa",
+      "description": "Nemoguće pronaći NHS stomatologa koji prima nove pacijente"
+    },
+    "Mental Health Service Waits": {
+      "name": "Čekanje na usluge mentalnog zdravlja",
+      "description": "Mjesecima se čeka na terapiju i podršku za mentalno zdravlje"
+    },
+    "Prescription Costs": {
+      "name": "Troškovi recepata",
+      "description": "Cijena po receptu previsoka u Engleskoj, neusklađenost među dijelovima UK-a"
+    },
+    "Hospital Parking Charges": {
+      "name": "Naknade za parkiranje u bolnici",
+      "description": "Plaćanje parkiranja u bolnici dok ste bolesni ili posjećujete bolesne bližnje"
+    },
+    "Rent Increases": {
+      "name": "Povećanje najamnina",
+      "description": "Privatne najamnine rastu daleko iznad inflacije, prijetnja deložacijom bez krivnje"
+    },
+    "Council Tax Rises": {
+      "name": "Povećanje lokalnog poreza",
+      "description": "Godišnja povećanja lokalnog poreza dok se lokalne usluge pogoršavaju"
+    },
+    "Noisy Neighbours": {
+      "name": "Bučni susjedi",
+      "description": "Trajna buka, općine sporo reagiraju, utječe na mentalno zdravlje"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Promjene u odvoženju otpada",
+      "description": "Smanjeno odvoženje smeća, zbunjujuća pravila recikliranja, pretrpani kontejneri"
+    },
+    "Planning Permission Abuse": {
+      "name": "Zlouporaba građevinskih dozvola",
+      "description": "Neželjeni projekti odobreni, zelene površine ugrožene, zajednica ignorirana"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Vlaga i plijesan u stanovima",
+      "description": "Stanodavci i stambene udruge ne rješavaju probleme vlage i plijesni"
+    },
+    "Delivery Problems": {
+      "name": "Problemi s dostavom",
+      "description": "Paketi izgubljeni, ostavljeni na kiši, označeni kao dostavljeni ali nisu primljeni"
+    },
+    "Shrinkflation": {
+      "name": "Smanjivanje proizvoda",
+      "description": "Proizvodi postaju manji dok cijene ostaju iste ili rastu"
+    },
+    "Refund Difficulties": {
+      "name": "Poteškoće s povratom novca",
+      "description": "Tvrtke nepotrebno otežavaju povrat robe i novca"
+    },
+    "Fake Reviews": {
+      "name": "Lažne recenzije",
+      "description": "Ne može se vjerovati online recenzijama, lažne pozitivne recenzije zavode potrošače"
+    },
+    "Subscription Traps": {
+      "name": "Zamke pretplate",
+      "description": "Besplatna probna razdoblja prelaze u plaćena bez jasnog pristanka, teško za otkazati"
+    },
+    "Food Quality Decline": {
+      "name": "Pad kvalitete hrane",
+      "description": "Gotova jela lošije kvalitete, manje porcije, više aditiva"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustracija samoposlužnim blagajnama",
+      "description": "Samoposlužni aparati nepouzdani, zamjenjuju ljudsko osoblje"
+    },
+    "Cost of Childcare": {
+      "name": "Troškovi brige za djecu",
+      "description": "Troškovi čuvanja djece nedostupno skupi, ograničavaju mogućnost rada"
+    },
+    "Student Loan Repayment": {
+      "name": "Otplata studentskog kredita",
+      "description": "Diplomanti otplaćuju desetljećima, promjene praga i kamata"
+    },
+    "Dog Fouling": {
+      "name": "Pseći izmet",
+      "description": "Pseći izmet na javnim površinama, u parkovima i na pločnicima koji se ne čisti"
+    },
+    "AI Replacing Jobs": {
+      "name": "Umjetna inteligencija zamjenjuje radna mjesta",
+      "description": "Zabrinutost zbog automatizacije poslova umjetnom inteligencijom bez podrške za prijelaz"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britanski željeznički prijevoznik na pruzi West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britanski željeznički prijevoznik za London i jug Engleske"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britanski željeznički prijevoznik za sjever Engleske"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britanski željeznički prijevoznik na dugim relacijama"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britanski željeznički prijevoznik na trans-peninskim pravcima"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britanski željeznički prijevoznik na pruzi East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Europska niskotarifna zrakoplovna kompanija"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britanska niskotarifna zrakoplovna kompanija"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Britanska nacionalna zrakoplovna kompanija"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Tvrtka za odmor i putovanja"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Veliki britanski pružatelj širokopojasnog interneta i mobilnih usluga"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britanski pružatelj širokopojasnog interneta, TV-a i mobilnih usluga"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britanski pružatelj TV-a, širokopojasnog interneta i mobilnih usluga"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalna telekomunikacijska tvrtka sa sjedištem u UK-u"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britanski operater mobilne mreže"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britanski pružatelj širokopojasnog interneta i telefonskih usluga"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britanski opskrbljivač energijom"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britanski opskrbljivač energijom"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britanski opskrbljivač energijom (u francuskom vlasništvu)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britanski opskrbljivač obnovljivom energijom"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britanski opskrbljivač energijom"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britanski opskrbljivač energijom (u njemačkom vlasništvu)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Tvrtka za vodoopskrbu i kanalizaciju za London i dolinu Temze"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Tvrtka za vodoopskrbu za jug Engleske"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Tvrtka za vodoopskrbu za sjeverozapad Engleske"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Tvrtka za vodoopskrbu za Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Tvrtka za vodoopskrbu za Istočnu Angliju"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britanska multinacionalna banka"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Globalna bankarska i financijska skupina"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britanska maloprodajna i komercijalna banka"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britanska bankarska skupina"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britanska banka (u španjolskom vlasništvu)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitalna banka i fintech tvrtka"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britansko osiguranje i financijske usluge"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britansko osiguranje automobila i domova"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britanska osiguravajuća tvrtka"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalna e-trgovina i tehnologija"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britanska poštanska služba"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britanska služba za dostavu paketa (ranije Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britanska služba za dostavu paketa"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britanski lanac supermarketa"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britanski lanac supermarketa"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Nacionalna zdravstvena služba za Englesku"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS stomatološke usluge"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Privatni pružatelj zdravstvenih usluga"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britanske lokalne samouprave"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britanski graditelj stambenih objekata"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britanska online platforma za iznajmljivanje"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming usluga za zabavu"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Tehnološka tvrtka"
+    }
+  }
+}

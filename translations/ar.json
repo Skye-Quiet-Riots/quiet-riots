@@ -1,0 +1,421 @@
+{
+  "locale": "ar",
+  "categories": {
+    "Transport": "النقل",
+    "Telecoms": "الاتصالات",
+    "Banking": "الخدمات المصرفية",
+    "Health": "الصحة",
+    "Education": "التعليم",
+    "Environment": "البيئة",
+    "Energy": "الطاقة",
+    "Water": "المياه",
+    "Insurance": "التأمين",
+    "Housing": "الإسكان",
+    "Shopping": "التسوق",
+    "Delivery": "التوصيل",
+    "Local": "محلي",
+    "Employment": "التوظيف",
+    "Tech": "التكنولوجيا",
+    "Other": "أخرى"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "إلغاء القطارات",
+      "description": "القطارات تُلغى أو تتأخر بشدة مع إشعار أو تعويض غير كافٍ"
+    },
+    "Train Ticket Prices": {
+      "name": "أسعار تذاكر القطارات",
+      "description": "أسعار تذاكر السكك الحديدية باهظة جداً، زيادات تفوق التضخم، تسعير غير متسق"
+    },
+    "Flight Delays": {
+      "name": "تأخيرات الرحلات الجوية",
+      "description": "الرحلات تتأخر أو تُلغى، تواصل ضعيف، صعوبة في المطالبة بالتعويض"
+    },
+    "Lost Luggage": {
+      "name": "فقدان الأمتعة",
+      "description": "الحقائب لا تصل إلى الوجهة، تتبع بطيء، تعويض غير كافٍ"
+    },
+    "Bus Route Cuts": {
+      "name": "إلغاء خطوط الحافلات",
+      "description": "خطوط تُلغى، تقليل التكرار، المجتمعات الريفية تفقد الوصول إلى الحافلات"
+    },
+    "Pothole Damage": {
+      "name": "أضرار الحفر",
+      "description": "الحفر تضر بالمركبات وتعرض راكبي الدراجات للخطر، البلديات بطيئة في الإصلاح"
+    },
+    "Parking Fines": {
+      "name": "غرامات مواقف السيارات",
+      "description": "رسوم مواقف خاصة غير عادلة، تنفيذ عدواني، لافتات مربكة"
+    },
+    "Fuel Prices": {
+      "name": "أسعار الوقود",
+      "description": "أسعار البنزين والديزل مرتفعة جداً، بطيئة في الانخفاض عند تراجع أسعار الجملة"
+    },
+    "Broadband Speed": {
+      "name": "سرعة الإنترنت",
+      "description": "سرعات الإنترنت أقل بكثير مما يُعلن عنه ويُدفع مقابله"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "مناطق انعدام إشارة الهاتف",
+      "description": "لا توجد إشارة هاتف في المنازل أو أماكن العمل أو على طرق النقل"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "زيادة الأسعار أثناء العقد",
+      "description": "فواتير الهاتف والإنترنت والتلفزيون ترتفع خلال العقود الملزمة"
+    },
+    "Customer Service Hold Times": {
+      "name": "أوقات انتظار خدمة العملاء",
+      "description": "ساعات على الانتظار للتحدث مع شخص حقيقي"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "صعوبة إلغاء الاشتراكات",
+      "description": "الشركات تتعمد تصعيب عملية الإلغاء أو إلغاء الاشتراك"
+    },
+    "Roaming Charges": {
+      "name": "رسوم التجوال",
+      "description": "رسوم هاتف غير متوقعة عند السفر للخارج، زيادات أسعار ما بعد البريكست"
+    },
+    "Energy Bill Costs": {
+      "name": "تكاليف فواتير الطاقة",
+      "description": "فواتير الغاز والكهرباء لا يمكن تحملها، سقف الأسعار لا يزال مرتفعاً جداً"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "فواتير طاقة غير دقيقة",
+      "description": "قراءات تقديرية خاطئة، فوترة زائدة، أخطاء في الفواتير"
+    },
+    "Water Bill Increases": {
+      "name": "زيادات فواتير المياه",
+      "description": "فواتير المياه ترتفع بشكل حاد بينما جودة الخدمة تتراجع"
+    },
+    "Sewage in Rivers": {
+      "name": "مياه الصرف في الأنهار",
+      "description": "شركات المياه تصرف مياه صرف صحي غير معالجة في المجاري المائية والشواطئ"
+    },
+    "Power Cuts": {
+      "name": "انقطاع الكهرباء",
+      "description": "انقطاعات في إمداد الكهرباء، استعادة بطيئة، تعويض غير كافٍ"
+    },
+    "Smart Meter Problems": {
+      "name": "مشاكل العدادات الذكية",
+      "description": "العدادات الذكية لا تعمل، تفقد وظائفها بعد تغيير المورد"
+    },
+    "Bank Branch Closures": {
+      "name": "إغلاق فروع البنوك",
+      "description": "فروع البنوك المحلية تُغلق، تاركة المجتمعات بدون خدمات مصرفية"
+    },
+    "Hidden Bank Charges": {
+      "name": "رسوم بنكية مخفية",
+      "description": "رسوم غير متوقعة للسحب على المكشوف والمعاملات الخارجية وصيانة الحساب"
+    },
+    "Fraud and Scam Losses": {
+      "name": "خسائر الاحتيال والنصب",
+      "description": "البنوك ترفض تعويض ضحايا الاحتيال وعمليات الدفع المصرح بها الاحتيالية"
+    },
+    "Insurance Claim Rejections": {
+      "name": "رفض مطالبات التأمين",
+      "description": "المطالبات تُرفض بحجج فنية بعد سنوات من دفع الأقساط"
+    },
+    "Mortgage Rate Shock": {
+      "name": "صدمة معدل الرهن العقاري",
+      "description": "انتهاء السعر الثابت والانتقال إلى سعر متغير أعلى بكثير"
+    },
+    "Overseas Transfer Fees": {
+      "name": "رسوم التحويلات الخارجية",
+      "description": "رسوم مفرطة وأسعار صرف سيئة للتحويلات المالية الدولية"
+    },
+    "NHS Waiting Times": {
+      "name": "أوقات انتظار NHS",
+      "description": "انتظار أشهر أو سنوات للعمليات الجراحية ومواعيد المتخصصين"
+    },
+    "GP Appointment Access": {
+      "name": "الحصول على موعد طبيب عام",
+      "description": "لا يمكن التواصل لحجز مواعيد الطبيب العام، انتظار أسابيع"
+    },
+    "Dentist Availability": {
+      "name": "توفر طبيب الأسنان",
+      "description": "من المستحيل إيجاد طبيب أسنان NHS يقبل مرضى جدد"
+    },
+    "Mental Health Service Waits": {
+      "name": "انتظار خدمات الصحة النفسية",
+      "description": "أشهر من الانتظار للحصول على العلاج النفسي والدعم"
+    },
+    "Prescription Costs": {
+      "name": "تكاليف الوصفات الطبية",
+      "description": "تكلفة الصنف الواحد مرتفعة جداً في إنجلترا، عدم اتساق بين دول المملكة المتحدة"
+    },
+    "Hospital Parking Charges": {
+      "name": "رسوم مواقف المستشفيات",
+      "description": "الدفع مقابل مواقف السيارات في المستشفى أثناء المرض أو زيارة الأقارب المرضى"
+    },
+    "Rent Increases": {
+      "name": "زيادات الإيجارات",
+      "description": "الإيجارات الخاصة ترتفع فوق التضخم بكثير، تهديد الطرد بدون سبب"
+    },
+    "Council Tax Rises": {
+      "name": "زيادات ضريبة المجلس المحلي",
+      "description": "زيادات سنوية في ضريبة المجلس بينما الخدمات المحلية تتدهور"
+    },
+    "Noisy Neighbours": {
+      "name": "الجيران المزعجون",
+      "description": "إزعاج ضوضاء مستمر، البلديات بطيئة في التصرف، يؤثر على الصحة النفسية"
+    },
+    "Rubbish Collection Changes": {
+      "name": "تغييرات جمع القمامة",
+      "description": "تقليل مرات جمع القمامة، قواعد إعادة تدوير مربكة، حاويات طافحة"
+    },
+    "Planning Permission Abuse": {
+      "name": "إساءة استخدام تراخيص البناء",
+      "description": "الموافقة على مشاريع غير مرغوبة، الحزام الأخضر مهدد، تجاهل المجتمع"
+    },
+    "Damp and Mould in Housing": {
+      "name": "الرطوبة والعفن في المساكن",
+      "description": "الملاك وجمعيات الإسكان يفشلون في معالجة الرطوبة والعفن"
+    },
+    "Delivery Problems": {
+      "name": "مشاكل التوصيل",
+      "description": "الطرود تُفقد، تُترك في المطر، تُسجل كمسلّمة لكنها لم تُستلم"
+    },
+    "Shrinkflation": {
+      "name": "التضخم الانكماشي",
+      "description": "المنتجات تصغر حجماً بينما الأسعار تبقى كما هي أو ترتفع"
+    },
+    "Refund Difficulties": {
+      "name": "صعوبات الاسترداد",
+      "description": "الشركات تجعل عمليات الإرجاع والاسترداد صعبة بلا داعٍ"
+    },
+    "Fake Reviews": {
+      "name": "التقييمات المزيفة",
+      "description": "لا يمكن الوثوق بالتقييمات عبر الإنترنت، تقييمات إيجابية مزيفة تضلل المستهلكين"
+    },
+    "Subscription Traps": {
+      "name": "فخاخ الاشتراكات",
+      "description": "التجارب المجانية تتحول إلى مدفوعة دون موافقة واضحة، صعوبة الإلغاء"
+    },
+    "Food Quality Decline": {
+      "name": "تراجع جودة الطعام",
+      "description": "وجبات جاهزة بجودة أسوأ، حصص أصغر، مواد مضافة أكثر"
+    },
+    "Self-Checkout Frustration": {
+      "name": "إحباط الدفع الذاتي",
+      "description": "أجهزة الخدمة الذاتية غير موثوقة، تحل محل الموظفين البشريين"
+    },
+    "Cost of Childcare": {
+      "name": "تكلفة رعاية الأطفال",
+      "description": "تكاليف رعاية الأطفال باهظة للغاية، تحد من القدرة على العمل"
+    },
+    "Student Loan Repayment": {
+      "name": "سداد القروض الطلابية",
+      "description": "الخريجون يسددون لعقود، تغييرات في العتبة وأسعار الفائدة"
+    },
+    "Dog Fouling": {
+      "name": "فضلات الكلاب",
+      "description": "فضلات الكلاب في الأماكن العامة والحدائق والأرصفة لا تُنظف"
+    },
+    "AI Replacing Jobs": {
+      "name": "الذكاء الاصطناعي يحل محل الوظائف",
+      "description": "قلق من أتمتة الذكاء الاصطناعي للوظائف دون دعم للانتقال المهني"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "مشغل سكك حديدية بريطاني على خط West Coast الرئيسي"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "مشغل سكك حديدية بريطاني يخدم لندن والجنوب"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "مشغل سكك حديدية بريطاني يخدم شمال إنجلترا"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "مشغل سكك حديدية بريطاني للمسافات الطويلة"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "مشغل سكك حديدية بريطاني يخدم مسارات عبر بينين"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "مشغل سكك حديدية بريطاني على خط East Coast الرئيسي"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "شركة طيران أوروبية منخفضة التكلفة"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "شركة طيران منخفضة التكلفة مقرها المملكة المتحدة"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "الناقل الجوي الوطني للمملكة المتحدة"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "شركة عطلات وسفر"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "مزود رئيسي للإنترنت والهاتف المحمول في المملكة المتحدة"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "مزود إنترنت وتلفزيون وهاتف محمول في المملكة المتحدة"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "مزود تلفزيون وإنترنت وهاتف محمول في المملكة المتحدة"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "شركة اتصالات عالمية مقرها المملكة المتحدة"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "مشغل شبكة هاتف محمول في المملكة المتحدة"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "مزود إنترنت وهاتف في المملكة المتحدة"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "مورد طاقة في المملكة المتحدة"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "مورد طاقة في المملكة المتحدة"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "مورد طاقة في المملكة المتحدة (ملكية فرنسية)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "مورد طاقة متجددة في المملكة المتحدة"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "مورد طاقة في المملكة المتحدة"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "مورد طاقة في المملكة المتحدة (ملكية ألمانية)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "شركة مياه وصرف صحي للندن ووادي التيمز"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "شركة مياه لجنوب إنجلترا"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "شركة مياه لشمال غرب إنجلترا"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "شركة مياه لمنطقة الميدلاندز"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "شركة مياه لشرق أنجليا"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "بنك بريطاني متعدد الجنسيات"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "خدمات مصرفية ومالية عالمية"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "بنك تجزئة وتجاري في المملكة المتحدة"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "مجموعة مصرفية في المملكة المتحدة"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "بنك في المملكة المتحدة (ملكية إسبانية)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "خدمات مصرفية رقمية وتكنولوجيا مالية"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "تأمين وخدمات مالية في المملكة المتحدة"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "تأمين سيارات ومنازل في المملكة المتحدة"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "شركة تأمين في المملكة المتحدة"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "تجارة إلكترونية وتكنولوجيا عالمية"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "خدمة البريد في المملكة المتحدة"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "خدمة توصيل طرود في المملكة المتحدة (كانت سابقاً Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "خدمة توصيل طرود في المملكة المتحدة"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "سلسلة سوبرماركت في المملكة المتحدة"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "سلسلة سوبرماركت في المملكة المتحدة"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "خدمة الصحة الوطنية لإنجلترا"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "خدمات طب الأسنان في NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "مزود رعاية صحية خاصة"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "سلطات الحكم المحلي في المملكة المتحدة"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "شركة بناء مساكن في المملكة المتحدة"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "منصة تأجير عقارات إلكترونية في المملكة المتحدة"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "خدمة بث ترفيهي"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "شركة تكنولوجيا"
+    }
+  }
+}

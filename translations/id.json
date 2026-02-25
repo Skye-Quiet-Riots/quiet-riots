@@ -1,0 +1,421 @@
+{
+  "locale": "id",
+  "categories": {
+    "Transport": "Transportasi",
+    "Telecoms": "Telekomunikasi",
+    "Banking": "Perbankan",
+    "Health": "Kesehatan",
+    "Education": "Pendidikan",
+    "Environment": "Lingkungan",
+    "Energy": "Energi",
+    "Water": "Air",
+    "Insurance": "Asuransi",
+    "Housing": "Perumahan",
+    "Shopping": "Belanja",
+    "Delivery": "Pengiriman",
+    "Local": "Lokal",
+    "Employment": "Ketenagakerjaan",
+    "Tech": "Teknologi",
+    "Other": "Lainnya"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Pembatalan Kereta",
+      "description": "Kereta dibatalkan atau sangat terlambat tanpa pemberitahuan atau kompensasi yang memadai"
+    },
+    "Train Ticket Prices": {
+      "name": "Harga Tiket Kereta",
+      "description": "Tarif kereta terlalu mahal, kenaikan di atas inflasi, penetapan harga tidak konsisten"
+    },
+    "Flight Delays": {
+      "name": "Keterlambatan Penerbangan",
+      "description": "Penerbangan tertunda atau dibatalkan, komunikasi buruk, sulit mengklaim kompensasi"
+    },
+    "Lost Luggage": {
+      "name": "Bagasi Hilang",
+      "description": "Bagasi tidak sampai di tujuan, pelacakan lambat, kompensasi tidak memadai"
+    },
+    "Bus Route Cuts": {
+      "name": "Pemotongan Rute Bus",
+      "description": "Rute dibatalkan, frekuensi dikurangi, komunitas pedesaan kehilangan akses bus"
+    },
+    "Pothole Damage": {
+      "name": "Kerusakan Akibat Lubang Jalan",
+      "description": "Lubang jalan merusak kendaraan dan membahayakan pesepeda, pemerintah lambat memperbaiki"
+    },
+    "Parking Fines": {
+      "name": "Denda Parkir",
+      "description": "Biaya parkir swasta yang tidak adil, penegakan agresif, rambu membingungkan"
+    },
+    "Fuel Prices": {
+      "name": "Harga Bahan Bakar",
+      "description": "Harga bensin dan solar terlalu tinggi, lambat turun ketika harga grosir turun"
+    },
+    "Broadband Speed": {
+      "name": "Kecepatan Internet",
+      "description": "Kecepatan internet jauh di bawah yang diiklankan dan dibayar"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Zona Mati Sinyal Seluler",
+      "description": "Tidak ada sinyal seluler di rumah, tempat kerja, atau sepanjang rute transportasi"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Kenaikan Harga di Tengah Kontrak",
+      "description": "Tagihan telepon, internet, dan TV naik selama kontrak yang terkunci"
+    },
+    "Customer Service Hold Times": {
+      "name": "Waktu Tunggu Layanan Pelanggan",
+      "description": "Menunggu berjam-jam untuk berbicara dengan manusia"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Kesulitan Membatalkan Langganan",
+      "description": "Perusahaan sengaja mempersulit pembatalan atau berhenti berlangganan"
+    },
+    "Roaming Charges": {
+      "name": "Biaya Roaming",
+      "description": "Biaya seluler tak terduga saat bepergian ke luar negeri, kenaikan harga pasca-Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Biaya Tagihan Energi",
+      "description": "Tagihan gas dan listrik tidak terjangkau, batas harga masih terlalu tinggi"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Tagihan Energi Tidak Akurat",
+      "description": "Pembacaan estimasi salah, kelebihan penagihan, kesalahan tagihan"
+    },
+    "Water Bill Increases": {
+      "name": "Kenaikan Tagihan Air",
+      "description": "Tagihan air naik tajam sementara kualitas layanan menurun"
+    },
+    "Sewage in Rivers": {
+      "name": "Limbah di Sungai",
+      "description": "Perusahaan air membuang limbah mentah ke saluran air dan pantai"
+    },
+    "Power Cuts": {
+      "name": "Pemadaman Listrik",
+      "description": "Gangguan pasokan listrik, pemulihan lambat, kompensasi tidak memadai"
+    },
+    "Smart Meter Problems": {
+      "name": "Masalah Meteran Pintar",
+      "description": "Meteran pintar tidak berfungsi, kehilangan fungsi setelah berganti pemasok"
+    },
+    "Bank Branch Closures": {
+      "name": "Penutupan Cabang Bank",
+      "description": "Cabang bank lokal ditutup, masyarakat kehilangan akses layanan"
+    },
+    "Hidden Bank Charges": {
+      "name": "Biaya Bank Tersembunyi",
+      "description": "Biaya tak terduga untuk cerukan, transaksi luar negeri, biaya pemeliharaan rekening"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Kerugian Penipuan",
+      "description": "Bank menolak mengganti kerugian korban penipuan dan penipuan pembayaran"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Penolakan Klaim Asuransi",
+      "description": "Klaim ditolak karena teknis setelah bertahun-tahun membayar premi"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Kejutan Suku Bunga KPR",
+      "description": "Suku bunga tetap berakhir dan beralih ke suku bunga variabel yang jauh lebih tinggi"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Biaya Transfer Luar Negeri",
+      "description": "Biaya berlebihan dan nilai tukar buruk untuk transfer uang internasional"
+    },
+    "NHS Waiting Times": {
+      "name": "Waktu Tunggu NHS",
+      "description": "Menunggu berbulan-bulan atau bertahun-tahun untuk operasi dan janji dokter spesialis"
+    },
+    "GP Appointment Access": {
+      "name": "Akses Janji Dokter Umum",
+      "description": "Tidak bisa menelepon untuk membuat janji dokter, menunggu berminggu-minggu"
+    },
+    "Dentist Availability": {
+      "name": "Ketersediaan Dokter Gigi",
+      "description": "Tidak mungkin menemukan dokter gigi NHS yang menerima pasien baru"
+    },
+    "Mental Health Service Waits": {
+      "name": "Antrian Layanan Kesehatan Mental",
+      "description": "Menunggu berbulan-bulan untuk terapi dan dukungan kesehatan mental"
+    },
+    "Prescription Costs": {
+      "name": "Biaya Resep",
+      "description": "Biaya per item terlalu tinggi di Inggris, tidak konsisten antar negara di UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Biaya Parkir Rumah Sakit",
+      "description": "Membayar parkir di rumah sakit saat sakit atau menjenguk kerabat yang sakit"
+    },
+    "Rent Increases": {
+      "name": "Kenaikan Sewa",
+      "description": "Sewa swasta naik jauh di atas inflasi, ancaman penggusuran tanpa kesalahan"
+    },
+    "Council Tax Rises": {
+      "name": "Kenaikan Pajak Daerah",
+      "description": "Pajak daerah naik setiap tahun sementara layanan lokal semakin buruk"
+    },
+    "Noisy Neighbours": {
+      "name": "Tetangga Berisik",
+      "description": "Gangguan kebisingan terus-menerus, pemerintah lambat bertindak, memengaruhi kesehatan mental"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Perubahan Pengumpulan Sampah",
+      "description": "Pengumpulan sampah dikurangi, aturan daur ulang membingungkan, tempat sampah meluap"
+    },
+    "Planning Permission Abuse": {
+      "name": "Penyalahgunaan Izin Perencanaan",
+      "description": "Pembangunan yang tidak diinginkan disetujui, sabuk hijau terancam, komunitas diabaikan"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Kelembapan dan Jamur di Perumahan",
+      "description": "Pemilik rumah dan asosiasi perumahan gagal memperbaiki kelembapan dan jamur"
+    },
+    "Delivery Problems": {
+      "name": "Masalah Pengiriman",
+      "description": "Paket hilang, ditinggal di hujan, ditandai terkirim tetapi tidak diterima"
+    },
+    "Shrinkflation": {
+      "name": "Penyusutan Produk",
+      "description": "Produk semakin kecil sementara harga tetap atau naik"
+    },
+    "Refund Difficulties": {
+      "name": "Kesulitan Pengembalian Dana",
+      "description": "Perusahaan mempersulit pengembalian barang dan dana secara tidak perlu"
+    },
+    "Fake Reviews": {
+      "name": "Ulasan Palsu",
+      "description": "Tidak bisa mempercayai ulasan online, ulasan positif palsu menyesatkan konsumen"
+    },
+    "Subscription Traps": {
+      "name": "Jebakan Langganan",
+      "description": "Uji coba gratis berubah menjadi berbayar tanpa persetujuan jelas, sulit dibatalkan"
+    },
+    "Food Quality Decline": {
+      "name": "Penurunan Kualitas Makanan",
+      "description": "Makanan siap saji kualitas lebih buruk, porsi lebih kecil, lebih banyak bahan tambahan"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustrasi Kasir Mandiri",
+      "description": "Mesin swalayan tidak andal, menggantikan staf manusia"
+    },
+    "Cost of Childcare": {
+      "name": "Biaya Penitipan Anak",
+      "description": "Biaya penitipan anak sangat mahal, membatasi kemampuan bekerja"
+    },
+    "Student Loan Repayment": {
+      "name": "Pembayaran Pinjaman Mahasiswa",
+      "description": "Lulusan membayar kembali selama puluhan tahun, perubahan ambang batas dan bunga"
+    },
+    "Dog Fouling": {
+      "name": "Kotoran Anjing",
+      "description": "Kotoran anjing di ruang publik, taman, dan trotoar tidak dibersihkan"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Menggantikan Pekerjaan",
+      "description": "Kekhawatiran tentang kecerdasan buatan yang mengotomatisasi pekerjaan tanpa dukungan transisi"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Operator kereta api Inggris melayani jalur West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Operator kereta api Inggris melayani London dan wilayah selatan"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Operator kereta api Inggris melayani wilayah utara Inggris"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Operator kereta api jarak jauh Inggris"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Operator kereta api Inggris melayani rute lintas Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Operator kereta api Inggris melayani jalur East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Maskapai penerbangan murah Eropa"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Maskapai penerbangan murah berbasis di Inggris"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Maskapai penerbangan nasional Inggris"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Perusahaan liburan dan perjalanan"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Penyedia internet dan seluler utama di Inggris"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Penyedia internet, TV, dan seluler Inggris"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Penyedia TV, internet, dan seluler Inggris"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Perusahaan telekomunikasi global berkantor pusat di Inggris"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operator jaringan seluler Inggris"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Penyedia internet dan telepon Inggris"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Pemasok energi Inggris"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Pemasok energi Inggris"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Pemasok energi Inggris (dimiliki perusahaan Prancis)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Pemasok energi terbarukan Inggris"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Pemasok energi Inggris"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Pemasok energi Inggris (dimiliki perusahaan Jerman)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Perusahaan air dan limbah untuk London dan lembah Thames"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Perusahaan air untuk wilayah selatan Inggris"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Perusahaan air untuk wilayah barat laut Inggris"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Perusahaan air untuk wilayah Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Perusahaan air untuk wilayah East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Bank multinasional Inggris"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Perbankan dan jasa keuangan global"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Bank ritel dan komersial Inggris"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Grup perbankan Inggris"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Bank Inggris (dimiliki perusahaan Spanyol)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Perbankan digital dan fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Perusahaan asuransi dan jasa keuangan Inggris"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Perusahaan asuransi mobil dan rumah Inggris"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Perusahaan asuransi Inggris"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Perusahaan e-commerce dan teknologi global"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Layanan pos Inggris"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Layanan pengiriman paket Inggris (sebelumnya Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Layanan pengiriman paket Inggris"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Jaringan supermarket Inggris"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Jaringan supermarket Inggris"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Layanan Kesehatan Nasional untuk Inggris"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Layanan kedokteran gigi NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Penyedia layanan kesehatan swasta"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Otoritas pemerintah daerah Inggris"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Perusahaan pembangun rumah Inggris"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Platform persewaan online Inggris"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Layanan streaming hiburan"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Perusahaan teknologi"
+    }
+  }
+}

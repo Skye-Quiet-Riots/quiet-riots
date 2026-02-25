@@ -1,0 +1,421 @@
+{
+  "locale": "eu",
+  "categories": {
+    "Transport": "Garraioa",
+    "Telecoms": "Telekomunikazioak",
+    "Banking": "Bankua",
+    "Health": "Osasuna",
+    "Education": "Hezkuntza",
+    "Environment": "Ingurumena",
+    "Energy": "Energia",
+    "Water": "Ura",
+    "Insurance": "Asegurua",
+    "Housing": "Etxebizitza",
+    "Shopping": "Erosketak",
+    "Delivery": "Bidalketa",
+    "Local": "Tokikoa",
+    "Employment": "Enplegua",
+    "Tech": "Teknologia",
+    "Other": "Besteak"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Tren Bertan Behera Uzteak",
+      "description": "Trenak bertan behera utzita edo izugarri atzeratuta, abisu edo konpentsazio nahikorik gabe"
+    },
+    "Train Ticket Prices": {
+      "name": "Tren Txartelen Prezioak",
+      "description": "Tren tarifak garestiegiak, inflazioaren gainetiko igoerak, prezio desberdinak"
+    },
+    "Flight Delays": {
+      "name": "Hegaldien Atzerapenak",
+      "description": "Hegaldiak atzeratuak edo bertan behera utziak, komunikazio eskasa, konpentsazioa eskatzeko zailtasunak"
+    },
+    "Lost Luggage": {
+      "name": "Galdutako Ekipajea",
+      "description": "Maletek helmugara iristen ez direnean, jarraipena motela, konpentsazio eskasa"
+    },
+    "Bus Route Cuts": {
+      "name": "Autobus Ibilbideen Murrizketak",
+      "description": "Ibilbideak bertan behera, maiztasuna murriztua, landa-komunitateak autobus sarbidea galtzen"
+    },
+    "Pothole Damage": {
+      "name": "Zuloen Kalteak",
+      "description": "Zuloek ibilgailuak kaltetzen eta txirrindulariak arriskuan jartzen dituzte, udalek konponketa atzeratzen dute"
+    },
+    "Parking Fines": {
+      "name": "Aparkaleku Isunak",
+      "description": "Aparkaleku pribatuen karga bidegabeak, betearazpen oldartsua, seinaleztapen nahasia"
+    },
+    "Fuel Prices": {
+      "name": "Erregaien Prezioak",
+      "description": "Gasolina eta dieselaren prezioak altuegiak, handizkako prezioa jaisten denean motel jaisten dira"
+    },
+    "Broadband Speed": {
+      "name": "Banda Zabalaren Abiadura",
+      "description": "Interneteko abiadurak iragarritakoa eta ordaindutakoa baino askoz baxuagoak"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mugikorren Seinalerik Gabeko Eremuak",
+      "description": "Mugikorren seinalerik ez etxeetan, lantokietan edo garraio ibilbideetan"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Prezioen Igoera Kontratuaren Erdian",
+      "description": "Telefono, banda zabal eta TB fakturak igotzen dira blokeatutako kontratuetan"
+    },
+    "Customer Service Hold Times": {
+      "name": "Bezero Arretako Itxaron Denborak",
+      "description": "Orduak zain pertsona batekin hitz egiteko"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Harpidetzak Baliogabetzeko Zailtasuna",
+      "description": "Enpresek nahita zailtzen dute baliogabetzea edo baja ematea"
+    },
+    "Roaming Charges": {
+      "name": "Ibiltaritza Karguak",
+      "description": "Ustekabeko mugikor karguak atzerrian bidaiatzean, Brexit osteko prezio igoerak"
+    },
+    "Energy Bill Costs": {
+      "name": "Energia Fakturen Kostuak",
+      "description": "Gas eta elektrizitate fakturak ordainezinezko prezioan, prezio muga altuegi mantentzen da"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Energia Faktura Okerrak",
+      "description": "Aurreikusitako irakurketak okerrak, gehiegizko kobrantzak, fakturazio erroreak"
+    },
+    "Water Bill Increases": {
+      "name": "Ur Fakturen Igoera",
+      "description": "Ur fakturak bizkor igotzen dira zerbitzu kalitatea jaisten den bitartean"
+    },
+    "Sewage in Rivers": {
+      "name": "Estolderia Ibaietan",
+      "description": "Ur konpainiek estolderia gordina ibaietara eta hondartzetara isurtzen dute"
+    },
+    "Power Cuts": {
+      "name": "Argindar Mozketa",
+      "description": "Elektrizitate horniduraren etenak, berrezarpen motela, konpentsazio eskasa"
+    },
+    "Smart Meter Problems": {
+      "name": "Smart Meter Arazoak",
+      "description": "Smart meter-ak ez dabiltza, funtzionalitatea galtzen dute hornitzailea aldatzean"
+    },
+    "Bank Branch Closures": {
+      "name": "Banku Sukurtsalen Itxiera",
+      "description": "Tokiko banku sukurtsalak ixten dira, komunitateak sarbiderik gabe uzten"
+    },
+    "Hidden Bank Charges": {
+      "name": "Ezkutuko Banku Karguak",
+      "description": "Ustekabeko komisio gordezkoak, atzerriko transakzioak, kontuaren mantentze gastuak"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Iruzur eta Estafa Galerak",
+      "description": "Bankuek iruzurraren eta baimendutako push ordainketako estafaren biktimei itzultzea ukatzen dute"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Aseguru Erreklamazioen Ukatzea",
+      "description": "Erreklamazioak teknikotasun arrazoiengatik ukatzen dira, urteetako primak ordaindu ondoren"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Hipoteka Tasa Txundidura",
+      "description": "Tasa finkoa amaitzen da eta tasa aldakor askoz altuago batera aldatzen da"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Nazioarteko Transferentzia Komisionak",
+      "description": "Komisio gehiegizkoak eta truke tasa txarrak nazioarteko diru transferentzietarako"
+    },
+    "NHS Waiting Times": {
+      "name": "NHSren Itxaron Denborak",
+      "description": "Hilabete edo urteetako itxarona ebakuntzetarako eta espezialistentzako kontsultetarako"
+    },
+    "GP Appointment Access": {
+      "name": "Mediku Kontsulta Sarbidea",
+      "description": "Ezin da mediku kontsultarik lortu, asteetako itxarona"
+    },
+    "Dentist Availability": {
+      "name": "Dentisten Eskuragarritasuna",
+      "description": "Ezinezkoa da paziente berriak onartzen dituen NHS dentista bat aurkitzea"
+    },
+    "Mental Health Service Waits": {
+      "name": "Osasun Mentaleko Zerbitzuen Itxarona",
+      "description": "Hilabeteko itxarona terapia eta osasun mentaleko laguntzarako"
+    },
+    "Prescription Costs": {
+      "name": "Errezeten Kostuak",
+      "description": "Elementuko kostua altuegi Ingalaterran, UK-ko nazioen arteko desberdintasuna"
+    },
+    "Hospital Parking Charges": {
+      "name": "Ospitaleko Aparkaleku Karguak",
+      "description": "Ospitalean aparkatzeagatik ordaintzea gaixorik zaudenean edo gaixo dauden senideak bisitatzean"
+    },
+    "Rent Increases": {
+      "name": "Alokairuen Igoera",
+      "description": "Alokairu pribatuak inflazioaren gainetik igotzen dira, errurik gabeko kaleratzeko mehatxua"
+    },
+    "Council Tax Rises": {
+      "name": "Udal Zergen Igoera",
+      "description": "Udal zergen urteko igoerak tokiko zerbitzuak okerragoak diren bitartean"
+    },
+    "Noisy Neighbours": {
+      "name": "Auzokide Zaratatsuak",
+      "description": "Zarata etengabea, udalek motel jokatzen dute, osasun mentalean eragina"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Zabor Bilketaren Aldaketak",
+      "description": "Zabor bilketa murriztua, birziklatzeko arau nahasgarriak, zabaltegi gainezka"
+    },
+    "Planning Permission Abuse": {
+      "name": "Hirigintza Baimenen Abusua",
+      "description": "Nahi ez diren garapena onartua, gerrikalde berdea mehatxupean, komunitatea bazterturik"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Hezetasuna eta Lizuna Etxebizitzetan",
+      "description": "Jabeak eta etxebizitza elkarteek hezetasuna eta lizuna konpontzeko huts egiten dute"
+    },
+    "Delivery Problems": {
+      "name": "Bidalketa Arazoak",
+      "description": "Paketeak galduak, euripean utziak, entregatutzat markaturik baina jaso gabeak"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Produktuak txikiago bihurtzen dira prezioak berdin mantentzen diren edo igotzen diren bitartean"
+    },
+    "Refund Difficulties": {
+      "name": "Itzulketa Zailtasunak",
+      "description": "Enpresek itzulketak eta dirua itzultzea beharrik gabe zailtzen dute"
+    },
+    "Fake Reviews": {
+      "name": "Iritzi Faltsuak",
+      "description": "Ezin da lineako iritzietan fidatu, iritzi positibo faltsuek kontsumitzaileak engainatzen dituzte"
+    },
+    "Subscription Traps": {
+      "name": "Harpidetza Tranpak",
+      "description": "Doako probak ordaindu bihurtzen dira adostasun argirik gabe, baliogabetzeko zailak"
+    },
+    "Food Quality Decline": {
+      "name": "Elikagaien Kalitatearen Beherakada",
+      "description": "Plateren kalitate txarragoa, portzio txikiagoak, gehiago gehigarriak"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Autoordainketa Frustrazioa",
+      "description": "Autozerbitzuko makinak fidagaitzak, giza langileak ordezkatzen"
+    },
+    "Cost of Childcare": {
+      "name": "Haurren Zaintzaren Kostua",
+      "description": "Haurren zaintzaren kostuak debekagarriki garestiak, lan egiteko gaitasuna mugatuz"
+    },
+    "Student Loan Repayment": {
+      "name": "Ikasle Maileguen Itzulketa",
+      "description": "Graduatuak hamarkadetan ordaintzen, atalase eta interes aldaketak"
+    },
+    "Dog Fouling": {
+      "name": "Txakurren Gorotzak",
+      "description": "Txakurren gorotzak gune publikoetan, parkeetan eta espaloietan garbitu gabe"
+    },
+    "AI Replacing Jobs": {
+      "name": "AIak Lanpostuak Ordezkatzen",
+      "description": "Adimen artifizialak lanpostuak automatizatzeak sortzen duen antsietatea, trantsizioko laguntzarik gabe"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "UKko tren operadorea, West Coast Main Line zerbitzatzen duena"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "UKko tren operadorea, London eta hegoaldea zerbitzatzen duena"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "UKko tren operadorea, Ingalaterrako iparraldea zerbitzatzen duena"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "UKko distantzia luzeko tren operadorea"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "UKko tren operadorea, trans-Pennine ibilbideak zerbitzatzen dituena"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "UKko tren operadorea, East Coast Main Line zerbitzatzen duena"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Europako kostu baxuko airelinea"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "UKn oinarritutako kostu baxuko airelinea"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "UKko bandera airelinea"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Opor eta bidaia enpresa"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "UKko banda zabal eta mugikor hornitzaile nagusia"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "UKko banda zabal, TB eta mugikor hornitzailea"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "UKko TB, banda zabal eta mugikor hornitzailea"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Telekomunikazio enpresa globala, UKn egoitza duena"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "UKko mugikor sare operadorea"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "UKko banda zabal eta telefono hornitzailea"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "UKko energia hornitzailea"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "UKko energia hornitzailea"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "UKko energia hornitzailea (Frantziaren jabetzakoa)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "UKko energia berriztagarriaren hornitzailea"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "UKko energia hornitzailea"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "UKko energia hornitzailea (Alemaniaren jabetzakoa)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Ur eta estolderia konpainia Londonerako eta Thames haranerako"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Ur konpainia Ingalaterrako hegoalderako"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Ur konpainia Ingalaterrako ipar-menderako"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Ur konpainia Midlandserako"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Ur konpainia East Angliarako"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britainiar banku multinazionala"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Banku eta finantza zerbitzu globalak"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "UKko txikizkako eta merkataritza bankua"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "UKko banku taldea"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "UKko bankua (Espainiaren jabetzakoa)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Banku digitala eta fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "UKko aseguru eta finantza zerbitzuak"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "UKko auto eta etxe asegurua"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "UKko aseguru enpresa"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Merkataritza elektroniko eta teknologia globala"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "UKko posta zerbitzua"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "UKko pakete bidalketa zerbitzua (lehenago Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "UKko pakete bidalketa zerbitzua"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "UKko supermerkatu katea"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "UKko supermerkatu katea"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Ingalaterrako Osasun Zerbitzu Nazionala"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHSren hortz zerbitzuak"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Osasun arreta pribatuko hornitzailea"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "UKko tokiko gobernu agintaritzak"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "UKko etxe eraikitzailea"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "UKko lineako alokairu plataforma"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming entretenimendua zerbitzua"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Teknologia enpresa"
+    }
+  }
+}

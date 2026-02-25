@@ -1,0 +1,421 @@
+{
+  "locale": "ko",
+  "categories": {
+    "Transport": "교통",
+    "Telecoms": "통신",
+    "Banking": "은행/금융",
+    "Health": "의료/건강",
+    "Education": "교육",
+    "Environment": "환경",
+    "Energy": "에너지",
+    "Water": "수도",
+    "Insurance": "보험",
+    "Housing": "주거",
+    "Shopping": "쇼핑/소비",
+    "Delivery": "배송/물류",
+    "Local": "지역 사안",
+    "Employment": "고용",
+    "Tech": "기술",
+    "Other": "기타"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "열차 운행 취소",
+      "description": "열차가 취소되거나 심각하게 지연되며, 통보나 보상이 부적절"
+    },
+    "Train Ticket Prices": {
+      "name": "기차표 가격",
+      "description": "철도 요금이 지나치게 비싸고, 물가 상승률을 초과하는 인상, 일관성 없는 가격 체계"
+    },
+    "Flight Delays": {
+      "name": "항공편 지연",
+      "description": "항공편 지연 또는 결항, 미흡한 안내, 보상 청구의 어려움"
+    },
+    "Lost Luggage": {
+      "name": "수하물 분실",
+      "description": "수하물이 목적지에 도착하지 않음, 추적이 느림, 보상 부족"
+    },
+    "Bus Route Cuts": {
+      "name": "버스 노선 축소",
+      "description": "노선 폐지, 운행 빈도 감소, 농촌 지역의 버스 접근성 상실"
+    },
+    "Pothole Damage": {
+      "name": "도로 포트홀 피해",
+      "description": "포트홀이 차량을 손상시키고 자전거 이용자를 위험에 빠뜨림, 지자체 보수가 느림"
+    },
+    "Parking Fines": {
+      "name": "주차 과태료",
+      "description": "불공정한 민간 주차 요금, 과도한 단속, 혼란스러운 안내 표지"
+    },
+    "Fuel Prices": {
+      "name": "연료 가격",
+      "description": "휘발유와 경유 가격이 지나치게 높고, 도매가 하락 시 소매가 인하가 느림"
+    },
+    "Broadband Speed": {
+      "name": "초고속 인터넷 속도",
+      "description": "실제 인터넷 속도가 광고 및 결제 기준에 훨씬 못 미침"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "휴대폰 음영 지역",
+      "description": "집, 직장, 교통 경로에서 휴대폰 신호가 잡히지 않음"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "계약 중 요금 인상",
+      "description": "휴대폰, 초고속 인터넷, TV 요금이 약정 기간 중에 인상됨"
+    },
+    "Customer Service Hold Times": {
+      "name": "고객센터 대기 시간",
+      "description": "상담원 연결까지 수 시간을 대기해야 함"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "구독 해지 어려움",
+      "description": "기업이 고의적으로 구독 해지나 탈퇴를 어렵게 만듦"
+    },
+    "Roaming Charges": {
+      "name": "로밍 요금",
+      "description": "해외 여행 시 예상치 못한 휴대폰 로밍 요금 발생, 브렉시트 이후 요금 인상"
+    },
+    "Energy Bill Costs": {
+      "name": "에너지 요금",
+      "description": "가스와 전기 요금을 감당하기 어려움, 가격 상한선도 여전히 너무 높음"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "부정확한 에너지 청구서",
+      "description": "추정 검침값 오류, 과다 청구, 청구서 오류"
+    },
+    "Water Bill Increases": {
+      "name": "수도 요금 인상",
+      "description": "수도 요금이 급격히 오르는 반면 서비스 품질은 저하"
+    },
+    "Sewage in Rivers": {
+      "name": "하천 오수 방류",
+      "description": "수도 회사가 미처리 하수를 하천과 해변에 방류"
+    },
+    "Power Cuts": {
+      "name": "정전",
+      "description": "전력 공급 중단, 복구 지연, 보상 부족"
+    },
+    "Smart Meter Problems": {
+      "name": "스마트 계량기 문제",
+      "description": "스마트 계량기가 작동하지 않거나, 공급사 변경 후 기능을 상실"
+    },
+    "Bank Branch Closures": {
+      "name": "은행 지점 폐쇄",
+      "description": "지역 은행 지점이 폐쇄되어 지역사회가 은행 서비스를 이용할 수 없게 됨"
+    },
+    "Hidden Bank Charges": {
+      "name": "은행 숨은 수수료",
+      "description": "당좌 대월, 외화 거래, 계좌 유지에 대한 예상치 못한 수수료"
+    },
+    "Fraud and Scam Losses": {
+      "name": "사기 피해",
+      "description": "은행이 사기 및 승인된 푸시결제 사기 피해자에 대한 보상을 거부"
+    },
+    "Insurance Claim Rejections": {
+      "name": "보험금 청구 거부",
+      "description": "수년간 보험료를 납부한 후, 기술적 사유로 보험금 청구가 거부됨"
+    },
+    "Mortgage Rate Shock": {
+      "name": "주택담보대출 금리 충격",
+      "description": "고정 금리 기간이 끝나고 훨씬 높은 변동 금리로 전환"
+    },
+    "Overseas Transfer Fees": {
+      "name": "해외 송금 수수료",
+      "description": "국제 송금 수수료가 과도하고 환율이 불리함"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS 대기 시간",
+      "description": "수술 및 전문의 진료 예약에 수개월에서 수년 대기"
+    },
+    "GP Appointment Access": {
+      "name": "일반의 예약 접근성",
+      "description": "일반의 예약 전화가 연결되지 않고, 수 주를 대기해야 함"
+    },
+    "Dentist Availability": {
+      "name": "치과 의사 부족",
+      "description": "새 환자를 받는 NHS 치과를 찾는 것이 거의 불가능"
+    },
+    "Mental Health Service Waits": {
+      "name": "정신건강 서비스 대기",
+      "description": "심리 치료 및 정신건강 지원에 수개월 대기"
+    },
+    "Prescription Costs": {
+      "name": "처방약 비용",
+      "description": "잉글랜드의 항목당 비용이 너무 높고, 영국 내 지역별 기준이 불일치"
+    },
+    "Hospital Parking Charges": {
+      "name": "병원 주차 요금",
+      "description": "진료나 병문안 시 병원 주차 요금을 지불해야 함"
+    },
+    "Rent Increases": {
+      "name": "임대료 인상",
+      "description": "민간 임대료가 물가 상승률을 크게 초과하여 상승, 무과실 퇴거 위협"
+    },
+    "Council Tax Rises": {
+      "name": "지방세 인상",
+      "description": "지방세가 매년 인상되는 반면 지역 공공 서비스는 악화"
+    },
+    "Noisy Neighbours": {
+      "name": "층간 소음/이웃 소음",
+      "description": "지속적인 소음 방해, 지자체 대응이 느림, 정신 건강에 영향"
+    },
+    "Rubbish Collection Changes": {
+      "name": "쓰레기 수거 변경",
+      "description": "쓰레기 수거 횟수 감소, 혼란스러운 재활용 규정, 쓰레기통 넘침"
+    },
+    "Planning Permission Abuse": {
+      "name": "건축 허가 남용",
+      "description": "원치 않는 개발이 승인되고, 그린벨트가 위협받으며, 지역사회 의견이 무시됨"
+    },
+    "Damp and Mould in Housing": {
+      "name": "주택 습기 및 곰팡이",
+      "description": "집주인과 주택 조합이 습기 및 곰팡이 문제를 수리하지 않음"
+    },
+    "Delivery Problems": {
+      "name": "배송 문제",
+      "description": "택배 분실, 비에 방치, 배송 완료로 표시되었으나 수령하지 못함"
+    },
+    "Shrinkflation": {
+      "name": "슈링크플레이션",
+      "description": "제품은 작아지는데 가격은 그대로이거나 인상됨"
+    },
+    "Refund Difficulties": {
+      "name": "환불 어려움",
+      "description": "기업이 반품 및 환불 절차를 불필요하게 복잡하게 만듦"
+    },
+    "Fake Reviews": {
+      "name": "가짜 리뷰",
+      "description": "온라인 리뷰를 신뢰할 수 없고, 허위 긍정 리뷰가 소비자를 오도함"
+    },
+    "Subscription Traps": {
+      "name": "구독 함정",
+      "description": "무료 체험이 명확한 동의 없이 유료로 전환되며, 해지가 어려움"
+    },
+    "Food Quality Decline": {
+      "name": "식품 품질 저하",
+      "description": "간편식 품질 저하, 용량 감소, 첨가물 증가"
+    },
+    "Self-Checkout Frustration": {
+      "name": "셀프 계산대 불만",
+      "description": "셀프 계산기가 불안정하고, 인력 계산대를 대체함"
+    },
+    "Cost of Childcare": {
+      "name": "보육 비용",
+      "description": "보육비가 감당하기 어려울 정도로 비싸, 취업 능력이 제한됨"
+    },
+    "Student Loan Repayment": {
+      "name": "학자금 대출 상환",
+      "description": "졸업생이 수십 년간 상환해야 하며, 기준 금액과 이자율이 변경됨"
+    },
+    "Dog Fouling": {
+      "name": "반려견 배변 방치",
+      "description": "공공장소, 공원, 보도에 개 배변이 치워지지 않음"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI의 일자리 대체",
+      "description": "전환 지원 없이 인공지능이 일자리를 자동화하는 것에 대한 불안"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "웨스트코스트 본선을 운행하는 영국 철도 운영사"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "런던 및 남부 지역을 운행하는 영국 철도 운영사"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "잉글랜드 북부를 운행하는 영국 철도 운영사"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "영국 장거리 철도 운영사"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "페나인 횡단 노선을 운행하는 영국 철도 운영사"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "이스트코스트 본선을 운행하는 영국 철도 운영사"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "유럽 저비용 항공사"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "영국 저비용 항공사"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "영국 국적 항공사"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "휴가 및 여행 회사"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "영국 주요 초고속 인터넷 및 모바일 통신 제공업체"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "영국 초고속 인터넷, TV 및 모바일 통신 제공업체"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "영국 TV, 초고속 인터넷 및 모바일 통신 제공업체"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "영국에 본사를 둔 글로벌 통신 회사"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "영국 모바일 네트워크 운영사"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "영국 초고속 인터넷 및 전화 제공업체"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "영국 에너지 공급업체"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "영국 에너지 공급업체"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "영국 에너지 공급업체 (프랑스 자본)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "영국 재생에너지 공급업체"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "영국 에너지 공급업체"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "영국 에너지 공급업체 (독일 자본)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "런던 및 템스 밸리의 상하수도 회사"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "잉글랜드 남부의 수도 회사"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "잉글랜드 북서부의 수도 회사"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "미들랜즈 지역의 수도 회사"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "이스트앵글리아 지역의 수도 회사"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "영국 다국적 은행"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "글로벌 은행 및 금융 서비스 그룹"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "영국 소매 및 상업 은행"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "영국 은행 그룹"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "영국 은행 (스페인 자본)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "디지털 뱅킹 및 핀테크 기업"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "영국 보험 및 금융 서비스 회사"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "영국 자동차 및 주택 보험 회사"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "영국 보험 회사"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "글로벌 전자상거래 및 기술 기업"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "영국 우편 서비스"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "영국 택배 서비스 (구 Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "영국 택배 서비스"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "영국 슈퍼마켓 체인"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "영국 슈퍼마켓 체인"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "잉글랜드 국민건강서비스"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS 치과 서비스"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "민간 의료 서비스 제공업체"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "영국 지방자치단체"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "영국 주택 건설업체"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "영국 온라인 임대 플랫폼"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "스트리밍 엔터테인먼트 서비스"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "기술 기업"
+    }
+  }
+}

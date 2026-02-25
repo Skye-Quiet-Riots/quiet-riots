@@ -1,0 +1,421 @@
+{
+  "locale": "sv",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telekom",
+    "Banking": "Bank",
+    "Health": "Halsa",
+    "Education": "Utbildning",
+    "Environment": "Miljo",
+    "Energy": "Energi",
+    "Water": "Vatten",
+    "Insurance": "Forsakring",
+    "Housing": "Bostad",
+    "Shopping": "Shopping",
+    "Delivery": "Leverans",
+    "Local": "Lokalt",
+    "Employment": "Arbete",
+    "Tech": "Teknik",
+    "Other": "Ovrigt"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Installt tag",
+      "description": "Tag installda eller kraftigt forsenade med otillracklig information eller kompensation"
+    },
+    "Train Ticket Prices": {
+      "name": "Tagbiljettpriser",
+      "description": "Tagbiljetter for dyra, prisokningar over inflationen, inkonsekvent prissattning"
+    },
+    "Flight Delays": {
+      "name": "Flygforseningar",
+      "description": "Flyg forsenade eller installda, dalig kommunikation, svart att fa kompensation"
+    },
+    "Lost Luggage": {
+      "name": "Forsvunnet bagage",
+      "description": "Vaskor som inte ankommit, langsam sparning, otillracklig kompensation"
+    },
+    "Bus Route Cuts": {
+      "name": "Indragna busslinjer",
+      "description": "Linjer indragna, turtatheten minskad, landsbygdssamhallen forlorar busstillgang"
+    },
+    "Pothole Damage": {
+      "name": "Skador fran gropar i vagen",
+      "description": "Gropar i vagen som skadar fordon och utsatter cyklister for fara, kommuner sena med reparationer"
+    },
+    "Parking Fines": {
+      "name": "Parkeringsboter",
+      "description": "Orattvisa privata parkeringsavgifter, aggressiv tillamning, forvirrande skyltning"
+    },
+    "Fuel Prices": {
+      "name": "Branslekostnader",
+      "description": "Bensin- och dieselpriser for hoga, sena att sjunka nar grossistpriset faller"
+    },
+    "Broadband Speed": {
+      "name": "Bredbandshastighet",
+      "description": "Internethastigheter langt under vad som utlovats och betalats for"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Doda zoner for mobilsignal",
+      "description": "Ingen mobilsignal i bostader, pa arbetsplatser eller langs transportvagar"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Prisokningar mitt i avtalet",
+      "description": "Telefon-, bredband- och tv-rakningar okar under bindningstiden"
+    },
+    "Customer Service Hold Times": {
+      "name": "Vantetider for kundtjanst",
+      "description": "Timmar i telefonko for att fa prata med en manniska"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Svart att saga upp prenumerationer",
+      "description": "Foretag som medvetet gor det svart att saga upp eller avregistrera sig"
+    },
+    "Roaming Charges": {
+      "name": "Roamingavgifter",
+      "description": "Oforvantade mobilkostnader vid resor utomlands, prisokningar efter Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Energirakningar",
+      "description": "Gas- och elrakningar ooverkomliga, pristaket fortfarande for hogt"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Felaktiga energirakningar",
+      "description": "Beraknade avlasningar felaktiga, overdebitering, faktureringsfel"
+    },
+    "Water Bill Increases": {
+      "name": "Hojda vattenrakningar",
+      "description": "Vattenrakningar okar kraftigt medan tjanstekvaliteten forsamras"
+    },
+    "Sewage in Rivers": {
+      "name": "Avlopp i vattendrag",
+      "description": "Vattenbolag som slapper ut orenat avloppsvatten i vattendrag och pa strander"
+    },
+    "Power Cuts": {
+      "name": "Stromavbrott",
+      "description": "Avbrott i elforsorjningen, langsam aterupprattning, otillracklig kompensation"
+    },
+    "Smart Meter Problems": {
+      "name": "Problem med smarta matare",
+      "description": "Smarta matare fungerar inte, forlorar funktionalitet efter byte av leverantor"
+    },
+    "Bank Branch Closures": {
+      "name": "Stangning av bankkontor",
+      "description": "Lokala bankkontor stangs, samhallen lamnas utan tillgang till banktjanster"
+    },
+    "Hidden Bank Charges": {
+      "name": "Dolda bankavgifter",
+      "description": "Oforvantade avgifter for overtrassering, utlandstransaktioner, kontoforvaltning"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Forluster genom bedrageri",
+      "description": "Banker vagrar ersatta offer for bedrageri och auktoriserade betalningsbedragerier"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Avslag pa forsakringskrav",
+      "description": "Krav avslagna pa teknikaliteter efter ar av premiebetalning"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Bolanerantechock",
+      "description": "Den fasta rantan gar ut och overgar till en mycket hogre rorlig ranta"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Avgifter for utlandsoverforingar",
+      "description": "Orimliga avgifter och daliga vaxelkurser for internationella overforingar"
+    },
+    "NHS Waiting Times": {
+      "name": "Vantetider i sjukvarden",
+      "description": "Manader eller ar av vantan pa operationer och specialistbesok"
+    },
+    "GP Appointment Access": {
+      "name": "Tillgang till lakarbesok",
+      "description": "Gar inte att boka tid hos lakaren, veckolanga vantetider"
+    },
+    "Dentist Availability": {
+      "name": "Tillgang till tandvard",
+      "description": "Omojligt att hitta en tandlakare som tar emot nya patienter"
+    },
+    "Mental Health Service Waits": {
+      "name": "Vantetider for psykiatrisk vard",
+      "description": "Manadslanga vantetider for terapi och psykologiskt stod"
+    },
+    "Prescription Costs": {
+      "name": "Receptkostnader",
+      "description": "Kostnad per preparat for hog i England, inkonsekvens mellan brittiska nationer"
+    },
+    "Hospital Parking Charges": {
+      "name": "Parkeringsavgifter vid sjukhus",
+      "description": "Betala for parkering pa sjukhuset nar man ar sjuk eller besoker sjuka anhoriga"
+    },
+    "Rent Increases": {
+      "name": "Hyreshojningar",
+      "description": "Privata hyror stiger langt over inflationen, hot om vrakningar utan saklig grund"
+    },
+    "Council Tax Rises": {
+      "name": "Hojd kommunalskatt",
+      "description": "Arliga hojningar av kommunalskatten medan de lokala tjanstarna forsamras"
+    },
+    "Noisy Neighbours": {
+      "name": "Bullriga grannar",
+      "description": "Ihallande bullerstorningar, kommuner sena att agera, paverkar den psykiska halsan"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Andringar i sophamtning",
+      "description": "Minskad sophamtning, forvirrande atervinningsregler, overfulla soptunnor"
+    },
+    "Planning Permission Abuse": {
+      "name": "Missbruk av bygglov",
+      "description": "Oonskade byggen godkanda, gront balte hotat, samhallet ignorerat"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Fukt och mogel i bostader",
+      "description": "Hyresvardar och bostadsforetag som inte atgardar fukt och mogel"
+    },
+    "Delivery Problems": {
+      "name": "Leveransproblem",
+      "description": "Paket forsvunna, lamnade i regnet, markerade som levererade men inte mottagna"
+    },
+    "Shrinkflation": {
+      "name": "Krympflation",
+      "description": "Produkter som blir mindre medan priserna forblir desamma eller okar"
+    },
+    "Refund Difficulties": {
+      "name": "Svarigheter med aterbetalning",
+      "description": "Foretag som gor returer och aterbetalningar onodigt svara"
+    },
+    "Fake Reviews": {
+      "name": "Falska recensioner",
+      "description": "Gar inte att lita pa onlinerecensioner, falska positiva recensioner vilseleder konsumenter"
+    },
+    "Subscription Traps": {
+      "name": "Prenumerationsfallor",
+      "description": "Gratis provperioder som overgar till betalda utan tydligt samtycke, svara att saga upp"
+    },
+    "Food Quality Decline": {
+      "name": "Forsamrad livsmedelskvalitet",
+      "description": "Fardiga matratter av samre kvalitet, mindre portioner, fler tillsatser"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustration med sjalvbetjaning",
+      "description": "Sjalvbetjaningskassor opalitliga, ersatter mansklig personal"
+    },
+    "Cost of Childcare": {
+      "name": "Kostnad for barnomsorg",
+      "description": "Barnomsorgskostnader ooverkomligt hoga, begransar mojligheten att arbeta"
+    },
+    "Student Loan Repayment": {
+      "name": "Aterbetalning av studielan",
+      "description": "Utexaminerade betalar tillbaka i artionden, andringar av troskel och ranta"
+    },
+    "Dog Fouling": {
+      "name": "Hundbajs",
+      "description": "Hundavforing i offentliga utrymmen, parker och pa trottoarer som inte stadas upp"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI ersatter jobb",
+      "description": "Oro over att artificiell intelligens automatiserar jobb utan stod for omstallning"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Brittisk tagoperator pa West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Brittisk tagoperator for London och sodra England"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Brittisk tagoperator for norra England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Brittisk langdistanstagoperator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Brittisk tagoperator pa trans-Pennine-rutter"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Brittisk tagoperator pa East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Europeiskt lagprisflygbolag"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Brittiskt lagprisflygbolag"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Storbritanniens nationella flygbolag"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Rese- och semesterforetag"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Stor brittisk bredband- och mobilleverantor"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Brittisk bredband-, tv- och mobilleverantor"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Brittisk tv-, bredband- och mobilleverantor"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalt telekomforetag med huvudkontor i Storbritannien"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Brittisk mobilnatverksoperator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Brittisk bredband- och telefonleverantor"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Brittisk energileverantor"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Brittisk energileverantor"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Brittisk energileverantor (franskagd)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Brittisk leverantor av fornybar energi"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Brittisk energileverantor"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Brittisk energileverantor (tyskagd)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Vatten- och avloppsbolag for London och Themsendalen"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vattenbolag for sodra England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vattenbolag for nordvastra England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vattenbolag for Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vattenbolag for East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Brittisk multinationell bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Globala bank- och finanstjanster"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Brittisk privat- och foretagsbank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Brittisk bankgrupp"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Brittisk bank (spanskagd)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital bank och fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Brittiska forsakrings- och finanstjanster"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Brittisk bil- och hemforsakring"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Brittiskt forsakringsbolag"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalt e-handels- och teknikforetag"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Brittisk posttjanst"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Brittisk paketleveranstjanst (tidigare Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Brittisk paketleveranstjanst"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Brittisk stormarknadskedja"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Brittisk stormarknadskedja"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Nationella halso- och sjukvarden for England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Nationella halso- och sjukvardens tandvardstjanster"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Privat vardgivare"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Brittiska kommunala myndigheter"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Brittiskt bostadsbyggforetag"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Brittisk plattform for uthyrning online"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streamingtjanst for underhallning"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Teknikforetag"
+    }
+  }
+}

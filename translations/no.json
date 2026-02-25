@@ -1,0 +1,421 @@
+{
+  "locale": "no",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telekom",
+    "Banking": "Bank",
+    "Health": "Helse",
+    "Education": "Utdanning",
+    "Environment": "Miljo",
+    "Energy": "Energi",
+    "Water": "Vann",
+    "Insurance": "Forsikring",
+    "Housing": "Bolig",
+    "Shopping": "Handel",
+    "Delivery": "Levering",
+    "Local": "Lokalt",
+    "Employment": "Arbeid",
+    "Tech": "Teknologi",
+    "Other": "Annet"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Toginnstillinger",
+      "description": "Tog innstilt eller kraftig forsinket uten tilstrekkelig varsel eller kompensasjon"
+    },
+    "Train Ticket Prices": {
+      "name": "Togbillettpriser",
+      "description": "Togbilletter for dyre, prisokninger over inflasjonen, inkonsekvent prising"
+    },
+    "Flight Delays": {
+      "name": "Flyforsinkelser",
+      "description": "Fly forsinket eller kansellert, darlig kommunikasjon, vanskelig a fa kompensasjon"
+    },
+    "Lost Luggage": {
+      "name": "Tapt bagasje",
+      "description": "Bager ankommer ikke destinasjonen, treg sporing, utilstrekkelig kompensasjon"
+    },
+    "Bus Route Cuts": {
+      "name": "Kutt i bussruter",
+      "description": "Ruter kansellert, frekvens redusert, bygdesamfunn mister busstilbudet"
+    },
+    "Pothole Damage": {
+      "name": "Skader fra hull i veien",
+      "description": "Hull i veien skader kjoretoy og setter syklister i fare, kommunene er trege med reparasjoner"
+    },
+    "Parking Fines": {
+      "name": "Parkeringsbother",
+      "description": "Urettferdige private parkeringsavgifter, aggressiv handheving, forvirrende skilting"
+    },
+    "Fuel Prices": {
+      "name": "Drivstoffpriser",
+      "description": "Bensin- og dieselpriser for hoye, trege til a synke nar engrosprisen faller"
+    },
+    "Broadband Speed": {
+      "name": "Bredbandshastighet",
+      "description": "Internetthastigheter langt under det som er annonsert og betalt for"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobilsignalens dodsoner",
+      "description": "Ingen mobilsignal hjemme, pa arbeidsplassen eller langs transportruter"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Prisokninger midt i kontrakten",
+      "description": "Telefon-, bredbands- og TV-regninger oker under laste kontrakter"
+    },
+    "Customer Service Hold Times": {
+      "name": "Ventetid hos kundeservice",
+      "description": "Timer i telefonko for a fa snakke med et menneske"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Vanskelig a si opp abonnementer",
+      "description": "Selskaper gjor det bevisst vanskelig a avbestille eller melde seg ut"
+    },
+    "Roaming Charges": {
+      "name": "Roamingavgifter",
+      "description": "Uventede mobilavgifter pa reise i utlandet, prisokninger etter Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Energiregningskostnader",
+      "description": "Gass- og stromregninger uoverkommelige, pristaket fortsatt for hoyt"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Unoyaktige energiregninger",
+      "description": "Estimerte maleravlesninger feil, overprising, faktureringsfeil"
+    },
+    "Water Bill Increases": {
+      "name": "Okning i vannregninger",
+      "description": "Vannregninger stiger kraftig mens tjenestekvaliteten synker"
+    },
+    "Sewage in Rivers": {
+      "name": "Kloakk i elver",
+      "description": "Vannselskaper slipper urenset kloakk ut i vassdrag og pa strender"
+    },
+    "Power Cuts": {
+      "name": "Strombrudd",
+      "description": "Avbrudd i stromforsyningen, treg gjenoppretting, utilstrekkelig kompensasjon"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemer med smarte malere",
+      "description": "Smarte malere fungerer ikke, mister funksjonalitet etter leverandorbytte"
+    },
+    "Bank Branch Closures": {
+      "name": "Nedleggelse av bankfilialer",
+      "description": "Lokale bankfilialer legges ned og etterlater lokalsamfunn uten tilgang"
+    },
+    "Hidden Bank Charges": {
+      "name": "Skjulte bankgebyrer",
+      "description": "Uventede gebyrer for kassekreditt, utenlandstransaksjoner og kontoadministrasjon"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Tap fra svindel og bedrageri",
+      "description": "Banker nekter a refundere ofre for svindel og autorisert betalingsbedrageri"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Avslag pa forsikringskrav",
+      "description": "Krav avvist pa teknikaliteter etter ar med premiebetaling"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Sjokk over bolanrenten",
+      "description": "Fastrenten utloper og gar over til mye hoyere flytende rente"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Gebyrer for utenlandsoverforinger",
+      "description": "Urimelige gebyrer og darlige valutakurser for internasjonale pengeoverforinger"
+    },
+    "NHS Waiting Times": {
+      "name": "Ventetider i NHS",
+      "description": "Mange maneder eller ar med ventetid for operasjoner og spesialistimer"
+    },
+    "GP Appointment Access": {
+      "name": "Tilgang til fastlegetime",
+      "description": "Umulig a komme gjennom for a bestille legetime, ukelange ventetider"
+    },
+    "Dentist Availability": {
+      "name": "Tilgjengelighet hos tannlege",
+      "description": "Umulig a finne en offentlig tannlege som tar imot nye pasienter"
+    },
+    "Mental Health Service Waits": {
+      "name": "Ventetider for psykisk helsehjelp",
+      "description": "Manedslange ventetider for terapi og psykisk helsestotte"
+    },
+    "Prescription Costs": {
+      "name": "Reseptkostnader",
+      "description": "For hoy pris per preparat i England, forskjeller mellom britiske nasjoner"
+    },
+    "Hospital Parking Charges": {
+      "name": "Parkeringsavgifter pa sykehus",
+      "description": "Ma betale for parkering pa sykehuset nar man er syk eller besoker syke"
+    },
+    "Rent Increases": {
+      "name": "Husleieokninger",
+      "description": "Privat husleie stiger langt over inflasjonen, trussel om utkastelse uten grunn"
+    },
+    "Council Tax Rises": {
+      "name": "Okning i eiendomsskatt",
+      "description": "Arlige okninger i eiendomsskatt mens lokale tjenester blir darligere"
+    },
+    "Noisy Neighbours": {
+      "name": "Brakete naboer",
+      "description": "Vedvarende stoyforstyrrelser, kommunen treg med a handle, pavirker psykisk helse"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Endringer i soppelhenting",
+      "description": "Redusert soppeltomming, forvirrende kildesorteringsregler, overfylte dunker"
+    },
+    "Planning Permission Abuse": {
+      "name": "Misbruk av byggetillatelser",
+      "description": "Uonskede utbygginger godkjent, gronne omrader truet, lokalsamfunnet oversett"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Fukt og mugg i boliger",
+      "description": "Utleiere og boligselskaper unnlater a utbedre fukt og mugg"
+    },
+    "Delivery Problems": {
+      "name": "Leveringsproblemer",
+      "description": "Pakker tapt, etterlatt i regnet, merket som levert men ikke mottatt"
+    },
+    "Shrinkflation": {
+      "name": "Krympeflasjon",
+      "description": "Produkter blir mindre mens prisene forblir de samme eller oker"
+    },
+    "Refund Difficulties": {
+      "name": "Vanskeligheter med refusjon",
+      "description": "Selskaper gjor returer og refusjoner unodvendig vanskelig"
+    },
+    "Fake Reviews": {
+      "name": "Falske anmeldelser",
+      "description": "Kan ikke stole pa nettanmeldelser, falske positive anmeldelser villeder forbrukere"
+    },
+    "Subscription Traps": {
+      "name": "Abonnementsfeller",
+      "description": "Gratis proveperioder konverteres til betalt uten tydelig samtykke, vanskelig a avbryte"
+    },
+    "Food Quality Decline": {
+      "name": "Synkende matkvalitet",
+      "description": "Ferdigmat med darligere kvalitet, mindre porsjoner, flere tilsetningsstoffer"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustrasjon over selvbetjening",
+      "description": "Selvbetjeningsautomater upalitelige, erstatter menneskelig personale"
+    },
+    "Cost of Childcare": {
+      "name": "Barnehagekostnader",
+      "description": "Barnepass uoverkommelig dyrt, begrenser muligheten til a jobbe"
+    },
+    "Student Loan Repayment": {
+      "name": "Tilbakebetaling av studielan",
+      "description": "Utdannede betaler tilbake i artier, endringer i grenser og renter"
+    },
+    "Dog Fouling": {
+      "name": "Hundeavforing",
+      "description": "Hundeavforing i offentlige rom, parker og pa fortau som ikke ryddes opp"
+    },
+    "AI Replacing Jobs": {
+      "name": "KI erstatter jobber",
+      "description": "Bekymring for at kunstig intelligens automatiserer jobber uten stotte til omstilling"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britisk togoperator som betjener West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britisk togoperator som betjener London og sor"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britisk togoperator som betjener Nord-England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britisk langdistanse-togoperator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britisk togoperator som betjener trans-Pennine-ruter"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britisk togoperator som betjener East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Europeisk lavprisflyseslskap"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britisk lavprisflyseslskap"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Storbritannias nasjonale flyselskap"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Ferie- og reiseselskap"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Stor britisk bredband- og mobiloperator"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britisk bredband-, TV- og mobiloperator"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britisk TV-, bredband- og mobiloperator"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalt telekomselskap med hovedkontor i Storbritannia"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britisk mobiloperator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britisk bredband- og telefonoperator"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britisk energileverandor"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britisk energileverandor"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britisk energileverandor (franskeid)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britisk leverandor av fornybar energi"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britisk energileverandor"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britisk energileverandor (tyskeid)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Vann- og avlopsselskap for London og Thames-dalen"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vannselskap for Sor-England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vannselskap for Nordvest-England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vannselskap for Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vannselskap for East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britisk internasjonal bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Global bank- og finanstjenester"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britisk detaljhandels- og forretningsbank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britisk bankkonsern"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britisk bank (spanskeid)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital bank og fintech-selskap"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britisk forsikrings- og finansselskap"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britisk bil- og boligforsikring"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britisk forsikringsselskap"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalt e-handels- og teknologiselskap"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britisk posttjeneste"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britisk pakkeleveringsselskap (tidligere Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britisk pakkeleveringsselskap"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britisk supermarkedkjede"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britisk supermarkedkjede"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Englands nasjonale helsetjeneste"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS tannhelsetjenester"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Privat helsetjenesteleverandor"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britiske lokale myndigheter"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britisk boligbygger"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britisk nettbasert utleieplattform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Strommetjeneste for underholdning"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Teknologiselskap"
+    }
+  }
+}
