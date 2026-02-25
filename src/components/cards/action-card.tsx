@@ -1,4 +1,6 @@
-import { getTranslations } from 'next-intl/server';
+'use client';
+
+import { useTranslations } from 'next-intl';
 import type { Action } from '@/types';
 
 interface ActionCardProps {
@@ -23,8 +25,8 @@ const TIME_LABEL_KEYS: Record<string, 'time1min' | 'time10min' | 'time1hour'> = 
   '1hr+': 'time1hour',
 };
 
-export async function ActionCard({ action }: ActionCardProps) {
-  const t = await getTranslations('Cards');
+export function ActionCard({ action }: ActionCardProps) {
+  const t = useTranslations('Cards');
 
   const color = TYPE_COLORS[action.type];
   const emoji = TYPE_EMOJIS[action.type];

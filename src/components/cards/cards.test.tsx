@@ -43,42 +43,36 @@ describe('ActionCard', () => {
     provider_name: 'Change.org',
   };
 
-  it('renders action title and description', async () => {
-    const el = await ActionCard({ action });
-    render(el);
+  it('renders action title and description', () => {
+    render(<ActionCard action={action} />);
     expect(screen.getByText('Sign the petition')).toBeDefined();
     expect(screen.getByText('Add your voice')).toBeDefined();
   });
 
-  it('renders time label', async () => {
-    const el = await ActionCard({ action });
-    render(el);
+  it('renders time label', () => {
+    render(<ActionCard action={action} />);
     expect(screen.getByText('1 min')).toBeDefined();
   });
 
-  it('renders provider link when present', async () => {
-    const el = await ActionCard({ action });
-    render(el);
+  it('renders provider link when present', () => {
+    render(<ActionCard action={action} />);
     const link = screen.getByText(/Change\.org/);
     expect(link.closest('a')?.getAttribute('href')).toBe('https://example.com');
   });
 
-  it('renders skills when present', async () => {
-    const el = await ActionCard({ action });
-    render(el);
+  it('renders skills when present', () => {
+    render(<ActionCard action={action} />);
     expect(screen.getByText(/Skills: none/)).toBeDefined();
   });
 
-  it('hides provider link when not present', async () => {
+  it('hides provider link when not present', () => {
     const noProvider = { ...action, provider_name: null, external_url: null };
-    const el = await ActionCard({ action: noProvider });
-    render(el);
+    render(<ActionCard action={noProvider} />);
     expect(screen.queryByText(/↗/)).toBeNull();
   });
 
-  it('renders type emoji', async () => {
-    const el = await ActionCard({ action });
-    render(el);
+  it('renders type emoji', () => {
+    render(<ActionCard action={action} />);
     expect(screen.getByText('⚡')).toBeDefined();
   });
 });

@@ -1,4 +1,6 @@
-import { getTranslations } from 'next-intl/server';
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import type { IssuePivotRow, OrgPivotRow } from '@/types';
 
@@ -16,8 +18,8 @@ interface OrgPivotProps {
 
 type PivotTableProps = IssuePivotProps | OrgPivotProps;
 
-export async function PivotTable(props: PivotTableProps) {
-  const t = await getTranslations('Pivot');
+export function PivotTable(props: PivotTableProps) {
+  const t = useTranslations('Pivot');
 
   if (props.mode === 'issue') {
     return (
