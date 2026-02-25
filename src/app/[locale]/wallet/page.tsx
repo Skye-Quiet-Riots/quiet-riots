@@ -8,6 +8,7 @@ import {
   getWalletTransactions,
 } from '@/lib/queries/wallet';
 import { getCampaigns } from '@/lib/queries/campaigns';
+import { translateCampaigns } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { WalletBalance } from '@/components/data/wallet-balance';
 import { TransactionList } from '@/components/data/transaction-list';
@@ -44,11 +45,12 @@ export default async function WalletPage({ params }: Props) {
   }
 
   const wallet = await getOrCreateWallet(user.id);
-  const [summary, transactions, activeCampaigns] = await Promise.all([
+  const [summary, transactions, rawCampaigns] = await Promise.all([
     getUserSpendingSummary(user.id),
     getWalletTransactions(wallet.id),
     getCampaigns(undefined, 'active'),
   ]);
+  const activeCampaigns = await translateCampaigns(rawCampaigns, locale);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">

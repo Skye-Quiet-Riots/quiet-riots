@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getCampaignsWithIssues } from '@/lib/queries/campaigns';
+import { getTranslatedEntities } from '@/lib/queries/translations';
 import { PageHeader } from '@/components/layout/page-header';
 import { CampaignCard } from '@/components/cards/campaign-card';
 import { StatusFilter } from '@/components/interactive/status-filter';
@@ -19,7 +20,18 @@ export default async function CampaignsPage({ params, searchParams }: Props) {
   const sp = await searchParams;
   const status = sp.status as CampaignStatus | undefined;
 
-  const campaigns = await getCampaignsWithIssues(status);
+  const rawCampaigns = await getCampaignsWithIssues(status);
+
+  // Translate issue names shown alongside campaigns
+  let campaigns = rawCampaigns;
+  if (locale !== 'en' && rawCampaigns.length > 0) {
+    const issueIds = [...new Set(rawCampaigns.map((c) => c.issue_id))];
+    const issueTranslations = await getTranslatedEntities('issue', issueIds, locale);
+    campaigns = rawCampaigns.map((c) => {
+      const t = issueTranslations[c.issue_id];
+      return t?.name ? { ...c, issue_name: t.name } : c;
+    });
+  }
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

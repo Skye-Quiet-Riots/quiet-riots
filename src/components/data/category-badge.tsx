@@ -3,11 +3,17 @@ import type { Category } from '@/types';
 
 interface CategoryBadgeProps {
   category: Category;
+  label?: string;
   showEmoji?: boolean;
   size?: 'sm' | 'md';
 }
 
-export function CategoryBadge({ category, showEmoji = true, size = 'sm' }: CategoryBadgeProps) {
+export function CategoryBadge({
+  category,
+  label,
+  showEmoji = true,
+  size = 'sm',
+}: CategoryBadgeProps) {
   const colors = CATEGORY_COLORS[category];
   const emoji = CATEGORY_EMOJIS[category];
 
@@ -18,7 +24,7 @@ export function CategoryBadge({ category, showEmoji = true, size = 'sm' }: Categ
       }`}
     >
       {showEmoji && <span>{emoji}</span>}
-      {category}
+      {label ?? category}
     </span>
   );
 }

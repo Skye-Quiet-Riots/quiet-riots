@@ -8,6 +8,7 @@ import { trackEvent } from '@/lib/analytics';
 
 export function CategoryFilter() {
   const t = useTranslations('Filter');
+  const tc = useTranslations('Categories');
   const router = useRouter();
   const searchParams = useSearchParams();
   const active = searchParams.get('category') as Category | null;
@@ -46,7 +47,7 @@ export function CategoryFilter() {
           }`}
         >
           <span>{CATEGORY_EMOJIS[cat]}</span>
-          {cat}
+          {tc(cat)}
         </button>
       ))}
     </div>

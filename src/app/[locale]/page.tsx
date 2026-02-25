@@ -3,6 +3,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getTrendingIssues } from '@/lib/queries/issues';
 import { getTrendingReels } from '@/lib/queries/reels';
+import { translateEntities } from '@/lib/queries/translate';
+import { getTranslation } from '@/lib/queries/translations';
 import { IssueCard } from '@/components/cards/issue-card';
 
 export const dynamic = 'force-dynamic';
@@ -12,9 +14,16 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
   setRequestLocale(locale);
 
   const t = await getTranslations('Home');
-  const trending = await getTrendingIssues(6);
+  const rawTrending = await getTrendingIssues(6);
+  const trending = await translateEntities(rawTrending, 'issue', locale);
   const topReels = await getTrendingReels(1);
   const topReel = topReels[0];
+
+  // Translate the issue name shown alongside the top reel
+  if (topReel && locale !== 'en') {
+    const translatedName = await getTranslation('issue', topReel.issue_id, 'name', locale);
+    if (translatedName) topReel.issue_name = translatedName;
+  }
 
   return (
     <div className="flex flex-col">

@@ -8,6 +8,11 @@ import {
 } from '@/lib/queries/organisations';
 import { getEvidenceForOrg } from '@/lib/queries/evidence';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
+import {
+  translateEntity,
+  translateIssuePivotRows,
+  translateOrgPivotRows,
+} from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { StatBadge } from '@/components/data/stat-badge';
@@ -24,13 +29,19 @@ export default async function OrgDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('OrgDetail');
+  const tc = await getTranslations('Categories');
 
-  const org = await getOrganisationById(id);
-  if (!org) notFound();
+  const rawOrg = await getOrganisationById(id);
+  if (!rawOrg) notFound();
+  const org = await translateEntity(rawOrg, 'organisation', locale);
 
-  const orgPivotRows = await getIssuesForOrg(org.id);
-  const firstIssue = orgPivotRows[0];
-  const issuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
+  const rawOrgPivotRows = await getIssuesForOrg(org.id);
+  const firstIssue = rawOrgPivotRows[0];
+  const rawIssuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
+  const [orgPivotRows, issuePivotRows] = await Promise.all([
+    translateOrgPivotRows(rawOrgPivotRows, locale),
+    translateIssuePivotRows(rawIssuePivotRows, locale),
+  ]);
   const totalRioters = await getTotalRiotersForOrg(org.id);
   const evidence = await getEvidenceForOrg(org.id);
   const assistant = await getAssistantByCategory(toAssistantCategory(org.category));
@@ -41,13 +52,13 @@ export default async function OrgDetailPage({ params }: Props) {
         title={`${org.logo_emoji} ${org.name}`}
         breadcrumbs={[
           { label: t('breadcrumb'), href: '/organisations' },
-          { label: org.category, href: `/organisations?category=${org.category}` },
+          { label: tc(org.category), href: `/organisations?category=${org.category}` },
           { label: org.name },
         ]}
       />
 
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <CategoryBadge category={org.category} size="md" />
+        <CategoryBadge category={org.category} label={tc(org.category)} size="md" />
       </div>
 
       {/* Assistants */}
