@@ -56,6 +56,7 @@ export default async function IssueDetailPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations('IssueDetail');
   const tc = await getTranslations('Categories');
+  const tFr = await getTranslations('FirstRioter');
 
   const rawIssue = await getIssueById(id);
   if (!rawIssue) notFound();
@@ -151,6 +152,12 @@ export default async function IssueDetailPage({ params }: Props) {
             isPublic={isPublicRecognition}
             approvedAt={issue.approved_at}
             locale={locale}
+            labels={{
+              imageAlt: tFr('imageAlt'),
+              fallbackName: tFr('fallbackName'),
+              badge: tFr('badge'),
+              anonymous: tFr('anonymous'),
+            }}
           />
         </div>
       )}

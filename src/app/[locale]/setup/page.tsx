@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { getSession } from '@/lib/session';
 import { hasRole } from '@/lib/queries/roles';
 import { getSuggestionsByStatus } from '@/lib/queries/suggestions';
@@ -15,6 +15,7 @@ interface Props {
 export default async function SetupPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('Setup');
 
   const userId = await getSession();
   if (!userId) redirect(`/${locale}/auth/signin`);
@@ -27,7 +28,7 @@ export default async function SetupPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <PageHeader title="Setup Guide" subtitle="Review and manage Quiet Riot suggestions" />
+      <PageHeader title={t('title')} subtitle={t('subtitle')} />
       <SetupDashboard initialSuggestions={suggestions} />
     </div>
   );

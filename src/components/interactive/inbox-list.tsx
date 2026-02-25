@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Message } from '@/types';
 
 const TYPE_ICONS: Record<string, string> = {
@@ -36,6 +37,7 @@ interface InboxListProps {
 }
 
 export function InboxList({ initialMessages, initialUnreadCount }: InboxListProps) {
+  const t = useTranslations('Inbox');
   const [messages, setMessages] = useState(initialMessages);
   const [unreadCount, setUnreadCount] = useState(initialUnreadCount);
   const [filter, setFilter] = useState<'all' | 'unread'>('all');
@@ -74,7 +76,7 @@ export function InboxList({ initialMessages, initialUnreadCount }: InboxListProp
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300'
             }`}
           >
-            All
+            {t('filterAll')}
           </button>
           <button
             onClick={() => setFilter('unread')}
@@ -84,7 +86,7 @@ export function InboxList({ initialMessages, initialUnreadCount }: InboxListProp
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300'
             }`}
           >
-            Unread ({unreadCount})
+            {t('filterUnread', { count: unreadCount })}
           </button>
         </div>
         {unreadCount > 0 && (
@@ -93,7 +95,7 @@ export function InboxList({ initialMessages, initialUnreadCount }: InboxListProp
             disabled={loading}
             className="text-sm font-medium text-blue-600 hover:text-blue-800 disabled:opacity-50 dark:text-blue-400"
           >
-            {loading ? 'Marking...' : 'Mark all read'}
+            {loading ? t('marking') : t('markAllRead')}
           </button>
         )}
       </div>
@@ -101,7 +103,7 @@ export function InboxList({ initialMessages, initialUnreadCount }: InboxListProp
       {/* Message list */}
       {filteredMessages.length === 0 ? (
         <div className="py-12 text-center text-gray-500 dark:text-gray-400">
-          {filter === 'unread' ? 'No unread messages' : 'No messages yet'}
+          {filter === 'unread' ? t('noUnread') : t('noMessages')}
         </div>
       ) : (
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -146,7 +148,7 @@ export function InboxList({ initialMessages, initialUnreadCount }: InboxListProp
                     onClick={() => handleMarkRead(message.id)}
                     className="mt-1 text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
                   >
-                    Mark as read
+                    {t('markAsRead')}
                   </button>
                 )}
               </div>

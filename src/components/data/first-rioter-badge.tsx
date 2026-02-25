@@ -8,6 +8,12 @@ interface FirstRioterBadgeProps {
   isPublic: boolean;
   approvedAt: string | null;
   locale: string;
+  labels: {
+    imageAlt: string;
+    fallbackName: string;
+    badge: string;
+    anonymous: string;
+  };
 }
 
 export function FirstRioterBadge({
@@ -17,6 +23,7 @@ export function FirstRioterBadge({
   isPublic,
   approvedAt,
   locale,
+  labels,
 }: FirstRioterBadgeProps) {
   const formattedDate = approvedAt
     ? new Date(approvedAt).toLocaleDateString(locale, {
@@ -36,7 +43,7 @@ export function FirstRioterBadge({
               {userImage ? (
                 <Image
                   src={userImage}
-                  alt={userName ?? 'First Rioter'}
+                  alt={userName ?? labels.imageAlt}
                   width={24}
                   height={24}
                   className="rounded-full"
@@ -47,19 +54,17 @@ export function FirstRioterBadge({
                 </span>
               )}
               <span className="text-sm font-medium text-green-800 dark:text-green-200">
-                {userName ?? 'First Rioter'}
+                {userName ?? labels.fallbackName}
               </span>
             </Link>
-            <span className="text-sm text-green-600 dark:text-green-400">— First Quiet Rioter</span>
+            <span className="text-sm text-green-600 dark:text-green-400">{labels.badge}</span>
           </>
         ) : (
           <>
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-400 text-xs text-white dark:bg-zinc-600">
               ?
             </span>
-            <span className="text-sm text-green-600 dark:text-green-400">
-              Anonymous First Quiet Rioter
-            </span>
+            <span className="text-sm text-green-600 dark:text-green-400">{labels.anonymous}</span>
           </>
         )}
         {formattedDate && (
