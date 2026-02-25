@@ -162,3 +162,21 @@ export async function getUserConnectedAccounts(
   });
   return result.rows as unknown as { provider: string; type: string }[];
 }
+
+export async function countUserAuthMethods(userId: string): Promise<number> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM accounts WHERE user_id = ?',
+    args: [userId],
+  });
+  return (result.rows[0] as unknown as { count: number }).count;
+}
+
+export async function unlinkUserAccount(userId: string, provider: string): Promise<boolean> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'DELETE FROM accounts WHERE user_id = ? AND provider = ?',
+    args: [userId, provider],
+  });
+  return result.rowsAffected > 0;
+}
