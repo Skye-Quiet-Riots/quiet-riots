@@ -120,7 +120,10 @@ git checkout -b claude/<next-task-name> origin/main
 - **`npx vercel` commands fail in worktrees:** Vercel CLI doesn't recognise worktrees as linked projects — always run from `/Users/skye/Projects/quiet-riots`
 - **libSQL `datetime("now")` as column default fails:** Use `CURRENT_TIMESTAMP` or omit and set in application code
 - **OpenClaw default session reset wipes memory at 4 AM:** The default `session.reset.mode` is `"daily"` with `atHour: 4`. This creates a brand new session on the first inbound message after 4 AM, so the bot loses all conversational context overnight. Fixed by setting `session.reset.mode: "idle"` with `idleMinutes: 1440` (24h) — sessions now only reset after 24 hours of inactivity. The auto-update LaunchAgent also runs at 04:00 which compounds the issue.
-- **DB changes need Vercel redeployment:** After modifying production DB data directly (scripts, manual inserts), Vercel serverless functions may serve stale data from their cached function instances. Run `cd /Users/skye/Projects/quiet-riots && npx vercel --prod` to force a fresh deployment. `npm run seed` is blocked on production by default — use `npm run seed:production` only if you truly need a full reset (drops all tables).
+- **DB changes need Vercel redeployment:** After modifying production DB schema (migrations) or data (scripts, manual inserts), Vercel serverless functions may serve stale data. Force a fresh deployment: `cd /Users/skye/Projects/quiet-riots && git checkout main && git pull origin main && npx vercel --prod`. ALWAYS pull main first — see "Main repo checkout gets stale" gotcha.
+- **Main repo checkout gets stale in worktree workflow:** PRs merged via `gh api` or `gh pr merge` update `origin/main` on GitHub, but the local checkout at `/Users/skye/Projects/quiet-riots` stays at whatever commit it was on. Running `npx vercel --prod` from there deploys the stale local code, not what's on GitHub. Fix: always `cd /Users/skye/Projects/quiet-riots && git checkout main && git pull origin main` before any `npx vercel` command.
+- **New env vars need Vercel setup:** When adding a required env var to `src/lib/env.ts` or `.env.example`, it MUST also be added to Vercel production/preview via `npx vercel env add`. Missing env vars cause `instrumentation.ts` to throw, resulting in 500 errors on every route. Always check `npx vercel env ls` after adding new required vars.
+- **Migrations must run on BOTH staging AND production:** After merging migration files, run `npm run migrate` (with env vars) against both environments immediately. Never run staging-only — production will 500 if deployed code references columns that don't exist yet.
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
 - **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
 - **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
@@ -168,15 +171,40 @@ At the start of every session (or when asked to "pick up where we left off"):
 - After merging a PR, immediately create a fresh branch if more work follows
 - **Merge PRs within the same session they're created.** A PR left open across sessions will go stale — main moves on, the branch conflicts, and it has to be rebased or recreated. If a PR can't be merged this session (e.g. needs user review), note it in "Next steps" of the session log so the next session deals with it immediately.
 
-### Deployment verification
+### Post-merge checklist (run after EVERY merge to main)
 
-- After merging to main, verify production health: `curl -s https://www.quietriots.com/api/health`
-- For UI changes, verify the change is visible on production (allow ~30s for Vercel propagation)
-- For CSP or header changes, verify with: `curl -sI https://www.quietriots.com | grep -i <header>`
+After merging a PR, run through this checklist immediately — don't defer to end of session:
+
+1. **Env vars check:** If `.env.example` changed or `src/lib/env.ts` changed, verify all new required env vars are set in Vercel:
+   - `cd /Users/skye/Projects/quiet-riots && npx vercel env ls` — compare against `.env.example`
+   - If any are missing: `npx vercel env add <NAME> production` (and `preview` if needed)
+   - Common miss: adding a var to env validation without adding it to Vercel
+
+2. **Migration check:** If new `migrations/*.sql` files were added:
+   - Pull env vars: `cd /Users/skye/Projects/quiet-riots && npx vercel env pull /tmp/vercel-preview-env --environment preview && npx vercel env pull /tmp/vercel-production-env --environment production`
+   - Run on staging: `set -a && source /tmp/vercel-preview-env && set +a && npx tsx scripts/migrate.ts`
+   - Run on production: `set -a && source /tmp/vercel-production-env && set +a && npx tsx scripts/migrate.ts`
+   - Run seed scripts if needed (e.g. `seed-reference-data.ts` for new tables)
+   - Clean up: `rm -f /tmp/vercel-preview-env /tmp/vercel-production-env`
+   - ALWAYS run on BOTH environments — never staging-only
+
+3. **Sync main repo checkout:** The main repo at `/Users/skye/Projects/quiet-riots` must be updated before any `npx vercel --prod`:
+   - `cd /Users/skye/Projects/quiet-riots && git checkout main && git pull origin main`
+   - This is critical because `npx vercel --prod` deploys from the local filesystem, not from GitHub
+
+4. **Verify production:** Wait ~30s for Vercel propagation, then:
+   - `curl -s https://www.quietriots.com/api/health` — must return `{"status":"ok"}`
+   - For UI changes, verify the change is visible on production
+   - For CSP or header changes: `curl -sI https://www.quietriots.com | grep -i <header>`
+   - If health returns 500: check Vercel deployment logs (`npx vercel inspect <url> --logs`), likely a missing env var
+
+5. **Force redeploy if needed:** If Vercel auto-deploy didn't trigger or deployed stale code:
+   - `cd /Users/skye/Projects/quiet-riots && git checkout main && git pull origin main && npx vercel --prod`
+   - NEVER run `npx vercel --prod` without pulling main first — this deploys stale local files
 
 ### PR lifecycle (within a session)
 
-- Create PR → wait for CI (`gh pr checks <number> --watch`) → merge (`gh pr merge <number> --squash --admin`) → verify deployment
+- Create PR → wait for CI (`gh pr checks <number> --watch`) → merge (`gh pr merge <number> --squash --admin`) → run post-merge checklist → verify deployment
 - Default: merge every PR in the same session it's created. Only leave open if user explicitly requests review.
 
 ## End of Session Protocol
