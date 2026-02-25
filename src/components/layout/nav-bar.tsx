@@ -20,6 +20,7 @@ export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [hasSetupRole, setHasSetupRole] = useState(false);
   const { data: session, status } = useSession();
   const t = useTranslations('Nav');
   const avatarRef = useRef<HTMLDivElement>(null);
@@ -42,6 +43,20 @@ export function NavBar() {
     fetchUnread();
     // Poll every 60s for new messages
     const interval = setInterval(fetchUnread, 60000);
+    // Check if user has setup guide or admin role
+    async function fetchRoles() {
+      try {
+        const res = await fetch('/api/roles/me');
+        if (res.ok && !cancelled) {
+          const data = await res.json();
+          const roles = data.data?.roles ?? [];
+          setHasSetupRole(roles.includes('setup_guide') || roles.includes('administrator'));
+        }
+      } catch {
+        // ignore
+      }
+    }
+    fetchRoles();
     return () => {
       cancelled = true;
       clearInterval(interval);
@@ -156,6 +171,15 @@ export function NavBar() {
                       </span>
                     )}
                   </Link>
+                  {hasSetupRole && (
+                    <Link
+                      href="/setup"
+                      onClick={() => setAvatarOpen(false)}
+                      className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    >
+                      Setup Guide
+                    </Link>
+                  )}
                   <button
                     onClick={() => signOut({ callbackUrl: '/' })}
                     className="block w-full px-4 py-2 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
