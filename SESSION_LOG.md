@@ -6,12 +6,11 @@
 
 ## Latest Session
 
-**Session 39** (2026-02-25) — Follow-ups: i18n + E2E Tests for Suggestion Pipeline
-→ [`session-logs/2026-02-session-39.md`](session-logs/2026-02-session-39.md)
+**Session 40** (2026-02-25) — Translate Suggestion Pipeline i18n Sections (44 Locales)
+→ [`session-logs/2026-02-session-40.md`](session-logs/2026-02-session-40.md)
 
 ## Current Priorities
 
-- **Generate actual translations** for the 7 new i18n sections across 44 non-English locales (currently English placeholders)
 - **End-to-end test** the suggestion pipeline via WhatsApp in production
 - **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
 
@@ -19,6 +18,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 40  | 2026-02-25    | Translate suggestion pipeline i18n (44 locales)       | [`session-40`](session-logs/2026-02-session-40.md)                                                             |
 | 39  | 2026-02-25    | Follow-ups: i18n + E2E tests for suggestion pipeline  | [`session-39`](session-logs/2026-02-session-39.md)                                                             |
 | 38  | 2026-02-25    | "Start a New Quiet Riot" feature (Phases 2-6)         | [`session-38`](session-logs/2026-02-session-38.md)                                                             |
 | 37  | 2026-02-25    | Translated synonym search for all 44 locales          | [`session-37`](session-logs/2026-02-session-37.md)                                                             |
