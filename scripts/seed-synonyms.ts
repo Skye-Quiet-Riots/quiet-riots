@@ -14,7 +14,7 @@ import { printDbBanner, requireRemoteDb } from './db-safety';
 import { generateId } from '../src/lib/uuid';
 
 // ─── Synonym definitions: [issueName, [synonym terms]] ───────────────────────
-const SYNONYMS: [string, string[]][] = [
+export const SYNONYMS: [string, string[]][] = [
   [
     'Train Cancellations',
     [
@@ -263,7 +263,10 @@ async function main() {
   console.log(`\nDone: ${added} added, ${skipped} already existed, ${notFound} issues not found`);
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+// Only run when executed directly (not when imported by tests or other scripts)
+if (process.argv[1]?.endsWith('seed-synonyms.ts') || process.argv[1]?.endsWith('seed-synonyms')) {
+  main().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

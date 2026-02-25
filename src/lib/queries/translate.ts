@@ -1,5 +1,5 @@
 import { getTranslatedEntities } from './translations';
-import type { IssuePivotRow } from '@/types';
+import type { IssuePivotRow, Synonym } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -106,5 +106,25 @@ export async function translateOrgPivotRows<T extends { issue_id: string; issue_
     const t = translations[row.issue_id];
     if (!t) return row;
     return { ...row, issue_name: t.name || row.issue_name };
+  });
+}
+
+/**
+ * Translate synonym terms for display. Overlays translated terms onto synonym objects.
+ * Falls back to original English terms if no translation exists.
+ */
+export async function translateSynonyms(synonyms: Synonym[], locale: string): Promise<Synonym[]> {
+  if (locale === 'en' || synonyms.length === 0) return synonyms;
+
+  const translations = await getTranslatedEntities(
+    'synonym',
+    synonyms.map((s) => s.id),
+    locale,
+  );
+
+  return synonyms.map((synonym) => {
+    const t = translations[synonym.id];
+    if (!t || !t.term) return synonym;
+    return { ...synonym, term: t.term };
   });
 }

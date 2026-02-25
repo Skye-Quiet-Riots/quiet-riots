@@ -69,18 +69,25 @@ export function parseSearchWords(search: string): string[] {
 }
 
 /**
- * Build a LIKE clause that also searches translated entity names.
- * When searching in a non-English locale, adds a subquery against the translations table.
- * Args: namePattern, synonymPattern[, languageCode, translatedNamePattern]
+ * Build a LIKE clause that also searches translated entity names and translated synonyms.
+ * When searching in a non-English locale, adds subqueries against the translations table
+ * for both issue names and synonym terms.
+ * Args: namePattern, synonymPattern[, languageCode, translatedNamePattern, languageCode, translatedSynonymPattern]
  */
 function buildTranslatedLikeClause(includeTranslations: boolean): string {
   let clause =
     " (name LIKE ? ESCAPE '\\'" +
     " OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ? ESCAPE '\\')";
   if (includeTranslations) {
+    // Search translated issue names
     clause +=
       " OR id IN (SELECT entity_id FROM translations WHERE entity_type = 'issue'" +
       " AND field = 'name' AND language_code = ? AND value LIKE ? ESCAPE '\\')";
+    // Search translated synonym terms
+    clause +=
+      ' OR id IN (SELECT issue_id FROM synonyms WHERE id IN (' +
+      "SELECT entity_id FROM translations WHERE entity_type = 'synonym'" +
+      " AND field = 'term' AND language_code = ? AND value LIKE ? ESCAPE '\\'))";
   }
   clause += ')';
   return clause;
@@ -88,7 +95,8 @@ function buildTranslatedLikeClause(includeTranslations: boolean): string {
 
 /**
  * Push LIKE args for a single escaped word into an args array.
- * Pushes 2 args (name + synonym) or 4 args (+languageCode + translation) depending on locale.
+ * Pushes 2 args (name + synonym) for English, or 6 args (+translated name + translated synonyms)
+ * for non-English locales.
  */
 function pushIssueLikeArgs(
   args: (string | number)[],
@@ -98,8 +106,10 @@ function pushIssueLikeArgs(
   args.push(`%${escaped}%`); // name LIKE
   args.push(`%${escaped}%`); // synonym LIKE
   if (languageCode && languageCode !== 'en') {
-    args.push(languageCode); // language_code = ?
-    args.push(`%${escaped}%`); // translated name LIKE
+    args.push(languageCode); // language_code = ? (translated issue name)
+    args.push(`%${escaped}%`); // translated issue name LIKE
+    args.push(languageCode); // language_code = ? (translated synonym)
+    args.push(`%${escaped}%`); // translated synonym LIKE
   }
 }
 

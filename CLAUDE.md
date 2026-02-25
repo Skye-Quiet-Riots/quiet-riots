@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 1289 tests (~5s)                        |
+| `npm test`                | Run 1519 tests (~5s)                        |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -78,6 +78,45 @@ git checkout -b claude/<next-task-name> origin/main
 - Mobile-first CSS — design for small screens, scale up with breakpoints
 - Follow existing code patterns before introducing new ones
 - TypeScript strict mode — no `any` without justification
+
+## Internationalisation Protocol (IMPORTANT — follow for every feature)
+
+Every user-facing text must be translated into all 44 non-English locales. A feature is not complete until translations exist in all locales.
+
+### Checklist for new DB fields/entities
+
+1. **User-facing?** → Add to `scripts/seed-translations.ts` (both `TranslationFile` interface, `generateEnglishBaseline()`, and `applyTranslations()`)
+2. **Searchable?** → Update `buildTranslatedLikeClause()` in `src/lib/queries/issues.ts` (or equivalent query) to also search the `translations` table for non-English locales
+3. **Displayed?** → Use `translateEntities()` / `translateEntity()` from `src/lib/queries/translate.ts` to overlay translations before rendering
+4. **Generate translations** for all 44 locales using Claude sub-agents (same pattern as session 26) before merging
+5. **Apply translations** to staging + production as part of the post-merge checklist (`seed-translations.ts --apply`)
+
+### Rules
+
+- **Seed scripts must seed all 44 locales**, not just English — any new entity type must be added to `seed-translations.ts`
+- **Never ship English-only** — if a feature adds user-facing text and doesn't include translations, it's incomplete
+- **Translation files** live in `translations/*.json` — one per locale, keyed by English source text
+- **Translation table** stores `(entity_type, entity_id, field, language_code, value)` with UNIQUE constraint on `(entity_type, entity_id, field, language_code)`
+- **Sanitise** all translated values with `sanitizeText()` before DB insertion
+
+## Dual-Surface Protocol (IMPORTANT — follow for every feature)
+
+Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a bug, verify the fix works on both surfaces before merging.
+
+### Checklist
+
+1. **Web path:** Which page/component is affected? Does it pass `locale` to query functions?
+2. **Bot path:** Which bot action is affected? Does it accept `language_code`? Does it translate the response?
+3. **Shared code:** Both surfaces should use the same query/logic layer (`src/lib/queries/`) — never duplicate logic in the API route and bot route separately
+4. **Tests:** Write tests for both the API route (web surface: `src/app/api/*/`) and bot action (WhatsApp surface: `src/app/api/bot/bot-api.test.ts`)
+5. **Translations:** Both surfaces must return translated content for non-English users
+
+### Key paths
+
+| Surface  | Search                            | Issue detail                     | Synonyms                         |
+| -------- | --------------------------------- | -------------------------------- | -------------------------------- |
+| Web app  | `GET /api/issues?search=&locale=` | `/[locale]/issues/[id]/page.tsx` | `SynonymList` component          |
+| WhatsApp | Bot `search_issues` action        | Bot `get_issue` action           | Returned in `get_issue` response |
 
 ## Developer Best Practices (implemented)
 

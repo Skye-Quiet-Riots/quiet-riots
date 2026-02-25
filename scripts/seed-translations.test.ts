@@ -2,7 +2,13 @@ import { describe, it, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { routing } from '../src/i18n/routing';
-import { CATEGORIES, ISSUES, ORGANISATIONS, type TranslationFile } from './seed-translations';
+import {
+  CATEGORIES,
+  ISSUES,
+  ORGANISATIONS,
+  SYNONYMS,
+  type TranslationFile,
+} from './seed-translations';
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
 
@@ -100,6 +106,99 @@ describe('translations/ files', () => {
           data.organisations[orgName].name,
           `${locale} org "${orgName}" name should be preserved`,
         ).toBe(orgName);
+      }
+    }
+  });
+
+  // ─── Synonym translation tests ───
+
+  // Build expected synonym keys from SYNONYMS data (grouped by issue name)
+  const issueNamesWithSynonyms = [...new Set(SYNONYMS.map(([issueName]) => issueName))].sort();
+
+  it('en.json has synonyms key with correct structure', () => {
+    const filePath = path.join(TRANSLATIONS_DIR, 'en.json');
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.synonyms).toBeDefined();
+    const keys = Object.keys(data.synonyms).sort();
+    expect(keys).toEqual(issueNamesWithSynonyms);
+
+    // Each issue should have a non-empty array of terms
+    for (const [key, terms] of Object.entries(data.synonyms)) {
+      expect(Array.isArray(terms), `en synonyms["${key}"] should be array`).toBe(true);
+      expect(terms.length, `en synonyms["${key}"] should not be empty`).toBeGreaterThan(0);
+      for (const term of terms) {
+        expect(typeof term).toBe('string');
+        expect(term.length, `en synonym term for "${key}" should not be empty`).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it.each(nonEnLocales)('%s.json has synonyms key with correct issue keys', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.synonyms, `${locale} missing synonyms key`).toBeDefined();
+    const keys = Object.keys(data.synonyms).sort();
+    expect(keys).toEqual(issueNamesWithSynonyms);
+  });
+
+  it.each(nonEnLocales)(
+    '%s.json synonym arrays match English baseline length per issue',
+    (locale) => {
+      const enPath = path.join(TRANSLATIONS_DIR, 'en.json');
+      const enData: TranslationFile = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+      const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+      const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+      for (const [issue, enTerms] of Object.entries(enData.synonyms)) {
+        const localeTerms = data.synonyms[issue];
+        expect(localeTerms, `${locale} missing synonyms for "${issue}"`).toBeDefined();
+        expect(
+          localeTerms.length,
+          `${locale} synonyms["${issue}"] has ${localeTerms?.length} terms, expected ${enTerms.length}`,
+        ).toBe(enTerms.length);
+      }
+    },
+  );
+
+  it.each(nonEnLocales)('%s.json has no empty synonym terms', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const [issue, terms] of Object.entries(data.synonyms)) {
+      for (let i = 0; i < terms.length; i++) {
+        expect(typeof terms[i]).toBe('string');
+        expect(
+          terms[i].trim().length,
+          `${locale} synonyms["${issue}"][${i}] is empty`,
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it.each(nonEnLocales)('%s.json synonym terms do not contain HTML or script', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const [issue, terms] of Object.entries(data.synonyms)) {
+      for (const term of terms) {
+        expect(term, `${locale} synonyms["${issue}"] contains HTML`).not.toMatch(/<[^>]+>/);
+        expect(term, `${locale} synonyms["${issue}"] contains script`).not.toMatch(
+          /javascript:|on\w+\s*=/i,
+        );
+      }
+    }
+  });
+
+  it.each(nonEnLocales)('%s.json synonym terms are under 255 chars', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const [issue, terms] of Object.entries(data.synonyms)) {
+      for (const term of terms) {
+        expect(
+          term.length,
+          `${locale} synonyms["${issue}"] term "${term.slice(0, 30)}..." exceeds 255 chars`,
+        ).toBeLessThanOrEqual(255);
       }
     }
   });
