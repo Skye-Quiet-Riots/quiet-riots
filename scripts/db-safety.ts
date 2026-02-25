@@ -5,7 +5,7 @@
  * like `npm run seed` which drops all tables.
  *
  * Usage:
- *   import { printDbBanner, confirmOrAbort, blockProductionUnlessForced } from './db-safety';
+ *   import { printDbBanner, confirmOrAbort, blockProductionUnlessForced, requireRemoteDb } from './db-safety';
  */
 
 import * as readline from 'node:readline/promises';
@@ -63,6 +63,37 @@ export async function confirmOrAbort(message: string): Promise<void> {
   } finally {
     rl.close();
   }
+}
+
+/**
+ * Block scripts that write data from running against the local file DB.
+ *
+ * When `tsx` doesn't load `.env.local`, libSQL silently falls back to
+ * `file:quiet-riots.db` — a local SQLite file with no data.  This guard
+ * catches that case and tells the developer how to fix it.
+ *
+ * Call this in any script that needs a real (staging/production) database,
+ * e.g. `seed-translations --apply`, `seed-assistants`, `seed-reference-data`.
+ */
+export function requireRemoteDb(): DbEnvironment {
+  const env = getDbEnvironment();
+  if (env.isLocal) {
+    console.error(
+      '\x1b[31m✖ BLOCKED: This script requires a remote database (staging or production).\x1b[0m',
+    );
+    console.error(`  Detected: ${env.dbUrl}`);
+    console.error('');
+    console.error('  tsx does not load .env.local automatically. Either:');
+    console.error(
+      '    1. Use the helper:  bash scripts/with-staging-env.sh scripts/<script>.ts [args]',
+    );
+    console.error(
+      '    2. Pass env vars:   TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npx tsx scripts/<script>.ts',
+    );
+    console.error('');
+    process.exit(1);
+  }
+  return env;
 }
 
 /**

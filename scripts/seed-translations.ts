@@ -385,7 +385,8 @@ function generateEnglishBaseline(): TranslationFile {
 // ─── Apply mode ───────────────────────────────────────────────────────────────
 
 async function applyTranslations() {
-  const { printDbBanner } = await import('./db-safety');
+  const { requireRemoteDb, printDbBanner } = await import('./db-safety');
+  requireRemoteDb();
   const env = printDbBanner();
 
   // Check that translations directory exists
