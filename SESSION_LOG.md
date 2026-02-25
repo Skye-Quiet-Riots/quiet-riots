@@ -6,20 +6,24 @@
 
 ## Latest Session
 
-**Session 41** (2026-02-25) — Branded, Locale-Aware Magic Link Emails via Resend
-→ [`session-logs/2026-02-session-41.md`](session-logs/2026-02-session-41.md)
+**Session 42** (2026-02-25) — Magic Link Email Deployment Fix + Security/i18n Audit
+→ [`session-logs/2026-02-session-42.md`](session-logs/2026-02-session-42.md)
 
 ## Current Priorities
 
-- **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
-- **End-to-end test** magic link email flow once domain is verified
-- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
-- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
+- **CRITICAL: Fix email template XSS** — add `escapeHtml()`, URL scheme validation, apply to email template
+- **Add rate limiting** to `/api/auth/[...nextauth]` POST handler
+- **Add RTL + lang attributes** to email template for ar/he/fa locales
+- **Write missing tests** — `sendVerificationRequest` (mocked fetch), parameterised locale coverage, XSS regression
+- **Fix 8 missing locale files** — et, lt, lv, mk, sq, sr, ur, zh
+- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET`
+- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET`
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 42  | 2026-02-25    | Magic link email deploy fix + security/i18n audit     | [`session-42`](session-logs/2026-02-session-42.md)                                                             |
 | 41  | 2026-02-25    | Branded, locale-aware magic link emails via Resend    | [`session-41`](session-logs/2026-02-session-41.md)                                                             |
 | 40  | 2026-02-25    | Translate suggestion pipeline i18n (44 locales)       | [`session-40`](session-logs/2026-02-session-40.md)                                                             |
 | 39  | 2026-02-25    | Follow-ups: i18n + E2E tests for suggestion pipeline  | [`session-39`](session-logs/2026-02-session-39.md)                                                             |
