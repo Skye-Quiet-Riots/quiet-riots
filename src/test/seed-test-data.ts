@@ -667,6 +667,126 @@ export async function seedTestData() {
     ],
   });
 
+  // Additional user for testing roles and suggestions
+  await db.execute({
+    sql: `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`,
+    args: [
+      'user-admin',
+      'Simon D.',
+      'simon.darling@whatsapp.com',
+      '+447974766838',
+      '1hr+',
+      'admin,strategy',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`,
+    args: ['user-new', 'New User', 'newuser@example.com', '+447700900003', '10min', ''],
+  });
+
+  // User roles
+  await db.execute({
+    sql: `INSERT INTO user_roles (id, user_id, role, assigned_by) VALUES (?, ?, ?, ?)`,
+    args: ['role-sarah-guide', 'user-sarah', 'setup_guide', 'user-admin'],
+  });
+  await db.execute({
+    sql: `INSERT INTO user_roles (id, user_id, role, assigned_by) VALUES (?, ?, ?, ?)`,
+    args: ['role-admin', 'user-admin', 'administrator', null],
+  });
+
+  // A pending issue (suggested but not yet approved)
+  await db.execute({
+    sql: `INSERT INTO issues (id, name, category, description, rioter_count, country_count, trending_delta, status, first_rioter_id)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'issue-mobile-data',
+      'Mobile Data Costs',
+      'Telecoms',
+      'Expensive mobile data plans',
+      1,
+      1,
+      0,
+      'pending_review',
+      'user-new',
+    ],
+  });
+
+  // Issue suggestions
+  await db.execute({
+    sql: `INSERT INTO issue_suggestions (id, suggested_by, original_text, suggested_name, suggested_type, category, description, status, issue_id)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'suggestion-mobile',
+      'user-new',
+      'mobile data is too expensive in the UK',
+      'Mobile Data Costs',
+      'issue',
+      'Telecoms',
+      'Expensive mobile data plans',
+      'pending_review',
+      'issue-mobile-data',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO issue_suggestions (id, suggested_by, original_text, suggested_name, suggested_type, category, description, status)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'suggestion-fasttrack',
+      'user-marcio',
+      'FastTrack Broadband never delivers what they promise',
+      'FastTrack Broadband',
+      'organisation',
+      'Telecoms',
+      'UK broadband ISP with reliability issues',
+      'approved',
+    ],
+  });
+
+  // Messages
+  await db.execute({
+    sql: `INSERT INTO messages (id, recipient_id, sender_name, type, subject, body, entity_type, entity_id, read)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'msg-001',
+      'user-sarah',
+      null,
+      'suggestion_received',
+      'New suggestion: Mobile Data Costs',
+      'A new Quiet Riot has been suggested in Telecoms category.',
+      'issue_suggestion',
+      'suggestion-mobile',
+      0,
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO messages (id, recipient_id, sender_name, type, subject, body, entity_type, entity_id, read)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'msg-002',
+      'user-new',
+      'Sarah K. — Setup Guide',
+      'suggestion_approved',
+      'Thumbs Up 👍: Mobile Data Costs',
+      'Your Quiet Riot suggestion has been approved!',
+      'issue_suggestion',
+      'suggestion-mobile',
+      1,
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO messages (id, recipient_id, sender_name, type, subject, body, read)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'msg-003',
+      'user-marcio',
+      null,
+      'general',
+      'Welcome to Quiet Riots',
+      'Thanks for joining the movement!',
+      0,
+    ],
+  });
+
   // Languages (needed for translations FK)
   await db.execute({
     sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,

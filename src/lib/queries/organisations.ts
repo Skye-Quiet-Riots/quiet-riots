@@ -1,6 +1,13 @@
 import { getDb } from '../db';
+import { generateId } from '@/lib/uuid';
 import { escapeLike, parseSearchWords } from './issues';
-import type { Organisation, Category, IssuePivotRow, OrgPivotRow } from '@/types';
+import type {
+  Organisation,
+  OrganisationStatus,
+  Category,
+  IssuePivotRow,
+  OrgPivotRow,
+} from '@/types';
 
 /**
  * Build a LIKE clause for organisation search.
@@ -29,10 +36,16 @@ export async function getAllOrganisations(
   category?: Category,
   search?: string,
   languageCode?: string,
+  options?: { includeAllStatuses?: boolean },
 ): Promise<Organisation[]> {
   const db = getDb();
   let query = 'SELECT * FROM organisations WHERE 1=1';
   const args: (string | number)[] = [];
+
+  // By default, only show active organisations
+  if (!options?.includeAllStatuses) {
+    query += " AND status = 'active'";
+  }
   const hasTranslations = !!languageCode && languageCode !== 'en';
   const likeClause = buildOrgLikeClause(hasTranslations);
 
@@ -147,4 +160,37 @@ export async function getTotalRiotersForOrg(orgId: string): Promise<number> {
     args: [orgId],
   });
   return (result.rows[0]?.total as number) ?? 0;
+}
+
+// Create a new organisation
+export async function createOrganisation(data: {
+  name: string;
+  category: Category;
+  description?: string;
+  logo_emoji?: string;
+  country?: string;
+  status?: OrganisationStatus;
+  first_rioter_id?: string;
+}): Promise<Organisation> {
+  const db = getDb();
+  const id = generateId();
+  await db.execute({
+    sql: `INSERT INTO organisations (id, name, category, description, logo_emoji, country, status, first_rioter_id)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      id,
+      data.name,
+      data.category,
+      data.description || '',
+      data.logo_emoji || '🏢',
+      data.country || 'UK',
+      data.status || 'active',
+      data.first_rioter_id || null,
+    ],
+  });
+  const result = await db.execute({
+    sql: 'SELECT * FROM organisations WHERE id = ?',
+    args: [id],
+  });
+  return result.rows[0] as unknown as Organisation;
 }

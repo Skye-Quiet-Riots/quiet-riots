@@ -18,13 +18,7 @@ export interface AssistantWithStats extends CategoryAssistant {
 export interface AssistantDetail extends AssistantWithStats {
   riots: Pick<
     Issue,
-    | 'id'
-    | 'name'
-    | 'rioter_count'
-    | 'agent_helps'
-    | 'human_helps'
-    | 'agent_focus'
-    | 'human_focus'
+    'id' | 'name' | 'rioter_count' | 'agent_helps' | 'human_helps' | 'agent_focus' | 'human_focus'
   >[];
   recent_activity: AssistantActivity[];
   messages_sent: number;
@@ -50,6 +44,7 @@ export async function getAllAssistants(): Promise<AssistantWithStats[]> {
         COUNT(DISTINCT a.id) AS action_count
       FROM issues i
       LEFT JOIN actions a ON a.issue_id = i.id
+      WHERE i.status = 'active'
       GROUP BY LOWER(i.category)
     ) stats ON stats.cat = ca.category
     ORDER BY stats.rioter_count DESC
@@ -60,9 +55,7 @@ export async function getAllAssistants(): Promise<AssistantWithStats[]> {
 /**
  * Get a single assistant pair by category.
  */
-export async function getAssistantByCategory(
-  category: string,
-): Promise<CategoryAssistant | null> {
+export async function getAssistantByCategory(category: string): Promise<CategoryAssistant | null> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT * FROM category_assistants WHERE LOWER(category) = LOWER(?)',
@@ -74,9 +67,7 @@ export async function getAssistantByCategory(
 /**
  * Get full detail for a category's assistant pair including riots, activity, and stats.
  */
-export async function getAssistantDetail(
-  category: string,
-): Promise<AssistantDetail | null> {
+export async function getAssistantDetail(category: string): Promise<AssistantDetail | null> {
   const db = getDb();
 
   // Get the assistant pair
@@ -96,13 +87,13 @@ export async function getAssistantDetail(
               COUNT(DISTINCT a.id) AS action_count
             FROM issues i
             LEFT JOIN actions a ON a.issue_id = i.id
-            WHERE LOWER(i.category) = ?`,
+            WHERE LOWER(i.category) = ? AND i.status = 'active'`,
       args: [category],
     }),
     db.execute({
       sql: `SELECT id, name, rioter_count, agent_helps, human_helps, agent_focus, human_focus
             FROM issues
-            WHERE LOWER(category) = ?
+            WHERE LOWER(category) = ? AND status = 'active'
             ORDER BY rioter_count DESC`,
       args: [category],
     }),
@@ -187,9 +178,7 @@ export async function createAssistantClaim(
 /**
  * Get categories where a user has been introduced to assistants.
  */
-export async function getUserMetAssistants(
-  userId: string,
-): Promise<AssistantCategory[]> {
+export async function getUserMetAssistants(userId: string): Promise<AssistantCategory[]> {
   const db = getDb();
   const result = await db.execute({
     sql: 'SELECT category FROM user_assistant_introductions WHERE user_id = ? ORDER BY introduced_at ASC',
