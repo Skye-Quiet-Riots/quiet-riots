@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 const CATEGORIES = [
   'Transport',
@@ -28,6 +29,8 @@ interface SuggestionFormProps {
 
 export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
   const router = useRouter();
+  const t = useTranslations('SuggestForm');
+  const tCat = useTranslations('Categories');
   const [suggestedName, setSuggestedName] = useState(prefillText);
   const [category, setCategory] = useState('');
   const [suggestedType, setSuggestedType] = useState<'issue' | 'organisation'>('issue');
@@ -65,7 +68,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
         setError(data.error?.message || 'Failed to submit suggestion');
       }
     } catch {
-      setError('Network error — please try again');
+      setError(t('networkError'));
     } finally {
       setLoading(false);
     }
@@ -75,17 +78,14 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
     return (
       <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-center dark:border-green-800 dark:bg-green-950">
         <p className="mb-2 text-lg font-semibold text-green-800 dark:text-green-200">
-          Suggestion submitted!
+          {t('successTitle')}
         </p>
-        <p className="mb-4 text-sm text-green-600 dark:text-green-400">
-          Your Quiet Riot is now in the waiting room. A Setup Guide will review it within the hour.
-          You can gather evidence and share your thoughts while it&apos;s being reviewed.
-        </p>
+        <p className="mb-4 text-sm text-green-600 dark:text-green-400">{t('successMessage')}</p>
         <button
           onClick={() => router.push('/issues')}
           className="rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
         >
-          Back to Issues
+          {t('backToIssues')}
         </button>
       </div>
     );
@@ -104,14 +104,14 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           htmlFor="suggested-name"
           className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
         >
-          Name for your Quiet Riot *
+          {t('nameLabel')} *
         </label>
         <input
           id="suggested-name"
           type="text"
           value={suggestedName}
           onChange={(e) => setSuggestedName(e.target.value)}
-          placeholder="e.g. Mobile Data Costs, Pothole Crisis..."
+          placeholder={t('namePlaceholder')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-800"
           required
           maxLength={255}
@@ -123,7 +123,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           htmlFor="type"
           className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
         >
-          Type *
+          {t('typeLabel')} *
         </label>
         <select
           id="type"
@@ -131,8 +131,8 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           onChange={(e) => setSuggestedType(e.target.value as 'issue' | 'organisation')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-800"
         >
-          <option value="issue">Issue (a shared problem)</option>
-          <option value="organisation">Organisation (a company or body)</option>
+          <option value="issue">{t('typeIssue')}</option>
+          <option value="organisation">{t('typeOrganisation')}</option>
         </select>
       </div>
 
@@ -141,7 +141,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           htmlFor="category"
           className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
         >
-          Category *
+          {t('categoryLabel')} *
         </label>
         <select
           id="category"
@@ -150,10 +150,10 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-800"
           required
         >
-          <option value="">Select a category...</option>
+          <option value="">{t('categoryPlaceholder')}</option>
           {CATEGORIES.map((cat) => (
             <option key={cat} value={cat}>
-              {cat}
+              {tCat(cat)}
             </option>
           ))}
         </select>
@@ -164,13 +164,13 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           htmlFor="description"
           className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
         >
-          Description (optional)
+          {t('descriptionLabel')}
         </label>
         <textarea
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Tell us more about this issue..."
+          placeholder={t('descriptionPlaceholder')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-800"
           rows={3}
           maxLength={2000}
@@ -186,7 +186,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
           className="h-4 w-4 rounded border-zinc-300"
         />
         <label htmlFor="public-recognition" className="text-sm text-zinc-700 dark:text-zinc-300">
-          Show me as the First Quiet Rioter (uncheck to stay anonymous)
+          {t('publicRecognition')}
         </label>
       </div>
 
@@ -195,7 +195,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
         disabled={loading || !suggestedName.trim() || !category}
         className="w-full rounded-md bg-purple-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
       >
-        {loading ? 'Submitting...' : 'Suggest This Quiet Riot'}
+        {loading ? t('submitting') : t('submit')}
       </button>
     </form>
   );

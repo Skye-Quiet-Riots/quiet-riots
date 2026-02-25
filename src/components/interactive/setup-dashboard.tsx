@@ -1,17 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { IssueSuggestion, SuggestionStatus } from '@/types';
 
-const STATUS_TABS: { label: string; value: SuggestionStatus | 'all' }[] = [
-  { label: 'All', value: 'all' },
-  { label: 'Pending', value: 'pending_review' },
-  { label: 'More Info', value: 'more_info_requested' },
-  { label: 'Approved', value: 'approved' },
-  { label: 'Translations', value: 'translations_ready' },
-  { label: 'Live', value: 'live' },
-  { label: 'Rejected', value: 'rejected' },
-  { label: 'Merged', value: 'merged' },
+const STATUS_TAB_KEYS: { key: string; value: SuggestionStatus | 'all' }[] = [
+  { key: 'tabAll', value: 'all' },
+  { key: 'tabPending', value: 'pending_review' },
+  { key: 'tabMoreInfo', value: 'more_info_requested' },
+  { key: 'tabApproved', value: 'approved' },
+  { key: 'tabTranslations', value: 'translations_ready' },
+  { key: 'tabLive', value: 'live' },
+  { key: 'tabRejected', value: 'rejected' },
+  { key: 'tabMerged', value: 'merged' },
 ];
 
 const STATUS_COLORS: Record<string, string> = {
@@ -22,6 +23,16 @@ const STATUS_COLORS: Record<string, string> = {
   live: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
   rejected: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
   merged: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+};
+
+const STATUS_LABEL_KEYS: Record<string, string> = {
+  pending_review: 'statusPendingReview',
+  more_info_requested: 'statusMoreInfoRequested',
+  approved: 'statusApproved',
+  translations_ready: 'statusTranslationsReady',
+  live: 'statusLive',
+  rejected: 'statusRejected',
+  merged: 'statusMerged',
 };
 
 function formatDate(dateStr: string): string {
@@ -39,6 +50,7 @@ interface SetupDashboardProps {
 }
 
 export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
+  const t = useTranslations('Setup');
   const [suggestions, setSuggestions] = useState(initialSuggestions);
   const [activeTab, setActiveTab] = useState<SuggestionStatus | 'all'>('all');
   const [reviewingId, setReviewingId] = useState<string | null>(null);
@@ -86,7 +98,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
     <div className="space-y-6">
       {/* Status tabs */}
       <div className="flex flex-wrap gap-2">
-        {STATUS_TABS.map((tab) => {
+        {STATUS_TAB_KEYS.map((tab) => {
           const count =
             tab.value === 'all'
               ? suggestions.length
@@ -101,7 +113,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                   : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700'
               }`}
             >
-              {tab.label} ({count})
+              {t(tab.key)} ({count})
             </button>
           );
         })}
@@ -111,7 +123,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
       {pendingCount > 0 && (
         <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-4 dark:border-yellow-800 dark:bg-yellow-950">
           <p className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
-            {pendingCount} suggestion{pendingCount !== 1 ? 's' : ''} waiting for review
+            {t('pendingCount', { count: pendingCount })}
           </p>
         </div>
       )}
@@ -119,7 +131,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
       {/* Suggestion cards */}
       {filtered.length === 0 ? (
         <div className="py-12 text-center text-zinc-500 dark:text-zinc-400">
-          No suggestions in this category
+          {t('noSuggestions')}
         </div>
       ) : (
         <div className="space-y-4">
@@ -139,14 +151,14 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                         STATUS_COLORS[s.status] || 'bg-zinc-100 text-zinc-600'
                       }`}
                     >
-                      {s.status.replace(/_/g, ' ')}
+                      {t(STATUS_LABEL_KEYS[s.status] || 'statusPendingReview')}
                     </span>
                     <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
                       {s.suggested_type}
                     </span>
                   </div>
                   <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                    Category: <strong>{s.category}</strong> &middot; Created{' '}
+                    {t('category')} <strong>{s.category}</strong> &middot; {t('created')}{' '}
                     {formatDate(s.created_at)}
                   </p>
                   {s.original_text && (
@@ -159,25 +171,40 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                   )}
                   {s.close_match_ids && (
                     <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">
-                      Close matches: {s.close_match_ids}
+                      {t('closeMatches')} {s.close_match_ids}
                     </p>
                   )}
                   {s.reviewer_notes && (
                     <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-                      Reviewer notes: {s.reviewer_notes}
+                      {t('reviewerNotes')} {s.reviewer_notes}
                     </p>
                   )}
                   {s.rejection_reason && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                      Rejection: {s.rejection_reason}
+                      {t('rejection')} {s.rejection_reason}
                       {s.rejection_detail ? ` — ${s.rejection_detail}` : ''}
                     </p>
                   )}
                   <div className="mt-2 flex flex-wrap gap-2 text-xs text-zinc-400 dark:text-zinc-500">
-                    <span>Recognition: {s.public_recognition ? 'Public' : 'Anonymous'}</span>
-                    {s.reviewed_at && <span>&middot; Reviewed: {formatDate(s.reviewed_at)}</span>}
-                    {s.approved_at && <span>&middot; Approved: {formatDate(s.approved_at)}</span>}
-                    {s.live_at && <span>&middot; Live: {formatDate(s.live_at)}</span>}
+                    <span>
+                      {t('recognition')}{' '}
+                      {s.public_recognition ? t('recognitionPublic') : t('recognitionAnonymous')}
+                    </span>
+                    {s.reviewed_at && (
+                      <span>
+                        &middot; {t('reviewed')} {formatDate(s.reviewed_at)}
+                      </span>
+                    )}
+                    {s.approved_at && (
+                      <span>
+                        &middot; {t('approved')} {formatDate(s.approved_at)}
+                      </span>
+                    )}
+                    {s.live_at && (
+                      <span>
+                        &middot; {t('live')} {formatDate(s.live_at)}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -197,7 +224,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                       onClick={() => setReviewingId(s.id)}
                       className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
                     >
-                      Review
+                      {t('reviewButton')}
                     </button>
                   )}
                 </div>
@@ -209,7 +236,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                     disabled={actionLoading}
                     className="rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-50"
                   >
-                    Go Live
+                    {t('goLiveButton')}
                   </button>
                 </div>
               )}
@@ -232,11 +259,19 @@ function ReviewForm({
   onCancel: () => void;
   loading: boolean;
 }) {
+  const t = useTranslations('Setup');
   const [decision, setDecision] = useState<string>('');
   const [rejectionReason, setRejectionReason] = useState<string>('');
   const [rejectionDetail, setRejectionDetail] = useState('');
   const [reviewerNotes, setReviewerNotes] = useState('');
   const [mergeIssueId, setMergeIssueId] = useState('');
+
+  const DECISION_LABELS: Record<string, string> = {
+    approve: t('statusApproved'),
+    reject: t('statusRejected'),
+    merge: t('statusMerged'),
+    more_info: t('askInfoButton'),
+  };
 
   function handleSubmit() {
     const extra: Record<string, unknown> = {};
@@ -267,7 +302,7 @@ function ReviewForm({
                 : 'bg-white text-zinc-700 hover:bg-zinc-100 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600'
             }`}
           >
-            {d === 'more_info' ? 'Ask Info' : d.charAt(0).toUpperCase() + d.slice(1)}
+            {DECISION_LABELS[d]}
           </button>
         ))}
       </div>
@@ -278,11 +313,11 @@ function ReviewForm({
           onChange={(e) => setRejectionReason(e.target.value)}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-700"
         >
-          <option value="">Select reason...</option>
-          <option value="close_to_existing">Close to existing Quiet Riot</option>
-          <option value="about_people">About people, not issues</option>
-          <option value="illegal_subject">Illegal subject</option>
-          <option value="other">Other</option>
+          <option value="">{t('selectReason')}</option>
+          <option value="close_to_existing">{t('reasonCloseToExisting')}</option>
+          <option value="about_people">{t('reasonAboutPeople')}</option>
+          <option value="illegal_subject">{t('reasonIllegal')}</option>
+          <option value="other">{t('reasonOther')}</option>
         </select>
       )}
 
@@ -294,7 +329,7 @@ function ReviewForm({
               ? setRejectionDetail(e.target.value)
               : setReviewerNotes(e.target.value)
           }
-          placeholder={decision === 'reject' ? 'Detail (optional)...' : 'Your question...'}
+          placeholder={decision === 'reject' ? t('detailPlaceholder') : t('questionPlaceholder')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-700"
           rows={2}
         />
@@ -304,7 +339,7 @@ function ReviewForm({
         <textarea
           value={reviewerNotes}
           onChange={(e) => setReviewerNotes(e.target.value)}
-          placeholder="Notes (optional)..."
+          placeholder={t('notesPlaceholder')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-700"
           rows={2}
         />
@@ -315,7 +350,7 @@ function ReviewForm({
           type="text"
           value={mergeIssueId}
           onChange={(e) => setMergeIssueId(e.target.value)}
-          placeholder="Issue ID to merge into..."
+          placeholder={t('mergeIdPlaceholder')}
           className="w-full rounded-md border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-700"
         />
       )}
@@ -326,13 +361,13 @@ function ReviewForm({
           disabled={!decision || loading}
           className="rounded-md bg-blue-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
         >
-          {loading ? 'Submitting...' : 'Submit'}
+          {loading ? t('submitting') : t('submit')}
         </button>
         <button
           onClick={onCancel}
           className="rounded-md bg-zinc-200 px-4 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200"
         >
-          Cancel
+          {t('cancel')}
         </button>
       </div>
     </div>
