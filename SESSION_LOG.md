@@ -6,20 +6,21 @@
 
 ## Latest Session
 
-**Session 27** (2026-02-25) — DB Content Translations for All 44 Locales
-→ [`session-logs/2026-02-session-27.md`](session-logs/2026-02-session-27.md)
+**Session 28** (2026-02-25) — Post-Signup Onboarding Wizard
+→ [`session-logs/2026-02-session-28.md`](session-logs/2026-02-session-28.md)
 
 ## Current Priorities
 
-- **Onboarding wizard** — Post-signup interests/language/country selection
-- **Avatar upload** — Upload to Vercel Blob
-- **DB migration on staging/production** — Run migrations 011-013 + seed translations with `--apply`
+- **Avatar upload** — Upload to Vercel Blob, display in profile + nav
+- **DB migration on staging/production** — Run migrations 011-014 + seed reference data
 - **OpenClaw session clear** — After SKILL.md language directive changes
+- **Connected accounts management** — Show Google/Facebook links on profile page
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 28  | 2026-02-25    | Post-signup onboarding wizard                         | [`session-28`](session-logs/2026-02-session-28.md)                                                             |
 | 27  | 2026-02-25    | DB content translations for all 44 locales            | [`session-27`](session-logs/2026-02-session-27.md)                                                             |
 | 26  | 2026-02-24    | Locale message translations for all 44 languages      | [`session-26`](session-logs/2026-02-session-26.md)                                                             |
 | 25  | 2026-02-24    | Phases 3-6: Full global rearchitecture complete       | [`session-25`](session-logs/2026-02-session-25.md)                                                             |

@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 1121 tests (~3.7s)                      |
+| `npm test`                | Run 1134 tests (~3.5s)                      |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
