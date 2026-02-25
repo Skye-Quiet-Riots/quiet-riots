@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getSession } from '@/lib/session';
+
+export const dynamic = 'force-dynamic';
 import { getUserById, getUserIssues, getUserConnectedAccounts } from '@/lib/queries/users';
 import { getUserFeedPostCount, getUserTotalLikes } from '@/lib/queries/community';
 import { PageHeader } from '@/components/layout/page-header';

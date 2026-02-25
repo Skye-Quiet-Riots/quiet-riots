@@ -1,8 +1,18 @@
+import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 
-export default async function AuthErrorPage(props: { searchParams: Promise<{ error?: string }> }) {
-  const searchParams = await props.searchParams;
+export const dynamic = 'force-dynamic';
+
+type Props = {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ error?: string }>;
+};
+
+export default async function AuthErrorPage({ params, searchParams: searchParamsPromise }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const searchParams = await searchParamsPromise;
   const error = searchParams.error;
   const t = await getTranslations('Auth');
 
