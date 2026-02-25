@@ -666,4 +666,60 @@ export async function seedTestData() {
       'Rail Legal Review',
     ],
   });
+
+  // Languages (needed for translations FK)
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['pl', 'Polish', 'Polski', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['es', 'Spanish', 'Español', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['en', 'English', 'English', 'ltr'],
+  });
+
+  // Translations — Polish (pl) for issues and organisations
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-001', 'issue', 'issue-rail', 'name', 'pl', 'Odwołania pociągów', 'machine'],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-002', 'issue', 'issue-broadband', 'name', 'pl', 'Szybkość internetu', 'machine'],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-003', 'issue', 'issue-flights', 'name', 'pl', 'Opóźnienia lotów', 'machine'],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'trans-004',
+      'organisation',
+      'org-southern',
+      'name',
+      'pl',
+      'Kolej Południowa',
+      'machine',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-005', 'organisation', 'org-bt', 'name', 'pl', 'BT Telekomunikacja', 'machine'],
+  });
+
+  // Translations — Spanish (es) for one issue
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-006', 'issue', 'issue-rail', 'name', 'es', 'Cancelaciones de trenes', 'machine'],
+  });
 }

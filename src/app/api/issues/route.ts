@@ -9,7 +9,8 @@ export async function GET(request: NextRequest) {
   const category = searchParams.get('category') as Category | undefined;
   const rawSearch = searchParams.get('search');
   const search = rawSearch ? trimAndLimit(rawSearch, 500) : undefined;
+  const locale = searchParams.get('locale') || undefined;
 
-  const issues = await getAllIssues(category || undefined, search);
+  const issues = await getAllIssues(category || undefined, search, undefined, locale);
   return apiOk(issues);
 }

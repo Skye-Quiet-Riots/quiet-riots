@@ -343,6 +343,85 @@ describe('getAllIssues with countryCode', () => {
   });
 });
 
+describe('getAllIssues with languageCode (translation search)', () => {
+  // Test data translations:
+  // issue-rail → 'Odwołania pociągów' (pl), 'Cancelaciones de trenes' (es)
+  // issue-broadband → 'Szybkość internetu' (pl)
+  // issue-flights → 'Opóźnienia lotów' (pl)
+
+  it('finds issue by Polish translated name', async () => {
+    const issues = await getAllIssues(undefined, 'pociągów', undefined, 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('finds issue by Spanish translated name', async () => {
+    const issues = await getAllIssues(undefined, 'Cancelaciones', undefined, 'es');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('does not search translations when locale is en', async () => {
+    // 'pociągów' is Polish, should NOT match when searching in English
+    const issues = await getAllIssues(undefined, 'pociągów', undefined, 'en');
+    expect(issues).toHaveLength(0);
+  });
+
+  it('does not search translations when no locale provided', async () => {
+    const issues = await getAllIssues(undefined, 'pociągów');
+    expect(issues).toHaveLength(0);
+  });
+
+  it('does not cross-contaminate between languages', async () => {
+    // 'Cancelaciones' is in Spanish, should NOT match when searching in Polish
+    const issues = await getAllIssues(undefined, 'Cancelaciones', undefined, 'pl');
+    expect(issues).toHaveLength(0);
+  });
+
+  it('still finds issues by English name when non-English locale set', async () => {
+    const issues = await getAllIssues(undefined, 'Rail', undefined, 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('still finds issues via synonyms when non-English locale set', async () => {
+    const issues = await getAllIssues(undefined, 'train cancelled', undefined, 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('multi-word translation search works with AND logic', async () => {
+    // 'Szybkość internetu' → both words should match issue-broadband
+    const issues = await getAllIssues(undefined, 'Szybkość internetu', undefined, 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Broadband Speed');
+  });
+
+  it('combines category + translation search', async () => {
+    const issues = await getAllIssues('Transport', 'pociągów', undefined, 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('returns no results when translation search + category mismatch', async () => {
+    // 'pociągów' is Rail Cancellations (Transport), not Telecoms
+    const issues = await getAllIssues('Telecoms', 'pociągów', undefined, 'pl');
+    expect(issues).toHaveLength(0);
+  });
+
+  it('combines translation search + countryCode', async () => {
+    const issues = await getAllIssues(undefined, 'pociągów', 'GB', 'pl');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('escapes LIKE wildcards in translated search', async () => {
+    const issues = await getAllIssues(undefined, '%', undefined, 'pl');
+    const allIssues = await getAllIssues();
+    expect(issues.length).toBeLessThan(allIssues.length);
+  });
+});
+
 describe('getIssueCountsByCategory', () => {
   it('returns correct counts per category', async () => {
     const counts = await getIssueCountsByCategory();

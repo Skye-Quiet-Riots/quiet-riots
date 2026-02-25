@@ -68,18 +68,52 @@ export function parseSearchWords(search: string): string[] {
     .slice(0, MAX_SEARCH_WORDS);
 }
 
-function buildLikeClause(): string {
-  return " (name LIKE ? ESCAPE '\\' OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ? ESCAPE '\\'))";
+/**
+ * Build a LIKE clause that also searches translated entity names.
+ * When searching in a non-English locale, adds a subquery against the translations table.
+ * Args: namePattern, synonymPattern[, languageCode, translatedNamePattern]
+ */
+function buildTranslatedLikeClause(includeTranslations: boolean): string {
+  let clause =
+    " (name LIKE ? ESCAPE '\\'" +
+    " OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ? ESCAPE '\\')";
+  if (includeTranslations) {
+    clause +=
+      " OR id IN (SELECT entity_id FROM translations WHERE entity_type = 'issue'" +
+      " AND field = 'name' AND language_code = ? AND value LIKE ? ESCAPE '\\')";
+  }
+  clause += ')';
+  return clause;
+}
+
+/**
+ * Push LIKE args for a single escaped word into an args array.
+ * Pushes 2 args (name + synonym) or 4 args (+languageCode + translation) depending on locale.
+ */
+function pushIssueLikeArgs(
+  args: (string | number)[],
+  escaped: string,
+  languageCode?: string,
+): void {
+  args.push(`%${escaped}%`); // name LIKE
+  args.push(`%${escaped}%`); // synonym LIKE
+  if (languageCode && languageCode !== 'en') {
+    args.push(languageCode); // language_code = ?
+    args.push(`%${escaped}%`); // translated name LIKE
+  }
 }
 
 export async function getAllIssues(
   category?: Category,
   search?: string,
   countryCode?: string,
+  languageCode?: string,
 ): Promise<Issue[]> {
   const db = getDb();
   let query = 'SELECT * FROM issues WHERE 1=1';
   const args: (string | number)[] = [];
+  const hasTranslations = !!languageCode && languageCode !== 'en';
+  const likeClause = buildTranslatedLikeClause(hasTranslations);
 
   if (category) {
     query += ' AND category = ?';
@@ -91,16 +125,16 @@ export async function getAllIssues(
     if (words.length === 0) {
       // All words were stop words or too short — fall back to full-phrase LIKE
       const escaped = escapeLike(search.trim());
-      query += ' AND' + buildLikeClause();
-      args.push(`%${escaped}%`, `%${escaped}%`);
+      query += ' AND' + likeClause;
+      pushIssueLikeArgs(args, escaped, languageCode);
     } else {
-      // Try AND: every word must match in name or synonyms
+      // Try AND: every word must match in name, synonyms, or translated name
       let andQuery = query;
       const andArgs = [...args];
       for (const word of words) {
         const escaped = escapeLike(word);
-        andQuery += ' AND' + buildLikeClause();
-        andArgs.push(`%${escaped}%`, `%${escaped}%`);
+        andQuery += ' AND' + likeClause;
+        pushIssueLikeArgs(andArgs, escaped, languageCode);
       }
 
       if (countryCode) {
@@ -119,8 +153,8 @@ export async function getAllIssues(
       // AND returned nothing with 2+ words — fall back to OR (any word matches)
       for (let i = 0; i < words.length; i++) {
         const escaped = escapeLike(words[i]);
-        query += (i === 0 ? ' AND (' : ' OR') + buildLikeClause();
-        args.push(`%${escaped}%`, `%${escaped}%`);
+        query += (i === 0 ? ' AND (' : ' OR') + likeClause;
+        pushIssueLikeArgs(args, escaped, languageCode);
       }
       query += ')';
     }

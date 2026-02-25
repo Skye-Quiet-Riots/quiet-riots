@@ -110,3 +110,96 @@ describe('getTotalRiotersForOrg', () => {
     expect(total).toBe(0);
   });
 });
+
+describe('getAllOrganisations with search', () => {
+  it('filters by English name search', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Southern');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('Southern Rail');
+  });
+
+  it('filters by partial name match', async () => {
+    const orgs = await getAllOrganisations(undefined, 'BT');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('BT');
+  });
+
+  it('combines category and search', async () => {
+    const orgs = await getAllOrganisations('Transport', 'Southern');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('Southern Rail');
+  });
+
+  it('returns empty when search + category mismatch', async () => {
+    const orgs = await getAllOrganisations('Banking', 'Southern');
+    expect(orgs).toHaveLength(0);
+  });
+
+  it('returns empty for non-matching search', async () => {
+    const orgs = await getAllOrganisations(undefined, 'nonexistent');
+    expect(orgs).toHaveLength(0);
+  });
+
+  it('handles empty string search', async () => {
+    const orgs = await getAllOrganisations(undefined, '');
+    const allOrgs = await getAllOrganisations();
+    expect(orgs.length).toBe(allOrgs.length);
+  });
+
+  it('handles whitespace-only search', async () => {
+    const orgs = await getAllOrganisations(undefined, '   ');
+    const allOrgs = await getAllOrganisations();
+    expect(orgs.length).toBe(allOrgs.length);
+  });
+});
+
+describe('getAllOrganisations with translation search', () => {
+  // Test data translations:
+  // org-southern → 'Kolej Południowa' (pl)
+  // org-bt → 'BT Telekomunikacja' (pl)
+
+  it('finds org by Polish translated name', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Południowa', 'pl');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('Southern Rail');
+  });
+
+  it('finds org by Polish translated name (partial)', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Telekomunikacja', 'pl');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('BT');
+  });
+
+  it('does not search translations when locale is en', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Południowa', 'en');
+    expect(orgs).toHaveLength(0);
+  });
+
+  it('does not search translations when no locale provided', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Południowa');
+    expect(orgs).toHaveLength(0);
+  });
+
+  it('still finds orgs by English name when non-English locale set', async () => {
+    const orgs = await getAllOrganisations(undefined, 'Southern', 'pl');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('Southern Rail');
+  });
+
+  it('combines category + translation search', async () => {
+    const orgs = await getAllOrganisations('Transport', 'Południowa', 'pl');
+    expect(orgs).toHaveLength(1);
+    expect(orgs[0].name).toBe('Southern Rail');
+  });
+
+  it('returns empty when translation search + category mismatch', async () => {
+    const orgs = await getAllOrganisations('Banking', 'Południowa', 'pl');
+    expect(orgs).toHaveLength(0);
+  });
+
+  it('escapes LIKE wildcards in translated org search', async () => {
+    const orgs = await getAllOrganisations(undefined, '%', 'pl');
+    const allOrgs = await getAllOrganisations();
+    expect(orgs.length).toBeLessThan(allOrgs.length);
+  });
+});

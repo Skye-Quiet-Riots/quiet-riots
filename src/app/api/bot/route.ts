@@ -420,7 +420,7 @@ export async function POST(request: NextRequest) {
       // ─── Issue Discovery ─────────────────────────────────
       case 'search_issues': {
         const locale = (p.language_code as string) || 'en';
-        let issues = await getAllIssues(undefined, p.query as string);
+        let issues = await getAllIssues(undefined, p.query as string, undefined, locale);
         issues = await translateEntities(issues, 'issue', locale);
         return ok({ issues });
       }
