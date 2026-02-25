@@ -6,6 +6,7 @@ import {
   rejectSuggestion,
   mergeSuggestion,
   requestMoreInfo,
+  markTranslationsReady,
 } from '@/lib/queries/suggestions';
 import { sendNotification } from '@/lib/queries/messages';
 import { hasRole } from '@/lib/queries/roles';
@@ -53,14 +54,17 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   switch (decision) {
     case 'approve': {
       const cat = (parsed.data.category as Category) || (suggestion.category as Category);
-      const result = await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
+      await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
+      // Auto-transition to translations_ready (translations generated post-go-live via seed script)
+      const result = await markTranslationsReady(id);
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_approved',
         subject: `Thumbs Up 👍: ${suggestion.suggested_name}`,
-        body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! Translations are being prepared.`,
+        body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! It's ready for the Setup Guide to make it live.`,
         entityType: 'issue_suggestion',
         entityId: id,
+        whatsAppSummary: `Good news — your Quiet Riot "${suggestion.suggested_name}" has been approved! We'll let you know when it goes live.`,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'approved' });
     }
@@ -74,13 +78,20 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         parsed.data.rejection_detail,
         parsed.data.close_match_ids,
       );
+      const reasonLabels: Record<string, string> = {
+        close_to_existing: 'too similar to an existing Quiet Riot',
+        about_people: 'it targets people rather than issues',
+        illegal_subject: 'it involves illegal activity',
+        other: parsed.data.rejection_detail || 'see details',
+      };
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_rejected',
         subject: `Update on ${suggestion.suggested_name}`,
-        body: `Your suggestion "${suggestion.suggested_name}" wasn't approved. Reason: ${reason}.`,
+        body: `Your suggestion "${suggestion.suggested_name}" wasn't approved because ${reasonLabels[reason] || reason}. Learn more: /info/rejection-reasons`,
         entityType: 'issue_suggestion',
         entityId: id,
+        whatsAppSummary: `Your suggestion "${suggestion.suggested_name}" didn't get the 👍 because ${reasonLabels[reason] || reason}. Learn more: https://www.quietriots.com/info/rejection-reasons`,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'rejected' });
     }
@@ -93,13 +104,19 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       if (mergeIssueId) {
         await joinIssue(suggestion.suggested_by, mergeIssueId);
       }
+      const mergeTargetPath = mergeIssueId
+        ? `/issues/${mergeIssueId}`
+        : mergeOrgId
+          ? `/organisations/${mergeOrgId}`
+          : '';
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_merged',
         subject: `Your suggestion: ${suggestion.suggested_name}`,
-        body: `Your suggestion is similar to an existing Quiet Riot. We've added you to that one.`,
+        body: `Your suggestion is similar to an existing Quiet Riot. We've added you to that one so you can start taking action.`,
         entityType: 'issue_suggestion',
         entityId: id,
+        whatsAppSummary: `Your suggestion "${suggestion.suggested_name}" is similar to an existing Quiet Riot. We've added you — check it out: https://www.quietriots.com${mergeTargetPath}`,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'merged' });
     }
@@ -111,9 +128,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         recipientId: suggestion.suggested_by,
         type: 'suggestion_more_info',
         subject: `Question about ${suggestion.suggested_name}`,
-        body: `The Setup Guide has a question: ${notes}`,
+        body: `The Setup Guide has a question about your suggestion "${suggestion.suggested_name}": ${notes}`,
         entityType: 'issue_suggestion',
         entityId: id,
+        whatsAppSummary: `The Setup Guide has a question about "${suggestion.suggested_name}": ${notes}`,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'more_info' });
     }
