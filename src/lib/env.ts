@@ -5,7 +5,11 @@ const envSchema = z.object({
   TURSO_AUTH_TOKEN: z.string().min(1, 'TURSO_AUTH_TOKEN is required'),
   BOT_API_KEY: z
     .string()
-    .min(1, 'BOT_API_KEY is required — bot auth will reject all requests without it'),
+    .min(1, 'BOT_API_KEY is required — bot auth will reject all requests without it')
+    .refine((key) => key !== 'qr-bot-dev-key-2026', {
+      message:
+        "BOT_API_KEY is set to the dev fallback key — production requires a proper secret (generate with: node -e \"console.log(require('crypto').randomBytes(32).toString('base64url'))\")",
+    }),
   AUTH_SECRET: z.string().min(1, 'AUTH_SECRET is required for Auth.js JWT signing'),
 });
 

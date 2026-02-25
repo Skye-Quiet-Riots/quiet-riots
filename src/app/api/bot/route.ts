@@ -91,7 +91,7 @@ import { sanitizeText } from '@/lib/sanitize';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
 const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
-const IS_USING_DEV_KEY = !process.env.BOT_API_KEY;
+const IS_DEV_KEY = !process.env.BOT_API_KEY || process.env.BOT_API_KEY === DEV_FALLBACK_KEY;
 
 // ─── Zod Schemas ──────────────────────────────────────────
 const phoneField = z
@@ -414,8 +414,8 @@ const bodySchema = z.object({
 
 // ─── Helpers ──────────────────────────────────────────────
 function verifyAuth(request: NextRequest): boolean {
-  if (IS_USING_DEV_KEY && process.env.NODE_ENV === 'production') {
-    return false; // Reject all bot requests if no real API key is configured
+  if (IS_DEV_KEY && process.env.NODE_ENV === 'production') {
+    return false; // Reject dev fallback key in production — require a proper secret
   }
   const auth = request.headers.get('authorization');
   return auth === `Bearer ${BOT_API_KEY}`;
