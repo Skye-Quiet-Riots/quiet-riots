@@ -9,6 +9,7 @@ import { getAllAssistants } from '@/lib/queries/assistants';
 import { translateEntities } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { OrgCard } from '@/components/cards/org-card';
+import { SearchBar } from '@/components/interactive/search-bar';
 import { CategoryFilter } from '@/components/interactive/category-filter';
 import { AssistantBanner } from '@/components/data/assistant-banner';
 import { AssistantOverviewBanner } from '@/components/data/assistant-overview-banner';
@@ -16,7 +17,7 @@ import type { Category } from '@/types';
 
 interface Props {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; search?: string }>;
 }
 
 export default async function OrganisationsPage({ params, searchParams }: Props) {
@@ -26,8 +27,9 @@ export default async function OrganisationsPage({ params, searchParams }: Props)
 
   const sp = await searchParams;
   const category = sp.category as Category | undefined;
+  const search = sp.search || undefined;
   const [rawOrgs, allAssistants] = await Promise.all([
-    getAllOrganisations(category),
+    getAllOrganisations(category, search, locale),
     getAllAssistants(),
   ]);
   const orgs = await translateEntities(rawOrgs, 'organisation', locale);
@@ -48,7 +50,10 @@ export default async function OrganisationsPage({ params, searchParams }: Props)
     <div className="mx-auto max-w-5xl px-4 py-8">
       <PageHeader title={t('title')} subtitle={t('subtitle')} />
 
-      <div className="mb-6">
+      <div className="mb-6 space-y-4">
+        <Suspense>
+          <SearchBar placeholder={t('searchPlaceholder')} />
+        </Suspense>
         <Suspense>
           <CategoryFilter />
         </Suspense>

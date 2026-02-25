@@ -1,16 +1,81 @@
 import { getDb } from '../db';
+import { escapeLike, parseSearchWords } from './issues';
 import type { Organisation, Category, IssuePivotRow, OrgPivotRow } from '@/types';
 
-export async function getAllOrganisations(category?: Category): Promise<Organisation[]> {
-  const db = getDb();
-  if (category) {
-    const result = await db.execute({
-      sql: 'SELECT * FROM organisations WHERE category = ? ORDER BY name',
-      args: [category],
-    });
-    return result.rows as unknown as Organisation[];
+/**
+ * Build a LIKE clause for organisation search.
+ * Searches name, and optionally translated names.
+ */
+function buildOrgLikeClause(includeTranslations: boolean): string {
+  let clause = " (name LIKE ? ESCAPE '\\')";
+  if (includeTranslations) {
+    clause =
+      " (name LIKE ? ESCAPE '\\'" +
+      " OR id IN (SELECT entity_id FROM translations WHERE entity_type = 'organisation'" +
+      " AND field = 'name' AND language_code = ? AND value LIKE ? ESCAPE '\\'))";
   }
-  const result = await db.execute('SELECT * FROM organisations ORDER BY name');
+  return clause;
+}
+
+function pushOrgLikeArgs(args: (string | number)[], escaped: string, languageCode?: string): void {
+  args.push(`%${escaped}%`); // name LIKE
+  if (languageCode && languageCode !== 'en') {
+    args.push(languageCode); // language_code = ?
+    args.push(`%${escaped}%`); // translated name LIKE
+  }
+}
+
+export async function getAllOrganisations(
+  category?: Category,
+  search?: string,
+  languageCode?: string,
+): Promise<Organisation[]> {
+  const db = getDb();
+  let query = 'SELECT * FROM organisations WHERE 1=1';
+  const args: (string | number)[] = [];
+  const hasTranslations = !!languageCode && languageCode !== 'en';
+  const likeClause = buildOrgLikeClause(hasTranslations);
+
+  if (category) {
+    query += ' AND category = ?';
+    args.push(category);
+  }
+
+  if (search && search.trim()) {
+    const words = parseSearchWords(search);
+
+    if (words.length === 0) {
+      const escaped = escapeLike(search.trim());
+      query += ' AND' + likeClause;
+      pushOrgLikeArgs(args, escaped, languageCode);
+    } else {
+      // Try AND: every word must match in name or translated name
+      let andQuery = query;
+      const andArgs = [...args];
+      for (const word of words) {
+        const escaped = escapeLike(word);
+        andQuery += ' AND' + likeClause;
+        pushOrgLikeArgs(andArgs, escaped, languageCode);
+      }
+      andQuery += ' ORDER BY name';
+      const andResult = await db.execute({ sql: andQuery, args: andArgs });
+
+      if (andResult.rows.length > 0 || words.length <= 1) {
+        return andResult.rows as unknown as Organisation[];
+      }
+
+      // AND returned nothing with 2+ words — fall back to OR
+      for (let i = 0; i < words.length; i++) {
+        const escaped = escapeLike(words[i]);
+        query += (i === 0 ? ' AND (' : ' OR') + likeClause;
+        pushOrgLikeArgs(args, escaped, languageCode);
+      }
+      query += ')';
+    }
+  }
+
+  query += ' ORDER BY name';
+  const result = await db.execute({ sql: query, args });
   return result.rows as unknown as Organisation[];
 }
 

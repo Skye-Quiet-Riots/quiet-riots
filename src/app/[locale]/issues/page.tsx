@@ -26,7 +26,7 @@ export default async function IssuesPage({ params, searchParams }: Props) {
   const search = sp.search || undefined;
 
   const [rawIssues, counts, allAssistants] = await Promise.all([
-    getAllIssues(category, search),
+    getAllIssues(category, search, undefined, locale),
     getIssueCountsByCategory(),
     getAllAssistants(),
   ]);
