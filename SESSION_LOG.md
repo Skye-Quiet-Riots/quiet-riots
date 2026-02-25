@@ -6,21 +6,21 @@
 
 ## Latest Session
 
-**Session 26** (2026-02-24) — Locale Message Translations for All 44 Languages
-→ [`session-logs/2026-02-session-26.md`](session-logs/2026-02-session-26.md)
+**Session 27** (2026-02-25) — DB Content Translations for All 44 Locales
+→ [`session-logs/2026-02-session-27.md`](session-logs/2026-02-session-27.md)
 
 ## Current Priorities
 
-- **Seed translations for DB content** — Translate issue names, org names, category names into all locales
 - **Onboarding wizard** — Post-signup interests/language/country selection
 - **Avatar upload** — Upload to Vercel Blob
-- **DB migration on staging/production** — Run migrations 011-013
+- **DB migration on staging/production** — Run migrations 011-013 + seed translations with `--apply`
 - **OpenClaw session clear** — After SKILL.md language directive changes
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 27  | 2026-02-25    | DB content translations for all 44 locales            | [`session-27`](session-logs/2026-02-session-27.md)                                                             |
 | 26  | 2026-02-24    | Locale message translations for all 44 languages      | [`session-26`](session-logs/2026-02-session-26.md)                                                             |
 | 25  | 2026-02-24    | Phases 3-6: Full global rearchitecture complete       | [`session-25`](session-logs/2026-02-session-25.md)                                                             |
 | 24  | 2026-02-24    | Phase 1 (Auth.js) + Phase 2 (i18n) complete           | [`session-24`](session-logs/2026-02-session-24.md)                                                             |
