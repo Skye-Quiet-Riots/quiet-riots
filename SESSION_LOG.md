@@ -6,18 +6,21 @@
 
 ## Latest Session
 
-**Session 40** (2026-02-25) — Translate Suggestion Pipeline i18n Sections (44 Locales)
-→ [`session-logs/2026-02-session-40.md`](session-logs/2026-02-session-40.md)
+**Session 41** (2026-02-25) — Branded, Locale-Aware Magic Link Emails via Resend
+→ [`session-logs/2026-02-session-41.md`](session-logs/2026-02-session-41.md)
 
 ## Current Priorities
 
-- **End-to-end test** the suggestion pipeline via WhatsApp in production
-- **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
+- **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
+- **End-to-end test** magic link email flow once domain is verified
+- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
+- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 41  | 2026-02-25    | Branded, locale-aware magic link emails via Resend    | [`session-41`](session-logs/2026-02-session-41.md)                                                             |
 | 40  | 2026-02-25    | Translate suggestion pipeline i18n (44 locales)       | [`session-40`](session-logs/2026-02-session-40.md)                                                             |
 | 39  | 2026-02-25    | Follow-ups: i18n + E2E tests for suggestion pipeline  | [`session-39`](session-logs/2026-02-session-39.md)                                                             |
 | 38  | 2026-02-25    | "Start a New Quiet Riot" feature (Phases 2-6)         | [`session-38`](session-logs/2026-02-session-38.md)                                                             |
