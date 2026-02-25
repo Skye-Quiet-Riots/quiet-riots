@@ -16,6 +16,11 @@ import { getCampaignsForIssue } from '@/lib/queries/campaigns';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { getEvidenceForIssue } from '@/lib/queries/evidence';
+import {
+  translateEntity,
+  translateIssuePivotRows,
+  translateOrgPivotRows,
+} from '@/lib/queries/translate';
 import { getSession } from '@/lib/session';
 import { toAssistantCategory } from '@/types';
 
@@ -45,17 +50,23 @@ export default async function IssueDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('IssueDetail');
+  const tc = await getTranslations('Categories');
 
-  const issue = await getIssueById(id);
-  if (!issue) notFound();
+  const rawIssue = await getIssueById(id);
+  if (!rawIssue) notFound();
+  const issue = await translateEntity(rawIssue, 'issue', locale);
 
   const userId = await getSession();
   const joined = userId ? await hasJoinedIssue(userId, issue.id) : false;
 
   // Load all data in parallel
-  const issuePivotRows = await getOrgsForIssue(issue.id);
-  const firstOrg = issuePivotRows[0];
-  const orgPivotRows = firstOrg ? await getIssuesForOrg(firstOrg.organisation_id) : [];
+  const rawIssuePivotRows = await getOrgsForIssue(issue.id);
+  const firstOrg = rawIssuePivotRows[0];
+  const rawOrgPivotRows = firstOrg ? await getIssuesForOrg(firstOrg.organisation_id) : [];
+  const [issuePivotRows, orgPivotRows] = await Promise.all([
+    translateIssuePivotRows(rawIssuePivotRows, locale),
+    translateOrgPivotRows(rawOrgPivotRows, locale),
+  ]);
   const actions = await getActionsForIssue(issue.id);
   const actionCount = await getActionCountForIssue(issue.id);
   const health = await getCommunityHealth(issue.id);
@@ -74,14 +85,14 @@ export default async function IssueDetailPage({ params }: Props) {
         title={issue.name}
         breadcrumbs={[
           { label: t('breadcrumb'), href: '/issues' },
-          { label: issue.category, href: `/issues?category=${issue.category}` },
+          { label: tc(issue.category), href: `/issues?category=${issue.category}` },
           { label: issue.name },
         ]}
       />
 
       {/* Category + Trending */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <CategoryBadge category={issue.category} size="md" />
+        <CategoryBadge category={issue.category} label={tc(issue.category)} size="md" />
         <TrendingIndicator delta={issue.trending_delta} size="md" />
       </div>
 

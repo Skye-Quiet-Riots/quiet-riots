@@ -11,6 +11,7 @@ interface OrgCardProps {
 
 export async function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
   const t = await getTranslations('Cards');
+  const tc = await getTranslations('Categories');
 
   return (
     <Link
@@ -25,7 +26,7 @@ export async function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
           {org.name}
         </h3>
         <div className="mt-1 flex items-center gap-2">
-          <CategoryBadge category={org.category} showEmoji={false} />
+          <CategoryBadge category={org.category} label={tc(org.category)} showEmoji={false} />
           {issueCount !== undefined && (
             <span className="text-xs text-zinc-500 dark:text-zinc-400">
               {issueCount} {t('issues')}

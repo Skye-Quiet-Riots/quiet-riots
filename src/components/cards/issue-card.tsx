@@ -10,6 +10,7 @@ interface IssueCardProps {
 
 export async function IssueCard({ issue }: IssueCardProps) {
   const t = await getTranslations('Cards');
+  const tc = await getTranslations('Categories');
 
   return (
     <Link
@@ -28,7 +29,7 @@ export async function IssueCard({ issue }: IssueCardProps) {
       </p>
 
       <div className="mt-auto flex items-center justify-between">
-        <CategoryBadge category={issue.category} />
+        <CategoryBadge category={issue.category} label={tc(issue.category)} />
         <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="font-semibold">
             {issue.rioter_count.toLocaleString()} {t('rioters')}

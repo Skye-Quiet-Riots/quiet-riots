@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getAllIssues, getIssueCountsByCategory } from '@/lib/queries/issues';
 import { getAllAssistants } from '@/lib/queries/assistants';
+import { translateEntities } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { IssueCard } from '@/components/cards/issue-card';
 import { SearchBar } from '@/components/interactive/search-bar';
@@ -24,11 +25,12 @@ export default async function IssuesPage({ params, searchParams }: Props) {
   const category = sp.category as Category | undefined;
   const search = sp.search || undefined;
 
-  const [issues, counts, allAssistants] = await Promise.all([
+  const [rawIssues, counts, allAssistants] = await Promise.all([
     getAllIssues(category, search),
     getIssueCountsByCategory(),
     getAllAssistants(),
   ]);
+  const issues = await translateEntities(rawIssues, 'issue', locale);
   const totalIssues = Object.values(counts).reduce((sum, c) => sum + c, 0);
   const assistant = category
     ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())

@@ -28,6 +28,7 @@ function getStatusBadgeClassName(status: string): string | null {
 
 export async function CampaignCard({ campaign, issueName, issueCategory }: CampaignCardProps) {
   const t = await getTranslations('Cards');
+  const tc = await getTranslations('Categories');
   const pct = Math.min(100, Math.round((campaign.raised_pence / campaign.target_pence) * 100));
   const badgeClassName = getStatusBadgeClassName(campaign.status);
   const badgeLabel =
@@ -57,7 +58,9 @@ export async function CampaignCard({ campaign, issueName, issueCategory }: Campa
 
       {issueName && (
         <div className="mb-2 flex items-center gap-1.5">
-          {issueCategory && <CategoryBadge category={issueCategory} size="sm" />}
+          {issueCategory && (
+            <CategoryBadge category={issueCategory} label={tc(issueCategory)} size="sm" />
+          )}
           <span className="text-xs text-zinc-500 dark:text-zinc-400">{issueName}</span>
         </div>
       )}

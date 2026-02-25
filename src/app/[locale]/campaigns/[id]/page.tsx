@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { getSession } from '@/lib/session';
 import { getCampaignById } from '@/lib/queries/campaigns';
 import { getIssueById } from '@/lib/queries/issues';
+import { translateEntity, translateCampaigns } from '@/lib/queries/translate';
 import { getWalletByUserId } from '@/lib/queries/wallet';
 import { formatCurrency } from '@/lib/format';
 import { PageHeader } from '@/components/layout/page-header';
@@ -18,12 +19,20 @@ interface Props {
 export default async function CampaignDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('CampaignDetail');
+  const [t, tc] = await Promise.all([
+    getTranslations('CampaignDetail'),
+    getTranslations('Categories'),
+  ]);
 
-  const campaign = await getCampaignById(id);
-  if (!campaign) notFound();
+  const rawCampaign = await getCampaignById(id);
+  if (!rawCampaign) notFound();
 
-  const [issue, userId] = await Promise.all([getIssueById(campaign.issue_id), getSession()]);
+  const [[campaign], rawIssue, userId] = await Promise.all([
+    translateCampaigns([rawCampaign], locale),
+    getIssueById(rawCampaign.issue_id),
+    getSession(),
+  ]);
+  const issue = rawIssue ? await translateEntity(rawIssue, 'issue', locale) : null;
 
   const wallet = userId ? await getWalletByUserId(userId) : null;
   const pct = Math.min(100, Math.round((campaign.raised_pence / campaign.target_pence) * 100));
@@ -65,7 +74,7 @@ export default async function CampaignDetailPage({ params }: Props) {
       {/* Issue link */}
       {issue && (
         <div className="mb-4 flex items-center gap-2">
-          <CategoryBadge category={issue.category} size="sm" />
+          <CategoryBadge category={issue.category} label={tc(issue.category)} size="sm" />
           <Link
             href={`/issues/${issue.id}`}
             className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
