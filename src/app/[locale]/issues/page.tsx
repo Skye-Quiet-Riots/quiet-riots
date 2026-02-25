@@ -9,6 +9,7 @@ import { SearchBar } from '@/components/interactive/search-bar';
 import { CategoryFilter } from '@/components/interactive/category-filter';
 import { AssistantBanner } from '@/components/data/assistant-banner';
 import { AssistantOverviewBanner } from '@/components/data/assistant-overview-banner';
+import { Link } from '@/i18n/navigation';
 import type { Category } from '@/types';
 
 interface Props {
@@ -70,7 +71,15 @@ export default async function IssuesPage({ params, searchParams }: Props) {
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-lg text-zinc-500 dark:text-zinc-400">{t('noResults')}</p>
+          <p className="mb-4 text-lg text-zinc-500 dark:text-zinc-400">{t('noResults')}</p>
+          {search && (
+            <Link
+              href={`/issues/suggest?q=${encodeURIComponent(search)}`}
+              className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-700"
+            >
+              ✊ {t('suggestNew')}
+            </Link>
+          )}
         </div>
       )}
     </div>
