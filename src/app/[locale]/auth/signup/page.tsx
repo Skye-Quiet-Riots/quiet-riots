@@ -13,14 +13,18 @@ export default function SignUpPage() {
 
   async function handleOAuth(provider: string) {
     setIsLoading(provider);
-    await signIn(provider, { callbackUrl: '/' });
+    await signIn(provider, { callbackUrl: '/onboard' });
   }
 
   async function handleEmail(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
     setIsLoading('email');
-    await signIn('resend', { email: email.trim().toLowerCase(), redirect: false });
+    await signIn('resend', {
+      email: email.trim().toLowerCase(),
+      redirect: false,
+      callbackUrl: '/onboard',
+    });
     setEmailSent(true);
     setIsLoading(null);
   }

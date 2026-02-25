@@ -63,6 +63,7 @@ export async function updateUser(
     skills?: string;
     language_code?: string;
     country_code?: string;
+    onboarding_completed?: number;
   },
 ): Promise<User | null> {
   const db = getDb();
@@ -92,6 +93,10 @@ export async function updateUser(
   if (data.country_code !== undefined) {
     sets.push('country_code = ?');
     args.push(data.country_code);
+  }
+  if (data.onboarding_completed !== undefined) {
+    sets.push('onboarding_completed = ?');
+    args.push(data.onboarding_completed);
   }
 
   if (sets.length === 0) return getUserById(id);
