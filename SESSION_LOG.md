@@ -6,18 +6,19 @@
 
 ## Latest Session
 
-**Session 30** (2026-02-25) — Connected Accounts Management + OpenClaw Session Clear
-→ [`session-logs/2026-02-session-30.md`](session-logs/2026-02-session-30.md)
+**Session 33** (2026-02-25) — Wire Up DB Content Translations + DB Safety Guard
+→ [`session-logs/2026-02-session-33.md`](session-logs/2026-02-session-33.md)
 
 ## Current Priorities
 
-- **DB migration on staging/production** — Run migrations 011-014 + seed reference data
-- **Verify production deployment** — Check connected accounts feature is visible
+- **Verify translations on production** — Spot-check pages in German, French, Japanese
+- **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 33  | 2026-02-25    | Wire up DB content translations + DB safety guard     | [`session-33`](session-logs/2026-02-session-33.md)                                                             |
 | 30  | 2026-02-25    | Connected accounts management + OpenClaw clear        | [`session-30`](session-logs/2026-02-session-30.md)                                                             |
 | 29  | 2026-02-25    | Avatar upload (Vercel Blob)                           | [`session-29`](session-logs/2026-02-session-29.md)                                                             |
 | 28  | 2026-02-25    | Post-signup onboarding wizard                         | [`session-28`](session-logs/2026-02-session-28.md)                                                             |

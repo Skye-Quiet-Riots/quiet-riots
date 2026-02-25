@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 1155 tests (~3.6s)                      |
+| `npm test`                | Run 1180 tests (~4s)                        |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -115,7 +115,7 @@ git checkout -b claude/<next-task-name> origin/main
 - **CSP + SSG = broken JavaScript:** Pages pre-rendered at build time (SSG/static) get 0 script nonces — CSP blocks ALL JavaScript, React never hydrates, buttons/forms stay disabled/dead. The `[locale]/layout.tsx` has `generateStaticParams()` which makes child pages SSG by default. Any page with interactive client components MUST use `export const dynamic = 'force-dynamic'` in a server component wrapper. Pattern: extract `'use client'` code to a separate file (e.g., `signup-form.tsx`), make `page.tsx` a server component with `force-dynamic` that imports and renders the client component. Already fixed for: auth/signin, auth/signup, auth/verify, auth/error, onboard, profile.
 - **Bot API key in tests:** Test helper reads `BOT_API_KEY` env var with same fallback as route — CI sets it to `test-key`
 - **`BOT_API_KEY` is required in production:** The env validation now requires `BOT_API_KEY`. The dev fallback key (`qr-bot-dev-key-2026`) still works locally/in tests but is rejected in production. Vercel production env already has the real key set.
-- **`tsx` doesn't load `.env.local`:** When running `npm run seed` or `tsx scripts/*.ts`, env vars must be passed explicitly or sourced from `.env.local` — without them, libSQL falls back to `file:quiet-riots.db` (a local SQLite file) instead of the remote Turso database
+- **`tsx` doesn't load `.env.local`:** When running `npm run seed` or `tsx scripts/*.ts`, env vars must be passed explicitly or sourced from `.env.local` — without them, libSQL falls back to `file:quiet-riots.db` (a local SQLite file) instead of the remote Turso database. Scripts that need a remote DB (`seed-translations --apply`, `seed-assistants`, `seed-reference-data`) have a `requireRemoteDb()` guard that blocks this. Use `bash scripts/with-staging-env.sh scripts/<script>.ts [args]` to auto-load env vars from the main repo's `.env.local`.
 - **`.env.local` should point to staging:** For day-to-day development, `.env.local` should use the staging Turso DB. Vercel Preview deployments also use staging. To get staging creds: `npx vercel env pull /tmp/vercel-preview-env --environment preview` (must run from main repo root, not a worktree). To run scripts against production, pass env vars explicitly: `TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npx tsx scripts/seed-assistants.ts`
 - **`npm run seed` is blocked on production:** The seed script refuses to run against production unless the `--i-know-what-im-doing` flag is passed (via `npm run seed:production`). This prevents accidental data loss. All scripts show a database banner (LOCAL/STAGING/PRODUCTION) before running.
 - **`npx vercel` commands fail in worktrees:** Vercel CLI doesn't recognise worktrees as linked projects — always run from `/Users/skye/Projects/quiet-riots`
