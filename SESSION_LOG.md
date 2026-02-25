@@ -6,18 +6,19 @@
 
 ## Latest Session
 
-**Session 33** (2026-02-25) — Wire Up DB Content Translations + DB Safety Guard
-→ [`session-logs/2026-02-session-33.md`](session-logs/2026-02-session-33.md)
+**Session 34** (2026-02-25) — Fix WhatsApp Bot Returning Issues in English
+→ [`session-logs/2026-02-session-34.md`](session-logs/2026-02-session-34.md)
 
 ## Current Priorities
 
-- **Verify translations on production** — Spot-check pages in German, French, Japanese
+- **Verify bot fix in production** — Send a WhatsApp message in Polish and check translated issue names
 - **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 34  | 2026-02-25    | Fix WhatsApp bot returning issues in English          | [`session-34`](session-logs/2026-02-session-34.md)                                                             |
 | 33  | 2026-02-25    | Wire up DB content translations + DB safety guard     | [`session-33`](session-logs/2026-02-session-33.md)                                                             |
 | 30  | 2026-02-25    | Connected accounts management + OpenClaw clear        | [`session-30`](session-logs/2026-02-session-30.md)                                                             |
 | 29  | 2026-02-25    | Avatar upload (Vercel Blob)                           | [`session-29`](session-logs/2026-02-session-29.md)                                                             |
