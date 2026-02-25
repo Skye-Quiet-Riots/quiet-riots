@@ -210,45 +210,39 @@ describe('PivotTable', () => {
     { issue_id: 'issue-2', issue_name: 'Bus Routes', rioter_count: 200, rank: 2 },
   ];
 
-  it('renders issue pivot rows', async () => {
-    const el = await PivotTable({ mode: 'issue', rows: issueRows });
-    render(el);
+  it('renders issue pivot rows', () => {
+    render(<PivotTable mode="issue" rows={issueRows} />);
     expect(screen.getByText('Network Rail')).toBeDefined();
     expect(screen.getByText('TfL')).toBeDefined();
     expect(screen.getByText('#1')).toBeDefined();
     expect(screen.getByText('#2')).toBeDefined();
   });
 
-  it('links to organisation pages in issue mode', async () => {
-    const el = await PivotTable({ mode: 'issue', rows: issueRows });
-    render(el);
+  it('links to organisation pages in issue mode', () => {
+    render(<PivotTable mode="issue" rows={issueRows} />);
     const links = screen.getAllByRole('link');
     expect(links[0].getAttribute('href')).toBe('/organisations/org-1');
   });
 
-  it('shows YOU badge for current org', async () => {
-    const el = await PivotTable({ mode: 'issue', rows: issueRows, currentOrgId: 'org-1' });
-    render(el);
+  it('shows YOU badge for current org', () => {
+    render(<PivotTable mode="issue" rows={issueRows} currentOrgId="org-1" />);
     expect(screen.getByText('YOU')).toBeDefined();
   });
 
-  it('renders org pivot rows', async () => {
-    const el = await PivotTable({ mode: 'org', rows: orgRows });
-    render(el);
+  it('renders org pivot rows', () => {
+    render(<PivotTable mode="org" rows={orgRows} />);
     expect(screen.getByText('Train Delays')).toBeDefined();
     expect(screen.getByText('Bus Routes')).toBeDefined();
   });
 
-  it('links to issue pages in org mode', async () => {
-    const el = await PivotTable({ mode: 'org', rows: orgRows });
-    render(el);
+  it('links to issue pages in org mode', () => {
+    render(<PivotTable mode="org" rows={orgRows} />);
     const links = screen.getAllByRole('link');
     expect(links[0].getAttribute('href')).toBe('/issues/issue-1');
   });
 
-  it('shows YOU badge for current issue', async () => {
-    const el = await PivotTable({ mode: 'org', rows: orgRows, currentIssueId: 'issue-2' });
-    render(el);
+  it('shows YOU badge for current issue', () => {
+    render(<PivotTable mode="org" rows={orgRows} currentIssueId="issue-2" />);
     expect(screen.getByText('YOU')).toBeDefined();
   });
 });
