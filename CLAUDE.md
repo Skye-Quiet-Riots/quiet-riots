@@ -78,6 +78,7 @@ git checkout -b claude/<next-task-name> origin/main
 - Mobile-first CSS — design for small screens, scale up with breakpoints
 - Follow existing code patterns before introducing new ones
 - TypeScript strict mode — no `any` without justification
+- IMPORTANT: **Design for multiple languages and countries from the outset.** Every feature must work for all 45 locales and international users from day one — never build English-only and retrofit i18n later. This applies to UI text, emails, URLs (locale-aware callbacks), form validation, date/currency formatting, and any user-facing content.
 
 ## Internationalisation Protocol (IMPORTANT — follow for every feature)
 
