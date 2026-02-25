@@ -893,3 +893,277 @@ describe('Bot API: translated issue data', () => {
     },
   );
 });
+
+// ─── User Memory ──────────────────────────────────────────
+
+describe('Bot API: save_memory', () => {
+  it('saves a memory for an existing user', async () => {
+    const { status, body } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'commute_route',
+      value: 'Manchester to Leeds, 07:42',
+      category: 'context',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memory.memory_key).toBe('commute_route');
+    expect(body.data.memory.memory_value).toBe('Manchester to Leeds, 07:42');
+    expect(body.data.memory.category).toBe('context');
+  });
+
+  it('upserts when saving with the same key', async () => {
+    await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'upsert_test_key',
+      value: 'original',
+    });
+    const { status, body } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'upsert_test_key',
+      value: 'updated',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memory.memory_value).toBe('updated');
+  });
+
+  it('defaults category to general', async () => {
+    const { status, body } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'default_cat_test',
+      value: 'A general note',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memory.category).toBe('general');
+  });
+
+  it('sanitizes input text', async () => {
+    const { status, body } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'sanitize_test',
+      value: 'Clean\x00text',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memory.memory_value).not.toContain('\x00');
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+19999999999',
+      key: 'test',
+      value: 'test',
+    });
+    expect(status).toBe(404);
+  });
+
+  it('rejects empty key', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: '',
+      value: 'test',
+    });
+    expect(status).toBe(400);
+  });
+
+  it('rejects empty value', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'test',
+      value: '',
+    });
+    expect(status).toBe(400);
+  });
+
+  it('rejects invalid category', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'test',
+      value: 'test',
+      category: 'invalid',
+    });
+    expect(status).toBe(400);
+  });
+
+  it('rejects key over 100 chars', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'x'.repeat(101),
+      value: 'test',
+    });
+    expect(status).toBe(400);
+  });
+
+  it('rejects value over 500 chars', async () => {
+    const { status } = await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'test',
+      value: 'x'.repeat(501),
+    });
+    expect(status).toBe(400);
+  });
+});
+
+describe('Bot API: get_memories', () => {
+  it('returns all memories for a user', async () => {
+    // Save a couple of memories first
+    await callBot('save_memory', {
+      phone: '+5511999999999',
+      key: 'pref_1',
+      value: 'Prefers Portuguese',
+      category: 'preference',
+    });
+    await callBot('save_memory', {
+      phone: '+5511999999999',
+      key: 'goal_1',
+      value: 'Wants to find rail issues in Brazil',
+      category: 'goal',
+    });
+
+    const { status, body } = await callBot('get_memories', {
+      phone: '+5511999999999',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memories.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('returns empty array for user with no memories', async () => {
+    await callBot('identify', { phone: '+447700900222', name: 'No Memory User' });
+    const { status, body } = await callBot('get_memories', {
+      phone: '+447700900222',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memories).toEqual([]);
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('get_memories', { phone: '+19999999999' });
+    expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: delete_memory', () => {
+  it('deletes an existing memory', async () => {
+    await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'delete_api_test',
+      value: 'to be deleted',
+    });
+    const { status, body } = await callBot('delete_memory', {
+      phone: '+447700900001',
+      key: 'delete_api_test',
+    });
+    expect(status).toBe(200);
+    expect(body.data.deleted).toBe(true);
+
+    // Verify it's gone
+    const { body: memBody } = await callBot('get_memories', { phone: '+447700900001' });
+    const found = memBody.data.memories.find(
+      (m: { memory_key: string }) => m.memory_key === 'delete_api_test',
+    );
+    expect(found).toBeUndefined();
+  });
+
+  it('returns ok for non-existent key (idempotent)', async () => {
+    const { status, body } = await callBot('delete_memory', {
+      phone: '+447700900001',
+      key: 'nonexistent_key_xyz',
+    });
+    expect(status).toBe(200);
+    expect(body.data.deleted).toBe(false);
+  });
+
+  it('returns 404 for unknown user', async () => {
+    const { status } = await callBot('delete_memory', {
+      phone: '+19999999999',
+      key: 'test',
+    });
+    expect(status).toBe(404);
+  });
+
+  it('rejects empty key', async () => {
+    const { status } = await callBot('delete_memory', {
+      phone: '+447700900001',
+      key: '',
+    });
+    expect(status).toBe(400);
+  });
+});
+
+describe('Bot API: identify returns memories', () => {
+  it('includes memories in identify response', async () => {
+    // Save a memory for Sarah
+    await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'identify_test_mem',
+      value: 'Should appear in identify response',
+    });
+
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memories).toBeDefined();
+    expect(Array.isArray(body.data.memories)).toBe(true);
+    const testMemory = body.data.memories.find(
+      (m: { memory_key: string }) => m.memory_key === 'identify_test_mem',
+    );
+    expect(testMemory).toBeDefined();
+    expect(testMemory.memory_value).toBe('Should appear in identify response');
+  });
+
+  it('returns empty memories array for new user', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900333',
+      name: 'Brand New User',
+    });
+    expect(status).toBe(200);
+    expect(body.data.memories).toEqual([]);
+  });
+
+  it('save_memory then identify returns the saved memory', async () => {
+    await callBot('save_memory', {
+      phone: '+5511999999999',
+      key: 'roundtrip_test',
+      value: 'Round trip verified',
+      category: 'context',
+    });
+    const { body } = await callBot('identify', { phone: '+5511999999999' });
+    const mem = body.data.memories.find(
+      (m: { memory_key: string }) => m.memory_key === 'roundtrip_test',
+    );
+    expect(mem).toBeDefined();
+    expect(mem.memory_value).toBe('Round trip verified');
+    expect(mem.category).toBe('context');
+  });
+});
+
+describe('Bot API: memory cross-user isolation', () => {
+  it('user A memories are not visible to user B', async () => {
+    await callBot('save_memory', {
+      phone: '+447700900001',
+      key: 'sarah_private',
+      value: 'Only for Sarah',
+    });
+    const { body } = await callBot('get_memories', { phone: '+5511999999999' });
+    const found = body.data.memories.find(
+      (m: { memory_key: string }) => m.memory_key === 'sarah_private',
+    );
+    expect(found).toBeUndefined();
+  });
+});
+
+// ─── Structural guard: all memory actions resolve user by phone ───
+
+const MEMORY_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [
+  { action: 'save_memory', minParams: { phone: '+19999999999', key: 'test', value: 'test' } },
+  { action: 'get_memories', minParams: { phone: '+19999999999' } },
+  { action: 'delete_memory', minParams: { phone: '+19999999999', key: 'test' } },
+];
+
+describe('Bot API: memory structural guards', () => {
+  it.each(MEMORY_ACTIONS)(
+    '$action returns 404 for unknown phone',
+    async ({ action, minParams }) => {
+      const { status } = await callBot(action, minParams);
+      expect(status).toBe(404);
+    },
+  );
+});
