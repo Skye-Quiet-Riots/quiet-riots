@@ -88,6 +88,30 @@ describe('Bot API: search_issues', () => {
     const { status } = await callBot('search_issues', {});
     expect(status).toBe(400);
   });
+
+  it('finds issues with natural language query (multi-word search)', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'my train keeps getting cancelled',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+  });
+
+  it('handles query with only stop words gracefully', async () => {
+    const { status, body } = await callBot('search_issues', { query: 'the and were' });
+    expect(status).toBe(200);
+    expect(Array.isArray(body.data.issues)).toBe(true);
+  });
+
+  it('handles long query within limits', async () => {
+    const longQuery =
+      'train cancelled delayed service not running problems everywhere ' +
+      'commuters frustrated waiting platform announcement';
+    const { status, body } = await callBot('search_issues', { query: longQuery });
+    expect(status).toBe(200);
+    expect(Array.isArray(body.data.issues)).toBe(true);
+  });
 });
 
 describe('Bot API: get_trending', () => {
