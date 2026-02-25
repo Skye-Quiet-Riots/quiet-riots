@@ -1,5 +1,8 @@
 import { getDb } from '../db';
 import { generateId } from '@/lib/uuid';
+import { getUserById } from './users';
+import { sendEmail } from '../email';
+import { sendWhatsAppMessage } from '../whatsapp';
 import type { Message, MessageType, MessageEntityType } from '@/types';
 
 export async function createMessage(data: {
@@ -91,4 +94,54 @@ export async function markAllAsRead(recipientId: string): Promise<number> {
     args: [recipientId],
   });
   return result.rowsAffected;
+}
+
+/**
+ * Multi-channel notification delivery.
+ * Always creates an inbox message. Also sends email + WhatsApp if user has those channels.
+ * Graceful — never throws.
+ */
+export async function sendNotification(data: {
+  recipientId: string;
+  senderName?: string;
+  type: MessageType;
+  subject: string;
+  body: string;
+  entityType?: MessageEntityType;
+  entityId?: string;
+  whatsAppSummary?: string;
+}): Promise<Message | null> {
+  try {
+    // 1. Always create inbox message
+    const message = await createMessage({
+      recipientId: data.recipientId,
+      senderName: data.senderName,
+      type: data.type,
+      subject: data.subject,
+      body: data.body,
+      entityType: data.entityType,
+      entityId: data.entityId,
+    });
+
+    // 2. Look up user for email/phone channels
+    const user = await getUserById(data.recipientId);
+    if (!user) return message;
+
+    // 3. WhatsApp push (if user has phone)
+    if (user.phone) {
+      const waMessage = data.whatsAppSummary || `${data.subject}: ${data.body.slice(0, 500)}`;
+      sendWhatsAppMessage(user.phone, waMessage).catch(() => {});
+    }
+
+    // 4. Email (only if real email, not wa-* placeholder)
+    if (user.email && !user.email.startsWith('wa-')) {
+      const htmlBody = `<p>${data.body.replace(/\n/g, '</p><p>')}</p>`;
+      sendEmail(user.email, data.subject, htmlBody).catch(() => {});
+    }
+
+    return message;
+  } catch (error) {
+    console.error('sendNotification failed:', error);
+    return null;
+  }
 }

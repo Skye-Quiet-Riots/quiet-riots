@@ -19,9 +19,34 @@ export function NavBar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
   const { data: session, status } = useSession();
   const t = useTranslations('Nav');
   const avatarRef = useRef<HTMLDivElement>(null);
+
+  // Fetch unread message count when logged in
+  useEffect(() => {
+    if (status !== 'authenticated') return;
+    let cancelled = false;
+    async function fetchUnread() {
+      try {
+        const res = await fetch('/api/messages?unread_only=true&limit=1');
+        if (res.ok && !cancelled) {
+          const data = await res.json();
+          setUnreadCount(data.data?.unread_count ?? 0);
+        }
+      } catch {
+        // Silently ignore — badge is optional
+      }
+    }
+    fetchUnread();
+    // Poll every 60s for new messages
+    const interval = setInterval(fetchUnread, 60000);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, [status]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -60,6 +85,34 @@ export function NavBar() {
           ))}
           <LanguageSelector />
 
+          {/* Inbox icon (visible when logged in) */}
+          {session?.user && (
+            <Link
+              href="/inbox"
+              className="relative text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+              aria-label="Inbox"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              {unreadCount > 0 && (
+                <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </span>
+              )}
+            </Link>
+          )}
+
           {/* User avatar / sign in */}
           {status === 'loading' ? (
             <div className="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-700" />
@@ -90,6 +143,18 @@ export function NavBar() {
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >
                     {t('profile')}
+                  </Link>
+                  <Link
+                    href="/inbox"
+                    onClick={() => setAvatarOpen(false)}
+                    className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  >
+                    Inbox
+                    {unreadCount > 0 && (
+                      <span className="rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                        {unreadCount}
+                      </span>
+                    )}
                   </Link>
                   <button
                     onClick={() => signOut({ callbackUrl: '/' })}
@@ -149,6 +214,22 @@ export function NavBar() {
           {/* Mobile user section */}
           {session?.user ? (
             <>
+              <Link
+                href="/inbox"
+                onClick={() => setMenuOpen(false)}
+                className={`flex items-center gap-2 py-2 text-sm font-medium ${
+                  pathname.startsWith('/inbox')
+                    ? 'text-zinc-900 dark:text-white'
+                    : 'text-zinc-500 dark:text-zinc-400'
+                }`}
+              >
+                Inbox
+                {unreadCount > 0 && (
+                  <span className="rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                    {unreadCount}
+                  </span>
+                )}
+              </Link>
               <Link
                 href="/profile"
                 onClick={() => setMenuOpen(false)}
