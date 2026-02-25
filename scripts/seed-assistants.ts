@@ -12,7 +12,7 @@
 
 import { getDb } from '../src/lib/db';
 import { generateId } from '../src/lib/uuid';
-import { printDbBanner, confirmOrAbort } from './db-safety';
+import { printDbBanner, confirmOrAbort, requireRemoteDb } from './db-safety';
 
 // ─────────────────────────────────────────────────────────────────
 // 1. CATEGORY ASSISTANTS — 16 pairs
@@ -69,8 +69,7 @@ const categoryAssistants: CategoryAssistant[] = [
     category: 'telecoms',
     agent_name: 'Pulse',
     agent_icon: '💜',
-    agent_quote:
-      'Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.',
+    agent_quote: 'Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.',
     agent_bio:
       'Analyses broadband speeds, compiles provider comparison data, and helps rioters build evidence for Ofcom. If your connection is slow, Pulse will prove it.',
     agent_gradient_start: '#a855f7',
@@ -127,8 +126,7 @@ const categoryAssistants: CategoryAssistant[] = [
     agent_gradient_end: '#0891b2',
     human_name: 'Nia',
     human_icon: '👩🏿',
-    human_quote:
-      'We got a beach reopened 3 weeks early by showing the sewage data was wrong.',
+    human_quote: 'We got a beach reopened 3 weeks early by showing the sewage data was wrong.',
     human_bio:
       'Surfer from Cornwall who got tired of sewage warnings closing his local beach. Helps rioters report discharges, gather water quality evidence, and coordinate with the EA.',
     human_gradient_start: '#10b981',
@@ -247,7 +245,7 @@ const categoryAssistants: CategoryAssistant[] = [
     agent_quote:
       'Helped photograph the same pothole in 11 different weather conditions. The council finally gave in.',
     agent_bio:
-      "Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.",
+      'Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.',
     agent_gradient_start: '#14b8a6',
     agent_gradient_end: '#0d9488',
     human_name: 'Taz',
@@ -510,8 +508,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'telecoms',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
-    description:
-      'Compiled speed test results from 200 rioters — average 18 Mbps on 65 Mbps plans',
+    description: 'Compiled speed test results from 200 rioters — average 18 Mbps on 65 Mbps plans',
     stat_value: 200,
     stat_label: 'tests',
     days_ago: 2,
@@ -852,8 +849,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'local',
     assistant_type: 'agent',
     activity_type: 'compiled_data',
-    description:
-      'Mapped 89 dog fouling hotspots — 60% have no council bins within 100m',
+    description: 'Mapped 89 dog fouling hotspots — 60% have no council bins within 100m',
     stat_value: 89,
     stat_label: 'hotspots',
     days_ago: 1,
@@ -911,8 +907,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'other',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
-    description:
-      'Connected 40 rioters dealing with the same gym chain cancellation runaround',
+    description: 'Connected 40 rioters dealing with the same gym chain cancellation runaround',
     stat_value: 40,
     stat_label: 'rioters',
     days_ago: 4,
@@ -930,8 +925,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'other',
     assistant_type: 'human',
     activity_type: 'sent_messages',
-    description:
-      'Shared cancellation script library with 18 rioters battling retention teams',
+    description: 'Shared cancellation script library with 18 rioters battling retention teams',
     stat_value: 18,
     stat_label: 'messages',
     days_ago: 9,
@@ -940,8 +934,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'other',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
-    description:
-      'Submitted free trial dark pattern evidence to Trading Standards for 5 companies',
+    description: 'Submitted free trial dark pattern evidence to Trading Standards for 5 companies',
     stat_value: 5,
     stat_label: 'companies',
     days_ago: 13,
@@ -1043,8 +1036,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'delivery',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
-    description:
-      'Submitted delivery failure league table to Citizens Advice and Trading Standards',
+    description: 'Submitted delivery failure league table to Citizens Advice and Trading Standards',
     stat_value: 1,
     stat_label: 'reports',
     days_ago: 12,
@@ -1085,8 +1077,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'education',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
-    description:
-      'Welcomed 20 new education rioters and shared the overpayment checker tool',
+    description: 'Welcomed 20 new education rioters and shared the overpayment checker tool',
     stat_value: 20,
     stat_label: 'rioters',
     days_ago: 9,
@@ -1117,8 +1108,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'environment',
     assistant_type: 'human',
     activity_type: 'connected_rioters',
-    description:
-      'Got 200 rioters to sign evidence petition for air quality monitors in their area',
+    description: 'Got 200 rioters to sign evidence petition for air quality monitors in their area',
     stat_value: 200,
     stat_label: 'rioters',
     days_ago: 5,
@@ -1189,8 +1179,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'employment',
     assistant_type: 'human',
     activity_type: 'welcomed_rioters',
-    description:
-      'Welcomed 13 new employment rioters and shared retraining resource guide',
+    description: 'Welcomed 13 new employment rioters and shared retraining resource guide',
     stat_value: 13,
     stat_label: 'rioters',
     days_ago: 9,
@@ -1199,8 +1188,7 @@ const activityEntries: ActivityEntry[] = [
     category: 'employment',
     assistant_type: 'agent',
     activity_type: 'escalated_complaint',
-    description:
-      'Building evidence report on employer obligations around AI consultation for ACAS',
+    description: 'Building evidence report on employer obligations around AI consultation for ACAS',
     stat_value: 1,
     stat_label: 'reports',
     days_ago: 12,
@@ -1491,7 +1479,7 @@ const perRiotCopy: PerRiotCopy[] = [
     agent_focus:
       'Analysed 500 rioter statements. Average hidden charges: £127/year. Most common: arranged overdraft daily fees and foreign transaction markups.',
     human_focus:
-      "Running a \"statement audit\" challenge — rioters checking 3 months of statements and flagging anything unexpected. 89 rioters found charges they didn't know about.",
+      'Running a "statement audit" challenge — rioters checking 3 months of statements and flagging anything unexpected. 89 rioters found charges they didn\'t know about.',
   },
   {
     name_match: 'Fraud and Scam Losses',
@@ -1513,7 +1501,7 @@ const perRiotCopy: PerRiotCopy[] = [
     agent_focus:
       'Average payment increase for rioters coming off 2-year fixes: £287/month. Comparing remortgage options across 12 lenders to find the best deals.',
     human_focus:
-      "Running a \"remortgage buddy\" system — pairing rioters who've just switched with those about to, so they can share what worked.",
+      'Running a "remortgage buddy" system — pairing rioters who\'ve just switched with those about to, so they can share what worked.',
   },
   {
     name_match: 'Overseas Transfer Fees',
@@ -1721,7 +1709,7 @@ const perRiotCopy: PerRiotCopy[] = [
     agent_focus:
       'Evri has a 23% complaint rate among rioters — 3x higher than DPD. Building a delivery league table with real data.',
     human_focus:
-      "Created a \"what to say\" script for each major courier's complaints line. Rioters report 40% faster resolution using the scripts.",
+      'Created a "what to say" script for each major courier\'s complaints line. Rioters report 40% faster resolution using the scripts.',
   },
 
   // ── LOCAL ──
@@ -1734,7 +1722,7 @@ const perRiotCopy: PerRiotCopy[] = [
     agent_focus:
       'Average council response time to pothole reports: 34 days. But 20% never get fixed at all. Built a tracking dashboard by council area.',
     human_focus:
-      "Organised a \"pothole safari\" in the Valleys — 30 rioters mapped every pothole on their daily routes in one weekend. Council couldn't ignore 847 reports.",
+      'Organised a "pothole safari" in the Valleys — 30 rioters mapped every pothole on their daily routes in one weekend. Council couldn\'t ignore 847 reports.',
   },
   {
     name_match: 'Council Tax Rises',
@@ -1802,7 +1790,7 @@ const perRiotCopy: PerRiotCopy[] = [
     agent_focus:
       'Mapped the cancellation process for 30 companies. Average steps to cancel: 4.2. Worst offender: 9 steps including a "loyalty call."',
     human_focus:
-      "Built a \"cancellation script\" library — exact words to say to each company's retention team. Updated weekly by rioters who've just done it.",
+      'Built a "cancellation script" library — exact words to say to each company\'s retention team. Updated weekly by rioters who\'ve just done it.',
   },
   {
     name_match: 'Cost of Childcare',
@@ -1824,7 +1812,7 @@ const perRiotCopy: PerRiotCopy[] = [
     human_helps:
       'Shares strategies for managing repayments, connects graduates with similar balances, and helps with overpayment refund claims',
     agent_focus:
-      "For Plan 2 borrowers, average projected repayment: 38 years before write-off. 83% will never fully repay. Built a calculator so rioters can see their own numbers.",
+      'For Plan 2 borrowers, average projected repayment: 38 years before write-off. 83% will never fully repay. Built a calculator so rioters can see their own numbers.',
     human_focus:
       "Helping rioters who've accidentally overpaid (earned under threshold but still charged) claim refunds. 12 refunds processed — average £340 each.",
   },
@@ -1862,6 +1850,9 @@ function daysAgoISO(days: number): string {
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const db = getDb();
+
+  // Refuse to run against local file DB — this script needs real data
+  requireRemoteDb();
 
   // Show which database we're connecting to and require confirmation
   const env = printDbBanner();
@@ -1965,9 +1956,7 @@ async function main() {
 
   for (const copy of perRiotCopy) {
     const isLikePattern = copy.name_match.includes('%');
-    const whereClause = isLikePattern
-      ? `name LIKE ? COLLATE NOCASE`
-      : `name = ? COLLATE NOCASE`;
+    const whereClause = isLikePattern ? `name LIKE ? COLLATE NOCASE` : `name = ? COLLATE NOCASE`;
 
     // Check if the issue exists
     const checkSql = `SELECT COUNT(*) as cnt FROM issues WHERE ${whereClause}`;

@@ -10,7 +10,7 @@
  */
 
 import { getDb } from '../src/lib/db';
-import { printDbBanner } from './db-safety';
+import { printDbBanner, requireRemoteDb } from './db-safety';
 import { generateId } from '../src/lib/uuid';
 
 // ─── Languages ──────────────────────────────────────────────────────────────
@@ -313,6 +313,7 @@ const COUNTRIES: [string, string, string | null, string | null, string | null][]
 ];
 
 async function main() {
+  requireRemoteDb();
   printDbBanner();
 
   const db = getDb();
