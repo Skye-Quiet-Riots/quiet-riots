@@ -15,10 +15,12 @@ afterAll(async () => {
 describe('getSynonymsForIssue', () => {
   it('returns synonyms for an issue', async () => {
     const synonyms = await getSynonymsForIssue('issue-rail');
-    expect(synonyms).toHaveLength(2);
+    expect(synonyms).toHaveLength(4);
     const terms = synonyms.map((s) => s.term);
     expect(terms).toContain('train cancellations');
     expect(terms).toContain('cancelled trains');
+    expect(terms).toContain('train cancelled');
+    expect(terms).toContain('rail delays');
   });
 
   it('returns empty array for issue with no synonyms', async () => {

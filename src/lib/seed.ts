@@ -1376,12 +1376,15 @@ export async function seed() {
       [
         'train cancelled',
         'cancelled train',
+        'train cancellation',
         'trains not running',
         'rail cancellation',
         'service cancelled',
         'train delays',
         'delayed train',
         'trains late',
+        'late train',
+        'rail delays',
       ],
     ],
     ['Train Ticket Prices', ['rail fares', 'ticket costs', 'expensive trains', 'train fares']],
@@ -1536,6 +1539,44 @@ export async function seed() {
     ['Roaming Charges', ['holiday phone bill', 'abroad data charges', 'foreign phone charges']],
     ['Smart Meter Problems', ['smart meter broken', 'meter not working', 'meter lost signal']],
     ['Subscription Traps', ['free trial trap', 'auto renewal', 'charged after trial']],
+    ['Fuel Prices', ['petrol prices', 'diesel prices', 'fuel cost', 'petrol too expensive']],
+    ['Power Cuts', ['power outage', 'electricity cut', 'blackout', 'no power', 'power failure']],
+    [
+      'Mortgage Rate Shock',
+      ['mortgage increase', 'mortgage rate', 'remortgage', 'fixed rate ending'],
+    ],
+    [
+      'Overseas Transfer Fees',
+      ['transfer fees', 'sending money abroad', 'remittance fees', 'wire transfer cost'],
+    ],
+    ['Hospital Parking Charges', ['hospital parking', 'parking at hospital', 'NHS parking']],
+    [
+      'Noisy Neighbours',
+      ['noise complaint', 'neighbour noise', 'loud neighbours', 'noise nuisance'],
+    ],
+    [
+      'Rubbish Collection Changes',
+      ['bin collection', 'bins not collected', 'recycling confusion', 'missed bin collection'],
+    ],
+    [
+      'Planning Permission Abuse',
+      ['planning permission', 'unwanted development', 'green belt', 'building permission'],
+    ],
+    ['Refund Difficulties', ['cant get refund', 'refund refused', 'return rejected', 'money back']],
+    ['Fake Reviews', ['review manipulation', 'paid reviews', 'trust pilot fake', 'fake review']],
+    [
+      'Food Quality Decline',
+      ['food quality', 'ready meal worse', 'food additives', 'portion smaller'],
+    ],
+    [
+      'Self-Checkout Frustration',
+      ['self checkout', 'self service', 'no staff tills', 'machine not working'],
+    ],
+    [
+      'Cost of Childcare',
+      ['childcare cost', 'nursery fees', 'childcare expensive', 'daycare cost'],
+    ],
+    ['Dog Fouling', ['dog mess', 'dog poo', 'dog waste', 'fouling']],
   ];
 
   for (const [issueName, terms] of synonyms) {

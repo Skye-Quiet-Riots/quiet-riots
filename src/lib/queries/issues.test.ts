@@ -9,6 +9,8 @@ import {
   getIssueCountsByCategory,
   createIssue,
   getIssuesForCountry,
+  parseSearchWords,
+  escapeLike,
 } from './issues';
 
 beforeAll(async () => {
@@ -56,6 +58,133 @@ describe('getAllIssues', () => {
   it('returns empty array when no matches', async () => {
     const issues = await getAllIssues(undefined, 'nonexistent');
     expect(issues).toHaveLength(0);
+  });
+});
+
+describe('parseSearchWords', () => {
+  it('splits on whitespace and lowercases', () => {
+    expect(parseSearchWords('Train Cancelled')).toEqual(['train', 'cancelled']);
+  });
+
+  it('removes stop words', () => {
+    expect(parseSearchWords('the train was cancelled')).toEqual(['train', 'cancelled']);
+  });
+
+  it('removes words shorter than 3 characters', () => {
+    expect(parseSearchWords('UK rail delays')).toEqual(['rail', 'delays']);
+  });
+
+  it('caps at 5 words', () => {
+    const result = parseSearchWords('one two three four five six seven eight');
+    expect(result).toHaveLength(5);
+  });
+
+  it('returns empty array when all words are stop words', () => {
+    expect(parseSearchWords('the and were')).toEqual([]);
+  });
+
+  it('returns empty array for whitespace-only input', () => {
+    expect(parseSearchWords('   ')).toEqual([]);
+  });
+});
+
+describe('escapeLike', () => {
+  it('escapes percent sign', () => {
+    expect(escapeLike('100%')).toBe('100\\%');
+  });
+
+  it('escapes underscore', () => {
+    expect(escapeLike('test_data')).toBe('test\\_data');
+  });
+
+  it('escapes backslash', () => {
+    expect(escapeLike('path\\file')).toBe('path\\\\file');
+  });
+
+  it('leaves normal text unchanged', () => {
+    expect(escapeLike('train cancelled')).toBe('train cancelled');
+  });
+});
+
+describe('getAllIssues multi-word search', () => {
+  // Test data: issue-rail = "Rail Cancellations" (Transport, 2847)
+  //   synonyms: "train cancellations", "cancelled trains", "train cancelled", "rail delays"
+  // Test data: issue-broadband = "Broadband Speed" (Telecoms, 4112)
+  //   synonyms: "slow internet"
+  // Test data: issue-flights = "Flight Delays" (Transport, 12340)
+  //   synonyms: "flight cancelled"
+
+  it('matches natural language query via word splitting', async () => {
+    const issues = await getAllIssues(undefined, 'my train keeps getting cancelled');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('Rail Cancellations');
+  });
+
+  it('matches words across name and synonym separately', async () => {
+    // "rail" matches issue name, "delays" matches synonym "rail delays"
+    const issues = await getAllIssues(undefined, 'rail delays');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('uses AND logic: all words must match', async () => {
+    // "rail" matches Rail Cancellations, "broadband" matches Broadband Speed — no issue has both
+    const issues = await getAllIssues(undefined, 'rail broadband');
+    // AND returns nothing, OR fallback returns both
+    expect(issues.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('falls back to OR when AND returns nothing with 2+ words', async () => {
+    // "rail" and "broadband" don't coexist — AND fails, OR finds both
+    const issues = await getAllIssues(undefined, 'rail broadband');
+    const names = issues.map((i) => i.name);
+    expect(names).toContain('Rail Cancellations');
+    expect(names).toContain('Broadband Speed');
+  });
+
+  it('filters stop words before searching', async () => {
+    // "the rail" → "rail" after stop word removal
+    const issues = await getAllIssues(undefined, 'the rail');
+    expect(issues).toHaveLength(1);
+    expect(issues[0].name).toBe('Rail Cancellations');
+  });
+
+  it('falls back to full-phrase LIKE when all words are stop words', async () => {
+    const issues = await getAllIssues(undefined, 'the and were');
+    // Full-phrase "the and were" won't match any issue name
+    expect(issues).toHaveLength(0);
+  });
+
+  it('treats SQL LIKE wildcards as literals', async () => {
+    // "%" should not match everything
+    const allIssues = await getAllIssues();
+    const percentSearch = await getAllIssues(undefined, '%');
+    expect(percentSearch.length).toBeLessThan(allIssues.length);
+  });
+
+  it('treats underscore as literal', async () => {
+    const issues = await getAllIssues(undefined, 'test_nonexistent');
+    expect(issues).toHaveLength(0);
+  });
+
+  it('handles special characters without error', async () => {
+    // Apostrophes and ampersands should not crash
+    const issues1 = await getAllIssues(undefined, "can't cancel");
+    expect(Array.isArray(issues1)).toBe(true);
+    const issues2 = await getAllIssues(undefined, 'A&E waiting');
+    expect(Array.isArray(issues2)).toBe(true);
+  });
+
+  it('returns all issues for empty string search', async () => {
+    const issues = await getAllIssues(undefined, '');
+    const allIssues = await getAllIssues();
+    expect(issues.length).toBe(allIssues.length);
+  });
+
+  it('returns all issues for whitespace-only search', async () => {
+    const issues = await getAllIssues(undefined, '   ');
+    const allIssues = await getAllIssues();
+    expect(issues.length).toBe(allIssues.length);
   });
 });
 

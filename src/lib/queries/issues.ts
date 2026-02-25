@@ -2,6 +2,76 @@ import { getDb } from '../db';
 import { generateId } from '@/lib/uuid';
 import type { Issue, Category } from '@/types';
 
+/** Escape SQL LIKE metacharacters so they match literally. */
+export function escapeLike(s: string): string {
+  return s.replace(/[%_\\]/g, '\\$&');
+}
+
+const STOP_WORDS = new Set([
+  'the',
+  'and',
+  'are',
+  'for',
+  'not',
+  'but',
+  'had',
+  'has',
+  'was',
+  'were',
+  'been',
+  'being',
+  'have',
+  'with',
+  'this',
+  'that',
+  'from',
+  'they',
+  'which',
+  'their',
+  'there',
+  'about',
+  'would',
+  'could',
+  'should',
+  'into',
+  'than',
+  'other',
+  'some',
+  'what',
+  'when',
+  'where',
+  'very',
+  'just',
+  'also',
+  'really',
+  'still',
+  'much',
+  'many',
+  'always',
+  'never',
+  'keep',
+  'keeps',
+  'getting',
+]);
+
+const MAX_SEARCH_WORDS = 5;
+
+/**
+ * Extract meaningful search words from a query string.
+ * Filters stop words, short words, and caps at MAX_SEARCH_WORDS.
+ */
+export function parseSearchWords(search: string): string[] {
+  return search
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length >= 3 && !STOP_WORDS.has(w))
+    .slice(0, MAX_SEARCH_WORDS);
+}
+
+function buildLikeClause(): string {
+  return " (name LIKE ? ESCAPE '\\' OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ? ESCAPE '\\'))";
+}
+
 export async function getAllIssues(
   category?: Category,
   search?: string,
@@ -15,9 +85,45 @@ export async function getAllIssues(
     query += ' AND category = ?';
     args.push(category);
   }
-  if (search) {
-    query += ' AND (name LIKE ? OR id IN (SELECT issue_id FROM synonyms WHERE term LIKE ?))';
-    args.push(`%${search}%`, `%${search}%`);
+  if (search && search.trim()) {
+    const words = parseSearchWords(search);
+
+    if (words.length === 0) {
+      // All words were stop words or too short — fall back to full-phrase LIKE
+      const escaped = escapeLike(search.trim());
+      query += ' AND' + buildLikeClause();
+      args.push(`%${escaped}%`, `%${escaped}%`);
+    } else {
+      // Try AND: every word must match in name or synonyms
+      let andQuery = query;
+      const andArgs = [...args];
+      for (const word of words) {
+        const escaped = escapeLike(word);
+        andQuery += ' AND' + buildLikeClause();
+        andArgs.push(`%${escaped}%`, `%${escaped}%`);
+      }
+
+      if (countryCode) {
+        andQuery +=
+          " AND (country_scope = 'global' OR (country_scope = 'country' AND primary_country = ?))";
+        andArgs.push(countryCode.toUpperCase());
+      }
+
+      andQuery += ' ORDER BY rioter_count DESC';
+      const andResult = await db.execute({ sql: andQuery, args: andArgs });
+
+      if (andResult.rows.length > 0 || words.length <= 1) {
+        return andResult.rows as unknown as Issue[];
+      }
+
+      // AND returned nothing with 2+ words — fall back to OR (any word matches)
+      for (let i = 0; i < words.length; i++) {
+        const escaped = escapeLike(words[i]);
+        query += (i === 0 ? ' AND (' : ' OR') + buildLikeClause();
+        args.push(`%${escaped}%`, `%${escaped}%`);
+      }
+      query += ')';
+    }
   }
   if (countryCode) {
     query +=

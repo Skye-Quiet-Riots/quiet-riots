@@ -101,6 +101,18 @@ export async function seedTestData() {
     sql: `INSERT INTO synonyms (id, issue_id, term) VALUES (?, ?, ?)`,
     args: ['syn-003', 'issue-broadband', 'slow internet'],
   });
+  await db.execute({
+    sql: `INSERT INTO synonyms (id, issue_id, term) VALUES (?, ?, ?)`,
+    args: ['syn-004', 'issue-rail', 'train cancelled'],
+  });
+  await db.execute({
+    sql: `INSERT INTO synonyms (id, issue_id, term) VALUES (?, ?, ?)`,
+    args: ['syn-005', 'issue-rail', 'rail delays'],
+  });
+  await db.execute({
+    sql: `INSERT INTO synonyms (id, issue_id, term) VALUES (?, ?, ?)`,
+    args: ['syn-006', 'issue-flights', 'flight cancelled'],
+  });
 
   // 2 users
   await db.execute({
