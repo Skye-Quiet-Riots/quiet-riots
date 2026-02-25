@@ -10,6 +10,7 @@ import { CategoryBadge } from '@/components/data/category-badge';
 import { TrendingIndicator } from '@/components/data/trending-indicator';
 import { ProfileEditForm } from '@/components/interactive/profile-edit-form';
 import { ProfileCreateForm } from '@/components/interactive/profile-create-form';
+import { AvatarUpload } from '@/components/interactive/avatar-upload';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -67,9 +68,7 @@ export default async function ProfilePage({ params }: Props) {
       <div className="mb-8 rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
         <div className="mb-4 flex items-start justify-between">
           <div className="flex items-center gap-4">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 text-2xl font-bold text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
-              {user.name.charAt(0).toUpperCase()}
-            </span>
+            <AvatarUpload currentUrl={user.avatar_url} userName={user.name} />
             <div>
               <h2 className="text-lg font-bold">{user.name}</h2>
               <p className="text-sm text-zinc-500 dark:text-zinc-400">{user.email}</p>

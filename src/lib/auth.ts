@@ -109,19 +109,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         session.user.id = token.sub;
       }
 
-      // Validate session_version — if it changed, the session is invalidated
-      if (token.session_version !== undefined) {
+      // Validate session_version and fetch avatar
+      if (token.sub) {
         const db = getDb();
         const result = await db.execute({
-          sql: 'SELECT session_version FROM users WHERE id = ?',
+          sql: 'SELECT session_version, avatar_url FROM users WHERE id = ?',
           args: [token.sub as string],
         });
         if (result.rows[0]) {
-          const currentVersion = result.rows[0].session_version as number;
-          if (currentVersion !== token.session_version) {
-            // Session has been invalidated (e.g., "sign out everywhere")
-            // Return empty session to trigger re-auth
-            session.user = {} as typeof session.user;
+          // Check session version
+          if (token.session_version !== undefined) {
+            const currentVersion = result.rows[0].session_version as number;
+            if (currentVersion !== token.session_version) {
+              session.user = {} as typeof session.user;
+              return session;
+            }
+          }
+          // Attach avatar URL to session
+          const avatarUrl = result.rows[0].avatar_url as string | null;
+          if (avatarUrl) {
+            session.user.image = avatarUrl;
           }
         }
       }

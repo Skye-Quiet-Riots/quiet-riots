@@ -67,10 +67,20 @@ export function NavBar() {
             <div ref={avatarRef} className="relative">
               <button
                 onClick={() => setAvatarOpen(!avatarOpen)}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-sm font-medium text-white transition-opacity hover:opacity-80"
+                className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-purple-600 text-sm font-medium text-white transition-opacity hover:opacity-80"
                 aria-label={t('profile')}
               >
-                {userInitial}
+                {session.user.image ? (
+                  <Image
+                    src={session.user.image}
+                    alt={session.user.name ?? ''}
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  userInitial
+                )}
               </button>
               {avatarOpen && (
                 <div className="absolute right-0 mt-2 w-40 rounded-md border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
