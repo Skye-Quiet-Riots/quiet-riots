@@ -51,6 +51,13 @@ import {
   createSuggestion,
 } from '@/lib/queries/assistants';
 import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
+import {
+  translateEntities,
+  translateEntity,
+  translateCampaigns,
+  translateIssuePivotRows,
+  translateOrgPivotRows,
+} from '@/lib/queries/translate';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -81,15 +88,19 @@ const queryParam = z.object({ query: z.string().min(1).max(500) });
 
 const actionSchemas = {
   identify: phoneParam,
-  search_issues: queryParam,
-  get_trending: z.object({ limit: z.number().int().positive().optional() }),
-  get_issue: issueIdParam,
+  search_issues: queryParam.extend({ language_code: langField }),
+  get_trending: z.object({
+    limit: z.number().int().positive().optional(),
+    language_code: langField,
+  }),
+  get_issue: issueIdParam.extend({ language_code: langField }),
   get_actions: issueIdParam.extend({
     type: z.string().max(50).optional(),
     time: z.string().max(50).optional(),
     skills: z.string().max(200).optional(),
+    language_code: langField,
   }),
-  get_community: issueIdParam,
+  get_community: issueIdParam.extend({ language_code: langField }),
   join_issue: phoneAndIssue,
   leave_issue: phoneAndIssue,
   post_feed: phoneAndIssue.extend({
@@ -99,8 +110,8 @@ const actionSchemas = {
       .max(5000)
       .transform((s) => sanitizeText(s)),
   }),
-  get_org_pivot: z.object({ org_id: idField }),
-  get_orgs: z.object({ category: z.string().max(50).optional() }),
+  get_org_pivot: z.object({ org_id: idField, language_code: langField }),
+  get_orgs: z.object({ category: z.string().max(50).optional(), language_code: langField }),
   add_synonym: z.object({
     issue_id: idField,
     term: z
@@ -181,6 +192,7 @@ const actionSchemas = {
   get_campaigns: z.object({
     issue_id: idField.optional(),
     status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
+    language_code: langField,
   }),
   get_category_assistants: z.object({
     category: z.string().min(1, 'Category required').max(50),
@@ -364,43 +376,58 @@ export async function POST(request: NextRequest) {
           user = await createUser({ name, email, phone, language_code: languageCode });
           trackedUserId = user.id;
         }
+        const locale = user.language_code || 'en';
         const issues = await getUserIssues(user.id);
-        return ok({ user, issues, language_code: user.language_code });
+        const translatedIssues = await translateOrgPivotRows(
+          issues as unknown as { issue_id: string; issue_name: string }[],
+          locale,
+        );
+        return ok({ user, issues: translatedIssues, language_code: user.language_code });
       }
 
       // ─── Issue Discovery ─────────────────────────────────
       case 'search_issues': {
-        const issues = await getAllIssues(undefined, p.query as string);
+        const locale = (p.language_code as string) || 'en';
+        let issues = await getAllIssues(undefined, p.query as string);
+        issues = await translateEntities(issues, 'issue', locale);
         return ok({ issues });
       }
 
       case 'get_trending': {
+        const locale = (p.language_code as string) || 'en';
         const limit = (p.limit as number) || 6;
-        const issues = await getTrendingIssues(limit);
+        let issues = await getTrendingIssues(limit);
+        issues = await translateEntities(issues, 'issue', locale);
         return ok({ issues });
       }
 
       case 'get_issue': {
         const issueId = p.issue_id as string;
-        const issue = await getIssueById(issueId);
-        if (!issue) return err('Issue not found', 404);
+        const locale = (p.language_code as string) || 'en';
+        const rawIssue = await getIssueById(issueId);
+        if (!rawIssue) return err('Issue not found', 404);
 
         const [
           health,
           countries,
-          pivotOrgs,
+          rawPivotOrgs,
           actionCount,
           synonyms,
           seasonalPattern,
-          relatedIssues,
+          rawRelatedIssues,
         ] = await Promise.all([
-          getCommunityHealth(issue.id),
-          getCountryBreakdown(issue.id),
-          getOrgsForIssue(issue.id),
-          getActionCountForIssue(issue.id),
-          getSynonymsForIssue(issue.id),
-          getSeasonalPattern(issue.id),
-          getRelatedIssues(issue.id),
+          getCommunityHealth(rawIssue.id),
+          getCountryBreakdown(rawIssue.id),
+          getOrgsForIssue(rawIssue.id),
+          getActionCountForIssue(rawIssue.id),
+          getSynonymsForIssue(rawIssue.id),
+          getSeasonalPattern(rawIssue.id),
+          getRelatedIssues(rawIssue.id),
+        ]);
+        const [issue, pivotOrgs, relatedIssues] = await Promise.all([
+          translateEntity(rawIssue, 'issue', locale),
+          translateIssuePivotRows(rawPivotOrgs, locale),
+          translateOrgPivotRows(rawRelatedIssues, locale),
         ]);
         return ok({
           issue,
@@ -417,6 +444,7 @@ export async function POST(request: NextRequest) {
       // ─── Actions ─────────────────────────────────────────
       case 'get_actions': {
         const issueId = p.issue_id as string;
+        // Note: actions are not translated in DB yet — language_code accepted but unused
         const actions = await getFilteredActions(issueId, {
           type: p.type as string | undefined,
           time: p.time as string | undefined,
@@ -428,6 +456,7 @@ export async function POST(request: NextRequest) {
       // ─── Community ───────────────────────────────────────
       case 'get_community': {
         const issueId = p.issue_id as string;
+        // Note: community data (health, feed, experts, countries) is not translated — language_code accepted for future use
         const [health, feed, experts, countries] = await Promise.all([
           getCommunityHealth(issueId),
           getFeedPosts(issueId, 5),
@@ -473,19 +502,26 @@ export async function POST(request: NextRequest) {
       // ─── Organisation Pivot ──────────────────────────────
       case 'get_org_pivot': {
         const orgId = p.org_id as string;
-        const org = await getOrganisationById(orgId);
-        if (!org) return err('Organisation not found', 404);
+        const locale = (p.language_code as string) || 'en';
+        const rawOrg = await getOrganisationById(orgId);
+        if (!rawOrg) return err('Organisation not found', 404);
 
-        const [issues, totalRioters] = await Promise.all([
-          getIssuesForOrg(org.id),
-          getTotalRiotersForOrg(org.id),
+        const [rawIssues, totalRioters] = await Promise.all([
+          getIssuesForOrg(rawOrg.id),
+          getTotalRiotersForOrg(rawOrg.id),
+        ]);
+        const [org, issues] = await Promise.all([
+          translateEntity(rawOrg, 'organisation', locale),
+          translateOrgPivotRows(rawIssues, locale),
         ]);
         return ok({ org, issues, totalRioters });
       }
 
       case 'get_orgs': {
         const category = p.category as string | undefined;
-        const orgs = await getAllOrganisations(category as never);
+        const locale = (p.language_code as string) || 'en';
+        let orgs = await getAllOrganisations(category as never);
+        orgs = await translateEntities(orgs, 'organisation', locale);
         return ok({ orgs });
       }
 
@@ -623,7 +659,9 @@ export async function POST(request: NextRequest) {
       case 'get_campaigns': {
         const issueId = p.issue_id as string | undefined;
         const status = p.status as import('@/types').CampaignStatus | undefined;
-        const campaigns = await getCampaigns(issueId, status);
+        const locale = (p.language_code as string) || 'en';
+        let campaigns = await getCampaigns(issueId, status);
+        campaigns = await translateCampaigns(campaigns, locale);
         return ok({ campaigns });
       }
 

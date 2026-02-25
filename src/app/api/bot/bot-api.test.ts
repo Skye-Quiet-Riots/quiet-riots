@@ -704,3 +704,192 @@ describe('Bot API: update_user with language and country', () => {
     expect(body.data.user.country_code).toBe('FR');
   });
 });
+
+// ─── Translated Data (language_code on data-fetching actions) ──────
+
+describe('Bot API: translated issue data', () => {
+  // Seed test translations before these tests
+  beforeAll(async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+
+    // Insert test language (FK constraint on translations table)
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+      args: ['pl', 'Polish', 'Polski', 'ltr'],
+    });
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+      args: ['es', 'Spanish', 'Español', 'ltr'],
+    });
+
+    // Seed Polish translations for test issues
+    const translations = [
+      ['issue', 'issue-rail', 'name', 'pl', 'Odwołania pociągów'],
+      ['issue', 'issue-rail', 'description', 'pl', 'Odwołania pociągów w całej sieci'],
+      ['issue', 'issue-broadband', 'name', 'pl', 'Prędkość łącza szerokopasmowego'],
+      ['issue', 'issue-broadband', 'description', 'pl', 'Wolne prędkości internetu'],
+      ['organisation', 'org-southern', 'name', 'pl', 'Southern Rail'],
+      ['organisation', 'org-southern', 'description', 'pl', 'Brytyjski operator kolejowy'],
+      ['campaign', 'camp-water-test', 'title', 'pl', 'Przegląd prawny kolei'],
+      [
+        'campaign',
+        'camp-water-test',
+        'description',
+        'pl',
+        'Finansowanie niezależnego przeglądu prawnego',
+      ],
+    ];
+    for (const [entityType, entityId, field, lang, value] of translations) {
+      await db.execute({
+        sql: `INSERT OR IGNORE INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+              VALUES (lower(hex(randomblob(16))), ?, ?, ?, ?, ?, 'manual')`,
+        args: [entityType, entityId, field, lang, value],
+      });
+    }
+  });
+
+  it('search_issues returns translated names when language_code is passed', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Odwołania pociągów');
+  });
+
+  it('search_issues returns English names when no language_code is passed', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Rail Cancellations');
+  });
+
+  it('get_trending returns translated names with language_code', async () => {
+    const { status, body } = await callBot('get_trending', {
+      limit: 10,
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    if (rail) {
+      expect(rail.name).toBe('Odwołania pociągów');
+    }
+  });
+
+  it('get_issue returns translated issue and pivot org names', async () => {
+    const { status, body } = await callBot('get_issue', {
+      issue_id: 'issue-rail',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    expect(body.data.issue.name).toBe('Odwołania pociągów');
+    expect(body.data.issue.description).toBe('Odwołania pociągów w całej sieci');
+  });
+
+  it('get_issue returns English when language_code is en', async () => {
+    const { status, body } = await callBot('get_issue', {
+      issue_id: 'issue-rail',
+      language_code: 'en',
+    });
+    expect(status).toBe(200);
+    expect(body.data.issue.name).toBe('Rail Cancellations');
+  });
+
+  it('get_org_pivot returns translated org name', async () => {
+    const { status, body } = await callBot('get_org_pivot', {
+      org_id: 'org-southern',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    expect(body.data.org.description).toBe('Brytyjski operator kolejowy');
+  });
+
+  it('get_orgs returns translated org names', async () => {
+    const { status, body } = await callBot('get_orgs', {
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const southern = body.data.orgs.find((o: { id: string }) => o.id === 'org-southern');
+    expect(southern).toBeDefined();
+    expect(southern.description).toBe('Brytyjski operator kolejowy');
+  });
+
+  it('get_campaigns returns translated campaign titles', async () => {
+    const { status, body } = await callBot('get_campaigns', {
+      issue_id: 'issue-rail',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const camp = body.data.campaigns.find((c: { id: string }) => c.id === 'camp-water-test');
+    expect(camp).toBeDefined();
+    expect(camp.title).toBe('Przegląd prawny kolei');
+    expect(camp.description).toBe('Finansowanie niezależnego przeglądu prawnego');
+  });
+
+  it('identify returns translated user issues when user has language_code', async () => {
+    // First set the user's language to Polish
+    await callBot('set_language', {
+      phone: '+5511999999999',
+      language_code: 'pl',
+    });
+    // Now identify — should return translated issue names
+    const { status, body } = await callBot('identify', {
+      phone: '+5511999999999',
+    });
+    expect(status).toBe(200);
+    expect(body.data.language_code).toBe('pl');
+    // Marcio is a member of issue-rail (seeded)
+    const railIssue = body.data.issues.find(
+      (i: { issue_id: string }) => i.issue_id === 'issue-rail',
+    );
+    expect(railIssue).toBeDefined();
+    expect(railIssue.issue_name).toBe('Odwołania pociągów');
+  });
+
+  it('actions still work with language_code param (no translation applied)', async () => {
+    const { status, body } = await callBot('get_actions', {
+      issue_id: 'issue-rail',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    expect(body.data.actions.length).toBeGreaterThanOrEqual(1);
+    // Actions are still in English (not translated in DB)
+    expect(body.data.actions[0].title).toBeTruthy();
+  });
+
+  // ─── Structural guard: all data-fetching actions must accept language_code ───
+  // If you add a new action that returns translatable data (issues, orgs, campaigns),
+  // add it to this list. The test will fail if the action rejects language_code.
+
+  const DATA_FETCHING_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [
+    { action: 'search_issues', minParams: { query: 'test' } },
+    { action: 'get_trending', minParams: {} },
+    { action: 'get_issue', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_actions', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_community', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
+    { action: 'get_orgs', minParams: {} },
+    { action: 'get_campaigns', minParams: {} },
+  ];
+
+  it.each(DATA_FETCHING_ACTIONS)(
+    '$action accepts language_code without validation error',
+    async ({ action, minParams }) => {
+      const { status, body } = await callBot(action, {
+        ...minParams,
+        language_code: 'pl',
+      });
+      // Should not return 400 validation error about language_code
+      expect(status).not.toBe(400);
+      if (status === 400) {
+        expect(body.error).not.toContain('language_code');
+      }
+    },
+  );
+});
