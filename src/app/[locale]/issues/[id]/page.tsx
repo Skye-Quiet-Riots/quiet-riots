@@ -23,6 +23,9 @@ import {
   translateSynonyms,
 } from '@/lib/queries/translate';
 import { getSession } from '@/lib/session';
+import { getSuggestionByIssueId } from '@/lib/queries/suggestions';
+import { getUserById } from '@/lib/queries/users';
+import { hasRole } from '@/lib/queries/roles';
 import { toAssistantCategory } from '@/types';
 
 import { PageHeader } from '@/components/layout/page-header';
@@ -41,6 +44,7 @@ import { ReelsSection } from '@/components/interactive/reels-section';
 import { CampaignProgress } from '@/components/data/campaign-progress';
 import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
+import { FirstRioterBadge } from '@/components/data/first-rioter-badge';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
 interface Props {
@@ -55,10 +59,40 @@ export default async function IssueDetailPage({ params }: Props) {
 
   const rawIssue = await getIssueById(id);
   if (!rawIssue) notFound();
-  const issue = await translateEntity(rawIssue, 'issue', locale);
 
   const userId = await getSession();
+
+  // Pending issues: only visible to creator + Setup Guides
+  if (rawIssue.status === 'pending_review') {
+    const isCreator = userId === rawIssue.first_rioter_id;
+    const isGuide = userId ? await hasRole(userId, 'setup_guide') : false;
+    const isAdmin = userId ? await hasRole(userId, 'administrator') : false;
+    if (!isCreator && !isGuide && !isAdmin) notFound();
+  }
+  if (rawIssue.status === 'rejected') notFound();
+
+  const issue = await translateEntity(rawIssue, 'issue', locale);
   const joined = userId ? await hasJoinedIssue(userId, issue.id) : false;
+
+  // First Rioter data
+  let firstRioterUser: { id: string; name: string | null; image: string | null } | null = null;
+  let isPublicRecognition = true;
+  if (issue.first_rioter_id && issue.status === 'active') {
+    const [user, suggestion] = await Promise.all([
+      getUserById(issue.first_rioter_id),
+      getSuggestionByIssueId(issue.id),
+    ]);
+    if (user) {
+      firstRioterUser = {
+        id: user.id,
+        name: user.display_name || user.name,
+        image: user.avatar_url,
+      };
+    }
+    if (suggestion) {
+      isPublicRecognition = suggestion.public_recognition === 1;
+    }
+  }
 
   // Load all data in parallel
   const rawIssuePivotRows = await getOrgsForIssue(issue.id);
@@ -97,6 +131,29 @@ export default async function IssueDetailPage({ params }: Props) {
         <CategoryBadge category={issue.category} label={tc(issue.category)} size="md" />
         <TrendingIndicator delta={issue.trending_delta} size="md" />
       </div>
+
+      {/* Pending review banner */}
+      {issue.status === 'pending_review' && (
+        <div className="mb-4 rounded-lg border border-yellow-200 bg-yellow-50 px-4 py-3 dark:border-yellow-800 dark:bg-yellow-950">
+          <p className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
+            {t('pendingBanner')}
+          </p>
+        </div>
+      )}
+
+      {/* First Rioter badge */}
+      {firstRioterUser && issue.status === 'active' && (
+        <div className="mb-4">
+          <FirstRioterBadge
+            userId={firstRioterUser.id}
+            userName={firstRioterUser.name}
+            userImage={firstRioterUser.image}
+            isPublic={isPublicRecognition}
+            approvedAt={issue.approved_at}
+            locale={locale}
+          />
+        </div>
+      )}
 
       {/* Assistants */}
       {assistant && (

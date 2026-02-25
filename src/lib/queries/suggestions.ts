@@ -61,6 +61,15 @@ export async function getSuggestionById(id: string): Promise<IssueSuggestion | n
   return (result.rows[0] as unknown as IssueSuggestion) ?? null;
 }
 
+export async function getSuggestionByIssueId(issueId: string): Promise<IssueSuggestion | null> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT * FROM issue_suggestions WHERE issue_id = ? ORDER BY created_at DESC LIMIT 1',
+    args: [issueId],
+  });
+  return (result.rows[0] as unknown as IssueSuggestion) ?? null;
+}
+
 export async function getSuggestionsByUser(userId: string): Promise<IssueSuggestion[]> {
   const db = getDb();
   const result = await db.execute({
