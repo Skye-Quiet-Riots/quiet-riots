@@ -862,4 +862,34 @@ describe('Bot API: translated issue data', () => {
     // Actions are still in English (not translated in DB)
     expect(body.data.actions[0].title).toBeTruthy();
   });
+
+  // ─── Structural guard: all data-fetching actions must accept language_code ───
+  // If you add a new action that returns translatable data (issues, orgs, campaigns),
+  // add it to this list. The test will fail if the action rejects language_code.
+
+  const DATA_FETCHING_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [
+    { action: 'search_issues', minParams: { query: 'test' } },
+    { action: 'get_trending', minParams: {} },
+    { action: 'get_issue', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_actions', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_community', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
+    { action: 'get_orgs', minParams: {} },
+    { action: 'get_campaigns', minParams: {} },
+  ];
+
+  it.each(DATA_FETCHING_ACTIONS)(
+    '$action accepts language_code without validation error',
+    async ({ action, minParams }) => {
+      const { status, body } = await callBot(action, {
+        ...minParams,
+        language_code: 'pl',
+      });
+      // Should not return 400 validation error about language_code
+      expect(status).not.toBe(400);
+      if (status === 400) {
+        expect(body.error).not.toContain('language_code');
+      }
+    },
+  );
 });
