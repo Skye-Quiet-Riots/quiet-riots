@@ -5,7 +5,9 @@ import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import type { CampaignStatus } from '@/types';
 
-const BOT_API_KEY = process.env.BOT_API_KEY || 'qr-bot-dev-key-2026';
+const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
+const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
+const IS_DEV_KEY = !process.env.BOT_API_KEY || process.env.BOT_API_KEY === DEV_FALLBACK_KEY;
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
@@ -31,9 +33,9 @@ const createCampaignSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
-  // Only bot can create campaigns
+  // Only bot can create campaigns — reject dev key in production
   const auth = request.headers.get('authorization');
-  if (auth !== `Bearer ${BOT_API_KEY}`) {
+  if (auth !== `Bearer ${BOT_API_KEY}` || (IS_DEV_KEY && process.env.NODE_ENV === 'production')) {
     return apiError('Unauthorized', 401);
   }
 
