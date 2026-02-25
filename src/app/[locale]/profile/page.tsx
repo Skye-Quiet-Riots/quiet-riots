@@ -11,6 +11,7 @@ import { TrendingIndicator } from '@/components/data/trending-indicator';
 import { ProfileEditForm } from '@/components/interactive/profile-edit-form';
 import { ProfileCreateForm } from '@/components/interactive/profile-create-form';
 import { AvatarUpload } from '@/components/interactive/avatar-upload';
+import { ConnectedAccounts } from '@/components/interactive/connected-accounts';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -107,24 +108,7 @@ export default async function ProfilePage({ params }: Props) {
       </div>
 
       {/* Connected accounts */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-lg font-bold">{t('connectedAccounts')}</h2>
-        {connectedAccounts.length > 0 ? (
-          <div className="flex flex-wrap gap-3">
-            {connectedAccounts.map((account) => (
-              <div
-                key={`${account.provider}-${account.type}`}
-                className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
-              >
-                <span className="font-medium capitalize">{account.provider}</span>
-                <span className="text-xs text-green-600 dark:text-green-400">Connected</span>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('noConnectedAccounts')}</p>
-        )}
-      </section>
+      <ConnectedAccounts accounts={connectedAccounts} />
 
       {/* Joined issues */}
       <section>
