@@ -64,6 +64,7 @@ export async function updateUser(
     language_code?: string;
     country_code?: string;
     onboarding_completed?: number;
+    avatar_url?: string;
   },
 ): Promise<User | null> {
   const db = getDb();
@@ -97,6 +98,10 @@ export async function updateUser(
   if (data.onboarding_completed !== undefined) {
     sets.push('onboarding_completed = ?');
     args.push(data.onboarding_completed);
+  }
+  if (data.avatar_url !== undefined) {
+    sets.push('avatar_url = ?');
+    args.push(data.avatar_url);
   }
 
   if (sets.length === 0) return getUserById(id);
