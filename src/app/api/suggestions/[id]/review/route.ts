@@ -1,0 +1,121 @@
+import { NextRequest } from 'next/server';
+import { z } from 'zod';
+import {
+  getSuggestionById,
+  approveSuggestion,
+  rejectSuggestion,
+  mergeSuggestion,
+  requestMoreInfo,
+} from '@/lib/queries/suggestions';
+import { sendNotification } from '@/lib/queries/messages';
+import { hasRole } from '@/lib/queries/roles';
+import { joinIssue } from '@/lib/queries/users';
+import { getSession } from '@/lib/session';
+import { rateLimit } from '@/lib/rate-limit';
+import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
+import type { Category, RejectionReason } from '@/types';
+
+const reviewSchema = z.object({
+  decision: z.enum(['approve', 'reject', 'merge', 'more_info']),
+  category: z.string().optional(),
+  rejection_reason: z
+    .enum(['close_to_existing', 'about_people', 'illegal_subject', 'other'])
+    .optional(),
+  rejection_detail: z.string().max(1000).optional(),
+  close_match_ids: z.array(z.string()).optional(),
+  merge_into_issue_id: z.string().optional(),
+  merge_into_org_id: z.string().optional(),
+  reviewer_notes: z.string().max(2000).optional(),
+});
+
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const userId = await getSession();
+  if (!userId) return apiError('Not logged in', 401);
+
+  const isGuide = await hasRole(userId, 'setup_guide');
+  const isAdmin = await hasRole(userId, 'administrator');
+  if (!isGuide && !isAdmin) return apiError('Setup Guide role required', 403);
+
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  const { allowed } = rateLimit(`review:${ip}`);
+  if (!allowed) return apiError('Too many requests', 429);
+
+  const { id } = await params;
+  const suggestion = await getSuggestionById(id);
+  if (!suggestion) return apiError('Suggestion not found', 404);
+
+  const body = await request.json();
+  const parsed = reviewSchema.safeParse(body);
+  if (!parsed.success) return apiValidationError(parsed.error.issues);
+
+  const { decision } = parsed.data;
+
+  switch (decision) {
+    case 'approve': {
+      const cat = (parsed.data.category as Category) || (suggestion.category as Category);
+      const result = await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
+      sendNotification({
+        recipientId: suggestion.suggested_by,
+        type: 'suggestion_approved',
+        subject: `Thumbs Up 👍: ${suggestion.suggested_name}`,
+        body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! Translations are being prepared.`,
+        entityType: 'issue_suggestion',
+        entityId: id,
+      }).catch(() => {});
+      return apiOk({ suggestion: result, decision: 'approved' });
+    }
+    case 'reject': {
+      const reason = parsed.data.rejection_reason as RejectionReason;
+      if (!reason) return apiError('rejection_reason required for reject decision');
+      const result = await rejectSuggestion(
+        id,
+        userId,
+        reason,
+        parsed.data.rejection_detail,
+        parsed.data.close_match_ids,
+      );
+      sendNotification({
+        recipientId: suggestion.suggested_by,
+        type: 'suggestion_rejected',
+        subject: `Update on ${suggestion.suggested_name}`,
+        body: `Your suggestion "${suggestion.suggested_name}" wasn't approved. Reason: ${reason}.`,
+        entityType: 'issue_suggestion',
+        entityId: id,
+      }).catch(() => {});
+      return apiOk({ suggestion: result, decision: 'rejected' });
+    }
+    case 'merge': {
+      const mergeIssueId = parsed.data.merge_into_issue_id;
+      const mergeOrgId = parsed.data.merge_into_org_id;
+      if (!mergeIssueId && !mergeOrgId)
+        return apiError('merge_into_issue_id or merge_into_org_id required');
+      const result = await mergeSuggestion(id, userId, mergeIssueId, mergeOrgId);
+      if (mergeIssueId) {
+        await joinIssue(suggestion.suggested_by, mergeIssueId);
+      }
+      sendNotification({
+        recipientId: suggestion.suggested_by,
+        type: 'suggestion_merged',
+        subject: `Your suggestion: ${suggestion.suggested_name}`,
+        body: `Your suggestion is similar to an existing Quiet Riot. We've added you to that one.`,
+        entityType: 'issue_suggestion',
+        entityId: id,
+      }).catch(() => {});
+      return apiOk({ suggestion: result, decision: 'merged' });
+    }
+    case 'more_info': {
+      const notes = parsed.data.reviewer_notes;
+      if (!notes) return apiError('reviewer_notes required when requesting more info');
+      const result = await requestMoreInfo(id, userId, notes);
+      sendNotification({
+        recipientId: suggestion.suggested_by,
+        type: 'suggestion_more_info',
+        subject: `Question about ${suggestion.suggested_name}`,
+        body: `The Setup Guide has a question: ${notes}`,
+        entityType: 'issue_suggestion',
+        entityId: id,
+      }).catch(() => {});
+      return apiOk({ suggestion: result, decision: 'more_info' });
+    }
+  }
+}
