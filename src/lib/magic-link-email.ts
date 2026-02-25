@@ -14,6 +14,32 @@ type EmailStrings = {
   emailIgnore: string;
 };
 
+/** RTL locales — Arabic, Hebrew, Farsi */
+const RTL_LOCALES = new Set(['ar', 'he', 'fa']);
+
+/** Escape HTML entities to prevent XSS via translation injection */
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Validate URL scheme — only allow https: (and http: for local dev) */
+function validateUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+      return url;
+    }
+  } catch {
+    // invalid URL
+  }
+  throw new Error(`Invalid verification URL scheme: ${url}`);
+}
+
 /**
  * Extract locale from the callbackUrl embedded in the verification URL.
  * Auth.js constructs: /api/auth/callback/resend?callbackUrl=/fr/onboard&token=...&email=...
@@ -71,9 +97,13 @@ async function loadEmailStrings(locale: string): Promise<EmailStrings> {
 }
 
 /** Render the branded HTML email */
-function renderEmail(url: string, strings: EmailStrings): string {
+function renderEmail(url: string, strings: EmailStrings, locale: string = 'en'): string {
+  const safeUrl = validateUrl(url);
+  const dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';
+  const align = RTL_LOCALES.has(locale) ? 'right' : 'center';
+
   return `<!DOCTYPE html>
-<html>
+<html dir="${dir}" lang="${escapeHtml(locale)}">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="margin:0;padding:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 20px;">
@@ -82,17 +112,17 @@ function renderEmail(url: string, strings: EmailStrings): string {
         <tr><td style="padding:32px 32px 0;text-align:center;">
           <img src="https://www.quietriots.com/logo-192.png" alt="Quiet Riots" width="48" height="48" style="border-radius:50%;">
         </td></tr>
-        <tr><td style="padding:24px 32px 0;text-align:center;">
-          <h1 style="margin:0;font-size:20px;font-weight:700;color:#18181b;">${strings.emailHeading}</h1>
+        <tr><td style="padding:24px 32px 0;text-align:${align};">
+          <h1 style="margin:0;font-size:20px;font-weight:700;color:#18181b;">${escapeHtml(strings.emailHeading)}</h1>
         </td></tr>
-        <tr><td style="padding:12px 32px 0;text-align:center;">
-          <p style="margin:0;font-size:14px;line-height:22px;color:#71717a;">${strings.emailBody}</p>
+        <tr><td style="padding:12px 32px 0;text-align:${align};">
+          <p style="margin:0;font-size:14px;line-height:22px;color:#71717a;">${escapeHtml(strings.emailBody)}</p>
         </td></tr>
         <tr><td style="padding:24px 32px;text-align:center;">
-          <a href="${url}" target="_blank" style="display:inline-block;padding:12px 32px;background:#18181b;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">${strings.emailButton}</a>
+          <a href="${safeUrl}" target="_blank" style="display:inline-block;padding:12px 32px;background:#18181b;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">${escapeHtml(strings.emailButton)}</a>
         </td></tr>
-        <tr><td style="padding:0 32px 32px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:#a1a1aa;">${strings.emailIgnore}</p>
+        <tr><td style="padding:0 32px 32px;text-align:${align};">
+          <p style="margin:0;font-size:12px;color:#a1a1aa;">${escapeHtml(strings.emailIgnore)}</p>
         </td></tr>
       </table>
     </td></tr>
@@ -122,7 +152,7 @@ export const sendVerificationRequest: EmailConfig['sendVerificationRequest'] = a
       from: provider.from,
       to,
       subject: strings.emailSubject,
-      html: renderEmail(url, strings),
+      html: renderEmail(url, strings, locale),
       text: renderText(url, strings),
     }),
   });
@@ -134,4 +164,4 @@ export const sendVerificationRequest: EmailConfig['sendVerificationRequest'] = a
 };
 
 // Exported for testing
-export { extractLocale, loadEmailStrings, renderEmail, renderText };
+export { extractLocale, loadEmailStrings, renderEmail, renderText, escapeHtml, validateUrl };
