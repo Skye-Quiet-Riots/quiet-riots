@@ -234,7 +234,7 @@ export async function goLiveSuggestion(id: string): Promise<IssueSuggestion | nu
   await db.execute({
     sql: `UPDATE issue_suggestions
           SET status = 'live', live_at = datetime('now'), updated_at = datetime('now')
-          WHERE id = ? AND status = 'translations_ready'`,
+          WHERE id = ? AND status IN ('approved', 'translations_ready')`,
     args: [id],
   });
 
