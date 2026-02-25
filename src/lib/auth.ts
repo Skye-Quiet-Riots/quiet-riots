@@ -11,6 +11,7 @@ import Facebook from 'next-auth/providers/facebook';
 import Resend from 'next-auth/providers/resend';
 import { TursoAdapter } from './auth-adapter';
 import { getDb } from './db';
+import { sendVerificationRequest } from './magic-link-email';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: TursoAdapter(),
@@ -29,7 +30,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
     Resend({
       apiKey: process.env.RESEND_API_KEY,
-      from: process.env.EMAIL_FROM || 'noreply@quietriots.com',
+      from: process.env.EMAIL_FROM || 'Quiet Riots <noreply@quietriots.com>',
+      sendVerificationRequest,
     }),
   ],
 

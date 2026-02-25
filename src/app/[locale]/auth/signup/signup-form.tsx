@@ -2,7 +2,7 @@
 
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 export function SignUpForm() {
@@ -10,10 +10,13 @@ export function SignUpForm() {
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const [emailSent, setEmailSent] = useState(false);
   const t = useTranslations('Auth');
+  const locale = useLocale();
+
+  const callbackUrl = `/${locale}/onboard`;
 
   async function handleOAuth(provider: string) {
     setIsLoading(provider);
-    await signIn(provider, { callbackUrl: '/onboard' });
+    await signIn(provider, { callbackUrl });
   }
 
   async function handleEmail(e: React.FormEvent) {
@@ -23,7 +26,7 @@ export function SignUpForm() {
     await signIn('resend', {
       email: email.trim().toLowerCase(),
       redirect: false,
-      callbackUrl: '/onboard',
+      callbackUrl,
     });
     setEmailSent(true);
     setIsLoading(null);
