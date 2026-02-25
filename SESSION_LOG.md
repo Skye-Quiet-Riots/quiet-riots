@@ -6,18 +6,19 @@
 
 ## Latest Session
 
-**Session 35** (2026-02-25) — Persistent Per-User Memory for WhatsApp Bot
-→ [`session-logs/2026-02-session-35.md`](session-logs/2026-02-session-35.md)
+**Session 36** (2026-02-25) — Fix WhatsApp Search + Non-English Search Fallback
+→ [`session-logs/2026-02-session-36.md`](session-logs/2026-02-session-36.md)
 
 ## Current Priorities
 
-- **Test memory in production** — Send a WhatsApp message and verify bot reads/saves memories across sessions
+- **Test non-English search on WhatsApp** — Send a message in Polish/Spanish and verify translated name search works
 - **Auth provider setup** — Resend, Google OAuth, Facebook OAuth need user-side configuration
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 36  | 2026-02-25    | Fix WhatsApp search + non-English search fallback     | [`session-36`](session-logs/2026-02-session-36.md)                                                             |
 | 35  | 2026-02-25    | Persistent per-user memory for WhatsApp bot           | [`session-35`](session-logs/2026-02-session-35.md)                                                             |
 | 34  | 2026-02-25    | Fix WhatsApp bot returning issues in English          | [`session-34`](session-logs/2026-02-session-34.md)                                                             |
 | 33  | 2026-02-25    | Wire up DB content translations + DB safety guard     | [`session-33`](session-logs/2026-02-session-33.md)                                                             |
