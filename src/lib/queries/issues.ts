@@ -1,6 +1,6 @@
 import { getDb } from '../db';
 import { generateId } from '@/lib/uuid';
-import type { Issue, Category } from '@/types';
+import type { Issue, IssueStatus, Category } from '@/types';
 
 /** Escape SQL LIKE metacharacters so they match literally. */
 export function escapeLike(s: string): string {
@@ -118,10 +118,16 @@ export async function getAllIssues(
   search?: string,
   countryCode?: string,
   languageCode?: string,
+  options?: { includeAllStatuses?: boolean },
 ): Promise<Issue[]> {
   const db = getDb();
   let query = 'SELECT * FROM issues WHERE 1=1';
   const args: (string | number)[] = [];
+
+  // By default, only show active issues (pending/rejected hidden from public)
+  if (!options?.includeAllStatuses) {
+    query += " AND status = 'active'";
+  }
   const hasTranslations = !!languageCode && languageCode !== 'en';
   const likeClause = buildTranslatedLikeClause(hasTranslations);
 
@@ -189,7 +195,7 @@ export async function getIssueById(id: string): Promise<Issue | null> {
 export async function getIssuesByCategory(category: Category): Promise<Issue[]> {
   const db = getDb();
   const result = await db.execute({
-    sql: 'SELECT * FROM issues WHERE category = ? ORDER BY rioter_count DESC',
+    sql: "SELECT * FROM issues WHERE category = ? AND status = 'active' ORDER BY rioter_count DESC",
     args: [category],
   });
   return result.rows as unknown as Issue[];
@@ -198,7 +204,7 @@ export async function getIssuesByCategory(category: Category): Promise<Issue[]> 
 export async function getTrendingIssues(limit: number = 6): Promise<Issue[]> {
   const db = getDb();
   const result = await db.execute({
-    sql: 'SELECT * FROM issues ORDER BY trending_delta DESC LIMIT ?',
+    sql: "SELECT * FROM issues WHERE status = 'active' ORDER BY trending_delta DESC LIMIT ?",
     args: [limit],
   });
   return result.rows as unknown as Issue[];
@@ -210,11 +216,13 @@ export async function createIssue(data: {
   description?: string;
   country_scope?: 'global' | 'country';
   primary_country?: string;
+  status?: IssueStatus;
+  first_rioter_id?: string;
 }): Promise<Issue> {
   const db = getDb();
   const id = generateId();
   await db.execute({
-    sql: 'INSERT INTO issues (id, name, category, description, country_scope, primary_country) VALUES (?, ?, ?, ?, ?, ?)',
+    sql: 'INSERT INTO issues (id, name, category, description, country_scope, primary_country, status, first_rioter_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
     args: [
       id,
       data.name,
@@ -222,6 +230,8 @@ export async function createIssue(data: {
       data.description || '',
       data.country_scope || 'global',
       data.primary_country || null,
+      data.status || 'active',
+      data.first_rioter_id || null,
     ],
   });
   const issue = await db.execute({ sql: 'SELECT * FROM issues WHERE id = ?', args: [id] });
@@ -234,7 +244,7 @@ export async function getIssuesForCountry(
 ): Promise<Issue[]> {
   const db = getDb();
   let query =
-    "SELECT * FROM issues WHERE (country_scope = 'global' OR (country_scope = 'country' AND primary_country = ?))";
+    "SELECT * FROM issues WHERE status = 'active' AND (country_scope = 'global' OR (country_scope = 'country' AND primary_country = ?))";
   const args: (string | number)[] = [countryCode.toUpperCase()];
 
   if (category) {
@@ -250,7 +260,7 @@ export async function getIssuesForCountry(
 export async function getIssueCountsByCategory(): Promise<Record<string, number>> {
   const db = getDb();
   const result = await db.execute(
-    'SELECT category, COUNT(*) as count FROM issues GROUP BY category',
+    "SELECT category, COUNT(*) as count FROM issues WHERE status = 'active' GROUP BY category",
   );
   const counts: Record<string, number> = {};
   for (const row of result.rows) {

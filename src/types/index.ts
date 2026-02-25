@@ -16,6 +16,8 @@ export type Category =
   | 'Tech'
   | 'Other';
 
+export type IssueStatus = 'pending_review' | 'active' | 'rejected';
+
 export interface Issue {
   id: string;
   name: string;
@@ -31,7 +33,12 @@ export interface Issue {
   human_focus: string | null;
   country_scope: 'global' | 'country';
   primary_country: string | null;
+  status: IssueStatus;
+  first_rioter_id: string | null;
+  approved_at: string | null;
 }
+
+export type OrganisationStatus = 'pending_review' | 'active' | 'rejected';
 
 export interface Organisation {
   id: string;
@@ -44,6 +51,9 @@ export interface Organisation {
   regulator: string | null;
   ombudsman: string | null;
   website: string | null;
+  status: OrganisationStatus;
+  first_rioter_id: string | null;
+  approved_at: string | null;
 }
 
 export interface IssueOrganisation {
@@ -653,5 +663,84 @@ export interface BotEvent {
   status: 'ok' | 'error';
   error_message: string | null;
   metadata: string | null;
+  created_at: string;
+}
+
+// User Roles (suggestion moderation)
+export type RoleType = 'setup_guide' | 'administrator';
+
+export interface UserRole {
+  id: string;
+  user_id: string;
+  role: RoleType;
+  assigned_by: string | null;
+  created_at: string;
+}
+
+// Issue Suggestions (waiting room for new Quiet Riots)
+export type SuggestionStatus =
+  | 'pending_review'
+  | 'more_info_requested'
+  | 'approved'
+  | 'translations_ready'
+  | 'live'
+  | 'rejected'
+  | 'merged';
+
+export type SuggestedType = 'issue' | 'organisation';
+
+export type RejectionReason = 'close_to_existing' | 'about_people' | 'illegal_subject' | 'other';
+
+export interface IssueSuggestion {
+  id: string;
+  suggested_by: string;
+  original_text: string;
+  suggested_name: string;
+  suggested_type: SuggestedType;
+  category: Category;
+  description: string;
+  status: SuggestionStatus;
+  issue_id: string | null;
+  organisation_id: string | null;
+  merged_into_issue_id: string | null;
+  merged_into_org_id: string | null;
+  reviewer_id: string | null;
+  rejection_reason: RejectionReason | null;
+  rejection_detail: string | null;
+  close_match_ids: string | null;
+  public_recognition: number;
+  first_rioter_notified: number;
+  reviewer_notes: string | null;
+  reviewed_at: string | null;
+  approved_at: string | null;
+  live_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// Messages / Inbox
+export type MessageType =
+  | 'suggestion_received'
+  | 'suggestion_approved'
+  | 'suggestion_rejected'
+  | 'suggestion_merged'
+  | 'suggestion_more_info'
+  | 'suggestion_live'
+  | 'suggestion_progress'
+  | 'role_assigned'
+  | 'general';
+
+export type MessageEntityType = 'issue_suggestion' | 'issue' | 'organisation' | 'user';
+
+export interface Message {
+  id: string;
+  recipient_id: string;
+  sender_name: string | null;
+  type: MessageType;
+  subject: string;
+  body: string;
+  entity_type: MessageEntityType | null;
+  entity_id: string | null;
+  read: number;
   created_at: string;
 }

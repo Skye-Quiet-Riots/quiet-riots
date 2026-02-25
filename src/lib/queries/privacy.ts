@@ -226,6 +226,9 @@ export async function hardDeleteUser(userId: string): Promise<void> {
 
   // Batch delete from all related tables
   const statements: { sql: string; args: (string | null)[] }[] = [
+    { sql: 'DELETE FROM messages WHERE recipient_id = ?', args: [userId] },
+    { sql: 'DELETE FROM issue_suggestions WHERE suggested_by = ?', args: [userId] },
+    { sql: 'DELETE FROM user_roles WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM user_memory WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM user_consents WHERE user_id = ?', args: [userId] },
     { sql: 'DELETE FROM notification_preferences WHERE user_id = ?', args: [userId] },
@@ -262,6 +265,22 @@ export async function hardDeleteUser(userId: string): Promise<void> {
   // Nullify user_id in bot_events rather than deleting the analytics
   statements.push({
     sql: 'UPDATE bot_events SET user_id = NULL WHERE user_id = ?',
+    args: [userId],
+  });
+
+  // Nullify first_rioter_id on issues/orgs (the entities persist independently)
+  statements.push({
+    sql: 'UPDATE issues SET first_rioter_id = NULL WHERE first_rioter_id = ?',
+    args: [userId],
+  });
+  statements.push({
+    sql: 'UPDATE organisations SET first_rioter_id = NULL WHERE first_rioter_id = ?',
+    args: [userId],
+  });
+
+  // Nullify assigned_by in user_roles (the role assignments for other users persist)
+  statements.push({
+    sql: 'UPDATE user_roles SET assigned_by = NULL WHERE assigned_by = ?',
     args: [userId],
   });
 
