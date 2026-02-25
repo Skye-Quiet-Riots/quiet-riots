@@ -1,0 +1,421 @@
+{
+  "locale": "he",
+  "categories": {
+    "Transport": "תחבורה",
+    "Telecoms": "טלקום",
+    "Banking": "בנקאות",
+    "Health": "בריאות",
+    "Education": "חינוך",
+    "Environment": "סביבה",
+    "Energy": "אנרגיה",
+    "Water": "מים",
+    "Insurance": "ביטוח",
+    "Housing": "דיור",
+    "Shopping": "קניות",
+    "Delivery": "משלוחים",
+    "Local": "מקומי",
+    "Employment": "תעסוקה",
+    "Tech": "טכנולוגיה",
+    "Other": "אחר"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "ביטולי רכבות",
+      "description": "רכבות מבוטלות או מתעכבות קשות עם הודעה או פיצוי לא מספקים"
+    },
+    "Train Ticket Prices": {
+      "name": "מחירי כרטיסי רכבת",
+      "description": "מחירי הרכבת יקרים מדי, העלאות מעל האינפלציה, תמחור לא עקבי"
+    },
+    "Flight Delays": {
+      "name": "עיכובי טיסות",
+      "description": "טיסות מתעכבות או מבוטלות, תקשורת לקויה, קושי בתביעת פיצוי"
+    },
+    "Lost Luggage": {
+      "name": "מזוודות אבודות",
+      "description": "מזוודות לא מגיעות ליעד, מעקב איטי, פיצוי לא מספק"
+    },
+    "Bus Route Cuts": {
+      "name": "ביטול קווי אוטובוס",
+      "description": "קווים מבוטלים, תדירות מופחתת, קהילות כפריות מאבדות גישה לאוטובוסים"
+    },
+    "Pothole Damage": {
+      "name": "נזק מבורות בכביש",
+      "description": "בורות פוגעות ברכבים ומסכנות רוכבי אופניים, רשויות מקומיות איטיות בתיקון"
+    },
+    "Parking Fines": {
+      "name": "קנסות חניה",
+      "description": "חיובי חניה פרטיים לא הוגנים, אכיפה תוקפנית, שילוט מבלבל"
+    },
+    "Fuel Prices": {
+      "name": "מחירי דלק",
+      "description": "מחירי בנזין ודיזל גבוהים מדי, ירידה איטית כשמחירי הסיטונאות יורדים"
+    },
+    "Broadband Speed": {
+      "name": "מהירות אינטרנט",
+      "description": "מהירויות אינטרנט נמוכות בהרבה ממה שמפורסם ומשולם"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "אזורי מת של קליטה סלולרית",
+      "description": "אין קליטה סלולרית בבתים, במקומות עבודה או לאורך מסלולי תחבורה"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "העלאות מחיר באמצע חוזה",
+      "description": "חשבונות טלפון, אינטרנט וטלוויזיה עולים במהלך חוזים מחייבים"
+    },
+    "Customer Service Hold Times": {
+      "name": "זמני המתנה בשירות לקוחות",
+      "description": "שעות על המתנה כדי לדבר עם נציג אנושי"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "קושי בביטול מנויים",
+      "description": "חברות מכוונות מקשות על ביטול או הסרת מנוי"
+    },
+    "Roaming Charges": {
+      "name": "חיובי נדידה",
+      "description": "חיובים סלולריים בלתי צפויים בנסיעות לחו\"ל, העלאות מחירים לאחר הברקזיט"
+    },
+    "Energy Bill Costs": {
+      "name": "עלויות חשבונות אנרגיה",
+      "description": "חשבונות גז וחשמל בלתי ניתנים לתשלום, תקרת המחירים עדיין גבוהה מדי"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "חשבונות אנרגיה לא מדויקים",
+      "description": "קריאות מוערכות שגויות, חיוב יתר, שגיאות בחיוב"
+    },
+    "Water Bill Increases": {
+      "name": "עליית חשבונות מים",
+      "description": "חשבונות מים עולים בחדות בעוד איכות השירות יורדת"
+    },
+    "Sewage in Rivers": {
+      "name": "ביוב בנהרות",
+      "description": "חברות מים משחררות ביוב גולמי לנתיבי מים ולחופים"
+    },
+    "Power Cuts": {
+      "name": "הפסקות חשמל",
+      "description": "הפסקות באספקת חשמל, שיקום איטי, פיצוי לא מספק"
+    },
+    "Smart Meter Problems": {
+      "name": "בעיות מוני חכם",
+      "description": "מוני חכם לא עובדים, מאבדים פונקציונליות לאחר החלפת ספק"
+    },
+    "Bank Branch Closures": {
+      "name": "סגירת סניפי בנק",
+      "description": "סניפי בנק מקומיים נסגרים, משאירים קהילות ללא גישה לשירותי בנקאות"
+    },
+    "Hidden Bank Charges": {
+      "name": "חיובי בנק נסתרים",
+      "description": "עמלות בלתי צפויות על משיכות יתר, עסקאות בינלאומיות, תחזוקת חשבון"
+    },
+    "Fraud and Scam Losses": {
+      "name": "הפסדים מהונאות",
+      "description": "בנקים מסרבים לפצות קורבנות הונאה ותשלומים מורשים הונאתיים"
+    },
+    "Insurance Claim Rejections": {
+      "name": "דחיית תביעות ביטוח",
+      "description": "תביעות נדחות על סמך טכניקליות לאחר שנים של תשלום פרמיות"
+    },
+    "Mortgage Rate Shock": {
+      "name": "הלם ריבית משכנתא",
+      "description": "סיום ריבית קבועה ומעבר לריבית משתנה גבוהה בהרבה"
+    },
+    "Overseas Transfer Fees": {
+      "name": "עמלות העברות לחו\"ל",
+      "description": "עמלות מופרזות ושערי חליפין גרועים להעברות כספים בינלאומיות"
+    },
+    "NHS Waiting Times": {
+      "name": "זמני המתנה ב-NHS",
+      "description": "המתנה של חודשים או שנים לניתוחים ותורים מקצועיים"
+    },
+    "GP Appointment Access": {
+      "name": "גישה לתור רופא משפחה",
+      "description": "אי אפשר להשיג תור לרופא משפחה, המתנה של שבועות"
+    },
+    "Dentist Availability": {
+      "name": "זמינות רופאי שיניים",
+      "description": "בלתי אפשרי למצוא רופא שיניים של NHS שמקבל מטופלים חדשים"
+    },
+    "Mental Health Service Waits": {
+      "name": "המתנה לשירותי בריאות הנפש",
+      "description": "חודשי המתנה לטיפול ותמיכה בבריאות הנפש"
+    },
+    "Prescription Costs": {
+      "name": "עלויות מרשם",
+      "description": "עלות לפריט גבוהה מדי באנגליה, חוסר עקביות בין מדינות בריטניה"
+    },
+    "Hospital Parking Charges": {
+      "name": "דמי חניה בבתי חולים",
+      "description": "תשלום על חניה בבית חולים כשאתה חולה או מבקר קרובים חולים"
+    },
+    "Rent Increases": {
+      "name": "עליות שכר דירה",
+      "description": "שכר דירה פרטי עולה הרבה מעל האינפלציה, איום פינוי ללא עילה"
+    },
+    "Council Tax Rises": {
+      "name": "עליות ארנונה",
+      "description": "העלאות ארנונה שנתיות בזמן שהשירותים המקומיים מתדרדרים"
+    },
+    "Noisy Neighbours": {
+      "name": "שכנים רועשים",
+      "description": "מטרד רעש מתמשך, רשויות מקומיות איטיות בפעולה, פוגע בבריאות הנפש"
+    },
+    "Rubbish Collection Changes": {
+      "name": "שינויים באיסוף אשפה",
+      "description": "הפחתת איסוף פחים, כללי מיחזור מבלבלים, פחים גולשים"
+    },
+    "Planning Permission Abuse": {
+      "name": "ניצול לרעה של היתרי בניה",
+      "description": "פיתוחים לא רצויים מאושרים, שטחים ירוקים מאויימים, הקהילה מתעלמת"
+    },
+    "Damp and Mould in Housing": {
+      "name": "לחות ועובש בדיור",
+      "description": "בעלי דירות ועמותות דיור נכשלים בטיפול בלחות ועובש"
+    },
+    "Delivery Problems": {
+      "name": "בעיות משלוח",
+      "description": "חבילות אובדות, נשארות בגשם, מסומנות כנמסרות אך לא התקבלו"
+    },
+    "Shrinkflation": {
+      "name": "שרינקפלציה",
+      "description": "מוצרים מתכווצים בעוד המחירים נשארים זהים או עולים"
+    },
+    "Refund Difficulties": {
+      "name": "קשיים בהחזרים",
+      "description": "חברות מקשות שלא לצורך על החזרות וזיכויים"
+    },
+    "Fake Reviews": {
+      "name": "ביקורות מזויפות",
+      "description": "אי אפשר לסמוך על ביקורות מקוונות, ביקורות חיוביות מזויפות מטעות צרכנים"
+    },
+    "Subscription Traps": {
+      "name": "מלכודות מנויים",
+      "description": "תקופות ניסיון חינמיות הופכות לתשלום ללא הסכמה ברורה, קשה לבטל"
+    },
+    "Food Quality Decline": {
+      "name": "ירידה באיכות המזון",
+      "description": "ארוחות מוכנות באיכות ירודה, מנות קטנות יותר, יותר תוספים"
+    },
+    "Self-Checkout Frustration": {
+      "name": "תסכול מקופות עצמיות",
+      "description": "מכונות שירות עצמי לא אמינות, מחליפות צוות אנושי"
+    },
+    "Cost of Childcare": {
+      "name": "עלות טיפול בילדים",
+      "description": "עלויות טיפול בילדים יקרות באופן מונע, מגבילות יכולת לעבוד"
+    },
+    "Student Loan Repayment": {
+      "name": "החזר הלוואות סטודנטים",
+      "description": "בוגרים משלמים בחזרה במשך עשרות שנים, שינויים בסף ובריבית"
+    },
+    "Dog Fouling": {
+      "name": "צואת כלבים",
+      "description": "צואת כלבים במרחבים ציבוריים, גנים ומדרכות ללא ניקוי"
+    },
+    "AI Replacing Jobs": {
+      "name": "בינה מלאכותית מחליפה מקומות עבודה",
+      "description": "חרדה מפני אוטומציה של מקומות עבודה על ידי בינה מלאכותית ללא תמיכה במעבר"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "מפעיל רכבות בריטי בקו West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "מפעיל רכבות בריטי המשרת את לונדון והדרום"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "מפעיל רכבות בריטי המשרת את צפון אנגליה"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "מפעיל רכבות בריטי למרחקים ארוכים"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "מפעיל רכבות בריטי המשרת מסלולי טרנס-פנין"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "מפעיל רכבות בריטי בקו East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "חברת תעופה אירופית מוזלת"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "חברת תעופה מוזלת מבריטניה"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "חברת התעופה הלאומית של בריטניה"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "חברת חופשות ונסיעות"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "ספק אינטרנט וסלולר מרכזי בבריטניה"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "ספק אינטרנט, טלוויזיה וסלולר בבריטניה"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "ספק טלוויזיה, אינטרנט וסלולר בבריטניה"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "חברת טלקום גלובלית עם מטה בבריטניה"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "מפעיל רשת סלולרית בבריטניה"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "ספק אינטרנט וטלפון בבריטניה"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "ספק אנרגיה בבריטניה"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "ספק אנרגיה בבריטניה"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "ספק אנרגיה בבריטניה (בבעלות צרפתית)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "ספק אנרגיה מתחדשת בבריטניה"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "ספק אנרגיה בבריטניה"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "ספק אנרגיה בבריטניה (בבעלות גרמנית)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "חברת מים וביוב ללונדון ועמק התמזה"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "חברת מים לדרום אנגליה"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "חברת מים לצפון-מערב אנגליה"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "חברת מים למידלנדס"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "חברת מים למזרח אנגליה"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "בנק בריטי רב-לאומי"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "שירותי בנקאות ופיננסים גלובליים"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "בנק קמעונאי ומסחרי בבריטניה"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "קבוצה בנקאית בבריטניה"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "בנק בבריטניה (בבעלות ספרדית)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "בנקאות דיגיטלית ופינטק"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "ביטוח ושירותים פיננסיים בבריטניה"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "ביטוח רכב ודירה בבריטניה"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "חברת ביטוח בבריטניה"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "מסחר אלקטרוני וטכנולוגיה גלובלית"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "שירות הדואר של בריטניה"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "שירות משלוח חבילות בבריטניה (לשעבר Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "שירות משלוח חבילות בבריטניה"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "רשת סופרמרקטים בבריטניה"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "רשת סופרמרקטים בבריטניה"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "שירות הבריאות הלאומי של אנגליה"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "שירותי רפואת שיניים של NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "ספק שירותי בריאות פרטיים"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "רשויות שלטון מקומי בבריטניה"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "חברת בנייה למגורים בבריטניה"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "פלטפורמת השכרה מקוונת בבריטניה"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "שירות בידור בסטרימינג"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "חברת טכנולוגיה"
+    }
+  }
+}

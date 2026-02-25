@@ -1,0 +1,421 @@
+{
+  "locale": "bn",
+  "categories": {
+    "Transport": "পরিবহন",
+    "Telecoms": "টেলিযোগাযোগ",
+    "Banking": "ব্যাংকিং",
+    "Health": "স্বাস্থ্য",
+    "Education": "শিক্ষা",
+    "Environment": "পরিবেশ",
+    "Energy": "শক্তি",
+    "Water": "জল",
+    "Insurance": "বীমা",
+    "Housing": "আবাসন",
+    "Shopping": "কেনাকাটা",
+    "Delivery": "ডেলিভারি",
+    "Local": "স্থানীয়",
+    "Employment": "কর্মসংস্থান",
+    "Tech": "প্রযুক্তি",
+    "Other": "অন্যান্য"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "ট্রেন বাতিল",
+      "description": "ট্রেন বাতিল বা গুরুতরভাবে বিলম্বিত, অপর্যাপ্ত বিজ্ঞপ্তি বা ক্ষতিপূরণ"
+    },
+    "Train Ticket Prices": {
+      "name": "ট্রেনের টিকিটের দাম",
+      "description": "রেলের ভাড়া অত্যন্ত ব্যয়বহুল, মুদ্রাস্ফীতির চেয়ে বেশি বৃদ্ধি, অসংগত মূল্য নির্ধারণ"
+    },
+    "Flight Delays": {
+      "name": "বিমান বিলম্ব",
+      "description": "বিমান বিলম্বিত বা বাতিল, খারাপ যোগাযোগ, ক্ষতিপূরণ দাবি করতে অসুবিধা"
+    },
+    "Lost Luggage": {
+      "name": "হারানো লাগেজ",
+      "description": "ব্যাগ গন্তব্যে পৌঁছায় না, ধীর ট্র্যাকিং, অপর্যাপ্ত ক্ষতিপূরণ"
+    },
+    "Bus Route Cuts": {
+      "name": "বাস রুট কাটছাঁট",
+      "description": "রুট বাতিল, ফ্রিকোয়েন্সি হ্রাস, গ্রামীণ সম্প্রদায় বাস সেবা হারাচ্ছে"
+    },
+    "Pothole Damage": {
+      "name": "গর্তের ক্ষতি",
+      "description": "গর্তে গাড়ির ক্ষতি এবং সাইকেল চালকদের বিপদ, কাউন্সিল মেরামতে ধীর"
+    },
+    "Parking Fines": {
+      "name": "পার্কিং জরিমানা",
+      "description": "অন্যায্য বেসরকারি পার্কিং চার্জ, আক্রমণাত্মক প্রয়োগ, বিভ্রান্তিকর সাইনবোর্ড"
+    },
+    "Fuel Prices": {
+      "name": "জ্বালানির দাম",
+      "description": "পেট্রোল ও ডিজেলের দাম অত্যধিক, পাইকারি দাম কমলেও খুচরা দাম কমতে ধীর"
+    },
+    "Broadband Speed": {
+      "name": "ব্রডব্যান্ডের গতি",
+      "description": "ইন্টারনেটের গতি বিজ্ঞাপিত এবং প্রদত্ত গতির চেয়ে অনেক কম"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "মোবাইল সিগন্যাল ডেড জোন",
+      "description": "বাড়ি, কর্মক্ষেত্র বা পরিবহন রুটে কোনো মোবাইল সিগন্যাল নেই"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "চুক্তির মাঝে দাম বৃদ্ধি",
+      "description": "ফোন, ব্রডব্যান্ড ও টিভি বিল লকড চুক্তির মধ্যেও বাড়ছে"
+    },
+    "Customer Service Hold Times": {
+      "name": "গ্রাহক সেবায় অপেক্ষার সময়",
+      "description": "একজন মানুষের সাথে কথা বলতে ঘণ্টার পর ঘণ্টা হোল্ডে অপেক্ষা"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "সাবস্ক্রিপশন বাতিলে অসুবিধা",
+      "description": "কোম্পানিগুলো ইচ্ছাকৃতভাবে বাতিল বা আনসাবস্ক্রাইব করা কঠিন করে তোলে"
+    },
+    "Roaming Charges": {
+      "name": "রোমিং চার্জ",
+      "description": "বিদেশে ভ্রমণের সময় অপ্রত্যাশিত মোবাইল চার্জ, Brexit-পরবর্তী মূল্যবৃদ্ধি"
+    },
+    "Energy Bill Costs": {
+      "name": "শক্তি বিলের খরচ",
+      "description": "গ্যাস ও বিদ্যুৎ বিল বহনযোগ্য নয়, প্রাইস ক্যাপ এখনও অত্যধিক"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "ভুল শক্তি বিল",
+      "description": "আনুমানিক রিডিং ভুল, অতিরিক্ত চার্জ, বিলিং ত্রুটি"
+    },
+    "Water Bill Increases": {
+      "name": "পানির বিল বৃদ্ধি",
+      "description": "পানির বিল দ্রুত বাড়ছে যখন সেবার মান কমছে"
+    },
+    "Sewage in Rivers": {
+      "name": "নদীতে পয়ঃনিষ্কাশন",
+      "description": "পানি কোম্পানিগুলো নদী ও সমুদ্র সৈকতে কাঁচা পয়ঃনিষ্কাশন ফেলছে"
+    },
+    "Power Cuts": {
+      "name": "বিদ্যুৎ বিভ্রাট",
+      "description": "বিদ্যুৎ সরবরাহ বিঘ্নিত, ধীর পুনরুদ্ধার, অপর্যাপ্ত ক্ষতিপূরণ"
+    },
+    "Smart Meter Problems": {
+      "name": "স্মার্ট মিটার সমস্যা",
+      "description": "স্মার্ট মিটার কাজ করছে না, সরবরাহকারী বদলানোর পর কার্যকারিতা হারাচ্ছে"
+    },
+    "Bank Branch Closures": {
+      "name": "ব্যাংক শাখা বন্ধ",
+      "description": "স্থানীয় ব্যাংক শাখা বন্ধ হচ্ছে, সম্প্রদায়কে সেবা ছাড়া ফেলে দিচ্ছে"
+    },
+    "Hidden Bank Charges": {
+      "name": "লুকানো ব্যাংক চার্জ",
+      "description": "ওভারড্রাফট, বিদেশি লেনদেন, অ্যাকাউন্ট রক্ষণাবেক্ষণের জন্য অপ্রত্যাশিত ফি"
+    },
+    "Fraud and Scam Losses": {
+      "name": "জালিয়াতি ও প্রতারণার ক্ষতি",
+      "description": "ব্যাংক জালিয়াতি ও অনুমোদিত পুশ পেমেন্ট প্রতারণার শিকারদের ফেরত দিতে অস্বীকার"
+    },
+    "Insurance Claim Rejections": {
+      "name": "বীমা দাবি প্রত্যাখ্যান",
+      "description": "বছরের পর বছর প্রিমিয়াম দেওয়ার পর প্রযুক্তিগত কারণে দাবি প্রত্যাখ্যাত"
+    },
+    "Mortgage Rate Shock": {
+      "name": "মর্টগেজ হারের ধাক্কা",
+      "description": "নির্দিষ্ট হার শেষ হলে অনেক বেশি পরিবর্তনশীল হারে স্থানান্তর"
+    },
+    "Overseas Transfer Fees": {
+      "name": "বিদেশে অর্থ স্থানান্তর ফি",
+      "description": "আন্তর্জাতিক অর্থ স্থানান্তরে অতিরিক্ত ফি এবং খারাপ বিনিময় হার"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS অপেক্ষার সময়",
+      "description": "অপারেশন ও বিশেষজ্ঞ অ্যাপয়েন্টমেন্টের জন্য বহু মাস বা বহু বছরের অপেক্ষা"
+    },
+    "GP Appointment Access": {
+      "name": "GP অ্যাপয়েন্টমেন্টে প্রবেশাধিকার",
+      "description": "GP অ্যাপয়েন্টমেন্ট বুক করতে ফোন করা যায় না, সপ্তাহব্যাপী অপেক্ষা"
+    },
+    "Dentist Availability": {
+      "name": "ডেন্টিস্টের প্রাপ্যতা",
+      "description": "নতুন রোগী গ্রহণকারী NHS ডেন্টিস্ট খুঁজে পাওয়া অসম্ভব"
+    },
+    "Mental Health Service Waits": {
+      "name": "মানসিক স্বাস্থ্য সেবায় অপেক্ষা",
+      "description": "থেরাপি ও মানসিক স্বাস্থ্য সহায়তার জন্য মাসব্যাপী অপেক্ষা"
+    },
+    "Prescription Costs": {
+      "name": "প্রেসক্রিপশনের খরচ",
+      "description": "ইংল্যান্ডে প্রতি ওষুধের খরচ অত্যধিক, UK জাতিসমূহে অসংগতি"
+    },
+    "Hospital Parking Charges": {
+      "name": "হাসপাতাল পার্কিং চার্জ",
+      "description": "অসুস্থ অবস্থায় বা অসুস্থ আত্মীয়দের দেখতে গিয়ে হাসপাতালে পার্কিংয়ের জন্য অর্থ প্রদান"
+    },
+    "Rent Increases": {
+      "name": "ভাড়া বৃদ্ধি",
+      "description": "বেসরকারি ভাড়া মুদ্রাস্ফীতির অনেক উপরে বাড়ছে, বিনা দোষে উচ্ছেদের হুমকি"
+    },
+    "Council Tax Rises": {
+      "name": "কাউন্সিল ট্যাক্স বৃদ্ধি",
+      "description": "বার্ষিক কাউন্সিল ট্যাক্স বৃদ্ধি যখন স্থানীয় সেবা খারাপ হচ্ছে"
+    },
+    "Noisy Neighbours": {
+      "name": "কোলাহলকারী প্রতিবেশী",
+      "description": "ক্রমাগত শব্দ সমস্যা, কাউন্সিল পদক্ষেপে ধীর, মানসিক স্বাস্থ্য প্রভাবিত"
+    },
+    "Rubbish Collection Changes": {
+      "name": "আবর্জনা সংগ্রহে পরিবর্তন",
+      "description": "কম বিন সংগ্রহ, বিভ্রান্তিকর পুনর্ব্যবহার নিয়ম, উপচে পড়া বিন"
+    },
+    "Planning Permission Abuse": {
+      "name": "পরিকল্পনা অনুমতির অপব্যবহার",
+      "description": "অবাঞ্ছিত উন্নয়ন অনুমোদিত, গ্রিন বেল্ট হুমকিতে, সম্প্রদায় উপেক্ষিত"
+    },
+    "Damp and Mould in Housing": {
+      "name": "আবাসনে স্যাঁতস্যাঁতে ও ছাতা পড়া",
+      "description": "বাড়িওয়ালা ও আবাসন সংস্থা স্যাঁতস্যাঁতে ও ছাতা মেরামতে ব্যর্থ"
+    },
+    "Delivery Problems": {
+      "name": "ডেলিভারি সমস্যা",
+      "description": "পার্সেল হারিয়ে যাওয়া, বৃষ্টিতে ফেলে রাখা, ডেলিভারি দেখানো কিন্তু পাওয়া যায়নি"
+    },
+    "Shrinkflation": {
+      "name": "শ্রিংকফ্লেশন",
+      "description": "পণ্য ছোট হচ্ছে যখন দাম একই থাকছে বা বাড়ছে"
+    },
+    "Refund Difficulties": {
+      "name": "ফেরত পেতে অসুবিধা",
+      "description": "কোম্পানিগুলো রিটার্ন ও ফেরত অপ্রয়োজনীয়ভাবে কঠিন করছে"
+    },
+    "Fake Reviews": {
+      "name": "ভুয়া রিভিউ",
+      "description": "অনলাইন রিভিউ বিশ্বাসযোগ্য নয়, ভুয়া ইতিবাচক রিভিউ গ্রাহকদের বিভ্রান্ত করছে"
+    },
+    "Subscription Traps": {
+      "name": "সাবস্ক্রিপশনের ফাঁদ",
+      "description": "বিনামূল্যে ট্রায়াল স্পষ্ট সম্মতি ছাড়াই পেইডে রূপান্তরিত, বাতিল করা কঠিন"
+    },
+    "Food Quality Decline": {
+      "name": "খাদ্যের মান হ্রাস",
+      "description": "রেডি মিলের মান খারাপ, ছোট পরিবেশন, বেশি সংযোজনদ্রব্য"
+    },
+    "Self-Checkout Frustration": {
+      "name": "সেলফ-চেকআউটে হতাশা",
+      "description": "সেলফ-সার্ভিস মেশিন অনির্ভরযোগ্য, মানব কর্মীদের প্রতিস্থাপন করছে"
+    },
+    "Cost of Childcare": {
+      "name": "শিশু যত্নের খরচ",
+      "description": "শিশু যত্নের খরচ অত্যধিক ব্যয়বহুল, কাজ করার সক্ষমতা সীমিত করছে"
+    },
+    "Student Loan Repayment": {
+      "name": "ছাত্র ঋণ পরিশোধ",
+      "description": "স্নাতকরা কয়েক দশক ধরে পরিশোধ করছে, সীমা ও সুদের হার পরিবর্তন"
+    },
+    "Dog Fouling": {
+      "name": "কুকুরের মলত্যাগ",
+      "description": "জনসাধারণের স্থান, পার্ক ও ফুটপাতে কুকুরের মল পরিষ্কার করা হয় না"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI চাকরি প্রতিস্থাপন করছে",
+      "description": "স্থানান্তর সহায়তা ছাড়া কৃত্রিম বুদ্ধিমত্তা দ্বারা চাকরি স্বয়ংক্রিয়করণের উদ্বেগ"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "ওয়েস্ট কোস্ট মেইন লাইনে সেবাদানকারী UK রেল অপারেটর"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "লন্ডন ও দক্ষিণাঞ্চলে সেবাদানকারী UK রেল অপারেটর"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "উত্তর ইংল্যান্ডে সেবাদানকারী UK রেল অপারেটর"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "UK দীর্ঘ দূরত্বের রেল অপারেটর"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "ট্রান্স-পেনাইন রুটে সেবাদানকারী UK রেল অপারেটর"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "ইস্ট কোস্ট মেইন লাইনে সেবাদানকারী UK রেল অপারেটর"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "সাশ্রয়ী ইউরোপীয় বিমান সংস্থা"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "UK-ভিত্তিক সাশ্রয়ী বিমান সংস্থা"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "UK-র প্রধান জাতীয় বিমান সংস্থা"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "ছুটি ও ভ্রমণ কোম্পানি"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "প্রধান UK ব্রডব্যান্ড ও মোবাইল সেবাদাতা"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "UK ব্রডব্যান্ড, টিভি ও মোবাইল সেবাদাতা"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "UK টিভি, ব্রডব্যান্ড ও মোবাইল সেবাদাতা"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "UK-তে সদর দপ্তর অবস্থিত বৈশ্বিক টেলিযোগাযোগ কোম্পানি"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "UK মোবাইল নেটওয়ার্ক অপারেটর"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "UK ব্রডব্যান্ড ও ফোন সেবাদাতা"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "UK শক্তি সরবরাহকারী"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "UK শক্তি সরবরাহকারী"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "UK শক্তি সরবরাহকারী (ফরাসি মালিকানাধীন)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "UK নবায়নযোগ্য শক্তি সরবরাহকারী"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "UK শক্তি সরবরাহকারী"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "UK শক্তি সরবরাহকারী (জার্মান মালিকানাধীন)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "লন্ডন ও টেমস উপত্যকার জল ও পয়ঃনিষ্কাশন কোম্পানি"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "দক্ষিণ ইংল্যান্ডের জল কোম্পানি"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "উত্তর-পশ্চিম ইংল্যান্ডের জল কোম্পানি"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "মিডল্যান্ডসের জল কোম্পানি"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "ইস্ট অ্যাংলিয়ার জল কোম্পানি"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "ব্রিটিশ বহুজাতিক ব্যাংক"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "বৈশ্বিক ব্যাংকিং ও আর্থিক সেবা"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "UK খুচরা ও বাণিজ্যিক ব্যাংক"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "UK ব্যাংকিং গ্রুপ"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "UK ব্যাংক (স্পেনীয় মালিকানাধীন)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "ডিজিটাল ব্যাংকিং ও ফিনটেক"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "UK বীমা ও আর্থিক সেবা"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "UK গাড়ি ও গৃহ বীমা"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "UK বীমা কোম্পানি"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "বৈশ্বিক ই-কমার্স ও প্রযুক্তি"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "UK ডাক সেবা"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "UK পার্সেল ডেলিভারি সেবা (আগে Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "UK পার্সেল ডেলিভারি সেবা"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "UK সুপারমার্কেট চেইন"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "UK সুপারমার্কেট চেইন"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "ইংল্যান্ডের জাতীয় স্বাস্থ্য সেবা"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS দন্ত চিকিৎসা সেবা"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "বেসরকারি স্বাস্থ্যসেবা প্রদানকারী"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "UK স্থানীয় সরকার কর্তৃপক্ষ"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "UK গৃহনির্মাতা"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "UK অনলাইন ভাড়া প্ল্যাটফর্ম"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "স্ট্রিমিং বিনোদন সেবা"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "প্রযুক্তি কোম্পানি"
+    }
+  }
+}

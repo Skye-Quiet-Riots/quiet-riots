@@ -1,0 +1,421 @@
+{
+  "locale": "cs",
+  "categories": {
+    "Transport": "Doprava",
+    "Telecoms": "Telekomunikace",
+    "Banking": "Bankovnictvi",
+    "Health": "Zdravotnictvi",
+    "Education": "Vzdelavani",
+    "Environment": "Zivotni prostredi",
+    "Energy": "Energie",
+    "Water": "Voda",
+    "Insurance": "Pojisteni",
+    "Housing": "Bydleni",
+    "Shopping": "Nakupovani",
+    "Delivery": "Dorucovani",
+    "Local": "Mistni",
+    "Employment": "Zamestnanost",
+    "Tech": "Technologie",
+    "Other": "Ostatni"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Ruseni vlaku",
+      "description": "Vlaky ruseny nebo vazne zpozdeny bez dostatecneho upozorneni ci kompenzace"
+    },
+    "Train Ticket Prices": {
+      "name": "Ceny jizdenek",
+      "description": "Jizdenky prilis drahe, zdrazovani nad urovni inflace, nekonzistentni ceny"
+    },
+    "Flight Delays": {
+      "name": "Zpozdeni letu",
+      "description": "Lety zpozdene nebo zrusene, spatna komunikace, obtizne uplatnovani kompenzace"
+    },
+    "Lost Luggage": {
+      "name": "Ztracena zavazadla",
+      "description": "Zavazadla nedorazila do cile, pomale sledovani, nedostatecna kompenzace"
+    },
+    "Bus Route Cuts": {
+      "name": "Ruseni autobusovych linek",
+      "description": "Linky zruseny, snizena frekvence, venkovske komunity prichazeji o autobusovou dopravu"
+    },
+    "Pothole Damage": {
+      "name": "Skody zpusobene vymolinami",
+      "description": "Vymoliny poskozuji vozidla a ohrozuji cyklisty, obce jsou pomale s opravami"
+    },
+    "Parking Fines": {
+      "name": "Pokuty za parkovani",
+      "description": "Nespravedlive soukrome parkovaci poplatky, agresivni vymahani, matouci znaceni"
+    },
+    "Fuel Prices": {
+      "name": "Ceny pohonnych hmot",
+      "description": "Ceny benzinu a nafty prilis vysoke, pomale klesaji kdyz klesa velkoobchodni cena"
+    },
+    "Broadband Speed": {
+      "name": "Rychlost sirokopasmeho internetu",
+      "description": "Rychlost internetu vyrazne pod inzerovanou a placenou urovni"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mrtve zony mobilniho signalu",
+      "description": "Zadny mobilni signal doma, v praci nebo podel dopravnich tras"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Zdrazovani v prubehu smlouvy",
+      "description": "Ucty za telefon, internet a televizi rostou behem uzamcenych smluv"
+    },
+    "Customer Service Hold Times": {
+      "name": "Cekani na zakaznicke lince",
+      "description": "Hodiny cekani na lince nez se dovolate k zivemu cloveku"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Obtize se zrusenim predplatneho",
+      "description": "Firmy zamerne ztezuji zruseni nebo odhlaseni predplatneho"
+    },
+    "Roaming Charges": {
+      "name": "Roamingove poplatky",
+      "description": "Neocekavane poplatky za mobilni telefon v zahranici, zdrazeni po Brexitu"
+    },
+    "Energy Bill Costs": {
+      "name": "Naklady na ucty za energii",
+      "description": "Ucty za plyn a elektrinu nedostupne, cenovy strop stale prilis vysoky"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Nepresne ucty za energii",
+      "description": "Odhadovane odecty meridel chybne, predrazovani, chyby ve fakturaci"
+    },
+    "Water Bill Increases": {
+      "name": "Rust uctu za vodu",
+      "description": "Ucty za vodu prudce rostou zatimco kvalita sluzeb klesa"
+    },
+    "Sewage in Rivers": {
+      "name": "Splassky v rekach",
+      "description": "Vodarske spolecnosti vypousteji neupravene odpadni vody do vodnich toku a na plaze"
+    },
+    "Power Cuts": {
+      "name": "Vypadky proudu",
+      "description": "Preruseni dodavek elektriny, pomale obnoveni, nedostatecna kompenzace"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemy s chytrymi meridly",
+      "description": "Chytre meridla nefunguji, ztraceji funkcnost po zmene dodavatele"
+    },
+    "Bank Branch Closures": {
+      "name": "Uzavirani bankovnich pobocek",
+      "description": "Mistni bankovni pobocky se zaviraji a komunity zustavaji bez pristupu ke sluzbam"
+    },
+    "Hidden Bank Charges": {
+      "name": "Skryte bankovni poplatky",
+      "description": "Neocekavane poplatky za precerpani, zahranicni transakce a spravu uctu"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Ztraty z podvodu",
+      "description": "Banky odmijtaji nahrazovat obetem podvodu a autorizovanych platebich podvodu"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Zamitnuti pojistnych naroku",
+      "description": "Naroky zamitnuty z technickych duvodu po letech placeni pojistneho"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Sok z hypotecni sazby",
+      "description": "Fixovana sazba konci a prechazi na vyrazne vyssi pohyblivou sazbu"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Poplatky za zahranicni prevody",
+      "description": "Nadmerne poplatky a spatne smenne kurzy u mezinarodních peneznich prevodu"
+    },
+    "NHS Waiting Times": {
+      "name": "Cekaci doby v NHS",
+      "description": "Vicesicni nebo viceleté cekani na operace a specializovana vysetreni"
+    },
+    "GP Appointment Access": {
+      "name": "Pristup k obvodnimu lekari",
+      "description": "Nelze se dovolat pro objednani k lekari, tydenni cekaci doby"
+    },
+    "Dentist Availability": {
+      "name": "Dostupnost zubnich lekaru",
+      "description": "Nemoznost najit verejneho zubniho lekare prijimajiciho nove pacienty"
+    },
+    "Mental Health Service Waits": {
+      "name": "Cekani na sluzby dusevniho zdravi",
+      "description": "Mesice cekani na terapii a podporu dusevniho zdravi"
+    },
+    "Prescription Costs": {
+      "name": "Naklady na recepty",
+      "description": "Cena za polozku prilis vysoka v Anglii, nekonzistence mezi zememi Spojeneko kralovstvi"
+    },
+    "Hospital Parking Charges": {
+      "name": "Poplatky za parkovani u nemocnice",
+      "description": "Placeni za parkovani v nemocnici pri nemoci nebo navsteve nemocnych blizkych"
+    },
+    "Rent Increases": {
+      "name": "Zvysovani najemneho",
+      "description": "Soukrome najemne roste vyrazne nad inflaci, hrozba vystehovani bez duvodu"
+    },
+    "Council Tax Rises": {
+      "name": "Rust mistni dane",
+      "description": "Kazdorocni zvysovani mistni dane zatimco se mistni sluzby zhorsují"
+    },
+    "Noisy Neighbours": {
+      "name": "Hlucni sousede",
+      "description": "Pretrvavajici hlukove obtezovani, obec pomala s resenim, ovlivnuje dusevni zdravi"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Zmeny ve svozu odpadu",
+      "description": "Snizena frekvence svozu, matouci pravidla recyklace, pretekajici nadoby"
+    },
+    "Planning Permission Abuse": {
+      "name": "Zneuzivani stavebnich povoleni",
+      "description": "Nechtene stavby schvaleny, zelene plochy ohrozeny, komunita ignorovana"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Vlhkost a plisen v bytech",
+      "description": "Pronajimtele a bytova druzstva neresi problemy s vlhkosti a plisni"
+    },
+    "Delivery Problems": {
+      "name": "Problemy s dorucenim",
+      "description": "Baliky ztraceny, zanechane na desti, oznacene jako dorucene ale neprevzate"
+    },
+    "Shrinkflation": {
+      "name": "Smrstovaci inflace",
+      "description": "Vyrobky se zmensují zatimco ceny zustavaji stejne nebo rostou"
+    },
+    "Refund Difficulties": {
+      "name": "Obtize s vracenim penez",
+      "description": "Firmy zbytecne ztezuji vraceni zbozi a penez"
+    },
+    "Fake Reviews": {
+      "name": "Falesne recenze",
+      "description": "Online recenzim nelze verit, falesne pozitivni recenze uvadeji spotrebitele v omyl"
+    },
+    "Subscription Traps": {
+      "name": "Pasti na predplatne",
+      "description": "Zkusebni verze zdarma se meni na placene bez jasneho souhlasu, obtizne zruseni"
+    },
+    "Food Quality Decline": {
+      "name": "Pokles kvality potravin",
+      "description": "Hotova jidla horsi kvality, mensi porce, vice pridatnych latek"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustrace ze samoobsluznych pokladen",
+      "description": "Samoobsluzne pokladny nespolehive, nahrazuji lidsky personal"
+    },
+    "Cost of Childcare": {
+      "name": "Naklady na peci o deti",
+      "description": "Pece o deti neusnosne draha, omezuje moznost pracovat"
+    },
+    "Student Loan Repayment": {
+      "name": "Splaceni studentske pujcky",
+      "description": "Absolventi splaceji desitky let, zmeny prahu a urokovych sazeb"
+    },
+    "Dog Fouling": {
+      "name": "Psi exkrementy",
+      "description": "Psi exkrementy na verejnych prostranstvich, v parcich a na chodnicich neuklidene"
+    },
+    "AI Replacing Jobs": {
+      "name": "UI nahrazujici pracovni mista",
+      "description": "Obavy z automatizace pracovnich mist umelou inteligenci bez podpory pri prechodu"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britsky zeleznicni operator na trase West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britsky zeleznicni operator obsluhujici Londyn a jih Anglie"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britsky zeleznicni operator obsluhujici sever Anglie"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britsky dalkovy zeleznicni operator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britsky zeleznicni operator na trans-Pennine trasach"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britsky zeleznicni operator na trase East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Evropska nizkonakladova letecka spolecnost"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britska nizkonakladova letecka spolecnost"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Narodni letecka spolecnost Velke Britanie"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Dovolenkova a cestovni spolecnost"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Velky britsky poskytovatel sirokopasmeho internetu a mobilnich sluzeb"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britsky poskytovatel internetu, televize a mobilnich sluzeb"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britsky poskytovatel televize, internetu a mobilnich sluzeb"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalni telekomunikacni spolecnost se sidlem ve Velke Britanii"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britsky operator mobilni site"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britsky poskytovatel internetu a telefonie"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britsky dodavatel energie"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britsky dodavatel energie"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britsky dodavatel energie (ve francouzskem vlastnictvi)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britsky dodavatel obnovitelne energie"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britsky dodavatel energie"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britsky dodavatel energie (v nemeckem vlastnictvi)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Vodovodni a kanalizacni spolecnost pro Londyn a udoli Temze"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vodarska spolecnost pro jih Anglie"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vodarska spolecnost pro severozapad Anglie"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vodarska spolecnost pro oblast Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vodarska spolecnost pro East Anglii"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britska nadnarodni banka"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Globalni bankovni a financni sluzby"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britska retailova a komercni banka"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britska bankovni skupina"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britska banka (ve spanelskem vlastnictvi)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitalni banka a fintech spolecnost"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britska pojistovaci a financni spolecnost"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britske autopojisteni a pojisteni domacnosti"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britska pojistovaci spolecnost"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalni spolecnost elektronickeho obchodu a technologii"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britska postovni sluzba"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britska balikova dorucovaci sluzba (drive Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britska balikova dorucovaci sluzba"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britsky retezec supermarketu"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britsky retezec supermarketu"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Narodni zdravotni sluzba pro Anglii"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Zubni sluzby NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Soukromy poskytovatel zdravotnich sluzeb"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britske mistni samospravne organy"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britsky stavitel obytnych domu"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britska online platforma pro pronajem"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streamovaci zabavni sluzba"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technologicka spolecnost"
+    }
+  }
+}

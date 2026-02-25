@@ -1,0 +1,421 @@
+{
+  "locale": "ro",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telecomunicatii",
+    "Banking": "Servicii bancare",
+    "Health": "Sanatate",
+    "Education": "Educatie",
+    "Environment": "Mediu",
+    "Energy": "Energie",
+    "Water": "Apa",
+    "Insurance": "Asigurari",
+    "Housing": "Locuinte",
+    "Shopping": "Cumparaturi",
+    "Delivery": "Livrare",
+    "Local": "Local",
+    "Employment": "Ocupare",
+    "Tech": "Tehnologie",
+    "Other": "Altele"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Anulari de trenuri",
+      "description": "Trenuri anulate sau intarziate grav fara notificare adecvata sau compensatie"
+    },
+    "Train Ticket Prices": {
+      "name": "Preturile biletelor de tren",
+      "description": "Tarifele feroviare prea scumpe, scumpiri peste inflatie, preturi inconsecvente"
+    },
+    "Flight Delays": {
+      "name": "Intarzieri de zboruri",
+      "description": "Zboruri intarziate sau anulate, comunicare slaba, dificultati in obtinerea compensatiei"
+    },
+    "Lost Luggage": {
+      "name": "Bagaje pierdute",
+      "description": "Bagajele nu ajung la destinatie, urmarire lenta, compensatie inadecvata"
+    },
+    "Bus Route Cuts": {
+      "name": "Desfiintarea rutelor de autobuz",
+      "description": "Rute anulate, frecventa redusa, comunitatile rurale pierd accesul la autobuz"
+    },
+    "Pothole Damage": {
+      "name": "Daune cauzate de gropi",
+      "description": "Gropile din asfalt deterioreaza vehiculele si pun in pericol biciclistii, primaariile repara lent"
+    },
+    "Parking Fines": {
+      "name": "Amenzi de parcare",
+      "description": "Taxe de parcare private inechitabile, aplicare agresiva, semnalizare confuza"
+    },
+    "Fuel Prices": {
+      "name": "Preturile carburantilor",
+      "description": "Preturile benzinei si motorinei prea mari, scad lent cand preturile en gros scad"
+    },
+    "Broadband Speed": {
+      "name": "Viteza internetului",
+      "description": "Viteza internetului mult sub cea promisa si platita"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Zone fara semnal mobil",
+      "description": "Lipsa semnalului mobil acasa, la locul de munca sau pe rutele de transport"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Scumpiri in timpul contractului",
+      "description": "Facturile de telefon, internet si TV cresc in timpul contractelor cu perioada fixa"
+    },
+    "Customer Service Hold Times": {
+      "name": "Asteptare la serviciul clienti",
+      "description": "Ore in sir de asteptare la telefon pana sa vorbesti cu un operator uman"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Dificultati la anularea abonamentelor",
+      "description": "Companiile fac deliberat dificila anularea sau dezabonarea"
+    },
+    "Roaming Charges": {
+      "name": "Taxe de roaming",
+      "description": "Taxe mobile neasteptate in strainatate, scumpiri post-Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Costuri facturi de energie",
+      "description": "Facturile la gaz si electricitate inaccesibile, plafonul de pret inca prea mare"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Facturi de energie incorecte",
+      "description": "Citiri estimate gresite, suprataxare, erori de facturare"
+    },
+    "Water Bill Increases": {
+      "name": "Cresteri ale facturilor de apa",
+      "description": "Facturile de apa cresc brusc in timp ce calitatea serviciilor scade"
+    },
+    "Sewage in Rivers": {
+      "name": "Ape uzate in rauri",
+      "description": "Companiile de apa deversseaza ape uzate netratate in cursurile de apa si pe plaje"
+    },
+    "Power Cuts": {
+      "name": "Pene de curent",
+      "description": "Intreruperi ale alimentarii cu energie electrica, restaurare lenta, compensatie inadecvata"
+    },
+    "Smart Meter Problems": {
+      "name": "Probleme cu contoarele inteligente",
+      "description": "Contoarele inteligente nu functioneaza, pierderea functionalitatii dupa schimbarea furnizorului"
+    },
+    "Bank Branch Closures": {
+      "name": "Inchiderea sucursalelor bancare",
+      "description": "Sucursalele bancare locale se inchid, comunitatile raman fara acces"
+    },
+    "Hidden Bank Charges": {
+      "name": "Comisioane bancare ascunse",
+      "description": "Comisioane neasteptate pentru descoperit de cont, tranzactii internationale, intretinere cont"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Pierderi din fraude",
+      "description": "Bancile refuza sa despagubeeasca victimele fraudelor si ale esccrocheriilor de plati autorizate"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Respingerea cererilor de asigurare",
+      "description": "Cereri respinse pe motive tehnice dupa ani de plata a primelor"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Socul ratei ipotecare",
+      "description": "Expirarea ratei fixe si trecerea la o rata variabila mult mai mare"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Comisioane pentru transferuri internationale",
+      "description": "Comisioane excesive si cursuri de schimb nefavorabile pentru transferuri internationale"
+    },
+    "NHS Waiting Times": {
+      "name": "Timpii de asteptare NHS",
+      "description": "Asteptare de luni sau ani pentru operatii si consultatii de specialitate"
+    },
+    "GP Appointment Access": {
+      "name": "Acces la medic de familie",
+      "description": "Nu poti obtine o programare la medicul de familie, saptamani de asteptare"
+    },
+    "Dentist Availability": {
+      "name": "Disponibilitatea dentistilor",
+      "description": "Imposibil de gasit un dentist NHS care accepta pacienti noi"
+    },
+    "Mental Health Service Waits": {
+      "name": "Asteptare la servicii de sanatate mintala",
+      "description": "Luni de asteptare pentru terapie si sprijin pentru sanatatea mintala"
+    },
+    "Prescription Costs": {
+      "name": "Costurile retetelor",
+      "description": "Costul per articol prea mare in Anglia, inconsecventa intre tarile din UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Taxe parcare la spital",
+      "description": "Plata parcarii la spital cand esti bolnav sau vizitezi rude bolnave"
+    },
+    "Rent Increases": {
+      "name": "Cresteri ale chiriei",
+      "description": "Chiriile private cresc mult peste inflatie, amenintaarea evacuarii fara motiv"
+    },
+    "Council Tax Rises": {
+      "name": "Cresteri ale impozitului local",
+      "description": "Cresteri anuale ale impozitului local in timp ce serviciile locale se deterioreaza"
+    },
+    "Noisy Neighbours": {
+      "name": "Vecini zgomotosi",
+      "description": "Deranj sonor persistent, primariile reactioneaza lent, afecteaza sanatatea mintala"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Modificari la colectarea gunoiului",
+      "description": "Colectare mai rara, reguli de reciclare confuze, pubele supraplline"
+    },
+    "Planning Permission Abuse": {
+      "name": "Abuz de autorizatii de constructie",
+      "description": "Constructii nedorite aprobate, centura verde amenintata, comunitatea ignorata"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Umezeala si mucegai in locuinte",
+      "description": "Proprietarii si asociatiile de locatari nu repara umezeala si mucegaiul"
+    },
+    "Delivery Problems": {
+      "name": "Probleme cu livrarile",
+      "description": "Colete pierdute, lasate in ploaie, marcate ca livrate dar neprimite"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflatie",
+      "description": "Produsele devin mai mici in timp ce preturile raman la fel sau cresc"
+    },
+    "Refund Difficulties": {
+      "name": "Dificultati la rambursare",
+      "description": "Companiile fac inutil de dificile returnarile si rambursarile"
+    },
+    "Fake Reviews": {
+      "name": "Recenzii false",
+      "description": "Recenziile online nu sunt de incredere, recenzii pozitive false induc in eroare consumatorii"
+    },
+    "Subscription Traps": {
+      "name": "Capcane de abonament",
+      "description": "Perioade de proba gratuite se transforma in plati fara consimtamaant clar, greu de anulat"
+    },
+    "Food Quality Decline": {
+      "name": "Scaderea calitatii alimentelor",
+      "description": "Mancaruri gatite de calitate inferioara, portii mai mici, mai multi aditivi"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustrarea casei de marcat self-service",
+      "description": "Automatele self-service nesigure, inlocuiesc personalul uman"
+    },
+    "Cost of Childcare": {
+      "name": "Costurile ingrijirii copiilor",
+      "description": "Costurile ingrijirii copiilor sunt prohibitiv de scumpe, limiteaza posibilitatea de a munci"
+    },
+    "Student Loan Repayment": {
+      "name": "Rambursarea imprumutului studentesc",
+      "description": "Absolventii platesc inapoi decenii, modificari ale pragului si dobanzii"
+    },
+    "Dog Fouling": {
+      "name": "Excremente canine",
+      "description": "Excremente canine in spatii publice, parcuri si pe trotuare, necuraatate"
+    },
+    "AI Replacing Jobs": {
+      "name": "IA inlocuieste locuri de munca",
+      "description": "Ingrijorare ca inteligenta artificiala automatizeaza locuri de munca fara sprijin de tranzitie"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Operator feroviar britanic pe linia West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Operator feroviar britanic pentru Londra si sudul Angliei"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Operator feroviar britanic pentru nordul Angliei"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Operator feroviar britanic pe distante lungi"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Operator feroviar britanic pe rutele trans-Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Operator feroviar britanic pe linia East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Companie aeriana europeana low-cost"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Companie aeriana britanica low-cost"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Compania aeriana nationala a Marii Britanii"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Companie de vacante si calatorii"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Mare furnizor britanic de internet si servicii mobile"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Furnizor britanic de internet, TV si servicii mobile"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Furnizor britanic de TV, internet si servicii mobile"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Companie globala de telecomunicatii cu sediul in UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operator de retea mobila din UK"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Furnizor britanic de internet si telefonie"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Furnizor britanic de energie"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Furnizor britanic de energie"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Furnizor britanic de energie (detinut de Franta)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Furnizor britanic de energie regenerabila"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Furnizor britanic de energie"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Furnizor britanic de energie (detinut de Germania)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Companie de apa si canalizare pentru Londra si Valea Tamisei"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Companie de apa pentru sudul Angliei"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Companie de apa pentru nord-vestul Angliei"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Companie de apa pentru regiunea Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Companie de apa pentru East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Banca multinationala britanica"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Servicii bancare si financiare globale"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Banca britanica de retail si comerciala"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Grup bancar britanic"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Banca britanica (detinuuta de Spania)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Servicii bancare digitale si fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Asigurari si servicii financiare britanice"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Asigurari auto si de locuinta din UK"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Companie de asigurari britanica"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Companie globala de e-commerce si tehnologie"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Serviciul postal britanic"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Serviciu britanic de livrare colete (fost Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Serviciu britanic de livrare colete"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Lant de supermarketuri britanic"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Lant de supermarketuri britanic"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Serviciul National de Sanatate pentru Anglia"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Servicii dentare NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Furnizor privat de servicii medicale"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Autoritatile administratiei locale din UK"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Constructor britanic de locuinte"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Platforma online britanica de inchirieri"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Serviciu de streaming si divertisment"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Companie de tehnologie"
+    }
+  }
+}

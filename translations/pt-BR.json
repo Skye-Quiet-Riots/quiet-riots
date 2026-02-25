@@ -1,0 +1,421 @@
+{
+  "locale": "pt-BR",
+  "categories": {
+    "Transport": "Transporte",
+    "Telecoms": "Telecomunicacoes",
+    "Banking": "Servicos Bancarios",
+    "Health": "Saude",
+    "Education": "Educacao",
+    "Environment": "Meio Ambiente",
+    "Energy": "Energia",
+    "Water": "Agua",
+    "Insurance": "Seguros",
+    "Housing": "Moradia",
+    "Shopping": "Compras",
+    "Delivery": "Entregas",
+    "Local": "Assuntos Locais",
+    "Employment": "Emprego",
+    "Tech": "Tecnologia",
+    "Other": "Outros"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Cancelamento de Trens",
+      "description": "Trens cancelados ou com atrasos graves, sem aviso previo ou compensacao adequados"
+    },
+    "Train Ticket Prices": {
+      "name": "Precos das Passagens de Trem",
+      "description": "Tarifas ferroviarias caras demais, aumentos acima da inflacao, precos inconsistentes"
+    },
+    "Flight Delays": {
+      "name": "Atrasos de Voos",
+      "description": "Voos atrasados ou cancelados, comunicacao ruim, dificuldade em obter compensacao"
+    },
+    "Lost Luggage": {
+      "name": "Bagagem Extraviada",
+      "description": "Bagagem que nao chega ao destino, rastreamento lento, compensacao inadequada"
+    },
+    "Bus Route Cuts": {
+      "name": "Cortes em Linhas de Onibus",
+      "description": "Rotas canceladas, frequencia reduzida, comunidades rurais perdendo acesso a onibus"
+    },
+    "Pothole Damage": {
+      "name": "Danos por Buracos na Estrada",
+      "description": "Buracos danificando veiculos e colocando ciclistas em risco, prefeituras lentas para consertar"
+    },
+    "Parking Fines": {
+      "name": "Multas de Estacionamento",
+      "description": "Cobrancas injustas de estacionamento privado, fiscalizacao agressiva, sinalizacao confusa"
+    },
+    "Fuel Prices": {
+      "name": "Precos dos Combustiveis",
+      "description": "Precos da gasolina e do diesel altos demais, demoram para cair quando o preco no atacado baixa"
+    },
+    "Broadband Speed": {
+      "name": "Velocidade da Banda Larga",
+      "description": "Velocidades de internet muito abaixo do que e anunciado e pago"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Zonas sem Sinal de Celular",
+      "description": "Sem sinal de celular em casas, locais de trabalho ou ao longo de rotas de transporte"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Aumentos de Preco durante o Contrato",
+      "description": "Contas de telefone, banda larga e TV aumentando durante contratos vigentes"
+    },
+    "Customer Service Hold Times": {
+      "name": "Tempo de Espera no Atendimento ao Cliente",
+      "description": "Horas na espera para falar com um ser humano"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Dificuldade em Cancelar Assinaturas",
+      "description": "Empresas dificultando deliberadamente o cancelamento de assinaturas"
+    },
+    "Roaming Charges": {
+      "name": "Tarifas de Roaming",
+      "description": "Custos inesperados de celular ao viajar para o exterior, aumentos de precos pos-Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Custos das Contas de Energia",
+      "description": "Contas de gas e eletricidade impagaveis, teto de preco ainda alto demais"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Contas de Energia Incorretas",
+      "description": "Leituras estimadas erradas, cobrancas excessivas, erros de faturamento"
+    },
+    "Water Bill Increases": {
+      "name": "Aumentos na Conta de Agua",
+      "description": "Contas de agua subindo muito enquanto a qualidade do servico piora"
+    },
+    "Sewage in Rivers": {
+      "name": "Esgoto nos Rios",
+      "description": "Empresas de agua despejando esgoto nao tratado em rios e praias"
+    },
+    "Power Cuts": {
+      "name": "Quedas de Energia",
+      "description": "Interrupcoes no fornecimento de eletricidade, restauracao lenta, compensacao inadequada"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemas com Medidores Inteligentes",
+      "description": "Medidores inteligentes sem funcionar, perdendo funcionalidade apos trocar de fornecedor"
+    },
+    "Bank Branch Closures": {
+      "name": "Fechamento de Agencias Bancarias",
+      "description": "Agencias bancarias locais fechando, deixando comunidades sem acesso"
+    },
+    "Hidden Bank Charges": {
+      "name": "Taxas Bancarias Ocultas",
+      "description": "Taxas inesperadas por cheque especial, transacoes internacionais, manutencao de conta"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Perdas por Fraude e Golpes",
+      "description": "Bancos se recusando a reembolsar vitimas de fraude e golpes de transferencia autorizada"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Rejeicao de Sinistros de Seguros",
+      "description": "Sinistros negados por detalhes tecnicos apos anos pagando premios"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Choque das Taxas de Financiamento Imobiliario",
+      "description": "Periodo de taxa fixa termina e passa para uma taxa variavel muito mais alta"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Taxas de Transferencia Internacional",
+      "description": "Taxas excessivas e cambio desfavoravel para transferencias internacionais de dinheiro"
+    },
+    "NHS Waiting Times": {
+      "name": "Tempos de Espera do NHS",
+      "description": "Esperas de meses ou anos por cirurgias e consultas com especialistas"
+    },
+    "GP Appointment Access": {
+      "name": "Acesso a Consultas de Clinico Geral",
+      "description": "Impossivel conseguir marcar consulta no GP, semanas de espera"
+    },
+    "Dentist Availability": {
+      "name": "Disponibilidade de Dentistas",
+      "description": "Impossivel encontrar um dentista do NHS que aceite novos pacientes"
+    },
+    "Mental Health Service Waits": {
+      "name": "Espera por Servicos de Saude Mental",
+      "description": "Meses de espera por terapia e apoio em saude mental"
+    },
+    "Prescription Costs": {
+      "name": "Custos de Receitas Medicas",
+      "description": "Custo por medicamento alto demais na Inglaterra, inconsistencia entre nacoes do Reino Unido"
+    },
+    "Hospital Parking Charges": {
+      "name": "Taxas de Estacionamento em Hospitais",
+      "description": "Pagar para estacionar no hospital enquanto esta doente ou visitando parentes doentes"
+    },
+    "Rent Increases": {
+      "name": "Aumentos de Aluguel",
+      "description": "Alugueis privados subindo muito acima da inflacao, ameaca de despejo sem justa causa"
+    },
+    "Council Tax Rises": {
+      "name": "Aumentos do Council Tax",
+      "description": "Aumentos anuais do Council Tax enquanto os servicos locais pioram"
+    },
+    "Noisy Neighbours": {
+      "name": "Vizinhos Barulhentos",
+      "description": "Perturbacao sonora persistente, prefeituras lentas para agir, afetando a saude mental"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Mudancas na Coleta de Lixo",
+      "description": "Menos coletas, regras de reciclagem confusas, lixeiras transbordando"
+    },
+    "Planning Permission Abuse": {
+      "name": "Abuso de Licencas de Construcao",
+      "description": "Projetos indesejados aprovados, areas verdes ameacadas, comunidades ignoradas"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Umidade e Mofo nas Moradias",
+      "description": "Proprietarios e associacoes de moradia nao consertando problemas de umidade e mofo"
+    },
+    "Delivery Problems": {
+      "name": "Problemas de Entrega",
+      "description": "Encomendas perdidas, deixadas na chuva, marcadas como entregues mas nao recebidas"
+    },
+    "Shrinkflation": {
+      "name": "Reduflacao",
+      "description": "Produtos ficando menores enquanto os precos continuam iguais ou sobem"
+    },
+    "Refund Difficulties": {
+      "name": "Dificuldades de Reembolso",
+      "description": "Empresas dificultando desnecessariamente devolucoes e reembolsos"
+    },
+    "Fake Reviews": {
+      "name": "Avaliacoes Falsas",
+      "description": "Avaliacoes online nao confiaveis, avaliacoes positivas falsas enganando consumidores"
+    },
+    "Subscription Traps": {
+      "name": "Armadilhas de Assinatura",
+      "description": "Periodos de teste gratuitos convertidos em pagos sem consentimento claro, dificeis de cancelar"
+    },
+    "Food Quality Decline": {
+      "name": "Queda na Qualidade dos Alimentos",
+      "description": "Refeicoes prontas de qualidade pior, porcoes menores, mais aditivos"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustracao com Caixas de Autoatendimento",
+      "description": "Maquinas de autoatendimento pouco confiaveis, substituindo funcionarios humanos"
+    },
+    "Cost of Childcare": {
+      "name": "Custo da Creche",
+      "description": "Custos de cuidado infantil proibitivamente caros, limitando a capacidade de trabalhar"
+    },
+    "Student Loan Repayment": {
+      "name": "Pagamento de Emprestimo Estudantil",
+      "description": "Formados pagando por decadas, mudancas nos limites e juros"
+    },
+    "Dog Fouling": {
+      "name": "Fezes de Cachorro",
+      "description": "Fezes de cachorro em espacos publicos, parques e calcadas sem serem limpas"
+    },
+    "AI Replacing Jobs": {
+      "name": "IA Substituindo Empregos",
+      "description": "Ansiedade com a inteligencia artificial automatizando empregos sem apoio na transicao"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Operadora ferroviaria britanica na West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Operadora ferroviaria britanica para Londres e o sul"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Operadora ferroviaria britanica para o norte da Inglaterra"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Operadora ferroviaria britanica de longa distancia"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Operadora ferroviaria britanica nas rotas trans-Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Operadora ferroviaria britanica na East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Companhia aerea europeia de baixo custo"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Companhia aerea britanica de baixo custo"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Companhia aerea de bandeira britanica"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Empresa de ferias e viagens"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Grande provedora britanica de banda larga e telefonia movel"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Provedora britanica de banda larga, TV e telefonia movel"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Provedora britanica de TV, banda larga e telefonia movel"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Empresa global de telecomunicacoes com sede no Reino Unido"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operadora de rede movel britanica"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Provedora britanica de banda larga e telefone"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Fornecedora britanica de energia"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Fornecedora britanica de energia"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Fornecedora britanica de energia (de propriedade francesa)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Fornecedora britanica de energia renovavel"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Fornecedora britanica de energia"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Fornecedora britanica de energia (de propriedade alema)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Empresa de agua e saneamento para Londres e o Vale do Tamisa"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Empresa de agua para o sul da Inglaterra"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Empresa de agua para o noroeste da Inglaterra"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Empresa de agua para as Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Empresa de agua para East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Banco multinacional britanico"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Servicos bancarios e financeiros globais"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Banco britanico de varejo e comercial"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Grupo bancario britanico"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Banco britanico (de propriedade espanhola)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Banco digital e fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Seguros e servicos financeiros britanicos"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Seguro automotivo e residencial britanico"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Empresa de seguros britanica"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Empresa global de e-commerce e tecnologia"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Servico postal britanico"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Servico britanico de entrega de encomendas (anteriormente Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Servico britanico de entrega de encomendas"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Rede de supermercados britanica"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Rede de supermercados britanica"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Servico Nacional de Saude para a Inglaterra"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Servicos odontologicos do NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Prestadora privada de servicos de saude"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Governos locais britanicos"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Construtora de imoveis britanica"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Plataforma britanica de aluguel online"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Servico de entretenimento por streaming"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Empresa de tecnologia"
+    }
+  }
+}

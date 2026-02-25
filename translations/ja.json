@@ -1,0 +1,421 @@
+{
+  "locale": "ja",
+  "categories": {
+    "Transport": "交通",
+    "Telecoms": "通信",
+    "Banking": "銀行・金融",
+    "Health": "医療・健康",
+    "Education": "教育",
+    "Environment": "環境",
+    "Energy": "エネルギー",
+    "Water": "水道",
+    "Insurance": "保険",
+    "Housing": "住宅",
+    "Shopping": "買い物・消費",
+    "Delivery": "配送・物流",
+    "Local": "地域",
+    "Employment": "雇用",
+    "Tech": "テクノロジー",
+    "Other": "その他"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "列車の運休",
+      "description": "列車が運休または大幅に遅延し、通知や補償が不十分"
+    },
+    "Train Ticket Prices": {
+      "name": "鉄道運賃",
+      "description": "鉄道運賃が高すぎ、物価上昇率を上回る値上げ、料金体系が不統一"
+    },
+    "Flight Delays": {
+      "name": "フライトの遅延",
+      "description": "フライトの遅延や欠航、情報伝達の不備、補償請求の困難さ"
+    },
+    "Lost Luggage": {
+      "name": "手荷物の紛失",
+      "description": "荷物が目的地に届かない、追跡が遅い、補償が不十分"
+    },
+    "Bus Route Cuts": {
+      "name": "バス路線の削減",
+      "description": "路線の廃止、運行本数の削減、地方がバスサービスを失う"
+    },
+    "Pothole Damage": {
+      "name": "路面の陥没被害",
+      "description": "道路の陥没が車両を損傷し自転車利用者を危険にさらす、自治体の補修が遅い"
+    },
+    "Parking Fines": {
+      "name": "駐車違反金",
+      "description": "不当な民間駐車場の料金、強引な取り締まり、分かりにくい標識"
+    },
+    "Fuel Prices": {
+      "name": "燃料価格",
+      "description": "ガソリン・軽油価格が高すぎ、卸売価格が下がっても小売価格の値下がりが遅い"
+    },
+    "Broadband Speed": {
+      "name": "ブロードバンド速度",
+      "description": "実際の通信速度が広告や契約で謳われている速度を大きく下回る"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "携帯電話の圏外エリア",
+      "description": "自宅、職場、交通路線沿いで携帯電話の電波が入らない"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "契約期間中の値上げ",
+      "description": "携帯電話、ブロードバンド、テレビの料金が契約期間中に値上げされる"
+    },
+    "Customer Service Hold Times": {
+      "name": "カスタマーサービスの待ち時間",
+      "description": "オペレーターにつながるまで何時間も待たされる"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "サブスクリプションの解約困難",
+      "description": "企業が意図的に解約や退会を難しくしている"
+    },
+    "Roaming Charges": {
+      "name": "ローミング料金",
+      "description": "海外旅行時に予想外の携帯電話ローミング料金が発生、EU離脱後の値上げ"
+    },
+    "Energy Bill Costs": {
+      "name": "エネルギー料金",
+      "description": "ガス・電気料金が支払えないほど高額、価格上限もまだ高すぎる"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "不正確なエネルギー請求",
+      "description": "推定検針値の誤り、過大請求、請求書のミス"
+    },
+    "Water Bill Increases": {
+      "name": "水道料金の値上げ",
+      "description": "水道料金が急騰する一方、サービス品質は低下"
+    },
+    "Sewage in Rivers": {
+      "name": "河川への下水放流",
+      "description": "水道会社が未処理の下水を河川や海岸に放流"
+    },
+    "Power Cuts": {
+      "name": "停電",
+      "description": "電力供給の中断、復旧の遅さ、補償の不十分さ"
+    },
+    "Smart Meter Problems": {
+      "name": "スマートメーターの問題",
+      "description": "スマートメーターが正常に動作しない、供給会社を変更すると機能しなくなる"
+    },
+    "Bank Branch Closures": {
+      "name": "銀行支店の閉鎖",
+      "description": "地域の銀行支店が閉鎖され、地域住民が銀行サービスを利用できなくなる"
+    },
+    "Hidden Bank Charges": {
+      "name": "銀行の隠れた手数料",
+      "description": "当座貸越、外貨取引、口座維持の予想外の手数料"
+    },
+    "Fraud and Scam Losses": {
+      "name": "詐欺被害",
+      "description": "銀行が詐欺やプッシュ型決済詐欺の被害者への返金を拒否"
+    },
+    "Insurance Claim Rejections": {
+      "name": "保険金請求の拒否",
+      "description": "長年保険料を支払った後、技術的な理由で保険金請求が却下される"
+    },
+    "Mortgage Rate Shock": {
+      "name": "住宅ローン金利の急変",
+      "description": "固定金利期間が終了し、はるかに高い変動金利に移行"
+    },
+    "Overseas Transfer Fees": {
+      "name": "海外送金手数料",
+      "description": "国際送金の手数料が高額、為替レートが不利"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS待機時間",
+      "description": "手術や専門医の予約に数か月から数年待ち"
+    },
+    "GP Appointment Access": {
+      "name": "かかりつけ医の予約困難",
+      "description": "電話がつながらず予約ができない、数週間待ち"
+    },
+    "Dentist Availability": {
+      "name": "歯科医の不足",
+      "description": "新規患者を受け入れるNHS歯科医がほとんど見つからない"
+    },
+    "Mental Health Service Waits": {
+      "name": "メンタルヘルスサービスの待機",
+      "description": "心理療法やメンタルヘルス支援に数か月待ち"
+    },
+    "Prescription Costs": {
+      "name": "処方薬の費用",
+      "description": "イングランドでの処方薬1品目あたりの費用が高い、英国各地で基準が不統一"
+    },
+    "Hospital Parking Charges": {
+      "name": "病院の駐車料金",
+      "description": "通院や見舞いの際に病院の駐車料金を支払わなければならない"
+    },
+    "Rent Increases": {
+      "name": "家賃の値上げ",
+      "description": "民間賃貸の家賃が物価上昇率を大きく上回って上昇、無過失立退きの脅威"
+    },
+    "Council Tax Rises": {
+      "name": "カウンシルタックスの値上げ",
+      "description": "地方税が毎年値上がりする一方、地方行政サービスは悪化"
+    },
+    "Noisy Neighbours": {
+      "name": "騒音問題のある隣人",
+      "description": "持続的な騒音問題、自治体の対応が遅い、精神的健康に影響"
+    },
+    "Rubbish Collection Changes": {
+      "name": "ごみ収集の変更",
+      "description": "ごみ収集回数の削減、分別ルールの混乱、ごみ箱があふれる"
+    },
+    "Planning Permission Abuse": {
+      "name": "建築許可の濫用",
+      "description": "望まれない開発計画が承認、グリーンベルトへの脅威、地域の意見が無視される"
+    },
+    "Damp and Mould in Housing": {
+      "name": "住宅の湿気とカビ",
+      "description": "家主や住宅組合が湿気やカビの問題を修繕しない"
+    },
+    "Delivery Problems": {
+      "name": "配送トラブル",
+      "description": "荷物の紛失、雨ざらしで放置、配達済みと表示されるが届いていない"
+    },
+    "Shrinkflation": {
+      "name": "シュリンクフレーション",
+      "description": "商品が小さくなっているのに価格は据え置きか値上げ"
+    },
+    "Refund Difficulties": {
+      "name": "返金の困難さ",
+      "description": "企業が返品・返金手続きを不必要に複雑にしている"
+    },
+    "Fake Reviews": {
+      "name": "やらせレビュー",
+      "description": "ネット上のレビューが信頼できない、虚偽の高評価が消費者を誤導"
+    },
+    "Subscription Traps": {
+      "name": "サブスクリプションの罠",
+      "description": "無料お試しが明確な同意なく有料に切り替わり、解約が困難"
+    },
+    "Food Quality Decline": {
+      "name": "食品品質の低下",
+      "description": "調理済み食品の品質低下、分量の減少、添加物の増加"
+    },
+    "Self-Checkout Frustration": {
+      "name": "セルフレジへの不満",
+      "description": "セルフレジが不安定、有人レジの人員削減"
+    },
+    "Cost of Childcare": {
+      "name": "保育費用",
+      "description": "保育料が高すぎて働くことが難しい"
+    },
+    "Student Loan Repayment": {
+      "name": "学生ローンの返済",
+      "description": "卒業生が数十年にわたって返済、返済基準額や金利の変更"
+    },
+    "Dog Fouling": {
+      "name": "犬のフン放置",
+      "description": "公共の場、公園、歩道にある犬のフンが清掃されない"
+    },
+    "AI Replacing Jobs": {
+      "name": "AIによる雇用の代替",
+      "description": "移行支援のないまま人工知能が仕事を自動化することへの不安"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "ウェストコースト本線を運行する英国の鉄道事業者"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "ロンドンおよび南部地域を運行する英国の鉄道事業者"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "イングランド北部を運行する英国の鉄道事業者"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "英国の長距離鉄道事業者"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "ペナイン山脈横断路線を運行する英国の鉄道事業者"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "イーストコースト本線を運行する英国の鉄道事業者"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "ヨーロッパの格安航空会社"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "英国の格安航空会社"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "英国のフラッグキャリア航空会社"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "旅行・ホリデー会社"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "英国の大手ブロードバンド・モバイル通信プロバイダー"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "英国のブロードバンド・テレビ・モバイル通信プロバイダー"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "英国のテレビ・ブロードバンド・モバイル通信プロバイダー"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "英国に本社を置くグローバル通信会社"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "英国のモバイルネットワーク事業者"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "英国のブロードバンド・電話プロバイダー"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "英国のエネルギー供給会社"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "英国のエネルギー供給会社"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "英国のエネルギー供給会社（仏系）"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "英国の再生可能エネルギー供給会社"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "英国のエネルギー供給会社"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "英国のエネルギー供給会社（独系）"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "ロンドンおよびテムズ渓谷の上下水道会社"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "イングランド南部の水道会社"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "イングランド北西部の水道会社"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "ミッドランズ地方の水道会社"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "イーストアングリアの水道会社"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "英国の多国籍銀行"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "グローバルな銀行・金融サービスグループ"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "英国のリテール・商業銀行"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "英国の銀行グループ"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "英国の銀行（スペイン系）"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "デジタルバンキング・フィンテック企業"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "英国の保険・金融サービス会社"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "英国の自動車・住宅保険会社"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "英国の保険会社"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "グローバルなEコマース・テクノロジー企業"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "英国の郵便サービス"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "英国の宅配サービス（旧Hermes）"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "英国の宅配サービス"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "英国のスーパーマーケットチェーン"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "英国のスーパーマーケットチェーン"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "イングランドの国民保健サービス"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHSの歯科サービス"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "民間医療サービスプロバイダー"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "英国の地方自治体"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "英国の住宅建設会社"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "英国のオンライン賃貸プラットフォーム"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "動画配信サービス"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "テクノロジー企業"
+    }
+  }
+}

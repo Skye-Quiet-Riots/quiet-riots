@@ -1,0 +1,421 @@
+{
+  "locale": "tl",
+  "categories": {
+    "Transport": "Transportasyon",
+    "Telecoms": "Telekomunikasyon",
+    "Banking": "Pagbabangko",
+    "Health": "Kalusugan",
+    "Education": "Edukasyon",
+    "Environment": "Kapaligiran",
+    "Energy": "Enerhiya",
+    "Water": "Tubig",
+    "Insurance": "Seguro",
+    "Housing": "Pabahay",
+    "Shopping": "Pamimili",
+    "Delivery": "Paghahatid",
+    "Local": "Lokal",
+    "Employment": "Trabaho",
+    "Tech": "Teknolohiya",
+    "Other": "Iba Pa"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Pagkansela ng Tren",
+      "description": "Mga tren na kinansela o labis na naantala nang walang sapat na abiso o kabayaran"
+    },
+    "Train Ticket Prices": {
+      "name": "Presyo ng Tiket sa Tren",
+      "description": "Masyadong mahal ang pamasahe sa tren, pagtaas na lampas sa implasyon, hindi pare-parehong presyo"
+    },
+    "Flight Delays": {
+      "name": "Pagkaantala ng Eroplano",
+      "description": "Mga flight na naantala o kinansela, mahinang komunikasyon, mahirap mag-claim ng kabayaran"
+    },
+    "Lost Luggage": {
+      "name": "Nawawalang Bagahe",
+      "description": "Hindi dumating ang mga bag sa destinasyon, mabagal na paghahanap, hindi sapat na kabayaran"
+    },
+    "Bus Route Cuts": {
+      "name": "Pagbawas ng Ruta ng Bus",
+      "description": "Mga ruta na kinansela, binawasan ang dalas, nawawalan ng access sa bus ang mga komunidad sa lalawigan"
+    },
+    "Pothole Damage": {
+      "name": "Pinsala mula sa Lubak",
+      "description": "Mga lubak na sumisira sa sasakyan at nanganganib sa mga siklista, mabagal ang konseho sa pag-aayos"
+    },
+    "Parking Fines": {
+      "name": "Multa sa Paradahan",
+      "description": "Hindi patas na bayarin sa pribadong paradahan, agresibong pagpapatupad, nakakalitong karatula"
+    },
+    "Fuel Prices": {
+      "name": "Presyo ng Gasolina",
+      "description": "Masyadong mahal ang gasolina at diesel, mabagal bumaba kahit bumaba ang presyo sa wholesale"
+    },
+    "Broadband Speed": {
+      "name": "Bilis ng Broadband",
+      "description": "Bilis ng internet na malayong mas mababa sa inaanunsyo at binabayaran"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mga Lugar na Walang Signal",
+      "description": "Walang signal ng mobile sa mga tahanan, lugar ng trabaho, o sa mga ruta ng transportasyon"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Pagtaas ng Presyo sa Gitna ng Kontrata",
+      "description": "Tumataas ang mga bill sa telepono, broadband at TV habang naka-lock sa kontrata"
+    },
+    "Customer Service Hold Times": {
+      "name": "Mahabang Paghihintay sa Customer Service",
+      "description": "Oras-oras na naghihintay para makausap ang isang tao"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Kahirapan sa Pagkansela ng Subscription",
+      "description": "Sinasadya ng mga kumpanya na pahirapan ang pagkansela o pag-unsubscribe"
+    },
+    "Roaming Charges": {
+      "name": "Bayarin sa Roaming",
+      "description": "Hindi inaasahang mga singil sa mobile kapag nasa ibang bansa, pagtaas ng presyo pagkatapos ng Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Gastos sa Bill ng Enerhiya",
+      "description": "Hindi kayang bayaran ang bill sa gas at kuryente, masyadong mataas pa rin ang price cap"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Hindi Tumpak na Bill ng Enerhiya",
+      "description": "Maling estimated na pagbasa, labis na singil, mga error sa billing"
+    },
+    "Water Bill Increases": {
+      "name": "Pagtaas ng Bill sa Tubig",
+      "description": "Mabilis na pagtaas ng bill sa tubig habang bumababa ang kalidad ng serbisyo"
+    },
+    "Sewage in Rivers": {
+      "name": "Dumi sa mga Ilog",
+      "description": "Mga kumpanya ng tubig na nagtatapon ng hilaw na dumi sa mga daluyan ng tubig at mga dalampasigan"
+    },
+    "Power Cuts": {
+      "name": "Pagkaputol ng Kuryente",
+      "description": "Pagkaantala ng suplay ng kuryente, mabagal na pagbabalik, hindi sapat na kabayaran"
+    },
+    "Smart Meter Problems": {
+      "name": "Problema sa Smart Meter",
+      "description": "Hindi gumagana ang smart meter, nawawalan ng function pagkatapos magpalit ng supplier"
+    },
+    "Bank Branch Closures": {
+      "name": "Pagsasara ng mga Sangay ng Bangko",
+      "description": "Nagsasara ang mga lokal na sangay ng bangko, naiiwang walang access ang mga komunidad"
+    },
+    "Hidden Bank Charges": {
+      "name": "Nakatagong Bayarin sa Bangko",
+      "description": "Hindi inaasahang bayarin para sa overdraft, dayuhang transaksyon, pagpapanatili ng account"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Pagkalugi sa Panloloko at Scam",
+      "description": "Tumatangging mag-reimburse ang mga bangko sa mga biktima ng panloloko at awtorisadong push payment scam"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Pagtanggi sa Claim ng Seguro",
+      "description": "Mga claim na tinanggihan dahil sa mga teknikal na dahilan pagkatapos ng maraming taon ng pagbabayad ng premium"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Pagkagulat sa Rate ng Mortgage",
+      "description": "Natapos ang fixed rate at lumipat sa mas mataas na variable rate"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Bayarin sa Padala sa Ibang Bansa",
+      "description": "Labis na bayarin at mahinang palitan ng pera para sa internasyonal na pagpapadala ng pera"
+    },
+    "NHS Waiting Times": {
+      "name": "Oras ng Paghihintay sa NHS",
+      "description": "Ilang buwan o ilang taon na paghihintay para sa mga operasyon at appointment sa espesyalista"
+    },
+    "GP Appointment Access": {
+      "name": "Access sa Appointment sa GP",
+      "description": "Hindi makapag-book ng appointment sa GP, ilang linggo ang paghihintay"
+    },
+    "Dentist Availability": {
+      "name": "Pagkakaroon ng Dentista",
+      "description": "Imposibleng makahanap ng NHS dentista na tumatanggap ng bagong pasyente"
+    },
+    "Mental Health Service Waits": {
+      "name": "Paghihintay sa Serbisyo ng Mental Health",
+      "description": "Ilang buwang paghihintay para sa therapy at suporta sa mental health"
+    },
+    "Prescription Costs": {
+      "name": "Gastos sa Reseta",
+      "description": "Masyadong mahal ang bawat item sa England, hindi pare-pareho sa mga bansa ng UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Bayarin sa Paradahan ng Ospital",
+      "description": "Nagbabayad para mag-park sa ospital habang may sakit o bumibisita sa may sakit na kamag-anak"
+    },
+    "Rent Increases": {
+      "name": "Pagtaas ng Upa",
+      "description": "Pagtaas ng upa sa pribado na lampas sa implasyon, banta ng pagpapaalis nang walang kasalanan"
+    },
+    "Council Tax Rises": {
+      "name": "Pagtaas ng Council Tax",
+      "description": "Taunang pagtaas ng council tax habang lumalala ang mga lokal na serbisyo"
+    },
+    "Noisy Neighbours": {
+      "name": "Maingay na Kapitbahay",
+      "description": "Patuloy na ingay, mabagal kumilos ang konseho, nakakaapekto sa mental health"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Pagbabago sa Koleksyon ng Basura",
+      "description": "Nabawasan ang koleksyon ng basura, nakakalitong patakaran sa recycling, umaapaw na mga basurahan"
+    },
+    "Planning Permission Abuse": {
+      "name": "Pag-abuso sa Permit ng Konstruksyon",
+      "description": "Inaprubahan ang hindi gustong mga development, nanganganib ang green belt, binabalewala ang komunidad"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Halumigmig at Amag sa Pabahay",
+      "description": "Nabibigo ang mga may-ari ng bahay at housing association na ayusin ang halumigmig at amag"
+    },
+    "Delivery Problems": {
+      "name": "Problema sa Paghahatid",
+      "description": "Mga parsela na nawala, iniwan sa ulan, minarkahang naihatid pero hindi natanggap"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Lumiliit ang mga produkto habang nananatili o tumataas ang presyo"
+    },
+    "Refund Difficulties": {
+      "name": "Kahirapan sa Refund",
+      "description": "Sinasadya ng mga kumpanya na pahirapan ang pagbabalik at refund"
+    },
+    "Fake Reviews": {
+      "name": "Pekeng Review",
+      "description": "Hindi mapagkakatiwalaan ang mga online review, nakakapanlinlang na pekeng positibong review sa mga mamimili"
+    },
+    "Subscription Traps": {
+      "name": "Bitag sa Subscription",
+      "description": "Mga libreng trial na nagiging bayad nang walang malinaw na pahintulot, mahirap ikansela"
+    },
+    "Food Quality Decline": {
+      "name": "Pagbaba ng Kalidad ng Pagkain",
+      "description": "Bumaba ang kalidad ng mga ready meal, lumiliit ang sukat, mas maraming additives"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Inis sa Self-Checkout",
+      "description": "Hindi maaasahan ang mga self-service machine, pinapalitan ang mga empleyado"
+    },
+    "Cost of Childcare": {
+      "name": "Gastos sa Pag-aalaga ng Bata",
+      "description": "Masyadong mahal ang childcare, nilimitahan ang kakayahang magtrabaho"
+    },
+    "Student Loan Repayment": {
+      "name": "Pagbabayad ng Student Loan",
+      "description": "Mga nagtapos na nagbabayad ng ilang dekada, pagbabago sa threshold at interes"
+    },
+    "Dog Fouling": {
+      "name": "Dumi ng Aso",
+      "description": "Dumi ng aso sa mga pampublikong lugar, parke, at bangketa na hindi nililinis"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI na Pumapalit sa mga Trabaho",
+      "description": "Pagkabalisa tungkol sa artificial intelligence na nag-a-automate ng mga trabaho nang walang suporta sa paglipat"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Operator ng tren sa UK na nagsisilbi sa West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Operator ng tren sa UK na nagsisilbi sa London at timog"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Operator ng tren sa UK na nagsisilbi sa hilaga ng England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Operator ng tren sa UK para sa mahabang distansya"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Operator ng tren sa UK na nagsisilbi sa mga ruta ng trans-Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Operator ng tren sa UK na nagsisilbi sa East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Murang airline sa Europa"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Murang airline na base sa UK"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Pambansang airline ng UK"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Kumpanya ng bakasyon at paglalakbay"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Malaking provider ng broadband at mobile sa UK"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Provider ng broadband, TV, at mobile sa UK"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Provider ng TV, broadband, at mobile sa UK"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Pandaigdigang kumpanya ng telekomunikasyon na nakabase sa UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operator ng mobile network sa UK"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Provider ng broadband at telepono sa UK"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Supplier ng enerhiya sa UK"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Supplier ng enerhiya sa UK"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Supplier ng enerhiya sa UK (pag-aari ng France)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Supplier ng renewable energy sa UK"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Supplier ng enerhiya sa UK"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Supplier ng enerhiya sa UK (pag-aari ng Germany)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Kumpanya ng tubig at alkantarilya para sa London at Thames Valley"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Kumpanya ng tubig para sa timog ng England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Kumpanya ng tubig para sa hilagang-kanluran ng England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Kumpanya ng tubig para sa Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Kumpanya ng tubig para sa East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Multinasyonal na bangko ng Britain"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Pandaigdigang serbisyo sa pagbabangko at pananalapi"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Bangko sa UK para sa retail at komersyal"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Grupo ng pagbabangko sa UK"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Bangko sa UK (pag-aari ng Spain)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital na pagbabangko at fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Seguro at serbisyong pinansyal sa UK"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Seguro ng kotse at bahay sa UK"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Kumpanya ng seguro sa UK"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Pandaigdigang e-commerce at teknolohiya"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Serbisyo ng koreo sa UK"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Serbisyo ng paghahatid ng parsela sa UK (dating Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Serbisyo ng paghahatid ng parsela sa UK"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Kadena ng supermarket sa UK"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Kadena ng supermarket sa UK"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Pambansang Serbisyo ng Kalusugan para sa England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Mga serbisyo sa ngipin ng NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Pribadong provider ng pangangalagang pangkalusugan"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Mga awtoridad ng lokal na pamahalaan sa UK"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Tagapagtayo ng bahay sa UK"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Online na platform ng pagpapaupa sa UK"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Serbisyo ng streaming entertainment"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Kumpanya ng teknolohiya"
+    }
+  }
+}

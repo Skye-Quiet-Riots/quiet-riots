@@ -1,0 +1,421 @@
+{
+  "locale": "th",
+  "categories": {
+    "Transport": "การขนส่ง",
+    "Telecoms": "โทรคมนาคม",
+    "Banking": "การธนาคาร",
+    "Health": "สุขภาพ",
+    "Education": "การศึกษา",
+    "Environment": "สิ่งแวดล้อม",
+    "Energy": "พลังงาน",
+    "Water": "น้ำประปา",
+    "Insurance": "ประกันภัย",
+    "Housing": "ที่อยู่อาศัย",
+    "Shopping": "การจับจ่ายซื้อของ",
+    "Delivery": "การจัดส่งสินค้า",
+    "Local": "ท้องถิ่น",
+    "Employment": "การจ้างงาน",
+    "Tech": "เทคโนโลยี",
+    "Other": "อื่น ๆ"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "รถไฟถูกยกเลิก",
+      "description": "รถไฟถูกยกเลิกหรือล่าช้าอย่างรุนแรงโดยไม่มีการแจ้งเตือนหรือชดเชยอย่างเพียงพอ"
+    },
+    "Train Ticket Prices": {
+      "name": "ราคาตั๋วรถไฟ",
+      "description": "ค่าโดยสารรถไฟแพงเกินไป ปรับขึ้นเกินอัตราเงินเฟ้อ การตั้งราคาไม่สม่ำเสมอ"
+    },
+    "Flight Delays": {
+      "name": "เที่ยวบินล่าช้า",
+      "description": "เที่ยวบินล่าช้าหรือถูกยกเลิก การสื่อสารไม่ดี การเรียกร้องค่าชดเชยทำได้ยาก"
+    },
+    "Lost Luggage": {
+      "name": "กระเป๋าสูญหาย",
+      "description": "กระเป๋าไม่มาถึงจุดหมาย การติดตามล่าช้า การชดเชยไม่เพียงพอ"
+    },
+    "Bus Route Cuts": {
+      "name": "การตัดเส้นทางรถเมล์",
+      "description": "เส้นทางถูกยกเลิก ลดความถี่ ชุมชนในชนบทสูญเสียการเข้าถึงรถเมล์"
+    },
+    "Pothole Damage": {
+      "name": "ความเสียหายจากหลุมบ่อ",
+      "description": "หลุมบ่อทำให้รถเสียหายและเป็นอันตรายต่อนักปั่นจักรยาน เทศบาลซ่อมแซมล่าช้า"
+    },
+    "Parking Fines": {
+      "name": "ค่าปรับที่จอดรถ",
+      "description": "ค่าจอดรถเอกชนที่ไม่เป็นธรรม การบังคับใช้กฎอย่างก้าวร้าว ป้ายบอกทางสับสน"
+    },
+    "Fuel Prices": {
+      "name": "ราคาน้ำมัน",
+      "description": "ราคาน้ำมันเบนซินและดีเซลสูงเกินไป ลดลงช้าเมื่อราคาขายส่งลดลง"
+    },
+    "Broadband Speed": {
+      "name": "ความเร็วอินเทอร์เน็ต",
+      "description": "ความเร็วอินเทอร์เน็ตต่ำกว่าที่โฆษณาและจ่ายเงินไปมาก"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "พื้นที่ไม่มีสัญญาณมือถือ",
+      "description": "ไม่มีสัญญาณมือถือในบ้าน ที่ทำงาน หรือตามเส้นทางขนส่ง"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "ขึ้นราคาระหว่างสัญญา",
+      "description": "ค่าโทรศัพท์ อินเทอร์เน็ต และทีวีเพิ่มขึ้นระหว่างสัญญาที่ถูกล็อค"
+    },
+    "Customer Service Hold Times": {
+      "name": "เวลารอสายบริการลูกค้า",
+      "description": "รอสายเป็นชั่วโมงเพื่อพูดคุยกับเจ้าหน้าที่จริง"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "ยกเลิกการสมัครสมาชิกยาก",
+      "description": "บริษัทจงใจทำให้การยกเลิกหรือเลิกสมัครทำได้ยาก"
+    },
+    "Roaming Charges": {
+      "name": "ค่าโรมมิ่ง",
+      "description": "ค่าใช้จ่ายมือถือที่ไม่คาดคิดเมื่อเดินทางไปต่างประเทศ ราคาเพิ่มหลัง Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "ค่าพลังงาน",
+      "description": "ค่าแก๊สและไฟฟ้าสูงจนรับไม่ไหว เพดานราคายังสูงเกินไป"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "ใบแจ้งค่าพลังงานไม่ถูกต้อง",
+      "description": "การอ่านมิเตอร์โดยประมาณผิดพลาด คิดเงินเกิน ข้อผิดพลาดในการเรียกเก็บ"
+    },
+    "Water Bill Increases": {
+      "name": "ค่าน้ำประปาเพิ่มขึ้น",
+      "description": "ค่าน้ำประปาเพิ่มขึ้นอย่างรวดเร็วขณะที่คุณภาพบริการลดลง"
+    },
+    "Sewage in Rivers": {
+      "name": "น้ำเสียในแม่น้ำ",
+      "description": "บริษัทประปาปล่อยน้ำเสียดิบลงในทางน้ำและชายหาด"
+    },
+    "Power Cuts": {
+      "name": "ไฟดับ",
+      "description": "กระแสไฟฟ้าหยุดจ่าย การกู้คืนล่าช้า การชดเชยไม่เพียงพอ"
+    },
+    "Smart Meter Problems": {
+      "name": "ปัญหามิเตอร์อัจฉริยะ",
+      "description": "มิเตอร์อัจฉริยะไม่ทำงาน สูญเสียฟังก์ชันหลังเปลี่ยนผู้ให้บริการ"
+    },
+    "Bank Branch Closures": {
+      "name": "ธนาคารสาขาปิดตัว",
+      "description": "ธนาคารสาขาในท้องถิ่นปิดตัว ชุมชนขาดการเข้าถึงบริการ"
+    },
+    "Hidden Bank Charges": {
+      "name": "ค่าธรรมเนียมธนาคารแอบแฝง",
+      "description": "ค่าธรรมเนียมที่ไม่คาดคิดสำหรับการเบิกเกินบัญชี ธุรกรรมต่างประเทศ การดูแลบัญชี"
+    },
+    "Fraud and Scam Losses": {
+      "name": "ความสูญเสียจากการฉ้อโกง",
+      "description": "ธนาคารปฏิเสธการคืนเงินให้เหยื่อฉ้อโกงและหลอกลวงทางการเงิน"
+    },
+    "Insurance Claim Rejections": {
+      "name": "การปฏิเสธเคลมประกัน",
+      "description": "เคลมถูกปฏิเสธด้วยเหตุผลทางเทคนิคหลังจ่ายเบี้ยมาหลายปี"
+    },
+    "Mortgage Rate Shock": {
+      "name": "อัตราสินเชื่อบ้านช็อก",
+      "description": "อัตราดอกเบี้ยคงที่สิ้นสุดและเปลี่ยนเป็นอัตราลอยตัวที่สูงขึ้นมาก"
+    },
+    "Overseas Transfer Fees": {
+      "name": "ค่าธรรมเนียมโอนเงินต่างประเทศ",
+      "description": "ค่าธรรมเนียมสูงเกินไปและอัตราแลกเปลี่ยนไม่ดีสำหรับการโอนเงินระหว่างประเทศ"
+    },
+    "NHS Waiting Times": {
+      "name": "เวลารอ NHS",
+      "description": "รอหลายเดือนหรือหลายปีสำหรับการผ่าตัดและพบแพทย์เฉพาะทาง"
+    },
+    "GP Appointment Access": {
+      "name": "การเข้าถึงนัดแพทย์ทั่วไป",
+      "description": "ไม่สามารถโทรจองนัดแพทย์ได้ ต้องรอหลายสัปดาห์"
+    },
+    "Dentist Availability": {
+      "name": "ทันตแพทย์มีจำกัด",
+      "description": "ไม่สามารถหาทันตแพทย์ NHS ที่รับผู้ป่วยใหม่ได้"
+    },
+    "Mental Health Service Waits": {
+      "name": "รอบริการสุขภาพจิต",
+      "description": "รอหลายเดือนสำหรับการบำบัดและบริการสุขภาพจิต"
+    },
+    "Prescription Costs": {
+      "name": "ค่ายา",
+      "description": "ค่ายาต่อรายการสูงเกินไปในอังกฤษ ความไม่สอดคล้องระหว่างประเทศในสหราชอาณาจักร"
+    },
+    "Hospital Parking Charges": {
+      "name": "ค่าจอดรถโรงพยาบาล",
+      "description": "ต้องจ่ายค่าจอดรถที่โรงพยาบาลขณะป่วยหรือเยี่ยมผู้ป่วย"
+    },
+    "Rent Increases": {
+      "name": "ค่าเช่าเพิ่มขึ้น",
+      "description": "ค่าเช่าเอกชนเพิ่มขึ้นมากกว่าอัตราเงินเฟ้อ ภัยคุกคามการขับไล่โดยไม่มีความผิด"
+    },
+    "Council Tax Rises": {
+      "name": "ภาษีท้องถิ่นเพิ่มขึ้น",
+      "description": "ภาษีท้องถิ่นเพิ่มขึ้นทุกปีขณะที่บริการท้องถิ่นแย่ลง"
+    },
+    "Noisy Neighbours": {
+      "name": "เพื่อนบ้านเสียงดัง",
+      "description": "เสียงรบกวนต่อเนื่อง เทศบาลดำเนินการล่าช้า ส่งผลต่อสุขภาพจิต"
+    },
+    "Rubbish Collection Changes": {
+      "name": "เปลี่ยนแปลงการเก็บขยะ",
+      "description": "ลดการเก็บขยะ กฎการรีไซเคิลสับสน ถังขยะล้น"
+    },
+    "Planning Permission Abuse": {
+      "name": "การใช้ใบอนุญาตก่อสร้างในทางที่ผิด",
+      "description": "โครงการพัฒนาที่ไม่ต้องการได้รับอนุมัติ พื้นที่สีเขียวถูกคุกคาม ชุมชนถูกเพิกเฉย"
+    },
+    "Damp and Mould in Housing": {
+      "name": "ความชื้นและเชื้อราในที่อยู่อาศัย",
+      "description": "เจ้าของบ้านและสมาคมที่อยู่อาศัยไม่ยอมแก้ไขปัญหาความชื้นและเชื้อรา"
+    },
+    "Delivery Problems": {
+      "name": "ปัญหาการจัดส่ง",
+      "description": "พัสดุสูญหาย ถูกทิ้งกลางฝน แจ้งว่าจัดส่งแล้วแต่ไม่ได้รับ"
+    },
+    "Shrinkflation": {
+      "name": "การลดขนาดสินค้า",
+      "description": "สินค้ามีขนาดเล็กลงขณะที่ราคาเท่าเดิมหรือเพิ่มขึ้น"
+    },
+    "Refund Difficulties": {
+      "name": "การคืนเงินยาก",
+      "description": "บริษัททำให้การคืนสินค้าและการคืนเงินยุ่งยากโดยไม่จำเป็น"
+    },
+    "Fake Reviews": {
+      "name": "รีวิวปลอม",
+      "description": "ไม่สามารถเชื่อถือรีวิวออนไลน์ได้ รีวิวเชิงบวกปลอมหลอกลวงผู้บริโภค"
+    },
+    "Subscription Traps": {
+      "name": "กับดักการสมัครสมาชิก",
+      "description": "ทดลองฟรีเปลี่ยนเป็นเสียเงินโดยไม่ได้ยินยอมชัดเจน ยกเลิกยาก"
+    },
+    "Food Quality Decline": {
+      "name": "คุณภาพอาหารลดลง",
+      "description": "อาหารสำเร็จรูปคุณภาพแย่ลง ปริมาณน้อยลง สารปรุงแต่งมากขึ้น"
+    },
+    "Self-Checkout Frustration": {
+      "name": "ความหงุดหงิดกับเครื่องชำระเงินอัตโนมัติ",
+      "description": "เครื่องบริการตนเองไม่น่าเชื่อถือ มาแทนที่พนักงานจริง"
+    },
+    "Cost of Childcare": {
+      "name": "ค่าดูแลเด็ก",
+      "description": "ค่าดูแลเด็กแพงจนรับไม่ไหว จำกัดความสามารถในการทำงาน"
+    },
+    "Student Loan Repayment": {
+      "name": "การชำระคืนเงินกู้นักศึกษา",
+      "description": "ผู้สำเร็จการศึกษาต้องจ่ายคืนหลายสิบปี มีการเปลี่ยนเกณฑ์และดอกเบี้ย"
+    },
+    "Dog Fouling": {
+      "name": "มูลสุนัขในที่สาธารณะ",
+      "description": "มูลสุนัขตามพื้นที่สาธารณะ สวน และทางเท้าไม่ถูกทำความสะอาด"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI แทนที่งาน",
+      "description": "ความกังวลเรื่องปัญญาประดิษฐ์ที่ทำให้งานเป็นระบบอัตโนมัติโดยไม่มีการสนับสนุนการเปลี่ยนผ่าน"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทาง West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรให้บริการลอนดอนและภาคใต้"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรให้บริการภาคเหนือของอังกฤษ"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "ผู้ให้บริการรถไฟทางไกลของสหราชอาณาจักร"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทางข้ามเทือกเขา Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทาง East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "สายการบินราคาประหยัดของยุโรป"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "สายการบินราคาประหยัดสัญชาติสหราชอาณาจักร"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "สายการบินแห่งชาติของสหราชอาณาจักร"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "บริษัทท่องเที่ยวและวันหยุดพักผ่อน"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "ผู้ให้บริการอินเทอร์เน็ตและมือถือรายใหญ่ของสหราชอาณาจักร"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "ผู้ให้บริการอินเทอร์เน็ต ทีวี และมือถือของสหราชอาณาจักร"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "ผู้ให้บริการทีวี อินเทอร์เน็ต และมือถือของสหราชอาณาจักร"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "บริษัทโทรคมนาคมระดับโลกที่มีสำนักงานใหญ่ในสหราชอาณาจักร"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "ผู้ให้บริการเครือข่ายมือถือของสหราชอาณาจักร"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "ผู้ให้บริการอินเทอร์เน็ตและโทรศัพท์ของสหราชอาณาจักร"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เจ้าของเป็นบริษัทฝรั่งเศส)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "ผู้จัดหาพลังงานหมุนเวียนของสหราชอาณาจักร"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เจ้าของเป็นบริษัทเยอรมัน)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "บริษัทน้ำประปาและสุขาภิบาลสำหรับลอนดอนและหุบเขา Thames"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "บริษัทน้ำประปาสำหรับภาคใต้ของอังกฤษ"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "บริษัทน้ำประปาสำหรับภาคตะวันตกเฉียงเหนือของอังกฤษ"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "บริษัทน้ำประปาสำหรับภาค Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "บริษัทน้ำประปาสำหรับภาค East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "ธนาคารข้ามชาติของอังกฤษ"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "ธนาคารและบริการทางการเงินระดับโลก"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "ธนาคารค้าปลีกและพาณิชย์ของสหราชอาณาจักร"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "กลุ่มธนาคารของสหราชอาณาจักร"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "ธนาคารในสหราชอาณาจักร (เจ้าของเป็นบริษัทสเปน)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "ธนาคารดิจิทัลและฟินเทค"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "บริษัทประกันภัยและบริการทางการเงินของสหราชอาณาจักร"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "บริษัทประกันรถยนต์และบ้านของสหราชอาณาจักร"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "บริษัทประกันภัยของสหราชอาณาจักร"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "บริษัทอีคอมเมิร์ซและเทคโนโลยีระดับโลก"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "บริการไปรษณีย์ของสหราชอาณาจักร"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "บริการจัดส่งพัสดุของสหราชอาณาจักร (เดิมชื่อ Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "บริการจัดส่งพัสดุของสหราชอาณาจักร"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "เครือซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "เครือซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "บริการสุขภาพแห่งชาติสำหรับอังกฤษ"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "บริการทันตกรรม NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "ผู้ให้บริการสุขภาพเอกชน"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "หน่วยงานปกครองส่วนท้องถิ่นของสหราชอาณาจักร"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "บริษัทสร้างบ้านของสหราชอาณาจักร"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "แพลตฟอร์มเช่าบ้านออนไลน์ของสหราชอาณาจักร"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "บริการสตรีมมิ่งบันเทิง"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "บริษัทเทคโนโลยี"
+    }
+  }
+}

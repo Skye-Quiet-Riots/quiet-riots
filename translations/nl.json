@@ -1,0 +1,421 @@
+{
+  "locale": "nl",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telecom",
+    "Banking": "Bankieren",
+    "Health": "Gezondheid",
+    "Education": "Onderwijs",
+    "Environment": "Milieu",
+    "Energy": "Energie",
+    "Water": "Water",
+    "Insurance": "Verzekeringen",
+    "Housing": "Huisvesting",
+    "Shopping": "Winkelen",
+    "Delivery": "Bezorging",
+    "Local": "Lokaal",
+    "Employment": "Werkgelegenheid",
+    "Tech": "Technologie",
+    "Other": "Overig"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Treinuitval",
+      "description": "Treinen geannuleerd of ernstig vertraagd met onvoldoende kennisgeving of compensatie"
+    },
+    "Train Ticket Prices": {
+      "name": "Treinkaartprijzen",
+      "description": "Treinkaartjes te duur, stijgingen boven de inflatie, inconsistente prijzen"
+    },
+    "Flight Delays": {
+      "name": "Vluchtvertragingen",
+      "description": "Vluchten vertraagd of geannuleerd, slechte communicatie, moeilijk om compensatie te claimen"
+    },
+    "Lost Luggage": {
+      "name": "Verloren bagage",
+      "description": "Koffers komen niet aan op de bestemming, trage tracking, ontoereikende compensatie"
+    },
+    "Bus Route Cuts": {
+      "name": "Buslijnen geschrapt",
+      "description": "Routes geannuleerd, frequentie verminderd, plattelandsgemeenschappen verliezen bustoegang"
+    },
+    "Pothole Damage": {
+      "name": "Schade door kuilen in de weg",
+      "description": "Kuilen die voertuigen beschadigen en fietsers in gevaar brengen, gemeenten traag met reparatie"
+    },
+    "Parking Fines": {
+      "name": "Parkeerboetes",
+      "description": "Oneerlijke particuliere parkeerkosten, agressieve handhaving, verwarrende bewegwijzering"
+    },
+    "Fuel Prices": {
+      "name": "Brandstofprijzen",
+      "description": "Benzine- en dieselprijzen te hoog, dalen traag wanneer de groothandelsprijs zakt"
+    },
+    "Broadband Speed": {
+      "name": "Breedbandsnelheid",
+      "description": "Internetsnelheden ver onder wat geadverteerd en betaald wordt"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Dode zones voor mobiel signaal",
+      "description": "Geen mobiel signaal in woningen, op werkplekken of langs vervoersroutes"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Prijsverhogingen tijdens het contract",
+      "description": "Telefoon-, breedband- en tv-rekeningen stijgen tijdens vastgelegde contracten"
+    },
+    "Customer Service Hold Times": {
+      "name": "Wachttijden klantenservice",
+      "description": "Uren in de wacht om een medewerker te spreken"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Moeilijk abonnementen opzeggen",
+      "description": "Bedrijven die het opzettelijk moeilijk maken om op te zeggen of uit te schrijven"
+    },
+    "Roaming Charges": {
+      "name": "Roamingkosten",
+      "description": "Onverwachte mobiele kosten bij reizen naar het buitenland, prijsstijgingen na Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Energierekeningen",
+      "description": "Gas- en elektriciteitsrekeningen onbetaalbaar, het prijsplafond is nog steeds te hoog"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Onjuiste energierekeningen",
+      "description": "Geschatte meterstanden verkeerd, te veel in rekening gebracht, factureringsfouten"
+    },
+    "Water Bill Increases": {
+      "name": "Stijging waterrekeningen",
+      "description": "Waterrekeningen stijgen sterk terwijl de servicekwaliteit daalt"
+    },
+    "Sewage in Rivers": {
+      "name": "Rioolwater in rivieren",
+      "description": "Waterbedrijven die ongezuiverd rioolwater lozen in waterwegen en op stranden"
+    },
+    "Power Cuts": {
+      "name": "Stroomuitval",
+      "description": "Onderbrekingen van de elektriciteitsvoorziening, traag herstel, ontoereikende compensatie"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemen met slimme meters",
+      "description": "Slimme meters werken niet, functionaliteit verloren na wisselen van leverancier"
+    },
+    "Bank Branch Closures": {
+      "name": "Sluiting van bankfilialen",
+      "description": "Lokale bankfilialen sluiten, waardoor gemeenschappen zonder toegang achterblijven"
+    },
+    "Hidden Bank Charges": {
+      "name": "Verborgen bankkosten",
+      "description": "Onverwachte kosten voor rood staan, buitenlandse transacties, rekeningbeheer"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Verliezen door fraude en oplichting",
+      "description": "Banken weigeren slachtoffers van fraude en geautoriseerde betaalfraude te vergoeden"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Afwijzing van verzekeringsclaims",
+      "description": "Claims afgewezen op technische gronden na jaren van premiebetaling"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Hypotheekrenteschok",
+      "description": "Vaste rente afgelopen en overgang naar veel hogere variabele rente"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Kosten voor buitenlandse overboekingen",
+      "description": "Buitensporige kosten en slechte wisselkoersen voor internationale overboekingen"
+    },
+    "NHS Waiting Times": {
+      "name": "Wachttijden in de gezondheidszorg",
+      "description": "Maanden- of jarenlange wachttijden voor operaties en specialistische afspraken"
+    },
+    "GP Appointment Access": {
+      "name": "Toegang tot huisartsafspraken",
+      "description": "Niet door kunnen komen om een huisartsafspraak te maken, wekenlange wachttijden"
+    },
+    "Dentist Availability": {
+      "name": "Beschikbaarheid van tandartsen",
+      "description": "Onmogelijk om een tandarts te vinden die nieuwe patienten aanneemt"
+    },
+    "Mental Health Service Waits": {
+      "name": "Wachttijden geestelijke gezondheidszorg",
+      "description": "Maandenlange wachttijden voor therapie en psychische ondersteuning"
+    },
+    "Prescription Costs": {
+      "name": "Kosten van receptgeneesmiddelen",
+      "description": "Kosten per item te hoog in Engeland, inconsistentie tussen de landen van het VK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Parkeerkosten bij het ziekenhuis",
+      "description": "Betalen om te parkeren bij het ziekenhuis terwijl je ziek bent of zieke familieleden bezoekt"
+    },
+    "Rent Increases": {
+      "name": "Huurverhogingen",
+      "description": "Particuliere huur stijgt ver boven de inflatie, dreiging van huisuitzetting zonder reden"
+    },
+    "Council Tax Rises": {
+      "name": "Stijging gemeentebelasting",
+      "description": "Jaarlijkse stijgingen van de gemeentebelasting terwijl lokale diensten verslechteren"
+    },
+    "Noisy Neighbours": {
+      "name": "Overlast van buren",
+      "description": "Aanhoudende geluidsoverlast, gemeenten traag om op te treden, invloed op de mentale gezondheid"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Wijzigingen in afvalinzameling",
+      "description": "Minder afvalinzameling, verwarrende recyclingregels, overvolle containers"
+    },
+    "Planning Permission Abuse": {
+      "name": "Misbruik van bouwvergunningen",
+      "description": "Ongewenste bouwprojecten goedgekeurd, groene zone bedreigd, gemeenschap genegeerd"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Vocht en schimmel in woningen",
+      "description": "Verhuurders en woningcorporaties die vocht en schimmel niet verhelpen"
+    },
+    "Delivery Problems": {
+      "name": "Bezorgproblemen",
+      "description": "Pakketten zoekgeraakt, in de regen achtergelaten, als bezorgd gemarkeerd maar niet ontvangen"
+    },
+    "Shrinkflation": {
+      "name": "Krimpflatie",
+      "description": "Producten worden kleiner terwijl de prijzen gelijk blijven of stijgen"
+    },
+    "Refund Difficulties": {
+      "name": "Moeilijkheden met terugbetaling",
+      "description": "Bedrijven die retourzendingen en terugbetalingen onnodig moeilijk maken"
+    },
+    "Fake Reviews": {
+      "name": "Neprecensies",
+      "description": "Online recensies niet te vertrouwen, valse positieve recensies misleiden consumenten"
+    },
+    "Subscription Traps": {
+      "name": "Abonnementsvallen",
+      "description": "Gratis proefperiodes die zonder duidelijke toestemming overgaan in betaald, moeilijk op te zeggen"
+    },
+    "Food Quality Decline": {
+      "name": "Afname van voedselkwaliteit",
+      "description": "Kant-en-klaarmaaltijden van slechtere kwaliteit, kleinere porties, meer additieven"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustratie met zelfscankassa's",
+      "description": "Zelfscankassa's onbetrouwbaar, vervangen menselijk personeel"
+    },
+    "Cost of Childcare": {
+      "name": "Kosten van kinderopvang",
+      "description": "Kinderopvangkosten onbetaalbaar hoog, beperken de mogelijkheid om te werken"
+    },
+    "Student Loan Repayment": {
+      "name": "Terugbetaling studieschuld",
+      "description": "Afgestudeerden betalen tientallen jaren terug, wijzigingen in drempels en rente"
+    },
+    "Dog Fouling": {
+      "name": "Hondenpoep",
+      "description": "Hondenuitwerpselen in openbare ruimten, parken en op stoepen die niet worden opgeruimd"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI vervangt banen",
+      "description": "Ongerustheid over kunstmatige intelligentie die banen automatiseert zonder ondersteuning bij de transitie"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britse treinoperator op de West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britse treinoperator voor Londen en het zuiden"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britse treinoperator voor het noorden van Engeland"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britse langeafstandstreinoperator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britse treinoperator op trans-Pennine routes"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britse treinoperator op de East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Europese lagekostenluchtvaartmaatschappij"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britse lagekostenluchtvaartmaatschappij"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Nationale luchtvaartmaatschappij van het Verenigd Koninkrijk"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Reis- en vakantiebedrijf"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Grote Britse breedband- en mobiele provider"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britse breedband-, tv- en mobiele provider"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britse tv-, breedband- en mobiele provider"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Wereldwijd telecombedrijf met hoofdkantoor in het VK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britse mobiele netwerkoperator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britse breedband- en telefonieprovider"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britse energieleverancier"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britse energieleverancier"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britse energieleverancier (Frans eigendom)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britse leverancier van hernieuwbare energie"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britse energieleverancier"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britse energieleverancier (Duits eigendom)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Water- en rioleringsbedrijf voor Londen en de Theemsvalei"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Waterbedrijf voor het zuiden van Engeland"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Waterbedrijf voor het noordwesten van Engeland"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Waterbedrijf voor de Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Waterbedrijf voor East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britse multinationale bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Wereldwijde bank- en financiele diensten"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britse particuliere en zakelijke bank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britse bankengroep"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britse bank (Spaans eigendom)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitale bank en fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britse verzekeringen en financiele diensten"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britse auto- en woningverzekering"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Brits verzekeringsbedrijf"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Wereldwijd e-commerce- en technologiebedrijf"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britse postdienst"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britse pakketbezorgdienst (voorheen Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britse pakketbezorgdienst"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britse supermarktketen"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britse supermarktketen"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Nationale gezondheidsdienst voor Engeland"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Tandheelkundige diensten van de nationale gezondheidsdienst"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Particuliere zorgverlener"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britse lokale overheden"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britse woningbouwer"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Brits online verhuurplatform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming entertainmentdienst"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technologiebedrijf"
+    }
+  }
+}

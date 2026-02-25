@@ -1,0 +1,421 @@
+{
+  "locale": "hu",
+  "categories": {
+    "Transport": "Kozlekedes",
+    "Telecoms": "Tavkozles",
+    "Banking": "Bankugy",
+    "Health": "Egeszsegugy",
+    "Education": "Oktatas",
+    "Environment": "Kornyezetvedelem",
+    "Energy": "Energia",
+    "Water": "Viz",
+    "Insurance": "Biztositas",
+    "Housing": "Lakas",
+    "Shopping": "Vasarlas",
+    "Delivery": "Kiszallitas",
+    "Local": "Helyi ugyek",
+    "Employment": "Foglalkoztatas",
+    "Tech": "Technologia",
+    "Other": "Egyeb"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Vonattorllesek",
+      "description": "Vonatok torlese vagy sulyos keslese megfeleloe ertesites vagy karpotlas nelkul"
+    },
+    "Train Ticket Prices": {
+      "name": "Vonatjegy-arak",
+      "description": "Tul magas vasuti viteldijak, inflacio feletti dragulas, kovetkezetllen arazes"
+    },
+    "Flight Delays": {
+      "name": "Jaratkeseesek",
+      "description": "Jaratok kesesee vagy torlese, rossz tajekozttatas, nehezseg a karpotlas igenylesevel"
+    },
+    "Lost Luggage": {
+      "name": "Elveszett poggyasz",
+      "description": "Poggyasz nem erkezik meg a celalloomasra, lassu nyomokovetes, eelegtelen karpotlas"
+    },
+    "Bus Route Cuts": {
+      "name": "Buszjarat-megszuntetesek",
+      "description": "Jaratok megszuntetese, ritkabb kozlekedes, videki kozossegek busz nelkul maradnak"
+    },
+    "Pothole Damage": {
+      "name": "Katyukarok",
+      "description": "Katyuk rongaaljak a jarmuuveket es veszelyeztetik a kerekparosokat, onkormanyzatok lassu javitasa"
+    },
+    "Parking Fines": {
+      "name": "Parkollasi birsagok",
+      "description": "Meltanytalan magan parkoolasi dijak, agressziv vegrehajtaas, felrevezeto jelzesek"
+    },
+    "Fuel Prices": {
+      "name": "Uzemanyagarak",
+      "description": "Benzin- es gazolajaarak tul magasak, lassu csokkenes a nagykereskedelmi ar eseesekor"
+    },
+    "Broadband Speed": {
+      "name": "Szelessaavu internet sebessege",
+      "description": "Az internet sebessege messze elmarad a hirdetetttol es a kifizetettol"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobiljel nellkuli zonak",
+      "description": "Nincs mobiltel vetel otthon, munkahelyen vagy kozlekedesi utvonaalokon"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Ardragulas szerzodes kozben",
+      "description": "Telefon-, internet- es TV-szaamlak emelkedese husegiido alatt"
+    },
+    "Customer Service Hold Times": {
+      "name": "Ugyfellszolgalati varakozas",
+      "description": "Orakig tarto varakozas, mig egy elo szemellyel beszelhetunk"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Elofizetes lemondasi nehezsegek",
+      "description": "A cegek szandekosan megnehezitik a lemondast vagy leiratkozast"
+    },
+    "Roaming Charges": {
+      "name": "Roamingdijak",
+      "description": "Varatlan mobil dijak kulfoldi tartoozkodas soran, Brexit utani ardragulas"
+    },
+    "Energy Bill Costs": {
+      "name": "Energiaszamla-koltsegek",
+      "description": "A gaz- es villanyszaamlak megfizethetetlenek, az arsapka meg mindig tul magas"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Pontatlan energiaszaamlak",
+      "description": "Hibas becsult leolvasasok, tullszaamlazas, szaamlazasi hibak"
+    },
+    "Water Bill Increases": {
+      "name": "Vizszamla-emelkedesek",
+      "description": "Vizszaamlak meredek emelkedese, mikozben a szolgaltatas minosege romlik"
+    },
+    "Sewage in Rivers": {
+      "name": "Szennyviz a folyokbban",
+      "description": "Vizikozmuu-cegek kezeletlen szennyvizet eresztenek vizfolyasokba es strandokra"
+    },
+    "Power Cuts": {
+      "name": "Aramszunetek",
+      "description": "Aramellatas megszakadasa, lassu helyrealllitas, elegtelen karpotlas"
+    },
+    "Smart Meter Problems": {
+      "name": "Okosmeroo-problemak",
+      "description": "Okosmerok nem mukodnek, funkcionalitas elvesztese szolgaltatoovaltas utan"
+    },
+    "Bank Branch Closures": {
+      "name": "Bankfiokok bezarasa",
+      "description": "Helyi bankfiokok bezarnak, kozossegek hozzaferes nelkul maradnak"
+    },
+    "Hidden Bank Charges": {
+      "name": "Rejtett banki dijak",
+      "description": "Varatlan dijak folyoszamla-tullepesert, kulfoldi tranzakciokert, szaamlavezetesert"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Csalasbol szarmazo vesztesegek",
+      "description": "Bankok megtagadjak a csalas es engedelyezett fizeetesi csalasok aldozatainak karpotlasat"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Biztositasi igenyek elutasitasa",
+      "description": "Igenyek elutasitasa technikai okokbol evekig tartoo dijfizetees utan"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Jelzaloghitel-kamatsokk",
+      "description": "A fix kamatperiodus lejarta es atlles sokkal magasabb valtozo kamatra"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Kulfoldi atutalasi dijak",
+      "description": "Tulzott dijak es kedvezotlen arfolyamok nemzetkozi penzkulddesnel"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS varolistak",
+      "description": "Tobbhoonapos vagy tobbeves varakozas muteetekre es szakorvosi vizsgalatokra"
+    },
+    "GP Appointment Access": {
+      "name": "Haziorvosi idopontkeres",
+      "description": "Nem lehet bejelentkezni haziorvoshoz, hetekig tarto varakkozas"
+    },
+    "Dentist Availability": {
+      "name": "Fogorvosi elerheetoseg",
+      "description": "Lehetetllen NHS fogorvost talalni, aki uj paacienst fogad"
+    },
+    "Mental Health Service Waits": {
+      "name": "Mentalis egeszsegugyi varakozas",
+      "description": "Hoonapokig tarto varakozas terapiara es mentalis egeszsegugyi tamogatasra"
+    },
+    "Prescription Costs": {
+      "name": "Recept koltsegei",
+      "description": "Tetelenkkenti ar tul magas Angliaban, kovetkezetlenseg az UK orszagai kozott"
+    },
+    "Hospital Parking Charges": {
+      "name": "Korhazi parkolasi dijak",
+      "description": "Fizetni kell a korhazi parkolasert betegseg vagy beteg hozzatartozok latogatasa soran"
+    },
+    "Rent Increases": {
+      "name": "Berletidij-emelesek",
+      "description": "Magan berleti dijak az inflacio folott emelkednek, hibatlan felmondas fenyegetese"
+    },
+    "Council Tax Rises": {
+      "name": "Onkorrmanyzati ado emelese",
+      "description": "Eves onkormanyzati adoemeles, mikozben a helyi szolgaltatasok romllanak"
+    },
+    "Noisy Neighbours": {
+      "name": "Zajos szomszedok",
+      "description": "Tartoos zajzavaras, onkormanyzatok lassan reagalnak, hataaas a mentalis egeszssegre"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Hulladekgyuujtes valtozasai",
+      "description": "Ritkabb szemeetszallitas, zavaros ujrahasznoositasi szabalyok, tulcsorddulo kukak"
+    },
+    "Planning Permission Abuse": {
+      "name": "Epitesi engedelyek visszaeelese",
+      "description": "Nem kivaant epitkezesek jovahagyasa, zoldovezetetek veszelyben, kozosseg figyelmen kivul hagyva"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Nedvesseg es pennesz a lakasokban",
+      "description": "Berbeadok es lakasszoveetkezetek nem javitjak a nedvesseget es penneszt"
+    },
+    "Delivery Problems": {
+      "name": "Szallitasi problemak",
+      "description": "Csomagok elvesznek, esoben hagyva, kezbesitettkent jelolve de nem megkapva"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflacio",
+      "description": "Termekek kissebbek lesznek, mikozben az arak valtozatlanok maradnak vagy emelkednek"
+    },
+    "Refund Difficulties": {
+      "name": "Visszaterritesi nehezsegek",
+      "description": "Cegek szuksegtelenul megnehezitik az aruk visszaveteleet es a penzvissszateriteset"
+    },
+    "Fake Reviews": {
+      "name": "Hamis ertekelesek",
+      "description": "Online ertekeelesekben nem lehet megbizni, hamis pozitiv ertekelesek felrevezetik a vasaarlokat"
+    },
+    "Subscription Traps": {
+      "name": "Elofizeetes-csapdak",
+      "description": "Ingyenes probaidoszakok fizetossee valnak egyertelmu beleegyezes nelkul, neheez lemondani"
+    },
+    "Food Quality Decline": {
+      "name": "Etelek minossegenek romlasa",
+      "description": "Kesz etelek rosszabb minoseguuek, kissebb adagok, tobb adalekanyag"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Onkiszolgalo penztar frusztraacioja",
+      "description": "Onkiszolgalo automatak megbizhatatlanok, emberi szemelyzetet valtjak ki"
+    },
+    "Cost of Childcare": {
+      "name": "Gyermekellatas koltsegei",
+      "description": "Gyermekellatas arai megfizethetetetlenek, korlatozzak a munkavallalast"
+    },
+    "Student Loan Repayment": {
+      "name": "Diakhitel visszafizetese",
+      "description": "Diplomaasok evtizedekig fizetnek vissza, kuszobertek- es kamatvaltozasok"
+    },
+    "Dog Fouling": {
+      "name": "Kutyapiszok",
+      "description": "Kutyaurulek kozterulleten, parkokban es jaardakon nincs eltakaritva"
+    },
+    "AI Replacing Jobs": {
+      "name": "MI altal megszuuno allasok",
+      "description": "Aggodalom a mesterseges intelligencia altal automatizalt munkahelyek miatt, atkeepzesi tamogatas nelkul"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Brit vasuti szolgaltato a West Coast Main Line vonalon"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Brit vasuti szolgaltato London es a deli regio szamara"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Brit vasuti szolgaltato Eszak-Anglia szamara"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Brit tavolsagi vasuti szolgaltato"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Brit vasuti szolgaltato a Pennine-hegysegen atvezeto utvonaalokon"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Brit vasuti szolgaltato az East Coast Main Line vonalon"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Olcso europai legitarsasag"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Brit szekhelyu olcso legitarsasag"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "A brit nemzeti legitarsasag"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Nyaralo- es utazasi vallallat"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Nagy brit szelessaavu es mobil szolgaltato"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Brit internet-, TV- es mobilszolgaltato"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Brit TV-, internet- es mobilszolgaltato"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalis tavkozllesi vallalat brit szekhellyel"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Brit mobilhaalozati operator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Brit internet- es telefonszolgaltato"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Brit energiaszolgaltato"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Brit energiaszolgaltato"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Brit energiaszolgaltato (francia tulajdonban)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Brit megujulo energiaszolgaltato"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Brit energiaszolgaltato"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Brit energiaszolgaltato (nemet tulajdonban)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Viz- es csatornamuuvelto vallalat London es a Temze-volgy szamara"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vizszolgaltato Del-Anglia szamara"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vizszolgaltato Eszaknyugat-Anglia szamara"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vizszolgaltato a Midlands regio szamara"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vizszolgaltato Kelet-Anglia szamara"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Brit multinacionalis bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Globalis banki es penzugyi szolgaltatasok"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Brit lakossaagi es kereskedelmi bank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Brit bankcsopport"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Brit bank (spanyol tulajdonban)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitalis bank es fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Brit biztositasi es penzugyi szolgaltatasok"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Brit auto- es lakasbiztosito"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Brit biztosito tarsasag"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalis e-kereskedelmi es technologiai vallalat"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Brit postai szolgalat"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Brit csomagkezbesito szolgalat (korabban Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Brit csomagkezbesito szolgalat"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Brit szupermarketlaanc"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Brit szupermarketlaanc"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Nemzeti Egeszsegugyi Szolgalat Anglia szamara"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS fogaszati szolgaltatasok"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Magan egeszsegugyi szolgaltato"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Brit helyi onkoormanyzati hatosagok"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Brit lakasepito vallalat"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Brit online berbeadasi platform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming szorakoztato szolgaltatas"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technologiai vallalat"
+    }
+  }
+}

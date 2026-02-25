@@ -1,0 +1,421 @@
+{
+  "locale": "sw",
+  "categories": {
+    "Transport": "Usafiri",
+    "Telecoms": "Mawasiliano",
+    "Banking": "Benki",
+    "Health": "Afya",
+    "Education": "Elimu",
+    "Environment": "Mazingira",
+    "Energy": "Nishati",
+    "Water": "Maji",
+    "Insurance": "Bima",
+    "Housing": "Makazi",
+    "Shopping": "Ununuzi",
+    "Delivery": "Uwasilishaji",
+    "Local": "Mitaa",
+    "Employment": "Ajira",
+    "Tech": "Teknolojia",
+    "Other": "Nyingine"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Kufutwa kwa Treni",
+      "description": "Treni zinafutwa au kucheleweshwa sana bila taarifa au fidia ya kutosha"
+    },
+    "Train Ticket Prices": {
+      "name": "Bei za Tiketi za Treni",
+      "description": "Nauli za treni ni ghali sana, ongezeko zaidi ya mfumuko wa bei, bei zisizo sawa"
+    },
+    "Flight Delays": {
+      "name": "Ucheleweshaji wa Ndege",
+      "description": "Ndege zinacheleweshwa au kufutwa, mawasiliano duni, ugumu wa kudai fidia"
+    },
+    "Lost Luggage": {
+      "name": "Mizigo Iliyopotea",
+      "description": "Mifuko haifiki mahali pa kwenda, ufuatiliaji wa polepole, fidia isiyotosha"
+    },
+    "Bus Route Cuts": {
+      "name": "Kupunguzwa kwa Njia za Basi",
+      "description": "Njia zinafutwa, marudio yanapunguzwa, jamii za vijijini zinapoteza ufikiaji wa basi"
+    },
+    "Pothole Damage": {
+      "name": "Uharibifu wa Mashimo ya Barabara",
+      "description": "Mashimo yanayoharibu magari na kuhatarisha waendesha baiskeli, halmashauri zinachelewa kurekebisha"
+    },
+    "Parking Fines": {
+      "name": "Faini za Maegesho",
+      "description": "Malipo yasiyo ya haki ya maegesho ya kibinafsi, utekelezaji mkali, alama za kuchanganya"
+    },
+    "Fuel Prices": {
+      "name": "Bei za Mafuta",
+      "description": "Bei za petroli na dizeli ni kubwa sana, zinashuka polepole wakati bei ya jumla inaposhuka"
+    },
+    "Broadband Speed": {
+      "name": "Kasi ya Broadband",
+      "description": "Kasi ya intaneti iko chini sana kuliko inavyotangazwa na kulipwa"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Maeneo Yasiyo na Mtandao",
+      "description": "Hakuna mtandao wa simu katika nyumba, sehemu za kazi, au njia za usafiri"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Kupanda kwa Bei Katikati ya Mkataba",
+      "description": "Bili za simu, broadband na TV zinaongezeka wakati wa mikataba iliyofungwa"
+    },
+    "Customer Service Hold Times": {
+      "name": "Muda wa Kusubiri Huduma kwa Wateja",
+      "description": "Masaa ya kusubiri kuzungumza na mtu halisi"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Ugumu wa Kufuta Usajili",
+      "description": "Makampuni yanafanya kuwa vigumu kwa makusudi kufuta au kujitoa"
+    },
+    "Roaming Charges": {
+      "name": "Malipo ya Roaming",
+      "description": "Malipo yasiyotarajiwa ya simu unaposafiria nje ya nchi, ongezeko la bei baada ya Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Gharama za Bili ya Nishati",
+      "description": "Bili za gesi na umeme haziwezi kulipika, kikomo cha bei bado ni cha juu sana"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Bili za Nishati Zisizo Sahihi",
+      "description": "Makadirio ya usomaji yasiyo sahihi, kutoza zaidi, makosa ya bili"
+    },
+    "Water Bill Increases": {
+      "name": "Ongezeko la Bili ya Maji",
+      "description": "Bili za maji zinapanda kwa kasi wakati ubora wa huduma unapungua"
+    },
+    "Sewage in Rivers": {
+      "name": "Maji Machafu Mitoni",
+      "description": "Makampuni ya maji yanatupa maji machafu ghafi kwenye njia za maji na ufukweni"
+    },
+    "Power Cuts": {
+      "name": "Kukatika kwa Umeme",
+      "description": "Usumbufu wa ugavi wa umeme, urejesho wa polepole, fidia isiyotosha"
+    },
+    "Smart Meter Problems": {
+      "name": "Matatizo ya Smart Meter",
+      "description": "Smart meter hazifanyi kazi, zinapoteza utendakazi baada ya kubadilisha mtoa huduma"
+    },
+    "Bank Branch Closures": {
+      "name": "Kufungwa kwa Matawi ya Benki",
+      "description": "Matawi ya benki za mitaa yanafungwa, jamii zinabaki bila ufikiaji"
+    },
+    "Hidden Bank Charges": {
+      "name": "Malipo ya Benki Yaliyofichwa",
+      "description": "Ada zisizotarajiwa za overdraft, miamala ya kigeni, utunzaji wa akaunti"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Hasara za Ulaghai na Udanganyifu",
+      "description": "Benki zinakataa kufidia waathirika wa ulaghai na kashfa za malipo ya kusukumwa"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Kukataliwa kwa Madai ya Bima",
+      "description": "Madai yanakataliwa kwa sababu za kiufundi baada ya miaka ya kulipa primi"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Mshtuko wa Kiwango cha Rehani",
+      "description": "Kiwango kisichobadilika kinaisha na kubadilika kuwa kiwango cha juu zaidi kinachobadilika"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Ada za Uhamisho wa Kimataifa",
+      "description": "Ada kubwa na viwango duni vya ubadilishaji kwa uhamisho wa pesa wa kimataifa"
+    },
+    "NHS Waiting Times": {
+      "name": "Muda wa Kusubiri wa NHS",
+      "description": "Miezi au miaka ya kusubiri upasuaji na miadi ya wataalamu"
+    },
+    "GP Appointment Access": {
+      "name": "Ufikiaji wa Miadi ya GP",
+      "description": "Huwezi kupata nafasi ya kuona GP, wiki za kusubiri"
+    },
+    "Dentist Availability": {
+      "name": "Upatikanaji wa Daktari wa Meno",
+      "description": "Haiwezekani kupata daktari wa meno wa NHS anayekubali wagonjwa wapya"
+    },
+    "Mental Health Service Waits": {
+      "name": "Kusubiri Huduma za Afya ya Akili",
+      "description": "Miezi ya kusubiri tiba na msaada wa afya ya akili"
+    },
+    "Prescription Costs": {
+      "name": "Gharama za Dawa",
+      "description": "Gharama kwa kila bidhaa ni kubwa sana nchini Uingereza, kutofautiana kati ya nchi za UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Malipo ya Maegesho ya Hospitali",
+      "description": "Kulipa kuegesha hospitalini wakati mgonjwa au kumtembelea jamaa mgonjwa"
+    },
+    "Rent Increases": {
+      "name": "Ongezeko la Kodi ya Nyumba",
+      "description": "Kodi ya nyumba ya kibinafsi inapanda zaidi ya mfumuko wa bei, tishio la kufukuzwa bila kosa"
+    },
+    "Council Tax Rises": {
+      "name": "Ongezeko la Kodi ya Halmashauri",
+      "description": "Ongezeko la kila mwaka la kodi ya halmashauri wakati huduma za mitaa zinazidi kuwa mbaya"
+    },
+    "Noisy Neighbours": {
+      "name": "Majirani Wenye Kelele",
+      "description": "Kelele zinazoendelea, halmashauri zinachelewa kuchukua hatua, kuathiri afya ya akili"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Mabadiliko ya Ukusanyaji Taka",
+      "description": "Kupunguzwa kwa ukusanyaji wa taka, sheria za kuchakata zinazovuruga, mapipa yanayofurika"
+    },
+    "Planning Permission Abuse": {
+      "name": "Unyanyasaji wa Ruhusa ya Ujenzi",
+      "description": "Maendeleo yasiyotakiwa yanaidhinishwa, eneo la kijani liko hatarini, jamii inapuuzwa"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Unyevu na Ukungu katika Makazi",
+      "description": "Wamiliki na vyama vya nyumba wanashindwa kurekebisha unyevu na ukungu"
+    },
+    "Delivery Problems": {
+      "name": "Matatizo ya Uwasilishaji",
+      "description": "Vifurushi vinapotea, kuachwa mvuani, kuonyeshwa kuwa vimewasilishwa lakini havikupokelewa"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Bidhaa zinakuwa ndogo wakati bei zinabaki sawa au kuongezeka"
+    },
+    "Refund Difficulties": {
+      "name": "Ugumu wa Kurejeshewa Pesa",
+      "description": "Makampuni yanafanya kurejesha na kurejeshewa pesa kuwa vigumu bila sababu"
+    },
+    "Fake Reviews": {
+      "name": "Maoni Bandia",
+      "description": "Huwezi kuamini maoni ya mtandaoni, maoni bandia chanya yanapotosha wateja"
+    },
+    "Subscription Traps": {
+      "name": "Mitego ya Usajili",
+      "description": "Majaribio ya bure yanabadilika kuwa ya kulipa bila idhini wazi, vigumu kufuta"
+    },
+    "Food Quality Decline": {
+      "name": "Kupungua kwa Ubora wa Chakula",
+      "description": "Milo tayari ubora wake umeshuka, sehemu ndogo, viongeza zaidi"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Kero ya Self-Checkout",
+      "description": "Mashine za kujihudumia hazitegemeki, zinachukua nafasi ya wafanyakazi"
+    },
+    "Cost of Childcare": {
+      "name": "Gharama ya Malezi ya Watoto",
+      "description": "Gharama za malezi ya watoto ni kubwa kupita kiasi, zinazuia uwezo wa kufanya kazi"
+    },
+    "Student Loan Repayment": {
+      "name": "Ulipaji wa Mkopo wa Masomo",
+      "description": "Wahitimu wanalipa kwa miongo, mabadiliko ya kiwango na riba"
+    },
+    "Dog Fouling": {
+      "name": "Uchafu wa Mbwa",
+      "description": "Kinyesi cha mbwa katika maeneo ya umma, mbuga, na njia za watembea kwa miguu hakisafishwi"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Inachukua Nafasi ya Kazi",
+      "description": "Wasiwasi kuhusu akili bandia inayoondoa kazi bila msaada wa mpito"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Opereta wa treni wa UK anayehudumia West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Opereta wa treni wa UK anayehudumia London na kusini"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Opereta wa treni wa UK anayehudumia kaskazini mwa England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Opereta wa treni wa UK wa masafa marefu"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Opereta wa treni wa UK anayehudumia njia za trans-Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Opereta wa treni wa UK anayehudumia East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Ndege ya bei nafuu ya Ulaya"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Ndege ya bei nafuu yenye makao makuu UK"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Ndege ya taifa ya UK"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Kampuni ya likizo na usafiri"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Mtoa huduma mkubwa wa broadband na simu UK"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Mtoa huduma wa broadband, TV, na simu UK"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Mtoa huduma wa TV, broadband, na simu UK"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Kampuni ya mawasiliano ya kimataifa yenye makao makuu UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Opereta wa mtandao wa simu UK"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Mtoa huduma wa broadband na simu UK"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Mtoa nishati wa UK"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Mtoa nishati wa UK"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Mtoa nishati wa UK (umiliki wa Ufaransa)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Mtoa nishati mbadala wa UK"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Mtoa nishati wa UK"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Mtoa nishati wa UK (umiliki wa Ujerumani)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Kampuni ya maji na maji taka kwa London na Thames Valley"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Kampuni ya maji kwa kusini mwa England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Kampuni ya maji kwa kaskazini-magharibi mwa England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Kampuni ya maji kwa Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Kampuni ya maji kwa East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Benki ya kimataifa ya Uingereza"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Huduma za benki na fedha za kimataifa"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Benki ya rejareja na biashara ya UK"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Kundi la benki la UK"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Benki ya UK (umiliki wa Uhispania)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Benki ya kidijitali na fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Bima na huduma za kifedha za UK"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Bima ya gari na nyumba ya UK"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Kampuni ya bima ya UK"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Biashara ya mtandaoni na teknolojia ya kimataifa"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Huduma ya posta ya UK"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Huduma ya uwasilishaji vifurushi ya UK (zamani Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Huduma ya uwasilishaji vifurushi ya UK"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Mtandao wa maduka makubwa ya UK"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Mtandao wa maduka makubwa ya UK"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Huduma ya Afya ya Taifa kwa England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Huduma za meno za NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Mtoa huduma za afya za kibinafsi"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Mamlaka za serikali za mitaa za UK"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Mjenzi wa nyumba wa UK"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Jukwaa la kukodisha mtandaoni la UK"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Huduma ya utiririshaji wa burudani"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Kampuni ya teknolojia"
+    }
+  }
+}
