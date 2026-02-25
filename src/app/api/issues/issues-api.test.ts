@@ -85,6 +85,50 @@ describe('GET /api/issues/[id]/actions', () => {
   });
 });
 
+describe('GET /api/issues — translated synonym search', () => {
+  it('matches translated synonyms for non-English locale', async () => {
+    // "trenes cancelados" is the Spanish translation of synonym "cancelled trains" for Rail Cancellations
+    const request = new NextRequest(
+      'http://localhost:3000/api/issues?search=trenes+cancelados&locale=es',
+    );
+    const response = await getIssues(request);
+    const { data } = await response.json();
+    expect(data.length).toBeGreaterThanOrEqual(1);
+    expect(data.some((i: { name: string }) => i.name === 'Rail Cancellations')).toBe(true);
+  });
+
+  it('matches translated synonym for broadband issue in Spanish', async () => {
+    // "internet lento" is the Spanish translation of "slow internet"
+    const request = new NextRequest(
+      'http://localhost:3000/api/issues?search=internet+lento&locale=es',
+    );
+    const response = await getIssues(request);
+    const { data } = await response.json();
+    expect(data.length).toBeGreaterThanOrEqual(1);
+    expect(data.some((i: { name: string }) => i.name === 'Broadband Speed')).toBe(true);
+  });
+
+  it('does not use synonym translations for English locale', async () => {
+    // "trenes cancelados" is Spanish — should NOT match when searching in English
+    const request = new NextRequest(
+      'http://localhost:3000/api/issues?search=trenes+cancelados&locale=en',
+    );
+    const response = await getIssues(request);
+    const { data } = await response.json();
+    expect(data).toHaveLength(0);
+  });
+
+  it('still matches English synonyms regardless of locale', async () => {
+    // "cancelled trains" is an English synonym — should match even with locale=es
+    const request = new NextRequest(
+      'http://localhost:3000/api/issues?search=cancelled+trains&locale=es',
+    );
+    const response = await getIssues(request);
+    const { data } = await response.json();
+    expect(data.length).toBeGreaterThanOrEqual(1);
+  });
+});
+
 describe('GET/POST /api/issues/[id]/synonyms', () => {
   it('returns synonyms', async () => {
     const request = new Request('http://localhost:3000/api/issues/1/synonyms');

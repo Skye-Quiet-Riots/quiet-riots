@@ -20,6 +20,7 @@ import {
   translateEntity,
   translateIssuePivotRows,
   translateOrgPivotRows,
+  translateSynonyms,
 } from '@/lib/queries/translate';
 import { getSession } from '@/lib/session';
 import { toAssistantCategory } from '@/types';
@@ -73,7 +74,8 @@ export default async function IssueDetailPage({ params }: Props) {
   const experts = await getExpertProfiles(issue.id);
   const feedPosts = await getFeedPosts(issue.id);
   const countries = await getCountryBreakdown(issue.id);
-  const synonyms = await getSynonymsForIssue(issue.id);
+  const rawSynonyms = await getSynonymsForIssue(issue.id);
+  const synonyms = await translateSynonyms(rawSynonyms, locale);
   const reels = await getReelsForIssue(issue.id);
   const campaigns = await getCampaignsForIssue(issue.id);
   const evidence = await getEvidenceForIssue(issue.id);

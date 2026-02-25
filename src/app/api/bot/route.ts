@@ -57,6 +57,7 @@ import {
   translateCampaigns,
   translateIssuePivotRows,
   translateOrgPivotRows,
+  translateSynonyms,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
 import type { MemoryCategory } from '@/types';
@@ -456,10 +457,11 @@ export async function POST(request: NextRequest) {
           getSeasonalPattern(rawIssue.id),
           getRelatedIssues(rawIssue.id),
         ]);
-        const [issue, pivotOrgs, relatedIssues] = await Promise.all([
+        const [issue, pivotOrgs, relatedIssues, translatedSynonyms] = await Promise.all([
           translateEntity(rawIssue, 'issue', locale),
           translateIssuePivotRows(rawPivotOrgs, locale),
           translateOrgPivotRows(rawRelatedIssues, locale),
+          translateSynonyms(synonyms, locale),
         ]);
         return ok({
           issue,
@@ -467,7 +469,7 @@ export async function POST(request: NextRequest) {
           countries,
           pivotOrgs,
           actionCount,
-          synonyms,
+          synonyms: translatedSynonyms,
           seasonalPattern,
           relatedIssues,
         });

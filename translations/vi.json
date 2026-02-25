@@ -1,421 +1,634 @@
 {
   "locale": "vi",
   "categories": {
-    "Transport": "Giao th\u00f4ng",
-    "Telecoms": "Vi\u1ec5n th\u00f4ng",
-    "Banking": "Ng\u00e2n h\u00e0ng",
-    "Health": "S\u1ee9c kh\u1ecfe",
-    "Education": "Gi\u00e1o d\u1ee5c",
-    "Environment": "M\u00f4i tr\u01b0\u1eddng",
-    "Energy": "N\u0103ng l\u01b0\u1ee3ng",
-    "Water": "N\u01b0\u1edbc",
-    "Insurance": "B\u1ea3o hi\u1ec3m",
-    "Housing": "Nh\u00e0 \u1edf",
-    "Shopping": "Mua s\u1eafm",
-    "Delivery": "Giao h\u00e0ng",
-    "Local": "\u0110\u1ecba ph\u01b0\u01a1ng",
-    "Employment": "Vi\u1ec7c l\u00e0m",
-    "Tech": "C\u00f4ng ngh\u1ec7",
-    "Other": "Kh\u00e1c"
+    "Transport": "Giao thông",
+    "Telecoms": "Viễn thông",
+    "Banking": "Ngân hàng",
+    "Health": "Sức khỏe",
+    "Education": "Giáo dục",
+    "Environment": "Môi trường",
+    "Energy": "Năng lượng",
+    "Water": "Nước",
+    "Insurance": "Bảo hiểm",
+    "Housing": "Nhà ở",
+    "Shopping": "Mua sắm",
+    "Delivery": "Giao hàng",
+    "Local": "Địa phương",
+    "Employment": "Việc làm",
+    "Tech": "Công nghệ",
+    "Other": "Khác"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "H\u1ee7y chuy\u1ebfn t\u00e0u",
-      "description": "T\u00e0u b\u1ecb h\u1ee7y ho\u1eb7c tr\u1ec5 nghi\u00eam tr\u1ecdng m\u00e0 kh\u00f4ng \u0111\u01b0\u1ee3c th\u00f4ng b\u00e1o ho\u1eb7c b\u1ed3i th\u01b0\u1eddng \u0111\u1ea7y \u0111\u1ee7"
+      "name": "Hủy chuyến tàu",
+      "description": "Tàu bị hủy hoặc trễ nghiêm trọng mà không được thông báo hoặc bồi thường đầy đủ"
     },
     "Train Ticket Prices": {
-      "name": "Gi\u00e1 v\u00e9 t\u00e0u",
-      "description": "Gi\u00e1 v\u00e9 t\u00e0u qu\u00e1 \u0111\u1eaft, t\u0103ng v\u01b0\u1ee3t l\u1ea1m ph\u00e1t, gi\u00e1 c\u1ea3 kh\u00f4ng nh\u1ea5t qu\u00e1n"
+      "name": "Giá vé tàu",
+      "description": "Giá vé tàu quá đắt, tăng vượt lạm phát, giá cả không nhất quán"
     },
     "Flight Delays": {
-      "name": "Chuy\u1ebfn bay b\u1ecb tr\u1ec5",
-      "description": "Chuy\u1ebfn bay b\u1ecb tr\u1ec5 ho\u1eb7c b\u1ecb h\u1ee7y, th\u00f4ng tin li\u00ean l\u1ea1c k\u00e9m, kh\u00f3 kh\u0103n khi \u0111\u00f2i b\u1ed3i th\u01b0\u1eddng"
+      "name": "Chuyến bay bị trễ",
+      "description": "Chuyến bay bị trễ hoặc bị hủy, thông tin liên lạc kém, khó khăn khi đòi bồi thường"
     },
     "Lost Luggage": {
-      "name": "M\u1ea5t h\u00e0nh l\u00fd",
-      "description": "H\u00e0nh l\u00fd kh\u00f4ng \u0111\u1ebfn n\u01a1i, theo d\u00f5i ch\u1eadm, b\u1ed3i th\u01b0\u1eddng kh\u00f4ng \u0111\u1ea7y \u0111\u1ee7"
+      "name": "Mất hành lý",
+      "description": "Hành lý không đến nơi, theo dõi chậm, bồi thường không đầy đủ"
     },
     "Bus Route Cuts": {
-      "name": "C\u1eaft tuy\u1ebfn xe bu\u00fdt",
-      "description": "C\u00e1c tuy\u1ebfn b\u1ecb h\u1ee7y, gi\u1ea3m t\u1ea7n su\u1ea5t, c\u1ed9ng \u0111\u1ed3ng n\u00f4ng th\u00f4n m\u1ea5t quy\u1ec1n ti\u1ebfp c\u1eadn xe bu\u00fdt"
+      "name": "Cắt tuyến xe buýt",
+      "description": "Các tuyến bị hủy, giảm tần suất, cộng đồng nông thôn mất quyền tiếp cận xe buýt"
     },
     "Pothole Damage": {
-      "name": "Thi\u1ec7t h\u1ea1i do \u1ed5 g\u00e0",
-      "description": "\u1ed4 g\u00e0 l\u00e0m h\u1ecfng xe v\u00e0 g\u00e2y nguy hi\u1ec3m cho ng\u01b0\u1eddi \u0111i xe \u0111\u1ea1p, ch\u00ednh quy\u1ec1n ch\u1eadm s\u1eeda ch\u1eefa"
+      "name": "Thiệt hại do ổ gà",
+      "description": "Ổ gà làm hỏng xe và gây nguy hiểm cho người đi xe đạp, chính quyền chậm sửa chữa"
     },
     "Parking Fines": {
-      "name": "Ph\u1ea1t \u0111\u1eadu xe",
-      "description": "Ph\u00ed \u0111\u1eadu xe t\u01b0 nh\u00e2n kh\u00f4ng c\u00f4ng b\u1eb1ng, th\u1ef1c thi qu\u00e1 m\u1ea1nh tay, bi\u1ec3n b\u00e1o kh\u00f3 hi\u1ec3u"
+      "name": "Phạt đậu xe",
+      "description": "Phí đậu xe tư nhân không công bằng, thực thi quá mạnh tay, biển báo khó hiểu"
     },
     "Fuel Prices": {
-      "name": "Gi\u00e1 nhi\u00ean li\u1ec7u",
-      "description": "Gi\u00e1 x\u0103ng d\u1ea7u qu\u00e1 cao, gi\u1ea3m ch\u1eadm khi gi\u00e1 b\u00e1n bu\u00f4n gi\u1ea3m"
+      "name": "Giá nhiên liệu",
+      "description": "Giá xăng dầu quá cao, giảm chậm khi giá bán buôn giảm"
     },
     "Broadband Speed": {
-      "name": "T\u1ed1c \u0111\u1ed9 internet",
-      "description": "T\u1ed1c \u0111\u1ed9 internet th\u1ea5p h\u01a1n nhi\u1ec1u so v\u1edbi qu\u1ea3ng c\u00e1o v\u00e0 m\u1ee9c \u0111\u00e3 tr\u1ea3 ti\u1ec1n"
+      "name": "Tốc độ internet",
+      "description": "Tốc độ internet thấp hơn nhiều so với quảng cáo và mức đã trả tiền"
     },
     "Mobile Signal Dead Zones": {
-      "name": "V\u00f9ng kh\u00f4ng c\u00f3 s\u00f3ng \u0111i\u1ec7n tho\u1ea1i",
-      "description": "Kh\u00f4ng c\u00f3 s\u00f3ng \u0111i\u1ec7n tho\u1ea1i t\u1ea1i nh\u00e0, n\u01a1i l\u00e0m vi\u1ec7c ho\u1eb7c d\u1ecdc tuy\u1ebfn giao th\u00f4ng"
+      "name": "Vùng không có sóng điện thoại",
+      "description": "Không có sóng điện thoại tại nhà, nơi làm việc hoặc dọc tuyến giao thông"
     },
     "Price Rises Mid-Contract": {
-      "name": "T\u0103ng gi\u00e1 gi\u1eefa h\u1ee3p \u0111\u1ed3ng",
-      "description": "H\u00f3a \u0111\u01a1n \u0111i\u1ec7n tho\u1ea1i, internet v\u00e0 truy\u1ec1n h\u00ecnh t\u0103ng trong th\u1eddi gian h\u1ee3p \u0111\u1ed3ng b\u1ecb kh\u00f3a"
+      "name": "Tăng giá giữa hợp đồng",
+      "description": "Hóa đơn điện thoại, internet và truyền hình tăng trong thời gian hợp đồng bị khóa"
     },
     "Customer Service Hold Times": {
-      "name": "Th\u1eddi gian ch\u1edd d\u1ecbch v\u1ee5 kh\u00e1ch h\u00e0ng",
-      "description": "Ch\u1edd h\u00e0ng gi\u1edd \u0111\u1ec3 \u0111\u01b0\u1ee3c n\u00f3i chuy\u1ec7n v\u1edbi nh\u00e2n vi\u00ean th\u1ef1c"
+      "name": "Thời gian chờ dịch vụ khách hàng",
+      "description": "Chờ hàng giờ để được nói chuyện với nhân viên thực"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Kh\u00f3 h\u1ee7y \u0111\u0103ng k\u00fd",
-      "description": "C\u00e1c c\u00f4ng ty c\u1ed1 t\u00ecnh l\u00e0m cho vi\u1ec7c h\u1ee7y ho\u1eb7c b\u1ecf \u0111\u0103ng k\u00fd tr\u1edf n\u00ean kh\u00f3 kh\u0103n"
+      "name": "Khó hủy đăng ký",
+      "description": "Các công ty cố tình làm cho việc hủy hoặc bỏ đăng ký trở nên khó khăn"
     },
     "Roaming Charges": {
-      "name": "Ph\u00ed chuy\u1ec3n v\u00f9ng",
-      "description": "Ph\u00ed \u0111i\u1ec7n tho\u1ea1i b\u1ea5t ng\u1edd khi \u0111i du l\u1ecbch n\u01b0\u1edbc ngo\u00e0i, gi\u00e1 t\u0103ng sau Brexit"
+      "name": "Phí chuyển vùng",
+      "description": "Phí điện thoại bất ngờ khi đi du lịch nước ngoài, giá tăng sau Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Chi ph\u00ed h\u00f3a \u0111\u01a1n n\u0103ng l\u01b0\u1ee3ng",
-      "description": "H\u00f3a \u0111\u01a1n gas v\u00e0 \u0111i\u1ec7n kh\u00f4ng th\u1ec3 chi tr\u1ea3, tr\u1ea7n gi\u00e1 v\u1eabn qu\u00e1 cao"
+      "name": "Chi phí hóa đơn năng lượng",
+      "description": "Hóa đơn gas và điện không thể chi trả, trần giá vẫn quá cao"
     },
     "Inaccurate Energy Bills": {
-      "name": "H\u00f3a \u0111\u01a1n n\u0103ng l\u01b0\u1ee3ng kh\u00f4ng ch\u00ednh x\u00e1c",
-      "description": "S\u1ed1 \u0111\u1ecdc \u01b0\u1edbc t\u00ednh sai, t\u00ednh ph\u00ed qu\u00e1 m\u1ee9c, l\u1ed7i trong vi\u1ec7c l\u1eadp h\u00f3a \u0111\u01a1n"
+      "name": "Hóa đơn năng lượng không chính xác",
+      "description": "Số đọc ước tính sai, tính phí quá mức, lỗi trong việc lập hóa đơn"
     },
     "Water Bill Increases": {
-      "name": "H\u00f3a \u0111\u01a1n n\u01b0\u1edbc t\u0103ng",
-      "description": "H\u00f3a \u0111\u01a1n n\u01b0\u1edbc t\u0103ng m\u1ea1nh trong khi ch\u1ea5t l\u01b0\u1ee3ng d\u1ecbch v\u1ee5 gi\u1ea3m"
+      "name": "Hóa đơn nước tăng",
+      "description": "Hóa đơn nước tăng mạnh trong khi chất lượng dịch vụ giảm"
     },
     "Sewage in Rivers": {
-      "name": "N\u01b0\u1edbc th\u1ea3i trong s\u00f4ng",
-      "description": "C\u00e1c c\u00f4ng ty n\u01b0\u1edbc x\u1ea3 n\u01b0\u1edbc th\u1ea3i ch\u01b0a x\u1eed l\u00fd v\u00e0o \u0111\u01b0\u1eddng n\u01b0\u1edbc v\u00e0 b\u00e3i bi\u1ec3n"
+      "name": "Nước thải trong sông",
+      "description": "Các công ty nước xả nước thải chưa xử lý vào đường nước và bãi biển"
     },
     "Power Cuts": {
-      "name": "M\u1ea5t \u0111i\u1ec7n",
-      "description": "Gi\u00e1n \u0111o\u1ea1n cung c\u1ea5p \u0111i\u1ec7n, ph\u1ee5c h\u1ed3i ch\u1eadm, b\u1ed3i th\u01b0\u1eddng kh\u00f4ng \u0111\u1ea7y \u0111\u1ee7"
+      "name": "Mất điện",
+      "description": "Gián đoạn cung cấp điện, phục hồi chậm, bồi thường không đầy đủ"
     },
     "Smart Meter Problems": {
-      "name": "V\u1ea5n \u0111\u1ec1 \u0111\u1ed3ng h\u1ed3 th\u00f4ng minh",
-      "description": "\u0110\u1ed3ng h\u1ed3 th\u00f4ng minh kh\u00f4ng ho\u1ea1t \u0111\u1ed9ng, m\u1ea5t ch\u1ee9c n\u0103ng sau khi \u0111\u1ed5i nh\u00e0 cung c\u1ea5p"
+      "name": "Vấn đề đồng hồ thông minh",
+      "description": "Đồng hồ thông minh không hoạt động, mất chức năng sau khi đổi nhà cung cấp"
     },
     "Bank Branch Closures": {
-      "name": "\u0110\u00f3ng c\u1eeda chi nh\u00e1nh ng\u00e2n h\u00e0ng",
-      "description": "C\u00e1c chi nh\u00e1nh ng\u00e2n h\u00e0ng \u0111\u1ecba ph\u01b0\u01a1ng \u0111\u00f3ng c\u1eeda, c\u1ed9ng \u0111\u1ed3ng m\u1ea5t quy\u1ec1n ti\u1ebfp c\u1eadn"
+      "name": "Đóng cửa chi nhánh ngân hàng",
+      "description": "Các chi nhánh ngân hàng địa phương đóng cửa, cộng đồng mất quyền tiếp cận"
     },
     "Hidden Bank Charges": {
-      "name": "Ph\u00ed ng\u00e2n h\u00e0ng \u1ea9n",
-      "description": "Ph\u00ed b\u1ea5t ng\u1edd cho th\u1ea5u chi, giao d\u1ecbch n\u01b0\u1edbc ngo\u00e0i, ph\u00ed duy tr\u00ec t\u00e0i kho\u1ea3n"
+      "name": "Phí ngân hàng ẩn",
+      "description": "Phí bất ngờ cho thấu chi, giao dịch nước ngoài, phí duy trì tài khoản"
     },
     "Fraud and Scam Losses": {
-      "name": "Thi\u1ec7t h\u1ea1i do gian l\u1eadn v\u00e0 l\u1eeba \u0111\u1ea3o",
-      "description": "Ng\u00e2n h\u00e0ng t\u1eeb ch\u1ed1i ho\u00e0n ti\u1ec1n cho n\u1ea1n nh\u00e2n gian l\u1eadn v\u00e0 l\u1eeba \u0111\u1ea3o thanh to\u00e1n"
+      "name": "Thiệt hại do gian lận và lừa đảo",
+      "description": "Ngân hàng từ chối hoàn tiền cho nạn nhân gian lận và lừa đảo thanh toán"
     },
     "Insurance Claim Rejections": {
-      "name": "T\u1eeb ch\u1ed1i y\u00eau c\u1ea7u b\u1ea3o hi\u1ec3m",
-      "description": "Y\u00eau c\u1ea7u b\u1ed3i th\u01b0\u1eddng b\u1ecb t\u1eeb ch\u1ed1i v\u00ec l\u00fd do k\u1ef9 thu\u1eadt sau nhi\u1ec1u n\u0103m \u0111\u00f3ng ph\u00ed"
+      "name": "Từ chối yêu cầu bảo hiểm",
+      "description": "Yêu cầu bồi thường bị từ chối vì lý do kỹ thuật sau nhiều năm đóng phí"
     },
     "Mortgage Rate Shock": {
-      "name": "C\u00fa s\u1ed1c l\u00e3i su\u1ea5t th\u1ebf ch\u1ea5p",
-      "description": "L\u00e3i su\u1ea5t c\u1ed1 \u0111\u1ecbnh k\u1ebft th\u00fac v\u00e0 chuy\u1ec3n sang l\u00e3i su\u1ea5t th\u1ea3 n\u1ed5i cao h\u01a1n nhi\u1ec1u"
+      "name": "Cú sốc lãi suất thế chấp",
+      "description": "Lãi suất cố định kết thúc và chuyển sang lãi suất thả nổi cao hơn nhiều"
     },
     "Overseas Transfer Fees": {
-      "name": "Ph\u00ed chuy\u1ec3n ti\u1ec1n qu\u1ed1c t\u1ebf",
-      "description": "Ph\u00ed qu\u00e1 cao v\u00e0 t\u1ef7 gi\u00e1 h\u1ed1i \u0111o\u00e1i k\u00e9m cho chuy\u1ec3n ti\u1ec1n qu\u1ed1c t\u1ebf"
+      "name": "Phí chuyển tiền quốc tế",
+      "description": "Phí quá cao và tỷ giá hối đoái kém cho chuyển tiền quốc tế"
     },
     "NHS Waiting Times": {
-      "name": "Th\u1eddi gian ch\u1edd NHS",
-      "description": "Ch\u1edd nhi\u1ec1u th\u00e1ng ho\u1eb7c nhi\u1ec1u n\u0103m \u0111\u1ec3 ph\u1eabu thu\u1eadt v\u00e0 kh\u00e1m chuy\u00ean khoa"
+      "name": "Thời gian chờ NHS",
+      "description": "Chờ nhiều tháng hoặc nhiều năm để phẫu thuật và khám chuyên khoa"
     },
     "GP Appointment Access": {
-      "name": "Ti\u1ebfp c\u1eadn l\u1ecbch h\u1eb9n b\u00e1c s\u0129 \u0111a khoa",
-      "description": "Kh\u00f4ng th\u1ec3 g\u1ecdi \u0111\u1eb7t l\u1ecbch h\u1eb9n b\u00e1c s\u0129, ph\u1ea3i ch\u1edd h\u00e0ng tu\u1ea7n"
+      "name": "Tiếp cận lịch hẹn bác sĩ đa khoa",
+      "description": "Không thể gọi đặt lịch hẹn bác sĩ, phải chờ hàng tuần"
     },
     "Dentist Availability": {
-      "name": "T\u00ecnh s\u1eb5n c\u00f3 c\u1ee7a nha s\u0129",
-      "description": "Kh\u00f4ng th\u1ec3 t\u00ecm nha s\u0129 NHS nh\u1eadn b\u1ec7nh nh\u00e2n m\u1edbi"
+      "name": "Tình sẵn có của nha sĩ",
+      "description": "Không thể tìm nha sĩ NHS nhận bệnh nhân mới"
     },
     "Mental Health Service Waits": {
-      "name": "Ch\u1edd d\u1ecbch v\u1ee5 s\u1ee9c kh\u1ecfe t\u00e2m th\u1ea7n",
-      "description": "Ch\u1edd h\u00e0ng th\u00e1ng \u0111\u1ec3 \u0111\u01b0\u1ee3c tr\u1ecb li\u1ec7u v\u00e0 h\u1ed7 tr\u1ee3 s\u1ee9c kh\u1ecfe t\u00e2m th\u1ea7n"
+      "name": "Chờ dịch vụ sức khỏe tâm thần",
+      "description": "Chờ hàng tháng để được trị liệu và hỗ trợ sức khỏe tâm thần"
     },
     "Prescription Costs": {
-      "name": "Chi ph\u00ed \u0111\u01a1n thu\u1ed1c",
-      "description": "Chi ph\u00ed m\u1ed7i \u0111\u01a1n thu\u1ed1c qu\u00e1 cao \u1edf Anh, kh\u00f4ng nh\u1ea5t qu\u00e1n gi\u1eefa c\u00e1c qu\u1ed1c gia V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "name": "Chi phí đơn thuốc",
+      "description": "Chi phí mỗi đơn thuốc quá cao ở Anh, không nhất quán giữa các quốc gia Vương quốc Anh"
     },
     "Hospital Parking Charges": {
-      "name": "Ph\u00ed \u0111\u1eadu xe b\u1ec7nh vi\u1ec7n",
-      "description": "Ph\u1ea3i tr\u1ea3 ph\u00ed \u0111\u1eadu xe t\u1ea1i b\u1ec7nh vi\u1ec7n khi \u0111ang \u1ed1m ho\u1eb7c th\u0103m ng\u01b0\u1eddi \u1ed1m"
+      "name": "Phí đậu xe bệnh viện",
+      "description": "Phải trả phí đậu xe tại bệnh viện khi đang ốm hoặc thăm người ốm"
     },
     "Rent Increases": {
-      "name": "T\u0103ng gi\u00e1 thu\u00ea",
-      "description": "Gi\u00e1 thu\u00ea t\u01b0 nh\u00e2n t\u0103ng v\u01b0\u1ee3t xa l\u1ea1m ph\u00e1t, \u0111e d\u1ecda \u0111u\u1ed5i kh\u1ecfi nh\u00e0 kh\u00f4ng c\u00f3 l\u1ed7i"
+      "name": "Tăng giá thuê",
+      "description": "Giá thuê tư nhân tăng vượt xa lạm phát, đe dọa đuổi khỏi nhà không có lỗi"
     },
     "Council Tax Rises": {
-      "name": "T\u0103ng thu\u1ebf \u0111\u1ecba ph\u01b0\u01a1ng",
-      "description": "Thu\u1ebf \u0111\u1ecba ph\u01b0\u01a1ng t\u0103ng h\u00e0ng n\u0103m trong khi d\u1ecbch v\u1ee5 \u0111\u1ecba ph\u01b0\u01a1ng t\u1ec7 h\u01a1n"
+      "name": "Tăng thuế địa phương",
+      "description": "Thuế địa phương tăng hàng năm trong khi dịch vụ địa phương tệ hơn"
     },
     "Noisy Neighbours": {
-      "name": "H\u00e0ng x\u00f3m \u1ed3n \u00e0o",
-      "description": "Ti\u1ebfng \u1ed3n li\u00ean t\u1ee5c, ch\u00ednh quy\u1ec1n ch\u1eadm x\u1eed l\u00fd, \u1ea3nh h\u01b0\u1edfng s\u1ee9c kh\u1ecfe t\u00e2m th\u1ea7n"
+      "name": "Hàng xóm ồn ào",
+      "description": "Tiếng ồn liên tục, chính quyền chậm xử lý, ảnh hưởng sức khỏe tâm thần"
     },
     "Rubbish Collection Changes": {
-      "name": "Thay \u0111\u1ed5i thu gom r\u00e1c",
-      "description": "Gi\u1ea3m t\u1ea7n su\u1ea5t thu gom r\u00e1c, quy \u0111\u1ecbnh t\u00e1i ch\u1ebf kh\u00f3 hi\u1ec3u, th\u00f9ng r\u00e1c tr\u00e0n"
+      "name": "Thay đổi thu gom rác",
+      "description": "Giảm tần suất thu gom rác, quy định tái chế khó hiểu, thùng rác tràn"
     },
     "Planning Permission Abuse": {
-      "name": "L\u1ea1m d\u1ee5ng gi\u1ea5y ph\u00e9p quy ho\u1ea1ch",
-      "description": "C\u00e1c d\u1ef1 \u00e1n kh\u00f4ng mong mu\u1ed1n \u0111\u01b0\u1ee3c ph\u00ea duy\u1ec7t, v\u00f9ng xanh b\u1ecb \u0111e d\u1ecda, c\u1ed9ng \u0111\u1ed3ng b\u1ecb ph\u1ed1 m\u1eb7c"
+      "name": "Lạm dụng giấy phép quy hoạch",
+      "description": "Các dự án không mong muốn được phê duyệt, vùng xanh bị đe dọa, cộng đồng bị phớt mặc"
     },
     "Damp and Mould in Housing": {
-      "name": "\u1ea8m m\u1ed1c trong nh\u00e0 \u1edf",
-      "description": "Ch\u1ee7 nh\u00e0 v\u00e0 hi\u1ec7p h\u1ed9i nh\u00e0 \u1edf kh\u00f4ng ch\u1ecbu s\u1eeda ch\u1eefa \u1ea9m m\u1ed1c"
+      "name": "Ẩm mốc trong nhà ở",
+      "description": "Chủ nhà và hiệp hội nhà ở không chịu sửa chữa ẩm mốc"
     },
     "Delivery Problems": {
-      "name": "V\u1ea5n \u0111\u1ec1 giao h\u00e0ng",
-      "description": "B\u01b0u ki\u1ec7n m\u1ea5t, b\u1ecb \u0111\u1ec3 ngo\u00e0i m\u01b0a, \u0111\u00e1nh d\u1ea5u \u0111\u00e3 giao nh\u01b0ng kh\u00f4ng nh\u1eadn \u0111\u01b0\u1ee3c"
+      "name": "Vấn đề giao hàng",
+      "description": "Bưu kiện mất, bị để ngoài mưa, đánh dấu đã giao nhưng không nhận được"
     },
     "Shrinkflation": {
-      "name": "Gi\u1ea3m k\u00edch th\u01b0\u1edbc s\u1ea3n ph\u1ea9m",
-      "description": "S\u1ea3n ph\u1ea9m nh\u1ecf \u0111i trong khi gi\u00e1 gi\u1eef nguy\u00ean ho\u1eb7c t\u0103ng"
+      "name": "Giảm kích thước sản phẩm",
+      "description": "Sản phẩm nhỏ đi trong khi giá giữ nguyên hoặc tăng"
     },
     "Refund Difficulties": {
-      "name": "Kh\u00f3 kh\u0103n khi ho\u00e0n ti\u1ec1n",
-      "description": "C\u00e1c c\u00f4ng ty l\u00e0m cho vi\u1ec7c tr\u1ea3 h\u00e0ng v\u00e0 ho\u00e0n ti\u1ec1n kh\u00f3 kh\u0103n kh\u00f4ng c\u1ea7n thi\u1ebft"
+      "name": "Khó khăn khi hoàn tiền",
+      "description": "Các công ty làm cho việc trả hàng và hoàn tiền khó khăn không cần thiết"
     },
     "Fake Reviews": {
-      "name": "\u0110\u00e1nh gi\u00e1 gi\u1ea3",
-      "description": "Kh\u00f4ng th\u1ec3 tin t\u01b0\u1edfng \u0111\u00e1nh gi\u00e1 tr\u1ef1c tuy\u1ebfn, \u0111\u00e1nh gi\u00e1 t\u00edch c\u1ef1c gi\u1ea3 l\u1eeba \u0111\u1ea3o ng\u01b0\u1eddi ti\u00eau d\u00f9ng"
+      "name": "Đánh giá giả",
+      "description": "Không thể tin tưởng đánh giá trực tuyến, đánh giá tích cực giả lừa đảo người tiêu dùng"
     },
     "Subscription Traps": {
-      "name": "B\u1eaby \u0111\u0103ng k\u00fd",
-      "description": "D\u00f9ng th\u1eed mi\u1ec5n ph\u00ed chuy\u1ec3n th\u00e0nh tr\u1ea3 ph\u00ed m\u00e0 kh\u00f4ng c\u00f3 s\u1ef1 \u0111\u1ed3ng \u00fd r\u00f5 r\u00e0ng, kh\u00f3 h\u1ee7y"
+      "name": "Bẫy đăng ký",
+      "description": "Dùng thử miễn phí chuyển thành trả phí mà không có sự đồng ý rõ ràng, khó hủy"
     },
     "Food Quality Decline": {
-      "name": "Ch\u1ea5t l\u01b0\u1ee3ng th\u1ef1c ph\u1ea9m gi\u1ea3m",
-      "description": "\u0110\u1ed3 \u0103n s\u1eb5n ch\u1ea5t l\u01b0\u1ee3ng k\u00e9m h\u01a1n, ph\u1ea7n nh\u1ecf h\u01a1n, nhi\u1ec1u ph\u1ee5 gia h\u01a1n"
+      "name": "Chất lượng thực phẩm giảm",
+      "description": "Đồ ăn sẵn chất lượng kém hơn, phần nhỏ hơn, nhiều phụ gia hơn"
     },
     "Self-Checkout Frustration": {
-      "name": "B\u1ef1c x\u00fac v\u1edbi qu\u1ea7y t\u1ef1 thanh to\u00e1n",
-      "description": "M\u00e1y t\u1ef1 ph\u1ee5c v\u1ee5 kh\u00f4ng \u0111\u00e1ng tin c\u1eady, thay th\u1ebf nh\u00e2n vi\u00ean th\u1ef1c"
+      "name": "Bực xúc với quầy tự thanh toán",
+      "description": "Máy tự phục vụ không đáng tin cậy, thay thế nhân viên thực"
     },
     "Cost of Childcare": {
-      "name": "Chi ph\u00ed gi\u1eef tr\u1ebb",
-      "description": "Chi ph\u00ed gi\u1eef tr\u1ebb \u0111\u1eaft \u0111\u1ebfn m\u1ee9c c\u1ea5m, h\u1ea1n ch\u1ebf kh\u1ea3 n\u0103ng \u0111i l\u00e0m"
+      "name": "Chi phí giữ trẻ",
+      "description": "Chi phí giữ trẻ đắt đến mức cấm, hạn chế khả năng đi làm"
     },
     "Student Loan Repayment": {
-      "name": "Tr\u1ea3 n\u1ee3 sinh vi\u00ean",
-      "description": "Sinh vi\u00ean t\u1ed1t nghi\u1ec7p ph\u1ea3i tr\u1ea3 n\u1ee3 h\u00e0ng ch\u1ee5c n\u0103m, thay \u0111\u1ed5i ng\u01b0\u1ee1ng v\u00e0 l\u00e3i su\u1ea5t"
+      "name": "Trả nợ sinh viên",
+      "description": "Sinh viên tốt nghiệp phải trả nợ hàng chục năm, thay đổi ngưỡng và lãi suất"
     },
     "Dog Fouling": {
-      "name": "Ph\u00e2n ch\u00f3",
-      "description": "Ph\u00e2n ch\u00f3 \u1edf n\u01a1i c\u00f4ng c\u1ed9ng, c\u00f4ng vi\u00ean v\u00e0 v\u1ec9a h\u00e8 kh\u00f4ng \u0111\u01b0\u1ee3c d\u1ecdn d\u1eb9p"
+      "name": "Phân chó",
+      "description": "Phân chó ở nơi công cộng, công viên và vỉa hè không được dọn dẹp"
     },
     "AI Replacing Jobs": {
-      "name": "AI thay th\u1ebf vi\u1ec7c l\u00e0m",
-      "description": "Lo l\u1eafng v\u1ec1 tr\u00ed tu\u1ec7 nh\u00e2n t\u1ea1o t\u1ef1 \u0111\u1ed9ng h\u00f3a c\u00f4ng vi\u1ec7c m\u00e0 kh\u00f4ng c\u00f3 h\u1ed7 tr\u1ee3 chuy\u1ec3n \u0111\u1ed5i"
+      "name": "AI thay thế việc làm",
+      "description": "Lo lắng về trí tuệ nhân tạo tự động hóa công việc mà không có hỗ trợ chuyển đổi"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft V\u01b0\u01a1ng qu\u1ed1c Anh ph\u1ee5c v\u1ee5 tuy\u1ebfn West Coast Main Line"
+      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft V\u01b0\u01a1ng qu\u1ed1c Anh ph\u1ee5c v\u1ee5 London v\u00e0 mi\u1ec1n nam"
+      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ London và miền nam"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft V\u01b0\u01a1ng qu\u1ed1c Anh ph\u1ee5c v\u1ee5 mi\u1ec1n b\u1eafc n\u01b0\u1edbc Anh"
+      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ miền bắc nước Anh"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft \u0111\u01b0\u1eddng d\u00e0i V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà vận hành đường sắt đường dài Vương quốc Anh"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft V\u01b0\u01a1ng qu\u1ed1c Anh ph\u1ee5c v\u1ee5 tuy\u1ebfn xuy\u00ean Pennine"
+      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến xuyên Pennine"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Nh\u00e0 v\u1eadn h\u00e0nh \u0111\u01b0\u1eddng s\u1eaft V\u01b0\u01a1ng qu\u1ed1c Anh ph\u1ee5c v\u1ee5 tuy\u1ebfn East Coast Main Line"
+      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "H\u00e3ng h\u00e0ng kh\u00f4ng gi\u00e1 r\u1ebb ch\u00e2u \u00c2u"
+      "description": "Hãng hàng không giá rẻ châu Âu"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "H\u00e3ng h\u00e0ng kh\u00f4ng gi\u00e1 r\u1ebb c\u00f3 tr\u1ee5 s\u1edf t\u1ea1i V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Hãng hàng không giá rẻ có trụ sở tại Vương quốc Anh"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "H\u00e3ng h\u00e0ng kh\u00f4ng qu\u1ed1c gia V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Hãng hàng không quốc gia Vương quốc Anh"
     },
     "TUI": {
       "name": "TUI",
-      "description": "C\u00f4ng ty du l\u1ecbch v\u00e0 ngh\u1ec9 d\u01b0\u1ee1ng"
+      "description": "Công ty du lịch và nghỉ dưỡng"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Nh\u00e0 cung c\u1ea5p internet v\u00e0 di \u0111\u1ed9ng l\u1edbn c\u1ee7a V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp internet và di động lớn của Vương quốc Anh"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Nh\u00e0 cung c\u1ea5p internet, truy\u1ec1n h\u00ecnh v\u00e0 di \u0111\u1ed9ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp internet, truyền hình và di động Vương quốc Anh"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Nh\u00e0 cung c\u1ea5p truy\u1ec1n h\u00ecnh, internet v\u00e0 di \u0111\u1ed9ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp truyền hình, internet và di động Vương quốc Anh"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "C\u00f4ng ty vi\u1ec5n th\u00f4ng to\u00e0n c\u1ea7u c\u00f3 tr\u1ee5 s\u1edf t\u1ea1i V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Công ty viễn thông toàn cầu có trụ sở tại Vương quốc Anh"
     },
     "Three": {
       "name": "Three",
-      "description": "Nh\u00e0 m\u1ea1ng di \u0111\u1ed9ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà mạng di động Vương quốc Anh"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Nh\u00e0 cung c\u1ea5p internet v\u00e0 \u0111i\u1ec7n tho\u1ea1i V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp internet và điện thoại Vương quốc Anh"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng V\u01b0\u01a1ng qu\u1ed1c Anh (thu\u1ed9c s\u1edf h\u1eefu c\u1ee7a Ph\u00e1p)"
+      "description": "Nhà cung cấp năng lượng Vương quốc Anh (thuộc sở hữu của Pháp)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng t\u00e1i t\u1ea1o V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp năng lượng tái tạo Vương quốc Anh"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Nh\u00e0 cung c\u1ea5p n\u0103ng l\u01b0\u1ee3ng V\u01b0\u01a1ng qu\u1ed1c Anh (thu\u1ed9c s\u1edf h\u1eefu c\u1ee7a \u0110\u1ee9c)"
+      "description": "Nhà cung cấp năng lượng Vương quốc Anh (thuộc sở hữu của Đức)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "C\u00f4ng ty n\u01b0\u1edbc v\u00e0 tho\u00e1t n\u01b0\u1edbc cho London v\u00e0 th\u1ee5ng l\u0169ng Thames"
+      "description": "Công ty nước và thoát nước cho London và thụng lũng Thames"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "C\u00f4ng ty n\u01b0\u1edbc cho mi\u1ec1n nam n\u01b0\u1edbc Anh"
+      "description": "Công ty nước cho miền nam nước Anh"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "C\u00f4ng ty n\u01b0\u1edbc cho v\u00f9ng t\u00e2y b\u1eafc n\u01b0\u1edbc Anh"
+      "description": "Công ty nước cho vùng tây bắc nước Anh"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "C\u00f4ng ty n\u01b0\u1edbc cho v\u00f9ng Midlands"
+      "description": "Công ty nước cho vùng Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "C\u00f4ng ty n\u01b0\u1edbc cho v\u00f9ng East Anglia"
+      "description": "Công ty nước cho vùng East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Ng\u00e2n h\u00e0ng \u0111a qu\u1ed1c gia c\u1ee7a Anh"
+      "description": "Ngân hàng đa quốc gia của Anh"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Ng\u00e2n h\u00e0ng v\u00e0 d\u1ecbch v\u1ee5 t\u00e0i ch\u00ednh to\u00e0n c\u1ea7u"
+      "description": "Ngân hàng và dịch vụ tài chính toàn cầu"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Ng\u00e2n h\u00e0ng b\u00e1n l\u1ebb v\u00e0 th\u01b0\u01a1ng m\u1ea1i V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Ngân hàng bán lẻ và thương mại Vương quốc Anh"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "T\u1eadp \u0111o\u00e0n ng\u00e2n h\u00e0ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Tập đoàn ngân hàng Vương quốc Anh"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Ng\u00e2n h\u00e0ng V\u01b0\u01a1ng qu\u1ed1c Anh (thu\u1ed9c s\u1edf h\u1eefu c\u1ee7a T\u00e2y Ban Nha)"
+      "description": "Ngân hàng Vương quốc Anh (thuộc sở hữu của Tây Ban Nha)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Ng\u00e2n h\u00e0ng s\u1ed1 v\u00e0 c\u00f4ng ngh\u1ec7 t\u00e0i ch\u00ednh"
+      "description": "Ngân hàng số và công nghệ tài chính"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "C\u00f4ng ty b\u1ea3o hi\u1ec3m v\u00e0 d\u1ecbch v\u1ee5 t\u00e0i ch\u00ednh V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Công ty bảo hiểm và dịch vụ tài chính Vương quốc Anh"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "C\u00f4ng ty b\u1ea3o hi\u1ec3m xe v\u00e0 nh\u00e0 V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Công ty bảo hiểm xe và nhà Vương quốc Anh"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "C\u00f4ng ty b\u1ea3o hi\u1ec3m V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Công ty bảo hiểm Vương quốc Anh"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "C\u00f4ng ty th\u01b0\u01a1ng m\u1ea1i \u0111i\u1ec7n t\u1eed v\u00e0 c\u00f4ng ngh\u1ec7 to\u00e0n c\u1ea7u"
+      "description": "Công ty thương mại điện tử và công nghệ toàn cầu"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "D\u1ecbch v\u1ee5 b\u01b0u ch\u00ednh V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Dịch vụ bưu chính Vương quốc Anh"
     },
     "Evri": {
       "name": "Evri",
-      "description": "D\u1ecbch v\u1ee5 giao b\u01b0u ki\u1ec7n V\u01b0\u01a1ng qu\u1ed1c Anh (tr\u01b0\u1edbc \u0111\u00e2y l\u00e0 Hermes)"
+      "description": "Dịch vụ giao bưu kiện Vương quốc Anh (trước đây là Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "D\u1ecbch v\u1ee5 giao b\u01b0u ki\u1ec7n V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Dịch vụ giao bưu kiện Vương quốc Anh"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Chu\u1ed7i si\u00eau th\u1ecb V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Chuỗi siêu thị Vương quốc Anh"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Chu\u1ed7i si\u00eau th\u1ecb V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Chuỗi siêu thị Vương quốc Anh"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "D\u1ecbch v\u1ee5 Y t\u1ebf Qu\u1ed1c gia cho n\u01b0\u1edbc Anh"
+      "description": "Dịch vụ Y tế Quốc gia cho nước Anh"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "D\u1ecbch v\u1ee5 nha khoa NHS"
+      "description": "Dịch vụ nha khoa NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Nh\u00e0 cung c\u1ea5p d\u1ecbch v\u1ee5 ch\u0103m s\u00f3c s\u1ee9c kh\u1ecfe t\u01b0 nh\u00e2n"
+      "description": "Nhà cung cấp dịch vụ chăm sóc sức khỏe tư nhân"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "C\u01a1 quan ch\u00ednh quy\u1ec1n \u0111\u1ecba ph\u01b0\u01a1ng V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Cơ quan chính quyền địa phương Vương quốc Anh"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "C\u00f4ng ty x\u00e2y d\u1ef1ng nh\u00e0 \u1edf V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Công ty xây dựng nhà ở Vương quốc Anh"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "N\u1ec1n t\u1ea3ng cho thu\u00ea tr\u1ef1c tuy\u1ebfn V\u01b0\u01a1ng qu\u1ed1c Anh"
+      "description": "Nền tảng cho thuê trực tuyến Vương quốc Anh"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "D\u1ecbch v\u1ee5 ph\u00e1t tr\u1ef1c tuy\u1ebfn gi\u1ea3i tr\u00ed"
+      "description": "Dịch vụ phát trực tuyến giải trí"
     },
     "Apple": {
       "name": "Apple",
-      "description": "C\u00f4ng ty c\u00f4ng ngh\u1ec7"
+      "description": "Công ty công nghệ"
     }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "tàu bị hủy",
+      "hủy chuyến tàu",
+      "tàu hủy chuyến",
+      "tàu không chạy",
+      "hủy tàu hỏa",
+      "dịch vụ tàu hủy",
+      "tàu trễ",
+      "tàu bị trễ",
+      "tàu chậm",
+      "tàu đến trễ",
+      "trễ tàu hỏa"
+    ],
+    "Train Ticket Prices": ["giá vé tàu", "tiền vé tàu", "tàu đắt", "vé tàu hỏa"],
+    "Flight Delays": [
+      "chuyến bay trễ",
+      "máy bay trễ",
+      "chuyến bay hủy",
+      "trễ ở sân bay",
+      "kẹt ở sân bay",
+      "máy bay muộn"
+    ],
+    "Lost Luggage": [
+      "hành lý mất",
+      "vali mất",
+      "hành lý chưa đến",
+      "vali thất lạc",
+      "hành lý không ra băng chuyền",
+      "hãng bay làm mất đồ"
+    ],
+    "Bus Route Cuts": ["cắt tuyến xe buýt", "giảm tuyến xe buýt", "hủy tuyến xe buýt"],
+    "Broadband Speed": [
+      "mạng chậm",
+      "wifi chậm",
+      "wifi lag",
+      "tốc độ mạng",
+      "internet không hoạt động",
+      "giật lag",
+      "mạng hay mất",
+      "wifi hay mất"
+    ],
+    "Mobile Signal Dead Zones": ["không có sóng", "mất sóng", "vùng mất sóng", "không có tín hiệu"],
+    "Price Rises Mid-Contract": [
+      "tăng giá giữa hợp đồng",
+      "giá hợp đồng tăng",
+      "tăng phí giữa hợp đồng"
+    ],
+    "Customer Service Hold Times": [
+      "chờ máy",
+      "chờ điện thoại",
+      "gọi không được",
+      "không ai bắt máy",
+      "xếp hàng điện thoại",
+      "tổng đài"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "không hủy được",
+      "khó hủy",
+      "hủy đăng ký",
+      "bỏ đăng ký"
+    ],
+    "Energy Bill Costs": [
+      "hóa đơn gas quá cao",
+      "hóa đơn điện",
+      "giá năng lượng",
+      "chi phí sưởi ấm",
+      "nghèo năng lượng",
+      "không đủ tiền trả điện"
+    ],
+    "Inaccurate Energy Bills": ["hóa đơn điện sai", "đọc đồng hồ sai", "tính phí điện quá mức"],
+    "Water Bill Increases": ["tiền nước", "phí nước", "hóa đơn nước cao quá"],
+    "Sewage in Rivers": [
+      "xả nước thải",
+      "nước thải chưa xử lý",
+      "nước thải ra biển",
+      "ô nhiễm nguồn nước",
+      "tràn nước thải",
+      "tràn cống"
+    ],
+    "Hidden Bank Charges": [
+      "phí bất ngờ",
+      "phí ẩn",
+      "phí không ngờ",
+      "phí thấu chi",
+      "phí ngân hàng"
+    ],
+    "Fraud and Scam Losses": [
+      "bị lừa đảo",
+      "gian lận ngân hàng",
+      "lừa chuyển tiền",
+      "gian lận tài chính"
+    ],
+    "Bank Branch Closures": [
+      "đóng chi nhánh ngân hàng",
+      "ngân hàng địa phương đóng",
+      "không có ngân hàng gần nhà"
+    ],
+    "Insurance Claim Rejections": [
+      "bị từ chối bảo hiểm",
+      "bảo hiểm không trả",
+      "từ chối bồi thường"
+    ],
+    "NHS Waiting Times": [
+      "chờ NHS",
+      "danh sách chờ",
+      "chờ phẫu thuật",
+      "chờ bệnh viện",
+      "chờ chuyển tuyến",
+      "chờ mổ"
+    ],
+    "GP Appointment Access": [
+      "không đặt lịch bác sĩ được",
+      "lịch hẹn bác sĩ",
+      "gọi bác sĩ không được",
+      "không gặp được bác sĩ",
+      "giành lịch hẹn sáng sớm"
+    ],
+    "Dentist Availability": ["nha sĩ NHS", "không tìm được nha sĩ", "danh sách chờ nha sĩ"],
+    "Mental Health Service Waits": [
+      "ngân sách sức khỏe tâm thần",
+      "tiếp cận trị liệu",
+      "chờ tư vấn tâm lý",
+      "chờ CAMHS"
+    ],
+    "Prescription Costs": ["giá thuốc", "tiền thuốc", "phí nhà thuốc"],
+    "Delivery Problems": [
+      "mất bưu kiện",
+      "bưu kiện không đến",
+      "để ngoài mưa",
+      "hàng bị mất cắp",
+      "tài xế giao hàng",
+      "lỡ giao hàng"
+    ],
+    "Rent Increases": [
+      "tiền thuê quá cao",
+      "tiền thuê tăng",
+      "chủ nhà tăng giá",
+      "bị đuổi khỏi nhà"
+    ],
+    "Parking Fines": ["vé phạt đỗ xe", "phạt đỗ xe", "PCN", "phạt đỗ xe bất công"],
+    "Shrinkflation": ["phần ít hơn", "trả bằng giá được ít hơn", "gói nhỏ hơn", "sản phẩm co lại"],
+    "Pothole Damage": ["ổ gà", "đường hỏng", "ổ gà hư xe"],
+    "Council Tax Rises": ["tăng thuế địa phương", "thuế địa phương quá cao", "thuế vùng"],
+    "Damp and Mould in Housing": ["nhà bị mốc", "phòng ẩm", "mốc đen", "nhà hư hỏng"],
+    "Student Loan Repayment": ["nợ sinh viên", "học phí", "nợ học tập", "vay sinh viên"],
+    "AI Replacing Jobs": ["tự động hóa công việc", "AI cướp việc", "robot thay thế lao động"],
+    "Roaming Charges": [
+      "cước điện thoại đi du lịch",
+      "phí data nước ngoài",
+      "phí điện thoại nước ngoài"
+    ],
+    "Smart Meter Problems": [
+      "đồng hồ thông minh hỏng",
+      "đồng hồ không hoạt động",
+      "đồng hồ mất sóng"
+    ],
+    "Subscription Traps": ["bẫy dùng thử miễn phí", "tự động gia hạn", "bị thu phí sau dùng thử"],
+    "Fuel Prices": ["giá xăng", "giá dầu diesel", "chi phí xăng dầu", "xăng quá đắt"],
+    "Power Cuts": ["mất điện", "cúp điện", "mất điện đột ngột", "không có điện", "sự cố điện"],
+    "Mortgage Rate Shock": [
+      "lãi vay nhà tăng",
+      "lãi suất thế chấp",
+      "tái thế chấp",
+      "hết lãi suất cố định"
+    ],
+    "Overseas Transfer Fees": [
+      "phí chuyển tiền",
+      "gửi tiền ra nước ngoài",
+      "phí kiều hối",
+      "phí chuyển khoản quốc tế"
+    ],
+    "Hospital Parking Charges": ["phí đỗ xe bệnh viện", "đỗ xe ở bệnh viện", "đỗ xe NHS"],
+    "Noisy Neighbours": [
+      "khiếu nại tiếng ồn",
+      "hàng xóm ồn",
+      "hàng xóm ồn ào",
+      "tiếng ồn phiền phức"
+    ],
+    "Rubbish Collection Changes": [
+      "thu gom rác",
+      "không thu rác",
+      "tái chế lộn xộn",
+      "bỏ lỡ thu gom rác"
+    ],
+    "Planning Permission Abuse": [
+      "giấy phép xây dựng",
+      "dự án không mong muốn",
+      "vùng xanh",
+      "xin phép xây dựng"
+    ],
+    "Refund Difficulties": [
+      "không được hoàn tiền",
+      "từ chối hoàn tiền",
+      "trả hàng bị từ chối",
+      "lấy tiền lại"
+    ],
+    "Fake Reviews": ["thao túng đánh giá", "đánh giá mua", "đánh giá giả mạo", "review giả"],
+    "Food Quality Decline": [
+      "chất lượng thực phẩm",
+      "đồ ăn sẵn tệ hơn",
+      "phụ gia thực phẩm",
+      "phần ăn nhỏ hơn"
+    ],
+    "Self-Checkout Frustration": [
+      "quầy tự thanh toán",
+      "tự phục vụ",
+      "không có nhân viên thu ngân",
+      "máy không hoạt động"
+    ],
+    "Cost of Childcare": ["chi phí giữ trẻ", "học phí nhà trẻ", "giữ trẻ đắt", "chi phí trông trẻ"],
+    "Dog Fouling": ["phân chó", "chó ị bậy", "chất thải chó", "chó phóng uế"]
   }
 }

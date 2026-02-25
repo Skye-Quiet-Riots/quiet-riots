@@ -887,6 +887,62 @@ describe('Bot API: translated issue data', () => {
     expect(body.data.actions[0].title).toBeTruthy();
   });
 
+  // ─── Translated synonym search (bot surface) ───
+
+  it('search_issues matches translated synonyms for non-English locale', async () => {
+    // "trenes cancelados" is the Spanish translation of synonym "cancelled trains" for Rail Cancellations
+    const { status, body } = await callBot('search_issues', {
+      query: 'trenes cancelados',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+  });
+
+  it('search_issues matches translated synonym for broadband in Spanish', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'internet lento',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    const broadband = body.data.issues.find((i: { id: string }) => i.id === 'issue-broadband');
+    expect(broadband).toBeDefined();
+  });
+
+  it('search_issues does not match translated synonyms when locale is en', async () => {
+    // "trenes cancelados" is Spanish — should NOT match in English locale
+    const { status, body } = await callBot('search_issues', {
+      query: 'trenes cancelados',
+      language_code: 'en',
+    });
+    expect(status).toBe(200);
+    expect(body.data.issues).toHaveLength(0);
+  });
+
+  it('get_issue returns translated synonyms for non-English locale', async () => {
+    const { status, body } = await callBot('get_issue', {
+      issue_id: 'issue-rail',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    const terms = body.data.synonyms.map((s: { term: string }) => s.term);
+    // syn-001 and syn-002 have Spanish translations seeded
+    expect(terms).toContain('cancelaciones de trenes');
+    expect(terms).toContain('trenes cancelados');
+  });
+
+  it('get_issue returns English synonyms when locale is en', async () => {
+    const { status, body } = await callBot('get_issue', {
+      issue_id: 'issue-rail',
+      language_code: 'en',
+    });
+    expect(status).toBe(200);
+    const terms = body.data.synonyms.map((s: { term: string }) => s.term);
+    expect(terms).toContain('train cancellations');
+    expect(terms).toContain('cancelled trains');
+  });
+
   // ─── Structural guard: all data-fetching actions must accept language_code ───
   // If you add a new action that returns translatable data (issues, orgs, campaigns),
   // add it to this list. The test will fail if the action rejects language_code.

@@ -1,5 +1,5 @@
 /**
- * Seed translated content for database entities (issues, organisations, categories).
+ * Seed translated content for database entities (issues, organisations, categories, synonyms).
  *
  * This script generates translation files and optionally inserts them into the database.
  * Translations are stored in `translations/` directory as JSON files per locale.
@@ -21,6 +21,8 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { SYNONYMS } from './seed-synonyms';
+export { SYNONYMS };
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
 
@@ -359,6 +361,8 @@ export interface TranslationFile {
   categories: Record<string, string>;
   issues: Record<string, { name: string; description: string }>;
   organisations: Record<string, { name: string; description: string }>;
+  /** Synonyms keyed by English issue name → array of translated synonym terms */
+  synonyms: Record<string, string[]>;
 }
 
 // ─── Generate mode ────────────────────────────────────────────────────────────
@@ -379,7 +383,12 @@ function generateEnglishBaseline(): TranslationFile {
     organisations[org.name] = { name: org.name, description: org.description };
   }
 
-  return { locale: 'en', categories, issues, organisations };
+  const synonyms: Record<string, string[]> = {};
+  for (const [issueName, terms] of SYNONYMS) {
+    synonyms[issueName] = [...terms];
+  }
+
+  return { locale: 'en', categories, issues, organisations, synonyms };
 }
 
 // ─── Apply mode ───────────────────────────────────────────────────────────────
@@ -421,11 +430,23 @@ async function applyTranslations() {
     orgIdMap[row.name as string] = row.id as string;
   }
 
+  // Build synonym lookup: issue name → array of { synonymId, term }
+  const synonymResult = await db.execute(
+    'SELECT s.id, s.term, i.name as issue_name FROM synonyms s JOIN issues i ON i.id = s.issue_id ORDER BY s.id',
+  );
+  const synonymsByIssue: Record<string, { id: string; term: string }[]> = {};
+  for (const row of synonymResult.rows) {
+    const issueName = row.issue_name as string;
+    if (!synonymsByIssue[issueName]) synonymsByIssue[issueName] = [];
+    synonymsByIssue[issueName].push({ id: row.id as string, term: row.term as string });
+  }
+
   console.log(
-    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations`,
+    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations, ${synonymResult.rows.length} synonyms`,
   );
 
   const { generateId } = await import('../src/lib/uuid');
+  const { sanitizeText } = await import('../src/lib/sanitize');
 
   let inserted = 0;
   let skipped = 0;
@@ -500,6 +521,32 @@ async function applyTranslations() {
       });
     }
 
+    // Synonyms — match translated terms to English synonym rows by array index
+    if (data.synonyms) {
+      for (const [issueName, translatedTerms] of Object.entries(data.synonyms)) {
+        const dbSynonyms = synonymsByIssue[issueName];
+        if (!dbSynonyms) {
+          skipped++;
+          continue;
+        }
+
+        // Match by array index — translated term[i] corresponds to English synonym[i]
+        const count = Math.min(translatedTerms.length, dbSynonyms.length);
+        for (let i = 0; i < count; i++) {
+          const translatedTerm = sanitizeText(translatedTerms[i]);
+          if (!translatedTerm || translatedTerm.length > 255) continue;
+
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'synonym', ?, 'term', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), dbSynonyms[i].id, locale, translatedTerm],
+          });
+        }
+      }
+    }
+
     // Execute batch
     if (statements.length > 0) {
       await db.batch(statements, 'write');
@@ -565,9 +612,11 @@ async function main() {
     console.log('✅ en.json (baseline)');
 
     // Count what we need
-    const totalStrings = CATEGORIES.length + ISSUES.length * 2 + ORGANISATIONS.length * 2;
+    const synonymCount = SYNONYMS.reduce((sum, [, terms]) => sum + terms.length, 0);
+    const totalStrings =
+      CATEGORIES.length + ISSUES.length * 2 + ORGANISATIONS.length * 2 + synonymCount;
     console.log(
-      `\nContent to translate: ${CATEGORIES.length} categories + ${ISSUES.length} issues (name+desc) + ${ORGANISATIONS.length} orgs (name+desc) = ${totalStrings} strings per locale`,
+      `\nContent to translate: ${CATEGORIES.length} categories + ${ISSUES.length} issues (name+desc) + ${ORGANISATIONS.length} orgs (name+desc) + ${synonymCount} synonyms = ${totalStrings} strings per locale`,
     );
     console.log(`Target locales: ${targetLocales.length}`);
     console.log(`\n⚠️  Translation files need to be generated by translation agents.`);
@@ -590,6 +639,7 @@ async function main() {
         categories: { ...baseline.categories },
         issues: JSON.parse(JSON.stringify(baseline.issues)),
         organisations: JSON.parse(JSON.stringify(baseline.organisations)),
+        synonyms: JSON.parse(JSON.stringify(baseline.synonyms)),
       };
       fs.writeFileSync(outPath, JSON.stringify(placeholder, null, 2) + '\n');
       generated++;

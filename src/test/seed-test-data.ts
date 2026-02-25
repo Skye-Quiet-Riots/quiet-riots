@@ -722,4 +722,34 @@ export async function seedTestData() {
           VALUES (?, ?, ?, ?, ?, ?, ?)`,
     args: ['trans-006', 'issue', 'issue-rail', 'name', 'es', 'Cancelaciones de trenes', 'machine'],
   });
+
+  // Translated synonyms — Spanish (es) for synonym terms
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'trans-syn-001',
+      'synonym',
+      'syn-001',
+      'term',
+      'es',
+      'cancelaciones de trenes',
+      'machine',
+    ],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-syn-002', 'synonym', 'syn-002', 'term', 'es', 'trenes cancelados', 'machine'],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-syn-003', 'synonym', 'syn-003', 'term', 'es', 'internet lento', 'machine'],
+  });
+  await db.execute({
+    sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: ['trans-syn-006', 'synonym', 'syn-006', 'term', 'es', 'vuelo cancelado', 'machine'],
+  });
 }

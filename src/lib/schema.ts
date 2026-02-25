@@ -51,6 +51,8 @@ export async function createTables() {
       issue_id TEXT NOT NULL REFERENCES issues(id),
       term TEXT NOT NULL CHECK(length(term) <= 255)
     );
+    CREATE INDEX IF NOT EXISTS idx_synonyms_issue ON synonyms(issue_id);
+    CREATE INDEX IF NOT EXISTS idx_synonyms_term ON synonyms(term);
 
     CREATE TABLE IF NOT EXISTS users (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
