@@ -1,5 +1,5 @@
 import { getTranslatedEntities } from './translations';
-import type { IssuePivotRow, OrgPivotRow } from '@/types';
+import type { IssuePivotRow } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -87,13 +87,13 @@ export async function translateIssuePivotRows(
 }
 
 /**
- * Translate issue names in org pivot rows.
+ * Translate issue names in org pivot rows or any rows with issue_id + issue_name.
  * Looks up translations for `issue_id` entities.
  */
-export async function translateOrgPivotRows(
-  rows: OrgPivotRow[],
+export async function translateOrgPivotRows<T extends { issue_id: string; issue_name: string }>(
+  rows: T[],
   locale: string,
-): Promise<OrgPivotRow[]> {
+): Promise<T[]> {
   if (locale === 'en' || rows.length === 0) return rows;
 
   const translations = await getTranslatedEntities(
