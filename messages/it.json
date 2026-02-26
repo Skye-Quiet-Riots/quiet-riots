@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Raccogli prove",
     "gatherEvidenceDesc": "Documenta cosa sta succedendo con {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Progetti d'azione",
     "subtitle": "{count} {count, plural, one {progetto commissiona} other {progetti commissionano}} servizi per l'azione collettiva.",
     "noResults": "Nessun progetto d'azione trovato. Prova un filtro diverso."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Progetti d'azione",
     "fullyFunded": "Obiettivo raggiunto",
     "disbursed": "Completato",
@@ -352,7 +352,7 @@
     "you": "TU",
     "rioters": "partecipanti"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Progetti d'azione",
     "funded": "Obiettivo raggiunto",
     "disbursed": "Completato",
@@ -438,7 +438,7 @@
     "topUp": "Ricarica",
     "simulated": "Ricarica simulata per test. Pagamenti reali in arrivo."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Fondi insufficienti. Ricarica prima il tuo portafoglio.",
     "minContribution": "Il pagamento minimo è 10p",
     "contribute": "Sostieni questo progetto",
@@ -447,7 +447,7 @@
     "invalidAmount": "Inserisci un importo valido",
     "customAmount": "Importo personalizzato (£)",
     "give": "Paga",
-    "success": "Pagato {amount} per {campaign}!",
+    "success": "Pagato {amount} per {actionInitiative}!",
     "remainingBalance": "Saldo rimanente: {balance}",
     "topUpPrompt": "Ricarica il portafoglio",
     "toKeepSupporting": "per continuare a sostenere i progetti d'azione.",

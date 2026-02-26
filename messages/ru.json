@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Собирай доказательства",
     "gatherEvidenceDesc": "Документируй происходящее с {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Проекты действий",
     "subtitle": "{count} {count, plural, one {проект} few {проекта} many {проектов} other {проектов}} заказывают услуги для коллективных действий.",
     "noResults": "Проекты действий не найдены. Попробуй другой фильтр."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Проекты действий",
     "fullyFunded": "Цель достигнута",
     "disbursed": "Завершено",
@@ -352,7 +352,7 @@
     "you": "ТЫ",
     "rioters": "участников"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Проекты действий",
     "funded": "Цель достигнута",
     "disbursed": "Завершено",
@@ -438,7 +438,7 @@
     "topUp": "Пополнить",
     "simulated": "Симулированное пополнение для тестирования. Настоящие платежи скоро."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Недостаточно средств. Сначала пополни кошелёк.",
     "minContribution": "Минимальный платёж — 10p",
     "contribute": "Поддержать этот проект",
@@ -447,7 +447,7 @@
     "invalidAmount": "Введи корректную сумму",
     "customAmount": "Произвольная сумма (£)",
     "give": "Оплатить",
-    "success": "Оплачено {amount} за {campaign}!",
+    "success": "Оплачено {amount} за {actionInitiative}!",
     "remainingBalance": "Остаток на балансе: {balance}",
     "topUpPrompt": "Пополни кошелёк",
     "toKeepSupporting": "чтобы продолжить поддерживать проекты действий.",

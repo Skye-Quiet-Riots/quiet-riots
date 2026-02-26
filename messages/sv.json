@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Samla bevis",
     "gatherEvidenceDesc": "Dokumentera vad som händer med {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Handlingsprojekt",
     "subtitle": "{count} {count, plural, one {projekt} other {projekt}} som beställer tjänster för kollektiv handling.",
     "noResults": "Inga handlingsprojekt hittades. Prova ett annat filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Handlingsprojekt",
     "fullyFunded": "Mål uppnått",
     "disbursed": "Slutfört",
@@ -352,7 +352,7 @@
     "you": "DU",
     "rioters": "deltagare"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Handlingsprojekt",
     "funded": "Mål uppnått",
     "disbursed": "Slutfört",
@@ -438,7 +438,7 @@
     "topUp": "Fyll på",
     "simulated": "Simulerad påfyllning för testning. Riktiga betalningar kommer snart."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Otillräckligt saldo. Fyll på din plånbok först.",
     "minContribution": "Minsta betalning är 10p",
     "contribute": "Stöd detta projekt",
@@ -447,7 +447,7 @@
     "invalidAmount": "Ange ett giltigt belopp",
     "customAmount": "Valfritt belopp (£)",
     "give": "Betala",
-    "success": "Betalade {amount} till {campaign}!",
+    "success": "Betalade {amount} till {actionInitiative}!",
     "remainingBalance": "Ditt återstående saldo: {balance}",
     "topUpPrompt": "Fyll på din plånbok",
     "toKeepSupporting": "för att fortsätta stödja handlingsprojekt.",

@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 اجمع الأدلة",
     "gatherEvidenceDesc": "وثّق ما يحدث مع {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "مشاريع العمل",
     "subtitle": "{count} {count, plural, one {مشروع يكلّف} other {مشاريع تكلّف}} خدمات للعمل الجماعي.",
     "noResults": "لم يتم العثور على مشاريع عمل. جرّب فلتراً مختلفاً."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "مشاريع العمل",
     "fullyFunded": "تم بلوغ الهدف",
     "disbursed": "مكتمل",
@@ -352,7 +352,7 @@
     "you": "أنت",
     "rioters": "مشاركون"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ مشاريع العمل",
     "funded": "تم بلوغ الهدف",
     "disbursed": "مكتمل",
@@ -438,7 +438,7 @@
     "topUp": "شحن",
     "simulated": "شحن تجريبي للاختبار. المدفوعات الحقيقية قادمة قريباً."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "رصيد غير كافٍ. اشحن محفظتك أولاً.",
     "minContribution": "الحد الأدنى للدفع هو 10p",
     "contribute": "ادعم هذا المشروع",
@@ -447,7 +447,7 @@
     "invalidAmount": "أدخل مبلغاً صالحاً",
     "customAmount": "مبلغ مخصص (£)",
     "give": "ادفع",
-    "success": "تم دفع {amount} نحو {campaign}!",
+    "success": "تم دفع {amount} نحو {actionInitiative}!",
     "remainingBalance": "رصيدك المتبقي: {balance}",
     "topUpPrompt": "اشحن محفظتك",
     "toKeepSupporting": "لمواصلة دعم مشاريع العمل.",

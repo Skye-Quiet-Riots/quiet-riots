@@ -15,7 +15,7 @@ interface Props {
 export default async function ActionInitiativesPage({ params, searchParams }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('Campaigns');
+  const t = await getTranslations('ActionInitiatives');
 
   const sp = await searchParams;
   const status = sp.status as ActionInitiativeStatus | undefined;

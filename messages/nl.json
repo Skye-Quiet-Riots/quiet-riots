@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Bewijs verzamelen",
     "gatherEvidenceDesc": "Documenteer wat er gebeurt bij {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Actieprojecten",
     "subtitle": "{count} {count, plural, one {project} other {projecten}} die diensten inschakelen voor collectieve actie.",
     "noResults": "Geen actieprojecten gevonden. Probeer een ander filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Actieprojecten",
     "fullyFunded": "Doel bereikt",
     "disbursed": "Voltooid",
@@ -352,7 +352,7 @@
     "you": "JIJ",
     "rioters": "deelnemers"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Actieprojecten",
     "funded": "Doel bereikt",
     "disbursed": "Voltooid",
@@ -438,7 +438,7 @@
     "topUp": "Opwaarderen",
     "simulated": "Gesimuleerde opwaardering voor testdoeleinden. Echte betalingen komen binnenkort."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Onvoldoende saldo. Laad eerst je portemonnee op.",
     "minContribution": "Minimale betaling is 10p",
     "contribute": "Steun dit project",
@@ -447,7 +447,7 @@
     "invalidAmount": "Voer een geldig bedrag in",
     "customAmount": "Aangepast bedrag (£)",
     "give": "Betaal",
-    "success": "{amount} betaald voor {campaign}!",
+    "success": "{amount} betaald voor {actionInitiative}!",
     "remainingBalance": "Je resterende saldo: {balance}",
     "topUpPrompt": "Laad je portemonnee op",
     "toKeepSupporting": "om actieprojecten te blijven steunen.",

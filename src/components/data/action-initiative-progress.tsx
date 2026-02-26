@@ -27,7 +27,7 @@ export async function ActionInitiativeProgress({
 }: ActionInitiativeProgressProps) {
   if (actionInitiatives.length === 0) return null;
 
-  const t = await getTranslations('CampaignProgress');
+  const t = await getTranslations('ActionInitiativeProgress');
 
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">

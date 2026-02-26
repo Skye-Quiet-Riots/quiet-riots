@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 ஆதாரம் சேகரி",
     "gatherEvidenceDesc": "{orgName} பற்றி என்ன நடக்கிறது என்று பதிவு செய்."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "செயல் திட்டங்கள்",
     "subtitle": "{count} {count, plural, one {திட்டம்} other {திட்டங்கள்}} கூட்டு நடவடிக்கைக்கான சேவைகளை நியமிக்கின்றன.",
     "noResults": "செயல் திட்டங்கள் எதுவும் கிடைக்கவில்லை. வேறு வடிகட்டி முயற்சி செய்."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "செயல் திட்டங்கள்",
     "fullyFunded": "இலக்கு அடையப்பட்டது",
     "disbursed": "நிறைவடைந்தது",
@@ -352,7 +352,7 @@
     "you": "நீ",
     "rioters": "உறுப்பினர்கள்"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ செயல் திட்டங்கள்",
     "funded": "இலக்கு அடையப்பட்டது",
     "disbursed": "நிறைவடைந்தது",
@@ -438,7 +438,7 @@
     "topUp": "டாப்-அப்",
     "simulated": "சோதனைக்கான உருவகப்படுத்தப்பட்ட டாப்-அப். விரைவில் உண்மையான பணம் செலுத்தல்."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "போதுமான நிதி இல்லை. முதலில் உன் வாலட்டை டாப்-அப் செய்.",
     "minContribution": "குறைந்தபட்ச பணம் செலுத்தல் 10p",
     "contribute": "இந்த திட்டத்தை ஆதரி",
@@ -447,7 +447,7 @@
     "invalidAmount": "சரியான தொகை உள்ளிடு",
     "customAmount": "தனிப்பயன் தொகை (£)",
     "give": "பணம் செலுத்து",
-    "success": "{campaign}-க்கு {amount} செலுத்தப்பட்டது!",
+    "success": "{actionInitiative}-க்கு {amount} செலுத்தப்பட்டது!",
     "remainingBalance": "உன் மீதமுள்ள இருப்பு: {balance}",
     "topUpPrompt": "உன் வாலட்டை டாப்-அப் செய்",
     "toKeepSupporting": "செயல் திட்டங்களை தொடர்ந்து ஆதரிக்க.",

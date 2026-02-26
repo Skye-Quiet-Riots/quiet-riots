@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Kerää todisteita",
     "gatherEvidenceDesc": "Dokumentoi mitä tapahtuu organisaatiossa {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Toimintaprojektit",
     "subtitle": "{count} {count, plural, one {projekti} other {projektia}} tilaa palveluja yhteistoimintaan.",
     "noResults": "Toimintaprojekteja ei löytynyt. Kokeile eri suodatinta."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Toimintaprojektit",
     "fullyFunded": "Tavoite saavutettu",
     "disbursed": "Valmis",
@@ -352,7 +352,7 @@
     "you": "SINÄ",
     "rioters": "osallistujaa"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Toimintaprojektit",
     "funded": "Tavoite saavutettu",
     "disbursed": "Valmis",
@@ -438,7 +438,7 @@
     "topUp": "Lataa",
     "simulated": "Simuloitu lataus testausta varten. Oikeat maksut tulossa pian."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Riittämätön saldo. Lataa lompakkoasi ensin.",
     "minContribution": "Vähimmäismaksu on 10p",
     "contribute": "Tue tätä projektia",
@@ -447,7 +447,7 @@
     "invalidAmount": "Syötä kelvollinen summa",
     "customAmount": "Vapaavalintainen summa (£)",
     "give": "Maksa",
-    "success": "Maksoit {amount} projektiin {campaign}!",
+    "success": "Maksoit {amount} projektiin {actionInitiative}!",
     "remainingBalance": "Jäljellä oleva saldosi: {balance}",
     "topUpPrompt": "Lataa lompakkoasi",
     "toKeepSupporting": "jatkaaksesi toimintaprojektien tukemista.",

@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Recopila Proves",
     "gatherEvidenceDesc": "Documenta el que passa amb {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Projectes d'Acció",
     "subtitle": "{count} {count, plural, one {projecte} other {projectes}} que encarreguen serveis per a l'acció col·lectiva.",
     "noResults": "No s'han trobat projectes d'acció. Prova un filtre diferent."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Projectes d'Acció",
     "fullyFunded": "Objectiu Assolit",
     "disbursed": "Completat",
@@ -352,7 +352,7 @@
     "you": "TU",
     "rioters": "participants"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Projectes d'Acció",
     "funded": "Objectiu Assolit",
     "disbursed": "Completat",
@@ -438,7 +438,7 @@
     "topUp": "Recarrega",
     "simulated": "Recàrrega simulada per proves. Pagaments reals properament."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Fons insuficients. Recarrega primer la teva cartera.",
     "minContribution": "El pagament mínim és de 10p",
     "contribute": "Dona Suport a Aquest Projecte",
@@ -447,7 +447,7 @@
     "invalidAmount": "Introdueix un import vàlid",
     "customAmount": "Import personalitzat (£)",
     "give": "Paga",
-    "success": "Has pagat {amount} per {campaign}!",
+    "success": "Has pagat {amount} per {actionInitiative}!",
     "remainingBalance": "El teu saldo restant: {balance}",
     "topUpPrompt": "Recarrega la teva cartera",
     "toKeepSupporting": "per continuar donant suport a projectes d'acció.",

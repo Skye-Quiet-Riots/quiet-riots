@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Zbieraj dokazy",
     "gatherEvidenceDesc": "Dokumentuj, co sa deje s {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Akcne projekty",
     "subtitle": "{count} {count, plural, one {projekt objednavajuci} other {projektov objednavajucich}} sluzby pre kolektivnu akciu.",
     "noResults": "Ziadne akcne projekty sa nenasli. Skus iny filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Akcne projekty",
     "fullyFunded": "Ciel dosiahnuty",
     "disbursed": "Dokonceny",
@@ -352,7 +352,7 @@
     "you": "TY",
     "rioters": "ucastnikov"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Akcne projekty",
     "funded": "Ciel dosiahnuty",
     "disbursed": "Dokonceny",
@@ -438,7 +438,7 @@
     "topUp": "Dobit",
     "simulated": "Simulovane dobitie na testovanie. Prave platby coskoro."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Nedostatocne prostriedky. Najprv dobij penazenku.",
     "minContribution": "Minimalna platba je 10p",
     "contribute": "Podporit tento projekt",
@@ -447,7 +447,7 @@
     "invalidAmount": "Zadaj platnu sumu",
     "customAmount": "Vlastna suma (£)",
     "give": "Zaplatit",
-    "success": "Zaplatene {amount} za {campaign}!",
+    "success": "Zaplatene {amount} za {actionInitiative}!",
     "remainingBalance": "Zostavajuci zostatok: {balance}",
     "topUpPrompt": "Dobij penazenku",
     "toKeepSupporting": "pre dalsiu podporu akcnych projektov.",

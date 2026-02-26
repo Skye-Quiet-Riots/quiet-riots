@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Zberi dokaze",
     "gatherEvidenceDesc": "Dokumentiraj, kar se dogaja z {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Akcijski projekti",
     "subtitle": "{count} {count, plural, one {projekt naroča} other {projektov naroča}} storitve za skupno akcijo.",
     "noResults": "Nobeni akcijski projekti niso bili najdeni. Poskusi z drugim filtrom."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Akcijski projekti",
     "fullyFunded": "Cilj dosezen",
     "disbursed": "Zaključeno",
@@ -352,7 +352,7 @@
     "you": "TI",
     "rioters": "udelezencev"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Akcijski projekti",
     "funded": "Cilj dosežen",
     "disbursed": "Zaključeno",
@@ -438,7 +438,7 @@
     "topUp": "Napolni",
     "simulated": "Simulirano polnjenje za testiranje. Prava plačila kmalu."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Nezadostna sredstva. Najprej napolni denarnico.",
     "minContribution": "Najnižje plačilo je 10p",
     "contribute": "Podpri ta projekt",
@@ -447,7 +447,7 @@
     "invalidAmount": "Vnesi veljaven znesek",
     "customAmount": "Prilagojen znesek (£)",
     "give": "Plačaj",
-    "success": "Plačano {amount} za {campaign}!",
+    "success": "Plačano {amount} za {actionInitiative}!",
     "remainingBalance": "Preostali saldo: {balance}",
     "topUpPrompt": "Napolni denarnico",
     "toKeepSupporting": "za nadaljnje podpiranje akcijskih projektov.",

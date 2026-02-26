@@ -20,7 +20,7 @@ export default async function ActionInitiativeDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
   const [t, tc] = await Promise.all([
-    getTranslations('CampaignDetail'),
+    getTranslations('ActionInitiativeDetail'),
     getTranslations('Categories'),
   ]);
 

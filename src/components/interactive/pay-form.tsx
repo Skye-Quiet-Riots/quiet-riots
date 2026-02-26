@@ -26,7 +26,7 @@ export function PayForm({
   userBalance,
   currency = 'GBP',
 }: PayFormProps) {
-  const t = useTranslations('Contribute');
+  const t = useTranslations('Pay');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -93,7 +93,7 @@ export function PayForm({
         <p className="mb-2 text-sm font-semibold text-green-700 dark:text-green-300">
           {t('success', {
             amount: formatCurrency(success.amount, currency),
-            campaign: actionInitiativeTitle,
+            actionInitiative: actionInitiativeTitle,
           })}
         </p>
         <p className="text-sm text-green-600 dark:text-green-400">

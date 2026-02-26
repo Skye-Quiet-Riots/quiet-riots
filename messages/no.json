@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Samle bevis",
     "gatherEvidenceDesc": "Dokumenter hva som skjer med {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Aksjonsprosjekter",
     "subtitle": "{count} {count, plural, one {prosjekt} other {prosjekter}} som bestiller tjenester for kollektiv handling.",
     "noResults": "Ingen aksjonsprosjekter funnet. Prøv et annet filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Aksjonsprosjekter",
     "fullyFunded": "Mål nådd",
     "disbursed": "Fullført",
@@ -352,7 +352,7 @@
     "you": "DEG",
     "rioters": "deltakere"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Aksjonsprosjekter",
     "funded": "Mål nådd",
     "disbursed": "Fullført",
@@ -438,7 +438,7 @@
     "topUp": "Fyll opp",
     "simulated": "Simulert påfylling for testing. Ekte betalinger kommer snart."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Utilstrekkelig saldo. Fyll opp lommeboken din først.",
     "minContribution": "Minste betaling er 10p",
     "contribute": "Støtt dette prosjektet",
@@ -447,7 +447,7 @@
     "invalidAmount": "Oppgi et gyldig beløp",
     "customAmount": "Valgfritt beløp (£)",
     "give": "Betal",
-    "success": "Betalt {amount} til {campaign}!",
+    "success": "Betalt {amount} til {actionInitiative}!",
     "remainingBalance": "Din gjenværende saldo: {balance}",
     "topUpPrompt": "Fyll opp lommeboken",
     "toKeepSupporting": "for å fortsette å støtte aksjonsprosjekter.",

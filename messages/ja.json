@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 証拠を集める",
     "gatherEvidenceDesc": "{orgName} で起きていることを記録しましょう。"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "アクションプロジェクト",
     "subtitle": "{count} {count, plural, one {件のプロジェクト} other {件のプロジェクト}}が集団行動のためのサービスを委託しています。",
     "noResults": "アクションプロジェクトが見つかりません。別のフィルターをお試しください。"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "アクションプロジェクト",
     "fullyFunded": "目標達成",
     "disbursed": "完了",
@@ -352,7 +352,7 @@
     "you": "あなた",
     "rioters": "参加者"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ アクションプロジェクト",
     "funded": "目標達成",
     "disbursed": "完了",
@@ -438,7 +438,7 @@
     "topUp": "チャージ",
     "simulated": "テスト用のシミュレーションチャージです。実際の決済は近日公開予定。"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "残高不足です。まずウォレットにチャージしてください。",
     "minContribution": "最低支払額は 10p です",
     "contribute": "このプロジェクトを支援する",
@@ -447,7 +447,7 @@
     "invalidAmount": "有効な金額を入力してください",
     "customAmount": "カスタム金額（£）",
     "give": "支払う",
-    "success": "{campaign} に {amount} を支払いました！",
+    "success": "{actionInitiative} に {amount} を支払いました！",
     "remainingBalance": "残りの残高：{balance}",
     "topUpPrompt": "ウォレットにチャージ",
     "toKeepSupporting": "してアクションプロジェクトの支援を続けましょう。",

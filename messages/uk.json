@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Збирай докази",
     "gatherEvidenceDesc": "Документуй, що відбувається з {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Проєкти дій",
     "subtitle": "{count} {count, plural, one {проєкт} few {проєкти} many {проєктів} other {проєктів}} замовляють послуги для колективних дій.",
     "noResults": "Проєктів дій не знайдено. Спробуй інший фільтр."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Проєкти дій",
     "fullyFunded": "Мету досягнуто",
     "disbursed": "Завершено",
@@ -352,7 +352,7 @@
     "you": "ТИ",
     "rioters": "учасників"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Проєкти дій",
     "funded": "Мету досягнуто",
     "disbursed": "Завершено",
@@ -438,7 +438,7 @@
     "topUp": "Поповнити",
     "simulated": "Симульоване поповнення для тестування. Реальні платежі незабаром."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Недостатньо коштів. Спочатку поповни гаманець.",
     "minContribution": "Мінімальний платіж — 10p",
     "contribute": "Підтримати цей проєкт",
@@ -447,7 +447,7 @@
     "invalidAmount": "Введи коректну суму",
     "customAmount": "Довільна сума (£)",
     "give": "Оплатити",
-    "success": "Оплачено {amount} для {campaign}!",
+    "success": "Оплачено {amount} для {actionInitiative}!",
     "remainingBalance": "Залишок на балансі: {balance}",
     "topUpPrompt": "Поповни гаманець",
     "toKeepSupporting": "щоб продовжити підтримувати проєкти дій.",
