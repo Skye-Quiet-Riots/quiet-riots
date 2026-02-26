@@ -206,9 +206,9 @@ export async function createTables() {
     CREATE TABLE IF NOT EXISTS wallet_transactions (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
       wallet_id TEXT NOT NULL REFERENCES wallets(id),
-      type TEXT NOT NULL CHECK(type IN ('topup','contribute','refund','share_consideration')),
+      type TEXT NOT NULL CHECK(type IN ('topup','payment','refund','share_consideration')),
       amount_pence INTEGER NOT NULL CHECK(amount_pence > 0),
-      campaign_id TEXT,
+      action_initiative_id TEXT,
       issue_id TEXT,
       stripe_payment_id TEXT,
       description TEXT DEFAULT '' CHECK(length(description) <= 500),
@@ -217,22 +217,22 @@ export async function createTables() {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
-    CREATE TABLE IF NOT EXISTS campaigns (
+    CREATE TABLE IF NOT EXISTS action_initiatives (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
       issue_id TEXT NOT NULL REFERENCES issues(id),
       org_id TEXT REFERENCES organisations(id),
       title TEXT NOT NULL CHECK(length(title) <= 255),
       description TEXT NOT NULL DEFAULT '' CHECK(length(description) <= 2000),
       target_pence INTEGER NOT NULL CHECK(target_pence > 0),
-      raised_pence INTEGER NOT NULL DEFAULT 0 CHECK(raised_pence >= 0),
-      contributor_count INTEGER NOT NULL DEFAULT 0 CHECK(contributor_count >= 0),
+      committed_pence INTEGER NOT NULL DEFAULT 0 CHECK(committed_pence >= 0),
+      supporter_count INTEGER NOT NULL DEFAULT 0 CHECK(supporter_count >= 0),
       recipient TEXT CHECK(length(recipient) <= 255),
       recipient_url TEXT CHECK(length(recipient_url) <= 500),
-      status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','funded','disbursed','cancelled')),
-      platform_fee_pct INTEGER NOT NULL DEFAULT 15 CHECK(platform_fee_pct >= 0 AND platform_fee_pct <= 100),
+      status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','goal_reached','delivered','cancelled')),
+      service_fee_pct INTEGER NOT NULL DEFAULT 15 CHECK(service_fee_pct >= 0 AND service_fee_pct <= 100),
       currency_code TEXT DEFAULT 'GBP' CHECK(length(currency_code) <= 3),
-      funded_at TEXT,
-      disbursed_at TEXT,
+      goal_reached_at TEXT,
+      delivered_at TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
@@ -308,9 +308,9 @@ export async function createTables() {
 
     CREATE INDEX IF NOT EXISTS idx_wallet_user ON wallets(user_id);
     CREATE INDEX IF NOT EXISTS idx_wtx_wallet ON wallet_transactions(wallet_id);
-    CREATE INDEX IF NOT EXISTS idx_wtx_campaign ON wallet_transactions(campaign_id);
-    CREATE INDEX IF NOT EXISTS idx_campaigns_issue ON campaigns(issue_id);
-    CREATE INDEX IF NOT EXISTS idx_campaigns_status ON campaigns(status);
+    CREATE INDEX IF NOT EXISTS idx_wtx_action_initiative ON wallet_transactions(action_initiative_id);
+    CREATE INDEX IF NOT EXISTS idx_action_initiatives_issue ON action_initiatives(issue_id);
+    CREATE INDEX IF NOT EXISTS idx_action_initiatives_status ON action_initiatives(status);
     CREATE INDEX IF NOT EXISTS idx_assistant_activity_category ON assistant_activity(category);
     CREATE INDEX IF NOT EXISTS idx_assistant_activity_created ON assistant_activity(created_at DESC);
     CREATE INDEX IF NOT EXISTS idx_user_introductions_user ON user_assistant_introductions(user_id);
@@ -747,7 +747,8 @@ export async function dropTables() {
     DROP TABLE IF EXISTS category_assistants;
     DROP TABLE IF EXISTS wallet_transactions;
     DROP TABLE IF EXISTS wallets;
-    DROP TABLE IF EXISTS campaigns;
+    DROP VIEW IF EXISTS campaigns;
+    DROP TABLE IF EXISTS action_initiatives;
     DROP TABLE IF EXISTS reel_shown_log;
     DROP TABLE IF EXISTS reel_votes;
     DROP TABLE IF EXISTS riot_reels;
