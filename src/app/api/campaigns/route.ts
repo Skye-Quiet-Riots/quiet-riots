@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getCampaigns, createCampaign } from '@/lib/queries/campaigns';
+import { generateAndStoreTranslations } from '@/lib/queries/generate-translations';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import type { CampaignStatus } from '@/types';
@@ -61,5 +62,11 @@ export async function POST(request: NextRequest) {
     recipientUrl: parsed.data.recipient_url,
     platformFeePct: parsed.data.platform_fee_pct,
   });
+
+  // Fire-and-forget: generate translations for campaign title/description
+  const fields: Record<string, string> = { title: parsed.data.title };
+  if (parsed.data.description) fields.description = parsed.data.description;
+  generateAndStoreTranslations('campaign', campaign.id, fields).catch(() => {});
+
   return apiOk(campaign, 201);
 }

@@ -45,16 +45,43 @@ function formatDate(dateStr: string): string {
   });
 }
 
-interface SetupDashboardProps {
-  initialSuggestions: IssueSuggestion[];
+interface SubmitterInfo {
+  name: string;
+  language: string;
+  memberSince: string;
 }
 
-export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
+interface SetupDashboardProps {
+  initialSuggestions: IssueSuggestion[];
+  languageMap: Record<string, string>;
+  submitterMap: Record<string, SubmitterInfo>;
+}
+
+export function SetupDashboard({
+  initialSuggestions,
+  languageMap,
+  submitterMap,
+}: SetupDashboardProps) {
   const t = useTranslations('Setup');
   const [suggestions, setSuggestions] = useState(initialSuggestions);
   const [activeTab, setActiveTab] = useState<SuggestionStatus | 'all'>('all');
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState(false);
+  const [generatingId, setGeneratingId] = useState<string | null>(null);
+  const [generationError, setGenerationError] = useState<string | null>(null);
+  const [expandedSubmitter, setExpandedSubmitter] = useState<string | null>(null);
+  const [translationReviewId, setTranslationReviewId] = useState<string | null>(null);
+  const [translationData, setTranslationData] = useState<Record<
+    string,
+    Record<string, { value: string; source: string }>
+  > | null>(null);
+  const [translationLanguageNames, setTranslationLanguageNames] = useState<Record<
+    string,
+    string
+  > | null>(null);
+  const [translationLoading, setTranslationLoading] = useState(false);
+  const [flaggedLocales, setFlaggedLocales] = useState<Set<string>>(new Set());
+  const [regenerating, setRegenerating] = useState(false);
 
   const filtered =
     activeTab === 'all' ? suggestions : suggestions.filter((s) => s.status === activeTab);
@@ -73,9 +100,34 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
         const data = await res.json();
         setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
         setReviewingId(null);
+
+        // If approved, trigger async translation generation
+        if (decision === 'approve') {
+          triggerTranslationGeneration(id);
+        }
       }
     } finally {
       setActionLoading(false);
+    }
+  }
+
+  async function triggerTranslationGeneration(id: string) {
+    setGeneratingId(id);
+    setGenerationError(null);
+    try {
+      const res = await fetch(`/api/suggestions/${id}/generate-translations`, {
+        method: 'POST',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
+      } else {
+        setGenerationError(id);
+      }
+    } catch {
+      setGenerationError(id);
+    } finally {
+      setGeneratingId(null);
     }
   }
 
@@ -88,10 +140,68 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
       if (res.ok) {
         const data = await res.json();
         setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
+        setTranslationReviewId(null);
+        setTranslationData(null);
       }
     } finally {
       setActionLoading(false);
     }
+  }
+
+  async function loadTranslations(id: string) {
+    if (translationReviewId === id) {
+      setTranslationReviewId(null);
+      setTranslationData(null);
+      setTranslationLanguageNames(null);
+      setFlaggedLocales(new Set());
+      return;
+    }
+    setTranslationLoading(true);
+    setTranslationReviewId(id);
+    try {
+      const res = await fetch(`/api/suggestions/${id}/translations`);
+      if (res.ok) {
+        const data = await res.json();
+        setTranslationData(data.data.translations);
+        setTranslationLanguageNames(data.data.languageNames);
+        setFlaggedLocales(new Set());
+      }
+    } finally {
+      setTranslationLoading(false);
+    }
+  }
+
+  async function handleRegenerateFlagged(id: string) {
+    if (flaggedLocales.size === 0) return;
+    setRegenerating(true);
+    try {
+      const res = await fetch(`/api/suggestions/${id}/translations/regenerate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locales: [...flaggedLocales] }),
+      });
+      if (res.ok) {
+        setFlaggedLocales(new Set());
+        // Reload translations
+        const reloadRes = await fetch(`/api/suggestions/${id}/translations`);
+        if (reloadRes.ok) {
+          const data = await reloadRes.json();
+          setTranslationData(data.data.translations);
+          setTranslationLanguageNames(data.data.languageNames);
+        }
+      }
+    } finally {
+      setRegenerating(false);
+    }
+  }
+
+  function toggleFlagLocale(locale: string) {
+    setFlaggedLocales((prev) => {
+      const next = new Set(prev);
+      if (next.has(locale)) next.delete(locale);
+      else next.add(locale);
+      return next;
+    });
   }
 
   return (
@@ -142,7 +252,7 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
                       {s.suggested_name}
                     </h3>
@@ -156,12 +266,32 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                     <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
                       {s.suggested_type}
                     </span>
+                    {s.language_code && s.language_code !== 'en' && (
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+                        {languageMap[s.language_code] || s.language_code}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                     {t('category')} <strong>{s.category}</strong> &middot; {t('created')}{' '}
                     {formatDate(s.created_at)}
                   </p>
-                  {s.original_text && (
+
+                  {/* Original submission for non-English */}
+                  {s.original_text && s.language_code && s.language_code !== 'en' && (
+                    <div className="mt-2 rounded-md border border-amber-200 bg-amber-50 p-3 dark:border-amber-800 dark:bg-amber-950">
+                      <p className="text-xs font-medium text-amber-700 dark:text-amber-300">
+                        {t('submittedIn', {
+                          language: languageMap[s.language_code] || s.language_code,
+                        })}
+                      </p>
+                      <p className="mt-1 text-sm italic text-amber-900 dark:text-amber-100">
+                        &ldquo;{s.original_text}&rdquo;
+                      </p>
+                    </div>
+                  )}
+                  {/* For English submissions, show original_text in the old style */}
+                  {s.original_text && (!s.language_code || s.language_code === 'en') && (
                     <p className="mt-2 text-sm italic text-zinc-600 dark:text-zinc-400">
                       &ldquo;{s.original_text}&rdquo;
                     </p>
@@ -206,6 +336,39 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                       </span>
                     )}
                   </div>
+
+                  {/* Inline submitter info */}
+                  {submitterMap[s.suggested_by] && (
+                    <div className="mt-2">
+                      <button
+                        onClick={() =>
+                          setExpandedSubmitter(expandedSubmitter === s.id ? null : s.id)
+                        }
+                        className="text-xs font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                      >
+                        {expandedSubmitter === s.id ? t('hideSubmitter') : t('viewSubmitter')}
+                      </button>
+                      {expandedSubmitter === s.id && (
+                        <div className="mt-1 rounded-md border border-zinc-200 bg-zinc-50 p-3 text-xs dark:border-zinc-700 dark:bg-zinc-800">
+                          <div className="space-y-1">
+                            <p className="text-zinc-600 dark:text-zinc-300">
+                              <span className="font-medium">{t('submitterName')}</span>{' '}
+                              {submitterMap[s.suggested_by].name}
+                            </p>
+                            <p className="text-zinc-600 dark:text-zinc-300">
+                              <span className="font-medium">{t('submitterLanguage')}</span>{' '}
+                              {languageMap[submitterMap[s.suggested_by].language] ||
+                                submitterMap[s.suggested_by].language}
+                            </p>
+                            <p className="text-zinc-600 dark:text-zinc-300">
+                              <span className="font-medium">{t('submitterMemberSince')}</span>{' '}
+                              {formatDate(submitterMap[s.suggested_by].memberSince)}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -229,15 +392,119 @@ export function SetupDashboard({ initialSuggestions }: SetupDashboardProps) {
                   )}
                 </div>
               )}
-              {(s.status === 'approved' || s.status === 'translations_ready') && (
-                <div className="mt-4">
-                  <button
-                    onClick={() => handleGoLive(s.id)}
-                    disabled={actionLoading}
-                    className="rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-50"
-                  >
-                    {t('goLiveButton')}
-                  </button>
+              {s.status === 'approved' && (
+                <div className="mt-4 flex items-center gap-3">
+                  {generatingId === s.id ? (
+                    <span className="text-sm text-blue-600 dark:text-blue-400">
+                      {t('generatingTranslations')}
+                    </span>
+                  ) : generationError === s.id ? (
+                    <>
+                      <span className="text-sm text-red-600 dark:text-red-400">
+                        {t('translationFailed')}
+                      </span>
+                      <button
+                        onClick={() => triggerTranslationGeneration(s.id)}
+                        className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+                      >
+                        {t('retryTranslations')}
+                      </button>
+                    </>
+                  ) : (
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                      {t('translationsPending')}
+                    </span>
+                  )}
+                </div>
+              )}
+              {s.status === 'translations_ready' && (
+                <div className="mt-4 space-y-3">
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={() => loadTranslations(s.id)}
+                      className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
+                    >
+                      {translationReviewId === s.id
+                        ? t('hideTranslations')
+                        : t('reviewTranslations')}
+                    </button>
+                    <button
+                      onClick={() => handleGoLive(s.id)}
+                      disabled={actionLoading}
+                      className="rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-50"
+                    >
+                      {t('approveAndGoLive')}
+                    </button>
+                  </div>
+
+                  {/* Translation review panel */}
+                  {translationReviewId === s.id && (
+                    <div className="rounded-md border border-indigo-200 bg-indigo-50 p-4 dark:border-indigo-800 dark:bg-indigo-950">
+                      {translationLoading ? (
+                        <p className="text-sm text-indigo-600 dark:text-indigo-400">
+                          {t('generatingTranslations')}
+                        </p>
+                      ) : translationData && Object.keys(translationData).length > 0 ? (
+                        <div className="space-y-3">
+                          <div className="max-h-96 space-y-2 overflow-y-auto">
+                            {Object.entries(translationData)
+                              .sort(([a], [b]) => a.localeCompare(b))
+                              .map(([locale, fields]) => (
+                                <div
+                                  key={locale}
+                                  className="flex items-start gap-3 rounded border border-indigo-100 bg-white p-2 dark:border-indigo-800 dark:bg-indigo-900"
+                                >
+                                  <div className="min-w-0 flex-1">
+                                    <div className="flex items-center gap-2">
+                                      <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">
+                                        {translationLanguageNames?.[locale] || locale}
+                                      </span>
+                                      <span className="text-xs text-zinc-400">
+                                        {fields.name?.source === 'reviewed'
+                                          ? t('translationSourceReviewed')
+                                          : t('translationSourceMachine')}
+                                      </span>
+                                    </div>
+                                    {Object.entries(fields).map(([field, data]) => (
+                                      <p
+                                        key={field}
+                                        className="mt-0.5 text-xs text-zinc-600 dark:text-zinc-300"
+                                      >
+                                        <span className="font-medium">{field}:</span> {data.value}
+                                      </p>
+                                    ))}
+                                  </div>
+                                  <label className="flex shrink-0 items-center gap-1 text-xs text-zinc-500">
+                                    <input
+                                      type="checkbox"
+                                      checked={flaggedLocales.has(locale)}
+                                      onChange={() => toggleFlagLocale(locale)}
+                                      className="rounded border-zinc-300"
+                                    />
+                                    {t('flagForRegen')}
+                                  </label>
+                                </div>
+                              ))}
+                          </div>
+                          {flaggedLocales.size > 0 && (
+                            <button
+                              onClick={() => handleRegenerateFlagged(s.id)}
+                              disabled={regenerating}
+                              className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+                            >
+                              {regenerating
+                                ? t('regenerating')
+                                : t('regenerateFlagged', { count: flaggedLocales.size })}
+                            </button>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                          {t('noTranslationsYet')}
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

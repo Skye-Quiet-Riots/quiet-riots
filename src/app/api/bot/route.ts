@@ -1513,8 +1513,8 @@ export async function POST(request: NextRequest) {
         const suggestionId = p.suggestion_id as string;
         const suggestion = await getSuggestionById(suggestionId);
         if (!suggestion) return err('Suggestion not found', 404);
-        if (suggestion.status !== 'approved' && suggestion.status !== 'translations_ready')
-          return err('Suggestion must be approved or have translations ready before going live');
+        if (suggestion.status !== 'translations_ready')
+          return err('Translations must be ready before going live');
 
         const result = await goLiveSuggestion(suggestionId);
 

@@ -320,6 +320,19 @@ describe('goLiveSuggestion', () => {
     const result = await goLiveSuggestion(suggestion.id);
     expect(result!.status).toBe('pending_review'); // unchanged
   });
+
+  it('does not go live if suggestion is only approved (not translations_ready)', async () => {
+    const suggestion = await createSuggestion({
+      suggestedBy: 'user-new',
+      originalText: 'approved only test',
+      suggestedName: 'Approved Only',
+      suggestedType: 'issue',
+      category: 'Other',
+    });
+    await approveSuggestion(suggestion.id, 'user-sarah');
+    const result = await goLiveSuggestion(suggestion.id);
+    expect(result!.status).toBe('approved'); // unchanged — must be translations_ready
+  });
 });
 
 describe('setPublicRecognition', () => {
