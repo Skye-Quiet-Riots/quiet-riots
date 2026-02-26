@@ -83,9 +83,10 @@ import {
   getUnreadCount,
   markAsRead,
   markAllAsRead,
+  getUndeliveredMessages,
+  markMessageDelivered,
 } from '@/lib/queries/messages';
 import { sendEmail } from '@/lib/email';
-import { sendWhatsAppMessage } from '@/lib/whatsapp';
 import { getUndeliveredCodes, markCodeDelivered } from '@/lib/queries/phone-verification';
 import {
   checkShareEligibility,
@@ -459,6 +460,10 @@ const actionSchemas = {
   // ─── OTP Delivery (for local polling script) ───────────
   get_undelivered_codes: z.object({}),
   mark_code_delivered: z.object({ code_id: idField }),
+
+  // ─── Message Delivery (for local polling script) ──────
+  get_undelivered_messages: z.object({}),
+  mark_message_delivered: z.object({ message_id: idField }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -502,9 +507,15 @@ function parseParams<T extends ActionName>(action: T, params: Record<string, unk
 
 // ─── Notification Helpers ──────────────────────────────────
 
+/** Compute WhatsApp delivery expiry (4 hours from now) */
+function whatsappExpiresAt(): string {
+  const expires = new Date(Date.now() + 4 * 60 * 60 * 1000);
+  return expires.toISOString().replace('T', ' ').replace('Z', '');
+}
+
 /**
  * Notify all Setup Guides about a new suggestion.
- * Sends WhatsApp push + email + inbox message.
+ * Queues WhatsApp for polling script + sends email + creates inbox message.
  * Fire-and-forget — never throws.
  */
 async function notifySetupGuides(
@@ -520,8 +531,14 @@ async function notifySetupGuides(
     // Deduplicate by user_id
     const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
 
+    const waMessage = `New Quiet Riot suggestion from ${suggestedByName}: "${suggestedName}" in ${category}. Please review it.`;
+    const expiresAt = whatsappExpiresAt();
+
     for (const userId of uniqueUserIds) {
-      // Inbox message
+      // Look up user for phone/email
+      const guideUser = await getUserById(userId);
+
+      // Inbox message + WhatsApp queue (if user has phone)
       await createMessage({
         recipientId: userId,
         senderName: suggestedByName,
@@ -530,16 +547,10 @@ async function notifySetupGuides(
         body: `A new Quiet Riot suggestion "${suggestedName}" in ${category} has been submitted by ${suggestedByName}. Please review it on the Setup page.`,
         entityType: 'issue_suggestion',
         entityId: suggestionId,
+        whatsappMessage: guideUser?.phone ? waMessage : undefined,
+        whatsappExpiresAt: guideUser?.phone ? expiresAt : undefined,
       });
 
-      // WhatsApp push (need to look up user phone)
-      const guideUser = await getUserById(userId);
-      if (guideUser?.phone) {
-        await sendWhatsAppMessage(
-          guideUser.phone,
-          `New Quiet Riot suggestion from ${suggestedByName}: "${suggestedName}" in ${category}. Please review it.`,
-        );
-      }
       // Email (only if real email)
       if (guideUser?.email && !guideUser.email.startsWith('wa-')) {
         await sendEmail(
@@ -556,6 +567,7 @@ async function notifySetupGuides(
 
 /**
  * Send notification to a specific user via all channels.
+ * Queues WhatsApp for polling script + sends email + creates inbox message.
  * Fire-and-forget — never throws.
  */
 async function notifyUser(
@@ -568,6 +580,8 @@ async function notifyUser(
   senderName?: string,
 ): Promise<void> {
   try {
+    const user = await getUserById(userId);
+
     await createMessage({
       recipientId: userId,
       senderName,
@@ -576,12 +590,10 @@ async function notifyUser(
       body,
       entityType,
       entityId,
+      whatsappMessage: user?.phone ? `${subject}: ${body.slice(0, 500)}` : undefined,
+      whatsappExpiresAt: user?.phone ? whatsappExpiresAt() : undefined,
     });
 
-    const user = await getUserById(userId);
-    if (user?.phone) {
-      await sendWhatsAppMessage(user.phone, `${subject}: ${body.slice(0, 500)}`);
-    }
     if (user?.email && !user.email.startsWith('wa-')) {
       await sendEmail(user.email, subject, `<p>${body.replace(/\n/g, '</p><p>')}</p>`);
     }
@@ -592,6 +604,7 @@ async function notifyUser(
 
 /**
  * Notify all Share Guides about a new share application.
+ * Queues WhatsApp for polling script + sends email + creates inbox message.
  * Fire-and-forget — never throws.
  */
 async function notifyShareGuides(applicantName: string, applicantUserId: string): Promise<void> {
@@ -601,7 +614,12 @@ async function notifyShareGuides(applicantName: string, applicantUserId: string)
     const allRoleRows = [...guideRoles, ...adminRoles];
     const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
 
+    const waMessage = `New share application from ${applicantName}. Please review it on the Share Guide dashboard.`;
+    const expiresAt = whatsappExpiresAt();
+
     for (const userId of uniqueUserIds) {
+      const guideUser = await getUserById(userId);
+
       await createMessage({
         recipientId: userId,
         senderName: applicantName,
@@ -610,15 +628,10 @@ async function notifyShareGuides(applicantName: string, applicantUserId: string)
         body: `${applicantName} has applied for their Quiet Riots share. Please review their application on the Share Guide dashboard.`,
         entityType: 'share_application',
         entityId: applicantUserId,
+        whatsappMessage: guideUser?.phone ? waMessage : undefined,
+        whatsappExpiresAt: guideUser?.phone ? expiresAt : undefined,
       });
 
-      const guideUser = await getUserById(userId);
-      if (guideUser?.phone) {
-        await sendWhatsAppMessage(
-          guideUser.phone,
-          `New share application from ${applicantName}. Please review it on the Share Guide dashboard.`,
-        );
-      }
       if (guideUser?.email && !guideUser.email.startsWith('wa-')) {
         await sendEmail(
           guideUser.email,
@@ -634,6 +647,7 @@ async function notifyShareGuides(applicantName: string, applicantUserId: string)
 
 /**
  * Notify Share Guides about a user question on their share application.
+ * Queues WhatsApp for polling script + creates inbox message.
  * Fire-and-forget — never throws.
  */
 async function notifyShareGuidesQuestion(
@@ -647,7 +661,12 @@ async function notifyShareGuidesQuestion(
     const allRoleRows = [...guideRoles, ...adminRoles];
     const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
 
+    const waMessage = `Share question from ${userName}: ${question.slice(0, 200)}`;
+    const expiresAt = whatsappExpiresAt();
+
     for (const userId of uniqueUserIds) {
+      const guideUser = await getUserById(userId);
+
       await createMessage({
         recipientId: userId,
         senderName: userName,
@@ -656,6 +675,8 @@ async function notifyShareGuidesQuestion(
         body: `${userName} asked: ${question.slice(0, 500)}`,
         entityType: 'share_application',
         entityId: applicationId,
+        whatsappMessage: guideUser?.phone ? waMessage : undefined,
+        whatsappExpiresAt: guideUser?.phone ? expiresAt : undefined,
       });
     }
   } catch (error) {
@@ -1826,6 +1847,18 @@ export async function POST(request: NextRequest) {
       case 'mark_code_delivered': {
         const codeId = p.code_id as string;
         const delivered = await markCodeDelivered(codeId);
+        return ok({ delivered });
+      }
+
+      // ─── Message Delivery (for local polling script) ──────
+      case 'get_undelivered_messages': {
+        const messages = await getUndeliveredMessages();
+        return ok({ messages });
+      }
+
+      case 'mark_message_delivered': {
+        const messageId = p.message_id as string;
+        const delivered = await markMessageDelivered(messageId);
         return ok({ delivered });
       }
 

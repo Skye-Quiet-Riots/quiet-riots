@@ -72,6 +72,17 @@
 - **Dependency:** Requires OpenClaw gateway running + internet connectivity to reach Vercel API
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.otp-delivery.plist`
 
+## WhatsApp Message Delivery via Polling
+
+- **Problem:** Vercel serverless functions can't call OpenClaw CLI (local Mac only). `sendWhatsAppMessage()` silently fails on Vercel.
+- **Architecture:** `sendNotification()` stores `whatsapp_message` + `whatsapp_expires_at` on the `messages` table → local Mac polls every 5s → sends via OpenClaw → marks delivered → NULLs message content (defence in depth)
+- **Script:** `scripts/deliver-messages.sh` — polls `get_undelivered_messages` bot action, sends via `openclaw message send`, marks via `mark_message_delivered`
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.message-delivery.plist` (5s interval)
+- **Log:** `~/.openclaw/logs/message-delivery.log`
+- **Security:** whatsapp_message NULLed after delivery (defence in depth), atomic marking prevents double-delivery, 4-hour delivery window, max 5 retry attempts
+- **Dependency:** Requires OpenClaw gateway running + internet connectivity to reach Vercel API
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.message-delivery.plist`
+
 ## Log Rotation (Daily)
 
 - **Script:** `~/.openclaw/scripts/log-rotate.sh` — rotates logs over 10MB, keeps 3 copies (.1, .2, .3)
@@ -100,7 +111,7 @@
 | `openclaw-workspace/` | AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md | No         |
 | `openclaw-skills/`    | SKILL.md (bot conversation flows)                  | No         |
 | `openclaw-scripts/`   | watchdog, auto-update, log-rotate, backup scripts  | No         |
-| `launchagents/`       | All 7 .plist files                                 | No         |
+| `launchagents/`       | All 8 .plist files                                 | No         |
 | `secrets/`            | .env.local (Turso credentials, API keys)           | Yes        |
 | `claude-settings/`    | Claude Code settings.json                          | No         |
 
@@ -118,6 +129,7 @@
 | OpenClaw gateway | `ai.openclaw.gateway`               | Always (KeepAlive) | WhatsApp bot                               |
 | Watchdog         | `com.quietriots.openclaw-watchdog`  | Every 120s         | Restart gateway after WiFi drops           |
 | OTP delivery     | `com.quietriots.otp-delivery`       | Every 3s           | Deliver phone OTP codes via WhatsApp       |
+| Msg delivery     | `com.quietriots.message-delivery`   | Every 5s           | Deliver notification messages via WhatsApp |
 | Backup           | `com.quietriots.backup`             | Daily 03:00        | Encrypted backup to GitHub                 |
 | Log rotation     | `com.quietriots.openclaw-logrotate` | Daily 03:30        | Rotate logs over 10MB                      |
 | Auto-update      | `com.quietriots.openclaw-update`    | Daily 04:00        | Update OpenClaw + run tests + restart      |

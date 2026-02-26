@@ -1971,3 +1971,121 @@ describe('Bot API: Share Scheme', () => {
     expect(body.ok).toBe(false);
   });
 });
+
+// ─── Message Delivery (WhatsApp polling) ──────────────────────
+describe('Bot API: Message delivery', () => {
+  beforeEach(async () => {
+    // Clean up any pending delivery messages
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `UPDATE messages SET whatsapp_delivered_at = datetime('now'), whatsapp_message = NULL
+            WHERE whatsapp_message IS NOT NULL AND whatsapp_delivered_at IS NULL`,
+      args: [],
+    });
+  });
+
+  it('get_undelivered_messages requires auth', async () => {
+    const noAuthRequest = new Request('http://localhost:3000/api/bot', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ action: 'get_undelivered_messages', params: {} }),
+    });
+    const response = await POST(noAuthRequest as never);
+    expect(response.status).toBe(401);
+  });
+
+  it('get_undelivered_messages returns pending messages', async () => {
+    const { createMessage } = await import('@/lib/queries/messages');
+    const expiresAt = new Date(Date.now() + 4 * 60 * 60 * 1000)
+      .toISOString()
+      .replace('T', ' ')
+      .replace('Z', '');
+    await createMessage({
+      recipientId: 'user-sarah',
+      type: 'general',
+      subject: 'Bot delivery test',
+      body: 'Test message for bot API.',
+      whatsappMessage: 'Bot delivery test: Test message for bot API.',
+      whatsappExpiresAt: expiresAt,
+    });
+
+    const { status, body } = await callBot('get_undelivered_messages', {});
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.messages.length).toBeGreaterThanOrEqual(1);
+    expect(body.data.messages[0].phone).toBeTruthy();
+    expect(body.data.messages[0].whatsapp_message).toBeTruthy();
+    expect(body.data.messages[0].id).toBeTruthy();
+  });
+
+  it('get_undelivered_messages returns empty when none pending', async () => {
+    const { status, body } = await callBot('get_undelivered_messages', {});
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.messages).toEqual([]);
+  });
+
+  it('mark_message_delivered marks message and returns delivered=true', async () => {
+    const { createMessage } = await import('@/lib/queries/messages');
+    const expiresAt = new Date(Date.now() + 4 * 60 * 60 * 1000)
+      .toISOString()
+      .replace('T', ' ')
+      .replace('Z', '');
+    const msg = await createMessage({
+      recipientId: 'user-sarah',
+      type: 'general',
+      subject: 'Mark delivered test',
+      body: 'Will be marked delivered.',
+      whatsappMessage: 'Mark delivered test',
+      whatsappExpiresAt: expiresAt,
+    });
+
+    const { status, body } = await callBot('mark_message_delivered', { message_id: msg.id });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.delivered).toBe(true);
+
+    // Verify it's no longer in undelivered list
+    const { body: body2 } = await callBot('get_undelivered_messages', {});
+    const found = body2.data.messages.find((m: { id: string }) => m.id === msg.id);
+    expect(found).toBeUndefined();
+  });
+
+  it('mark_message_delivered returns delivered=false for invalid id', async () => {
+    const { status, body } = await callBot('mark_message_delivered', {
+      message_id: 'non-existent-msg-id',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.delivered).toBe(false);
+  });
+
+  it('mark_message_delivered requires message_id', async () => {
+    const { status, body } = await callBot('mark_message_delivered', {});
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+
+  it('mark_message_delivered is idempotent (second call returns false)', async () => {
+    const { createMessage } = await import('@/lib/queries/messages');
+    const expiresAt = new Date(Date.now() + 4 * 60 * 60 * 1000)
+      .toISOString()
+      .replace('T', ' ')
+      .replace('Z', '');
+    const msg = await createMessage({
+      recipientId: 'user-sarah',
+      type: 'general',
+      subject: 'Idempotent test',
+      body: 'Test idempotency.',
+      whatsappMessage: 'Idempotent test',
+      whatsappExpiresAt: expiresAt,
+    });
+
+    const { body: body1 } = await callBot('mark_message_delivered', { message_id: msg.id });
+    expect(body1.data.delivered).toBe(true);
+
+    const { body: body2 } = await callBot('mark_message_delivered', { message_id: msg.id });
+    expect(body2.data.delivered).toBe(false);
+  });
+});

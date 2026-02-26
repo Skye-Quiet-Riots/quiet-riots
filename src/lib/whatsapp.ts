@@ -3,7 +3,14 @@ import { execFile } from 'child_process';
 const E164_REGEX = /^\+[1-9]\d{1,14}$/;
 
 /**
- * Send a proactive WhatsApp message via OpenClaw CLI.
+ * @deprecated Use the WhatsApp delivery queue instead (messages table + polling script).
+ * This function calls /opt/homebrew/bin/openclaw directly, which only works on the local
+ * Mac — it silently fails on Vercel serverless functions. For production notifications,
+ * use `sendNotification()` from `src/lib/queries/messages.ts` which queues messages for
+ * the local polling script (scripts/deliver-messages.sh) to deliver.
+ *
+ * Kept for the OTP delivery script and potential future Twilio migration.
+ *
  * Returns true if sent, false on failure.
  * Graceful degradation — never throws.
  *

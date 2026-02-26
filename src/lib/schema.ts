@@ -574,10 +574,16 @@ export async function createTables() {
       entity_type TEXT CHECK(entity_type IN ('issue_suggestion','issue','organisation','user','share_application')),
       entity_id TEXT,
       read INTEGER NOT NULL DEFAULT 0 CHECK(read IN (0,1)),
+      whatsapp_message TEXT,
+      whatsapp_delivered_at TEXT,
+      whatsapp_expires_at TEXT,
+      whatsapp_attempts INTEGER NOT NULL DEFAULT 0,
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
     CREATE INDEX IF NOT EXISTS idx_messages_recipient ON messages(recipient_id, read, created_at DESC);
     CREATE INDEX IF NOT EXISTS idx_messages_entity ON messages(entity_type, entity_id);
+    CREATE INDEX IF NOT EXISTS idx_messages_wa_delivery ON messages(whatsapp_delivered_at)
+      WHERE whatsapp_message IS NOT NULL AND whatsapp_delivered_at IS NULL;
 
     CREATE TABLE IF NOT EXISTS phone_verification_codes (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
