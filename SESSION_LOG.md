@@ -6,22 +6,22 @@
 
 ## Latest Session
 
-**Session 44** (2026-02-26) — Comprehensive Auth Upgrade (12 Phases)
-→ [`session-logs/2026-02-session-44.md`](session-logs/2026-02-session-44.md)
+**Session 45** (2026-02-26) — Housekeeping: PR #103 merge, user merge, script fixes
+→ [`session-logs/2026-02-session-45.md`](session-logs/2026-02-session-45.md)
 
 ## Current Priorities
 
-- **Execute Simon's user merge** — dry-run on staging first, then production (`scripts/merge-users.ts`)
+- **SMS provider integration** — Twilio or similar for phone OTP in production (backend ready, needs transport)
 - **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
 - **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
 - **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
-- **SMS provider integration** — Twilio or similar for phone auth in production
 - **End-to-end testing** — manually test all new auth flows on production
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 45  | 2026-02-26    | Housekeeping: PR #103 merge, user merge, script fixes | [`session-45`](session-logs/2026-02-session-45.md)                                                             |
 | 44  | 2026-02-26    | Comprehensive auth upgrade (12 phases)                | [`session-44`](session-logs/2026-02-session-44.md)                                                             |
 | 43  | 2026-02-26    | Phone auth, admin dashboard, first rioter recognition | [`session-43`](session-logs/2026-02-session-43.md)                                                             |
 | 42  | 2026-02-25    | Magic link email deploy fix + security/i18n audit     | [`session-42`](session-logs/2026-02-session-42.md)                                                             |

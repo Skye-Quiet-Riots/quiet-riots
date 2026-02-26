@@ -167,6 +167,8 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **Migrations must run on BOTH staging AND production:** After merging migration files, run `npm run migrate` (with env vars) against both environments immediately. Never run staging-only — production will 500 if deployed code references columns that don't exist yet.
 - **Production has more data than seed:** Production has 49 issues (vs 19 in seed.ts). Never re-seed production — use targeted migration scripts that match by name instead of relying on seed-generated IDs.
 - **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
+- **libSQL rows return `Value` objects, not plain JS types:** When using `db.execute()` directly (e.g. in scripts), row fields are libSQL `Value` objects. Use `String(row.field)` and `Number(row.field)` to coerce before passing as SQL args — `as string` type casts don't convert at runtime.
+- **Merge script ordering matters:** In `merge-users.ts`, soft-delete the source user (freeing their email) BEFORE upgrading the target's email, and move wallet transactions BEFORE deleting the source wallet. Batch statements execute in order.
 - **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
 - **New env vars need a redeploy AFTER being added:** Vercel injects env vars at build time. If you add an env var via `npx vercel env add` after the auto-deploy has already built, the deployed functions won't have it. Always run `npx vercel --prod` after adding new env vars (pull main first). The post-merge health check (`/api/health`) only tests DB connectivity — it won't catch missing Resend/OAuth keys.
 - **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
@@ -180,7 +182,7 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 
 ## Known Issues
 
-- None currently tracked
+- **SMS provider needed for phone OTP in production:** Phone auth codes are currently logged to console in dev mode only. Need Twilio (or similar) integration for production SMS delivery. Backend is ready (`src/lib/queries/phone-auth.ts`), just needs the transport layer. Requires: Twilio account, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` env vars in Vercel.
 
 ## Start of Session Protocol
 
