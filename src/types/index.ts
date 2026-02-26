@@ -765,6 +765,10 @@ export interface Message {
   entity_type: MessageEntityType | null;
   entity_id: string | null;
   read: number;
+  whatsapp_message: string | null;
+  whatsapp_delivered_at: string | null;
+  whatsapp_expires_at: string | null;
+  whatsapp_attempts: number;
   created_at: string;
 }
 
