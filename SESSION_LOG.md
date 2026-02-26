@@ -6,8 +6,8 @@
 
 ## Latest Session
 
-**Session 50** (2026-02-26) — Stripe-Compliant Payment Copy
-→ [`session-logs/2026-02-session-50.md`](session-logs/2026-02-session-50.md)
+**Session 51** (2026-02-26) — Recovery + End-of-Session
+→ [`session-logs/2026-02-session-51.md`](session-logs/2026-02-session-51.md)
 
 ## Current Priorities
 
@@ -22,6 +22,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 51  | 2026-02-26    | Recovery + End-of-Session                             | [`session-51`](session-logs/2026-02-session-51.md)                                                             |
 | 50  | 2026-02-26    | Stripe-Compliant Payment Copy                         | [`session-50`](session-logs/2026-02-session-50.md)                                                             |
 | 49  | 2026-02-26    | WhatsApp Message Delivery Queue + Phone Login Fix     | [`session-49`](session-logs/2026-02-session-49.md)                                                             |
 | 48  | 2026-02-26    | Global Share Scheme (Phases 6-7 + Deploy)             | [`session-48`](session-logs/2026-02-session-48.md)                                                             |
