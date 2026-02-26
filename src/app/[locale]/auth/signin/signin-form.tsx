@@ -6,10 +6,13 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 type Tab = 'email' | 'phone';
+type EmailMode = 'password' | 'magic-link';
 
 export function SignInForm() {
   const [tab, setTab] = useState<Tab>('email');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailMode, setEmailMode] = useState<EmailMode>('password');
   const [phone, setPhone] = useState('');
   const [countryCode, setCountryCode] = useState('+44');
   const [otpCode, setOtpCode] = useState('');
@@ -17,6 +20,7 @@ export function SignInForm() {
   const [emailSent, setEmailSent] = useState(false);
   const [codeSent, setCodeSent] = useState(false);
   const [phoneError, setPhoneError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const t = useTranslations('Auth');
   const locale = useLocale();
 
@@ -27,12 +31,51 @@ export function SignInForm() {
     await signIn(provider, { callbackUrl });
   }
 
-  async function handleEmail(e: React.FormEvent) {
+  async function handleMagicLink(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
     setIsLoading('email');
+    setEmailError('');
     await signIn('resend', { email: email.trim().toLowerCase(), redirect: false, callbackUrl });
     setEmailSent(true);
+    setIsLoading(null);
+  }
+
+  async function handlePasswordSignIn(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim() || !password) return;
+    setIsLoading('password');
+    setEmailError('');
+
+    try {
+      const res = await fetch('/api/auth/password/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          password,
+        }),
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        window.location.assign(callbackUrl);
+      } else {
+        // Map error codes to user-friendly messages
+        if (data.code === 'NO_PASSWORD') {
+          setEmailError(t('noPasswordSet'));
+          setEmailMode('magic-link');
+        } else if (data.code === 'RATE_LIMITED') {
+          setEmailError(data.error);
+        } else if (data.code === 'INVALID_CREDENTIALS') {
+          setEmailError(t('wrongPassword'));
+        } else {
+          setEmailError(data.error || t('wrongPassword'));
+        }
+      }
+    } catch {
+      setEmailError('Network error');
+    }
     setIsLoading(null);
   }
 
@@ -78,7 +121,7 @@ export function SignInForm() {
       });
       const data = await res.json();
       if (data.ok) {
-        window.location.href = callbackUrl;
+        window.location.assign(callbackUrl);
       } else {
         setPhoneError(data.error || t('invalidCode'));
       }
@@ -193,28 +236,101 @@ export function SignInForm() {
         </div>
 
         {tab === 'email' ? (
-          /* Email magic link */
-          <form onSubmit={handleEmail} className="space-y-3">
-            <label htmlFor="email" className="sr-only">
-              {t('emailLabel')}
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder={t('emailLabel')}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-            />
-            <button
-              type="submit"
-              disabled={isLoading !== null || !email.trim()}
-              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            >
-              {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
-            </button>
-          </form>
+          emailMode === 'password' ? (
+            /* Email + Password sign in */
+            <form onSubmit={handlePasswordSignIn} className="space-y-3">
+              <label htmlFor="email" className="sr-only">
+                {t('emailLabel')}
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder={t('emailLabel')}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError('');
+                }}
+                required
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              <label htmlFor="password" className="sr-only">
+                {t('passwordLabel')}
+              </label>
+              <input
+                id="password"
+                type="password"
+                placeholder={t('passwordLabel')}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setEmailError('');
+                }}
+                required
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              {emailError && <p className="text-sm text-red-500">{emailError}</p>}
+              <button
+                type="submit"
+                disabled={isLoading !== null || !email.trim() || !password}
+                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+              >
+                {isLoading === 'password' ? t('signingIn') : t('signInWithPassword')}
+              </button>
+              <div className="flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEmailMode('magic-link');
+                    setEmailError('');
+                  }}
+                  className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                >
+                  {t('useMagicLink')}
+                </button>
+                <Link
+                  href="/auth/forgot-password"
+                  className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  {t('forgotPassword')}
+                </Link>
+              </div>
+            </form>
+          ) : (
+            /* Email magic link */
+            <form onSubmit={handleMagicLink} className="space-y-3">
+              <label htmlFor="email-magic" className="sr-only">
+                {t('emailLabel')}
+              </label>
+              <input
+                id="email-magic"
+                type="email"
+                placeholder={t('emailLabel')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              {emailError && <p className="text-sm text-red-500">{emailError}</p>}
+              <button
+                type="submit"
+                disabled={isLoading !== null || !email.trim()}
+                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+              >
+                {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setEmailMode('password');
+                  setEmailError('');
+                }}
+                className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+              >
+                {t('signInWithPassword')}
+              </button>
+            </form>
+          )
         ) : codeSent ? (
           /* OTP code entry */
           <form onSubmit={handleVerifyCode} className="space-y-3">

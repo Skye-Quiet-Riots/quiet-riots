@@ -6,9 +6,14 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 type Step = 'form' | 'verify' | 'done';
+type SignupMode = 'password' | 'magic-link';
 
 export function SignUpForm() {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [signupMode, setSignupMode] = useState<SignupMode>('password');
   const [phone, setPhone] = useState('');
   const [countryCode, setCountryCode] = useState('+44');
   const [otpCode, setOtpCode] = useState('');
@@ -17,6 +22,7 @@ export function SignUpForm() {
   const [emailSent, setEmailSent] = useState(false);
   const [phoneVerified, setPhoneVerified] = useState(false);
   const [phoneError, setPhoneError] = useState('');
+  const [formError, setFormError] = useState('');
   const t = useTranslations('Auth');
   const locale = useLocale();
 
@@ -25,6 +31,58 @@ export function SignUpForm() {
   async function handleOAuth(provider: string) {
     setIsLoading(provider);
     await signIn(provider, { callbackUrl });
+  }
+
+  async function handlePasswordSignUp(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim() || !name.trim() || !password) return;
+    setFormError('');
+
+    // Client-side validation
+    if (password.length < 10) {
+      setFormError(t('passwordTooShort'));
+      return;
+    }
+    if (password !== confirmPassword) {
+      setFormError(t('passwordsDoNotMatch'));
+      return;
+    }
+
+    // If phone was entered and not yet verified, verify first
+    if (phone.trim() && !phoneVerified) {
+      await handleSendCode();
+      return;
+    }
+
+    setIsLoading('password');
+
+    try {
+      const res = await fetch('/api/auth/password/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim().toLowerCase(),
+          password,
+        }),
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        window.location.assign(callbackUrl);
+      } else {
+        if (data.code === 'EMAIL_EXISTS') {
+          setFormError(t('emailAlreadyExists'));
+        } else if (data.code === 'PASSWORD_BREACHED') {
+          setFormError(t('passwordBreached'));
+        } else {
+          setFormError(data.error || 'Signup failed');
+        }
+      }
+    } catch {
+      setFormError('Network error');
+    }
+    setIsLoading(null);
   }
 
   async function handleEmailSignUp(e: React.FormEvent) {
@@ -37,7 +95,7 @@ export function SignUpForm() {
       return;
     }
 
-    // Proceed with email signup
+    // Proceed with email magic link signup
     setIsLoading('email');
     await signIn('resend', {
       email: email.trim().toLowerCase(),
@@ -90,7 +148,14 @@ export function SignUpForm() {
       if (data.ok) {
         setPhoneVerified(true);
         setStep('form');
-        // Now proceed with email signup
+
+        // If in password mode, let user click submit again
+        if (signupMode === 'password') {
+          setIsLoading(null);
+          return;
+        }
+
+        // In magic-link mode, proceed with email signup
         setIsLoading('email');
         await signIn('resend', {
           email: email.trim().toLowerCase(),
@@ -235,68 +300,208 @@ export function SignUpForm() {
           <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
-        {/* Email + Phone signup form */}
-        <form onSubmit={handleEmailSignUp} className="space-y-3">
-          <label htmlFor="signup-email" className="sr-only">
-            {t('emailLabel')}
-          </label>
-          <input
-            id="signup-email"
-            type="email"
-            placeholder={t('emailLabel')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-          />
-
-          {/* Phone input with country code */}
-          <div className="flex gap-2">
+        {signupMode === 'password' ? (
+          /* Email + Password signup form */
+          <form onSubmit={handlePasswordSignUp} className="space-y-3">
+            <label htmlFor="signup-name" className="sr-only">
+              Name
+            </label>
             <input
+              id="signup-name"
               type="text"
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-              placeholder="+44"
-              aria-label={t('countryCode')}
-              className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-            />
-            <input
-              type="tel"
-              placeholder={t('phoneLabel')}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                setFormError('');
+              }}
               required
-              className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
             />
-          </div>
-          {phoneVerified && (
-            <p className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {t('phoneVerified')}
-            </p>
-          )}
-          {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
 
-          <button
-            type="submit"
-            disabled={isLoading !== null || !email.trim() || !phone.trim()}
-            className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-          >
-            {isLoading === 'email'
-              ? t('sendingLink')
-              : isLoading === 'phone'
-                ? t('sendingCode')
-                : phoneVerified
-                  ? t('signUpWithEmail')
-                  : t('sendCode')}
-          </button>
-        </form>
+            <label htmlFor="signup-email" className="sr-only">
+              {t('emailLabel')}
+            </label>
+            <input
+              id="signup-email"
+              type="email"
+              placeholder={t('emailLabel')}
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setFormError('');
+              }}
+              required
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+
+            <label htmlFor="signup-password" className="sr-only">
+              {t('passwordLabel')}
+            </label>
+            <input
+              id="signup-password"
+              type="password"
+              placeholder={t('passwordLabel')}
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setFormError('');
+              }}
+              required
+              minLength={10}
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+            <p className="text-xs text-zinc-400">{t('passwordRequirements')}</p>
+
+            <label htmlFor="signup-confirm" className="sr-only">
+              {t('confirmPasswordLabel')}
+            </label>
+            <input
+              id="signup-confirm"
+              type="password"
+              placeholder={t('confirmPasswordLabel')}
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                setFormError('');
+              }}
+              required
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+
+            {/* Optional phone */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                placeholder="+44"
+                aria-label={t('countryCode')}
+                className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              <input
+                type="tel"
+                placeholder={`${t('phoneLabel')} (optional)`}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+            </div>
+            {phoneVerified && (
+              <p className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {t('phoneVerified')}
+              </p>
+            )}
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            {formError && <p className="text-sm text-red-500">{formError}</p>}
+
+            <button
+              type="submit"
+              disabled={
+                isLoading !== null || !email.trim() || !name.trim() || !password || !confirmPassword
+              }
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'password'
+                ? t('creatingAccount')
+                : isLoading === 'phone'
+                  ? t('sendingCode')
+                  : phone.trim() && !phoneVerified
+                    ? t('sendCode')
+                    : t('signUpWithPassword')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setSignupMode('magic-link');
+                setFormError('');
+              }}
+              className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('useMagicLink')}
+            </button>
+          </form>
+        ) : (
+          /* Email + Phone magic-link signup form */
+          <form onSubmit={handleEmailSignUp} className="space-y-3">
+            <label htmlFor="signup-email-ml" className="sr-only">
+              {t('emailLabel')}
+            </label>
+            <input
+              id="signup-email-ml"
+              type="email"
+              placeholder={t('emailLabel')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+
+            {/* Phone input with country code */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                placeholder="+44"
+                aria-label={t('countryCode')}
+                className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              <input
+                type="tel"
+                placeholder={t('phoneLabel')}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+            </div>
+            {phoneVerified && (
+              <p className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {t('phoneVerified')}
+              </p>
+            )}
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+
+            <button
+              type="submit"
+              disabled={isLoading !== null || !email.trim() || !phone.trim()}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'email'
+                ? t('sendingLink')
+                : isLoading === 'phone'
+                  ? t('sendingCode')
+                  : phoneVerified
+                    ? t('signUpWithEmail')
+                    : t('sendCode')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setSignupMode('password');
+                setFormError('');
+              }}
+              className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('signUpWithPassword')}
+            </button>
+          </form>
+        )}
 
         <p className="mt-4 text-center text-xs text-zinc-400">
           {t('termsAgree')}{' '}
