@@ -91,8 +91,8 @@ export async function POST(request: NextRequest) {
   const hash = await hashPassword(password);
   await setUserPasswordHash(user.id, hash);
 
-  // Set session
-  await setSession(user.id, user.session_version);
+  // Set session (includes Auth.js JWT for client-side useSession)
+  await setSession(user.id, user.session_version, { name: user.name, email: user.email });
 
   // Send welcome email (non-blocking)
   sendEmail(

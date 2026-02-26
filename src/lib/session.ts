@@ -1,6 +1,10 @@
 import { cookies } from 'next/headers';
+import { encode } from 'next-auth/jwt';
 
 const SESSION_COOKIE = 'qr_user_id';
+const AUTH_COOKIE_SECURE = '__Secure-authjs.session-token';
+const AUTH_COOKIE_DEV = 'authjs.session-token';
+const AUTH_MAX_AGE = 30 * 24 * 60 * 60; // 30 days — matches Auth.js config
 
 /**
  * Parse legacy cookie value.
@@ -91,25 +95,69 @@ export async function getSession(): Promise<string | null> {
 }
 
 /**
- * Set the legacy session cookie with version tracking.
- * Stores "userId:sessionVersion" so we can validate on read.
+ * Set both the legacy session cookie AND the Auth.js JWT session cookie.
+ *
+ * The legacy cookie (`qr_user_id`) is checked server-side by `getSession()`.
+ * The Auth.js JWT cookie is checked client-side by `useSession()` from next-auth/react.
+ *
+ * Without the Auth.js cookie, phone/password logins would appear unauthenticated
+ * to client components (nav-bar, auth-gate, etc.) even though server-side auth works.
  */
-export async function setSession(userId: string, sessionVersion?: number): Promise<void> {
+export async function setSession(
+  userId: string,
+  sessionVersion?: number,
+  userInfo?: { name?: string; email?: string; image?: string },
+): Promise<void> {
   const version = sessionVersion ?? 1;
+  const isProduction = process.env.NODE_ENV === 'production';
   const cookieStore = await cookies();
+
+  // 1. Legacy cookie (server-side getSession)
   cookieStore.set(SESSION_COOKIE, `${userId}:${version}`, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: isProduction,
     sameSite: 'lax',
     maxAge: 60 * 60 * 24 * 365, // 1 year
     path: '/',
   });
+
+  // 2. Auth.js JWT cookie (client-side useSession)
+  const secret = process.env.AUTH_SECRET;
+  if (secret) {
+    try {
+      const cookieName = isProduction ? AUTH_COOKIE_SECURE : AUTH_COOKIE_DEV;
+      const token = await encode({
+        token: {
+          sub: userId,
+          session_version: version,
+          name: userInfo?.name,
+          email: userInfo?.email,
+          picture: userInfo?.image,
+        },
+        secret,
+        salt: cookieName,
+        maxAge: AUTH_MAX_AGE,
+      });
+      cookieStore.set(cookieName, token, {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: 'lax',
+        maxAge: AUTH_MAX_AGE,
+        path: '/',
+      });
+    } catch {
+      // Graceful degradation — legacy cookie still works for server-side auth
+    }
+  }
 }
 
 /**
- * Clear the legacy session cookie.
+ * Clear both the legacy session cookie and the Auth.js JWT session cookie.
  */
 export async function clearSession(): Promise<void> {
   const cookieStore = await cookies();
   cookieStore.delete(SESSION_COOKIE);
+  const isProduction = process.env.NODE_ENV === 'production';
+  const cookieName = isProduction ? AUTH_COOKIE_SECURE : AUTH_COOKIE_DEV;
+  cookieStore.delete(cookieName);
 }

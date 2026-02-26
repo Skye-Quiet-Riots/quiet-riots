@@ -77,8 +77,12 @@ export async function POST(request: NextRequest) {
     args: [user.id],
   });
 
-  // Set session with version tracking
-  await setSession(user.id, user.session_version);
+  // Set session with version tracking (includes Auth.js JWT for client-side useSession)
+  await setSession(user.id, user.session_version, {
+    name: user.name,
+    email: user.email,
+    image: user.avatar_url ?? undefined,
+  });
 
   // SIM swap protection: send email notification about phone-based signin
   if (!isNewUser && user.email && !user.email.startsWith('wa-')) {

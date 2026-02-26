@@ -106,8 +106,11 @@ export async function POST(request: NextRequest) {
     return apiError('Invalid email or password.', 401, 'INVALID_CREDENTIALS');
   }
 
-  // Success! Set session
-  await setSession(user.id, user.session_version);
+  // Success! Set session (includes Auth.js JWT for client-side useSession)
+  await setSession(user.id, user.session_version, {
+    name: user.name,
+    email: user.email,
+  });
   await logLoginEvent(user.id, ip, 'login', 'password');
 
   // Send notification email for new device/location (non-blocking)

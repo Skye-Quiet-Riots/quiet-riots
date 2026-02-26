@@ -216,7 +216,10 @@ describe('Password Auth API', () => {
       await signupPOST(req);
 
       expect(setSession).toHaveBeenCalledOnce();
-      expect(setSession).toHaveBeenCalledWith(expect.any(String), expect.any(Number));
+      expect(setSession).toHaveBeenCalledWith(expect.any(String), expect.any(Number), {
+        name: 'Test User',
+        email: 'session@test.com',
+      });
     });
 
     it('sends welcome email after signup', async () => {
@@ -358,7 +361,10 @@ describe('Password Auth API', () => {
       });
       await signinPOST(req);
 
-      expect(setSession).toHaveBeenCalledWith('user-test-pw', expect.any(Number));
+      expect(setSession).toHaveBeenCalledWith('user-test-pw', expect.any(Number), {
+        name: 'Test PW User',
+        email: 'test@test.com',
+      });
     });
 
     it('logs successful login event', async () => {
