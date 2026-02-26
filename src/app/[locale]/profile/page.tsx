@@ -14,6 +14,7 @@ import { ProfileEditForm } from '@/components/interactive/profile-edit-form';
 import { ProfileCreateForm } from '@/components/interactive/profile-create-form';
 import { AvatarUpload } from '@/components/interactive/avatar-upload';
 import { ConnectedAccounts } from '@/components/interactive/connected-accounts';
+import { PhoneManagement } from '@/components/interactive/phone-management';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -127,6 +128,9 @@ export default async function ProfilePage({ params }: Props) {
 
       {/* Connected accounts */}
       <ConnectedAccounts accounts={connectedAccounts} />
+
+      {/* Phone management */}
+      <PhoneManagement currentPhone={user.phone} phoneVerified={!!user.phone_verified} />
 
       {/* Joined issues */}
       <section>
