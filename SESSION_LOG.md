@@ -6,19 +6,21 @@
 
 ## Latest Session
 
-**Session 47** (2026-02-26) — OTP delivery E2E testing + API key fix
-→ [`session-logs/2026-02-session-47.md`](session-logs/2026-02-session-47.md)
+**Session 48** (2026-02-26) — Global Share Scheme (Phases 6-7 + Deploy)
+→ [`session-logs/2026-02-session-48.md`](session-logs/2026-02-session-48.md)
 
 ## Current Priorities
 
-- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
-- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
-- **End-to-end testing** — manually test all auth flows on production (email, phone OTP, OAuth)
+- **End-to-end testing** — manually test the full share lifecycle on production
+- **Phase 8: Polish** — PDF certificate generation, country-specific tax guidance, PII data retention
+- **Google/Facebook OAuth setup** — still pending from session 47
+- **Resend email** — API key failed when sending notification; may need domain verification
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 48  | 2026-02-26    | Global Share Scheme (Phases 6-7 + Deploy)             | [`session-48`](session-logs/2026-02-session-48.md)                                                             |
 | 47  | 2026-02-26    | OTP delivery E2E testing + API key fix                | [`session-47`](session-logs/2026-02-session-47.md)                                                             |
 | 46  | 2026-02-26    | Phone OTP delivery via WhatsApp + auto-update         | [`session-46`](session-logs/2026-02-session-46.md)                                                             |
 | 45  | 2026-02-26    | Housekeeping: PR #103 merge, user merge, script fixes | [`session-45`](session-logs/2026-02-session-45.md)                                                             |
