@@ -15,6 +15,7 @@ import { ProfileCreateForm } from '@/components/interactive/profile-create-form'
 import { AvatarUpload } from '@/components/interactive/avatar-upload';
 import { ConnectedAccounts } from '@/components/interactive/connected-accounts';
 import { PhoneManagement } from '@/components/interactive/phone-management';
+import { PasswordManagement } from '@/components/interactive/password-management';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -131,6 +132,9 @@ export default async function ProfilePage({ params }: Props) {
 
       {/* Phone management */}
       <PhoneManagement currentPhone={user.phone} phoneVerified={!!user.phone_verified} />
+
+      {/* Password management */}
+      <PasswordManagement hasPassword={!!user.password_hash} />
 
       {/* Joined issues */}
       <section>
