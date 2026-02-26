@@ -39,11 +39,11 @@ export async function POST(request: Request) {
   // Check if user already exists
   const existing = await getUserByEmail(email);
   if (existing) {
-    await setSession(existing.id);
+    await setSession(existing.id, existing.session_version);
     return apiOk(existing);
   }
 
   const user = await createUser({ name, email, time_available, skills });
-  await setSession(user.id);
+  await setSession(user.id, user.session_version);
   return apiOk(user);
 }
