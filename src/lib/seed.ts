@@ -2731,11 +2731,11 @@ export async function seed() {
   }
 
   // =============================
-  // CAMPAIGNS (Riot Treasury)
+  // ACTION INITIATIVES (Riot Treasury)
   // =============================
-  const campaignSql = `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, recipient_url, status, platform_fee_pct) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const actionInitiativeSql = `INSERT INTO action_initiatives (id, issue_id, title, description, target_pence, committed_pence, supporter_count, recipient, recipient_url, status, service_fee_pct) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  const campaigns: [
+  const actionInitiatives: [
     string,
     string,
     string,
@@ -2840,39 +2840,39 @@ export async function seed() {
       400,
       'Citizens Advice',
       'https://www.citizensadvice.org.uk/',
-      'funded',
+      'goal_reached',
       15,
     ],
   ];
 
-  let campaignCount = 0;
+  let actionInitiativeCount = 0;
   for (const [
     issueName,
     title,
     description,
     target,
-    raised,
-    contributors,
+    committed,
+    supporters,
     recipient,
     recipientUrl,
     status,
     feePct,
-  ] of campaigns) {
+  ] of actionInitiatives) {
     const issueId = issueIds[issueName];
     if (!issueId) continue;
-    await insertRow(campaignSql, [
+    await insertRow(actionInitiativeSql, [
       issueId,
       title,
       description,
       target,
-      raised,
-      contributors,
+      committed,
+      supporters,
       recipient,
       recipientUrl,
       status,
       feePct,
     ]);
-    campaignCount++;
+    actionInitiativeCount++;
   }
 
   // =============================
@@ -3155,7 +3155,7 @@ export async function seed() {
   console.log(`   ${orgs.length} organisations`);
   console.log(`   ${users.length} sample users`);
   console.log(`   ${reelCount} riot reels`);
-  console.log(`   ${campaignCount} campaigns`);
+  console.log(`   ${actionInitiativeCount} action initiatives`);
   console.log(`   ${seedAssistants.length} category assistants`);
   console.log('   10 evidence posts + 4 comments');
   console.log(
