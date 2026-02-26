@@ -86,6 +86,7 @@ import {
 } from '@/lib/queries/messages';
 import { sendEmail } from '@/lib/email';
 import { sendWhatsAppMessage } from '@/lib/whatsapp';
+import { getUndeliveredCodes, markCodeDelivered } from '@/lib/queries/phone-verification';
 import type { MemoryCategory, Category, SuggestedType, RejectionReason } from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
@@ -428,6 +429,10 @@ const actionSchemas = {
   verify_email_status: z.object({
     phone: phoneField,
   }),
+
+  // ─── OTP Delivery (for local polling script) ───────────
+  get_undelivered_codes: z.object({}),
+  mark_code_delivered: z.object({ code_id: idField }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -1531,6 +1536,18 @@ export async function POST(request: NextRequest) {
             ? 'User has a WhatsApp placeholder email. Use link_email to set a real email.'
             : `User email is ${user.email}.`,
         });
+      }
+
+      // ─── OTP Delivery (for local polling script) ───────────
+      case 'get_undelivered_codes': {
+        const codes = await getUndeliveredCodes();
+        return ok({ codes });
+      }
+
+      case 'mark_code_delivered': {
+        const codeId = p.code_id as string;
+        const delivered = await markCodeDelivered(codeId);
+        return ok({ delivered });
       }
 
       default:

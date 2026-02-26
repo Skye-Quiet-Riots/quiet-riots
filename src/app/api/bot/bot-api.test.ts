@@ -1675,3 +1675,77 @@ describe('Bot API: verify_email_status', () => {
     expect(status).toBe(404);
   });
 });
+
+describe('Bot API: OTP delivery', () => {
+  // Clean up phone verification codes between tests to prevent state leakage
+  beforeEach(async () => {
+    const { _resetVerificationCodes } = await import(
+      '@/lib/queries/phone-verification'
+    );
+    await _resetVerificationCodes();
+  });
+
+  it('get_undelivered_codes requires auth', async () => {
+    const noAuthRequest = new Request('http://localhost:3000/api/bot', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ action: 'get_undelivered_codes', params: {} }),
+    });
+    const response = await POST(noAuthRequest as never);
+    expect(response.status).toBe(401);
+  });
+
+  it('get_undelivered_codes returns pending codes', async () => {
+    // Import and create a code with delivery message
+    const { createVerificationCode } = await import(
+      '@/lib/queries/phone-verification'
+    );
+    await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+
+    const { status, body } = await callBot('get_undelivered_codes', {});
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.codes.length).toBe(1);
+    expect(body.data.codes[0].phone).toBe('+447700900099');
+    expect(body.data.codes[0].delivery_message).toBe('Your code is 123456');
+    expect(body.data.codes[0].id).toBeTruthy();
+  });
+
+  it('get_undelivered_codes returns empty when none pending', async () => {
+    const { status, body } = await callBot('get_undelivered_codes', {});
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.codes).toEqual([]);
+  });
+
+  it('mark_code_delivered marks code and returns delivered=true', async () => {
+    const { createVerificationCode } = await import(
+      '@/lib/queries/phone-verification'
+    );
+    const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+
+    const { status, body } = await callBot('mark_code_delivered', { code_id: id });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.delivered).toBe(true);
+
+    // Verify it's no longer in undelivered list
+    const { body: body2 } = await callBot('get_undelivered_codes', {});
+    expect(body2.data.codes.length).toBe(0);
+  });
+
+  it('mark_code_delivered returns delivered=false for invalid id', async () => {
+    const { status, body } = await callBot('mark_code_delivered', {
+      code_id: 'non-existent-id',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.delivered).toBe(false);
+  });
+
+  it('mark_code_delivered requires code_id', async () => {
+    const { status, body } = await callBot('mark_code_delivered', {});
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+});

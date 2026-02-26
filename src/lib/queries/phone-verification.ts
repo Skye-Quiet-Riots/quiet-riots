@@ -1,6 +1,7 @@
 /**
  * Phone verification query layer.
- * Handles OTP code generation, storage (SHA-256 hashed), and verification.
+ * Handles OTP code generation, storage (SHA-256 hashed), verification,
+ * and delivery tracking for WhatsApp OTP delivery.
  */
 
 import { createHash, randomInt } from 'crypto';
@@ -21,10 +22,14 @@ export function hashCode(code: string): string {
  * Create a verification code for a phone number.
  * Invalidates all prior unexpired codes for this phone.
  * Returns the plaintext code (for sending via WhatsApp).
+ *
+ * @param deliveryMessage - Optional pre-formatted message for WhatsApp delivery.
+ *   When provided, the local Mac polling script will pick up and deliver via OpenClaw.
  */
 export async function createVerificationCode(
   phone: string,
   userId?: string,
+  deliveryMessage?: string,
 ): Promise<{ id: string; code: string; expiresAt: string }> {
   const db = getDb();
   const id = generateId();
@@ -33,19 +38,19 @@ export async function createVerificationCode(
   const now = new Date();
   const expiresAt = new Date(now.getTime() + 5 * 60 * 1000).toISOString(); // 5 minutes
 
-  // Invalidate prior codes for this phone
+  // Invalidate prior codes for this phone (also NULL out their delivery messages)
   await db.execute({
     sql: `UPDATE phone_verification_codes
-          SET expires_at = ?
+          SET expires_at = ?, delivery_message = NULL
           WHERE phone = ? AND verified_at IS NULL AND expires_at > ?`,
     args: [now.toISOString(), phone, now.toISOString()],
   });
 
   // Insert new code
   await db.execute({
-    sql: `INSERT INTO phone_verification_codes (id, phone, user_id, code_hash, expires_at, created_at)
-          VALUES (?, ?, ?, ?, ?, ?)`,
-    args: [id, phone, userId ?? null, codeHash, expiresAt, now.toISOString()],
+    sql: `INSERT INTO phone_verification_codes (id, phone, user_id, code_hash, expires_at, delivery_message, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [id, phone, userId ?? null, codeHash, expiresAt, deliveryMessage ?? null, now.toISOString()],
   });
 
   return { id, code, expiresAt };
@@ -55,6 +60,7 @@ export async function createVerificationCode(
  * Verify an OTP code for a phone number.
  * Returns the verification record if successful, null if failed.
  * Increments attempt count on failure.
+ * Clears delivery_message on success (defence in depth).
  */
 export async function verifyCode(
   phone: string,
@@ -98,9 +104,9 @@ export async function verifyCode(
     return null;
   }
 
-  // Mark as verified
+  // Mark as verified + clear delivery_message (defence in depth — code can't be read after use)
   await db.execute({
-    sql: 'UPDATE phone_verification_codes SET verified_at = ? WHERE id = ?',
+    sql: 'UPDATE phone_verification_codes SET verified_at = ?, delivery_message = NULL WHERE id = ?',
     args: [now, id],
   });
 
@@ -138,9 +144,75 @@ export async function isCooldownPassed(phone: string, cooldownMs = 60_000): Prom
   return elapsed >= cooldownMs;
 }
 
+/**
+ * Get undelivered OTP codes awaiting WhatsApp delivery.
+ * Only returns unexpired, unverified codes with a delivery_message.
+ * Time-bounded: codes are only deliverable within their 5-min window.
+ */
+export async function getUndeliveredCodes(): Promise<
+  Array<{ id: string; phone: string; delivery_message: string }>
+> {
+  const db = getDb();
+  const now = new Date().toISOString();
+  const result = await db.execute({
+    sql: `SELECT id, phone, delivery_message FROM phone_verification_codes
+          WHERE delivered_at IS NULL
+            AND verified_at IS NULL
+            AND expires_at > ?
+            AND delivery_message IS NOT NULL
+          ORDER BY created_at ASC
+          LIMIT 10`,
+    args: [now],
+  });
+
+  return result.rows.map((row) => ({
+    id: row.id as string,
+    phone: row.phone as string,
+    delivery_message: row.delivery_message as string,
+  }));
+}
+
+/**
+ * Mark a code as delivered (sent via WhatsApp).
+ * Uses atomic WHERE delivered_at IS NULL to prevent race conditions —
+ * if two pollers try to deliver the same code, only the first succeeds.
+ * Returns true if this call was the one that marked it.
+ */
+export async function markCodeDelivered(id: string): Promise<boolean> {
+  const db = getDb();
+  const now = new Date().toISOString();
+  const result = await db.execute({
+    sql: `UPDATE phone_verification_codes
+          SET delivered_at = ?
+          WHERE id = ? AND delivered_at IS NULL`,
+    args: [now, id],
+  });
+  return result.rowsAffected > 0;
+}
+
+/**
+ * Clear the delivery message for a code (defence in depth).
+ * Called after verification or expiry to ensure the plaintext OTP
+ * is not readable from the database.
+ */
+export async function clearDeliveryMessage(id: string): Promise<void> {
+  const db = getDb();
+  await db.execute({
+    sql: 'UPDATE phone_verification_codes SET delivery_message = NULL WHERE id = ?',
+    args: [id],
+  });
+}
+
 /** Clean up expired verification codes (housekeeping). */
 export async function cleanExpiredCodes(): Promise<number> {
   const db = getDb();
+  // First, NULL out delivery messages on expired codes (defence in depth)
+  await db.execute({
+    sql: `UPDATE phone_verification_codes SET delivery_message = NULL
+          WHERE expires_at < ? AND delivery_message IS NOT NULL`,
+    args: [new Date().toISOString()],
+  });
+  // Then delete expired codes
   const result = await db.execute({
     sql: `DELETE FROM phone_verification_codes WHERE expires_at < ?`,
     args: [new Date().toISOString()],

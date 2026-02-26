@@ -585,6 +585,8 @@ export async function createTables() {
       max_attempts INTEGER NOT NULL DEFAULT 5 CHECK(max_attempts >= 1),
       expires_at TEXT NOT NULL,
       verified_at TEXT,
+      delivered_at TEXT,
+      delivery_message TEXT,
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
     CREATE INDEX IF NOT EXISTS idx_phone_codes_phone ON phone_verification_codes(phone);
