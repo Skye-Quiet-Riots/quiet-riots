@@ -19,6 +19,7 @@ import {
 } from '@/lib/queries/community';
 import {
   getUserByPhone,
+  getUserByEmail,
   getUserById,
   createUser,
   updateUser,
@@ -90,6 +91,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
 import { sanitizeText } from '@/lib/sanitize';
+import { getDb } from '@/lib/db';
+import { generateId } from '@/lib/uuid';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
 const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
@@ -415,6 +418,15 @@ const actionSchemas = {
     phone: phoneField,
     suggestion_id: idField,
     public_recognition: z.boolean(),
+  }),
+
+  // ─── Email Linking ────────────────────────────────────
+  link_email: z.object({
+    phone: phoneField,
+    email: z.string().email('Invalid email address').max(255),
+  }),
+  verify_email_status: z.object({
+    phone: phoneField,
   }),
 } as const;
 
@@ -1451,6 +1463,73 @@ export async function POST(request: NextRequest) {
         return ok({
           suggestion: updated,
           preference: publicRecognition ? 'public' : 'anonymous',
+        });
+      }
+
+      // ─── Email Linking ────────────────────────────────────
+
+      case 'link_email': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const newEmail = (p.email as string).toLowerCase().trim();
+
+        // Check email isn't already used by another user
+        const existing = await getUserByEmail(newEmail);
+        if (existing && existing.id !== user.id) {
+          return err('This email is already linked to another account', 409);
+        }
+
+        // Create a verification token
+        const db = getDb();
+        const token = generateId();
+        const expires = new Date(Date.now() + 24 * 60 * 60_000).toISOString(); // 24h
+
+        await db.execute({
+          sql: `INSERT INTO verification_tokens (identifier, token, expires, type)
+                VALUES (?, ?, ?, 'email_verify')`,
+          args: [`${user.id}:${newEmail}`, token, expires],
+        });
+
+        // Build verification URL
+        const baseUrl = process.env.NEXTAUTH_URL || 'https://www.quietriots.com';
+        const verifyUrl = `${baseUrl}/api/auth/verify-email-link?token=${token}`;
+
+        // Send verification email
+        await sendEmail(
+          newEmail,
+          'Verify your email for Quiet Riots',
+          `<p>Hi ${user.name},</p>
+           <p>Click the link below to link this email to your Quiet Riots account:</p>
+           <p><a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;background:#18181b;color:#fff;text-decoration:none;border-radius:8px;">Verify email</a></p>
+           <p>This link expires in 24 hours.</p>
+           <p>If you didn't request this, you can safely ignore this email.</p>
+           <p>— Quiet Riots</p>`,
+        );
+
+        return ok({
+          sent: true,
+          email: newEmail,
+          message: `Verification email sent to ${newEmail}. Ask the user to check their inbox and click the link.`,
+        });
+      }
+
+      case 'verify_email_status': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const isWaEmail = (user.email || '').startsWith('wa-');
+        return ok({
+          email: user.email,
+          is_placeholder: isWaEmail,
+          verified: !isWaEmail,
+          message: isWaEmail
+            ? 'User has a WhatsApp placeholder email. Use link_email to set a real email.'
+            : `User email is ${user.email}.`,
         });
       }
 

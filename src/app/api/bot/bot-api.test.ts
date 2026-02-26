@@ -1614,3 +1614,64 @@ describe('Bot API: suggestion/inbox structural guards', () => {
     },
   );
 });
+
+// ─── Email Linking Tests ────────────────────────────────────
+describe('Bot API: link_email', () => {
+  it('sends verification email for valid email', async () => {
+    const { status, body } = await callBot('link_email', {
+      phone: '+447700900001', // sarah
+      email: 'newemail@example.com',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.sent).toBe(true);
+    expect(body.data.email).toBe('newemail@example.com');
+  });
+
+  it('rejects invalid email', async () => {
+    const { status, body } = await callBot('link_email', {
+      phone: '+447700900001',
+      email: 'not-an-email',
+    });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+
+  it('returns 404 for unknown phone', async () => {
+    const { status } = await callBot('link_email', {
+      phone: '+449999999999',
+      email: 'test@example.com',
+    });
+    expect(status).toBe(404);
+  });
+
+  it('rejects email already used by another user', async () => {
+    // user-marcio has marcio@example.com — try to link sarah to it
+    const { status, body } = await callBot('link_email', {
+      phone: '+447700900001', // sarah
+      email: 'marcio@example.com',
+    });
+    expect(status).toBe(409);
+    expect(body.ok).toBe(false);
+  });
+});
+
+describe('Bot API: verify_email_status', () => {
+  it('shows email status for user with real email', async () => {
+    const { status, body } = await callBot('verify_email_status', {
+      phone: '+447700900001', // sarah has sarah@example.com
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.email).toBe('sarah@example.com');
+    expect(body.data.is_placeholder).toBe(false);
+    expect(body.data.verified).toBe(true);
+  });
+
+  it('returns 404 for unknown phone', async () => {
+    const { status } = await callBot('verify_email_status', {
+      phone: '+449999999999',
+    });
+    expect(status).toBe(404);
+  });
+});
