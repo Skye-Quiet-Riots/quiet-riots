@@ -206,6 +206,21 @@ At the start of every session (or when asked to "pick up where we left off"):
 - Run `npm test` after meaningful changes — don't batch all testing to the end
 - If you discover a new gotcha, add it to CLAUDE.md immediately
 
+### Incremental commit protocol (IMPORTANT — prevents lost work)
+
+- **Commit after every logical unit of work** (e.g. each phase of a multi-phase feature). Don't batch everything into one commit at the end.
+- **Push after every commit.** If the session dies unexpectedly, the last pushed commit survives.
+- **Save plans to `PLAN.md`** at the start of multi-phase work. Commit and push PLAN.md before starting implementation. If the session dies, the next session can pick up from the plan.
+- **Never rely on uncommitted work surviving a session.** The previous session lost all 5 phases of work because nothing was committed.
+- Pattern for multi-phase work:
+  ```
+  1. Write PLAN.md → commit + push
+  2. Phase 1 code + tests → commit + push
+  3. Phase 2 code + tests → commit + push
+  ... repeat for each phase
+  N. Create PR after final phase
+  ```
+
 ### Branching & PRs
 
 - Follow the Branching Workflow exactly — fresh branch from `origin/main` for every piece of work
