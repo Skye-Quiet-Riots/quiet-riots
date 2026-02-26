@@ -75,6 +75,22 @@ export default async function ProfilePage({ params }: Props) {
             <div>
               <h2 className="text-lg font-bold">{user.name}</h2>
               <p className="text-sm text-zinc-500 dark:text-zinc-400">{user.email}</p>
+              {user.phone ? (
+                <p className="mt-0.5 flex items-center gap-1 text-sm text-zinc-500 dark:text-zinc-400">
+                  {user.phone}
+                  {user.phone_verified ? (
+                    <span className="inline-flex items-center gap-0.5 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                      {t('phoneVerified')}
+                    </span>
+                  ) : (
+                    <span className="rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300">
+                      {t('phoneNotVerified')}
+                    </span>
+                  )}
+                </p>
+              ) : (
+                <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">{t('noPhone')}</p>
+              )}
               <p className="mt-0.5 text-xs text-zinc-400 dark:text-zinc-500">
                 {t('memberSince')} {memberSince}
               </p>

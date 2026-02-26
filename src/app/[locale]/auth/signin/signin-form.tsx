@@ -5,10 +5,18 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
+type Tab = 'email' | 'phone';
+
 export function SignInForm() {
+  const [tab, setTab] = useState<Tab>('email');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [countryCode, setCountryCode] = useState('+44');
+  const [otpCode, setOtpCode] = useState('');
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const [emailSent, setEmailSent] = useState(false);
+  const [codeSent, setCodeSent] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
   const t = useTranslations('Auth');
   const locale = useLocale();
 
@@ -25,6 +33,58 @@ export function SignInForm() {
     setIsLoading('email');
     await signIn('resend', { email: email.trim().toLowerCase(), redirect: false, callbackUrl });
     setEmailSent(true);
+    setIsLoading(null);
+  }
+
+  async function handleSendCode(e: React.FormEvent) {
+    e.preventDefault();
+    if (!phone.trim()) return;
+    setPhoneError('');
+    setIsLoading('phone');
+
+    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+
+    try {
+      const res = await fetch('/api/auth/phone/send-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: fullPhone }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setCodeSent(true);
+      } else {
+        setPhoneError(data.error || 'Failed to send code');
+      }
+    } catch {
+      setPhoneError('Network error');
+    }
+    setIsLoading(null);
+  }
+
+  async function handleVerifyCode(e: React.FormEvent) {
+    e.preventDefault();
+    if (!otpCode.trim() || otpCode.length !== 6) return;
+    setPhoneError('');
+    setIsLoading('verify');
+
+    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+
+    try {
+      const res = await fetch('/api/auth/phone/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: fullPhone, code: otpCode }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        window.location.href = callbackUrl;
+      } else {
+        setPhoneError(data.error || t('invalidCode'));
+      }
+    } catch {
+      setPhoneError('Network error');
+    }
     setIsLoading(null);
   }
 
@@ -108,28 +168,118 @@ export function SignInForm() {
           <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
-        {/* Email magic link */}
-        <form onSubmit={handleEmail} className="space-y-3">
-          <label htmlFor="email" className="sr-only">
-            {t('emailLabel')}
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder={t('emailLabel')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-          />
+        {/* Tabs: Email / Phone */}
+        <div className="mb-4 flex rounded-lg border border-zinc-200 dark:border-zinc-700">
           <button
-            type="submit"
-            disabled={isLoading !== null || !email.trim()}
-            className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            onClick={() => setTab('email')}
+            className={`flex-1 rounded-l-lg px-4 py-2 text-sm font-medium transition-colors ${
+              tab === 'email'
+                ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+                : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
+            }`}
           >
-            {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
+            {t('emailTab')}
           </button>
-        </form>
+          <button
+            onClick={() => setTab('phone')}
+            className={`flex-1 rounded-r-lg px-4 py-2 text-sm font-medium transition-colors ${
+              tab === 'phone'
+                ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+                : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
+            }`}
+          >
+            {t('phoneTab')}
+          </button>
+        </div>
+
+        {tab === 'email' ? (
+          /* Email magic link */
+          <form onSubmit={handleEmail} className="space-y-3">
+            <label htmlFor="email" className="sr-only">
+              {t('emailLabel')}
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder={t('emailLabel')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+            <button
+              type="submit"
+              disabled={isLoading !== null || !email.trim()}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
+            </button>
+          </form>
+        ) : codeSent ? (
+          /* OTP code entry */
+          <form onSubmit={handleVerifyCode} className="space-y-3">
+            <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('codeSent')}</p>
+            <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={6}
+              placeholder={t('codeLabel')}
+              value={otpCode}
+              onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))}
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-center text-lg tracking-[0.5em] text-zinc-900 placeholder:text-zinc-400 placeholder:tracking-normal focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              autoFocus
+            />
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            <button
+              type="submit"
+              disabled={isLoading !== null || otpCode.length !== 6}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'verify' ? t('verifyingCode') : t('signInWithPhone')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setCodeSent(false);
+                setOtpCode('');
+                setPhoneError('');
+              }}
+              className="w-full text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('resendCode')}
+            </button>
+          </form>
+        ) : (
+          /* Phone number entry */
+          <form onSubmit={handleSendCode} className="space-y-3">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                placeholder="+44"
+                className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              <input
+                type="tel"
+                placeholder={t('phoneLabel')}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+            </div>
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            <button
+              type="submit"
+              disabled={isLoading !== null || !phone.trim()}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'phone' ? t('sendingCode') : t('sendCode')}
+            </button>
+          </form>
+        )}
 
         <p className="mt-6 text-center text-xs text-zinc-400">
           {t('noAccount')}{' '}

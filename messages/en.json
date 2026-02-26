@@ -151,7 +151,11 @@
     "unlinkFailed": "Failed to unlink account",
     "cannotUnlinkLast": "Cannot unlink your only connected account",
     "deactivateAccount": "Deactivate account",
-    "deactivateConfirm": "Are you sure you want to deactivate your account? You can reactivate it within 30 days."
+    "deactivateConfirm": "Are you sure you want to deactivate your account? You can reactivate it within 30 days.",
+    "phone": "Phone",
+    "phoneVerified": "Verified",
+    "phoneNotVerified": "Not verified",
+    "noPhone": "No phone number linked"
   },
   "Auth": {
     "welcomeBack": "Welcome back",
@@ -190,7 +194,23 @@
     "emailHeading": "Sign in to Quiet Riots",
     "emailBody": "Click the button below to sign in to your account. This link expires in 24 hours.",
     "emailButton": "Sign in",
-    "emailIgnore": "If you did not request this email, you can safely ignore it."
+    "emailIgnore": "If you did not request this email, you can safely ignore it.",
+    "emailTab": "Email",
+    "phoneTab": "Phone",
+    "phoneLabel": "Phone number",
+    "countryCode": "Country code",
+    "sendCode": "Send verification code",
+    "sendingCode": "Sending code...",
+    "enterCode": "Enter verification code",
+    "codeLabel": "6-digit code",
+    "verifyCode": "Verify code",
+    "verifyingCode": "Verifying...",
+    "codeSent": "A verification code has been sent to your WhatsApp.",
+    "codeExpired": "Code expired. Please request a new one.",
+    "invalidCode": "Invalid code. Please try again.",
+    "resendCode": "Resend code",
+    "phoneVerified": "Phone verified",
+    "signInWithPhone": "Sign in with phone"
   },
   "AuthGate": {
     "signInTo": "Sign in to {action}",

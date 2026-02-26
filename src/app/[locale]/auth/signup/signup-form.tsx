@@ -5,10 +5,18 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
+type Step = 'form' | 'verify' | 'done';
+
 export function SignUpForm() {
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [countryCode, setCountryCode] = useState('+44');
+  const [otpCode, setOtpCode] = useState('');
+  const [step, setStep] = useState<Step>('form');
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const [emailSent, setEmailSent] = useState(false);
+  const [phoneVerified, setPhoneVerified] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
   const t = useTranslations('Auth');
   const locale = useLocale();
 
@@ -19,9 +27,17 @@ export function SignUpForm() {
     await signIn(provider, { callbackUrl });
   }
 
-  async function handleEmail(e: React.FormEvent) {
+  async function handleEmailSignUp(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
+
+    // If phone was entered and not yet verified, verify first
+    if (phone.trim() && !phoneVerified) {
+      await handleSendCode();
+      return;
+    }
+
+    // Proceed with email signup
     setIsLoading('email');
     await signIn('resend', {
       email: email.trim().toLowerCase(),
@@ -29,6 +45,65 @@ export function SignUpForm() {
       callbackUrl,
     });
     setEmailSent(true);
+    setIsLoading(null);
+  }
+
+  async function handleSendCode() {
+    setPhoneError('');
+    setIsLoading('phone');
+
+    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+
+    try {
+      const res = await fetch('/api/auth/phone/send-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: fullPhone }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setStep('verify');
+      } else {
+        setPhoneError(data.error || 'Failed to send code');
+      }
+    } catch {
+      setPhoneError('Network error');
+    }
+    setIsLoading(null);
+  }
+
+  async function handleVerifyCode(e: React.FormEvent) {
+    e.preventDefault();
+    if (!otpCode.trim() || otpCode.length !== 6) return;
+    setPhoneError('');
+    setIsLoading('verify');
+
+    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+
+    try {
+      const res = await fetch('/api/auth/phone/verify-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: fullPhone, code: otpCode }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setPhoneVerified(true);
+        setStep('form');
+        // Now proceed with email signup
+        setIsLoading('email');
+        await signIn('resend', {
+          email: email.trim().toLowerCase(),
+          redirect: false,
+          callbackUrl,
+        });
+        setEmailSent(true);
+      } else {
+        setPhoneError(data.error || t('invalidCode'));
+      }
+    } catch {
+      setPhoneError('Network error');
+    }
     setIsLoading(null);
   }
 
@@ -53,6 +128,54 @@ export function SignUpForm() {
           </div>
           <h1 className="mb-2 text-xl font-bold">{t('checkEmail')}</h1>
           <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('signUpLinkSent')}</p>
+          {phoneVerified && (
+            <p className="mt-2 text-sm text-green-600 dark:text-green-400">{t('phoneVerified')}</p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  if (step === 'verify') {
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col items-center justify-center px-4">
+        <div className="w-full rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h1 className="mb-2 text-center text-2xl font-bold">{t('enterCode')}</h1>
+          <p className="mb-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            {t('codeSent')}
+          </p>
+          <form onSubmit={handleVerifyCode} className="space-y-3">
+            <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={6}
+              placeholder={t('codeLabel')}
+              value={otpCode}
+              onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))}
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-center text-lg tracking-[0.5em] text-zinc-900 placeholder:text-zinc-400 placeholder:tracking-normal focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              autoFocus
+            />
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            <button
+              type="submit"
+              disabled={isLoading !== null || otpCode.length !== 6}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'verify' ? t('verifyingCode') : t('verifyCode')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setStep('form');
+                setOtpCode('');
+                setPhoneError('');
+              }}
+              className="w-full text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('resendCode')}
+            </button>
+          </form>
         </div>
       </div>
     );
@@ -112,13 +235,13 @@ export function SignUpForm() {
           <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
-        {/* Email magic link */}
-        <form onSubmit={handleEmail} className="space-y-3">
-          <label htmlFor="email" className="sr-only">
+        {/* Email + Phone signup form */}
+        <form onSubmit={handleEmailSignUp} className="space-y-3">
+          <label htmlFor="signup-email" className="sr-only">
             {t('emailLabel')}
           </label>
           <input
-            id="email"
+            id="signup-email"
             type="email"
             placeholder={t('emailLabel')}
             value={email}
@@ -126,12 +249,52 @@ export function SignUpForm() {
             required
             className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
           />
+
+          {/* Phone input with country code */}
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              placeholder="+44"
+              aria-label={t('countryCode')}
+              className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+            <input
+              type="tel"
+              placeholder={t('phoneLabel')}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+            />
+          </div>
+          {phoneVerified && (
+            <p className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              {t('phoneVerified')}
+            </p>
+          )}
+          {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+
           <button
             type="submit"
-            disabled={isLoading !== null || !email.trim()}
+            disabled={isLoading !== null || !email.trim() || !phone.trim()}
             className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
           >
-            {isLoading === 'email' ? t('sendingLink') : t('signUpWithEmail')}
+            {isLoading === 'email'
+              ? t('sendingLink')
+              : isLoading === 'phone'
+                ? t('sendingCode')
+                : phoneVerified
+                  ? t('signUpWithEmail')
+                  : t('sendCode')}
           </button>
         </form>
 
