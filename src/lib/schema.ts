@@ -206,7 +206,7 @@ export async function createTables() {
     CREATE TABLE IF NOT EXISTS wallet_transactions (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
       wallet_id TEXT NOT NULL REFERENCES wallets(id),
-      type TEXT NOT NULL CHECK(type IN ('topup','contribute','refund')),
+      type TEXT NOT NULL CHECK(type IN ('topup','contribute','refund','share_consideration')),
       amount_pence INTEGER NOT NULL CHECK(amount_pence > 0),
       campaign_id TEXT,
       issue_id TEXT,
@@ -511,7 +511,7 @@ export async function createTables() {
     CREATE TABLE IF NOT EXISTS user_roles (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
       user_id TEXT NOT NULL REFERENCES users(id),
-      role TEXT NOT NULL CHECK(role IN ('setup_guide','administrator')),
+      role TEXT NOT NULL CHECK(role IN ('setup_guide','administrator','share_guide','compliance_guide','treasury_guide')),
       assigned_by TEXT REFERENCES users(id),
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
       UNIQUE(user_id, role)
@@ -564,11 +564,14 @@ export async function createTables() {
       type TEXT NOT NULL CHECK(type IN (
         'suggestion_received','suggestion_approved','suggestion_rejected',
         'suggestion_merged','suggestion_more_info','suggestion_live',
-        'suggestion_progress','role_assigned','general'
+        'suggestion_progress','role_assigned','general',
+        'share_available','share_approved','share_identity_needed',
+        'share_issued','share_rejected','share_question',
+        'share_payment_received','share_refunded'
       )),
       subject TEXT NOT NULL CHECK(length(subject) <= 255),
       body TEXT NOT NULL CHECK(length(body) <= 5000),
-      entity_type TEXT CHECK(entity_type IN ('issue_suggestion','issue','organisation','user')),
+      entity_type TEXT CHECK(entity_type IN ('issue_suggestion','issue','organisation','user','share_application')),
       entity_id TEXT,
       read INTEGER NOT NULL DEFAULT 0 CHECK(read IN (0,1)),
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
