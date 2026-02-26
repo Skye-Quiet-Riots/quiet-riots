@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 सबूत इकट्ठा करो",
     "gatherEvidenceDesc": "{orgName} के बारे में क्या हो रहा है उसे दर्ज करो।"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "कार्य परियोजनाएँ",
     "subtitle": "{count} {count, plural, one {परियोजना} other {परियोजनाएँ}} सामूहिक कार्रवाई के लिए सेवाएँ कमीशन कर रही हैं।",
     "noResults": "कोई कार्य परियोजना नहीं मिली। कोई और फ़िल्टर आज़माओ।"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "कार्य परियोजनाएँ",
     "fullyFunded": "लक्ष्य प्राप्त",
     "disbursed": "पूर्ण",
@@ -352,7 +352,7 @@
     "you": "तुम",
     "rioters": "सदस्य"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ कार्य परियोजनाएँ",
     "funded": "लक्ष्य प्राप्त",
     "disbursed": "पूर्ण",
@@ -438,7 +438,7 @@
     "topUp": "टॉप-अप",
     "simulated": "परीक्षण के लिए सिम्युलेटेड टॉप-अप। जल्द ही असली भुगतान।"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "पर्याप्त धन नहीं। पहले अपना वॉलेट टॉप-अप करो।",
     "minContribution": "न्यूनतम भुगतान 10p है",
     "contribute": "इस परियोजना का समर्थन करो",
@@ -447,7 +447,7 @@
     "invalidAmount": "एक वैध राशि दर्ज करो",
     "customAmount": "कस्टम राशि (£)",
     "give": "भुगतान करो",
-    "success": "{campaign} के लिए {amount} का भुगतान किया!",
+    "success": "{actionInitiative} के लिए {amount} का भुगतान किया!",
     "remainingBalance": "तुम्हारा शेष बैलेंस: {balance}",
     "topUpPrompt": "अपना वॉलेट टॉप-अप करो",
     "toKeepSupporting": "कार्य परियोजनाओं का समर्थन जारी रखने के लिए।",

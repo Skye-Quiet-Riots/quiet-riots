@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 തെളിവ് ശേഖരിക്കുക",
     "gatherEvidenceDesc": "{orgName} സംബന്ധിച്ച് എന്ത് സംഭവിക്കുന്നു എന്ന് രേഖപ്പെടുത്തുക."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "ആക്ഷൻ പ്രോജക്ടുകൾ",
     "subtitle": "{count} {count, plural, one {പ്രോജക്ട്} other {പ്രോജക്ടുകൾ}} കൂട്ടായ പ്രവർത്തനത്തിനായി സേവനങ്ങൾ കമ്മീഷൻ ചെയ്യുന്നു.",
     "noResults": "ആക്ഷൻ പ്രോജക്ടുകൾ ഒന്നും കണ്ടെത്തിയില്ല. മറ്റൊരു ഫിൽറ്റർ പരീക്ഷിക്കുക."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "ആക്ഷൻ പ്രോജക്ടുകൾ",
     "fullyFunded": "ലക്ഷ്യം കൈവരിച്ചു",
     "disbursed": "പൂർത്തിയായി",
@@ -352,7 +352,7 @@
     "you": "നീ",
     "rioters": "അംഗങ്ങൾ"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ ആക്ഷൻ പ്രോജക്ടുകൾ",
     "funded": "ലക്ഷ്യം കൈവരിച്ചു",
     "disbursed": "പൂർത്തിയായി",
@@ -438,7 +438,7 @@
     "topUp": "ടോപ്പ്-അപ്പ്",
     "simulated": "പരീക്ഷണത്തിനുള്ള സിമ്യുലേറ്റഡ് ടോപ്പ്-അപ്പ്. യഥാർത്ഥ പേയ്മെന്റുകൾ ഉടൻ വരുന്നു."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "മതിയായ ഫണ്ട് ഇല്ല. ആദ്യം നിന്റെ വാലറ്റ് ടോപ്പ്-അപ്പ് ചെയ്യുക.",
     "minContribution": "കുറഞ്ഞ പേയ്മെന്റ് 10p",
     "contribute": "ഈ പ്രോജക്ടിനെ പിന്തുണയ്ക്കുക",
@@ -447,7 +447,7 @@
     "invalidAmount": "സാധുവായ തുക നൽകുക",
     "customAmount": "ഇഷ്ടാനുസരണ തുക (£)",
     "give": "പണമടയ്ക്കുക",
-    "success": "{campaign}-ലേക്ക് {amount} പണമടച്ചു!",
+    "success": "{actionInitiative}-ലേക്ക് {amount} പണമടച്ചു!",
     "remainingBalance": "നിന്റെ ശേഷിക്കുന്ന ബാലൻസ്: {balance}",
     "topUpPrompt": "നിന്റെ വാലറ്റ് ടോപ്പ്-അപ്പ് ചെയ്യുക",
     "toKeepSupporting": "ആക്ഷൻ പ്രോജക്ടുകളെ പിന്തുണയ്ക്കുന്നത് തുടരാൻ.",

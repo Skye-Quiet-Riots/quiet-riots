@@ -4,12 +4,12 @@
 
 - `/` — Homepage with hero, trending issues, riot reel of the day, how it works, mission statement
 - `/issues` — Browse all issues with category filter and search
-- `/issues/[id]` — Issue detail: stats, health meter, experts, countries, pivot table, actions, campaigns, riot reels, feed
+- `/issues/[id]` — Issue detail: stats, health meter, experts, countries, pivot table, actions, action initiatives, riot reels, feed
 - `/organisations` — Browse all organisations with category filter
 - `/organisations/[id]` — Organisation detail: stats, Pareto ranking, pivot table
-- `/wallet` — Wallet dashboard: balance, top-up, active campaigns, transaction history
-- `/campaigns` — Browse all campaigns with status filter (active/funded/disbursed)
-- `/campaigns/[id]` — Campaign detail: progress, stats, contribute form
+- `/wallet` — Wallet dashboard: balance, top-up, active action initiatives, transaction history
+- `/action-initiatives` — Browse all action initiatives with status filter (active/goal_reached/delivered)
+- `/action-initiatives/[id]` — Action initiative detail: progress, stats, pay form
 - `/profile` — User profile page
 - `/assistants` — Browse all 16 category assistant pairs (AI agent + human organiser)
 - `/assistants/[category]` — Assistant pair profile: dual cards, activity feed, riots, claim form
@@ -35,9 +35,9 @@
 - `GET /api/wallet` — Wallet balance (cookie auth)
 - `GET /api/wallet/history` — Transaction history (cookie auth)
 - `POST /api/wallet/topup` — Create topup (cookie auth, rate limited)
-- `POST /api/wallet/contribute` — Contribute to campaign (cookie auth, rate limited)
-- `GET/POST /api/campaigns` — List campaigns (public, cached) / Create campaign (bot auth)
-- `GET /api/campaigns/[id]` — Campaign detail (public, cached)
+- `POST /api/wallet/pay` — Pay towards action initiative (cookie auth, rate limited)
+- `GET/POST /api/action-initiatives` — List action initiatives (public, cached) / Create action initiative (bot auth)
+- `GET /api/action-initiatives/[id]` — Action initiative detail (public, cached)
 - `GET /api/assistants` — All 16 assistant pairs with stats (public, cached)
 - `GET /api/assistants/[category]` — Assistant pair detail (public, cached)
 - `GET /api/assistants/[category]/activity` — Paginated activity feed (public, cached)
@@ -48,7 +48,7 @@
 
 ## Database (29 tables)
 
-`issues` (with per-riot assistant copy fields), `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp + profile/i18n/auth fields), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/contribute/refund), `campaigns` (per-issue funding targets), `category_assistants` (16 pairs, one per issue category), `user_assistant_introductions` (tracks which pairs a user has met), `assistant_activity` (log of assistant actions), `assistant_claims` (humans expressing interest in a role), `languages` (i18n reference with RTL support), `countries` (249 countries with currency/phone prefix), `translations` (generic entity translation), `accounts` (OAuth provider linking), `verification_tokens` (magic links), `legal_documents` (country-specific T&Cs), `user_consents` (consent tracking), `user_memory` (persistent bot context per user across sessions)
+`issues` (with per-riot assistant copy fields), `organisations`, `issue_organisation` (pivot/Pareto), `synonyms`, `users` (with phone column for WhatsApp + profile/i18n/auth fields), `user_issues`, `actions`, `feed`, `community_health`, `expert_profiles`, `country_breakdown`, `riot_reels` (YouTube videos per issue), `reel_votes` (user upvotes), `reel_shown_log` (tracks which reels a user has seen), `wallets` (one per user, balance in pence), `wallet_transactions` (topup/payment/refund), `action_initiatives` (per-issue funding targets), `category_assistants` (16 pairs, one per issue category), `user_assistant_introductions` (tracks which pairs a user has met), `assistant_activity` (log of assistant actions), `assistant_claims` (humans expressing interest in a role), `languages` (i18n reference with RTL support), `countries` (249 countries with currency/phone prefix), `translations` (generic entity translation), `accounts` (OAuth provider linking), `verification_tokens` (magic links), `legal_documents` (country-specific T&Cs), `user_consents` (consent tracking), `user_memory` (persistent bot context per user across sessions)
 
 ## Key Patterns
 
@@ -65,9 +65,9 @@
 
 ```
 src/components/
-├── cards/          # issue-card, org-card, action-card, expert-card, feed-post-card, reel-card, campaign-card, assistant-card
-├── data/           # health-meter, pivot-table, stat-badge, trending-indicator, country-list, category-badge, synonym-list, campaign-progress, wallet-balance, transaction-list, assistant-profile, assistant-activity-list
-├── interactive/    # join-button, search-bar, feed-composer, feed-section, actions-section, category-filter, pivot-toggle, time-skill-filter, reels-section, topup-form, contribute-form, status-filter, claim-form
+├── cards/          # issue-card, org-card, action-card, expert-card, feed-post-card, reel-card, action-initiative-card, assistant-card
+├── data/           # health-meter, pivot-table, stat-badge, trending-indicator, country-list, category-badge, synonym-list, action-initiative-progress, wallet-balance, transaction-list, assistant-profile, assistant-activity-list
+├── interactive/    # join-button, search-bar, feed-composer, feed-section, actions-section, category-filter, pivot-toggle, time-skill-filter, reels-section, topup-form, pay-form, status-filter, claim-form
 └── layout/         # nav-bar, footer, page-header
 ```
 
@@ -78,13 +78,13 @@ src/lib/
 ├── db.ts             # Singleton Turso/libSQL connection
 ├── schema.ts         # Table creation/drop
 ├── session.ts        # Cookie-based auth
-├── seed.ts           # 19 issues, 18 orgs, actions, feed, experts, health, countries, riot reels, campaigns
+├── seed.ts           # 19 issues, 18 orgs, actions, feed, experts, health, countries, riot reels, action initiatives
 ├── youtube.ts        # YouTube URL parsing (extractVideoId) and oEmbed metadata fetching
 ├── env.ts            # Environment variable validation (runs at startup)
 ├── rate-limit.ts     # Sliding-window in-memory rate limiter
 ├── api-response.ts   # Standardised API response helpers (apiSuccess, apiError, apiValidationError)
 ├── format.ts         # Shared formatting utilities (formatPence)
-└── queries/          # issues.ts, organisations.ts, users.ts, actions.ts, community.ts, synonyms.ts, reels.ts, wallet.ts, campaigns.ts, assistants.ts
+└── queries/          # issues.ts, organisations.ts, users.ts, actions.ts, community.ts, synonyms.ts, reels.ts, wallet.ts, action-initiatives.ts, assistants.ts
 ```
 
 ## Infrastructure

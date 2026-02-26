@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 প্রমাণ সংগ্রহ করো",
     "gatherEvidenceDesc": "{orgName} নিয়ে কী ঘটছে তা নথিভুক্ত করো।"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "কর্ম প্রকল্প",
     "subtitle": "{count}টি {count, plural, one {প্রকল্প} other {প্রকল্প}} সম্মিলিত কর্মের জন্য সেবা কমিশনিং করছে।",
     "noResults": "কোনো কর্ম প্রকল্প পাওয়া যায়নি। অন্য ফিল্টার চেষ্টা করো।"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "কর্ম প্রকল্প",
     "fullyFunded": "লক্ষ্যমাত্রা অর্জিত",
     "disbursed": "সম্পন্ন",
@@ -352,7 +352,7 @@
     "you": "তুমি",
     "rioters": "সদস্য"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ কর্ম প্রকল্প",
     "funded": "লক্ষ্যমাত্রা অর্জিত",
     "disbursed": "সম্পন্ন",
@@ -438,7 +438,7 @@
     "topUp": "টপ-আপ",
     "simulated": "পরীক্ষার জন্য সিমুলেটেড টপ-আপ। শীঘ্রই আসল পেমেন্ট আসছে।"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "পর্যাপ্ত তহবিল নেই। আগে তোমার ওয়ালেট টপ-আপ করো।",
     "minContribution": "সর্বনিম্ন পেমেন্ট 10p",
     "contribute": "এই প্রকল্প সমর্থন করো",
@@ -447,7 +447,7 @@
     "invalidAmount": "একটি বৈধ পরিমাণ দাও",
     "customAmount": "কাস্টম পরিমাণ (£)",
     "give": "পেমেন্ট করো",
-    "success": "{campaign}-এর জন্য {amount} পরিশোধ করা হয়েছে!",
+    "success": "{actionInitiative}-এর জন্য {amount} পরিশোধ করা হয়েছে!",
     "remainingBalance": "তোমার অবশিষ্ট ব্যালেন্স: {balance}",
     "topUpPrompt": "তোমার ওয়ালেট টপ-আপ করো",
     "toKeepSupporting": "কর্ম প্রকল্প সমর্থন চালিয়ে যেতে।",

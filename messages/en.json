@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Gather Evidence",
     "gatherEvidenceDesc": "Document what's happening with {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Action Projects",
     "subtitle": "{count} {count, plural, one {project} other {projects}} commissioning services for collective action.",
     "noResults": "No action projects found. Try a different filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Action Projects",
     "fullyFunded": "Goal Reached",
     "disbursed": "Completed",
@@ -352,7 +352,7 @@
     "you": "YOU",
     "rioters": "rioters"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Action Projects",
     "funded": "Goal Reached",
     "disbursed": "Completed",
@@ -438,7 +438,7 @@
     "topUp": "Top Up",
     "simulated": "Simulated top-up for testing. Real payments coming soon."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Insufficient funds. Top up your wallet first.",
     "minContribution": "Minimum payment is 10p",
     "contribute": "Support This Project",
@@ -447,7 +447,7 @@
     "invalidAmount": "Enter a valid amount",
     "customAmount": "Custom amount (£)",
     "give": "Pay",
-    "success": "Paid {amount} towards {campaign}!",
+    "success": "Paid {amount} towards {actionInitiative}!",
     "remainingBalance": "Your remaining balance: {balance}",
     "topUpPrompt": "Top up your wallet",
     "toKeepSupporting": "to keep supporting action projects.",

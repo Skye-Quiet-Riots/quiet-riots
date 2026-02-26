@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import { getSession } from '@/lib/session';
 import { getUserById } from '@/lib/queries/users';
-import { createContribution, getOrCreateWallet } from '@/lib/queries/wallet';
+import { createPayment, getOrCreateWallet } from '@/lib/queries/wallet';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 
-const contributeSchema = z.object({
-  campaign_id: z.string().min(1, 'Campaign ID required').max(64),
+const paySchema = z.object({
+  action_initiative_id: z.string().min(1, 'Action initiative ID required').max(64),
   amount_pence: z.number().int().min(10, 'Minimum payment is 10p').max(1000000),
 });
 
@@ -19,34 +19,34 @@ export async function POST(request: Request) {
   if (!user) {
     return apiError('User not found', 401);
   }
-  const { allowed } = rateLimit(`contribute:${userId}`);
+  const { allowed } = rateLimit(`payment:${userId}`);
   if (!allowed) {
     return apiError('Too many requests', 429);
   }
 
   const body = await request.json();
-  const parsed = contributeSchema.safeParse(body);
+  const parsed = paySchema.safeParse(body);
   if (!parsed.success) {
     return apiValidationError(parsed.error.issues);
   }
 
   try {
-    const result = await createContribution(
+    const result = await createPayment(
       userId,
-      parsed.data.campaign_id,
+      parsed.data.action_initiative_id,
       parsed.data.amount_pence,
     );
     const wallet = await getOrCreateWallet(userId);
     return apiOk({
       transaction: result.transaction,
-      campaign: result.campaign,
+      actionInitiative: result.actionInitiative,
       wallet_balance_pence: wallet.balance_pence,
     });
   } catch (e) {
-    const message = e instanceof Error ? e.message : 'Contribution failed';
+    const message = e instanceof Error ? e.message : 'Payment failed';
     if (message === 'Insufficient funds') return apiError(message);
-    if (message === 'Campaign not found') return apiError(message, 404);
-    if (message === 'Campaign is not active') return apiError(message);
+    if (message === 'Action initiative not found') return apiError(message, 404);
+    if (message === 'Action initiative is not active') return apiError(message);
     if (message === 'Wallet not found') return apiError(message, 404);
     throw e;
   }

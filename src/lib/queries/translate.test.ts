@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   translateEntities,
   translateEntity,
-  translateCampaigns,
+  translateActionInitiatives,
   translateIssuePivotRows,
   translateOrgPivotRows,
 } from './translate';
@@ -101,20 +101,20 @@ describe('translateEntity', () => {
   });
 });
 
-describe('translateCampaigns', () => {
-  const campaigns = [
+describe('translateActionInitiatives', () => {
+  const actionInitiatives = [
     { id: 'c1', title: 'Fix the Trains', description: 'Raise money for rail reform' },
     { id: 'c2', title: 'Better Buses', description: null },
   ];
 
   it('short-circuits for English locale', async () => {
-    const result = await translateCampaigns(campaigns, 'en');
-    expect(result).toBe(campaigns);
+    const result = await translateActionInitiatives(actionInitiatives, 'en');
+    expect(result).toBe(actionInitiatives);
     expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
   });
 
   it('short-circuits for empty array', async () => {
-    const result = await translateCampaigns([], 'de');
+    const result = await translateActionInitiatives([], 'de');
     expect(result).toEqual([]);
     expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
   });
@@ -124,7 +124,7 @@ describe('translateCampaigns', () => {
       c1: { title: 'Züge reparieren', description: 'Geld für Bahnreform' },
     });
 
-    const result = await translateCampaigns(campaigns, 'de');
+    const result = await translateActionInitiatives(actionInitiatives, 'de');
     expect(result[0].title).toBe('Züge reparieren');
     expect(result[0].description).toBe('Geld für Bahnreform');
     expect(result[1].title).toBe('Better Buses'); // no translation
@@ -136,15 +136,15 @@ describe('translateCampaigns', () => {
       c1: { title: '' },
     });
 
-    const result = await translateCampaigns(campaigns, 'de');
+    const result = await translateActionInitiatives(actionInitiatives, 'de');
     expect(result[0].title).toBe('Fix the Trains');
   });
 
-  it('uses campaign entity type', async () => {
+  it('uses action_initiative entity type', async () => {
     mockGetTranslatedEntities.mockResolvedValue({});
 
-    await translateCampaigns(campaigns, 'fr');
-    expect(mockGetTranslatedEntities).toHaveBeenCalledWith('campaign', ['c1', 'c2'], 'fr');
+    await translateActionInitiatives(actionInitiatives, 'fr');
+    expect(mockGetTranslatedEntities).toHaveBeenCalledWith('action_initiative', ['c1', 'c2'], 'fr');
   });
 });
 

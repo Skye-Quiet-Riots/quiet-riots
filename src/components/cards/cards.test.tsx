@@ -2,14 +2,14 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ActionCard } from './action-card';
-import { CampaignCard } from './campaign-card';
+import { ActionInitiativeCard } from './action-initiative-card';
 import { EvidenceCard } from './evidence-card';
 import { ExpertCard } from './expert-card';
 import { FeedPostCard } from './feed-post-card';
 import { IssueCard } from './issue-card';
 import { OrgCard } from './org-card';
 import { ReelCard } from './reel-card';
-import type { Campaign, Evidence } from '@/types';
+import type { ActionInitiative, Evidence } from '@/types';
 
 // Mock next/link (kept for safety — some components may still import it)
 vi.mock('next/link', () => ({
@@ -335,51 +335,53 @@ describe('OrgCard', () => {
   });
 });
 
-const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
-  id: 'camp-1',
+const makeActionInitiative = (overrides: Partial<ActionInitiative> = {}): ActionInitiative => ({
+  id: 'ai-1',
   issue_id: 'issue-1',
   org_id: null,
   title: 'Avanti Legal Review',
   description: '',
   target_pence: 100000,
-  raised_pence: 31000,
-  contributor_count: 155,
+  committed_pence: 31000,
+  supporter_count: 155,
   recipient: null,
   recipient_url: null,
   status: 'active',
-  platform_fee_pct: 15,
-  funded_at: null,
-  disbursed_at: null,
+  service_fee_pct: 15,
+  goal_reached_at: null,
+  delivered_at: null,
   created_at: '2026-01-01T00:00:00.000Z',
   ...overrides,
 });
 
-describe('CampaignCard', () => {
-  it('renders campaign title as a link', async () => {
-    const el = await CampaignCard({ campaign: makeCampaign() });
+describe('ActionInitiativeCard', () => {
+  it('renders action initiative title as a link', async () => {
+    const el = await ActionInitiativeCard({ actionInitiative: makeActionInitiative() });
     render(el);
     const link = screen.getByRole('link');
-    expect(link.getAttribute('href')).toBe('/campaigns/camp-1');
+    expect(link.getAttribute('href')).toBe('/action-initiatives/ai-1');
     expect(screen.getByText('Avanti Legal Review')).toBeDefined();
   });
 
-  it('shows progress and backer count', async () => {
-    const el = await CampaignCard({ campaign: makeCampaign() });
+  it('shows progress and supporter count', async () => {
+    const el = await ActionInitiativeCard({ actionInitiative: makeActionInitiative() });
     render(el);
     expect(screen.getByText(/£310.*£1,000/)).toBeDefined();
     // ICU plural format is not parsed by the simple mock — check the count is present
     expect(screen.getByText(/155/)).toBeDefined();
   });
 
-  it('shows funded badge', async () => {
-    const el = await CampaignCard({ campaign: makeCampaign({ status: 'funded' }) });
+  it('shows goal_reached badge', async () => {
+    const el = await ActionInitiativeCard({
+      actionInitiative: makeActionInitiative({ status: 'goal_reached' }),
+    });
     render(el);
     expect(screen.getByText('Goal Reached')).toBeDefined();
   });
 
   it('shows issue name when provided', async () => {
-    const el = await CampaignCard({
-      campaign: makeCampaign(),
+    const el = await ActionInitiativeCard({
+      actionInitiative: makeActionInitiative(),
       issueName: 'Train Cancellations',
       issueCategory: 'Transport',
     });

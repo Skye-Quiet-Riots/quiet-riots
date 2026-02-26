@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Zbieraj dowody",
     "gatherEvidenceDesc": "Dokumentuj co sie dzieje z {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Projekty akcji",
     "subtitle": "{count} {count, plural, one {projekt} other {projektow}} zamawiajacych uslugi na rzecz zbiorowego dzialania.",
     "noResults": "Nie znaleziono projektow akcji. Sprobuj innego filtru."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Projekty akcji",
     "fullyFunded": "Cel osiagniety",
     "disbursed": "Ukonczony",
@@ -352,7 +352,7 @@
     "you": "TY",
     "rioters": "uczestnikow"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Projekty akcji",
     "funded": "Cel osiagniety",
     "disbursed": "Ukonczony",
@@ -438,7 +438,7 @@
     "topUp": "Doladuj",
     "simulated": "Symulowane doladowanie do testow. Prawdziwe platnosci juz wkrotce."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Niewystarczajace srodki. Najpierw doladuj portfel.",
     "minContribution": "Minimalna platnosc to 10p",
     "contribute": "Wesprzyj ten projekt",
@@ -447,7 +447,7 @@
     "invalidAmount": "Podaj prawidlowa kwote",
     "customAmount": "Kwota wlasna (£)",
     "give": "Zaplac",
-    "success": "Zaplacono {amount} za {campaign}!",
+    "success": "Zaplacono {amount} za {actionInitiative}!",
     "remainingBalance": "Pozostale saldo: {balance}",
     "topUpPrompt": "Doladuj portfel",
     "toKeepSupporting": "aby dalej wspierac projekty akcji.",

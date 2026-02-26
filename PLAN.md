@@ -1,577 +1,388 @@
-# Quiet Riots Global Share Scheme — Implementation Plan
+# Plan: Rename "campaigns" → "action_initiatives" (Full Code Refactor)
 
 ## Context
 
-Every Quiet Rioter worldwide (249 countries) gets offered **one share** in Quiet Riots (a UK limited company). This creates a share lifecycle with 4 personas (User, Share Guide, Compliance Guide, Senior Compliance) and a multi-step workflow: eligibility → offer → 10p payment → apply → identity verification → compliance review → certificate issuance. The feature works on both web and WhatsApp, in all 45 locales.
+Session 50 (PR #116) changed the **UI-facing copy** to Stripe-compliant language ("Action Projects", "Goal Reached", etc.), but all **internal code** still uses `campaigns`, `contribute`, `raised_pence`, `funded`, `disbursed`, `platform_fee_pct`. Stripe can see API routes and URL paths, so this needs a full code-level rename. No previous session attempted this code refactor.
+
+## Scope Boundaries
+
+### IN SCOPE
+- Table rename `campaigns` → `action_initiatives` (+ all column renames)
+- Column rename `wallet_transactions.campaign_id` → `action_initiative_id`
+- Transaction type `'contribute'` → `'payment'`
+- Status values `'funded'` → `'goal_reached'`, `'disbursed'` → `'delivered'`
+- Column renames: `raised_pence` → `committed_pence`, `contributor_count` → `supporter_count`, `platform_fee_pct` → `service_fee_pct`, `funded_at` → `goal_reached_at`, `disbursed_at` → `delivered_at`
+- All TypeScript types, queries, API routes, pages, components
+- URL path renames (`/campaigns` → `/action-initiatives`, `/wallet/contribute` → `/wallet/pay`)
+- Translation entity type `'campaign'` → `'action_initiative'` (in DB data)
+- i18n namespace renames in all 45 locale files
+- SEO redirects for old URLs
+
+### OUT OF SCOPE (with justification)
+- **`notification_preferences.campaign_updates` column** — internal DB column, not user-facing. Renaming cascades into privacy.ts, privacy.test.ts, notifications route, types. Separate PR.
+- **Bot action names (`contribute`, `get_campaigns`)** — Changing requires SKILL.md + TOOLS.md + OpenClaw session clearing. Keep old action names in bot route for compatibility. Separate PR with OpenClaw coordination.
+- **Analytics event name `campaign_contributed`** — Keep for dashboard continuity; rename later.
+
+## Naming Convention
+
+| Old | New |
+|---|---|
+| `campaigns` (table) | `action_initiatives` |
+| `Campaign` (type) | `ActionInitiative` |
+| `CampaignStatus` | `ActionInitiativeStatus` |
+| `CampaignWithIssue` | `ActionInitiativeWithIssue` |
+| `campaign_id` (FK column) | `action_initiative_id` |
+| `/api/campaigns` | `/api/action-initiatives` |
+| `/[locale]/campaigns` | `/[locale]/action-initiatives` |
+| `getCampaigns()` etc. | `getActionInitiatives()` etc. |
+| `createContribution()` | `createPayment()` |
+| `translateCampaigns()` | `translateActionInitiatives()` |
+| `campaign-card.tsx` | `action-initiative-card.tsx` |
+| `campaign-progress.tsx` | `action-initiative-progress.tsx` |
+| `contribute-form.tsx` | `pay-form.tsx` |
+| `campaigns.ts` (query file) | `action-initiatives.ts` |
+| `contribute` (tx type) | `payment` |
+| `/api/wallet/contribute` | `/api/wallet/pay` |
+| `raised_pence` | `committed_pence` |
+| `contributor_count` | `supporter_count` |
+| `platform_fee_pct` | `service_fee_pct` |
+| `funded` (status) | `goal_reached` |
+| `funded_at` | `goal_reached_at` |
+| `disbursed` (status) | `delivered` |
+| `disbursed_at` | `delivered_at` |
+
+## Incremental Commit Protocol (MANDATORY)
+
+Every phase gets its own commit + push **immediately** after `npm test` passes. If the session crashes, the last pushed commit survives. Each phase includes its own test updates so tests pass at every checkpoint.
+
+## Deployment Strategy
+
+**Problem:** Renaming a table creates a chicken-and-egg between code and schema. Old code references `FROM campaigns`, new code references `FROM action_initiatives`.
+
+**Solution:** The migration creates a **backwards-compatible VIEW** so old code keeps working during the brief deployment window:
 
-The share section is password-protected and accessed via the Profile dropdown or by asking the WhatsApp bot. The Share page is the hub of information; the bot is a spoke that makes it accessible conversationally.
-
----
-
-## Security Design (from senior developer audit)
-
-### Principles applied throughout
-
-1. **Atomic state transitions** — all status changes use `UPDATE ... WHERE status = '<expected>'` and check `rowsAffected > 0`. If 0, another request won the race. No duplicate notifications.
-2. **Self-review prevention** — every review/compliance/senior endpoint explicitly checks `application.user_id !== actorId`.
-3. **Role-scoped data access** — Share Guides never see identity data. Compliance Guides see identity but not share_guide notes. Users never see guide IDs or internal notes. Messages filtered by role visibility.
-4. **PII protection** — `share_identities` gets application-level field encryption (AES-256-GCM, key from `SHARE_IDENTITY_KEY` env var). PII access logged from day 1 via `share_audit_log`.
-5. **Password gate hardened** — password stored in `SHARE_ACCESS_PASSWORD` env var (not in source code). Cookie bound to userId via HMAC. Rate-limited POST endpoint. Path-scoped cookie (`/share`).
-6. **Wallet payment atomic** — 10p debit + status transition in same `db.batch()`. Balance checked before batch. Refund on rejection.
-7. **Input sanitization** — all user-supplied text through `sanitizeText()`. All Zod schemas with explicit length limits. Country code validated against countries table.
-
----
-
-## Eligibility Requirements
-
-A Quiet Rioter qualifies for the share offer **only after meeting all three criteria**:
-
-1. **Verified real-name user** — completed identity verification (name, email confirmed or phone verified)
-2. **Joined 3 Quiet Riots** — member of at least 3 issues
-3. **Completed 10 actions** — any combination of: commenting on a post, submitting evidence, taking an action, liking a post, joining an issue, submitting a suggestion, etc.
-
-The share application status starts as `not_eligible` until these thresholds are met, at which point it auto-promotes to `available`. Eligibility checks are async (fire-and-forget after join/action) and short-circuit if the user already has status ≠ `not_eligible`.
-
----
-
-## WhatsApp Onboarding — Share Mention
-
-The bot introduces the share scheme early in the onboarding flow (within the first 3 messages). This is a **mention, not a hard sell** — it plants the seed:
-
-**Message pattern (during or after first issue search):**
-> "By the way, every Quiet Rioter who joins 3 Riots and takes 10 actions qualifies for a real share in Quiet Riots — the company itself. You can find out more any time by asking me about 'my share' or visiting your profile on the website."
-
-The bot uses `user_memory` to track:
-- `share_mentioned: true` — so it doesn't repeat the intro on subsequent sessions
-- `share_eligible: true/false` — updated when thresholds are met
-- `share_status: <status>` — mirrors the DB status for quick bot reference
-
-When a user asks about shares via WhatsApp, the bot explains the basics conversationally and links them to the full Share page for detailed information (consideration explanation, valuation table, legal disclaimers).
-
----
-
-## Profile Page — Share Section
-
-A new **"Your Quiet Riots Share"** section is added to the profile page, positioned after the stats grid and before Connected Accounts:
-
-- **Share status badge** with progress towards eligibility if not yet eligible
-- **Link to the full Share info page**: "Learn more about your Quiet Riots share →"
-- If `issued`: certificate number and issue date
-
-This is always visible on the profile — no password gate needed here.
-
----
-
-## 10p Share Consideration Payment
-
-### Why 10p?
-
-Under UK company law (Companies Act 2006), shares cannot be issued for free. A nominal payment is required for the share to be legally valid. The consideration is **10 pence** (or the equivalent in the user's local currency using live exchange rates from the existing wallet system).
-
-### User Flow
-
-When a user clicks "Proceed with Issue" on the Share info page:
-
-1. **Check wallet balance** — does the user have ≥10p (or local equivalent) in their Quiet Riots wallet?
-2. **If sufficient:** Show confirmation: *"To complete your share application, a nominal payment of 10p (or [local equivalent]) will be deducted from your wallet. This is a legal requirement for the share to be valid."* User confirms → 10p deducted → status moves to `under_review`.
-3. **If insufficient:** Show message: *"You need 10p in your wallet to proceed. Would you like to top up now?"* with a link to the wallet top-up page. After topping up, they return to proceed.
-
-### Treasury
-
-The 10p goes to a **Quiet Riots Treasury wallet** — a special system wallet (not tied to a user) that holds all share consideration payments. A new `treasury_guide` role can view all treasury transactions. The Super Administrator always has access.
-
-### Refund Policy
-
-If a share application is **rejected**, the 10p is automatically refunded to the user's wallet with a notification: *"Your share application was not approved. Your 10p consideration has been refunded to your wallet."*
-
-If the user **declines** (before proceeding), no payment is taken.
-
----
-
-## Share Consideration — How It Works at Different Valuations
-
-### Legal Background (UK Company Law)
-
-Under the Companies Act 2006, shares in a UK limited company cannot be issued for free — some form of consideration must be given. However, shares can be issued at **nominal value** (the par value set when the company was formed), which can be as low as £0.001.
-
-The key mechanism is **growth shares** — a special class of shares that only become valuable above a certain company valuation (the "hurdle"). Because they have minimal current value at the time of issue, they can be issued at or near nominal value with reduced tax implications. Growth shares are taxed as capital gains (not income), which is significantly more favourable.
-
-### What This Means at Each Valuation Stage
-
-| Stage | Valuation | Share Nominal Value | What Happens |
-|-------|----------|-------------------|-------------|
-| **Pre-Seed** | $10m | £0.001 | Shares issued at nominal value. You pay 10p consideration. No meaningful tax event. |
-| **Seed** | $100m | £0.001 | Same nominal value. Difference goes to share premium account. Growth share hurdle set above current valuation. |
-| **Series A** | $1bn | £0.001 | Pre-emption rights waived for user share pool (agreed at Seed). HMRC may assign "hope value" but growth share structure minimises this. |
-| **Series B** | $10bn | £0.001 | Growth share hurdle ensures limited current value despite high company valuation. Investor anti-dilution already accounts for user pool. |
-| **Series C** | $100bn | £0.001 | User share pool is a defined cap table percentage. New shares issued from reserved pool, not new dilutive issuances. |
-| **IPO** | $1tn | — | No new shares issued. User shares convert to ordinary tradeable shares. Capital gains tax may apply on sale. |
-
-### Important Disclaimers
-
-- This is a simplified explanation — not legal, tax, or investment advice
-- Each user's tax obligations depend on their country of residence
-- There is no guarantee the company will reach any valuation
-- The share structure may be modified as the company grows
-- Users should consult qualified advisors in their own country
-
----
-
-## Team Permissions Module
-
-### Extended roles system
-
-The existing `user_roles` table is extended with new roles. A user can have multiple roles but **`share_guide` and `compliance_guide` are mutually exclusive** (enforced in `assignRole()`). Only administrators can assign roles.
-
-| Role | Access |
-|------|--------|
-| `setup_guide` | Issue suggestion review dashboard |
-| `administrator` | Full access to everything (Super Admin) |
-| `share_guide` | Share application review, user Q&A |
-| `compliance_guide` | Identity verification review, compliance decisions |
-| `treasury_guide` | Treasury transaction log, payment reporting |
-
-The `administrator` role implicitly has all other role permissions. Simon Darling (Super Administrator) always has access to all dashboards.
-
-### Team management page (`/[locale]/admin/team`)
-
-Role-gated to `administrator` only. Shows:
-- All users with assigned roles
-- Add/remove role buttons
-- Mutual exclusivity enforcement (can't give someone both `share_guide` and `compliance_guide`)
-- Audit trail of role changes (who assigned, when)
-
----
-
-## Phase 1: Database + Types
-
-**Migration:** `migrations/022_share_scheme.sql`
-
-### New tables
-
-**`share_applications`** — core state machine (one per user):
-- `id`, `user_id` (UNIQUE FK)
-- `status` CHECK IN (`not_eligible`, `available`, `under_review`, `approved`, `identity_submitted`, `forwarded_senior`, `issued`, `declined`, `rejected`, `withdrawn`)
-- Eligibility: `riots_joined_at_offer`, `actions_at_offer`, `eligible_at`
-- Payment: `payment_transaction_id` (FK to wallet_transactions), `payment_amount_pence`
-- Guide review: `share_guide_id`, `share_guide_decision_at`, `share_guide_notes`
-- Compliance: `compliance_guide_id`, `compliance_decision_at`, `compliance_notes`
-- Senior: `senior_compliance_id`, `senior_decision_at`, `senior_notes`
-- `rejection_reason`, `reapply_count` CHECK(≥0), `certificate_number` (UNIQUE), `issued_at`
-- `last_notification_at`, `created_at`, `updated_at`
-- Indexes: `status`, `user_id` (via UNIQUE), `share_guide_id`
-
-**`share_identities`** — identity verification details (encrypted PII):
-- `id`, `application_id` (UNIQUE FK), `user_id` (UNIQUE FK)
-- Personal: `legal_first_name`, `legal_middle_name`, `legal_last_name`, `date_of_birth`, `gender` CHECK IN values
-- Address: `address_line_1`, `address_line_2`, `city`, `state_province`, `postal_code`, `country_code`
-- `phone`, `id_document_type` CHECK IN values, `id_document_country`
-- `digital_verification_available` (0/1)
-- `submitted_at`, `updated_at`
-- All personal fields encrypted at application level (AES-256-GCM, key from `SHARE_IDENTITY_KEY` env var)
-
-**`share_messages`** — bidirectional conversation threads:
-- `id`, `application_id` (FK), `sender_id` (FK), `sender_role` CHECK IN (`applicant`, `share_guide`, `compliance_guide`, `senior_compliance`)
-- `content` CHECK(length ≤ 5000), `created_at`
-- Indexes: `(application_id, created_at)`, `sender_id`
-
-**`share_audit_log`** — PII access and action logging:
-- `id`, `application_id`, `actor_id`, `action` (e.g. `viewed_identity`, `approved`, `rejected`, `forwarded`), `detail`, `created_at`
-- Index: `(application_id, created_at)`
-
-**`share_status_history`** — complete transition trail:
-- `id`, `application_id`, `from_status`, `to_status`, `actor_id`, `notes`, `created_at`
-- Index: `(application_id, created_at)`
-
-**`share_certificate_counter`** — monotonic counter for certificate numbers:
-- `id` (always 1), `next_number` INTEGER DEFAULT 1
-- Certificate format: `QR-{YYYYMM}-{SEQ}` (e.g. `QR-202603-00001`)
-
-**Treasury wallet:** A special row in `wallets` table with `user_id = 'treasury'` (system wallet).
-
-### Schema modifications (temp table + copy + rename)
-
-1. **`user_roles`** — extend CHECK: add `'share_guide'`, `'compliance_guide'`, `'treasury_guide'`
-2. **`messages`** — extend `type` CHECK: add `'share_available'`, `'share_approved'`, `'share_identity_needed'`, `'share_issued'`, `'share_rejected'`, `'share_question'`, `'share_payment_received'`, `'share_refunded'`
-3. **`messages`** — extend `entity_type` CHECK: add `'share_application'`
-
-### Type updates (`src/types/index.ts`)
-
-- New types: `ShareStatus` (10 values including `not_eligible`, `withdrawn`), `ShareApplication`, `ShareIdentity`, `ShareMessage`, `ShareAuditEntry`, `ShareStatusHistory`, `ShareGender`, `IdDocumentType`
-- Extend: `RoleType` (+3 new), `MessageType` (+8 new), `MessageEntityType` (+1)
-
-### Schema updates (`src/lib/schema.ts`)
-
-- Add 6 new tables to `createTables()` and `dropTables()`
-
-### Files
-| File | Action |
-|------|--------|
-| `migrations/022_share_scheme.sql` | Create |
-| `src/types/index.ts` | Modify |
-| `src/lib/schema.ts` | Modify |
-
----
-
-## Phase 2: Query Layer + Tests
-
-**File:** `src/lib/queries/shares.ts`
-
-### Eligibility (single optimised query)
 ```sql
-SELECT
-  (SELECT COUNT(*) FROM user_issues WHERE user_id = ?) as riots_joined,
-  (SELECT COUNT(*) FROM feed WHERE user_id = ?) +
-  (SELECT COUNT(*) FROM actions WHERE ... ) as actions_taken,
-  u.email_verified, u.phone_verified, u.name
-FROM users u WHERE u.id = ?
+CREATE VIEW campaigns AS SELECT
+  id, issue_id, org_id, title, description, target_pence,
+  committed_pence AS raised_pence, supporter_count AS contributor_count,
+  recipient, recipient_url,
+  CASE status WHEN 'goal_reached' THEN 'funded' WHEN 'delivered' THEN 'disbursed' ELSE status END AS status,
+  service_fee_pct AS platform_fee_pct, currency_code,
+  goal_reached_at AS funded_at, delivered_at AS disbursed_at, created_at
+FROM action_initiatives;
 ```
-- `checkShareEligibility(userId)` — returns `{ eligible, riotsJoined, actionsTaken, isVerified }`
-- `getOrCreateShareApplication(userId)` — lazy-create with correct initial status
-- `promoteToEligible(userId)` — `not_eligible` → `available` using `WHERE status = 'not_eligible'` + `rowsAffected` guard. Async, fire-and-forget.
 
-### Core lifecycle (all using `rowsAffected` idempotency)
-- `getShareApplication(userId)` / `getShareApplicationById(id)`
-- `proceedWithShare(userId, walletId)` — atomic `db.batch()`: debit wallet 10p + credit treasury + insert wallet_transaction + update status `available` → `under_review`
-- `declineShare(userId)` — `available` → `declined` (permanent, no payment taken)
-- `withdrawShare(userId)` — user-initiated cancellation from `under_review` or `approved` → `withdrawn` (10p refunded)
-- `reapplyForShare(userId, walletId)` — `rejected` → `under_review` (another 10p payment, bump reapply_count)
+**Deployment sequence:**
+1. Run migration on staging → verify
+2. Run migration on production → the VIEW lets old deployed code keep reading
+3. Merge PR → Vercel auto-deploys new code (reads from `action_initiatives` directly)
+4. Future cleanup PR: `DROP VIEW IF EXISTS campaigns;`
 
-### Share Guide functions
-- `getApplicationsForReview(guideRole)` — filtered by status relevant to each role
-- `approveShareApplication(id, guideId, notes?)` — `under_review` → `approved` + self-review guard
-- `rejectShareApplication(id, guideId, reason)` — → `rejected` + auto-refund 10p
-
-### Identity functions
-- `submitIdentity(data)` — `approved` → `identity_submitted` + encrypt PII fields before INSERT
-- `getShareIdentity(applicationId, requesterId)` — decrypt + log access to `share_audit_log`
-- `updateIdentity(applicationId, data)` — allow re-submission when more info requested
-
-### Compliance functions
-- `approveCompliance(id, guideId, notes?)` — → `issued` (generate certificate_number atomically via counter)
-- `rejectCompliance(id, guideId, reason)` — → `rejected` + auto-refund
-- `requestMoreInfoCompliance(id, guideId, notes)` — keeps status as `identity_submitted`, sends message
-- `forwardToSenior(id, guideId, notes)` — → `forwarded_senior`
-- `approveSenior` / `rejectSenior` — same patterns
-
-### Shared helpers
-- `logShareAudit(applicationId, actorId, action, detail?)` — append to audit log
-- `recordStatusHistory(applicationId, fromStatus, toStatus, actorId, notes?)` — append to history
-- `getIdVerificationTier(countryCode)` — static map
-- `getShareStats()` — counts by status
-- `getTreasuryTransactions(limit, offset)` — for treasury dashboard
-- `createShareMessage(...)` / `getShareMessages(applicationId, visibleToRole)` — role-filtered
-
-### PII encryption helpers (`src/lib/share-crypto.ts`)
-- `encryptField(plaintext, key)` → `{iv}:{ciphertext}` (AES-256-GCM)
-- `decryptField(encrypted, key)` → plaintext
-- Key from `SHARE_IDENTITY_KEY` env var
-
-### Test file: `src/lib/queries/shares.test.ts` — 40+ test cases
-
-**Eligibility:** below threshold, exactly at threshold, above, unverified user fails
-**State machine exhaustive:** from each of 10 statuses, attempt every transition → only valid ones succeed
-**Race conditions:** concurrent proceed (only one wins), concurrent proceed+decline (one wins), duplicate promotion (one notification)
-**Self-review:** guide cannot approve own application
-**Payment:** wallet with exactly 10p succeeds, 9p fails, 0p fails, no wallet fails gracefully
-**Refund:** rejection triggers refund, withdrawal triggers refund
-**PII:** identity fields encrypted on write, decrypted on read, access logged
-**Messages:** role-filtered visibility (share guide can't see compliance messages)
-**Reapply:** count increments, requires fresh 10p payment
-
-### Files
-| File | Action |
-|------|--------|
-| `src/lib/queries/shares.ts` | Create |
-| `src/lib/queries/shares.test.ts` | Create |
-| `src/lib/share-crypto.ts` | Create |
+Note: The VIEW is read-only (SQLite limitation). During the ~60s window between migration and new code deploy, writes (`createContribution`, `createCampaign`) will fail. Reads keep working.
 
 ---
 
-## Phase 3: API Routes + Tests
+## Phase 0: Plan
+- Save PLAN.md → commit + push
 
-### Routes
+## Phase 1: Database Migration + Schema
 
-| Route | Method | Auth | Purpose |
-|-------|--------|------|---------|
-| `/api/shares` | GET | Cookie | User's share status + eligibility (strips guide IDs/notes) |
-| `/api/shares/proceed` | POST | Cookie + rate limit | Pay 10p + apply (`available` → `under_review`) |
-| `/api/shares/decline` | POST | Cookie + rate limit | Decline (permanent, no payment) |
-| `/api/shares/withdraw` | POST | Cookie + rate limit | Cancel application (refund 10p) |
-| `/api/shares/identity` | POST | Cookie + rate limit | Submit/update identity form |
-| `/api/shares/reapply` | POST | Cookie + rate limit | Reapply after rejection (another 10p) |
-| `/api/shares/access` | POST | Rate limit only | Password gate (env var, user-bound cookie, HMAC) |
-| `/api/shares/[id]/review` | POST | Cookie + `share_guide`/`administrator` | Share Guide decision + self-review guard |
-| `/api/shares/[id]/compliance` | POST | Cookie + `compliance_guide`/`administrator` | Compliance decision + self-review guard |
-| `/api/shares/[id]/senior` | POST | Cookie + `administrator` | Senior Compliance decision |
-| `/api/shares/[id]/messages` | GET/POST | Cookie + role check | Role-filtered conversation thread |
-| `/api/shares/queue` | GET | Cookie + any guide role | Guide inbox (filtered by role) |
-| `/api/shares/treasury` | GET | Cookie + `treasury_guide`/`administrator` | Treasury transaction log |
-| `/api/roles/team` | GET/POST/DELETE | Cookie + `administrator` | Team permissions management |
+**Create** `migrations/025_rename_campaigns_to_action_initiatives.sql`:
 
-### `GET /api/shares` response (user-facing — no guide internals)
-```json
-{
-  "application": { "id": "...", "status": "not_eligible", "certificate_number": null },
-  "eligibility": {
-    "eligible": false,
-    "riotsJoined": 1, "riotsRequired": 3,
-    "actionsTaken": 4, "actionsRequired": 10,
-    "isVerified": true
-  },
-  "walletBalance": 0,
-  "paymentRequired": 10
+```sql
+-- Step 1: Rename table
+ALTER TABLE campaigns RENAME TO action_initiatives;
+
+-- Step 2: Rebuild action_initiatives with renamed columns + status values
+CREATE TABLE action_initiatives_new (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  issue_id TEXT NOT NULL REFERENCES issues(id),
+  org_id TEXT REFERENCES organisations(id),
+  title TEXT NOT NULL CHECK(length(title) <= 255),
+  description TEXT NOT NULL DEFAULT '' CHECK(length(description) <= 2000),
+  target_pence INTEGER NOT NULL CHECK(target_pence > 0),
+  committed_pence INTEGER NOT NULL DEFAULT 0 CHECK(committed_pence >= 0),
+  supporter_count INTEGER NOT NULL DEFAULT 0 CHECK(supporter_count >= 0),
+  recipient TEXT CHECK(length(recipient) <= 255),
+  recipient_url TEXT CHECK(length(recipient_url) <= 500),
+  status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','goal_reached','delivered','cancelled')),
+  service_fee_pct INTEGER NOT NULL DEFAULT 15 CHECK(service_fee_pct >= 0 AND service_fee_pct <= 100),
+  currency_code TEXT DEFAULT 'GBP' CHECK(length(currency_code) <= 3),
+  goal_reached_at TEXT,
+  delivered_at TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO action_initiatives_new SELECT id, issue_id, org_id, title, description,
+  target_pence, raised_pence, contributor_count, recipient, recipient_url,
+  CASE status WHEN 'funded' THEN 'goal_reached' WHEN 'disbursed' THEN 'delivered' ELSE status END,
+  platform_fee_pct, currency_code, funded_at, disbursed_at, created_at
+FROM action_initiatives;
+DROP TABLE action_initiatives;
+ALTER TABLE action_initiatives_new RENAME TO action_initiatives;
+
+-- Step 3: Rebuild wallet_transactions with renamed column + transaction type
+CREATE TABLE wallet_transactions_new (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  wallet_id TEXT NOT NULL REFERENCES wallets(id),
+  type TEXT NOT NULL CHECK(type IN ('topup','payment','refund','share_consideration')),
+  amount_pence INTEGER NOT NULL CHECK(amount_pence > 0),
+  action_initiative_id TEXT,
+  issue_id TEXT,
+  stripe_payment_id TEXT,
+  description TEXT DEFAULT '' CHECK(length(description) <= 500),
+  completed_at TEXT,
+  currency_code TEXT DEFAULT 'GBP' CHECK(length(currency_code) <= 3),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO wallet_transactions_new SELECT id, wallet_id,
+  CASE type WHEN 'contribute' THEN 'payment' ELSE type END,
+  amount_pence, campaign_id, issue_id, stripe_payment_id,
+  description, completed_at, currency_code, created_at
+FROM wallet_transactions;
+DROP TABLE wallet_transactions;
+ALTER TABLE wallet_transactions_new RENAME TO wallet_transactions;
+
+-- Step 4: Recreate indexes
+CREATE INDEX idx_action_initiatives_issue ON action_initiatives(issue_id);
+CREATE INDEX idx_action_initiatives_status ON action_initiatives(status);
+CREATE INDEX idx_wtx_action_initiative ON wallet_transactions(action_initiative_id);
+CREATE INDEX idx_wtx_wallet ON wallet_transactions(wallet_id);
+
+-- Step 5: Update translation entity type in data
+UPDATE translations SET entity_type = 'action_initiative' WHERE entity_type = 'campaign';
+
+-- Step 6: Backwards-compatible view (read-only, for deployment window)
+CREATE VIEW campaigns AS SELECT
+  id, issue_id, org_id, title, description, target_pence,
+  committed_pence AS raised_pence, supporter_count AS contributor_count,
+  recipient, recipient_url,
+  CASE status WHEN 'goal_reached' THEN 'funded' WHEN 'delivered' THEN 'disbursed' ELSE status END AS status,
+  service_fee_pct AS platform_fee_pct, currency_code,
+  goal_reached_at AS funded_at, delivered_at AS disbursed_at, created_at
+FROM action_initiatives;
+```
+
+**CRITICAL:** Use `CURRENT_TIMESTAMP` not `datetime('now')` for DEFAULT values (Turso gotcha).
+
+**Update** `src/lib/schema.ts`:
+- Rename table `campaigns` → `action_initiatives` with all new column names/constraints
+- Rename `campaign_id` → `action_initiative_id` in `wallet_transactions`
+- Change `'contribute'` → `'payment'` in CHECK constraint
+- Update index names
+- In `dropTables()`: add `DROP VIEW IF EXISTS campaigns;` BEFORE `DROP TABLE IF EXISTS action_initiatives;`
+
+**Commit + push** (tests won't pass yet — that's OK for this phase only since schema is foundational)
+
+## Phase 2: Types + Query Files + Their Tests
+
+**Update** `src/types/index.ts`:
+- `CampaignStatus` → `ActionInitiativeStatus` with `'active' | 'goal_reached' | 'delivered' | 'cancelled'`
+- `WalletTransactionType`: `'contribute'` → `'payment'`
+- `WalletTransaction.campaign_id` → `action_initiative_id`
+- `Campaign` → `ActionInitiative` with all field renames
+
+**Rename + update** `src/lib/queries/campaigns.ts` → `src/lib/queries/action-initiatives.ts`:
+- All function names, SQL, types, column references
+
+**Update** `src/lib/queries/wallet.ts`:
+- `createContribution()` → `createPayment()`
+- All SQL column refs, status values, return types
+- Keep parameter name `actionInitiativeId` (was `campaignId`)
+
+**Update** `src/lib/queries/translate.ts`:
+- `translateCampaigns()` → `translateActionInitiatives()`
+- Entity type `'campaign'` → `'action_initiative'`
+
+**Update** `src/lib/queries/generate-translations.ts`:
+- Entity type reference
+
+**Update test files:**
+- `campaigns.test.ts` → `action-initiatives.test.ts`
+- `wallet.test.ts` — function names, assertions, column refs
+- `translate.test.ts` — function name
+- `generate-translations.test.ts` — entity type
+- `ai.test.ts` — campaign references
+
+**Update** `src/test/seed-test-data.ts`:
+- Table names, column names, status values, transaction types in INSERT statements
+
+**Run `npm test` — MUST pass**
+**Commit + push**
+
+## Phase 3: API Routes + Their Tests
+
+**Rename** `src/app/api/campaigns/` → `src/app/api/action-initiatives/`
+- Update all imports, function calls, variable names, error messages, Zod schemas
+- `platform_fee_pct` → `service_fee_pct` in create schema
+
+**Rename** `src/app/api/wallet/contribute/` → `src/app/api/wallet/pay/`
+- Update imports, schema name (`contributeSchema` → `paySchema`), rate limit key
+
+**Update** `src/app/api/bot/route.ts`:
+- Update imports to new query file paths/names
+- Internal variable names: `campaign` → `actionInitiative`
+- **Keep bot action names `contribute` and `get_campaigns` for SKILL.md compatibility**
+- Update error messages
+
+**Update test files:**
+- `campaigns-api.test.ts` → `action-initiatives-api.test.ts` (rename + update)
+- `wallet-api.test.ts` — API path `/api/wallet/contribute` → `/api/wallet/pay`
+- `bot-api.test.ts` — response field names, error messages (keep action names)
+
+**Run `npm test` — MUST pass**
+**Commit + push**
+
+## Phase 4: Pages + Components + Their Tests
+
+**Rename page directories:**
+- `src/app/[locale]/campaigns/` → `src/app/[locale]/action-initiatives/`
+- Update all imports, variable names, hrefs, translation namespaces
+
+**Rename component files:**
+- `campaign-card.tsx` → `action-initiative-card.tsx`
+- `campaign-progress.tsx` → `action-initiative-progress.tsx`
+- `contribute-form.tsx` → `pay-form.tsx`
+
+**Update component internals:**
+- All props: `campaign` → `actionInitiative`, `campaignId` → `actionInitiativeId`
+- All field accesses: `raised_pence` → `committed_pence`, `contributor_count` → `supporter_count`, etc.
+- `status-filter.tsx`: type refs `CampaignStatus` → `ActionInitiativeStatus`, status values
+- `transaction-list.tsx`: `'contribute'` → `'payment'`
+- `wallet-balance.tsx`: `campaigns_supported` prop name (keep for now, it's internal)
+- `pay-form.tsx`: `fetch('/api/wallet/pay')`, keep `trackEvent('campaign_contributed')` (out of scope)
+
+**Update pages that import these:**
+- `src/app/[locale]/wallet/page.tsx` — imports, variables, hrefs `/campaigns` → `/action-initiatives`
+- `src/app/[locale]/issues/[id]/page.tsx` — imports, variables
+
+**Update all hrefs:**
+- `/campaigns` → `/action-initiatives` everywhere
+- `/campaigns/${id}` → `/action-initiatives/${id}`
+
+**Update component test files:**
+- `data.test.tsx` — field names in test data, transaction types
+- `cards.test.tsx` — field names in test data
+- `interactive.test.tsx` — component names, API paths, transaction types
+
+**Update** `src/test/integration.test.ts` — campaign references
+
+**Run `npm test` — MUST pass**
+**Commit + push**
+
+## Phase 5: Seed Data
+
+**Update** `src/lib/seed.ts`:
+- `INSERT INTO campaigns` → `INSERT INTO action_initiatives`
+- Column renames in all INSERT statements
+- Status values: `'funded'` → `'goal_reached'`, `'disbursed'` → `'delivered'`
+- Transaction type: `'contribute'` → `'payment'`
+
+**Run `npm test` — MUST pass**
+**Commit + push**
+
+## Phase 6: SEO Redirects
+
+**Update** `next.config.ts` — add permanent redirects:
+```ts
+async redirects() {
+  return [
+    { source: '/:locale/campaigns', destination: '/:locale/action-initiatives', permanent: true },
+    { source: '/:locale/campaigns/:id', destination: '/:locale/action-initiatives/:id', permanent: true },
+  ];
 }
 ```
 
-### Auto-promotion hook (async, fire-and-forget)
-After `POST /api/issues/[id]/join`, feed post, evidence upload, etc. — check if user's share status is `not_eligible`, then call `promoteToEligible()` asynchronously. Uses `rowsAffected` guard to prevent duplicate notifications.
+**Commit + push**
 
-### Test file: `src/app/api/shares/shares-api.test.ts` — 35+ test cases
+## Phase 7: i18n (messages/*.json)
 
-Auth, validation, full lifecycle, payment flow, refund flow, treasury logging, eligibility promotion, role gating, self-review prevention, rate limiting, concurrent requests.
+**Update** `messages/en.json`:
+- `"Campaigns"` → `"ActionInitiatives"` (namespace)
+- `"CampaignDetail"` → `"ActionInitiativeDetail"` (namespace)
+- `"CampaignProgress"` → `"ActionInitiativeProgress"` (namespace)
+- `"Contribute"` → `"Pay"` (namespace)
+- Interpolation vars: `{campaign}` → `{actionInitiative}` in success messages
+- Check all `getTranslations()` calls match new namespace names
 
-### Files (~15 new)
-| File | Action |
-|------|--------|
-| `src/app/api/shares/route.ts` | Create |
-| `src/app/api/shares/proceed/route.ts` | Create |
-| `src/app/api/shares/decline/route.ts` | Create |
-| `src/app/api/shares/withdraw/route.ts` | Create |
-| `src/app/api/shares/identity/route.ts` | Create |
-| `src/app/api/shares/reapply/route.ts` | Create |
-| `src/app/api/shares/access/route.ts` | Create |
-| `src/app/api/shares/[id]/review/route.ts` | Create |
-| `src/app/api/shares/[id]/compliance/route.ts` | Create |
-| `src/app/api/shares/[id]/senior/route.ts` | Create |
-| `src/app/api/shares/[id]/messages/route.ts` | Create |
-| `src/app/api/shares/queue/route.ts` | Create |
-| `src/app/api/shares/treasury/route.ts` | Create |
-| `src/app/api/roles/team/route.ts` | Create |
-| `src/app/api/shares/shares-api.test.ts` | Create |
+**Update** `src/i18n/messages.test.ts` — expect new namespace names
 
----
+**Launch 6 parallel sub-agents** for 44 non-English locales (standard batches):
+- Rename namespace keys (structure-only change, translation values stay the same)
+- Rename interpolation variables `{campaign}` → `{actionInitiative}`
 
-## Phase 4: Web UI — Profile Section + Share Pages + Payment Flow
+**Validate:** `for f in messages/*.json; do node -e "require('./$f')" || echo "BROKEN: $f"; done`
 
-### Profile page — Share section (`share-profile-section.tsx`)
-New section after stats grid, before Connected Accounts. Shows status badge, eligibility progress bar, link to Share info page, and certificate info if issued.
+**Run `npm test` — MUST pass**
+**Commit + push**
 
-### Password gate (hardened)
-- `POST /api/shares/access` — validates password from `SHARE_ACCESS_PASSWORD` env var. Sets `qr_share_access` cookie bound to userId via HMAC (`HMAC(userId, SHARE_ACCESS_PASSWORD)`). Cookie path `/share`, httpOnly, 7-day expiry. Rate limited.
-- `src/app/[locale]/share/layout.tsx` — server component verifies cookie HMAC against session userId
-- `src/components/interactive/share-password-gate.tsx` — client component
+## Phase 8: Documentation + Scripts
 
-### Share info page (`src/app/[locale]/share/page.tsx`)
-Server component, `force-dynamic`. Content:
+**Update** `ARCHITECTURE.md`:
+- All route paths, table names, component names, query file names
 
-1. **Hero:** "Your Quiet Riots Global Share"
-2. **Ownership explanation** — what having a share means
-3. **Share consideration section** (`share-consideration-explainer.tsx`) — explains nominal value, growth shares, the 10p payment requirement, what happens at each investment stage from $10m to $1tn, important disclaimers
-4. **Value illustration table** (`share-value-table.tsx`)
-5. **How investment rounds affect your share** — Seed/A/B/C, dilution, user pool protection
-6. **Your responsibilities** — tax obligations, not advice, user's responsibility
-7. **Eligibility + action section:**
-   - If not eligible: progress towards 3 riots + 10 actions
-   - If eligible: three choices with 10p payment flow:
-     - **Proceed** → wallet balance check → confirm 10p deduction → status `under_review`
-     - **Wait** → no action, come back any time
-     - **Decline** → confirmation dialog (permanent) → status `declined`
-8. **Country-specific tax guidance** (generic with disclaimer)
+**Update** `CLAUDE.md`:
+- All references to campaigns, campaign routes, campaign table
 
-### Payment flow in Proceed
-1. User clicks "Proceed with Issue"
-2. Client checks wallet balance via `GET /api/wallet`
-3. If balance ≥ 10p equivalent: show confirmation *"A nominal payment of 10p will be deducted from your wallet. This is a legal requirement."*
-4. If balance < 10p: show *"You need at least 10p in your wallet. [Top up now →](/wallet)"* with return link
-5. On confirm: `POST /api/shares/proceed` → atomic debit + status change
-6. User receives payment confirmation notification + "application under review" notification
+**Update** `scripts/seed-translations.ts`:
+- Entity type `'campaign'` → `'action_initiative'`
 
-### Identity form (`src/app/[locale]/share/identity/page.tsx`)
-Accessible when status = `approved`. All fields with Zod validation + `sanitizeText()`:
-- Legal first name, middle name, last name (required except middle)
-- Date of birth (locale-aware input, validated: in past, age ≥ 18)
-- Gender toggle
-- Address (line 1 required, line 2 optional, city required, state optional, postal code optional, country required — validated against countries table)
-- Phone (E.164 via `normalizePhone()`)
-- ID document type + country
-- Digital verification tier indicator (computed from country)
+**Add notes:**
+- `notification_preferences.campaign_updates` intentionally not renamed (separate PR)
+- Bot action names `contribute`/`get_campaigns` intentionally kept (separate PR, requires SKILL.md update)
+- Future cleanup: `DROP VIEW IF EXISTS campaigns;` after confirming no old code references it
 
-### Status page (`src/app/[locale]/share/status/page.tsx`)
-Visual timeline. Certificate details if issued. Withdrawal option if `under_review` or `approved`.
+**Commit + push**
 
-### Nav-bar integration
-- "My Share" in profile dropdown (both desktop + mobile)
-- "Share Guide" link if `share_guide` role
-- "Compliance" link if `compliance_guide` role
-- "Treasury" link if `treasury_guide` role
-- Extend existing `fetchRoles()` to check all new roles
+## Phase 9: Final Verification + PR
 
-### i18n
-Add `Share` namespace to `messages/en.json` with ~90 keys.
+1. `npm test` — all tests pass
+2. `npm run build` — clean TypeScript build
+3. Grep for any remaining `campaign` references (excluding session-logs, node_modules, .git):
+   ```bash
+   grep -r "campaign" src/ scripts/ messages/en.json migrations/ --include="*.ts" --include="*.tsx" --include="*.json" --include="*.sql" | grep -v node_modules | grep -v "campaign_updates" | grep -v "campaign_contributed" | grep -v session-logs
+   ```
+4. Create PR
+5. Wait for CI
 
-### Components
-| Component | Path | Type |
-|-----------|------|------|
-| `share-password-gate.tsx` | `src/components/interactive/` | Client |
-| `share-info-page.tsx` | `src/components/interactive/` | Client |
-| `share-identity-form.tsx` | `src/components/interactive/` | Client |
-| `share-value-table.tsx` | `src/components/data/` | Server |
-| `share-status-tracker.tsx` | `src/components/data/` | Server |
-| `share-profile-section.tsx` | `src/components/data/` | Client |
-| `share-eligibility-progress.tsx` | `src/components/data/` | Server |
-| `share-consideration-explainer.tsx` | `src/components/data/` | Server |
-| `share-payment-flow.tsx` | `src/components/interactive/` | Client |
+## Phase 10: Deployment
 
-### Pages
-| Page | Path |
-|------|------|
-| Share layout (password gate) | `src/app/[locale]/share/layout.tsx` |
-| Share info | `src/app/[locale]/share/page.tsx` |
-| Identity form | `src/app/[locale]/share/identity/page.tsx` |
-| Status tracker | `src/app/[locale]/share/status/page.tsx` |
+Execute in this exact order:
+1. Run migration on staging → verify reads + writes work
+2. Run migration on production → backwards-compatible VIEW keeps old code working
+3. Merge PR → Vercel auto-deploys new code (~60s)
+4. Run post-merge checklist (health check, etc.)
+5. Verify `/action-initiatives` page loads, `/campaigns` redirects work
+6. **Future PR:** Drop the `campaigns` VIEW
+7. **Future PR:** Rename bot actions + update SKILL.md/TOOLS.md + clear OpenClaw sessions
 
----
+## Security Considerations
 
-## Phase 5: Guide Dashboards + Treasury + Team Permissions
+- **No auth/authz changes** — session handling, cookie auth, bot API key auth all unchanged
+- **Rate limit keys change** (`contribute:` → `payment:`) — in-memory limiter resets on Vercel cold start anyway, no security gap
+- **No new attack surface** — same endpoints, just renamed paths
+- **SEO redirects** prevent URL enumeration of old paths returning 404s
+- **Backwards-compatible VIEW** is read-only — no risk of writes through VIEW bypassing constraints
+- **Bot action names preserved** — no risk of breaking SKILL.md auth flow
 
-### Share Guide dashboard (`src/app/[locale]/share-guide/page.tsx`)
-- Role-gated (`share_guide` or `administrator`)
-- Tab bar: all, under_review, approved, identity_submitted, etc.
-- Application cards (user name, country, date, status badge)
-- Review form: Approve / Reject / Ask Question to User / Ask Question to Compliance
-- Questions inbox: user-submitted questions, sorted by newest
-- Message thread per application (only applicant ↔ share_guide messages visible)
-- Stale applications view: `approved` for > 7 days without identity submission
+## Rollback Strategy
 
-### Compliance dashboard (`src/app/[locale]/compliance/page.tsx`)
-- Role-gated (`compliance_guide` or `administrator`)
-- Shows `identity_submitted` and `forwarded_senior` applications
-- Identity detail view with PII access logging — masked in list view, full on expand
-- Actions: Approve / Reject / Ask for More Info / Forward to Senior Compliance
-- Comment text box
-- Message thread (only applicant ↔ compliance messages visible)
+If migration breaks production:
+1. The VIEW means old code can still READ from `campaigns`
+2. For full rollback: create reverse migration (rename back, rebuild with old columns/values)
+3. The migration is idempotent-safe: running twice on a migrated DB will fail (campaigns table doesn't exist), not corrupt data
 
-### Treasury dashboard (`src/app/[locale]/treasury/page.tsx`)
-- Role-gated (`treasury_guide` or `administrator`)
-- Treasury wallet balance
-- Transaction log: all 10p payments, refunds, with user name, date, application status
-- Summary stats: total collected, total refunded, net
+## Files to Modify (~85 files)
 
-### Team permissions page (`src/app/[locale]/admin/team/page.tsx`)
-- Role-gated (`administrator` only)
-- Lists all users with roles
-- Add/remove role buttons with mutual exclusivity enforcement
-- Role assignment audit trail
-
-### Components
-| Component | Path | Type |
-|-----------|------|------|
-| `share-guide-dashboard.tsx` | `src/components/interactive/` | Client |
-| `compliance-dashboard.tsx` | `src/components/interactive/` | Client |
-| `treasury-dashboard.tsx` | `src/components/interactive/` | Client |
-| `team-permissions.tsx` | `src/components/interactive/` | Client |
-| `share-application-card.tsx` | `src/components/cards/` | Client |
-| `share-review-form.tsx` | `src/components/interactive/` | Client |
-| `share-identity-detail.tsx` | `src/components/data/` | Server |
-| `share-message-thread.tsx` | `src/components/interactive/` | Client |
-
----
-
-## Phase 6: Bot Surface (WhatsApp)
-
-### Early onboarding mention (first 3 messages)
-SKILL.md updated: after first issue search result, bot mentions the share scheme naturally. Saves `share_mentioned: true` to memory. On eligibility met, proactively notifies.
-
-### New bot actions (7)
-- `get_share_status` — eligibility + status + link to web page
-- `get_share_eligibility` — progress towards thresholds
-- `apply_for_share` — pay 10p + apply (validates phone → user_id match)
-- `decline_share` — permanent decline
-- `submit_share_identity` — conversational identity collection
-- `ask_share_question` — sends to Share Guide
-- `reapply_share` — after rejection (another 10p)
-
-All bot actions validate `phone → user_id` match (existing pattern) to prevent cross-user manipulation.
-
-### Files
-| File | Action |
-|------|--------|
-| `src/app/api/bot/route.ts` | Modify — add 7 actions |
-| `src/app/api/bot/bot-api.test.ts` | Modify — add 15+ tests |
-| `~/.openclaw/skills/quiet-riots/SKILL.md` | Modify |
-
----
-
-## Phase 7: Translations (all 44 non-English locales)
-
-Generate translations for `Share`, `ShareGuide`, `Compliance`, `Treasury`, `Team` namespaces using Claude sub-agents (session 26 pattern). ~90 keys per namespace × 44 locales.
-
----
-
-## Phase 8: Polish
-
-- PDF certificate generation (pdf-lib → Vercel Blob) — UK share certificate with London address
-- Country-specific tax guidance (JSON map per country)
-- In-person verification office directory
-- PII data retention policy (auto-delete identity data N days after issuance)
-- Advanced admin stats dashboard
-
----
-
-## Commit Plan
-
-```
-1. PLAN.md → commit + push
-2. Phase 1 (migration + types + schema + crypto) → commit + push
-3. Phase 2 (query layer + 40+ tests) → commit + push
-4. Phase 3 (API routes + 35+ tests) → commit + push
-5. Phase 4 (profile section + share pages + payment flow + nav + i18n) → commit + push
-6. Phase 5 (guide dashboards + treasury + team permissions) → commit + push
-7. Create PR → CI → merge → post-merge checklist
-8. Phase 6 (bot surface) → separate PR
-9. Phase 7 (translations for all 44 locales) → separate PR
-10. Notify Simon Darling via WhatsApp + email when live on staging + production
-```
-
-## Verification
-
-1. `npm test` passes after each phase
-2. `npm run build` passes after Phase 4+
-3. Profile page shows eligibility progress
-4. After 3 issues + 10 actions → status = `available`, user notified
-5. `/en/share` → password gate → share info page with consideration explainer
-6. Proceed → 10p deducted → `under_review` → payment confirmation notification
-7. Share Guide approves → user notified → identity form accessible
-8. Identity submitted → Compliance Guide sees it → approves → share issued → certificate notification
-9. Rejection → 10p refunded → user can reapply
-10. Treasury dashboard shows all payments/refunds
-11. Team permissions page shows all roles
-12. WhatsApp bot mentions share in first 3 messages
-13. All pages work in all 45 locales
-14. Simon Darling notified when live
-
-## New env vars needed
-
-| Var | Purpose | Where |
-|-----|---------|-------|
-| `SHARE_ACCESS_PASSWORD` | Password gate for /share pages | Vercel prod + preview |
-| `SHARE_IDENTITY_KEY` | AES-256-GCM key for PII encryption | Vercel prod + preview |
-
-## Key patterns to reuse
-
-| Pattern | Source file |
-|---------|------------|
-| Role-gated page | `src/app/[locale]/setup/page.tsx` |
-| Review dashboard | `src/components/interactive/setup-dashboard.tsx` |
-| Review API route | `src/app/api/suggestions/[id]/review/route.ts` |
-| Multi-channel notify | `src/lib/queries/messages.ts` → `sendNotification()` |
-| Lifecycle queries | `src/lib/queries/suggestions.ts` |
-| Atomic wallet debit | `src/app/api/wallet/contribute/route.ts` |
-| Zod validation | All POST API routes |
-| Rate limiting | `src/lib/rate-limit.ts` |
-| Profile dropdown | `src/components/layout/nav-bar.tsx` |
-| ID generation | `src/lib/uuid.ts` → `generateId()` |
-| Input sanitization | `src/lib/sanitize.ts` |
-| User memory (bot) | `src/lib/queries/users.ts` → memory functions |
-| Bot onboarding | `~/.openclaw/skills/quiet-riots/SKILL.md` |
+**Migration:** 1 new file (`025_rename_campaigns_to_action_initiatives.sql`)
+**Schema:** `src/lib/schema.ts`
+**Types:** `src/types/index.ts`
+**Queries:** `action-initiatives.ts` (renamed), `wallet.ts`, `translate.ts`, `generate-translations.ts`
+**API routes:** `action-initiatives/route.ts`, `action-initiatives/[id]/route.ts`, `wallet/pay/route.ts` (renamed), `bot/route.ts`
+**Pages:** `action-initiatives/page.tsx`, `action-initiatives/[id]/page.tsx` (renamed), `wallet/page.tsx`, `issues/[id]/page.tsx`
+**Components:** `action-initiative-card.tsx`, `action-initiative-progress.tsx`, `pay-form.tsx` (renamed), `status-filter.tsx`, `transaction-list.tsx`, `wallet-balance.tsx`
+**Tests:** `action-initiatives.test.ts`, `wallet.test.ts`, `translate.test.ts`, `generate-translations.test.ts`, `ai.test.ts`, `action-initiatives-api.test.ts`, `wallet-api.test.ts`, `bot-api.test.ts`, `data.test.tsx`, `cards.test.tsx`, `interactive.test.tsx`, `integration.test.ts`, `messages.test.ts`, `seed-test-data.ts`
+**Seed:** `seed.ts`
+**Translations:** 45 locale files
+**Docs:** `ARCHITECTURE.md`, `CLAUDE.md`
+**Scripts:** `seed-translations.ts`
+**Config:** `next.config.ts` (redirects)

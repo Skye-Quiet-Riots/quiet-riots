@@ -85,22 +85,22 @@ describe('generateAndStoreTranslations', () => {
     );
   });
 
-  it('works for campaigns with title field', async () => {
+  it('works for action initiatives with title field', async () => {
     mockGenerateEntityTranslations.mockResolvedValueOnce({
       fr: { title: 'Titre', description: 'Desc' },
     });
     mockUpsertTranslation.mockResolvedValue(undefined);
 
     const { generateAndStoreTranslations } = await import('./generate-translations');
-    const result = await generateAndStoreTranslations('campaign', 'campaign-789', {
+    const result = await generateAndStoreTranslations('action_initiative', 'ai-789', {
       title: 'Title',
       description: 'Description',
     });
 
     expect(result.success).toBe(true);
     expect(mockUpsertTranslation).toHaveBeenCalledWith(
-      'campaign',
-      'campaign-789',
+      'action_initiative',
+      'ai-789',
       'title',
       'fr',
       'Titre',

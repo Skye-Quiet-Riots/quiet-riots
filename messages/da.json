@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Saml beviser",
     "gatherEvidenceDesc": "Dokumentér hvad der sker med {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Handlingsprojekter",
     "subtitle": "{count} {count, plural, one {projekt} other {projekter}} der bestiller tjenester til kollektiv handling.",
     "noResults": "Ingen handlingsprojekter fundet. Prøv et andet filter."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Handlingsprojekter",
     "fullyFunded": "Mål nået",
     "disbursed": "Afsluttet",
@@ -352,7 +352,7 @@
     "you": "DIG",
     "rioters": "deltagere"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Handlingsprojekter",
     "funded": "Mål nået",
     "disbursed": "Afsluttet",
@@ -438,7 +438,7 @@
     "topUp": "Fyld op",
     "simulated": "Simuleret opfyldning til test. Rigtige betalinger kommer snart."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Utilstrækkelig saldo. Fyld op på din tegnebog først.",
     "minContribution": "Minimumsbetaling er 10p",
     "contribute": "Støt dette projekt",
@@ -447,7 +447,7 @@
     "invalidAmount": "Indtast et gyldigt beløb",
     "customAmount": "Valgfrit beløb (£)",
     "give": "Betal",
-    "success": "Betalt {amount} til {campaign}!",
+    "success": "Betalt {amount} til {actionInitiative}!",
     "remainingBalance": "Din resterende saldo: {balance}",
     "topUpPrompt": "Fyld op på din tegnebog",
     "toKeepSupporting": "for at fortsætte med at støtte handlingsprojekter.",

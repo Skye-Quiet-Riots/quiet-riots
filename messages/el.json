@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Συγκέντρωσε Αποδεικτικά",
     "gatherEvidenceDesc": "Τεκμηρίωσε τι συμβαίνει με τον οργανισμό {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Έργα Δράσης",
     "subtitle": "{count} {count, plural, one {έργο} other {έργα}} που αναθέτουν υπηρεσίες για συλλογική δράση.",
     "noResults": "Δε βρέθηκαν έργα δράσης. Δοκίμασε διαφορετικό φίλτρο."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Έργα Δράσης",
     "fullyFunded": "Στόχος Επιτεύχθηκε",
     "disbursed": "Ολοκληρώθηκε",
@@ -352,7 +352,7 @@
     "you": "ΕΣΥ",
     "rioters": "συμμετέχοντες"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Έργα Δράσης",
     "funded": "Στόχος Επιτεύχθηκε",
     "disbursed": "Ολοκληρώθηκε",
@@ -438,7 +438,7 @@
     "topUp": "Φόρτιση",
     "simulated": "Προσομοιωμένη φόρτιση για δοκιμή. Πραγματικές πληρωμές σύντομα."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Ανεπαρκές υπόλοιπο. Φόρτισε πρώτα το πορτοφόλι σου.",
     "minContribution": "Ελάχιστη πληρωμή 10p",
     "contribute": "Υποστήριξε αυτό το έργο",
@@ -447,7 +447,7 @@
     "invalidAmount": "Εισάγαγε έγκυρο ποσό",
     "customAmount": "Προσαρμοσμένο ποσό (£)",
     "give": "Πλήρωσε",
-    "success": "Πληρώθηκαν {amount} για {campaign}!",
+    "success": "Πληρώθηκαν {amount} για {actionInitiative}!",
     "remainingBalance": "Υπόλοιπο: {balance}",
     "topUpPrompt": "Φόρτισε το πορτοφόλι σου",
     "toKeepSupporting": "για να συνεχίσεις να υποστηρίζεις έργα δράσης.",

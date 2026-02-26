@@ -8,7 +8,7 @@ import { PivotToggle } from './pivot-toggle';
 import { TimeSkillFilter } from './time-skill-filter';
 import { ReelsSection } from './reels-section';
 import { TopUpForm } from './topup-form';
-import { ContributeForm } from './contribute-form';
+import { PayForm } from './pay-form';
 import { StatusFilter } from './status-filter';
 import { EvidenceComposer } from './evidence-composer';
 import { ShareEligibilityBanner } from './share-eligibility-banner';
@@ -319,16 +319,28 @@ describe('TopUpForm', () => {
   });
 });
 
-describe('ContributeForm', () => {
+describe('PayForm', () => {
   it('renders balance and preset amounts', () => {
-    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={500} />);
+    render(
+      <PayForm
+        actionInitiativeId="ai-1"
+        actionInitiativeTitle="Test Action Initiative"
+        userBalance={500}
+      />,
+    );
     expect(screen.getByText(/£5/)).toBeDefined();
     expect(screen.getByText('50p')).toBeDefined();
     expect(screen.getByText('£2')).toBeDefined();
   });
 
   it('disables buttons when balance is too low', () => {
-    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={0} />);
+    render(
+      <PayForm
+        actionInitiativeId="ai-1"
+        actionInitiativeTitle="Test Action Initiative"
+        userBalance={0}
+      />,
+    );
     const buttons = screen.getAllByRole('button');
     // Preset buttons should be disabled
     const presetButton = buttons.find((b) => b.textContent === '50p');
@@ -336,42 +348,60 @@ describe('ContributeForm', () => {
   });
 
   it('shows low balance message when empty', () => {
-    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={0} />);
+    render(
+      <PayForm
+        actionInitiativeId="ai-1"
+        actionInitiativeTitle="Test Action Initiative"
+        userBalance={0}
+      />,
+    );
     expect(screen.getByText(/wallet is empty/)).toBeDefined();
   });
 
-  it('calls API and shows success on contribution', async () => {
+  it('calls API and shows success on payment', async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () =>
         Promise.resolve({
           data: {
-            transaction: { type: 'contribute', amount_pence: 100 },
-            campaign: {},
+            transaction: { type: 'payment', amount_pence: 100 },
+            actionInitiative: {},
             wallet_balance_pence: 400,
           },
         }),
     });
     global.fetch = mockFetch;
 
-    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={500} />);
+    render(
+      <PayForm
+        actionInitiativeId="ai-1"
+        actionInitiativeTitle="Test Action Initiative"
+        userBalance={500}
+      />,
+    );
     fireEvent.click(screen.getByText('£1'));
 
     await waitFor(() => {
       expect(mockFetch).toHaveBeenCalledWith(
-        '/api/wallet/contribute',
+        '/api/wallet/pay',
         expect.objectContaining({ method: 'POST' }),
       );
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Paid £1 towards Test Campaign/)).toBeDefined();
+      expect(screen.getByText(/Paid £1 towards Test Action Initiative/)).toBeDefined();
       expect(screen.getByText(/remaining balance: £4/)).toBeDefined();
     });
   });
 
   it('shows insufficient funds error for custom amount over balance', async () => {
-    render(<ContributeForm campaignId="camp-1" campaignTitle="Test Campaign" userBalance={30} />);
+    render(
+      <PayForm
+        actionInitiativeId="ai-1"
+        actionInitiativeTitle="Test Action Initiative"
+        userBalance={30}
+      />,
+    );
 
     // Preset buttons are disabled, use custom amount form
     const input = screen.getByPlaceholderText('Custom amount (£)');

@@ -6,7 +6,7 @@ import { sanitizeText } from '@/lib/sanitize';
  * Generate translations for an entity's fields into all supported locales
  * using Claude, then store them in the translations table.
  *
- * @param entityType - 'issue', 'organisation', or 'campaign'
+ * @param entityType - 'issue', 'organisation', or 'action_initiative'
  * @param entityId - The entity ID
  * @param fields - Map of field names to English values (e.g. { name: "...", description: "..." })
  * @returns Success status and count of locales translated

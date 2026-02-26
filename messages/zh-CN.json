@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 收集证据",
     "gatherEvidenceDesc": "记录 {orgName} 正在发生的事。"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "行动项目",
     "subtitle": "{count} {count, plural, one {个项目} other {个项目}}正在为集体行动委托服务。",
     "noResults": "未找到行动项目。请尝试不同的筛选条件。"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "行动项目",
     "fullyFunded": "已达目标",
     "disbursed": "已完成",
@@ -352,7 +352,7 @@
     "you": "你",
     "rioters": "参与者"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ 行动项目",
     "funded": "已达目标",
     "disbursed": "已完成",
@@ -438,7 +438,7 @@
     "topUp": "充值",
     "simulated": "模拟充值，仅供测试。真实支付即将上线。"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "余额不足。请先为钱包充值。",
     "minContribution": "最低付款 10p",
     "contribute": "支持此项目",
@@ -447,7 +447,7 @@
     "invalidAmount": "请输入有效金额",
     "customAmount": "自定义金额（£）",
     "give": "付款",
-    "success": "已为 {campaign} 支付 {amount}！",
+    "success": "已为 {actionInitiative} 支付 {amount}！",
     "remainingBalance": "你的剩余余额：{balance}",
     "topUpPrompt": "为钱包充值",
     "toKeepSupporting": "以继续支持行动项目。",

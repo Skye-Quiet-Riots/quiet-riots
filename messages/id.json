@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Kumpulkan Bukti",
     "gatherEvidenceDesc": "Dokumentasikan apa yang terjadi dengan {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Proyek Aksi",
     "subtitle": "{count} {count, plural, one {proyek} other {proyek}} memesan layanan untuk aksi kolektif.",
     "noResults": "Tidak ditemukan proyek aksi. Coba filter lain."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Proyek Aksi",
     "fullyFunded": "Target Tercapai",
     "disbursed": "Selesai",
@@ -352,7 +352,7 @@
     "you": "KAMU",
     "rioters": "peserta"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Proyek Aksi",
     "funded": "Target Tercapai",
     "disbursed": "Selesai",
@@ -438,7 +438,7 @@
     "topUp": "Isi Ulang",
     "simulated": "Isi ulang simulasi untuk pengujian. Pembayaran nyata segera hadir."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Dana tidak cukup. Isi dompetmu dulu.",
     "minContribution": "Pembayaran minimum 10p",
     "contribute": "Dukung Proyek Ini",
@@ -447,7 +447,7 @@
     "invalidAmount": "Masukkan jumlah yang valid",
     "customAmount": "Jumlah lain (£)",
     "give": "Bayar",
-    "success": "Membayar {amount} untuk {campaign}!",
+    "success": "Membayar {amount} untuk {actionInitiative}!",
     "remainingBalance": "Saldo tersisa: {balance}",
     "topUpPrompt": "Isi dompetmu",
     "toKeepSupporting": "untuk terus mendukung proyek aksi.",

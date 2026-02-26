@@ -7,12 +7,12 @@ import {
   getUserSpendingSummary,
   getWalletTransactions,
 } from '@/lib/queries/wallet';
-import { getCampaigns } from '@/lib/queries/campaigns';
-import { translateCampaigns } from '@/lib/queries/translate';
+import { getActionInitiatives } from '@/lib/queries/action-initiatives';
+import { translateActionInitiatives } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { WalletBalance } from '@/components/data/wallet-balance';
 import { TransactionList } from '@/components/data/transaction-list';
-import { CampaignProgress } from '@/components/data/campaign-progress';
+import { ActionInitiativeProgress } from '@/components/data/action-initiative-progress';
 import { TopUpForm } from '@/components/interactive/topup-form';
 
 interface Props {
@@ -45,12 +45,12 @@ export default async function WalletPage({ params }: Props) {
   }
 
   const wallet = await getOrCreateWallet(user.id);
-  const [summary, transactions, rawCampaigns] = await Promise.all([
+  const [summary, transactions, rawActionInitiatives] = await Promise.all([
     getUserSpendingSummary(user.id),
     getWalletTransactions(wallet.id),
-    getCampaigns(undefined, 'active'),
+    getActionInitiatives(undefined, 'active'),
   ]);
-  const activeCampaigns = await translateCampaigns(rawCampaigns, locale);
+  const activeActionInitiatives = await translateActionInitiatives(rawActionInitiatives, locale);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
@@ -69,18 +69,18 @@ export default async function WalletPage({ params }: Props) {
         <TopUpForm />
       </div>
 
-      {activeCampaigns.length > 0 && (
+      {activeActionInitiatives.length > 0 && (
         <div className="mb-6">
           <div className="mb-2 flex items-center justify-between">
             <h2 className="text-lg font-bold">{t('activeCampaigns')}</h2>
             <Link
-              href="/campaigns"
+              href="/action-initiatives"
               className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
             >
               {t('viewAll')}
             </Link>
           </div>
-          <CampaignProgress campaigns={activeCampaigns.slice(0, 4)} />
+          <ActionInitiativeProgress actionInitiatives={activeActionInitiatives.slice(0, 4)} />
         </div>
       )}
 

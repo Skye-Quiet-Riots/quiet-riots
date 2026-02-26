@@ -11,7 +11,7 @@ vi.mock('next/headers', () => ({
 import { cookies } from 'next/headers';
 import { GET } from './route';
 import { GET as getHistory } from './history/route';
-import { POST as postContribute } from './contribute/route';
+import { POST as postPay } from './pay/route';
 import { POST as postTopup } from './topup/route';
 
 beforeAll(async () => {
@@ -163,55 +163,55 @@ describe('POST /api/wallet/topup', () => {
   });
 });
 
-describe('POST /api/wallet/contribute', () => {
-  it('deducts from wallet and credits campaign', async () => {
+describe('POST /api/wallet/pay', () => {
+  it('deducts from wallet and credits action initiative', async () => {
     mockLoggedIn('user-sarah');
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-water-test', amount_pence: 50 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-water-test', amount_pence: 50 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     const body = await response.json();
     expect(response.status).toBe(200);
-    expect(body.data.transaction.type).toBe('contribute');
+    expect(body.data.transaction.type).toBe('payment');
     expect(body.data.wallet_balance_pence).toBeDefined();
   });
 
   it('returns error for insufficient funds', async () => {
     mockLoggedIn('user-sarah');
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-water-test', amount_pence: 999999 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-water-test', amount_pence: 999999 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     const body = await response.json();
     expect(response.status).toBe(400);
     expect(body.error).toContain('Insufficient funds');
   });
 
-  it('returns 404 for non-existent campaign', async () => {
+  it('returns 404 for non-existent action initiative', async () => {
     mockLoggedIn('user-sarah');
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-nonexistent', amount_pence: 50 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-nonexistent', amount_pence: 50 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     const body = await response.json();
     expect(response.status).toBe(404);
-    expect(body.error).toContain('Campaign not found');
+    expect(body.error).toContain('Action initiative not found');
   });
 
-  it('returns error for funded (inactive) campaign', async () => {
+  it('returns error for goal-reached (inactive) action initiative', async () => {
     mockLoggedIn('user-sarah');
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-funded', amount_pence: 50 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-funded', amount_pence: 50 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     const body = await response.json();
     expect(response.status).toBe(400);
     expect(body.error).toContain('not active');
@@ -219,12 +219,12 @@ describe('POST /api/wallet/contribute', () => {
 
   it('returns 401 for non-existent user', async () => {
     mockLoggedIn('user-does-not-exist');
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-water-test', amount_pence: 50 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-water-test', amount_pence: 50 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     const body = await response.json();
     expect(response.status).toBe(401);
     expect(body.error).toContain('Not logged in');
@@ -232,12 +232,12 @@ describe('POST /api/wallet/contribute', () => {
 
   it('returns 401 when not logged in', async () => {
     mockLoggedOut();
-    const request = new Request('http://localhost:3000/api/wallet/contribute', {
+    const request = new Request('http://localhost:3000/api/wallet/pay', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ campaign_id: 'camp-water-test', amount_pence: 50 }),
+      body: JSON.stringify({ action_initiative_id: 'camp-water-test', amount_pence: 50 }),
     });
-    const response = await postContribute(request);
+    const response = await postPay(request);
     expect(response.status).toBe(401);
   });
 });

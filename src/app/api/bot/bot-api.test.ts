@@ -423,8 +423,8 @@ describe('Bot API: topup_wallet', () => {
 });
 
 describe('Bot API: contribute', () => {
-  it('deducts from wallet and credits campaign', async () => {
-    // Sarah has wallet with £5 balance (seeded) — contribute 10p
+  it('deducts from wallet and credits action initiative', async () => {
+    // Sarah has wallet with £5 balance (seeded) — pay 10p
     const { status, body } = await callBot('contribute', {
       phone: '+447700900001', // Sarah
       campaign_id: 'camp-water-test',
@@ -435,14 +435,14 @@ describe('Bot API: contribute', () => {
     expect(body.data.campaign).toBeDefined();
   });
 
-  it('returns error for non-existent campaign', async () => {
+  it('returns error for non-existent action initiative', async () => {
     const { status, body } = await callBot('contribute', {
       phone: '+5511999999999',
       campaign_id: 'camp-nonexistent',
       amount_pence: 100,
     });
     expect(status).toBe(404);
-    expect(body.error).toContain('Campaign not found');
+    expect(body.error).toContain('Action initiative not found');
   });
 
   it('fails for unknown user', async () => {
@@ -474,10 +474,12 @@ describe('Bot API: get_campaigns', () => {
 
   it('filters by status', async () => {
     const { status, body } = await callBot('get_campaigns', {
-      status: 'funded',
+      status: 'goal_reached',
     });
     expect(status).toBe(200);
-    expect(body.data.campaigns.every((c: { status: string }) => c.status === 'funded')).toBe(true);
+    expect(body.data.campaigns.every((c: { status: string }) => c.status === 'goal_reached')).toBe(
+      true,
+    );
   });
 });
 
@@ -764,9 +766,9 @@ describe('Bot API: translated issue data', () => {
       ['issue', 'issue-broadband', 'description', 'pl', 'Wolne prędkości internetu'],
       ['organisation', 'org-southern', 'name', 'pl', 'Southern Rail'],
       ['organisation', 'org-southern', 'description', 'pl', 'Brytyjski operator kolejowy'],
-      ['campaign', 'camp-water-test', 'title', 'pl', 'Przegląd prawny kolei'],
+      ['action_initiative', 'camp-water-test', 'title', 'pl', 'Przegląd prawny kolei'],
       [
-        'campaign',
+        'action_initiative',
         'camp-water-test',
         'description',
         'pl',
@@ -853,7 +855,7 @@ describe('Bot API: translated issue data', () => {
     expect(southern.description).toBe('Brytyjski operator kolejowy');
   });
 
-  it('get_campaigns returns translated campaign titles', async () => {
+  it('get_campaigns returns translated action initiative titles', async () => {
     const { status, body } = await callBot('get_campaigns', {
       issue_id: 'issue-rail',
       language_code: 'pl',
@@ -953,7 +955,7 @@ describe('Bot API: translated issue data', () => {
   });
 
   // ─── Structural guard: all data-fetching actions must accept language_code ───
-  // If you add a new action that returns translatable data (issues, orgs, campaigns),
+  // If you add a new action that returns translatable data (issues, orgs, action initiatives),
   // add it to this list. The test will fail if the action rejects language_code.
 
   const DATA_FETCHING_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [

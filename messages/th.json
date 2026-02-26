@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 รวบรวมหลักฐาน",
     "gatherEvidenceDesc": "บันทึกสิ่งที่เกิดขึ้นกับ {orgName}"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "โครงการปฏิบัติการ",
     "subtitle": "{count} {count, plural, one {โครงการ} other {โครงการ}} จ้างบริการเพื่อการดำเนินการร่วม",
     "noResults": "ไม่พบโครงการปฏิบัติการ ลองเปลี่ยนตัวกรองดู"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "โครงการปฏิบัติการ",
     "fullyFunded": "บรรลุเป้าหมายแล้ว",
     "disbursed": "เสร็จสมบูรณ์",
@@ -352,7 +352,7 @@
     "you": "คุณ",
     "rioters": "สมาชิก"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ โครงการปฏิบัติการ",
     "funded": "บรรลุเป้าหมายแล้ว",
     "disbursed": "เสร็จสมบูรณ์",
@@ -438,7 +438,7 @@
     "topUp": "เติมเงิน",
     "simulated": "เติมเงินจำลองสำหรับทดสอบ การชำระเงินจริงเร็วๆ นี้"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "เงินไม่พอ เติมเงินในกระเป๋าก่อน",
     "minContribution": "ชำระขั้นต่ำ 10p",
     "contribute": "สนับสนุนโครงการนี้",
@@ -447,7 +447,7 @@
     "invalidAmount": "กรอกจำนวนเงินที่ถูกต้อง",
     "customAmount": "จำนวนอื่น (£)",
     "give": "ชำระเงิน",
-    "success": "ชำระ {amount} ให้ {campaign} แล้ว!",
+    "success": "ชำระ {amount} ให้ {actionInitiative} แล้ว!",
     "remainingBalance": "ยอดเงินคงเหลือ: {balance}",
     "topUpPrompt": "เติมเงินในกระเป๋า",
     "toKeepSupporting": "เพื่อสนับสนุนโครงการปฏิบัติการต่อไป",

@@ -37,27 +37,27 @@ export async function translateEntity<
 }
 
 /**
- * Translate campaign objects (which use `title` instead of `name`).
+ * Translate action initiative objects (which use `title` instead of `name`).
  */
-export async function translateCampaigns<
+export async function translateActionInitiatives<
   T extends { id: string; title: string; description?: string | null },
->(campaigns: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || campaigns.length === 0) return campaigns;
+>(actionInitiatives: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || actionInitiatives.length === 0) return actionInitiatives;
 
   const translations = await getTranslatedEntities(
-    'campaign',
-    campaigns.map((c) => c.id),
+    'action_initiative',
+    actionInitiatives.map((ai) => ai.id),
     locale,
   );
 
-  return campaigns.map((campaign) => {
-    const t = translations[campaign.id];
-    if (!t) return campaign;
+  return actionInitiatives.map((actionInitiative) => {
+    const t = translations[actionInitiative.id];
+    if (!t) return actionInitiative;
     return {
-      ...campaign,
-      title: t.title || campaign.title,
-      ...(campaign.description !== undefined && {
-        description: t.description || campaign.description,
+      ...actionInitiative,
+      title: t.title || actionInitiative.title,
+      ...(actionInitiative.description !== undefined && {
+        description: t.description || actionInitiative.description,
       }),
     };
   });

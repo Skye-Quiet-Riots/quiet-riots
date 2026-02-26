@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 Aduna dovezi",
     "gatherEvidenceDesc": "Documenteaza ce se intampla cu {orgName}."
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "Proiecte de actiune",
     "subtitle": "{count} {count, plural, one {proiect care comisioneaza} other {proiecte care comisioneaza}} servicii pentru actiune colectiva.",
     "noResults": "Nu s-au gasit proiecte de actiune. Incearca un filtru diferit."
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "Proiecte de actiune",
     "fullyFunded": "Obiectiv atins",
     "disbursed": "Finalizat",
@@ -352,7 +352,7 @@
     "you": "TU",
     "rioters": "participanti"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ Proiecte de actiune",
     "funded": "Obiectiv atins",
     "disbursed": "Finalizat",
@@ -438,7 +438,7 @@
     "topUp": "Incarca",
     "simulated": "Incarcare simulata pentru testare. Platile reale vin in curand."
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "Fonduri insuficiente. Incarca-ti portofelul mai intai.",
     "minContribution": "Plata minima este 10p",
     "contribute": "Sustine acest proiect",
@@ -447,7 +447,7 @@
     "invalidAmount": "Introdu o suma valida",
     "customAmount": "Suma personalizata (£)",
     "give": "Plateste",
-    "success": "Ai platit {amount} pentru {campaign}!",
+    "success": "Ai platit {amount} pentru {actionInitiative}!",
     "remainingBalance": "Sold ramas: {balance}",
     "topUpPrompt": "Incarca-ti portofelul",
     "toKeepSupporting": "pentru a continua sa sustii proiecte de actiune.",

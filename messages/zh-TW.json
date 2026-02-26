@@ -83,12 +83,12 @@
     "gatherEvidence": "📹 蒐集證據",
     "gatherEvidenceDesc": "記錄 {orgName} 正在發生的事。"
   },
-  "Campaigns": {
+  "ActionInitiatives": {
     "title": "行動專案",
     "subtitle": "{count} {count, plural, one {個專案} other {個專案}}正在為集體行動委託服務。",
     "noResults": "未找到行動專案。請嘗試不同的篩選條件。"
   },
-  "CampaignDetail": {
+  "ActionInitiativeDetail": {
     "breadcrumb": "行動專案",
     "fullyFunded": "已達目標",
     "disbursed": "已完成",
@@ -352,7 +352,7 @@
     "you": "你",
     "rioters": "參與者"
   },
-  "CampaignProgress": {
+  "ActionInitiativeProgress": {
     "title": "⚡ 行動專案",
     "funded": "已達目標",
     "disbursed": "已完成",
@@ -438,7 +438,7 @@
     "topUp": "儲值",
     "simulated": "模擬儲值，僅供測試。真實付款即將上線。"
   },
-  "Contribute": {
+  "Pay": {
     "insufficientFunds": "餘額不足。請先為錢包儲值。",
     "minContribution": "最低付款 10p",
     "contribute": "支持此專案",
@@ -447,7 +447,7 @@
     "invalidAmount": "請輸入有效金額",
     "customAmount": "自訂金額（£）",
     "give": "付款",
-    "success": "已為 {campaign} 支付 {amount}！",
+    "success": "已為 {actionInitiative} 支付 {amount}！",
     "remainingBalance": "你的剩餘餘額：{balance}",
     "topUpPrompt": "為錢包儲值",
     "toKeepSupporting": "以繼續支持行動專案。",

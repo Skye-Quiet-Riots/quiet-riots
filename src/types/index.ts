@@ -327,8 +327,8 @@ export interface ReelShownLog {
 }
 
 // Riot Wallet
-export type CampaignStatus = 'active' | 'funded' | 'disbursed' | 'cancelled';
-export type WalletTransactionType = 'topup' | 'contribute' | 'refund' | 'share_consideration';
+export type ActionInitiativeStatus = 'active' | 'goal_reached' | 'delivered' | 'cancelled';
+export type WalletTransactionType = 'topup' | 'payment' | 'refund' | 'share_consideration';
 
 export interface Wallet {
   id: string;
@@ -346,7 +346,7 @@ export interface WalletTransaction {
   wallet_id: string;
   type: WalletTransactionType;
   amount_pence: number;
-  campaign_id: string | null;
+  action_initiative_id: string | null;
   issue_id: string | null;
   stripe_payment_id: string | null;
   description: string;
@@ -355,22 +355,22 @@ export interface WalletTransaction {
   created_at: string;
 }
 
-export interface Campaign {
+export interface ActionInitiative {
   id: string;
   issue_id: string;
   org_id: string | null;
   title: string;
   description: string;
   target_pence: number;
-  raised_pence: number;
-  contributor_count: number;
+  committed_pence: number;
+  supporter_count: number;
   recipient: string | null;
   recipient_url: string | null;
-  status: CampaignStatus;
-  platform_fee_pct: number;
+  status: ActionInitiativeStatus;
+  service_fee_pct: number;
   currency_code: string;
-  funded_at: string | null;
-  disbursed_at: string | null;
+  goal_reached_at: string | null;
+  delivered_at: string | null;
   created_at: string;
 }
 
