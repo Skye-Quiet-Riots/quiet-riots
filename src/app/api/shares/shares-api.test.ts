@@ -184,16 +184,28 @@ describe('GET /api/shares', () => {
     expect(response.status).toBe(401);
   });
 
-  it('returns share status and eligibility', async () => {
+  it('auto-promotes eligible user to available status', async () => {
     mockLoggedIn('user-eligible');
     const response = await getShare();
     const { ok, data } = await response.json();
     expect(response.status).toBe(200);
     expect(ok).toBe(true);
-    expect(data.application.status).toBe('not_eligible');
+    // User meets all criteria — should auto-promote from not_eligible to available
+    expect(data.application.status).toBe('available');
     expect(data.eligibility.eligible).toBe(true);
     expect(data.eligibility.riotsJoined).toBeGreaterThanOrEqual(3);
     expect(data.paymentRequired).toBe(10);
+  });
+
+  it('does not promote ineligible user', async () => {
+    // user-norole has no riots joined and no actions
+    mockLoggedIn('user-norole');
+    const response = await getShare();
+    const { ok, data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(ok).toBe(true);
+    expect(data.application.status).toBe('not_eligible');
+    expect(data.eligibility.eligible).toBe(false);
   });
 
   it('does not expose guide IDs in response', async () => {

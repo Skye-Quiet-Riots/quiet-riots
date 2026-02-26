@@ -92,6 +92,7 @@ import {
   checkShareEligibility,
   getOrCreateShareApplication,
   getShareApplication,
+  promoteToEligible,
   proceedWithShare,
   declineShare,
   withdrawShare,
@@ -1664,9 +1665,17 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
-        const application = await getShareApplication(user.id);
+        let application = await getShareApplication(user.id);
         const eligibility = await checkShareEligibility(user.id);
         const wallet = await getWalletByUserId(user.id);
+
+        // Auto-promote if eligible but status is still not_eligible
+        if (application && application.status === 'not_eligible' && eligibility.eligible) {
+          const promoted = await promoteToEligible(user.id);
+          if (promoted) {
+            application = await getShareApplication(user.id);
+          }
+        }
 
         return ok({
           status: application?.status ?? 'not_eligible',
@@ -1717,8 +1726,14 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
-        // Ensure application exists and is eligible
-        const app = await getOrCreateShareApplication(user.id);
+        // Ensure application exists and auto-promote if eligible
+        let app = await getOrCreateShareApplication(user.id);
+        if (app.status === 'not_eligible') {
+          const promoted = await promoteToEligible(user.id);
+          if (promoted) {
+            app = await getOrCreateShareApplication(user.id);
+          }
+        }
         if (app.status !== 'available') {
           return err(
             app.status === 'not_eligible'

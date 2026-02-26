@@ -85,7 +85,7 @@ export function ShareInfoPage({ application, eligibility, walletBalance }: Share
   }
 
   const status = application.status;
-  const showEligibility = status === 'not_eligible';
+  const showEligibility = status === 'not_eligible' || status === 'available';
   const showActions = status === 'available';
   const showStatus = status !== 'not_eligible' && status !== 'available' && status !== 'declined';
   const showWithdraw = status === 'under_review' || status === 'approved';
