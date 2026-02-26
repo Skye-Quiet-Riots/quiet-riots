@@ -1679,9 +1679,7 @@ describe('Bot API: verify_email_status', () => {
 describe('Bot API: OTP delivery', () => {
   // Clean up phone verification codes between tests to prevent state leakage
   beforeEach(async () => {
-    const { _resetVerificationCodes } = await import(
-      '@/lib/queries/phone-verification'
-    );
+    const { _resetVerificationCodes } = await import('@/lib/queries/phone-verification');
     await _resetVerificationCodes();
   });
 
@@ -1697,9 +1695,7 @@ describe('Bot API: OTP delivery', () => {
 
   it('get_undelivered_codes returns pending codes', async () => {
     // Import and create a code with delivery message
-    const { createVerificationCode } = await import(
-      '@/lib/queries/phone-verification'
-    );
+    const { createVerificationCode } = await import('@/lib/queries/phone-verification');
     await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
 
     const { status, body } = await callBot('get_undelivered_codes', {});
@@ -1719,9 +1715,7 @@ describe('Bot API: OTP delivery', () => {
   });
 
   it('mark_code_delivered marks code and returns delivered=true', async () => {
-    const { createVerificationCode } = await import(
-      '@/lib/queries/phone-verification'
-    );
+    const { createVerificationCode } = await import('@/lib/queries/phone-verification');
     const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
 
     const { status, body } = await callBot('mark_code_delivered', { code_id: id });
@@ -1745,6 +1739,234 @@ describe('Bot API: OTP delivery', () => {
 
   it('mark_code_delivered requires code_id', async () => {
     const { status, body } = await callBot('mark_code_delivered', {});
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+});
+
+// ─── Share Scheme ─────────────────────────────────────────────
+describe('Bot API: Share Scheme', () => {
+  const SHARE_PHONE = '+447700900001'; // user-sarah
+
+  beforeEach(async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    // Clean share tables between tests
+    await db.execute({ sql: 'DELETE FROM share_messages', args: [] });
+    await db.execute({ sql: 'DELETE FROM share_status_history', args: [] });
+    await db.execute({ sql: 'DELETE FROM share_audit_log', args: [] });
+    await db.execute({ sql: 'DELETE FROM share_identities', args: [] });
+    await db.execute({ sql: 'DELETE FROM share_applications', args: [] });
+    // Ensure treasury system user exists (wallets FK requires a user row)
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO users (id, name, email, status)
+            VALUES ('treasury', 'Quiet Riots Treasury', 'treasury@system.quietriots.com', 'active')`,
+      args: [],
+    });
+    // Ensure treasury wallet exists
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO wallets (id, user_id, balance_pence, total_loaded_pence, total_spent_pence)
+            VALUES ('treasury-wallet', 'treasury', 0, 0, 0)`,
+      args: [],
+    });
+    // Reset treasury wallet balance to 0
+    await db.execute({
+      sql: `UPDATE wallets SET balance_pence = 0 WHERE id = 'treasury-wallet'`,
+      args: [],
+    });
+    // Reset sarah's wallet balance to £5
+    await db.execute({
+      sql: `UPDATE wallets SET balance_pence = 500 WHERE id = 'wallet-sarah'`,
+      args: [],
+    });
+  });
+
+  it('get_share_status returns eligibility info for user', async () => {
+    const { status, body } = await callBot('get_share_status', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.status).toBeDefined();
+    expect(body.data.eligibility).toBeDefined();
+    expect(body.data.eligibility.riots_required).toBe(3);
+    expect(body.data.eligibility.actions_required).toBe(10);
+    expect(body.data.payment_required_pence).toBe(10);
+  });
+
+  it('get_share_status returns 404 for unknown phone', async () => {
+    const { status, body } = await callBot('get_share_status', { phone: '+447700999999' });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+
+  it('get_share_eligibility returns progress', async () => {
+    const { status, body } = await callBot('get_share_eligibility', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(typeof body.data.eligible).toBe('boolean');
+    expect(typeof body.data.riots_joined).toBe('number');
+    expect(typeof body.data.actions_taken).toBe('number');
+    expect(body.data.message).toBeDefined();
+  });
+
+  it('apply_for_share fails when user is not eligible', async () => {
+    const { status, body } = await callBot('apply_for_share', { phone: SHARE_PHONE });
+    // Sarah is not eligible (only 1 riot joined, needs 3)
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+    expect(body.error).toContain('not yet eligible');
+  });
+
+  it('apply_for_share succeeds when status is available', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    // Force the application to available status
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status) VALUES ('app-sarah', 'user-sarah', 'available')`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('apply_for_share', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.status).toBe('under_review');
+    expect(body.data.message).toContain('10p');
+  });
+
+  it('apply_for_share fails with insufficient balance', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    // Force available status and zero wallet balance
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status) VALUES ('app-sarah', 'user-sarah', 'available')`,
+      args: [],
+    });
+    await db.execute({
+      sql: `UPDATE wallets SET balance_pence = 0 WHERE id = 'wallet-sarah'`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('apply_for_share', { phone: SHARE_PHONE });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+    expect(body.error).toContain('Insufficient');
+  });
+
+  it('decline_share works when status is available', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status) VALUES ('app-sarah', 'user-sarah', 'available')`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('decline_share', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.status).toBe('declined');
+  });
+
+  it('decline_share fails when no application', async () => {
+    const { status, body } = await callBot('decline_share', { phone: SHARE_PHONE });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+
+  it('withdraw_share fails when no application in withdrawable state', async () => {
+    const { status, body } = await callBot('withdraw_share', { phone: SHARE_PHONE });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+
+  it('withdraw_share works for under_review application', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status, payment_amount_pence) VALUES ('app-sarah', 'user-sarah', 'under_review', 10)`,
+      args: [],
+    });
+    // Give treasury the 10p that would have been received
+    await db.execute({
+      sql: `UPDATE wallets SET balance_pence = 10 WHERE id = 'treasury-wallet'`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('withdraw_share', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.status).toBe('withdrawn');
+    expect(body.data.message).toContain('refunded');
+  });
+
+  it('reapply_share works after rejection', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status, reapply_count) VALUES ('app-sarah', 'user-sarah', 'rejected', 0)`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('reapply_share', { phone: SHARE_PHONE });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.status).toBe('under_review');
+  });
+
+  it('reapply_share fails with insufficient balance', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status, reapply_count) VALUES ('app-sarah', 'user-sarah', 'rejected', 0)`,
+      args: [],
+    });
+    await db.execute({
+      sql: `UPDATE wallets SET balance_pence = 0 WHERE id = 'wallet-sarah'`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('reapply_share', { phone: SHARE_PHONE });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+    expect(body.error).toContain('Insufficient');
+  });
+
+  it('ask_share_question sends message to share guide', async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO share_applications (id, user_id, status) VALUES ('app-sarah', 'user-sarah', 'under_review')`,
+      args: [],
+    });
+
+    const { status, body } = await callBot('ask_share_question', {
+      phone: SHARE_PHONE,
+      message: 'When will my share be approved?',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.message).toContain('question has been sent');
+
+    // Verify message was stored
+    const msgs = await db.execute({
+      sql: `SELECT * FROM share_messages WHERE application_id = 'app-sarah'`,
+      args: [],
+    });
+    expect(msgs.rows.length).toBe(1);
+    expect(msgs.rows[0].sender_role).toBe('applicant');
+  });
+
+  it('ask_share_question fails without application', async () => {
+    const { status, body } = await callBot('ask_share_question', {
+      phone: SHARE_PHONE,
+      message: 'Hello?',
+    });
+    expect(status).toBe(400);
+    expect(body.ok).toBe(false);
+  });
+
+  it('ask_share_question requires message param', async () => {
+    const { status, body } = await callBot('ask_share_question', {
+      phone: SHARE_PHONE,
+    });
     expect(status).toBe(400);
     expect(body.ok).toBe(false);
   });

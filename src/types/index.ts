@@ -328,7 +328,7 @@ export interface ReelShownLog {
 
 // Riot Wallet
 export type CampaignStatus = 'active' | 'funded' | 'disbursed' | 'cancelled';
-export type WalletTransactionType = 'topup' | 'contribute' | 'refund';
+export type WalletTransactionType = 'topup' | 'contribute' | 'refund' | 'share_consideration';
 
 export interface Wallet {
   id: string;
@@ -671,8 +671,13 @@ export interface BotEvent {
   created_at: string;
 }
 
-// User Roles (suggestion moderation)
-export type RoleType = 'setup_guide' | 'administrator';
+// User Roles
+export type RoleType =
+  | 'setup_guide'
+  | 'administrator'
+  | 'share_guide'
+  | 'compliance_guide'
+  | 'treasury_guide';
 
 export interface UserRole {
   id: string;
@@ -733,9 +738,22 @@ export type MessageType =
   | 'suggestion_live'
   | 'suggestion_progress'
   | 'role_assigned'
-  | 'general';
+  | 'general'
+  | 'share_available'
+  | 'share_approved'
+  | 'share_identity_needed'
+  | 'share_issued'
+  | 'share_rejected'
+  | 'share_question'
+  | 'share_payment_received'
+  | 'share_refunded';
 
-export type MessageEntityType = 'issue_suggestion' | 'issue' | 'organisation' | 'user';
+export type MessageEntityType =
+  | 'issue_suggestion'
+  | 'issue'
+  | 'organisation'
+  | 'user'
+  | 'share_application';
 
 export interface Message {
   id: string;
@@ -747,5 +765,120 @@ export interface Message {
   entity_type: MessageEntityType | null;
   entity_id: string | null;
   read: number;
+  created_at: string;
+}
+
+// ── Global Share Scheme ─────────────────────────────────────────────────
+
+export type ShareStatus =
+  | 'not_eligible'
+  | 'available'
+  | 'under_review'
+  | 'approved'
+  | 'identity_submitted'
+  | 'forwarded_senior'
+  | 'issued'
+  | 'declined'
+  | 'rejected'
+  | 'withdrawn';
+
+export type ShareGender = 'male' | 'female' | 'non_binary' | 'prefer_not_to_say' | 'other';
+
+export type IdDocumentType = 'passport' | 'national_id' | 'driving_licence' | 'other';
+
+export type ShareSenderRole =
+  | 'applicant'
+  | 'share_guide'
+  | 'compliance_guide'
+  | 'senior_compliance';
+
+export interface ShareApplication {
+  id: string;
+  user_id: string;
+  status: ShareStatus;
+  // Eligibility snapshots
+  riots_joined_at_offer: number | null;
+  actions_at_offer: number | null;
+  eligible_at: string | null;
+  // Payment
+  payment_transaction_id: string | null;
+  payment_amount_pence: number | null;
+  // Share Guide review
+  share_guide_id: string | null;
+  share_guide_decision_at: string | null;
+  share_guide_notes: string | null;
+  // Compliance Guide review
+  compliance_guide_id: string | null;
+  compliance_decision_at: string | null;
+  compliance_notes: string | null;
+  // Senior Compliance review
+  senior_compliance_id: string | null;
+  senior_decision_at: string | null;
+  senior_notes: string | null;
+  // Rejection / reapply
+  rejection_reason: string | null;
+  reapply_count: number;
+  // Certificate
+  certificate_number: string | null;
+  issued_at: string | null;
+  // Tracking
+  last_notification_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ShareIdentity {
+  id: string;
+  application_id: string;
+  user_id: string;
+  // Personal details (encrypted at application level)
+  legal_first_name: string;
+  legal_middle_name: string | null;
+  legal_last_name: string;
+  date_of_birth: string;
+  gender: ShareGender | null;
+  // Address (encrypted at application level)
+  address_line_1: string;
+  address_line_2: string | null;
+  city: string;
+  state_province: string | null;
+  postal_code: string | null;
+  country_code: string;
+  // Contact
+  phone: string;
+  // ID verification
+  id_document_type: IdDocumentType | null;
+  id_document_country: string | null;
+  digital_verification_available: number;
+  // Timestamps
+  submitted_at: string;
+  updated_at: string;
+}
+
+export interface ShareMessage {
+  id: string;
+  application_id: string;
+  sender_id: string;
+  sender_role: ShareSenderRole;
+  content: string;
+  created_at: string;
+}
+
+export interface ShareAuditEntry {
+  id: string;
+  application_id: string;
+  actor_id: string;
+  action: string;
+  detail: string | null;
+  created_at: string;
+}
+
+export interface ShareStatusHistory {
+  id: string;
+  application_id: string;
+  from_status: string;
+  to_status: string;
+  actor_id: string;
+  notes: string | null;
   created_at: string;
 }

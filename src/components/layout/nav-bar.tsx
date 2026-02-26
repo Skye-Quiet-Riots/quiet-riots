@@ -21,6 +21,9 @@ export function NavBar() {
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const [hasSetupRole, setHasSetupRole] = useState(false);
+  const [hasShareGuideRole, setHasShareGuideRole] = useState(false);
+  const [hasComplianceRole, setHasComplianceRole] = useState(false);
+  const [hasTreasuryRole, setHasTreasuryRole] = useState(false);
   const { data: session, status } = useSession();
   const t = useTranslations('Nav');
   const avatarRef = useRef<HTMLDivElement>(null);
@@ -50,7 +53,11 @@ export function NavBar() {
         if (res.ok && !cancelled) {
           const data = await res.json();
           const roles = data.data?.roles ?? [];
-          setHasSetupRole(roles.includes('setup_guide') || roles.includes('administrator'));
+          const isAdmin = roles.includes('administrator');
+          setHasSetupRole(roles.includes('setup_guide') || isAdmin);
+          setHasShareGuideRole(roles.includes('share_guide') || isAdmin);
+          setHasComplianceRole(roles.includes('compliance_guide') || isAdmin);
+          setHasTreasuryRole(roles.includes('treasury_guide') || isAdmin);
         }
       } catch {
         // ignore
@@ -171,6 +178,13 @@ export function NavBar() {
                       </span>
                     )}
                   </Link>
+                  <Link
+                    href="/share"
+                    onClick={() => setAvatarOpen(false)}
+                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  >
+                    My Share
+                  </Link>
                   {hasSetupRole && (
                     <Link
                       href="/setup"
@@ -178,6 +192,33 @@ export function NavBar() {
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                     >
                       Setup Guide
+                    </Link>
+                  )}
+                  {hasShareGuideRole && (
+                    <Link
+                      href="/share-guide"
+                      onClick={() => setAvatarOpen(false)}
+                      className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    >
+                      Share Guide
+                    </Link>
+                  )}
+                  {hasComplianceRole && (
+                    <Link
+                      href="/compliance"
+                      onClick={() => setAvatarOpen(false)}
+                      className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    >
+                      Compliance
+                    </Link>
+                  )}
+                  {hasTreasuryRole && (
+                    <Link
+                      href="/treasury"
+                      onClick={() => setAvatarOpen(false)}
+                      className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    >
+                      Treasury
                     </Link>
                   )}
                   <button
@@ -264,6 +305,17 @@ export function NavBar() {
                 }`}
               >
                 {t('profile')}
+              </Link>
+              <Link
+                href="/share"
+                onClick={() => setMenuOpen(false)}
+                className={`block py-2 text-sm font-medium ${
+                  pathname.startsWith('/share')
+                    ? 'text-zinc-900 dark:text-white'
+                    : 'text-zinc-500 dark:text-zinc-400'
+                }`}
+              >
+                My Share
               </Link>
               <button
                 onClick={() => {

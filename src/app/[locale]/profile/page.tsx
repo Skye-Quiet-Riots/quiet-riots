@@ -10,12 +10,14 @@ import { PageHeader } from '@/components/layout/page-header';
 import { StatBadge } from '@/components/data/stat-badge';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { TrendingIndicator } from '@/components/data/trending-indicator';
+import { ShareProfileSection } from '@/components/data/share-profile-section';
 import { ProfileEditForm } from '@/components/interactive/profile-edit-form';
 import { ProfileCreateForm } from '@/components/interactive/profile-create-form';
 import { AvatarUpload } from '@/components/interactive/avatar-upload';
 import { ConnectedAccounts } from '@/components/interactive/connected-accounts';
 import { PhoneManagement } from '@/components/interactive/phone-management';
 import { PasswordManagement } from '@/components/interactive/password-management';
+import { getOrCreateShareApplication, checkShareEligibility } from '@/lib/queries/shares';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -51,12 +53,15 @@ export default async function ProfilePage({ params }: Props) {
     redirect('/');
   }
 
-  const [rawIssues, postCount, totalLikes, connectedAccounts] = await Promise.all([
-    getUserIssues(userId),
-    getUserFeedPostCount(userId),
-    getUserTotalLikes(userId),
-    getUserConnectedAccounts(userId),
-  ]);
+  const [rawIssues, postCount, totalLikes, connectedAccounts, shareApplication, shareEligibility] =
+    await Promise.all([
+      getUserIssues(userId),
+      getUserFeedPostCount(userId),
+      getUserTotalLikes(userId),
+      getUserConnectedAccounts(userId),
+      getOrCreateShareApplication(userId),
+      checkShareEligibility(userId),
+    ]);
   // getUserIssues returns flat rows with joined issue columns
   const issues = rawIssues as unknown as UserIssueRow[];
 
@@ -126,6 +131,19 @@ export default async function ProfilePage({ params }: Props) {
         <StatBadge value={postCount} label={t('posts', { count: postCount })} />
         <StatBadge value={totalLikes} label={t('likes', { count: totalLikes })} />
       </div>
+
+      {/* Share section */}
+      <ShareProfileSection
+        status={shareApplication.status}
+        certificateNumber={shareApplication.certificate_number}
+        issuedAt={shareApplication.issued_at}
+        eligibility={{
+          riotsJoined: shareEligibility.riotsJoined,
+          riotsRequired: shareEligibility.riotsRequired,
+          actionsTaken: shareEligibility.actionsTaken,
+          actionsRequired: shareEligibility.actionsRequired,
+        }}
+      />
 
       {/* Connected accounts */}
       <ConnectedAccounts accounts={connectedAccounts} />
