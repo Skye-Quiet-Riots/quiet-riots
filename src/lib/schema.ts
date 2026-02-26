@@ -83,7 +83,10 @@ export async function createTables() {
       status TEXT DEFAULT 'active' CHECK(status IN ('active','deactivated','deleted')),
       deactivated_at TEXT,
       session_version INTEGER NOT NULL DEFAULT 1,
-      onboarding_completed INTEGER NOT NULL DEFAULT 0
+      onboarding_completed INTEGER NOT NULL DEFAULT 0,
+      password_hash TEXT CHECK(length(password_hash) <= 255),
+      password_changed_at TEXT,
+      merged_into_user_id TEXT REFERENCES users(id)
     );
 
     CREATE TABLE IF NOT EXISTS user_issues (
@@ -395,8 +398,10 @@ export async function createTables() {
     CREATE TABLE IF NOT EXISTS verification_tokens (
       identifier TEXT NOT NULL CHECK(length(identifier) <= 255),
       token TEXT NOT NULL UNIQUE,
-      expires TEXT NOT NULL
+      expires TEXT NOT NULL,
+      type TEXT NOT NULL DEFAULT 'magic_link' CHECK(type IN ('magic_link', 'password_reset', 'email_verify'))
     );
+    CREATE INDEX IF NOT EXISTS idx_verification_tokens_identifier ON verification_tokens(identifier);
 
     CREATE TABLE IF NOT EXISTS legal_documents (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
@@ -585,23 +590,23 @@ export async function createTables() {
     CREATE INDEX IF NOT EXISTS idx_phone_codes_phone ON phone_verification_codes(phone);
     CREATE INDEX IF NOT EXISTS idx_phone_codes_expires ON phone_verification_codes(expires_at);
 
-    CREATE TABLE IF NOT EXISTS phone_rate_limits (
+    CREATE TABLE IF NOT EXISTS rate_limits (
       id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
-      phone TEXT NOT NULL,
+      identifier TEXT NOT NULL,
       action TEXT NOT NULL,
       count INTEGER NOT NULL DEFAULT 1 CHECK(count >= 0),
       window_start TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
       locked_until TEXT,
-      UNIQUE(phone, action)
+      UNIQUE(identifier, action)
     );
-    CREATE INDEX IF NOT EXISTS idx_phone_rate_phone ON phone_rate_limits(phone);
+    CREATE INDEX IF NOT EXISTS idx_rate_limits_identifier ON rate_limits(identifier);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
-    DROP TABLE IF EXISTS phone_rate_limits;
+    DROP TABLE IF EXISTS rate_limits;
     DROP TABLE IF EXISTS phone_verification_codes;
     DROP TABLE IF EXISTS messages;
     DROP TABLE IF EXISTS issue_suggestions;

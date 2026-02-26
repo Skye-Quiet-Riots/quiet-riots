@@ -99,6 +99,11 @@ export interface User {
   session_version: number;
   // Onboarding
   onboarding_completed: number;
+  // Password auth
+  password_hash: string | null;
+  password_changed_at: string | null;
+  // Merge tracking
+  merged_into_user_id: string | null;
 }
 
 export interface UserIssue {

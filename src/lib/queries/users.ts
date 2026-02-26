@@ -163,13 +163,68 @@ export async function getUserConnectedAccounts(
   return result.rows as unknown as { provider: string; type: string }[];
 }
 
+/**
+ * Count the number of authentication methods a user has.
+ * Includes: OAuth accounts, verified phone, verified email, and password.
+ * Used to prevent users from removing their last auth method.
+ */
 export async function countUserAuthMethods(userId: string): Promise<number> {
   const db = getDb();
-  const result = await db.execute({
+
+  // Count OAuth/email provider accounts
+  const accountsResult = await db.execute({
     sql: 'SELECT COUNT(*) as count FROM accounts WHERE user_id = ?',
     args: [userId],
   });
-  return (result.rows[0] as unknown as { count: number }).count;
+  const oauthCount = (accountsResult.rows[0] as unknown as { count: number }).count;
+
+  // Check phone and password on user record
+  const userResult = await db.execute({
+    sql: 'SELECT phone_verified, password_hash FROM users WHERE id = ?',
+    args: [userId],
+  });
+
+  if (userResult.rows.length === 0) return oauthCount;
+
+  const user = userResult.rows[0] as unknown as {
+    phone_verified: number;
+    password_hash: string | null;
+  };
+
+  let count = oauthCount;
+  if (user.phone_verified === 1) count++;
+  if (user.password_hash) count++;
+
+  return count;
+}
+
+/**
+ * Get user by email with password hash included.
+ * Used for password-based authentication.
+ */
+export async function getUserByEmailWithPassword(
+  email: string,
+): Promise<(User & { password_hash: string | null }) | null> {
+  const db = getDb();
+  const normalized = email.toLowerCase().trim();
+  const result = await db.execute({
+    sql: 'SELECT * FROM users WHERE LOWER(email) = ?',
+    args: [normalized],
+  });
+  return (
+    (result.rows[0] as unknown as (User & { password_hash: string | null }) | undefined) ?? null
+  );
+}
+
+/**
+ * Set or update a user's password hash.
+ */
+export async function setUserPasswordHash(userId: string, hash: string): Promise<void> {
+  const db = getDb();
+  await db.execute({
+    sql: 'UPDATE users SET password_hash = ?, password_changed_at = ? WHERE id = ?',
+    args: [hash, new Date().toISOString(), userId],
+  });
 }
 
 export async function unlinkUserAccount(userId: string, provider: string): Promise<boolean> {
