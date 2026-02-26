@@ -6,20 +6,20 @@
 
 ## Latest Session
 
-**Session 46** (2026-02-26) — Phone OTP delivery via WhatsApp + auto-update enhancement
-→ [`session-logs/2026-02-session-46.md`](session-logs/2026-02-session-46.md)
+**Session 47** (2026-02-26) — OTP delivery E2E testing + API key fix
+→ [`session-logs/2026-02-session-47.md`](session-logs/2026-02-session-47.md)
 
 ## Current Priorities
 
-- **E2E test phone OTP** — verify WhatsApp code arrives and sign-in completes on production
 - **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
 - **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
-- **End-to-end testing** — manually test all new auth flows on production
+- **End-to-end testing** — manually test all auth flows on production (email, phone OTP, OAuth)
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 47  | 2026-02-26    | OTP delivery E2E testing + API key fix                | [`session-47`](session-logs/2026-02-session-47.md)                                                             |
 | 46  | 2026-02-26    | Phone OTP delivery via WhatsApp + auto-update         | [`session-46`](session-logs/2026-02-session-46.md)                                                             |
 | 45  | 2026-02-26    | Housekeeping: PR #103 merge, user merge, script fixes | [`session-45`](session-logs/2026-02-session-45.md)                                                             |
 | 44  | 2026-02-26    | Comprehensive auth upgrade (12 phases)                | [`session-44`](session-logs/2026-02-session-44.md)                                                             |
