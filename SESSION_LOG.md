@@ -6,20 +6,23 @@
 
 ## Latest Session
 
-**Session 49** (2026-02-26) — WhatsApp Message Delivery Queue + Phone Login Fix
-→ [`session-logs/2026-02-session-49.md`](session-logs/2026-02-session-49.md)
+**Session 50** (2026-02-26) — Stripe-Compliant Payment Copy
+→ [`session-logs/2026-02-session-50.md`](session-logs/2026-02-session-50.md)
 
 ## Current Priorities
 
+- **Clear OpenClaw sessions** — SKILL.md changed, bot needs session reset
 - **End-to-end testing** — manually test the full share lifecycle on production
 - **Phase 8: Polish** — PDF certificate generation, country-specific tax guidance, PII data retention
 - **Google/Facebook OAuth setup** — still pending from session 47
 - **Resend email** — API key failed when sending notification; may need domain verification
+- **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 50  | 2026-02-26    | Stripe-Compliant Payment Copy                         | [`session-50`](session-logs/2026-02-session-50.md)                                                             |
 | 49  | 2026-02-26    | WhatsApp Message Delivery Queue + Phone Login Fix     | [`session-49`](session-logs/2026-02-session-49.md)                                                             |
 | 48  | 2026-02-26    | Global Share Scheme (Phases 6-7 + Deploy)             | [`session-48`](session-logs/2026-02-session-48.md)                                                             |
 | 47  | 2026-02-26    | OTP delivery E2E testing + API key fix                | [`session-47`](session-logs/2026-02-session-47.md)                                                             |
