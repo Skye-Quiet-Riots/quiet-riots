@@ -6,22 +6,23 @@
 
 ## Latest Session
 
-**Session 51** (2026-02-26) — Recovery + End-of-Session
-→ [`session-logs/2026-02-session-51.md`](session-logs/2026-02-session-51.md)
+**Session 52** (2026-02-26) — Rename campaigns → action_initiatives (Full Code Refactor)
+→ [`session-logs/2026-02-session-52.md`](session-logs/2026-02-session-52.md)
 
 ## Current Priorities
 
 - **Clear OpenClaw sessions** — SKILL.md changed, bot needs session reset
-- **End-to-end testing** — manually test the full share lifecycle on production
-- **Phase 8: Polish** — PDF certificate generation, country-specific tax guidance, PII data retention
-- **Google/Facebook OAuth setup** — still pending from session 47
-- **Resend email** — API key failed when sending notification; may need domain verification
+- **Future PR: Rename bot action names** — `contribute` → `payment`, `get_campaigns` → `get_action_initiatives`
+- **Future PR: Drop campaigns VIEW** — after confirming no old code references it
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
+- **Google/Facebook OAuth setup** — still pending from session 47
+- **End-to-end testing** — manually test the full share lifecycle on production
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 52  | 2026-02-26    | Rename campaigns → action_initiatives (Full Refactor) | [`session-52`](session-logs/2026-02-session-52.md)                                                             |
 | 51  | 2026-02-26    | Recovery + End-of-Session                             | [`session-51`](session-logs/2026-02-session-51.md)                                                             |
 | 50  | 2026-02-26    | Stripe-Compliant Payment Copy                         | [`session-50`](session-logs/2026-02-session-50.md)                                                             |
 | 49  | 2026-02-26    | WhatsApp Message Delivery Queue + Phone Login Fix     | [`session-49`](session-logs/2026-02-session-49.md)                                                             |
