@@ -1,6 +1,6 @@
 import { getDb } from '../db';
 import { generateId } from '@/lib/uuid';
-import type { Wallet, WalletTransaction, Campaign, ExchangeRate } from '@/types';
+import type { Wallet, WalletTransaction, ActionInitiative, ExchangeRate } from '@/types';
 
 export async function getWalletByUserId(userId: string): Promise<Wallet | null> {
   const db = getDb();
@@ -132,31 +132,31 @@ export async function completeTopup(
   ]);
 }
 
-export async function createContribution(
+export async function createPayment(
   userId: string,
-  campaignId: string,
+  actionInitiativeId: string,
   amountPence: number,
-): Promise<{ transaction: WalletTransaction; campaign: Campaign }> {
+): Promise<{ transaction: WalletTransaction; actionInitiative: ActionInitiative }> {
   const db = getDb();
 
-  // Get wallet and campaign
-  const [walletResult, campaignResult] = await Promise.all([
+  // Get wallet and action initiative
+  const [walletResult, aiResult] = await Promise.all([
     db.execute({ sql: 'SELECT * FROM wallets WHERE user_id = ?', args: [userId] }),
-    db.execute({ sql: 'SELECT * FROM campaigns WHERE id = ?', args: [campaignId] }),
+    db.execute({ sql: 'SELECT * FROM action_initiatives WHERE id = ?', args: [actionInitiativeId] }),
   ]);
 
   const wallet = walletResult.rows[0] as unknown as Wallet | undefined;
   if (!wallet) throw new Error('Wallet not found');
 
-  const campaign = campaignResult.rows[0] as unknown as Campaign | undefined;
-  if (!campaign) throw new Error('Campaign not found');
+  const actionInitiative = aiResult.rows[0] as unknown as ActionInitiative | undefined;
+  if (!actionInitiative) throw new Error('Action initiative not found');
 
-  if (campaign.status !== 'active') throw new Error('Campaign is not active');
+  if (actionInitiative.status !== 'active') throw new Error('Action initiative is not active');
   if (wallet.balance_pence < amountPence) throw new Error('Insufficient funds');
 
   const txId = generateId();
 
-  // Atomic: debit wallet + credit campaign + record transaction + mark campaign funded if target met
+  // Atomic: debit wallet + credit action initiative + record transaction
   await db.batch([
     {
       sql: `UPDATE wallets SET
@@ -167,43 +167,43 @@ export async function createContribution(
       args: [amountPence, amountPence, wallet.id],
     },
     {
-      sql: `UPDATE campaigns SET
-              raised_pence = raised_pence + ?,
-              contributor_count = contributor_count + 1
+      sql: `UPDATE action_initiatives SET
+              committed_pence = committed_pence + ?,
+              supporter_count = supporter_count + 1
             WHERE id = ?`,
-      args: [amountPence, campaignId],
+      args: [amountPence, actionInitiativeId],
     },
     {
-      sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, campaign_id, issue_id, currency_code, completed_at, description)
-            VALUES (?, ?, 'contribute', ?, ?, ?, ?, datetime('now'), ?)`,
+      sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, action_initiative_id, issue_id, currency_code, completed_at, description)
+            VALUES (?, ?, 'payment', ?, ?, ?, ?, datetime('now'), ?)`,
       args: [
         txId,
         wallet.id,
         amountPence,
-        campaignId,
-        campaign.issue_id,
+        actionInitiativeId,
+        actionInitiative.issue_id,
         wallet.currency,
-        campaign.title,
+        actionInitiative.title,
       ],
     },
   ]);
 
-  // Check if campaign just hit target — move status update into same check
-  const updatedCampaign = await db.execute({
-    sql: 'SELECT * FROM campaigns WHERE id = ?',
-    args: [campaignId],
+  // Check if action initiative just hit target
+  const updatedAi = await db.execute({
+    sql: 'SELECT * FROM action_initiatives WHERE id = ?',
+    args: [actionInitiativeId],
   });
-  const campaignAfter = updatedCampaign.rows[0] as unknown as Campaign;
+  const aiAfter = updatedAi.rows[0] as unknown as ActionInitiative;
 
   if (
-    campaignAfter.raised_pence >= campaignAfter.target_pence &&
-    campaignAfter.status === 'active'
+    aiAfter.committed_pence >= aiAfter.target_pence &&
+    aiAfter.status === 'active'
   ) {
     await db.execute({
-      sql: "UPDATE campaigns SET status = 'funded', funded_at = datetime('now') WHERE id = ?",
-      args: [campaignId],
+      sql: "UPDATE action_initiatives SET status = 'goal_reached', goal_reached_at = datetime('now') WHERE id = ?",
+      args: [actionInitiativeId],
     });
-    campaignAfter.status = 'funded';
+    aiAfter.status = 'goal_reached';
   }
 
   const txResult = await db.execute({
@@ -212,7 +212,7 @@ export async function createContribution(
   });
   const transaction = txResult.rows[0] as unknown as WalletTransaction;
 
-  return { transaction, campaign: campaignAfter };
+  return { transaction, actionInitiative: aiAfter };
 }
 
 export async function getUserSpendingSummary(
@@ -226,7 +226,7 @@ export async function getUserSpendingSummary(
             COUNT(*) as transaction_count
           FROM wallet_transactions wt
           JOIN wallets w ON wt.wallet_id = w.id
-          WHERE w.user_id = ? AND wt.type = 'contribute'`,
+          WHERE w.user_id = ? AND wt.type = 'payment'`,
     args: [userId],
   });
   const row = result.rows[0] as unknown as {

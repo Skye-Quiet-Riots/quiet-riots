@@ -7,7 +7,7 @@ import {
   getWalletTransactions,
   createTopupTransaction,
   completeTopup,
-  createContribution,
+  createPayment,
   getUserSpendingSummary,
   getExchangeRate,
   upsertExchangeRate,
@@ -113,8 +113,8 @@ describe('completeTopup', () => {
   });
 });
 
-describe('createContribution', () => {
-  it('deducts from wallet and credits campaign', async () => {
+describe('createPayment', () => {
+  it('deducts from wallet and credits action initiative', async () => {
     // First top up to ensure sufficient funds
     const { transaction: topupTx } = await createTopupTransaction('wallet-sarah', 2000);
     await completeTopup(topupTx.id);
@@ -122,39 +122,39 @@ describe('createContribution', () => {
     const walletBefore = await getWalletByUserId('user-sarah');
     const balanceBefore = walletBefore!.balance_pence;
 
-    const result = await createContribution('user-sarah', 'camp-water-test', 100);
-    expect(result.transaction.type).toBe('contribute');
+    const result = await createPayment('user-sarah', 'camp-water-test', 100);
+    expect(result.transaction.type).toBe('payment');
     expect(result.transaction.amount_pence).toBe(100);
-    expect(result.transaction.campaign_id).toBe('camp-water-test');
+    expect(result.transaction.action_initiative_id).toBe('camp-water-test');
     expect(result.transaction.completed_at).not.toBeNull();
-    expect(result.campaign.raised_pence).toBeGreaterThan(31000);
+    expect(result.actionInitiative.committed_pence).toBeGreaterThan(31000);
 
     const walletAfter = await getWalletByUserId('user-sarah');
     expect(walletAfter!.balance_pence).toBe(balanceBefore - 100);
   });
 
   it('throws error for insufficient funds', async () => {
-    await expect(createContribution('user-sarah', 'camp-water-test', 999999)).rejects.toThrow(
+    await expect(createPayment('user-sarah', 'camp-water-test', 999999)).rejects.toThrow(
       'Insufficient funds',
     );
   });
 
-  it('throws error for non-existent campaign', async () => {
-    await expect(createContribution('user-sarah', 'camp-nonexistent', 100)).rejects.toThrow(
-      'Campaign not found',
+  it('throws error for non-existent action initiative', async () => {
+    await expect(createPayment('user-sarah', 'camp-nonexistent', 100)).rejects.toThrow(
+      'Action initiative not found',
     );
   });
 
-  it('throws error for funded campaign', async () => {
-    await expect(createContribution('user-sarah', 'camp-funded', 100)).rejects.toThrow(
-      'Campaign is not active',
+  it('throws error for goal-reached action initiative', async () => {
+    await expect(createPayment('user-sarah', 'camp-funded', 100)).rejects.toThrow(
+      'Action initiative is not active',
     );
   });
 
-  it('marks campaign as funded when target is reached', async () => {
-    // camp-almost-funded has target 10000, raised 9950 — needs 50 more
-    const result = await createContribution('user-sarah', 'camp-almost-funded', 50);
-    expect(result.campaign.status).toBe('funded');
+  it('marks action initiative as goal_reached when target is reached', async () => {
+    // camp-almost-funded has target 10000, committed 9950 — needs 50 more
+    const result = await createPayment('user-sarah', 'camp-almost-funded', 50);
+    expect(result.actionInitiative.status).toBe('goal_reached');
   });
 });
 

@@ -410,9 +410,9 @@ export async function seedTestData() {
     args: ['reel-001', 'user-sarah'],
   });
 
-  // Campaigns
+  // Action Initiatives
   await db.execute({
-    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+    sql: `INSERT INTO action_initiatives (id, issue_id, title, description, target_pence, committed_pence, supporter_count, recipient, status)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       'camp-water-test',
@@ -427,7 +427,7 @@ export async function seedTestData() {
     ],
   });
   await db.execute({
-    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+    sql: `INSERT INTO action_initiatives (id, issue_id, title, description, target_pence, committed_pence, supporter_count, recipient, status)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       'camp-funded',
@@ -438,11 +438,11 @@ export async function seedTestData() {
       50000,
       250,
       'Open Rights Group',
-      'funded',
+      'goal_reached',
     ],
   });
   await db.execute({
-    sql: `INSERT INTO campaigns (id, issue_id, title, description, target_pence, raised_pence, contributor_count, recipient, status)
+    sql: `INSERT INTO action_initiatives (id, issue_id, title, description, target_pence, committed_pence, supporter_count, recipient, status)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       'camp-almost-funded',
@@ -654,12 +654,12 @@ export async function seedTestData() {
     args: ['wtx-topup-1', 'wallet-sarah', 'topup', 1000, 'Wallet top-up'],
   });
   await db.execute({
-    sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, campaign_id, issue_id, description)
+    sql: `INSERT INTO wallet_transactions (id, wallet_id, type, amount_pence, action_initiative_id, issue_id, description)
           VALUES (?, ?, ?, ?, ?, ?, ?)`,
     args: [
       'wtx-contrib-1',
       'wallet-sarah',
-      'contribute',
+      'payment',
       500,
       'camp-water-test',
       'issue-rail',

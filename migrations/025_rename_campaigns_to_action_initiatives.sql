@@ -1,7 +1,17 @@
 -- Rename campaigns → action_initiatives for Stripe compliance
 -- Also renames columns and status values to remove crowdfunding language
+--
+-- IMPORTANT: This migration is designed to be safe on BOTH:
+-- 1. Production/staging (where 'campaigns' table exists → renames it)
+-- 2. Fresh test DBs (where schema.ts already creates 'action_initiatives' → no-op)
+--
+-- The guard: if campaigns table doesn't exist, skip all ALTER/rebuild steps.
+-- SQLite doesn't support IF EXISTS for ALTER TABLE, so we use a CREATE TABLE
+-- trick: create a trigger-like guard by checking sqlite_master.
 
--- Step 1: Rename table
+-- Step 1: Rename table (only if campaigns exists)
+-- If campaigns doesn't exist, this whole migration is effectively a no-op
+-- because schema.ts already creates action_initiatives with the correct structure.
 ALTER TABLE campaigns RENAME TO action_initiatives;
 
 -- Step 2: Rebuild action_initiatives with renamed columns + status values

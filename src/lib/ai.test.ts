@@ -173,7 +173,7 @@ describe('generateEntityTranslations', () => {
     expect(result).toEqual({});
   });
 
-  it('supports arbitrary field names (e.g. title for campaigns)', async () => {
+  it('supports arbitrary field names (e.g. title for action initiatives)', async () => {
     process.env.ANTHROPIC_API_KEY = 'test-key';
     mockCreate.mockResolvedValueOnce({
       content: [
