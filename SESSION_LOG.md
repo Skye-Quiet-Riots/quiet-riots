@@ -6,23 +6,21 @@
 
 ## Latest Session
 
-**Session 42** (2026-02-25) — Magic Link Email Deployment Fix + Security/i18n Audit
-→ [`session-logs/2026-02-session-42.md`](session-logs/2026-02-session-42.md)
+**Session 43** (2026-02-26) — Phone Auth, Admin Dashboard, First Rioter Recognition & i18n
+→ [`session-logs/2026-02-session-43.md`](session-logs/2026-02-session-43.md)
 
 ## Current Priorities
 
-- **CRITICAL: Fix email template XSS** — add `escapeHtml()`, URL scheme validation, apply to email template
-- **Add rate limiting** to `/api/auth/[...nextauth]` POST handler
-- **Add RTL + lang attributes** to email template for ar/he/fa locales
-- **Write missing tests** — `sendVerificationRequest` (mocked fetch), parameterised locale coverage, XSS regression
-- **Fix 8 missing locale files** — et, lt, lv, mk, sq, sr, ur, zh
-- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET`
-- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET`
+- **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
+- **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
+- **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
+- **SMS provider integration** — Twilio or similar for phone auth in production
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 43  | 2026-02-26    | Phone auth, admin dashboard, first rioter recognition | [`session-43`](session-logs/2026-02-session-43.md)                                                             |
 | 42  | 2026-02-25    | Magic link email deploy fix + security/i18n audit     | [`session-42`](session-logs/2026-02-session-42.md)                                                             |
 | 41  | 2026-02-25    | Branded, locale-aware magic link emails via Resend    | [`session-41`](session-logs/2026-02-session-41.md)                                                             |
 | 40  | 2026-02-25    | Translate suggestion pipeline i18n (44 locales)       | [`session-40`](session-logs/2026-02-session-40.md)                                                             |
