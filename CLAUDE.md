@@ -182,7 +182,8 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 
 ## Known Issues
 
-- **SMS provider needed for phone OTP in production:** Phone auth codes are currently logged to console in dev mode only. Need Twilio (or similar) integration for production SMS delivery. Backend is ready (`src/lib/queries/phone-auth.ts`), just needs the transport layer. Requires: Twilio account, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` env vars in Vercel.
+- **OTP delivery depends on Mac being online:** Phone OTP codes are delivered via WhatsApp by a polling script running on the local Mac (`scripts/deliver-otp-codes.sh` via LaunchAgent every 3s). If the Mac is offline, sleeping, or the OpenClaw gateway is down, codes won't be delivered until connectivity is restored. Codes expire after 5 minutes.
+- **OTP delivery message contains plaintext code:** The `delivery_message` column stores the readable code for WhatsApp delivery. It's NULLed after verification/expiry (defence in depth), but there's a 5-minute window where the plaintext is in the DB. Bot API auth is required to read it.
 
 ## Start of Session Protocol
 
@@ -195,7 +196,8 @@ At the start of every session (or when asked to "pick up where we left off"):
    - `openclaw --version` — report current version
    - `launchctl list | grep ai.openclaw.gateway` — confirm gateway is running
    - `tail -5 ~/.openclaw/logs/watchdog.log` — check for recent auto-recoveries
-   - `tail -3 ~/.openclaw/logs/auto-update.log` — check if auto-update ran recently
+   - `tail -3 ~/.openclaw/logs/auto-update.log` — check if auto-update ran recently; look for TESTS FAILED lines
+   - `tail -3 ~/.openclaw/logs/otp-delivery.log` — check recent OTP deliveries
    - If the watchdog has been restarting frequently, flag it as a connectivity issue
 
 **Continuation sessions:** If this session continues a previous one (context compacted or "pick up where we left off"), skip the full start-of-session — just read the latest session file and continue working.
