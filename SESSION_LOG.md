@@ -6,20 +6,23 @@
 
 ## Latest Session
 
-**Session 43** (2026-02-26) — Phone Auth, Admin Dashboard, First Rioter Recognition & i18n
-→ [`session-logs/2026-02-session-43.md`](session-logs/2026-02-session-43.md)
+**Session 44** (2026-02-26) — Comprehensive Auth Upgrade (12 Phases)
+→ [`session-logs/2026-02-session-44.md`](session-logs/2026-02-session-44.md)
 
 ## Current Priorities
 
+- **Execute Simon's user merge** — dry-run on staging first, then production (`scripts/merge-users.ts`)
 - **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
 - **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
 - **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
 - **SMS provider integration** — Twilio or similar for phone auth in production
+- **End-to-end testing** — manually test all new auth flows on production
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 44  | 2026-02-26    | Comprehensive auth upgrade (12 phases)                | [`session-44`](session-logs/2026-02-session-44.md)                                                             |
 | 43  | 2026-02-26    | Phone auth, admin dashboard, first rioter recognition | [`session-43`](session-logs/2026-02-session-43.md)                                                             |
 | 42  | 2026-02-25    | Magic link email deploy fix + security/i18n audit     | [`session-42`](session-logs/2026-02-session-42.md)                                                             |
 | 41  | 2026-02-25    | Branded, locale-aware magic link emails via Resend    | [`session-41`](session-logs/2026-02-session-41.md)                                                             |
