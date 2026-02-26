@@ -14,13 +14,16 @@ afterAll(() => {
 
 beforeEach(async () => {
   // Drop ALL tables so ALTER TABLE migrations don't hit "duplicate column" errors
+  // Disable FK checks to avoid dependency-order issues during cleanup
   const db = getDb();
+  await db.execute('PRAGMA foreign_keys = OFF');
   const tables = await db.execute(
     "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'",
   );
   for (const row of tables.rows) {
     await db.execute(`DROP TABLE IF EXISTS "${row.name as string}"`);
   }
+  await db.execute('PRAGMA foreign_keys = ON');
 });
 
 describe('migrate', () => {

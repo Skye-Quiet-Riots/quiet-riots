@@ -602,12 +602,113 @@ export async function createTables() {
       UNIQUE(identifier, action)
     );
     CREATE INDEX IF NOT EXISTS idx_rate_limits_identifier ON rate_limits(identifier);
+
+    CREATE TABLE IF NOT EXISTS share_applications (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      user_id TEXT NOT NULL REFERENCES users(id) UNIQUE,
+      status TEXT NOT NULL DEFAULT 'not_eligible' CHECK(status IN (
+        'not_eligible','available','under_review','approved',
+        'identity_submitted','forwarded_senior',
+        'issued','declined','rejected','withdrawn'
+      )),
+      riots_joined_at_offer INTEGER CHECK(riots_joined_at_offer >= 0),
+      actions_at_offer INTEGER CHECK(actions_at_offer >= 0),
+      eligible_at TEXT,
+      payment_transaction_id TEXT,
+      payment_amount_pence INTEGER CHECK(payment_amount_pence >= 0),
+      share_guide_id TEXT REFERENCES users(id),
+      share_guide_decision_at TEXT,
+      share_guide_notes TEXT CHECK(length(share_guide_notes) <= 2000),
+      compliance_guide_id TEXT REFERENCES users(id),
+      compliance_decision_at TEXT,
+      compliance_notes TEXT CHECK(length(compliance_notes) <= 2000),
+      senior_compliance_id TEXT REFERENCES users(id),
+      senior_decision_at TEXT,
+      senior_notes TEXT CHECK(length(senior_notes) <= 2000),
+      rejection_reason TEXT CHECK(length(rejection_reason) <= 1000),
+      reapply_count INTEGER NOT NULL DEFAULT 0 CHECK(reapply_count >= 0),
+      certificate_number TEXT UNIQUE CHECK(length(certificate_number) <= 50),
+      issued_at TEXT,
+      last_notification_at TEXT,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE INDEX IF NOT EXISTS idx_share_apps_status ON share_applications(status);
+    CREATE INDEX IF NOT EXISTS idx_share_apps_guide ON share_applications(share_guide_id);
+
+    CREATE TABLE IF NOT EXISTS share_identities (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      application_id TEXT NOT NULL REFERENCES share_applications(id) UNIQUE,
+      user_id TEXT NOT NULL REFERENCES users(id) UNIQUE,
+      legal_first_name TEXT NOT NULL CHECK(length(legal_first_name) <= 500),
+      legal_middle_name TEXT CHECK(length(legal_middle_name) <= 500),
+      legal_last_name TEXT NOT NULL CHECK(length(legal_last_name) <= 500),
+      date_of_birth TEXT NOT NULL CHECK(length(date_of_birth) <= 500),
+      gender TEXT CHECK(gender IN ('male','female','non_binary','prefer_not_to_say','other')),
+      address_line_1 TEXT NOT NULL CHECK(length(address_line_1) <= 500),
+      address_line_2 TEXT CHECK(length(address_line_2) <= 500),
+      city TEXT NOT NULL CHECK(length(city) <= 500),
+      state_province TEXT CHECK(length(state_province) <= 500),
+      postal_code TEXT CHECK(length(postal_code) <= 500),
+      country_code TEXT NOT NULL CHECK(length(country_code) <= 3),
+      phone TEXT NOT NULL CHECK(length(phone) <= 500),
+      id_document_type TEXT CHECK(id_document_type IN ('passport','national_id','driving_licence','other')),
+      id_document_country TEXT CHECK(length(id_document_country) <= 3),
+      digital_verification_available INTEGER NOT NULL DEFAULT 1 CHECK(digital_verification_available IN (0,1)),
+      submitted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE INDEX IF NOT EXISTS idx_share_identities_app ON share_identities(application_id);
+
+    CREATE TABLE IF NOT EXISTS share_messages (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      application_id TEXT NOT NULL REFERENCES share_applications(id),
+      sender_id TEXT NOT NULL REFERENCES users(id),
+      sender_role TEXT NOT NULL CHECK(sender_role IN ('applicant','share_guide','compliance_guide','senior_compliance')),
+      content TEXT NOT NULL CHECK(length(content) <= 5000),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE INDEX IF NOT EXISTS idx_share_msgs_app ON share_messages(application_id, created_at);
+    CREATE INDEX IF NOT EXISTS idx_share_msgs_sender ON share_messages(sender_id);
+
+    CREATE TABLE IF NOT EXISTS share_audit_log (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      application_id TEXT NOT NULL,
+      actor_id TEXT NOT NULL,
+      action TEXT NOT NULL CHECK(length(action) <= 100),
+      detail TEXT CHECK(length(detail) <= 2000),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE INDEX IF NOT EXISTS idx_share_audit_app ON share_audit_log(application_id, created_at);
+
+    CREATE TABLE IF NOT EXISTS share_status_history (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      application_id TEXT NOT NULL REFERENCES share_applications(id),
+      from_status TEXT NOT NULL CHECK(length(from_status) <= 30),
+      to_status TEXT NOT NULL CHECK(length(to_status) <= 30),
+      actor_id TEXT NOT NULL,
+      notes TEXT CHECK(length(notes) <= 2000),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE INDEX IF NOT EXISTS idx_share_history_app ON share_status_history(application_id, created_at);
+
+    CREATE TABLE IF NOT EXISTS share_certificate_counter (
+      id INTEGER PRIMARY KEY CHECK(id = 1),
+      next_number INTEGER NOT NULL DEFAULT 1 CHECK(next_number >= 1)
+    );
+    INSERT OR IGNORE INTO share_certificate_counter (id, next_number) VALUES (1, 1);
   `);
 }
 
 export async function dropTables() {
   const db = getDb();
   await db.executeMultiple(`
+    DROP TABLE IF EXISTS share_certificate_counter;
+    DROP TABLE IF EXISTS share_status_history;
+    DROP TABLE IF EXISTS share_audit_log;
+    DROP TABLE IF EXISTS share_messages;
+    DROP TABLE IF EXISTS share_identities;
+    DROP TABLE IF EXISTS share_applications;
     DROP TABLE IF EXISTS rate_limits;
     DROP TABLE IF EXISTS phone_verification_codes;
     DROP TABLE IF EXISTS messages;
