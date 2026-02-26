@@ -278,6 +278,22 @@ describe('promoteToEligible', () => {
     expect(history[0].from_status).toBe('not_eligible');
     expect(history[0].to_status).toBe('available');
   });
+
+  it('getOrCreateShareApplication returns stale status without promotion (regression)', async () => {
+    // This documents the bug where the profile page showed "Not yet eligible"
+    // even though the user was eligible — because it used the DB status
+    // without calling promoteToEligible() first.
+    const appBefore = await getOrCreateShareApplication('user-eligible');
+    expect(appBefore.status).toBe('not_eligible');
+
+    const eligibility = await checkShareEligibility('user-eligible');
+    expect(eligibility.eligible).toBe(true);
+
+    // After promotion, re-fetching shows the correct status
+    await promoteToEligible('user-eligible');
+    const appAfter = await getOrCreateShareApplication('user-eligible');
+    expect(appAfter.status).toBe('available');
+  });
 });
 
 // ── Payment flow ────────────────────────────────────────────────────────

@@ -17,7 +17,11 @@ import { AvatarUpload } from '@/components/interactive/avatar-upload';
 import { ConnectedAccounts } from '@/components/interactive/connected-accounts';
 import { PhoneManagement } from '@/components/interactive/phone-management';
 import { PasswordManagement } from '@/components/interactive/password-management';
-import { getOrCreateShareApplication, checkShareEligibility } from '@/lib/queries/shares';
+import {
+  getOrCreateShareApplication,
+  checkShareEligibility,
+  promoteToEligible,
+} from '@/lib/queries/shares';
 import type { Category } from '@/types';
 
 interface UserIssueRow {
@@ -53,15 +57,23 @@ export default async function ProfilePage({ params }: Props) {
     redirect('/');
   }
 
-  const [rawIssues, postCount, totalLikes, connectedAccounts, shareApplication, shareEligibility] =
-    await Promise.all([
+  const [rawIssues, postCount, totalLikes, connectedAccounts, shareEligibility] = await Promise.all(
+    [
       getUserIssues(userId),
       getUserFeedPostCount(userId),
       getUserTotalLikes(userId),
       getUserConnectedAccounts(userId),
-      getOrCreateShareApplication(userId),
       checkShareEligibility(userId),
-    ]);
+    ],
+  );
+
+  // Auto-promote if eligible but DB status is still not_eligible
+  if (shareEligibility.eligible) {
+    await promoteToEligible(userId);
+  }
+  // Fetch application after potential promotion so status is current
+  const shareApplication = await getOrCreateShareApplication(userId);
+
   // getUserIssues returns flat rows with joined issue columns
   const issues = rawIssues as unknown as UserIssueRow[];
 
