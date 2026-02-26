@@ -13,6 +13,20 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'platform-lookaside.fbsbx.com' },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:locale/campaigns',
+        destination: '/:locale/action-initiatives',
+        permanent: true,
+      },
+      {
+        source: '/:locale/campaigns/:id',
+        destination: '/:locale/action-initiatives/:id',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withSentryConfig(withNextIntl(nextConfig), {
