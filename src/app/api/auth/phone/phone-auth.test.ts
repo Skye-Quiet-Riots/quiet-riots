@@ -127,7 +127,7 @@ describe('Phone Auth API', () => {
       });
       expect(result.rows.length).toBe(1);
       expect(result.rows[0].delivery_message).toBeTruthy();
-      expect((result.rows[0].delivery_message as string)).toContain('Quiet Riots verification code');
+      expect(result.rows[0].delivery_message as string).toContain('Quiet Riots verification code');
       expect(result.rows[0].delivered_at).toBeNull();
     });
   });
@@ -197,6 +197,22 @@ describe('Phone Auth API', () => {
       expect(data.ok).toBe(true);
       expect(data.data.userId).toBe('user-sarah');
       expect(data.data.isNewUser).toBe(false);
+    });
+
+    it('sets session with user info after successful signin (regression: Auth.js JWT)', async () => {
+      const { setSession } = await import('@/lib/session');
+      const { code } = await createVerificationCode('+447700900001');
+      const req = createTestRequest('/api/auth/phone/signin', {
+        method: 'POST',
+        body: { phone: '+447700900001', code },
+      });
+      await signinPOST(req);
+
+      expect(setSession).toHaveBeenCalledWith(
+        'user-sarah',
+        expect.any(Number),
+        expect.objectContaining({ name: expect.any(String), email: expect.any(String) }),
+      );
     });
 
     it('creates new user with email provided', async () => {
@@ -293,7 +309,11 @@ describe('Phone Auth API', () => {
 
     it('getUndeliveredCodes returns codes awaiting delivery', async () => {
       // Create a code with delivery message
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
 
       const codes = await getUndeliveredCodes();
       expect(codes.length).toBe(1);
@@ -309,7 +329,11 @@ describe('Phone Auth API', () => {
     });
 
     it('getUndeliveredCodes excludes delivered codes', async () => {
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
       await markCodeDelivered(id);
 
       const codes = await getUndeliveredCodes();
@@ -318,7 +342,11 @@ describe('Phone Auth API', () => {
 
     it('getUndeliveredCodes excludes expired codes', async () => {
       // Create code then manually expire it
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
       const db = getDb();
       const pastDate = new Date(Date.now() - 10 * 60 * 1000).toISOString(); // 10 min ago
       await db.execute({
@@ -331,7 +359,11 @@ describe('Phone Auth API', () => {
     });
 
     it('getUndeliveredCodes excludes verified codes', async () => {
-      const { code } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { code } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
       await verifyCode('+447700900099', code);
 
       const codes = await getUndeliveredCodes();
@@ -350,7 +382,11 @@ describe('Phone Auth API', () => {
     });
 
     it('markCodeDelivered is atomic (race-safe) — second call returns false', async () => {
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
 
       const first = await markCodeDelivered(id);
       const second = await markCodeDelivered(id);
@@ -360,7 +396,11 @@ describe('Phone Auth API', () => {
     });
 
     it('markCodeDelivered sets delivered_at timestamp', async () => {
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
       await markCodeDelivered(id);
 
       const db = getDb();
@@ -406,7 +446,11 @@ describe('Phone Auth API', () => {
     });
 
     it('cleanExpiredCodes NULLs delivery_message on expired codes before deleting', async () => {
-      const { id } = await createVerificationCode('+447700900099', undefined, 'Your code is 123456');
+      const { id } = await createVerificationCode(
+        '+447700900099',
+        undefined,
+        'Your code is 123456',
+      );
 
       // Manually expire the code
       const db = getDb();
