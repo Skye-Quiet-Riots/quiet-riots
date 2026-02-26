@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 1791 tests (~10s)                       |
+| `npm test`                | Run 1951 tests (~13s)                       |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -236,6 +236,7 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **New env vars need a redeploy AFTER being added:** Vercel injects env vars at build time. If you add an env var via `npx vercel env add` after the auto-deploy has already built, the deployed functions won't have it. Always run `npx vercel --prod` after adding new env vars (pull main first). The post-merge health check (`/api/health`) only tests DB connectivity — it won't catch missing Resend/OAuth keys.
 - **OTP delivery script must use production API key:** The `scripts/deliver-otp-codes.sh` script always talks to production Vercel. It hardcodes the production bot API key (`qr-xx21iIL4s2cepF9WVzHwwlL7QslY4boQGJHEWFYNA1U`) because `.env.local` has the dev fallback key (`qr-bot-dev-key-2026`) which production rejects. Never change this to read from `.env.local`.
 - **WhatsApp delivery from Vercel requires DB queue polling:** `sendWhatsAppMessage()` calls `/opt/homebrew/bin/openclaw` which only exists on the local Mac — it silently fails on Vercel. All WhatsApp delivery must go through the DB queue: write `whatsapp_message` + `whatsapp_expires_at` to the `messages` table, and the local polling script (`scripts/deliver-messages.sh`, 5s interval) handles actual delivery via OpenClaw. Use `sendNotification()` from `src/lib/queries/messages.ts` which handles this automatically. Same pattern as OTP delivery. **This is the standard approach until Twilio replaces OpenClaw.**
+- **Phone/password login must set Auth.js JWT cookie:** `setSession()` sets BOTH the legacy `qr_user_id` cookie (server-side `getSession()`) AND the Auth.js JWT cookie (client-side `useSession()` from next-auth/react). Without the JWT cookie, the nav-bar and auth-gate show the user as logged out even though server-side auth works. The JWT is encoded using `encode()` from `next-auth/jwt` with `AUTH_SECRET`. Cookie name: `__Secure-authjs.session-token` (production) or `authjs.session-token` (dev). All callers of `setSession()` should pass `userInfo` (name, email, image) for the JWT payload.
 - **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
 
 ## Database ID Convention
