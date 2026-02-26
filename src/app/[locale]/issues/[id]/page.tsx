@@ -45,6 +45,7 @@ import { CampaignProgress } from '@/components/data/campaign-progress';
 import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { FirstRioterBadge } from '@/components/data/first-rioter-badge';
+import { ShareEligibilityBanner } from '@/components/interactive/share-eligibility-banner';
 import { getActionCountForIssue } from '@/lib/queries/actions';
 
 interface Props {
@@ -290,6 +291,9 @@ export default async function IssueDetailPage({ params }: Props) {
         <h2 className="mb-4 text-lg font-bold">{t('communityFeed')}</h2>
         <FeedSection issueId={issue.id} initialPosts={feedPosts} />
       </section>
+
+      {/* Share eligibility banner */}
+      {userId && <ShareEligibilityBanner />}
     </div>
   );
 }
