@@ -14,6 +14,8 @@ import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { sanitizeText } from '@/lib/sanitize';
+import { getUserById } from '@/lib/queries/users';
+import { translateToEnglish } from '@/lib/ai';
 import type { Category, SuggestedType, SuggestionStatus } from '@/types';
 
 // Schema for the original "idea suggestion" for existing issues
@@ -128,13 +130,21 @@ export async function POST(request: NextRequest) {
     public_recognition,
   } = parsed.data;
 
+  // Translate to English if user's language is not English
+  const user = await getUserById(userId);
+  const userLang = user?.language_code || 'en';
+  const englishName =
+    userLang !== 'en' ? await translateToEnglish(suggested_name, userLang) : suggested_name;
+  const englishDescription =
+    userLang !== 'en' && description ? await translateToEnglish(description, userLang) : description;
+
   // Create pending entity
   let entityId: string;
   if (suggested_type === 'issue') {
     const issue = await createIssue({
-      name: suggested_name,
+      name: englishName,
       category: category as Category,
-      description,
+      description: englishDescription,
       status: 'pending_review',
       first_rioter_id: userId,
     });
@@ -142,9 +152,9 @@ export async function POST(request: NextRequest) {
     await joinIssue(userId, issue.id);
   } else {
     const org = await createOrganisation({
-      name: suggested_name,
+      name: englishName,
       category: category as Category,
-      description,
+      description: englishDescription,
       status: 'pending_review',
       first_rioter_id: userId,
     });
@@ -152,7 +162,7 @@ export async function POST(request: NextRequest) {
   }
 
   const closeMatches = await getCloseMatches(
-    suggested_name,
+    englishName,
     category as Category,
     suggested_type as SuggestedType,
   );
@@ -160,14 +170,15 @@ export async function POST(request: NextRequest) {
   const suggestion = await createIssueSuggestion({
     suggestedBy: userId,
     originalText: original_text,
-    suggestedName: suggested_name,
+    suggestedName: englishName,
     suggestedType: suggested_type as SuggestedType,
     category: category as Category,
-    description,
+    description: englishDescription,
     issueId: suggested_type === 'issue' ? entityId : undefined,
     organisationId: suggested_type === 'organisation' ? entityId : undefined,
     closeMatchIds: closeMatches.map((m) => m.id),
     publicRecognition: public_recognition ? 1 : 0,
+    languageCode: userLang,
   });
 
   return apiOk(

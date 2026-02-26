@@ -550,6 +550,7 @@ export async function createTables() {
       reviewed_at TEXT,
       approved_at TEXT,
       live_at TEXT,
+      language_code TEXT DEFAULT 'en' CHECK(length(language_code) <= 10),
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
       updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );

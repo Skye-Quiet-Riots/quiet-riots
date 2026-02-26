@@ -21,14 +21,15 @@ export async function createSuggestion(data: {
   organisationId?: string;
   closeMatchIds?: string[];
   publicRecognition?: number;
+  languageCode?: string;
 }): Promise<IssueSuggestion> {
   const db = getDb();
   const id = generateId();
   await db.execute({
     sql: `INSERT INTO issue_suggestions
           (id, suggested_by, original_text, suggested_name, suggested_type, category, description,
-           issue_id, organisation_id, close_match_ids, public_recognition)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+           issue_id, organisation_id, close_match_ids, public_recognition, language_code)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       id,
       data.suggestedBy,
@@ -41,6 +42,7 @@ export async function createSuggestion(data: {
       data.organisationId ?? null,
       data.closeMatchIds ? JSON.stringify(data.closeMatchIds) : null,
       data.publicRecognition ?? 1,
+      data.languageCode ?? 'en',
     ],
   });
   const result = await db.execute({

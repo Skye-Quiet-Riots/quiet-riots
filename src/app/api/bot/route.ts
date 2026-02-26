@@ -103,6 +103,7 @@ import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
 import { sanitizeText } from '@/lib/sanitize';
+import { translateToEnglish } from '@/lib/ai';
 import { getDb } from '@/lib/db';
 import { generateId } from '@/lib/uuid';
 
@@ -944,11 +945,20 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        // Translate to English if user's language is not English
+        const userLang = user.language_code || 'en';
+        const englishName =
+          userLang !== 'en' ? await translateToEnglish(name, userLang) : name;
+        const englishDescription =
+          userLang !== 'en' && description
+            ? await translateToEnglish(description, userLang)
+            : description;
+
         // Create pending issue
         const issue = await createIssue({
-          name,
+          name: englishName,
           category,
-          description,
+          description: englishDescription,
           status: 'pending_review',
           first_rioter_id: user.id,
         });
@@ -957,21 +967,24 @@ export async function POST(request: NextRequest) {
         await joinIssue(user.id, issue.id);
 
         // Create suggestion record
-        const closeMatches = await getCloseMatches(name, category, 'issue');
+        const closeMatches = await getCloseMatches(englishName, category, 'issue');
         const suggestion = await createIssueSuggestion({
           suggestedBy: user.id,
           originalText: name,
-          suggestedName: name,
+          suggestedName: englishName,
           suggestedType: 'issue',
           category,
-          description,
+          description: englishDescription,
           issueId: issue.id,
           closeMatchIds: closeMatches.map((m) => m.id),
           publicRecognition: 1,
+          languageCode: userLang,
         });
 
         // Notify Setup Guides (fire-and-forget)
-        notifySetupGuides(name, category, user.name ?? 'Anonymous', suggestion.id).catch(() => {});
+        notifySetupGuides(englishName, category, user.name ?? 'Anonymous', suggestion.id).catch(
+          () => {},
+        );
 
         return ok({ issue, suggestion, close_matches: closeMatches });
       }
@@ -1266,16 +1279,25 @@ export async function POST(request: NextRequest) {
         const description = (p.description as string) || '';
         const publicRecognition = p.public_recognition as boolean;
 
-        // Find close matches
-        const closeMatches = await getCloseMatches(suggestedName, category, suggestedType);
+        // Translate to English if user's language is not English
+        const userLang = user.language_code || 'en';
+        const englishName =
+          userLang !== 'en' ? await translateToEnglish(suggestedName, userLang) : suggestedName;
+        const englishDescription =
+          userLang !== 'en' && description
+            ? await translateToEnglish(description, userLang)
+            : description;
+
+        // Find close matches (using English name for better matching)
+        const closeMatches = await getCloseMatches(englishName, category, suggestedType);
 
         // Create the pending entity
         let entityId: string;
         if (suggestedType === 'issue') {
           const issue = await createIssue({
-            name: suggestedName,
+            name: englishName,
             category,
-            description,
+            description: englishDescription,
             status: 'pending_review',
             first_rioter_id: user.id,
           });
@@ -1284,9 +1306,9 @@ export async function POST(request: NextRequest) {
           await joinIssue(user.id, issue.id);
         } else {
           const org = await createOrganisation({
-            name: suggestedName,
+            name: englishName,
             category,
-            description,
+            description: englishDescription,
             status: 'pending_review',
             first_rioter_id: user.id,
           });
@@ -1297,18 +1319,19 @@ export async function POST(request: NextRequest) {
         const suggestion = await createIssueSuggestion({
           suggestedBy: user.id,
           originalText: p.original_text as string,
-          suggestedName,
+          suggestedName: englishName,
           suggestedType,
           category,
-          description,
+          description: englishDescription,
           issueId: suggestedType === 'issue' ? entityId : undefined,
           organisationId: suggestedType === 'organisation' ? entityId : undefined,
           closeMatchIds: closeMatches.map((m) => m.id),
           publicRecognition: publicRecognition ? 1 : 0,
+          languageCode: userLang,
         });
 
         // Notify Setup Guides (fire-and-forget)
-        notifySetupGuides(suggestedName, category, user.name ?? 'Anonymous', suggestion.id).catch(
+        notifySetupGuides(englishName, category, user.name ?? 'Anonymous', suggestion.id).catch(
           () => {},
         );
 
