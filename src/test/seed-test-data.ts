@@ -667,6 +667,21 @@ export async function seedTestData() {
     ],
   });
 
+  // User with password (pre-hashed 'testPassword123' via SHA-256 + bcrypt 12 rounds)
+  await db.execute({
+    sql: `INSERT INTO users (id, name, email, phone, time_available, skills, password_hash, email_verified) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      'user-with-password',
+      'Pat W.',
+      'pat@example.com',
+      '+447700900077',
+      '10min',
+      'writing',
+      '$2b$12$z8rPMziMeA54HtIxQ.mWteC4neFoW9rp.zxp0zTFaJdftbLcBURvW',
+      1,
+    ],
+  });
+
   // Additional user for testing roles and suggestions
   await db.execute({
     sql: `INSERT INTO users (id, name, email, phone, time_available, skills) VALUES (?, ?, ?, ?, ?, ?)`,
