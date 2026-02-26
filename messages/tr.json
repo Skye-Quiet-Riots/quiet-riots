@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName} ile ilgili neler olduğunu belgele."
   },
   "Campaigns": {
-    "title": "Kampanyalar",
-    "subtitle": "Değişim için fon toplayan {count} {count, plural, one {kampanya} other {kampanya}}.",
-    "noResults": "Kampanya bulunamadı. Farklı bir filtre dene."
+    "title": "Eylem Projeleri",
+    "subtitle": "Kolektif eylem için hizmet sipariş eden {count} {count, plural, one {proje} other {proje}}.",
+    "noResults": "Eylem projesi bulunamadı. Farklı bir filtre dene."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanyalar",
-    "fullyFunded": "Tamamen Fonlandı",
-    "disbursed": "Fonlar Dağıtıldı",
+    "breadcrumb": "Eylem Projeleri",
+    "fullyFunded": "Hedefe Ulaşıldı",
+    "disbursed": "Tamamlandı",
     "cancelled": "İptal Edildi",
     "active": "Aktif",
     "target": "hedef",
-    "raised": "toplanan",
+    "raised": "taahhüt edilen",
     "backers": "{count, plural, one {destekçi} other {destekçi}}",
-    "platformFee": "platform ücreti",
-    "wantToContribute": "Katkıda bulunmak ister misin?",
-    "topUpFirst": "Katkıda bulunmaya başlamak için önce cüzdanını yükle.",
-    "createAccountPrompt": "Bu kampanyayı desteklemek için hesap oluştur ve cüzdanını yükle.",
+    "platformFee": "hizmet bedeli",
+    "wantToContribute": "Bu projeyi desteklemek ister misin?",
+    "topUpFirst": "Başlamak için önce cüzdanını yükle.",
+    "createAccountPrompt": "Bu hizmeti sipariş etmek için hesap oluştur ve cüzdanını yükle.",
     "goToWallet": "Cüzdana git",
     "createAccount": "Hesap oluştur",
-    "completedMessage": "Bu kampanya {status}. Tüm {count} destekçiye teşekkürler!",
-    "recipient": "Alıcı"
+    "completedMessage": "Bu proje {status}. Tüm {count} destekçiye teşekkürler!",
+    "recipient": "Hizmet Sağlayıcı"
   },
   "Assistants": {
     "title": "Asistanlar",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Cüzdanın",
-    "createPromptTitle": "Amaçları Desteklemeye Başla",
-    "createPromptDesc": "Fon yüklemek ve seni ilgilendiren kampanyalara katkıda bulunmak için ücretsiz bir hesap oluştur.",
+    "createPromptTitle": "Kolektif Eylemi Güçlendir",
+    "createPromptDesc": "Cüzdanını yüklemek ve eylem projeleri için hizmet sipariş etmek üzere ücretsiz bir hesap oluştur.",
     "createAccount": "Hesap oluştur",
-    "activeCampaigns": "Aktif Kampanyalar",
+    "activeCampaigns": "Aktif Projeler",
     "viewAll": "Tümünü gör"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Seçilmiş",
     "community": "Topluluk",
     "aiPick": "AI Seçimi",
-    "funded": "Fonlandı",
-    "disbursed": "Dağıtıldı",
+    "funded": "Hedefe Ulaşıldı",
+    "disbursed": "Tamamlandı",
     "backers": "{count, plural, one {destekçi} other {destekçi}}",
     "aiAndHuman": "AI Ajanı & İnsan Organizatör",
     "riots": "{count, plural, one {riot} other {riot}}"
@@ -353,21 +353,21 @@
     "rioters": "katılımcılar"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanyalar",
-    "funded": "Fonlandı",
-    "disbursed": "Dağıtıldı",
+    "title": "⚡ Eylem Projeleri",
+    "funded": "Hedefe Ulaşıldı",
+    "disbursed": "Tamamlandı",
     "backers": "{count, plural, one {destekçi} other {destekçi}}"
   },
   "WalletBalance": {
     "title": "Bakiyen",
     "loaded": "yüklenen",
-    "contributed": "katkıda bulunulan",
-    "campaigns": "{count, plural, one {kampanya} other {kampanya}}"
+    "contributed": "harcanan",
+    "campaigns": "{count, plural, one {proje} other {proje}}"
   },
   "Transactions": {
     "title": "Son İşlemler",
     "topUp": "Yükleme",
-    "contribution": "Katkı",
+    "contribution": "Proje ödemesi",
     "refund": "İade",
     "justNow": "az önce",
     "minutesAgo": "{count}dk önce",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Tümü",
     "active": "Aktif",
-    "funded": "Fonlandı",
-    "disbursed": "Dağıtıldı"
+    "funded": "Hedefe Ulaşıldı",
+    "disbursed": "Tamamlandı"
   },
   "TimeSkill": {
     "timeQuestion": "Ne kadar zamanın var?",
@@ -436,24 +436,24 @@
     "networkError": "Ağ hatası. Lütfen tekrar dene.",
     "customAmount": "Özel tutar (£)",
     "topUp": "Yükle",
-    "simulated": "Test için simüle edilmiş yükleme. Stripe ile gerçek ödemeler yakında."
+    "simulated": "Test için simüle edilmiş yükleme. Gerçek ödemeler yakında."
   },
   "Contribute": {
     "insufficientFunds": "Yetersiz bakiye. Önce cüzdanını yükle.",
-    "minContribution": "Minimum katkı 10p",
-    "contribute": "Katkıda Bulun",
+    "minContribution": "Minimum ödeme 10p",
+    "contribute": "Bu Projeyi Destekle",
     "yourBalance": "Bakiyen: ",
     "networkError": "Ağ hatası. Lütfen tekrar dene.",
     "invalidAmount": "Geçerli bir tutar gir",
     "customAmount": "Özel tutar (£)",
-    "give": "Ver",
-    "success": "{campaign} için {amount} katkıda bulunuldu!",
+    "give": "Öde",
+    "success": "{campaign} için {amount} ödendi!",
     "remainingBalance": "Kalan bakiyen: {balance}",
     "topUpPrompt": "Cüzdanını yükle",
-    "toKeepSupporting": "kampanyaları desteklemeye devam etmek için.",
+    "toKeepSupporting": "eylem projelerini desteklemeye devam etmek için.",
     "walletEmpty": "Cüzdanın boş.",
     "topUp": "Yükle",
-    "toContribute": "katkıda bulunmak için."
+    "toContribute": "projeleri desteklemek için."
   },
   "Claim": {
     "success": "Teşekkürler! {name} rolüne ilgini not ettik. Seninle iletişime geçeceğiz.",

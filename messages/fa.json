@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "مستند کنید چه اتفاقی با {orgName} می‌افتد."
   },
   "Campaigns": {
-    "title": "کمپین‌ها",
-    "subtitle": "{count} {count, plural, one {کمپین در حال} other {کمپین در حال}} جمع‌آوری بودجه برای تغییر.",
-    "noResults": "کمپینی یافت نشد. فیلتر دیگری را امتحان کنید."
+    "title": "پروژه‌های اقدام",
+    "subtitle": "{count} {count, plural, one {پروژه در حال} other {پروژه در حال}} سفارش خدمات برای اقدام جمعی.",
+    "noResults": "پروژه اقدامی یافت نشد. فیلتر دیگری را امتحان کنید."
   },
   "CampaignDetail": {
-    "breadcrumb": "کمپین‌ها",
-    "fullyFunded": "کاملاً تأمین مالی شده",
-    "disbursed": "وجوه توزیع شده",
+    "breadcrumb": "پروژه‌های اقدام",
+    "fullyFunded": "هدف محقق شد",
+    "disbursed": "تکمیل شده",
     "cancelled": "لغو شده",
     "active": "فعال",
     "target": "هدف",
-    "raised": "جمع‌آوری شده",
+    "raised": "تعهد شده",
     "backers": "{count, plural, one {حامی} other {حامیان}}",
-    "platformFee": "کارمزد پلتفرم",
-    "wantToContribute": "می‌خواهید مشارکت کنید؟",
-    "topUpFirst": "ابتدا کیف پولتان را شارژ کنید تا بتوانید مشارکت کنید.",
-    "createAccountPrompt": "حساب بسازید و کیف پولتان را شارژ کنید تا از این کمپین حمایت کنید.",
+    "platformFee": "کارمزد خدمات",
+    "wantToContribute": "می‌خواهید از این پروژه حمایت کنید؟",
+    "topUpFirst": "ابتدا کیف پولتان را شارژ کنید تا شروع کنید.",
+    "createAccountPrompt": "حساب بسازید و کیف پولتان را شارژ کنید تا این خدمات را سفارش دهید.",
     "goToWallet": "رفتن به کیف پول",
     "createAccount": "ساخت حساب",
-    "completedMessage": "این کمپین {status} شده است. از همه {count} حامی متشکریم!",
-    "recipient": "دریافت‌کننده"
+    "completedMessage": "این پروژه {status} شده است. از همه {count} حامی متشکریم!",
+    "recipient": "ارائه‌دهنده خدمات"
   },
   "Assistants": {
     "title": "دستیاران",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "کیف پول شما",
-    "createPromptTitle": "شروع به حمایت از اهداف",
-    "createPromptDesc": "یک حساب رایگان بسازید تا بودجه شارژ کنید و به کمپین‌هایی که برایتان مهم هستند مشارکت کنید.",
+    "createPromptTitle": "اقدام جمعی را به حرکت درآورید",
+    "createPromptDesc": "یک حساب رایگان بسازید تا کیف پولتان را شارژ کنید و خدماتی برای پروژه‌های اقدام سفارش دهید.",
     "createAccount": "ساخت حساب",
-    "activeCampaigns": "کمپین‌های فعال",
+    "activeCampaigns": "پروژه‌های فعال",
     "viewAll": "مشاهده همه"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "گلچین",
     "community": "جامعه",
     "aiPick": "انتخاب هوش مصنوعی",
-    "funded": "تأمین مالی شده",
-    "disbursed": "توزیع شده",
+    "funded": "هدف محقق شد",
+    "disbursed": "تکمیل شده",
     "backers": "{count, plural, one {حامی} other {حامیان}}",
     "aiAndHuman": "عامل هوش مصنوعی و سازمان‌دهنده انسانی",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "مشارکت‌کنندگان"
   },
   "CampaignProgress": {
-    "title": "💰 کمپین‌ها",
-    "funded": "تأمین مالی شده",
-    "disbursed": "توزیع شده",
+    "title": "⚡ پروژه‌های اقدام",
+    "funded": "هدف محقق شد",
+    "disbursed": "تکمیل شده",
     "backers": "{count, plural, one {حامی} other {حامیان}}"
   },
   "WalletBalance": {
     "title": "موجودی شما",
     "loaded": "شارژ شده",
-    "contributed": "مشارکت شده",
-    "campaigns": "{count, plural, one {کمپین} other {کمپین‌ها}}"
+    "contributed": "خرج شده",
+    "campaigns": "{count, plural, one {پروژه} other {پروژه‌ها}}"
   },
   "Transactions": {
     "title": "تراکنش‌های اخیر",
     "topUp": "شارژ",
-    "contribution": "مشارکت",
+    "contribution": "پرداخت پروژه",
     "refund": "بازپرداخت",
     "justNow": "همین الان",
     "minutesAgo": "{count} دقیقه پیش",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "همه",
     "active": "فعال",
-    "funded": "تأمین مالی شده",
-    "disbursed": "توزیع شده"
+    "funded": "هدف محقق شد",
+    "disbursed": "تکمیل شده"
   },
   "TimeSkill": {
     "timeQuestion": "چقدر وقت دارید؟",
@@ -436,24 +436,24 @@
     "networkError": "خطای شبکه. لطفاً دوباره تلاش کنید.",
     "customAmount": "مبلغ دلخواه (£)",
     "topUp": "شارژ",
-    "simulated": "شارژ آزمایشی برای تست. پرداخت‌های واقعی از طریق Stripe به‌زودی."
+    "simulated": "شارژ آزمایشی برای تست. پرداخت‌های واقعی به‌زودی."
   },
   "Contribute": {
     "insufficientFunds": "موجودی کافی نیست. ابتدا کیف پولتان را شارژ کنید.",
-    "minContribution": "حداقل مشارکت 10p است",
-    "contribute": "مشارکت",
+    "minContribution": "حداقل پرداخت 10p است",
+    "contribute": "حمایت از این پروژه",
     "yourBalance": "موجودی شما: ",
     "networkError": "خطای شبکه. لطفاً دوباره تلاش کنید.",
     "invalidAmount": "مبلغ معتبر وارد کنید",
     "customAmount": "مبلغ دلخواه (£)",
-    "give": "بدهید",
-    "success": "{amount} به کمپین {campaign} مشارکت شد!",
+    "give": "پرداخت",
+    "success": "{amount} برای {campaign} پرداخت شد!",
     "remainingBalance": "موجودی باقیمانده: {balance}",
     "topUpPrompt": "کیف پولتان را شارژ کنید",
-    "toKeepSupporting": "تا به حمایت از کمپین‌ها ادامه دهید.",
+    "toKeepSupporting": "تا به حمایت از پروژه‌های اقدام ادامه دهید.",
     "walletEmpty": "کیف پول شما خالی است.",
     "topUp": "شارژ",
-    "toContribute": "تا مشارکت کنید."
+    "toContribute": "تا از پروژه‌ها حمایت کنید."
   },
   "Claim": {
     "success": "ممنون! علاقه‌مندی شما به نقش {name} ثبت شد. با شما تماس خواهیم گرفت.",

@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Ghi lại những gì đang xảy ra với {orgName}."
   },
   "Campaigns": {
-    "title": "Chiến dịch",
-    "subtitle": "{count} {count, plural, one {chiến dịch} other {chiến dịch}} gây quỹ cho sự thay đổi.",
-    "noResults": "Không tìm thấy chiến dịch nào. Thử bộ lọc khác."
+    "title": "Dự án hành động",
+    "subtitle": "{count} {count, plural, one {dự án} other {dự án}} đặt dịch vụ cho hành động tập thể.",
+    "noResults": "Không tìm thấy dự án hành động nào. Thử bộ lọc khác."
   },
   "CampaignDetail": {
-    "breadcrumb": "Chiến dịch",
-    "fullyFunded": "Đã gây quỹ đủ",
-    "disbursed": "Đã giải ngân",
+    "breadcrumb": "Dự án hành động",
+    "fullyFunded": "Đã đạt mục tiêu",
+    "disbursed": "Đã hoàn thành",
     "cancelled": "Đã hủy",
     "active": "Đang hoạt động",
     "target": "mục tiêu",
-    "raised": "đã gây quỹ",
+    "raised": "đã cam kết",
     "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}",
-    "platformFee": "phí nền tảng",
-    "wantToContribute": "Bạn muốn đóng góp?",
-    "topUpFirst": "Nạp tiền vào ví trước để bắt đầu đóng góp.",
-    "createAccountPrompt": "Tạo tài khoản và nạp tiền vào ví để ủng hộ chiến dịch này.",
+    "platformFee": "phí dịch vụ",
+    "wantToContribute": "Bạn muốn ủng hộ dự án này?",
+    "topUpFirst": "Nạp tiền vào ví trước để bắt đầu.",
+    "createAccountPrompt": "Tạo tài khoản và nạp tiền vào ví để đặt dịch vụ này.",
     "goToWallet": "Đi đến ví",
     "createAccount": "Tạo tài khoản",
-    "completedMessage": "Chiến dịch này đã {status}. Cảm ơn tất cả {count} người ủng hộ!",
-    "recipient": "Người nhận"
+    "completedMessage": "Dự án này đã {status}. Cảm ơn tất cả {count} người ủng hộ!",
+    "recipient": "Nhà cung cấp dịch vụ"
   },
   "Assistants": {
     "title": "Trợ lý",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Ví của bạn",
-    "createPromptTitle": "Bắt đầu ủng hộ",
-    "createPromptDesc": "Tạo tài khoản miễn phí để nạp tiền và đóng góp cho các chiến dịch bạn quan tâm.",
+    "createPromptTitle": "Thúc đẩy hành động tập thể",
+    "createPromptDesc": "Tạo tài khoản miễn phí để nạp tiền vào ví và đặt dịch vụ cho các dự án hành động.",
     "createAccount": "Tạo tài khoản",
-    "activeCampaigns": "Chiến dịch đang hoạt động",
+    "activeCampaigns": "Dự án đang hoạt động",
     "viewAll": "Xem tất cả"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Được chọn lọc",
     "community": "Cộng đồng",
     "aiPick": "AI chọn",
-    "funded": "Đã gây quỹ",
-    "disbursed": "Đã giải ngân",
+    "funded": "Đã đạt mục tiêu",
+    "disbursed": "Đã hoàn thành",
     "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}",
     "aiAndHuman": "AI Agent & Người tổ chức",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "thành viên"
   },
   "CampaignProgress": {
-    "title": "💰 Chiến dịch",
-    "funded": "Đã gây quỹ",
-    "disbursed": "Đã giải ngân",
+    "title": "⚡ Dự án hành động",
+    "funded": "Đã đạt mục tiêu",
+    "disbursed": "Đã hoàn thành",
     "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}"
   },
   "WalletBalance": {
     "title": "Số dư của bạn",
     "loaded": "đã nạp",
-    "contributed": "đã đóng góp",
-    "campaigns": "{count, plural, one {chiến dịch} other {chiến dịch}}"
+    "contributed": "đã chi",
+    "campaigns": "{count, plural, one {dự án} other {dự án}}"
   },
   "Transactions": {
     "title": "Giao dịch gần đây",
     "topUp": "Nạp tiền",
-    "contribution": "Đóng góp",
+    "contribution": "Thanh toán dự án",
     "refund": "Hoàn tiền",
     "justNow": "vừa xong",
     "minutesAgo": "{count} phút trước",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Tất cả",
     "active": "Đang hoạt động",
-    "funded": "Đã gây quỹ",
-    "disbursed": "Đã giải ngân"
+    "funded": "Đã đạt mục tiêu",
+    "disbursed": "Đã hoàn thành"
   },
   "TimeSkill": {
     "timeQuestion": "Bạn có bao nhiêu thời gian?",
@@ -436,24 +436,24 @@
     "networkError": "Lỗi mạng. Vui lòng thử lại.",
     "customAmount": "Số tiền khác (£)",
     "topUp": "Nạp tiền",
-    "simulated": "Nạp tiền mô phỏng để thử nghiệm. Thanh toán thật qua Stripe sẽ có sớm."
+    "simulated": "Nạp tiền mô phỏng để thử nghiệm. Thanh toán thật sẽ có sớm."
   },
   "Contribute": {
     "insufficientFunds": "Không đủ tiền. Nạp thêm vào ví trước.",
-    "minContribution": "Đóng góp tối thiểu là 10p",
-    "contribute": "Đóng góp",
+    "minContribution": "Thanh toán tối thiểu là 10p",
+    "contribute": "Ủng hộ dự án này",
     "yourBalance": "Số dư của bạn: ",
     "networkError": "Lỗi mạng. Vui lòng thử lại.",
     "invalidAmount": "Nhập số tiền hợp lệ",
     "customAmount": "Số tiền khác (£)",
-    "give": "Cho",
-    "success": "Đã đóng góp {amount} cho {campaign}!",
+    "give": "Thanh toán",
+    "success": "Đã thanh toán {amount} cho {campaign}!",
     "remainingBalance": "Số dư còn lại: {balance}",
     "topUpPrompt": "Nạp tiền vào ví",
-    "toKeepSupporting": "để tiếp tục ủng hộ các chiến dịch.",
+    "toKeepSupporting": "để tiếp tục ủng hộ các dự án hành động.",
     "walletEmpty": "Ví của bạn đã hết tiền.",
     "topUp": "Nạp tiền",
-    "toContribute": "để đóng góp."
+    "toContribute": "để ủng hộ dự án."
   },
   "Claim": {
     "success": "Cảm ơn! Chúng tôi đã ghi nhận sự quan tâm của bạn với vai trò {name}. Chúng tôi sẽ liên hệ.",

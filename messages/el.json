@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Τεκμηρίωσε τι συμβαίνει με τον οργανισμό {orgName}."
   },
   "Campaigns": {
-    "title": "Καμπάνιες",
-    "subtitle": "{count} {count, plural, one {καμπάνια} other {καμπάνιες}} που συγκεντρώνουν χρήματα για αλλαγή.",
-    "noResults": "Δε βρέθηκαν καμπάνιες. Δοκίμασε διαφορετικό φίλτρο."
+    "title": "Έργα Δράσης",
+    "subtitle": "{count} {count, plural, one {έργο} other {έργα}} που αναθέτουν υπηρεσίες για συλλογική δράση.",
+    "noResults": "Δε βρέθηκαν έργα δράσης. Δοκίμασε διαφορετικό φίλτρο."
   },
   "CampaignDetail": {
-    "breadcrumb": "Καμπάνιες",
-    "fullyFunded": "Πλήρης Χρηματοδότηση",
-    "disbursed": "Τα Χρήματα Εκταμιεύτηκαν",
+    "breadcrumb": "Έργα Δράσης",
+    "fullyFunded": "Στόχος Επιτεύχθηκε",
+    "disbursed": "Ολοκληρώθηκε",
     "cancelled": "Ακυρώθηκε",
     "active": "Ενεργή",
     "target": "στόχος",
-    "raised": "συγκεντρώθηκαν",
+    "raised": "δεσμευμένα",
     "backers": "{count, plural, one {υποστηρικτής} other {υποστηρικτές}}",
-    "platformFee": "χρέωση πλατφόρμας",
-    "wantToContribute": "Θέλεις να συνεισφέρεις;",
-    "topUpFirst": "Φόρτισε πρώτα το πορτοφόλι σου για να αρχίσεις να συνεισφέρεις.",
-    "createAccountPrompt": "Δημιούργησε λογαριασμό και φόρτισε το πορτοφόλι σου για να υποστηρίξεις αυτή την καμπάνια.",
+    "platformFee": "χρέωση υπηρεσίας",
+    "wantToContribute": "Θέλεις να υποστηρίξεις αυτό το έργο;",
+    "topUpFirst": "Φόρτισε πρώτα το πορτοφόλι σου για να ξεκινήσεις.",
+    "createAccountPrompt": "Δημιούργησε λογαριασμό και φόρτισε το πορτοφόλι σου για να αναθέσεις αυτή την υπηρεσία.",
     "goToWallet": "Πήγαινε στο πορτοφόλι",
     "createAccount": "Δημιουργία λογαριασμού",
-    "completedMessage": "Αυτή η καμπάνια {status}. Ευχαριστούμε όλους τους {count} υποστηρικτές!",
-    "recipient": "Αποδέκτης"
+    "completedMessage": "Αυτό το έργο {status}. Ευχαριστούμε όλους τους {count} υποστηρικτές!",
+    "recipient": "Πάροχος Υπηρεσιών"
   },
   "Assistants": {
     "title": "Βοηθοί",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Το Πορτοφόλι σου",
-    "createPromptTitle": "Άρχισε να Υποστηρίζεις Σκοπούς",
-    "createPromptDesc": "Δημιούργησε δωρεάν λογαριασμό για να φορτώσεις χρήματα και να συνεισφέρεις σε καμπάνιες που σε ενδιαφέρουν.",
+    "createPromptTitle": "Κινητοποίησε τη Συλλογική Δράση",
+    "createPromptDesc": "Δημιούργησε δωρεάν λογαριασμό για να φορτώσεις το πορτοφόλι σου και να αναθέσεις υπηρεσίες για έργα δράσης.",
     "createAccount": "Δημιουργία λογαριασμού",
-    "activeCampaigns": "Ενεργές Καμπάνιες",
+    "activeCampaigns": "Ενεργά Έργα",
     "viewAll": "Δες όλα"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Επιλεγμένο",
     "community": "Κοινότητα",
     "aiPick": "Επιλογή AI",
-    "funded": "Χρηματοδοτήθηκε",
-    "disbursed": "Εκταμιεύτηκε",
+    "funded": "Στόχος Επιτεύχθηκε",
+    "disbursed": "Ολοκληρώθηκε",
     "backers": "{count, plural, one {υποστηρικτής} other {υποστηρικτές}}",
     "aiAndHuman": "AI Πράκτορας & Άνθρωπος Οργανωτής",
     "riots": "{count, plural, one {riot} other {riots}}"
@@ -353,21 +353,21 @@
     "rioters": "συμμετέχοντες"
   },
   "CampaignProgress": {
-    "title": "💰 Καμπάνιες",
-    "funded": "Χρηματοδοτήθηκε",
-    "disbursed": "Εκταμιεύτηκε",
+    "title": "⚡ Έργα Δράσης",
+    "funded": "Στόχος Επιτεύχθηκε",
+    "disbursed": "Ολοκληρώθηκε",
     "backers": "{count, plural, one {υποστηρικτής} other {υποστηρικτές}}"
   },
   "WalletBalance": {
     "title": "Το Υπόλοιπό σου",
     "loaded": "φορτώθηκαν",
-    "contributed": "συνεισφέρθηκαν",
-    "campaigns": "{count, plural, one {καμπάνια} other {καμπάνιες}}"
+    "contributed": "δαπανήθηκαν",
+    "campaigns": "{count, plural, one {έργο} other {έργα}}"
   },
   "Transactions": {
     "title": "Πρόσφατες Συναλλαγές",
     "topUp": "Φόρτιση",
-    "contribution": "Συνεισφορά",
+    "contribution": "Πληρωμή έργου",
     "refund": "Επιστροφή",
     "justNow": "μόλις τώρα",
     "minutesAgo": "{count}λ πριν",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Όλα",
     "active": "Ενεργά",
-    "funded": "Χρηματοδοτημένα",
-    "disbursed": "Εκταμιευμένα"
+    "funded": "Στόχος Επιτεύχθηκε",
+    "disbursed": "Ολοκληρώθηκε"
   },
   "TimeSkill": {
     "timeQuestion": "Πόσο χρόνο έχεις;",
@@ -436,24 +436,24 @@
     "networkError": "Σφάλμα δικτύου. Δοκίμασε ξανά.",
     "customAmount": "Προσαρμοσμένο ποσό (£)",
     "topUp": "Φόρτιση",
-    "simulated": "Προσομοιωμένη φόρτιση για δοκιμή. Πραγματικές πληρωμές μέσω Stripe σύντομα."
+    "simulated": "Προσομοιωμένη φόρτιση για δοκιμή. Πραγματικές πληρωμές σύντομα."
   },
   "Contribute": {
     "insufficientFunds": "Ανεπαρκές υπόλοιπο. Φόρτισε πρώτα το πορτοφόλι σου.",
-    "minContribution": "Ελάχιστη συνεισφορά 10p",
-    "contribute": "Συνεισφορά",
+    "minContribution": "Ελάχιστη πληρωμή 10p",
+    "contribute": "Υποστήριξε αυτό το έργο",
     "yourBalance": "Το υπόλοιπό σου: ",
     "networkError": "Σφάλμα δικτύου. Δοκίμασε ξανά.",
     "invalidAmount": "Εισάγαγε έγκυρο ποσό",
     "customAmount": "Προσαρμοσμένο ποσό (£)",
-    "give": "Δώσε",
-    "success": "Συνεισφέρθηκαν {amount} στην καμπάνια {campaign}!",
+    "give": "Πλήρωσε",
+    "success": "Πληρώθηκαν {amount} για {campaign}!",
     "remainingBalance": "Υπόλοιπο: {balance}",
     "topUpPrompt": "Φόρτισε το πορτοφόλι σου",
-    "toKeepSupporting": "για να συνεχίσεις να υποστηρίζεις καμπάνιες.",
+    "toKeepSupporting": "για να συνεχίσεις να υποστηρίζεις έργα δράσης.",
     "walletEmpty": "Το πορτοφόλι σου είναι άδειο.",
     "topUp": "Φόρτιση",
-    "toContribute": "για να συνεισφέρεις."
+    "toContribute": "για να υποστηρίξεις έργα."
   },
   "Claim": {
     "success": "Ευχαριστούμε! Σημειώσαμε το ενδιαφέρον σου για τον ρόλο {name}. Θα επικοινωνήσουμε μαζί σου.",

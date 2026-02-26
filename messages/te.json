@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName} గురించి ఏమి జరుగుతుందో నమోదు చేయి."
   },
   "Campaigns": {
-    "title": "ప్రచారాలు",
-    "subtitle": "{count} {count, plural, one {ప్రచారం} other {ప్రచారాలు}} మార్పు కోసం నిధులు సేకరిస్తున్నాయి.",
-    "noResults": "ప్రచారాలు కనుగొనబడలేదు. వేరే ఫిల్టర్ ప్రయత్నించు."
+    "title": "చర్య ప్రాజెక్టులు",
+    "subtitle": "{count} {count, plural, one {ప్రాజెక్టు} other {ప్రాజెక్టులు}} సామూహిక చర్య కోసం సేవలను నియమిస్తున్నాయి.",
+    "noResults": "చర్య ప్రాజెక్టులు కనుగొనబడలేదు. వేరే ఫిల్టర్ ప్రయత్నించు."
   },
   "CampaignDetail": {
-    "breadcrumb": "ప్రచారాలు",
-    "fullyFunded": "పూర్తిగా నిధులు సమకూరాయి",
-    "disbursed": "నిధులు పంపిణీ చేయబడ్డాయి",
+    "breadcrumb": "చర్య ప్రాజెక్టులు",
+    "fullyFunded": "లక్ష్యం చేరుకుంది",
+    "disbursed": "పూర్తయింది",
     "cancelled": "రద్దు చేయబడింది",
     "active": "సక్రియం",
     "target": "లక్ష్యం",
-    "raised": "సేకరించబడింది",
+    "raised": "నిబద్ధత చేయబడింది",
     "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}",
-    "platformFee": "ప్లాట్‌ఫారమ్ ఫీ",
-    "wantToContribute": "సహకరించాలనుకుంటున్నావా?",
-    "topUpFirst": "సహకరించడం మొదలుపెట్టడానికి ముందు నీ వాలెట్ టాప్-అప్ చేయి.",
-    "createAccountPrompt": "ఈ ప్రచారానికి మద్దతు ఇవ్వడానికి ఖాతా సృష్టించి వాలెట్‌లో డబ్బు వేయి.",
+    "platformFee": "సేవా రుసుము",
+    "wantToContribute": "ఈ ప్రాజెక్టుకు మద్దతు ఇవ్వాలనుకుంటున్నావా?",
+    "topUpFirst": "ప్రారంభించడానికి ముందు నీ వాలెట్ టాప్-అప్ చేయి.",
+    "createAccountPrompt": "ఈ సేవను నియమించడానికి ఖాతా సృష్టించి వాలెట్‌లో డబ్బు వేయి.",
     "goToWallet": "వాలెట్‌కి వెళ్ళు",
     "createAccount": "ఖాతా సృష్టించు",
-    "completedMessage": "ఈ ప్రచారం {status} అయింది. అందరు {count} మద్దతుదారులకు ధన్యవాదాలు!",
-    "recipient": "గ్రహీత"
+    "completedMessage": "ఈ ప్రాజెక్టు {status} అయింది. అందరు {count} మద్దతుదారులకు ధన్యవాదాలు!",
+    "recipient": "సేవా ప్రదాత"
   },
   "Assistants": {
     "title": "సహాయకులు",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "నీ వాలెట్",
-    "createPromptTitle": "కారణాలకు మద్దతు ఇవ్వడం మొదలుపెట్టు",
-    "createPromptDesc": "ఉచిత ఖాతా సృష్టించు, డబ్బు వేయి మరియు నీకు ముఖ్యమైన ప్రచారాలకు సహకరించు.",
+    "createPromptTitle": "సామూహిక చర్యను ప్రేరేపించు",
+    "createPromptDesc": "ఉచిత ఖాతా సృష్టించు, వాలెట్‌లో డబ్బు వేయి మరియు చర్య ప్రాజెక్టుల కోసం సేవలను నియమించు.",
     "createAccount": "ఖాతా సృష్టించు",
-    "activeCampaigns": "సక్రియ ప్రచారాలు",
+    "activeCampaigns": "సక్రియ ప్రాజెక్టులు",
     "viewAll": "అన్నీ చూడు"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "క్యూరేట్ చేసింది",
     "community": "సమాజం",
     "aiPick": "AI ఎంపిక",
-    "funded": "నిధులు సమకూరాయి",
-    "disbursed": "పంపిణీ చేయబడింది",
+    "funded": "లక్ష్యం చేరుకుంది",
+    "disbursed": "పూర్తయింది",
     "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}",
     "aiAndHuman": "AI ఏజెంట్ & మానవ నిర్వాహకుడు",
     "riots": "{count, plural, one {riot} other {riots}}"
@@ -353,21 +353,21 @@
     "rioters": "సభ్యులు"
   },
   "CampaignProgress": {
-    "title": "💰 ప్రచారాలు",
-    "funded": "నిధులు సమకూరాయి",
-    "disbursed": "పంపిణీ చేయబడింది",
+    "title": "⚡ చర్య ప్రాజెక్టులు",
+    "funded": "లక్ష్యం చేరుకుంది",
+    "disbursed": "పూర్తయింది",
     "backers": "{count, plural, one {మద్దతుదారు} other {మద్దతుదారులు}}"
   },
   "WalletBalance": {
     "title": "నీ బ్యాలెన్స్",
     "loaded": "లోడ్ చేయబడింది",
-    "contributed": "సహకరించబడింది",
-    "campaigns": "{count, plural, one {ప్రచారం} other {ప్రచారాలు}}"
+    "contributed": "ఖర్చు చేయబడింది",
+    "campaigns": "{count, plural, one {ప్రాజెక్టు} other {ప్రాజెక్టులు}}"
   },
   "Transactions": {
     "title": "ఇటీవలి లావాదేవీలు",
     "topUp": "టాప్-అప్",
-    "contribution": "సహకారం",
+    "contribution": "ప్రాజెక్టు చెల్లింపు",
     "refund": "రీఫండ్",
     "justNow": "ఇప్పుడే",
     "minutesAgo": "{count} నిమిషాల క్రితం",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "అన్నీ",
     "active": "సక్రియం",
-    "funded": "నిధులు సమకూరాయి",
-    "disbursed": "పంపిణీ చేయబడింది"
+    "funded": "లక్ష్యం చేరుకుంది",
+    "disbursed": "పూర్తయింది"
   },
   "TimeSkill": {
     "timeQuestion": "నీకు ఎంత సమయం ఉంది?",
@@ -436,24 +436,24 @@
     "networkError": "నెట్‌వర్క్ లోపం. దయచేసి మళ్ళీ ప్రయత్నించు.",
     "customAmount": "కస్టమ్ మొత్తం (£)",
     "topUp": "టాప్-అప్",
-    "simulated": "పరీక్ష కోసం సిమ్యులేటెడ్ టాప్-అప్. త్వరలో Stripe ద్వారా నిజమైన చెల్లింపులు."
+    "simulated": "పరీక్ష కోసం సిమ్యులేటెడ్ టాప్-అప్. త్వరలో నిజమైన చెల్లింపులు."
   },
   "Contribute": {
     "insufficientFunds": "తగినంత నిధులు లేవు. ముందు నీ వాలెట్ టాప్-అప్ చేయి.",
-    "minContribution": "కనీస సహకారం 10p",
-    "contribute": "సహకరించు",
+    "minContribution": "కనీస చెల్లింపు 10p",
+    "contribute": "ఈ ప్రాజెక్టుకు మద్దతు ఇవ్వు",
     "yourBalance": "నీ బ్యాలెన్స్: ",
     "networkError": "నెట్‌వర్క్ లోపం. దయచేసి మళ్ళీ ప్రయత్నించు.",
     "invalidAmount": "చెల్లుబాటయ్యే మొత్తం నమోదు చేయి",
     "customAmount": "కస్టమ్ మొత్తం (£)",
-    "give": "ఇవ్వు",
-    "success": "{campaign} కి {amount} సహకరించబడింది!",
+    "give": "చెల్లించు",
+    "success": "{campaign} కి {amount} చెల్లించబడింది!",
     "remainingBalance": "నీ మిగిలిన బ్యాలెన్స్: {balance}",
     "topUpPrompt": "నీ వాలెట్ టాప్-అప్ చేయి",
-    "toKeepSupporting": "ప్రచారాలకు మద్దతు కొనసాగించడానికి.",
+    "toKeepSupporting": "చర్య ప్రాజెక్టులకు మద్దతు కొనసాగించడానికి.",
     "walletEmpty": "నీ వాలెట్ ఖాళీగా ఉంది.",
     "topUp": "టాప్-అప్ చేయి",
-    "toContribute": "సహకరించడానికి."
+    "toContribute": "ప్రాజెక్టులకు మద్దతు ఇవ్వడానికి."
   },
   "Claim": {
     "success": "ధన్యవాదాలు! {name} పాత్రలో నీ ఆసక్తి నమోదు చేసుకున్నాము. మేము సంప్రదిస్తాము.",

@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "תעדו מה קורה עם {orgName}."
   },
   "Campaigns": {
-    "title": "קמפיינים",
-    "subtitle": "{count} {count, plural, one {קמפיין מגייס} other {קמפיינים מגייסים}} כספים לשינוי.",
-    "noResults": "לא נמצאו קמפיינים. נסו מסנן אחר."
+    "title": "פרויקטי פעולה",
+    "subtitle": "{count} {count, plural, one {פרויקט מזמין} other {פרויקטים מזמינים}} שירותים לפעולה קולקטיבית.",
+    "noResults": "לא נמצאו פרויקטי פעולה. נסו מסנן אחר."
   },
   "CampaignDetail": {
-    "breadcrumb": "קמפיינים",
-    "fullyFunded": "מומן במלואו",
-    "disbursed": "הכספים חולקו",
+    "breadcrumb": "פרויקטי פעולה",
+    "fullyFunded": "היעד הושג",
+    "disbursed": "הושלם",
     "cancelled": "בוטל",
     "active": "פעיל",
     "target": "יעד",
-    "raised": "גויס",
+    "raised": "התחייבו",
     "backers": "{count, plural, one {תומך} other {תומכים}}",
-    "platformFee": "עמלת פלטפורמה",
-    "wantToContribute": "רוצה לתרום?",
-    "topUpFirst": "טענו את הארנק שלכם קודם כדי להתחיל לתרום.",
-    "createAccountPrompt": "צרו חשבון וטענו את הארנק שלכם כדי לתמוך בקמפיין הזה.",
+    "platformFee": "דמי שירות",
+    "wantToContribute": "רוצים לתמוך בפרויקט הזה?",
+    "topUpFirst": "טענו את הארנק שלכם קודם כדי להתחיל.",
+    "createAccountPrompt": "צרו חשבון וטענו את הארנק שלכם כדי להזמין שירות זה.",
     "goToWallet": "לארנק",
     "createAccount": "צרו חשבון",
-    "completedMessage": "הקמפיין הזה {status}. תודה לכל {count} התומכים!",
-    "recipient": "מקבל"
+    "completedMessage": "הפרויקט הזה {status}. תודה לכל {count} התומכים!",
+    "recipient": "ספק שירות"
   },
   "Assistants": {
     "title": "עוזרים",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "הארנק שלך",
-    "createPromptTitle": "התחילו לתמוך במטרות",
-    "createPromptDesc": "צרו חשבון חינמי כדי לטעון כספים ולתרום לקמפיינים שחשובים לכם.",
+    "createPromptTitle": "הניעו פעולה קולקטיבית",
+    "createPromptDesc": "צרו חשבון חינמי כדי לטעון את הארנק שלכם ולהזמין שירותים לפרויקטי פעולה.",
     "createAccount": "צרו חשבון",
-    "activeCampaigns": "קמפיינים פעילים",
+    "activeCampaigns": "פרויקטים פעילים",
     "viewAll": "הצג הכל"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "אוצר",
     "community": "קהילה",
     "aiPick": "בחירת AI",
-    "funded": "מומן",
-    "disbursed": "חולק",
+    "funded": "היעד הושג",
+    "disbursed": "הושלם",
     "backers": "{count, plural, one {תומך} other {תומכים}}",
     "aiAndHuman": "סוכן AI ומארגן אנושי",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "משתתפים"
   },
   "CampaignProgress": {
-    "title": "💰 קמפיינים",
-    "funded": "מומן",
-    "disbursed": "חולק",
+    "title": "⚡ פרויקטי פעולה",
+    "funded": "היעד הושג",
+    "disbursed": "הושלם",
     "backers": "{count, plural, one {תומך} other {תומכים}}"
   },
   "WalletBalance": {
     "title": "היתרה שלך",
     "loaded": "נטען",
-    "contributed": "תרמתי",
-    "campaigns": "{count, plural, one {קמפיין} other {קמפיינים}}"
+    "contributed": "הוצאתי",
+    "campaigns": "{count, plural, one {פרויקט} other {פרויקטים}}"
   },
   "Transactions": {
     "title": "עסקאות אחרונות",
     "topUp": "טעינה",
-    "contribution": "תרומה",
+    "contribution": "תשלום פרויקט",
     "refund": "החזר",
     "justNow": "עכשיו",
     "minutesAgo": "לפני {count} ד׳",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "הכל",
     "active": "פעיל",
-    "funded": "מומן",
-    "disbursed": "חולק"
+    "funded": "היעד הושג",
+    "disbursed": "הושלם"
   },
   "TimeSkill": {
     "timeQuestion": "כמה זמן יש לכם?",
@@ -436,24 +436,24 @@
     "networkError": "שגיאת רשת. נסו שוב.",
     "customAmount": "סכום מותאם (£)",
     "topUp": "טעינה",
-    "simulated": "טעינה מדומה לבדיקה. תשלומים אמיתיים דרך Stripe בקרוב."
+    "simulated": "טעינה מדומה לבדיקה. תשלומים אמיתיים בקרוב."
   },
   "Contribute": {
     "insufficientFunds": "אין מספיק כספים. טענו את הארנק שלכם קודם.",
-    "minContribution": "תרומה מינימלית היא 10p",
-    "contribute": "תרמו",
+    "minContribution": "תשלום מינימלי הוא 10p",
+    "contribute": "תמכו בפרויקט הזה",
     "yourBalance": "היתרה שלך: ",
     "networkError": "שגיאת רשת. נסו שוב.",
     "invalidAmount": "הזינו סכום תקין",
     "customAmount": "סכום מותאם (£)",
-    "give": "תנו",
-    "success": "תרמתם {amount} לקמפיין {campaign}!",
+    "give": "שלמו",
+    "success": "שילמתם {amount} עבור {campaign}!",
     "remainingBalance": "היתרה שנותרה: {balance}",
     "topUpPrompt": "טענו את הארנק שלכם",
-    "toKeepSupporting": "כדי להמשיך לתמוך בקמפיינים.",
+    "toKeepSupporting": "כדי להמשיך לתמוך בפרויקטי פעולה.",
     "walletEmpty": "הארנק שלכם ריק.",
     "topUp": "טעינה",
-    "toContribute": "כדי לתרום."
+    "toContribute": "כדי לתמוך בפרויקטים."
   },
   "Claim": {
     "success": "תודה! רשמנו את ההתעניינות שלך בתפקיד {name}. ניצור קשר.",

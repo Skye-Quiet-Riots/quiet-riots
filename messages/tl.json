@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Idokumento ang nangyayari sa {orgName}."
   },
   "Campaigns": {
-    "title": "Mga Kampanya",
-    "subtitle": "{count} {count, plural, one {kampanya} other {kampanya}} na nangongolekta ng pondo para sa pagbabago.",
-    "noResults": "Walang nahanap na kampanya. Subukan ang ibang filter."
+    "title": "Mga Action Project",
+    "subtitle": "{count} {count, plural, one {proyekto} other {proyekto}} na kumukuha ng mga serbisyo para sa kolektibong aksyon.",
+    "noResults": "Walang nahanap na action project. Subukan ang ibang filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Mga Kampanya",
-    "fullyFunded": "Ganap na Na-fund",
-    "disbursed": "Na-disburse ang Pondo",
+    "breadcrumb": "Mga Action Project",
+    "fullyFunded": "Naabot ang Target",
+    "disbursed": "Nakumpleto",
     "cancelled": "Kinansela",
     "active": "Aktibo",
     "target": "target",
-    "raised": "nakalap",
+    "raised": "nakommit",
     "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}",
-    "platformFee": "bayad sa platform",
-    "wantToContribute": "Gusto mong mag-ambag?",
-    "topUpFirst": "Mag-top up muna ng iyong wallet upang magsimulang mag-ambag.",
-    "createAccountPrompt": "Gumawa ng account at mag-load ng wallet upang suportahan ang kampanyang ito.",
+    "platformFee": "bayad sa serbisyo",
+    "wantToContribute": "Gusto mong suportahan ang proyektong ito?",
+    "topUpFirst": "Mag-top up muna ng iyong wallet upang makapagsimula.",
+    "createAccountPrompt": "Gumawa ng account at mag-load ng wallet upang mag-komisyon ng serbisyong ito.",
     "goToWallet": "Pumunta sa wallet",
     "createAccount": "Gumawa ng account",
-    "completedMessage": "Ang kampanyang ito ay {status}. Salamat sa lahat ng {count} tagasuporta!",
-    "recipient": "Tatanggap"
+    "completedMessage": "Ang proyektong ito ay {status}. Salamat sa lahat ng {count} tagasuporta!",
+    "recipient": "Tagapagbigay ng Serbisyo"
   },
   "Assistants": {
     "title": "Mga Katulong",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Ang Iyong Wallet",
-    "createPromptTitle": "Magsimulang Sumuporta ng mga Layunin",
-    "createPromptDesc": "Gumawa ng libreng account para mag-load ng pondo at mag-ambag sa mga kampanyang mahalaga sa iyo.",
+    "createPromptTitle": "Palakasin ang Kolektibong Aksyon",
+    "createPromptDesc": "Gumawa ng libreng account para mag-load ng wallet at kumuha ng mga serbisyo para sa mga action project.",
     "createAccount": "Gumawa ng account",
-    "activeCampaigns": "Mga Aktibong Kampanya",
+    "activeCampaigns": "Mga Aktibong Proyekto",
     "viewAll": "Tingnan lahat"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Pinili",
     "community": "Komunidad",
     "aiPick": "Pinili ng AI",
-    "funded": "Na-fund",
-    "disbursed": "Na-disburse",
+    "funded": "Naabot ang Target",
+    "disbursed": "Nakumpleto",
     "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}",
     "aiAndHuman": "AI Agent at Human Organiser",
     "riots": "{count, plural, one {riot} other {riot}}"
@@ -353,21 +353,21 @@
     "rioters": "kalahok"
   },
   "CampaignProgress": {
-    "title": "💰 Mga Kampanya",
-    "funded": "Na-fund",
-    "disbursed": "Na-disburse",
+    "title": "⚡ Mga Action Project",
+    "funded": "Naabot ang Target",
+    "disbursed": "Nakumpleto",
     "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}"
   },
   "WalletBalance": {
     "title": "Ang Iyong Balanse",
     "loaded": "na-load",
-    "contributed": "nai-ambag",
-    "campaigns": "{count, plural, one {kampanya} other {kampanya}}"
+    "contributed": "nagastos",
+    "campaigns": "{count, plural, one {proyekto} other {proyekto}}"
   },
   "Transactions": {
     "title": "Kamakailang mga Transaksyon",
     "topUp": "Top-up",
-    "contribution": "Ambag",
+    "contribution": "Bayad sa proyekto",
     "refund": "Refund",
     "justNow": "ngayon lang",
     "minutesAgo": "{count}m nakalipas",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Lahat",
     "active": "Aktibo",
-    "funded": "Na-fund",
-    "disbursed": "Na-disburse"
+    "funded": "Naabot ang Target",
+    "disbursed": "Nakumpleto"
   },
   "TimeSkill": {
     "timeQuestion": "Gaano karaming oras ang mayroon ka?",
@@ -436,24 +436,24 @@
     "networkError": "Error sa network. Pakisubukan muli.",
     "customAmount": "Custom na halaga (£)",
     "topUp": "Mag-top Up",
-    "simulated": "Simulated na top-up para sa testing. Mga tunay na bayad sa pamamagitan ng Stripe ay paparating."
+    "simulated": "Simulated na top-up para sa testing. Mga tunay na bayad ay paparating."
   },
   "Contribute": {
     "insufficientFunds": "Hindi sapat ang pondo. Mag-top up muna ng wallet.",
-    "minContribution": "Minimum na ambag ay 10p",
-    "contribute": "Mag-ambag",
+    "minContribution": "Minimum na bayad ay 10p",
+    "contribute": "Suportahan ang Proyektong Ito",
     "yourBalance": "Ang iyong balanse: ",
     "networkError": "Error sa network. Pakisubukan muli.",
     "invalidAmount": "Maglagay ng tamang halaga",
     "customAmount": "Custom na halaga (£)",
-    "give": "Ibigay",
-    "success": "Nag-ambag ng {amount} sa {campaign}!",
+    "give": "Magbayad",
+    "success": "Nagbayad ng {amount} para sa {campaign}!",
     "remainingBalance": "Natitirang balanse: {balance}",
     "topUpPrompt": "Mag-top up ng wallet",
-    "toKeepSupporting": "para patuloy na sumuporta ng mga kampanya.",
+    "toKeepSupporting": "para patuloy na sumuporta ng mga action project.",
     "walletEmpty": "Walang laman ang iyong wallet.",
     "topUp": "Mag-top up",
-    "toContribute": "para makapag-ambag."
+    "toContribute": "para sumuporta ng mga proyekto."
   },
   "Claim": {
     "success": "Salamat! Nabanggit na namin ang iyong interes sa {name} na role. Makikipag-ugnayan kami.",

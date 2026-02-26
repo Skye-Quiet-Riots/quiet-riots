@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentuj, co se deje s {orgName}."
   },
   "Campaigns": {
-    "title": "Kampane",
-    "subtitle": "{count} {count, plural, one {kampan sbirajici} other {kampani sbirajicich}} prostredky na zmenu.",
-    "noResults": "Zadne kampane nenalezeny. Zkus jiny filtr."
+    "title": "Akcni projekty",
+    "subtitle": "{count} {count, plural, one {projekt zadavajici} other {projektu zadavajicich}} sluzby pro kolektivni akci.",
+    "noResults": "Zadne akcni projekty nenalezeny. Zkus jiny filtr."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampane",
-    "fullyFunded": "Plne financovano",
-    "disbursed": "Prostredky vyplaceny",
+    "breadcrumb": "Akcni projekty",
+    "fullyFunded": "Cil dosazsen",
+    "disbursed": "Dokonceno",
     "cancelled": "Zruseno",
     "active": "Aktivni",
     "target": "cil",
-    "raised": "vybrano",
+    "raised": "prislibeno",
     "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
-    "platformFee": "poplatek platformy",
-    "wantToContribute": "Chces prispet?",
-    "topUpFirst": "Nejdriv si dobij penezenku, abys mohl prispivat.",
-    "createAccountPrompt": "Vytvor si ucet a dobij penezenku pro podporu teto kampane.",
+    "platformFee": "servisni poplatek",
+    "wantToContribute": "Chces podpoirit tento projekt?",
+    "topUpFirst": "Nejdriv si dobij penezenku, abys mohl zacit.",
+    "createAccountPrompt": "Vytvor si ucet a dobij penezenku pro zadani teto sluzby.",
     "goToWallet": "Prejit na penezenku",
     "createAccount": "Vytvorit ucet",
-    "completedMessage": "Tato kampan byla {status}. Dekujeme vsem {count} podporovatelu!",
-    "recipient": "Prijemce"
+    "completedMessage": "Tento projekt byl {status}. Dekujeme vsem {count} podporovatelu!",
+    "recipient": "Poskytovatel sluzeb"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Tvoje penezenka",
-    "createPromptTitle": "Zacni podporovat veci",
-    "createPromptDesc": "Vytvor si bezplatny ucet pro nabiti prostredku a prispivani na kampane, ktere jsou pro tebe dulezite.",
+    "createPromptTitle": "Pohon kolektivni akci",
+    "createPromptDesc": "Vytvor si bezplatny ucet pro nabiti penezenky a zadavani sluzeb pro akcni projekty.",
     "createAccount": "Vytvorit ucet",
-    "activeCampaigns": "Aktivni kampane",
+    "activeCampaigns": "Aktivni projekty",
     "viewAll": "Zobrazit vse"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Vybirane",
     "community": "Komunita",
     "aiPick": "Vyber AI",
-    "funded": "Financovano",
-    "disbursed": "Vyplaceno",
+    "funded": "Cil dosazsen",
+    "disbursed": "Dokonceno",
     "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
     "aiAndHuman": "AI Agent a Organizator",
     "riots": "{count, plural, one {riot} other {riotu}}"
@@ -353,21 +353,21 @@
     "rioters": "ucastniku"
   },
   "CampaignProgress": {
-    "title": "💰 Kampane",
-    "funded": "Financovano",
-    "disbursed": "Vyplaceno",
+    "title": "⚡ Akcni projekty",
+    "funded": "Cil dosazsen",
+    "disbursed": "Dokonceno",
     "backers": "{count, plural, one {podporovatel} other {podporovatelu}}"
   },
   "WalletBalance": {
     "title": "Tvuj zustatek",
     "loaded": "nabito",
-    "contributed": "prispeno",
-    "campaigns": "{count, plural, one {kampan} other {kampani}}"
+    "contributed": "utraceno",
+    "campaigns": "{count, plural, one {projekt} other {projektu}}"
   },
   "Transactions": {
     "title": "Nedavne transakce",
     "topUp": "Dobiti",
-    "contribution": "Prispevek",
+    "contribution": "Platba za projekt",
     "refund": "Vraceni",
     "justNow": "prave ted",
     "minutesAgo": "pred {count} min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Vse",
     "active": "Aktivni",
-    "funded": "Financovano",
-    "disbursed": "Vyplaceno"
+    "funded": "Cil dosazsen",
+    "disbursed": "Dokonceno"
   },
   "TimeSkill": {
     "timeQuestion": "Kolik mas casu?",
@@ -436,24 +436,24 @@
     "networkError": "Chyba site. Zkus to znovu.",
     "customAmount": "Vlastni castka (£)",
     "topUp": "Dobit",
-    "simulated": "Simulovane dobiti pro testovani. Prave platby pres Stripe jiz brzy."
+    "simulated": "Simulovane dobiti pro testovani. Prave platby jiz brzy."
   },
   "Contribute": {
     "insufficientFunds": "Nedostatecne prostredky. Nejdriv dobij penezenku.",
-    "minContribution": "Minimalni prispevek je 10p",
-    "contribute": "Prispet",
+    "minContribution": "Minimalni platba je 10p",
+    "contribute": "Podpoirit tento projekt",
     "yourBalance": "Tvuj zustatek: ",
     "networkError": "Chyba site. Zkus to znovu.",
     "invalidAmount": "Zadej platnou castku",
     "customAmount": "Vlastni castka (£)",
-    "give": "Darovat",
-    "success": "Prispeno {amount} na {campaign}!",
+    "give": "Zaplatit",
+    "success": "Zaplaceno {amount} na {campaign}!",
     "remainingBalance": "Zbyvaujici zustatek: {balance}",
     "topUpPrompt": "Dobij penezenku",
-    "toKeepSupporting": "pro dalsi podporu kampani.",
+    "toKeepSupporting": "pro dalsi podporu akcnich projektu.",
     "walletEmpty": "Tvoje penezenka je prazdna.",
     "topUp": "Dobit",
-    "toContribute": "pro prispivani."
+    "toContribute": "pro podporu projektu."
   },
   "Claim": {
     "success": "Dekujeme! Zaznamenali jsme tvuj zajem o roli {name}. Ozveme se ti.",

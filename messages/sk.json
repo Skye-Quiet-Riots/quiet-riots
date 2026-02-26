@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentuj, co sa deje s {orgName}."
   },
   "Campaigns": {
-    "title": "Kampane",
-    "subtitle": "{count} {count, plural, one {kampan zbierajuca} other {kampani zbierajucich}} prostriedky na zmenu.",
-    "noResults": "Ziadne kampane sa nenasli. Skus iny filter."
+    "title": "Akcne projekty",
+    "subtitle": "{count} {count, plural, one {projekt objednavajuci} other {projektov objednavajucich}} sluzby pre kolektivnu akciu.",
+    "noResults": "Ziadne akcne projekty sa nenasli. Skus iny filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampane",
-    "fullyFunded": "Plne financovane",
-    "disbursed": "Prostriedky vyplatene",
+    "breadcrumb": "Akcne projekty",
+    "fullyFunded": "Ciel dosiahnuty",
+    "disbursed": "Dokonceny",
     "cancelled": "Zrusene",
     "active": "Aktivna",
     "target": "ciel",
-    "raised": "vybrane",
+    "raised": "prislubenych",
     "backers": "{count, plural, one {podporovatel} other {podporovatelov}}",
-    "platformFee": "poplatok platformy",
-    "wantToContribute": "Chces prispiet?",
-    "topUpFirst": "Najprv si dobij penazenku, aby si mohol prispievat.",
-    "createAccountPrompt": "Vytvor si ucet a dobij penazenku pre podporu tejto kampane.",
+    "platformFee": "poplatok za sluzbu",
+    "wantToContribute": "Chces podporit tento projekt?",
+    "topUpFirst": "Najprv si dobij penazenku, aby si mohol zacat.",
+    "createAccountPrompt": "Vytvor si ucet a dobij penazenku na objednanie tejto sluzby.",
     "goToWallet": "Prejst na penazenku",
     "createAccount": "Vytvorit ucet",
-    "completedMessage": "Tato kampan bola {status}. Dakujeme vsetkym {count} podporovatelom!",
-    "recipient": "Prijemca"
+    "completedMessage": "Tento projekt bol {status}. Dakujeme vsetkym {count} podporovatelom!",
+    "recipient": "Poskytovatel sluzieb"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Tvoja penazenka",
-    "createPromptTitle": "Zacni podporovat veci",
-    "createPromptDesc": "Vytvor si bezplatny ucet na nabitie prostriedkov a prispievanie na kampane, ktore su pre teba dolezite.",
+    "createPromptTitle": "Posilni kolektivnu akciu",
+    "createPromptDesc": "Vytvor si bezplatny ucet na dobitie penazenky a objednavanie sluzieb pre akcne projekty.",
     "createAccount": "Vytvorit ucet",
-    "activeCampaigns": "Aktivne kampane",
+    "activeCampaigns": "Aktivne projekty",
     "viewAll": "Zobrazit vsetko"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Vyberane",
     "community": "Komunita",
     "aiPick": "Vyber AI",
-    "funded": "Financovane",
-    "disbursed": "Vyplatene",
+    "funded": "Ciel dosiahnuty",
+    "disbursed": "Dokonceny",
     "backers": "{count, plural, one {podporovatel} other {podporovatelov}}",
     "aiAndHuman": "AI Agent a Organizator",
     "riots": "{count, plural, one {riot} other {riotov}}"
@@ -353,21 +353,21 @@
     "rioters": "ucastnikov"
   },
   "CampaignProgress": {
-    "title": "💰 Kampane",
-    "funded": "Financovane",
-    "disbursed": "Vyplatene",
+    "title": "⚡ Akcne projekty",
+    "funded": "Ciel dosiahnuty",
+    "disbursed": "Dokonceny",
     "backers": "{count, plural, one {podporovatel} other {podporovatelov}}"
   },
   "WalletBalance": {
     "title": "Tvoj zostatok",
     "loaded": "nabite",
-    "contributed": "prispene",
-    "campaigns": "{count, plural, one {kampan} other {kampani}}"
+    "contributed": "minutych",
+    "campaigns": "{count, plural, one {projekt} other {projektov}}"
   },
   "Transactions": {
     "title": "Nedavne transakcie",
     "topUp": "Dobitie",
-    "contribution": "Prispevok",
+    "contribution": "Platba za projekt",
     "refund": "Vratenie",
     "justNow": "prave teraz",
     "minutesAgo": "pred {count} min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Vsetko",
     "active": "Aktivne",
-    "funded": "Financovane",
-    "disbursed": "Vyplatene"
+    "funded": "Ciel dosiahnuty",
+    "disbursed": "Dokonceny"
   },
   "TimeSkill": {
     "timeQuestion": "Kolko mas casu?",
@@ -436,24 +436,24 @@
     "networkError": "Chyba siete. Skus to znova.",
     "customAmount": "Vlastna suma (£)",
     "topUp": "Dobit",
-    "simulated": "Simulovane dobitie na testovanie. Prave platby cez Stripe coskoro."
+    "simulated": "Simulovane dobitie na testovanie. Prave platby coskoro."
   },
   "Contribute": {
     "insufficientFunds": "Nedostatocne prostriedky. Najprv dobij penazenku.",
-    "minContribution": "Minimalny prispevok je 10p",
-    "contribute": "Prispiet",
+    "minContribution": "Minimalna platba je 10p",
+    "contribute": "Podporit tento projekt",
     "yourBalance": "Tvoj zostatok: ",
     "networkError": "Chyba siete. Skus to znova.",
     "invalidAmount": "Zadaj platnu sumu",
     "customAmount": "Vlastna suma (£)",
-    "give": "Darovat",
-    "success": "Prispene {amount} na {campaign}!",
+    "give": "Zaplatit",
+    "success": "Zaplatene {amount} za {campaign}!",
     "remainingBalance": "Zostavajuci zostatok: {balance}",
     "topUpPrompt": "Dobij penazenku",
-    "toKeepSupporting": "pre dalsiu podporu kampani.",
+    "toKeepSupporting": "pre dalsiu podporu akcnych projektov.",
     "walletEmpty": "Tvoja penazenka je prazdna.",
     "topUp": "Dobit",
-    "toContribute": "pre prispievanie."
+    "toContribute": "pre podporu projektov."
   },
   "Claim": {
     "success": "Dakujeme! Zaznamenali sme tvoj zaujem o rolu {name}. Ozveme sa ti.",

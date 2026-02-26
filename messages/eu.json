@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentatu {orgName}(r)ekin gertatzen ari dena."
   },
   "Campaigns": {
-    "title": "Kanpainak",
-    "subtitle": "{count} {count, plural, one {kanpaina} other {kanpaina}} aldaketarako funtsak biltzen.",
-    "noResults": "Ez da kanpainarik aurkitu. Saiatu iragazki ezberdin batekin."
+    "title": "Ekintza-proiektuak",
+    "subtitle": "{count} {count, plural, one {proiektu} other {proiektu}} ekintza kolektiborako zerbitzuak kontratatzen.",
+    "noResults": "Ez da ekintza-proiekturik aurkitu. Saiatu iragazki ezberdin batekin."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kanpainak",
-    "fullyFunded": "Guztiz Finantzatua",
-    "disbursed": "Funtsak Banatuta",
+    "breadcrumb": "Ekintza-proiektuak",
+    "fullyFunded": "Helburua Lortua",
+    "disbursed": "Osatua",
     "cancelled": "Bertan behera utzita",
     "active": "Aktiboa",
     "target": "helburua",
-    "raised": "bilduta",
-    "backers": "{count, plural, one {babesleak} other {babesleak}}",
-    "platformFee": "plataforma-kuota",
-    "wantToContribute": "Lagundu nahi duzu?",
-    "topUpFirst": "Birkargatu zure zorroa lehenik laguntzen hasteko.",
-    "createAccountPrompt": "Sortu kontu bat eta kargatu zure zorroa kanpaina hau laguntzeko.",
+    "raised": "konprometitua",
+    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}",
+    "platformFee": "zerbitzu-kuota",
+    "wantToContribute": "Proiektu hau lagundu nahi duzu?",
+    "topUpFirst": "Birkargatu zure zorroa lehenik hasteko.",
+    "createAccountPrompt": "Sortu kontu bat eta kargatu zure zorroa zerbitzu hau kontratatzeko.",
     "goToWallet": "Joan zorrora",
     "createAccount": "Sortu kontua",
-    "completedMessage": "Kanpaina hau {status} izan da. Eskerrik asko {count} babesle guztiei!",
-    "recipient": "Hartzailea"
+    "completedMessage": "Proiektu hau {status} izan da. Eskerrik asko {count} laguntzaile guztiei!",
+    "recipient": "Zerbitzu-hornitzailea"
   },
   "Assistants": {
     "title": "Laguntzaileak",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Zure Zorroa",
-    "createPromptTitle": "Hasi Kausak Laguntzen",
-    "createPromptDesc": "Sortu doako kontu bat funtsak kargatzeko eta zuri axola zaizkizun kanpainetara laguntzeko.",
+    "createPromptTitle": "Bultzatu Ekintza Kolektiboa",
+    "createPromptDesc": "Sortu doako kontu bat zure zorroa kargatzeko eta ekintza-proiektuetarako zerbitzuak kontratatzeko.",
     "createAccount": "Sortu kontua",
-    "activeCampaigns": "Kanpaina Aktiboak",
+    "activeCampaigns": "Proiektu Aktiboak",
     "viewAll": "Ikusi guztiak"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Hautatua",
     "community": "Komunitatea",
     "aiPick": "AI Hautapena",
-    "funded": "Finantzatua",
-    "disbursed": "Banatua",
-    "backers": "{count, plural, one {babesleak} other {babesleak}}",
+    "funded": "Helburua Lortua",
+    "disbursed": "Osatua",
+    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}",
     "aiAndHuman": "AI Agentea eta Giza Antolatzailea",
     "riots": "{count, plural, one {riot} other {riot}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "partaide"
   },
   "CampaignProgress": {
-    "title": "💰 Kanpainak",
-    "funded": "Finantzatua",
-    "disbursed": "Banatua",
-    "backers": "{count, plural, one {babesleak} other {babesleak}}"
+    "title": "⚡ Ekintza-proiektuak",
+    "funded": "Helburua Lortua",
+    "disbursed": "Osatua",
+    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}"
   },
   "WalletBalance": {
     "title": "Zure Saldoa",
     "loaded": "kargatuta",
-    "contributed": "lagunduta",
-    "campaigns": "{count, plural, one {kanpaina} other {kanpaina}}"
+    "contributed": "gastatua",
+    "campaigns": "{count, plural, one {proiektu} other {proiektu}}"
   },
   "Transactions": {
     "title": "Azken Transakzioak",
     "topUp": "Birkarga",
-    "contribution": "Ekarpena",
+    "contribution": "Proiektu-ordainketa",
     "refund": "Itzulketa",
     "justNow": "oraintxe",
     "minutesAgo": "duela {count}min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Guztiak",
     "active": "Aktiboa",
-    "funded": "Finantzatua",
-    "disbursed": "Banatua"
+    "funded": "Helburua Lortua",
+    "disbursed": "Osatua"
   },
   "TimeSkill": {
     "timeQuestion": "Zenbat denbora duzu?",
@@ -436,24 +436,24 @@
     "networkError": "Sare-errorea. Mesedez, saiatu berriro.",
     "customAmount": "Zenbateko pertsonalizatua (£)",
     "topUp": "Birkargatu",
-    "simulated": "Birkarga simulatua probetarako. Benetako ordainketak Stripe bidez laster."
+    "simulated": "Birkarga simulatua probetarako. Benetako ordainketak laster."
   },
   "Contribute": {
     "insufficientFunds": "Funts nahikorik ez. Birkargatu zure zorroa lehenik.",
-    "minContribution": "Gutxieneko ekarpena 10p da",
-    "contribute": "Lagundu",
+    "minContribution": "Gutxieneko ordainketa 10p da",
+    "contribute": "Lagundu Proiektu Hau",
     "yourBalance": "Zure saldoa: ",
     "networkError": "Sare-errorea. Mesedez, saiatu berriro.",
     "invalidAmount": "Sartu zenbateko baliogarri bat",
     "customAmount": "Zenbateko pertsonalizatua (£)",
-    "give": "Eman",
-    "success": "{amount} lagundu da {campaign}(r)a!",
+    "give": "Ordaindu",
+    "success": "{amount} ordaindu da {campaign}(r)a!",
     "remainingBalance": "Zure gainerako saldoa: {balance}",
     "topUpPrompt": "Birkargatu zure zorroa",
-    "toKeepSupporting": "kanpainak laguntzen jarraitzeko.",
+    "toKeepSupporting": "ekintza-proiektuak laguntzen jarraitzeko.",
     "walletEmpty": "Zure zorroa hutsik dago.",
     "topUp": "Birkargatu",
-    "toContribute": "laguntzeko."
+    "toContribute": "proiektuak laguntzeko."
   },
   "Claim": {
     "success": "Eskerrik asko! {name} rolaren zure interesa jaso dugu. Harremanetan jarriko gara.",

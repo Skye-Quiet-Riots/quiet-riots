@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "บันทึกสิ่งที่เกิดขึ้นกับ {orgName}"
   },
   "Campaigns": {
-    "title": "แคมเปญ",
-    "subtitle": "{count} {count, plural, one {แคมเปญ} other {แคมเปญ}} ระดมทุนเพื่อการเปลี่ยนแปลง",
-    "noResults": "ไม่พบแคมเปญ ลองเปลี่ยนตัวกรองดู"
+    "title": "โครงการปฏิบัติการ",
+    "subtitle": "{count} {count, plural, one {โครงการ} other {โครงการ}} จ้างบริการเพื่อการดำเนินการร่วม",
+    "noResults": "ไม่พบโครงการปฏิบัติการ ลองเปลี่ยนตัวกรองดู"
   },
   "CampaignDetail": {
-    "breadcrumb": "แคมเปญ",
-    "fullyFunded": "ระดมทุนครบแล้ว",
-    "disbursed": "จ่ายเงินแล้ว",
+    "breadcrumb": "โครงการปฏิบัติการ",
+    "fullyFunded": "บรรลุเป้าหมายแล้ว",
+    "disbursed": "เสร็จสมบูรณ์",
     "cancelled": "ยกเลิกแล้ว",
     "active": "กำลังดำเนินการ",
     "target": "เป้าหมาย",
-    "raised": "ระดมได้",
+    "raised": "ผูกพันแล้ว",
     "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
-    "platformFee": "ค่าธรรมเนียมแพลตฟอร์ม",
-    "wantToContribute": "ต้องการร่วมสนับสนุนไหม?",
-    "topUpFirst": "เติมเงินในกระเป๋าก่อนเพื่อเริ่มสนับสนุน",
-    "createAccountPrompt": "สร้างบัญชีและเติมเงินเพื่อสนับสนุนแคมเปญนี้",
+    "platformFee": "ค่าบริการ",
+    "wantToContribute": "ต้องการสนับสนุนโครงการนี้ไหม?",
+    "topUpFirst": "เติมเงินในกระเป๋าก่อนเพื่อเริ่มต้น",
+    "createAccountPrompt": "สร้างบัญชีและเติมเงินเพื่อจ้างบริการนี้",
     "goToWallet": "ไปที่กระเป๋าเงิน",
     "createAccount": "สร้างบัญชี",
-    "completedMessage": "แคมเปญนี้{status}แล้ว ขอบคุณผู้สนับสนุนทั้ง {count} คน!",
-    "recipient": "ผู้รับ"
+    "completedMessage": "โครงการนี้{status}แล้ว ขอบคุณผู้สนับสนุนทั้ง {count} คน!",
+    "recipient": "ผู้ให้บริการ"
   },
   "Assistants": {
     "title": "ผู้ช่วย",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "กระเป๋าเงินของคุณ",
-    "createPromptTitle": "เริ่มสนับสนุนสิ่งดีๆ",
-    "createPromptDesc": "สร้างบัญชีฟรีเพื่อเติมเงินและสนับสนุนแคมเปญที่คุณสนใจ",
+    "createPromptTitle": "ขับเคลื่อนการดำเนินการร่วม",
+    "createPromptDesc": "สร้างบัญชีฟรีเพื่อเติมเงินและจ้างบริการสำหรับโครงการปฏิบัติการ",
     "createAccount": "สร้างบัญชี",
-    "activeCampaigns": "แคมเปญที่กำลังดำเนินการ",
+    "activeCampaigns": "โครงการที่กำลังดำเนินการ",
     "viewAll": "ดูทั้งหมด"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "คัดสรร",
     "community": "ชุมชน",
     "aiPick": "AI เลือก",
-    "funded": "ระดมทุนแล้ว",
-    "disbursed": "จ่ายเงินแล้ว",
+    "funded": "บรรลุเป้าหมายแล้ว",
+    "disbursed": "เสร็จสมบูรณ์",
     "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
     "aiAndHuman": "AI Agent & ผู้จัดการที่เป็นคน",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "สมาชิก"
   },
   "CampaignProgress": {
-    "title": "💰 แคมเปญ",
-    "funded": "ระดมทุนแล้ว",
-    "disbursed": "จ่ายเงินแล้ว",
+    "title": "⚡ โครงการปฏิบัติการ",
+    "funded": "บรรลุเป้าหมายแล้ว",
+    "disbursed": "เสร็จสมบูรณ์",
     "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}"
   },
   "WalletBalance": {
     "title": "ยอดเงินของคุณ",
     "loaded": "เติมแล้ว",
-    "contributed": "สนับสนุนแล้ว",
-    "campaigns": "{count, plural, one {แคมเปญ} other {แคมเปญ}}"
+    "contributed": "ใช้ไปแล้ว",
+    "campaigns": "{count, plural, one {โครงการ} other {โครงการ}}"
   },
   "Transactions": {
     "title": "รายการล่าสุด",
     "topUp": "เติมเงิน",
-    "contribution": "สนับสนุน",
+    "contribution": "ชำระเงินโครงการ",
     "refund": "คืนเงิน",
     "justNow": "เมื่อกี้",
     "minutesAgo": "{count} นาทีที่แล้ว",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "ทั้งหมด",
     "active": "กำลังดำเนินการ",
-    "funded": "ระดมทุนแล้ว",
-    "disbursed": "จ่ายเงินแล้ว"
+    "funded": "บรรลุเป้าหมายแล้ว",
+    "disbursed": "เสร็จสมบูรณ์"
   },
   "TimeSkill": {
     "timeQuestion": "คุณมีเวลาเท่าไหร่?",
@@ -436,24 +436,24 @@
     "networkError": "เครือข่ายผิดพลาด กรุณาลองอีกครั้ง",
     "customAmount": "จำนวนอื่น (£)",
     "topUp": "เติมเงิน",
-    "simulated": "เติมเงินจำลองสำหรับทดสอบ การชำระเงินจริงผ่าน Stripe เร็วๆ นี้"
+    "simulated": "เติมเงินจำลองสำหรับทดสอบ การชำระเงินจริงเร็วๆ นี้"
   },
   "Contribute": {
     "insufficientFunds": "เงินไม่พอ เติมเงินในกระเป๋าก่อน",
-    "minContribution": "สนับสนุนขั้นต่ำ 10p",
-    "contribute": "สนับสนุน",
+    "minContribution": "ชำระขั้นต่ำ 10p",
+    "contribute": "สนับสนุนโครงการนี้",
     "yourBalance": "ยอดเงินของคุณ: ",
     "networkError": "เครือข่ายผิดพลาด กรุณาลองอีกครั้ง",
     "invalidAmount": "กรอกจำนวนเงินที่ถูกต้อง",
     "customAmount": "จำนวนอื่น (£)",
-    "give": "ให้",
-    "success": "สนับสนุน {amount} ให้ {campaign} แล้ว!",
+    "give": "ชำระเงิน",
+    "success": "ชำระ {amount} ให้ {campaign} แล้ว!",
     "remainingBalance": "ยอดเงินคงเหลือ: {balance}",
     "topUpPrompt": "เติมเงินในกระเป๋า",
-    "toKeepSupporting": "เพื่อสนับสนุนแคมเปญต่อไป",
+    "toKeepSupporting": "เพื่อสนับสนุนโครงการปฏิบัติการต่อไป",
     "walletEmpty": "กระเป๋าเงินของคุณว่างเปล่า",
     "topUp": "เติมเงิน",
-    "toContribute": "เพื่อสนับสนุน"
+    "toContribute": "เพื่อสนับสนุนโครงการ"
   },
   "Claim": {
     "success": "ขอบคุณ! เราบันทึกความสนใจของคุณในบทบาท {name} แล้ว เราจะติดต่อกลับ",

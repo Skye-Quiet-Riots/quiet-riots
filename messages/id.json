@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentasikan apa yang terjadi dengan {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanye",
-    "subtitle": "{count} {count, plural, one {kampanye} other {kampanye}} menggalang dana untuk perubahan.",
-    "noResults": "Tidak ditemukan kampanye. Coba filter lain."
+    "title": "Proyek Aksi",
+    "subtitle": "{count} {count, plural, one {proyek} other {proyek}} memesan layanan untuk aksi kolektif.",
+    "noResults": "Tidak ditemukan proyek aksi. Coba filter lain."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanye",
-    "fullyFunded": "Dana Terkumpul Penuh",
-    "disbursed": "Dana Telah Dicairkan",
+    "breadcrumb": "Proyek Aksi",
+    "fullyFunded": "Target Tercapai",
+    "disbursed": "Selesai",
     "cancelled": "Dibatalkan",
     "active": "Aktif",
     "target": "target",
-    "raised": "terkumpul",
+    "raised": "dikomitmenkan",
     "backers": "{count, plural, one {pendukung} other {pendukung}}",
-    "platformFee": "biaya platform",
-    "wantToContribute": "Ingin berkontribusi?",
-    "topUpFirst": "Isi dompetmu dulu untuk mulai berkontribusi.",
-    "createAccountPrompt": "Buat akun dan isi dompetmu untuk mendukung kampanye ini.",
+    "platformFee": "biaya layanan",
+    "wantToContribute": "Ingin mendukung proyek ini?",
+    "topUpFirst": "Isi dompetmu dulu untuk memulai.",
+    "createAccountPrompt": "Buat akun dan isi dompetmu untuk memesan layanan ini.",
     "goToWallet": "Ke dompet",
     "createAccount": "Buat akun",
-    "completedMessage": "Kampanye ini telah {status}. Terima kasih kepada semua {count} pendukung!",
-    "recipient": "Penerima"
+    "completedMessage": "Proyek ini telah {status}. Terima kasih kepada semua {count} pendukung!",
+    "recipient": "Penyedia Layanan"
   },
   "Assistants": {
     "title": "Asisten",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Dompetmu",
-    "createPromptTitle": "Mulai Mendukung",
-    "createPromptDesc": "Buat akun gratis untuk mengisi dana dan berkontribusi ke kampanye yang kamu pedulikan.",
+    "createPromptTitle": "Dorong Aksi Kolektif",
+    "createPromptDesc": "Buat akun gratis untuk mengisi dompet dan memesan layanan untuk proyek aksi.",
     "createAccount": "Buat akun",
-    "activeCampaigns": "Kampanye Aktif",
+    "activeCampaigns": "Proyek Aktif",
     "viewAll": "Lihat semua"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Pilihan",
     "community": "Komunitas",
     "aiPick": "Pilihan AI",
-    "funded": "Terdanai",
-    "disbursed": "Dicairkan",
+    "funded": "Target Tercapai",
+    "disbursed": "Selesai",
     "backers": "{count, plural, one {pendukung} other {pendukung}}",
     "aiAndHuman": "AI Agent & Pengorganisir",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "peserta"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanye",
-    "funded": "Terdanai",
-    "disbursed": "Dicairkan",
+    "title": "⚡ Proyek Aksi",
+    "funded": "Target Tercapai",
+    "disbursed": "Selesai",
     "backers": "{count, plural, one {pendukung} other {pendukung}}"
   },
   "WalletBalance": {
     "title": "Saldomu",
     "loaded": "diisi",
-    "contributed": "dikontribusikan",
-    "campaigns": "{count, plural, one {kampanye} other {kampanye}}"
+    "contributed": "dibelanjakan",
+    "campaigns": "{count, plural, one {proyek} other {proyek}}"
   },
   "Transactions": {
     "title": "Transaksi Terbaru",
     "topUp": "Isi ulang",
-    "contribution": "Kontribusi",
+    "contribution": "Pembayaran proyek",
     "refund": "Pengembalian",
     "justNow": "baru saja",
     "minutesAgo": "{count} menit lalu",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Semua",
     "active": "Aktif",
-    "funded": "Terdanai",
-    "disbursed": "Dicairkan"
+    "funded": "Target Tercapai",
+    "disbursed": "Selesai"
   },
   "TimeSkill": {
     "timeQuestion": "Berapa banyak waktu yang kamu punya?",
@@ -436,24 +436,24 @@
     "networkError": "Kesalahan jaringan. Silakan coba lagi.",
     "customAmount": "Jumlah lain (£)",
     "topUp": "Isi Ulang",
-    "simulated": "Isi ulang simulasi untuk pengujian. Pembayaran nyata via Stripe segera hadir."
+    "simulated": "Isi ulang simulasi untuk pengujian. Pembayaran nyata segera hadir."
   },
   "Contribute": {
     "insufficientFunds": "Dana tidak cukup. Isi dompetmu dulu.",
-    "minContribution": "Kontribusi minimum 10p",
-    "contribute": "Kontribusi",
+    "minContribution": "Pembayaran minimum 10p",
+    "contribute": "Dukung Proyek Ini",
     "yourBalance": "Saldomu: ",
     "networkError": "Kesalahan jaringan. Silakan coba lagi.",
     "invalidAmount": "Masukkan jumlah yang valid",
     "customAmount": "Jumlah lain (£)",
-    "give": "Beri",
-    "success": "Berkontribusi {amount} ke {campaign}!",
+    "give": "Bayar",
+    "success": "Membayar {amount} untuk {campaign}!",
     "remainingBalance": "Saldo tersisa: {balance}",
     "topUpPrompt": "Isi dompetmu",
-    "toKeepSupporting": "untuk terus mendukung kampanye.",
+    "toKeepSupporting": "untuk terus mendukung proyek aksi.",
     "walletEmpty": "Dompetmu kosong.",
     "topUp": "Isi ulang",
-    "toContribute": "untuk berkontribusi."
+    "toContribute": "untuk mendukung proyek."
   },
   "Claim": {
     "success": "Terima kasih! Kami sudah mencatat minatmu pada peran {name}. Kami akan menghubungimu.",

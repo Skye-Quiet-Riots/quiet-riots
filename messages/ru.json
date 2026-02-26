@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Документируй происходящее с {orgName}."
   },
   "Campaigns": {
-    "title": "Кампании",
-    "subtitle": "{count} {count, plural, one {кампания} few {кампании} many {кампаний} other {кампаний}} собирают средства на перемены.",
-    "noResults": "Кампаний не найдено. Попробуй другой фильтр."
+    "title": "Проекты действий",
+    "subtitle": "{count} {count, plural, one {проект} few {проекта} many {проектов} other {проектов}} заказывают услуги для коллективных действий.",
+    "noResults": "Проекты действий не найдены. Попробуй другой фильтр."
   },
   "CampaignDetail": {
-    "breadcrumb": "Кампании",
-    "fullyFunded": "Полностью профинансировано",
-    "disbursed": "Средства выплачены",
+    "breadcrumb": "Проекты действий",
+    "fullyFunded": "Цель достигнута",
+    "disbursed": "Завершено",
     "cancelled": "Отменено",
     "active": "Активная",
     "target": "цель",
-    "raised": "собрано",
-    "backers": "{count, plural, one {спонсор} few {спонсора} many {спонсоров} other {спонсоров}}",
-    "platformFee": "комиссия платформы",
-    "wantToContribute": "Хочешь сделать взнос?",
-    "topUpFirst": "Сначала пополни кошелёк, чтобы начать вносить средства.",
-    "createAccountPrompt": "Создай аккаунт и пополни кошелёк, чтобы поддержать эту кампанию.",
+    "raised": "подтверждено",
+    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}",
+    "platformFee": "сервисный сбор",
+    "wantToContribute": "Хочешь поддержать этот проект?",
+    "topUpFirst": "Сначала пополни кошелёк, чтобы начать.",
+    "createAccountPrompt": "Создай аккаунт и пополни кошелёк, чтобы заказать эту услугу.",
     "goToWallet": "Перейти в кошелёк",
     "createAccount": "Создать аккаунт",
-    "completedMessage": "Эта кампания {status}. Спасибо всем {count} спонсорам!",
-    "recipient": "Получатель"
+    "completedMessage": "Этот проект {status}. Спасибо всем {count} участникам!",
+    "recipient": "Поставщик услуг"
   },
   "Assistants": {
     "title": "Помощники",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Твой кошелёк",
-    "createPromptTitle": "Начни поддерживать дела",
-    "createPromptDesc": "Создай бесплатный аккаунт, чтобы пополнить средства и вносить их в кампании, которые тебе важны.",
+    "createPromptTitle": "Усиль коллективное действие",
+    "createPromptDesc": "Создай бесплатный аккаунт, чтобы пополнить кошелёк и заказывать услуги для проектов действий.",
     "createAccount": "Создать аккаунт",
-    "activeCampaigns": "Активные кампании",
+    "activeCampaigns": "Активные проекты",
     "viewAll": "Смотреть все"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Отобрано",
     "community": "Сообщество",
     "aiPick": "Выбор ИИ",
-    "funded": "Профинансировано",
-    "disbursed": "Выплачено",
-    "backers": "{count, plural, one {спонсор} few {спонсора} many {спонсоров} other {спонсоров}}",
+    "funded": "Цель достигнута",
+    "disbursed": "Завершено",
+    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}",
     "aiAndHuman": "ИИ-агент и человек-организатор",
     "riots": "{count, plural, one {riot} few {riots} many {riots} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "участников"
   },
   "CampaignProgress": {
-    "title": "💰 Кампании",
-    "funded": "Профинансировано",
-    "disbursed": "Выплачено",
-    "backers": "{count, plural, one {спонсор} few {спонсора} many {спонсоров} other {спонсоров}}"
+    "title": "⚡ Проекты действий",
+    "funded": "Цель достигнута",
+    "disbursed": "Завершено",
+    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}"
   },
   "WalletBalance": {
     "title": "Твой баланс",
     "loaded": "пополнено",
-    "contributed": "внесено",
-    "campaigns": "{count, plural, one {кампания} few {кампании} many {кампаний} other {кампаний}}"
+    "contributed": "потрачено",
+    "campaigns": "{count, plural, one {проект} few {проекта} many {проектов} other {проектов}}"
   },
   "Transactions": {
     "title": "Последние транзакции",
     "topUp": "Пополнение",
-    "contribution": "Взнос",
+    "contribution": "Оплата проекта",
     "refund": "Возврат",
     "justNow": "только что",
     "minutesAgo": "{count} мин назад",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Все",
     "active": "Активные",
-    "funded": "Профинансированные",
-    "disbursed": "Выплаченные"
+    "funded": "Цель достигнута",
+    "disbursed": "Завершено"
   },
   "TimeSkill": {
     "timeQuestion": "Сколько у тебя времени?",
@@ -436,24 +436,24 @@
     "networkError": "Ошибка сети. Попробуй ещё раз.",
     "customAmount": "Произвольная сумма (£)",
     "topUp": "Пополнить",
-    "simulated": "Симулированное пополнение для тестирования. Настоящие платежи через Stripe скоро."
+    "simulated": "Симулированное пополнение для тестирования. Настоящие платежи скоро."
   },
   "Contribute": {
     "insufficientFunds": "Недостаточно средств. Сначала пополни кошелёк.",
-    "minContribution": "Минимальный взнос — 10п",
-    "contribute": "Сделать взнос",
+    "minContribution": "Минимальный платёж — 10p",
+    "contribute": "Поддержать этот проект",
     "yourBalance": "Твой баланс: ",
     "networkError": "Ошибка сети. Попробуй ещё раз.",
     "invalidAmount": "Введи корректную сумму",
     "customAmount": "Произвольная сумма (£)",
-    "give": "Внести",
-    "success": "Внесено {amount} в {campaign}!",
+    "give": "Оплатить",
+    "success": "Оплачено {amount} за {campaign}!",
     "remainingBalance": "Остаток на балансе: {balance}",
     "topUpPrompt": "Пополни кошелёк",
-    "toKeepSupporting": "чтобы продолжить поддерживать кампании.",
+    "toKeepSupporting": "чтобы продолжить поддерживать проекты действий.",
     "walletEmpty": "Твой кошелёк пуст.",
     "topUp": "Пополнить",
-    "toContribute": "чтобы сделать взнос."
+    "toContribute": "чтобы поддержать проекты."
   },
   "Claim": {
     "success": "Спасибо! Мы зафиксировали твой интерес к роли {name}. Мы свяжемся с тобой.",

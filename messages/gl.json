@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Documenta o que está a pasar con {orgName}."
   },
   "Campaigns": {
-    "title": "Campañas",
-    "subtitle": "{count} {count, plural, one {campaña} other {campañas}} recadando fondos para o cambio.",
-    "noResults": "Non se atoparon campañas. Proba cun filtro diferente."
+    "title": "Proxectos de acción",
+    "subtitle": "{count} {count, plural, one {proxecto contratando} other {proxectos contratando}} servizos para a acción colectiva.",
+    "noResults": "Non se atoparon proxectos de acción. Proba cun filtro diferente."
   },
   "CampaignDetail": {
-    "breadcrumb": "Campañas",
-    "fullyFunded": "Totalmente financiada",
-    "disbursed": "Fondos desembolsados",
+    "breadcrumb": "Proxectos de acción",
+    "fullyFunded": "Obxectivo alcanzado",
+    "disbursed": "Completado",
     "cancelled": "Cancelada",
     "active": "Activa",
     "target": "obxectivo",
-    "raised": "recadado",
-    "backers": "{count, plural, one {mecenas} other {mecenas}}",
-    "platformFee": "comisión da plataforma",
-    "wantToContribute": "Queres contribuír?",
-    "topUpFirst": "Recarga a túa carteira primeiro para comezar a contribuír.",
-    "createAccountPrompt": "Crea unha conta e carga a túa carteira para apoiar esta campaña.",
+    "raised": "comprometido",
+    "backers": "{count, plural, one {colaborador} other {colaboradores}}",
+    "platformFee": "tarifa de servizo",
+    "wantToContribute": "Queres apoiar este proxecto?",
+    "topUpFirst": "Recarga a túa carteira primeiro para comezar.",
+    "createAccountPrompt": "Crea unha conta e carga a túa carteira para contratar este servizo.",
     "goToWallet": "Ir á carteira",
     "createAccount": "Crear conta",
-    "completedMessage": "Esta campaña foi {status}. Grazas a todos os {count} mecenas!",
-    "recipient": "Destinatario"
+    "completedMessage": "Este proxecto foi {status}. Grazas a todos os {count} colaboradores!",
+    "recipient": "Provedor de servizos"
   },
   "Assistants": {
     "title": "Asistentes",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "A túa carteira",
-    "createPromptTitle": "Comeza a apoiar causas",
-    "createPromptDesc": "Crea unha conta gratuíta para cargar fondos e contribuír a campañas que che importan.",
+    "createPromptTitle": "Impulsa a acción colectiva",
+    "createPromptDesc": "Crea unha conta gratuíta para cargar a túa carteira e contratar servizos para proxectos de acción.",
     "createAccount": "Crear conta",
-    "activeCampaigns": "Campañas activas",
+    "activeCampaigns": "Proxectos activos",
     "viewAll": "Ver todas"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Seleccionado",
     "community": "Comunidade",
     "aiPick": "Escolla IA",
-    "funded": "Financiada",
-    "disbursed": "Desembolsada",
-    "backers": "{count, plural, one {mecenas} other {mecenas}}",
+    "funded": "Obxectivo alcanzado",
+    "disbursed": "Completado",
+    "backers": "{count, plural, one {colaborador} other {colaboradores}}",
     "aiAndHuman": "Axente de IA e organizador humano",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "participantes"
   },
   "CampaignProgress": {
-    "title": "💰 Campañas",
-    "funded": "Financiada",
-    "disbursed": "Desembolsada",
-    "backers": "{count, plural, one {mecenas} other {mecenas}}"
+    "title": "⚡ Proxectos de acción",
+    "funded": "Obxectivo alcanzado",
+    "disbursed": "Completado",
+    "backers": "{count, plural, one {colaborador} other {colaboradores}}"
   },
   "WalletBalance": {
     "title": "O teu saldo",
     "loaded": "cargado",
-    "contributed": "contribuído",
-    "campaigns": "{count, plural, one {campaña} other {campañas}}"
+    "contributed": "gastado",
+    "campaigns": "{count, plural, one {proxecto} other {proxectos}}"
   },
   "Transactions": {
     "title": "Transaccións recentes",
     "topUp": "Recarga",
-    "contribution": "Contribución",
+    "contribution": "Pago de proxecto",
     "refund": "Reembolso",
     "justNow": "agora mesmo",
     "minutesAgo": "hai {count}m",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Todas",
     "active": "Activas",
-    "funded": "Financiadas",
-    "disbursed": "Desembolsadas"
+    "funded": "Obxectivo alcanzado",
+    "disbursed": "Completados"
   },
   "TimeSkill": {
     "timeQuestion": "Canto tempo tes?",
@@ -436,24 +436,24 @@
     "networkError": "Erro de rede. Por favor, téntao de novo.",
     "customAmount": "Cantidade personalizada (£)",
     "topUp": "Recargar",
-    "simulated": "Recarga simulada para probas. Pagos reais mediante Stripe en breve."
+    "simulated": "Recarga simulada para probas. Pagos reais en breve."
   },
   "Contribute": {
     "insufficientFunds": "Fondos insuficientes. Recarga a túa carteira primeiro.",
-    "minContribution": "A contribución mínima é de 10p",
-    "contribute": "Contribuír",
+    "minContribution": "O pago mínimo é de 10p",
+    "contribute": "Apoiar este proxecto",
     "yourBalance": "O teu saldo: ",
     "networkError": "Erro de rede. Por favor, téntao de novo.",
     "invalidAmount": "Introduce unha cantidade válida",
     "customAmount": "Cantidade personalizada (£)",
-    "give": "Dar",
-    "success": "Contribuíches {amount} a {campaign}!",
+    "give": "Pagar",
+    "success": "Pagaches {amount} para {campaign}!",
     "remainingBalance": "O teu saldo restante: {balance}",
     "topUpPrompt": "Recarga a túa carteira",
-    "toKeepSupporting": "para seguir apoiando campañas.",
+    "toKeepSupporting": "para seguir apoiando proxectos de acción.",
     "walletEmpty": "A túa carteira está baleira.",
     "topUp": "Recargar",
-    "toContribute": "para contribuír."
+    "toContribute": "para apoiar proxectos."
   },
   "Claim": {
     "success": "Grazas! Tomamos nota do teu interese no rol de {name}. Porémonos en contacto contigo.",

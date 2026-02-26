@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Документуй, що відбувається з {orgName}."
   },
   "Campaigns": {
-    "title": "Кампанії",
-    "subtitle": "{count} {count, plural, one {кампанія} few {кампанії} many {кампаній} other {кампаній}} збирають кошти на зміни.",
-    "noResults": "Кампаній не знайдено. Спробуй інший фільтр."
+    "title": "Проєкти дій",
+    "subtitle": "{count} {count, plural, one {проєкт} few {проєкти} many {проєктів} other {проєктів}} замовляють послуги для колективних дій.",
+    "noResults": "Проєктів дій не знайдено. Спробуй інший фільтр."
   },
   "CampaignDetail": {
-    "breadcrumb": "Кампанії",
-    "fullyFunded": "Повністю профінансовано",
-    "disbursed": "Кошти виплачено",
+    "breadcrumb": "Проєкти дій",
+    "fullyFunded": "Мету досягнуто",
+    "disbursed": "Завершено",
     "cancelled": "Скасовано",
     "active": "Активна",
     "target": "ціль",
-    "raised": "зібрано",
-    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}",
-    "platformFee": "комісія платформи",
-    "wantToContribute": "Хочеш зробити внесок?",
-    "topUpFirst": "Спочатку поповни гаманець, щоб почати робити внески.",
-    "createAccountPrompt": "Створи акаунт і поповни гаманець, щоб підтримати цю кампанію.",
+    "raised": "зобов'язано",
+    "backers": "{count, plural, one {підтримувач} few {підтримувачі} many {підтримувачів} other {підтримувачів}}",
+    "platformFee": "сервісний збір",
+    "wantToContribute": "Хочеш підтримати цей проєкт?",
+    "topUpFirst": "Спочатку поповни гаманець, щоб почати.",
+    "createAccountPrompt": "Створи акаунт і поповни гаманець, щоб замовити цю послугу.",
     "goToWallet": "Перейти до гаманця",
     "createAccount": "Створити акаунт",
-    "completedMessage": "Цю кампанію {status}. Дякуємо всім {count} спонсорам!",
-    "recipient": "Отримувач"
+    "completedMessage": "Цей проєкт {status}. Дякуємо всім {count} підтримувачам!",
+    "recipient": "Постачальник послуг"
   },
   "Assistants": {
     "title": "Помічники",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Твій гаманець",
-    "createPromptTitle": "Почни підтримувати справи",
-    "createPromptDesc": "Створи безкоштовний акаунт, щоб поповнити кошти та робити внески в кампанії, які тобі важливі.",
+    "createPromptTitle": "Підтримай колективні дії",
+    "createPromptDesc": "Створи безкоштовний акаунт, щоб поповнити гаманець і замовляти послуги для проєктів дій.",
     "createAccount": "Створити акаунт",
-    "activeCampaigns": "Активні кампанії",
+    "activeCampaigns": "Активні проєкти",
     "viewAll": "Переглянути всі"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Відібрано",
     "community": "Спільнота",
     "aiPick": "Вибір ШІ",
-    "funded": "Профінансовано",
-    "disbursed": "Виплачено",
-    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}",
+    "funded": "Мету досягнуто",
+    "disbursed": "Завершено",
+    "backers": "{count, plural, one {підтримувач} few {підтримувачі} many {підтримувачів} other {підтримувачів}}",
     "aiAndHuman": "ШІ-агент і людина-організатор",
     "riots": "{count, plural, one {riot} few {riots} many {riots} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "учасників"
   },
   "CampaignProgress": {
-    "title": "💰 Кампанії",
-    "funded": "Профінансовано",
-    "disbursed": "Виплачено",
-    "backers": "{count, plural, one {спонсор} few {спонсори} many {спонсорів} other {спонсорів}}"
+    "title": "⚡ Проєкти дій",
+    "funded": "Мету досягнуто",
+    "disbursed": "Завершено",
+    "backers": "{count, plural, one {підтримувач} few {підтримувачі} many {підтримувачів} other {підтримувачів}}"
   },
   "WalletBalance": {
     "title": "Твій баланс",
     "loaded": "поповнено",
-    "contributed": "внесено",
-    "campaigns": "{count, plural, one {кампанія} few {кампанії} many {кампаній} other {кампаній}}"
+    "contributed": "витрачено",
+    "campaigns": "{count, plural, one {проєкт} few {проєкти} many {проєктів} other {проєктів}}"
   },
   "Transactions": {
     "title": "Останні транзакції",
     "topUp": "Поповнення",
-    "contribution": "Внесок",
+    "contribution": "Оплата проєкту",
     "refund": "Повернення",
     "justNow": "щойно",
     "minutesAgo": "{count} хв тому",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Всі",
     "active": "Активні",
-    "funded": "Профінансовані",
-    "disbursed": "Виплачені"
+    "funded": "Мету досягнуто",
+    "disbursed": "Завершено"
   },
   "TimeSkill": {
     "timeQuestion": "Скільки маєш часу?",
@@ -436,24 +436,24 @@
     "networkError": "Помилка мережі. Спробуй ще раз.",
     "customAmount": "Довільна сума (£)",
     "topUp": "Поповнити",
-    "simulated": "Симульоване поповнення для тестування. Справжні платежі через Stripe скоро."
+    "simulated": "Симульоване поповнення для тестування. Реальні платежі незабаром."
   },
   "Contribute": {
     "insufficientFunds": "Недостатньо коштів. Спочатку поповни гаманець.",
-    "minContribution": "Мінімальний внесок — 10п",
-    "contribute": "Зробити внесок",
+    "minContribution": "Мінімальний платіж — 10p",
+    "contribute": "Підтримати цей проєкт",
     "yourBalance": "Твій баланс: ",
     "networkError": "Помилка мережі. Спробуй ще раз.",
     "invalidAmount": "Введи коректну суму",
     "customAmount": "Довільна сума (£)",
-    "give": "Внести",
-    "success": "Внесено {amount} у {campaign}!",
+    "give": "Оплатити",
+    "success": "Оплачено {amount} для {campaign}!",
     "remainingBalance": "Залишок на балансі: {balance}",
     "topUpPrompt": "Поповни гаманець",
-    "toKeepSupporting": "щоб продовжити підтримувати кампанії.",
+    "toKeepSupporting": "щоб продовжити підтримувати проєкти дій.",
     "walletEmpty": "Твій гаманець порожній.",
     "topUp": "Поповнити",
-    "toContribute": "щоб зробити внесок."
+    "toContribute": "щоб підтримати проєкти."
   },
   "Claim": {
     "success": "Дякуємо! Ми зафіксували твій інтерес до ролі {name}. Ми зв'яжемося з тобою.",

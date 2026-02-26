@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Documenteer wat er gebeurt bij {orgName}."
   },
   "Campaigns": {
-    "title": "Campagnes",
-    "subtitle": "{count} {count, plural, one {campagne} other {campagnes}} die geld inzamelen voor verandering.",
-    "noResults": "Geen campagnes gevonden. Probeer een ander filter."
+    "title": "Actieprojecten",
+    "subtitle": "{count} {count, plural, one {project} other {projecten}} die diensten inschakelen voor collectieve actie.",
+    "noResults": "Geen actieprojecten gevonden. Probeer een ander filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Campagnes",
-    "fullyFunded": "Volledig gefinancierd",
-    "disbursed": "Fondsen uitbetaald",
+    "breadcrumb": "Actieprojecten",
+    "fullyFunded": "Doel bereikt",
+    "disbursed": "Voltooid",
     "cancelled": "Geannuleerd",
     "active": "Actief",
     "target": "doel",
-    "raised": "opgehaald",
-    "backers": "{count, plural, one {donateur} other {donateurs}}",
-    "platformFee": "platformkosten",
-    "wantToContribute": "Wil je bijdragen?",
-    "topUpFirst": "Laad eerst je portemonnee op om te kunnen bijdragen.",
-    "createAccountPrompt": "Maak een account aan en laad je portemonnee om deze campagne te steunen.",
+    "raised": "toegezegd",
+    "backers": "{count, plural, one {supporter} other {supporters}}",
+    "platformFee": "servicekosten",
+    "wantToContribute": "Wil je dit project steunen?",
+    "topUpFirst": "Laad eerst je portemonnee op om aan de slag te gaan.",
+    "createAccountPrompt": "Maak een account aan en laad je portemonnee om deze dienst in te schakelen.",
     "goToWallet": "Ga naar portemonnee",
     "createAccount": "Account aanmaken",
-    "completedMessage": "Deze campagne is {status}. Bedankt aan alle {count} donateurs!",
-    "recipient": "Ontvanger"
+    "completedMessage": "Dit project is {status}. Bedankt aan alle {count} supporters!",
+    "recipient": "Dienstverlener"
   },
   "Assistants": {
     "title": "Assistenten",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Jouw portemonnee",
-    "createPromptTitle": "Begin met het steunen van goede doelen",
-    "createPromptDesc": "Maak een gratis account aan om geld te laden en bij te dragen aan campagnes die er voor jou toe doen.",
+    "createPromptTitle": "Versterk collectieve actie",
+    "createPromptDesc": "Maak een gratis account aan om je portemonnee op te laden en diensten in te schakelen voor actieprojecten.",
     "createAccount": "Account aanmaken",
-    "activeCampaigns": "Actieve campagnes",
+    "activeCampaigns": "Actieve projecten",
     "viewAll": "Bekijk alles"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Samengesteld",
     "community": "Community",
     "aiPick": "AI-keuze",
-    "funded": "Gefinancierd",
-    "disbursed": "Uitbetaald",
-    "backers": "{count, plural, one {donateur} other {donateurs}}",
+    "funded": "Doel bereikt",
+    "disbursed": "Voltooid",
+    "backers": "{count, plural, one {supporter} other {supporters}}",
     "aiAndHuman": "AI-agent & menselijke organisator",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "deelnemers"
   },
   "CampaignProgress": {
-    "title": "💰 Campagnes",
-    "funded": "Gefinancierd",
-    "disbursed": "Uitbetaald",
-    "backers": "{count, plural, one {donateur} other {donateurs}}"
+    "title": "⚡ Actieprojecten",
+    "funded": "Doel bereikt",
+    "disbursed": "Voltooid",
+    "backers": "{count, plural, one {supporter} other {supporters}}"
   },
   "WalletBalance": {
     "title": "Jouw saldo",
     "loaded": "geladen",
-    "contributed": "bijgedragen",
-    "campaigns": "{count, plural, one {campagne} other {campagnes}}"
+    "contributed": "besteed",
+    "campaigns": "{count, plural, one {project} other {projecten}}"
   },
   "Transactions": {
     "title": "Recente transacties",
     "topUp": "Opwaardering",
-    "contribution": "Bijdrage",
+    "contribution": "Projectbetaling",
     "refund": "Terugbetaling",
     "justNow": "zojuist",
     "minutesAgo": "{count}m geleden",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Alles",
     "active": "Actief",
-    "funded": "Gefinancierd",
-    "disbursed": "Uitbetaald"
+    "funded": "Doel bereikt",
+    "disbursed": "Voltooid"
   },
   "TimeSkill": {
     "timeQuestion": "Hoeveel tijd heb je?",
@@ -436,24 +436,24 @@
     "networkError": "Netwerkfout. Probeer het opnieuw.",
     "customAmount": "Aangepast bedrag (£)",
     "topUp": "Opwaarderen",
-    "simulated": "Gesimuleerde opwaardering voor testdoeleinden. Echte betalingen via Stripe komen binnenkort."
+    "simulated": "Gesimuleerde opwaardering voor testdoeleinden. Echte betalingen komen binnenkort."
   },
   "Contribute": {
     "insufficientFunds": "Onvoldoende saldo. Laad eerst je portemonnee op.",
-    "minContribution": "Minimale bijdrage is 10p",
-    "contribute": "Bijdragen",
+    "minContribution": "Minimale betaling is 10p",
+    "contribute": "Steun dit project",
     "yourBalance": "Jouw saldo: ",
     "networkError": "Netwerkfout. Probeer het opnieuw.",
     "invalidAmount": "Voer een geldig bedrag in",
     "customAmount": "Aangepast bedrag (£)",
-    "give": "Doneer",
-    "success": "{amount} bijgedragen aan {campaign}!",
+    "give": "Betaal",
+    "success": "{amount} betaald voor {campaign}!",
     "remainingBalance": "Je resterende saldo: {balance}",
     "topUpPrompt": "Laad je portemonnee op",
-    "toKeepSupporting": "om campagnes te blijven steunen.",
+    "toKeepSupporting": "om actieprojecten te blijven steunen.",
     "walletEmpty": "Je portemonnee is leeg.",
     "topUp": "Opwaarderen",
-    "toContribute": "om bij te dragen."
+    "toContribute": "om projecten te steunen."
   },
   "Claim": {
     "success": "Bedankt! We hebben je interesse in de rol van {name} genoteerd. We nemen contact met je op.",

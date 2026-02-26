@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentald, mi tortenik a(z) {orgName} szervezettel."
   },
   "Campaigns": {
-    "title": "Kampanyok",
-    "subtitle": "{count} {count, plural, one {kampany gyujt} other {kampany gyujt}} penzt a valtozasert.",
-    "noResults": "Nem talalhatok kampanyok. Probalkozz mas szurovel."
+    "title": "Akcioprojektek",
+    "subtitle": "{count} {count, plural, one {projekt rendel} other {projekt rendel}} szolgaltatasokat a kozos cselekvesert.",
+    "noResults": "Nem talalhatok akcioprojektek. Probalkozz mas szurovel."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanyok",
-    "fullyFunded": "Teljesen finanszirozott",
-    "disbursed": "Penzeszozk kiutalt",
+    "breadcrumb": "Akcioprojektek",
+    "fullyFunded": "Cel elérve",
+    "disbursed": "Befejezve",
     "cancelled": "Torolve",
     "active": "Aktiv",
     "target": "cel",
-    "raised": "osszegyujtve",
+    "raised": "elkoteleződve",
     "backers": "{count, plural, one {tamogato} other {tamogato}}",
-    "platformFee": "platformdij",
-    "wantToContribute": "Szeretnel hozzajarulni?",
-    "topUpFirst": "Eloszor toltsd fel a penztarcadat, hogy elkezdj hozzajarulni.",
-    "createAccountPrompt": "Hozz letre egy fiokot es toltsd fel a penztarcadat a kampany tamogatasahoz.",
+    "platformFee": "szolgaltatasi dij",
+    "wantToContribute": "Szeretned tamogatni ezt a projektet?",
+    "topUpFirst": "Eloszor toltsd fel a penztarcadat a kezdeshez.",
+    "createAccountPrompt": "Hozz letre egy fiokot es toltsd fel a penztarcadat a szolgaltatas megrendelessehez.",
     "goToWallet": "Ugrasa penztarcara",
     "createAccount": "Fiok letrehozasa",
-    "completedMessage": "Ez a kampany {status}. Koszonet az osszes {count} tamogatonak!",
-    "recipient": "Kedvezmenyezett"
+    "completedMessage": "Ez a projekt {status}. Koszonet az osszes {count} tamogatonak!",
+    "recipient": "Szolgaltato"
   },
   "Assistants": {
     "title": "Asszisztensek",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Penztarcad",
-    "createPromptTitle": "Kezdj el ugyeket tamogatni",
-    "createPromptDesc": "Hozz letre egy ingyenes fiokot, toltsd fel es jarulj hozza a szamodra fontos kampanyokhoz.",
+    "createPromptTitle": "Mozditsd elo a kozos cselekvest",
+    "createPromptDesc": "Hozz letre egy ingyenes fiokot, toltsd fel a penztarcadat es rendelj szolgaltatasokat akcioprojektekhez.",
     "createAccount": "Fiok letrehozasa",
-    "activeCampaigns": "Aktiv kampanyok",
+    "activeCampaigns": "Aktiv projektek",
     "viewAll": "Osszes megtekintese"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Valogatas",
     "community": "Kozosseg",
     "aiPick": "AI valasztas",
-    "funded": "Finanszirozott",
-    "disbursed": "Kiutalva",
+    "funded": "Cel elerve",
+    "disbursed": "Befejezve",
     "backers": "{count, plural, one {tamogato} other {tamogato}}",
     "aiAndHuman": "AI Agens es Szervezo",
     "riots": "{count, plural, one {riot} other {riot}}"
@@ -353,21 +353,21 @@
     "rioters": "resztvevo"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanyok",
-    "funded": "Finanszirozott",
-    "disbursed": "Kiutalva",
+    "title": "⚡ Akcioprojektek",
+    "funded": "Cel elerve",
+    "disbursed": "Befejezve",
     "backers": "{count, plural, one {tamogato} other {tamogato}}"
   },
   "WalletBalance": {
     "title": "Egyenleged",
     "loaded": "feltoltve",
-    "contributed": "hozzajarult",
-    "campaigns": "{count, plural, one {kampany} other {kampany}}"
+    "contributed": "elkoltve",
+    "campaigns": "{count, plural, one {projekt} other {projekt}}"
   },
   "Transactions": {
     "title": "Legutobbi tranzakciok",
     "topUp": "Feltoltes",
-    "contribution": "Hozzajarulas",
+    "contribution": "Projekt fizetes",
     "refund": "Visszaterites",
     "justNow": "eppen most",
     "minutesAgo": "{count} perce",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Mind",
     "active": "Aktiv",
-    "funded": "Finanszirozott",
-    "disbursed": "Kiutalva"
+    "funded": "Cel elerve",
+    "disbursed": "Befejezve"
   },
   "TimeSkill": {
     "timeQuestion": "Mennyi idod van?",
@@ -436,24 +436,24 @@
     "networkError": "Halozati hiba. Probald ujra.",
     "customAmount": "Egyedi osszeg (£)",
     "topUp": "Feltoltes",
-    "simulated": "Szimulalt feltoltes teszteleshez. A valos fizetes Stripe-on keresztul hamarosan."
+    "simulated": "Szimulalt feltoltes teszteleshez. A valos fizetesek hamarosan erkeznek."
   },
   "Contribute": {
     "insufficientFunds": "Nem eleg fedezet. Eloszor toltsd fel a penztarcadat.",
-    "minContribution": "A minimalis hozzajarulas 10p",
-    "contribute": "Hozzajarulas",
+    "minContribution": "A minimalis fizetes 10p",
+    "contribute": "Tamogasd ezt a projektet",
     "yourBalance": "Egyenleged: ",
     "networkError": "Halozati hiba. Probald ujra.",
     "invalidAmount": "Adj meg ervenyes osszeget",
     "customAmount": "Egyedi osszeg (£)",
-    "give": "Adomanyozes",
-    "success": "{amount} hozzajarulva a(z) {campaign} kampanyhoz!",
+    "give": "Fizetes",
+    "success": "{amount} fizetve a(z) {campaign} projekthez!",
     "remainingBalance": "Maradek egyenleg: {balance}",
     "topUpPrompt": "Toltsd fel a penztarcadat",
-    "toKeepSupporting": "a kampanyok tovabi tamogatasahoz.",
+    "toKeepSupporting": "az akcioprojektek tovabi tamogatasahoz.",
     "walletEmpty": "A penztarcad ures.",
     "topUp": "Feltoltes",
-    "toContribute": "a hozzajarulashoz."
+    "toContribute": "a projektek tamogatasahoz."
   },
   "Claim": {
     "success": "Koszonjuk! Feljegyeztuk az erdeklodesedet a {name} szerepkor irant. Felkeresunk.",

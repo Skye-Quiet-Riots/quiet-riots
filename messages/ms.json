@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentasi apa yang berlaku dengan {orgName}."
   },
   "Campaigns": {
-    "title": "Kempen",
-    "subtitle": "{count} {count, plural, one {kempen} other {kempen}} mengumpul dana untuk perubahan.",
-    "noResults": "Tiada kempen dijumpai. Cuba penapis lain."
+    "title": "Projek Tindakan",
+    "subtitle": "{count} {count, plural, one {projek} other {projek}} menugaskan perkhidmatan untuk tindakan kolektif.",
+    "noResults": "Tiada projek tindakan dijumpai. Cuba penapis lain."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kempen",
-    "fullyFunded": "Dana Penuh Terkumpul",
-    "disbursed": "Dana Telah Diagihkan",
+    "breadcrumb": "Projek Tindakan",
+    "fullyFunded": "Sasaran Tercapai",
+    "disbursed": "Selesai",
     "cancelled": "Dibatalkan",
     "active": "Aktif",
     "target": "sasaran",
-    "raised": "terkumpul",
+    "raised": "dikomitkan",
     "backers": "{count, plural, one {penyokong} other {penyokong}}",
-    "platformFee": "yuran platform",
-    "wantToContribute": "Mahu menyumbang?",
-    "topUpFirst": "Isi dompet anda dahulu untuk mula menyumbang.",
-    "createAccountPrompt": "Buat akaun dan isi dompet anda untuk menyokong kempen ini.",
+    "platformFee": "yuran perkhidmatan",
+    "wantToContribute": "Mahu menyokong projek ini?",
+    "topUpFirst": "Isi dompet anda dahulu untuk bermula.",
+    "createAccountPrompt": "Buat akaun dan isi dompet anda untuk menugaskan perkhidmatan ini.",
     "goToWallet": "Ke dompet",
     "createAccount": "Buat akaun",
-    "completedMessage": "Kempen ini telah {status}. Terima kasih kepada semua {count} penyokong!",
-    "recipient": "Penerima"
+    "completedMessage": "Projek ini telah {status}. Terima kasih kepada semua {count} penyokong!",
+    "recipient": "Penyedia Perkhidmatan"
   },
   "Assistants": {
     "title": "Pembantu",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Dompet Anda",
-    "createPromptTitle": "Mula Menyokong",
-    "createPromptDesc": "Buat akaun percuma untuk mengisi dana dan menyumbang kepada kempen yang penting bagi anda.",
+    "createPromptTitle": "Kuasakan Tindakan Kolektif",
+    "createPromptDesc": "Buat akaun percuma untuk mengisi dompet anda dan menugaskan perkhidmatan untuk projek tindakan.",
     "createAccount": "Buat akaun",
-    "activeCampaigns": "Kempen Aktif",
+    "activeCampaigns": "Projek Aktif",
     "viewAll": "Lihat semua"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Pilihan",
     "community": "Komuniti",
     "aiPick": "Pilihan AI",
-    "funded": "Terdana",
-    "disbursed": "Diagihkan",
+    "funded": "Sasaran Tercapai",
+    "disbursed": "Selesai",
     "backers": "{count, plural, one {penyokong} other {penyokong}}",
     "aiAndHuman": "AI Agent & Penganjur",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "peserta"
   },
   "CampaignProgress": {
-    "title": "💰 Kempen",
-    "funded": "Terdana",
-    "disbursed": "Diagihkan",
+    "title": "⚡ Projek Tindakan",
+    "funded": "Sasaran Tercapai",
+    "disbursed": "Selesai",
     "backers": "{count, plural, one {penyokong} other {penyokong}}"
   },
   "WalletBalance": {
     "title": "Baki Anda",
     "loaded": "diisi",
-    "contributed": "disumbangkan",
-    "campaigns": "{count, plural, one {kempen} other {kempen}}"
+    "contributed": "dibelanjakan",
+    "campaigns": "{count, plural, one {projek} other {projek}}"
   },
   "Transactions": {
     "title": "Transaksi Terkini",
     "topUp": "Isi semula",
-    "contribution": "Sumbangan",
+    "contribution": "Bayaran projek",
     "refund": "Bayaran balik",
     "justNow": "baru sahaja",
     "minutesAgo": "{count} minit lalu",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Semua",
     "active": "Aktif",
-    "funded": "Terdana",
-    "disbursed": "Diagihkan"
+    "funded": "Sasaran Tercapai",
+    "disbursed": "Selesai"
   },
   "TimeSkill": {
     "timeQuestion": "Berapa banyak masa anda ada?",
@@ -436,24 +436,24 @@
     "networkError": "Ralat rangkaian. Sila cuba lagi.",
     "customAmount": "Jumlah lain (£)",
     "topUp": "Isi Semula",
-    "simulated": "Isi semula simulasi untuk ujian. Pembayaran sebenar melalui Stripe akan datang."
+    "simulated": "Isi semula simulasi untuk ujian. Pembayaran sebenar akan datang."
   },
   "Contribute": {
     "insufficientFunds": "Dana tidak mencukupi. Isi dompet anda dahulu.",
-    "minContribution": "Sumbangan minimum ialah 10p",
-    "contribute": "Sumbang",
+    "minContribution": "Bayaran minimum ialah 10p",
+    "contribute": "Sokong Projek Ini",
     "yourBalance": "Baki anda: ",
     "networkError": "Ralat rangkaian. Sila cuba lagi.",
     "invalidAmount": "Masukkan jumlah yang sah",
     "customAmount": "Jumlah lain (£)",
-    "give": "Beri",
-    "success": "Menyumbang {amount} kepada {campaign}!",
+    "give": "Bayar",
+    "success": "Membayar {amount} untuk {campaign}!",
     "remainingBalance": "Baki berbaki: {balance}",
     "topUpPrompt": "Isi dompet anda",
-    "toKeepSupporting": "untuk terus menyokong kempen.",
+    "toKeepSupporting": "untuk terus menyokong projek tindakan.",
     "walletEmpty": "Dompet anda kosong.",
     "topUp": "Isi semula",
-    "toContribute": "untuk menyumbang."
+    "toContribute": "untuk menyokong projek."
   },
   "Claim": {
     "success": "Terima kasih! Kami telah mencatat minat anda terhadap peranan {name}. Kami akan menghubungi anda.",

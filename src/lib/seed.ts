@@ -2750,7 +2750,7 @@ export async function seed() {
     [
       'Train Cancellations',
       'Avanti Legal Review',
-      'Fund independent legal review of Avanti West Coast franchise obligations and compensation policies',
+      'Commission an independent legal review of Avanti West Coast franchise obligations and compensation policies',
       100000,
       31000,
       155,
@@ -2774,7 +2774,7 @@ export async function seed() {
     [
       'Sewage in Rivers',
       'Brighton Water Testing',
-      'Fund independent water quality testing at 12 Brighton beach sites',
+      'Commission independent water quality testing at 12 Brighton beach sites',
       50000,
       18750,
       313,
@@ -2786,7 +2786,7 @@ export async function seed() {
     [
       'Sewage in Rivers',
       'River Testing Kits',
-      'Crowdfund portable water testing kits for 50 volunteer river monitors across England',
+      'Purchase portable water testing kits for 50 volunteer river monitors across England',
       100000,
       65000,
       325,
@@ -2798,7 +2798,7 @@ export async function seed() {
     [
       'Broadband Speed',
       'Community Speed Map App',
-      'Fund development of a community broadband speed testing and mapping app',
+      'Commission development of a community broadband speed testing and mapping app',
       75000,
       58500,
       293,
@@ -2810,7 +2810,7 @@ export async function seed() {
     [
       'GP Appointment Access',
       'GP Access FOI Requests',
-      'Crowdfund Freedom of Information requests to every NHS trust on GP appointment statistics',
+      'Commission Freedom of Information requests to every NHS trust on GP appointment statistics',
       45000,
       5400,
       54,
@@ -2834,7 +2834,7 @@ export async function seed() {
     [
       'Energy Bill Costs',
       'Smart Meter Audit',
-      'Fund an independent audit of smart meter accuracy across 500 households',
+      'Commission an independent audit of smart meter accuracy across 500 households',
       80000,
       80000,
       400,

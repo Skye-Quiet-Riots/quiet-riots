@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName} নিয়ে কী ঘটছে তা নথিভুক্ত করো।"
   },
   "Campaigns": {
-    "title": "প্রচারাভিযান",
-    "subtitle": "{count}টি {count, plural, one {প্রচারাভিযান} other {প্রচারাভিযান}} পরিবর্তনের জন্য তহবিল সংগ্রহ করছে।",
-    "noResults": "কোনো প্রচারাভিযান পাওয়া যায়নি। অন্য ফিল্টার চেষ্টা করো।"
+    "title": "কর্ম প্রকল্প",
+    "subtitle": "{count}টি {count, plural, one {প্রকল্প} other {প্রকল্প}} সম্মিলিত কর্মের জন্য সেবা কমিশনিং করছে।",
+    "noResults": "কোনো কর্ম প্রকল্প পাওয়া যায়নি। অন্য ফিল্টার চেষ্টা করো।"
   },
   "CampaignDetail": {
-    "breadcrumb": "প্রচারাভিযান",
-    "fullyFunded": "সম্পূর্ণ অর্থায়িত",
-    "disbursed": "তহবিল বিতরণ হয়েছে",
+    "breadcrumb": "কর্ম প্রকল্প",
+    "fullyFunded": "লক্ষ্যমাত্রা অর্জিত",
+    "disbursed": "সম্পন্ন",
     "cancelled": "বাতিল",
     "active": "সক্রিয়",
     "target": "লক্ষ্য",
-    "raised": "সংগৃহীত",
+    "raised": "প্রতিশ্রুত",
     "backers": "{count, plural, one {সমর্থক} other {সমর্থক}}",
-    "platformFee": "প্ল্যাটফর্ম ফি",
-    "wantToContribute": "অবদান রাখতে চাও?",
-    "topUpFirst": "অবদান শুরু করতে আগে তোমার ওয়ালেট টপ-আপ করো।",
-    "createAccountPrompt": "এই প্রচারাভিযানে সাহায্য করতে একটি অ্যাকাউন্ট তৈরি করো এবং ওয়ালেটে টাকা জমা করো।",
+    "platformFee": "সেবা ফি",
+    "wantToContribute": "এই প্রকল্পটি সমর্থন করতে চাও?",
+    "topUpFirst": "শুরু করতে আগে তোমার ওয়ালেট টপ-আপ করো।",
+    "createAccountPrompt": "এই সেবা কমিশন করতে একটি অ্যাকাউন্ট তৈরি করো এবং ওয়ালেটে টাকা জমা করো।",
     "goToWallet": "ওয়ালেটে যাও",
     "createAccount": "অ্যাকাউন্ট তৈরি করো",
-    "completedMessage": "এই প্রচারাভিযান {status} হয়েছে। সব {count} জন সমর্থককে ধন্যবাদ!",
-    "recipient": "প্রাপক"
+    "completedMessage": "এই প্রকল্পটি {status} হয়েছে। সব {count} জন সমর্থককে ধন্যবাদ!",
+    "recipient": "সেবা প্রদানকারী"
   },
   "Assistants": {
     "title": "সহায়ক",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "তোমার ওয়ালেট",
-    "createPromptTitle": "কারণ সমর্থন শুরু করো",
-    "createPromptDesc": "বিনামূল্যে অ্যাকাউন্ট তৈরি করো, টাকা জমা করো এবং তোমার গুরুত্বপূর্ণ প্রচারাভিযানে অবদান রাখো।",
+    "createPromptTitle": "সম্মিলিত কর্ম চালিত করো",
+    "createPromptDesc": "বিনামূল্যে অ্যাকাউন্ট তৈরি করো, ওয়ালেটে টাকা জমা করো এবং কর্ম প্রকল্পের জন্য সেবা কমিশন করো।",
     "createAccount": "অ্যাকাউন্ট তৈরি করো",
-    "activeCampaigns": "সক্রিয় প্রচারাভিযান",
+    "activeCampaigns": "সক্রিয় প্রকল্প",
     "viewAll": "সব দেখো"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "কিউরেটেড",
     "community": "সম্প্রদায়",
     "aiPick": "AI বাছাই",
-    "funded": "অর্থায়িত",
-    "disbursed": "বিতরিত",
+    "funded": "লক্ষ্যমাত্রা অর্জিত",
+    "disbursed": "সম্পন্ন",
     "backers": "{count, plural, one {সমর্থক} other {সমর্থক}}",
     "aiAndHuman": "AI এজেন্ট ও মানব সংগঠক",
     "riots": "{count, plural, one {riot} other {riots}}"
@@ -353,21 +353,21 @@
     "rioters": "সদস্য"
   },
   "CampaignProgress": {
-    "title": "💰 প্রচারাভিযান",
-    "funded": "অর্থায়িত",
-    "disbursed": "বিতরিত",
+    "title": "⚡ কর্ম প্রকল্প",
+    "funded": "লক্ষ্যমাত্রা অর্জিত",
+    "disbursed": "সম্পন্ন",
     "backers": "{count, plural, one {সমর্থক} other {সমর্থক}}"
   },
   "WalletBalance": {
     "title": "তোমার ব্যালেন্স",
     "loaded": "জমা হয়েছে",
-    "contributed": "অবদান রেখেছো",
-    "campaigns": "{count, plural, one {প্রচারাভিযান} other {প্রচারাভিযান}}"
+    "contributed": "ব্যয়িত",
+    "campaigns": "{count, plural, one {প্রকল্প} other {প্রকল্প}}"
   },
   "Transactions": {
     "title": "সাম্প্রতিক লেনদেন",
     "topUp": "টপ-আপ",
-    "contribution": "অবদান",
+    "contribution": "প্রকল্প পেমেন্ট",
     "refund": "ফেরত",
     "justNow": "এইমাত্র",
     "minutesAgo": "{count} মিনিট আগে",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "সব",
     "active": "সক্রিয়",
-    "funded": "অর্থায়িত",
-    "disbursed": "বিতরিত"
+    "funded": "লক্ষ্যমাত্রা অর্জিত",
+    "disbursed": "সম্পন্ন"
   },
   "TimeSkill": {
     "timeQuestion": "তোমার কতটা সময় আছে?",
@@ -436,24 +436,24 @@
     "networkError": "নেটওয়ার্ক ত্রুটি। অনুগ্রহ করে আবার চেষ্টা করো।",
     "customAmount": "কাস্টম পরিমাণ (£)",
     "topUp": "টপ-আপ",
-    "simulated": "পরীক্ষার জন্য সিমুলেটেড টপ-আপ। শীঘ্রই Stripe-এর মাধ্যমে আসল পেমেন্ট।"
+    "simulated": "পরীক্ষার জন্য সিমুলেটেড টপ-আপ। শীঘ্রই আসল পেমেন্ট আসছে।"
   },
   "Contribute": {
     "insufficientFunds": "পর্যাপ্ত তহবিল নেই। আগে তোমার ওয়ালেট টপ-আপ করো।",
-    "minContribution": "সর্বনিম্ন অবদান 10p",
-    "contribute": "অবদান রাখো",
+    "minContribution": "সর্বনিম্ন পেমেন্ট 10p",
+    "contribute": "এই প্রকল্প সমর্থন করো",
     "yourBalance": "তোমার ব্যালেন্স: ",
     "networkError": "নেটওয়ার্ক ত্রুটি। অনুগ্রহ করে আবার চেষ্টা করো।",
     "invalidAmount": "একটি বৈধ পরিমাণ দাও",
     "customAmount": "কাস্টম পরিমাণ (£)",
-    "give": "দাও",
-    "success": "{campaign}-এ {amount} অবদান রাখা হয়েছে!",
+    "give": "পেমেন্ট করো",
+    "success": "{campaign}-এর জন্য {amount} পরিশোধ করা হয়েছে!",
     "remainingBalance": "তোমার অবশিষ্ট ব্যালেন্স: {balance}",
     "topUpPrompt": "তোমার ওয়ালেট টপ-আপ করো",
-    "toKeepSupporting": "প্রচারাভিযান সমর্থন চালিয়ে যেতে।",
+    "toKeepSupporting": "কর্ম প্রকল্প সমর্থন চালিয়ে যেতে।",
     "walletEmpty": "তোমার ওয়ালেট খালি।",
     "topUp": "টপ-আপ করো",
-    "toContribute": "অবদান রাখতে।"
+    "toContribute": "প্রকল্প সমর্থন করতে।"
   },
   "Claim": {
     "success": "ধন্যবাদ! {name} ভূমিকায় তোমার আগ্রহ নোট করা হয়েছে। আমরা যোগাযোগ করবো।",

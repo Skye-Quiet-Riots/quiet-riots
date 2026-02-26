@@ -106,7 +106,7 @@ export default async function CampaignDetailPage({ params }: Props) {
         />
       </div>
       <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-        {formatCurrency(campaign.raised_pence, campaign.currency_code)} raised of{' '}
+        {formatCurrency(campaign.raised_pence, campaign.currency_code)} committed of{' '}
         {formatCurrency(campaign.target_pence, campaign.currency_code)} target ({pct}%)
       </p>
 

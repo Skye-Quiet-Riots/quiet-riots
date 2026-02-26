@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentera vad som händer med {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanjer",
-    "subtitle": "{count} {count, plural, one {kampanj} other {kampanjer}} samlar in pengar för förändring.",
-    "noResults": "Inga kampanjer hittades. Prova ett annat filter."
+    "title": "Handlingsprojekt",
+    "subtitle": "{count} {count, plural, one {projekt} other {projekt}} som beställer tjänster för kollektiv handling.",
+    "noResults": "Inga handlingsprojekt hittades. Prova ett annat filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanjer",
-    "fullyFunded": "Fullt finansierad",
-    "disbursed": "Medel utbetalda",
+    "breadcrumb": "Handlingsprojekt",
+    "fullyFunded": "Mål uppnått",
+    "disbursed": "Slutfört",
     "cancelled": "Avbruten",
     "active": "Aktiv",
     "target": "mål",
-    "raised": "insamlat",
-    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}",
-    "platformFee": "plattformsavgift",
-    "wantToContribute": "Vill du bidra?",
-    "topUpFirst": "Fyll på din plånbok först för att börja bidra.",
-    "createAccountPrompt": "Skapa ett konto och ladda din plånbok för att stödja denna kampanj.",
+    "raised": "utfäst",
+    "backers": "{count, plural, one {supporter} other {supporters}}",
+    "platformFee": "serviceavgift",
+    "wantToContribute": "Vill du stödja detta projekt?",
+    "topUpFirst": "Fyll på din plånbok först för att komma igång.",
+    "createAccountPrompt": "Skapa ett konto och ladda din plånbok för att beställa denna tjänst.",
     "goToWallet": "Gå till plånbok",
     "createAccount": "Skapa konto",
-    "completedMessage": "Denna kampanj har {status}. Tack till alla {count} bidragsgivare!",
-    "recipient": "Mottagare"
+    "completedMessage": "Detta projekt har {status}. Tack till alla {count} supporters!",
+    "recipient": "Tjänsteleverantör"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Din plånbok",
-    "createPromptTitle": "Börja stödja saker",
-    "createPromptDesc": "Skapa ett gratis konto för att ladda pengar och bidra till kampanjer som betyder något för dig.",
+    "createPromptTitle": "Driv kollektiv handling",
+    "createPromptDesc": "Skapa ett gratis konto för att ladda din plånbok och beställa tjänster för handlingsprojekt.",
     "createAccount": "Skapa konto",
-    "activeCampaigns": "Aktiva kampanjer",
+    "activeCampaigns": "Aktiva projekt",
     "viewAll": "Visa alla"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Utvald",
     "community": "Gemenskap",
     "aiPick": "AI-val",
-    "funded": "Finansierad",
-    "disbursed": "Utbetald",
-    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}",
+    "funded": "Mål uppnått",
+    "disbursed": "Slutfört",
+    "backers": "{count, plural, one {supporter} other {supporters}}",
     "aiAndHuman": "AI-agent & mänsklig organisatör",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "deltagare"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanjer",
-    "funded": "Finansierad",
-    "disbursed": "Utbetald",
-    "backers": "{count, plural, one {bidragsgivare} other {bidragsgivare}}"
+    "title": "⚡ Handlingsprojekt",
+    "funded": "Mål uppnått",
+    "disbursed": "Slutfört",
+    "backers": "{count, plural, one {supporter} other {supporters}}"
   },
   "WalletBalance": {
     "title": "Ditt saldo",
     "loaded": "laddat",
-    "contributed": "bidragit",
-    "campaigns": "{count, plural, one {kampanj} other {kampanjer}}"
+    "contributed": "spenderat",
+    "campaigns": "{count, plural, one {projekt} other {projekt}}"
   },
   "Transactions": {
     "title": "Senaste transaktioner",
     "topUp": "Påfyllning",
-    "contribution": "Bidrag",
+    "contribution": "Projektbetalning",
     "refund": "Återbetalning",
     "justNow": "just nu",
     "minutesAgo": "{count}m sedan",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Alla",
     "active": "Aktiva",
-    "funded": "Finansierade",
-    "disbursed": "Utbetalda"
+    "funded": "Mål uppnått",
+    "disbursed": "Slutfört"
   },
   "TimeSkill": {
     "timeQuestion": "Hur mycket tid har du?",
@@ -436,24 +436,24 @@
     "networkError": "Nätverksfel. Försök igen.",
     "customAmount": "Valfritt belopp (£)",
     "topUp": "Fyll på",
-    "simulated": "Simulerad påfyllning för testning. Riktiga betalningar via Stripe kommer snart."
+    "simulated": "Simulerad påfyllning för testning. Riktiga betalningar kommer snart."
   },
   "Contribute": {
     "insufficientFunds": "Otillräckligt saldo. Fyll på din plånbok först.",
-    "minContribution": "Minsta bidrag är 10p",
-    "contribute": "Bidra",
+    "minContribution": "Minsta betalning är 10p",
+    "contribute": "Stöd detta projekt",
     "yourBalance": "Ditt saldo: ",
     "networkError": "Nätverksfel. Försök igen.",
     "invalidAmount": "Ange ett giltigt belopp",
     "customAmount": "Valfritt belopp (£)",
-    "give": "Ge",
-    "success": "Bidrog med {amount} till {campaign}!",
+    "give": "Betala",
+    "success": "Betalade {amount} till {campaign}!",
     "remainingBalance": "Ditt återstående saldo: {balance}",
     "topUpPrompt": "Fyll på din plånbok",
-    "toKeepSupporting": "för att fortsätta stödja kampanjer.",
+    "toKeepSupporting": "för att fortsätta stödja handlingsprojekt.",
     "walletEmpty": "Din plånbok är tom.",
     "topUp": "Fyll på",
-    "toContribute": "för att bidra."
+    "toContribute": "för att stödja projekt."
   },
   "Claim": {
     "success": "Tack! Vi har noterat ditt intresse för rollen som {name}. Vi hör av oss.",

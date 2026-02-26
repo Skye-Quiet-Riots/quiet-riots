@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Documenteaza ce se intampla cu {orgName}."
   },
   "Campaigns": {
-    "title": "Campanii",
-    "subtitle": "{count} {count, plural, one {campanie care strange} other {campanii care strang}} fonduri pentru schimbare.",
-    "noResults": "Nu s-au gasit campanii. Incearca un filtru diferit."
+    "title": "Proiecte de actiune",
+    "subtitle": "{count} {count, plural, one {proiect care comisioneaza} other {proiecte care comisioneaza}} servicii pentru actiune colectiva.",
+    "noResults": "Nu s-au gasit proiecte de actiune. Incearca un filtru diferit."
   },
   "CampaignDetail": {
-    "breadcrumb": "Campanii",
-    "fullyFunded": "Complet finantata",
-    "disbursed": "Fonduri distribuite",
+    "breadcrumb": "Proiecte de actiune",
+    "fullyFunded": "Obiectiv atins",
+    "disbursed": "Finalizat",
     "cancelled": "Anulata",
     "active": "Activa",
     "target": "tinta",
-    "raised": "strans",
+    "raised": "angajat",
     "backers": "{count, plural, one {sustinator} other {sustinatori}}",
-    "platformFee": "taxa platformei",
-    "wantToContribute": "Vrei sa contribui?",
-    "topUpFirst": "Incarca-ti portofelul mai intai pentru a incepe sa contribui.",
-    "createAccountPrompt": "Creaza un cont si incarca-ti portofelul pentru a sustine aceasta campanie.",
+    "platformFee": "taxa de serviciu",
+    "wantToContribute": "Vrei sa sustii acest proiect?",
+    "topUpFirst": "Incarca-ti portofelul mai intai pentru a incepe.",
+    "createAccountPrompt": "Creaza un cont si incarca-ti portofelul pentru a comisiona acest serviciu.",
     "goToWallet": "Mergi la portofel",
     "createAccount": "Creaza cont",
-    "completedMessage": "Aceasta campanie a fost {status}. Multumim tuturor celor {count} sustinatori!",
-    "recipient": "Destinatar"
+    "completedMessage": "Acest proiect a fost {status}. Multumim tuturor celor {count} sustinatori!",
+    "recipient": "Furnizor de servicii"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Portofelul tau",
-    "createPromptTitle": "Incepe sa sustii cauze",
-    "createPromptDesc": "Creaza un cont gratuit pentru a incarca fonduri si a contribui la campaniile care conteaza pentru tine.",
+    "createPromptTitle": "Sustine actiunea colectiva",
+    "createPromptDesc": "Creaza un cont gratuit pentru a-ti incarca portofelul si a comisiona servicii pentru proiecte de actiune.",
     "createAccount": "Creaza cont",
-    "activeCampaigns": "Campanii active",
+    "activeCampaigns": "Proiecte active",
     "viewAll": "Vezi tot"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Selectionat",
     "community": "Comunitate",
     "aiPick": "Selectia AI",
-    "funded": "Finantat",
-    "disbursed": "Distribuit",
+    "funded": "Obiectiv atins",
+    "disbursed": "Finalizat",
     "backers": "{count, plural, one {sustinator} other {sustinatori}}",
     "aiAndHuman": "Agent AI si Organizator uman",
     "riots": "{count, plural, one {riot} other {rioturi}}"
@@ -353,21 +353,21 @@
     "rioters": "participanti"
   },
   "CampaignProgress": {
-    "title": "💰 Campanii",
-    "funded": "Finantat",
-    "disbursed": "Distribuit",
+    "title": "⚡ Proiecte de actiune",
+    "funded": "Obiectiv atins",
+    "disbursed": "Finalizat",
     "backers": "{count, plural, one {sustinator} other {sustinatori}}"
   },
   "WalletBalance": {
     "title": "Soldul tau",
     "loaded": "incarcat",
-    "contributed": "contribuit",
-    "campaigns": "{count, plural, one {campanie} other {campanii}}"
+    "contributed": "cheltuit",
+    "campaigns": "{count, plural, one {proiect} other {proiecte}}"
   },
   "Transactions": {
     "title": "Tranzactii recente",
     "topUp": "Incarcare",
-    "contribution": "Contributie",
+    "contribution": "Plata proiect",
     "refund": "Rambursare",
     "justNow": "chiar acum",
     "minutesAgo": "acum {count} min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Toate",
     "active": "Active",
-    "funded": "Finantate",
-    "disbursed": "Distribuite"
+    "funded": "Obiectiv atins",
+    "disbursed": "Finalizat"
   },
   "TimeSkill": {
     "timeQuestion": "Cat timp ai?",
@@ -436,24 +436,24 @@
     "networkError": "Eroare de retea. Te rugam sa incerci din nou.",
     "customAmount": "Suma personalizata (£)",
     "topUp": "Incarca",
-    "simulated": "Incarcare simulata pentru testare. Platile reale prin Stripe vin in curand."
+    "simulated": "Incarcare simulata pentru testare. Platile reale vin in curand."
   },
   "Contribute": {
     "insufficientFunds": "Fonduri insuficiente. Incarca-ti portofelul mai intai.",
-    "minContribution": "Contributia minima este 10p",
-    "contribute": "Contribuie",
+    "minContribution": "Plata minima este 10p",
+    "contribute": "Sustine acest proiect",
     "yourBalance": "Soldul tau: ",
     "networkError": "Eroare de retea. Te rugam sa incerci din nou.",
     "invalidAmount": "Introdu o suma valida",
     "customAmount": "Suma personalizata (£)",
-    "give": "Doneaza",
-    "success": "Ai contribuit {amount} la {campaign}!",
+    "give": "Plateste",
+    "success": "Ai platit {amount} pentru {campaign}!",
     "remainingBalance": "Sold ramas: {balance}",
     "topUpPrompt": "Incarca-ti portofelul",
-    "toKeepSupporting": "pentru a continua sa sustii campaniile.",
+    "toKeepSupporting": "pentru a continua sa sustii proiecte de actiune.",
     "walletEmpty": "Portofelul tau este gol.",
     "topUp": "Incarca",
-    "toContribute": "pentru a contribui."
+    "toContribute": "pentru a sustine proiecte."
   },
   "Claim": {
     "success": "Multumim! Am notat interesul tau pentru rolul {name}. Te vom contacta.",

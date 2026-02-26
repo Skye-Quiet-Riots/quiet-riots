@@ -327,13 +327,13 @@ describe('CampaignProgress', () => {
     expect(screen.getByText(/31%/)).toBeDefined();
     // ICU plural not parsed by mock — check count and raw plural string separately
     expect(screen.getByText(/42/)).toBeDefined();
-    expect(screen.getByText(/backer/)).toBeDefined();
+    expect(screen.getByText(/supporter/)).toBeDefined();
   });
 
   it('shows funded badge', async () => {
     const el = await CampaignProgress({ campaigns: [makeCampaign({ status: 'funded' })] });
     render(el);
-    expect(screen.getByText('Funded')).toBeDefined();
+    expect(screen.getByText('Goal Reached')).toBeDefined();
   });
 
   it('shows backer text for single contributor', async () => {
@@ -342,7 +342,7 @@ describe('CampaignProgress', () => {
     });
     render(el);
     // The mock doesn't parse ICU plurals, so the rendered text includes the raw ICU string
-    expect(screen.getByText(/1.*backer/)).toBeDefined();
+    expect(screen.getByText(/1.*supporter/)).toBeDefined();
   });
 
   it('formats pence amounts correctly', async () => {
@@ -367,11 +367,11 @@ describe('WalletBalance', () => {
     expect(screen.getByText('£10')).toBeDefined();
     expect(screen.getByText('£5.50')).toBeDefined();
     expect(screen.getByText('3')).toBeDefined();
-    // ICU plural not parsed by mock — check the raw string contains 'campaign'
-    expect(screen.getByText(/campaign/)).toBeDefined();
+    // ICU plural not parsed by mock — check the raw string contains 'project'
+    expect(screen.getByText(/project/)).toBeDefined();
   });
 
-  it('shows campaign text for single campaign', async () => {
+  it('shows project text for single project', async () => {
     const el = await WalletBalance({
       balance_pence: 100,
       total_loaded_pence: 100,
@@ -379,7 +379,7 @@ describe('WalletBalance', () => {
       campaigns_supported: 1,
     });
     render(el);
-    expect(screen.getByText(/campaign/)).toBeDefined();
+    expect(screen.getByText(/project/)).toBeDefined();
   });
 });
 

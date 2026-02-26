@@ -231,7 +231,7 @@ const actionSchemas = {
   contribute: z.object({
     phone: phoneField,
     campaign_id: idField,
-    amount_pence: z.number().int().min(10, 'Minimum contribution is 10p').max(1000000),
+    amount_pence: z.number().int().min(10, 'Minimum payment is 10p').max(1000000),
   }),
   get_campaigns: z.object({
     issue_id: idField.optional(),
@@ -1077,7 +1077,7 @@ export async function POST(request: NextRequest) {
             wallet_balance_pence: wallet.balance_pence,
           });
         } catch (e) {
-          const message = e instanceof Error ? e.message : 'Contribution failed';
+          const message = e instanceof Error ? e.message : 'Payment failed';
           if (message === 'Insufficient funds') return err(message);
           if (message === 'Campaign not found') return err(message, 404);
           if (message === 'Campaign is not active') return err(message);

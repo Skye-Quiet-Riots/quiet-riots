@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentiere, was mit {orgName} passiert."
   },
   "Campaigns": {
-    "title": "Kampagnen",
-    "subtitle": "{count} {count, plural, one {Kampagne sammelt} other {Kampagnen sammeln}} Mittel für Veränderung.",
-    "noResults": "Keine Kampagnen gefunden. Probiere einen anderen Filter."
+    "title": "Aktionsprojekte",
+    "subtitle": "{count} {count, plural, one {Projekt beauftragt} other {Projekte beauftragen}} Dienstleistungen für kollektives Handeln.",
+    "noResults": "Keine Aktionsprojekte gefunden. Probiere einen anderen Filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampagnen",
-    "fullyFunded": "Vollständig finanziert",
-    "disbursed": "Mittel ausgezahlt",
+    "breadcrumb": "Aktionsprojekte",
+    "fullyFunded": "Ziel erreicht",
+    "disbursed": "Abgeschlossen",
     "cancelled": "Abgebrochen",
     "active": "Aktiv",
     "target": "Ziel",
-    "raised": "gesammelt",
+    "raised": "zugesagt",
     "backers": "{count, plural, one {Unterstützer} other {Unterstützer}}",
-    "platformFee": "Plattformgebühr",
-    "wantToContribute": "Möchtest du beitragen?",
+    "platformFee": "Servicegebühr",
+    "wantToContribute": "Möchtest du dieses Projekt unterstützen?",
     "topUpFirst": "Lade zuerst dein Wallet auf, um loszulegen.",
-    "createAccountPrompt": "Erstelle ein Konto und lade dein Wallet auf, um diese Kampagne zu unterstützen.",
+    "createAccountPrompt": "Erstelle ein Konto und lade dein Wallet auf, um diese Dienstleistung zu beauftragen.",
     "goToWallet": "Zum Wallet",
     "createAccount": "Konto erstellen",
-    "completedMessage": "Diese Kampagne wurde {status}. Danke an alle {count} Unterstützer!",
-    "recipient": "Empfänger"
+    "completedMessage": "Dieses Projekt wurde {status}. Danke an alle {count} Unterstützer!",
+    "recipient": "Dienstleister"
   },
   "Assistants": {
     "title": "Assistenten",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Dein Wallet",
-    "createPromptTitle": "Unterstütze gute Sachen",
-    "createPromptDesc": "Erstelle ein kostenloses Konto, um Guthaben aufzuladen und Kampagnen zu unterstützen, die dir wichtig sind.",
+    "createPromptTitle": "Kollektives Handeln antreiben",
+    "createPromptDesc": "Erstelle ein kostenloses Konto, um dein Wallet aufzuladen und Dienstleistungen für Aktionsprojekte zu beauftragen.",
     "createAccount": "Konto erstellen",
-    "activeCampaigns": "Aktive Kampagnen",
+    "activeCampaigns": "Aktive Projekte",
     "viewAll": "Alle anzeigen"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Kuratiert",
     "community": "Community",
     "aiPick": "KI-Auswahl",
-    "funded": "Finanziert",
-    "disbursed": "Ausgezahlt",
+    "funded": "Ziel erreicht",
+    "disbursed": "Abgeschlossen",
     "backers": "{count, plural, one {Unterstützer} other {Unterstützer}}",
     "aiAndHuman": "KI-Agent & Menschlicher Organisator",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
@@ -353,21 +353,21 @@
     "rioters": "Teilnehmer"
   },
   "CampaignProgress": {
-    "title": "💰 Kampagnen",
-    "funded": "Finanziert",
-    "disbursed": "Ausgezahlt",
+    "title": "⚡ Aktionsprojekte",
+    "funded": "Ziel erreicht",
+    "disbursed": "Abgeschlossen",
     "backers": "{count, plural, one {Unterstützer} other {Unterstützer}}"
   },
   "WalletBalance": {
     "title": "Dein Guthaben",
     "loaded": "aufgeladen",
-    "contributed": "beigetragen",
-    "campaigns": "{count, plural, one {Kampagne} other {Kampagnen}}"
+    "contributed": "ausgegeben",
+    "campaigns": "{count, plural, one {Projekt} other {Projekte}}"
   },
   "Transactions": {
     "title": "Letzte Transaktionen",
     "topUp": "Aufladung",
-    "contribution": "Beitrag",
+    "contribution": "Projektzahlung",
     "refund": "Rückerstattung",
     "justNow": "gerade eben",
     "minutesAgo": "vor {count} Min.",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Alle",
     "active": "Aktiv",
-    "funded": "Finanziert",
-    "disbursed": "Ausgezahlt"
+    "funded": "Ziel erreicht",
+    "disbursed": "Abgeschlossen"
   },
   "TimeSkill": {
     "timeQuestion": "Wie viel Zeit hast du?",
@@ -436,24 +436,24 @@
     "networkError": "Netzwerkfehler. Bitte versuche es erneut.",
     "customAmount": "Eigener Betrag (£)",
     "topUp": "Aufladen",
-    "simulated": "Simulierte Aufladung zum Testen. Echte Zahlungen über Stripe folgen bald."
+    "simulated": "Simulierte Aufladung zum Testen. Echte Zahlungen folgen bald."
   },
   "Contribute": {
     "insufficientFunds": "Nicht genug Guthaben. Lade zuerst dein Wallet auf.",
-    "minContribution": "Der Mindestbeitrag beträgt 10p",
-    "contribute": "Beitragen",
+    "minContribution": "Die Mindestzahlung beträgt 10p",
+    "contribute": "Dieses Projekt unterstützen",
     "yourBalance": "Dein Guthaben: ",
     "networkError": "Netzwerkfehler. Bitte versuche es erneut.",
     "invalidAmount": "Gib einen gültigen Betrag ein",
     "customAmount": "Eigener Betrag (£)",
-    "give": "Spenden",
-    "success": "{amount} an {campaign} beigetragen!",
+    "give": "Zahlen",
+    "success": "{amount} für {campaign} bezahlt!",
     "remainingBalance": "Dein verbleibendes Guthaben: {balance}",
     "topUpPrompt": "Lade dein Wallet auf",
-    "toKeepSupporting": "um weiterhin Kampagnen zu unterstützen.",
+    "toKeepSupporting": "um weiterhin Aktionsprojekte zu unterstützen.",
     "walletEmpty": "Dein Wallet ist leer.",
     "topUp": "Aufladen",
-    "toContribute": "um beizutragen."
+    "toContribute": "um Projekte zu unterstützen."
   },
   "Claim": {
     "success": "Danke! Wir haben dein Interesse an der Rolle {name} vermerkt. Wir melden uns bei dir.",

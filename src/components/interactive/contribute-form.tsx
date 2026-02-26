@@ -54,7 +54,7 @@ export function ContributeForm({
 
       if (!res.ok) {
         const data = await res.json();
-        setError(data.error || 'Contribution failed');
+        setError(data.error || 'Payment failed');
         return;
       }
 
@@ -109,7 +109,7 @@ export function ContributeForm({
   }
 
   return (
-    <AuthGate action="contribute to this campaign">
+    <AuthGate action="support this action project">
       <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
         <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
           {t('contribute')}

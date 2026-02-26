@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentiraj sto se dogada s {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanje",
-    "subtitle": "{count} {count, plural, one {kampanja prikuplja} other {kampanja prikuplja}} sredstva za promjenu.",
-    "noResults": "Nisu pronadene kampanje. Pokusaj s drugim filtrom."
+    "title": "Akcijski projekti",
+    "subtitle": "{count} {count, plural, one {projekt naručuje} other {projekata naručuje}} usluge za kolektivno djelovanje.",
+    "noResults": "Nisu pronađeni akcijski projekti. Pokušaj s drugim filtrom."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanje",
-    "fullyFunded": "Potpuno financirano",
-    "disbursed": "Sredstva isplacena",
+    "breadcrumb": "Akcijski projekti",
+    "fullyFunded": "Cilj postignut",
+    "disbursed": "Završeno",
     "cancelled": "Otkazano",
     "active": "Aktivna",
     "target": "cilj",
-    "raised": "prikupljeno",
-    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}",
-    "platformFee": "naknada platforme",
-    "wantToContribute": "Zelis doprinijeti?",
-    "topUpFirst": "Prvo napuni novcanik da pocnes doprinositi.",
-    "createAccountPrompt": "Kreiraj racun i napuni novcanik za potporu ove kampanje.",
+    "raised": "obvezano",
+    "backers": "{count, plural, one {podržavatelj} other {podržavatelja}}",
+    "platformFee": "naknada za uslugu",
+    "wantToContribute": "Želiš podržati ovaj projekt?",
+    "topUpFirst": "Prvo napuni novčanik da počneš.",
+    "createAccountPrompt": "Kreiraj račun i napuni novčanik za naručivanje ove usluge.",
     "goToWallet": "Idi na novcanik",
     "createAccount": "Kreiraj racun",
-    "completedMessage": "Ova kampanja je {status}. Hvala svim {count} podrzavateljima!",
-    "recipient": "Primatelj"
+    "completedMessage": "Ovaj projekt je {status}. Hvala svim {count} podržavateljima!",
+    "recipient": "Pružatelj usluge"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Tvoj novcanik",
-    "createPromptTitle": "Pocni podrzavati ciljeve",
-    "createPromptDesc": "Kreiraj besplatan racun za punjenje sredstava i doprinos kampanjama koje su ti vazne.",
+    "createPromptTitle": "Pokreni kolektivno djelovanje",
+    "createPromptDesc": "Kreiraj besplatan račun za punjenje novčanika i naručivanje usluga za akcijske projekte.",
     "createAccount": "Kreiraj racun",
-    "activeCampaigns": "Aktivne kampanje",
+    "activeCampaigns": "Aktivni projekti",
     "viewAll": "Pogledaj sve"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Odabrano",
     "community": "Zajednica",
     "aiPick": "Izbor AI-ja",
-    "funded": "Financirano",
-    "disbursed": "Isplaceno",
-    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}",
+    "funded": "Cilj postignut",
+    "disbursed": "Završeno",
+    "backers": "{count, plural, one {podržavatelj} other {podržavatelja}}",
     "aiAndHuman": "AI Agent i Organizator",
     "riots": "{count, plural, one {riot} other {riotova}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "sudionika"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanje",
-    "funded": "Financirano",
-    "disbursed": "Isplaceno",
-    "backers": "{count, plural, one {podrzavatelj} other {podrzavatelja}}"
+    "title": "⚡ Akcijski projekti",
+    "funded": "Cilj postignut",
+    "disbursed": "Završeno",
+    "backers": "{count, plural, one {podržavatelj} other {podržavatelja}}"
   },
   "WalletBalance": {
     "title": "Tvoj saldo",
     "loaded": "napunjeno",
-    "contributed": "doprinijeto",
-    "campaigns": "{count, plural, one {kampanja} other {kampanja}}"
+    "contributed": "potrošeno",
+    "campaigns": "{count, plural, one {projekt} other {projekata}}"
   },
   "Transactions": {
     "title": "Nedavne transakcije",
     "topUp": "Punjenje",
-    "contribution": "Doprinos",
+    "contribution": "Plaćanje projekta",
     "refund": "Povrat",
     "justNow": "upravo sada",
     "minutesAgo": "prije {count} min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Sve",
     "active": "Aktivne",
-    "funded": "Financirane",
-    "disbursed": "Isplacene"
+    "funded": "Cilj postignut",
+    "disbursed": "Završeno"
   },
   "TimeSkill": {
     "timeQuestion": "Koliko vremena imas?",
@@ -436,24 +436,24 @@
     "networkError": "Mrezna greska. Pokusaj ponovno.",
     "customAmount": "Prilagodeni iznos (£)",
     "topUp": "Napuni",
-    "simulated": "Simulirano punjenje za testiranje. Prave uplate putem Stripea uskoro."
+    "simulated": "Simulirano punjenje za testiranje. Prava plaćanja uskoro."
   },
   "Contribute": {
     "insufficientFunds": "Nedovoljno sredstava. Prvo napuni novcanik.",
-    "minContribution": "Minimalni doprinos je 10p",
-    "contribute": "Doprinesi",
+    "minContribution": "Minimalno plaćanje je 10p",
+    "contribute": "Podrži ovaj projekt",
     "yourBalance": "Tvoj saldo: ",
     "networkError": "Mrezna greska. Pokusaj ponovno.",
     "invalidAmount": "Unesi valjani iznos",
     "customAmount": "Prilagodeni iznos (£)",
-    "give": "Doniraj",
-    "success": "Doprinijeto {amount} za {campaign}!",
+    "give": "Plati",
+    "success": "Plaćeno {amount} za {campaign}!",
     "remainingBalance": "Preostali saldo: {balance}",
     "topUpPrompt": "Napuni novcanik",
-    "toKeepSupporting": "za nastavak podrzavanja kampanja.",
+    "toKeepSupporting": "za nastavak podržavanja akcijskih projekata.",
     "walletEmpty": "Tvoj novcanik je prazan.",
     "topUp": "Napuni",
-    "toContribute": "za doprinos."
+    "toContribute": "za podršku projektima."
   },
   "Claim": {
     "success": "Hvala! Zabilježili smo tvoj interes za ulogu {name}. Javit cemo ti se.",
