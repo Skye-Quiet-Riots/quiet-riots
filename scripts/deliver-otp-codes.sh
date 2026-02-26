@@ -12,14 +12,11 @@ OPENCLAW="/opt/homebrew/bin/openclaw"
 JQ="/opt/homebrew/bin/jq"
 API_URL="https://www.quietriots.com/api/bot"
 
-# Source BOT_API_KEY from main repo .env.local
-ENV_FILE="/Users/skye/Projects/quiet-riots/.env.local"
-BOT_API_KEY=""
-if [ -f "$ENV_FILE" ]; then
-  BOT_API_KEY=$(grep '^BOT_API_KEY=' "$ENV_FILE" | cut -d= -f2- || true)
-fi
-# Fallback to production key if not found in .env.local
-BOT_API_KEY="${BOT_API_KEY:-qr-xx21iIL4s2cepF9WVzHwwlL7QslY4boQGJHEWFYNA1U}"
+# Production bot API key — this script always talks to production Vercel.
+# The .env.local key is the dev fallback which production rejects, so we
+# hardcode the production key here. It's the same key in Vercel env vars,
+# OpenClaw SKILL.md, and TOOLS.md.
+BOT_API_KEY="qr-xx21iIL4s2cepF9WVzHwwlL7QslY4boQGJHEWFYNA1U"
 
 log() { echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ') $1" >> "$LOGFILE"; }
 
