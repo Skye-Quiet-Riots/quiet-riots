@@ -1,49 +1,93 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
-type Tab = 'email' | 'phone';
-type EmailMode = 'password' | 'magic-link';
+type InputMode = 'unknown' | 'email' | 'phone';
+type EmailAuthMode = 'password' | 'magic-link';
+
+/**
+ * Detect whether a combined input looks like an email or phone number.
+ * Priority: `@` always wins (handles `user+tag@gmail.com`).
+ * Phone: starts with `+` followed by digit(s), or all digits with ≥7 chars.
+ */
+function detectInputMode(value: string): InputMode {
+  const trimmed = value.trim();
+  if (!trimmed) return 'unknown';
+  if (trimmed.includes('@')) return 'email';
+  if (/^\+\d/.test(trimmed)) return 'phone';
+  if (/^\d{7,}$/.test(trimmed)) return 'phone';
+  return 'unknown';
+}
+
+/**
+ * Parse a phone-like input into country code + local number.
+ * If it starts with +, split after the country code prefix.
+ * If it's just digits, return as-is (user will choose country code separately).
+ */
+function parsePhoneInput(value: string): { countryCode: string; local: string } {
+  const trimmed = value.trim();
+  // Full international format: +44 7700 900001 or +447700900001
+  const match = trimmed.match(/^(\+\d{1,4})\s*(.*)$/);
+  if (match) {
+    return { countryCode: match[1], local: match[2].replace(/\s/g, '') };
+  }
+  return { countryCode: '+44', local: trimmed };
+}
 
 export function SignInForm() {
-  const [tab, setTab] = useState<Tab>('email');
-  const [email, setEmail] = useState('');
+  // Combined input
+  const [input, setInput] = useState('');
+
+  // Email auth state
   const [password, setPassword] = useState('');
-  const [emailMode, setEmailMode] = useState<EmailMode>('password');
-  const [phone, setPhone] = useState('');
-  const [countryCode, setCountryCode] = useState('+44');
-  const [otpCode, setOtpCode] = useState('');
-  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [emailAuthMode, setEmailAuthMode] = useState<EmailAuthMode>('password');
   const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState('');
+
+  // Phone auth state
+  const [countryCode, setCountryCode] = useState('+44');
+  const [phoneLocal, setPhoneLocal] = useState('');
+  const [otpCode, setOtpCode] = useState('');
   const [codeSent, setCodeSent] = useState(false);
   const [phoneError, setPhoneError] = useState('');
-  const [emailError, setEmailError] = useState('');
+
+  // Phone mode entered (user confirmed they want phone auth)
+  const [phoneConfirmed, setPhoneConfirmed] = useState(false);
+
+  // General
+  const [isLoading, setIsLoading] = useState<string | null>(null);
   const t = useTranslations('Auth');
   const locale = useLocale();
-
   const callbackUrl = `/${locale}`;
 
+  const inputMode = useMemo(() => detectInputMode(input), [input]);
+
+  // ─── OAuth ───────────────────────────────────────────
   async function handleOAuth(provider: string) {
     setIsLoading(provider);
     await signIn(provider, { callbackUrl });
   }
 
+  // ─── Email: Magic Link ───────────────────────────────
   async function handleMagicLink(e: React.FormEvent) {
     e.preventDefault();
-    if (!email.trim()) return;
+    const email = input.trim().toLowerCase();
+    if (!email) return;
     setIsLoading('email');
     setEmailError('');
-    await signIn('resend', { email: email.trim().toLowerCase(), redirect: false, callbackUrl });
+    await signIn('resend', { email, redirect: false, callbackUrl });
     setEmailSent(true);
     setIsLoading(null);
   }
 
+  // ─── Email: Password ─────────────────────────────────
   async function handlePasswordSignIn(e: React.FormEvent) {
     e.preventDefault();
-    if (!email.trim() || !password) return;
+    const email = input.trim().toLowerCase();
+    if (!email || !password) return;
     setIsLoading('password');
     setEmailError('');
 
@@ -51,20 +95,16 @@ export function SignInForm() {
       const res = await fetch('/api/auth/password/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.trim().toLowerCase(),
-          password,
-        }),
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
 
       if (data.ok) {
         window.location.assign(callbackUrl);
       } else {
-        // Map error codes to user-friendly messages
         if (data.code === 'NO_PASSWORD') {
           setEmailError(t('noPasswordSet'));
-          setEmailMode('magic-link');
+          setEmailAuthMode('magic-link');
         } else if (data.code === 'RATE_LIMITED') {
           setEmailError(data.error);
         } else if (data.code === 'INVALID_CREDENTIALS') {
@@ -79,13 +119,14 @@ export function SignInForm() {
     setIsLoading(null);
   }
 
+  // ─── Phone: Send Code ────────────────────────────────
   async function handleSendCode(e: React.FormEvent) {
     e.preventDefault();
-    if (!phone.trim()) return;
+    if (!phoneLocal.trim()) return;
     setPhoneError('');
     setIsLoading('phone');
 
-    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+    const fullPhone = `${countryCode}${phoneLocal.replace(/^0+/, '')}`;
 
     try {
       const res = await fetch('/api/auth/phone/send-code', {
@@ -105,13 +146,14 @@ export function SignInForm() {
     setIsLoading(null);
   }
 
+  // ─── Phone: Verify Code ──────────────────────────────
   async function handleVerifyCode(e: React.FormEvent) {
     e.preventDefault();
     if (!otpCode.trim() || otpCode.length !== 6) return;
     setPhoneError('');
     setIsLoading('verify');
 
-    const fullPhone = `${countryCode}${phone.replace(/^0+/, '')}`;
+    const fullPhone = `${countryCode}${phoneLocal.replace(/^0+/, '')}`;
 
     try {
       const res = await fetch('/api/auth/phone/signin', {
@@ -131,6 +173,27 @@ export function SignInForm() {
     setIsLoading(null);
   }
 
+  // ─── Handle input change ─────────────────────────────
+  function handleInputChange(value: string) {
+    setInput(value);
+    setEmailError('');
+    setPhoneError('');
+    // Reset phone confirmed state when input changes
+    if (phoneConfirmed) {
+      setPhoneConfirmed(false);
+      setPhoneLocal('');
+    }
+  }
+
+  // ─── Transition to phone mode ────────────────────────
+  function confirmPhoneMode() {
+    const parsed = parsePhoneInput(input);
+    setCountryCode(parsed.countryCode);
+    setPhoneLocal(parsed.local);
+    setPhoneConfirmed(true);
+  }
+
+  // ─── Email sent confirmation ─────────────────────────
   if (emailSent) {
     return (
       <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col items-center justify-center px-4">
@@ -157,6 +220,118 @@ export function SignInForm() {
     );
   }
 
+  // ─── Phone: OTP code entry ───────────────────────────
+  if (phoneConfirmed && codeSent) {
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col items-center justify-center px-4">
+        <div className="w-full rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h1 className="mb-2 text-center text-2xl font-bold">{t('welcomeBack')}</h1>
+          <p className="mb-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            {t('codeSent')}
+          </p>
+          <form onSubmit={handleVerifyCode} className="space-y-3">
+            <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={6}
+              placeholder={t('codeLabel')}
+              value={otpCode}
+              onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))}
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-center text-lg tracking-[0.5em] text-zinc-900 placeholder:text-zinc-400 placeholder:tracking-normal focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              autoFocus
+            />
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            <button
+              type="submit"
+              disabled={isLoading !== null || otpCode.length !== 6}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'verify' ? t('verifyingCode') : t('signInWithPhone')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setCodeSent(false);
+                setOtpCode('');
+                setPhoneError('');
+              }}
+              className="w-full text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('resendCode')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setPhoneConfirmed(false);
+                setCodeSent(false);
+                setOtpCode('');
+                setPhoneError('');
+              }}
+              className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('backToSignIn')}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Phone: Number entry with country code ───────────
+  if (phoneConfirmed && !codeSent) {
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col items-center justify-center px-4">
+        <div className="w-full rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h1 className="mb-2 text-center text-2xl font-bold">{t('welcomeBack')}</h1>
+          <p className="mb-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            {t('signInSubtitle')}
+          </p>
+          <form onSubmit={handleSendCode} className="space-y-3">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                placeholder="+44"
+                className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              />
+              <input
+                type="tel"
+                placeholder={t('phoneLabel')}
+                value={phoneLocal}
+                onChange={(e) => setPhoneLocal(e.target.value)}
+                required
+                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+                autoFocus
+              />
+            </div>
+            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+            <button
+              type="submit"
+              disabled={isLoading !== null || !phoneLocal.trim()}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {isLoading === 'phone' ? t('sendingCode') : t('sendCode')}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setPhoneConfirmed(false);
+                setPhoneLocal('');
+                setPhoneError('');
+              }}
+              className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              {t('backToSignIn')}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Main form: Combined input ───────────────────────
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col items-center justify-center px-4">
       <div className="w-full rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
@@ -211,191 +386,108 @@ export function SignInForm() {
           <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
-        {/* Tabs: Email / Phone */}
-        <div className="mb-4 flex rounded-lg border border-zinc-200 dark:border-zinc-700">
-          <button
-            onClick={() => setTab('email')}
-            className={`flex-1 rounded-l-lg px-4 py-2 text-sm font-medium transition-colors ${
-              tab === 'email'
-                ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
-            }`}
-          >
-            {t('emailTab')}
-          </button>
-          <button
-            onClick={() => setTab('phone')}
-            className={`flex-1 rounded-r-lg px-4 py-2 text-sm font-medium transition-colors ${
-              tab === 'phone'
-                ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
-            }`}
-          >
-            {t('phoneTab')}
-          </button>
-        </div>
+        {/* Combined email/phone input */}
+        <div className="space-y-3">
+          <label htmlFor="signin-input" className="sr-only">
+            {t('emailOrPhone')}
+          </label>
+          <input
+            id="signin-input"
+            type="text"
+            inputMode={inputMode === 'phone' ? 'tel' : 'email'}
+            placeholder={t('emailOrPhone')}
+            value={input}
+            onChange={(e) => handleInputChange(e.target.value)}
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+          />
 
-        {tab === 'email' ? (
-          emailMode === 'password' ? (
-            /* Email + Password sign in */
-            <form onSubmit={handlePasswordSignIn} className="space-y-3">
-              <label htmlFor="email" className="sr-only">
-                {t('emailLabel')}
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder={t('emailLabel')}
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setEmailError('');
-                }}
-                required
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              />
-              <label htmlFor="password" className="sr-only">
-                {t('passwordLabel')}
-              </label>
-              <input
-                id="password"
-                type="password"
-                placeholder={t('passwordLabel')}
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  setEmailError('');
-                }}
-                required
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              />
-              {emailError && <p className="text-sm text-red-500">{emailError}</p>}
-              <button
-                type="submit"
-                disabled={isLoading !== null || !email.trim() || !password}
-                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-              >
-                {isLoading === 'password' ? t('signingIn') : t('signInWithPassword')}
-              </button>
-              <div className="flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setEmailMode('magic-link');
-                    setEmailError('');
-                  }}
-                  className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
-                >
-                  {t('useMagicLink')}
-                </button>
-                <Link
-                  href="/auth/forgot-password"
-                  className="text-xs text-blue-600 hover:underline dark:text-blue-400"
-                >
-                  {t('forgotPassword')}
-                </Link>
-              </div>
-            </form>
-          ) : (
-            /* Email magic link */
-            <form onSubmit={handleMagicLink} className="space-y-3">
-              <label htmlFor="email-magic" className="sr-only">
-                {t('emailLabel')}
-              </label>
-              <input
-                id="email-magic"
-                type="email"
-                placeholder={t('emailLabel')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              />
-              {emailError && <p className="text-sm text-red-500">{emailError}</p>}
-              <button
-                type="submit"
-                disabled={isLoading !== null || !email.trim()}
-                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-              >
-                {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
-              </button>
+          {/* Email detected → show password or magic link form */}
+          {inputMode === 'email' && (
+            <>
+              {emailAuthMode === 'password' ? (
+                <form onSubmit={handlePasswordSignIn} className="space-y-3">
+                  <label htmlFor="signin-password" className="sr-only">
+                    {t('passwordLabel')}
+                  </label>
+                  <input
+                    id="signin-password"
+                    type="password"
+                    placeholder={t('passwordLabel')}
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      setEmailError('');
+                    }}
+                    required
+                    className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+                  />
+                  {emailError && <p className="text-sm text-red-500">{emailError}</p>}
+                  <button
+                    type="submit"
+                    disabled={isLoading !== null || !input.trim() || !password}
+                    className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                  >
+                    {isLoading === 'password' ? t('signingIn') : t('signInWithPassword')}
+                  </button>
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmailAuthMode('magic-link');
+                        setEmailError('');
+                      }}
+                      className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                    >
+                      {t('useMagicLink')}
+                    </button>
+                    <Link
+                      href="/auth/forgot-password"
+                      className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+                    >
+                      {t('forgotPassword')}
+                    </Link>
+                  </div>
+                </form>
+              ) : (
+                <form onSubmit={handleMagicLink} className="space-y-3">
+                  {emailError && <p className="text-sm text-red-500">{emailError}</p>}
+                  <button
+                    type="submit"
+                    disabled={isLoading !== null || !input.trim()}
+                    className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                  >
+                    {isLoading === 'email' ? t('sendingLink') : t('sendMagicLink')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmailAuthMode('password');
+                      setEmailError('');
+                    }}
+                    className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                  >
+                    {t('signInWithPassword')}
+                  </button>
+                </form>
+              )}
+            </>
+          )}
+
+          {/* Phone detected → show "Continue with phone" button */}
+          {inputMode === 'phone' && (
+            <>
+              {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
               <button
                 type="button"
-                onClick={() => {
-                  setEmailMode('password');
-                  setEmailError('');
-                }}
-                className="w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                onClick={confirmPhoneMode}
+                disabled={isLoading !== null}
+                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
               >
-                {t('signInWithPassword')}
+                {t('signInWithPhone')}
               </button>
-            </form>
-          )
-        ) : codeSent ? (
-          /* OTP code entry */
-          <form onSubmit={handleVerifyCode} className="space-y-3">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('codeSent')}</p>
-            <input
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              maxLength={6}
-              placeholder={t('codeLabel')}
-              value={otpCode}
-              onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))}
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-center text-lg tracking-[0.5em] text-zinc-900 placeholder:text-zinc-400 placeholder:tracking-normal focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              autoFocus
-            />
-            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
-            <button
-              type="submit"
-              disabled={isLoading !== null || otpCode.length !== 6}
-              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            >
-              {isLoading === 'verify' ? t('verifyingCode') : t('signInWithPhone')}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setCodeSent(false);
-                setOtpCode('');
-                setPhoneError('');
-              }}
-              className="w-full text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
-            >
-              {t('resendCode')}
-            </button>
-          </form>
-        ) : (
-          /* Phone number entry */
-          <form onSubmit={handleSendCode} className="space-y-3">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={countryCode}
-                onChange={(e) => setCountryCode(e.target.value)}
-                placeholder="+44"
-                className="w-20 rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              />
-              <input
-                type="tel"
-                placeholder={t('phoneLabel')}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-              />
-            </div>
-            {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
-            <button
-              type="submit"
-              disabled={isLoading !== null || !phone.trim()}
-              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            >
-              {isLoading === 'phone' ? t('sendingCode') : t('sendCode')}
-            </button>
-          </form>
-        )}
+            </>
+          )}
+        </div>
 
         <p className="mt-6 text-center text-xs text-zinc-400">
           {t('noAccount')}{' '}
