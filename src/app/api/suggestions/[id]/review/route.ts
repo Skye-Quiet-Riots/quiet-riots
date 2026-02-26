@@ -6,7 +6,6 @@ import {
   rejectSuggestion,
   mergeSuggestion,
   requestMoreInfo,
-  markTranslationsReady,
 } from '@/lib/queries/suggestions';
 import { sendNotification } from '@/lib/queries/messages';
 import { hasRole } from '@/lib/queries/roles';
@@ -54,14 +53,14 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   switch (decision) {
     case 'approve': {
       const cat = (parsed.data.category as Category) || (suggestion.category as Category);
-      await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
-      // Auto-transition to translations_ready (translations generated post-go-live via seed script)
-      const result = await markTranslationsReady(id);
+      const result = await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
+      // Translations are generated asynchronously via POST /api/suggestions/[id]/generate-translations
+      // Dashboard triggers generation after approval returns
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_approved',
         subject: `Thumbs Up 👍: ${suggestion.suggested_name}`,
-        body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! It's ready for the Setup Guide to make it live.`,
+        body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! We're preparing translations now — we'll let you know when it goes live.`,
         entityType: 'issue_suggestion',
         entityId: id,
         whatsAppSummary: `Good news — your Quiet Riot "${suggestion.suggested_name}" has been approved! We'll let you know when it goes live.`,

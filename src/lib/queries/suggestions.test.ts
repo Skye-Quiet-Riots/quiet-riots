@@ -72,6 +72,29 @@ describe('createSuggestion', () => {
     expect(suggestion.close_match_ids).toBe('["issue-rail","issue-flights"]');
   });
 
+  it('stores language_code when provided', async () => {
+    const suggestion = await createSuggestion({
+      suggestedBy: 'user-new',
+      originalText: 'Okul Ücretleri çok yüksek',
+      suggestedName: 'School Fees',
+      suggestedType: 'issue',
+      category: 'Education',
+      languageCode: 'tr',
+    });
+    expect(suggestion.language_code).toBe('tr');
+  });
+
+  it('defaults language_code to en', async () => {
+    const suggestion = await createSuggestion({
+      suggestedBy: 'user-new',
+      originalText: 'too many potholes',
+      suggestedName: 'Potholes',
+      suggestedType: 'issue',
+      category: 'Transport',
+    });
+    expect(suggestion.language_code).toBe('en');
+  });
+
   it('respects public_recognition setting', async () => {
     const suggestion = await createSuggestion({
       suggestedBy: 'user-new',
@@ -296,6 +319,19 @@ describe('goLiveSuggestion', () => {
     });
     const result = await goLiveSuggestion(suggestion.id);
     expect(result!.status).toBe('pending_review'); // unchanged
+  });
+
+  it('does not go live if suggestion is only approved (not translations_ready)', async () => {
+    const suggestion = await createSuggestion({
+      suggestedBy: 'user-new',
+      originalText: 'approved only test',
+      suggestedName: 'Approved Only',
+      suggestedType: 'issue',
+      category: 'Other',
+    });
+    await approveSuggestion(suggestion.id, 'user-sarah');
+    const result = await goLiveSuggestion(suggestion.id);
+    expect(result!.status).toBe('approved'); // unchanged — must be translations_ready
   });
 });
 

@@ -12,6 +12,9 @@ import { cookies } from 'next/headers';
 import { GET, POST } from './route';
 import { POST as reviewSuggestion } from './[id]/review/route';
 import { POST as goLiveSuggestion } from './[id]/go-live/route';
+import { GET as getTranslations } from './[id]/translations/route';
+import { POST as regenerateTranslations } from './[id]/translations/regenerate/route';
+import { markTranslationsReady } from '@/lib/queries/suggestions';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -207,7 +210,7 @@ describe('POST /api/suggestions/[id]/review', () => {
     expect(response.status).toBe(403);
   });
 
-  it('allows setup guide to approve a suggestion (auto-transitions to translations_ready)', async () => {
+  it('allows setup guide to approve a suggestion (stays approved, translations generated separately)', async () => {
     mockLoggedIn('user-sarah');
     const request = new NextRequest(
       'http://localhost:3000/api/suggestions/suggestion-mobile/review',
@@ -224,8 +227,8 @@ describe('POST /api/suggestions/[id]/review', () => {
     expect(response.status).toBe(200);
     expect(ok).toBe(true);
     expect(data.decision).toBe('approved');
-    // After approve, markTranslationsReady auto-transitions
-    expect(data.suggestion.status).toBe('translations_ready');
+    // Approval no longer auto-transitions — translations are generated async
+    expect(data.suggestion.status).toBe('approved');
   });
 
   it('returns 404 for non-existent suggestion', async () => {
@@ -267,9 +270,23 @@ describe('POST /api/suggestions/[id]/go-live', () => {
     expect(response.status).toBe(403);
   });
 
+  it('rejects go-live for approved (not translations_ready) suggestion', async () => {
+    mockLoggedIn('user-sarah');
+    // suggestion-mobile is 'approved' — go-live requires 'translations_ready'
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/go-live',
+      { method: 'POST' },
+    );
+    const response = await goLiveSuggestion(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(400);
+  });
+
   it('makes a translations_ready suggestion live', async () => {
     mockLoggedIn('user-sarah');
-    // suggestion-mobile should be translations_ready from the approve test above
+    // Manually transition to translations_ready (simulates async generation completing)
+    await markTranslationsReady('suggestion-mobile');
     const request = new NextRequest(
       'http://localhost:3000/api/suggestions/suggestion-mobile/go-live',
       { method: 'POST' },
@@ -287,7 +304,7 @@ describe('POST /api/suggestions/[id]/go-live', () => {
 describe('Suggestion full lifecycle', () => {
   let createdSuggestionId: string;
 
-  it('creates a suggestion → approves → goes live', async () => {
+  it('creates a suggestion → approves → generates translations → goes live', async () => {
     // Step 1: Create suggestion
     mockLoggedIn('user-new');
     const createRequest = new NextRequest('http://localhost:3000/api/suggestions', {
@@ -304,7 +321,7 @@ describe('Suggestion full lifecycle', () => {
     expect(createRes.status).toBe(201);
     createdSuggestionId = createData.suggestion.id;
 
-    // Step 2: Approve (as guide)
+    // Step 2: Approve (as guide) — stays 'approved' (no auto-transition)
     mockLoggedIn('user-sarah');
     const approveRequest = new NextRequest(
       `http://localhost:3000/api/suggestions/${createdSuggestionId}/review`,
@@ -319,9 +336,12 @@ describe('Suggestion full lifecycle', () => {
     });
     const { data: approveData } = await approveRes.json();
     expect(approveRes.status).toBe(200);
-    expect(approveData.suggestion.status).toBe('translations_ready');
+    expect(approveData.suggestion.status).toBe('approved');
 
-    // Step 3: Go live (as guide)
+    // Step 3: Simulate translation generation completing
+    await markTranslationsReady(createdSuggestionId);
+
+    // Step 4: Go live (as guide)
     const goLiveRequest = new NextRequest(
       `http://localhost:3000/api/suggestions/${createdSuggestionId}/go-live`,
       { method: 'POST' },
@@ -441,5 +461,122 @@ describe('Suggestion full lifecycle', () => {
     const { data: infoData } = await infoRes.json();
     expect(infoRes.status).toBe(200);
     expect(infoData.decision).toBe('more_info');
+  });
+});
+
+describe('GET /api/suggestions/[id]/translations', () => {
+  it('returns 401 for unauthenticated users', async () => {
+    mockLoggedOut();
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations',
+    );
+    const response = await getTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 for non-guide users', async () => {
+    mockLoggedIn('user-new');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations',
+    );
+    const response = await getTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(403);
+  });
+
+  it('returns translations for a live suggestion', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations',
+    );
+    const response = await getTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    const { ok, data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(ok).toBe(true);
+    expect(data.translations).toBeDefined();
+    expect(data.languageNames).toBeDefined();
+    expect(data.entityType).toBeDefined();
+  });
+
+  it('returns 404 for non-existent suggestion', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/non-existent/translations',
+    );
+    const response = await getTranslations(request, {
+      params: Promise.resolve({ id: 'non-existent' }),
+    });
+    expect(response.status).toBe(404);
+  });
+});
+
+describe('POST /api/suggestions/[id]/translations/regenerate', () => {
+  it('returns 401 for unauthenticated users', async () => {
+    mockLoggedOut();
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations/regenerate',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locales: ['fr'] }),
+      },
+    );
+    const response = await regenerateTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('returns 403 for non-guide users', async () => {
+    mockLoggedIn('user-new');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations/regenerate',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locales: ['fr'] }),
+      },
+    );
+    const response = await regenerateTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(403);
+  });
+
+  it('validates locale values against supported locales', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations/regenerate',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locales: ['xx-invalid'] }),
+      },
+    );
+    const response = await regenerateTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(400);
+  });
+
+  it('requires at least one locale', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new NextRequest(
+      'http://localhost:3000/api/suggestions/suggestion-mobile/translations/regenerate',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locales: [] }),
+      },
+    );
+    const response = await regenerateTranslations(request, {
+      params: Promise.resolve({ id: 'suggestion-mobile' }),
+    });
+    expect(response.status).toBe(400);
   });
 });

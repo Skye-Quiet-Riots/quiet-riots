@@ -72,6 +72,55 @@ export async function getTranslatedEntities(
 }
 
 /**
+ * Get all translations for an entity across all locales.
+ * Returns a map of languageCode → { field → { value, source } }.
+ * Used by the translation review UI.
+ */
+export async function getAllEntityTranslations(
+  entityType: string,
+  entityId: string,
+): Promise<Record<string, Record<string, { value: string; source: string }>>> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `SELECT language_code, field, value, source FROM translations
+          WHERE entity_type = ? AND entity_id = ?
+          ORDER BY language_code, field`,
+    args: [entityType, entityId],
+  });
+  const translations: Record<string, Record<string, { value: string; source: string }>> = {};
+  for (const row of result.rows) {
+    const locale = row.language_code as string;
+    if (!translations[locale]) translations[locale] = {};
+    translations[locale][row.field as string] = {
+      value: row.value as string,
+      source: row.source as string,
+    };
+  }
+  return translations;
+}
+
+/**
+ * Batch-fetch language names for a set of language codes.
+ * Returns a map of code → English name.
+ */
+export async function getLanguageNames(
+  codes: string[],
+): Promise<Record<string, string>> {
+  if (codes.length === 0) return {};
+  const db = getDb();
+  const placeholders = codes.map(() => '?').join(', ');
+  const result = await db.execute({
+    sql: `SELECT code, name FROM languages WHERE code IN (${placeholders})`,
+    args: codes,
+  });
+  const names: Record<string, string> = {};
+  for (const row of result.rows) {
+    names[row.code as string] = row.name as string;
+  }
+  return names;
+}
+
+/**
  * Upsert a translation (insert or update if exists).
  * Used by the translate API route to cache translations.
  */

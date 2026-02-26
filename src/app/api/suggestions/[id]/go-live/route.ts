@@ -22,8 +22,8 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const { id } = await params;
   const suggestion = await getSuggestionById(id);
   if (!suggestion) return apiError('Suggestion not found', 404);
-  if (suggestion.status !== 'approved' && suggestion.status !== 'translations_ready') {
-    return apiError('Suggestion must be approved before going live');
+  if (suggestion.status !== 'translations_ready') {
+    return apiError('Translations must be ready before going live');
   }
 
   const result = await goLiveSuggestion(id);

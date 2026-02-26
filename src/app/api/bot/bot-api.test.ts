@@ -4,6 +4,7 @@ import { seedTestData } from '@/test/seed-test-data';
 import { createBotRequest } from '@/test/api-helpers';
 import { POST } from './route';
 import { _resetRateLimitStore } from '@/lib/rate-limit';
+import { markTranslationsReady } from '@/lib/queries/suggestions';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -1487,8 +1488,19 @@ describe('Bot API: go_live_suggestion', () => {
     expect(body.error).toContain('Setup Guide role required');
   });
 
-  it('makes an approved suggestion live', async () => {
-    // suggestion-mobile was approved earlier in review_suggestion test
+  it('rejects go-live for approved (not translations_ready) suggestion', async () => {
+    // suggestion-mobile is 'approved' from review test — go-live requires 'translations_ready'
+    const { status, body } = await callBot('go_live_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: 'suggestion-mobile',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Translations must be ready');
+  });
+
+  it('makes a translations_ready suggestion live', async () => {
+    // Manually transition to translations_ready (simulates async generation completing)
+    await markTranslationsReady('suggestion-mobile');
     const { status, body } = await callBot('go_live_suggestion', {
       phone: '+447700900001', // sarah — setup_guide
       suggestion_id: 'suggestion-mobile',
@@ -1513,7 +1525,7 @@ describe('Bot API: go_live_suggestion', () => {
       suggestion_id: sugId,
     });
     expect(status).toBe(400);
-    expect(body.error).toContain('approved');
+    expect(body.error).toContain('Translations must be ready');
   });
 });
 

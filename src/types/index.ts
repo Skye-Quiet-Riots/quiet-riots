@@ -725,6 +725,7 @@ export interface IssueSuggestion {
   approved_at: string | null;
   live_at: string | null;
   created_at: string;
+  language_code: string;
   updated_at: string;
 }
 
