@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName}에서 일어나고 있는 일을 기록하세요."
   },
   "Campaigns": {
-    "title": "캠페인",
-    "subtitle": "{count} {count, plural, one {개 캠페인이} other {개 캠페인이}} 변화를 위한 자금을 모으고 있습니다.",
-    "noResults": "캠페인을 찾을 수 없습니다. 다른 필터를 시도해보세요."
+    "title": "액션 프로젝트",
+    "subtitle": "{count} {count, plural, one {개 프로젝트가} other {개 프로젝트가}} 집단 행동을 위한 서비스를 의뢰하고 있습니다.",
+    "noResults": "액션 프로젝트를 찾을 수 없습니다. 다른 필터를 시도해보세요."
   },
   "CampaignDetail": {
-    "breadcrumb": "캠페인",
+    "breadcrumb": "액션 프로젝트",
     "fullyFunded": "목표 달성",
-    "disbursed": "자금 배분 완료",
+    "disbursed": "완료",
     "cancelled": "취소됨",
     "active": "진행 중",
     "target": "목표",
-    "raised": "모금액",
+    "raised": "확약됨",
     "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
-    "platformFee": "플랫폼 수수료",
-    "wantToContribute": "후원하시겠습니까?",
-    "topUpFirst": "먼저 지갑을 충전한 후 후원을 시작하세요.",
-    "createAccountPrompt": "계정을 만들고 지갑을 충전하여 이 캠페인을 지원하세요.",
+    "platformFee": "서비스 수수료",
+    "wantToContribute": "이 프로젝트를 지원하시겠습니까?",
+    "topUpFirst": "먼저 지갑을 충전하여 시작하세요.",
+    "createAccountPrompt": "계정을 만들고 지갑을 충전하여 이 서비스를 의뢰하세요.",
     "goToWallet": "지갑으로 이동",
     "createAccount": "계정 만들기",
-    "completedMessage": "이 캠페인은 {status}되었습니다. {count}명의 후원자 여러분께 감사드립니다!",
-    "recipient": "수령인"
+    "completedMessage": "이 프로젝트는 {status}되었습니다. {count}명의 후원자 여러분께 감사드립니다!",
+    "recipient": "서비스 제공자"
   },
   "Assistants": {
     "title": "어시스턴트",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "내 지갑",
-    "createPromptTitle": "응원을 시작하세요",
-    "createPromptDesc": "무료 계정을 만들어 자금을 충전하고 관심 있는 캠페인에 기여하세요.",
+    "createPromptTitle": "집단 행동을 추진하세요",
+    "createPromptDesc": "무료 계정을 만들어 지갑을 충전하고 액션 프로젝트에 서비스를 의뢰하세요.",
     "createAccount": "계정 만들기",
-    "activeCampaigns": "진행 중인 캠페인",
+    "activeCampaigns": "진행 중인 프로젝트",
     "viewAll": "전체 보기"
   },
   "Profile": {
@@ -321,7 +321,7 @@
     "community": "커뮤니티",
     "aiPick": "AI 추천",
     "funded": "목표 달성",
-    "disbursed": "배분 완료",
+    "disbursed": "완료",
     "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
     "aiAndHuman": "AI 에이전트 & 인간 조직자",
     "riots": "{count, plural, one {개의 Quiet Riot} other {개의 Quiet Riot}}"
@@ -353,21 +353,21 @@
     "rioters": "참여자"
   },
   "CampaignProgress": {
-    "title": "💰 캠페인",
+    "title": "⚡ 액션 프로젝트",
     "funded": "목표 달성",
-    "disbursed": "배분 완료",
+    "disbursed": "완료",
     "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}"
   },
   "WalletBalance": {
     "title": "내 잔액",
     "loaded": "충전됨",
-    "contributed": "기여함",
-    "campaigns": "{count, plural, one {개 캠페인} other {개 캠페인}}"
+    "contributed": "사용됨",
+    "campaigns": "{count, plural, one {개 프로젝트} other {개 프로젝트}}"
   },
   "Transactions": {
     "title": "최근 거래",
     "topUp": "충전",
-    "contribution": "기여",
+    "contribution": "프로젝트 결제",
     "refund": "환불",
     "justNow": "방금",
     "minutesAgo": "{count}분 전",
@@ -409,7 +409,7 @@
     "all": "전체",
     "active": "진행 중",
     "funded": "목표 달성",
-    "disbursed": "배분 완료"
+    "disbursed": "완료"
   },
   "TimeSkill": {
     "timeQuestion": "시간이 얼마나 있으세요?",
@@ -436,24 +436,24 @@
     "networkError": "네트워크 오류입니다. 다시 시도해주세요.",
     "customAmount": "사용자 지정 금액 (£)",
     "topUp": "충전",
-    "simulated": "테스트용 시뮬레이션 충전입니다. Stripe 실제 결제가 곧 제공됩니다."
+    "simulated": "테스트용 시뮬레이션 충전입니다. 실제 결제가 곧 제공됩니다."
   },
   "Contribute": {
     "insufficientFunds": "잔액이 부족합니다. 먼저 지갑을 충전하세요.",
-    "minContribution": "최소 기여 금액은 10p입니다",
-    "contribute": "기여하기",
+    "minContribution": "최소 결제 금액은 10p입니다",
+    "contribute": "이 프로젝트 지원하기",
     "yourBalance": "내 잔액: ",
     "networkError": "네트워크 오류입니다. 다시 시도해주세요.",
     "invalidAmount": "유효한 금액을 입력하세요",
     "customAmount": "사용자 지정 금액 (£)",
-    "give": "기부",
-    "success": "{campaign}에 {amount}을(를) 기여했습니다!",
+    "give": "결제",
+    "success": "{campaign}에 {amount}을(를) 결제했습니다!",
     "remainingBalance": "남은 잔액: {balance}",
     "topUpPrompt": "지갑 충전하기",
-    "toKeepSupporting": "캠페인 지원을 계속하세요.",
+    "toKeepSupporting": "액션 프로젝트 지원을 계속하세요.",
     "walletEmpty": "지갑이 비어 있습니다.",
     "topUp": "충전",
-    "toContribute": "기여하세요."
+    "toContribute": "프로젝트를 지원하세요."
   },
   "Claim": {
     "success": "감사합니다! {name} 역할에 대한 관심을 기록했습니다. 연락드리겠습니다.",

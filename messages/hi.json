@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName} के बारे में क्या हो रहा है उसे दर्ज करो।"
   },
   "Campaigns": {
-    "title": "अभियान",
-    "subtitle": "{count} {count, plural, one {अभियान} other {अभियान}} बदलाव के लिए धन जुटा रहे हैं।",
-    "noResults": "कोई अभियान नहीं मिला। कोई और फ़िल्टर आज़माओ।"
+    "title": "कार्य परियोजनाएँ",
+    "subtitle": "{count} {count, plural, one {परियोजना} other {परियोजनाएँ}} सामूहिक कार्रवाई के लिए सेवाएँ कमीशन कर रही हैं।",
+    "noResults": "कोई कार्य परियोजना नहीं मिली। कोई और फ़िल्टर आज़माओ।"
   },
   "CampaignDetail": {
-    "breadcrumb": "अभियान",
-    "fullyFunded": "पूरी तरह वित्तपोषित",
-    "disbursed": "धन वितरित",
+    "breadcrumb": "कार्य परियोजनाएँ",
+    "fullyFunded": "लक्ष्य प्राप्त",
+    "disbursed": "पूर्ण",
     "cancelled": "रद्द",
     "active": "सक्रिय",
     "target": "लक्ष्य",
-    "raised": "जुटाया",
+    "raised": "प्रतिबद्ध",
     "backers": "{count, plural, one {समर्थक} other {समर्थक}}",
-    "platformFee": "प्लेटफ़ॉर्म शुल्क",
-    "wantToContribute": "योगदान करना चाहते हो?",
-    "topUpFirst": "योगदान शुरू करने के लिए पहले अपना वॉलेट टॉप-अप करो।",
-    "createAccountPrompt": "इस अभियान को सहयोग देने के लिए अकाउंट बनाओ और वॉलेट में पैसे डालो।",
+    "platformFee": "सेवा शुल्क",
+    "wantToContribute": "इस परियोजना का समर्थन करना चाहते हो?",
+    "topUpFirst": "शुरू करने के लिए पहले अपना वॉलेट टॉप-अप करो।",
+    "createAccountPrompt": "इस सेवा को कमीशन करने के लिए अकाउंट बनाओ और वॉलेट में पैसे डालो।",
     "goToWallet": "वॉलेट पर जाओ",
     "createAccount": "अकाउंट बनाओ",
-    "completedMessage": "यह अभियान {status} हो चुका है। सभी {count} समर्थकों का धन्यवाद!",
-    "recipient": "प्राप्तकर्ता"
+    "completedMessage": "यह परियोजना {status} हो चुकी है। सभी {count} समर्थकों का धन्यवाद!",
+    "recipient": "सेवा प्रदाता"
   },
   "Assistants": {
     "title": "सहायक",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "तुम्हारा वॉलेट",
-    "createPromptTitle": "कारणों का समर्थन शुरू करो",
-    "createPromptDesc": "मुफ़्त अकाउंट बनाओ, पैसे डालो और तुम्हें जो अभियान महत्वपूर्ण लगें उनमें योगदान करो।",
+    "createPromptTitle": "सामूहिक कार्रवाई को बढ़ावा दो",
+    "createPromptDesc": "मुफ़्त अकाउंट बनाओ, वॉलेट में पैसे डालो और कार्य परियोजनाओं के लिए सेवाएँ कमीशन करो।",
     "createAccount": "अकाउंट बनाओ",
-    "activeCampaigns": "सक्रिय अभियान",
+    "activeCampaigns": "सक्रिय परियोजनाएँ",
     "viewAll": "सभी देखें"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "क्यूरेटेड",
     "community": "समुदाय",
     "aiPick": "AI चुनाव",
-    "funded": "वित्तपोषित",
-    "disbursed": "वितरित",
+    "funded": "लक्ष्य प्राप्त",
+    "disbursed": "पूर्ण",
     "backers": "{count, plural, one {समर्थक} other {समर्थक}}",
     "aiAndHuman": "AI एजेंट और मानव आयोजक",
     "riots": "{count, plural, one {riot} other {riots}}"
@@ -353,21 +353,21 @@
     "rioters": "सदस्य"
   },
   "CampaignProgress": {
-    "title": "💰 अभियान",
-    "funded": "वित्तपोषित",
-    "disbursed": "वितरित",
+    "title": "⚡ कार्य परियोजनाएँ",
+    "funded": "लक्ष्य प्राप्त",
+    "disbursed": "पूर्ण",
     "backers": "{count, plural, one {समर्थक} other {समर्थक}}"
   },
   "WalletBalance": {
     "title": "तुम्हारा बैलेंस",
     "loaded": "लोड किया",
-    "contributed": "योगदान दिया",
-    "campaigns": "{count, plural, one {अभियान} other {अभियान}}"
+    "contributed": "ख़र्च किया",
+    "campaigns": "{count, plural, one {परियोजना} other {परियोजनाएँ}}"
   },
   "Transactions": {
     "title": "हाल के लेन-देन",
     "topUp": "टॉप-अप",
-    "contribution": "योगदान",
+    "contribution": "परियोजना भुगतान",
     "refund": "रिफ़ंड",
     "justNow": "अभी",
     "minutesAgo": "{count} मिनट पहले",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "सभी",
     "active": "सक्रिय",
-    "funded": "वित्तपोषित",
-    "disbursed": "वितरित"
+    "funded": "लक्ष्य प्राप्त",
+    "disbursed": "पूर्ण"
   },
   "TimeSkill": {
     "timeQuestion": "तुम्हारे पास कितना समय है?",
@@ -436,24 +436,24 @@
     "networkError": "नेटवर्क त्रुटि। कृपया फिर से कोशिश करो।",
     "customAmount": "कस्टम राशि (£)",
     "topUp": "टॉप-अप",
-    "simulated": "परीक्षण के लिए सिम्युलेटेड टॉप-अप। जल्द ही Stripe से असली भुगतान।"
+    "simulated": "परीक्षण के लिए सिम्युलेटेड टॉप-अप। जल्द ही असली भुगतान।"
   },
   "Contribute": {
     "insufficientFunds": "पर्याप्त धन नहीं। पहले अपना वॉलेट टॉप-अप करो।",
-    "minContribution": "न्यूनतम योगदान 10p है",
-    "contribute": "योगदान करो",
+    "minContribution": "न्यूनतम भुगतान 10p है",
+    "contribute": "इस परियोजना का समर्थन करो",
     "yourBalance": "तुम्हारा बैलेंस: ",
     "networkError": "नेटवर्क त्रुटि। कृपया फिर से कोशिश करो।",
     "invalidAmount": "एक वैध राशि दर्ज करो",
     "customAmount": "कस्टम राशि (£)",
-    "give": "दो",
-    "success": "{campaign} में {amount} का योगदान दिया!",
+    "give": "भुगतान करो",
+    "success": "{campaign} के लिए {amount} का भुगतान किया!",
     "remainingBalance": "तुम्हारा शेष बैलेंस: {balance}",
     "topUpPrompt": "अपना वॉलेट टॉप-अप करो",
-    "toKeepSupporting": "अभियानों का समर्थन जारी रखने के लिए।",
+    "toKeepSupporting": "कार्य परियोजनाओं का समर्थन जारी रखने के लिए।",
     "walletEmpty": "तुम्हारा वॉलेट खाली है।",
     "topUp": "टॉप-अप करो",
-    "toContribute": "योगदान करने के लिए।"
+    "toContribute": "परियोजनाओं का समर्थन करने के लिए।"
   },
   "Claim": {
     "success": "धन्यवाद! {name} भूमिका में तुम्हारी रुचि नोट कर ली है। हम संपर्क करेंगे।",

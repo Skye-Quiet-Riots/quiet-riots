@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentirai kakvo se sluchva s {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanii",
-    "subtitle": "{count} {count, plural, one {kampaniya sabirashta} other {kampanii sabirashti}} sredstva za promyana.",
-    "noResults": "Ne sa namereni kampanii. Probvai drug filtar."
+    "title": "Проекти за действие",
+    "subtitle": "{count} {count, plural, one {проект, възлагащ} other {проекта, възлагащи}} услуги за колективно действие.",
+    "noResults": "Не са намерени проекти за действие. Пробвай друг филтър."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanii",
-    "fullyFunded": "Napalno finansirana",
-    "disbursed": "Sredstva raspredeleni",
+    "breadcrumb": "Проекти за действие",
+    "fullyFunded": "Целта е постигната",
+    "disbursed": "Завършен",
     "cancelled": "Otmenena",
     "active": "Aktivna",
     "target": "tsel",
-    "raised": "sabrano",
-    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}",
-    "platformFee": "taksa na platformata",
-    "wantToContribute": "Iskash li da prineesesh?",
-    "topUpFirst": "Pyrvo zaredi portfeila si, za da zapochnesh da prinasyash.",
-    "createAccountPrompt": "Sazdai akount i zaredi portfeila si, za da podkrepish tazi kampaniya.",
+    "raised": "ангажирано",
+    "backers": "{count, plural, one {поддръжник} other {поддръжници}}",
+    "platformFee": "такса за обслужване",
+    "wantToContribute": "Искаш ли да подкрепиш този проект?",
+    "topUpFirst": "Първо зареди портфейла си, за да започнеш.",
+    "createAccountPrompt": "Създай акаунт и зареди портфейла си, за да възложиш тази услуга.",
     "goToWallet": "Kym portfeila",
     "createAccount": "Sazdavane na akount",
-    "completedMessage": "Tazi kampaniya beshe {status}. Blagodarim na vsichki {count} podkrepyashti!",
-    "recipient": "Poluchatel"
+    "completedMessage": "Този проект беше {status}. Благодарим на всички {count} поддръжници!",
+    "recipient": "Доставчик на услуги"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Tvoiyat portfeil",
-    "createPromptTitle": "Zapochni da podkrepvash kausi",
-    "createPromptDesc": "Sazdai bezplaten akount, za da zaledish sredstva i da prinasyash kam kampanii, koito sa vazhni za teb.",
+    "createPromptTitle": "Задвижи колективното действие",
+    "createPromptDesc": "Създай безплатен акаунт, за да заредиш портфейла си и да възлагаш услуги за проекти за действие.",
     "createAccount": "Sazdavane na akount",
-    "activeCampaigns": "Aktivni kampanii",
+    "activeCampaigns": "Активни проекти",
     "viewAll": "Vizh vsichki"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Podbirano",
     "community": "Obshtnost",
     "aiPick": "Izbor na AI",
-    "funded": "Finansirano",
-    "disbursed": "Raspredeleno",
-    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}",
+    "funded": "Целта е постигната",
+    "disbursed": "Завършен",
+    "backers": "{count, plural, one {поддръжник} other {поддръжници}}",
     "aiAndHuman": "AI Agent i Choveshki organizator",
     "riots": "{count, plural, one {riot} other {riota}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "uchastnitsi"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanii",
-    "funded": "Finansirano",
-    "disbursed": "Raspredeleno",
-    "backers": "{count, plural, one {podkrepyasht} other {podkrepyashti}}"
+    "title": "⚡ Проекти за действие",
+    "funded": "Целта е постигната",
+    "disbursed": "Завършен",
+    "backers": "{count, plural, one {поддръжник} other {поддръжници}}"
   },
   "WalletBalance": {
     "title": "Tvoeto saldo",
     "loaded": "zaredeno",
-    "contributed": "prineseno",
-    "campaigns": "{count, plural, one {kampaniya} other {kampanii}}"
+    "contributed": "изразходвано",
+    "campaigns": "{count, plural, one {проект} other {проекта}}"
   },
   "Transactions": {
     "title": "Skoreshni transaktsii",
     "topUp": "Zarezhidane",
-    "contribution": "Prinos",
+    "contribution": "Плащане за проект",
     "refund": "Vazbrazhdane",
     "justNow": "tokhu-shto",
     "minutesAgo": "predi {count} min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Vsichki",
     "active": "Aktivni",
-    "funded": "Finansirani",
-    "disbursed": "Raspredeleni"
+    "funded": "Целта е постигната",
+    "disbursed": "Завършен"
   },
   "TimeSkill": {
     "timeQuestion": "Kolko vreme imash?",
@@ -436,24 +436,24 @@
     "networkError": "Mrezhova greshka. Molya, probvai otnovo.",
     "customAmount": "Potroitelska suma (£)",
     "topUp": "Zaredi",
-    "simulated": "Simulirano zarezdane za testove. Realnite plashitaniya chrez Stripe idvat skoro."
+    "simulated": "Симулирано зареждане за тестове. Реалните плащания идват скоро."
   },
   "Contribute": {
     "insufficientFunds": "Nedostatachni sredstva. Pyrvo zaredi portfeila si.",
-    "minContribution": "Minimalniyat prinos e 10p",
-    "contribute": "Prinesi",
+    "minContribution": "Минималното плащане е 10p",
+    "contribute": "Подкрепи този проект",
     "yourBalance": "Tvoeto saldo: ",
     "networkError": "Mrezhova greshka. Molya, probvai otnovo.",
     "invalidAmount": "Vavedi validna suma",
     "customAmount": "Potroitelska suma (£)",
-    "give": "Dari",
-    "success": "Prineseni {amount} kam {campaign}!",
+    "give": "Плати",
+    "success": "Платени {amount} към {campaign}!",
     "remainingBalance": "Ostavashto saldo: {balance}",
     "topUpPrompt": "Zaredi portfeila si",
-    "toKeepSupporting": "za da prodalzish da podkrepvash kampanii.",
+    "toKeepSupporting": "за да продължиш да подкрепяш проекти за действие.",
     "walletEmpty": "Portfeilat ti e prazen.",
     "topUp": "Zaredi",
-    "toContribute": "za da prineesh."
+    "toContribute": "за да подкрепяш проекти."
   },
   "Claim": {
     "success": "Blagodarim! Otbelyazakhme interesa ti kam rolyata na {name}. Shte se svarzhem s teb.",

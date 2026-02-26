@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "وثّق ما يحدث مع {orgName}."
   },
   "Campaigns": {
-    "title": "الحملات",
-    "subtitle": "{count} {count, plural, one {حملة تجمع} other {حملات تجمع}} تبرعات من أجل التغيير.",
-    "noResults": "لم يتم العثور على حملات. جرّب فلتراً مختلفاً."
+    "title": "مشاريع العمل",
+    "subtitle": "{count} {count, plural, one {مشروع يكلّف} other {مشاريع تكلّف}} خدمات للعمل الجماعي.",
+    "noResults": "لم يتم العثور على مشاريع عمل. جرّب فلتراً مختلفاً."
   },
   "CampaignDetail": {
-    "breadcrumb": "الحملات",
-    "fullyFunded": "مموّلة بالكامل",
-    "disbursed": "تم صرف الأموال",
+    "breadcrumb": "مشاريع العمل",
+    "fullyFunded": "تم بلوغ الهدف",
+    "disbursed": "مكتمل",
     "cancelled": "ملغاة",
     "active": "نشطة",
     "target": "الهدف",
-    "raised": "تم جمعه",
-    "backers": "{count, plural, one {داعم} other {داعمين}}",
-    "platformFee": "رسوم المنصة",
-    "wantToContribute": "تريد المساهمة؟",
-    "topUpFirst": "اشحن محفظتك أولاً لبدء المساهمة.",
-    "createAccountPrompt": "أنشئ حساباً واشحن محفظتك لدعم هذه الحملة.",
+    "raised": "ملتزم به",
+    "backers": "{count, plural, one {مؤيد} other {مؤيدين}}",
+    "platformFee": "رسوم الخدمة",
+    "wantToContribute": "تريد دعم هذا المشروع؟",
+    "topUpFirst": "اشحن محفظتك أولاً للبدء.",
+    "createAccountPrompt": "أنشئ حساباً واشحن محفظتك لتكليف هذه الخدمة.",
     "goToWallet": "اذهب إلى المحفظة",
     "createAccount": "إنشاء حساب",
-    "completedMessage": "تم {status} هذه الحملة. شكراً لجميع الداعمين البالغ عددهم {count}!",
-    "recipient": "المستفيد"
+    "completedMessage": "تم {status} هذا المشروع. شكراً لجميع المؤيدين البالغ عددهم {count}!",
+    "recipient": "مقدّم الخدمة"
   },
   "Assistants": {
     "title": "المساعدون",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "محفظتك",
-    "createPromptTitle": "ابدأ بدعم القضايا",
-    "createPromptDesc": "أنشئ حساباً مجانياً لشحن الرصيد والمساهمة في الحملات التي تهمك.",
+    "createPromptTitle": "فعّل العمل الجماعي",
+    "createPromptDesc": "أنشئ حساباً مجانياً لشحن محفظتك وتكليف خدمات لمشاريع العمل.",
     "createAccount": "إنشاء حساب",
-    "activeCampaigns": "الحملات النشطة",
+    "activeCampaigns": "المشاريع النشطة",
     "viewAll": "عرض الكل"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "مختارة",
     "community": "مجتمع",
     "aiPick": "اختيار الذكاء الاصطناعي",
-    "funded": "مموّلة",
-    "disbursed": "تم الصرف",
-    "backers": "{count, plural, one {داعم} other {داعمين}}",
+    "funded": "تم بلوغ الهدف",
+    "disbursed": "مكتمل",
+    "backers": "{count, plural, one {مؤيد} other {مؤيدين}}",
     "aiAndHuman": "وكيل ذكاء اصطناعي ومنظّم بشري",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "مشاركون"
   },
   "CampaignProgress": {
-    "title": "💰 الحملات",
-    "funded": "مموّلة",
-    "disbursed": "تم الصرف",
-    "backers": "{count, plural, one {داعم} other {داعمين}}"
+    "title": "⚡ مشاريع العمل",
+    "funded": "تم بلوغ الهدف",
+    "disbursed": "مكتمل",
+    "backers": "{count, plural, one {مؤيد} other {مؤيدين}}"
   },
   "WalletBalance": {
     "title": "رصيدك",
     "loaded": "مشحون",
-    "contributed": "تم المساهمة",
-    "campaigns": "{count, plural, one {حملة} other {حملات}}"
+    "contributed": "أُنفق",
+    "campaigns": "{count, plural, one {مشروع} other {مشاريع}}"
   },
   "Transactions": {
     "title": "المعاملات الأخيرة",
     "topUp": "شحن",
-    "contribution": "مساهمة",
+    "contribution": "دفعة مشروع",
     "refund": "استرداد",
     "justNow": "الآن",
     "minutesAgo": "قبل {count} د",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "الكل",
     "active": "نشطة",
-    "funded": "مموّلة",
-    "disbursed": "تم الصرف"
+    "funded": "تم بلوغ الهدف",
+    "disbursed": "مكتمل"
   },
   "TimeSkill": {
     "timeQuestion": "كم من الوقت لديك؟",
@@ -436,24 +436,24 @@
     "networkError": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
     "customAmount": "مبلغ مخصص (£)",
     "topUp": "شحن",
-    "simulated": "شحن تجريبي للاختبار. المدفوعات الحقيقية عبر Stripe قريباً."
+    "simulated": "شحن تجريبي للاختبار. المدفوعات الحقيقية قادمة قريباً."
   },
   "Contribute": {
     "insufficientFunds": "رصيد غير كافٍ. اشحن محفظتك أولاً.",
-    "minContribution": "الحد الأدنى للمساهمة هو 10p",
-    "contribute": "ساهم",
+    "minContribution": "الحد الأدنى للدفع هو 10p",
+    "contribute": "ادعم هذا المشروع",
     "yourBalance": "رصيدك: ",
     "networkError": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
     "invalidAmount": "أدخل مبلغاً صالحاً",
     "customAmount": "مبلغ مخصص (£)",
-    "give": "تبرّع",
-    "success": "تم التبرع بـ{amount} لحملة {campaign}!",
+    "give": "ادفع",
+    "success": "تم دفع {amount} نحو {campaign}!",
     "remainingBalance": "رصيدك المتبقي: {balance}",
     "topUpPrompt": "اشحن محفظتك",
-    "toKeepSupporting": "لمواصلة دعم الحملات.",
+    "toKeepSupporting": "لمواصلة دعم مشاريع العمل.",
     "walletEmpty": "محفظتك فارغة.",
     "topUp": "اشحن",
-    "toContribute": "للمساهمة."
+    "toContribute": "لدعم المشاريع."
   },
   "Claim": {
     "success": "شكراً! سجّلنا اهتمامك بدور {name}. سنتواصل معك.",

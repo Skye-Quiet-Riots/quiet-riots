@@ -364,7 +364,7 @@ describe('ContributeForm', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Contributed £1 to Test Campaign/)).toBeDefined();
+      expect(screen.getByText(/Paid £1 towards Test Campaign/)).toBeDefined();
       expect(screen.getByText(/remaining balance: £4/)).toBeDefined();
     });
   });
@@ -388,8 +388,8 @@ describe('StatusFilter', () => {
     render(<StatusFilter />);
     expect(screen.getByText('All')).toBeDefined();
     expect(screen.getByText('Active')).toBeDefined();
-    expect(screen.getByText('Funded')).toBeDefined();
-    expect(screen.getByText('Disbursed')).toBeDefined();
+    expect(screen.getByText('Goal Reached')).toBeDefined();
+    expect(screen.getByText('Completed')).toBeDefined();
   });
 
   it('updates URL on click', () => {

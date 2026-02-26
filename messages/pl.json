@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentuj co sie dzieje z {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanie",
-    "subtitle": "{count} {count, plural, one {kampania zbierajaca} other {kampanii zbierajacych}} srodki na zmiane.",
-    "noResults": "Nie znaleziono kampanii. Sprobuj innego filtru."
+    "title": "Projekty akcji",
+    "subtitle": "{count} {count, plural, one {projekt} other {projektow}} zamawiajacych uslugi na rzecz zbiorowego dzialania.",
+    "noResults": "Nie znaleziono projektow akcji. Sprobuj innego filtru."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanie",
-    "fullyFunded": "W pelni sfinansowana",
-    "disbursed": "Srodki wyplacone",
+    "breadcrumb": "Projekty akcji",
+    "fullyFunded": "Cel osiagniety",
+    "disbursed": "Ukonczony",
     "cancelled": "Anulowana",
     "active": "Aktywna",
     "target": "cel",
-    "raised": "zebrano",
+    "raised": "zadeklarowano",
     "backers": "{count, plural, one {wspierajacy} other {wspierajacych}}",
-    "platformFee": "oplata platformy",
-    "wantToContribute": "Chcesz wesprzec?",
-    "topUpFirst": "Najpierw doladuj portfel, zeby zaczac wspierac.",
-    "createAccountPrompt": "Zaloz konto i doladuj portfel, aby wesprzec te kampanie.",
+    "platformFee": "oplata za usluge",
+    "wantToContribute": "Chcesz wesprzec ten projekt?",
+    "topUpFirst": "Najpierw doladuj portfel, zeby zaczac.",
+    "createAccountPrompt": "Zaloz konto i doladuj portfel, aby zamowic te usluge.",
     "goToWallet": "Przejdz do portfela",
     "createAccount": "Zaloz konto",
-    "completedMessage": "Ta kampania zostala {status}. Dziekujemy wszystkim {count} wspierajacym!",
-    "recipient": "Odbiorca"
+    "completedMessage": "Ten projekt zostal {status}. Dziekujemy wszystkim {count} wspierajacym!",
+    "recipient": "Uslugodawca"
   },
   "Assistants": {
     "title": "Asystenci",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Twoj portfel",
-    "createPromptTitle": "Zacznij wspierac sprawy",
-    "createPromptDesc": "Zaloz darmowe konto, aby doladowac srodki i wspierac kampanie, ktore sa dla ciebie wazne.",
+    "createPromptTitle": "Wspieraj zbiorowe dzialanie",
+    "createPromptDesc": "Zaloz darmowe konto, aby doladowac portfel i zamawiac uslugi dla projektow akcji.",
     "createAccount": "Zaloz konto",
-    "activeCampaigns": "Aktywne kampanie",
+    "activeCampaigns": "Aktywne projekty",
     "viewAll": "Zobacz wszystkie"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Wybrane",
     "community": "Spolecznosc",
     "aiPick": "Wybor AI",
-    "funded": "Sfinansowane",
-    "disbursed": "Wyplacone",
+    "funded": "Cel osiagniety",
+    "disbursed": "Ukonczony",
     "backers": "{count, plural, one {wspierajacy} other {wspierajacych}}",
     "aiAndHuman": "Agent AI i Organizator",
     "riots": "{count, plural, one {riot} other {riotow}}"
@@ -353,21 +353,21 @@
     "rioters": "uczestnikow"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanie",
-    "funded": "Sfinansowane",
-    "disbursed": "Wyplacone",
+    "title": "⚡ Projekty akcji",
+    "funded": "Cel osiagniety",
+    "disbursed": "Ukonczony",
     "backers": "{count, plural, one {wspierajacy} other {wspierajacych}}"
   },
   "WalletBalance": {
     "title": "Twoje saldo",
     "loaded": "doladowane",
-    "contributed": "przekazane",
-    "campaigns": "{count, plural, one {kampania} other {kampanii}}"
+    "contributed": "wydane",
+    "campaigns": "{count, plural, one {projekt} other {projektow}}"
   },
   "Transactions": {
     "title": "Ostatnie transakcje",
     "topUp": "Doladowanie",
-    "contribution": "Wplata",
+    "contribution": "Platnosc za projekt",
     "refund": "Zwrot",
     "justNow": "przed chwila",
     "minutesAgo": "{count} min temu",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Wszystkie",
     "active": "Aktywne",
-    "funded": "Sfinansowane",
-    "disbursed": "Wyplacone"
+    "funded": "Cel osiagniety",
+    "disbursed": "Ukonczony"
   },
   "TimeSkill": {
     "timeQuestion": "Ile masz czasu?",
@@ -436,24 +436,24 @@
     "networkError": "Blad sieci. Sprobuj ponownie.",
     "customAmount": "Kwota wlasna (£)",
     "topUp": "Doladuj",
-    "simulated": "Symulowane doladowanie do testow. Prawdziwe platnosci przez Stripe juz wkrotce."
+    "simulated": "Symulowane doladowanie do testow. Prawdziwe platnosci juz wkrotce."
   },
   "Contribute": {
     "insufficientFunds": "Niewystarczajace srodki. Najpierw doladuj portfel.",
-    "minContribution": "Minimalna wplata to 10p",
-    "contribute": "Wspieraj",
+    "minContribution": "Minimalna platnosc to 10p",
+    "contribute": "Wesprzyj ten projekt",
     "yourBalance": "Twoje saldo: ",
     "networkError": "Blad sieci. Sprobuj ponownie.",
     "invalidAmount": "Podaj prawidlowa kwote",
     "customAmount": "Kwota wlasna (£)",
-    "give": "Przekaz",
-    "success": "Wplacono {amount} na {campaign}!",
+    "give": "Zaplac",
+    "success": "Zaplacono {amount} za {campaign}!",
     "remainingBalance": "Pozostale saldo: {balance}",
     "topUpPrompt": "Doladuj portfel",
-    "toKeepSupporting": "aby dalej wspierac kampanie.",
+    "toKeepSupporting": "aby dalej wspierac projekty akcji.",
     "walletEmpty": "Twoj portfel jest pusty.",
     "topUp": "Doladuj",
-    "toContribute": "aby wspierac."
+    "toContribute": "aby wspierac projekty."
   },
   "Claim": {
     "success": "Dziekujemy! Odnotowalismy twoje zainteresowanie rola {name}. Skontaktujemy sie z toba.",

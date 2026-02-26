@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumenter hva som skjer med {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanjer",
-    "subtitle": "{count} {count, plural, one {kampanje} other {kampanjer}} samler inn penger til forandring.",
-    "noResults": "Ingen kampanjer funnet. Prøv et annet filter."
+    "title": "Aksjonsprosjekter",
+    "subtitle": "{count} {count, plural, one {prosjekt} other {prosjekter}} som bestiller tjenester for kollektiv handling.",
+    "noResults": "Ingen aksjonsprosjekter funnet. Prøv et annet filter."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanjer",
-    "fullyFunded": "Fullt finansiert",
-    "disbursed": "Midler utbetalt",
+    "breadcrumb": "Aksjonsprosjekter",
+    "fullyFunded": "Mål nådd",
+    "disbursed": "Fullført",
     "cancelled": "Avlyst",
     "active": "Aktiv",
     "target": "mål",
-    "raised": "samlet inn",
-    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}",
-    "platformFee": "plattformavgift",
-    "wantToContribute": "Vil du bidra?",
-    "topUpFirst": "Fyll opp lommeboken din først for å begynne å bidra.",
-    "createAccountPrompt": "Opprett en konto og lad lommeboken for å støtte denne kampanjen.",
+    "raised": "forpliktet",
+    "backers": "{count, plural, one {støttespiller} other {støttespillere}}",
+    "platformFee": "tjenesteavgift",
+    "wantToContribute": "Vil du støtte dette prosjektet?",
+    "topUpFirst": "Fyll opp lommeboken din først for å komme i gang.",
+    "createAccountPrompt": "Opprett en konto og lad lommeboken for å bestille denne tjenesten.",
     "goToWallet": "Gå til lommebok",
     "createAccount": "Opprett konto",
-    "completedMessage": "Denne kampanjen har blitt {status}. Takk til alle {count} bidragsytere!",
-    "recipient": "Mottaker"
+    "completedMessage": "Dette prosjektet har blitt {status}. Takk til alle {count} støttespillere!",
+    "recipient": "Tjenesteleverandør"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Din lommebok",
-    "createPromptTitle": "Begynn å støtte saker",
-    "createPromptDesc": "Opprett en gratis konto for å laste inn midler og bidra til kampanjer som betyr noe for deg.",
+    "createPromptTitle": "Styrk kollektiv handling",
+    "createPromptDesc": "Opprett en gratis konto for å lade lommeboken din og bestille tjenester for aksjonsprosjekter.",
     "createAccount": "Opprett konto",
-    "activeCampaigns": "Aktive kampanjer",
+    "activeCampaigns": "Aktive prosjekter",
     "viewAll": "Vis alle"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Utvalgt",
     "community": "Fellesskap",
     "aiPick": "AI-valg",
-    "funded": "Finansiert",
-    "disbursed": "Utbetalt",
-    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}",
+    "funded": "Mål nådd",
+    "disbursed": "Fullført",
+    "backers": "{count, plural, one {støttespiller} other {støttespillere}}",
     "aiAndHuman": "AI-agent & menneskelig organisator",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "deltakere"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanjer",
-    "funded": "Finansiert",
-    "disbursed": "Utbetalt",
-    "backers": "{count, plural, one {bidragsyter} other {bidragsytere}}"
+    "title": "⚡ Aksjonsprosjekter",
+    "funded": "Mål nådd",
+    "disbursed": "Fullført",
+    "backers": "{count, plural, one {støttespiller} other {støttespillere}}"
   },
   "WalletBalance": {
     "title": "Din saldo",
     "loaded": "lastet inn",
-    "contributed": "bidratt",
-    "campaigns": "{count, plural, one {kampanje} other {kampanjer}}"
+    "contributed": "brukt",
+    "campaigns": "{count, plural, one {prosjekt} other {prosjekter}}"
   },
   "Transactions": {
     "title": "Nylige transaksjoner",
     "topUp": "Påfylling",
-    "contribution": "Bidrag",
+    "contribution": "Prosjektbetaling",
     "refund": "Refusjon",
     "justNow": "akkurat nå",
     "minutesAgo": "{count}m siden",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Alle",
     "active": "Aktive",
-    "funded": "Finansierte",
-    "disbursed": "Utbetalte"
+    "funded": "Mål nådd",
+    "disbursed": "Fullført"
   },
   "TimeSkill": {
     "timeQuestion": "Hvor mye tid har du?",
@@ -436,24 +436,24 @@
     "networkError": "Nettverksfeil. Vennligst prøv igjen.",
     "customAmount": "Valgfritt beløp (£)",
     "topUp": "Fyll opp",
-    "simulated": "Simulert påfylling for testing. Ekte betalinger via Stripe kommer snart."
+    "simulated": "Simulert påfylling for testing. Ekte betalinger kommer snart."
   },
   "Contribute": {
     "insufficientFunds": "Utilstrekkelig saldo. Fyll opp lommeboken din først.",
-    "minContribution": "Minste bidrag er 10p",
-    "contribute": "Bidra",
+    "minContribution": "Minste betaling er 10p",
+    "contribute": "Støtt dette prosjektet",
     "yourBalance": "Din saldo: ",
     "networkError": "Nettverksfeil. Vennligst prøv igjen.",
     "invalidAmount": "Oppgi et gyldig beløp",
     "customAmount": "Valgfritt beløp (£)",
-    "give": "Gi",
-    "success": "Bidro med {amount} til {campaign}!",
+    "give": "Betal",
+    "success": "Betalt {amount} til {campaign}!",
     "remainingBalance": "Din gjenværende saldo: {balance}",
     "topUpPrompt": "Fyll opp lommeboken",
-    "toKeepSupporting": "for å fortsette å støtte kampanjer.",
+    "toKeepSupporting": "for å fortsette å støtte aksjonsprosjekter.",
     "walletEmpty": "Lommeboken din er tom.",
     "topUp": "Fyll opp",
-    "toContribute": "for å bidra."
+    "toContribute": "for å støtte prosjekter."
   },
   "Claim": {
     "success": "Takk! Vi har notert din interesse for rollen som {name}. Vi tar kontakt.",

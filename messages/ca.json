@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Documenta el que passa amb {orgName}."
   },
   "Campaigns": {
-    "title": "Campanyes",
-    "subtitle": "{count} {count, plural, one {campanya} other {campanyes}} recaptant fons pel canvi.",
-    "noResults": "No s'han trobat campanyes. Prova un filtre diferent."
+    "title": "Projectes d'Acció",
+    "subtitle": "{count} {count, plural, one {projecte} other {projectes}} que encarreguen serveis per a l'acció col·lectiva.",
+    "noResults": "No s'han trobat projectes d'acció. Prova un filtre diferent."
   },
   "CampaignDetail": {
-    "breadcrumb": "Campanyes",
-    "fullyFunded": "Totalment Finançada",
-    "disbursed": "Fons Desemborsats",
+    "breadcrumb": "Projectes d'Acció",
+    "fullyFunded": "Objectiu Assolit",
+    "disbursed": "Completat",
     "cancelled": "Cancel·lada",
     "active": "Activa",
     "target": "objectiu",
-    "raised": "recaptat",
-    "backers": "{count, plural, one {mecenes} other {mecenes}}",
-    "platformFee": "comissió de la plataforma",
-    "wantToContribute": "Vols contribuir?",
-    "topUpFirst": "Recarrega la teva cartera primer per començar a contribuir.",
-    "createAccountPrompt": "Crea un compte i carrega la teva cartera per donar suport a aquesta campanya.",
+    "raised": "compromès",
+    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}",
+    "platformFee": "tarifa de servei",
+    "wantToContribute": "Vols donar suport a aquest projecte?",
+    "topUpFirst": "Recarrega la teva cartera primer per començar.",
+    "createAccountPrompt": "Crea un compte i carrega la teva cartera per encarregar aquest servei.",
     "goToWallet": "Ves a la cartera",
     "createAccount": "Crea un compte",
-    "completedMessage": "Aquesta campanya ha estat {status}. Gràcies a tots els {count} mecenes!",
-    "recipient": "Destinatari"
+    "completedMessage": "Aquest projecte ha estat {status}. Gràcies a tots els {count} col·laboradors!",
+    "recipient": "Proveïdor de Serveis"
   },
   "Assistants": {
     "title": "Assistents",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "La Teva Cartera",
-    "createPromptTitle": "Comença a Donar Suport a Causes",
-    "createPromptDesc": "Crea un compte gratuït per carregar fons i contribuir a campanyes que t'importen.",
+    "createPromptTitle": "Impulsa l'Acció Col·lectiva",
+    "createPromptDesc": "Crea un compte gratuït per carregar la teva cartera i encarregar serveis per a projectes d'acció.",
     "createAccount": "Crea un compte",
-    "activeCampaigns": "Campanyes Actives",
+    "activeCampaigns": "Projectes Actius",
     "viewAll": "Veure-ho tot"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Seleccionat",
     "community": "Comunitat",
     "aiPick": "Selecció IA",
-    "funded": "Finançada",
-    "disbursed": "Desemborsada",
-    "backers": "{count, plural, one {mecenes} other {mecenes}}",
+    "funded": "Objectiu Assolit",
+    "disbursed": "Completat",
+    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}",
     "aiAndHuman": "Agent d'IA i Organitzador Humà",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "participants"
   },
   "CampaignProgress": {
-    "title": "💰 Campanyes",
-    "funded": "Finançada",
-    "disbursed": "Desemborsada",
-    "backers": "{count, plural, one {mecenes} other {mecenes}}"
+    "title": "⚡ Projectes d'Acció",
+    "funded": "Objectiu Assolit",
+    "disbursed": "Completat",
+    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}"
   },
   "WalletBalance": {
     "title": "El Teu Saldo",
     "loaded": "carregat",
-    "contributed": "contribuït",
-    "campaigns": "{count, plural, one {campanya} other {campanyes}}"
+    "contributed": "gastat",
+    "campaigns": "{count, plural, one {projecte} other {projectes}}"
   },
   "Transactions": {
     "title": "Transaccions Recents",
     "topUp": "Recàrrega",
-    "contribution": "Contribució",
+    "contribution": "Pagament de projecte",
     "refund": "Reemborsament",
     "justNow": "ara mateix",
     "minutesAgo": "fa {count}min",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Tot",
     "active": "Activa",
-    "funded": "Finançada",
-    "disbursed": "Desemborsada"
+    "funded": "Objectiu Assolit",
+    "disbursed": "Completat"
   },
   "TimeSkill": {
     "timeQuestion": "Quant de temps tens?",
@@ -436,24 +436,24 @@
     "networkError": "Error de xarxa. Si us plau, torna-ho a provar.",
     "customAmount": "Import personalitzat (£)",
     "topUp": "Recarrega",
-    "simulated": "Recàrrega simulada per proves. Pagaments reals via Stripe properament."
+    "simulated": "Recàrrega simulada per proves. Pagaments reals properament."
   },
   "Contribute": {
     "insufficientFunds": "Fons insuficients. Recarrega primer la teva cartera.",
-    "minContribution": "La contribució mínima és de 10p",
-    "contribute": "Contribueix",
+    "minContribution": "El pagament mínim és de 10p",
+    "contribute": "Dona Suport a Aquest Projecte",
     "yourBalance": "El teu saldo: ",
     "networkError": "Error de xarxa. Si us plau, torna-ho a provar.",
     "invalidAmount": "Introdueix un import vàlid",
     "customAmount": "Import personalitzat (£)",
-    "give": "Dona",
-    "success": "Has contribuït {amount} a {campaign}!",
+    "give": "Paga",
+    "success": "Has pagat {amount} per {campaign}!",
     "remainingBalance": "El teu saldo restant: {balance}",
     "topUpPrompt": "Recarrega la teva cartera",
-    "toKeepSupporting": "per continuar donant suport a campanyes.",
+    "toKeepSupporting": "per continuar donant suport a projectes d'acció.",
     "walletEmpty": "La teva cartera està buida.",
     "topUp": "Recarrega",
-    "toContribute": "per contribuir."
+    "toContribute": "per donar suport a projectes."
   },
   "Claim": {
     "success": "Gràcies! Hem anotat el teu interès en el rol de {name}. Et contactarem.",

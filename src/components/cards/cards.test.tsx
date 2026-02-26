@@ -374,7 +374,7 @@ describe('CampaignCard', () => {
   it('shows funded badge', async () => {
     const el = await CampaignCard({ campaign: makeCampaign({ status: 'funded' }) });
     render(el);
-    expect(screen.getByText('Funded')).toBeDefined();
+    expect(screen.getByText('Goal Reached')).toBeDefined();
   });
 
   it('shows issue name when provided', async () => {

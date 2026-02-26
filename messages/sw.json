@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Rekodi kinachoendelea na {orgName}."
   },
   "Campaigns": {
-    "title": "Kampeni",
-    "subtitle": "{count} {count, plural, one {kampeni} other {kampeni}} zinazokusanya fedha kwa mabadiliko.",
-    "noResults": "Hakuna kampeni zilizopatikana. Jaribu kichujio tofauti."
+    "title": "Miradi ya Hatua",
+    "subtitle": "{count} {count, plural, one {mradi} other {miradi}} inayoagiza huduma kwa hatua za pamoja.",
+    "noResults": "Hakuna miradi ya hatua iliyopatikana. Jaribu kichujio tofauti."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampeni",
-    "fullyFunded": "Imefadhiliwa Kikamilifu",
-    "disbursed": "Fedha Zimetolewa",
+    "breadcrumb": "Miradi ya Hatua",
+    "fullyFunded": "Lengo Limefikiwa",
+    "disbursed": "Imekamilika",
     "cancelled": "Imesitishwa",
     "active": "Hai",
     "target": "lengo",
-    "raised": "imekusanywa",
-    "backers": "{count, plural, one {mfadhili} other {wafadhili}}",
-    "platformFee": "ada ya jukwaa",
-    "wantToContribute": "Unataka kuchangia?",
-    "topUpFirst": "Jaza mkoba wako kwanza ili uanze kuchangia.",
-    "createAccountPrompt": "Tengeneza akaunti na ujaze mkoba wako ili kusaidia kampeni hii.",
+    "raised": "imeahidiwa",
+    "backers": "{count, plural, one {msaidizi} other {wasaidizi}}",
+    "platformFee": "ada ya huduma",
+    "wantToContribute": "Unataka kusaidia mradi huu?",
+    "topUpFirst": "Jaza mkoba wako kwanza ili uanze.",
+    "createAccountPrompt": "Tengeneza akaunti na ujaze mkoba wako ili kuagiza huduma hii.",
     "goToWallet": "Nenda kwenye mkoba",
     "createAccount": "Tengeneza akaunti",
-    "completedMessage": "Kampeni hii imekuwa {status}. Asante kwa wafadhili wote {count}!",
-    "recipient": "Mpokeaji"
+    "completedMessage": "Mradi huu umekuwa {status}. Asante kwa wasaidizi wote {count}!",
+    "recipient": "Mtoa Huduma"
   },
   "Assistants": {
     "title": "Wasaidizi",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Mkoba Wako",
-    "createPromptTitle": "Anza Kusaidia Dhamira",
-    "createPromptDesc": "Tengeneza akaunti ya bure ili ujaze fedha na uchangie kampeni zinazokuvutia.",
+    "createPromptTitle": "Endeleza Hatua za Pamoja",
+    "createPromptDesc": "Tengeneza akaunti ya bure ili ujaze mkoba wako na uagize huduma kwa miradi ya hatua.",
     "createAccount": "Tengeneza akaunti",
-    "activeCampaigns": "Kampeni Hai",
+    "activeCampaigns": "Miradi Hai",
     "viewAll": "Tazama zote"
   },
   "Profile": {
@@ -320,9 +320,9 @@
     "curated": "Iliyochaguliwa",
     "community": "Jamii",
     "aiPick": "Uchaguzi wa AI",
-    "funded": "Imefadhiliwa",
-    "disbursed": "Imetolewa",
-    "backers": "{count, plural, one {mfadhili} other {wafadhili}}",
+    "funded": "Lengo Limefikiwa",
+    "disbursed": "Imekamilika",
+    "backers": "{count, plural, one {msaidizi} other {wasaidizi}}",
     "aiAndHuman": "Wakala wa AI na Mwandaaji Binadamu",
     "riots": "{count, plural, one {riot} other {riot}}"
   },
@@ -353,21 +353,21 @@
     "rioters": "washiriki"
   },
   "CampaignProgress": {
-    "title": "💰 Kampeni",
-    "funded": "Imefadhiliwa",
-    "disbursed": "Imetolewa",
-    "backers": "{count, plural, one {mfadhili} other {wafadhili}}"
+    "title": "⚡ Miradi ya Hatua",
+    "funded": "Lengo Limefikiwa",
+    "disbursed": "Imekamilika",
+    "backers": "{count, plural, one {msaidizi} other {wasaidizi}}"
   },
   "WalletBalance": {
     "title": "Salio Lako",
     "loaded": "imejazwa",
-    "contributed": "imechangiwa",
-    "campaigns": "{count, plural, one {kampeni} other {kampeni}}"
+    "contributed": "imetumika",
+    "campaigns": "{count, plural, one {mradi} other {miradi}}"
   },
   "Transactions": {
     "title": "Miamala ya Hivi Karibuni",
     "topUp": "Kujaza",
-    "contribution": "Mchango",
+    "contribution": "Malipo ya mradi",
     "refund": "Kurejesha",
     "justNow": "sasa hivi",
     "minutesAgo": "dak {count} zilizopita",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Zote",
     "active": "Hai",
-    "funded": "Imefadhiliwa",
-    "disbursed": "Imetolewa"
+    "funded": "Lengo Limefikiwa",
+    "disbursed": "Imekamilika"
   },
   "TimeSkill": {
     "timeQuestion": "Una muda gani?",
@@ -436,24 +436,24 @@
     "networkError": "Hitilafu ya mtandao. Tafadhali jaribu tena.",
     "customAmount": "Kiasi maalum (£)",
     "topUp": "Jaza",
-    "simulated": "Kujaza kwa majaribio. Malipo halisi kupitia Stripe yanakuja hivi karibuni."
+    "simulated": "Kujaza kwa majaribio. Malipo halisi yanakuja hivi karibuni."
   },
   "Contribute": {
     "insufficientFunds": "Fedha hazitoshi. Jaza mkoba wako kwanza.",
-    "minContribution": "Mchango wa chini ni 10p",
-    "contribute": "Changia",
+    "minContribution": "Malipo ya chini ni 10p",
+    "contribute": "Saidia Mradi Huu",
     "yourBalance": "Salio lako: ",
     "networkError": "Hitilafu ya mtandao. Tafadhali jaribu tena.",
     "invalidAmount": "Weka kiasi halali",
     "customAmount": "Kiasi maalum (£)",
-    "give": "Toa",
-    "success": "Umechangia {amount} kwa {campaign}!",
+    "give": "Lipa",
+    "success": "Umelipa {amount} kwa {campaign}!",
     "remainingBalance": "Salio lako lililobaki: {balance}",
     "topUpPrompt": "Jaza mkoba wako",
-    "toKeepSupporting": "ili kuendelea kusaidia kampeni.",
+    "toKeepSupporting": "ili kuendelea kusaidia miradi ya hatua.",
     "walletEmpty": "Mkoba wako ni tupu.",
     "topUp": "Jaza",
-    "toContribute": "ili kuchangia."
+    "toContribute": "ili kusaidia miradi."
   },
   "Claim": {
     "success": "Asante! Tumesajili hamu yako katika nafasi ya {name}. Tutawasiliana.",

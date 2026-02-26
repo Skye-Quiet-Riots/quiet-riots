@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "記錄 {orgName} 正在發生的事。"
   },
   "Campaigns": {
-    "title": "募資活動",
-    "subtitle": "{count} {count, plural, one {個募資活動} other {個募資活動}}正在為改變籌集資金。",
-    "noResults": "未找到募資活動。請嘗試不同的篩選條件。"
+    "title": "行動專案",
+    "subtitle": "{count} {count, plural, one {個專案} other {個專案}}正在為集體行動委託服務。",
+    "noResults": "未找到行動專案。請嘗試不同的篩選條件。"
   },
   "CampaignDetail": {
-    "breadcrumb": "募資活動",
-    "fullyFunded": "已滿額籌集",
-    "disbursed": "資金已撥付",
+    "breadcrumb": "行動專案",
+    "fullyFunded": "已達目標",
+    "disbursed": "已完成",
     "cancelled": "已取消",
     "active": "進行中",
     "target": "目標",
-    "raised": "已籌集",
+    "raised": "已承諾",
     "backers": "{count, plural, one {位支持者} other {位支持者}}",
-    "platformFee": "平台費用",
-    "wantToContribute": "想要捐款？",
-    "topUpFirst": "請先為錢包儲值，即可開始捐款。",
-    "createAccountPrompt": "建立帳戶並為錢包儲值，支持此募資活動。",
+    "platformFee": "服務費",
+    "wantToContribute": "想支持這個專案嗎？",
+    "topUpFirst": "請先為錢包儲值即可開始。",
+    "createAccountPrompt": "建立帳戶並為錢包儲值，即可委託此服務。",
     "goToWallet": "前往錢包",
     "createAccount": "建立帳戶",
-    "completedMessage": "此募資活動已{status}。感謝所有 {count} 位支持者！",
-    "recipient": "接收方"
+    "completedMessage": "此專案已{status}。感謝所有 {count} 位支持者！",
+    "recipient": "服務提供商"
   },
   "Assistants": {
     "title": "助手",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "你的錢包",
-    "createPromptTitle": "開始支持公益",
-    "createPromptDesc": "建立免費帳戶來儲值資金，為你關心的募資活動捐款。",
+    "createPromptTitle": "推動集體行動",
+    "createPromptDesc": "建立免費帳戶，為錢包儲值並委託行動專案的服務。",
     "createAccount": "建立帳戶",
-    "activeCampaigns": "進行中的募資活動",
+    "activeCampaigns": "進行中的專案",
     "viewAll": "查看全部"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "精選",
     "community": "社群",
     "aiPick": "AI 推薦",
-    "funded": "已籌滿",
-    "disbursed": "已撥付",
+    "funded": "已達目標",
+    "disbursed": "已完成",
     "backers": "{count, plural, one {位支持者} other {位支持者}}",
     "aiAndHuman": "AI 智慧代理和人類組織者",
     "riots": "{count, plural, one {場 Quiet Riot} other {場 Quiet Riot}}"
@@ -353,21 +353,21 @@
     "rioters": "參與者"
   },
   "CampaignProgress": {
-    "title": "💰 募資活動",
-    "funded": "已籌滿",
-    "disbursed": "已撥付",
+    "title": "⚡ 行動專案",
+    "funded": "已達目標",
+    "disbursed": "已完成",
     "backers": "{count, plural, one {位支持者} other {位支持者}}"
   },
   "WalletBalance": {
     "title": "你的餘額",
     "loaded": "已儲值",
-    "contributed": "已捐款",
-    "campaigns": "{count, plural, one {個募資活動} other {個募資活動}}"
+    "contributed": "已支出",
+    "campaigns": "{count, plural, one {個專案} other {個專案}}"
   },
   "Transactions": {
     "title": "近期交易",
     "topUp": "儲值",
-    "contribution": "捐款",
+    "contribution": "專案付款",
     "refund": "退款",
     "justNow": "剛剛",
     "minutesAgo": "{count}分鐘前",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "全部",
     "active": "進行中",
-    "funded": "已籌滿",
-    "disbursed": "已撥付"
+    "funded": "已達目標",
+    "disbursed": "已完成"
   },
   "TimeSkill": {
     "timeQuestion": "你有多少時間？",
@@ -436,24 +436,24 @@
     "networkError": "網路錯誤，請重試。",
     "customAmount": "自訂金額（£）",
     "topUp": "儲值",
-    "simulated": "模擬儲值，僅供測試。Stripe 真實付款即將上線。"
+    "simulated": "模擬儲值，僅供測試。真實付款即將上線。"
   },
   "Contribute": {
     "insufficientFunds": "餘額不足。請先為錢包儲值。",
-    "minContribution": "最低捐款 10 便士",
-    "contribute": "捐款",
+    "minContribution": "最低付款 10p",
+    "contribute": "支持此專案",
     "yourBalance": "你的餘額：",
     "networkError": "網路錯誤，請重試。",
     "invalidAmount": "請輸入有效金額",
     "customAmount": "自訂金額（£）",
-    "give": "捐出",
-    "success": "已向 {campaign} 捐款 {amount}！",
+    "give": "付款",
+    "success": "已為 {campaign} 支付 {amount}！",
     "remainingBalance": "你的剩餘餘額：{balance}",
     "topUpPrompt": "為錢包儲值",
-    "toKeepSupporting": "以繼續支持募資活動。",
+    "toKeepSupporting": "以繼續支持行動專案。",
     "walletEmpty": "你的錢包是空的。",
     "topUp": "儲值",
-    "toContribute": "以進行捐款。"
+    "toContribute": "以支持專案。"
   },
   "Claim": {
     "success": "謝謝！我們已記錄你對 {name} 角色的興趣。我們會與你聯繫。",

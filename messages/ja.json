@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "{orgName} で起きていることを記録しましょう。"
   },
   "Campaigns": {
-    "title": "キャンペーン",
-    "subtitle": "{count} {count, plural, one {件のキャンペーン} other {件のキャンペーン}}が変化のための資金を募っています。",
-    "noResults": "キャンペーンが見つかりません。別のフィルターをお試しください。"
+    "title": "アクションプロジェクト",
+    "subtitle": "{count} {count, plural, one {件のプロジェクト} other {件のプロジェクト}}が集団行動のためのサービスを委託しています。",
+    "noResults": "アクションプロジェクトが見つかりません。別のフィルターをお試しください。"
   },
   "CampaignDetail": {
-    "breadcrumb": "キャンペーン",
+    "breadcrumb": "アクションプロジェクト",
     "fullyFunded": "目標達成",
-    "disbursed": "資金配分済み",
+    "disbursed": "完了",
     "cancelled": "キャンセル済み",
     "active": "進行中",
     "target": "目標",
-    "raised": "調達済み",
+    "raised": "確約済み",
     "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
-    "platformFee": "プラットフォーム手数料",
-    "wantToContribute": "支援しませんか？",
-    "topUpFirst": "まずウォレットにチャージしてから支援を始めましょう。",
-    "createAccountPrompt": "アカウントを作成してウォレットにチャージし、このキャンペーンを支援しましょう。",
+    "platformFee": "サービス手数料",
+    "wantToContribute": "このプロジェクトを支援しませんか？",
+    "topUpFirst": "まずウォレットにチャージして始めましょう。",
+    "createAccountPrompt": "アカウントを作成してウォレットにチャージし、このサービスを委託しましょう。",
     "goToWallet": "ウォレットへ",
     "createAccount": "アカウント作成",
-    "completedMessage": "このキャンペーンは{status}されました。{count} 人の支援者の皆さん、ありがとうございます！",
-    "recipient": "受取人"
+    "completedMessage": "このプロジェクトは{status}されました。{count} 人の支援者の皆さん、ありがとうございます！",
+    "recipient": "サービス提供者"
   },
   "Assistants": {
     "title": "アシスタント",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "あなたのウォレット",
-    "createPromptTitle": "応援を始めよう",
-    "createPromptDesc": "無料アカウントを作成して資金をチャージし、あなたが大切に思うキャンペーンに貢献しましょう。",
+    "createPromptTitle": "集団行動を推進しよう",
+    "createPromptDesc": "無料アカウントを作成してウォレットにチャージし、アクションプロジェクトのサービスを委託しましょう。",
     "createAccount": "アカウント作成",
-    "activeCampaigns": "進行中のキャンペーン",
+    "activeCampaigns": "進行中のプロジェクト",
     "viewAll": "すべて見る"
   },
   "Profile": {
@@ -321,7 +321,7 @@
     "community": "コミュニティ",
     "aiPick": "AI おすすめ",
     "funded": "目標達成",
-    "disbursed": "配分済み",
+    "disbursed": "完了",
     "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
     "aiAndHuman": "AI エージェント＆人間のオーガナイザー",
     "riots": "{count, plural, one {件の Quiet Riot} other {件の Quiet Riot}}"
@@ -353,21 +353,21 @@
     "rioters": "参加者"
   },
   "CampaignProgress": {
-    "title": "💰 キャンペーン",
+    "title": "⚡ アクションプロジェクト",
     "funded": "目標達成",
-    "disbursed": "配分済み",
+    "disbursed": "完了",
     "backers": "{count, plural, one {人の支援者} other {人の支援者}}"
   },
   "WalletBalance": {
     "title": "あなたの残高",
     "loaded": "チャージ済み",
-    "contributed": "支援済み",
-    "campaigns": "{count, plural, one {件のキャンペーン} other {件のキャンペーン}}"
+    "contributed": "使用済み",
+    "campaigns": "{count, plural, one {件のプロジェクト} other {件のプロジェクト}}"
   },
   "Transactions": {
     "title": "最近の取引",
     "topUp": "チャージ",
-    "contribution": "支援",
+    "contribution": "プロジェクト支払い",
     "refund": "返金",
     "justNow": "たった今",
     "minutesAgo": "{count}分前",
@@ -409,7 +409,7 @@
     "all": "すべて",
     "active": "進行中",
     "funded": "目標達成",
-    "disbursed": "配分済み"
+    "disbursed": "完了"
   },
   "TimeSkill": {
     "timeQuestion": "どれくらい時間がありますか？",
@@ -436,24 +436,24 @@
     "networkError": "ネットワークエラーです。もう一度お試しください。",
     "customAmount": "カスタム金額（£）",
     "topUp": "チャージ",
-    "simulated": "テスト用のシミュレーションチャージです。Stripe による実際の決済は近日公開予定。"
+    "simulated": "テスト用のシミュレーションチャージです。実際の決済は近日公開予定。"
   },
   "Contribute": {
     "insufficientFunds": "残高不足です。まずウォレットにチャージしてください。",
-    "minContribution": "最低支援額は 10p です",
-    "contribute": "支援する",
+    "minContribution": "最低支払額は 10p です",
+    "contribute": "このプロジェクトを支援する",
     "yourBalance": "あなたの残高：",
     "networkError": "ネットワークエラーです。もう一度お試しください。",
     "invalidAmount": "有効な金額を入力してください",
     "customAmount": "カスタム金額（£）",
-    "give": "支援",
-    "success": "{campaign} に {amount} を支援しました！",
+    "give": "支払う",
+    "success": "{campaign} に {amount} を支払いました！",
     "remainingBalance": "残りの残高：{balance}",
     "topUpPrompt": "ウォレットにチャージ",
-    "toKeepSupporting": "してキャンペーンの支援を続けましょう。",
+    "toKeepSupporting": "してアクションプロジェクトの支援を続けましょう。",
     "walletEmpty": "ウォレットが空です。",
     "topUp": "チャージ",
-    "toContribute": "して支援しましょう。"
+    "toContribute": "してプロジェクトを支援しましょう。"
   },
   "Claim": {
     "success": "ありがとうございます！{name} の役割への関心を承りました。追ってご連絡いたします。",

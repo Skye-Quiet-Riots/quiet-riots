@@ -84,27 +84,27 @@
     "gatherEvidenceDesc": "Dokumentoi mitä tapahtuu organisaatiossa {orgName}."
   },
   "Campaigns": {
-    "title": "Kampanjat",
-    "subtitle": "{count} {count, plural, one {kampanja} other {kampanjaa}} kerää varoja muutokseen.",
-    "noResults": "Kampanjoita ei löytynyt. Kokeile eri suodatinta."
+    "title": "Toimintaprojektit",
+    "subtitle": "{count} {count, plural, one {projekti} other {projektia}} tilaa palveluja yhteistoimintaan.",
+    "noResults": "Toimintaprojekteja ei löytynyt. Kokeile eri suodatinta."
   },
   "CampaignDetail": {
-    "breadcrumb": "Kampanjat",
-    "fullyFunded": "Täysin rahoitettu",
-    "disbursed": "Varat maksettu",
+    "breadcrumb": "Toimintaprojektit",
+    "fullyFunded": "Tavoite saavutettu",
+    "disbursed": "Valmis",
     "cancelled": "Peruttu",
     "active": "Aktiivinen",
     "target": "tavoite",
-    "raised": "kerätty",
+    "raised": "sitoutunut",
     "backers": "{count, plural, one {tukija} other {tukijaa}}",
-    "platformFee": "alustamaksu",
-    "wantToContribute": "Haluatko osallistua?",
-    "topUpFirst": "Lataa lompakkoasi ensin aloittaaksesi osallistumisen.",
-    "createAccountPrompt": "Luo tili ja lataa lompakkosi tukeaksesi tätä kampanjaa.",
+    "platformFee": "palvelumaksu",
+    "wantToContribute": "Haluatko tukea tätä projektia?",
+    "topUpFirst": "Lataa lompakkoasi ensin aloittaaksesi.",
+    "createAccountPrompt": "Luo tili ja lataa lompakkosi tilataksesi tämän palvelun.",
     "goToWallet": "Siirry lompakkoon",
     "createAccount": "Luo tili",
-    "completedMessage": "Tämä kampanja on {status}. Kiitos kaikille {count} tukijalle!",
-    "recipient": "Vastaanottaja"
+    "completedMessage": "Tämä projekti on {status}. Kiitos kaikille {count} tukijalle!",
+    "recipient": "Palveluntarjoaja"
   },
   "Assistants": {
     "title": "Assistentit",
@@ -126,10 +126,10 @@
   },
   "Wallet": {
     "title": "Lompakkosi",
-    "createPromptTitle": "Aloita asioiden tukeminen",
-    "createPromptDesc": "Luo ilmainen tili ladataksesi varoja ja osallistuaksesi kampanjoihin jotka ovat sinulle tärkeitä.",
+    "createPromptTitle": "Edistä yhteistoimintaa",
+    "createPromptDesc": "Luo ilmainen tili ladataksesi lompakkoasi ja tilataksesi palveluja toimintaprojekteihin.",
     "createAccount": "Luo tili",
-    "activeCampaigns": "Aktiiviset kampanjat",
+    "activeCampaigns": "Aktiiviset projektit",
     "viewAll": "Näytä kaikki"
   },
   "Profile": {
@@ -320,8 +320,8 @@
     "curated": "Kuratoitu",
     "community": "Yhteisö",
     "aiPick": "AI-valinta",
-    "funded": "Rahoitettu",
-    "disbursed": "Maksettu",
+    "funded": "Tavoite saavutettu",
+    "disbursed": "Valmis",
     "backers": "{count, plural, one {tukija} other {tukijaa}}",
     "aiAndHuman": "AI-agentti & ihmisorganisaattori",
     "riots": "{count, plural, one {riot} other {riotia}}"
@@ -353,21 +353,21 @@
     "rioters": "osallistujaa"
   },
   "CampaignProgress": {
-    "title": "💰 Kampanjat",
-    "funded": "Rahoitettu",
-    "disbursed": "Maksettu",
+    "title": "⚡ Toimintaprojektit",
+    "funded": "Tavoite saavutettu",
+    "disbursed": "Valmis",
     "backers": "{count, plural, one {tukija} other {tukijaa}}"
   },
   "WalletBalance": {
     "title": "Saldosi",
     "loaded": "ladattu",
-    "contributed": "osallistuttu",
-    "campaigns": "{count, plural, one {kampanja} other {kampanjaa}}"
+    "contributed": "käytetty",
+    "campaigns": "{count, plural, one {projekti} other {projektia}}"
   },
   "Transactions": {
     "title": "Viimeaikaiset tapahtumat",
     "topUp": "Lataus",
-    "contribution": "Osallistuminen",
+    "contribution": "Projektimaksu",
     "refund": "Hyvitys",
     "justNow": "juuri nyt",
     "minutesAgo": "{count} min sitten",
@@ -408,8 +408,8 @@
   "Filter": {
     "all": "Kaikki",
     "active": "Aktiiviset",
-    "funded": "Rahoitetut",
-    "disbursed": "Maksetut"
+    "funded": "Tavoite saavutettu",
+    "disbursed": "Valmistuneet"
   },
   "TimeSkill": {
     "timeQuestion": "Kuinka paljon aikaa sinulla on?",
@@ -436,24 +436,24 @@
     "networkError": "Verkkovirhe. Yritä uudelleen.",
     "customAmount": "Vapaavalintainen summa (£)",
     "topUp": "Lataa",
-    "simulated": "Simuloitu lataus testausta varten. Oikeat maksut Stripen kautta tulossa pian."
+    "simulated": "Simuloitu lataus testausta varten. Oikeat maksut tulossa pian."
   },
   "Contribute": {
     "insufficientFunds": "Riittämätön saldo. Lataa lompakkoasi ensin.",
-    "minContribution": "Vähimmäisosallistuminen on 10p",
-    "contribute": "Osallistu",
+    "minContribution": "Vähimmäismaksu on 10p",
+    "contribute": "Tue tätä projektia",
     "yourBalance": "Saldosi: ",
     "networkError": "Verkkovirhe. Yritä uudelleen.",
     "invalidAmount": "Syötä kelvollinen summa",
     "customAmount": "Vapaavalintainen summa (£)",
-    "give": "Anna",
-    "success": "Osallistuit summalla {amount} kampanjaan {campaign}!",
+    "give": "Maksa",
+    "success": "Maksoit {amount} projektiin {campaign}!",
     "remainingBalance": "Jäljellä oleva saldosi: {balance}",
     "topUpPrompt": "Lataa lompakkoasi",
-    "toKeepSupporting": "jatkaaksesi kampanjoiden tukemista.",
+    "toKeepSupporting": "jatkaaksesi toimintaprojektien tukemista.",
     "walletEmpty": "Lompakkosi on tyhjä.",
     "topUp": "Lataa",
-    "toContribute": "osallistuaksesi."
+    "toContribute": "tukeaksesi projekteja."
   },
   "Claim": {
     "success": "Kiitos! Olemme merkinneet kiinnostuksesi rooliin {name}. Olemme yhteydessä.",
