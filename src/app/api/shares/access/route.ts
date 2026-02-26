@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   if (!userId) return apiError('Not logged in', 401);
 
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
-  const { allowed } = rateLimit(`share-access:${ip}`, 5, 60000); // 5 attempts per minute
+  const { allowed } = rateLimit(`share-access:${ip}`, { maxRequests: 5, windowMs: 60000 }); // 5 attempts per minute
   if (!allowed) return apiError('Too many attempts', 429);
 
   const body = await request.json();
