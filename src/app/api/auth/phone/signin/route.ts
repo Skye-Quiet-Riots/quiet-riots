@@ -77,8 +77,8 @@ export async function POST(request: NextRequest) {
     args: [user.id],
   });
 
-  // Set session
-  await setSession(user.id);
+  // Set session with version tracking
+  await setSession(user.id, user.session_version);
 
   // SIM swap protection: send email notification about phone-based signin
   if (!isNewUser && user.email && !user.email.startsWith('wa-')) {

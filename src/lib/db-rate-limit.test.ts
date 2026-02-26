@@ -36,7 +36,7 @@ describe('db-rate-limit', () => {
       expect(result.retryAfterMs).toBeGreaterThan(0);
     });
 
-    it('tracks different phones independently', async () => {
+    it('tracks different identifiers independently', async () => {
       await checkDbRateLimit('+447700900001', 'send_code', 1, 60_000);
       const result = await checkDbRateLimit('+447700900002', 'send_code', 1, 60_000);
       expect(result.allowed).toBe(true);
@@ -48,13 +48,27 @@ describe('db-rate-limit', () => {
       expect(result.allowed).toBe(true);
     });
 
+    it('works with email identifiers', async () => {
+      await checkDbRateLimit('user@example.com', 'password_login', 3, 60_000);
+      await checkDbRateLimit('user@example.com', 'password_login', 3, 60_000);
+      await checkDbRateLimit('user@example.com', 'password_login', 3, 60_000);
+      const result = await checkDbRateLimit('user@example.com', 'password_login', 3, 60_000);
+      expect(result.allowed).toBe(false);
+    });
+
+    it('works with IP address identifiers', async () => {
+      const result = await checkDbRateLimit('192.168.1.1', 'signup', 5, 300_000);
+      expect(result.allowed).toBe(true);
+      expect(result.count).toBe(1);
+    });
+
     it('resets after window expires', async () => {
       const { getDb } = await import('@/lib/db');
       const db = getDb();
 
       // Create a rate limit entry with an old window_start
       await db.execute({
-        sql: `INSERT INTO phone_rate_limits (id, phone, action, count, window_start)
+        sql: `INSERT INTO rate_limits (id, identifier, action, count, window_start)
               VALUES ('test-id', ?, ?, 3, ?)`,
         args: ['+447700900001', 'send_code', new Date(Date.now() - 120_000).toISOString()],
       });
@@ -79,7 +93,7 @@ describe('db-rate-limit', () => {
 
       // Create a lock that already expired
       await db.execute({
-        sql: `INSERT INTO phone_rate_limits (id, phone, action, count, window_start, locked_until)
+        sql: `INSERT INTO rate_limits (id, identifier, action, count, window_start, locked_until)
               VALUES ('lock-id', ?, ?, 0, ?, ?)`,
         args: [
           '+447700900001',

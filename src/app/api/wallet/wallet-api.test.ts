@@ -79,7 +79,7 @@ describe('GET /api/wallet — invalid session', () => {
     const response = await GET();
     const body = await response.json();
     expect(response.status).toBe(401);
-    expect(body.error).toContain('User not found');
+    expect(body.error).toContain('Not logged in');
   });
 });
 
@@ -103,7 +103,7 @@ describe('GET /api/wallet/history', () => {
     const response = await getHistory();
     const body = await response.json();
     expect(response.status).toBe(401);
-    expect(body.error).toContain('User not found');
+    expect(body.error).toContain('Not logged in');
   });
 
   it('returns empty for user without wallet', async () => {
@@ -148,7 +148,7 @@ describe('POST /api/wallet/topup', () => {
     const response = await postTopup(request);
     const body = await response.json();
     expect(response.status).toBe(401);
-    expect(body.error).toContain('User not found');
+    expect(body.error).toContain('Not logged in');
   });
 
   it('rejects topup below £1', async () => {
@@ -227,7 +227,7 @@ describe('POST /api/wallet/contribute', () => {
     const response = await postContribute(request);
     const body = await response.json();
     expect(response.status).toBe(401);
-    expect(body.error).toContain('User not found');
+    expect(body.error).toContain('Not logged in');
   });
 
   it('returns 401 when not logged in', async () => {

@@ -140,13 +140,13 @@ describe('GET /api/users/[id]', () => {
     expect(response.status).toBe(403);
   });
 
-  it('returns 404 for missing user when session matches', async () => {
+  it('returns 401 for non-existent user in session', async () => {
     mockLoggedIn('nonexistent');
     const request = new Request('http://localhost:3000/api/users/nonexistent');
     const response = await getUserDetail(request, {
       params: Promise.resolve({ id: 'nonexistent' }),
     });
-    expect(response.status).toBe(404);
+    expect(response.status).toBe(401);
   });
 });
 
@@ -190,7 +190,7 @@ describe('PATCH /api/users/[id]', () => {
     expect(response.status).toBe(403);
   });
 
-  it('returns 404 for missing user when session matches', async () => {
+  it('returns 401 for non-existent user in session', async () => {
     mockLoggedIn('nonexistent');
     const request = new Request('http://localhost:3000/api/users/nonexistent', {
       method: 'PATCH',
@@ -198,6 +198,6 @@ describe('PATCH /api/users/[id]', () => {
       body: JSON.stringify({ name: 'Ghost' }),
     });
     const response = await patchUser(request, { params: Promise.resolve({ id: 'nonexistent' }) });
-    expect(response.status).toBe(404);
+    expect(response.status).toBe(401);
   });
 });

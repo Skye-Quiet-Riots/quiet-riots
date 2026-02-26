@@ -307,7 +307,7 @@ describe('POST /api/users/[id]/met-assistants', () => {
     expect(response.status).toBe(403);
   });
 
-  it('returns 404 for nonexistent user when session matches', async () => {
+  it('returns 401 for nonexistent user in session', async () => {
     mockLoggedIn('nonexistent');
     const request = createTestRequest('/api/users/nonexistent/met-assistants', {
       method: 'POST',
@@ -316,7 +316,7 @@ describe('POST /api/users/[id]/met-assistants', () => {
     const response = await postMetAssistant(request, {
       params: Promise.resolve({ id: 'nonexistent' }),
     });
-    expect(response.status).toBe(404);
+    expect(response.status).toBe(401);
   });
 
   it('returns 400 for invalid category', async () => {

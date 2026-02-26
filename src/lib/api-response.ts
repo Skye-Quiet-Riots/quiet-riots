@@ -14,7 +14,11 @@ export type ErrorCode =
   | 'NOT_FOUND'
   | 'UNAUTHORIZED'
   | 'RATE_LIMITED'
-  | 'INTERNAL_ERROR';
+  | 'INTERNAL_ERROR'
+  | 'INVALID_CREDENTIALS'
+  | 'EMAIL_EXISTS'
+  | 'PASSWORD_BREACHED'
+  | 'NO_PASSWORD';
 
 export function apiOk<T>(data: T, status = 200) {
   return NextResponse.json({ ok: true, data }, { status });
