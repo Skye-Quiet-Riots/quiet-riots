@@ -79,13 +79,11 @@ async function findUser(identifier: string) {
 // Tables with user_id foreign key
 const USER_ID_TABLES = [
   { table: 'user_issues', column: 'user_id', hasUnique: true },
-  { table: 'actions', column: 'submitted_by', hasUnique: false },
   { table: 'feed', column: 'user_id', hasUnique: false },
   { table: 'riot_reels', column: 'submitted_by', hasUnique: false },
   { table: 'reel_votes', column: 'user_id', hasUnique: true },
   { table: 'reel_shown_log', column: 'user_id', hasUnique: false },
-  { table: 'wallets', column: 'user_id', hasUnique: true },
-  { table: 'wallet_transactions', column: 'wallet_id', hasUnique: false }, // Handled separately via wallet
+  // wallets + wallet_transactions handled separately via wallet merge section below
   { table: 'user_assistant_introductions', column: 'user_id', hasUnique: true },
   { table: 'assistant_claims', column: 'user_id', hasUnique: false },
   { table: 'bot_events', column: 'user_id', hasUnique: false },
@@ -104,7 +102,6 @@ const USER_ID_TABLES = [
   { table: 'issue_suggestions', column: 'reviewer_id', hasUnique: false },
   { table: 'messages', column: 'recipient_id', hasUnique: false },
   { table: 'notification_preferences', column: 'user_id', hasUnique: true },
-  { table: 'assistant_activity', column: 'user_id', hasUnique: false },
   { table: 'phone_verification_codes', column: 'user_id', hasUnique: false },
 ];
 
@@ -121,7 +118,13 @@ async function main() {
     console.error(`❌ Target user not found: ${targetIdentifier}`);
     process.exit(1);
   }
-  if (source.id === target.id) {
+  // Coerce libSQL Value objects to plain JS types
+  const sourceId = String(source.id);
+  const targetId = String(target.id);
+  const sourceEmail = String(source.email);
+  const targetEmail_ = String(target.email);
+
+  if (sourceId === targetId) {
     console.error('❌ Source and target are the same user');
     process.exit(1);
   }
@@ -153,9 +156,9 @@ async function main() {
     if (table === 'wallet_transactions') continue; // Handled via wallet merge
     const count = await db.execute({
       sql: `SELECT COUNT(*) as count FROM ${table} WHERE ${column} = ?`,
-      args: [source.id as string],
+      args: [sourceId],
     });
-    const n = (count.rows[0] as unknown as { count: number }).count;
+    const n = Number(count.rows[0].count);
     if (n > 0) {
       console.log(`│   ${table}.${column}: ${n} records`);
       totalRecords += n;
@@ -165,28 +168,30 @@ async function main() {
   // Check wallets
   const sourceWallet = await db.execute({
     sql: 'SELECT * FROM wallets WHERE user_id = ?',
-    args: [source.id as string],
+    args: [sourceId],
   });
   const targetWallet = await db.execute({
     sql: 'SELECT * FROM wallets WHERE user_id = ?',
-    args: [target.id as string],
+    args: [targetId],
   });
 
+  let swBalance = 0,
+    swSpent = 0,
+    swTopup = 0,
+    swId = '';
   if (sourceWallet.rows.length > 0) {
-    const sw = sourceWallet.rows[0] as unknown as {
-      balance_pence: number;
-      total_spent_pence: number;
-      total_topup_pence: number;
-    };
-    console.log(
-      `│   wallets: balance=${sw.balance_pence}p, spent=${sw.total_spent_pence}p, topup=${sw.total_topup_pence}p`,
-    );
+    const swRow = sourceWallet.rows[0];
+    swBalance = Number(swRow.balance_pence);
+    swSpent = Number(swRow.total_spent_pence);
+    swTopup = Number(swRow.total_loaded_pence);
+    swId = String(swRow.id);
+    console.log(`│   wallets: balance=${swBalance}p, spent=${swSpent}p, topup=${swTopup}p`);
 
     const txCount = await db.execute({
       sql: 'SELECT COUNT(*) as count FROM wallet_transactions WHERE wallet_id = ?',
-      args: [sourceWallet.rows[0].id as string],
+      args: [swId],
     });
-    const txN = (txCount.rows[0] as unknown as { count: number }).count;
+    const txN = Number(txCount.rows[0].count);
     if (txN > 0) {
       console.log(`│   wallet_transactions: ${txN} records`);
       totalRecords += txN;
@@ -197,9 +202,9 @@ async function main() {
   console.log('│');
 
   // Determine what email to set on target
-  const targetEmail = (target.email as string).startsWith('wa-') ? source.email : target.email;
-  if (targetEmail !== target.email) {
-    console.log(`│ EMAIL UPGRADE: ${target.email} → ${targetEmail}`);
+  const targetEmail = targetEmail_.startsWith('wa-') ? sourceEmail : targetEmail_;
+  if (targetEmail !== targetEmail_) {
+    console.log(`│ EMAIL UPGRADE: ${targetEmail_} → ${targetEmail}`);
   }
 
   console.log('└─────────────────────────────────────────────────');
@@ -220,46 +225,39 @@ async function main() {
 
     const count = await db.execute({
       sql: `SELECT COUNT(*) as count FROM ${table} WHERE ${column} = ?`,
-      args: [source.id as string],
+      args: [sourceId],
     });
-    const n = (count.rows[0] as unknown as { count: number }).count;
+    const n = Number(count.rows[0].count);
     if (n === 0) continue;
 
     if (hasUnique) {
       // For tables with UNIQUE constraints, try to update, then delete remaining conflicts
       statements.push({
         sql: `UPDATE OR IGNORE ${table} SET ${column} = ? WHERE ${column} = ?`,
-        args: [target.id as string, source.id as string],
+        args: [targetId, sourceId],
       });
       // Clean up any remaining source records (conflicting duplicates)
       statements.push({
         sql: `DELETE FROM ${table} WHERE ${column} = ?`,
-        args: [source.id as string],
+        args: [sourceId],
       });
     } else {
       statements.push({
         sql: `UPDATE ${table} SET ${column} = ? WHERE ${column} = ?`,
-        args: [target.id as string, source.id as string],
+        args: [targetId, sourceId],
       });
     }
   }
 
   // 2. Merge wallets
   if (sourceWallet.rows.length > 0) {
-    const sw = sourceWallet.rows[0] as unknown as {
-      id: string;
-      balance_pence: number;
-      total_spent_pence: number;
-      total_topup_pence: number;
-    };
-
     if (targetWallet.rows.length > 0) {
-      const tw = targetWallet.rows[0] as unknown as { id: string };
+      const twId = String(targetWallet.rows[0].id);
 
       // Move transactions from source wallet to target wallet
       statements.push({
         sql: 'UPDATE wallet_transactions SET wallet_id = ? WHERE wallet_id = ?',
-        args: [tw.id, sw.id],
+        args: [twId, swId],
       });
 
       // Add source balance to target
@@ -267,35 +265,27 @@ async function main() {
         sql: `UPDATE wallets SET
               balance_pence = balance_pence + ?,
               total_spent_pence = total_spent_pence + ?,
-              total_topup_pence = total_topup_pence + ?
+              total_loaded_pence = total_loaded_pence + ?
               WHERE id = ?`,
-        args: [sw.balance_pence, sw.total_spent_pence, sw.total_topup_pence, tw.id],
+        args: [swBalance, swSpent, swTopup, twId],
       });
 
       // Delete source wallet
       statements.push({
         sql: 'DELETE FROM wallets WHERE id = ?',
-        args: [sw.id],
+        args: [swId],
       });
     } else {
       // Target has no wallet — reassign source wallet
       statements.push({
         sql: 'UPDATE wallets SET user_id = ? WHERE id = ?',
-        args: [target.id as string, sw.id],
+        args: [targetId, swId],
       });
     }
   }
 
-  // 3. Update target user email if wa-* upgrade
-  if ((target.email as string).startsWith('wa-') && !(source.email as string).startsWith('wa-')) {
-    statements.push({
-      sql: 'UPDATE users SET email = ? WHERE id = ?',
-      args: [source.email as string, target.id as string],
-    });
-  }
-
-  // 4. Soft-delete source user
-  const mergedEmail = `merged-${source.id}@deleted.quietriots.com`;
+  // 3. Soft-delete source user (must come before email upgrade to free the email)
+  const mergedEmail = `merged-${sourceId}@deleted.quietriots.com`;
   statements.push({
     sql: `UPDATE users SET
           status = 'deleted',
@@ -304,18 +294,26 @@ async function main() {
           phone = NULL,
           phone_verified = 0
           WHERE id = ?`,
-    args: [target.id as string, mergedEmail, source.id as string],
+    args: [targetId, mergedEmail, sourceId],
   });
+
+  // 4. Update target user email if wa-* upgrade (after source email is freed)
+  if (targetEmail_.startsWith('wa-') && !sourceEmail.startsWith('wa-')) {
+    statements.push({
+      sql: 'UPDATE users SET email = ? WHERE id = ?',
+      args: [sourceEmail, targetId],
+    });
+  }
 
   // Execute all in a batch
   try {
     await db.batch(statements.map((s) => ({ sql: s.sql, args: s.args })));
     console.log(`  ✅ Merge complete. ${statements.length} operations executed.`);
-    console.log(`  Source user ${source.id} → soft-deleted, email set to ${mergedEmail}`);
-    console.log(`  Target user ${target.id} received all data.`);
+    console.log(`  Source user ${sourceId} → soft-deleted, email set to ${mergedEmail}`);
+    console.log(`  Target user ${targetId} received all data.`);
 
-    if ((target.email as string).startsWith('wa-') && !(source.email as string).startsWith('wa-')) {
-      console.log(`  Target email upgraded: ${target.email} → ${source.email}`);
+    if (targetEmail_.startsWith('wa-') && !sourceEmail.startsWith('wa-')) {
+      console.log(`  Target email upgraded: ${targetEmail_} → ${sourceEmail}`);
     }
   } catch (err) {
     console.error('  ❌ MERGE FAILED:', err);
