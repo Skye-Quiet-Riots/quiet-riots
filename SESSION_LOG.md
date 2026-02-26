@@ -6,13 +6,12 @@
 
 ## Latest Session
 
-**Session 45** (2026-02-26) — Housekeeping: PR #103 merge, user merge, script fixes
-→ [`session-logs/2026-02-session-45.md`](session-logs/2026-02-session-45.md)
+**Session 46** (2026-02-26) — Phone OTP delivery via WhatsApp + auto-update enhancement
+→ [`session-logs/2026-02-session-46.md`](session-logs/2026-02-session-46.md)
 
 ## Current Priorities
 
-- **SMS provider integration** — Twilio or similar for phone OTP in production (backend ready, needs transport)
-- **Domain verification** — verify `quietriots.com` in Resend dashboard + add DNS records to GoDaddy
+- **E2E test phone OTP** — verify WhatsApp code arrives and sign-in completes on production
 - **Google OAuth setup** — `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` from Google Cloud Console
 - **Facebook OAuth setup** — `AUTH_FACEBOOK_ID` + `AUTH_FACEBOOK_SECRET` from Meta Developer Console
 - **End-to-end testing** — manually test all new auth flows on production
@@ -21,6 +20,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 46  | 2026-02-26    | Phone OTP delivery via WhatsApp + auto-update         | [`session-46`](session-logs/2026-02-session-46.md)                                                             |
 | 45  | 2026-02-26    | Housekeeping: PR #103 merge, user merge, script fixes | [`session-45`](session-logs/2026-02-session-45.md)                                                             |
 | 44  | 2026-02-26    | Comprehensive auth upgrade (12 phases)                | [`session-44`](session-logs/2026-02-session-44.md)                                                             |
 | 43  | 2026-02-26    | Phone auth, admin dashboard, first rioter recognition | [`session-43`](session-logs/2026-02-session-43.md)                                                             |

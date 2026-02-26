@@ -56,10 +56,21 @@
 
 - **Script:** `~/.openclaw/scripts/auto-update.sh` — runs `openclaw update --yes` non-interactively
 - **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.openclaw-update.plist` — daily at 04:00
-- **Behaviour:** Checks network first, skips if npm registry unreachable. Logs current→new version. Auto-restarts gateway on successful update.
+- **Behaviour:** Checks network first, skips if npm registry unreachable. Logs current→new version. Auto-restarts gateway on successful update. After a version change, runs `npm test` and `npm run build` in the project directory and logs pass/fail results.
 - **Log:** `~/.openclaw/logs/auto-update.log`
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-update.plist`
 - **Manual update:** `openclaw update --yes` or `openclaw update wizard` for interactive
+
+## Phone OTP Delivery via WhatsApp
+
+- **Problem:** Vercel serverless functions can't reach the local Mac's OpenClaw gateway to send WhatsApp messages directly
+- **Architecture:** Vercel stores OTP codes in DB with `delivery_message` → local Mac polls every 3s → sends via OpenClaw → marks delivered
+- **Script:** `scripts/deliver-otp-codes.sh` — polls `get_undelivered_codes` bot action, sends via `openclaw message send`, marks via `mark_code_delivered`
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.otp-delivery.plist` (3s interval)
+- **Log:** `~/.openclaw/logs/otp-delivery.log`
+- **Security:** delivery_message NULLed after verification/expiry (defence in depth), atomic marking prevents race conditions, 5-min time-bounded exposure
+- **Dependency:** Requires OpenClaw gateway running + internet connectivity to reach Vercel API
+- **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.otp-delivery.plist`
 
 ## Log Rotation (Daily)
 
@@ -89,7 +100,7 @@
 | `openclaw-workspace/` | AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md | No         |
 | `openclaw-skills/`    | SKILL.md (bot conversation flows)                  | No         |
 | `openclaw-scripts/`   | watchdog, auto-update, log-rotate, backup scripts  | No         |
-| `launchagents/`       | All 6 .plist files                                 | No         |
+| `launchagents/`       | All 7 .plist files                                 | No         |
 | `secrets/`            | .env.local (Turso credentials, API keys)           | Yes        |
 | `claude-settings/`    | Claude Code settings.json                          | No         |
 
@@ -101,11 +112,12 @@
 
 ## All LaunchAgents Summary
 
-| Agent            | Label                               | Schedule           | Purpose                           |
-| ---------------- | ----------------------------------- | ------------------ | --------------------------------- |
-| Sleep prevention | `com.quietriots.nosleep`            | Always (KeepAlive) | `caffeinate -s`                   |
-| OpenClaw gateway | `ai.openclaw.gateway`               | Always (KeepAlive) | WhatsApp bot                      |
-| Watchdog         | `com.quietriots.openclaw-watchdog`  | Every 120s         | Restart gateway after WiFi drops  |
-| Backup           | `com.quietriots.backup`             | Daily 03:00        | Encrypted backup to GitHub        |
-| Log rotation     | `com.quietriots.openclaw-logrotate` | Daily 03:30        | Rotate logs over 10MB             |
-| Auto-update      | `com.quietriots.openclaw-update`    | Daily 04:00        | Update OpenClaw + restart gateway |
+| Agent            | Label                               | Schedule           | Purpose                                    |
+| ---------------- | ----------------------------------- | ------------------ | ------------------------------------------ |
+| Sleep prevention | `com.quietriots.nosleep`            | Always (KeepAlive) | `caffeinate -s`                            |
+| OpenClaw gateway | `ai.openclaw.gateway`               | Always (KeepAlive) | WhatsApp bot                               |
+| Watchdog         | `com.quietriots.openclaw-watchdog`  | Every 120s         | Restart gateway after WiFi drops           |
+| OTP delivery     | `com.quietriots.otp-delivery`       | Every 3s           | Deliver phone OTP codes via WhatsApp       |
+| Backup           | `com.quietriots.backup`             | Daily 03:00        | Encrypted backup to GitHub                 |
+| Log rotation     | `com.quietriots.openclaw-logrotate` | Daily 03:30        | Rotate logs over 10MB                      |
+| Auto-update      | `com.quietriots.openclaw-update`    | Daily 04:00        | Update OpenClaw + run tests + restart      |

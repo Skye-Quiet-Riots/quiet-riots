@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { createVerificationCode, isCooldownPassed } from '@/lib/queries/phone-verification';
 import { checkDbRateLimit, setDbRateLimitLock } from '@/lib/db-rate-limit';
+import { getDb } from '@/lib/db';
 
 const sendCodeSchema = z.object({
   phone: z
@@ -14,7 +15,9 @@ const sendCodeSchema = z.object({
 
 /**
  * POST /api/auth/phone/send-code
- * Send a verification code to a phone number via WhatsApp.
+ * Generate a verification code for a phone number.
+ * The code is stored in the DB with a delivery_message for WhatsApp delivery.
+ * A local polling script picks up undelivered codes and sends them via OpenClaw.
  *
  * Anti-enumeration: returns the same response regardless of whether
  * the phone number is known or not.
@@ -52,37 +55,21 @@ export async function POST(request: NextRequest) {
     return apiError('Please wait before requesting another code.', 429, 'RATE_LIMITED');
   }
 
-  // Create verification code
-  const { code } = await createVerificationCode(phone, parsed.data.userId);
+  // Create verification code — returns plaintext code + record id
+  const { id, code } = await createVerificationCode(phone, parsed.data.userId);
 
-  // Send code via WhatsApp bot API
-  // In development/test, just log it. In production, call the bot API.
-  if (process.env.NODE_ENV === 'production') {
-    try {
-      const botUrl = 'https://www.quietriots.com/api/bot';
-      const botKey = process.env.BOT_API_KEY;
-      if (botKey) {
-        await fetch(botUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${botKey}`,
-          },
-          body: JSON.stringify({
-            action: 'send_whatsapp_message',
-            params: {
-              phone,
-              message: `Your Quiet Riots verification code is: ${code}\n\nThis code expires in 5 minutes. Do not share it with anyone.`,
-            },
-          }),
-        });
-      }
-    } catch {
-      // Silently fail — we still return success (anti-enumeration)
-      console.error('Failed to send WhatsApp verification code');
-    }
-  } else {
-    // In dev/test, log the code for debugging
+  // Store delivery message for WhatsApp polling delivery.
+  // The local Mac polling script picks up records with delivery_message != NULL
+  // and delivered_at IS NULL, sends via OpenClaw, then marks as delivered.
+  const deliveryMessage = `Your Quiet Riots verification code is: ${code}\n\nThis code expires in 5 minutes. Do not share it with anyone.`;
+  const db = getDb();
+  await db.execute({
+    sql: 'UPDATE phone_verification_codes SET delivery_message = ? WHERE id = ?',
+    args: [deliveryMessage, id],
+  });
+
+  // In dev/test, also log the code for debugging (delivery script won't be running)
+  if (process.env.NODE_ENV !== 'production') {
     console.log(`[DEV] Verification code for ${phone}: ${code}`);
   }
 
