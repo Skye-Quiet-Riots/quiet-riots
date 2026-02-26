@@ -2,10 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { formatCurrency } from '@/lib/format';
 import { CategoryBadge } from '@/components/data/category-badge';
-import type { Campaign, Category } from '@/types';
+import type { ActionInitiative, Category } from '@/types';
 
-interface CampaignCardProps {
-  campaign: Campaign;
+interface ActionInitiativeCardProps {
+  actionInitiative: ActionInitiative;
   issueName?: string;
   issueCategory?: Category;
 }
@@ -17,35 +17,42 @@ function getProgressColor(pct: number): string {
 }
 
 function getStatusBadgeClassName(status: string): string | null {
-  if (status === 'funded') {
+  if (status === 'goal_reached') {
     return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300';
   }
-  if (status === 'disbursed') {
+  if (status === 'delivered') {
     return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300';
   }
   return null;
 }
 
-export async function CampaignCard({ campaign, issueName, issueCategory }: CampaignCardProps) {
+export async function ActionInitiativeCard({
+  actionInitiative,
+  issueName,
+  issueCategory,
+}: ActionInitiativeCardProps) {
   const t = await getTranslations('Cards');
   const tc = await getTranslations('Categories');
-  const pct = Math.min(100, Math.round((campaign.raised_pence / campaign.target_pence) * 100));
-  const badgeClassName = getStatusBadgeClassName(campaign.status);
+  const pct = Math.min(
+    100,
+    Math.round((actionInitiative.committed_pence / actionInitiative.target_pence) * 100),
+  );
+  const badgeClassName = getStatusBadgeClassName(actionInitiative.status);
   const badgeLabel =
-    campaign.status === 'funded'
+    actionInitiative.status === 'goal_reached'
       ? t('funded')
-      : campaign.status === 'disbursed'
+      : actionInitiative.status === 'delivered'
         ? t('disbursed')
         : null;
 
   return (
     <Link
-      href={`/campaigns/${campaign.id}`}
+      href={`/action-initiatives/${actionInitiative.id}`}
       className="group block rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
     >
       <div className="mb-2 flex items-start justify-between">
         <h3 className="text-sm font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400">
-          {campaign.title}
+          {actionInitiative.title}
         </h3>
         {badgeClassName && badgeLabel && (
           <span
@@ -74,11 +81,12 @@ export async function CampaignCard({ campaign, issueName, issueCategory }: Campa
 
       <div className="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
         <span>
-          {formatCurrency(campaign.raised_pence, campaign.currency_code)} of{' '}
-          {formatCurrency(campaign.target_pence, campaign.currency_code)} ({pct}%)
+          {formatCurrency(actionInitiative.committed_pence, actionInitiative.currency_code)} of{' '}
+          {formatCurrency(actionInitiative.target_pence, actionInitiative.currency_code)} ({pct}%)
         </span>
         <span>
-          {campaign.contributor_count} {t('backers', { count: campaign.contributor_count })}
+          {actionInitiative.supporter_count}{' '}
+          {t('backers', { count: actionInitiative.supporter_count })}
         </span>
       </div>
     </Link>

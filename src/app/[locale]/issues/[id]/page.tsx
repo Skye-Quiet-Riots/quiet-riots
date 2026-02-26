@@ -12,7 +12,7 @@ import {
 } from '@/lib/queries/community';
 import { getSynonymsForIssue } from '@/lib/queries/synonyms';
 import { getReelsForIssue } from '@/lib/queries/reels';
-import { getCampaignsForIssue } from '@/lib/queries/campaigns';
+import { getActionInitiativesForIssue } from '@/lib/queries/action-initiatives';
 import { hasJoinedIssue } from '@/lib/queries/users';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { getEvidenceForIssue } from '@/lib/queries/evidence';
@@ -41,7 +41,7 @@ import { JoinButton } from '@/components/interactive/join-button';
 import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
 import { ReelsSection } from '@/components/interactive/reels-section';
-import { CampaignProgress } from '@/components/data/campaign-progress';
+import { ActionInitiativeProgress } from '@/components/data/action-initiative-progress';
 import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { FirstRioterBadge } from '@/components/data/first-rioter-badge';
@@ -113,7 +113,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const rawSynonyms = await getSynonymsForIssue(issue.id);
   const synonyms = await translateSynonyms(rawSynonyms, locale);
   const reels = await getReelsForIssue(issue.id);
-  const campaigns = await getCampaignsForIssue(issue.id);
+  const actionInitiatives = await getActionInitiativesForIssue(issue.id);
   const evidence = await getEvidenceForIssue(issue.id);
   const assistant = await getAssistantByCategory(toAssistantCategory(issue.category));
 
@@ -228,10 +228,10 @@ export default async function IssueDetailPage({ params }: Props) {
         <ActionsSection issueId={issue.id} initialActions={actions} />
       </section>
 
-      {/* Campaigns */}
-      {campaigns.length > 0 && (
+      {/* Action Initiatives */}
+      {actionInitiatives.length > 0 && (
         <section className="mb-8">
-          <CampaignProgress campaigns={campaigns} />
+          <ActionInitiativeProgress actionInitiatives={actionInitiatives} />
         </section>
       )}
 

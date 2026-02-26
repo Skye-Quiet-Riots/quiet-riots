@@ -2,25 +2,25 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import type { CampaignStatus } from '@/types';
+import type { ActionInitiativeStatus } from '@/types';
 
 const STATUS_KEYS: {
-  value: CampaignStatus | null;
+  value: ActionInitiativeStatus | null;
   key: 'all' | 'active' | 'funded' | 'disbursed';
 }[] = [
   { value: null, key: 'all' },
   { value: 'active', key: 'active' },
-  { value: 'funded', key: 'funded' },
-  { value: 'disbursed', key: 'disbursed' },
+  { value: 'goal_reached', key: 'funded' },
+  { value: 'delivered', key: 'disbursed' },
 ];
 
 export function StatusFilter() {
   const t = useTranslations('Filter');
   const router = useRouter();
   const searchParams = useSearchParams();
-  const active = searchParams.get('status') as CampaignStatus | null;
+  const active = searchParams.get('status') as ActionInitiativeStatus | null;
 
-  function handleClick(status: CampaignStatus | null) {
+  function handleClick(status: ActionInitiativeStatus | null) {
     const params = new URLSearchParams(searchParams.toString());
     if (status) {
       params.set('status', status);

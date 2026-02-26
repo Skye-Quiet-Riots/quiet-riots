@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { CategoryBadge } from './category-badge';
-import { CampaignProgress } from './campaign-progress';
+import { ActionInitiativeProgress } from './action-initiative-progress';
 import { CountryList } from './country-list';
 import { HealthMeter } from './health-meter';
 import { PivotTable } from './pivot-table';
@@ -13,7 +13,7 @@ import { TransactionList } from './transaction-list';
 import { AssistantBanner } from './assistant-banner';
 import { AssistantDetailBanner } from './assistant-detail-banner';
 import { AssistantOverviewBanner } from './assistant-overview-banner';
-import type { Campaign, WalletTransaction, CategoryAssistant } from '@/types';
+import type { ActionInitiative, WalletTransaction, CategoryAssistant } from '@/types';
 import type { AssistantWithStats } from '@/lib/queries/assistants';
 
 // Mock next/link
@@ -294,35 +294,35 @@ describe('TrendingIndicator', () => {
   });
 });
 
-const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
-  id: 'camp-1',
+const makeActionInitiative = (overrides: Partial<ActionInitiative> = {}): ActionInitiative => ({
+  id: 'ai-1',
   issue_id: 'issue-1',
   org_id: null,
-  title: 'Test Campaign',
+  title: 'Test Action Initiative',
   description: '',
   target_pence: 10000,
-  raised_pence: 3100,
-  contributor_count: 42,
+  committed_pence: 3100,
+  supporter_count: 42,
   recipient: null,
   recipient_url: null,
   status: 'active',
-  platform_fee_pct: 15,
-  funded_at: null,
-  disbursed_at: null,
+  service_fee_pct: 15,
+  goal_reached_at: null,
+  delivered_at: null,
   created_at: '2026-01-01T00:00:00.000Z',
   ...overrides,
 });
 
-describe('CampaignProgress', () => {
-  it('renders nothing when no campaigns', async () => {
-    const el = await CampaignProgress({ campaigns: [] });
+describe('ActionInitiativeProgress', () => {
+  it('renders nothing when no action initiatives', async () => {
+    const el = await ActionInitiativeProgress({ actionInitiatives: [] });
     expect(el).toBeNull();
   });
 
-  it('renders campaign title and progress', async () => {
-    const el = await CampaignProgress({ campaigns: [makeCampaign()] });
+  it('renders action initiative title and progress', async () => {
+    const el = await ActionInitiativeProgress({ actionInitiatives: [makeActionInitiative()] });
     render(el);
-    expect(screen.getByText('Test Campaign')).toBeDefined();
+    expect(screen.getByText('Test Action Initiative')).toBeDefined();
     expect(screen.getByText(/£31 of £100/)).toBeDefined();
     expect(screen.getByText(/31%/)).toBeDefined();
     // ICU plural not parsed by mock — check count and raw plural string separately
@@ -330,15 +330,17 @@ describe('CampaignProgress', () => {
     expect(screen.getByText(/supporter/)).toBeDefined();
   });
 
-  it('shows funded badge', async () => {
-    const el = await CampaignProgress({ campaigns: [makeCampaign({ status: 'funded' })] });
+  it('shows goal_reached badge', async () => {
+    const el = await ActionInitiativeProgress({
+      actionInitiatives: [makeActionInitiative({ status: 'goal_reached' })],
+    });
     render(el);
     expect(screen.getByText('Goal Reached')).toBeDefined();
   });
 
-  it('shows backer text for single contributor', async () => {
-    const el = await CampaignProgress({
-      campaigns: [makeCampaign({ contributor_count: 1 })],
+  it('shows backer text for single supporter', async () => {
+    const el = await ActionInitiativeProgress({
+      actionInitiatives: [makeActionInitiative({ supporter_count: 1 })],
     });
     render(el);
     // The mock doesn't parse ICU plurals, so the rendered text includes the raw ICU string
@@ -346,8 +348,8 @@ describe('CampaignProgress', () => {
   });
 
   it('formats pence amounts correctly', async () => {
-    const el = await CampaignProgress({
-      campaigns: [makeCampaign({ raised_pence: 50, target_pence: 500 })],
+    const el = await ActionInitiativeProgress({
+      actionInitiatives: [makeActionInitiative({ committed_pence: 50, target_pence: 500 })],
     });
     render(el);
     expect(screen.getByText(/£0\.50.*£5/)).toBeDefined();
@@ -388,7 +390,7 @@ const makeTx = (overrides: Partial<WalletTransaction> = {}): WalletTransaction =
   wallet_id: 'wallet-1',
   type: 'topup',
   amount_pence: 500,
-  campaign_id: null,
+  action_initiative_id: null,
   issue_id: null,
   stripe_payment_id: null,
   description: 'Top-up via card',
@@ -409,7 +411,7 @@ describe('TransactionList', () => {
         makeTx({ type: 'topup', amount_pence: 500, description: 'Top-up via card' }),
         makeTx({
           id: 'tx-2',
-          type: 'contribute',
+          type: 'payment',
           amount_pence: 100,
           description: 'Avanti Legal Review',
         }),

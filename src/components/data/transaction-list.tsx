@@ -15,7 +15,7 @@ function getTypeDisplay(
   switch (type) {
     case 'topup':
       return { emoji: '💰', label: t('topUp'), colorClass: 'text-green-600 dark:text-green-400' };
-    case 'contribute':
+    case 'payment':
       return {
         emoji: '🎯',
         label: t('contribution'),
@@ -73,7 +73,7 @@ export async function TransactionList({ transactions }: TransactionListProps) {
       <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
         {transactions.map((tx) => {
           const display = getTypeDisplay(tx.type, t as (key: TypeDisplayKey) => string);
-          const sign = tx.type === 'contribute' ? '-' : '+';
+          const sign = tx.type === 'payment' ? '-' : '+';
 
           return (
             <div key={tx.id} className="flex items-center justify-between px-5 py-3">

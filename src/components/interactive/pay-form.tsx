@@ -7,9 +7,9 @@ import { formatCurrency } from '@/lib/format';
 import { trackEvent } from '@/lib/analytics';
 import { AuthGate } from './auth-gate';
 
-interface ContributeFormProps {
-  campaignId: string;
-  campaignTitle: string;
+interface PayFormProps {
+  actionInitiativeId: string;
+  actionInitiativeTitle: string;
   userBalance: number;
   currency?: string;
 }
@@ -20,19 +20,19 @@ const PRESET_AMOUNTS = [
   { label: '£2', pence: 200 },
 ];
 
-export function ContributeForm({
-  campaignId,
-  campaignTitle,
+export function PayForm({
+  actionInitiativeId,
+  actionInitiativeTitle,
   userBalance,
   currency = 'GBP',
-}: ContributeFormProps) {
+}: PayFormProps) {
   const t = useTranslations('Contribute');
   const [customAmount, setCustomAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState<{ amount: number; newBalance: number } | null>(null);
 
-  async function handleContribute(amountPence: number) {
+  async function handlePay(amountPence: number) {
     if (amountPence > userBalance) {
       setError(t('insufficientFunds'));
       return;
@@ -46,10 +46,13 @@ export function ContributeForm({
     setError('');
 
     try {
-      const res = await fetch('/api/wallet/contribute', {
+      const res = await fetch('/api/wallet/pay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ campaign_id: campaignId, amount_pence: amountPence }),
+        body: JSON.stringify({
+          action_initiative_id: actionInitiativeId,
+          amount_pence: amountPence,
+        }),
       });
 
       if (!res.ok) {
@@ -63,7 +66,10 @@ export function ContributeForm({
         amount: amountPence,
         newBalance: data.data.wallet_balance_pence,
       });
-      trackEvent('campaign_contributed', { campaignId, amountPence });
+      trackEvent('campaign_contributed', {
+        campaignId: actionInitiativeId,
+        amountPence,
+      });
     } catch {
       setError(t('networkError'));
     } finally {
@@ -78,7 +84,7 @@ export function ContributeForm({
       setError(t('invalidAmount'));
       return;
     }
-    handleContribute(Math.round(pounds * 100));
+    handlePay(Math.round(pounds * 100));
   }
 
   if (success) {
@@ -87,7 +93,7 @@ export function ContributeForm({
         <p className="mb-2 text-sm font-semibold text-green-700 dark:text-green-300">
           {t('success', {
             amount: formatCurrency(success.amount, currency),
-            campaign: campaignTitle,
+            campaign: actionInitiativeTitle,
           })}
         </p>
         <p className="text-sm text-green-600 dark:text-green-400">
@@ -125,7 +131,7 @@ export function ContributeForm({
           {PRESET_AMOUNTS.map((amt) => (
             <button
               key={amt.pence}
-              onClick={() => handleContribute(amt.pence)}
+              onClick={() => handlePay(amt.pence)}
               disabled={loading || amt.pence > userBalance}
               className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-semibold transition-colors hover:border-zinc-400 hover:bg-zinc-100 disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-500 dark:hover:bg-zinc-700"
             >

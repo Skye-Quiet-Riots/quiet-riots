@@ -2,21 +2,21 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getSession } from '@/lib/session';
-import { getCampaignById } from '@/lib/queries/campaigns';
+import { getActionInitiativeById } from '@/lib/queries/action-initiatives';
 import { getIssueById } from '@/lib/queries/issues';
-import { translateEntity, translateCampaigns } from '@/lib/queries/translate';
+import { translateEntity, translateActionInitiatives } from '@/lib/queries/translate';
 import { getWalletByUserId } from '@/lib/queries/wallet';
 import { formatCurrency } from '@/lib/format';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
 import { StatBadge } from '@/components/data/stat-badge';
-import { ContributeForm } from '@/components/interactive/contribute-form';
+import { PayForm } from '@/components/interactive/pay-form';
 
 interface Props {
   params: Promise<{ locale: string; id: string }>;
 }
 
-export default async function CampaignDetailPage({ params }: Props) {
+export default async function ActionInitiativeDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
   const [t, tc] = await Promise.all([
@@ -24,27 +24,30 @@ export default async function CampaignDetailPage({ params }: Props) {
     getTranslations('Categories'),
   ]);
 
-  const rawCampaign = await getCampaignById(id);
-  if (!rawCampaign) notFound();
+  const rawActionInitiative = await getActionInitiativeById(id);
+  if (!rawActionInitiative) notFound();
 
-  const [[campaign], rawIssue, userId] = await Promise.all([
-    translateCampaigns([rawCampaign], locale),
-    getIssueById(rawCampaign.issue_id),
+  const [[actionInitiative], rawIssue, userId] = await Promise.all([
+    translateActionInitiatives([rawActionInitiative], locale),
+    getIssueById(rawActionInitiative.issue_id),
     getSession(),
   ]);
   const issue = rawIssue ? await translateEntity(rawIssue, 'issue', locale) : null;
 
   const wallet = userId ? await getWalletByUserId(userId) : null;
-  const pct = Math.min(100, Math.round((campaign.raised_pence / campaign.target_pence) * 100));
+  const pct = Math.min(
+    100,
+    Math.round((actionInitiative.committed_pence / actionInitiative.target_pence) * 100),
+  );
 
   function getStatusDisplay(status: string): { label: string; className: string } {
     switch (status) {
-      case 'funded':
+      case 'goal_reached':
         return {
           label: t('fullyFunded'),
           className: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
         };
-      case 'disbursed':
+      case 'delivered':
         return {
           label: t('disbursed'),
           className: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
@@ -62,13 +65,16 @@ export default async function CampaignDetailPage({ params }: Props) {
     }
   }
 
-  const statusDisplay = getStatusDisplay(campaign.status);
+  const statusDisplay = getStatusDisplay(actionInitiative.status);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <PageHeader
-        title={campaign.title}
-        breadcrumbs={[{ label: t('breadcrumb'), href: '/campaigns' }, { label: campaign.title }]}
+        title={actionInitiative.title}
+        breadcrumbs={[
+          { label: t('breadcrumb'), href: '/action-initiatives' },
+          { label: actionInitiative.title },
+        ]}
       />
 
       {/* Issue link */}
@@ -94,8 +100,8 @@ export default async function CampaignDetailPage({ params }: Props) {
       </div>
 
       {/* Description */}
-      {campaign.description && (
-        <p className="mb-6 text-zinc-600 dark:text-zinc-400">{campaign.description}</p>
+      {actionInitiative.description && (
+        <p className="mb-6 text-zinc-600 dark:text-zinc-400">{actionInitiative.description}</p>
       )}
 
       {/* Progress bar */}
@@ -106,34 +112,35 @@ export default async function CampaignDetailPage({ params }: Props) {
         />
       </div>
       <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-        {formatCurrency(campaign.raised_pence, campaign.currency_code)} committed of{' '}
-        {formatCurrency(campaign.target_pence, campaign.currency_code)} target ({pct}%)
+        {formatCurrency(actionInitiative.committed_pence, actionInitiative.currency_code)} committed
+        of {formatCurrency(actionInitiative.target_pence, actionInitiative.currency_code)} target (
+        {pct}%)
       </p>
 
       {/* Stats */}
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatBadge
-          value={formatCurrency(campaign.target_pence, campaign.currency_code)}
+          value={formatCurrency(actionInitiative.target_pence, actionInitiative.currency_code)}
           label={t('target')}
         />
         <StatBadge
-          value={formatCurrency(campaign.raised_pence, campaign.currency_code)}
+          value={formatCurrency(actionInitiative.committed_pence, actionInitiative.currency_code)}
           label={t('raised')}
         />
         <StatBadge
-          value={campaign.contributor_count}
-          label={t('backers', { count: campaign.contributor_count })}
+          value={actionInitiative.supporter_count}
+          label={t('backers', { count: actionInitiative.supporter_count })}
         />
-        <StatBadge value={`${campaign.platform_fee_pct}%`} label={t('platformFee')} />
+        <StatBadge value={`${actionInitiative.service_fee_pct}%`} label={t('platformFee')} />
       </div>
 
-      {/* Contribute form or status message */}
-      {campaign.status === 'active' ? (
+      {/* Pay form or status message */}
+      {actionInitiative.status === 'active' ? (
         wallet ? (
           <div className="mb-8">
-            <ContributeForm
-              campaignId={campaign.id}
-              campaignTitle={campaign.title}
+            <PayForm
+              actionInitiativeId={actionInitiative.id}
+              actionInitiativeTitle={actionInitiative.title}
               userBalance={wallet.balance_pence}
             />
           </div>
@@ -155,30 +162,30 @@ export default async function CampaignDetailPage({ params }: Props) {
         <div className="mb-8 rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center dark:border-zinc-700 dark:bg-zinc-800/50">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             {t('completedMessage', {
-              status: campaign.status,
-              count: campaign.contributor_count,
+              status: actionInitiative.status,
+              count: actionInitiative.supporter_count,
             })}
           </p>
         </div>
       )}
 
       {/* Recipient */}
-      {campaign.recipient && (
+      {actionInitiative.recipient && (
         <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
           <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
             {t('recipient')}
           </h3>
-          {campaign.recipient_url ? (
+          {actionInitiative.recipient_url ? (
             <a
-              href={campaign.recipient_url}
+              href={actionInitiative.recipient_url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
             >
-              {campaign.recipient}
+              {actionInitiative.recipient}
             </a>
           ) : (
-            <p className="text-sm font-medium">{campaign.recipient}</p>
+            <p className="text-sm font-medium">{actionInitiative.recipient}</p>
           )}
         </div>
       )}

@@ -1,9 +1,9 @@
 import { getTranslations } from 'next-intl/server';
-import type { Campaign } from '@/types';
+import type { ActionInitiative } from '@/types';
 import { formatCurrency } from '@/lib/format';
 
-interface CampaignProgressProps {
-  campaigns: Campaign[];
+interface ActionInitiativeProgressProps {
+  actionInitiatives: ActionInitiative[];
 }
 
 function getProgressColor(pct: number): string {
@@ -13,17 +13,19 @@ function getProgressColor(pct: number): string {
 }
 
 function getStatusBadgeClassName(status: string): string | null {
-  if (status === 'funded') {
+  if (status === 'goal_reached') {
     return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300';
   }
-  if (status === 'disbursed') {
+  if (status === 'delivered') {
     return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300';
   }
   return null;
 }
 
-export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
-  if (campaigns.length === 0) return null;
+export async function ActionInitiativeProgress({
+  actionInitiatives,
+}: ActionInitiativeProgressProps) {
+  if (actionInitiatives.length === 0) return null;
 
   const t = await getTranslations('CampaignProgress');
 
@@ -34,23 +36,23 @@ export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
       </h3>
 
       <div className="space-y-4">
-        {campaigns.map((campaign) => {
+        {actionInitiatives.map((ai) => {
           const pct = Math.min(
             100,
-            Math.round((campaign.raised_pence / campaign.target_pence) * 100),
+            Math.round((ai.committed_pence / ai.target_pence) * 100),
           );
-          const badgeClassName = getStatusBadgeClassName(campaign.status);
+          const badgeClassName = getStatusBadgeClassName(ai.status);
           const badgeLabel =
-            campaign.status === 'funded'
+            ai.status === 'goal_reached'
               ? t('funded')
-              : campaign.status === 'disbursed'
+              : ai.status === 'delivered'
                 ? t('disbursed')
                 : null;
 
           return (
-            <div key={campaign.id}>
+            <div key={ai.id}>
               <div className="mb-1 flex items-center justify-between text-sm">
-                <span className="font-medium">{campaign.title}</span>
+                <span className="font-medium">{ai.title}</span>
                 {badgeClassName && badgeLabel && (
                   <span
                     className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badgeClassName}`}
@@ -60,9 +62,9 @@ export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
                 )}
               </div>
 
-              {campaign.description && (
+              {ai.description && (
                 <p className="mb-1.5 text-xs text-zinc-500 dark:text-zinc-400">
-                  {campaign.description}
+                  {ai.description}
                 </p>
               )}
 
@@ -75,12 +77,12 @@ export async function CampaignProgress({ campaigns }: CampaignProgressProps) {
 
               <div className="mt-1 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
                 <span>
-                  {formatCurrency(campaign.raised_pence, campaign.currency_code)} of{' '}
-                  {formatCurrency(campaign.target_pence, campaign.currency_code)} ({pct}
+                  {formatCurrency(ai.committed_pence, ai.currency_code)} of{' '}
+                  {formatCurrency(ai.target_pence, ai.currency_code)} ({pct}
                   %)
                 </span>
                 <span>
-                  {campaign.contributor_count} {t('backers', { count: campaign.contributor_count })}
+                  {ai.supporter_count} {t('backers', { count: ai.supporter_count })}
                 </span>
               </div>
             </div>
