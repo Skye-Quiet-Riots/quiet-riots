@@ -1,7 +1,11 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getSession } from '@/lib/session';
 import { redirect } from 'next/navigation';
-import { getOrCreateShareApplication, checkShareEligibility } from '@/lib/queries/shares';
+import {
+  getOrCreateShareApplication,
+  checkShareEligibility,
+  promoteToEligible,
+} from '@/lib/queries/shares';
 import { getOrCreateWallet } from '@/lib/queries/wallet';
 import { PageHeader } from '@/components/layout/page-header';
 import { ShareInfoPage } from '@/components/interactive/share-info-page';
@@ -22,11 +26,21 @@ export default async function SharePage({ params }: Props) {
     redirect(`/${locale}/auth/signin`);
   }
 
-  const [application, eligibility, wallet] = await Promise.all([
+  const [initialApplication, eligibility, wallet] = await Promise.all([
     getOrCreateShareApplication(userId),
     checkShareEligibility(userId),
     getOrCreateWallet(userId).catch(() => ({ balance_pence: 0 })),
   ]);
+  let application = initialApplication;
+
+  // Auto-promote to 'available' if user meets eligibility criteria
+  if (application.status === 'not_eligible' && eligibility.eligible) {
+    const promoted = await promoteToEligible(userId);
+    if (promoted) {
+      // Re-fetch the updated application
+      application = await getOrCreateShareApplication(userId);
+    }
+  }
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">

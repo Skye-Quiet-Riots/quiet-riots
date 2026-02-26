@@ -1,5 +1,9 @@
 import { getSession } from '@/lib/session';
-import { getOrCreateShareApplication, checkShareEligibility } from '@/lib/queries/shares';
+import {
+  getOrCreateShareApplication,
+  checkShareEligibility,
+  promoteToEligible,
+} from '@/lib/queries/shares';
 import { getOrCreateWallet } from '@/lib/queries/wallet';
 import { apiOk, apiError } from '@/lib/api-response';
 
@@ -10,8 +14,16 @@ export async function GET() {
   const userId = await getSession();
   if (!userId) return apiError('Not logged in', 401);
 
-  const application = await getOrCreateShareApplication(userId);
+  let application = await getOrCreateShareApplication(userId);
   const eligibility = await checkShareEligibility(userId);
+
+  // Auto-promote to 'available' if user meets eligibility criteria
+  if (application.status === 'not_eligible' && eligibility.eligible) {
+    const promoted = await promoteToEligible(userId);
+    if (promoted) {
+      application = await getOrCreateShareApplication(userId);
+    }
+  }
 
   let walletBalance = 0;
   try {
