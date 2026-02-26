@@ -42,10 +42,10 @@ import {
   getOrCreateWallet,
   createTopupTransaction,
   completeTopup,
-  createContribution,
+  createPayment,
   getUserSpendingSummary,
 } from '@/lib/queries/wallet';
-import { getCampaigns } from '@/lib/queries/campaigns';
+import { getActionInitiatives } from '@/lib/queries/action-initiatives';
 import {
   getAssistantByCategory,
   getAssistantDetail,
@@ -57,7 +57,7 @@ import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
 import {
   translateEntities,
   translateEntity,
-  translateCampaigns,
+  translateActionInitiatives,
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
@@ -237,7 +237,7 @@ const actionSchemas = {
   }),
   get_campaigns: z.object({
     issue_id: idField.optional(),
-    status: z.enum(['active', 'funded', 'disbursed', 'cancelled']).optional(),
+    status: z.enum(['active', 'goal_reached', 'delivered', 'cancelled']).optional(),
     language_code: langField,
   }),
   get_category_assistants: z.object({
@@ -1076,37 +1076,39 @@ export async function POST(request: NextRequest) {
       }
 
       case 'contribute': {
+        // Keep bot action name 'contribute' for SKILL.md compatibility
         const phone = p.phone as string;
-        const campaignId = p.campaign_id as string;
+        const actionInitiativeId = p.campaign_id as string;
         const amountPence = p.amount_pence as number;
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
         try {
-          const result = await createContribution(user.id, campaignId, amountPence);
+          const result = await createPayment(user.id, actionInitiativeId, amountPence);
           const wallet = await getOrCreateWallet(user.id);
           return ok({
             transaction: result.transaction,
-            campaign: result.campaign,
+            campaign: result.actionInitiative,
             wallet_balance_pence: wallet.balance_pence,
           });
         } catch (e) {
           const message = e instanceof Error ? e.message : 'Payment failed';
           if (message === 'Insufficient funds') return err(message);
-          if (message === 'Campaign not found') return err(message, 404);
-          if (message === 'Campaign is not active') return err(message);
+          if (message === 'Action initiative not found') return err(message, 404);
+          if (message === 'Action initiative is not active') return err(message);
           if (message === 'Wallet not found') return err(message, 404);
           throw e;
         }
       }
 
       case 'get_campaigns': {
+        // Keep bot action name 'get_campaigns' for SKILL.md compatibility
         const issueId = p.issue_id as string | undefined;
-        const status = p.status as import('@/types').CampaignStatus | undefined;
+        const status = p.status as import('@/types').ActionInitiativeStatus | undefined;
         const locale = (p.language_code as string) || 'en';
-        let campaigns = await getCampaigns(issueId, status);
-        campaigns = await translateCampaigns(campaigns, locale);
-        return ok({ campaigns });
+        let actionInitiatives = await getActionInitiatives(issueId, status);
+        actionInitiatives = await translateActionInitiatives(actionInitiatives, locale);
+        return ok({ campaigns: actionInitiatives });
       }
 
       // ─── Category Assistants ────────────────────────────────

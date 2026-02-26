@@ -268,14 +268,14 @@ describe('Integration: Wallet flow', () => {
     expect(walletAfter.body.data.wallet.balance_pence).toBe(1000);
     expect(walletAfter.body.data.wallet.total_loaded_pence).toBe(1000);
 
-    // Step 5: Contribute to a campaign
+    // Step 5: Pay towards an action initiative
     const contribute = await callBot('contribute', {
       phone,
       campaign_id: 'camp-water-test',
       amount_pence: 300,
     });
     expect(contribute.status).toBe(200);
-    expect(contribute.body.data.transaction.type).toBe('contribute');
+    expect(contribute.body.data.transaction.type).toBe('payment');
     expect(contribute.body.data.wallet_balance_pence).toBe(700);
 
     // Step 6: Verify final wallet state
@@ -303,15 +303,15 @@ describe('Integration: Wallet flow', () => {
     expect(contribute.body.error).toContain('Insufficient funds');
   });
 
-  it('contribute fails for inactive campaign', async () => {
+  it('contribute fails for inactive action initiative', async () => {
     const phone = '+44700900012';
-    await callBot('identify', { phone, name: 'Funded Campaign User' });
+    await callBot('identify', { phone, name: 'Goal Reached User' });
 
     // Top up first
     const topup = await callBot('topup_wallet', { phone, amount_pence: 500 });
     expect(topup.status).toBe(200);
 
-    // Try to contribute to a funded (inactive) campaign
+    // Try to pay towards a goal-reached (inactive) action initiative
     const contribute = await callBot('contribute', {
       phone,
       campaign_id: 'camp-funded',

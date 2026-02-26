@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getCampaigns, createCampaign } from '@/lib/queries/campaigns';
+import { getActionInitiatives, createActionInitiative } from '@/lib/queries/action-initiatives';
 import { generateAndStoreTranslations } from '@/lib/queries/generate-translations';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
-import type { CampaignStatus } from '@/types';
+import type { ActionInitiativeStatus } from '@/types';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
 const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
@@ -13,16 +13,16 @@ const IS_DEV_KEY = !process.env.BOT_API_KEY || process.env.BOT_API_KEY === DEV_F
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const issueId = searchParams.get('issue_id') || undefined;
-  const status = (searchParams.get('status') as CampaignStatus) || undefined;
+  const status = (searchParams.get('status') as ActionInitiativeStatus) || undefined;
 
-  const campaigns = await getCampaigns(issueId, status);
+  const actionInitiatives = await getActionInitiatives(issueId, status);
   return NextResponse.json(
-    { ok: true, data: campaigns },
+    { ok: true, data: actionInitiatives },
     { headers: { 'Cache-Control': 'public, max-age=60, s-maxage=300' } },
   );
 }
 
-const createCampaignSchema = z.object({
+const createActionInitiativeSchema = z.object({
   issue_id: z.string().min(1, 'Issue ID required'),
   org_id: z.string().optional(),
   title: z.string().min(1, 'Title required'),
@@ -30,29 +30,29 @@ const createCampaignSchema = z.object({
   target_pence: z.number().int().min(100, 'Minimum target is £1'),
   recipient: z.string().optional(),
   recipient_url: z.string().optional(),
-  platform_fee_pct: z.number().int().min(0).max(100).optional(),
+  service_fee_pct: z.number().int().min(0).max(100).optional(),
 });
 
 export async function POST(request: NextRequest) {
-  // Only bot can create campaigns — reject dev key in production
+  // Only bot can create action initiatives — reject dev key in production
   const auth = request.headers.get('authorization');
   if (auth !== `Bearer ${BOT_API_KEY}` || (IS_DEV_KEY && process.env.NODE_ENV === 'production')) {
     return apiError('Unauthorized', 401);
   }
 
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
-  const { allowed } = rateLimit(`create-campaign:${ip}`);
+  const { allowed } = rateLimit(`create-action-initiative:${ip}`);
   if (!allowed) {
     return apiError('Too many requests', 429);
   }
 
   const body = await request.json();
-  const parsed = createCampaignSchema.safeParse(body);
+  const parsed = createActionInitiativeSchema.safeParse(body);
   if (!parsed.success) {
     return apiValidationError(parsed.error.issues);
   }
 
-  const campaign = await createCampaign({
+  const actionInitiative = await createActionInitiative({
     issueId: parsed.data.issue_id,
     orgId: parsed.data.org_id,
     title: parsed.data.title,
@@ -60,13 +60,13 @@ export async function POST(request: NextRequest) {
     targetPence: parsed.data.target_pence,
     recipient: parsed.data.recipient,
     recipientUrl: parsed.data.recipient_url,
-    platformFeePct: parsed.data.platform_fee_pct,
+    serviceFeePct: parsed.data.service_fee_pct,
   });
 
-  // Fire-and-forget: generate translations for campaign title/description
+  // Fire-and-forget: generate translations for action initiative title/description
   const fields: Record<string, string> = { title: parsed.data.title };
   if (parsed.data.description) fields.description = parsed.data.description;
-  generateAndStoreTranslations('campaign', campaign.id, fields).catch(() => {});
+  generateAndStoreTranslations('action_initiative', actionInitiative.id, fields).catch(() => {});
 
-  return apiOk(campaign, 201);
+  return apiOk(actionInitiative, 201);
 }
