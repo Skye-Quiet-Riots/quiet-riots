@@ -87,6 +87,16 @@ import {
 import { sendEmail } from '@/lib/email';
 import { sendWhatsAppMessage } from '@/lib/whatsapp';
 import { getUndeliveredCodes, markCodeDelivered } from '@/lib/queries/phone-verification';
+import {
+  checkShareEligibility,
+  getOrCreateShareApplication,
+  getShareApplication,
+  proceedWithShare,
+  declineShare,
+  withdrawShare,
+  reapplyForShare,
+  createShareMessage,
+} from '@/lib/queries/shares';
 import type { MemoryCategory, Category, SuggestedType, RejectionReason } from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
@@ -430,6 +440,22 @@ const actionSchemas = {
     phone: phoneField,
   }),
 
+  // ─── Share Scheme ───────────────────────────────────────
+  get_share_status: z.object({ phone: phoneField }),
+  get_share_eligibility: z.object({ phone: phoneField }),
+  apply_for_share: z.object({ phone: phoneField }),
+  decline_share: z.object({ phone: phoneField }),
+  withdraw_share: z.object({ phone: phoneField }),
+  reapply_share: z.object({ phone: phoneField }),
+  ask_share_question: z.object({
+    phone: phoneField,
+    message: z
+      .string()
+      .min(1, 'Message required')
+      .max(5000)
+      .transform((s) => sanitizeText(s)),
+  }),
+
   // ─── OTP Delivery (for local polling script) ───────────
   get_undelivered_codes: z.object({}),
   mark_code_delivered: z.object({ code_id: idField }),
@@ -561,6 +587,79 @@ async function notifyUser(
     }
   } catch (error) {
     console.error('Failed to notify user:', error);
+  }
+}
+
+/**
+ * Notify all Share Guides about a new share application.
+ * Fire-and-forget — never throws.
+ */
+async function notifyShareGuides(applicantName: string, applicantUserId: string): Promise<void> {
+  try {
+    const guideRoles = await getUsersByRole('share_guide');
+    const adminRoles = await getUsersByRole('administrator');
+    const allRoleRows = [...guideRoles, ...adminRoles];
+    const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
+
+    for (const userId of uniqueUserIds) {
+      await createMessage({
+        recipientId: userId,
+        senderName: applicantName,
+        type: 'share_payment_received',
+        subject: `New share application from ${applicantName}`,
+        body: `${applicantName} has applied for their Quiet Riots share. Please review their application on the Share Guide dashboard.`,
+        entityType: 'share_application',
+        entityId: applicantUserId,
+      });
+
+      const guideUser = await getUserById(userId);
+      if (guideUser?.phone) {
+        await sendWhatsAppMessage(
+          guideUser.phone,
+          `New share application from ${applicantName}. Please review it on the Share Guide dashboard.`,
+        );
+      }
+      if (guideUser?.email && !guideUser.email.startsWith('wa-')) {
+        await sendEmail(
+          guideUser.email,
+          `New share application: ${applicantName}`,
+          `<p><strong>${applicantName}</strong> has applied for their Quiet Riots share.</p><p>Please review their application on the Share Guide dashboard.</p>`,
+        );
+      }
+    }
+  } catch (error) {
+    console.error('Failed to notify share guides:', error);
+  }
+}
+
+/**
+ * Notify Share Guides about a user question on their share application.
+ * Fire-and-forget — never throws.
+ */
+async function notifyShareGuidesQuestion(
+  userName: string,
+  question: string,
+  applicationId: string,
+): Promise<void> {
+  try {
+    const guideRoles = await getUsersByRole('share_guide');
+    const adminRoles = await getUsersByRole('administrator');
+    const allRoleRows = [...guideRoles, ...adminRoles];
+    const uniqueUserIds = [...new Set(allRoleRows.map((r) => r.user_id))];
+
+    for (const userId of uniqueUserIds) {
+      await createMessage({
+        recipientId: userId,
+        senderName: userName,
+        type: 'share_question',
+        subject: `Share question from ${userName}`,
+        body: `${userName} asked: ${question.slice(0, 500)}`,
+        entityType: 'share_application',
+        entityId: applicationId,
+      });
+    }
+  } catch (error) {
+    console.error('Failed to notify share guides about question:', error);
   }
 }
 
@@ -1535,6 +1634,186 @@ export async function POST(request: NextRequest) {
           message: isWaEmail
             ? 'User has a WhatsApp placeholder email. Use link_email to set a real email.'
             : `User email is ${user.email}.`,
+        });
+      }
+
+      // ─── Share Scheme ────────────────────────────────────────
+      case 'get_share_status': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const application = await getShareApplication(user.id);
+        const eligibility = await checkShareEligibility(user.id);
+        const wallet = await getWalletByUserId(user.id);
+
+        return ok({
+          status: application?.status ?? 'not_eligible',
+          certificate_number: application?.certificate_number ?? null,
+          issued_at: application?.issued_at ?? null,
+          eligibility: {
+            eligible: eligibility.eligible,
+            riots_joined: eligibility.riotsJoined,
+            riots_required: 3,
+            actions_taken: eligibility.actionsTaken,
+            actions_required: 10,
+            is_verified: eligibility.isVerified,
+          },
+          wallet_balance_pence: wallet?.balance_pence ?? 0,
+          payment_required_pence: 10,
+          message:
+            application?.status === 'issued'
+              ? `Your share has been issued! Certificate: ${application.certificate_number}`
+              : application?.status === 'not_eligible' || !application
+                ? `You need ${Math.max(0, 3 - eligibility.riotsJoined)} more Quiet Riots and ${Math.max(0, 10 - eligibility.actionsTaken)} more actions to qualify.`
+                : application?.status === 'available'
+                  ? 'You are eligible for your Quiet Riots share! Visit your profile or say "apply for share" to proceed.'
+                  : `Your share application is ${application.status.replace(/_/g, ' ')}.`,
+        });
+      }
+
+      case 'get_share_eligibility': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const eligibility = await checkShareEligibility(user.id);
+        return ok({
+          eligible: eligibility.eligible,
+          riots_joined: eligibility.riotsJoined,
+          riots_required: 3,
+          actions_taken: eligibility.actionsTaken,
+          actions_required: 10,
+          is_verified: eligibility.isVerified,
+          message: eligibility.eligible
+            ? 'You qualify for your Quiet Riots share!'
+            : `Progress: ${eligibility.riotsJoined}/3 Quiet Riots joined, ${eligibility.actionsTaken}/10 actions taken${!eligibility.isVerified ? ', verification needed' : ''}.`,
+        });
+      }
+
+      case 'apply_for_share': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        // Ensure application exists and is eligible
+        const app = await getOrCreateShareApplication(user.id);
+        if (app.status !== 'available') {
+          return err(
+            app.status === 'not_eligible'
+              ? 'You are not yet eligible for a share. Join more Quiet Riots and take more actions.'
+              : `Cannot apply — your current status is ${app.status.replace(/_/g, ' ')}.`,
+          );
+        }
+
+        // Check wallet balance
+        const wallet = await getOrCreateWallet(user.id);
+        if (wallet.balance_pence < 10) {
+          return err(
+            `Insufficient wallet balance. You need at least 10p (you have ${wallet.balance_pence}p). Top up your wallet first.`,
+          );
+        }
+
+        // Proceed with share — atomic 10p debit + status change
+        const result = await proceedWithShare(user.id, wallet.id);
+        if (!result) {
+          return err('Payment failed — please try again.');
+        }
+
+        // Notify share guides about new application
+        notifyShareGuides(user.name ?? 'A Quiet Rioter', user.id).catch(() => {});
+
+        return ok({
+          status: 'under_review',
+          message:
+            '10p has been deducted from your wallet. Your share application is now under review. A Share Guide will review it shortly.',
+        });
+      }
+
+      case 'decline_share': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const declined = await declineShare(user.id);
+        if (!declined) {
+          return err(
+            'Cannot decline — either you have no eligible share offer or your application is already in progress.',
+          );
+        }
+
+        return ok({
+          status: 'declined',
+          message:
+            'You have permanently declined the share offer. No payment was taken. This decision cannot be reversed.',
+        });
+      }
+
+      case 'withdraw_share': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const withdrawn = await withdrawShare(user.id);
+        if (!withdrawn) {
+          return err('Cannot withdraw — your application may not be in a withdrawable state.');
+        }
+
+        return ok({
+          status: 'withdrawn',
+          message:
+            'Your share application has been withdrawn and your 10p has been refunded to your wallet.',
+        });
+      }
+
+      case 'reapply_share': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const wallet = await getOrCreateWallet(user.id);
+        if (wallet.balance_pence < 10) {
+          return err(
+            `Insufficient wallet balance. You need at least 10p (you have ${wallet.balance_pence}p). Top up your wallet first.`,
+          );
+        }
+
+        const reapplied = await reapplyForShare(user.id, wallet.id);
+        if (!reapplied) {
+          return err('Cannot reapply — your application may not be in a rejected state.');
+        }
+
+        // Notify share guides
+        notifyShareGuides(user.name ?? 'A Quiet Rioter', user.id).catch(() => {});
+
+        return ok({
+          status: 'under_review',
+          message:
+            '10p has been deducted from your wallet. Your share re-application is now under review.',
+        });
+      }
+
+      case 'ask_share_question': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const app = await getShareApplication(user.id);
+        if (!app) {
+          return err("You don't have a share application yet.");
+        }
+
+        // Create message visible to share guide
+        await createShareMessage(app.id, user.id, 'applicant', p.message as string);
+
+        // Notify share guides about the question
+        notifyShareGuidesQuestion(user.name ?? 'A Quiet Rioter', p.message as string, app.id).catch(
+          () => {},
+        );
+
+        return ok({
+          message:
+            'Your question has been sent to the Share Guide team. You will receive a reply in your inbox.',
         });
       }
 
