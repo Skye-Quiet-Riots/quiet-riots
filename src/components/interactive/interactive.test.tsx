@@ -11,6 +11,7 @@ import { TopUpForm } from './topup-form';
 import { ContributeForm } from './contribute-form';
 import { StatusFilter } from './status-filter';
 import { EvidenceComposer } from './evidence-composer';
+import { ShareEligibilityBanner } from './share-eligibility-banner';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -661,5 +662,61 @@ describe('EvidenceComposer', () => {
     render(<EvidenceComposer {...defaultProps} />);
     expect(screen.getByText('Org A')).toBeDefined();
     expect(screen.getByText('General (no specific organisation)')).toBeDefined();
+  });
+});
+
+describe('ShareEligibilityBanner', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('renders nothing when user is not logged in (fetch fails)', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 401 });
+    const { container } = render(<ShareEligibilityBanner />);
+    await waitFor(() => {
+      expect(container.querySelector('section')).toBeNull();
+    });
+  });
+
+  it('renders nothing when user has non-available status', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ data: { application: { status: 'not_eligible' } } }),
+    });
+    const { container } = render(<ShareEligibilityBanner />);
+    await waitFor(() => {
+      expect(container.querySelector('section')).toBeNull();
+    });
+  });
+
+  it('renders banner with request button when status is available', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ data: { application: { status: 'available' } } }),
+    });
+    render(<ShareEligibilityBanner />);
+    await waitFor(() => {
+      expect(screen.getByText('You are eligible for your share')).toBeDefined();
+      expect(screen.getByText('Request it now')).toBeDefined();
+    });
+  });
+
+  it('shows confirmation message after clicking request button', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ data: { application: { status: 'available' } } }),
+    });
+    render(<ShareEligibilityBanner />);
+    await waitFor(() => {
+      expect(screen.getByText('Request it now')).toBeDefined();
+    });
+
+    fireEvent.click(screen.getByText('Request it now'));
+
+    expect(
+      screen.getByText('Your request has been received. We will be in contact in due course.'),
+    ).toBeDefined();
+    // Button should be gone
+    expect(screen.queryByText('Request it now')).toBeNull();
   });
 });
