@@ -6,7 +6,7 @@ import { generateId } from '@/lib/uuid';
 
 // Set encryption key for identity tests
 process.env.SHARE_IDENTITY_KEY = 'a'.repeat(64);
-process.env.SHARE_ACCESS_PASSWORD = 'reallyglobal';
+process.env.SHARE_ACCESS_PASSWORD = 'test-share-password';
 
 // Mock next/headers before importing route handlers
 vi.mock('next/headers', () => ({
@@ -296,7 +296,7 @@ describe('POST /api/shares/access', () => {
   it('grants access with correct password', async () => {
     mockLoggedIn('user-eligible');
     const request = jsonRequest('http://localhost:3000/api/shares/access', {
-      password: 'reallyglobal',
+      password: 'test-share-password',
     });
     const response = await accessShare(request);
     const { ok, data } = await response.json();
@@ -317,7 +317,7 @@ describe('POST /api/shares/access', () => {
   it('returns 401 for unauthenticated', async () => {
     mockLoggedOut();
     const request = jsonRequest('http://localhost:3000/api/shares/access', {
-      password: 'reallyglobal',
+      password: 'test-share-password',
     });
     const response = await accessShare(request);
     expect(response.status).toBe(401);
