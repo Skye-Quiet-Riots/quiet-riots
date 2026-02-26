@@ -65,6 +65,7 @@ import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory'
 import {
   createSuggestion as createIssueSuggestion,
   getSuggestionsByUser,
+  getSuggestionsByStatus,
   getSuggestionById,
   approveSuggestion,
   rejectSuggestion,
@@ -72,6 +73,7 @@ import {
   requestMoreInfo as requestSuggestionMoreInfo,
   goLiveSuggestion,
   getCloseMatches,
+  setPublicRecognition,
 } from '@/lib/queries/suggestions';
 import { hasRole, getUsersByRole } from '@/lib/queries/roles';
 import {
@@ -402,6 +404,17 @@ const actionSchemas = {
   }),
   mark_all_read: z.object({
     phone: phoneField,
+  }),
+
+  // ─── Admin/Setup Actions ────────────────────────────────
+  get_pending_suggestions: z.object({
+    phone: phoneField,
+    limit: z.number().int().positive().max(50).optional(),
+  }),
+  set_first_rioter_preference: z.object({
+    phone: phoneField,
+    suggestion_id: idField,
+    public_recognition: z.boolean(),
   }),
 } as const;
 
@@ -1399,6 +1412,46 @@ export async function POST(request: NextRequest) {
 
         const count = await markAllAsRead(user.id);
         return ok({ marked_count: count });
+      }
+
+      // ─── Admin/Setup Actions ────────────────────────────────
+
+      case 'get_pending_suggestions': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const isGuide = await hasRole(user.id, 'setup_guide');
+        const isAdmin = await hasRole(user.id, 'administrator');
+        if (!isGuide && !isAdmin) return err('Setup Guide or Administrator role required', 403);
+
+        const limit = (p.limit as number) || 20;
+        const suggestions = await getSuggestionsByStatus('pending_review', limit, 0);
+        return ok({ suggestions, count: suggestions.length });
+      }
+
+      case 'set_first_rioter_preference': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const suggestionId = p.suggestion_id as string;
+        const suggestion = await getSuggestionById(suggestionId);
+        if (!suggestion) return err('Suggestion not found', 404);
+
+        // Only the person who suggested it can change this
+        if (suggestion.suggested_by !== user.id) {
+          return err('Only the First Rioter can change recognition preference', 403);
+        }
+
+        const publicRecognition = p.public_recognition as boolean;
+        const updated = await setPublicRecognition(suggestionId, publicRecognition ? 1 : 0);
+        return ok({
+          suggestion: updated,
+          preference: publicRecognition ? 'public' : 'anonymous',
+        });
       }
 
       default:
