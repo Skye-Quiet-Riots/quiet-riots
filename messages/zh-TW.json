@@ -96,15 +96,15 @@
     "active": "進行中",
     "target": "目標",
     "raised": "已承諾",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "backers": "{count, plural, one {位參與者} other {位參與者}}",
     "platformFee": "服務費",
     "topUpFirst": "請先為錢包儲值即可開始。",
     "createAccountPrompt": "建立帳戶並為錢包儲值，即可委託此服務。",
     "goToWallet": "前往錢包",
     "createAccount": "建立帳戶",
-    "completedMessage": "此專案已{status}。感謝所有 {count} 位支持者！",
+    "completedMessage": "此專案已{status}。感謝所有 {count} 位參與者！",
     "recipient": "服務提供商",
-    "wantToSupport": "想支持這個專案嗎？"
+    "wantToSupport": "想委託此服務嗎？"
   },
   "Assistants": {
     "title": "助手",
@@ -322,7 +322,7 @@
     "aiPick": "AI 推薦",
     "funded": "已達目標",
     "disbursed": "已完成",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "backers": "{count, plural, one {位參與者} other {位參與者}}",
     "aiAndHuman": "AI 智慧代理和人類組織者",
     "riots": "{count, plural, one {場 Quiet Riot} other {場 Quiet Riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ 行動專案",
     "funded": "已達目標",
     "disbursed": "已完成",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}"
+    "backers": "{count, plural, one {位參與者} other {位參與者}}"
   },
   "WalletBalance": {
     "title": "你的餘額",
@@ -448,12 +448,12 @@
     "success": "已為 {actionInitiative} 支付 {amount}！",
     "remainingBalance": "你的剩餘餘額：{balance}",
     "topUpPrompt": "為錢包儲值",
-    "toKeepSupporting": "以繼續支持行動專案。",
+    "toKeepSupporting": "以繼續委託服務。",
     "walletEmpty": "你的錢包是空的。",
     "topUp": "儲值",
     "minPayment": "最低付款 10p",
-    "supportProject": "支持此專案",
-    "toSupport": "以支持專案。"
+    "supportProject": "委託此服務",
+    "toSupport": "以委託服務。"
   },
   "Claim": {
     "success": "謝謝！我們已記錄你對 {name} 角色的興趣。我們會與你聯繫。",

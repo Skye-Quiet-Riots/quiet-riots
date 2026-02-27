@@ -96,15 +96,15 @@
     "active": "进行中",
     "target": "目标",
     "raised": "已承诺",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "backers": "{count, plural, one {位参与者} other {位参与者}}",
     "platformFee": "服务费",
     "topUpFirst": "请先为钱包充值即可开始。",
     "createAccountPrompt": "创建账户并为钱包充值，即可委托此服务。",
     "goToWallet": "前往钱包",
     "createAccount": "创建账户",
-    "completedMessage": "此项目已{status}。感谢所有 {count} 位支持者！",
+    "completedMessage": "此项目已{status}。感谢所有 {count} 位参与者！",
     "recipient": "服务提供商",
-    "wantToSupport": "想支持这个项目吗？"
+    "wantToSupport": "想委托此服务吗？"
   },
   "Assistants": {
     "title": "助手",
@@ -322,7 +322,7 @@
     "aiPick": "AI 推荐",
     "funded": "已达目标",
     "disbursed": "已完成",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}",
+    "backers": "{count, plural, one {位参与者} other {位参与者}}",
     "aiAndHuman": "AI 智能体和人类组织者",
     "riots": "{count, plural, one {场 Quiet Riot} other {场 Quiet Riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ 行动项目",
     "funded": "已达目标",
     "disbursed": "已完成",
-    "backers": "{count, plural, one {位支持者} other {位支持者}}"
+    "backers": "{count, plural, one {位参与者} other {位参与者}}"
   },
   "WalletBalance": {
     "title": "你的余额",
@@ -448,12 +448,12 @@
     "success": "已为 {actionInitiative} 支付 {amount}！",
     "remainingBalance": "你的剩余余额：{balance}",
     "topUpPrompt": "为钱包充值",
-    "toKeepSupporting": "以继续支持行动项目。",
+    "toKeepSupporting": "以继续委托服务。",
     "walletEmpty": "你的钱包是空的。",
     "topUp": "充值",
     "minPayment": "最低付款 10p",
-    "supportProject": "支持此项目",
-    "toSupport": "以支持项目。"
+    "supportProject": "委托此服务",
+    "toSupport": "以委托服务。"
   },
   "Claim": {
     "success": "谢谢！我们已记录你对 {name} 角色的兴趣。我们会与你联系。",

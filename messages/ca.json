@@ -96,15 +96,15 @@
     "active": "Activa",
     "target": "objectiu",
     "raised": "compromès",
-    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "platformFee": "tarifa de servei",
     "topUpFirst": "Recarrega la teva cartera primer per començar.",
     "createAccountPrompt": "Crea un compte i carrega la teva cartera per encarregar aquest servei.",
     "goToWallet": "Ves a la cartera",
     "createAccount": "Crea un compte",
-    "completedMessage": "Aquest projecte ha estat {status}. Gràcies a tots els {count} col·laboradors!",
+    "completedMessage": "Aquest projecte ha estat {status}. Gràcies a tots els {count} participants!",
     "recipient": "Proveïdor de Serveis",
-    "wantToSupport": "Vols donar suport a aquest projecte?"
+    "wantToSupport": "Vols encarregar aquest servei?"
   },
   "Assistants": {
     "title": "Assistents",
@@ -322,7 +322,7 @@
     "aiPick": "Selecció IA",
     "funded": "Objectiu Assolit",
     "disbursed": "Completat",
-    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "aiAndHuman": "Agent d'IA i Organitzador Humà",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Projectes d'Acció",
     "funded": "Objectiu Assolit",
     "disbursed": "Completat",
-    "backers": "{count, plural, one {col·laborador} other {col·laboradors}}"
+    "backers": "{count, plural, one {participant} other {participants}}"
   },
   "WalletBalance": {
     "title": "El Teu Saldo",
@@ -448,12 +448,12 @@
     "success": "Has pagat {amount} per {actionInitiative}!",
     "remainingBalance": "El teu saldo restant: {balance}",
     "topUpPrompt": "Recarrega la teva cartera",
-    "toKeepSupporting": "per continuar donant suport a projectes d'acció.",
+    "toKeepSupporting": "per continuar encarregant serveis.",
     "walletEmpty": "La teva cartera està buida.",
     "topUp": "Recarrega",
     "minPayment": "El pagament mínim és de 10p",
-    "supportProject": "Dona Suport a Aquest Projecte",
-    "toSupport": "per donar suport a projectes."
+    "supportProject": "Encarrega Aquest Servei",
+    "toSupport": "per encarregar serveis."
   },
   "Claim": {
     "success": "Gràcies! Hem anotat el teu interès en el rol de {name}. Et contactarem.",

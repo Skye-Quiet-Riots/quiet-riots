@@ -96,15 +96,15 @@
     "active": "Active",
     "target": "objectif",
     "raised": "engagé",
-    "backers": "{count, plural, one {soutien} other {soutiens}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "platformFee": "frais de service",
     "topUpFirst": "Recharge d'abord ton portefeuille pour commencer.",
     "createAccountPrompt": "Crée un compte et charge ton portefeuille pour commander ce service.",
     "goToWallet": "Aller au portefeuille",
     "createAccount": "Créer un compte",
-    "completedMessage": "Ce projet a été {status}. Merci à tous les {count} soutiens !",
+    "completedMessage": "Ce projet a été {status}. Merci à tous les {count} participants !",
     "recipient": "Prestataire de services",
-    "wantToSupport": "Tu veux soutenir ce projet ?"
+    "wantToSupport": "Tu veux commander ce service ?"
   },
   "Assistants": {
     "title": "Assistants",
@@ -322,7 +322,7 @@
     "aiPick": "Choix IA",
     "funded": "Objectif atteint",
     "disbursed": "Terminé",
-    "backers": "{count, plural, one {soutien} other {soutiens}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "aiAndHuman": "Agent IA & Organisateur humain",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Projets d'action",
     "funded": "Objectif atteint",
     "disbursed": "Terminé",
-    "backers": "{count, plural, one {soutien} other {soutiens}}"
+    "backers": "{count, plural, one {participant} other {participants}}"
   },
   "WalletBalance": {
     "title": "Ton solde",
@@ -448,12 +448,12 @@
     "success": "{amount} payé pour {actionInitiative} !",
     "remainingBalance": "Ton solde restant : {balance}",
     "topUpPrompt": "Recharge ton portefeuille",
-    "toKeepSupporting": "pour continuer à soutenir des projets d'action.",
+    "toKeepSupporting": "pour continuer à commander des services.",
     "walletEmpty": "Ton portefeuille est vide.",
     "topUp": "Recharger",
     "minPayment": "Le paiement minimum est de 10p",
-    "supportProject": "Soutenir ce projet",
-    "toSupport": "pour soutenir des projets."
+    "supportProject": "Commander ce service",
+    "toSupport": "pour commander des services."
   },
   "Claim": {
     "success": "Merci ! Nous avons noté ton intérêt pour le rôle de {name}. Nous te recontacterons.",

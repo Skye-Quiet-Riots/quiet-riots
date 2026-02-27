@@ -96,15 +96,15 @@
     "active": "진행 중",
     "target": "목표",
     "raised": "확약됨",
-    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
+    "backers": "{count, plural, one {명의 참여자} other {명의 참여자}}",
     "platformFee": "서비스 수수료",
     "topUpFirst": "먼저 지갑을 충전하여 시작하세요.",
     "createAccountPrompt": "계정을 만들고 지갑을 충전하여 이 서비스를 의뢰하세요.",
     "goToWallet": "지갑으로 이동",
     "createAccount": "계정 만들기",
-    "completedMessage": "이 프로젝트는 {status}되었습니다. {count}명의 후원자 여러분께 감사드립니다!",
+    "completedMessage": "이 서비스는 {status}되었습니다. {count}명의 참여자 여러분께 감사드립니다!",
     "recipient": "서비스 제공자",
-    "wantToSupport": "이 프로젝트를 지원하시겠습니까?"
+    "wantToSupport": "이 서비스를 의뢰하시겠습니까?"
   },
   "Assistants": {
     "title": "어시스턴트",
@@ -322,7 +322,7 @@
     "aiPick": "AI 추천",
     "funded": "목표 달성",
     "disbursed": "완료",
-    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
+    "backers": "{count, plural, one {명의 참여자} other {명의 참여자}}",
     "aiAndHuman": "AI 에이전트 & 인간 조직자",
     "riots": "{count, plural, one {개의 Quiet Riot} other {개의 Quiet Riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ 액션 프로젝트",
     "funded": "목표 달성",
     "disbursed": "완료",
-    "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}"
+    "backers": "{count, plural, one {명의 참여자} other {명의 참여자}}"
   },
   "WalletBalance": {
     "title": "내 잔액",
@@ -448,12 +448,12 @@
     "success": "{actionInitiative}에 {amount}을(를) 결제했습니다!",
     "remainingBalance": "남은 잔액: {balance}",
     "topUpPrompt": "지갑 충전하기",
-    "toKeepSupporting": "액션 프로젝트 지원을 계속하세요.",
+    "toKeepSupporting": "서비스 의뢰를 계속하세요.",
     "walletEmpty": "지갑이 비어 있습니다.",
     "topUp": "충전",
     "minPayment": "최소 결제 금액은 10p입니다",
-    "supportProject": "이 프로젝트 지원하기",
-    "toSupport": "프로젝트를 지원하세요."
+    "supportProject": "이 서비스 의뢰하기",
+    "toSupport": "서비스를 의뢰하세요."
   },
   "Claim": {
     "success": "감사합니다! {name} 역할에 대한 관심을 기록했습니다. 연락드리겠습니다.",

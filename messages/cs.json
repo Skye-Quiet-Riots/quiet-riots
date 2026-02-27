@@ -96,15 +96,15 @@
     "active": "Aktivni",
     "target": "cil",
     "raised": "prislibeno",
-    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
+    "backers": "{count, plural, one {ucastnik} other {ucastniku}}",
     "platformFee": "servisni poplatek",
     "topUpFirst": "Nejdriv si dobij penezenku, abys mohl zacit.",
     "createAccountPrompt": "Vytvor si ucet a dobij penezenku pro zadani teto sluzby.",
     "goToWallet": "Prejit na penezenku",
     "createAccount": "Vytvorit ucet",
-    "completedMessage": "Tento projekt byl {status}. Dekujeme vsem {count} podporovatelu!",
+    "completedMessage": "Tento projekt byl {status}. Dekujeme vsem {count} ucastnikum!",
     "recipient": "Poskytovatel sluzeb",
-    "wantToSupport": "Chces podpoirit tento projekt?"
+    "wantToSupport": "Chces zadat tuto sluzbu?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -322,7 +322,7 @@
     "aiPick": "Vyber AI",
     "funded": "Cil dosazsen",
     "disbursed": "Dokonceno",
-    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}",
+    "backers": "{count, plural, one {ucastnik} other {ucastniku}}",
     "aiAndHuman": "AI Agent a Organizator",
     "riots": "{count, plural, one {riot} other {riotu}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Akcni projekty",
     "funded": "Cil dosazsen",
     "disbursed": "Dokonceno",
-    "backers": "{count, plural, one {podporovatel} other {podporovatelu}}"
+    "backers": "{count, plural, one {ucastnik} other {ucastniku}}"
   },
   "WalletBalance": {
     "title": "Tvuj zustatek",
@@ -448,12 +448,12 @@
     "success": "Zaplaceno {amount} na {actionInitiative}!",
     "remainingBalance": "Zbyvaujici zustatek: {balance}",
     "topUpPrompt": "Dobij penezenku",
-    "toKeepSupporting": "pro dalsi podporu akcnich projektu.",
+    "toKeepSupporting": "pro dalsi zadavani sluzeb.",
     "walletEmpty": "Tvoje penezenka je prazdna.",
     "topUp": "Dobit",
     "minPayment": "Minimalni platba je 10p",
-    "supportProject": "Podpoirit tento projekt",
-    "toSupport": "pro podporu projektu."
+    "supportProject": "Zadat tuto sluzbu",
+    "toSupport": "pro zadavani sluzeb."
   },
   "Claim": {
     "success": "Dekujeme! Zaznamenali jsme tvuj zajem o roli {name}. Ozveme se ti.",

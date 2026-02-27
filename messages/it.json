@@ -96,15 +96,15 @@
     "active": "Attiva",
     "target": "obiettivo",
     "raised": "impegnati",
-    "backers": "{count, plural, one {sostenitore} other {sostenitori}}",
+    "backers": "{count, plural, one {partecipante} other {partecipanti}}",
     "platformFee": "tariffa del servizio",
     "topUpFirst": "Ricarica prima il tuo portafoglio per iniziare.",
     "createAccountPrompt": "Crea un account e ricarica il portafoglio per commissionare questo servizio.",
     "goToWallet": "Vai al portafoglio",
     "createAccount": "Crea account",
-    "completedMessage": "Questo progetto è stato {status}. Grazie a tutti i {count} sostenitori!",
+    "completedMessage": "Questo servizio è stato {status}. Grazie a tutti i {count} partecipanti!",
     "recipient": "Fornitore del servizio",
-    "wantToSupport": "Vuoi sostenere questo progetto?"
+    "wantToSupport": "Vuoi commissionare questo servizio?"
   },
   "Assistants": {
     "title": "Assistenti",
@@ -322,7 +322,7 @@
     "aiPick": "Scelta AI",
     "funded": "Obiettivo raggiunto",
     "disbursed": "Completato",
-    "backers": "{count, plural, one {sostenitore} other {sostenitori}}",
+    "backers": "{count, plural, one {partecipante} other {partecipanti}}",
     "aiAndHuman": "Agente AI e organizzatore umano",
     "riots": "{count, plural, one {riot} other {riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Progetti d'azione",
     "funded": "Obiettivo raggiunto",
     "disbursed": "Completato",
-    "backers": "{count, plural, one {sostenitore} other {sostenitori}}"
+    "backers": "{count, plural, one {partecipante} other {partecipanti}}"
   },
   "WalletBalance": {
     "title": "Il tuo saldo",
@@ -448,12 +448,12 @@
     "success": "Pagato {amount} per {actionInitiative}!",
     "remainingBalance": "Saldo rimanente: {balance}",
     "topUpPrompt": "Ricarica il portafoglio",
-    "toKeepSupporting": "per continuare a sostenere i progetti d'azione.",
+    "toKeepSupporting": "per continuare a commissionare servizi.",
     "walletEmpty": "Il tuo portafoglio è vuoto.",
     "topUp": "Ricarica",
     "minPayment": "Il pagamento minimo è 10p",
-    "supportProject": "Sostieni questo progetto",
-    "toSupport": "per sostenere i progetti."
+    "supportProject": "Commissiona questo servizio",
+    "toSupport": "per commissionare servizi."
   },
   "Claim": {
     "success": "Grazie! Abbiamo preso nota del tuo interesse per il ruolo di {name}. Ti contatteremo.",
