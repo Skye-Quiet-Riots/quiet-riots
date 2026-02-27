@@ -96,15 +96,15 @@
     "active": "Aktiivinen",
     "target": "tavoite",
     "raised": "sitoutunut",
-    "backers": "{count, plural, one {tukija} other {tukijaa}}",
+    "backers": "{count, plural, one {osallistuja} other {osallistujaa}}",
     "platformFee": "palvelumaksu",
     "topUpFirst": "Lataa lompakkoasi ensin aloittaaksesi.",
     "createAccountPrompt": "Luo tili ja lataa lompakkosi tilataksesi tämän palvelun.",
     "goToWallet": "Siirry lompakkoon",
     "createAccount": "Luo tili",
-    "completedMessage": "Tämä projekti on {status}. Kiitos kaikille {count} tukijalle!",
+    "completedMessage": "Tämä projekti on {status}. Kiitos kaikille {count} osallistujaa!",
     "recipient": "Palveluntarjoaja",
-    "wantToSupport": "Haluatko tukea tätä projektia?"
+    "wantToSupport": "Haluatko tilata tämän palvelun?"
   },
   "Assistants": {
     "title": "Assistentit",
@@ -322,7 +322,7 @@
     "aiPick": "AI-valinta",
     "funded": "Tavoite saavutettu",
     "disbursed": "Valmis",
-    "backers": "{count, plural, one {tukija} other {tukijaa}}",
+    "backers": "{count, plural, one {osallistuja} other {osallistujaa}}",
     "aiAndHuman": "AI-agentti & ihmisorganisaattori",
     "riots": "{count, plural, one {riot} other {riotia}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Toimintaprojektit",
     "funded": "Tavoite saavutettu",
     "disbursed": "Valmis",
-    "backers": "{count, plural, one {tukija} other {tukijaa}}"
+    "backers": "{count, plural, one {osallistuja} other {osallistujaa}}"
   },
   "WalletBalance": {
     "title": "Saldosi",
@@ -448,12 +448,12 @@
     "success": "Maksoit {amount} projektiin {actionInitiative}!",
     "remainingBalance": "Jäljellä oleva saldosi: {balance}",
     "topUpPrompt": "Lataa lompakkoasi",
-    "toKeepSupporting": "jatkaaksesi toimintaprojektien tukemista.",
+    "toKeepSupporting": "tilataksesi lisää palveluita.",
     "walletEmpty": "Lompakkosi on tyhjä.",
     "topUp": "Lataa",
     "minPayment": "Vähimmäismaksu on 10p",
-    "supportProject": "Tue tätä projektia",
-    "toSupport": "tukeaksesi projekteja."
+    "supportProject": "Tilaa tämä palvelu",
+    "toSupport": "tilataksesi palveluita."
   },
   "Claim": {
     "success": "Kiitos! Olemme merkinneet kiinnostuksesi rooliin {name}. Olemme yhteydessä.",
