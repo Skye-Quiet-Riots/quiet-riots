@@ -280,11 +280,14 @@ At the start of every session (or when asked to "pick up where we left off"):
 
 - **Commit after every logical unit of work** (e.g. each phase of a multi-phase feature). Don't batch everything into one commit at the end.
 - **Push after every commit.** If the session dies unexpectedly, the last pushed commit survives.
-- **Save plans to `PLAN.md`** at the start of multi-phase work. Commit and push PLAN.md before starting implementation. If the session dies, the next session can pick up from the plan.
-- **Never rely on uncommitted work surviving a session.** The previous session lost all 5 phases of work because nothing was committed.
+- **MANDATORY: Save plans to `PLAN.md` before starting implementation.** Any multi-step task (3+ steps) MUST have its plan written to `PLAN.md`, committed, and pushed BEFORE writing any implementation code. This is non-negotiable — if the session dies or context compacts, the plan is the only thing that survives. A plan described only in conversation text is lost when context is compressed.
+  - **When to write PLAN.md:** Immediately after a plan is formed or approved — whether from EnterPlanMode, a user request, or your own analysis. Don't start coding until the plan is persisted.
+  - **What to include:** Problem statement, scope, all phases/steps, file list, deployment/rollback notes.
+  - **When to update:** If the plan changes mid-execution (e.g. a step is added or removed), update PLAN.md and push before continuing.
+- **Never rely on uncommitted work surviving a session.** The previous session lost all 5 phases of work because nothing was committed. Another session lost its plan because it was only in the conversation, not in PLAN.md.
 - Pattern for multi-phase work:
   ```
-  1. Write PLAN.md → commit + push
+  1. Write PLAN.md → commit + push (BEFORE any implementation)
   2. Phase 1 code + tests → commit + push
   3. Phase 2 code + tests → commit + push
   ... repeat for each phase
