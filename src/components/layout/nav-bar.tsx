@@ -112,7 +112,7 @@ export function NavBar() {
             <Link
               href="/inbox"
               className="relative text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-              aria-label="Inbox"
+              aria-label={t('inbox')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ export function NavBar() {
                     onClick={() => setAvatarOpen(false)}
                     className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >
-                    Inbox
+                    {t('inbox')}
                     {unreadCount > 0 && (
                       <span className="rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white">
                         {unreadCount}
@@ -183,7 +183,7 @@ export function NavBar() {
                     onClick={() => setAvatarOpen(false)}
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >
-                    My Share
+                    {t('myShare')}
                   </Link>
                   {hasSetupRole && (
                     <Link
@@ -191,7 +191,7 @@ export function NavBar() {
                       onClick={() => setAvatarOpen(false)}
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                     >
-                      Setup Guide
+                      {t('setupGuide')}
                     </Link>
                   )}
                   {hasShareGuideRole && (
@@ -200,7 +200,7 @@ export function NavBar() {
                       onClick={() => setAvatarOpen(false)}
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                     >
-                      Share Guide
+                      {t('shareGuide')}
                     </Link>
                   )}
                   {hasComplianceRole && (
@@ -209,7 +209,7 @@ export function NavBar() {
                       onClick={() => setAvatarOpen(false)}
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                     >
-                      Compliance
+                      {t('compliance')}
                     </Link>
                   )}
                   {hasTreasuryRole && (
@@ -218,7 +218,7 @@ export function NavBar() {
                       onClick={() => setAvatarOpen(false)}
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                     >
-                      Treasury
+                      {t('treasury')}
                     </Link>
                   )}
                   <button
@@ -288,7 +288,7 @@ export function NavBar() {
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
-                Inbox
+                {t('inbox')}
                 {unreadCount > 0 && (
                   <span className="rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white">
                     {unreadCount}
@@ -315,7 +315,7 @@ export function NavBar() {
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
-                My Share
+                {t('myShare')}
               </Link>
               <button
                 onClick={() => {

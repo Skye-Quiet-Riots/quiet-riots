@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { normalizePhone, trimAndLimit, sanitizeText } from './sanitize';
+import { normalizePhone, trimAndLimit, sanitizeText, sanitizeTranslation } from './sanitize';
 
 describe('normalizePhone', () => {
   it('accepts valid E.164 numbers', () => {
@@ -82,5 +82,70 @@ describe('sanitizeText', () => {
 
   it('handles empty string', () => {
     expect(sanitizeText('')).toBe('');
+  });
+});
+
+describe('sanitizeTranslation', () => {
+  it('strips HTML tags from translations', () => {
+    expect(sanitizeTranslation('Hello <b>World</b>')).toBe('Hello World');
+    expect(sanitizeTranslation('<p>Paragraph</p>')).toBe('Paragraph');
+    expect(sanitizeTranslation('<a href="http://evil.com">Click</a>')).toBe('Click');
+  });
+
+  it('strips script tags', () => {
+    expect(sanitizeTranslation('Hello <script>alert(1)</script> World')).toBe(
+      'Hello alert(1) World',
+    );
+  });
+
+  it('throws on javascript: URL scheme', () => {
+    expect(() => sanitizeTranslation('javascript:alert(1)')).toThrow('dangerous URL scheme');
+  });
+
+  it('throws on data:text/html scheme', () => {
+    expect(() => sanitizeTranslation('test data:text/html,<h1>XSS</h1>')).toThrow(
+      'dangerous URL scheme',
+    );
+  });
+
+  it('throws on vbscript: scheme', () => {
+    expect(() => sanitizeTranslation('vbscript:msgbox')).toThrow('dangerous URL scheme');
+  });
+
+  it('throws on case-insensitive URL schemes', () => {
+    expect(() => sanitizeTranslation('JAVASCRIPT:alert(1)')).toThrow('dangerous URL scheme');
+    expect(() => sanitizeTranslation('JavaScript:void(0)')).toThrow('dangerous URL scheme');
+  });
+
+  it('strips control characters', () => {
+    expect(sanitizeTranslation('hello\x00world')).toBe('helloworld');
+  });
+
+  it('preserves normal text', () => {
+    expect(sanitizeTranslation('Boîte de réception')).toBe('Boîte de réception');
+    expect(sanitizeTranslation('受信トレイ')).toBe('受信トレイ');
+    expect(sanitizeTranslation('صندوق الوارد')).toBe('صندوق الوارد');
+  });
+
+  it('preserves translation placeholders', () => {
+    expect(sanitizeTranslation('{count} issues found')).toBe('{count} issues found');
+    expect(sanitizeTranslation('Hello {name}!')).toBe('Hello {name}!');
+  });
+
+  it('enforces max length when specified', () => {
+    const long = 'a'.repeat(300);
+    expect(sanitizeTranslation(long, 255)).toHaveLength(255);
+  });
+
+  it('does not truncate when under limit', () => {
+    expect(sanitizeTranslation('short text', 255)).toBe('short text');
+  });
+
+  it('trims whitespace', () => {
+    expect(sanitizeTranslation('  hello  ')).toBe('hello');
+  });
+
+  it('handles empty string', () => {
+    expect(sanitizeTranslation('')).toBe('');
   });
 });

@@ -18,6 +18,11 @@ import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { getEvidenceForIssue } from '@/lib/queries/evidence';
 import {
   translateEntity,
+  translateActions,
+  translateExpertProfiles,
+  translateRiotReels,
+  translateActionInitiatives,
+  translateCountryBreakdown,
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
@@ -105,16 +110,21 @@ export default async function IssueDetailPage({ params }: Props) {
     translateIssuePivotRows(rawIssuePivotRows, locale),
     translateOrgPivotRows(rawOrgPivotRows, locale),
   ]);
-  const actions = await getActionsForIssue(issue.id);
+  const rawActions = await getActionsForIssue(issue.id);
+  const actions = await translateActions(rawActions, locale);
   const actionCount = await getActionCountForIssue(issue.id);
   const health = await getCommunityHealth(issue.id);
-  const experts = await getExpertProfiles(issue.id);
+  const rawExperts = await getExpertProfiles(issue.id);
+  const experts = await translateExpertProfiles(rawExperts, locale);
   const feedPosts = await getFeedPosts(issue.id);
-  const countries = await getCountryBreakdown(issue.id);
+  const rawCountries = await getCountryBreakdown(issue.id);
+  const countries = translateCountryBreakdown(rawCountries, locale);
   const rawSynonyms = await getSynonymsForIssue(issue.id);
   const synonyms = await translateSynonyms(rawSynonyms, locale);
-  const reels = await getReelsForIssue(issue.id);
-  const actionInitiatives = await getActionInitiativesForIssue(issue.id);
+  const rawReels = await getReelsForIssue(issue.id);
+  const reels = await translateRiotReels(rawReels, locale);
+  const rawActionInitiatives = await getActionInitiativesForIssue(issue.id);
+  const actionInitiatives = await translateActionInitiatives(rawActionInitiatives, locale);
   const evidence = await getEvidenceForIssue(issue.id);
   const rawAssistant = await getAssistantByCategory(toAssistantCategory(issue.category));
   const assistant = rawAssistant ? await translateCategoryAssistant(rawAssistant, locale) : null;

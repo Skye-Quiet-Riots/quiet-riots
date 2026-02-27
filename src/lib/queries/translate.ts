@@ -1,5 +1,5 @@
 import { getEntityTranslations, getTranslatedEntities } from './translations';
-import type { CategoryAssistant, IssuePivotRow, Synonym } from '@/types';
+import type { Action, CategoryAssistant, CountryBreakdown, ExpertProfile, IssuePivotRow, RiotReel, Synonym } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -129,6 +129,91 @@ export async function translateSynonyms(synonyms: Synonym[], locale: string): Pr
   });
 }
 
+/**
+ * Translate action objects (which use `title` instead of `name`).
+ * Overlays `title` and `description`. Follows translateActionInitiatives() pattern.
+ */
+export async function translateActions<
+  T extends { id: string; title: string; description?: string | null },
+>(actions: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || actions.length === 0) return actions;
+
+  const translations = await getTranslatedEntities(
+    'action',
+    actions.map((a) => a.id),
+    locale,
+  );
+
+  return actions.map((action) => {
+    const t = translations[action.id];
+    if (!t) return action;
+    return {
+      ...action,
+      title: t.title || action.title,
+      ...(action.description !== undefined && {
+        description: t.description || action.description,
+      }),
+    };
+  });
+}
+
+/**
+ * Translate expert profile objects.
+ * Overlays `role`, `speciality`, `achievement`.
+ * Does NOT translate `name` (proper nouns like "Dr. Sarah Chen").
+ */
+export async function translateExpertProfiles<
+  T extends { id: string; role: string; speciality: string; achievement: string },
+>(profiles: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || profiles.length === 0) return profiles;
+
+  const translations = await getTranslatedEntities(
+    'expert_profile',
+    profiles.map((p) => p.id),
+    locale,
+  );
+
+  return profiles.map((profile) => {
+    const t = translations[profile.id];
+    if (!t) return profile;
+    return {
+      ...profile,
+      role: t.role || profile.role,
+      speciality: t.speciality || profile.speciality,
+      achievement: t.achievement || profile.achievement,
+    };
+  });
+}
+
+/**
+ * Translate riot reel objects.
+ * Overlays `title` and `caption`.
+ * Only curated/seeded reel titles get translations; community-submitted reels
+ * keep their YouTube titles (the function harmlessly returns the original when
+ * no translation exists).
+ */
+export async function translateRiotReels<
+  T extends { id: string; title: string; caption: string },
+>(reels: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || reels.length === 0) return reels;
+
+  const translations = await getTranslatedEntities(
+    'riot_reel',
+    reels.map((r) => r.id),
+    locale,
+  );
+
+  return reels.map((reel) => {
+    const t = translations[reel.id];
+    if (!t) return reel;
+    return {
+      ...reel,
+      title: t.title || reel.title,
+      caption: t.caption || reel.caption,
+    };
+  });
+}
+
 /** Fields on category assistants that should be translated. */
 const ASSISTANT_TRANSLATABLE_FIELDS = [
   'agent_quote',
@@ -211,4 +296,58 @@ export async function translateCategoryAssistants<
 
     return { ...assistant, ...overlay };
   });
+}
+
+/**
+ * Translate a country code to a localised display name using Intl.DisplayNames.
+ * Zero DB rows needed — uses the built-in Node.js API.
+ *
+ * For romanised (-Latn) locales, falls back to English since Intl.DisplayNames
+ * returns native script characters for those locales.
+ */
+export function translateCountryName(code: string, locale: string): string {
+  if (locale === 'en') return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+
+  // Romanised locales get native script from Intl.DisplayNames — fall back to English
+  const effectiveLocale = locale.endsWith('-Latn') ? 'en' : locale;
+
+  try {
+    const dn = new Intl.DisplayNames([effectiveLocale], { type: 'region' });
+    return dn.of(code) ?? code;
+  } catch {
+    // Fallback to English if locale not supported
+    return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+  }
+}
+
+/**
+ * Translate an array of country objects (code + name) to localised names.
+ * Uses Intl.DisplayNames — no DB query needed.
+ */
+export function translateCountryNames<T extends { code: string; name: string }>(
+  countries: T[],
+  locale: string,
+): T[] {
+  if (locale === 'en' || countries.length === 0) return countries;
+
+  return countries.map((country) => ({
+    ...country,
+    name: translateCountryName(country.code, locale),
+  }));
+}
+
+/**
+ * Translate country names in CountryBreakdown objects (used on issue detail pages).
+ * Uses Intl.DisplayNames — no DB query needed.
+ */
+export function translateCountryBreakdown(
+  countries: CountryBreakdown[],
+  locale: string,
+): CountryBreakdown[] {
+  if (locale === 'en' || countries.length === 0) return countries;
+
+  return countries.map((country) => ({
+    ...country,
+    country_name: translateCountryName(country.country_code, locale),
+  }));
 }

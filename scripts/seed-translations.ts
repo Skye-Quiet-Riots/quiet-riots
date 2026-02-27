@@ -547,6 +547,115 @@ export const CATEGORY_ASSISTANTS: Record<string, AssistantTranslation> = {
   },
 };
 
+// ─── Actions source data (39 unique title/description pairs) ─────────────────
+
+export const ACTIONS: { title: string; description: string }[] = [
+  // Train Cancellations
+  { title: 'Claim delay repay compensation', description: 'You are legally entitled to compensation for delays over 15 or 30 minutes depending on operator' },
+  { title: 'Write to your MP about rail performance', description: 'Template letter to send to your MP highlighting the impact of cancellations' },
+  { title: 'Share your cancellation story', description: 'Help others understand the real impact — post your experience' },
+  { title: 'Suggest improvements to timetabling', description: 'What would actually fix this? Share your ideas' },
+  // Flight Delays
+  { title: 'Claim EU261 / UK261 compensation', description: 'Airlines must pay £220-520 for delays over 3 hours on qualifying flights' },
+  { title: 'Document everything at the airport', description: 'Photograph departure boards, keep boarding passes, note times' },
+  { title: 'Rate your airline experience', description: 'Help future passengers know what to expect' },
+  // Broadband Speed
+  { title: 'Run and save speed test evidence', description: 'Use Ofcom broadband checker to document your actual speeds vs advertised' },
+  { title: 'Complain to Ofcom', description: 'Report your broadband provider for not delivering advertised speeds' },
+  { title: 'Switch to a better provider', description: 'Compare broadband deals in your area and switch' },
+  { title: "Map your street's broadband speeds", description: 'Organise neighbours to all test and share — collective data is powerful' },
+  // Energy Bill Costs
+  { title: 'Check if you are on the cheapest tariff', description: 'Use Ofgem accredited comparison sites to check' },
+  { title: 'Apply for the Warm Home Discount', description: 'You may be eligible for £150 off your electricity bill' },
+  { title: 'Share energy saving tips', description: 'What actually works to cut bills? Share with the community' },
+  { title: 'Propose a community energy buying scheme', description: 'Bulk buying power as a group could get better rates' },
+  // Sewage in Rivers
+  { title: 'Report a sewage discharge', description: 'Use the Environment Agency hotline to report sewage pollution' },
+  { title: 'Check your local river quality', description: 'See real-time discharge data for your area' },
+  { title: 'Sign the petition for tougher regulation', description: 'Join thousands demanding change' },
+  { title: 'Organise a local river clean-up', description: 'Bring people together to clean up and raise awareness' },
+  // NHS Waiting Times
+  { title: 'Check your right to choose', description: 'You have the right to choose which hospital you are referred to — shorter waits may be available' },
+  { title: 'Contact PALS at your hospital', description: 'Patient Advice and Liaison Service can help escalate your case' },
+  { title: 'Share your waiting story', description: 'Real stories create pressure for change — your experience matters' },
+  // GP Appointment Access
+  { title: 'Know your rights to a GP appointment', description: 'Practices must offer urgent appointments — know what to ask for' },
+  { title: 'Complain to NHS England about GP access', description: 'Formal complaints create a paper trail that drives change' },
+  // Delivery Problems
+  { title: 'Claim compensation for lost parcel', description: 'The sender is responsible — contact them, not the courier' },
+  { title: 'Film your delivery location', description: 'Video evidence of where parcels are left helps with claims' },
+  { title: 'Rate your delivery driver', description: 'Help identify patterns — good and bad' },
+  // Hidden Bank Charges
+  { title: 'Check if you can reclaim charges', description: 'You may be able to reclaim unfair overdraft charges' },
+  { title: 'Switch to a fee-free bank account', description: 'Compare accounts with no monthly fees or hidden charges' },
+  // Parking Fines
+  { title: 'Appeal your parking charge', description: 'Most private parking charges can be successfully appealed' },
+  { title: 'Check if the signage was adequate', description: 'Unclear signs are grounds for appeal — photograph everything' },
+  // Rent Increases
+  { title: 'Know your rights on rent increases', description: 'Your landlord must follow proper legal process' },
+  { title: 'Contact Shelter for free advice', description: 'Free housing advice helpline' },
+  { title: 'Share your rent increase story', description: 'Collective stories drive policy change' },
+  // Student Loan Repayment
+  { title: 'Check your repayment plan', description: "Make sure you're on the right plan" },
+  { title: 'Campaign for reform', description: 'Write to your MP about student finance' },
+  // Generic (applied to 38 issues)
+  { title: 'Share your experience', description: 'Tell others about your story — collective voices drive change' },
+  { title: 'Write to your representative', description: 'Use our template to demand change from your MP or councillor' },
+  { title: 'Welcome new members', description: 'Help newcomers feel at home in the community' },
+];
+
+// ─── Expert profiles source data (12 experts, name stays untranslated) ───────
+
+export const EXPERT_PROFILES: { name: string; role: string; speciality: string; achievement: string }[] = [
+  { name: 'Carlos M.', role: 'Translator', speciality: 'ES/EN Translation', achievement: 'Translated 47 issues across languages' },
+  { name: 'Dr. Patel', role: 'Rail Rights Expert', speciality: 'Legal guidance', achievement: '12 years experience in transport law' },
+  { name: 'Yuki T.', role: 'Media & Comms Lead', speciality: 'JP/EN · Video campaigns', achievement: 'Running the cancellation evidence campaign' },
+  { name: 'Tom H.', role: 'Network Engineer', speciality: 'Broadband infrastructure', achievement: 'Helped 200+ members optimise speeds' },
+  { name: 'Lisa R.', role: 'Consumer Rights Advisor', speciality: 'Ofcom complaints', achievement: 'Won 34 compensation claims' },
+  { name: 'Dr. Chen', role: 'Healthcare Policy', speciality: 'NHS reform research', achievement: 'Published 3 policy papers on wait times' },
+  { name: 'Maria G.', role: 'Community Organiser', speciality: 'Campaign coordination', achievement: 'Organised 12 local health rallies' },
+  { name: 'Raj P.', role: 'Data Analyst', speciality: 'Wait time mapping', achievement: 'Built the national wait time tracker' },
+  { name: 'Prof. Johnson', role: 'Environmental Scientist', speciality: 'Water quality analysis', achievement: 'Published 5 papers on river pollution' },
+  { name: 'Aisha K.', role: 'Campaign Lead', speciality: 'River clean-ups', achievement: 'Organised 30 clean-up events' },
+  { name: 'Sophie M.', role: 'Financial Advisor', speciality: 'Bank fee analysis', achievement: 'Exposed hidden charges at 5 major banks' },
+  { name: 'Jake P.', role: 'Student Finance Expert', speciality: 'Loan repayment advice', achievement: 'Helped 1,000+ graduates save money' },
+];
+
+// ─── Riot reels source data (17 curated reels, keyed by video ID) ────────────
+
+export const RIOT_REELS: { video_id: string; title: string; caption: string }[] = [
+  { video_id: 'xsxkHfbbApk', title: 'The Famous Train Carriage Sketch | At Last the 1948 Show', caption: 'An irritating man ruins a perfectly good British Rail journey' },
+  { video_id: 'MXEgkM9eBts', title: 'Big Train - Eagle Line', caption: 'A train company so bad they made a sketch show about it' },
+  { video_id: 'LZ259Jx8MQY', title: 'Pushing Dial-up Modems Further Than We EVER Thought Possible', caption: 'When 668kbps feels like a win, UK broadband peaked in 1999' },
+  { video_id: 'Y_2kFv1QWzU', title: 'Why suffer broadband rage? New unbreakable BT hybrid broadband', caption: 'Every Brit who has screamed at a buffering wheel, this is your biopic' },
+  { video_id: 'eT_k9JG0IN4', title: 'Cassetteboy vs The Tories May 2022', caption: 'We would rather let our people freeze than tax our energy companies' },
+  { video_id: '3Wtx1HhDfDs', title: 'British Gas shares advert 1986', caption: 'If you see Sid, tell him gas costs four grand a year now' },
+  { video_id: 'aZo6vKS0ybI', title: 'BREAKING NEWS: Nish Kumar exposes sewage pollution by water companies', caption: 'Welcome to the beach — hazmat suits and turd ice cream included' },
+  { video_id: 'uK7DRJx9nbU', title: 'Cassetteboy vs Jeremy Hunt', caption: "Hunt's own words remixed to YMCA — the NHS roast we deserved" },
+  { video_id: 'R9biM_ZfIdo', title: 'George Agdgdgwngo Series 1 Compilation - Fonejacker', caption: 'He just needs your sort code for the steam cleaning' },
+  { video_id: 'zegud4x4zL0', title: 'Waiting for a Package - Foil Arms and Hog', caption: 'Your package is out for delivery. It will stay out for delivery.' },
+  { video_id: 'VaaankRbMkY', title: 'Lee Evans-Parcel Force', caption: 'Parcelforce! The most stressful word in the English language.' },
+  { video_id: '0n_Ty_72Qds', title: 'Little Britain - Computer says no', caption: 'The spiritual ancestor of every self-checkout machine' },
+  { video_id: '6_L_MpgMCMA', title: "Compilation Of Michael's Best Jokes About Planes And Airports | Michael McIntyre", caption: 'Your delayed Ryanair flight, but at least Michael McIntyre gets it' },
+  { video_id: 'e01EAS0GUa0', title: 'UK Pothole Epidemic - Resurface Our Roads', caption: "Britain's roads: where craters come with free suspension tests" },
+  { video_id: 'kAG39jKi0lI', title: 'My blackberry is not working - BBC', caption: 'When your network provider says the problem is at your end' },
+  { video_id: '27aVPqpnL7Y', title: 'Trigger Happy TV - The big phone guy', caption: 'UK coverage so good you need a phone the size of a suitcase' },
+  { video_id: 'w2A8q3XIhu0', title: "Hold music used to sound better. Here's why.", caption: 'We have all suffered. Now we know why it hurts.' },
+];
+
+// ─── Action initiatives source data (8 initiatives) ─────────────────────────
+
+export const ACTION_INITIATIVES: { title: string; description: string }[] = [
+  { title: 'Avanti Legal Review', description: 'Commission an independent legal review of Avanti West Coast franchise obligations and compensation policies' },
+  { title: 'Season Ticket Refund Toolkit', description: 'Build a free toolkit to help commuters claim back unused season ticket days' },
+  { title: 'Brighton Water Testing', description: 'Commission independent water quality testing at 12 Brighton beach sites' },
+  { title: 'River Testing Kits', description: 'Purchase portable water testing kits for 50 volunteer river monitors across England' },
+  { title: 'Community Speed Map App', description: 'Commission development of a community broadband speed testing and mapping app' },
+  { title: 'GP Access FOI Requests', description: 'Commission Freedom of Information requests to every NHS trust on GP appointment statistics' },
+  { title: 'Airline Compensation Guide', description: 'Create a comprehensive free guide to claiming EU261/UK261 flight delay compensation' },
+  { title: 'Smart Meter Audit', description: 'Commission an independent audit of smart meter accuracy across 500 households' },
+];
+
 // ─── Translation file structure ───────────────────────────────────────────────
 
 export interface TranslationFile {
@@ -558,6 +667,14 @@ export interface TranslationFile {
   synonyms: Record<string, string[]>;
   /** Category assistant translatable fields keyed by category name */
   category_assistants: Record<string, AssistantTranslation>;
+  /** Action title + description keyed by English title */
+  actions: Record<string, { title: string; description: string }>;
+  /** Expert profile translatable fields keyed by English name (name itself stays untranslated) */
+  expert_profiles: Record<string, { role: string; speciality: string; achievement: string }>;
+  /** Riot reel translatable fields keyed by YouTube video ID (curated only) */
+  riot_reels: Record<string, { title: string; caption: string }>;
+  /** Action initiative title + description keyed by English title */
+  action_initiatives: Record<string, { title: string; description: string }>;
 }
 
 // ─── Generate mode ────────────────────────────────────────────────────────────
@@ -588,7 +705,38 @@ function generateEnglishBaseline(): TranslationFile {
     category_assistants[cat] = { ...fields };
   }
 
-  return { locale: 'en', categories, issues, organisations, synonyms, category_assistants };
+  const actions: Record<string, { title: string; description: string }> = {};
+  for (const action of ACTIONS) {
+    actions[action.title] = { title: action.title, description: action.description };
+  }
+
+  const expert_profiles: Record<string, { role: string; speciality: string; achievement: string }> = {};
+  for (const expert of EXPERT_PROFILES) {
+    expert_profiles[expert.name] = { role: expert.role, speciality: expert.speciality, achievement: expert.achievement };
+  }
+
+  const riot_reels: Record<string, { title: string; caption: string }> = {};
+  for (const reel of RIOT_REELS) {
+    riot_reels[reel.video_id] = { title: reel.title, caption: reel.caption };
+  }
+
+  const action_initiatives: Record<string, { title: string; description: string }> = {};
+  for (const initiative of ACTION_INITIATIVES) {
+    action_initiatives[initiative.title] = { title: initiative.title, description: initiative.description };
+  }
+
+  return {
+    locale: 'en',
+    categories,
+    issues,
+    organisations,
+    synonyms,
+    category_assistants,
+    actions,
+    expert_profiles,
+    riot_reels,
+    action_initiatives,
+  };
 }
 
 // ─── Apply mode ───────────────────────────────────────────────────────────────
@@ -648,12 +796,45 @@ async function applyTranslations() {
     assistantIdMap[row.category as string] = row.id as string;
   }
 
+  // Build action lookup: title → id (actions have duplicate titles across issues, use first)
+  const actionResult = await db.execute('SELECT id, title FROM actions');
+  const actionIdMap: Record<string, string> = {};
+  for (const row of actionResult.rows) {
+    const title = row.title as string;
+    if (!actionIdMap[title]) {
+      actionIdMap[title] = row.id as string;
+    }
+  }
+
+  // Build expert lookup: name → id
+  const expertResult = await db.execute('SELECT id, name FROM expert_profiles');
+  const expertIdMap: Record<string, string> = {};
+  for (const row of expertResult.rows) {
+    expertIdMap[row.name as string] = row.id as string;
+  }
+
+  // Build reel lookup: youtube_video_id → id (curated reels only)
+  const reelResult = await db.execute(
+    "SELECT id, youtube_video_id FROM riot_reels WHERE source = 'curated'",
+  );
+  const reelIdMap: Record<string, string> = {};
+  for (const row of reelResult.rows) {
+    reelIdMap[row.youtube_video_id as string] = row.id as string;
+  }
+
+  // Build action initiative lookup: title → id
+  const aiResult = await db.execute('SELECT id, title FROM action_initiatives');
+  const aiIdMap: Record<string, string> = {};
+  for (const row of aiResult.rows) {
+    aiIdMap[row.title as string] = row.id as string;
+  }
+
   console.log(
-    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations, ${synonymResult.rows.length} synonyms, ${Object.keys(assistantIdMap).length} assistants`,
+    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations, ${synonymResult.rows.length} synonyms, ${Object.keys(assistantIdMap).length} assistants, ${Object.keys(actionIdMap).length} actions, ${Object.keys(expertIdMap).length} experts, ${Object.keys(reelIdMap).length} reels, ${Object.keys(aiIdMap).length} action initiatives`,
   );
 
   const { generateId } = await import('../src/lib/uuid');
-  const { sanitizeText } = await import('../src/lib/sanitize');
+  const { sanitizeTranslation } = await import('../src/lib/sanitize');
 
   let inserted = 0;
   let skipped = 0;
@@ -671,12 +852,14 @@ async function applyTranslations() {
 
     // Categories (use category name as entity_id since categories aren't a separate table)
     for (const [englishName, translatedName] of Object.entries(data.categories)) {
+      const sanitized = sanitizeTranslation(translatedName, 255);
+      if (!sanitized) continue;
       statements.push({
         sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
               VALUES (?, 'category', ?, 'name', ?, ?, 'machine')
               ON CONFLICT(entity_type, entity_id, field, language_code)
               DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), englishName, locale, translatedName],
+        args: [generateId(), englishName, locale, sanitized],
       });
     }
 
@@ -688,20 +871,26 @@ async function applyTranslations() {
         continue;
       }
 
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'issue', ?, 'name', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), issueId, locale, translation.name],
-      });
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'issue', ?, 'description', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), issueId, locale, translation.description],
-      });
+      const sanitizedName = sanitizeTranslation(translation.name, 255);
+      const sanitizedDesc = sanitizeTranslation(translation.description, 2000);
+      if (sanitizedName) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'issue', ?, 'name', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), issueId, locale, sanitizedName],
+        });
+      }
+      if (sanitizedDesc) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'issue', ?, 'description', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), issueId, locale, sanitizedDesc],
+        });
+      }
     }
 
     // Organisations
@@ -712,20 +901,26 @@ async function applyTranslations() {
         continue;
       }
 
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'organisation', ?, 'name', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), orgId, locale, translation.name],
-      });
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'organisation', ?, 'description', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), orgId, locale, translation.description],
-      });
+      const sanitizedOrgName = sanitizeTranslation(translation.name, 255);
+      const sanitizedOrgDesc = sanitizeTranslation(translation.description, 2000);
+      if (sanitizedOrgName) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'organisation', ?, 'name', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), orgId, locale, sanitizedOrgName],
+        });
+      }
+      if (sanitizedOrgDesc) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'organisation', ?, 'description', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), orgId, locale, sanitizedOrgDesc],
+        });
+      }
     }
 
     // Synonyms — match translated terms to English synonym rows by array index
@@ -740,8 +935,8 @@ async function applyTranslations() {
         // Match by array index — translated term[i] corresponds to English synonym[i]
         const count = Math.min(translatedTerms.length, dbSynonyms.length);
         for (let i = 0; i < count; i++) {
-          const translatedTerm = sanitizeText(translatedTerms[i]);
-          if (!translatedTerm || translatedTerm.length > 255) continue;
+          const translatedTerm = sanitizeTranslation(translatedTerms[i], 255);
+          if (!translatedTerm) continue;
 
           statements.push({
             sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
@@ -776,8 +971,8 @@ async function applyTranslations() {
         for (const field of assistantFields) {
           const value = translation[field];
           if (!value) continue;
-          const sanitized = sanitizeText(value);
-          if (!sanitized || sanitized.length > 2000) continue;
+          const sanitized = sanitizeTranslation(value, 2000);
+          if (!sanitized) continue;
 
           statements.push({
             sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
@@ -785,6 +980,129 @@ async function applyTranslations() {
                   ON CONFLICT(entity_type, entity_id, field, language_code)
                   DO UPDATE SET value = excluded.value, source = excluded.source`,
             args: [generateId(), assistantId, field, locale, sanitized],
+          });
+        }
+      }
+    }
+
+    // Actions — lookup by title to get DB id
+    if (data.actions) {
+      for (const [englishTitle, translation] of Object.entries(data.actions)) {
+        const actionId = actionIdMap[englishTitle];
+        if (!actionId) {
+          skipped++;
+          continue;
+        }
+
+        const sanitizedTitle = sanitizeTranslation(translation.title, 255);
+        const sanitizedDesc = sanitizeTranslation(translation.description, 2000);
+        if (sanitizedTitle) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'action', ?, 'title', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), actionId, locale, sanitizedTitle],
+          });
+        }
+        if (sanitizedDesc) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'action', ?, 'description', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), actionId, locale, sanitizedDesc],
+          });
+        }
+      }
+    }
+
+    // Expert profiles — lookup by name to get DB id
+    if (data.expert_profiles) {
+      const expertFields = ['role', 'speciality', 'achievement'] as const;
+      for (const [expertName, translation] of Object.entries(data.expert_profiles)) {
+        const expertId = expertIdMap[expertName];
+        if (!expertId) {
+          skipped++;
+          continue;
+        }
+
+        for (const field of expertFields) {
+          const value = translation[field];
+          if (!value) continue;
+          const sanitized = sanitizeTranslation(value, 2000);
+          if (!sanitized) continue;
+
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'expert_profile', ?, ?, ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), expertId, field, locale, sanitized],
+          });
+        }
+      }
+    }
+
+    // Riot reels — lookup by video_id to get DB id
+    if (data.riot_reels) {
+      for (const [videoId, translation] of Object.entries(data.riot_reels)) {
+        const reelId = reelIdMap[videoId];
+        if (!reelId) {
+          skipped++;
+          continue;
+        }
+
+        const sanitizedTitle = sanitizeTranslation(translation.title, 255);
+        const sanitizedCaption = sanitizeTranslation(translation.caption, 2000);
+        if (sanitizedTitle) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'riot_reel', ?, 'title', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), reelId, locale, sanitizedTitle],
+          });
+        }
+        if (sanitizedCaption) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'riot_reel', ?, 'caption', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), reelId, locale, sanitizedCaption],
+          });
+        }
+      }
+    }
+
+    // Action initiatives — lookup by title to get DB id
+    if (data.action_initiatives) {
+      for (const [englishTitle, translation] of Object.entries(data.action_initiatives)) {
+        const aiId = aiIdMap[englishTitle];
+        if (!aiId) {
+          skipped++;
+          continue;
+        }
+
+        const sanitizedAiTitle = sanitizeTranslation(translation.title, 255);
+        const sanitizedAiDesc = sanitizeTranslation(translation.description, 2000);
+        if (sanitizedAiTitle) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'action_initiative', ?, 'title', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), aiId, locale, sanitizedAiTitle],
+          });
+        }
+        if (sanitizedAiDesc) {
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'action_initiative', ?, 'description', ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), aiId, locale, sanitizedAiDesc],
           });
         }
       }
@@ -857,9 +1175,16 @@ async function main() {
     // Count what we need
     const synonymCount = SYNONYMS.reduce((sum, [, terms]) => sum + terms.length, 0);
     const totalStrings =
-      CATEGORIES.length + ISSUES.length * 2 + ORGANISATIONS.length * 2 + synonymCount;
+      CATEGORIES.length +
+      ISSUES.length * 2 +
+      ORGANISATIONS.length * 2 +
+      synonymCount +
+      ACTIONS.length * 2 +
+      EXPERT_PROFILES.length * 3 +
+      RIOT_REELS.length * 2 +
+      ACTION_INITIATIVES.length * 2;
     console.log(
-      `\nContent to translate: ${CATEGORIES.length} categories + ${ISSUES.length} issues (name+desc) + ${ORGANISATIONS.length} orgs (name+desc) + ${synonymCount} synonyms = ${totalStrings} strings per locale`,
+      `\nContent to translate: ${CATEGORIES.length} categories + ${ISSUES.length} issues + ${ORGANISATIONS.length} orgs + ${synonymCount} synonyms + ${ACTIONS.length} actions + ${EXPERT_PROFILES.length} experts + ${RIOT_REELS.length} reels + ${ACTION_INITIATIVES.length} initiatives = ${totalStrings} strings per locale`,
     );
     console.log(`Target locales: ${targetLocales.length}`);
     console.log(`\n⚠️  Translation files need to be generated by translation agents.`);
@@ -884,6 +1209,10 @@ async function main() {
         organisations: JSON.parse(JSON.stringify(baseline.organisations)),
         synonyms: JSON.parse(JSON.stringify(baseline.synonyms)),
         category_assistants: JSON.parse(JSON.stringify(baseline.category_assistants)),
+        actions: JSON.parse(JSON.stringify(baseline.actions)),
+        expert_profiles: JSON.parse(JSON.stringify(baseline.expert_profiles)),
+        riot_reels: JSON.parse(JSON.stringify(baseline.riot_reels)),
+        action_initiatives: JSON.parse(JSON.stringify(baseline.action_initiatives)),
       };
       fs.writeFileSync(outPath, JSON.stringify(placeholder, null, 2) + '\n');
       generated++;

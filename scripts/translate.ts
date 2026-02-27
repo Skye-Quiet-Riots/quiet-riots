@@ -36,6 +36,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
 import { NON_EN_LOCALES, LOCALE_NAMES } from '../src/i18n/locales';
+import { validateTranslation } from './translate-validation';
 
 // Load .env.local if it exists (tsx doesn't auto-load it)
 const envLocalPath = path.resolve(__dirname, '../.env.local');
@@ -65,6 +66,10 @@ const VALID_SECTIONS = [
   'organisations',
   'synonyms',
   'category_assistants',
+  'actions',
+  'expert_profiles',
+  'riot_reels',
+  'action_initiatives',
 ] as const;
 
 type Section = (typeof VALID_SECTIONS)[number];
@@ -237,39 +242,7 @@ async function withConcurrency<T>(
   await Promise.all(workers);
 }
 
-// ─── Validation ─────────────────────────────────────────────────────────────
-
-function validateTranslation(
-  original: Record<string, unknown>,
-  translated: Record<string, unknown>,
-  section: string,
-  locale: string,
-): string[] {
-  const errors: string[] = [];
-
-  const origKeys = Object.keys(original).sort();
-  const transKeys = Object.keys(translated).sort();
-
-  if (origKeys.length !== transKeys.length) {
-    errors.push(
-      `${locale}/${section}: Key count mismatch — expected ${origKeys.length}, got ${transKeys.length}`,
-    );
-  }
-
-  for (const key of origKeys) {
-    if (!(key in translated)) {
-      errors.push(`${locale}/${section}: Missing key "${key}"`);
-    }
-  }
-
-  for (const key of transKeys) {
-    if (!(key in original)) {
-      errors.push(`${locale}/${section}: Extra key "${key}"`);
-    }
-  }
-
-  return errors;
-}
+// Validation imported from ./translate-validation
 
 // ─── Main ───────────────────────────────────────────────────────────────────
 

@@ -80,6 +80,12 @@ describe('messages/en.json', () => {
     expect(nav).toHaveProperty('wallet');
     expect(nav).toHaveProperty('profile');
     expect(nav).toHaveProperty('toggleMenu');
+    expect(nav).toHaveProperty('inbox');
+    expect(nav).toHaveProperty('setupGuide');
+    expect(nav).toHaveProperty('myShare');
+    expect(nav).toHaveProperty('shareGuide');
+    expect(nav).toHaveProperty('compliance');
+    expect(nav).toHaveProperty('treasury');
   });
 
   it('Auth namespace has all required keys', () => {
