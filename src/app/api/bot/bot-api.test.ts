@@ -739,6 +739,27 @@ describe('Bot API: set_language', () => {
     });
     expect(status).toBe(400);
   });
+
+  it('rejects invalid language code', async () => {
+    const { status, body } = await callBot('set_language', {
+      phone: '+447700900001',
+      language_code: 'xx',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Invalid language code');
+  });
+
+  it.each(['en', 'bn', 'hi', 'ar', 'fr', 'ja'])(
+    'accepts valid language code: %s',
+    async (code) => {
+      const { status, body } = await callBot('set_language', {
+        phone: '+447700900001',
+        language_code: code,
+      });
+      expect(status).toBe(200);
+      expect(body.data.language_code).toBe(code);
+    },
+  );
 });
 
 describe('Bot API: set_country', () => {
@@ -790,6 +811,25 @@ describe('Bot API: identify with language', () => {
     });
     expect(status).toBe(200);
     expect(body.data.user.language_code).toBe('ja');
+  });
+
+  it('rejects invalid language_code on identify', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+8801712345678',
+      name: 'Test User',
+      language_code: 'zzzz',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Invalid language code');
+  });
+
+  it('rejects invalid language_code on identify for existing user', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+819012345678',
+      language_code: 'invalid',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Invalid language code');
   });
 });
 

@@ -790,6 +790,16 @@ export async function POST(request: NextRequest) {
       // ─── User Identity ───────────────────────────────────
       case 'identify': {
         const phone = p.phone as string;
+        // Validate language_code if provided
+        if (p.language_code) {
+          const db = getDb();
+          const langCheck = await db.execute({
+            sql: 'SELECT 1 FROM languages WHERE code = ?',
+            args: [p.language_code as string],
+          });
+          if (!langCheck.rows.length)
+            return err(`Invalid language code: ${p.language_code}`, 400);
+        }
         let user = await getUserByPhone(phone);
         if (user) {
           trackedUserId = user.id;
@@ -1270,11 +1280,16 @@ export async function POST(request: NextRequest) {
       // ─── Language / Country ─────────────────────────────
       case 'set_language': {
         const phone = p.phone as string;
+        const langCode = p.language_code as string;
+        const db = getDb();
+        const langCheck = await db.execute({
+          sql: 'SELECT 1 FROM languages WHERE code = ?',
+          args: [langCode],
+        });
+        if (!langCheck.rows.length) return err(`Invalid language code: ${langCode}`, 400);
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
-        const updated = await updateUser(user.id, {
-          language_code: p.language_code as string,
-        });
+        const updated = await updateUser(user.id, { language_code: langCode });
         return ok({ user: updated, language_code: updated?.language_code });
       }
 

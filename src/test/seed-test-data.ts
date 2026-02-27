@@ -815,6 +815,26 @@ export async function seedTestData() {
     sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
     args: ['en', 'English', 'English', 'ltr'],
   });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['fr', 'French', 'Français', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['ja', 'Japanese', '日本語', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['bn', 'Bengali', 'বাংলা', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['hi', 'Hindi', 'हिन्दी', 'ltr'],
+  });
+  await db.execute({
+    sql: `INSERT INTO languages (code, name, native_name, direction) VALUES (?, ?, ?, ?)`,
+    args: ['ar', 'Arabic', 'العربية', 'rtl'],
+  });
 
   // Translations — Polish (pl) for issues and organisations
   await db.execute({
