@@ -1,5 +1,5 @@
-import { getTranslatedEntities } from './translations';
-import type { IssuePivotRow, Synonym } from '@/types';
+import { getEntityTranslations, getTranslatedEntities } from './translations';
+import type { CategoryAssistant, IssuePivotRow, Synonym } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -126,5 +126,89 @@ export async function translateSynonyms(synonyms: Synonym[], locale: string): Pr
     const t = translations[synonym.id];
     if (!t || !t.term) return synonym;
     return { ...synonym, term: t.term };
+  });
+}
+
+/** Fields on category assistants that should be translated. */
+const ASSISTANT_TRANSLATABLE_FIELDS = [
+  'agent_quote',
+  'human_quote',
+  'agent_bio',
+  'human_bio',
+  'goal',
+  'focus',
+  'focus_detail',
+] as const;
+
+/**
+ * Translate a single category assistant object.
+ * Overlays translated values for quotes, bios, goal, focus, and focus_detail.
+ * Does NOT translate proper names (agent_name, human_name), icons, or internal fields.
+ */
+export async function translateCategoryAssistant<
+  T extends Pick<
+    CategoryAssistant,
+    | 'id'
+    | 'agent_quote'
+    | 'human_quote'
+    | 'agent_bio'
+    | 'human_bio'
+    | 'goal'
+    | 'focus'
+    | 'focus_detail'
+  >,
+>(assistant: T, locale: string): Promise<T> {
+  if (locale === 'en') return assistant;
+
+  const translations = await getEntityTranslations('category_assistant', assistant.id, locale);
+  if (Object.keys(translations).length === 0) return assistant;
+
+  const overlay: Record<string, string> = {};
+  for (const field of ASSISTANT_TRANSLATABLE_FIELDS) {
+    if (translations[field]) {
+      overlay[field] = translations[field];
+    }
+  }
+
+  return { ...assistant, ...overlay };
+}
+
+/**
+ * Translate multiple category assistant objects (for the list endpoint).
+ * Uses batch query to avoid N+1.
+ */
+export async function translateCategoryAssistants<
+  T extends Pick<
+    CategoryAssistant,
+    | 'id'
+    | 'agent_quote'
+    | 'human_quote'
+    | 'agent_bio'
+    | 'human_bio'
+    | 'goal'
+    | 'focus'
+    | 'focus_detail'
+  >,
+>(assistants: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || assistants.length === 0) return assistants;
+
+  const translations = await getTranslatedEntities(
+    'category_assistant',
+    assistants.map((a) => a.id),
+    locale,
+  );
+
+  return assistants.map((assistant) => {
+    const t = translations[assistant.id];
+    if (!t) return assistant;
+
+    const overlay: Record<string, string> = {};
+    for (const field of ASSISTANT_TRANSLATABLE_FIELDS) {
+      if (t[field]) {
+        overlay[field] = t[field];
+      }
+    }
+
+    return { ...assistant, ...overlay };
   });
 }

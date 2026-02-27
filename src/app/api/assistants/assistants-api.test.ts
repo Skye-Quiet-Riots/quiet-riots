@@ -58,7 +58,8 @@ afterAll(async () => {
 // ---------------------------------------------------------------
 describe('GET /api/assistants', () => {
   it('returns all assistants with stats', async () => {
-    const response = await getAssistants();
+    const request = new Request('http://localhost:3000/api/assistants');
+    const response = await getAssistants(request);
     const body = await response.json();
     expect(response.status).toBe(200);
     expect(body.ok).toBe(true);
@@ -73,9 +74,21 @@ describe('GET /api/assistants', () => {
   });
 
   it('returns JSON with ok: true', async () => {
-    const response = await getAssistants();
+    const request = new Request('http://localhost:3000/api/assistants');
+    const response = await getAssistants(request);
     const body = await response.json();
     expect(body.ok).toBe(true);
+  });
+
+  it('accepts locale query parameter', async () => {
+    const request = new Request('http://localhost:3000/api/assistants?locale=es');
+    const response = await getAssistants(request);
+    const body = await response.json();
+    expect(response.status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data).toHaveLength(2);
+    // Falls back to English values since no translations seeded for list
+    expect(body.data[0].agent_name).toBeDefined();
   });
 });
 
@@ -113,6 +126,19 @@ describe('GET /api/assistants/[category]', () => {
       params: Promise.resolve({ category: 'banking' }),
     });
     expect(response.status).toBe(404);
+  });
+
+  it('accepts locale query parameter', async () => {
+    const request = new Request('http://localhost:3000/api/assistants/transport?locale=es');
+    const response = await getAssistantDetail(request, {
+      params: Promise.resolve({ category: 'transport' }),
+    });
+    const body = await response.json();
+    expect(response.status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.agent_name).toBe('Jett');
+    expect(body.data.goal).toBeDefined();
+    expect(body.data.riots).toBeDefined();
   });
 });
 

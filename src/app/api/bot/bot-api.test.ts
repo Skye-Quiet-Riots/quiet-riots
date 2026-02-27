@@ -515,6 +515,60 @@ describe('Bot API: event tracking', () => {
   });
 });
 
+describe('Bot API: get_category_assistants', () => {
+  it('returns assistant for valid category', async () => {
+    const { status, body } = await callBot('get_category_assistants', {
+      category: 'transport',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant).toBeDefined();
+    expect(body.data.assistant.agent_name).toBe('Jett');
+    expect(body.data.assistant.human_name).toBe('Bex');
+  });
+
+  it('accepts language_code param', async () => {
+    const { status, body } = await callBot('get_category_assistants', {
+      category: 'transport',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant).toBeDefined();
+    // Falls back to English since no translations seeded in test DB
+    expect(body.data.assistant.agent_name).toBe('Jett');
+    expect(body.data.assistant.goal).toBeDefined();
+  });
+
+  it('returns translated assistant data when translations exist', async () => {
+    // Seed a translation row for the transport assistant's goal field
+    const { getDb } = await import('@/lib/db');
+    const { generateId } = await import('@/lib/uuid');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+            VALUES (?, 'category_assistant', 'asst-transport', 'goal', 'es', 'Meta en español', 'machine')
+            ON CONFLICT(entity_type, entity_id, field, language_code) DO UPDATE SET value = excluded.value`,
+      args: [generateId()],
+    });
+
+    const { status, body } = await callBot('get_category_assistants', {
+      category: 'transport',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant.goal).toBe('Meta en español');
+    // agent_name stays English (proper name, not translated)
+    expect(body.data.assistant.agent_name).toBe('Jett');
+  });
+
+  it('returns 404 for nonexistent category', async () => {
+    const { status, body } = await callBot('get_category_assistants', {
+      category: 'nonexistent',
+    });
+    expect(status).toBe(404);
+    expect(body.error).toContain('not found');
+  });
+});
+
 describe('Bot API: get_assistant_detail', () => {
   it('returns full detail for valid category', async () => {
     const { status, body } = await callBot('get_assistant_detail', {
@@ -529,6 +583,18 @@ describe('Bot API: get_assistant_detail', () => {
     expect(body.data.assistant.riots).toBeDefined();
     expect(body.data.assistant.recent_activity).toBeDefined();
     expect(typeof body.data.assistant.messages_sent).toBe('number');
+  });
+
+  it('accepts language_code param', async () => {
+    const { status, body } = await callBot('get_assistant_detail', {
+      category: 'transport',
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant).toBeDefined();
+    // Translation seeded by earlier test should be overlaid
+    expect(body.data.assistant.goal).toBe('Meta en español');
+    expect(body.data.assistant.riots).toBeDefined();
   });
 
   it('returns 404 for invalid category', async () => {
