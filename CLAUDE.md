@@ -101,6 +101,28 @@ Every user-facing text must be translated into all 55 non-English locales. A fea
 - **Translation table** stores `(entity_type, entity_id, field, language_code, value)` with UNIQUE constraint on `(entity_type, entity_id, field, language_code)`
 - **Sanitise** all translated values with `sanitizeText()` before DB insertion
 
+### Zero Tolerance for Hardcoded English (MANDATORY — zero exceptions)
+
+**EVERY user-visible string must go through i18n. No exceptions. No shortcuts. No "I'll translate it later."**
+
+1. **No hardcoded English strings in components.** Every string a user can see (labels, titles, descriptions, CTAs, tooltips, error messages, placeholders) MUST use `getTranslations()` or `useTranslations()` with a key from `messages/*.json`. If you write a literal English string in a `.tsx` file that renders to the DOM, it's a bug.
+
+2. **No untranslated DB data in pages.** Every page that fetches translatable entities (issues, organisations, assistants, synonyms) MUST call the appropriate `translate*()` function from `src/lib/queries/translate.ts` before rendering:
+   - `translateEntities()` / `translateEntity()` for issues, organisations
+   - `translateCategoryAssistants()` / `translateCategoryAssistant()` for assistants
+   - `translateSynonyms()` for synonyms
+   - If a page calls `getAllAssistants()`, `getAssistantByCategory()`, or `getAssistantDetail()`, it MUST translate the result before passing it to any component.
+
+3. **No untranslated category names.** Category names like "Transport", "Banking", "Health" are English enum values — they MUST be translated via `getTranslations('Categories')` before display. Every `<CategoryBadge>` MUST receive a translated `label` prop. The `{label ?? category}` fallback in `CategoryBadge` exists as a safety net, not as a valid rendering path.
+
+4. **Self-check before committing.** Search for hardcoded strings:
+   ```bash
+   # Find potential hardcoded English in components (review each match)
+   grep -rn ">[A-Z][a-z].*</" src/components/ src/app/ --include="*.tsx" | grep -v "test\." | grep -v "{" | head -20
+   ```
+
+5. **API routes vs pages.** API routes that return JSON are correctly translated (they use `translate*()` functions). The pattern to follow: if the API route translates, the page MUST also translate. Never assume "the API handles it" — pages call the DB directly, not the API.
+
 ### DB Entity Translation Protocol (MANDATORY — use `npm run translate`)
 
 When a feature adds or modifies translatable DB entities (issues, organisations, synonyms, category_assistants, categories), use the API-based translation pipeline. **NEVER use sub-agents for DB entity translations** — they are slow (~20 min), hit context limits, and fail silently.

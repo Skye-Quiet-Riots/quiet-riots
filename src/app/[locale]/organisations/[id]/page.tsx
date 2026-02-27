@@ -12,6 +12,7 @@ import {
   translateEntity,
   translateIssuePivotRows,
   translateOrgPivotRows,
+  translateCategoryAssistant,
 } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { CategoryBadge } from '@/components/data/category-badge';
@@ -44,7 +45,8 @@ export default async function OrgDetailPage({ params }: Props) {
   ]);
   const totalRioters = await getTotalRiotersForOrg(org.id);
   const evidence = await getEvidenceForOrg(org.id);
-  const assistant = await getAssistantByCategory(toAssistantCategory(org.category));
+  const rawAssistant = await getAssistantByCategory(toAssistantCategory(org.category));
+  const assistant = rawAssistant ? await translateCategoryAssistant(rawAssistant, locale) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

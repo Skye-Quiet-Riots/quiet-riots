@@ -21,6 +21,7 @@ import {
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
+  translateCategoryAssistant,
 } from '@/lib/queries/translate';
 import { getSession } from '@/lib/session';
 import { getSuggestionByIssueId } from '@/lib/queries/suggestions';
@@ -115,7 +116,8 @@ export default async function IssueDetailPage({ params }: Props) {
   const reels = await getReelsForIssue(issue.id);
   const actionInitiatives = await getActionInitiativesForIssue(issue.id);
   const evidence = await getEvidenceForIssue(issue.id);
-  const assistant = await getAssistantByCategory(toAssistantCategory(issue.category));
+  const rawAssistant = await getAssistantByCategory(toAssistantCategory(issue.category));
+  const assistant = rawAssistant ? await translateCategoryAssistant(rawAssistant, locale) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

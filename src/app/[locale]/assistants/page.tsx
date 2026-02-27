@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getAllAssistants } from '@/lib/queries/assistants';
+import { translateCategoryAssistants } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { AssistantCard } from '@/components/cards/assistant-card';
 
@@ -14,7 +15,8 @@ export default async function AssistantsPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations('Assistants');
 
-  const assistants = await getAllAssistants();
+  const rawAssistants = await getAllAssistants();
+  const assistants = await translateCategoryAssistants(rawAssistants, locale);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">

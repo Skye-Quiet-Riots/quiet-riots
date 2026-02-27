@@ -10,6 +10,7 @@ interface AssistantCardProps {
 
 export async function AssistantCard({ assistant }: AssistantCardProps) {
   const t = await getTranslations('Cards');
+  const tc = await getTranslations('Categories');
   const category = (assistant.category.charAt(0).toUpperCase() +
     assistant.category.slice(1)) as Category;
 
@@ -55,7 +56,7 @@ export async function AssistantCard({ assistant }: AssistantCardProps) {
 
       {/* Stats + Category */}
       <div className="mt-auto flex items-center justify-between">
-        <CategoryBadge category={category} />
+        <CategoryBadge category={category} label={tc(category)} />
         <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="font-semibold">
             {assistant.rioter_count.toLocaleString()} {t('rioters')}

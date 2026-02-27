@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import type { AssistantWithStats } from '@/lib/queries/assistants';
 
 interface AssistantOverviewBannerProps {
   assistants: AssistantWithStats[];
 }
 
-export function AssistantOverviewBanner({ assistants }: AssistantOverviewBannerProps) {
+export async function AssistantOverviewBanner({ assistants }: AssistantOverviewBannerProps) {
+  const t = await getTranslations('Assistants');
   // Show up to 6 assistant icons as a visual preview
   const preview = assistants.slice(0, 6);
 
@@ -33,16 +35,16 @@ export function AssistantOverviewBanner({ assistants }: AssistantOverviewBannerP
       {/* Description */}
       <div className="min-w-0 flex-1">
         <p className="text-sm font-semibold text-purple-900 dark:text-purple-200">
-          {assistants.length} AI & Human Assistant Pairs
+          {t('bannerTitle', { count: assistants.length })}
         </p>
         <p className="line-clamp-1 text-xs text-purple-700/80 dark:text-purple-300/70">
-          Every category has a dedicated AI agent and human organiser to help.
+          {t('bannerSubtitle')}
         </p>
       </div>
 
       {/* CTA */}
       <span className="flex-shrink-0 text-xs font-medium text-purple-600 group-hover:text-purple-800 dark:text-purple-400 dark:group-hover:text-purple-300">
-        Meet them →
+        {t('meetThem')}
       </span>
     </Link>
   );

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import type { CategoryAssistant, Category } from '@/types';
 
 interface AssistantDetailBannerProps {
@@ -8,14 +9,17 @@ interface AssistantDetailBannerProps {
   focus?: string | null;
 }
 
-export function AssistantDetailBanner({
+export async function AssistantDetailBanner({
   assistant,
   agentHelps,
   humanHelps,
   focus,
 }: AssistantDetailBannerProps) {
+  const t = await getTranslations('Assistants');
+  const tc = await getTranslations('Categories');
   const category = (assistant.category.charAt(0).toUpperCase() +
     assistant.category.slice(1)) as Category;
+  const categoryLabel = tc(category);
   const effectiveFocus = focus ?? assistant.focus;
 
   return (
@@ -44,13 +48,13 @@ export function AssistantDetailBanner({
         </div>
         <div className="min-w-0">
           <h3 className="font-semibold text-purple-900 dark:text-purple-200">
-            Your {category} Assistants
+            {t('yourAssistants', { category: categoryLabel })}
           </h3>
           <p className="text-sm text-purple-700 dark:text-purple-400">
             {assistant.agent_name}{' '}
-            <span className="text-purple-500 dark:text-purple-500">(AI Agent)</span> &{' '}
+            <span className="text-purple-500 dark:text-purple-500">{t('aiAgentLabel')}</span> &{' '}
             {assistant.human_name}{' '}
-            <span className="text-purple-500 dark:text-purple-500">(Human Organiser)</span>
+            <span className="text-purple-500 dark:text-purple-500">{t('humanOrganiserLabel')}</span>
           </p>
         </div>
       </div>
@@ -63,7 +67,7 @@ export function AssistantDetailBanner({
       {/* Current focus */}
       {effectiveFocus && (
         <p className="mb-2 text-sm italic text-zinc-600 dark:text-zinc-400">
-          📌 Current focus: {effectiveFocus}
+          📌 {t('currentFocus', { focus: effectiveFocus })}
         </p>
       )}
 
@@ -73,7 +77,7 @@ export function AssistantDetailBanner({
           {agentHelps && (
             <div className="rounded-lg bg-white/60 p-3 dark:bg-zinc-900/40">
               <p className="mb-1 text-xs font-semibold text-purple-700 dark:text-purple-400">
-                {assistant.agent_icon} {assistant.agent_name} helps with
+                {assistant.agent_icon} {t('helpsWith', { name: assistant.agent_name })}
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">{agentHelps}</p>
             </div>
@@ -81,7 +85,7 @@ export function AssistantDetailBanner({
           {humanHelps && (
             <div className="rounded-lg bg-white/60 p-3 dark:bg-zinc-900/40">
               <p className="mb-1 text-xs font-semibold text-indigo-700 dark:text-indigo-400">
-                {assistant.human_icon} {assistant.human_name} helps with
+                {assistant.human_icon} {t('helpsWith', { name: assistant.human_name })}
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">{humanHelps}</p>
             </div>
@@ -95,7 +99,7 @@ export function AssistantDetailBanner({
           href={`/assistants/${assistant.category.toLowerCase()}`}
           className="text-sm font-medium text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
         >
-          Learn more about {assistant.agent_name} & {assistant.human_name} →
+          {t('learnMore', { agentName: assistant.agent_name, humanName: assistant.human_name })}
         </Link>
       </div>
     </div>
