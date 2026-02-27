@@ -98,13 +98,13 @@
     "raised": "dikomitmenkan",
     "backers": "{count, plural, one {pendukung} other {pendukung}}",
     "platformFee": "biaya layanan",
-    "wantToContribute": "Ingin mendukung proyek ini?",
     "topUpFirst": "Isi dompetmu dulu untuk memulai.",
     "createAccountPrompt": "Buat akun dan isi dompetmu untuk memesan layanan ini.",
     "goToWallet": "Ke dompet",
     "createAccount": "Buat akun",
     "completedMessage": "Proyek ini telah {status}. Terima kasih kepada semua {count} pendukung!",
-    "recipient": "Penyedia Layanan"
+    "recipient": "Penyedia Layanan",
+    "wantToSupport": "Ingin mendukung proyek ini?"
   },
   "Assistants": {
     "title": "Asisten",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Dorong Aksi Kolektif",
     "createPromptDesc": "Buat akun gratis untuk mengisi dompet dan memesan layanan untuk proyek aksi.",
     "createAccount": "Buat akun",
-    "activeCampaigns": "Proyek Aktif",
-    "viewAll": "Lihat semua"
+    "viewAll": "Lihat semua",
+    "activeProjects": "Proyek Aktif"
   },
   "Profile": {
     "title": "Profilmu",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Saldomu",
     "loaded": "diisi",
-    "contributed": "dibelanjakan",
-    "campaigns": "{count, plural, one {proyek} other {proyek}}"
+    "spent": "dibelanjakan",
+    "projects": "{count, plural, one {proyek} other {proyek}}"
   },
   "Transactions": {
     "title": "Transaksi Terbaru",
     "topUp": "Isi ulang",
-    "contribution": "Pembayaran proyek",
     "refund": "Pengembalian",
     "justNow": "baru saja",
     "minutesAgo": "{count} menit lalu",
     "hoursAgo": "{count} jam lalu",
     "daysAgo": "{count} hari lalu",
-    "empty": "Belum ada transaksi. Isi dompetmu untuk memulai!"
+    "empty": "Belum ada transaksi. Isi dompetmu untuk memulai!",
+    "payment": "Pembayaran proyek"
   },
   "Activity": {
     "noActivity": "Belum ada aktivitas.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Dana tidak cukup. Isi dompetmu dulu.",
-    "minContribution": "Pembayaran minimum 10p",
-    "contribute": "Dukung Proyek Ini",
     "yourBalance": "Saldomu: ",
     "networkError": "Kesalahan jaringan. Silakan coba lagi.",
     "invalidAmount": "Masukkan jumlah yang valid",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "untuk terus mendukung proyek aksi.",
     "walletEmpty": "Dompetmu kosong.",
     "topUp": "Isi ulang",
-    "toContribute": "untuk mendukung proyek."
+    "minPayment": "Pembayaran minimum 10p",
+    "supportProject": "Dukung Proyek Ini",
+    "toSupport": "untuk mendukung proyek."
   },
   "Claim": {
     "success": "Terima kasih! Kami sudah mencatat minatmu pada peran {name}. Kami akan menghubungimu.",

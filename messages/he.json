@@ -98,13 +98,13 @@
     "raised": "התחייבו",
     "backers": "{count, plural, one {תומך} other {תומכים}}",
     "platformFee": "דמי שירות",
-    "wantToContribute": "רוצים לתמוך בפרויקט הזה?",
     "topUpFirst": "טענו את הארנק שלכם קודם כדי להתחיל.",
     "createAccountPrompt": "צרו חשבון וטענו את הארנק שלכם כדי להזמין שירות זה.",
     "goToWallet": "לארנק",
     "createAccount": "צרו חשבון",
     "completedMessage": "הפרויקט הזה {status}. תודה לכל {count} התומכים!",
-    "recipient": "ספק שירות"
+    "recipient": "ספק שירות",
+    "wantToSupport": "רוצים לתמוך בפרויקט הזה?"
   },
   "Assistants": {
     "title": "עוזרים",
@@ -129,8 +129,8 @@
     "createPromptTitle": "הניעו פעולה קולקטיבית",
     "createPromptDesc": "צרו חשבון חינמי כדי לטעון את הארנק שלכם ולהזמין שירותים לפרויקטי פעולה.",
     "createAccount": "צרו חשבון",
-    "activeCampaigns": "פרויקטים פעילים",
-    "viewAll": "הצג הכל"
+    "viewAll": "הצג הכל",
+    "activeProjects": "פרויקטים פעילים"
   },
   "Profile": {
     "title": "הפרופיל שלך",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "היתרה שלך",
     "loaded": "נטען",
-    "contributed": "הוצאתי",
-    "campaigns": "{count, plural, one {פרויקט} other {פרויקטים}}"
+    "spent": "הוצאתי",
+    "projects": "{count, plural, one {פרויקט} other {פרויקטים}}"
   },
   "Transactions": {
     "title": "עסקאות אחרונות",
     "topUp": "טעינה",
-    "contribution": "תשלום פרויקט",
     "refund": "החזר",
     "justNow": "עכשיו",
     "minutesAgo": "לפני {count} ד׳",
     "hoursAgo": "לפני {count} ש׳",
     "daysAgo": "לפני {count} י׳",
-    "empty": "אין עסקאות עדיין. טענו את הארנק שלכם כדי להתחיל!"
+    "empty": "אין עסקאות עדיין. טענו את הארנק שלכם כדי להתחיל!",
+    "payment": "תשלום פרויקט"
   },
   "Activity": {
     "noActivity": "אין פעילות עדיין.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "אין מספיק כספים. טענו את הארנק שלכם קודם.",
-    "minContribution": "תשלום מינימלי הוא 10p",
-    "contribute": "תמכו בפרויקט הזה",
     "yourBalance": "היתרה שלך: ",
     "networkError": "שגיאת רשת. נסו שוב.",
     "invalidAmount": "הזינו סכום תקין",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "כדי להמשיך לתמוך בפרויקטי פעולה.",
     "walletEmpty": "הארנק שלכם ריק.",
     "topUp": "טעינה",
-    "toContribute": "כדי לתמוך בפרויקטים."
+    "minPayment": "תשלום מינימלי הוא 10p",
+    "supportProject": "תמכו בפרויקט הזה",
+    "toSupport": "כדי לתמוך בפרויקטים."
   },
   "Claim": {
     "success": "תודה! רשמנו את ההתעניינות שלך בתפקיד {name}. ניצור קשר.",

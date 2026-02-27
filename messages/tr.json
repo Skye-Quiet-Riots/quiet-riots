@@ -98,13 +98,13 @@
     "raised": "taahhüt edilen",
     "backers": "{count, plural, one {destekçi} other {destekçi}}",
     "platformFee": "hizmet bedeli",
-    "wantToContribute": "Bu projeyi desteklemek ister misin?",
     "topUpFirst": "Başlamak için önce cüzdanını yükle.",
     "createAccountPrompt": "Bu hizmeti sipariş etmek için hesap oluştur ve cüzdanını yükle.",
     "goToWallet": "Cüzdana git",
     "createAccount": "Hesap oluştur",
     "completedMessage": "Bu proje {status}. Tüm {count} destekçiye teşekkürler!",
-    "recipient": "Hizmet Sağlayıcı"
+    "recipient": "Hizmet Sağlayıcı",
+    "wantToSupport": "Bu projeyi desteklemek ister misin?"
   },
   "Assistants": {
     "title": "Asistanlar",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Kolektif Eylemi Güçlendir",
     "createPromptDesc": "Cüzdanını yüklemek ve eylem projeleri için hizmet sipariş etmek üzere ücretsiz bir hesap oluştur.",
     "createAccount": "Hesap oluştur",
-    "activeCampaigns": "Aktif Projeler",
-    "viewAll": "Tümünü gör"
+    "viewAll": "Tümünü gör",
+    "activeProjects": "Aktif Projeler"
   },
   "Profile": {
     "title": "Profilin",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Bakiyen",
     "loaded": "yüklenen",
-    "contributed": "harcanan",
-    "campaigns": "{count, plural, one {proje} other {proje}}"
+    "spent": "harcanan",
+    "projects": "{count, plural, one {proje} other {proje}}"
   },
   "Transactions": {
     "title": "Son İşlemler",
     "topUp": "Yükleme",
-    "contribution": "Proje ödemesi",
     "refund": "İade",
     "justNow": "az önce",
     "minutesAgo": "{count}dk önce",
     "hoursAgo": "{count}sa önce",
     "daysAgo": "{count}g önce",
-    "empty": "Henüz işlem yok. Başlamak için cüzdanını yükle!"
+    "empty": "Henüz işlem yok. Başlamak için cüzdanını yükle!",
+    "payment": "Proje ödemesi"
   },
   "Activity": {
     "noActivity": "Henüz aktivite yok.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Yetersiz bakiye. Önce cüzdanını yükle.",
-    "minContribution": "Minimum ödeme 10p",
-    "contribute": "Bu Projeyi Destekle",
     "yourBalance": "Bakiyen: ",
     "networkError": "Ağ hatası. Lütfen tekrar dene.",
     "invalidAmount": "Geçerli bir tutar gir",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "eylem projelerini desteklemeye devam etmek için.",
     "walletEmpty": "Cüzdanın boş.",
     "topUp": "Yükle",
-    "toContribute": "projeleri desteklemek için."
+    "minPayment": "Minimum ödeme 10p",
+    "supportProject": "Bu Projeyi Destekle",
+    "toSupport": "projeleri desteklemek için."
   },
   "Claim": {
     "success": "Teşekkürler! {name} rolüne ilgini not ettik. Seninle iletişime geçeceğiz.",

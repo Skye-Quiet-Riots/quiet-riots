@@ -98,13 +98,13 @@
     "raised": "angajat",
     "backers": "{count, plural, one {sustinator} other {sustinatori}}",
     "platformFee": "taxa de serviciu",
-    "wantToContribute": "Vrei sa sustii acest proiect?",
     "topUpFirst": "Incarca-ti portofelul mai intai pentru a incepe.",
     "createAccountPrompt": "Creaza un cont si incarca-ti portofelul pentru a comisiona acest serviciu.",
     "goToWallet": "Mergi la portofel",
     "createAccount": "Creaza cont",
     "completedMessage": "Acest proiect a fost {status}. Multumim tuturor celor {count} sustinatori!",
-    "recipient": "Furnizor de servicii"
+    "recipient": "Furnizor de servicii",
+    "wantToSupport": "Vrei sa sustii acest proiect?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Sustine actiunea colectiva",
     "createPromptDesc": "Creaza un cont gratuit pentru a-ti incarca portofelul si a comisiona servicii pentru proiecte de actiune.",
     "createAccount": "Creaza cont",
-    "activeCampaigns": "Proiecte active",
-    "viewAll": "Vezi tot"
+    "viewAll": "Vezi tot",
+    "activeProjects": "Proiecte active"
   },
   "Profile": {
     "title": "Profilul tau",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Soldul tau",
     "loaded": "incarcat",
-    "contributed": "cheltuit",
-    "campaigns": "{count, plural, one {proiect} other {proiecte}}"
+    "spent": "cheltuit",
+    "projects": "{count, plural, one {proiect} other {proiecte}}"
   },
   "Transactions": {
     "title": "Tranzactii recente",
     "topUp": "Incarcare",
-    "contribution": "Plata proiect",
     "refund": "Rambursare",
     "justNow": "chiar acum",
     "minutesAgo": "acum {count} min",
     "hoursAgo": "acum {count} ore",
     "daysAgo": "acum {count} zile",
-    "empty": "Nicio tranzactie inca. Incarca-ti portofelul pentru a incepe!"
+    "empty": "Nicio tranzactie inca. Incarca-ti portofelul pentru a incepe!",
+    "payment": "Plata proiect"
   },
   "Activity": {
     "noActivity": "Nicio activitate inca.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Fonduri insuficiente. Incarca-ti portofelul mai intai.",
-    "minContribution": "Plata minima este 10p",
-    "contribute": "Sustine acest proiect",
     "yourBalance": "Soldul tau: ",
     "networkError": "Eroare de retea. Te rugam sa incerci din nou.",
     "invalidAmount": "Introdu o suma valida",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "pentru a continua sa sustii proiecte de actiune.",
     "walletEmpty": "Portofelul tau este gol.",
     "topUp": "Incarca",
-    "toContribute": "pentru a sustine proiecte."
+    "minPayment": "Plata minima este 10p",
+    "supportProject": "Sustine acest proiect",
+    "toSupport": "pentru a sustine proiecte."
   },
   "Claim": {
     "success": "Multumim! Am notat interesul tau pentru rolul {name}. Te vom contacta.",

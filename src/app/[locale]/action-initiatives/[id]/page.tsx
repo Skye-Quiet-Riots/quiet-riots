@@ -146,7 +146,7 @@ export default async function ActionInitiativeDetailPage({ params }: Props) {
           </div>
         ) : (
           <div className="mb-8 rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center dark:border-zinc-700 dark:bg-zinc-800/50">
-            <p className="mb-2 text-sm font-semibold">{t('wantToContribute')}</p>
+            <p className="mb-2 text-sm font-semibold">{t('wantToSupport')}</p>
             <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
               {userId ? t('topUpFirst') : t('createAccountPrompt')}
             </p>

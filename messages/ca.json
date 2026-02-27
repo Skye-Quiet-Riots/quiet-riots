@@ -98,13 +98,13 @@
     "raised": "compromès",
     "backers": "{count, plural, one {col·laborador} other {col·laboradors}}",
     "platformFee": "tarifa de servei",
-    "wantToContribute": "Vols donar suport a aquest projecte?",
     "topUpFirst": "Recarrega la teva cartera primer per començar.",
     "createAccountPrompt": "Crea un compte i carrega la teva cartera per encarregar aquest servei.",
     "goToWallet": "Ves a la cartera",
     "createAccount": "Crea un compte",
     "completedMessage": "Aquest projecte ha estat {status}. Gràcies a tots els {count} col·laboradors!",
-    "recipient": "Proveïdor de Serveis"
+    "recipient": "Proveïdor de Serveis",
+    "wantToSupport": "Vols donar suport a aquest projecte?"
   },
   "Assistants": {
     "title": "Assistents",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Impulsa l'Acció Col·lectiva",
     "createPromptDesc": "Crea un compte gratuït per carregar la teva cartera i encarregar serveis per a projectes d'acció.",
     "createAccount": "Crea un compte",
-    "activeCampaigns": "Projectes Actius",
-    "viewAll": "Veure-ho tot"
+    "viewAll": "Veure-ho tot",
+    "activeProjects": "Projectes Actius"
   },
   "Profile": {
     "title": "El Teu Perfil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "El Teu Saldo",
     "loaded": "carregat",
-    "contributed": "gastat",
-    "campaigns": "{count, plural, one {projecte} other {projectes}}"
+    "spent": "gastat",
+    "projects": "{count, plural, one {projecte} other {projectes}}"
   },
   "Transactions": {
     "title": "Transaccions Recents",
     "topUp": "Recàrrega",
-    "contribution": "Pagament de projecte",
     "refund": "Reemborsament",
     "justNow": "ara mateix",
     "minutesAgo": "fa {count}min",
     "hoursAgo": "fa {count}h",
     "daysAgo": "fa {count}d",
-    "empty": "Encara no hi ha transaccions. Recarrega la teva cartera per començar!"
+    "empty": "Encara no hi ha transaccions. Recarrega la teva cartera per començar!",
+    "payment": "Pagament de projecte"
   },
   "Activity": {
     "noActivity": "Encara no hi ha activitat.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Fons insuficients. Recarrega primer la teva cartera.",
-    "minContribution": "El pagament mínim és de 10p",
-    "contribute": "Dona Suport a Aquest Projecte",
     "yourBalance": "El teu saldo: ",
     "networkError": "Error de xarxa. Si us plau, torna-ho a provar.",
     "invalidAmount": "Introdueix un import vàlid",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "per continuar donant suport a projectes d'acció.",
     "walletEmpty": "La teva cartera està buida.",
     "topUp": "Recarrega",
-    "toContribute": "per donar suport a projectes."
+    "minPayment": "El pagament mínim és de 10p",
+    "supportProject": "Dona Suport a Aquest Projecte",
+    "toSupport": "per donar suport a projectes."
   },
   "Claim": {
     "success": "Gràcies! Hem anotat el teu interès en el rol de {name}. Et contactarem.",

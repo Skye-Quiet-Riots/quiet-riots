@@ -98,13 +98,13 @@
     "raised": "ملتزم به",
     "backers": "{count, plural, one {مؤيد} other {مؤيدين}}",
     "platformFee": "رسوم الخدمة",
-    "wantToContribute": "تريد دعم هذا المشروع؟",
     "topUpFirst": "اشحن محفظتك أولاً للبدء.",
     "createAccountPrompt": "أنشئ حساباً واشحن محفظتك لتكليف هذه الخدمة.",
     "goToWallet": "اذهب إلى المحفظة",
     "createAccount": "إنشاء حساب",
     "completedMessage": "تم {status} هذا المشروع. شكراً لجميع المؤيدين البالغ عددهم {count}!",
-    "recipient": "مقدّم الخدمة"
+    "recipient": "مقدّم الخدمة",
+    "wantToSupport": "تريد دعم هذا المشروع؟"
   },
   "Assistants": {
     "title": "المساعدون",
@@ -129,8 +129,8 @@
     "createPromptTitle": "فعّل العمل الجماعي",
     "createPromptDesc": "أنشئ حساباً مجانياً لشحن محفظتك وتكليف خدمات لمشاريع العمل.",
     "createAccount": "إنشاء حساب",
-    "activeCampaigns": "المشاريع النشطة",
-    "viewAll": "عرض الكل"
+    "viewAll": "عرض الكل",
+    "activeProjects": "المشاريع النشطة"
   },
   "Profile": {
     "title": "ملفك الشخصي",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "رصيدك",
     "loaded": "مشحون",
-    "contributed": "أُنفق",
-    "campaigns": "{count, plural, one {مشروع} other {مشاريع}}"
+    "spent": "أُنفق",
+    "projects": "{count, plural, one {مشروع} other {مشاريع}}"
   },
   "Transactions": {
     "title": "المعاملات الأخيرة",
     "topUp": "شحن",
-    "contribution": "دفعة مشروع",
     "refund": "استرداد",
     "justNow": "الآن",
     "minutesAgo": "قبل {count} د",
     "hoursAgo": "قبل {count} س",
     "daysAgo": "قبل {count} ي",
-    "empty": "لا توجد معاملات بعد. اشحن محفظتك للبدء!"
+    "empty": "لا توجد معاملات بعد. اشحن محفظتك للبدء!",
+    "payment": "دفعة مشروع"
   },
   "Activity": {
     "noActivity": "لا يوجد نشاط بعد.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "رصيد غير كافٍ. اشحن محفظتك أولاً.",
-    "minContribution": "الحد الأدنى للدفع هو 10p",
-    "contribute": "ادعم هذا المشروع",
     "yourBalance": "رصيدك: ",
     "networkError": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
     "invalidAmount": "أدخل مبلغاً صالحاً",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "لمواصلة دعم مشاريع العمل.",
     "walletEmpty": "محفظتك فارغة.",
     "topUp": "اشحن",
-    "toContribute": "لدعم المشاريع."
+    "minPayment": "الحد الأدنى للدفع هو 10p",
+    "supportProject": "ادعم هذا المشروع",
+    "toSupport": "لدعم المشاريع."
   },
   "Claim": {
     "success": "شكراً! سجّلنا اهتمامك بدور {name}. سنتواصل معك.",

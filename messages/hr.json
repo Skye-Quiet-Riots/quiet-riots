@@ -98,13 +98,13 @@
     "raised": "obvezano",
     "backers": "{count, plural, one {podržavatelj} other {podržavatelja}}",
     "platformFee": "naknada za uslugu",
-    "wantToContribute": "Želiš podržati ovaj projekt?",
     "topUpFirst": "Prvo napuni novčanik da počneš.",
     "createAccountPrompt": "Kreiraj račun i napuni novčanik za naručivanje ove usluge.",
     "goToWallet": "Idi na novcanik",
     "createAccount": "Kreiraj racun",
     "completedMessage": "Ovaj projekt je {status}. Hvala svim {count} podržavateljima!",
-    "recipient": "Pružatelj usluge"
+    "recipient": "Pružatelj usluge",
+    "wantToSupport": "Želiš podržati ovaj projekt?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Pokreni kolektivno djelovanje",
     "createPromptDesc": "Kreiraj besplatan račun za punjenje novčanika i naručivanje usluga za akcijske projekte.",
     "createAccount": "Kreiraj racun",
-    "activeCampaigns": "Aktivni projekti",
-    "viewAll": "Pogledaj sve"
+    "viewAll": "Pogledaj sve",
+    "activeProjects": "Aktivni projekti"
   },
   "Profile": {
     "title": "Tvoj profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Tvoj saldo",
     "loaded": "napunjeno",
-    "contributed": "potrošeno",
-    "campaigns": "{count, plural, one {projekt} other {projekata}}"
+    "spent": "potrošeno",
+    "projects": "{count, plural, one {projekt} other {projekata}}"
   },
   "Transactions": {
     "title": "Nedavne transakcije",
     "topUp": "Punjenje",
-    "contribution": "Plaćanje projekta",
     "refund": "Povrat",
     "justNow": "upravo sada",
     "minutesAgo": "prije {count} min",
     "hoursAgo": "prije {count} h",
     "daysAgo": "prije {count} d",
-    "empty": "Zasad nema transakcija. Napuni novcanik za pocetak!"
+    "empty": "Zasad nema transakcija. Napuni novcanik za pocetak!",
+    "payment": "Plaćanje projekta"
   },
   "Activity": {
     "noActivity": "Zasad nema aktivnosti.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nedovoljno sredstava. Prvo napuni novcanik.",
-    "minContribution": "Minimalno plaćanje je 10p",
-    "contribute": "Podrži ovaj projekt",
     "yourBalance": "Tvoj saldo: ",
     "networkError": "Mrezna greska. Pokusaj ponovno.",
     "invalidAmount": "Unesi valjani iznos",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "za nastavak podržavanja akcijskih projekata.",
     "walletEmpty": "Tvoj novcanik je prazan.",
     "topUp": "Napuni",
-    "toContribute": "za podršku projektima."
+    "minPayment": "Minimalno plaćanje je 10p",
+    "supportProject": "Podrži ovaj projekt",
+    "toSupport": "za podršku projektima."
   },
   "Claim": {
     "success": "Hvala! Zabilježili smo tvoj interes za ulogu {name}. Javit cemo ti se.",

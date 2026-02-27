@@ -98,13 +98,13 @@
     "raised": "zadeklarowano",
     "backers": "{count, plural, one {wspierajacy} other {wspierajacych}}",
     "platformFee": "oplata za usluge",
-    "wantToContribute": "Chcesz wesprzec ten projekt?",
     "topUpFirst": "Najpierw doladuj portfel, zeby zaczac.",
     "createAccountPrompt": "Zaloz konto i doladuj portfel, aby zamowic te usluge.",
     "goToWallet": "Przejdz do portfela",
     "createAccount": "Zaloz konto",
     "completedMessage": "Ten projekt zostal {status}. Dziekujemy wszystkim {count} wspierajacym!",
-    "recipient": "Uslugodawca"
+    "recipient": "Uslugodawca",
+    "wantToSupport": "Chcesz wesprzec ten projekt?"
   },
   "Assistants": {
     "title": "Asystenci",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Wspieraj zbiorowe dzialanie",
     "createPromptDesc": "Zaloz darmowe konto, aby doladowac portfel i zamawiac uslugi dla projektow akcji.",
     "createAccount": "Zaloz konto",
-    "activeCampaigns": "Aktywne projekty",
-    "viewAll": "Zobacz wszystkie"
+    "viewAll": "Zobacz wszystkie",
+    "activeProjects": "Aktywne projekty"
   },
   "Profile": {
     "title": "Twoj profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Twoje saldo",
     "loaded": "doladowane",
-    "contributed": "wydane",
-    "campaigns": "{count, plural, one {projekt} other {projektow}}"
+    "spent": "wydane",
+    "projects": "{count, plural, one {projekt} other {projektow}}"
   },
   "Transactions": {
     "title": "Ostatnie transakcje",
     "topUp": "Doladowanie",
-    "contribution": "Platnosc za projekt",
     "refund": "Zwrot",
     "justNow": "przed chwila",
     "minutesAgo": "{count} min temu",
     "hoursAgo": "{count} godz. temu",
     "daysAgo": "{count} dni temu",
-    "empty": "Brak transakcji. Doladuj portfel, aby zaczac!"
+    "empty": "Brak transakcji. Doladuj portfel, aby zaczac!",
+    "payment": "Platnosc za projekt"
   },
   "Activity": {
     "noActivity": "Brak aktywnosci.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Niewystarczajace srodki. Najpierw doladuj portfel.",
-    "minContribution": "Minimalna platnosc to 10p",
-    "contribute": "Wesprzyj ten projekt",
     "yourBalance": "Twoje saldo: ",
     "networkError": "Blad sieci. Sprobuj ponownie.",
     "invalidAmount": "Podaj prawidlowa kwote",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "aby dalej wspierac projekty akcji.",
     "walletEmpty": "Twoj portfel jest pusty.",
     "topUp": "Doladuj",
-    "toContribute": "aby wspierac projekty."
+    "minPayment": "Minimalna platnosc to 10p",
+    "supportProject": "Wesprzyj ten projekt",
+    "toSupport": "aby wspierac projekty."
   },
   "Claim": {
     "success": "Dziekujemy! Odnotowalismy twoje zainteresowanie rola {name}. Skontaktujemy sie z toba.",

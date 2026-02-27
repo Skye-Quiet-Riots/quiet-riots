@@ -98,13 +98,13 @@
     "raised": "imeahidiwa",
     "backers": "{count, plural, one {msaidizi} other {wasaidizi}}",
     "platformFee": "ada ya huduma",
-    "wantToContribute": "Unataka kusaidia mradi huu?",
     "topUpFirst": "Jaza mkoba wako kwanza ili uanze.",
     "createAccountPrompt": "Tengeneza akaunti na ujaze mkoba wako ili kuagiza huduma hii.",
     "goToWallet": "Nenda kwenye mkoba",
     "createAccount": "Tengeneza akaunti",
     "completedMessage": "Mradi huu umekuwa {status}. Asante kwa wasaidizi wote {count}!",
-    "recipient": "Mtoa Huduma"
+    "recipient": "Mtoa Huduma",
+    "wantToSupport": "Unataka kusaidia mradi huu?"
   },
   "Assistants": {
     "title": "Wasaidizi",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Endeleza Hatua za Pamoja",
     "createPromptDesc": "Tengeneza akaunti ya bure ili ujaze mkoba wako na uagize huduma kwa miradi ya hatua.",
     "createAccount": "Tengeneza akaunti",
-    "activeCampaigns": "Miradi Hai",
-    "viewAll": "Tazama zote"
+    "viewAll": "Tazama zote",
+    "activeProjects": "Miradi Hai"
   },
   "Profile": {
     "title": "Wasifu Wako",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Salio Lako",
     "loaded": "imejazwa",
-    "contributed": "imetumika",
-    "campaigns": "{count, plural, one {mradi} other {miradi}}"
+    "spent": "imetumika",
+    "projects": "{count, plural, one {mradi} other {miradi}}"
   },
   "Transactions": {
     "title": "Miamala ya Hivi Karibuni",
     "topUp": "Kujaza",
-    "contribution": "Malipo ya mradi",
     "refund": "Kurejesha",
     "justNow": "sasa hivi",
     "minutesAgo": "dak {count} zilizopita",
     "hoursAgo": "saa {count} zilizopita",
     "daysAgo": "siku {count} zilizopita",
-    "empty": "Hakuna miamala bado. Jaza mkoba wako ili kuanza!"
+    "empty": "Hakuna miamala bado. Jaza mkoba wako ili kuanza!",
+    "payment": "Malipo ya mradi"
   },
   "Activity": {
     "noActivity": "Hakuna shughuli bado.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Fedha hazitoshi. Jaza mkoba wako kwanza.",
-    "minContribution": "Malipo ya chini ni 10p",
-    "contribute": "Saidia Mradi Huu",
     "yourBalance": "Salio lako: ",
     "networkError": "Hitilafu ya mtandao. Tafadhali jaribu tena.",
     "invalidAmount": "Weka kiasi halali",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "ili kuendelea kusaidia miradi ya hatua.",
     "walletEmpty": "Mkoba wako ni tupu.",
     "topUp": "Jaza",
-    "toContribute": "ili kusaidia miradi."
+    "minPayment": "Malipo ya chini ni 10p",
+    "supportProject": "Saidia Mradi Huu",
+    "toSupport": "ili kusaidia miradi."
   },
   "Claim": {
     "success": "Asante! Tumesajili hamu yako katika nafasi ya {name}. Tutawasiliana.",

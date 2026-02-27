@@ -98,13 +98,13 @@
     "raised": "확약됨",
     "backers": "{count, plural, one {명의 후원자} other {명의 후원자}}",
     "platformFee": "서비스 수수료",
-    "wantToContribute": "이 프로젝트를 지원하시겠습니까?",
     "topUpFirst": "먼저 지갑을 충전하여 시작하세요.",
     "createAccountPrompt": "계정을 만들고 지갑을 충전하여 이 서비스를 의뢰하세요.",
     "goToWallet": "지갑으로 이동",
     "createAccount": "계정 만들기",
     "completedMessage": "이 프로젝트는 {status}되었습니다. {count}명의 후원자 여러분께 감사드립니다!",
-    "recipient": "서비스 제공자"
+    "recipient": "서비스 제공자",
+    "wantToSupport": "이 프로젝트를 지원하시겠습니까?"
   },
   "Assistants": {
     "title": "어시스턴트",
@@ -129,8 +129,8 @@
     "createPromptTitle": "집단 행동을 추진하세요",
     "createPromptDesc": "무료 계정을 만들어 지갑을 충전하고 액션 프로젝트에 서비스를 의뢰하세요.",
     "createAccount": "계정 만들기",
-    "activeCampaigns": "진행 중인 프로젝트",
-    "viewAll": "전체 보기"
+    "viewAll": "전체 보기",
+    "activeProjects": "진행 중인 프로젝트"
   },
   "Profile": {
     "title": "내 프로필",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "내 잔액",
     "loaded": "충전됨",
-    "contributed": "사용됨",
-    "campaigns": "{count, plural, one {개 프로젝트} other {개 프로젝트}}"
+    "spent": "사용됨",
+    "projects": "{count, plural, one {개 프로젝트} other {개 프로젝트}}"
   },
   "Transactions": {
     "title": "최근 거래",
     "topUp": "충전",
-    "contribution": "프로젝트 결제",
     "refund": "환불",
     "justNow": "방금",
     "minutesAgo": "{count}분 전",
     "hoursAgo": "{count}시간 전",
     "daysAgo": "{count}일 전",
-    "empty": "아직 거래가 없습니다. 지갑을 충전하여 시작하세요!"
+    "empty": "아직 거래가 없습니다. 지갑을 충전하여 시작하세요!",
+    "payment": "프로젝트 결제"
   },
   "Activity": {
     "noActivity": "아직 활동이 없습니다.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "잔액이 부족합니다. 먼저 지갑을 충전하세요.",
-    "minContribution": "최소 결제 금액은 10p입니다",
-    "contribute": "이 프로젝트 지원하기",
     "yourBalance": "내 잔액: ",
     "networkError": "네트워크 오류입니다. 다시 시도해주세요.",
     "invalidAmount": "유효한 금액을 입력하세요",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "액션 프로젝트 지원을 계속하세요.",
     "walletEmpty": "지갑이 비어 있습니다.",
     "topUp": "충전",
-    "toContribute": "프로젝트를 지원하세요."
+    "minPayment": "최소 결제 금액은 10p입니다",
+    "supportProject": "이 프로젝트 지원하기",
+    "toSupport": "프로젝트를 지원하세요."
   },
   "Claim": {
     "success": "감사합니다! {name} 역할에 대한 관심을 기록했습니다. 연락드리겠습니다.",

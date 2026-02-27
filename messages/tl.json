@@ -98,13 +98,13 @@
     "raised": "nakommit",
     "backers": "{count, plural, one {tagasuporta} other {tagasuporta}}",
     "platformFee": "bayad sa serbisyo",
-    "wantToContribute": "Gusto mong suportahan ang proyektong ito?",
     "topUpFirst": "Mag-top up muna ng iyong wallet upang makapagsimula.",
     "createAccountPrompt": "Gumawa ng account at mag-load ng wallet upang mag-komisyon ng serbisyong ito.",
     "goToWallet": "Pumunta sa wallet",
     "createAccount": "Gumawa ng account",
     "completedMessage": "Ang proyektong ito ay {status}. Salamat sa lahat ng {count} tagasuporta!",
-    "recipient": "Tagapagbigay ng Serbisyo"
+    "recipient": "Tagapagbigay ng Serbisyo",
+    "wantToSupport": "Gusto mong suportahan ang proyektong ito?"
   },
   "Assistants": {
     "title": "Mga Katulong",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Palakasin ang Kolektibong Aksyon",
     "createPromptDesc": "Gumawa ng libreng account para mag-load ng wallet at kumuha ng mga serbisyo para sa mga action project.",
     "createAccount": "Gumawa ng account",
-    "activeCampaigns": "Mga Aktibong Proyekto",
-    "viewAll": "Tingnan lahat"
+    "viewAll": "Tingnan lahat",
+    "activeProjects": "Mga Aktibong Proyekto"
   },
   "Profile": {
     "title": "Ang Iyong Profile",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Ang Iyong Balanse",
     "loaded": "na-load",
-    "contributed": "nagastos",
-    "campaigns": "{count, plural, one {proyekto} other {proyekto}}"
+    "spent": "nagastos",
+    "projects": "{count, plural, one {proyekto} other {proyekto}}"
   },
   "Transactions": {
     "title": "Kamakailang mga Transaksyon",
     "topUp": "Top-up",
-    "contribution": "Bayad sa proyekto",
     "refund": "Refund",
     "justNow": "ngayon lang",
     "minutesAgo": "{count}m nakalipas",
     "hoursAgo": "{count}o nakalipas",
     "daysAgo": "{count}a nakalipas",
-    "empty": "Wala pang transaksyon. Mag-top up ng wallet para makapagsimula!"
+    "empty": "Wala pang transaksyon. Mag-top up ng wallet para makapagsimula!",
+    "payment": "Bayad sa proyekto"
   },
   "Activity": {
     "noActivity": "Wala pang aktibidad.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Hindi sapat ang pondo. Mag-top up muna ng wallet.",
-    "minContribution": "Minimum na bayad ay 10p",
-    "contribute": "Suportahan ang Proyektong Ito",
     "yourBalance": "Ang iyong balanse: ",
     "networkError": "Error sa network. Pakisubukan muli.",
     "invalidAmount": "Maglagay ng tamang halaga",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "para patuloy na sumuporta ng mga action project.",
     "walletEmpty": "Walang laman ang iyong wallet.",
     "topUp": "Mag-top up",
-    "toContribute": "para sumuporta ng mga proyekto."
+    "minPayment": "Minimum na bayad ay 10p",
+    "supportProject": "Suportahan ang Proyektong Ito",
+    "toSupport": "para sumuporta ng mga proyekto."
   },
   "Claim": {
     "success": "Salamat! Nabanggit na namin ang iyong interes sa {name} na role. Makikipag-ugnayan kami.",

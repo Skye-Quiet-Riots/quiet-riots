@@ -98,13 +98,13 @@
     "raised": "sitoutunut",
     "backers": "{count, plural, one {tukija} other {tukijaa}}",
     "platformFee": "palvelumaksu",
-    "wantToContribute": "Haluatko tukea tätä projektia?",
     "topUpFirst": "Lataa lompakkoasi ensin aloittaaksesi.",
     "createAccountPrompt": "Luo tili ja lataa lompakkosi tilataksesi tämän palvelun.",
     "goToWallet": "Siirry lompakkoon",
     "createAccount": "Luo tili",
     "completedMessage": "Tämä projekti on {status}. Kiitos kaikille {count} tukijalle!",
-    "recipient": "Palveluntarjoaja"
+    "recipient": "Palveluntarjoaja",
+    "wantToSupport": "Haluatko tukea tätä projektia?"
   },
   "Assistants": {
     "title": "Assistentit",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Edistä yhteistoimintaa",
     "createPromptDesc": "Luo ilmainen tili ladataksesi lompakkoasi ja tilataksesi palveluja toimintaprojekteihin.",
     "createAccount": "Luo tili",
-    "activeCampaigns": "Aktiiviset projektit",
-    "viewAll": "Näytä kaikki"
+    "viewAll": "Näytä kaikki",
+    "activeProjects": "Aktiiviset projektit"
   },
   "Profile": {
     "title": "Profiilisi",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Saldosi",
     "loaded": "ladattu",
-    "contributed": "käytetty",
-    "campaigns": "{count, plural, one {projekti} other {projektia}}"
+    "spent": "käytetty",
+    "projects": "{count, plural, one {projekti} other {projektia}}"
   },
   "Transactions": {
     "title": "Viimeaikaiset tapahtumat",
     "topUp": "Lataus",
-    "contribution": "Projektimaksu",
     "refund": "Hyvitys",
     "justNow": "juuri nyt",
     "minutesAgo": "{count} min sitten",
     "hoursAgo": "{count} t sitten",
     "daysAgo": "{count} pv sitten",
-    "empty": "Ei tapahtumia vielä. Lataa lompakkoasi päästäksesi alkuun!"
+    "empty": "Ei tapahtumia vielä. Lataa lompakkoasi päästäksesi alkuun!",
+    "payment": "Projektimaksu"
   },
   "Activity": {
     "noActivity": "Ei toimintaa vielä.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Riittämätön saldo. Lataa lompakkoasi ensin.",
-    "minContribution": "Vähimmäismaksu on 10p",
-    "contribute": "Tue tätä projektia",
     "yourBalance": "Saldosi: ",
     "networkError": "Verkkovirhe. Yritä uudelleen.",
     "invalidAmount": "Syötä kelvollinen summa",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "jatkaaksesi toimintaprojektien tukemista.",
     "walletEmpty": "Lompakkosi on tyhjä.",
     "topUp": "Lataa",
-    "toContribute": "tukeaksesi projekteja."
+    "minPayment": "Vähimmäismaksu on 10p",
+    "supportProject": "Tue tätä projektia",
+    "toSupport": "tukeaksesi projekteja."
   },
   "Claim": {
     "success": "Kiitos! Olemme merkinneet kiinnostuksesi rooliin {name}. Olemme yhteydessä.",

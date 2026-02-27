@@ -98,13 +98,13 @@
     "raised": "تعهد شده",
     "backers": "{count, plural, one {حامی} other {حامیان}}",
     "platformFee": "کارمزد خدمات",
-    "wantToContribute": "می‌خواهید از این پروژه حمایت کنید؟",
     "topUpFirst": "ابتدا کیف پولتان را شارژ کنید تا شروع کنید.",
     "createAccountPrompt": "حساب بسازید و کیف پولتان را شارژ کنید تا این خدمات را سفارش دهید.",
     "goToWallet": "رفتن به کیف پول",
     "createAccount": "ساخت حساب",
     "completedMessage": "این پروژه {status} شده است. از همه {count} حامی متشکریم!",
-    "recipient": "ارائه‌دهنده خدمات"
+    "recipient": "ارائه‌دهنده خدمات",
+    "wantToSupport": "می‌خواهید از این پروژه حمایت کنید؟"
   },
   "Assistants": {
     "title": "دستیاران",
@@ -129,8 +129,8 @@
     "createPromptTitle": "اقدام جمعی را به حرکت درآورید",
     "createPromptDesc": "یک حساب رایگان بسازید تا کیف پولتان را شارژ کنید و خدماتی برای پروژه‌های اقدام سفارش دهید.",
     "createAccount": "ساخت حساب",
-    "activeCampaigns": "پروژه‌های فعال",
-    "viewAll": "مشاهده همه"
+    "viewAll": "مشاهده همه",
+    "activeProjects": "پروژه‌های فعال"
   },
   "Profile": {
     "title": "پروفایل شما",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "موجودی شما",
     "loaded": "شارژ شده",
-    "contributed": "خرج شده",
-    "campaigns": "{count, plural, one {پروژه} other {پروژه‌ها}}"
+    "spent": "خرج شده",
+    "projects": "{count, plural, one {پروژه} other {پروژه‌ها}}"
   },
   "Transactions": {
     "title": "تراکنش‌های اخیر",
     "topUp": "شارژ",
-    "contribution": "پرداخت پروژه",
     "refund": "بازپرداخت",
     "justNow": "همین الان",
     "minutesAgo": "{count} دقیقه پیش",
     "hoursAgo": "{count} ساعت پیش",
     "daysAgo": "{count} روز پیش",
-    "empty": "هنوز تراکنشی نیست. کیف پولتان را شارژ کنید تا شروع کنید!"
+    "empty": "هنوز تراکنشی نیست. کیف پولتان را شارژ کنید تا شروع کنید!",
+    "payment": "پرداخت پروژه"
   },
   "Activity": {
     "noActivity": "هنوز فعالیتی نیست.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "موجودی کافی نیست. ابتدا کیف پولتان را شارژ کنید.",
-    "minContribution": "حداقل پرداخت 10p است",
-    "contribute": "حمایت از این پروژه",
     "yourBalance": "موجودی شما: ",
     "networkError": "خطای شبکه. لطفاً دوباره تلاش کنید.",
     "invalidAmount": "مبلغ معتبر وارد کنید",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "تا به حمایت از پروژه‌های اقدام ادامه دهید.",
     "walletEmpty": "کیف پول شما خالی است.",
     "topUp": "شارژ",
-    "toContribute": "تا از پروژه‌ها حمایت کنید."
+    "minPayment": "حداقل پرداخت 10p است",
+    "supportProject": "حمایت از این پروژه",
+    "toSupport": "تا از پروژه‌ها حمایت کنید."
   },
   "Claim": {
     "success": "ممنون! علاقه‌مندی شما به نقش {name} ثبت شد. با شما تماس خواهیم گرفت.",

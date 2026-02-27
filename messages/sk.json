@@ -98,13 +98,13 @@
     "raised": "prislubenych",
     "backers": "{count, plural, one {podporovatel} other {podporovatelov}}",
     "platformFee": "poplatok za sluzbu",
-    "wantToContribute": "Chces podporit tento projekt?",
     "topUpFirst": "Najprv si dobij penazenku, aby si mohol zacat.",
     "createAccountPrompt": "Vytvor si ucet a dobij penazenku na objednanie tejto sluzby.",
     "goToWallet": "Prejst na penazenku",
     "createAccount": "Vytvorit ucet",
     "completedMessage": "Tento projekt bol {status}. Dakujeme vsetkym {count} podporovatelom!",
-    "recipient": "Poskytovatel sluzieb"
+    "recipient": "Poskytovatel sluzieb",
+    "wantToSupport": "Chces podporit tento projekt?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Posilni kolektivnu akciu",
     "createPromptDesc": "Vytvor si bezplatny ucet na dobitie penazenky a objednavanie sluzieb pre akcne projekty.",
     "createAccount": "Vytvorit ucet",
-    "activeCampaigns": "Aktivne projekty",
-    "viewAll": "Zobrazit vsetko"
+    "viewAll": "Zobrazit vsetko",
+    "activeProjects": "Aktivne projekty"
   },
   "Profile": {
     "title": "Tvoj profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Tvoj zostatok",
     "loaded": "nabite",
-    "contributed": "minutych",
-    "campaigns": "{count, plural, one {projekt} other {projektov}}"
+    "spent": "minutych",
+    "projects": "{count, plural, one {projekt} other {projektov}}"
   },
   "Transactions": {
     "title": "Nedavne transakcie",
     "topUp": "Dobitie",
-    "contribution": "Platba za projekt",
     "refund": "Vratenie",
     "justNow": "prave teraz",
     "minutesAgo": "pred {count} min",
     "hoursAgo": "pred {count} hod.",
     "daysAgo": "pred {count} dnami",
-    "empty": "Zatial ziadne transakcie. Dobij si penazenku a zacni!"
+    "empty": "Zatial ziadne transakcie. Dobij si penazenku a zacni!",
+    "payment": "Platba za projekt"
   },
   "Activity": {
     "noActivity": "Zatial ziadna aktivita.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nedostatocne prostriedky. Najprv dobij penazenku.",
-    "minContribution": "Minimalna platba je 10p",
-    "contribute": "Podporit tento projekt",
     "yourBalance": "Tvoj zostatok: ",
     "networkError": "Chyba siete. Skus to znova.",
     "invalidAmount": "Zadaj platnu sumu",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "pre dalsiu podporu akcnych projektov.",
     "walletEmpty": "Tvoja penazenka je prazdna.",
     "topUp": "Dobit",
-    "toContribute": "pre podporu projektov."
+    "minPayment": "Minimalna platba je 10p",
+    "supportProject": "Podporit tento projekt",
+    "toSupport": "pre podporu projektov."
   },
   "Claim": {
     "success": "Dakujeme! Zaznamenali sme tvoj zaujem o rolu {name}. Ozveme sa ti.",

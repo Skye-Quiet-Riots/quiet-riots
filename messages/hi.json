@@ -98,13 +98,13 @@
     "raised": "प्रतिबद्ध",
     "backers": "{count, plural, one {समर्थक} other {समर्थक}}",
     "platformFee": "सेवा शुल्क",
-    "wantToContribute": "इस परियोजना का समर्थन करना चाहते हो?",
     "topUpFirst": "शुरू करने के लिए पहले अपना वॉलेट टॉप-अप करो।",
     "createAccountPrompt": "इस सेवा को कमीशन करने के लिए अकाउंट बनाओ और वॉलेट में पैसे डालो।",
     "goToWallet": "वॉलेट पर जाओ",
     "createAccount": "अकाउंट बनाओ",
     "completedMessage": "यह परियोजना {status} हो चुकी है। सभी {count} समर्थकों का धन्यवाद!",
-    "recipient": "सेवा प्रदाता"
+    "recipient": "सेवा प्रदाता",
+    "wantToSupport": "इस परियोजना का समर्थन करना चाहते हो?"
   },
   "Assistants": {
     "title": "सहायक",
@@ -129,8 +129,8 @@
     "createPromptTitle": "सामूहिक कार्रवाई को बढ़ावा दो",
     "createPromptDesc": "मुफ़्त अकाउंट बनाओ, वॉलेट में पैसे डालो और कार्य परियोजनाओं के लिए सेवाएँ कमीशन करो।",
     "createAccount": "अकाउंट बनाओ",
-    "activeCampaigns": "सक्रिय परियोजनाएँ",
-    "viewAll": "सभी देखें"
+    "viewAll": "सभी देखें",
+    "activeProjects": "सक्रिय परियोजनाएँ"
   },
   "Profile": {
     "title": "तुम्हारी प्रोफ़ाइल",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "तुम्हारा बैलेंस",
     "loaded": "लोड किया",
-    "contributed": "ख़र्च किया",
-    "campaigns": "{count, plural, one {परियोजना} other {परियोजनाएँ}}"
+    "spent": "ख़र्च किया",
+    "projects": "{count, plural, one {परियोजना} other {परियोजनाएँ}}"
   },
   "Transactions": {
     "title": "हाल के लेन-देन",
     "topUp": "टॉप-अप",
-    "contribution": "परियोजना भुगतान",
     "refund": "रिफ़ंड",
     "justNow": "अभी",
     "minutesAgo": "{count} मिनट पहले",
     "hoursAgo": "{count} घंटे पहले",
     "daysAgo": "{count} दिन पहले",
-    "empty": "अभी कोई लेन-देन नहीं। शुरू करने के लिए अपना वॉलेट टॉप-अप करो!"
+    "empty": "अभी कोई लेन-देन नहीं। शुरू करने के लिए अपना वॉलेट टॉप-अप करो!",
+    "payment": "परियोजना भुगतान"
   },
   "Activity": {
     "noActivity": "अभी कोई गतिविधि नहीं।",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "पर्याप्त धन नहीं। पहले अपना वॉलेट टॉप-अप करो।",
-    "minContribution": "न्यूनतम भुगतान 10p है",
-    "contribute": "इस परियोजना का समर्थन करो",
     "yourBalance": "तुम्हारा बैलेंस: ",
     "networkError": "नेटवर्क त्रुटि। कृपया फिर से कोशिश करो।",
     "invalidAmount": "एक वैध राशि दर्ज करो",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "कार्य परियोजनाओं का समर्थन जारी रखने के लिए।",
     "walletEmpty": "तुम्हारा वॉलेट खाली है।",
     "topUp": "टॉप-अप करो",
-    "toContribute": "परियोजनाओं का समर्थन करने के लिए।"
+    "minPayment": "न्यूनतम भुगतान 10p है",
+    "supportProject": "इस परियोजना का समर्थन करो",
+    "toSupport": "परियोजनाओं का समर्थन करने के लिए।"
   },
   "Claim": {
     "success": "धन्यवाद! {name} भूमिका में तुम्हारी रुचि नोट कर ली है। हम संपर्क करेंगे।",

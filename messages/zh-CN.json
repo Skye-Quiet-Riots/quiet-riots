@@ -98,13 +98,13 @@
     "raised": "已承诺",
     "backers": "{count, plural, one {位支持者} other {位支持者}}",
     "platformFee": "服务费",
-    "wantToContribute": "想支持这个项目吗？",
     "topUpFirst": "请先为钱包充值即可开始。",
     "createAccountPrompt": "创建账户并为钱包充值，即可委托此服务。",
     "goToWallet": "前往钱包",
     "createAccount": "创建账户",
     "completedMessage": "此项目已{status}。感谢所有 {count} 位支持者！",
-    "recipient": "服务提供商"
+    "recipient": "服务提供商",
+    "wantToSupport": "想支持这个项目吗？"
   },
   "Assistants": {
     "title": "助手",
@@ -129,8 +129,8 @@
     "createPromptTitle": "推动集体行动",
     "createPromptDesc": "创建免费账户，为钱包充值并委托行动项目的服务。",
     "createAccount": "创建账户",
-    "activeCampaigns": "进行中的项目",
-    "viewAll": "查看全部"
+    "viewAll": "查看全部",
+    "activeProjects": "进行中的项目"
   },
   "Profile": {
     "title": "你的个人资料",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "你的余额",
     "loaded": "已充值",
-    "contributed": "已支出",
-    "campaigns": "{count, plural, one {个项目} other {个项目}}"
+    "spent": "已支出",
+    "projects": "{count, plural, one {个项目} other {个项目}}"
   },
   "Transactions": {
     "title": "近期交易",
     "topUp": "充值",
-    "contribution": "项目付款",
     "refund": "退款",
     "justNow": "刚刚",
     "minutesAgo": "{count}分钟前",
     "hoursAgo": "{count}小时前",
     "daysAgo": "{count}天前",
-    "empty": "暂无交易记录。为钱包充值即可开始！"
+    "empty": "暂无交易记录。为钱包充值即可开始！",
+    "payment": "项目付款"
   },
   "Activity": {
     "noActivity": "暂无活动。",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "余额不足。请先为钱包充值。",
-    "minContribution": "最低付款 10p",
-    "contribute": "支持此项目",
     "yourBalance": "你的余额：",
     "networkError": "网络错误，请重试。",
     "invalidAmount": "请输入有效金额",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "以继续支持行动项目。",
     "walletEmpty": "你的钱包是空的。",
     "topUp": "充值",
-    "toContribute": "以支持项目。"
+    "minPayment": "最低付款 10p",
+    "supportProject": "支持此项目",
+    "toSupport": "以支持项目。"
   },
   "Claim": {
     "success": "谢谢！我们已记录你对 {name} 角色的兴趣。我们会与你联系。",

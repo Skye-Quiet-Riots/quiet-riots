@@ -98,13 +98,13 @@
     "raised": "comprometido",
     "backers": "{count, plural, one {apoiador} other {apoiadores}}",
     "platformFee": "taxa de serviço",
-    "wantToContribute": "Quer apoiar este projeto?",
     "topUpFirst": "Carregue sua carteira primeiro para começar.",
     "createAccountPrompt": "Crie uma conta e carregue sua carteira para contratar este serviço.",
     "goToWallet": "Ir para a carteira",
     "createAccount": "Criar conta",
     "completedMessage": "Este projeto foi {status}. Obrigado a todos os {count} apoiadores!",
-    "recipient": "Prestador de Serviço"
+    "recipient": "Prestador de Serviço",
+    "wantToSupport": "Quer apoiar este projeto?"
   },
   "Assistants": {
     "title": "Assistentes",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Impulsione a Ação Coletiva",
     "createPromptDesc": "Crie uma conta gratuita para carregar sua carteira e contratar serviços para projetos de ação.",
     "createAccount": "Criar conta",
-    "activeCampaigns": "Projetos Ativos",
-    "viewAll": "Ver tudo"
+    "viewAll": "Ver tudo",
+    "activeProjects": "Projetos Ativos"
   },
   "Profile": {
     "title": "Seu Perfil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Seu Saldo",
     "loaded": "carregado",
-    "contributed": "gasto",
-    "campaigns": "{count, plural, one {projeto} other {projetos}}"
+    "spent": "gasto",
+    "projects": "{count, plural, one {projeto} other {projetos}}"
   },
   "Transactions": {
     "title": "Transações Recentes",
     "topUp": "Recarga",
-    "contribution": "Pagamento de projeto",
     "refund": "Reembolso",
     "justNow": "agora mesmo",
     "minutesAgo": "há {count}m",
     "hoursAgo": "há {count}h",
     "daysAgo": "há {count}d",
-    "empty": "Ainda sem transações. Carregue sua carteira para começar!"
+    "empty": "Ainda sem transações. Carregue sua carteira para começar!",
+    "payment": "Pagamento de projeto"
   },
   "Activity": {
     "noActivity": "Ainda sem atividade.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Fundos insuficientes. Carregue sua carteira primeiro.",
-    "minContribution": "O pagamento mínimo é 10p",
-    "contribute": "Apoiar Este Projeto",
     "yourBalance": "Seu saldo: ",
     "networkError": "Erro de rede. Por favor tente novamente.",
     "invalidAmount": "Insira um valor válido",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "para continuar apoiando projetos de ação.",
     "walletEmpty": "Sua carteira está vazia.",
     "topUp": "Recarregue",
-    "toContribute": "para apoiar projetos."
+    "minPayment": "O pagamento mínimo é 10p",
+    "supportProject": "Apoiar Este Projeto",
+    "toSupport": "para apoiar projetos."
   },
   "Claim": {
     "success": "Obrigado! Registramos seu interesse no papel de {name}. Entraremos em contato.",

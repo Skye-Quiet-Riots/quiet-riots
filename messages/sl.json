@@ -98,13 +98,13 @@
     "raised": "zagotovljeno",
     "backers": "{count, plural, one {podpornik} other {podpornikov}}",
     "platformFee": "storitvena pristojbina",
-    "wantToContribute": "Želiš podpreti ta projekt?",
     "topUpFirst": "Najprej napolni denarnico, da začneš.",
     "createAccountPrompt": "Ustvari račun in napolni denarnico za naročilo te storitve.",
     "goToWallet": "Pojdi na denarnico",
     "createAccount": "Ustvari racun",
     "completedMessage": "Ta projekt je bil {status}. Hvala vsem {count} podpornikom!",
-    "recipient": "Ponudnik storitev"
+    "recipient": "Ponudnik storitev",
+    "wantToSupport": "Želiš podpreti ta projekt?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Spodbudi skupno akcijo",
     "createPromptDesc": "Ustvari brezplačen račun za nalaganje sredstev in naročanje storitev za akcijske projekte.",
     "createAccount": "Ustvari racun",
-    "activeCampaigns": "Aktivni projekti",
-    "viewAll": "Poglej vse"
+    "viewAll": "Poglej vse",
+    "activeProjects": "Aktivni projekti"
   },
   "Profile": {
     "title": "Tvoj profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Tvoj saldo",
     "loaded": "nalozeno",
-    "contributed": "porabljeno",
-    "campaigns": "{count, plural, one {projekt} other {projektov}}"
+    "spent": "porabljeno",
+    "projects": "{count, plural, one {projekt} other {projektov}}"
   },
   "Transactions": {
     "title": "Nedavne transakcije",
     "topUp": "Polnjenje",
-    "contribution": "Plačilo projekta",
     "refund": "Vracilo",
     "justNow": "ravnokar",
     "minutesAgo": "pred {count} min",
     "hoursAgo": "pred {count} urami",
     "daysAgo": "pred {count} dnevi",
-    "empty": "Se ni transakcij. Napolni denarnico za zacetek!"
+    "empty": "Se ni transakcij. Napolni denarnico za zacetek!",
+    "payment": "Plačilo projekta"
   },
   "Activity": {
     "noActivity": "Se ni aktivnosti.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nezadostna sredstva. Najprej napolni denarnico.",
-    "minContribution": "Najnižje plačilo je 10p",
-    "contribute": "Podpri ta projekt",
     "yourBalance": "Tvoj saldo: ",
     "networkError": "Omrezna napaka. Poskusi znova.",
     "invalidAmount": "Vnesi veljaven znesek",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "za nadaljnje podpiranje akcijskih projektov.",
     "walletEmpty": "Tvoja denarnica je prazna.",
     "topUp": "Napolni",
-    "toContribute": "za podporo projektov."
+    "minPayment": "Najnižje plačilo je 10p",
+    "supportProject": "Podpri ta projekt",
+    "toSupport": "za podporo projektov."
   },
   "Claim": {
     "success": "Hvala! Zabelezili smo tvoj interes za vlogo {name}. Javili se ti bomo.",
