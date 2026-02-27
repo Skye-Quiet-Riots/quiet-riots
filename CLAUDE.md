@@ -377,6 +377,7 @@ After merging a PR, run through this checklist immediately — don't defer to en
 ### PR lifecycle (within a session)
 
 - Create PR → wait for CI (`gh pr checks <number> --watch`) → merge (`gh pr merge <number> --squash --admin`) → run post-merge checklist → verify deployment
+- **IMPORTANT: Always merge and deploy automatically.** After creating a PR: watch CI, merge, run post-merge checklist, verify production health — all without waiting for the user to tell you. The user should never have to say "merge and deploy". This is your responsibility every time.
 - Default: merge every PR in the same session it's created. Only leave open if user explicitly requests review.
 
 ## End of Session Protocol
