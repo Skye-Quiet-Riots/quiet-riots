@@ -6,7 +6,7 @@ interface TransactionListProps {
   transactions: WalletTransaction[];
 }
 
-type TypeDisplayKey = 'topUp' | 'contribution' | 'refund';
+type TypeDisplayKey = 'topUp' | 'payment' | 'refund';
 
 function getTypeDisplay(
   type: string,
@@ -18,7 +18,7 @@ function getTypeDisplay(
     case 'payment':
       return {
         emoji: '🎯',
-        label: t('contribution'),
+        label: t('payment'),
         colorClass: 'text-red-600 dark:text-red-400',
       };
     case 'refund':

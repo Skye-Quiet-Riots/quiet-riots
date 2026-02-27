@@ -98,7 +98,7 @@
     "raised": "committed",
     "backers": "{count, plural, one {supporter} other {supporters}}",
     "platformFee": "service fee",
-    "wantToContribute": "Want to support this project?",
+    "wantToSupport": "Want to support this project?",
     "topUpFirst": "Top up your wallet first to get started.",
     "createAccountPrompt": "Create an account and load your wallet to commission this service.",
     "goToWallet": "Go to wallet",
@@ -129,7 +129,7 @@
     "createPromptTitle": "Power Collective Action",
     "createPromptDesc": "Create a free account to load your wallet and commission services for action projects.",
     "createAccount": "Create account",
-    "activeCampaigns": "Active Projects",
+    "activeProjects": "Active Projects",
     "viewAll": "View all"
   },
   "Profile": {
@@ -361,13 +361,13 @@
   "WalletBalance": {
     "title": "Your Balance",
     "loaded": "loaded",
-    "contributed": "spent",
-    "campaigns": "{count, plural, one {project} other {projects}}"
+    "spent": "spent",
+    "projects": "{count, plural, one {project} other {projects}}"
   },
   "Transactions": {
     "title": "Recent Transactions",
     "topUp": "Top-up",
-    "contribution": "Project payment",
+    "payment": "Project payment",
     "refund": "Refund",
     "justNow": "just now",
     "minutesAgo": "{count}m ago",
@@ -440,8 +440,8 @@
   },
   "Pay": {
     "insufficientFunds": "Insufficient funds. Top up your wallet first.",
-    "minContribution": "Minimum payment is 10p",
-    "contribute": "Support This Project",
+    "minPayment": "Minimum payment is 10p",
+    "supportProject": "Support This Project",
     "yourBalance": "Your balance: ",
     "networkError": "Network error. Please try again.",
     "invalidAmount": "Enter a valid amount",
@@ -453,7 +453,7 @@
     "toKeepSupporting": "to keep supporting action projects.",
     "walletEmpty": "Your wallet is empty.",
     "topUp": "Top up",
-    "toContribute": "to support projects."
+    "toSupport": "to support projects."
   },
   "Claim": {
     "success": "Thanks! We've noted your interest in the {name} role. We'll be in touch.",

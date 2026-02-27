@@ -61,7 +61,7 @@ export default async function WalletPage({ params }: Props) {
           balance_pence={wallet.balance_pence}
           total_loaded_pence={wallet.total_loaded_pence}
           total_spent_pence={wallet.total_spent_pence}
-          campaigns_supported={summary.issuesSupported}
+          projects_supported={summary.issuesSupported}
         />
       </div>
 
@@ -72,7 +72,7 @@ export default async function WalletPage({ params }: Props) {
       {activeActionInitiatives.length > 0 && (
         <div className="mb-6">
           <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-lg font-bold">{t('activeCampaigns')}</h2>
+            <h2 className="text-lg font-bold">{t('activeProjects')}</h2>
             <Link
               href="/action-initiatives"
               className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"

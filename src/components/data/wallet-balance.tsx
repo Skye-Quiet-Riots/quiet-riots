@@ -5,7 +5,7 @@ interface WalletBalanceProps {
   balance_pence: number;
   total_loaded_pence: number;
   total_spent_pence: number;
-  campaigns_supported: number;
+  projects_supported: number;
   currency?: string;
 }
 
@@ -13,7 +13,7 @@ export async function WalletBalance({
   balance_pence,
   total_loaded_pence,
   total_spent_pence,
-  campaigns_supported,
+  projects_supported,
   currency = 'GBP',
 }: WalletBalanceProps) {
   const t = await getTranslations('WalletBalance');
@@ -36,12 +36,12 @@ export async function WalletBalance({
           <span className="block text-sm font-bold">
             {formatCurrency(total_spent_pence, currency)}
           </span>
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">{t('contributed')}</span>
+          <span className="text-xs text-zinc-500 dark:text-zinc-400">{t('spent')}</span>
         </div>
         <div className="text-center">
-          <span className="block text-sm font-bold">{campaigns_supported}</span>
+          <span className="block text-sm font-bold">{projects_supported}</span>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">
-            {t('campaigns', { count: campaigns_supported })}
+            {t('projects', { count: projects_supported })}
           </span>
         </div>
       </div>

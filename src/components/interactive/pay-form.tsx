@@ -38,7 +38,7 @@ export function PayForm({
       return;
     }
     if (amountPence < 10) {
-      setError(t('minContribution'));
+      setError(t('minPayment'));
       return;
     }
 
@@ -66,8 +66,8 @@ export function PayForm({
         amount: amountPence,
         newBalance: data.data.wallet_balance_pence,
       });
-      trackEvent('campaign_contributed', {
-        campaignId: actionInitiativeId,
+      trackEvent('action_initiative_payment', {
+        actionInitiativeId,
         amountPence,
       });
     } catch {
@@ -118,7 +118,7 @@ export function PayForm({
     <AuthGate action="support this action project">
       <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
         <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-          {t('contribute')}
+          {t('supportProject')}
         </h3>
         <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-500">
           {t('yourBalance')}
@@ -168,7 +168,7 @@ export function PayForm({
             >
               {t('topUp')}
             </Link>{' '}
-            {t('toContribute')}
+            {t('toSupport')}
           </p>
         )}
       </div>

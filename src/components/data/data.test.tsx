@@ -362,7 +362,7 @@ describe('WalletBalance', () => {
       balance_pence: 450,
       total_loaded_pence: 1000,
       total_spent_pence: 550,
-      campaigns_supported: 3,
+      projects_supported: 3,
     });
     render(el);
     expect(screen.getByText('£4.50')).toBeDefined();
@@ -378,7 +378,7 @@ describe('WalletBalance', () => {
       balance_pence: 100,
       total_loaded_pence: 100,
       total_spent_pence: 0,
-      campaigns_supported: 1,
+      projects_supported: 1,
     });
     render(el);
     expect(screen.getByText(/project/)).toBeDefined();
