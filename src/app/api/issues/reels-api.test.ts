@@ -163,7 +163,9 @@ describe('POST /api/issues/[id]/reels/[reelId]/vote', () => {
 
 describe('GET /api/reels/trending', () => {
   it('returns trending reels with issue names', async () => {
-    const response = await trendingGET();
+    const { NextRequest } = await import('next/server');
+    const request = new NextRequest('http://localhost/api/reels/trending');
+    const response = await trendingGET(request);
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(Array.isArray(data)).toBe(true);

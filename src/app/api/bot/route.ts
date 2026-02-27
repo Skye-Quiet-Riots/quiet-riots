@@ -57,7 +57,9 @@ import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
 import {
   translateEntities,
   translateEntity,
+  translateActions,
   translateActionInitiatives,
+  translateExpertProfiles,
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
@@ -897,25 +899,27 @@ export async function POST(request: NextRequest) {
       // ─── Actions ─────────────────────────────────────────
       case 'get_actions': {
         const issueId = p.issue_id as string;
-        // Note: actions are not translated in DB yet — language_code accepted but unused
-        const actions = await getFilteredActions(issueId, {
+        const lang = (p.language_code as string) || 'en';
+        const rawActions = await getFilteredActions(issueId, {
           type: p.type as string | undefined,
           time: p.time as string | undefined,
           skills: p.skills as string | undefined,
         });
+        const actions = await translateActions(rawActions, lang);
         return ok({ actions });
       }
 
       // ─── Community ───────────────────────────────────────
       case 'get_community': {
         const issueId = p.issue_id as string;
-        // Note: community data (health, feed, experts, countries) is not translated — language_code accepted for future use
-        const [health, feed, experts, countries] = await Promise.all([
+        const lang = (p.language_code as string) || 'en';
+        const [health, feed, rawExperts, countries] = await Promise.all([
           getCommunityHealth(issueId),
           getFeedPosts(issueId, 5),
           getExpertProfiles(issueId),
           getCountryBreakdown(issueId),
         ]);
+        const experts = await translateExpertProfiles(rawExperts, lang);
         return ok({ health, feed, experts, countries });
       }
 

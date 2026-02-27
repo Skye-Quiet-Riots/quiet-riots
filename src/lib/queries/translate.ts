@@ -1,5 +1,5 @@
 import { getEntityTranslations, getTranslatedEntities } from './translations';
-import type { CategoryAssistant, IssuePivotRow, Synonym } from '@/types';
+import type { Action, CategoryAssistant, ExpertProfile, IssuePivotRow, RiotReel, Synonym } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -126,6 +126,91 @@ export async function translateSynonyms(synonyms: Synonym[], locale: string): Pr
     const t = translations[synonym.id];
     if (!t || !t.term) return synonym;
     return { ...synonym, term: t.term };
+  });
+}
+
+/**
+ * Translate action objects (which use `title` instead of `name`).
+ * Overlays `title` and `description`. Follows translateActionInitiatives() pattern.
+ */
+export async function translateActions<
+  T extends { id: string; title: string; description?: string | null },
+>(actions: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || actions.length === 0) return actions;
+
+  const translations = await getTranslatedEntities(
+    'action',
+    actions.map((a) => a.id),
+    locale,
+  );
+
+  return actions.map((action) => {
+    const t = translations[action.id];
+    if (!t) return action;
+    return {
+      ...action,
+      title: t.title || action.title,
+      ...(action.description !== undefined && {
+        description: t.description || action.description,
+      }),
+    };
+  });
+}
+
+/**
+ * Translate expert profile objects.
+ * Overlays `role`, `speciality`, `achievement`.
+ * Does NOT translate `name` (proper nouns like "Dr. Sarah Chen").
+ */
+export async function translateExpertProfiles<
+  T extends { id: string; role: string; speciality: string; achievement: string },
+>(profiles: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || profiles.length === 0) return profiles;
+
+  const translations = await getTranslatedEntities(
+    'expert_profile',
+    profiles.map((p) => p.id),
+    locale,
+  );
+
+  return profiles.map((profile) => {
+    const t = translations[profile.id];
+    if (!t) return profile;
+    return {
+      ...profile,
+      role: t.role || profile.role,
+      speciality: t.speciality || profile.speciality,
+      achievement: t.achievement || profile.achievement,
+    };
+  });
+}
+
+/**
+ * Translate riot reel objects.
+ * Overlays `title` and `caption`.
+ * Only curated/seeded reel titles get translations; community-submitted reels
+ * keep their YouTube titles (the function harmlessly returns the original when
+ * no translation exists).
+ */
+export async function translateRiotReels<
+  T extends { id: string; title: string; caption: string },
+>(reels: T[], locale: string): Promise<T[]> {
+  if (locale === 'en' || reels.length === 0) return reels;
+
+  const translations = await getTranslatedEntities(
+    'riot_reel',
+    reels.map((r) => r.id),
+    locale,
+  );
+
+  return reels.map((reel) => {
+    const t = translations[reel.id];
+    if (!t) return reel;
+    return {
+      ...reel,
+      title: t.title || reel.title,
+      caption: t.caption || reel.caption,
+    };
   });
 }
 

@@ -2,7 +2,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   translateEntities,
   translateEntity,
+  translateActions,
   translateActionInitiatives,
+  translateExpertProfiles,
+  translateRiotReels,
   translateIssuePivotRows,
   translateOrgPivotRows,
 } from './translate';
@@ -145,6 +148,148 @@ describe('translateActionInitiatives', () => {
 
     await translateActionInitiatives(actionInitiatives, 'fr');
     expect(mockGetTranslatedEntities).toHaveBeenCalledWith('action_initiative', ['c1', 'c2'], 'fr');
+  });
+});
+
+describe('translateActions', () => {
+  const actions = [
+    { id: 'a1', title: 'Claim delay repay', description: 'Get compensation' },
+    { id: 'a2', title: 'Write to MP', description: null },
+  ];
+
+  it('short-circuits for English locale', async () => {
+    const result = await translateActions(actions, 'en');
+    expect(result).toBe(actions);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('short-circuits for empty array', async () => {
+    const result = await translateActions([], 'de');
+    expect(result).toEqual([]);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('translates title and description', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      a1: { title: 'Verspätungserstattung', description: 'Entschädigung erhalten' },
+    });
+
+    const result = await translateActions(actions, 'de');
+    expect(result[0].title).toBe('Verspätungserstattung');
+    expect(result[0].description).toBe('Entschädigung erhalten');
+    expect(result[1].title).toBe('Write to MP'); // no translation
+  });
+
+  it('does not overwrite with empty title', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      a1: { title: '' },
+    });
+
+    const result = await translateActions(actions, 'de');
+    expect(result[0].title).toBe('Claim delay repay');
+  });
+
+  it('uses action entity type', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({});
+
+    await translateActions(actions, 'fr');
+    expect(mockGetTranslatedEntities).toHaveBeenCalledWith('action', ['a1', 'a2'], 'fr');
+  });
+});
+
+describe('translateExpertProfiles', () => {
+  const profiles = [
+    { id: 'e1', role: 'Rail Expert', speciality: 'Delay claims', achievement: '500 claims won' },
+    { id: 'e2', role: 'Legal Advisor', speciality: 'Consumer law', achievement: '10 years exp' },
+  ];
+
+  it('short-circuits for English locale', async () => {
+    const result = await translateExpertProfiles(profiles, 'en');
+    expect(result).toBe(profiles);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('short-circuits for empty array', async () => {
+    const result = await translateExpertProfiles([], 'de');
+    expect(result).toEqual([]);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('translates role, speciality, and achievement', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      e1: { role: 'Bahnexperte', speciality: 'Verspätungsansprüche', achievement: '500 gewonnen' },
+    });
+
+    const result = await translateExpertProfiles(profiles, 'de');
+    expect(result[0].role).toBe('Bahnexperte');
+    expect(result[0].speciality).toBe('Verspätungsansprüche');
+    expect(result[0].achievement).toBe('500 gewonnen');
+    expect(result[1].role).toBe('Legal Advisor'); // no translation
+  });
+
+  it('does not overwrite with empty values', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      e1: { role: '', speciality: '', achievement: '' },
+    });
+
+    const result = await translateExpertProfiles(profiles, 'de');
+    expect(result[0].role).toBe('Rail Expert');
+    expect(result[0].speciality).toBe('Delay claims');
+    expect(result[0].achievement).toBe('500 claims won');
+  });
+
+  it('uses expert_profile entity type', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({});
+
+    await translateExpertProfiles(profiles, 'fr');
+    expect(mockGetTranslatedEntities).toHaveBeenCalledWith('expert_profile', ['e1', 'e2'], 'fr');
+  });
+});
+
+describe('translateRiotReels', () => {
+  const reels = [
+    { id: 'r1', title: 'Why trains fail', caption: 'A deep dive' },
+    { id: 'r2', title: 'Community response', caption: 'Rioters unite' },
+  ];
+
+  it('short-circuits for English locale', async () => {
+    const result = await translateRiotReels(reels, 'en');
+    expect(result).toBe(reels);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('short-circuits for empty array', async () => {
+    const result = await translateRiotReels([], 'de');
+    expect(result).toEqual([]);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('translates title and caption', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      r1: { title: 'Warum Züge versagen', caption: 'Ein tiefer Einblick' },
+    });
+
+    const result = await translateRiotReels(reels, 'de');
+    expect(result[0].title).toBe('Warum Züge versagen');
+    expect(result[0].caption).toBe('Ein tiefer Einblick');
+    expect(result[1].title).toBe('Community response'); // no translation
+  });
+
+  it('does not overwrite with empty values', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      r1: { title: '', caption: '' },
+    });
+
+    const result = await translateRiotReels(reels, 'de');
+    expect(result[0].title).toBe('Why trains fail');
+    expect(result[0].caption).toBe('A deep dive');
+  });
+
+  it('uses riot_reel entity type', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({});
+
+    await translateRiotReels(reels, 'fr');
+    expect(mockGetTranslatedEntities).toHaveBeenCalledWith('riot_reel', ['r1', 'r2'], 'fr');
   });
 });
 
