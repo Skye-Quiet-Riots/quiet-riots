@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Evidence } from '@/types';
 import { EvidenceComposer } from './evidence-composer';
 import { LiveWarningModal } from './live-warning-modal';
@@ -22,6 +23,7 @@ export function EvidenceSection({
   organisations,
   preselectedOrgId,
 }: EvidenceSectionProps) {
+  const t = useTranslations('Evidence');
   const [evidence, setEvidence] = useState(initialEvidence);
   const [showLiveWarning, setShowLiveWarning] = useState(false);
   const [isLive, setIsLive] = useState(false);
@@ -93,7 +95,7 @@ export function EvidenceSection({
 
       {evidence.length === 0 && (
         <p className="py-8 text-center text-sm text-zinc-400 dark:text-zinc-500">
-          No evidence gathered yet. Be the first to document what&apos;s happening.
+          {t('empty')}
         </p>
       )}
 
