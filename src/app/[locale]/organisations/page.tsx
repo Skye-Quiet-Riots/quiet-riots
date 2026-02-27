@@ -6,7 +6,7 @@ import {
   getTotalRiotersForOrg,
 } from '@/lib/queries/organisations';
 import { getAllAssistants } from '@/lib/queries/assistants';
-import { translateEntities } from '@/lib/queries/translate';
+import { translateEntities, translateCategoryAssistants } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { OrgCard } from '@/components/cards/org-card';
 import { SearchBar } from '@/components/interactive/search-bar';
@@ -28,11 +28,12 @@ export default async function OrganisationsPage({ params, searchParams }: Props)
   const sp = await searchParams;
   const category = sp.category as Category | undefined;
   const search = sp.search || undefined;
-  const [rawOrgs, allAssistants] = await Promise.all([
+  const [rawOrgs, rawAssistants] = await Promise.all([
     getAllOrganisations(category, search, locale),
     getAllAssistants(),
   ]);
   const orgs = await translateEntities(rawOrgs, 'organisation', locale);
+  const allAssistants = await translateCategoryAssistants(rawAssistants, locale);
   const assistant = category
     ? allAssistants.find((a) => a.category.toLowerCase() === category.toLowerCase())
     : undefined;

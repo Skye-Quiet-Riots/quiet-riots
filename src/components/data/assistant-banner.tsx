@@ -1,14 +1,15 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import type { AssistantWithStats } from '@/lib/queries/assistants';
-import type { Category } from '@/types';
 
 interface AssistantBannerProps {
   assistant: AssistantWithStats;
 }
 
-export function AssistantBanner({ assistant }: AssistantBannerProps) {
-  const category = (assistant.category.charAt(0).toUpperCase() +
-    assistant.category.slice(1)) as Category;
+export async function AssistantBanner({ assistant }: AssistantBannerProps) {
+  const t = await getTranslations('Assistants');
+  const tc = await getTranslations('Categories');
+  const categoryLabel = tc(assistant.category.charAt(0).toUpperCase() + assistant.category.slice(1));
 
   return (
     <Link
@@ -42,7 +43,7 @@ export function AssistantBanner({ assistant }: AssistantBannerProps) {
         <p className="text-sm font-semibold text-purple-900 dark:text-purple-200">
           {assistant.agent_name} & {assistant.human_name}
           <span className="ml-1.5 text-xs font-normal text-purple-600 dark:text-purple-400">
-            Your {category} Assistants
+            {t('yourAssistants', { category: categoryLabel })}
           </span>
         </p>
         {assistant.goal && (
@@ -54,7 +55,7 @@ export function AssistantBanner({ assistant }: AssistantBannerProps) {
 
       {/* CTA */}
       <span className="flex-shrink-0 text-xs font-medium text-purple-600 group-hover:text-purple-800 dark:text-purple-400 dark:group-hover:text-purple-300">
-        Meet them →
+        {t('meetThem')}
       </span>
     </Link>
   );

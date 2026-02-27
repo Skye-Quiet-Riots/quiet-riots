@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getAssistantDetail } from '@/lib/queries/assistants';
+import { translateCategoryAssistant } from '@/lib/queries/translate';
 import { PageHeader } from '@/components/layout/page-header';
 import { AssistantProfile } from '@/components/data/assistant-profile';
 import { AssistantActivityList } from '@/components/data/assistant-activity-list';
@@ -21,6 +22,7 @@ export default async function AssistantDetailPage({ params }: Props) {
   const { locale, category: rawCategory } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('AssistantDetail');
+  const tc = await getTranslations('Categories');
 
   const category = rawCategory.toLowerCase();
 
@@ -28,8 +30,9 @@ export default async function AssistantDetailPage({ params }: Props) {
     notFound();
   }
 
-  const detail = await getAssistantDetail(category);
-  if (!detail) notFound();
+  const rawDetail = await getAssistantDetail(category);
+  if (!rawDetail) notFound();
+  const detail = await translateCategoryAssistant(rawDetail, locale);
 
   const displayCategory = (category.charAt(0).toUpperCase() + category.slice(1)) as Category;
 
@@ -38,12 +41,12 @@ export default async function AssistantDetailPage({ params }: Props) {
       <PageHeader
         title={`${detail.agent_name} & ${detail.human_name}`}
         subtitle={detail.goal || undefined}
-        breadcrumbs={[{ label: t('breadcrumb'), href: '/assistants' }, { label: displayCategory }]}
+        breadcrumbs={[{ label: t('breadcrumb'), href: '/assistants' }, { label: tc(displayCategory) }]}
       />
 
       {/* Category badge */}
       <div className="mb-6">
-        <CategoryBadge category={displayCategory} size="md" />
+        <CategoryBadge category={displayCategory} label={tc(displayCategory)} size="md" />
       </div>
 
       {/* Dual profile cards */}

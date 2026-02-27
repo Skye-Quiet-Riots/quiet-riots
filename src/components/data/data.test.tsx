@@ -25,6 +25,84 @@ vi.mock('next/link', () => ({
   ),
 }));
 
+// Mock next-intl/server for async server components (banner, health, etc.)
+vi.mock('next-intl/server', () => {
+  const messages: Record<string, Record<string, string>> = {
+    Assistants: {
+      bannerTitle: '{count} AI & Human Assistant Pairs',
+      bannerSubtitle: 'Every category has a dedicated AI agent and human organiser to help.',
+      meetThem: 'Meet them →',
+      yourAssistants: 'Your {category} Assistants',
+      aiAgentLabel: '(AI Agent)',
+      humanOrganiserLabel: '(Human Organiser)',
+      currentFocus: 'Current focus: {focus}',
+      helpsWith: '{name} helps with',
+      learnMore: 'Learn more about {agentName} & {humanName} →',
+    },
+    Categories: {
+      Transport: 'Transport',
+      Telecoms: 'Telecoms',
+    },
+    Health: {
+      title: '📊 Sense of Community Index',
+      needsMet: 'Needs Met',
+      needsMetDesc: "Members feel it's worthwhile",
+      membership: 'Membership',
+      membershipDesc: 'Trust & belonging',
+      influence: 'Influence',
+      influenceDesc: 'Your voice matters',
+      connection: 'Connection',
+      connectionDesc: 'Shared experiences',
+      healthy: 'Healthy',
+      growing: 'Growing',
+      needsAttention: 'Needs Attention',
+    },
+    ActionInitiativeProgress: {
+      title: '⚡ Action Projects',
+      funded: 'Goal Reached',
+      disbursed: 'Completed',
+      backers: '{count} participants',
+    },
+    Transactions: {
+      title: 'Recent Transactions',
+      topUp: 'Top-up',
+      payment: 'Project payment',
+      refund: 'Refund',
+      justNow: 'just now',
+      minutesAgo: '{count}m ago',
+      hoursAgo: '{count}h ago',
+      daysAgo: '{count}d ago',
+      empty: 'No transactions yet. Top up your wallet to get started!',
+    },
+    WalletBalance: {
+      title: 'Your Balance',
+      loaded: 'loaded',
+      spent: 'spent',
+      projects: '{count, plural, one {project} other {projects}}',
+    },
+    Countries: {
+      title: '🌍 Countries',
+    },
+  };
+
+  return {
+    getTranslations: (namespace?: string) =>
+      Promise.resolve(
+        (key: string, params?: Record<string, string | number>) => {
+          const ns = namespace ? messages[namespace] : undefined;
+          let result = (ns && ns[key]) || key;
+          if (params) {
+            for (const [k, v] of Object.entries(params)) {
+              result = result.replace(`{${k}}`, String(v));
+            }
+          }
+          return result;
+        },
+      ),
+    setRequestLocale: () => {},
+  };
+});
+
 describe('CategoryBadge', () => {
   it('renders category name', () => {
     render(<CategoryBadge category="Transport" />);
@@ -463,102 +541,121 @@ const makeAssistantWithStats = (
 });
 
 describe('AssistantBanner', () => {
-  it('renders agent and human names', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+  it('renders agent and human names', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats() });
+    render(el);
     expect(screen.getByText(/Jett & Bex/)).toBeDefined();
   });
 
-  it('renders category label', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+  it('renders category label', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats() });
+    render(el);
     expect(screen.getByText(/Your Transport Assistants/)).toBeDefined();
   });
 
-  it('renders goal text', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+  it('renders goal text', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats() });
+    render(el);
     expect(screen.getByText('Help rioters hold UK transport companies to account')).toBeDefined();
   });
 
-  it('renders "Meet them" link to assistants page', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+  it('renders "Meet them" link to assistants page', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats() });
+    render(el);
     const link = screen.getByRole('link');
     expect(link.getAttribute('href')).toBe('/assistants/transport');
     expect(screen.getByText('Meet them →')).toBeDefined();
   });
 
-  it('renders both assistant icons', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats()} />);
+  it('renders both assistant icons', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats() });
+    render(el);
     expect(screen.getByText('🛩️')).toBeDefined();
     expect(screen.getByText('👩🏻')).toBeDefined();
   });
 
-  it('handles missing goal gracefully', () => {
-    render(<AssistantBanner assistant={makeAssistantWithStats({ goal: null })} />);
+  it('handles missing goal gracefully', async () => {
+    const el = await AssistantBanner({ assistant: makeAssistantWithStats({ goal: null }) });
+    render(el);
     expect(screen.getByText(/Jett & Bex/)).toBeDefined();
   });
 });
 
 describe('AssistantDetailBanner', () => {
-  it('renders category heading', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('renders category heading', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.getByText('Your Transport Assistants')).toBeDefined();
   });
 
-  it('renders agent and human names with roles', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('renders agent and human names with roles', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.getByText('(AI Agent)')).toBeDefined();
     expect(screen.getByText('(Human Organiser)')).toBeDefined();
   });
 
-  it('renders goal', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('renders goal', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.getByText('Help rioters hold UK transport companies to account')).toBeDefined();
   });
 
-  it('renders assistant focus', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('renders assistant focus', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.getByText(/Avanti West Coast cancellation patterns/)).toBeDefined();
   });
 
-  it('prefers focus prop over assistant focus', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} focus="Northern Rail punctuality" />);
+  it('prefers focus prop over assistant focus', async () => {
+    const el = await AssistantDetailBanner({
+      assistant: makeAssistant(),
+      focus: 'Northern Rail punctuality',
+    });
+    render(el);
     expect(screen.getByText(/Northern Rail punctuality/)).toBeDefined();
     expect(screen.queryByText(/Avanti West Coast/)).toBeNull();
   });
 
-  it('renders agentHelps and humanHelps when provided', () => {
-    render(
-      <AssistantDetailBanner
-        assistant={makeAssistant()}
-        agentHelps="Filing delay-repay claims automatically"
-        humanHelps="Coordinating group complaints"
-      />,
-    );
+  it('renders agentHelps and humanHelps when provided', async () => {
+    const el = await AssistantDetailBanner({
+      assistant: makeAssistant(),
+      agentHelps: 'Filing delay-repay claims automatically',
+      humanHelps: 'Coordinating group complaints',
+    });
+    render(el);
     expect(screen.getByText('Filing delay-repay claims automatically')).toBeDefined();
     expect(screen.getByText('Coordinating group complaints')).toBeDefined();
     expect(screen.getByText(/Jett helps with/)).toBeDefined();
     expect(screen.getByText(/Bex helps with/)).toBeDefined();
   });
 
-  it('omits help sections when not provided', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('omits help sections when not provided', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.queryByText(/helps with/)).toBeNull();
   });
 
-  it('links to assistant profile', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('links to assistant profile', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     const link = screen.getByRole('link');
     expect(link.getAttribute('href')).toBe('/assistants/transport');
     expect(screen.getByText(/Learn more about Jett & Bex/)).toBeDefined();
   });
 
-  it('handles null goal and focus gracefully', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant({ goal: null, focus: null })} />);
+  it('handles null goal and focus gracefully', async () => {
+    const el = await AssistantDetailBanner({
+      assistant: makeAssistant({ goal: null, focus: null }),
+    });
+    render(el);
     expect(screen.getByText('Your Transport Assistants')).toBeDefined();
     expect(screen.queryByText(/Current focus/)).toBeNull();
   });
 
-  it('renders both assistant icons', () => {
-    render(<AssistantDetailBanner assistant={makeAssistant()} />);
+  it('renders both assistant icons', async () => {
+    const el = await AssistantDetailBanner({ assistant: makeAssistant() });
+    render(el);
     expect(screen.getByText('🛩️')).toBeDefined();
     expect(screen.getByText('👩🏻')).toBeDefined();
   });
@@ -581,31 +678,36 @@ describe('AssistantOverviewBanner', () => {
     }),
   ];
 
-  it('renders assistant count', () => {
-    render(<AssistantOverviewBanner assistants={assistants} />);
+  it('renders assistant count', async () => {
+    const el = await AssistantOverviewBanner({ assistants });
+    render(el);
     expect(screen.getByText('2 AI & Human Assistant Pairs')).toBeDefined();
   });
 
-  it('renders description text', () => {
-    render(<AssistantOverviewBanner assistants={assistants} />);
+  it('renders description text', async () => {
+    const el = await AssistantOverviewBanner({ assistants });
+    render(el);
     expect(
       screen.getByText('Every category has a dedicated AI agent and human organiser to help.'),
     ).toBeDefined();
   });
 
-  it('links to assistants page', () => {
-    render(<AssistantOverviewBanner assistants={assistants} />);
+  it('links to assistants page', async () => {
+    const el = await AssistantOverviewBanner({ assistants });
+    render(el);
     const link = screen.getByRole('link');
     expect(link.getAttribute('href')).toBe('/assistants');
   });
 
-  it('renders "Meet them" CTA', () => {
-    render(<AssistantOverviewBanner assistants={assistants} />);
+  it('renders "Meet them" CTA', async () => {
+    const el = await AssistantOverviewBanner({ assistants });
+    render(el);
     expect(screen.getByText('Meet them →')).toBeDefined();
   });
 
-  it('renders preview icons', () => {
-    render(<AssistantOverviewBanner assistants={assistants} />);
+  it('renders preview icons', async () => {
+    const el = await AssistantOverviewBanner({ assistants });
+    render(el);
     expect(screen.getByText('🛩️')).toBeDefined();
     expect(screen.getByText('📡')).toBeDefined();
   });
