@@ -6,20 +6,21 @@
 
 ## Latest Session
 
-**Session 54** (2026-02-27) — Stripe Display Text Compliance + Translation Protocol Overhaul
-→ [`session-logs/2026-02-session-54.md`](session-logs/2026-02-session-54.md)
+**Session 55** (2026-02-27) — Category Assistant i18n + API Translation Pipeline
+→ [`session-logs/2026-02-session-55.md`](session-logs/2026-02-session-55.md)
 
 ## Current Priorities
 
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
-- **End-to-end testing** — manually test the full share lifecycle on production
-- **PR #129** — server-side language fallback for WhatsApp bot (CI passing, ready to merge)
+- **End-to-end testing** — manually test Bengali bot responses on production to verify assistant i18n fix
+- **Add ANTHROPIC_API_KEY to .env.local** — needed for `npm run translate` to work locally
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 55  | 2026-02-27    | Category Assistant i18n + API Translation Pipeline    | [`session-55`](session-logs/2026-02-session-55.md)                                                             |
 | 54  | 2026-02-27    | Stripe Display Text Compliance + Translation Protocol | [`session-54`](session-logs/2026-02-session-54.md)                                                             |
 | 53  | 2026-02-27    | Stripe-Compliant i18n Key Renames                     | [`session-53`](session-logs/2026-02-session-53.md)                                                             |
 | 52  | 2026-02-26    | Rename campaigns → action_initiatives (Full Refactor) | [`session-52`](session-logs/2026-02-session-52.md)                                                             |
