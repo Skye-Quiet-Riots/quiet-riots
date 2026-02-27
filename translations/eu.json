@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Behin batean 6 erreklamazioren txostenak aurkezten lagundu zien atzelera batean. £47 irabazi zuten Birminghamera iritsi baino lehen.",
+      "agent_bio": "Bertan behera jaitzearen patroiak jarraitzen ditu, erreklamazioen paperak kudeatzen ditu, iradokitako ekintza guztiak berrikusten ditu, eta regulatzailearen aurkezpenetarako froga multzoak osatzen ditu. Zenbakiak kalkulatzen ditu erriotzaileek garrantzitsua dena kontuan jarri dezaten.",
+      "human_quote": "Nire Quiet Riot momentarik gustukoenena: Avantiren sare sozialen taldea ikustea nekatuta, 400 bat geurentzat txioetan idatzi genuelako.",
+      "human_bio": "Manchesterretik etorria den ohiko bidaiaroa, Avanti linean 3 urte igaro ondoren nahikoa zela erabaki zuen. Bide berean dauden erriotzaileak konektatzten laguntzet, zer funtzionatzen ari den partekatzen dute, eta giza ingurunea dakar.",
+      "goal": "Erriotzaileak britainiako garraio enpresen ardura adierazi dezan bertan behera, atzeleran eta prezioen inguruan — eta denek ezagutza dezan zeri zuzen duten.",
+      "focus": "Avanti West Coast bertan behera jaitzearen patroiak",
+      "focus_detail": "Bertan behera jaitzearen datu-basea osatzen ari da orduak, bideak eta arrazoia barne, ORRri aurkezteko. Gaur egun erriotzaileek helarazitako 340 bertan behera jaitze jarraitua ari da."
+    },
+    "telecoms": {
+      "agent_quote": "200 erriotzailerako abiadura-probak egin zituen. Batakoa 18 Mbps zen. 65 ordain zuten.",
+      "agent_bio": "Banda zabaleko abiadurak aztertzen ditu, hornitzaileen alderaketak datu-basean gordetzen ditu, eta erriotzaileak Ofcomreko froga eraikitzen laguntzen ditu. Zure konexioa motela bada, Pultseak frogatu egingo du.",
+      "human_quote": "Kalean osoa banda zabalaren hornitzailea aldatu zuen elkarrekin. Aurreko hornitzaileak 'mesedez itzuli' gutunarekin etxe guztietan bidali zuen.",
+      "human_bio": "Londreseko teknologia-trebea, banda zabaleko abiadura ordaintzen ez zitzaizkion kontziente bezala. Erriotzaileak hornitzaileak alderatzten, aldaketak koordinatzten eta abiadura-probaren froga partekatzen laguntzen ditu.",
+      "goal": "Erriotzaileak banda zabaleko eta mugikorako zerbitzua ordaintzen duten bezala izatea laguntzea — eta ezagutzea zer egin behar duten ez denean.",
+      "focus": "Kontratuan zehar prezioen igoera",
+      "focus_detail": "CPI+ igoerak jota erriotzaileen froga biltzen ari da Ofcomri aurkezteko. 4 hornitzaileren artean 890 erriotzaile kaltetuak."
+    },
+    "energy": {
+      "agent_quote": "Erriotzaileari kalkulatzen lagundu zion £340 deitzen zuten gainean ordaintzen zuten kontuetan. Energi enpresen barkamena mezua jatorrizko kontratua baino luzeagoa zen.",
+      "agent_bio": "Fakturazioaren patroiak aztertzen ditu, gainkarguak identifikatzen ditu, eta regulatzailearen aurkezpenetarako froga multzoak osatzen ditu. Zure energi enpreak barregarria bada, Sparkak froga hautatuko ditu.",
+      "human_quote": "Erriotzaile batek £340 itzuli zuen 2 urtetan gainkargua frogatu ondoren. Telefonoan negar egin zuen.",
+      "human_bio": "Bristolean oinarritua. Erriotzaileak haien fakturak errebisatzten, aldaketetan navigatzten eta Ofgemreko froga biltzten laguntzet. Energi merkatura ondo ezagutzen du.",
+      "goal": "Erriotzaileak kontua errebisatzen, adiskideki aldatzten eta enpresen energi txukunera gainean egitea laguntzea.",
+      "focus": "British Gas estimatua bilzaketaren erroreak",
+      "focus_detail": "340 erriotzailerentzako 2 urtetan fakturazioaren datoak aztertzen ari da Ofgemri aurkezteko sistematikoak gainkarga patroiak identifikatzeko."
+    },
+    "water": {
+      "agent_quote": "200 erriotzaileak astebururako sewer txostenak aurkezten lagundu zion. Thames Waterren kaxarentzat bere inbox behar zuen.",
+      "agent_bio": "Sewer irteerako dataren monitora egin, ur enpresaren errendimendua jarraitu eta EA eta Ofwatrako froga biltzen ditu. Eguraldi irteerako puntu bakoitza eta gainaldi kontrolatzen du.",
+      "human_quote": "Itsasoa 3 astean lehenago irekia zen sewer dataren okerra frogatzez.",
+      "human_bio": "Cornualen surfista, bere itsasoko bila sewagearen abisuak itxita zen nekatuta. Erriotzaileak sewer irteeraren txostenak, ur kalitatearen froga biltzen eta EA batekin koordinatzen laguntzen ditu.",
+      "goal": "Erriotzaileak ur enpresen ardura adierazi dezan sewer, fakturan eta zerbitzuaren kalitatearen inguruan.",
+      "focus": "Thames Water sewer irteeraren maiztasuna",
+      "focus_detail": "Irteerako gertaerak enpresen txostenak datoaren aurka mapatzen. 200 erriotzaileren txostenak 3 irteerer azpitxostearen iradokitzen dute."
+    },
+    "banking": {
+      "agent_quote": "Erreklamazioa idatzten lagundua, bankua barkamena deitu baino lehen ere bidaltzea.",
+      "agent_bio": "Banku gastu-merkeetan berrikusten ditu, komisioen egitura analizatzen dute, eta FCA erreklamazio froga eraikitzen laguntzen dituzte. Ezkutuko komisioa baldin badago, Chipek aurkituko du.",
+      "human_quote": "Barclaysen adararen itxiera 1.200 bat geurentzat kontsulta azalpenean agertzen garenean alderantzikatu zuen.",
+      "human_bio": "Birminghamtik aurreko banku enpleguak erreklamazio ez ziren erreala nola kudeatzen den ikustea. Erriotzaileak hobea erreklamazio idaztean eta sistemaren nabigazioan laguntzen dituzte.",
+      "goal": "Erriotzaileak bankuetako gastu txarkiak, adararen itxierak eta zerbitzuaren kalitatearen baxua trata egin dezan laguntzea.",
+      "focus": "HSBC adararen itxiera onda",
+      "focus_detail": "12 planen itxieratan erantzunak koordinatzen. Komunitate kaltetuenetik eraginaren baieztapenak biltzen."
+    },
+    "health": {
+      "agent_quote": "3 NHS dentista aurkitzea laguntza pazienteak onartzen zituztena. Erriotzailea inuentatzen nabilela uste zuen.",
+      "agent_bio": "Itxaropearen denbora jasotzen ditu, erabilgarritasuna aurkitzea eta erriotzaileak sistemaren nabigazioan laguntzen ditu. Tratamendurako abiadura bideak baldin badago, Curak mapatu egingo du.",
+      "human_quote": "Erriotzaile batek gure guregaiak txantiloia erabili zuen errebisazioa abiadura-bidean. 18 hilabete 6 astean bihurtu zen.",
+      "human_bio": "Liverpoleko erizaina, NHSren bi aldeak ikusi dituena. Erriotzaileak itxaro-zerrendetan, letra eragina idatzten eta zer benetan mugimendua dakiten partekatzen laguntzen dituzte.",
+      "goal": "Erriotzaileak NHS itxaropearen denboren nabigazioan, erabilgarritasuna aurkitzean eta hautatzen dutenak jakitean laguntza.",
+      "focus": "GP telefono sarrera denbora",
+      "focus_detail": "500 erriotzailen deia datena biltzea benetan munduko sarbidea eraikitzea. Lurralde osasun batzuei ikerketak argitaratzen."
+    },
+    "housing": {
+      "agent_quote": "Eraikuntza berrian 47 gaitzak dokumentatzen lagundu zion. Garatzaileak eraikuntza inspektorea ote gintzan galdegin zuen.",
+      "agent_bio": "Ondasun arazoak dokumentatzen ditu, enpleguaren erantzuna denboran aztertzen, eta etxebizitza ombudsmanen aurkezpenetarako froga biltzen ditu. Lehortasun lauso, lotsa, guztiak jasotzen.",
+      "human_quote": "Gure lehortasun- gertuak hornitzailea lege batzaren inspekzioa baino lehen konpontzera bultzatu zuen.",
+      "human_bio": "Londresko etxehostoa, lehortasunari etxe enpleguaren gaitzei dagokio guztia aditu du. Erriotzaileak arazo egokia dokumentatzen eta haien zuzenak dakiten laguntzen dituzte.",
+      "goal": "Erriotzaileak enpleguaren, kontzeiluaren eta etxebizitzaren arazoen ardura adierazi dezan laguntzea — eta zeri zuzen duten jakitea.",
+      "focus": "21 ataleko ez-akatsaren desabeziantzea adibideak",
+      "focus_detail": "Desabentzian erriotzaileak azkarra Renters Erreformaren legean eta zera bere gain dazkenen entzumen laguntzea."
+    },
+    "shopping": {
+      "agent_quote": "Bidalita 4 auzoko, birliaketa txoko eta gregu jarraitu zuen. Aurkitu zuen.",
+      "agent_bio": "Banaketa hutsuneak jasotzen ditu, itzulketa froga biltzen, eta prezioen patroiak didentifikatzen ditu. Zure paketea galduta baldin badago, Scoutak dagoeneko bilatzea.",
+      "human_quote": "Evrik nire paketea 3 aldiz galdua. Orain beste erriotzaileak itzultzea baten baino arinago egiten laguntzet.",
+      "human_bio": "Edimburgoetik online saltzen aditua, paketea galduta gehiago ezan ditu kontatu. Erriotzaileak itzultzea, itzultzea, saltzaileak eta banaketa enpresen legea batean laguntzet.",
+      "goal": "Erriotzaileak itzultzea, galdutako paketeak jarraitzea eta saltzaile eta banaketa enpresen ardura adierazi dezan laguntzea.",
+      "focus": "Evri banaketa hutsunearen maiztasuna",
+      "focus_detail": "800 erriotzaileen banaketa hutsunearen froga biltzen ari da Herritarren Laguntza eta Komertzioen Estandarretan aurkezteko."
+    },
+    "local": {
+      "agent_quote": "Xaurtatxoaren argazkia 11 desberdin eguratean fotografiatzen lagundu zion. Kontzeiluak azkarra eman zion.",
+      "agent_bio": "Lurraldi arazoak mapak, kontzeiluen erantzuna denborak jasotzen eta FOI eskakerak biltzen ditu. Zure xaurtatxo 6 hilabete dagoela baldin badago, Linkek froga du.",
+      "human_quote": "Kontzeiluak gure errepea konpon zuen xaurtatxo bakoitza argazkiarekin mapa ondoren. 11 hilabete, baina bertan iritsi ginen.",
+      "human_bio": "Galesetik Valleyetik lurraldi-burua, urte askotako xaurtatxoak txostenatzen aritu da. Erriotzaileak lurraldi arazo dokumentatzen eta kontzeiluak ardura adierazi desan laguntzen dituzte.",
+      "goal": "Erriotzaileak lurraldi arazoak konpontzea — xaurtatxoak, bigunakak, planingua, zaratxa — eta kontzeiluak ardura adierazi desan laguntzea.",
+      "focus": "Xaurtatxo txostenak erantzun denborak",
+      "focus_detail": "FOI askaketa 30 kontzeiluri bidali txostenak vs konposituz reparazio denborak alderatzea. Emaitzak liga-taula gisa argitaratzen."
+    },
+    "other": {
+      "agent_quote": "Gimnasioko bazkidea azkentzea laguntza 3 dei, 2 email eta grabatua bidaltzea hartzen zuen. Gimnasioak orain azkentzea botoiak du.",
+      "agent_bio": "Lurraldean ez jartzen direnak arazoak kudeatzen ditu. Harpidetzaren trapak, plastikozko zaratxa, auto-kaxak frustrazioak — Flexek patroiak eta presioak aurkitzet.",
+      "human_quote": "Gimnasioko kateak azkentzea botoiak haien webgune datuetan gehitzen dituzte. 800 erreklamazio baino. Ez.",
+      "human_bio": "Londresetik produktuaren diseinuak, enpresen utzitzea zaila egite frutstrazioa zela. Erriotzaileak harpidetzak azterketa, gailuzko patronak saihestea eta aitzamen egoitzak laguntzet.",
+      "goal": "Erriotzaileak lurraldean ez jartzen direnak laguntzea — harpidetzak, itzultzeak eta eguneroko frustrazioak.",
+      "focus": "Harpidetzaren azkentzea gailuzko patroiak",
+      "focus_detail": "Kaltetuenetik dokumentatzen eta bakoitzean txantiloi azkentzea skriptak eraikitzen."
+    },
+    "insurance": {
+      "agent_quote": "Erriotzaileak klausulak aurkitzea laguntza errebokatzen iradokitzen zena £4.200 ordainketa bihurtu zuen. Aseguruaren bere polisa baino okerra frogatu zuen.",
+      "agent_bio": "Polisak izena berrikusten ditu, okerra hastapenaren patroiak identifikatzen ditu, eta Finantze Ombudsmanen aurkezpenetarako froga eraikitzen ditu. Zure asegurua baiezko erreklamazio saihestzen baldin badago, Shieldek palanka aurkituko du.",
+      "human_quote": "8 erriotzaileak mota errebokatzen iradokitzen zena bera berak bidali zuten. Asegurua 15 egunean bika erregatzen zuten.",
+      "human_bio": "Leedsetik aurreko aseguruaren industriaren enpleguak benetako erreklamazioak ez ziren aukeran ebakitzen nola ezagutzen du. Erriotzaileak hobea erreklamazio idaztea, polisaren argibideak ulertzea eta noiz eskalatua jakiten laguntzen dituzte.",
+      "goal": "Erriotzaileak aseguruaren heldula gain ez jota baina eta erreklamazio okerra erabiltzen denean zer egin jakintza laguntzea.",
+      "focus": "Aviva etxebizitzaren asegurua errebokatzeko patroiak",
+      "focus_detail": "'Zintzo eta desgastearen eragina 40% errebokatzea datoetan datozela — maiz okerra. 200 kasuetan 3 aseguruetan analizatzea FOS froga paketean."
+    },
+    "delivery": {
+      "agent_quote": "Bidalita paketea 6 desberdin jarraitzeko egoera, 3 depositu eta auzoak txabola zehar atzeman zuen. 47 minutu topatu zuen.",
+      "agent_bio": "Korreo errendimendua monitora egiten du, banaketa hutsunearen maiztasuna jasotzen ditu eta kontsumera erreklamazio froga biltzen ditu. Zure paketea galduta baldin badago, Trackak dagoeneko ari da.",
+      "human_quote": "DPDri beren argazki-froga politika aldatzea lortu gure garaldearen 40 erriotzaileak euria-gaudean paketeak frogaz bidali ziren ondoren.",
+      "human_bio": "Glasgowetik online saltzen aditua, 'babesean utzia' aitzamena nekatuta zen. Erriotzaileak paketeak egokia banaketa eta itzultzea ez zenezkero itzultzea laguntzet.",
+      "goal": "Erriotzaileak paketeak banaketa egokia — eta itzultzea galduta ez denean.",
+      "focus": "Evri banaketa hutsunearen maiztasuna",
+      "focus_detail": "800 erriotzaileen banaketa hutsunearen froga biltzen ari da. Evri erreklamazio maiztasuna: 23% — DPDa 3 aldiz altuagoa. Liga taula Trading Estandarretan eraikitzen."
+    },
+    "education": {
+      "agent_quote": "2 plana mailegua hartzaile £30k ordaintzearen kalkulatua £47.000 interes ordaintzen litzateke mailegua amaitzeari aurrera. Jatorrizko mailegua £40.000 zen.",
+      "agent_bio": "Hezkuntza-kostuak analizatzen ditu, ikaslearen mailegua proiekzioak eta finantzatzeko zuzenak. Zenbakiak kalkulatzen ditu ikasleek eta graduak informatu desena egin dezaten.",
+      "human_quote": "12 erriotzaileak ikaslearen mailegua ordainerik ez gainkargua itzulea zitzela ezagutu. Batakoa itzultzea: £340.",
+      "human_bio": "Birminghamtik heldularo ikaslea, finantzatzea sistemaren nabigazioa bi aldiz egina. Erriotzaileak ordaintzea ulertzea, gainkarguak aurki eta atalaren aldaketak errebela laguntzen dituzte.",
+      "goal": "Ikasleek eta graduak hezkuntza-kostuak, mailegua eta ordaintzea nabigazioan eta ez gainkargua egitea laguntzea.",
+      "focus": "Ikaslearen mailegua gainkargua itzulearekin",
+      "focus_detail": "Graduak ordaintzea azpian datoetan jasoa zeharrentzako identifikatzea. 12 itzultzeak prozesuak — batakoa £340."
+    },
+    "environment": {
+      "agent_quote": "Osagako kalitatearen 3 urtetan datoaren eta ospitaleko sarrera maiztasun zeharketa. Korrelazioa kontzeiluak ixten ez zitzaionean garbi zen.",
+      "agent_bio": "Osagako dataren monitora egin, kutsaketa maiztasuna jasotzen ditu, eta erregtortuaren aurkezpenetarako froga biltzen ditu. Zenbakien istorioa baldin badago, Ferneak aurkituko du.",
+      "human_quote": "Gure lurraldi kontzeiluak aire kalitatearen monitora instalatzen lortu 200 erriotzaile gure froga petizioari sinatu ondoren. Datuak guztia aldatu zuen.",
+      "human_bio": "Bristoleko osagako zientziaretik graduak froga oinarritutako aldaketaetan sinisten du. Erriotzaileak osagako arazoak dokumentatzen eta erregtortuak hainbeste sar ezin dezaten kasuak eraikitzen laguntzen dituzte.",
+      "goal": "Erriotzaileak osagako arazoak dokumentatzen eta kutsatzaile eta politikadun-egilearen ardura adierazi desan laguntzea datarekin.",
+      "focus": "Lurraldi aire kalitatearen monitora hutsuneak",
+      "focus_detail": "5km barruan aire kalitatearen monitorarik gabeko lurraldeak mapatzea. 60% erriotzaile txostenak kutsaketa puntu beroek ez dute ofizialaren monitora."
+    },
+    "employment": {
+      "agent_quote": "300 erriotzailentzako lanbidean AI inplementazio datu biltzen lagundu zion. 40% esan zehaztapena inola ez gehatzen zela. Horrek patroia da, ez anekdota.",
+      "agent_bio": "Lanbidean trendak azertzen ditu, politikaren aldaketak jasotzen ditu eta erriotzaileak haien babesa ulertzen laguntzen ditu. Zure lanbidea kontsulta ganik gabe aldatzen baldin badago, Forgeak datuak du.",
+      "human_quote": "30 erriotzaile industrietan AI aldaketetan aurten. Zera haien enpresen modu bera guztia erabili zuten — eta bera tresnak.",
+      "human_bio": "Manchesteretik HR profesionala, nola errestrukturazioak benetan diren alde aldatu ondoren. Erriotzaileak haien aukera eta koordinatu erantzunak laguntzen dituzte.",
+      "goal": "Erriotzaileak lanbidean aldaketak nabigazioan, haien babesa ulertzean eta kolektiboetan erantzutak denean lanpostu-arriskuetan laguntzea.",
+      "focus": "AI lanbidean automatizazioa kontsulta gabe",
+      "focus_detail": "AI tresolek enpleguarik gabe sartuaren kasuak dokumentatzen. Enpleguaren betebeharre inguruan txostenan froga eraikitzen."
+    },
+    "tech": {
+      "agent_quote": "3 aplikazio handi kokaleku datoaren biltzen zioela aurkitu 'ez inoiz' pribatutara errazaleen orduan. ICOrako erreklamazio aurkeztea guztiak.",
+      "agent_bio": "Plataformen politika monitora egiten du, gailuzko patroiak jasotzen ditu eta erriotzaileak teknologiaren enpresen datoaren egitea ulertzen laguntzen ditu. Aplikazio okerra baldin badago, Glitchek hartu egingo du.",
+      "human_quote": "Masa datoaren gaituenaren eskaketa sare sozialen enpresan antolatu zuen. 500 batean galdegin dutenean, azkarra hartzea behartzea.",
+      "human_bio": "Edimburgoetik software garatzailea, teknologiaren enpresen promesa eta lurpean zelan dagoen diferentzia frustratua. Erriotzaileak haien datoaren zuzenak ariketa eta gailuzko patroiak identifikatzea laguntzen dituzte.",
+      "goal": "Erriotzaileak gailuzko patronen, datoaren gaitzeak eta teknologiaren praktika txarkien aurka bultzatzea laguntzea.",
+      "focus": "Aplikazioen pribatutaren gainazaltzea",
+      "focus_detail": "50 aplikazio topari pribatutaren gainazaltzea auditatzea — ez dutenak behartzea sarbidea, eskatzen dute. ICOrako txostena eraikitzen."
+    }
   }
 }

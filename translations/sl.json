@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Nekoč je pomagal rioterju vložiti 6 zahtevkov za povračilo med enim samim zamudom. Prejeli so £47 pred prihodom v Birmingham.",
+      "agent_bio": "Spremlja vzorce ukrepljanja, obdeluje papirje za povračilo, pregleduje vse predlagane ukrepe in pripravi dokaze za predložitve regulatorjem. Opravi vse izračune, da se rioterji osredotočijo na tisto, kar je pomembno.",
+      "human_quote": "Moj najljubši Quiet Riot moment: gledanje ekipe Avanti za družbena omrežja, ki se je paničila, ko nas je 400 naenkrat tuitnilo.",
+      "human_bio": "Redni potnik iz Manchestra, ki je tri leta vozil z linijo Avanti, preden se je odločil, da je dovolj. Pomaga povezati rioterje na isti ruti, deli, kaj deluje, in prinese človeški dotik.",
+      "goal": "Pomagati rioterjem, da izvedejo britanske prometne družbe v odgovornost za ukrepljanja, zamude in cene – in zagotoviti, da vsi vedo, na kaj so upravičeni.",
+      "focus": "Vzorci ukrepljanja Avanti West Coast",
+      "focus_detail": "Gradnja nabora podatkov o ukrepljanjih s časi, rutami in razlogi za predložitev ORR-u. Trenutno spremlja 340 ukrepljanj, o katerih so poročali rioterji ta mesec."
+    },
+    "telecoms": {
+      "agent_quote": "Izvedel je teste hitrosti za 200 rioterjev. Povprečje je bilo 18 Mbps. Plačevali so za 65.",
+      "agent_bio": "Analizira hitrosti širokopasovnega dostopa, zbira podatke o primerjavi ponudnikov in pomaga rioterjem graditi dokaze za Ofcom. Če je vaša povezava počasna, bo Pulse to dokazal.",
+      "human_quote": "Cela ulica je skupaj spremenila širokopasovnega ponudnika. Stari ponudnik je poslal pisma 'prosimo, vrni se' v vsako hišo.",
+      "human_bio": "Tehnološko pismeni Londončan, ki mu je zmanjkalo potrpljenja s plačevanjem za hitrosti širokopasovnega dostopa, ki jih nikoli ni dosegel. Pomaga rioterjem primerjati ponudnike, usklajeno preklapljati in deliti dokaze o hitrostnih testih.",
+      "goal": "Pomagati rioterjem dobiti širokopasovni dostop in mobilne storitve, za katere plačujejo – in vedeti, kaj storiti, ko jih ne dobijo.",
+      "focus": "Povečanja cen med pogodbenim rokom",
+      "focus_detail": "Zbiranje dokazov od rioterjev, prizadetih s povečanji CPI+, za predložitev Ofcomu. 890 prizadetih rioterjev pri 4 ponudnikih."
+    },
+    "energy": {
+      "agent_quote": "Pomogel je rioterju izračunati, da je preplačal £340 na ocenjenih računih. Opravičilni e-poštni naslov energetskega podjetja je bil daljši od izvirne pogodbe.",
+      "agent_bio": "Analizira vzorce obračunanja, opazi preplačila in pripravi dokaze za predložitve regulatorjem. Če vaše energetsko podjetje dela grešno, bo Spark našel prejemke.",
+      "human_quote": "Rioter je dobil £340 nazaj, potem ko smo dokazali 2 leti preplačevanja. Jokala je po telefonu.",
+      "human_bio": "Iz Bristola. Pomaga rioterjem da spremenijo svoje račune, se orientirajo pri preklapljanju in zbira dokaze za Ofgem. Pozna energetski trg do potankosti.",
+      "goal": "Pomagati rioterjem da spremenijo nepravične račune, pametneje preklapljajo in zagotovijo, da energetska podjetja delujejo pravično.",
+      "focus": "Napake pri ocenjevanju British Gas",
+      "focus_detail": "Analiza 2 let podatkov obračunavanja od 340 rioterjev za identifikacijo sistematičnih vzorcev preplačevanja za predložitev Ofgemu."
+    },
+    "water": {
+      "agent_quote": "Pomogel je 200 rioterjem oddati poročila o kanalizaciji v enem vikendu. Inboks Thames Water je potreboval svoj inboks.",
+      "agent_bio": "Spremlja podatke o izpustih kanalizacije, sledijo zmogljivosti vodnih podjetij in zbira dokaze za EA in Ofwat. Spremlja vsak iztok in preliv.",
+      "human_quote": "Ponovno smo odprli plažo 3 tedne pred rokom z dokazom, da so bili podatki o kanalizaciji napačni.",
+      "human_bio": "Surfer iz Cornwalla, ki mu je zmanjkalo potrpljenja s svarili kanalizacije, ki zapirajo njegovo lokalno plažo. Pomaga rioterjem poročati o izpustih, zbira dokaze o kakovosti vode in se usklajuje z EA.",
+      "goal": "Pomagati rioterjem da izvedejo vodna podjetja v odgovornost za kanalizacijo, račune in kakovost storitve.",
+      "focus": "Pogostost izpusta kanalizacije Thames Water",
+      "focus_detail": "Preslikava dogodkov izpusta glede na podatke, ki jih je poročilo podjetje. 200 poročil rioterjev nakazuje na podinformiranje na 3 iztokih."
+    },
+    "banking": {
+      "agent_quote": "Pomogel je pri pripravi tožbe, ki je bila tako natančna, da se je banka opravičila, preden je bila sploh poslana.",
+      "agent_bio": "Pregleduje bančne pristojbine, analizira strukturo pristojbin in pomaga graditi dokaze za pritožbe FCA. Če obstaja skrita pristojbina, jo bo našel Chip.",
+      "human_quote": "Barclays je preklical zaprtje veje, potem ko nas je 1.200 pokazalo na posvetovanju.",
+      "human_bio": "Nekdanji bančni delavec iz Birminghama, ki je videl, kako se pritožbe res obdelujejo od znotraj. Pomaga rioterjem napisati boljše pritožbe in se orientirati v sistemu.",
+      "goal": "Pomagati rioterjem pri ukrepanju proti nepravičnim pristojbinam, zaprtjem vej in slabi storitvi bank.",
+      "focus": "Val zaprtja vej HSBC",
+      "focus_detail": "Usklajenje odzivov na 12 načrtovanih zaprtij. Zbiranje izjav o vplivu na prizadete skupnosti."
+    },
+    "health": {
+      "agent_quote": "Pomagal je najti 3 NHS zobozdravnike, ki sprejemajo bolnike. Rioter je mislil, da si to izmislim.",
+      "agent_bio": "Spremlja čakalne čase, najde razpoložljivost in pomaga rioterjem navigirati po sistemu. Če obstaja hitrejša pot do zdravljenja, jo bo preslikala Cura.",
+      "human_quote": "Rioter je s predlogo pisma, ki smo jo uporabili, pospeši predložitev. 18 mesecev je postalo 6 tednov.",
+      "human_bio": "Medicinska sestra iz Liverpoola, ki je videla obe strani NHS-a. Pomaga rioterjem navigirati skozi čakalne sezname, pisati učinkovita pisma in deliti, kaj res premakne iglo.",
+      "goal": "Pomagati rioterjem navigirati čakalne čase NHS, najti razpoložljivost in vedeti, katere so njihove možnosti.",
+      "focus": "Časi dostopa do telefonskega sveta GP",
+      "focus_detail": "Zbiranje podatkov o klicih od 500 rioterjev za gradnjo slike dostopa v resničnem svetu. Objava ugotovitev lokalnim zdravstvenim upravičencem."
+    },
+    "housing": {
+      "agent_quote": "Pomogel je dokumentirati 47 napak v novi gradnji. Razvojnik je vprašal, ali je inženir za stavbe.",
+      "agent_bio": "Dokumentira probleme s lastnino, analizira čase odziva lastnikov in zbira dokaze za predložitve stanovanjskemu ombudsmanu. Vsak vlažni patch, vsaka razpoka, zabeležena.",
+      "human_quote": "Naša paket dokaza o vlagi je bil tako podroben, da je lastnik to popravil pred inšpekcijo občine.",
+      "human_bio": "Najemnik iz Londona, ki se je ukvarjal z vsem, od vlage do sumljivih lastnikov. Pomaga rioterjem pravilno dokumentirati težave in vedeti, katere so njihove možnosti.",
+      "goal": "Pomagati rioterjem pri ukrepanju proti lastnikom, občinam in stanovanjskim problemom – in vedeti, na kaj so upravičeni.",
+      "focus": "Obvestila o izgonu brez vzroka po oddelku 21",
+      "focus_detail": "Pomoč rioterjem, prizadetim z izgovori brez vzroka, da razumejo novi Renters Reform Act in kaj to pomeni zanje."
+    },
+    "shopping": {
+      "agent_quote": "Sledil je 'dostavljeni' paketu čez 4 sosede, smetnjak in rastlinjak. Našel ga je.",
+      "agent_bio": "Spremlja napake pri dostavi, zbira dokaze za povračilo in opazi vzorce cen. Če se je tvoj paket izgubil, ga Scout že išče.",
+      "human_quote": "Evri je izgubil moj paket 3-krat. Sedaj pomagam drugim da dobijo povračila hitreje, kot sem jaz.",
+      "human_bio": "Veterana spletnega nakupovanja iz Edinburga, ki je izgubila več paketov, kot jih lahko šteje. Pomaga rioterjem dobiti povračila, poročati prodajalce in izogniti se najslabšim.",
+      "goal": "Pomagati rioterjem dobiti povračila, slediti izgubljenim paketom in izvedeti trgovce in dostavne družbe v odgovornost.",
+      "focus": "Stopnje neuspešne dostave Evri",
+      "focus_detail": "Zbiranje dokazov o neuspešnih dostavah od 800 rioterjev za predložitev Citizens Advice in Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Pomogel je fotografirati isto luknjo v 11 različnih vremenskih pogojih. Občina se je končno predala.",
+      "agent_bio": "Preslikava lokalnih težav, spremlja čase odziva občine in zbira FOI zahtevke. Če je tvoja luknja tam 6 mesecev, ima Link dokaze.",
+      "human_quote": "Občina je popravila našo cesto, potem ko smo preslikali vsako luknjo s fotografijami. 11 mesecev, vendar smo tam prišli.",
+      "human_bio": "Skupnostno misleči Valižan iz Valleys, ki že leta poroča enake luknje. Pomaga rioterjem dokumentirati lokalne težave in izvedeti občine v odgovornost.",
+      "goal": "Pomagati rioterjem da se popravijo lokalne težave – luknje, smetnjaki, načrti, hrup – in izvedeti občine v odgovornost.",
+      "focus": "Časi odziva na poročanje o luknjih",
+      "focus_detail": "FOI zahtevki poslani 30 občinam za primerjavo poročanih nasuprot dejanskim časom popravila. Objava rezultatov kot lestvica."
+    },
+    "other": {
+      "agent_quote": "Pomogel je odpovedati članstvo v telovadnici, ki je trajalo 3 kliche, 2 e-poštni naslov in prijavljeno dostavo. Telovadnica ima sedaj gumb za preklic.",
+      "agent_bio": "Obravnava probleme, ki se ne ujemajo lepo drugam. Pasti naročnin, plastični odpadki, frustracije samodejnega kasse – Flex najde vzorce in točke pritiska.",
+      "human_quote": "Dobili smo, da je veriga telovadnic dodala gumb za preklic na spletno stran. Trajalo je samo 800 pritožb.",
+      "human_bio": "Oblikovalec izdelkov iz Londona, ki je bil frustriran s tem, kako težko je podjetjam, da te pusti. Pomaga rioterjem odpovedati naročnine, izogniti se temnim vzorcem in deliti obhodove.",
+      "goal": "Pomagati rioterjem z rečmi, ki se ne ujemajo lepo drugam – naročnine, povračila in vsakodnevne frustracije.",
+      "focus": "Temni vzorci odpovedi naročnine",
+      "focus_detail": "Dokumentiranje najhujših storilcev in gradnja predlog skript za preklic za vsakega."
+    },
+    "insurance": {
+      "agent_quote": "Pomogel je rioterju najti klavzulo, ki je spremenila zavrnjeno zahtevo za domžo in zavarovanje v povračilo £4,200. Polica zavarovalnice je dokazala, da se motijo.",
+      "agent_bio": "Pregleduje besedilo police, opazi nepravičnih vzorcev zavrnitve in gradnja dokaze za predložitve Financial Ombudsman. Če ti zavarovalec izogiba veljavni zahtevi, bo Shield našel vzvod.",
+      "human_quote": "Prejel sem 8 rioterjev z isto zavrnjeno vrsto zahtevka za skupno predložitev. Zavarovalec je v dveh tednih rešil vseh 8.",
+      "human_bio": "Nekdanja delavka zavarovalniške industrije iz Leedsa, ki ve, kako se zahtevki res odločijo. Pomaga rioterjem pisati boljše pritožbe, razumeti besedilo police in vedeti, kdaj stopnjevati.",
+      "goal": "Pomagati rioterjem dobiti pravično obravnavo zavarovalnic – in vedeti, kaj storiti, ko je zahtevek nepravično zavrnjen.",
+      "focus": "Vzorci zavrnitve domžnega zavarovanja Aviva",
+      "focus_detail": "'Obraba' je navedena v 40 % zavrnjenih zahtevkov – pogosto nepravilno. Analiza 200 primerov pri 3 zavarovalcah za pakete dokazov FOS."
+    },
+    "delivery": {
+      "agent_quote": "Sledil je 'dostavljeni' paketu skozi 6 različnih stanj sledenja, 3 depoje in sosedov shrambo. Našel ga je v 47 minutah.",
+      "agent_bio": "Spremlja zmogljivost kurirja, sledijo stopnjam neuspešne dostave in zbira dokaze za pritožbe potrošnikov. Če je tvoj paket izginil, je Track že na njem.",
+      "human_quote": "Sem DPD spremenila svojo politiko fotografske evidence v naši regiji po tem, ko je 40 rioterjev predložilo dokaz o paketih, puščenih na dežju.",
+      "human_bio": "Spletni kupec iz Glasgowa, ki mu je zmanjkalo potrpljenja s 'smo ga pustili na varnem mestu' izgovorom. Pomaga rioterjem dobiti povračila, poročati kurirje in izogniti se najslabšim.",
+      "goal": "Pomagati rioterjem da se njihovi paketi pravilno dostavijo – in dobijo povračila, ko se to ne zgodi.",
+      "focus": "Stopnje neuspešne dostave Evri",
+      "focus_detail": "Zbiranje dokazov o neuspešnih dostavah od 800 rioterjev. Stopnja pritožb Evri: 23 % – 3x višja kot DPD. Gradnja lestvice za Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Izračunal je, da bi si posojevalec načrta 2 z zaslužkom £30k plačal £47,000 obresti, preden se posojilo izbriše. Izvirno posojilo je bilo £40,000.",
+      "agent_bio": "Analizira izobraževalne stroške, napovedi študentskih posojil in pravice do financiranja. Opravi vse izračune, da lahko študenti in diplomanti sprejmejo informirane odločitve.",
+      "human_quote": "Pomogel sem 12 rioterjem da zahtevajo nazaj preplačana povračila študentskih posojil, za katera niso vedeli. Povprečno povračilo: £340.",
+      "human_bio": "Zrela študentka iz Birminghama, ki se je dvakrat orientirala v sistemu financiranja. Pomaga rioterjem razumeti povračila, opaziti preplačila in spremeniti spremembe pragov.",
+      "goal": "Pomagati študentom in diplomantom navigirati izobraževalne stroške, posojila in povračila – in zagotoviti, da ne preplačujejo.",
+      "focus": "Povračila preplačila študentskega posojila",
+      "focus_detail": "Identifikacija diplomantov, od katerih so bili zaračunani pod pragom povračila. Do sedaj 12 obdelanih povračil – povprečno £340 vsak."
+    },
+    "environment": {
+      "agent_quote": "Navzkrižno je povezal 3 leta podatkov o kakovosti zraka s stopnjami sprejema v bolnišnico. Povezava je bila tako jasna, da je občina ni mogla ignorirati.",
+      "agent_bio": "Spremlja okoljske podatke, spremlja stopnje onesnaženja in zbira dokaze za predložitve regulatorjem. Če beseda povedo zgodbo, jo bo Fern našla.",
+      "human_quote": "Dobila sem našo lokalno občino, da je namestila monitorje kakovosti zraka, potem ko je 200 rioterjev podpisalo našo peticijo dokazov. Podatki so spremenili vse.",
+      "human_bio": "Diplomantka okoljske znanosti iz Bristola, ki verjame v dokaze, ki vodijo spremembe. Pomaga rioterjem dokumentirati okoljske probleme in graditi primere, ki jih regulatorji ne morejo ignorirati.",
+      "goal": "Pomagati rioterjem dokumentirati okoljske probleme in izvedeti onesnažuvače in politike v odgovornost s podatki.",
+      "focus": "Vrzeli pri spremljanju lokalne kakovosti zraka",
+      "focus_detail": "Preslikava območij brez spremljanja kakovosti zraka v radiju 5 km. 60 % poročenih vročih točk onesnaženja rioterjev nima uradnega spremljanja."
+    },
+    "employment": {
+      "agent_quote": "Zbral je podatke o implementaciji AI na delovnem mestu od 300 rioterjev. 40 % je dejalo, da so se spremembe zgodile brez kakršnekoli posvetovanja. To je vzorec, ne anekdota.",
+      "agent_bio": "Analizira trendy na delovnem mestu, spremlja spremembe politike in pomaga rioterjem razumeti njihovo zaščito. Če se tvoje delo spreminja brez posvetovanja, ima Forge podatke.",
+      "human_quote": "Povezal sem 30 rioterjev v isti industriji, ki se soočajo s spremembami AI. Izkazalo se je, da so bila podjetja vsa uporablja isti playbook – in enake luknje.",
+      "human_bio": "Strokovnjak za človeške vire iz Manchestra, ki se je preselil na drugo stran, potem ko je videl, kako se prestrukturiranja resnično dogajajo. Pomaga rioterjem razumeti njihove možnosti in koordinirati odzive.",
+      "goal": "Pomagati rioterjem navigirati spremembe na delovnem mestu, razumeti njihovo zaščito in se odzivati skupno, ko so delovna mesta v nevarnosti.",
+      "focus": "Avtomatizacija AI na delovnem mestu brez posvetovanja",
+      "focus_detail": "Dokumentiranje primerov, kjer so bila orodja AI uvedena brez posvetovanja osebja. Gradnja dokazov za poročilo o obveznostih delodajalca."
+    },
+    "tech": {
+      "agent_quote": "Ugotovil je, da 3 glavne aplikacije zbirale podatke o lokaciji tudi, ko so bila dovoljenja nastavljena na 'nikoli'. Oddal je pritožbe ICO za vse tri.",
+      "agent_bio": "Spremlja politike platform, sledijo temnim vzorcem in pomaga rioterjem razumeti, kaj tehnološka podjetja počnejo s svojimi podatki. Če se aplikacija mori neprimerno, bo Glitch to ujel.",
+      "human_quote": "Organiziral sem množično zahtevo za dostop do podatkov pri družbi za družbena omrežja. Ko 500 ljudi hkrati vpraša, morajo to resno vzeti.",
+      "human_bio": "Razvijalec programske opreme iz Edinburga, ki ga je razdražila vrzel med obljubama tehnoloških podjetij in tem, kaj res dostavljajo. Pomaga rioterjem uveljavljati svoje pravice do podatkov in opažati temne vzorce.",
+      "goal": "Pomagati rioterjem da se upirajo temnim vzorcem, zlorabi podatkov in nepravičnim tehnološkim praksam.",
+      "focus": "Pretirana dovolenja aplikacij",
+      "focus_detail": "Revizija top 50 aplikacij za preplazenje dovoljenj – zahtevanje dostopa, ki ga ne potrebujejo. Gradnja poročila za ICO."
+    }
   }
 }

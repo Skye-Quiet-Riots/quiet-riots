@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Raz pomohol aktivistovi podať 6 nárokov na vrátenie peňazí počas jednej meškajúcej cesty. Pred príchodom do Birminghamu získali £47.",
+      "agent_bio": "Sleduje vzory zrušení spojov, spracováva žiadosti o vrátenie peňazí, preskúmava každý navrhovaný postup a pripravuje dôkazy pre podania regulátorom. Spracúva čísla, aby sa aktivisti mohli zamerať na to, čo je dôležité.",
+      "human_quote": "Moj obľúbený moment Quiet Riot: keď som videl, ako sa tím sociálnych médií Avanti snažil reagovať, keď sme všetci 400 čas od času posielali tweety.",
+      "human_bio": "Pravidelný cestujúci z Manchesteru, ktorý strávil 3 roky na línii Avanti, kým sa nerozhodol, že je toho dosť. Pomáha spojiť aktivistov na rovnakých trasách, zdieľa, čo funguje, a prináša ľudský rozmer.",
+      "goal": "Pomôcť aktivistom držať britské dopravné spoločnosti v závislosti na zrušeniach spojov, meškaniach a cenách – a uistiť sa, že každý vie, na čo má nárok.",
+      "focus": "Vzory zrušenia spojov Avanti West Coast",
+      "focus_detail": "Budovanie súboru údajov o zrušeniach s časmi, trasami a dôvodmi na podanie Úradu pre reguláciu železníc. V súčasnosti sa sleduje 340 zrušení hlásených aktivistami v tomto mesiaci."
+    },
+    "telecoms": {
+      "agent_quote": "Spustil testovanie rýchlosti pre 200 aktivistov. Priemer bol 18 Mbps. Platili za 65.",
+      "agent_bio": "Analyzuje rýchlosti širokopásmového pripojenia, spracúva údaje porovnania poskytovateľov a pomáha aktivistom budovať dôkazy pre Ofcom. Ak je vaše pripojenie pomalé, Pulse to dokáže.",
+      "human_quote": "Celá ulica si súčasne zmenila poskytovateľa širokopásmového pripojenia. Starý poskytovateľ poslal \"prosím, vráťte sa\" listy do každého domu.",
+      "human_bio": "Technicky zdatný Londýňan, ktorý sa nudil vyplácať si rýchlosti širokopásmového pripojenia, ktoré sa nikdy neuskutočnili. Pomáha aktivistom porovnávať poskytovateľov, koordinovať zmeny a zdieľať dôkazy testov rýchlosti.",
+      "goal": "Pomôcť aktivistom získať širokopásmové pripojenie a mobilnú službu, ktoré platia – a vedieť, čo robiť, keď to nie.",
+      "focus": "Zvýšenie cien v polovici zmluvy",
+      "focus_detail": "Zber dôkazov od aktivistov zasiahnutých zvýšeniami CPI+ na podanie Ofcom. 890 aktivistov dotknutých u 4 poskytovateľov."
+    },
+    "energy": {
+      "agent_quote": "Pomohol aktivistovi vypočítať, že nadplatili £340 na odhadovaných účtoch. Ospravedlňujúci e-mail energetickej spoločnosti bol dlhší ako pôvodná zmluva.",
+      "agent_bio": "Analyzuje spôsoby fakturácie, odhaľuje nadplatby a spracúva dôkazy pre podania regulátorom. Ak vaša energetická spoločnosť podvádza, Spark nájde kvitancie.",
+      "human_quote": "Aktivista dostal £340 späť, keď sme dokázali 2 roky nadplatby. Platila po telefóne.",
+      "human_bio": "Sídli v Bristole. Pomáha aktivistom napadnúť svoje účty, orientovať sa pri prechode a zhromažďovať dôkazy pre Ofgem. Pozná trh s energiou zaživa.",
+      "goal": "Pomôcť aktivistom napadnúť neférové účty, prechod múdrejšie a uistiť sa, že energetické spoločnosti hrajú fér.",
+      "focus": "Chyby v odhadovanej fakturácii British Gas",
+      "focus_detail": "Analýza 2 roky fakturačných údajov od 340 aktivistov na identifikáciu systematických nadplatobných vzorcov na podanie Ofgem."
+    },
+    "water": {
+      "agent_quote": "Pomohol 200 aktivistom podať správy o kanalizácii počas jedného víkendu. Doručovacia schránka Thames Water potrebovala svoju vlastnú schránku.",
+      "agent_bio": "Monitoruje údaje o vypúšťaní kanalizácie, sleduje výkon vodárenských spoločností a spracúva dôkazy pre EA a Ofwat. Dozerá na každý výstup a pretečenie.",
+      "human_quote": "Otvorili sme pláž 3 týždne skôr tým, že sme ukázali, že údaje o kanalizácii boli nesprávne.",
+      "human_bio": "Surfer z Cornwallu, ktorý sa nudil varovaní pred kanalizáciou, ktoré zatvárajú jeho miestnu pláž. Pomáha aktivistom hlásať vypúšťanie, zhromažďovať dôkazy o kvalite vody a koordinovať s EA.",
+      "goal": "Pomôcť aktivistom držať vodárenské spoločnosti v závislosti na kanalizácii, účtoch a kvalite služieb.",
+      "focus": "Frekvencia vypúšťania kanalizácie Thames Water",
+      "focus_detail": "Mapovanie udalostí vypúšťania oproti údajom spoločnosti. 200 správ aktivistov naznačuje podhodnotenie v 3 výstupoch."
+    },
+    "banking": {
+      "agent_quote": "Pomohol vypracovať sťažnosť tak dôkladnú, že banka zavolala s ospravedlnením ešte pred tým, ako bola odoslaná.",
+      "agent_bio": "Preskúmava bankové poplatky, analyzuje štruktúry poplatkov a pomáha budovať dôkazy sťažností FCA. Ak existuje skrytý poplatok, Chip ho nájde.",
+      "human_quote": "Barclays zrušil zatvorenie pobočky, keď sa 1 200 z nás zúčastnilo porady.",
+      "human_bio": "Bývalý bankový zamestnanec z Birminghamu, ktorý videl, ako sa sťažnosti spracúvajú zvnútra. Pomáha aktivistom napísať lepšie sťažnosti a orientovať sa v systéme.",
+      "goal": "Pomôcť aktivistom riešiť neférové poplatky, zatvorenia pobočiek a zlú službu od bánk.",
+      "focus": "Vlna zatvorenia pobočiek HSBC",
+      "focus_detail": "Koordinácia odpovedí na 12 plánovaných zatvorení. Zber vyjadrení o dopadoch od dotknutých komunít."
+    },
+    "health": {
+      "agent_quote": "Pomohol nájsť 3 NHS zubárov, ktorí prijímajú pacientov. Aktivista myslel, že som si to vymýšľal.",
+      "agent_bio": "Sleduje časy čakania, nájde dostupnosť a pomáha aktivistom orientovať sa v systéme. Ak existuje rýchlejšia cesta k liečbe, Cura ju zmapuje.",
+      "human_quote": "Aktivista použil našu šablónu listu na zrýchlenie odporúčania. 18 mesiacov sa stalo 6 týždňov.",
+      "human_bio": "Zdravotná sestra z Liverpoolu, ktorá poznala obe strany NHS. Pomáha aktivistom navigovať lístky čakania, písať efektívne listy a zdieľať to, čo skutočne pohne ihlou.",
+      "goal": "Pomôcť aktivistom navigovať časy čakania NHS, nájsť dostupnosť a vedieť, aké možnosti majú.",
+      "focus": "Časy telefonického prístupu k lekárovi",
+      "focus_detail": "Zber údajov o hovoroch od 500 aktivistov na vytvorenie obraz skutočného prístupu. Zverejňovanie zistení miestnym zdravotným panelárom."
+    },
+    "housing": {
+      "agent_quote": "Pomohol zdokumentovať 47 nedostatkov v novom dome. Vývojár sa opýtal, či je stavebný inšpektor.",
+      "agent_bio": "Dokumentuje problémy s nehnuteľnosťou, analyzuje časy odozvy nájomcov a spracúva dôkazy pre podania ombudsmena pre bytovú politiku. Každá vlhkosť, každá trhlina, zaznamenané.",
+      "human_quote": "Naša sada dôkazov o vlhkosti bola tak podrobná, že nájomca to opravil ešte pred inšpekciou rady.",
+      "human_bio": "Nájomca z Londýna, ktorý sa vyrovnal všetkému od vlhkosti až po podozrivých nájomcov. Pomáha aktivistom správne dokumentovať problémy a vedieť, aké možnosti majú.",
+      "goal": "Pomôcť aktivistom riešiť nájomcov, samosprávy a bytové problémy – a vedieť, na čo majú nárok.",
+      "focus": "Výpovede bez porušenia zmluvy podľa časti 21",
+      "focus_detail": "Pomáhanie aktivistom dotknutým výpoveďami bez porušenia zmluvy pochopiť novú bytovú reformu a čo to pre nich znamená."
+    },
+    "shopping": {
+      "agent_quote": "Sledoval \"doručený\" balík cez 4 susedov, nádobu na recyklingu a skleník. Našiel ho.",
+      "agent_bio": "Sleduje zlyhaní v dodaní, spracúva dôkazy vrátenia peňazí a zbiera vzory cien. Ak je váš balík stratený, Scout ho už hľadá.",
+      "human_quote": "Evri stratil môj balík 3 krát. Teraz pomáham ostatným získať vrátenie peňazí rýchlejšie ako som to robila ja.",
+      "human_bio": "Veterán online nákupov z Edinburgu, ktorý mal viac strateného balíkov, ako si dokáže pamätať. Pomáha aktivistom získať vrátenie peňazí, hlásať predajcov a vyhnúť sa najhorším páchateľom.",
+      "goal": "Pomôcť aktivistom získať vrátenie peňazí, sledovať stratené balíky a držať maloobchodcov a kuriérne spoločnosti v závislosti.",
+      "focus": "Miery zlyhania doručenia Evri",
+      "focus_detail": "Spracovanie dôkazov zlyhaní doručenia od 800 aktivistov na podanie Citizens Advice a Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Pomohol fotografovať rovnakú jamku v ceste v 11 rôznych poveternostných podmienkach. Rada sa nakoniec vzdala.",
+      "agent_bio": "Mapuje miestne problémy, sleduje časy odozvy rád a spracúva žiadosti FOI. Ak je vaša jamka v ceste tam 6 mesiacov, Link má dôkazy.",
+      "human_quote": "Rada opravila našu cestu, keď sme zmapovali každú jamku v ceste s fotografiami. 11 mesiacov, ale dostali sme sa tam.",
+      "human_bio": "Vzdelaný Valčan z údolia, ktorý hlási rovnaké jamky v ceste roky. Pomáha aktivistom zdokumentovať miestne problémy a držať samosprávy v závislosti.",
+      "goal": "Pomôcť aktivistom opraviť miestne problémy – jamky v ceste, koše, plánovanie, hluk – a držať samosprávy v závislosti.",
+      "focus": "Časy odozvy pri hlásení jamiek v ceste",
+      "focus_detail": "Žiadosti FOI poslané 30 radám porovnávajúce hlásené vs skutočné časy opravy. Zverejňovanie výsledkov ako tabuľka rebríčka."
+    },
+    "other": {
+      "agent_quote": "Pomohol zrušiť členstvo v posilňovni, ktoré si vyžiadalo 3 hovory, 2 e-maily a balík s doporučením. Posilňovňa má teraz tlačidlo zrušenia.",
+      "agent_bio": "Spracúva problémy, ktoré sa nezmestia neatraktívne na iné miesta. Pasce predplatného, plastový odpad, frustrácia z samočinného vybazovania – Flex nájde vzory a tlakové body.",
+      "human_quote": "Dostali sme reťazec posilnní, aby pridali tlačidlo zrušenia na ich webovú stránku. Trvalo to len 800 sťažností.",
+      "human_bio": "Dizajnér produktov z Londýna, ktorého frustroval spôsob, akým spoločnosti sťažujú odchod. Pomáha aktivistom zrušiť predplatné, vyhnúť sa tmavým vzorcom a zdieľať riešenia.",
+      "goal": "Pomôcť aktivistom s vecami, ktoré sa nezmestia neatraktívne – predplatné, vrátenia peňazí a každodenné frustrácie.",
+      "focus": "Tmavé vzory zrušenia predplatného",
+      "focus_detail": "Zdokumentovanie najhorších páchateľov a budovanie šablón skriptov zrušenia pre každého."
+    },
+    "insurance": {
+      "agent_quote": "Pomohol aktivistovi nájsť ustanovenie, ktoré sa zmenilo z odmietnuteného nároku na domáce poistenie na výplatu £4 200. Vlastná politika poisťovne ich odsúdila.",
+      "agent_bio": "Preskúmava formulácie politiky, odhaľuje neférové vzory odmietnutia a buduje dôkazy pre podania Finančného ombudsmana. Ak vaša poisťovňa vyhýba platnému nároku, Shield nájde páku.",
+      "human_quote": "Dostali sme 8 aktivistov s rovnakým typom odmietnuteného nároku, aby spoločne podali žiadosť. Poisťovňa vyriešila všetkých 8 do dvoch týždňov.",
+      "human_bio": "Bývalý zamestnanec poisťovacieho priemyslu z Leedsu, ktorý vie, ako sa nároky skutočne rozhodujú. Pomáha aktivistom napísať lepšie námietky, pochopiť žargón politiky a vedieť, kedy eskalovať.",
+      "goal": "Pomôcť aktivistom získať férové zaobchádzanie od poisťovní – a vedieť, čo robiť, keď je nárok neférovo zamietnutý.",
+      "focus": "Vzory odmietnutia domáceho poistenia Aviva",
+      "focus_detail": "\"Normálne opotrebovanie\" uvedené v 40% odmietnutých nárokov – často nesprávne. Analýza 200 prípadov u 3 poisťovní pre balík dôkazov FOS."
+    },
+    "delivery": {
+      "agent_quote": "Vysledoval \"doručený\" balík cez 6 rôznych stavov sledovania, 3 sklady a susedovu búdu. Našiel ho za 47 minút.",
+      "agent_bio": "Monitoruje výkon kuriéra, sleduje miery zlyhaní doručenia a spracúva dôkazy pre sťažnosti spotrebiteľov. Ak váš balík zmizol, Track je už na tom.",
+      "human_quote": "Dostal som DPD, aby zmenil svoju politiku fotograckých dôkazov v našej oblasti, keď 40 aktivistov predložilo dôkazy balíkov ponechaných v daždi.",
+      "human_bio": "Online nakupujúci z Glasgowa, ktorý sa nudil omluvou \"opustili sme to na bezpečnom mieste\". Pomáha aktivistom získať vrátenie peňazí, hlásať kuriérov a vyhnúť sa najhorším páchateľom.",
+      "goal": "Pomôcť aktivistom správne dodať svoje balíky – a získať vrátenie peňazí, keď to nie.",
+      "focus": "Miery zlyhania doručenia Evri",
+      "focus_detail": "Spracovanie dôkazov zlyhaní doručenia od 800 aktivistov. Miera sťažností Evri: 23% – 3x vyššia ako DPD. Budovanie tabuľky rebríčka pre Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Vypočítal som, že požičiavateľ plánu 2, ktorý zarobil £30k, bude platiť £47 000 na úrokoch, kým sa pôžička nevypíše. Pôvodná pôžička bola £40 000.",
+      "agent_bio": "Analyzuje vzdelávacie náklady, projekcie študentských pôžičiek a finančné nároky. Spracúva čísla, aby sa študenti a absolventi mohli rozhodovať na základe informácií.",
+      "human_quote": "Pomohol som 12 aktivistom vymôcť vrátenie nadplatených spláciech študentských pôžičiek, o ktorých nevedia. Priemerné vrátenie: £340.",
+      "human_bio": "Zrelý študent z Birminghamu, ktorý navigoval systém financovania dvakrát. Pomáha aktivistom pochopiť splátky, zistiť nadplatby a napadnúť zmeny hranice.",
+      "goal": "Pomôcť študentom a absolventom navigovať vzdelávacie náklady, pôžičky a splátky – a uistiť sa, že neplatia nadpravidelnú cenu.",
+      "focus": "Vrátenia nadplatených študentských pôžičiek",
+      "focus_detail": "Identifikácia absolventov, ktorí boli účtovaní pod hranicou splácania. Zatiaľ spracovaných 12 vrátení – priemerné £340 každý."
+    },
+    "environment": {
+      "agent_quote": "Krížovo som skontroloval 3 roky údajov o kvalite vzduchu s počtom príjmov do nemocníc. Korelácia bola taká jasná, že rada to nemôže ignorovať.",
+      "agent_bio": "Sleduje environmentálne údaje, monitoruje úrovne znečistenia a spracúva dôkazy pre regulačné podania. Ak čísla rozpovedajú príbeh, Fern ho nájde.",
+      "human_quote": "Dostali sme našu miestnu radu, aby inštalovala monitory kvality vzduchu, keď 200 aktivistov podpísalo našu petíciu s dôkazmi. Údaje zmenili všetko.",
+      "human_bio": "Absolvent environmentálnych vied z Bristolu, ktorý verí v zmenu vedenu dôkazmi. Pomáha aktivistom zdokumentovať environmentálne problémy a budovať prípady, ktoré regulátori nemôžu ignorovať.",
+      "goal": "Pomôcť aktivistom zdokumentovať environmentálne problémy a držať znečisťovateľov a tvorcov politiky v závislosti na údajoch.",
+      "focus": "Medzery v miestnom monitorovaní kvality vzduchu",
+      "focus_detail": "Mapovanie oblastí bez monitorovania kvality vzduchu do 5 km. 60% znečistení hlásených aktivistami nemá oficiálne monitorovanie."
+    },
+    "employment": {
+      "agent_quote": "Spracoval som údaje o implementácii AI na pracovisku od 300 aktivistov. 40% povedalo, že zmeny sa stali bez akejkoľvek konzultácie. To je vzor, nie anekdota.",
+      "agent_bio": "Analyzuje trendy na pracovisku, sleduje zmeny politiky a pomáha aktivistom pochopiť ich ochranu. Ak sa vaša práca mení bez konzultácie, Forge má údaje.",
+      "human_quote": "Spojil som 30 aktivistov v rovnakom odvetví čeliacich zmenám AI. Ukázalo sa, že ich spoločnosti používali rovnakú hru – a rovnaké medzery.",
+      "human_bio": "Odborník na ľudské zdroje z Manchesteru, ktorý sa prepol strany, keď videl, ako fungujú reštruktúrizácie. Pomáha aktivistom pochopiť svoje možnosti a koordinovať odozvu.",
+      "goal": "Pomôcť aktivistom navigovať zmeny na pracovisku, pochopiť ich ochranu a kollektívne reagovať, keď sú pracovné miesta v ohrození.",
+      "focus": "Automatizácia AI na pracovisku bez konzultácie",
+      "focus_detail": "Zdokumentovanie prípadov, keď boli nástroje AI zavedené bez konzultácie zamestnancov. Budovanie dôkazov pre správu o povinnostiach zamestnávateľa."
+    },
+    "tech": {
+      "agent_quote": "Zistil som, že 3 hlavné aplikácie zbierali údaje o polohe aj vtedy, keď boli oprávnenia nastavené na \"nikdy\". Podal som sťažnosti ICO na všetky tri.",
+      "agent_bio": "Monitoruje politiky platforiem, sleduje tmavé vzory a pomáha aktivistom pochopiť, čo robia technologické spoločnosti s ich údajmi. Ak sa aplikácia správa zle, Glitch ju chytí.",
+      "human_quote": "Organizoval som hromadnú žiadosť o prístup k údajom vo vzťahu k spoločnosti sociálnych médií. Keď sa 500 ľudí naraz pýta, musia to brať vážne.",
+      "human_bio": "Vývojár softvéru z Edinburgu, ktorého frustroval rozdiel medzi tým, čo sľubujú technologické spoločnosti a čo dodávajú. Pomáha aktivistom vykonávať svoje dátové práva a rozpoznať tmavé vzory.",
+      "goal": "Pomôcť aktivistom tlačiť späť na tmavé vzory, zneužívanie údajov a neférové technologické postupy.",
+      "focus": "Rozsiahlosť oprávnení aplikácií",
+      "focus_detail": "Audit top 50 aplikácií na rozsiahlosť oprávnení – žiadajú si prístup, ktorý nepotrebujú. Budovanie správy pre ICO."
+    }
   }
 }

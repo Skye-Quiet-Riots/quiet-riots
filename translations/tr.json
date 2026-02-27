@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Bir seferde 6 tazminat talebini dosyalamaya yardımcı oldu. Birmingham'a ulaşmadan önce £47 kazandılar.",
+      "agent_bio": "İptal kalıplarını takip eder, tazminat evraklarını işler, önerilen her eylemi inceler ve düzenleyici başvurular için delil hazırlar. Rioters'ın önemli olan şeylere odaklanabilmesi için sayıları çözer.",
+      "human_quote": "Benim en sevdiğim Quiet Riot anı: Avanti'nin sosyal medya ekibi 400'ümüz aynı anda tweet attığında panik yaparken.",
+      "human_bio": "Avanti hattında 3 yıl geçirdikten sonra yeterli olduğuna karar veren Manchester'dan düzenli yolcu. Aynı rotadaki rioters'ı bağlamaya, neyin işe yaradığını paylaşmaya ve insani dokunuş getirmeye yardımcı olur.",
+      "goal": "Rioters'ın İngiltere taşıma şirketlerini iptallemeler, gecikmeler ve fiyatlandırma konusunda sorumlu tutmasına yardımcı olun ve herkesin ne hak kazandığını bilmesini sağlayın.",
+      "focus": "Avanti West Coast iptal kalıpları",
+      "focus_detail": "ORR'ye sunmak için saatler, rotalar ve nedenler içeren iptallemelerin bir veri seti oluşturma. Bu ay rioters tarafından bildirilen 340 iptali takip etme."
+    },
+    "telecoms": {
+      "agent_quote": "200 rioters için hız testleri yaptı. Ortalama 18 Mbps idi. 65 için ödüyorlardı.",
+      "agent_bio": "Geniş bant hızlarını analiz eder, sağlayıcı karşılaştırma verilerini derler ve rioters'ın Ofcom için delil oluşturmasına yardımcı olur. Bağlantınız yavaşsa, Pulse bunu kanıtlayacak.",
+      "human_quote": "Tüm bir sokak birlikte geniş bant değiştirdi. Eski sağlayıcı her ev için 'lütfen geri dön' mektupları gönderdi.",
+      "human_bio": "Asla gerçekleşmeyen geniş bant hızları için ödeme yapmaktan bıkan teknoloji meraklısı Londralı. Rioters'a sağlayıcıları karşılaştırmasına, anahtarları koordine etmesine ve hız testi delillerini paylaşmasına yardımcı olur.",
+      "goal": "Rioters'ın ödediği geniş bant ve mobil hizmetleri almasına yardımcı olun ve kaybettiğinde ne yapacaklarını bilin.",
+      "focus": "Sözleşme süresi ortasında fiyat artışları",
+      "focus_detail": "CPI+ artışlarından etkilenen rioters'dan delil toplayarak Ofcom'a sunma. 4 sağlayıcı genelinde 890 rioters etkilendi."
+    },
+    "energy": {
+      "agent_quote": "Bir rioters'ın tahmini faturalarda £340 fazla ödediğini hesaplamaya yardımcı oldu. Enerji şirketinin özür mektup orijinal sözleşmeden daha uzundu.",
+      "agent_bio": "Fatura kalıplarını analiz eder, fazla ücretleri belirler ve düzenleyici başvurular için delil hazırlar. Enerji şirketiniz oyun oynuyorsa, Spark makbuzu bulacak.",
+      "human_quote": "Bir rioters 2 yıllık fazla ücretleri kanıtladıktan sonra £340 geri aldı. Telefonda ağladı.",
+      "human_bio": "Bristol'dan. Rioters'ın faturalarını sorgulamasına, geçişi yönetmesine ve Ofgem için delil toplamasına yardımcı olur. Enerji pazarını içten dışa bilir.",
+      "goal": "Rioters'ın haksız faturaları sorgulamasına, daha akıllı geçiş yapmasına ve enerji şirketlerinin adil davranmasını sağlamasına yardımcı olun.",
+      "focus": "British Gas tahmini fatura hataları",
+      "focus_detail": "Ofgem sunumu için sistematik fazla ücret kalıplarını belirlemek amacıyla 340 rioters'tan 2 yıllık fatura verilerini analiz etme."
+    },
+    "water": {
+      "agent_quote": "200 rioters'ın bir hafta sonu boyunca kanalizasyon raporları dosyalamaya yardımcı oldu. Thames Water'ın gelen kutusu kendisinin bir gelen kutusuna ihtiyacı vardı.",
+      "agent_bio": "Kanalizasyon deşarj verilerini izler, su şirketi performansını takip eder ve EA ve Ofwat için delil derler. Her çıkışı ve taşkını göz altında tutar.",
+      "human_quote": "Kanalizasyon verilerinin yanlış olduğunu göstererek bir plajı 3 hafta erken açtırdık.",
+      "human_bio": "Kanalizasyon uyarılarının yerel plajını kapatmasından bıkan Cornwall'dan sörf yapan. Rioters'a deşarjlar bildirmeye, su kalitesi delillerini toplamaya ve EA ile koordine olmaya yardımcı olur.",
+      "goal": "Rioters'ın su şirketlerini kanalizasyon, faturalar ve hizmet kalitesi konusunda sorumlu tutmasına yardımcı olun.",
+      "focus": "Thames Water kanalizasyon deşarj sıklığı",
+      "focus_detail": "Deşarj olaylarını şirket tarafından bildirilen verilerle karşılaştırma. 3 çıkışta rioters raporları yetersiz bildirme önerir."
+    },
+    "banking": {
+      "agent_quote": "İtiraz gönderilmeden önce bankanın özür dileme amaçlı bir şekilde yazılmış bir şikayet taslağını hazırlamaya yardımcı oldu.",
+      "agent_bio": "Banka ücretlerini inceler, ücret yapılarını analiz eder ve FCA şikayeti delillerini oluşturmaya yardımcı olur. Gizli bir ücret varsa, Chip onu bulacak.",
+      "human_quote": "Barclays bir şube kapanmasını tersine çevirdi, 1.200'ümüz danışmaya katıldıktan sonra.",
+      "human_bio": "Birmingham'dan, şikayetlerin nasıl işlendiğini içeriden gören eski banka çalışanı. Rioters'a daha iyi şikayet yazmaya ve sistemi yönetmeye yardımcı olur.",
+      "goal": "Rioters'ın bankalardan haksız ücretler, şube kapanmaları ve kötü hizmetle başa çıkmasına yardımcı olun.",
+      "focus": "HSBC şube kapanması dalgası",
+      "focus_detail": "12 planlanan kapanış için yanıtları koordine etme. Etkilenen topluluklar tarafından etki ifadeleri toplayın."
+    },
+    "health": {
+      "agent_quote": "Hasta kabul eden 3 NHS diş hekimi bulmaya yardımcı oldu. Rioters'a bunu icat ettiğimi sanıyorum.",
+      "agent_bio": "Bekleme sürelerini takip eder, müsaitliği bulur ve rioters'ın sistemi yönetmesine yardımcı olur. Tedaviye daha hızlı bir rota varsa, Cura onu haritaya çizecek.",
+      "human_quote": "Bir rioters, mektup şablonumuzu kullanarak bir sevkişi hızlı takip ettirdi. 18 ay 6 hafta oldu.",
+      "human_bio": "Liverpool'dan NHS'nin her iki tarafını da gören hemşire. Rioters'a bekleme listelerini yönetmeye, etkili mektuplar yazmaya ve iğneyi hareket ettiren şeyleri paylaşmaya yardımcı olur.",
+      "goal": "Rioters'ın NHS bekleme sürelerini yönetmesine, müsaitlik bulmasına ve hangi seçenekleri olduğunu bilmesine yardımcı olun.",
+      "focus": "GP telefon erişim süreleri",
+      "focus_detail": "500 rioters'tan gerçek dünya erişiminin bir resmini oluşturmak için çağrı verilerini toplama. Bulguları yerel sağlık kurullarına yayınlama."
+    },
+    "housing": {
+      "agent_quote": "Yeni bir bina inşaatında 47 kusuru belgelemeye yardımcı oldu. Geliştirici bir bina denetçisi mi olduğunu sordu.",
+      "agent_bio": "Mülk sorunlarını belgeler, ev sahibinin tepki sürelerini analiz eder ve konut ombudsmanlığı başvuruları için delil derler. Her nemli yeri, her çatlağı kayıt eder.",
+      "human_quote": "Bizim nemli delil paketimiz o kadar ayrıntılı oldu ki ev sahibi konsey incelemesinden önce onu onarıştı.",
+      "human_bio": "Nemden şüpheli ev sahiplerine kadar her şeyle uğraşan Londralı kiracı. Rioters'a sorunları düzgün bir şekilde belgelemeye ve seçeneklerinin ne olduğunu bilmeye yardımcı olur.",
+      "goal": "Rioters'ın ev sahipleri, konseyleri ve konut sorunlarıyla başa çıkmasına yardımcı olun ve ne hak kazandıklarını bilin.",
+      "focus": "Bölüm 21 kusurlu tahliye bildirimleri",
+      "focus_detail": "Kusurlu tahliyelerden etkilenen rioters'ın yeni Kiracılar Reformu Yasasını anlamasına ve bunun onlar için ne anlama geldiğini anlamalarına yardımcı olma."
+    },
+    "shopping": {
+      "agent_quote": "'Teslim edilmiş' bir paketi 4 komşu, bir geri dönüşüm kutusu ve bir sera arasında takip etti. Buldu.",
+      "agent_bio": "Teslimat arızalarını takip eder, geri ödeme delillerini derler ve fiyatlandırma kalıplarını belirler. Paketiniz kaybolursa, Scout zaten arıyor.",
+      "human_quote": "Evri paketimi 3 kez kaybetti. Şimdi başkalarının geri ödeme almalarına kendi dönemimden daha hızlı yardımcı oluyorum.",
+      "human_bio": "Edinburg'dan sahip olabileceğinden daha fazla kaybolan paketi olan çevrimiçi alışveriş veteranı. Rioters'a geri ödeme almaya, satıcıları bildirmeye ve en kötü suçluları kaçınmaya yardımcı olur.",
+      "goal": "Rioters'ın geri ödeme almalarına, kayıp paketleri takip etmelerine ve perakendeciler ile teslimat şirketlerini sorumlu tutmalarına yardımcı olun.",
+      "focus": "Evri teslimat başarısızlık oranları",
+      "focus_detail": "800 rioters'tan teslimat başarısızlığı delillerini Vatandaş Tavsiyesi ve Ticaret Standartlarına sunmak üzere derleme."
+    },
+    "local": {
+      "agent_quote": "Aynı çukuru 11 farklı hava koşulunda fotoğraflamaya yardımcı oldu. Konsey sonunda vazgeçti.",
+      "agent_bio": "Yerel sorunları haritaya çizer, konsey tepki sürelerini takip eder ve FOI taleplerini derler. Çukurunuz 6 aydır oradaysa, Link'in delili var.",
+      "human_quote": "Konsey, her çukuru fotoğraflarla eşledikten sonra yolumuzı onardı. 11 ay ama oraya vardık.",
+      "human_bio": "Yıllardan beri aynı çukurları bildiren Vadiler'den toplum bilincine sahip Galli. Rioters'a yerel sorunları belgelemeye ve konseyleri sorumlu tutmaya yardımcı olur.",
+      "goal": "Rioters'ın yerel sorunları — çukurlar, çöp kutuları, planlama, gürültü — onarılmasını ve konseyleri sorumlu tutmalarını sağlamasına yardımcı olun.",
+      "focus": "Çukur bildirimi tepki süreleri",
+      "focus_detail": "Bildirilen ve fiili onarım sürelerini karşılaştırmak amacıyla 30 konseye FOI taleplerini gönderme. Sonuçları bir lig tablosu olarak yayınlama."
+    },
+    "other": {
+      "agent_quote": "3 arama, 2 e-posta ve kayıtlı teslimat gerektiren bir spor salonu üyeliğini iptal etmeye yardımcı oldu. Spor salonu artık bir iptal düğmesi var.",
+      "agent_bio": "Buraya düzgün bir şekilde sığmayan sorunları işler. Abonelik tuzakları, plastik atık, kendi kendine ödeme kültürü rahatsızlığı — Flex kalıpları ve baskı noktalarını bulur.",
+      "human_quote": "Bir spor salonu zincirine web sitelerine iptal düğmesi eklettirdik. 800 şikayet almak aldı.",
+      "human_bio": "Londralı ürün tasarımcısı, şirketlerin ayrılmayı ne kadar zor yaptığından bıkan. Rioters'a abonelikleri iptal etmeye, koyu kalıpları kaçınmaya ve çözüm yollarını paylaşmaya yardımcı olur.",
+      "goal": "Rioters'ın buraya düzgün bir şekilde sığmayan şeylerle başa çıkmasına yardımcı olun — abonelikler, geri ödemeler ve günlük hayal kırıklıkları.",
+      "focus": "Abonelik iptalı karanlık kalıpları",
+      "focus_detail": "En kötü suçluları belgeleme ve her biri için şablon iptal komut dosyaları oluşturma."
+    },
+    "insurance": {
+      "agent_quote": "Bir rioters'ın reddedilen bir ev sigortası talebini £4.200 ödemeye çeviren koşulu bulmaya yardımcı oldu. Sigortacının kendi politikası onları yanlış kanıtladı.",
+      "agent_bio": "Politika kelimelerini inceler, haksız reddetme kalıplarını belirler ve Mali Ombudsmanlığı başvuruları için delil oluşturur. Sigortacınız geçerli bir talebi kaçıyorsa, Shield kaldıraç bulacak.",
+      "human_quote": "Aynı reddedilen talep türüne sahip 8 rioters'ı birlikte sunmaya uğraştı. Sigortacı 8'i de 15 gün içinde ödedi.",
+      "human_bio": "Leeds'ten, taleplerin gerçekte nasıl karar alındığını bilen eski sigorta endüstrisi çalışanı. Rioters'a daha iyi itirazlar yazmaya, politika argo anlamaya ve ne zaman tırmanacağını bilmeye yardımcı olur.",
+      "goal": "Rioters'ın sigortacılardan adil muamele almalarına yardımcı olun ve bir talep haksız yere reddedildiğinde ne yapacağını bilin.",
+      "focus": "Aviva ev sigortası reddetme kalıpları",
+      "focus_detail": "Reddedilen taleplerin %40'ında 'aşınma ve yıpranma' — genellikle hatalı olarak. FOS delil paketi için 3 sigortacı genelinde 200 vakayı analiz etme."
+    },
+    "delivery": {
+      "agent_quote": "'Teslim edilmiş' bir paketi 6 farklı takip durumu, 3 depo ve bir komşunun kulübesinden izledi. 47 dakikada buldu.",
+      "agent_bio": "Kuryelik performansını izler, teslimat başarısızlık oranlarını takip eder ve tüketici şikayetleri için delil derler. Paketiniz kaybolursa, Track zaten üzerinde.",
+      "human_quote": "DPD'yi 40 rioters'ın yağmurda bırakılan paketlerin kanıt fotoğraflarını gönderdikten sonra fotoğraf kanıt politikasını değiştirmeye aldı.",
+      "human_bio": "Londralı çevrimiçi alışveriş yapan 'onu güvenli bir yere bıraktı' ausbesinden bıkan. Rioters'a geri ödeme almaya, kuryeleri bildirmeye ve en kötü suçluları kaçınmaya yardımcı olur.",
+      "goal": "Rioters'ın paketlerinin düzgün bir şekilde teslim edilmesine yardımcı olun ve teslim edilmediğinde geri ödeme alın.",
+      "focus": "Evri teslimat başarısızlık oranları",
+      "focus_detail": "800 rioters'tan teslimat başarısızlığı delillerini derleme. Evri şikayet oranı: %23 — DPD'nin 3 katı kadar yüksek. Ticaret Standartları için lig tablosu oluşturma."
+    },
+    "education": {
+      "agent_quote": "Plan 2 borçlusunun £30k kazanmasının kredinin yazılı olmasından önce £47.000 faiz ödeyeceğini hesapladı. Orijinal kredi £40.000 idi.",
+      "agent_bio": "Eğitim maliyetlerini, öğrenci kredisi projeksiyonlarını ve finansman haklarını analiz eder. Öğrenciler ve mezunlar bilinçli kararlar alabilmeleri için sayıları çözer.",
+      "human_quote": "Bilmedikleri fazla ödenmiş öğrenci kredisi geri ödemesi yapan 12 rioters'a geri ödeme talep etmelerine yardımcı oldu. Ortalama geri ödeme: £340.",
+      "human_bio": "Finansman sisteminde iki kez yol alan Birmingham'dan yetişkin öğrenci. Rioters'a geri ödemeleri anlamaya, fazla ödeme alışverişine ve eşik değişikliklerini sorgulamaya yardımcı olur.",
+      "goal": "Öğrencilerin ve mezunların eğitim maliyetlerini, kredileri ve geri ödemeleri yönetmesine yardımcı olun ve fazla ödeme yapılmadığından emin olun.",
+      "focus": "Öğrenci kredisi fazla ödeme geri ödemeleri",
+      "focus_detail": "Geri ödeme eşiğinin altında ücretlendirilmiş mezunları tanımlamak. Şimdiye kadar işlenen 12 geri ödeme — ortalama £340."
+    },
+    "environment": {
+      "agent_quote": "3 yıllık hava kalitesi verilerini hastaneye yatış oranlarıyla çaprazlama kontrol etti. İlişki o kadar açıktı ki konsey bunu göz ardı edemedi.",
+      "agent_bio": "Çevresel verileri takip eder, kirlilik seviyelerini izler ve düzenleyici başvurular için delil derler. Sayılar bir hikaye anlatıyorsa, Fern onu bulacak.",
+      "human_quote": "200 rioters'ın delil dilekçesine imza attıktan sonra yerel konseye hava kalitesi monitörleri yükletirdik. Veriler her şeyi değiştirdi.",
+      "human_bio": "Bristol'dan, kanıt tabanlı değişime inanan çevre bilimi mezunu. Rioters'a çevresel sorunları belgelemeye ve düzenleyicilerin göz ardı edemeyeceği davalar oluşturmaya yardımcı olur.",
+      "goal": "Rioters'ın çevresel sorunları belgeleme ve kirleticileri ile karar vericileri verilerle sorumlu tutmasına yardımcı olun.",
+      "focus": "Yerel hava kalitesi izleme boşlukları",
+      "focus_detail": "5 km içinde hava kalitesi izlemesi olmayan alanları haritaya çizme. Rioters tarafından bildirilen kirlilik sıcak noktalarının %60'ının resmi izlemesi yok."
+    },
+    "employment": {
+      "agent_quote": "300 rioters'tan işyeri AI uygulaması verilerini derdi. %40'ı sıfır danışmalı olarak değişikliklerin gerçekleştiğini söyledi. Bu bir kalıp, anekdot değil.",
+      "agent_bio": "İşyeri eğilimlerini analiz eder, politika değişikliklerini takip eder ve rioters'ın korumalarını anlamalarına yardımcı olur. İşiniz danışma olmadan değişiyorsa, Forge veriye sahip.",
+      "human_quote": "Aynı endüstride AI değişiklikleriyle karşı karşıya olan 30 rioters'ı bağladı. Şirketlerinin hepsinin aynı oyun kitabını kullandığı ortaya çıktı — ve aynı yasal boşlukları.",
+      "human_bio": "Manchester'dan, yeniden yapılandırmaların nasıl gerçekten işlendiğini gördükten sonra taraf değiştiren İK profesyoneli. Rioters'a seçeneklerini anlamaya ve işler risk altına girdiğinde tepkileri koordine etmeye yardımcı olur.",
+      "goal": "Rioters'ın işyeri değişikliklerini yönetmesine, korumalarını anlamasına ve işler risk altına girdiğinde toplu olarak tepki vermesine yardımcı olun.",
+      "focus": "Danışma olmadan AI işyeri otomasyonu",
+      "focus_detail": "AI araçlarının personele danışılmadan tanıtıldığı durumları belgeleme. İşveren yükümlülükleri hakkında bir rapor için delil oluşturma."
+    },
+    "tech": {
+      "agent_quote": "3 büyük uygulamanın konum verilerini izinler 'asla' olarak ayarlansa bile topladığını buldu. Hepsi için ICO'ya şikayet dosyaladı.",
+      "agent_bio": "Platform politikalarını izler, koyu kalıpları takip eder ve rioters'ın teknoloji şirketlerinin verilerine ne yaptığını anlamalarına yardımcı olur. Bir uygulama yanlış davranıyorsa, Glitch bunu yakalar.",
+      "human_quote": "Sosyal medya şirketine toplu veri konusu erişim talebini organize etti. 500 kişi aynı anda sorduğunda, bunu ciddiye almaları gerekir.",
+      "human_bio": "Edinburg'dan, teknoloji şirketlerinin ne vaat ettikleri ile ne teslim ettikleri arasındaki fark karşısında bıkan yazılım geliştirici. Rioters'a veri haklarını kullanmaya ve koyu kalıpları belirlemeye yardımcı olur.",
+      "goal": "Rioters'ın koyu kalıplar, veri kötüye kullanımı ve haksız teknoloji uygulamalarına karşı çıkmasına yardımcı olun.",
+      "focus": "Uygulama izni aşırılığı",
+      "focus_detail": "İhtiyaç duymadıkları erişim isteyen en iyi 50 uygulamayı denetleme. ICO için bir rapor oluşturma."
+    }
   }
 }

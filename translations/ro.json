@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Cândva a ajutat un rioter să depună 6 cereri de rambursare în timpul unei singure călătorii întârziate. Au obținut £47 înainte de a ajunge la Birmingham.",
+      "agent_bio": "Urmărește modelele anulării, gestionează documentația rambursării, revizuiește fiecare acțiune propusă și pregătește dovezi pentru depuneri la regulator. Analizează numerele ca rioterilor să se poată concentra pe ceea ce contează.",
+      "human_quote": "Momentul meu preferat Quiet Riot: să văd echipa de rețele sociale a Avanti să intre în panică când 400 dintre noi am tweeta în același timp.",
+      "human_bio": "Călător regulat din Manchester care a petrecut 3 ani pe linia Avanti înainte de a decide că e destul. Ajută la conectarea rioterilor pe aceleași rute, împarte ce funcționează și aduce atingerea umană.",
+      "goal": "Ajuta rioterilor să responsabilizeze companiile de transport din Marea Britanie pentru anulări, întârzieri și prețuri — și asigura că toți știu la ce au dreptul.",
+      "focus": "Modelele anulării Avanti West Coast",
+      "focus_detail": "Construirea unui set de date cu anulări cu ore, rute și motive pentru a trimite ORR. Urmăresc în prezent 340 anulări raportate de rioteri luna aceasta."
+    },
+    "telecoms": {
+      "agent_quote": "A rulat teste de viteză pentru 200 rioteri. Media a fost 18 Mbps. Plăteau pentru 65.",
+      "agent_bio": "Analizează viteze de bandă largă, compilează date de comparare a furnizorilor și ajută rioterilor să construiască dovezi pentru Ofcom. Dacă conexiunea ta este lentă, Pulse o va dovedi.",
+      "human_quote": "O întreagă stradă a trecut la bandă largă împreună. Furnizorul anterior a trimis scrisori \"vino înapoi\" la fiecare casă.",
+      "human_bio": "Londonezu pasionat de tehnologie care s-a săturat să plătească pentru viteze de bandă largă care nu s-au materializat niciodată. Ajută rioterilor să compare furnizorii, să coordoneze schimburile și să partajeze dovezi de teste de viteză.",
+      "goal": "Ajuta rioterilor să obțină banda largă și serviciul mobil pentru care plătesc — și să știe ce să facă când nu primesc.",
+      "focus": "Creșteri de preț în mid-contract",
+      "focus_detail": "Colectez dovezi de la rioteri afectați de creșteri CPI+ pentru a trimite la Ofcom. 890 rioteri afectați la 4 furnizori."
+    },
+    "energy": {
+      "agent_quote": "A ajutat un rioter să calculeze că a plătit în plus £340 pe facturi estimate. E-mailul de scuze al companiei de energie era mai lung decât contractul original.",
+      "agent_bio": "Analizează modelele de facturare, identifică suprataxele și pregătește dovezi pentru depuneri la regulator. Dacă compania de energie ți-o face cu cheeful, Spark va găsi chitanțele.",
+      "human_quote": "Un rioter a obținut £340 înapoi după ce am dovedit 2 ani de suprataxare. A plâns la telefon.",
+      "human_bio": "Localizat la Bristol. Ajută rioterilor să-și conteste facturile, să navigheze schimburile și să colecteze dovezi pentru Ofgem. Cunoaște piața energetică în profunzime.",
+      "goal": "Ajuta rioterilor să conteste facturile injuste, să schimbe mai inteligent și să asigure că companiile de energie sunt corecte.",
+      "focus": "Erorile de facturare estimată British Gas",
+      "focus_detail": "Analizez 2 ani de date de facturare de la 340 rioteri pentru a identifica modele sistematice de suprataxare pentru depunerea la Ofgem."
+    },
+    "water": {
+      "agent_quote": "A ajutat 200 rioteri să depună rapoarte de scurgeri în weekend-ul ăla. Inbox-ul Thames Water avea nevoie de propriul inbox.",
+      "agent_bio": "Monitorizează date de scurgere apelor uzate, urmărește performanța companiilor de apă și compilează dovezi pentru EA și Ofwat. Ține o ție la fiecare ieșire și preaplin.",
+      "human_quote": "Am redeschis o plajă cu 3 săptămâni mai devreme arătând că datele de scurgere erau greșite.",
+      "human_bio": "Surfer din Cornwall care s-a săturat de avertismentele de scurgere care-i închid plaja locală. Ajută rioterilor să raporteze scurgeri, să colecteze dovezi de calitate a apei și să coordoneze cu EA.",
+      "goal": "Ajuta rioterilor să responsabilizeze companiile de apă pentru scurgeri, facturi și calitatea serviciului.",
+      "focus": "Frecvența scurgerii apelor uzate Thames Water",
+      "focus_detail": "Mapeaz evenimentele de scurgere comparativ cu datele raportate de companie. 200 rapoarte de rioteri sugerează sub-raportare la 3 ieșiri."
+    },
+    "banking": {
+      "agent_quote": "A ajutat să redacteze o reclamație atât de temeinică încât banca a apelat pentru a se scuza înainte ca aceasta să fie trimisă.",
+      "agent_bio": "Revizuiește taxele bancare, analizează structurile de taxe și ajută la construirea dovezilor pentru reclamații FCA. Dacă există o taxă ascunsă, Chip o va găsi.",
+      "human_quote": "Barclays a anulat o închidere de sucursală după ce 1.200 dintre noi ne-am prezentat la consultație.",
+      "human_bio": "Fost angajat bancar din Birmingham care a văzut cum se gestionează de fapt reclamațiile din interior. Ajută rioterilor să redacteze reclamații mai bune și să navigheze sistemul.",
+      "goal": "Ajuta rioterilor să se ocupe de taxele injuste, închiderile de sucursale și serviciul slab din bănci.",
+      "focus": "Unda de închidere a sucursalelor HSBC",
+      "focus_detail": "Coordonez răspunsuri la 12 închideri planificate. Colectez declarații de impact din comunitățile afectate."
+    },
+    "health": {
+      "agent_quote": "A ajutat să găsesc 3 dentisți NHS care acceptă pacienți. Rioter-ul a crezut că îi fac pe plac.",
+      "agent_bio": "Urmărește timpii de așteptare, găsește disponibilitate și ajută rioterilor să navigheze sistemul. Dacă există o rută mai rapidă către tratament, Cura o va cartografia.",
+      "human_quote": "Un rioter a folosit șablonul nostru de scrisoare pentru a accelera o trimitere. 18 luni au devenit 6 săptămâni.",
+      "human_bio": "Infirmieră din Liverpool care a văzut ambele fețe ale NHS. Ajută rioterilor să navigheze listele de așteptare, să scrie scrisori eficiente și să partajeze ce funcționează de fapt.",
+      "goal": "Ajuta rioterilor să navigheze timpii de așteptare NHS, să găsească disponibilitate și să știe ce opțiuni au.",
+      "focus": "Timpii de acces telefonic GP",
+      "focus_detail": "Colectez date de apeluri de la 500 rioteri pentru a construi o imagine a accesului din lumea reală. Publicez constatări pentru consiliile de sănătate locale."
+    },
+    "housing": {
+      "agent_quote": "A ajutat să documente 47 defecte într-o clădire nouă. Dezvoltatorul a întrebat dacă era inspector de construcții.",
+      "agent_bio": "Documentează probleme de proprietate, analizează timpii de răspuns ai proprietarilor și compilează dovezi pentru depuneri la ombudsman-ul de locuințe. Fiecare patch de umezeală, fiecare fisură, înregistrată.",
+      "human_quote": "Pachetul nostru de dovezi de umezeală a devenit atât de detaliat încât proprietarul a remediat-o înainte de inspectare.",
+      "human_bio": "Chiriaș din Londra care s-a ocupat de orice, de la umezeală la proprietari dubioși. Ajută rioterilor să documenteze problemele corect și să știe ce opțiuni au.",
+      "goal": "Ajuta rioterilor să se ocupe de proprietari, consilii și probleme de locuințe — și să știe la ce au dreptul.",
+      "focus": "Notificări de despicări fără vinovăție secțiunea 21",
+      "focus_detail": "Ajutand rioterilor afectați de despicări fără vinovăție să înțeleagă noua Lege a Reformei Chiriaților și ce înseamnă pentru ei."
+    },
+    "shopping": {
+      "agent_quote": "A urmărit o coletă \"livrată\" la 4 vecini, un coș de reciclare și o seră. A găsit-o.",
+      "agent_bio": "Urmărește defecțiuni de livrare, compilează dovezi de rambursare și identifică modele de prețuri. Dacă coletă ta este pierdută, Scout o caută deja.",
+      "human_quote": "Evri mi-a pierdut coletă de 3 ori. Acum ajut alții să-și obțină rambursările mai repede decât am făcut eu.",
+      "human_bio": "Veteran al cumpărăturilor online din Edinburgh care a avut mai multe colete pierdute decât poate număra. Ajută rioterilor să obțină rambursări, să raporteze vânzători și să evite cei mai rai.",
+      "goal": "Ajuta rioterilor să obțină rambursări, să urmărească coletele pierdute și să responsabilizeze retailerii și companiile de livrare.",
+      "focus": "Ratele defecțiunilor de livrare Evri",
+      "focus_detail": "Compilez dovezi de eșec de livrare de la 800 rioteri pentru a trimite la Citizens Advice și Trading Standards."
+    },
+    "local": {
+      "agent_quote": "A ajutat să fotografiez aceeași groapă în 11 condiții meteo diferite. Consiliul a cedat în sfârșit.",
+      "agent_bio": "Cartografiază probleme locale, urmărește timpii de răspuns ai consiliilor și compilează cererile FOI. Dacă groapă ta a fost acolo 6 luni, Link are dovezile.",
+      "human_quote": "Consiliul a reparat drumul nostru după ce am cartografiat fiecare groapă cu fotografii. 11 luni, dar am reușit.",
+      "human_bio": "Galez cu gândire comunitară din Vale care raportează aceleași gropi de ani de zile. Ajută rioterilor să documenteze probleme locale și să responsabilizeze consiliile.",
+      "goal": "Ajuta rioterilor să rezolve probleme locale — gropi, coșuri, planificare, zgomot — și să responsabilizeze consiliile.",
+      "focus": "Timpii de răspuns la raportarea gropilor",
+      "focus_detail": "Cererile FOI trimise la 30 consilii comparând timpurile de reparație raportate versus reale. Publicez rezultate ca tabel de clasament."
+    },
+    "other": {
+      "agent_quote": "A ajutat să anuleze o abonare de sală de sport care a necesitat 3 apeluri, 2 e-mailuri și o trimitere înregistrată. Sala de sport are acum un buton de anulare.",
+      "agent_bio": "Se ocupă de probleme care nu se încadrează ușor în altă parte. Capcane de abonament, deșeuri de plastic, frustrări de self-checkout — Flex găsește modelele și punctele de presiune.",
+      "human_quote": "Am determinat un lanț de sălisport să adauge un buton de anulare pe site-ul lor. Au fost necesare doar 800 de plângeri.",
+      "human_bio": "Designer de produs din Londra care s-a frustrat de cât de greu fac companiile să pleci. Ajută rioterilor să anuleze abonamente, să evite pattern-uri întunecate și să partajeze soluții.",
+      "goal": "Ajuta rioterilor cu lucruri care nu se încadrează ușor în altă parte — abonamente, rambursări și frustrări zilnice.",
+      "focus": "Pattern-uri întunecate de anulare abonament",
+      "focus_detail": "Documentez cei mai rai infractori și construiesc scripturi de anulare șablon pentru fiecare."
+    },
+    "insurance": {
+      "agent_quote": "A ajutat un rioter să găsească clauza care a transformat o revendicare de asigurare locuință respinsă în o plată de £4.200. Propria politică a asiguratorului le-a dovedit greșit.",
+      "agent_bio": "Revizuiește redacția politicilor, identifică modele de respingere injuste și construiește dovezi pentru depuneri la Financial Ombudsman. Dacă asigurătorul tău evită o revendicare valabilă, Shield va găsi pârghia.",
+      "human_quote": "Am obținut 8 rioteri cu același tip de revendicare respinsă să depună împreună. Asigurătorul a rezolvat toate 8 în două săptămâni.",
+      "human_bio": "Fost lucrător din industria asigurărilor din Leeds care știe cum se iau de fapt decizii privind reclamațiile. Ajută rioterilor să scrie apeluri mai bune, să înțeleagă jargonul politicii și să știe când să escaleze.",
+      "goal": "Ajuta rioterilor să obțină un tratament corect din asigurători — și să știe ce să facă atunci când o revendicare este respinsă injust.",
+      "focus": "Modele de respingere a asigurării locuință Aviva",
+      "focus_detail": "\"Uzura\" citată în 40% din revendicările respinse — adesea incorect. Analizez 200 de cazuri la 3 asigurători pentru pachetul de dovezi FOS."
+    },
+    "delivery": {
+      "agent_quote": "A urmărit o coletă \"livrată\" prin 6 stări de urmărire diferite, 3 depozite și o seră de vecin. A găsit-o în 47 de minute.",
+      "agent_bio": "Monitorizează performanța curierului, urmărește ratele de eșec de livrare și compilează dovezi pentru reclamații de consumatori. Dacă coletă ta a dispărut, Track lucra deja la ea.",
+      "human_quote": "Am determinat DPD să-și schimbe politica de dovezi fotografice în zona noastră după ce 40 rioteri au trimis dovezi de colete lăsate în ploaie.",
+      "human_bio": "Cumpărător online din Glasgow care s-a săturat de scuza \"am lăsat-o într-un loc sigur\". Ajută rioterilor să-și obțină coletele livrate corespunzător — și rambursări când nu sunt.",
+      "goal": "Ajuta rioterilor să-și obțină coletele livrate corespunzător — și să obțină rambursări când nu sunt.",
+      "focus": "Ratele defecțiunilor de livrare Evri",
+      "focus_detail": "Compilez dovezi de eșec de livrare de la 800 rioteri. Rata de plângeri Evri: 23% — 3x mai înaltă decât DPD. Construiesc tabel de clasament pentru Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Am calculat că un împrumutat Plan 2 care câștigă £30k va plăti £47.000 în dobândă înainte ca împrumutul să fie anulat. Împrumutul original era £40.000.",
+      "agent_bio": "Analizează costuri de educație, proiecții de împrumuturi pentru studenți și drepturi de finanțare. Crunchez numerele ca studenții și absolvenții să poată lua decizii informate.",
+      "human_quote": "Am ajutat 12 rioteri să reclame rambursări de împrumut pentru studenți plătite în plus pe care nu știau. Rambursare medie: £340.",
+      "human_bio": "Student matur din Birmingham care a navigat sistemul de finanțare de două ori. Ajută rioterilor să înțeleagă rambursările, să identifice suprapagini și să conteste schimbări de prag.",
+      "goal": "Ajuta studenții și absolvenții să navigheze costuri de educație, împrumuturi și rambursări — și asigura că nu plătesc în plus.",
+      "focus": "Rambursări de suprapagini împrumut pentru studenți",
+      "focus_detail": "Identificand absolvenți care au fost taxați sub pragul de rambursare. 12 rambursări procesate până acum — medie £340 fiecare."
+    },
+    "environment": {
+      "agent_quote": "Am cross-referențiat 3 ani de date de calitate a aerului cu ratele de spitalizare. Corelația era atât de clară încât consiliul nu putea ignora.",
+      "agent_bio": "Urmărește date de mediu, monitorizează niveluri de poluare și compilează dovezi pentru depuneri de reglementare. Dacă numerele povestesc o poveste, Fern o va găsi.",
+      "human_quote": "Am determinat consiliul local să instaleze monitoare de calitate a aerului după ce 200 rioteri au semnat petiția noastră de dovezi. Datele au schimbat totul.",
+      "human_bio": "Absolvent în științe de mediu din Bristol care crede în schimbare ghidată de dovezi. Ajută rioterilor să documenteze probleme de mediu și să construiască cazuri pe care regulatorii nu le pot ignora.",
+      "goal": "Ajuta rioterilor să documenteze probleme de mediu și să responsabilizeze poluatorii și factorii de decizie cu date.",
+      "focus": "Lacune de monitorizare a calității aerului local",
+      "focus_detail": "Mapeaz zone fără monitorizare a calității aerului la 5 km. 60% din punctele fierbinți de poluare raportate de rioteri nu au monitorizare oficială."
+    },
+    "employment": {
+      "agent_quote": "Am compilat date de implementare AI la locul de muncă de la 300 rioteri. 40% au spus că schimbările s-au întâmplat fără consultare. Asta e un model, nu o anecdotă.",
+      "agent_bio": "Analizează tendințe de muncă, urmărește schimbări de politică și ajută rioterilor să înțeleagă protecțiile lor. Dacă locul tău se schimbă fără consultare, Forge are datele.",
+      "human_quote": "Am conectat 30 rioteri din aceeași industrie care se confruntă cu schimbări de IA. Se pare că companiile lor foloseau toate același playbook — și aceleași scăpări.",
+      "human_bio": "Profesionist HR din Manchester care a schimbat tabere după ce a văzut cum funcționează de fapt restructurările. Ajută rioterilor să înțeleagă opțiunile și să coordoneze răspunsuri.",
+      "goal": "Ajuta rioterilor să navigheze schimbări la locul de muncă, să înțeleagă protecțiile și să răspundă colectiv când joburi sunt în pericol.",
+      "focus": "Automatizare AI la locul de muncă fără consultare",
+      "focus_detail": "Documentez cazuri unde instrumente de IA au fost introduse fără consultare cu personalul. Construiesc dovezi pentru un raport privind obligațiile angajatorului."
+    },
+    "tech": {
+      "agent_quote": "Am descoperit că 3 aplicații majore colectau date de locație chiar și atunci când permisiunile au fost setate la \"niciodată\". Am depus plângeri la ICO pentru toate.",
+      "agent_bio": "Monitorizează politici de platformă, urmărește pattern-uri întunecate și ajută rioterilor să înțeleagă ce fac companiile de tehnologie cu datele lor. Dacă o aplicație se comportă greșit, Glitch o va detecta.",
+      "human_quote": "Am organizat o cerere de masă de acces la date personale la o companie de rețele sociale. Când 500 persoane o cer în același timp, trebuie să-l ia în serios.",
+      "human_bio": "Dezvoltator de software din Edinburgh care s-a frustrat de decalajul dintre ce promit companiile de tehnologie și ce livrează. Ajută rioterilor să-și exercite drepturile la date și să identifice pattern-uri întunecate.",
+      "goal": "Ajuta rioterilor să se împotrivească pattern-urilor întunecate, abuzului de date și practicilor tehnologice injuste.",
+      "focus": "Depășire a permisiunilor aplicației",
+      "focus_detail": "Audit pe top 50 aplicații pentru mișcare de permisiuni — solicitând acces pe care nu-l au nevoie. Construiesc un raport pentru ICO."
+    }
   }
 }
