@@ -1,37 +1,64 @@
-# Plan: Fill i18n Test Gaps
+# Plan: Fix All Untranslated Assistant & Category Strings
 
 ## Problem
-Several translation surfaces lack test coverage, and category_assistants translations are missing for 43 of 55 non-English locales.
 
-## Phases
+Multiple pages render assistant data and category names in English regardless of locale:
+- Hardcoded English strings in 3 banner components
+- Missing `translateCategoryAssistant(s)()` calls in 5 page components
+- Missing translated `label` prop on `CategoryBadge` in assistant-card and assistant detail page
 
-### Phase 1: Add category_assistants tests + make field required
-- Add tests to `seed-translations.test.ts` for category_assistants section
-- Test all 55 non-English locales have `category_assistants` key
-- Test all 16 category keys present in each locale
-- Test all 7 fields non-empty per category
-- Test no HTML/script injection, length limits
-- Make `category_assistants` required (not optional) in TranslationFile interface
+## Scope
 
-### Phase 2: Generate missing category_assistants translations
-- Run `npm run translate -- --section category_assistants` to fill the 43 missing locales
-- Verify JSON validity
+### Phase 1: Add mandatory i18n rules to CLAUDE.md
+- Add "Zero Tolerance for Hardcoded Strings" rules to prevent this recurring
 
-### Phase 3: Add empty-value checks for non-English messages/*.json
-- Extend messages.test.ts to check that non-English locale files have no empty string values
+### Phase 2: Add new message keys to en.json
+New keys needed in `Assistants` namespace:
+- `bannerTitle` — "{count} AI & Human Assistant Pairs"
+- `bannerSubtitle` — "Every category has a dedicated AI agent and human organiser to help."
+- `meetThem` — "Meet them →"
+- `yourAssistants` — "Your {category} Assistants"
+- `aiAgentLabel` — "(AI Agent)"
+- `humanOrganiserLabel` — "(Human Organiser)"
+- `currentFocus` — already exists in AssistantDetail
+- `helpsWith` — "{name} helps with"
+- `learnMore` — "Learn more about {agentName} & {humanName} →"
 
-### Phase 4: Add translation quality spot-check
-- For each non-English locale, verify that enough strings differ from English
-- Pick strings > 10 chars to avoid false positives on short universal words
+### Phase 3: Fix 3 banner components to use i18n
+1. `assistant-overview-banner.tsx` — make async, use getTranslations('Assistants')
+2. `assistant-banner.tsx` — make async, use getTranslations('Assistants') + getTranslations('Categories')
+3. `assistant-detail-banner.tsx` — make async, use getTranslations('Assistants') + getTranslations('Categories')
 
-### Phase 5: Add romanised locale content validation
-- For all 11 -Latn locale message files, verify no native script characters leaked in
-- Unicode range checks per locale family
+### Phase 4: Fix 5 page components to translate DB data
+1. `issues/page.tsx` — add translateCategoryAssistants() call
+2. `issues/[id]/page.tsx` — add translateCategoryAssistant() call
+3. `organisations/page.tsx` — add translateCategoryAssistants() call
+4. `organisations/[id]/page.tsx` — add translateCategoryAssistant() call
+5. `assistants/page.tsx` — add translateCategoryAssistants() call
 
-### Phase 6: Run tests, build, commit, push, create PR
+### Phase 5: Fix CategoryBadge label translation
+1. `assistant-card.tsx` — pass translated label to CategoryBadge
+2. `assistants/[category]/page.tsx` — pass translated label to CategoryBadge + translate detail data
 
-## Files Modified
-- `scripts/seed-translations.test.ts` — add category_assistants tests
-- `scripts/seed-translations.ts` — make category_assistants required in TranslationFile
-- `src/i18n/messages.test.ts` — add empty-value, quality, and romanised checks
-- `translations/*.json` — fill missing category_assistants (43 locales)
+### Phase 6: Propagate new keys to all 55 locales
+- Use Task agent to translate new Assistants keys
+- Apply via Node.js script
+- Validate all files
+
+### Phase 7: Update tests, build, commit, PR
+
+## Files to modify
+- `CLAUDE.md` — add mandatory rules
+- `messages/en.json` — add new keys
+- `messages/*.json` — propagate translations (55 files)
+- `src/components/data/assistant-overview-banner.tsx`
+- `src/components/data/assistant-banner.tsx`
+- `src/components/data/assistant-detail-banner.tsx`
+- `src/components/cards/assistant-card.tsx`
+- `src/app/[locale]/issues/page.tsx`
+- `src/app/[locale]/issues/[id]/page.tsx`
+- `src/app/[locale]/organisations/page.tsx`
+- `src/app/[locale]/organisations/[id]/page.tsx`
+- `src/app/[locale]/assistants/page.tsx`
+- `src/app/[locale]/assistants/[category]/page.tsx`
+- `src/components/data/data.test.tsx` — update tests for async components
