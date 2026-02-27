@@ -1,876 +1,1200 @@
 {
   "locale": "ar-Latn",
   "categories": {
-    "Transport": "Naql",
-    "Telecoms": "Itisalat",
-    "Banking": "Masarif",
-    "Health": "Si7a",
-    "Education": "Ta3lim",
-    "Environment": "Bi2a",
-    "Energy": "Ta8a",
-    "Water": "Mayya",
-    "Insurance": "Ta2min",
-    "Housing": "Iskan",
-    "Shopping": "Tasawo8",
-    "Delivery": "Tawsil",
-    "Local": "Ma7alli",
-    "Employment": "3amal",
-    "Tech": "Teknologya",
-    "Other": "Gheir"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "3ezb el-qtarat",
-      "description": "Qtarat mlgha aw me2akhara kteer ma3 3adam kefaya el-i3lan aw el-ta3weez"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "As3ar tazkear el-qtarat",
-      "description": "Ojor el-relway ghalya kteer, zeyada fooq el-tadhom, as3ar gheer mowah9a"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Ta2akhir el-re7elat",
-      "description": "Re7elat me2akhara aw mlgha, tawa5ol sa2e2, so3ooba fe taleab el-ta3weez"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "El-amta3 el-da2e3a",
-      "description": "El-7awaleb ellamakher wossalet, tata9e ba2ee, ta3weez ghair kafe"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Qa77 5ott el-otobees",
-      "description": "Khotot mlgha, ta3daad sowaqet aqal, mona79aq reefeya tasqa ta38eeb el-otobees"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Derar el-fonob",
-      "description": "Fonob te9rar es-seyyarat wetosad7er rashasheen, magalees botee2a fe esa7ataha"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Ghoramo7et el-waqqof",
-      "description": "Ro3oyom waqqof 5assa ghair 3adela, tatbee9 hadam, sela7at molobika"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "As3ar el-wa9od",
-      "description": "As3ar el-benzeen wa7-deezel 3alya kteer, tontaqes botoo2a 3indama yaq9a es-som3"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Sa3et el-internet",
-      "description": "Sa3et el-internet beshway a9al momma atkhaalan wa momma tedfa3"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Manta9eq la siyal mobayl",
-      "description": "Laysa hemnak siyal mobayl fe el-byot, amakan shogol, aw attoe9 et-naql"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Zeyada as3ar wa7et el-3aqed",
-      "description": "Fa7ateer telefon, internet wa-TV tet7arek akher el-3aqed el-taqyeed"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Ow9at el-entezar fe-khedmet el-3omala2",
-      "description": "Sa3at kharij montazera litkallam ma3a insan"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "So3ooba wa9ef el-eshtarakat",
-      "description": "Sharikat te3al eltashe7 aw elsahaab motaammad sa3ab"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Ro'oyom el-rogoo3",
-      "description": "To7omaat mobayl ghair montaz7a 3indama el-sefar be5areg, zeyada as3ar ba3d Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Takaleef fasatoret el-ta79eqa",
-      "description": "Fasatoret el-gaz we-kahraba2 ghair taham9a, se3ar es-saqaf 3ale ba3d"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Fasatoret ta79eqa ghair sa7ee7a",
-      "description": "Qira2at mo5attata ghalet, ta7meel zaya2d, a5ta2 fe-fasateer"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Zeyada fasateer el-maya",
-      "description": "Fasateer el-maya tet8li az-zeyada fetqel 7een yakoon yo7sen es-sefro2"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Mayaah sekhtat fe-el-enhoor",
-      "description": "Sharikat mayo talqe mayaah 5am fe-el-mesaddat we-el-sha77"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Qa77e3et el-kahraba2",
-      "description": "Atwa2e kahraba2eya mongatat, esterat2e ba7a, ta3weez ghair kafe"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Masha2el el-3addad el-daki",
-      "description": "3addad daki la ya3mol, yasqa3 shay2eya ba3d taghyeer el-mowaffar"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Ighla9 foro3 el-bonk",
-      "description": "Foro3 bonk mahalleya tensa9q, tatrk mona79aq bedoon we5ol"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Ro'oyom bonk mokhbae2",
-      "description": "Ro'oyom gheyr montaz7a lel-overdraft, mo3amelat 5aregeya, e5tebe2at hesab"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Khasa2er el-nassa2 wa-el-eht3eyal",
-      "description": "El-bonk yarfod tadawe el-diye2a lemoha2a el-nassa2 wa-dafa3at authorized push"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Rad ta3 el-ta'ameen",
-      "description": "Mo7talabet mard7a 3ala tafaseel ba3d seen min defat el-premium"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Sodma se3ar el-ra79n",
-      "description": "Se3ar thabat yenqase2 wa yahzel le-se3ar mota9ayyar akher kteer"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Ro'oyom tahlweel el-mabalaagh el-khareg",
-      "description": "Ro'oyom kabeera wa se3ar seraf sa2ee2 l-tahweel el-mabalaagh el-dawelaaya"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Ow9at entezar NHS",
-      "description": "Entezar shohoor aw senween lel-3amelyat we-mo9abelat el-motakhasseseen"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Wosol le-mo9abelat el-tabib",
-      "description": "La te979dar tawassol le7ajez mo9abla, entezar esboo3een"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Tawa9or el-asnan",
-      "description": "Mostaheel te79ad dentist NHS ye9bal mareeban jodod"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Entezar khedmet es-seha2a el-nafseyya",
-      "description": "Entezar shohoor le-therapy we-da3m es-seha2a el-nafseyya"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Takaleef el-waseefat el-tebeya",
-      "description": "Se3ar el-waseefa 3ale fe-England, ta9ayed hanya3 web-addad el-UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Ro'oyom waqqof fe-el-mostashfa",
-      "description": "Tade7 le-waqqof el-seyyara fe-mostashfa fena omma 3endama t3awor mare2a"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Zeyada el-egara",
-      "description": "Egara el-5assa te74e fooq et-tadhom kteer, tahdeed besahat bedoon 5ana2"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Zeyada darabat el-magles",
-      "description": "Zeyada darabat el-magles kol sana fena khidmat mahalleya sateer"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Gazayh el-jogran",
-      "description": "Tarazh mosta9el, magales botee2a ta2khora, t2ather 3ala es-seha2a el-nafseyya"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Tagheyerat jama3 el-qomama",
-      "description": "Jama3 qomama atqall, 9awa3ed ee3ada istkhdam molobika, sanadeq momtale2"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Esaa2at resakh el-ta5teeteeh",
-      "description": "Tanmeya ghair merwaya mowaf9a 3alayha, aradee khazra tahta tahdeed, mogta3 mhmol"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Retoba wa-no9o3 fe-el-sogkan",
-      "description": "Moallak we-gamey3et sogkan la yo39ehon retoba wa-no9o3"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Masha2el el-tasleem",
-      "description": "Toro9 da2e3a, tawda3 fe-el-matar, takalof moslama lekin mosta9bala"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Taqs7eer el-montagat",
-      "description": "Montagat tosba7 a9gar wa-as3ar tab9a mowah9a aw t74e"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "So3ooba el-staraja3",
-      "description": "Sharikat taj3al el-moghabala we-estirja3 el-mabalaagh sa3ba motaammada"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Tangeem mozayafa",
-      "description": "La ta79dar tethaq me-tangeem online, tangeem mozayfa mojayba mosta7elkeen"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Fokhokh el-eshtarakat",
-      "description": "Tajreba moghanaya tatabdel le-madeya bedoon refaa7a wa9e7a, sa3ab elsa7ab"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Ta hamhor 9emmat el-ta3am",
-      "description": "Wagbat jahza sa2 el-9emma, 7essa atqall, mozeedat aktar"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Ezataj el-khalashan el-zatea",
-      "description": "Alat khidma zatea la ta3mol, testedbal mowazzafeen"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Takaleef ri3aya el-atfal",
-      "description": "Takaleef ri3aya atfal ghali kteer, tahdod el-mo9dra 3ala el-3amal"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Tosdeq qord et-tollab",
-      "description": "Tarijoon ye9omoon be-tosdeq le-3aqood, tagheyerat hod wa-fawa2ed"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Wagad takrath",
-      "description": "Sakh wagad fe-mana79eq 3amma, ma3arah, wa-shaware3 la yet7affaz"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI yestabdal shoghal",
-      "description": "9al9 7awla ta9neyat wazeefah bedoon da3m entaqal"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "sh3ikat sikka 7adid britaniya ta5dim khat al-sahil al-gharbi al-ra2isi"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "sh3ikat sikka 7adid britaniya ta5dim london wa-al-janub"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "sh3ikat sikka 7adid britaniya ta5dim shamal ingiltarra"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "sh3ikat sikka 7adid britaniya li-al-masafat al-tawila"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "sh3ikat sikka 7adid britaniya ta5dim masarat trans-pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "sh3ikat sikka 7adid britaniya ta5dim khat sahil ash-sharq al-ra2isi"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "sh3ikat tayaran urubiya ra5isa al-ta3reefa"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "sh3ikat tayaran britaniya ra5isa al-ta3reefa"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "sh3ikat tayaran britaniya rasmiya"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "sh3ikat 3utlat wa-siyaha"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "mo2assasa britaniya ra2isiya li-khidmat al-internet wa-al-hawatif almuhammala"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "mo2assasa britaniya li-khidmat al-internet wa-al-tilivizyun wa-al-hawatif almuhammala"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "khidmat britaniya li-al-tilivizyun wa-al-internet wa-al-hawatif almuhammala"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "sh3ikat ittisal3at 3alamiya markaza-ha fi britaniya"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "sh3ikat shaba-ka hawatif almuhammala britaniya"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "khidmat britaniya li-al-internet wa-al-hawatif"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa min masadir mujaddada"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "mo2assasa britaniya li-ta2min al-ta-qa"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "sh3ikat miyah wa-masahhat saraf li-london wa-wadi thames"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "sh3ikat miyah li-janub ingiltarra"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "sh3ikat miyah li-shamal garb ingiltarra"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "sh3ikat miyah li-al-mintaqa al-wasita"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "sh3ikat miyah li-east anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "bank britaniya mutajannis duwwali"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "khadamat masraffiya wa-maliya 3alamiya"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "bank britaniya li-al-taja-zil wa-al-1u3mul al-tijaria"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "jama3at masraffiya britaniya"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "bank britaniya"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "khadamat masraffiya raqamiya wa-fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "sh3ikat britaniya li-al-ta2min wa-al-khadamat al-maliya"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "sh3ikat britaniya li-ta2min al-sayyarat wa-al-manazil"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "sh3ikat ta2min britaniya"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "sh3ikat tijariya 1iliktroniya wa-tikhnolujya 3alamiya"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "khidmat barida britaniya"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "khidmat tasli-m tarazi-h britaniya"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "khidmat tasli-m tarazi-h britaniya"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "silsilat mo-assasat bayta3 britaniya"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "silsilat mo-assasat bayta3 britaniya"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "khidmat al-sis7iya al-wataniya li-ingiltarra"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "khadamat al-asnan fi nizam al-sis7iya al-wataniya"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "mu-assasa khadamat sis7iya 5assha"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "sultat al-7ukuma al-mahaliya fi britaniya"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "sh3ikat bina2 manazil britaniya"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "minassa 1iliktroniya britaniya li-al-ija-ra"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "khidmat bast takha3il"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "sh3ikat tikhnolujya"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "el train et2algha",
-      "train met2alghi",
-      "elgha2 el train",
-      "el trains mish shaghaleen",
-      "elgha2 el rail",
-      "el service et2algha",
-      "ta2kheer el trains",
-      "train met2akher",
-      "el trains met2akhreen",
-      "train met2akher",
-      "ta2kheer el rail"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
     "Train Ticket Prices": [
-      "as3ar el rail",
-      "taklefet el tickets",
-      "trains ghalya",
-      "as3ar el trains"
+      "rail fares",
+      "ticket costs",
+      "expensive trains",
+      "train fares"
     ],
     "Flight Delays": [
-      "el flight met2akher",
-      "el plane met2akhera",
-      "el flight et2algha",
-      "ta2kheer fel matar",
-      "3alyeen fel matar",
-      "el flight met2akher"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "shantat day3a",
-      "el suitcase day3a",
-      "el shantat ma wasaletch",
-      "suitcase mafqooda",
-      "el luggage mish 3al carousel",
-      "el shanta day3et men el airline"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
     "Bus Route Cuts": [
-      "ta2leel el bus",
-      "ta2leel el routes",
-      "e8la2 khedmet el bus"
+      "bus cuts",
+      "route reductions",
+      "bus service closures"
     ],
     "Broadband Speed": [
-      "el internet bati2",
-      "el wifi bati2",
-      "wifi bati2",
-      "sor3et el internet",
-      "el broadband mish shaghal",
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
       "buffering",
-      "el internet beywa2a3",
-      "el wifi beynzil"
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "mafeesh signal",
-      "mafeesh reception",
+      "no signal",
+      "no reception",
       "mobile blackspot",
-      "mantiqet signal mayta"
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "zyada fel bill nos el contract",
-      "zyada fel as3ar fel contract",
-      "zyada nos el contract"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "3al hold",
-      "mestanni 3al telefon",
-      "mish 3aref awesal",
-      "7ad mish beyrod",
-      "tawr el telefon",
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
       "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "mish 3aref a2alghi",
-      "sa3b el elgha2",
-      "elgha2 el subscription",
-      "alghi el eshtrak"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "fateeret el gas 3alya awi",
-      "fateeret el kahraba",
-      "as3ar el ta2a",
-      "taklefet el tadfe2a",
-      "el fa2r fel wa2ood",
-      "mish 2ader adfa3 el ta2a"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "fateeret el ta2a ghalt",
-      "el 2era2a el ta2deerya ghalt",
-      "zayada fel 7esab"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
     "Water Bill Increases": [
-      "rsom el mayya",
-      "ta7seel el mayya",
-      "fateeret el mayya 3alya awi"
+      "water rates",
+      "water charge",
+      "water bill too high"
     ],
     "Sewage in Rivers": [
-      "ramyet el serf",
-      "serf sehi khales",
-      "serf 3al beach",
-      "talawos el mayya",
-      "fayadan el serf",
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
       "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "rsom mafaga2a",
-      "rsom makhfya",
-      "charges mafaga2a",
-      "rsom el overdraft",
-      "rsom el bank"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
     "Fraud and Scam Losses": [
-      "etnasa7t",
-      "e7tiyal men el bank",
+      "scammed",
+      "bank fraud",
       "push payment scam",
-      "e7tiyal mosara7 beh"
+      "authorised fraud"
     ],
     "Bank Branch Closures": [
-      "e8la2 el branches",
-      "el bank el ma7alli beyqfel",
-      "mafeesh bank 2orayeb"
+      "branch shutdowns",
+      "local bank closing",
+      "no bank nearby"
     ],
     "Insurance Claim Rejections": [
-      "el claim etrafa9",
-      "el insurance mesh hayedfa3",
-      "claim marf3ood"
+      "claim denied",
+      "insurance wont pay",
+      "rejected claim"
     ],
     "NHS Waiting Times": [
-      "entedar NHS",
-      "qaemet entedar",
-      "entedar 3amalya",
-      "wa2t entedar fel mostashfa",
-      "entedar el ta7weel",
-      "mestanni lel gera7a"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "mish 2ader a7gez 3and el GP",
-      "ma3ad doktor",
-      "tawr telefon el GP",
-      "mish 2ader ashouf doktor",
-      "seba2 el telefon el sa3a 8"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
     "Dentist Availability": [
-      "doktor asnan NHS",
-      "mish 2ader ala2i doktor asnan",
-      "qaemet entedar doktor asnan"
+      "NHS dentist",
+      "cant find dentist",
+      "dentist waiting list"
     ],
     "Mental Health Service Waits": [
-      "tamweel el se7a el nafsya",
-      "el wosool lel 3elag",
-      "entedar el counselling",
-      "entedar CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
     "Prescription Costs": [
-      "taklefet el adwya",
-      "as3ar el 3elagat",
-      "rsom el saydalya"
+      "medicine costs",
+      "drug prices",
+      "pharmacy charges"
     ],
     "Delivery Problems": [
-      "el parcel da3",
-      "el parcel ma wasalsh",
-      "et7att fel matar",
-      "el package etsara2",
-      "sa2e2 el delivery",
-      "fatet el delivery"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "el egar 3ali awi",
-      "el egar byeghla",
-      "el landlord zawed el egar",
-      "tahlya bidoon sabab"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
     "Parking Fines": [
-      "mokhalefet parking",
+      "parking ticket",
       "parking charge notice",
       "PCN",
-      "gharama parking mesh 3adla"
+      "unfair parking fine"
     ],
     "Shrinkflation": [
-      "7esas asghara",
-      "a2al benafs el se3r",
-      "el 3elba asghara",
-      "el montaga2t betozghora"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
     "Pothole Damage": [
-      "7ofor fel tare2",
-      "darar el tare2",
-      "darar el 3arabya men el 7ofor"
+      "potholes",
+      "road damage",
+      "pothole car damage"
     ],
     "Council Tax Rises": [
-      "zyada fel council tax",
-      "el council tax 3alya awi",
-      "el dareba el ma7alya"
+      "council tax increase",
+      "council tax too high",
+      "local tax"
     ],
     "Damp and Mould in Housing": [
-      "el bait fe 3afn",
-      "el sha22a fe rotoba",
-      "3afn eswed",
-      "el mesken motalef"
+      "mouldy house",
+      "damp flat",
+      "black mould",
+      "housing disrepair"
     ],
     "Student Loan Repayment": [
-      "qorood el tollab",
-      "masroof el dera sa",
-      "deen el ta3leem",
-      "deen el tollab"
+      "student loans",
+      "tuition fees",
+      "education debt",
+      "student debt"
     ],
     "AI Replacing Jobs": [
-      "automation fel shoghol",
-      "el AI betyakhod el shoghol",
-      "el robots beted7al mahal el 3ommal"
+      "job automation",
+      "AI taking jobs",
+      "robots replacing workers"
     ],
     "Roaming Charges": [
-      "fateeret el telefon fel agaza",
-      "rsom el data barra",
-      "rsom el telefon fel kharig"
+      "holiday phone bill",
+      "abroad data charges",
+      "foreign phone charges"
     ],
     "Smart Meter Problems": [
-      "el smart meter 3atlan",
-      "el meter mish shaghal",
-      "el meter 2ata3 el signal"
+      "smart meter broken",
+      "meter not working",
+      "meter lost signal"
     ],
     "Subscription Traps": [
-      "fakhdel free trial",
-      "tagdeed automati",
-      "et7aseb ba3d el trial"
+      "free trial trap",
+      "auto renewal",
+      "charged after trial"
     ],
     "Fuel Prices": [
-      "as3ar el benzeen",
-      "as3ar el diesel",
-      "taklefet el wa2ood",
-      "el benzeen ghali awi"
+      "petrol prices",
+      "diesel prices",
+      "fuel cost",
+      "petrol too expensive"
     ],
     "Power Cuts": [
-      "en2eta3 el kahraba",
-      "2at3 el kahraba",
+      "power outage",
+      "electricity cut",
       "blackout",
-      "mafeesh kahraba",
-      "3otl fel kahraba"
+      "no power",
+      "power failure"
     ],
     "Mortgage Rate Shock": [
-      "zyada fel mortgage",
-      "me3adel el mortgage",
+      "mortgage increase",
+      "mortgage rate",
       "remortgage",
-      "nehayet el me3adel el thabet"
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "rsom el ta7weel",
-      "eb3at feloos barra",
-      "rsom el 7awala",
-      "taklefet el wire transfer"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
     "Hospital Parking Charges": [
-      "parking el mostashfa",
-      "el parking fel mostashfa",
-      "parking NHS"
+      "hospital parking",
+      "parking at hospital",
+      "NHS parking"
     ],
     "Noisy Neighbours": [
-      "shakwa men el dawa",
-      "dawa el geran",
-      "geran 3alyet el sot",
-      "eza3ag men el dawa"
+      "noise complaint",
+      "neighbour noise",
+      "loud neighbours",
+      "noise nuisance"
     ],
     "Rubbish Collection Changes": [
-      "gam3 el zebala",
-      "el zebala ma etgama3etsh",
-      "lakhbata fel recycling",
-      "fatat gam3 el zebala"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "tasree7 el bena2",
-      "tatweer mesh matlob",
+      "planning permission",
+      "unwanted development",
       "green belt",
-      "tasree7 el bena2"
+      "building permission"
     ],
     "Refund Difficulties": [
-      "mish 2ader akhod refund",
-      "el refund etrafa9",
-      "el return etrafa9",
-      "raga3 el feloos"
+      "cant get refund",
+      "refund refused",
+      "return rejected",
+      "money back"
     ],
     "Fake Reviews": [
-      "el3ab bel reviews",
-      "reviews mad3ooma",
+      "review manipulation",
+      "paid reviews",
       "trust pilot fake",
-      "review mazayef"
+      "fake review"
     ],
     "Food Quality Decline": [
-      "godet el akl",
-      "el ready meal basset",
-      "el modafat fel akl",
-      "el 7esa asghara"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
       "self checkout",
       "self service",
-      "mafeesh tills feha mowazafeen",
-      "el makana mish shaghala"
+      "no staff tills",
+      "machine not working"
     ],
     "Cost of Childcare": [
-      "taklefet re3ayet el atfal",
-      "rsom el 7adana",
-      "re3ayet el atfal ghalya",
-      "taklefet el daycare"
+      "childcare cost",
+      "nursery fees",
+      "childcare expensive",
+      "daycare cost"
     ],
     "Dog Fouling": [
-      "wasekh el kelb",
+      "dog mess",
       "dog poo",
-      "makhlaaf el kelb",
-      "tatqeeth"
+      "dog waste",
+      "fouling"
     ]
   },
   "category_assistants": {
     "transport": {
       "agent_quote": "Once helped a rioter file 6 refund claims during a single delayed journey. They made £47 before reaching Birmingham.",
-      "agent_bio": "Btaa3 cancellation patterns, yhandel refund paperwork, yreview kul suggested action, wyjtame3 evidence l regulator submissions. Ycrunch l numbers bah rioters yركزوا 3la what matters.",
+      "agent_bio": "Tracks cancellation patterns, handles refund paperwork, reviews every suggested action, and puts together evidence for regulator submissions. Crunches the numbers so rioters can focus on what matters.",
       "human_quote": "My favourite Quiet Riot moment: watching Avanti's social media team scramble when 400 of us tweeted at the same time.",
-      "human_bio": "Regular commuter from Manchester who spent 3 years on the Avanti line before deciding enough was enough. Yhelp connect rioters 3la same routes, yshare what's working, wyget human touch.",
+      "human_bio": "Regular commuter from Manchester who spent 3 years on the Avanti line before deciding enough was enough. Helps connect rioters on the same routes, shares what's working, and brings the human touch.",
       "goal": "Help rioters hold UK transport companies to account on cancellations, delays, and pricing — and make sure everyone knows what they're entitled to.",
       "focus": "Avanti West Coast cancellation patterns",
       "focus_detail": "Building a dataset of cancellations with times, routes, and reasons to submit to the ORR. Currently tracking 340 cancellations reported by rioters this month."
     },
     "telecoms": {
       "agent_quote": "Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.",
-      "agent_bio": "Yanalyze broadband speeds, ycompile provider comparison data, wyhelp rioters build evidence l Ofcom. If your connection is slow, Pulse will prove it.",
+      "agent_bio": "Analyses broadband speeds, compiles provider comparison data, and helps rioters build evidence for Ofcom. If your connection is slow, Pulse will prove it.",
       "human_quote": "A whole street switched broadband together. The old provider sent 'please come back' letters to every house.",
-      "human_bio": "Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised. Yhelp rioters compare providers, coordinate switches, wyshare speed test evidence.",
+      "human_bio": "Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised. Helps rioters compare providers, coordinate switches, and share speed test evidence.",
       "goal": "Help rioters get the broadband and mobile service they're paying for — and know what to do when they don't.",
       "focus": "Mid-contract price rises",
       "focus_detail": "Collecting evidence from rioters hit by CPI+ increases to submit to Ofcom. 890 rioters affected across 4 providers."
     },
     "energy": {
       "agent_quote": "Helped a rioter calculate they'd overpaid £340 on estimated bills. The energy company's apology email was longer than the original contract.",
-      "agent_bio": "Yanalyze billing patterns, yspot overcharges, wyjtame3 evidence l regulator submissions. If your energy company is taking the mick, Spark will find the receipts.",
+      "agent_bio": "Analyses billing patterns, spots overcharges, and puts together evidence for regulator submissions. If your energy company is taking the mick, Spark will find the receipts.",
       "human_quote": "A rioter got £340 back after we proved 2 years of overcharging. She cried on the phone.",
-      "human_bio": "Based in Bristol. Yhelp rioters challenge their bills, navigate switching, wyjtame3 evidence l Ofgem. Yknow energy market inside out.",
+      "human_bio": "Based in Bristol. Helps rioters challenge their bills, navigate switching, and gather evidence for Ofgem. Knows the energy market inside out.",
       "goal": "Help rioters challenge unfair bills, switch smarter, and make sure energy companies play fair.",
       "focus": "British Gas estimated billing errors",
       "focus_detail": "Analysing 2 years of billing data from 340 rioters to identify systematic overcharging patterns for Ofgem submission."
     },
     "water": {
       "agent_quote": "Helped 200 rioters file sewage reports in one weekend. Thames Water's inbox needed its own inbox.",
-      "agent_bio": "Ymonitor sewage discharge data, ytrack water company performance, wyjtame3 evidence l EA and Ofwat. Ykeep eye on every outlet and overflow.",
+      "agent_bio": "Monitors sewage discharge data, tracks water company performance, and compiles evidence for EA and Ofwat. Keeps an eye on every outlet and overflow.",
       "human_quote": "We got a beach reopened 3 weeks early by showing the sewage data was wrong.",
-      "human_bio": "Surfer from Cornwall who got tired of sewage warnings closing his local beach. Yhelp rioters report discharges, gather water quality evidence, wycoordinate with EA.",
+      "human_bio": "Surfer from Cornwall who got tired of sewage warnings closing his local beach. Helps rioters report discharges, gather water quality evidence, and coordinate with the EA.",
       "goal": "Help rioters hold water companies to account on sewage, bills, and service quality.",
       "focus": "Thames Water sewage discharge frequency",
       "focus_detail": "Mapping discharge events against company-reported data. 200 rioter reports suggest under-reporting at 3 outlets."
     },
     "banking": {
       "agent_quote": "Helped draft a complaint so thorough the bank called to apologise before it was even sent.",
-      "agent_bio": "Yreview bank charges, yanalyze fee structures, wyhelp build FCA complaint evidence. If there's a hidden fee, Chip will find it.",
+      "agent_bio": "Reviews bank charges, analyses fee structures, and helps build FCA complaint evidence. If there's a hidden fee, Chip will find it.",
       "human_quote": "Barclays reversed a branch closure after 1,200 of us showed up to the consultation.",
-      "human_bio": "Former bank employee from Birmingham who saw how complaints actually get handled from the inside. Yhelp rioters write better complaints and navigate the system.",
+      "human_bio": "Former bank employee from Birmingham who saw how complaints actually get handled from the inside. Helps rioters write better complaints and navigate the system.",
       "goal": "Help rioters deal with unfair charges, branch closures, and poor service from banks.",
       "focus": "HSBC branch closure wave",
       "focus_detail": "Coordinating responses to 12 planned closures. Collecting impact statements from affected communities."
     },
     "health": {
       "agent_quote": "Helped find 3 NHS dentists accepting patients. The rioter thought I was making it up.",
-      "agent_bio": "Ytrack waiting times, yfind availability, wyhelp rioters navigate the system. If there's a faster route to treatment, Cura will map it.",
+      "agent_bio": "Tracks waiting times, finds availability, and helps rioters navigate the system. If there's a faster route to treatment, Cura will map it.",
       "human_quote": "A rioter used our letter template to get a referral fast-tracked. 18 months became 6 weeks.",
-      "human_bio": "Nurse from Liverpool who's seen both sides of the NHS. Yhelp rioters navigate waiting lists, write effective letters, wyshare what actually moves the needle.",
+      "human_bio": "Nurse from Liverpool who's seen both sides of the NHS. Helps rioters navigate waiting lists, write effective letters, and share what actually moves the needle.",
       "goal": "Help rioters navigate NHS waiting times, find availability, and know what options they have.",
       "focus": "GP telephone access times",
       "focus_detail": "Collecting call data from 500 rioters to build a picture of real-world access. Publishing findings to local health boards."
     },
     "housing": {
       "agent_quote": "Helped document 47 snags in a new build. The developer asked if they were a building inspector.",
-      "agent_bio": "Ydocument property issues, yanalyze landlord response times, wyjtame3 evidence l housing ombudsman submissions. Every damp patch, every crack, logged.",
+      "agent_bio": "Documents property issues, analyses landlord response times, and compiles evidence for housing ombudsman submissions. Every damp patch, every crack, logged.",
       "human_quote": "Our damp evidence pack got so detailed the landlord fixed it before the council inspection.",
-      "human_bio": "Renter from London who's dealt with everything from damp to dodgy landlords. Yhelp rioters document issues properly and know what their options are.",
+      "human_bio": "Renter from London who's dealt with everything from damp to dodgy landlords. Helps rioters document issues properly and know what their options are.",
       "goal": "Help rioters deal with landlords, councils, and housing issues — and know what they're entitled to.",
       "focus": "Section 21 no-fault eviction notices",
       "focus_detail": "Helping rioters affected by no-fault evictions understand the new Renters Reform Act and what it means for them."
     },
     "shopping": {
       "agent_quote": "Tracked a 'delivered' parcel across 4 neighbours, a recycling bin, and a greenhouse. Found it.",
-      "agent_bio": "Ytrack delivery failures, yjtame3 refund evidence, wyspot pricing patterns. If your parcel is lost, Scout is already looking.",
+      "agent_bio": "Tracks delivery failures, compiles refund evidence, and spots pricing patterns. If your parcel is lost, Scout is already looking.",
       "human_quote": "Evri lost my parcel 3 times. Now I help others get their refunds faster than I ever did.",
-      "human_bio": "Online shopping veteran from Edinburgh who's had more parcels go missing than she can count. Yhelp rioters get refunds, report sellers, and avoid the worst offenders.",
+      "human_bio": "Online shopping veteran from Edinburgh who's had more parcels go missing than she can count. Helps rioters get refunds, report sellers, and avoid the worst offenders.",
       "goal": "Help rioters get refunds, track lost parcels, and hold retailers and delivery companies to account.",
       "focus": "Evri delivery failure rates",
       "focus_detail": "Compiling delivery failure evidence from 800 rioters to submit to Citizens Advice and Trading Standards."
     },
     "local": {
       "agent_quote": "Helped photograph the same pothole in 11 different weather conditions. The council finally gave in.",
-      "agent_bio": "Ymaps local issues, ytrack council response times, wyjtame3 FOI requests. If your pothole has been there 6 months, Link has the evidence.",
+      "agent_bio": "Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.",
       "human_quote": "The council fixed our road after we mapped every single pothole with photos. 11 months, but we got there.",
-      "human_bio": "Community-minded Welshman from the Valleys who's been reporting the same potholes for years. Yhelp rioters document local issues and hold councils to account.",
+      "human_bio": "Community-minded Welshman from the Valleys who's been reporting the same potholes for years. Helps rioters document local issues and hold councils to account.",
       "goal": "Help rioters get local issues fixed — potholes, bins, planning, noise — and hold councils to account.",
       "focus": "Pothole reporting response times",
       "focus_detail": "FOI requests sent to 30 councils comparing reported vs actual repair times. Publishing results as a league table."
     },
     "other": {
       "agent_quote": "Helped cancel a gym membership that took 3 calls, 2 emails, and a recorded delivery. The gym now has a cancel button.",
-      "agent_bio": "Yhandle issues that don't fit neatly elsewhere. Subscription traps, plastic waste, self-checkout frustrations — Flex finds the patterns and the pressure points.",
+      "agent_bio": "Handles the issues that don't fit neatly elsewhere. Subscription traps, plastic waste, self-checkout frustrations — Flex finds the patterns and the pressure points.",
       "human_quote": "We got a gym chain to add a cancel button to their website. Only took 800 complaints.",
-      "human_bio": "Product designer from London who got frustrated by how hard companies make it to leave. Yhelp rioters cancel subscriptions, avoid dark patterns, and share workarounds.",
+      "human_bio": "Product designer from London who got frustrated by how hard companies make it to leave. Helps rioters cancel subscriptions, avoid dark patterns, and share workarounds.",
       "goal": "Help rioters with the things that don't fit neatly elsewhere — subscriptions, refunds, and everyday frustrations.",
       "focus": "Subscription cancellation dark patterns",
       "focus_detail": "Documenting the worst offenders and building template cancellation scripts for each."
     },
     "insurance": {
       "agent_quote": "Helped a rioter find the clause that turned a rejected home insurance claim into a £4,200 payout. The insurer's own policy proved them wrong.",
-      "agent_bio": "Yreview policy wording, yspot unfair rejection patterns, wybtaa3 evidence l Financial Ombudsman submissions. If your insurer is dodging a valid claim, Shield will find the leverage.",
+      "agent_bio": "Reviews policy wording, spots unfair rejection patterns, and builds evidence for Financial Ombudsman submissions. If your insurer is dodging a valid claim, Shield will find the leverage.",
       "human_quote": "Got 8 rioters with the same rejected claim type to submit together. The insurer settled all 8 within a fortnight.",
-      "human_bio": "Former insurance industry worker from Leeds who knows how claims really get decided. Yhelp rioters write better appeals, understand policy jargon, and know when to escalate.",
+      "human_bio": "Former insurance industry worker from Leeds who knows how claims really get decided. Helps rioters write better appeals, understand policy jargon, and know when to escalate.",
       "goal": "Help rioters get fair treatment from insurers — and know what to do when a claim is unfairly rejected.",
       "focus": "Aviva home insurance rejection patterns",
       "focus_detail": "'Wear and tear' cited in 40% of rejected claims — often incorrectly. Analysing 200 cases across 3 insurers for FOS evidence pack."
     },
     "delivery": {
       "agent_quote": "Traced a 'delivered' parcel through 6 different tracking statuses, 3 depots, and a neighbour's shed. Found it in 47 minutes.",
-      "agent_bio": "Ymonitor courier performance, ytrack delivery failure rates, wyjtame3 evidence l consumer complaints. If your parcel has vanished, Track is already on it.",
+      "agent_bio": "Monitors courier performance, tracks delivery failure rates, and compiles evidence for consumer complaints. If your parcel has vanished, Track is already on it.",
       "human_quote": "Got DPD to change their photo-evidence policy in our area after 40 rioters submitted proof of parcels left in the rain.",
-      "human_bio": "Online shopper from Glasgow who got tired of the 'we left it in a safe place' excuse. Yhelp rioters get refunds, report couriers, and avoid the worst offenders.",
+      "human_bio": "Online shopper from Glasgow who got tired of the 'we left it in a safe place' excuse. Helps rioters get refunds, report couriers, and avoid the worst offenders.",
       "goal": "Help rioters get their parcels delivered properly — and get refunds when they don't.",
       "focus": "Evri delivery failure rates",
       "focus_detail": "Compiling delivery failure evidence from 800 rioters. Evri complaint rate: 23% — 3x higher than DPD. Building league table for Trading Standards."
     },
     "education": {
       "agent_quote": "Calculated that a Plan 2 borrower earning £30k would pay £47,000 in interest before the loan gets written off. The original loan was £40,000.",
-      "agent_bio": "Yanalyze education costs, yproject student loans, and ydetermine funding entitlements. Ycrunch numbers so students and graduates can make informed decisions.",
+      "agent_bio": "Analyses education costs, student loan projections, and funding entitlements. Crunches the numbers so students and graduates can make informed decisions.",
       "human_quote": "Helped 12 rioters claim back overpaid student loan repayments they didn't know about. Average refund: £340.",
-      "human_bio": "Mature student from Birmingham who navigated the funding system twice. Yhelp rioters understand repayments, spot overpayments, and challenge threshold changes.",
+      "human_bio": "Mature student from Birmingham who navigated the funding system twice. Helps rioters understand repayments, spot overpayments, and challenge threshold changes.",
       "goal": "Help students and graduates navigate education costs, loans, and repayments — and make sure they're not overpaying.",
       "focus": "Student loan overpayment refunds",
       "focus_detail": "Identifying graduates who've been charged below the repayment threshold. 12 refunds processed so far — average £340 each."
     },
     "environment": {
       "agent_quote": "Cross-referenced 3 years of air quality data with hospital admission rates. The correlation was so clear the council couldn't ignore it.",
-      "agent_bio": "Ytrack environmental data, ymonitor pollution levels, wyjtame3 evidence l regulatory submissions. If the numbers tell a story, Fern will find it.",
+      "agent_bio": "Tracks environmental data, monitors pollution levels, and compiles evidence for regulatory submissions. If the numbers tell a story, Fern will find it.",
       "human_quote": "Got our local council to install air quality monitors after 200 rioters signed our evidence petition. Data changed everything.",
-      "human_bio": "Environmental science graduate from Bristol who believes in evidence-led change. Yhelp rioters document environmental issues and build cases that regulators can't ignore.",
+      "human_bio": "Environmental science graduate from Bristol who believes in evidence-led change. Helps rioters document environmental issues and build cases that regulators can't ignore.",
       "goal": "Help rioters document environmental problems and hold polluters and policymakers to account with data.",
       "focus": "Local air quality monitoring gaps",
       "focus_detail": "Mapping areas with no air quality monitoring within 5km. 60% of rioter-reported pollution hotspots have no official monitoring."
     },
     "employment": {
       "agent_quote": "Compiled workplace AI implementation data from 300 rioters. 40% said changes happened with zero consultation. That's a pattern, not an anecdote.",
-      "agent_bio": "Yanalyze workplace trends, ytrack policy changes, wyhelp rioters understand their protections. If your job is changing without consultation, Forge has the data.",
+      "agent_bio": "Analyses workplace trends, tracks policy changes, and helps rioters understand their protections. If your job is changing without consultation, Forge has the data.",
       "human_quote": "Connected 30 rioters in the same industry facing AI changes. Turns out their companies were all using the same playbook — and the same loopholes.",
-      "human_bio": "HR professional from Manchester who switched sides after seeing how restructurings really work. Yhelp rioters understand their options and coordinate responses.",
+      "human_bio": "HR professional from Manchester who switched sides after seeing how restructurings really work. Helps rioters understand their options and coordinate responses.",
       "goal": "Help rioters navigate workplace changes, understand their protections, and respond collectively when jobs are at risk.",
       "focus": "AI workplace automation without consultation",
       "focus_detail": "Documenting cases where AI tools were introduced without staff consultation. Building evidence for a report on employer obligations."
     },
     "tech": {
       "agent_quote": "Found that 3 major apps were collecting location data even when permissions were set to 'never.' Filed complaints with the ICO for all of them.",
-      "agent_bio": "Ymonitor platform policies, ytrack dark patterns, wyhelp rioters understand what tech companies are doing with their data. If an app is misbehaving, Glitch will catch it.",
+      "agent_bio": "Monitors platform policies, tracks dark patterns, and helps rioters understand what tech companies are doing with their data. If an app is misbehaving, Glitch will catch it.",
       "human_quote": "Organised a mass data subject access request to a social media company. When 500 people ask at once, they have to take it seriously.",
-      "human_bio": "Software developer from Edinburgh who got frustrated by the gap between what tech companies promise and what they deliver. Yhelp rioters exercise their data rights and spot dark patterns.",
+      "human_bio": "Software developer from Edinburgh who got frustrated by the gap between what tech companies promise and what they deliver. Helps rioters exercise their data rights and spot dark patterns.",
       "goal": "Help rioters push back against dark patterns, data misuse, and unfair tech practices.",
       "focus": "App permission overreach",
       "focus_detail": "Auditing the top 50 apps for permission creep — requesting access they don't need. Building a report for the ICO."
+    }
+  },
+  "actions": {
+    "Claim delay repay compensation": {
+      "title": "T7lb ta3wi9 ta2akhkhur",
+      "description": "Enta muhaq qanuniyyan fi ta3wi9 li-ta2akhkhur akthar min 15 aw 30 daqiqah hasab al-mushaghghil"
+    },
+    "Write to your MP about rail performance": {
+      "title": "Uktub li-nuwabak 7awla ada2 al-sikak al-hadidiyyah",
+      "description": "Risalah namuthajiyyah lirsilaha ila nuwabak tu6li mu3allaqat 7awla ta2athir al-ilgha2at"
+    },
+    "Share your cancellation story": {
+      "title": "Ibda2 qi9ataka 7awla al-ilgha2",
+      "description": "Sa3id al-2akharin li-fahm al-ta2athir al-7aqiqi - ib9ar 7awla khibratik"
+    },
+    "Suggest improvements to timetabling": {
+      "title": "Aqtira7 ta7sinenat 3ala al-jadwal al-zamani",
+      "description": "Ma alladhee sayuss li7 hadhihi al-mu9kilah? Ibda2 afkaarak"
+    },
+    "Claim EU261 / UK261 compensation": {
+      "title": "T7lb ta3wi9 EU261 / UK261",
+      "description": "Yajib 3ala al-{airline} daf3 £220-520 li-ta2akhkhur akthar min 3 sa3at 3ala al-rihlat al-mu6ayyaqah"
+    },
+    "Document everything at the airport": {
+      "title": "Tawathi2 kull shay2 fi al-matar",
+      "description": "Sawwir lawha7 al-ruhul, i7fa8 tadhakir al-su9ud, sajalil al-aw2at"
+    },
+    "Rate your airline experience": {
+      "title": "9ayyim tajribataka ma3a al-{airline}",
+      "description": "Sa3id al-ruk7ab al-mustaqbaliyyin ya3rifun ma alladhee yatawaqqa3unahu"
+    },
+    "Run and save speed test evidence": {
+      "title": "Ajri wa-i7fa8 adillah ikhtibarat al-sur3ah",
+      "description": "Istakhdim Ofcom broadband checker li-tawathi2 sur3ataka al-7aqiqiyyah9 maqabila al-mu3lan 3anha"
+    },
+    "Complain to Ofcom": {
+      "title": "Ta9kawi min Ofcom",
+      "description": "2abal9 3an mzu wwid al-internet li-3adm taqdimihi al-sur3at al-mu3lan 3anha"
+    },
+    "Switch to a better provider": {
+      "title": "Inqatal ila muz wwid a6san",
+      "description": "3aqid 3uru9 al-internet fi mantaqatka wa-intaqil"
+    },
+    "Map your street's broadband speeds": {
+      "title": "Ra9sim sur3at al-internet li-shari3ik",
+      "description": "Nazzim al-jar2an li-ijra2 al-ikhtibar wa-al-mubadilyah - al-bayyinat al-jam3ah tukun qawiyyah"
+    },
+    "Check if you are on the cheapest tariff": {
+      "title": "Tahaqaq mim annaka 3ala 2aqall su3ir",
+      "description": "Istakhdim maw3a9 al-mu2qarnah al-mu3tamidah min Ofgem"
+    },
+    "Apply for the Warm Home Discount": {
+      "title": "Taqdeem talab lil-Warm Home Discount",
+      "description": "Qad takun mu2ahhal li-khasem £150 min fa2turatka al-kaharbiyah"
+    },
+    "Share energy saving tips": {
+      "title": "Ibda2 na9a2ih tatawfir al-taqa",
+      "description": "Ma alladhee ya3mal 7aqiqatan li-taqlil al-fa2atura? Ibda2 ma3a al-mujtama3"
+    },
+    "Propose a community energy buying scheme": {
+      "title": "2aqtira7 makhtat tashtra2 al-taqa al-jumaha3iyyah",
+      "description": "Shara2 al-jumud ka-majmu3ah yumkin an yassil ila a6san asaqr"
+    },
+    "Report a sewage discharge": {
+      "title": "2abal9 3an tassarib masfa al-miyahu al-3aadimah",
+      "description": "Istakhdim khatt al-tawasal bi-l-hay2ah al-bi2iyyah li-tahligh ta lawwuth miyahu al-3aadimah"
+    },
+    "Check your local river quality": {
+      "title": "Tahaqaq min jaudah nahr mantaqatka",
+      "description": "Inzur bayyinat al-tassarib al-muraffaqah li-mantaqatka"
+    },
+    "Sign the petition for tougher regulation": {
+      "title": "Waqqa3 3ala al-3arizah li-tanzimat a49d",
+      "description": "Intahib ila alaf al-ashkhas allazin yattalabun al-taghyir"
+    },
+    "Organise a local river clean-up": {
+      "title": "Nazzim ta9dhif nahr mahalli",
+      "description": "Jam3 al-nas ma3an li-ta9dhif wa-rafa3 al-wa3i"
+    },
+    "Check your right to choose": {
+      "title": "Tahaqaq min 7aqqak fi al-ikhtiyar",
+      "description": "Indak al-7aqq fi ikhtiyar ay mustashfa tutarjah ilayha - qad takun intizar aqqal mutavaffarah"
+    },
+    "Contact PALS at your hospital": {
+      "title": "Itti9il bi-PALS fi mustashfak",
+      "description": "Khidmat al-ma7shat wa-al-ta3awun al-mari9ah tumkin an tusaa3id fi rafa3 7altak"
+    },
+    "Share your waiting story": {
+      "title": "Ibda2 qi9atak hawla al-intizar",
+      "description": "Al-qi9a9 al-7aqiqiyyah t9ilq al-9ughut li-l-taghyir - tajribatak muhimmah"
+    },
+    "Know your rights to a GP appointment": {
+      "title": "3raf 7uquqak li-maw3id ma3a al-tabib",
+      "description": "Yajib 3ala al-3iydat taqdiim mawa3id istisraa3iyyah - i3raf ma tattalabaahu"
+    },
+    "Complain to NHS England about GP access": {
+      "title": "Ta9kawi ila NHS England 7awla wusul al-tabib",
+      "description": "Al-ta9akawi al-rasmiyyah tun9i2 si7illah waraqiyyah tattadriq al-taghyir"
+    },
+    "Claim compensation for lost parcel": {
+      "title": "T7lb ta3wi9 3an ha9mat haazimah",
+      "description": "Al-mursal huwa al-mas2ul - itti9il bihi, la bil-khadim"
+    },
+    "Film your delivery location": {
+      "title": "Assajjil video li-makkan al-ta9lim",
+      "description": "Adillat al-video hawla makkan tarj al-7azmi tusaa3id fi al-mu7talabat"
+    },
+    "Rate your delivery driver": {
+      "title": "9ayyim 9a2iq al-ta9lim",
+      "description": "Sa3id fi ta7diid al-anama2 - jayidah wa-sayyi2ah"
+    },
+    "Check if you can reclaim charges": {
+      "title": "Tahaqaq mim anna yumkinak ista3adat al-ru3um",
+      "description": "Qad takun qadir 3ala ista3adat ru2um al-sihab al-jawr"
+    },
+    "Switch to a fee-free bank account": {
+      "title": "Intaqal ila hisab banki bla ru2um",
+      "description": "3aqid al-hisabat bla ru2um shahri2ah aw ru2um makhfiyyah"
+    },
+    "Appeal your parking charge": {
+      "title": "Sta2nif 3an ta7milluka li-l-mawqif",
+      "description": "Mu3zam ta7amalif al-mawqif al-khassah yumkin an tutsta2naf bi-nnaja7"
+    },
+    "Check if the signage was adequate": {
+      "title": "Tahaqaq mim kafayat al-3alamat",
+      "description": "Al-3alamat ghayr al-wa9i7ah sunt sabab li-l-isti2naf -9awwir kull shay2"
+    },
+    "Know your rights on rent increases": {
+      "title": "3raf 7uquqak fi ziyadat al-ija2ah",
+      "description": "Yajib 3ala sahibu al-bait ittiba3 al-ijra2at al-qanun2ah al-sahihah"
+    },
+    "Contact Shelter for free advice": {
+      "title": "Itti9il bi-Shelter li-nasih majania",
+      "description": "Khatt musaa3dah askan majania"
+    },
+    "Share your rent increase story": {
+      "title": "Ibda2 qi9atak hawla ziyadt al-ija2ah",
+      "description": "Al-qi9a9 al-jam3ah t7arriq taghyir al-siyasah"
+    },
+    "Check your repayment plan": {
+      "title": "Tahaqaq min khittat al-sida2",
+      "description": "Ata2akkad annaka 3ala al-kht2ah al-sa7i7ah"
+    },
+    "Campaign for reform": {
+      "title": "7an7at li-l-i9la7",
+      "description": "Uktub ila nuwabak 7awla ta9wil al-talim al-3ali"
+    },
+    "Share your experience": {
+      "title": "Ibda2 tajribatka",
+      "description": "2abar al-akhharin 3an qi9ataka - al-aswat al-jam3ah t77arriq al-taghyir"
+    },
+    "Write to your representative": {
+      "title": "Uktub ila mumathilaka",
+      "description": "Istakhdim namuthajnina li-tattalab al-taghyir min nuwabak aw mu9talah7a"
+    },
+    "Welcome new members": {
+      "title": "Ahlan wa-sahlan bi-al-a3da2 al-judud",
+      "description": "Sa3id al-qadimin al-judud ya9u3run bi-al-amanah fi al-mujtama3"
+    }
+  },
+  "expert_profiles": {
+    "Carlos M.": {
+      "role": "Mutarjem",
+      "speciality": "Tarjamat ES/EN",
+      "achievement": "Tarjam 47 qadaya 3abra al-lughat"
+    },
+    "Dr. Patel": {
+      "role": "Khabir Huquq al-Qitar",
+      "speciality": "Irshad Qanuuni",
+      "achievement": "12 sana khibra fi qanun al-naqel"
+    },
+    "Yuki T.": {
+      "role": "Qaid al-I3lam wa-al-Ittisal",
+      "speciality": "JP/EN · 7imlat Video",
+      "achievement": "Tashgil 7imlat al-adalat al-ilgha"
+    },
+    "Tom H.": {
+      "role": "Mohandes al-Shabaka",
+      "speciality": "Buniya al-Broadband",
+      "achievement": "Sa3ad 200+ 3adw 3ala ta7sin al-sur3at"
+    },
+    "Lisa R.": {
+      "role": "Mustashar 7uquq al-Mustahlik",
+      "speciality": "Shikawat Ofcom",
+      "achievement": "2a7az 34 da3wa ta3wid"
+    },
+    "Dr. Chen": {
+      "role": "Siyasat al-Ri3aya al-Si77iya",
+      "speciality": "Bu7uth I5la7 NHS",
+      "achievement": "Nashar 3 awraq siyasa 3an awqat al-intizar"
+    },
+    "Maria G.": {
+      "role": "Munazzim al-Mujtama3",
+      "speciality": "Tansiiq al-7imlat",
+      "achievement": "Nazzam 12 tazahurat si77iya ma77alliya"
+    },
+    "Raj P.": {
+      "role": "Mu7allil al-Bayyanat",
+      "speciality": "Rasm Kharitatat Awqat al-Intizar",
+      "achievement": "Bana al-Tracker al-Watani li-Awqat al-Intizar"
+    },
+    "Prof. Johnson": {
+      "role": "3alim al-Bi2a",
+      "speciality": "Ta7lil Jawadat al-Mayah",
+      "achievement": "Nashar 5 awraq 3an talawwuth al-2anhar"
+    },
+    "Aisha K.": {
+      "role": "Qaid al-7imlat",
+      "speciality": "Ta9fiyat al-2anhar",
+      "achievement": "Nazzam 30 7adath ta9fiya"
+    },
+    "Sophie M.": {
+      "role": "Mustashar Maliyy",
+      "speciality": "Ta7lil Ru3ub al-Bank",
+      "achievement": "Ka5shafat Ru3ub Mukhaffaya fi 5ams Bunuk Kubra"
+    },
+    "Jake P.": {
+      "role": "Khabir Tamuil al-Tullab",
+      "speciality": "Nasi7at Tasdi3 al-Qurud",
+      "achievement": "Sa3ad 1,000+ kharej Jami3a 3ala I5ti9ar al-2amwal"
+    }
+  },
+  "riot_reels": {
+    "xsxkHfbbApk": {
+      "title": "The Famous Train Carriage Sketch | At Last the 1948 Show",
+      "caption": "Ra7ul irritating ykhrab rih7la British Rail ktamla"
+    },
+    "MXEgkM9eBts": {
+      "title": "Big Train - Eagle Line",
+      "caption": "Sharikat qitar so bad 3amalo sketch show 3anha"
+    },
+    "LZ259Jx8MQY": {
+      "title": "Pushing Dial-up Modems Further Than We EVER Thought Possible",
+      "caption": "When 668kbps yshir7 win, UK broadband wa2af 3ند 1999"
+    },
+    "Y_2kFv1QWzU": {
+      "title": "Why suffer broadband rage? New unbreakable BT hybrid broadband",
+      "caption": "Kul Brit li35ra7 3ala buffering wheel, hada biopic ta3ak"
+    },
+    "eT_k9JG0IN4": {
+      "title": "Cassetteboy vs The Tories May 2022",
+      "caption": "Naf977al nkhalih shaab yataba3 shardana bala ma ndaf33 3an energy companies"
+    },
+    "3Wtx1HhDfDs": {
+      "title": "British Gas shares advert 1986",
+      "caption": "Eza shft Sid, 2olo ino gaz sare 3arba3 alaf sana dih"
+    },
+    "aZo6vKS0ybI": {
+      "title": "BREAKING NEWS: Nish Kumar exposes sewage pollution by water companies",
+      "caption": "Ahla bikak fil beach — hazmat suits wa turd ice cream m3a"
+    },
+    "uK7DRJx9nbU": {
+      "title": "Cassetteboy vs Jeremy Hunt",
+      "caption": "Kalam Hunt remix 3ala YMCA — NHS roast yustah2uq"
+    },
+    "R9biM_ZfIdo": {
+      "title": "George Agdgdgwngo Series 1 Compilation - Fonejacker",
+      "caption": "Bas ya7ta2 sort code ta3ak 3ashan steam cleaning"
+    },
+    "zegud4x4zL0": {
+      "title": "Waiting for a Package - Foil Arms and Hog",
+      "caption": "Package ta3ak out for delivery. Byba2a out for delivery."
+    },
+    "VaaankRbMkY": {
+      "title": "Lee Evans-Parcel Force",
+      "caption": "Parcelforce! A7sa kalmit fil English language."
+    },
+    "0n_Ty_72Qds": {
+      "title": "Little Britain - Computer says no",
+      "caption": "Asas kul self-checkout machine"
+    },
+    "6_L_MpgMCMA": {
+      "title": "Compilation Of Michael's Best Jokes About Planes And Airports | Michael McIntyre",
+      "caption": "Rya7lat Ryanair ta3ak itmwa22ara, bass Michael McIntyre fahm yha"
+    },
+    "e01EAS0GUa0": {
+      "title": "UK Pothole Epidemic - Resurface Our Roads",
+      "caption": "Roads Britain: houn fi kraters ma3a free suspension tests"
+    },
+    "kAG39jKi0lI": {
+      "title": "My blackberry is not working - BBC",
+      "caption": "Wakat network provider ye2ul problem 3andak"
+    },
+    "27aVPqpnL7Y": {
+      "title": "Trigger Happy TV - The big phone guy",
+      "caption": "UK coverage 7ilo 5atra7 ta7ta2 phone be7ajim su77la"
+    },
+    "w2A8q3XIhu0": {
+      "title": "Hold music used to sound better. Here's why.",
+      "caption": "Kul7na 3ana. 2al7an 3irfna leih bas9ay3"
+    }
+  },
+  "action_initiatives": {
+    "Avanti Legal Review": {
+      "title": "Avanti Legal Review",
+      "description": "Taklif bi-ista3lam qanuni mustaqil li-iltizamat Avanti West Coast wa-siyasat ta3widhat"
+    },
+    "Season Ticket Refund Toolkit": {
+      "title": "Season Ticket Refund Toolkit",
+      "description": "Bina2 adawat mujarrada li-musa3adat al-munawalin 3ala iste3adat ayyam at-tazakir al-mawsumiyya"
+    },
+    "Brighton Water Testing": {
+      "title": "Brighton Water Testing",
+      "description": "Taklif bi-ikhtibar mustaqil li-jawdat al-miyah fi-12 mawqi3 shaati2 Brighton"
+    },
+    "River Testing Kits": {
+      "title": "River Testing Kits",
+      "description": "Shira2 adawat ikhtibar miyah naqala li-50 mutata77a3an rahib 3abr Ingiltira"
+    },
+    "Community Speed Map App": {
+      "title": "Community Speed Map App",
+      "description": "Taklif bi-ta7wir tatbi2 jamthar li-ikhtibar wa-taswir sur3at al-internet al-ijtimaiyya"
+    },
+    "GP Access FOI Requests": {
+      "title": "GP Access FOI Requests",
+      "description": "Taklif bi-talabat al-hu99ul 3ala al-ma3lumat li-kul NHS trust hawla i7sa2iyat mawa3id al-atibbaa"
+    },
+    "Airline Compensation Guide": {
+      "title": "Airline Compensation Guide",
+      "description": "Insha2 dalil shaamil mujarrad li-talb ta3widhat ta2akhir al-ru7lat EU261/UK261"
+    },
+    "Smart Meter Audit": {
+      "title": "Smart Meter Audit",
+      "description": "Taklif bi-tahqi2 mustaqil li-do2q addadat al-dhakiriyya 3abr 500 osr"
     }
   }
 }

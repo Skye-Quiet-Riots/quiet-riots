@@ -1,876 +1,1200 @@
 {
   "locale": "fa-Latn",
   "categories": {
-    "Transport": "Haml o Naghl",
-    "Telecoms": "Mokhaberat",
-    "Banking": "Banki",
-    "Health": "Salamat",
-    "Education": "Amoozesh",
-    "Environment": "Mohit Zist",
-    "Energy": "Enerji",
-    "Water": "Ab",
-    "Insurance": "Bimeh",
-    "Housing": "Maskan",
-    "Shopping": "Kharid",
-    "Delivery": "Ersaal",
-    "Local": "Mahalli",
-    "Employment": "Eshteghaal",
-    "Tech": "Teknoloji",
-    "Other": "Sayer"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Loghaaye Ghataee Shode",
-      "description": "Logha az seda ya ta'khir-e shaded ba khabar-e na-kafi ya jabraan-e na-kafi"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Gheymat-e Belit-e Logha",
-      "description": "Keraye raahahan kheyli goran, afzaayesh-e boland-tar az tavalod-e saali, gheymat-gozari-ye gheyr-hamsooz"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Ta'khir-e Paarvaz",
-      "description": "Paarvazha ta'khir-shodeh ya loghaaye ghataee, mowasalat-e badeh, doshvari dar talab-e jabraan"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Chanteh-ha-ye Gom Shode",
-      "description": "Chanteh-ha ke be manzel-e maghsad naresedan, paygiri-ye arom, jabraan-e na-kafi"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Qati' Kardane Khatt-e Avtoboos",
-      "description": "Khatthaye loghaaye ghataee, taqdid-e baromad, javamee-ye rosteei az destan-e avtoboos mahroom mishavand"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Khesarat-e Chahshanbah-ha",
-      "description": "Chahshanbah-ha ke khodroha va baasiklit-savarane dar khatar hastand, shahr-darane arom dar tamir"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Jarime-ha-ye Parkinge Khosusi",
-      "description": "Hozine-ha-ye gheyr-adil-e parkinge khosusi, jabraan-e tond, alame-ha-ye gom-kunandeh"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Gheymat-e Sookht",
-      "description": "Gheymat-e benzin va dizel kheyli boland, kam shodan-e arom vaghti kharije sookht paeen miad"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Sorat-e Internet",
-      "description": "Sorat-e internet kheyli kam-tar az آن چه tashtahar shode va pardakht shode"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Monfaqat-e Beesignal",
-      "description": "Beesignal dar khaneh, mahall-e kar, ya khatt-e havaee-ye hamrah"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Afzaayesh-e Gheymat dar Miane-ye Gharardad",
-      "description": "Gozayesh-e telfon, internet va TV ke dar jareyan-e gharardad-e ghabz shonde"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Vaqt-e Entezaar bar Khat",
-      "description": "Sa'at ha dar entezaar baraye Sohbet ba yek fard"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Doshvari dar Loghaaye Aboonemandhaye",
-      "description": "Sherkatha ekhtetear-e sakht mikunand baraye loghaaye ya azma-ye aboonemandhaye"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Hozine-ha-ye Roaming",
-      "description": "Hozine-ha-ye giri-ye mobail-e gheyre montazar dar safar-e khareji, afzaayesh-e gheymat ba post-Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Hozine-ha-ye Sura-ye Enerzhi",
-      "description": "Sura-ye gaz va bargh ke gheyr-ghabel-e tahammol ast, gheymat-ghap hanooz kheyli boland"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Sura-ha-ye Enerzhi-ye Gheyrat-Zaaf",
-      "description": "Miqdar-ha-ye tahmine-shodeh ghaylan, ziyadeh giri, khata-ha-ye sura keshi"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Afzaayesh-e Sura-ye Aab",
-      "description": "Sura-ye aab ke kheyli billand mishavad va kamyat-e khidmat padeen miad"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Fazeolat dar Roodkhane-ha",
-      "description": "Sherkatha-ye aab khame ham inja fazeolat-e khaam dar avshan va sahele daryaye"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Qat'-e Bargh",
-      "description": "Qate'-e tadaad-e bargh, arom dar bar-gozari, jabraan-e na-kafi"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Moshkilat-e Smart Meter",
-      "description": "Smart meter-ha kar nakunand, az dast-e kar aftad pas az tablid-e barnameh-i"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Bastan-e Shobe-ha-ye Bank",
-      "description": "Shobe-ha-ye bank-e mahalle ke bashmichavand, javamee az dstan rahi baraye dastressi nadaran"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Hozine-ha-ye Penhani-ye Bank",
-      "description": "Hozine-ha-ye na-montazar baraye overdraft, taraf-e kharji, nigaresh-e hesab"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Ziyan-ha-ye Taghalob va Taloot",
-      "description": "Bank-ha ke az dast-dahi-ye gorbagha va jalb-e push az tool-e pezeershi enkar mikunand"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Red Kardane Talab-ha-ye Bimeh",
-      "description": "Talabha ke bar asas-e joziyyat red mishavand pas az sal-ha-ye parde haye bimeh"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Sok-e Nezhat-e Geroh",
-      "description": "Payan-e nerkh-e sabat va enteghal be nerkh-e motazzaker-e kheyli boland-tar"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Hozine-ha-ye Enteghal-e Khareji",
-      "description": "Hozine-ha-ye ziyadeh va nerkh-e badbakhti-ye badi baraye enteghal-e pule beyn-ol-melli"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Vaqt-e Entezaar-e NHS",
-      "description": "Entezaar-e chand-ma'ah ya chand-sal baraye ameliyyat va molaqat-ha-ye motekhassis"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Dastressi be Molaqat-ha-ye GP",
-      "description": "Natavan rah be entezar-e GP, entezaar-e hafteh-ha"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Dastres-i be Dand-Pezesk",
-      "description": "Na-momken-e peydan kardane yek dand-pezesk-e NHS ke beygaran-e noo ghobool konad"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Entezaar-e Khidmat-e Salamat-e Zehani",
-      "description": "Entezaar-e chand-ma'ah baraye darmane va hemayat-e salamat-e zehani"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Hozine-ha-ye Noskhe",
-      "description": "Hozine-ye gozide kheyli boland dar Engelestan, akhtelaf dar jahan-e UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Hozine-ha-ye Parkinge Bimaarestaan",
-      "description": "Pardakht baraye parkinge dar bimaarestaan dar hale bemari ya didan-e bemar"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Afzaayesh-e Ejaarah",
-      "description": "Ejaarah-e khosusi ke far-tar az tavalod-e saali boland mir-avad, ta'dhib-e tabeed bi-gonah"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Afzaayesh-e Maliyat-e Shavra",
-      "description": "Afzaayesh-e saliane-ye maliyat-e shavra dar hale kherad-shod-e khidmat-ha"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Hamassayeh-ha-ye Soltusan",
-      "description": "Azyaaye adavat-e tavaval, shavra-ha-ye arom dar amal, ta'sir bar salamat-e zehani"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Taghyirat-e Jame'-aavari-ye Zibale",
-      "description": "Kam-shod-e jame' aavari, qavaanin-e gom-kunandeh baraye baaztavzib, sanador-ha-ye por"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Sou-estef'al-e Ejaze-ye Barnameh Rizi",
-      "description": "Abalegh-e na-khasteh ghobool, sabze-ye sabz dar ta'tish, javame be tavajooh nadand"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Roshoobeh va Kabirok dar Maskan",
-      "description": "Molk-dar va anjoman-ha-ye maskan ke roshoobeh va kabirok ra tamir nakunand"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Moshkilat-e Taslim",
-      "description": "Baste-ha gom shodeh, bakhsh bar baran, alame-ye taslim shode vali daryaft nashode"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Kamtar Kardan-e Andazeh",
-      "description": "Mahsoole ke kamtar mishavad dar hale ke gheymat-ha same ya kheyli boland mishavad"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Doshvari dar Bakhsh Gheymat",
-      "description": "Sherkatha ke bakhsh-e gheymat va baztahran-e kheyli moskhel mikunand"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Neqd-o-Essi-ha-ye Jali",
-      "description": "Natavan be neqd-o-essi-ha-ye online etemmad kord, neqd-o-essi-ha-ye jali-ye misbeh gom-kunandeh"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Dami-ha-ye Aboonemandhaye",
-      "description": "Azma-ye azadi ke be pardakhti tabdil mishavand bedun-e ekhtiyar-e roshan, sakhte loghaaye"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Padeen Amdan-e Keyfiyat-e Ghaza",
-      "description": "Ghaza-ye amaadeh keyfiyat-e khrab-tar, bekhsh-ha-ye kamtar, ezafat-e beshtar"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Naaramandi-ye Safre-ye Khode",
-      "description": "Mashine-ha-ye khode-khadmat na-paayedar, jaye karz-ha-ye bashar"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Hozine-ha-ye Negahdari-ye Koudak",
-      "description": "Hozine-ha-ye negahdari-ye kodak kheyli goran, hozine kardane sommeddi ra mehhood mikonad"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Bazpardakht-e Qarz-e Taahsil",
-      "description": "Forooghte-aye ke baraye dahsale bazpardakht mikunand, avaz-e nedal va baha-ye sood"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Kalagh-e Sag",
-      "description": "Kalagh-e sag dar faza-ha-ye savahi, baghche-ha va piadaro ke pofak nashode"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "Jaye Giri-ye AI az Kar",
-      "description": "Andisheh-ye na-aram dar mored-e aql-e mossanahi ke kar-ha ra otomatize mikonad bedun-e hemayat-e enteghal"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "operatöri räyli-ye UK ke khidmat dahi West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "operatöri räyli-ye UK ke khidmat dahi London va janub"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "operatöri räyli-ye UK ke khidmat dahi shomäl-e Engelestan"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "operatöri räyli-ye masaafe-dar-o UK"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "operatöri räyli-ye UK ke khidmat dahi masir-haye trans-Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "operatöri räyli-ye UK ke khidmat dahi East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "masir-haye havai kam-hozineh-ye Orupai"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "masir-haye havai kam-hozineh-ye UK"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "masir-haye havai-ye ostandi-ye UK"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "sherkat-e ta'tilat va safar"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "farahan-de bozorg-e pahlove-band va telefonhaye mobil-e UK"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "farahan-de pahlove-band, TV, va mobil-e UK"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "farahan-de TV, pahlove-band, va mobil-e UK"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "sherkat-e jahani-ye telecoms ke dar UK markaz darat"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "operatöri shabake-ye mobil-e UK"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "farahan-de pahlove-band va telefon-e UK"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "tamino-konande-ye enerji-ye UK"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "tamino-konande-ye enerji-ye UK"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "tamino-konande-ye enerji-ye UK (Faranse-ye maleko)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "tamino-konande-ye enerji-ye tajdidpazir-e UK"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "tamino-konande-ye enerji-ye UK"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "tamino-konande-ye enerji-ye UK (Almani-ye maleko)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "sherkat-e ab va fa*-ab baraye London va Thames Valley"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "sherkat-e ab baraye janub-e Engelestan"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "sherkat-e ab baraye shomäl-gharb-e Engelestan"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "sherkat-e ab baraye Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "sherkat-e ab baraye East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "bank-e bornämevarni-ye Britania"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "khidmat-e banking va mali-ye jahani"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "bank-e retail va tejari-ye UK"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "goruh-e banking-e UK"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "bank-e UK (Espania-ye maleko)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "banking-e dijital va fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "sherkat-e bime va khidmat-e mali-ye UK"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "bime-ye mashin va khane-ye UK"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "sherkat-e bime-ye UK"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "tejarat-e elektroniki va tech-e jahani"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "khidmat-e posti-ye UK"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "khidmat-e taslim-e paket-e UK (sabeghan Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "khidmat-e taslim-e paket-e UK"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "zanjire supermarket-e UK"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "zanjire supermarket-e UK"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Khadamat-e Salamati-ye Melli baraye Engelestan"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "khidmat-haye dandanpazeshki-ye NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "farahan-de khadamat-e salamati-ye khosusi"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "dastgahan-haye hokumati-ye mahalli-ye UK"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "sherkat-e sasazeshan-e khane-ye UK"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "platform-e ajevari-ye online-ye UK"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "khidmat-e stream-koni-ye tafrih"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "sherkat-e technoloji"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "ghatar cancel shode",
-      "ghatar cancel",
-      "cancel shodan ghatar",
-      "ghatarha kar nemikone",
-      "cancel shodan rah ahan",
-      "service cancel shode",
-      "taakhir ghatar",
-      "ghatar dir karde",
-      "ghatarha dir hastan",
-      "ghatar dir",
-      "taakhir rah ahan"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
     "Train Ticket Prices": [
-      "nerkh blit rah ahan",
-      "gheymat blit",
-      "ghatarha geroon",
-      "nerkh blit ghatar"
+      "rail fares",
+      "ticket costs",
+      "expensive trains",
+      "train fares"
     ],
     "Flight Delays": [
-      "parvaz dir karde",
-      "havapeyma dir karde",
-      "parvaz cancel shode",
-      "taakhir foroodgah",
-      "gir karde tu foroodgah",
-      "parvaz dir"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "chamedan gom shode",
-      "chamadan gom shode",
-      "chamedan naresid",
-      "chamadan nadarim",
-      "chamedan ru navare nist",
-      "chamedan gom shode vasate airline"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
     "Bus Route Cuts": [
-      "otobus hazf shode",
-      "kam kardan masir",
-      "bastane khat otobus"
+      "bus cuts",
+      "route reductions",
+      "bus service closures"
     ],
     "Broadband Speed": [
-      "internet kond",
-      "wifi kond",
-      "wifi konde",
-      "sorat internet",
-      "internet kar nemikone",
-      "darhale buffer",
-      "internet ghat migire",
-      "wifi ghat migire"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "signal nist",
-      "antendeh nist",
-      "signal mobile nist",
-      "manteghe bedune signal"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "afzayesh gheymat vasate gharardad",
-      "afzayesh gheymat tu gharardad",
-      "afzayesh vasate gharardad"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "mantazeram",
-      "daram sare khat montazeram",
-      "nemitonam beresam",
-      "kasi javab nemide",
-      "saf telephone",
-      "markaz tamas"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "nemishe cancel kard",
-      "cancel kardan sakht",
-      "cancel kardan subscription",
-      "lagve abooman"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "ghobuz gaz kheyli bala",
-      "ghobuz bargh",
-      "gheymat energy",
-      "hazineye garmayesh",
-      "faghr energy",
-      "tavanam energy ro pardakht kard"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "ghobuz energy eshtebah",
-      "tekhmiin ghalat",
-      "bish az had pardakht kardam baraye energy"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
     "Water Bill Increases": [
-      "nerkh ab",
-      "hazineye ab",
-      "ghobuz ab kheyli bala"
+      "water rates",
+      "water charge",
+      "water bill too high"
     ],
     "Sewage in Rivers": [
-      "rikhtan fazelab",
-      "fazelab khom",
-      "fazelab ru sahel",
-      "aloodegie ab",
-      "sareriz fazelab",
-      "sareriz fazelab moshtarak"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "hazine gheyre montazereh",
-      "hazine penhoon",
-      "hazine gheyr mantezereh",
-      "hazine overdraft",
-      "hazine bank"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
     "Fraud and Scam Losses": [
-      "kalah khordam",
-      "kalahbardari bank",
-      "kalahbardari push payment",
-      "kalahbardari taiid shode"
+      "scammed",
+      "bank fraud",
+      "push payment scam",
+      "authorised fraud"
     ],
     "Bank Branch Closures": [
-      "baste shodan shobe",
-      "bank mahali dare mibande",
-      "bank nazdik nist"
+      "branch shutdowns",
+      "local bank closing",
+      "no bank nearby"
     ],
     "Insurance Claim Rejections": [
-      "claim rad shod",
-      "bimeh pul nemide",
-      "claim rad shode"
+      "claim denied",
+      "insurance wont pay",
+      "rejected claim"
     ],
     "NHS Waiting Times": [
-      "entezare NHS",
-      "liste entezar",
-      "entezare amal",
-      "vaghte entezare bimarestaoon",
-      "entezare erja",
-      "entezar baraye jarrahi"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "nemitonam nobat GP begiram",
-      "nobate doktor",
-      "saf telephone GP",
-      "nemitonam doktor bebinam",
-      "jangale saat 8 sobh"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
     "Dentist Availability": [
-      "dandoonpezeshke NHS",
-      "nemitonam dandoonpezeshk peyda konam",
-      "liste entezare dandoonpezeshk"
+      "NHS dentist",
+      "cant find dentist",
+      "dentist waiting list"
     ],
     "Mental Health Service Waits": [
-      "bodeje salamate ravani",
-      "dastresi be therapy",
-      "entezare counselling",
-      "entezare CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
     "Prescription Costs": [
-      "gheymate daro",
-      "gheymate daroo",
-      "hazineye darokhune"
+      "medicine costs",
+      "drug prices",
+      "pharmacy charges"
     ],
     "Delivery Problems": [
-      "baste gom shode",
-      "baste ersal nashode",
-      "zire baroon gozashte shode",
-      "baste dozidi shode",
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
       "delivery driver",
-      "delivery ro az dast dadam"
+      "missed delivery"
     ],
     "Rent Increases": [
-      "ejare kheyli bala",
-      "ejare dare bala mire",
-      "sahebekhoone dare ejare ro bala mibare",
-      "ekhraj bedune dalil"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
     "Parking Fines": [
-      "jarime parking",
+      "parking ticket",
       "parking charge notice",
       "PCN",
-      "jarime parking naedalane"
+      "unfair parking fine"
     ],
     "Shrinkflation": [
-      "meghdar kamtar shode",
-      "kamtar baraye hamin gheymat",
-      "bastebandi kuchiktar",
-      "mahsulat kuchiktar shode"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
     "Pothole Damage": [
-      "chalehaye jadde",
-      "khesarate jadde",
-      "asib az chalehaye jadde"
+      "potholes",
+      "road damage",
+      "pothole car damage"
     ],
     "Council Tax Rises": [
-      "afzayesh maliyat shahr",
-      "maliyat shahr kheyli bala",
-      "maliyat mahalli"
+      "council tax increase",
+      "council tax too high",
+      "local tax"
     ],
     "Damp and Mould in Housing": [
-      "khoone porkepek",
-      "aparteman namdaar",
-      "kepeke siah",
-      "kharabi maskan"
+      "mouldy house",
+      "damp flat",
+      "black mould",
+      "housing disrepair"
     ],
     "Student Loan Repayment": [
-      "vame daneshjo",
-      "shahrie daneshgah",
-      "badehi tahsili",
-      "badehi daneshjo"
+      "student loans",
+      "tuition fees",
+      "education debt",
+      "student debt"
     ],
     "AI Replacing Jobs": [
-      "otomasion kar",
-      "AI dare kara ro mibare",
-      "robotha daran jaye kargara ro migirand"
+      "job automation",
+      "AI taking jobs",
+      "robots replacing workers"
     ],
     "Roaming Charges": [
-      "ghobuz telephone tu safar",
-      "hazineye data tu kharej",
-      "hazineye telephone kharej"
+      "holiday phone bill",
+      "abroad data charges",
+      "foreign phone charges"
     ],
     "Smart Meter Problems": [
-      "smart meter khrab shode",
-      "kontor kar nemikone",
-      "kontor signal ro az dast dade"
+      "smart meter broken",
+      "meter not working",
+      "meter lost signal"
     ],
     "Subscription Traps": [
-      "dame azmoone raiigan",
-      "tajdid khodkar",
-      "bad az trial charge shod"
+      "free trial trap",
+      "auto renewal",
+      "charged after trial"
     ],
     "Fuel Prices": [
-      "gheymate benzin",
-      "gheymate diesel",
-      "gheymate sukht",
-      "benzin kheyli geroon"
+      "petrol prices",
+      "diesel prices",
+      "fuel cost",
+      "petrol too expensive"
     ],
     "Power Cuts": [
-      "ghat bargh",
-      "bargh ghat shode",
-      "khamoshi",
-      "bargh nist",
-      "kharabi bargh"
+      "power outage",
+      "electricity cut",
+      "blackout",
+      "no power",
+      "power failure"
     ],
     "Mortgage Rate Shock": [
-      "afzayesh mortgage",
-      "nerkh mortgage",
+      "mortgage increase",
+      "mortgage rate",
       "remortgage",
-      "tamoom shodan nerkh sabit"
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "hazineye transfer",
-      "ferestadan pul be kharej",
-      "hazineye havale",
-      "hazineye transfer bein almellali"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
     "Hospital Parking Charges": [
-      "parking bimarestan",
-      "parking tu bimarestan",
-      "parking NHS"
+      "hospital parking",
+      "parking at hospital",
+      "NHS parking"
     ],
     "Noisy Neighbours": [
-      "shekayat az saro seda",
-      "saro sedaye hamsaye",
-      "hamsayeha por saro sedan",
-      "mozahemiate saro seda"
+      "noise complaint",
+      "neighbour noise",
+      "loud neighbours",
+      "noise nuisance"
     ],
     "Rubbish Collection Changes": [
-      "jam kardan ashghal",
-      "satlha jam nashode",
-      "sardargoomi bazayaft",
-      "satl jam nashode"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "mojaveze sakht",
-      "tose ghayre morednazar",
-      "kamarband sabz",
-      "mojaveze sakhtoman"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
     "Refund Difficulties": [
-      "nemitonam pulo pas begiram",
-      "pas dadan pul rad shod",
-      "bargesht rad shod",
-      "pas dadan pul"
+      "cant get refund",
+      "refund refused",
+      "return rejected",
+      "money back"
     ],
     "Fake Reviews": [
-      "dastkaride review",
-      "reviewhaye puli",
+      "review manipulation",
+      "paid reviews",
       "trust pilot fake",
-      "review fake"
+      "fake review"
     ],
     "Food Quality Decline": [
-      "keyfiiate ghaza",
-      "ghazaye amade badtar shode",
-      "mavade ezafe ghaza",
-      "meghdar kuchiktar"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
       "self checkout",
-      "khodkar service",
-      "sandoogh ba kargar nist",
-      "machine kar nemikone"
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
     "Cost of Childcare": [
-      "hazineye negahdari koodak",
-      "shahrie mehmoonkhoone koodak",
-      "negahdari koodak geroon",
-      "hazineye daycare"
+      "childcare cost",
+      "nursery fees",
+      "childcare expensive",
+      "daycare cost"
     ],
     "Dog Fouling": [
-      "kherafe sag",
-      "goh sag",
-      "zobalehe sag",
-      "aloodegi sag"
+      "dog mess",
+      "dog poo",
+      "dog waste",
+      "fouling"
     ]
   },
   "category_assistants": {
     "transport": {
-      "agent_quote": "Yeki az rioter-ha komak kard ke 6 ta da'va-ye bāzpardākht dar yek safar-e takh'ir shode file kone. Ānhā £47 qabel az resiidan be Birmingham kamāl kard.",
-      "agent_bio": "Alg-hā-ye loghv-e qatār rā peek mikon, kāghaz-hā-ye bāzpardākht rā medevireh mikonad, har pahnehāde'ye moqtrah rā barresi mikonad, va barā-ye ārāye Regulatory mā'elomāt jam' mikon. Ădāde hā rā hisāb mikonad tā rioter-hā be cheeze-hāye mohemm tmarkoz konan.",
-      "human_quote": "Mofazzal-e man az Quiet Riot: didan-e tim-e social media-ye Avanti vaqti 400 nafar-e mā hamzamān tweet kordim.",
-      "human_bio": "Mosafer-e montazam-e Manchester ke 3 sāl dar khāt-e Avanti bud qabel az inke hāzm shavad. Komak mikonad ke rioter-hā dar hamān khāt-hā jam' shavand, share mikonad che chiz'hā kār mikon, va jānebi-ye ensāni-ye amr rā miāvard.",
-      "goal": "Komak dādan be rioter-hā barā-ye hold khordan be sherkathā-ye transport-e UK dar ba'b-e loghv, takh'ir, va qimat - va motmaen shavad ke hame chiz-e ke estehqāq dārand mi-donand.",
-      "focus": "Alg-hā-ye loghv-e Avanti West Coast",
-      "focus_detail": "Sakht-e dataset-e loghv'hā bā vaqt, khāt, va esbāb barā-ye ersel be ORR. Dar hāl-e peyghiri-ye 340 ta loghv ke dar in māh az rioter-hā report shode."
+      "agent_quote": "Once helped a rioter file 6 refund claims during a single delayed journey. They made £47 before reaching Birmingham.",
+      "agent_bio": "Tracks cancellation patterns, handles refund paperwork, reviews every suggested action, and puts together evidence for regulator submissions. Crunches the numbers so rioters can focus on what matters.",
+      "human_quote": "My favourite Quiet Riot moment: watching Avanti's social media team scramble when 400 of us tweeted at the same time.",
+      "human_bio": "Regular commuter from Manchester who spent 3 years on the Avanti line before deciding enough was enough. Helps connect rioters on the same routes, shares what's working, and brings the human touch.",
+      "goal": "Help rioters hold UK transport companies to account on cancellations, delays, and pricing — and make sure everyone knows what they're entitled to.",
+      "focus": "Avanti West Coast cancellation patterns",
+      "focus_detail": "Building a dataset of cancellations with times, routes, and reasons to submit to the ORR. Currently tracking 340 cancellations reported by rioters this month."
     },
     "telecoms": {
-      "agent_quote": "Speed test barā-ye 200 rioter anjām dād. Miangin 18 Mbps bud. Ānhā barā-ye 65 pāyegi mikardand.",
-      "agent_bio": "Sorāt-e broadband rā tahlil mikonad, dade-hā-ye moqāyese-ye provider rā jam' mikonad, va komak mikonad be rioter-hā barā-ye sāz-e mā'elomāt barā-ye Ofcom. Agar ettesāl-e shomā ārom ast, Pulse sābet mikonad.",
-      "human_quote": "Tamām-e khiyābān hamrāh broadband taghiir dād. Provider-e qadim letter-hā-ye 'lotfan bargard' barā-ye har khāneye sent kard.",
-      "human_bio": "London-neshan-e fehn-āvār ke az pardākht barā-ye sorāt-e broadband ke aslan pāyān neshod khaste shod. Komak mikonad be rioter-hā tā provider-hā rā moqāyese konand, hamrāh switch konand, va mā'elomāt-e speed test share konand.",
-      "goal": "Komak dādan be rioter-hā tā broadband va service-e mobile rā ke pardākht mikānand dāsht bashnd - va bedonand che kār konand vaqti ke nayāyand.",
-      "focus": "Afsāyesh-e qimat dar vasat-e ghārar",
-      "focus_detail": "Jam'āvari-ye mā'elomāt az rioter-hāyi ke bā afsāyesh-e CPI+ mowāje shodand barā-ye ersel be Ofcom. 890 rioter dar 4 provider āsib-dideh."
+      "agent_quote": "Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.",
+      "agent_bio": "Analyses broadband speeds, compiles provider comparison data, and helps rioters build evidence for Ofcom. If your connection is slow, Pulse will prove it.",
+      "human_quote": "A whole street switched broadband together. The old provider sent 'please come back' letters to every house.",
+      "human_bio": "Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised. Helps rioters compare providers, coordinate switches, and share speed test evidence.",
+      "goal": "Help rioters get the broadband and mobile service they're paying for — and know what to do when they don't.",
+      "focus": "Mid-contract price rises",
+      "focus_detail": "Collecting evidence from rioters hit by CPI+ increases to submit to Ofcom. 890 rioters affected across 4 providers."
     },
     "energy": {
-      "agent_quote": "Komak kard be yek rioter tā hesāb konad ke £340 bish az hād dar bill-hā-ye estimated pardākht karde. Email-e ozr-khāhi-ye energy company az original ghārar dvaltar bud.",
-      "agent_bio": "Alg-hā-ye bill rā tahlil mikonad, overpayment-hā rā detect mikonad, va barā-ye ersel be regulator mā'elomāt jam' mikonad. Agar energy company-ye shomā nakh'r mikonad, Spark mā'elomāt rā peyda mikonad.",
-      "human_quote": "Yek rioter £340 bāzgāsht gābt pas az inke 2 sāl overpayment sābet shod. Dar telefon geriye kard.",
-      "human_bio": "Bristol-makān ke komak mikonad be rioter-hā tā bill-hāye khod rā challenge konand, switch rā navigate konand, va barā-ye Ofgem mā'elomāt jam' konand. Bāzār-e energy rā khub mi-shenāsad.",
-      "goal": "Komak dādan be rioter-hā tā bill-hā-ye nā-monfāyet challenge konand, hekmāt-tar switch konand, va motmaen shavand ke energy company-hā drost amal konand.",
-      "focus": "Khatā-hā-ye bill-e estimated-e British Gas",
-      "focus_detail": "Tahlil-e dade-hā-ye bill az 2 sāl az 340 rioter barā-ye shnāsāyesh-e alg-hā-ye overpayment-e systematic barā-ye ersel be Ofgem."
+      "agent_quote": "Helped a rioter calculate they'd overpaid £340 on estimated bills. The energy company's apology email was longer than the original contract.",
+      "agent_bio": "Analyses billing patterns, spots overcharges, and puts together evidence for regulator submissions. If your energy company is taking the mick, Spark will find the receipts.",
+      "human_quote": "A rioter got £340 back after we proved 2 years of overcharging. She cried on the phone.",
+      "human_bio": "Based in Bristol. Helps rioters challenge their bills, navigate switching, and gather evidence for Ofgem. Knows the energy market inside out.",
+      "goal": "Help rioters challenge unfair bills, switch smarter, and make sure energy companies play fair.",
+      "focus": "British Gas estimated billing errors",
+      "focus_detail": "Analysing 2 years of billing data from 340 rioters to identify systematic overcharging patterns for Ofgem submission."
     },
     "water": {
-      "agent_quote": "Komak kard be 200 rioter tā sewage report dar yek vikand file konand. Inbox-e Thames Water niyāz be inbox-e khod dasht.",
-      "agent_bio": "Akhraj-e sewage rā monitor mikonad, āmulkard-e water company rā track mikonad, va barā-ye EA va Ofwat mā'elomāt jam' mikonad. Bar har outlet va overflow nazar negāh midar.",
-      "human_quote": "Beach rā 3 hafteh zudtar bāz kardim bā neshān-dadan-e inke sewage data ghāt bud.",
-      "human_bio": "Serfer-e Cornwall ke az sewage warning'hāye bāz-kardan-e beach-e khodash khaste shod. Komak mikonad be rioter-hā tā sewage-hā report konand, mā'elomāt-e water quality jam' konand, va bā EA hamāhengi konand.",
-      "goal": "Komak dādan be rioter-hā tā water company-hā rā hold khordan dar ba'b-e sewage, bill, va khetmat-e service.",
-      "focus": "Fravāni-ye akhraj-e sewage-ye Thames Water",
-      "focus_detail": "Mapping-e akhraj event'hā dar moqābel-e dade-hā-ye company-reported. 200 report az rioter peyhnehād mikonad under-reporting dar 3 outlet."
+      "agent_quote": "Helped 200 rioters file sewage reports in one weekend. Thames Water's inbox needed its own inbox.",
+      "agent_bio": "Monitors sewage discharge data, tracks water company performance, and compiles evidence for EA and Ofwat. Keeps an eye on every outlet and overflow.",
+      "human_quote": "We got a beach reopened 3 weeks early by showing the sewage data was wrong.",
+      "human_bio": "Surfer from Cornwall who got tired of sewage warnings closing his local beach. Helps rioters report discharges, gather water quality evidence, and coordinate with the EA.",
+      "goal": "Help rioters hold water companies to account on sewage, bills, and service quality.",
+      "focus": "Thames Water sewage discharge frequency",
+      "focus_detail": "Mapping discharge events against company-reported data. 200 rioter reports suggest under-reporting at 3 outlets."
     },
     "banking": {
-      "agent_quote": "Komak kard tā complaint-i rā draft kone ke cherā'ye bank barā-ye ozr khāhi tāleb telefon kard qabel az inke send shavad.",
-      "agent_bio": "Bank charge-hā rā barresi mikonad, sāxtemān-e fee rā tahlil mikonad, va komak mikonad tā mā'elomāt-e complaint-e FCA sakht shavad. Agar fee-ye penhān hast, Chip peyda mikonad.",
-      "human_quote": "Barclays branch closure-e khod rā pas negāh gāsht pas az inke 1,200 nafar-e mā dar consultation hāzer shodim.",
-      "human_bio": "Kārmand-e sabq-e bank az Birmingham ke az dākhel dîde ast chetor complaint'hā vāgh'ān handle mishan. Komak mikonad be rioter-hā tā complaint'hā-ye behtar write konand va system rā navigate konand.",
-      "goal": "Komak dādan be rioter-hā tā bā charge-hā-ye nā-monfāyet, branch closure, va poor service az bank'hā rāfetār konnand.",
-      "focus": "Mowj-e branch closure-ye HSBC",
-      "focus_detail": "Hamāhengi-ye response barā-ye 12 ta closure az pish. Jam'āvari-ye impact statement az communities-e āsib-dideh."
+      "agent_quote": "Helped draft a complaint so thorough the bank called to apologise before it was even sent.",
+      "agent_bio": "Reviews bank charges, analyses fee structures, and helps build FCA complaint evidence. If there's a hidden fee, Chip will find it.",
+      "human_quote": "Barclays reversed a branch closure after 1,200 of us showed up to the consultation.",
+      "human_bio": "Former bank employee from Birmingham who saw how complaints actually get handled from the inside. Helps rioters write better complaints and navigate the system.",
+      "goal": "Help rioters deal with unfair charges, branch closures, and poor service from banks.",
+      "focus": "HSBC branch closure wave",
+      "focus_detail": "Coordinating responses to 12 planned closures. Collecting impact statements from affected communities."
     },
     "health": {
-      "agent_quote": "Komak kard tā 3 ta NHS dentist peyda konand ke patient bepazir konand. Rioter fekr kard mān dāruq migam.",
-      "agent_bio": "Waiting time-hā rā track mikonad, availability rā peyda mikonad, va komak mikonad be rioter-hā tā system rā navigate konand. Agar masir-e sari'tar hast, Cura naqshe mikonad.",
-      "human_quote": "Yek rioter az letter template-e mā استفاده kard tā referral fast-track shavad. 18 māh 6 hafte shod.",
-      "human_bio": "Parvarda az Liverpool ke her doh taraf-e NHS rā dîde ast. Komak mikonad be rioter-hā tā waiting list navigate konand, letter-hā-ye effective write konand, va bā cheeze-hāyi ke vāgh'ān kār mikonad share konand.",
-      "goal": "Komak dādan be rioter-hā tā NHS waiting time-hā navigate konand, availability peyda konand, va option-hāye khod rā bedonand.",
-      "focus": "Sorāt-e aksес-e telefoni-ye GP",
-      "focus_detail": "Jam'āvari-ye call data az 500 rioter barā-ye sāxtan-e tasvir-e real-world access. Enteshār-e yāfteh-hā be health board-hā-ye local."
+      "agent_quote": "Helped find 3 NHS dentists accepting patients. The rioter thought I was making it up.",
+      "agent_bio": "Tracks waiting times, finds availability, and helps rioters navigate the system. If there's a faster route to treatment, Cura will map it.",
+      "human_quote": "A rioter used our letter template to get a referral fast-tracked. 18 months became 6 weeks.",
+      "human_bio": "Nurse from Liverpool who's seen both sides of the NHS. Helps rioters navigate waiting lists, write effective letters, and share what actually moves the needle.",
+      "goal": "Help rioters navigate NHS waiting times, find availability, and know what options they have.",
+      "focus": "GP telephone access times",
+      "focus_detail": "Collecting call data from 500 rioters to build a picture of real-world access. Publishing findings to local health boards."
     },
     "housing": {
-      "agent_quote": "Komak kard tā 47 ta snag dar yek new build document kone. Developer pors kard āyā man building inspector hastam.",
-      "agent_bio": "Masāel-e property rā document mikonad, surāt-e response-e landlord rā tahlil mikonad, va barā-ye housing ombudsman submission mā'elomāt jam' mikonad. Har damp patch, har crack, log shode.",
-      "human_quote": "Evidence pack-e damp-e mā cherā'ye detail bud ke landlord qabel az council inspection fix kard.",
-      "human_bio": "Renter az London ke bā hame cheeze az damp tā landlord-hā-ye dodgy rāfetār karde. Komak mikonad be rioter-hā tā masāel rā dorrost document konand va option-hāye khod rā bedonand.",
-      "goal": "Komak dādan be rioter-hā tā bā landlord'hā, council'hā, va masāel-e housing rāfetār konand - va bedonand estehqāq-e khod chist.",
-      "focus": "Notice-hā-ye eviction-e no-fault Section 21",
-      "focus_detail": "Komak be rioter-hāyi ke bā eviction-hā-ye no-fault āsib-dideh tā Renters Reform Act rā befahmand va ma'nā-ye ān chist."
+      "agent_quote": "Helped document 47 snags in a new build. The developer asked if they were a building inspector.",
+      "agent_bio": "Documents property issues, analyses landlord response times, and compiles evidence for housing ombudsman submissions. Every damp patch, every crack, logged.",
+      "human_quote": "Our damp evidence pack got so detailed the landlord fixed it before the council inspection.",
+      "human_bio": "Renter from London who's dealt with everything from damp to dodgy landlords. Helps rioters document issues properly and know what their options are.",
+      "goal": "Help rioters deal with landlords, councils, and housing issues — and know what they're entitled to.",
+      "focus": "Section 21 no-fault eviction notices",
+      "focus_detail": "Helping rioters affected by no-fault evictions understand the new Renters Reform Act and what it means for them."
     },
     "shopping": {
-      "agent_quote": "Parcel-i rā track kardam ke 'delivered' ālamāt dāsht dar 4 neighbor, yek recycle bin, va yek greenhouse. Peyda kardam.",
-      "agent_bio": "Delivery failure-hā rā track mikonad, mā'elomāt-e refund jam' mikonad, va alg-hā-ye qimat rā detect mikonad. Agar parcel-e shomā gone hast, Scout hamzamān dar joste-jo hast.",
-      "human_quote": "Evri parcel-e mān 3 bār gom kard. Hālā komak mikonad be digaron tā refund rā sari'tar dāsht bashnd.",
-      "human_bio": "Online shopping veteran az Edinburgh ke az parcel'hā-ye gom shode bīsh tar az in ke hesāb kone. Komak mikonad be rioter-hā tā refund dāsht bashnd, seller-hā rā report konand, va worst offender-hā rā avoid konand.",
-      "goal": "Komak dādan be rioter-hā tā refund dāsht bashnd, parcel-hā-ye gom track konand, va retailer'hā va delivery company-hā rā hold khordan.",
-      "focus": "Surāt-e failure-e delivery-ye Evri",
-      "focus_detail": "Jam'āvari-ye mā'elomāt-e delivery failure az 800 rioter barā-ye ersel be Citizens Advice va Trading Standards."
+      "agent_quote": "Tracked a 'delivered' parcel across 4 neighbours, a recycling bin, and a greenhouse. Found it.",
+      "agent_bio": "Tracks delivery failures, compiles refund evidence, and spots pricing patterns. If your parcel is lost, Scout is already looking.",
+      "human_quote": "Evri lost my parcel 3 times. Now I help others get their refunds faster than I ever did.",
+      "human_bio": "Online shopping veteran from Edinburgh who's had more parcels go missing than she can count. Helps rioters get refunds, report sellers, and avoid the worst offenders.",
+      "goal": "Help rioters get refunds, track lost parcels, and hold retailers and delivery companies to account.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "Compiling delivery failure evidence from 800 rioters to submit to Citizens Advice and Trading Standards."
     },
     "local": {
-      "agent_quote": "Komak kard tā hamān pothole rā dar 11 ta weather condition fotografe kone. Council sāren dād.",
-      "agent_bio": "Masāel-e local rā map mikonad, response time-hā-ye council rā track mikonad, va FOI request'hā jam' mikonad. Agar pothole-e shomā 6 māh injā hast, Link mā'elomāt rā dārad.",
-      "human_quote": "Council rāh-e mā rā fix kard pas az inke tamām-e pothole'hā rā bā foto map kardim. 11 māh, vali sākhtan kardam.",
-      "human_bio": "Community-minded Welsh az Valleys ke sāl'hā ast ke hamān pothole'hā rā report mikonad. Komak mikonad be rioter-hā tā masāel-e local document konand va council'hā rā hold khordan.",
-      "goal": "Komak dādan be rioter-hā tā masāel-e local fix shavand - pothole'hā, bin'hā, planning, noise - va council'hā rā hold khordan.",
-      "focus": "Surāt-e response-e pothole reporting",
-      "focus_detail": "FOI request'hā barā-ye 30 council tāyfān kardan-e reported vs actual repair time. Enteshār-e result'hā be onvān-e league table."
+      "agent_quote": "Helped photograph the same pothole in 11 different weather conditions. The council finally gave in.",
+      "agent_bio": "Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.",
+      "human_quote": "The council fixed our road after we mapped every single pothole with photos. 11 months, but we got there.",
+      "human_bio": "Community-minded Welshman from the Valleys who's been reporting the same potholes for years. Helps rioters document local issues and hold councils to account.",
+      "goal": "Help rioters get local issues fixed — potholes, bins, planning, noise — and hold councils to account.",
+      "focus": "Pothole reporting response times",
+      "focus_detail": "FOI requests sent to 30 councils comparing reported vs actual repair times. Publishing results as a league table."
     },
     "other": {
-      "agent_quote": "Komak kard tā gym membership rā cancel kone ke 3 call, 2 email, va yek recorded delivery gereft. Gym hālā cancel button dārad.",
-      "agent_bio": "Masāel-i rā handle mikonad ke neat nist. Subscription trap'hā, plastic waste, self-checkout frustration'hā - Flex alg-hā rā peyda mikonad va pressure point'hā.",
-      "human_quote": "Yek gym chain rā motā'essed kardim tā cancel button be website-e khod ezāfe konand. 800 complaint'hā gereft.",
-      "human_bio": "Product designer az London ke az khaste shavand'ye in hast ke company'hā chhod-o-rafte cherā sakht mi-konand. Komak mikonad be rioter-hā tā subscription cancel konand, dark pattern'hā avoid konand, va workaround share konand.",
-      "goal": "Komak dādan be rioter-hā bā cheeze-hāyi ke neat nist - subscription'hā, refund'hā, va everyday frustration'hā.",
-      "focus": "Dark pattern-hā-ye subscription cancellation",
-      "focus_detail": "Document kardan-e worst offender'hā va template cancellation script barā-ye har yek."
+      "agent_quote": "Helped cancel a gym membership that took 3 calls, 2 emails, and a recorded delivery. The gym now has a cancel button.",
+      "agent_bio": "Handles the issues that don't fit neatly elsewhere. Subscription traps, plastic waste, self-checkout frustrations — Flex finds the patterns and the pressure points.",
+      "human_quote": "We got a gym chain to add a cancel button to their website. Only took 800 complaints.",
+      "human_bio": "Product designer from London who got frustrated by how hard companies make it to leave. Helps rioters cancel subscriptions, avoid dark patterns, and share workarounds.",
+      "goal": "Help rioters with the things that don't fit neatly elsewhere — subscriptions, refunds, and everyday frustrations.",
+      "focus": "Subscription cancellation dark patterns",
+      "focus_detail": "Documenting the worst offenders and building template cancellation scripts for each."
     },
     "insurance": {
-      "agent_quote": "Komak kard be yek rioter tā clause-i peyda kone ke rejected home insurance claim rā be £4,200 payout tabdil kard. Policy-e khod-e insurer sābet kard ānhā ghāt bāshnd.",
-      "agent_bio": "Policy wording rā barresi mikonad, unfair rejection pattern-hā rā detect mikonad, va barā-ye Financial Ombudsman submission mā'elomāt jam' mikonad. Agar insurer-e shomā dārah valid claim rā dodge konad, Shield leverage peyda mikonad.",
-      "human_quote": "8 rioter bā hamān rejected claim type rā connect kardam ke hamrāh submit konand. Insurer hamāh 8 tā dar 2 hafte settlement dād.",
-      "human_bio": "Sabq-e ādin-e insurance az Leeds ke bedonad claim'hā vāgh'ān cherā decide mishan. Komak mikonad be rioter-hā tā appeal'hā behtar write konand, policy jārgon rā befahmand, va bedonand kay escalate konand.",
-      "goal": "Komak dādan be rioter-hā tā fair treatment az insurer'hā - va bedonand che kār konand vaqti ke claim nā-monfāyet reject shavad.",
-      "focus": "Alg-hā-ye rejection-e home insurance-ye Aviva",
-      "focus_detail": "'Wear and tear' dar 40% az rejected claim'hā - aghlab nā-dorrost. Tahlil-e 200 case dar 3 insurer barā-ye evidence pack-e FOS."
+      "agent_quote": "Helped a rioter find the clause that turned a rejected home insurance claim into a £4,200 payout. The insurer's own policy proved them wrong.",
+      "agent_bio": "Reviews policy wording, spots unfair rejection patterns, and builds evidence for Financial Ombudsman submissions. If your insurer is dodging a valid claim, Shield will find the leverage.",
+      "human_quote": "Got 8 rioters with the same rejected claim type to submit together. The insurer settled all 8 within a fortnight.",
+      "human_bio": "Former insurance industry worker from Leeds who knows how claims really get decided. Helps rioters write better appeals, understand policy jargon, and know when to escalate.",
+      "goal": "Help rioters get fair treatment from insurers — and know what to do when a claim is unfairly rejected.",
+      "focus": "Aviva home insurance rejection patterns",
+      "focus_detail": "'Wear and tear' cited in 40% of rejected claims — often incorrectly. Analysing 200 cases across 3 insurers for FOS evidence pack."
     },
     "delivery": {
-      "agent_quote": "Parcel-i rā trace kardam ke 'delivered' dar 6 different tracking status, 3 depot, va shed-e neighbor. 47 daqiqeh peyda kardam.",
-      "agent_bio": "Āmulkard-e courier rā monitor mikonad, delivery failure rate-hā rā track mikonad, va barā-ye consumer complaint mā'elomāt jam' mikonad. Agar parcel-e shomā gone hast, Track hamzamān jar hast.",
-      "human_quote": "DPD rā motā'essed kardim tā photo-evidence policy-e khod dar area-ye mā taghiir konand pas az inke 40 rioter proof az parcel'hā dar bārun submit kardand.",
-      "human_bio": "Online shopper az Glasgow ke az excuse-ye 'bā safe place gozāsht-im' khaste shod. Komak mikonad be rioter-hā tā refund dāsht bashnd, courier-hā rā report konand, va worst offender-hā rā avoid konand.",
-      "goal": "Komak dādan be rioter-hā tā parcel'hā-ye khod dorrost deliver shavand - va refund dāsht bashnd vaqti ke nayāyand.",
-      "focus": "Surāt-e failure-e delivery-ye Evri",
-      "focus_detail": "Jam'āvari-ye mā'elomāt-e delivery failure az 800 rioter. Evri complaint rate: 23% - 3 bar bīsh az DPD. Sakht-e league table barā-ye Trading Standards."
+      "agent_quote": "Traced a 'delivered' parcel through 6 different tracking statuses, 3 depots, and a neighbour's shed. Found it in 47 minutes.",
+      "agent_bio": "Monitors courier performance, tracks delivery failure rates, and compiles evidence for consumer complaints. If your parcel has vanished, Track is already on it.",
+      "human_quote": "Got DPD to change their photo-evidence policy in our area after 40 rioters submitted proof of parcels left in the rain.",
+      "human_bio": "Online shopper from Glasgow who got tired of the 'we left it in a safe place' excuse. Helps rioters get refunds, report couriers, and avoid the worst offenders.",
+      "goal": "Help rioters get their parcels delivered properly — and get refunds when they don't.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "Compiling delivery failure evidence from 800 rioters. Evri complaint rate: 23% — 3x higher than DPD. Building league table for Trading Standards."
     },
     "education": {
-      "agent_quote": "Hesāb kardam ke Plan 2 borrower ke £30k dar sāl kamāl mikonad £47,000 fāyede qabel az in ke loan delete shavad pardākht mikonad. Original loan £40,000 bud.",
-      "agent_bio": "Education cost-hā rā tahlil mikonad, student loan projection'hā rā analyze mikonad, va funding entitlement'hā rā peyda mikonad. Ădād rā hesāb mikonad tā student'hā va graduate'hā informed decision bgirand.",
-      "human_quote": "Komak kardam be 12 rioter tā overpaid student loan repayment'hā claim back konand ke nemidānestam. Miāngin refund: £340.",
-      "human_bio": "Mature student az Birmingham ke funding system rā 2 bār navigate kard. Komak mikonad be rioter-hā tā repayment'hā befahmand, overpayment detect konand, va threshold change challenge konand.",
-      "goal": "Komak dādan be student'hā va graduate'hā tā education cost'hā, loan'hā, va repayment'hā navigate konand - va motmaen shavand ke bish az had pardākht nakonand.",
-      "focus": "Refund-hā-ye overpayment-e student loan",
-      "focus_detail": "Shnāsāyesh-e graduate'hāyi ke zir-e repayment threshold charge shodand. 12 refund processed - miāngin £340 har yek."
+      "agent_quote": "Calculated that a Plan 2 borrower earning £30k would pay £47,000 in interest before the loan gets written off. The original loan was £40,000.",
+      "agent_bio": "Analyses education costs, student loan projections, and funding entitlements. Crunches the numbers so students and graduates can make informed decisions.",
+      "human_quote": "Helped 12 rioters claim back overpaid student loan repayments they didn't know about. Average refund: £340.",
+      "human_bio": "Mature student from Birmingham who navigated the funding system twice. Helps rioters understand repayments, spot overpayments, and challenge threshold changes.",
+      "goal": "Help students and graduates navigate education costs, loans, and repayments — and make sure they're not overpaying.",
+      "focus": "Student loan overpayment refunds",
+      "focus_detail": "Identifying graduates who've been charged below the repayment threshold. 12 refunds processed so far — average £340 each."
     },
     "environment": {
-      "agent_quote": "Cross-reference kardam 3 sāl dade-hā-ye air quality bā hospital admission rate'hā. Correlation cherā'ye clear bud ke council nemitānest ignore kone.",
-      "agent_bio": "Environmental data rā track mikonad, pollution level'hā monitor mikonad, va barā-ye regulatory submission mā'elomāt jam' mikonad. Agar ădād story bego-yan mikonad, Fern peyda mikonad.",
-      "human_quote": "Council rā motā'essed kardim tā air quality monitor-hā instal konand pas az inke 200 rioter evidence petition rā sign kardand. Data hame cheez taghiir dād.",
-      "human_bio": "Environmental science graduate az Bristol ke be evidence-led change bāvar mikonad. Komak mikonad be rioter-hā tā environmental issue'hā document konand va case-hā sakht konand ke regulator'hā nemitāvānand ignore konand.",
-      "goal": "Komak dādan be rioter-hā tā environmental problem'hā document konand va polluter'hā va policymaker'hā rā bā data hold khordan.",
-      "focus": "Gap-hā-ye monitoring-e local air quality",
-      "focus_detail": "Mapping-e area'hāyi ke monitoring-e air quality dar 5km nadārand. 60% az pollution hotspot'hā-ye rioter-reported official monitoring nadārand."
+      "agent_quote": "Cross-referenced 3 years of air quality data with hospital admission rates. The correlation was so clear the council couldn't ignore it.",
+      "agent_bio": "Tracks environmental data, monitors pollution levels, and compiles evidence for regulatory submissions. If the numbers tell a story, Fern will find it.",
+      "human_quote": "Got our local council to install air quality monitors after 200 rioters signed our evidence petition. Data changed everything.",
+      "human_bio": "Environmental science graduate from Bristol who believes in evidence-led change. Helps rioters document environmental issues and build cases that regulators can't ignore.",
+      "goal": "Help rioters document environmental problems and hold polluters and policymakers to account with data.",
+      "focus": "Local air quality monitoring gaps",
+      "focus_detail": "Mapping areas with no air quality monitoring within 5km. 60% of rioter-reported pollution hotspots have no official monitoring."
     },
     "employment": {
-      "agent_quote": "Workplace AI implementation data az 300 rioter jam' kardam. 40% goftand taghiir'hā bā zero consultation eshā shodand. In pattern hast, na anecdote.",
-      "agent_bio": "Workplace trend'hā rā tahlil mikonad, policy change'hā track mikonad, va komak mikonad be rioter-hā tā protection'hāye khod rā befahmand. Agar job-e shomā consultation bakhsh taghiir mikonad, Forge dade-hā dārad.",
-      "human_quote": "30 rioter dar hamān industry facing AI change rā connect kardam. Shāyed company'hāye ānhā hamāh hamān playbook va hamān loophole'hā rā استفاده mikardand.",
-      "human_bio": "HR professional az Manchester ke side taghiir dād pas az didan-e inke restructuring'hā vāgh'ān cherā kār mikonad. Komak mikonad be rioter-hā tā option'hāye khod befahmand va response'hā hamrāh coordinate konand.",
-      "goal": "Komak dādan be rioter-hā tā workplace change'hā navigate konand, protection'hāye khod rā befahmand, va vaqti ke job'hā risk dārand hamrāh respond konand.",
-      "focus": "AI workplace automation bedun-e consultation",
-      "focus_detail": "Document kardan-e case'hāyi ke AI tool'hā bedun-e staff consultation introduce shodand. Sakht-e report dar ba'b-e employer obligation'hā."
+      "agent_quote": "Compiled workplace AI implementation data from 300 rioters. 40% said changes happened with zero consultation. That's a pattern, not an anecdote.",
+      "agent_bio": "Analyses workplace trends, tracks policy changes, and helps rioters understand their protections. If your job is changing without consultation, Forge has the data.",
+      "human_quote": "Connected 30 rioters in the same industry facing AI changes. Turns out their companies were all using the same playbook — and the same loopholes.",
+      "human_bio": "HR professional from Manchester who switched sides after seeing how restructurings really work. Helps rioters understand their options and coordinate responses.",
+      "goal": "Help rioters navigate workplace changes, understand their protections, and respond collectively when jobs are at risk.",
+      "focus": "AI workplace automation without consultation",
+      "focus_detail": "Documenting cases where AI tools were introduced without staff consultation. Building evidence for a report on employer obligations."
     },
     "tech": {
-      "agent_quote": "Peyda kardam ke 3 major app location data jam' mikārand hattā vaqti ke permission'hā 'never' set astān. Complaint barā-ye hamāh ba ICO file kardam.",
-      "agent_bio": "Platform policy'hā monitor mikonad, dark pattern'hā track mikonad, va komak mikonad be rioter-hā tā befahmand tech company'hā bā dade-hā-ye ānhā chikār mikonand. Agar app misbehave konad, Glitch catch mikonad.",
-      "human_quote": "Mass data subject access request barā-ye yek social media company organize kardam. Vaqti 500 nafar hamzamān ask konand, ānhā majbur'ānd seriously take konand.",
-      "human_bio": "Software developer az Edinburgh ke az gap bain-e moqā'alāt-e tech company va delivery-ye ānhā khaste shod. Komak mikonad be rioter-hā tā data right'hāye khod exercise konand va dark pattern'hā detect konand.",
-      "goal": "Komak dādan be rioter-hā tā against dark pattern'hā, data misuse, va unfair tech practice'hā push konand.",
+      "agent_quote": "Found that 3 major apps were collecting location data even when permissions were set to 'never.' Filed complaints with the ICO for all of them.",
+      "agent_bio": "Monitors platform policies, tracks dark patterns, and helps rioters understand what tech companies are doing with their data. If an app is misbehaving, Glitch will catch it.",
+      "human_quote": "Organised a mass data subject access request to a social media company. When 500 people ask at once, they have to take it seriously.",
+      "human_bio": "Software developer from Edinburgh who got frustrated by the gap between what tech companies promise and what they deliver. Helps rioters exercise their data rights and spot dark patterns.",
+      "goal": "Help rioters push back against dark patterns, data misuse, and unfair tech practices.",
       "focus": "App permission overreach",
-      "focus_detail": "Audit-e top 50 app barā-ye permission creep - requesting access ke niyāz nadārand. Sakht-e report barā-ye ICO."
+      "focus_detail": "Auditing the top 50 apps for permission creep — requesting access they don't need. Building a report for the ICO."
+    }
+  },
+  "actions": {
+    "Claim delay repay compensation": {
+      "title": "Talabe tazyif va javanan tazyif",
+      "description": "Shoma qanonan hoghoghi tazyif baraye taakhir bish az 15 ya 30 daghighe dar asaas operater darid"
+    },
+    "Write to your MP about rail performance": {
+      "title": "Neveshtan be nemdegane shoma darbare amal-karde rah ahan",
+      "description": "Nemune neveshteh baraye ferestadan be nemdegane shoma ke ta'sire logham shodan ra barjaste mikonad"
+    },
+    "Share your cancellation story": {
+      "title": "Hamsazi kardan dastan logham shodan shoma",
+      "description": "Komekan be fahmide ta'sire vaghei — tajarobe khod ra nashr konid"
+    },
+    "Suggest improvements to timetabling": {
+      "title": "Pishnahad behbudi baraye jadvale zaman",
+      "description": "Che chiz vaghean in moshkil ra hal mikonad? Fikarhaye khod ra hamrahi konid"
+    },
+    "Claim EU261 / UK261 compensation": {
+      "title": "Talabe tazyif EU261 / UK261",
+      "description": "Havapaimahat bayad £220-520 baraye taakhir bish az 3 sa'at dar parvazhaye shartbandi parzir konand"
+    },
+    "Document everything at the airport": {
+      "title": "Musta'nedhasazi hame chiz dar fara'odan",
+      "description": "Akhas az sandoghaye harkat, hefz karde boarding pass ha, yaddashte zaman ha"
+    },
+    "Rate your airline experience": {
+      "title": "Amtiaz dadan tajarobe havapaimahat shoma",
+      "description": "Komekan be mosafere ayande ta beshanasand che chiz montazir shavand"
+    },
+    "Run and save speed test evidence": {
+      "title": "Ejra va sabthasazi sabet dovvomi sora'at",
+      "description": "Estefe'ade az Ofcom broadband checker baraye musta'nede sora'ate vaghei shoma nisbat be e'lan shode"
+    },
+    "Complain to Ofcom": {
+      "title": "Shakayat be Ofcom",
+      "description": "Gozareshe provider broadband shoma baraye naferestadan sora'ate e'lan shode"
+    },
+    "Switch to a better provider": {
+      "title": "Tabdil be provider behtar",
+      "description": "Moqayese kardan peshanehaye broadband dar mantaqe khod va tabdil"
+    },
+    "Map your street's broadband speeds": {
+      "title": "Negashte karde sora'ate broadband khiyaban khod",
+      "description": "Tanzim-e hamchenan baraye test kardan va hamrahi kardan — dadeha jamahi ghavi ast"
+    },
+    "Check if you are on the cheapest tariff": {
+      "title": "Bakhsh kardan ke آya dar arzan tarin tariff hastid",
+      "description": "Estefe'ade az saythaye moghayese moravar shode Ofgem"
+    },
+    "Apply for the Warm Home Discount": {
+      "title": "Edalame baraye Warm Home Discount",
+      "description": "Shoma momkene varize dasht baraye £150 tankhah elektrisiteh khod"
+    },
+    "Share energy saving tips": {
+      "title": "Hamrahi kardan nogahdashtaye sandoruye enerzhi",
+      "description": "Che chiz vaghean kaar mikonad baraye kaham karde hozine ha? Hamrahi kardan ba jamee"
+    },
+    "Propose a community energy buying scheme": {
+      "title": "Pishnahad brnameh kharidi enerzhi jamahi",
+      "description": "Ghavvate kharidi jamahi be onvane guruhe momkene sebebe dastrehahi behtar shavad"
+    },
+    "Report a sewage discharge": {
+      "title": "Gozareshe khuronje fosseylgh",
+      "description": "Estefe'ade az khatte varedeh Environment Agency baraye gozareshe alodegi fosseylgh"
+    },
+    "Check your local river quality": {
+      "title": "Bakhsh kardan kheyfiate roud mahali",
+      "description": "Deydane dadeye khuronje real-time baraye mantaqe shoma"
+    },
+    "Sign the petition for tougher regulation": {
+      "title": "Emza kardan dilkhahi baraye nezarate sakhttare",
+      "description": "Hamrah shavid ba hazaraan ke tabdil talabe mikonand"
+    },
+    "Organise a local river clean-up": {
+      "title": "Tanzim kardan paakizih roud mahali",
+      "description": "Jameh karde mardom baraye pak kardan va agahi ruzaneh"
+    },
+    "Check your right to choose": {
+      "title": "Bakhsh kardan hoghoghe entekhaabe khod",
+      "description": "Shoma hoghoghe entekhaabe hospital ra darid ke be an erfate shavid — montezer zaman kamtar momkene bashand"
+    },
+    "Contact PALS at your hospital": {
+      "title": "Ittesali ba PALS dar bimarestan khod",
+      "description": "Patient Advice and Liaison Service mitavanad komekan kardan baraye eskaleh karde case shoma"
+    },
+    "Share your waiting story": {
+      "title": "Hamrahi kardan dastan montezer shoma",
+      "description": "Dastanhaye vaghei feshar baraye tabdil ijad mikonand — tajarobe shoma mohem ast"
+    },
+    "Know your rights to a GP appointment": {
+      "title": "Shenasi hoghoghe khod baraye morakhkhasi GP",
+      "description": "Moarefe bayad morakhkhasi fori ta'min konand — bedanid che chiz taqaza konid"
+    },
+    "Complain to NHS England about GP access": {
+      "title": "Shakayat be NHS England darbare dastresii GP",
+      "description": "Shakayate rasmi yek sanad ijad mikonad ke tabdil ranzani mikonad"
+    },
+    "Claim compensation for lost parcel": {
+      "title": "Talabe tazyif baraye poste gom shode",
+      "description": "Ferestande mas'ul ast — be on tamas begirid, ne courier"
+    },
+    "Film your delivery location": {
+      "title": "Filmbrdariye mahale tosil",
+      "description": "Gozare video az ja'ye tosil poste ha komekan ba shakayat mikonad"
+    },
+    "Rate your delivery driver": {
+      "title": "Amtiaz dadan raghande tosile khod",
+      "description": "Komekan ta shemaril karde ravandi — khub va bad"
+    },
+    "Check if you can reclaim charges": {
+      "title": "Bakhsh kardan keآya mitavanavid hozine ra vaz gerftid",
+      "description": "Shoma momkene tavanid hozineye adilanenabe overdraft ra vaz begirid"
+    },
+    "Switch to a fee-free bank account": {
+      "title": "Tabdil be hesabe bank bede kofiye",
+      "description": "Moghayese hesab ha bede fiae mahi ya khafie"
+    },
+    "Appeal your parking charge": {
+      "title": "Tamasohval baraye hozineye parkinge khod",
+      "description": "Biyshtare hozineye parkinge khosoosi mitavanad ba movaffaghiyat tamasohval shavad"
+    },
+    "Check if the signage was adequate": {
+      "title": "Bakhsh kardan ke alamat kaafi bud",
+      "description": "Alamathaye noapasokh sababi tamasohval mibaashhand — aksase hameh chiz begirid"
+    },
+    "Know your rights on rent increases": {
+      "title": "Shenasi hoghoghe khod baraye afzayesh ejaare",
+      "description": "Mozahhibe shoma bayad ravand hoghoghi monasib ra taba'e konad"
+    },
+    "Contact Shelter for free advice": {
+      "title": "Ittesali ba Shelter baraye mashvarate raye",
+      "description": "Khottes komekhegui meskoon raye"
+    },
+    "Share your rent increase story": {
+      "title": "Hamrahi kardan dastan afzayesh ejaare khod",
+      "description": "Dastanhaye jamahi siyasat ra tabdil mikonand"
+    },
+    "Check your repayment plan": {
+      "title": "Bakhsh kardan barnameye bazperakhte khod",
+      "description": "Mota'aked shavid ke dar barnameye dorost hastid"
+    },
+    "Campaign for reform": {
+      "title": "Kampane baraye eslahat",
+      "description": "Neveshtan be nemdegane khod darbare molehe talime daneshjoyi"
+    },
+    "Share your experience": {
+      "title": "Hamrahi kardan tajarobe khod",
+      "description": "Goftan be digarane dastan khod — avaze jamahi tabdil ra ranzani mikonad"
+    },
+    "Write to your representative": {
+      "title": "Neveshtan be nemdegane khod",
+      "description": "Estefe'ade az nemune khod baraye taqazaye tabdil az nemdegane MP ya councilor"
+    },
+    "Welcome new members": {
+      "title": "Khosh amadi aezaye jadid",
+      "description": "Komekan ta novavaride rahat dar jamee hess konand"
+    }
+  },
+  "expert_profiles": {
+    "Carlos M.": {
+      "role": "Motropaz",
+      "speciality": "Tarjome ES/EN",
+      "achievement": "Tarjome 47 masale dar zabanaye mokhtalef"
+    },
+    "Dr. Patel": {
+      "role": "Karshenase Hoquq Rayhan",
+      "speciality": "Rahnamaye hoghughi",
+      "achievement": "12 sal tajrobe dar qanune havapaymayee"
+    },
+    "Yuki T.": {
+      "role": "Rahnegar Resane va Ertebatat",
+      "speciality": "JP/EN · Kampanhaye Video",
+      "achievement": "Edaraye kampanaye dalile laghv parvazha"
+    },
+    "Tom H.": {
+      "role": "Mohandes Shabake",
+      "speciality": "Zir-sanate pahnband",
+      "achievement": "Komak be 200+ ozu baraye behtarae soraat"
+    },
+    "Lisa R.": {
+      "role": "Moshavere Hoquq Mصرف-Konnande",
+      "speciality": "Shekayate Ofcom",
+      "achievement": "Piroozi dar 34 madaye jebran khasarat"
+    },
+    "Dr. Chen": {
+      "role": "Siyasate Behdashti",
+      "speciality": "Tahghighe Eslahi NHS",
+      "achievement": "Enteshar 3 maqaleye siyasati dar baraye vaqte entezar"
+    },
+    "Maria G.": {
+      "role": "Sazman-dehande Jamaat",
+      "speciality": "Hamahang-sazi kampanha",
+      "achievement": "Sazman-dehi 12 mitingi behdashti mahali"
+    },
+    "Raj P.": {
+      "role": "Tahlilgar Dade",
+      "speciality": "Naghshebandi vaqte entezar",
+      "achievement": "Sakht-sazi pusheyanse melli vaqte entezar"
+    },
+    "Prof. Johnson": {
+      "role": "Däneshvar Moheet-e Zist",
+      "speciality": "Tahlile kalite ab",
+      "achievement": "Enteshar 5 maqale dar bareye alayde-sazi rodkhanha"
+    },
+    "Aisha K.": {
+      "role": "Rahnegar Kampanha",
+      "speciality": "Pas-gadariye rodkhanha",
+      "achievement": "Sazman-dehi 30 roughane pas-gadari"
+    },
+    "Sophie M.": {
+      "role": "Moshavere Mali",
+      "speciality": "Tahlile haqe bank",
+      "achievement": "Fash-sazi haqhaye penhani dar 5 banke bozorg"
+    },
+    "Jake P.": {
+      "role": "Motekhasase Mali Daneshju",
+      "speciality": "Naseyhat-e bazdahande vamat",
+      "achievement": "Komak be 1,000+ farigh dar pas-andaze pul"
+    }
+  },
+  "riot_reels": {
+    "xsxkHfbbApk": {
+      "title": "Sketch Mashhur-e Vagn-e Gatar | Akhiran 1948 Show",
+      "caption": "Yek mard-e khaste-konande yek safar-e British Rail-e khub ra kharab mikone"
+    },
+    "MXEgkM9eBts": {
+      "title": "Big Train - Eagle Line",
+      "caption": "Yek sherkat-e gatar khayli bade ke dar bar-ash sketch show sakht-and"
+    },
+    "LZ259Jx8MQY": {
+      "title": "Dia-up Modem-ha Ra Bishtar Az In Ke Fekr Mikonim Mumkin Ast Pish Bord Dadan",
+      "caption": "Vaghti 668kbps manzande yek piroozi hast, UK broadband dar 1999 be auge-ye khod resid"
+    },
+    "Y_2kFv1QWzU": {
+      "title": "Cher-a az broadband rage ranj? BT hybrid broadband-e shekast-napazir-e jadid",
+      "caption": "Har Brit-i ke be soorate-ye vah az yek gholf-e buffer faryad zadeh, in biopic-e to ast"
+    },
+    "eT_k9JG0IN4": {
+      "title": "Cassetteboy vs The Tories May 2022",
+      "caption": "Ma tarjih midam ke mardom-e khod ra sarmakhorda bekonand dar jaaye in ke sherkat-haye eneji ra tax konim"
+    },
+    "3Wtx1HhDfDs": {
+      "title": "British Gas shares advert 1986",
+      "caption": "Agar Sid-ra didid, be-ash begu ke gaz hala chahar hezar pound dar sal harj-ast"
+    },
+    "aZo6vKS0ybI": {
+      "title": "AKHBAR-E FORORI: Nish Kumar olosh-e afzunegi-ye pelid-ha ra kashf mikone",
+      "caption": "Bekhosh-amed be sahel-e darya — lebas-haye hazmat va bostani-ye tord shamil ast"
+    },
+    "uK7DRJx9nbU": {
+      "title": "Cassetteboy vs Jeremy Hunt",
+      "caption": "Kalame-haye Hunt be shekl-e remix ba YMCA — NHS roast-i ke sazavari bud"
+    },
+    "R9biM_ZfIdo": {
+      "title": "George Agdgdgwngo Series 1 Compilation - Fonejacker",
+      "caption": "U faghat be sort code-t niaz dare baraye steam cleaning"
+    },
+    "zegud4x4zL0": {
+      "title": "Dar Entezar-e Package - Foil Arms and Hog",
+      "caption": "Package-t baraye delivery dar rah ast. U baraye delivery dar rah khahad mand"
+    },
+    "VaaankRbMkY": {
+      "title": "Lee Evans-Parcel Force",
+      "caption": "Parcelforce! Khatarnak-tarin kalame dar zabane Engelisi"
+    },
+    "0n_Ty_72Qds": {
+      "title": "Little Britain - Computer says no",
+      "caption": "Peshshineh-ye ruhani-ye har mashin-e self-checkout"
+    },
+    "6_L_MpgMCMA": {
+      "title": "Majmue-ye Beh-tarin Latife-haye Michael Dar Bare-ye Havapeima va Farhang-haye Parvaz | Michael McIntyre",
+      "caption": "Parvaze Ryanair-e takhiri-yet, ama haqal Michael McIntyre an-ra fahm mikone"
+    },
+    "e01EAS0GUa0": {
+      "title": "Epidemine-ye Pothole-haye UK - Sathe-ye Jado-ha Ra Avard",
+      "caption": "Jado-haye Britain: jaye-i ke granch-ha ba test-e suspension-e azad miad"
+    },
+    "kAG39jKi0lI": {
+      "title": "Blackberry-ye man kar nemikone - BBC",
+      "caption": "Vaghti shabake-ye provider-et beyanat-at mikonad ke problem dar akhare to ast"
+    },
+    "27aVPqpnL7Y": {
+      "title": "Trigger Happy TV - The big phone guy",
+      "caption": "UK coverage begone-ye in ke ba telefone-ye andazeye yek sandugh niaz dare"
+    },
+    "w2A8q3XIhu0": {
+      "title": "Hold music qabl-an behtar seda mikard. Inja gheili ast.",
+      "caption": "Hamegi raftiman. Hala midanestim cher dard mikone"
+    }
+  },
+  "action_initiatives": {
+    "Avanti Legal Review": {
+      "title": "Avanti Legal Review",
+      "description": "Taklif-e motale'eye hoghughi-ye mostaqel az Avanti West Coast franchise obligations va compensation policies"
+    },
+    "Season Ticket Refund Toolkit": {
+      "title": "Season Ticket Refund Toolkit",
+      "description": "Sazesh-e toolkit-e bekhosh baraye komak be commuters baraye talab-e vaz'e roozha-ye season ticket istifade nashode"
+    },
+    "Brighton Water Testing": {
+      "title": "Brighton Water Testing",
+      "description": "Taklif-e azmayesh-e keyfiyat-e ab-e mostaqel dar 12 sohe' saheli-ye Brighton"
+    },
+    "River Testing Kits": {
+      "title": "River Testing Kits",
+      "description": "Kharid-e kit-haye azmayesh-e ab-e hamrahe baraye 50 nazaratchi-ye dadie'i-ye talayee dar England"
+    },
+    "Community Speed Map App": {
+      "title": "Community Speed Map App",
+      "description": "Taklif-e tostooyeh-ye app-e azmayesh va naqsheh-bardari-ye sotrat-e internet-e jame'ati"
+    },
+    "GP Access FOI Requests": {
+      "title": "GP Access FOI Requests",
+      "description": "Taklif-e darbareye arizehaye Freedom of Information be har NHS trust baraye amareye appointment-haye GP"
+    },
+    "Airline Compensation Guide": {
+      "title": "Airline Compensation Guide",
+      "description": "Ijad-e rahnameye jame' va bekhosh baraye talab-e compenzasyon-e EU261/UK261 baraye ta'khir-e parvaz"
+    },
+    "Smart Meter Audit": {
+      "title": "Smart Meter Audit",
+      "description": "Taklif-e barsesi-ye mostaqel az sandogh-e smart meter dar 500 khanvade"
     }
   }
 }
