@@ -22,7 +22,7 @@ const updateSchema = z.object({
     .boolean()
     .transform((v) => (v ? 1 : 0))
     .optional(),
-  campaign_updates: z
+  action_initiative_updates: z
     .boolean()
     .transform((v) => (v ? 1 : 0))
     .optional(),

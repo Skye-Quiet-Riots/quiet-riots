@@ -213,7 +213,7 @@ describe('getNotificationPreferences', () => {
     expect(prefs.user_id).toBe('user-privacy');
     expect(prefs.security).toBe(1);
     expect(prefs.product_updates).toBe(1);
-    expect(prefs.campaign_updates).toBe(1);
+    expect(prefs.action_initiative_updates).toBe(1);
     expect(prefs.weekly_digest).toBe(0);
   });
 
@@ -236,7 +236,7 @@ describe('updateNotificationPreferences', () => {
     // Other fields should remain at defaults
     expect(updated.security).toBe(1);
     expect(updated.product_updates).toBe(1);
-    expect(updated.campaign_updates).toBe(1);
+    expect(updated.action_initiative_updates).toBe(1);
   });
 
   it('updates multiple fields at once', async () => {
@@ -248,15 +248,15 @@ describe('updateNotificationPreferences', () => {
     expect(updated.product_updates).toBe(0);
     // Other fields unchanged
     expect(updated.weekly_digest).toBe(1);
-    expect(updated.campaign_updates).toBe(1);
+    expect(updated.action_initiative_updates).toBe(1);
   });
 
   it('creates defaults first for a new user then updates', async () => {
     const updated = await updateNotificationPreferences('user-privacy-2', {
-      campaign_updates: 0,
+      action_initiative_updates: 0,
     });
     expect(updated.user_id).toBe('user-privacy-2');
-    expect(updated.campaign_updates).toBe(0);
+    expect(updated.action_initiative_updates).toBe(0);
     // Defaults for the rest
     expect(updated.security).toBe(1);
     expect(updated.product_updates).toBe(1);
@@ -380,7 +380,7 @@ describe('hardDeleteUser', () => {
       args: ['consent-del-1', userId, 'terms', '1.0', 'GB'],
     });
     await db.execute({
-      sql: 'INSERT INTO notification_preferences (user_id, security, product_updates, campaign_updates, weekly_digest) VALUES (?, 1, 1, 1, 0)',
+      sql: 'INSERT INTO notification_preferences (user_id, security, product_updates, action_initiative_updates, weekly_digest) VALUES (?, 1, 1, 1, 0)',
       args: [userId],
     });
     await db.execute({

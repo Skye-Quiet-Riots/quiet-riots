@@ -93,7 +93,7 @@ export async function getNotificationPreferences(userId: string): Promise<Notifi
   }
   // Create defaults
   await db.execute({
-    sql: `INSERT INTO notification_preferences (user_id, security, product_updates, campaign_updates, weekly_digest)
+    sql: `INSERT INTO notification_preferences (user_id, security, product_updates, action_initiative_updates, weekly_digest)
           VALUES (?, 1, 1, 1, 0)`,
     args: [userId],
   });
@@ -101,7 +101,7 @@ export async function getNotificationPreferences(userId: string): Promise<Notifi
     user_id: userId,
     security: 1,
     product_updates: 1,
-    campaign_updates: 1,
+    action_initiative_updates: 1,
     weekly_digest: 0,
   };
 }
@@ -125,9 +125,9 @@ export async function updateNotificationPreferences(
     sets.push('product_updates = ?');
     args.push(prefs.product_updates);
   }
-  if (prefs.campaign_updates !== undefined) {
-    sets.push('campaign_updates = ?');
-    args.push(prefs.campaign_updates);
+  if (prefs.action_initiative_updates !== undefined) {
+    sets.push('action_initiative_updates = ?');
+    args.push(prefs.action_initiative_updates);
   }
   if (prefs.weekly_digest !== undefined) {
     sets.push('weekly_digest = ?');
