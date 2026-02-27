@@ -2,617 +2,730 @@
   "locale": "ro",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
+    "Telecoms": "Telecomunicații",
+    "Banking": "Servicii bancare",
+    "Health": "Sănătate",
+    "Education": "Educație",
+    "Environment": "Mediu",
+    "Energy": "Energie",
+    "Water": "Apă",
+    "Insurance": "Asigurări",
+    "Housing": "Locuințe",
+    "Shopping": "Cumpărături",
+    "Delivery": "Livrare",
     "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Employment": "Angajare",
+    "Tech": "Tehnologie",
+    "Other": "Altele"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Anulări de trenuri",
+      "description": "Trenuri anulate sau grav întârziate fără notificare sau compensație adecvată"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Prețuri bilete de tren",
+      "description": "Tarife feroviare prea scumpe, creșteri peste inflație, prețuri inconsistente"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Întârzieri de zboruri",
+      "description": "Zboruri întârziate sau anulate, comunicare slabă, dificultate în a cere compensație"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Bagaje pierdute",
+      "description": "Bagaje care nu ajung la destinație, urmărire lentă, compensație inadecvată"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Reduceri de rute de autobuz",
+      "description": "Rute anulate, frecvență redusă, comunități rurale pierd acces la autobuz"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Daune din găuri în asfalt",
+      "description": "Găuri în asfalt care daunează vehiculelor și pun în pericol cicliștii, consiliile întârzie reparațiile"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Amenzi de parcare",
+      "description": "Taxe de parcare privată injuste, aplicare agresivă, semnalizare confuză"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Prețuri carburanți",
+      "description": "Prețuri benzină și motorină prea mari, scad lent când prețurile en-gros scad"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Viteza de bandă largă",
+      "description": "Viteze internet mult mai mici decât sunt anunțate și plătite"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Zone fără semnal mobil",
+      "description": "Nicio semnalizare mobilă în case, locuri de muncă sau pe rutele de transport"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Creșteri de preț în mijlocul contractului",
+      "description": "Facturile de telefon, bandă largă și televiziune cresc în contracte blocate"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Timpii de așteptare pentru serviciul clienți",
+      "description": "Ore în așteptare pentru a vorbi cu o persoană"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Dificultate în anularea abonamentelor",
+      "description": "Companiile fac deliberat dificil să anulezi sau să te dezabonezi"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Taxe de roaming",
+      "description": "Taxe mobile neașteptate când călătorești în străinătate, creșteri de preț post-Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Costuri facturilor de energie",
+      "description": "Facturile de gaz și electricitate inaffordabile, limita de preț încă prea mare"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Facturi de energie inexacte",
+      "description": "Citiri estimate greșite, suprataxare, erori de facturare"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Creșteri ale facturilor de apă",
+      "description": "Facturile de apă cresc brusc în timp ce calitatea serviciului scade"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Apă de canalizare în râuri",
+      "description": "Companiile de apă aruncă apă de canalizare brută în cursuri de apă și pe plaje"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Întreruperi de curent",
+      "description": "Întreruperi ale alimentării cu electricitate, restabilire lentă, compensație inadecvată"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Probleme cu contorii inteligenți",
+      "description": "Contorii inteligenți nu funcționează, pierd funcționalitate după schimbarea furnizorului"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Închideri de sucursale bancare",
+      "description": "Sucursalele bancare locale se închid, lăsând comunitățile fără acces"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Taxe bancare ascunse",
+      "description": "Taxe neașteptate pentru descoperturi, tranzacții în străinătate, menținere cont"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Pierderi din fraud și înșelăciuni",
+      "description": "Băncile refuză să îi despăgubească pe victimele fraудei și ale plăților autorizate prin înșelăciune"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Respingeri ale cererilor de asigurare",
+      "description": "Cereri respinse pe motive tehnice după ani de plată a primelor"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Șoc din rata ipotecii",
+      "description": "Rata fixă se încheie și trece la o rată variabilă mult mai mare"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Taxe de transfer în străinătate",
+      "description": "Taxe excesive și rate de schimb slabe pentru transferuri internaționale de bani"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Timpii de așteptare NHS",
+      "description": "Așteptări de luni sau ani pentru operații și programări la specialiști"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Acces la programări de medic",
+      "description": "Nu poți lua programare la medic, așteptări de săptămâni"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Disponibilitate dentist",
+      "description": "Imposibil de găsit un dentist NHS care acceptă pacienți noi"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Așteptări pentru servicii de sănătate mintală",
+      "description": "Așteptări de luni pentru terapie și suport de sănătate mintală"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Costuri rețete medicale",
+      "description": "Cost per articol prea mare în Anglia, inconsistență în diferitele națiuni ale Regatului Unit"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Taxe de parcare spital",
+      "description": "Plătiți pentru parcare la spital în timp ce sunteți bolnav sau vizitați rude bolnave"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Creșteri de chirie",
+      "description": "Chiria privată crește mult peste inflație, amenință cu evacuare fără motive"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Creșteri ale taxei consiliului",
+      "description": "Creșteri anuale ale taxei consiliului în timp ce serviciile locale se înrăutățesc"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Vecini zgomotoși",
+      "description": "Perturbări de zgomot persistente, consiliile acționează lent, afectând sănătatea mintală"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Schimbări în colectarea gunoaielor",
+      "description": "Colecții de pubele reduse, reguli de reciclare confuze, pubele pline"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Abuz în permisele de planificare",
+      "description": "Dezvoltări nedorite aprobate, ceintura verde amenințată, comunitatea ignorată"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Umiditate și mucegai în locuințe",
+      "description": "Proprietari și asociații de locuințe nu reușesc să repare umiditatea și mucegaiul"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Probleme de livrare",
+      "description": "Pachete pierdute, lăsate în ploaie, marcate ca livrate dar nu primite"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "Produsele devin mai mici în timp ce prețurile rămân la fel sau cresc"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Dificultăți în obținerea rambursării",
+      "description": "Companiile fac returnări și rambursări deliberat dificile"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Recenzii false",
+      "description": "Nu poți avea încredere în recenziile online, recenziile pozitive false induc în eroare consumatorii"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Capcane de abonament",
+      "description": "Versiuni gratuite se transformă în plătite fără consimțământ clar, greu de anulat"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Declin în calitatea alimentelor",
+      "description": "Mâncările gata preparate au o calitate mai slabă, porții mai mici, mai mulți aditivi"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Frustrare din cassa de autoservire",
+      "description": "Mașinile de autoservire nesigure, înlocuiesc personalul uman"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Costul îngrijirii copiilor",
+      "description": "Costurile îngrijirii copiilor sunt prohibitiv de scumpe, limitând capacitatea de a lucra"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Rambursarea creditului pentru studenți",
+      "description": "Absolvenții rambursează timp de decenii, schimbări de prag și dobândă"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Poluare de câini",
+      "description": "Excremente de câini în spații publice, parcuri și trotuare necurățate"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI înlocuiesc locurile de muncă",
+      "description": "Anxietate cu privire la inteligența artificială care automatizează locurile de muncă fără sprijin de tranziție"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Operator de cale ferată din Marea Britanie care deservește West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Operator de cale ferată din Marea Britanie care deservește Londra și sudul țării"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Operator de cale ferată din Marea Britanie care deservește nordul Angliei"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Operator de cale ferată pe distanțe lungi din Marea Britanie"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Operator de cale ferată din Marea Britanie care deservește rutele trans-Pennine"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Operator de cale ferată din Marea Britanie care deservește East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Linie aeriană low-cost europeană"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Linie aeriană low-cost cu sediul în Marea Britanie"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Linie aeriană națională britanică"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Companie de vacanțe și călătorii"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Furnizor major de bandă largă și servicii mobile din Marea Britanie"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Furnizor de bandă largă, televiziune și servicii mobile din Marea Britanie"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Furnizor de televiziune, bandă largă și servicii mobile din Marea Britanie"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Companie globală de telecomunicații cu sediul în Marea Britanie"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Operator de rețea mobilă din Marea Britanie"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Furnizor de bandă largă și telefonie din Marea Britanie"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Furnizor de energie din Marea Britanie"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Furnizor de energie din Marea Britanie"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Furnizor de energie din Marea Britanie (deținut de francezi)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Furnizor de energie regenerabilă din Marea Britanie"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Furnizor de energie din Marea Britanie"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Furnizor de energie din Marea Britanie (deținut de germani)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Companie de apă și canalizare pentru Londra și Valea Tamisei"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Companie de apă pentru sudul Angliei"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Companie de apă pentru nord-vestul Angliei"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Companie de apă pentru Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Companie de apă pentru Anglia de Est"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Bancă multinațională britanică"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Servicii bancare și financiare globale"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Bancă de retail și comercială din Marea Britanie"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Grup bancar din Marea Britanie"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Bancă din Marea Britanie (deținută de spanioli)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Servicii bancare digitale și fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Asigurări și servicii financiare din Marea Britanie"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Asigurări auto și locuință din Marea Britanie"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Companie de asigurări din Marea Britanie"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Comerț electronic și tehnologie globale"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Serviciul poștal din Marea Britanie"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Serviciu de livrare colete din Marea Britanie (fost Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Serviciu de livrare colete din Marea Britanie"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Lanț de supermarketuri din Marea Britanie"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Lanț de supermarketuri din Marea Britanie"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Serviciul Național de Sănătate pentru Anglia"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "Servicii dentare NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Furnizor de servicii medicale private"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Autorități de guvernare locală din Marea Britanie"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Constructor de case din Marea Britanie"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Platformă de închiriere online din Marea Britanie"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Serviciu de streaming de divertisment"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Companie de tehnologie"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "tren anulat",
+      "tren anulat",
+      "anulare tren",
+      "trenuri care nu circulă",
+      "anulare cale ferată",
+      "serviciu anulat",
+      "întârzieri trenuri",
+      "tren întârziat",
+      "trenuri cu întârziere",
+      "tren cu întârziere",
+      "întârzieri cale ferată"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "tarife cale ferată",
+      "costuri bilete",
+      "trenuri scumpe",
+      "tarife trenuri"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "zbor întârziat",
+      "avion întârziat",
+      "zbor anulat",
+      "întârzieri aeroport",
+      "blocat la aeroport",
+      "zbor cu întârziere"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "bagaje lipsă",
+      "geamantan pierdut",
+      "bagaje care nu au sosit",
+      "geamantan pierdut",
+      "bagaje care nu au apărut pe band",
+      "bagaj pierdut de compania aeriană"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "reduceri autobus",
+      "reduceri rute",
+      "închideri servicii autobus"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "internet lent",
+      "wifi lent",
+      "wifi lent",
+      "viteza internet",
+      "internet care nu funcționează",
+      "buffer lent",
+      "internet cade continuu",
+      "wifi cade"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "fără semnal",
+      "fără recepție",
+      "zonă moartă mobile",
+      "zonă moartă de semnal"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "creștere factură în mijlocul contractului",
+      "creștere preț contract",
+      "creștere în mijlocul contractului"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "pe așteptare",
+      "așteptând la telefon",
+      "nu pot trece",
+      "nimeni nu răspunde",
+      "coadă telefon",
+      "centru apeluri"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "nu pot anula",
+      "greu de anulat",
+      "anulare abonament",
+      "dezabonare"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "factură gaze prea mare",
+      "factură electricitate",
+      "prețuri energie",
+      "costuri încălzire",
+      "sărăcie energetică",
+      "nu pot plăti energia"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "factură energie greșită",
+      "citire estimată greșită",
+      "suprataxare energie"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "tarife apă",
+      "taxa apă",
+      "factură apă prea mare"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "deversare ape uzate",
+      "ape uzate brute",
+      "ape uzate pe plajă",
+      "poluare apă",
+      "depășire canal ape uzate",
+      "depășire canal combinat"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "taxe neașteptate",
+      "taxe ascunse",
+      "taxe surpriză",
+      "taxe descoperit",
+      "taxe bancă"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "înșelat",
+      "fraude bancară",
+      "fraudă plată autorizată",
+      "fraude autorizată"
+    ],
+    "Bank Branch Closures": [
+      "închideri sucursale",
+      "bancă locală care se închide",
+      "nicio bancă în apropiere"
+    ],
+    "Insurance Claim Rejections": [
+      "reclamație respingere",
+      "asigurare nu va plăti",
+      "reclamație respingere"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "așteptare NHS",
+      "listă așteptare",
+      "așteptare operație",
+      "timp așteptare spital",
+      "așteptare trimitere",
+      "așteptare operație"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "nu pot obține programare medic",
+      "programare doctor",
+      "coadă telefon medic",
+      "nu pot vedea un doctor",
+      "coadă telefon 8am"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "dentist NHS",
+      "nu pot găsi dentist",
+      "listă așteptare dentist"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "finanțare sănătate mintală",
+      "acces terapie",
+      "așteptare consiliere",
+      "așteptare CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "costuri medicamente",
+      "prețuri medicamente",
+      "taxe farmacie"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "colet pierdut",
+      "colet nelivrat",
+      "lăsat în ploaie",
+      "pachet furat",
+      "șofer livrare",
+      "livrare ratată"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "chirie prea mare",
+      "chirie care crește",
+      "proprietar mărește chiria",
+      "evacuare fără vină"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "amendă parcare",
+      "notificare taxa parcare",
+      "PCN",
+      "amendă parcare nejustă"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "porții mai mici",
+      "mai puțin pentru același preț",
+      "pachet mai mic",
+      "produse care se micșorează"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "gropi pe șosea",
+      "deteriorare drum",
+      "deteriorare mașină de gropă"
+    ],
+    "Council Tax Rises": [
+      "creștere taxa locală",
+      "taxa locală prea mare",
+      "taxa locală"
+    ],
+    "Damp and Mould in Housing": [
+      "casă mucegaiată",
+      "apartament umed",
+      "mucegai negru",
+      "reparații locuință"
+    ],
+    "Student Loan Repayment": [
+      "împrumuturi student",
+      "taxe tuiție",
+      "dată educație",
+      "dată student"
+    ],
+    "AI Replacing Jobs": [
+      "automatizare locuri munca",
+      "AI ia locuri munca",
+      "roboți înlocuiesc muncitori"
+    ],
+    "Roaming Charges": [
+      "factură telefon vacanță",
+      "taxe date străinătate",
+      "taxe telefon străine"
+    ],
+    "Smart Meter Problems": [
+      "contor inteligent stricat",
+      "contor care nu funcționează",
+      "contor a pierdut semnal"
+    ],
+    "Subscription Traps": [
+      "cursă probă gratuită",
+      "reînnoire automată",
+      "taxat după probă"
+    ],
+    "Fuel Prices": [
+      "prețuri benzină",
+      "prețuri motorină",
+      "cost combustibil",
+      "benzină prea scumpă"
+    ],
+    "Power Cuts": [
+      "pană curent",
+      "curent întrerupt",
+      "black-out",
+      "fără curent",
+      "eșec alimentare"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "creștere ipotecă",
+      "rata ipotecă",
+      "reinvestire ipotecă",
+      "rată fixă care se termină"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "taxe transfer",
+      "trimitere bani străinătate",
+      "taxe remitere",
+      "cost transfer bancar"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "parcare spital",
+      "parcare la spital",
+      "parcare NHS"
+    ],
+    "Noisy Neighbours": [
+      "plângere de zgomot",
+      "zgomot vecin",
+      "vecini zgomotoși",
+      "incomoditate zgomot"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "colectare gunoi",
+      "pubele care nu sunt colectate",
+      "confuzie reciclare",
+      "colectare pubă ratată"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "autorizație construire",
+      "dezvoltare nedorită",
+      "centură verde",
+      "autorizație construire"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "nu pot obține rambursare",
+      "rambursare refuzată",
+      "returnare respingere",
+      "bani înapoi"
+    ],
+    "Fake Reviews": [
+      "manipulare recenzii",
+      "recenzii plătite",
+      "trust pilot fals",
+      "recenzie falsă"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "calitate aliment",
+      "mâncare gătită mai rău",
+      "aditivi alimentari",
+      "porție mai mică"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "autoservire plată",
+      "autoservire",
+      "fără case de marcat cu personal",
+      "mașină care nu funcționează"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "cost îngrijire copii",
+      "taxe grădiniță",
+      "îngrijire copii scumpă",
+      "cost creșă"
+    ],
+    "Dog Fouling": [
+      "gunoi câine",
+      "caca câine",
+      "deșeu câine",
+      "murdărire"
+    ]
   },
   "category_assistants": {
     "transport": {

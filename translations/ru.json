@@ -1,618 +1,731 @@
 {
   "locale": "ru",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "Транспорт",
+    "Telecoms": "Телекоммуникации",
+    "Banking": "Банковское обслуживание",
+    "Health": "Здравоохранение",
+    "Education": "Образование",
+    "Environment": "Окружающая среда",
+    "Energy": "Энергетика",
+    "Water": "Водоснабжение",
+    "Insurance": "Страхование",
+    "Housing": "Жилищное обслуживание",
+    "Shopping": "Покупки",
+    "Delivery": "Доставка",
+    "Local": "Местные услуги",
+    "Employment": "Трудоустройство",
+    "Tech": "Технологии",
+    "Other": "Прочее"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Отмены поездов",
+      "description": "Поезда отменены или серьёзно задержаны с недостаточным уведомлением или компенсацией"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Цены на билеты на поезд",
+      "description": "Слишком дорогие железнодорожные тарифы, повышение выше уровня инфляции, непоследовательное ценообразование"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Задержки рейсов",
+      "description": "Задержанные или отменённые рейсы, плохая коммуникация, сложность с получением компенсации"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Потерянный багаж",
+      "description": "Багаж не прибывает в пункт назначения, медленное отслеживание, неадекватная компенсация"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Сокращение автобусных маршрутов",
+      "description": "Отмена маршрутов, снижение частоты, сельские сообщества теряют доступ к автобусам"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Повреждения от выбоин",
+      "description": "Выбоины повреждают автомобили и угрожают велосипедистам, советы медленно их ремонтируют"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Штрафы за парковку",
+      "description": "Несправедливые частные платежи за парковку, агрессивное взимание штрафов, непонятные знаки"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Цены на топливо",
+      "description": "Слишком высокие цены на бензин и дизель, медленный спад при падении оптовых цен"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Скорость широкополосного интернета",
+      "description": "Скорость интернета намного ниже рекламируемой и оплаченной"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Мёртвые зоны мобильного сигнала",
+      "description": "Отсутствие мобильного сигнала в домах, на рабочих местах или вдоль транспортных маршрутов"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Повышение цен во время контракта",
+      "description": "Счета за телефон, широкополосный интернет и телевидение растут во время заблокированных контрактов"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Время ожидания в службе поддержки",
+      "description": "Часы ожидания в очереди, чтобы поговорить с живым человеком"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Сложность отмены подписок",
+      "description": "Компании намеренно усложняют отмену или отписку"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Плата за роуминг",
+      "description": "Неожиданные мобильные платежи при путешествии за границу, повышение цен после Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Стоимость счетов за энергию",
+      "description": "Счета за газ и электричество недоступны по цене, лимит цены по-прежнему слишком высок"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Неточные счета за энергию",
+      "description": "Неправильные примерные показания, перерасчет, ошибки в выставлении счетов"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Повышение счетов за воду",
+      "description": "Счета за воду растут резко, в то время как качество услуг снижается"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Сточные воды в реках",
+      "description": "Водоканалы сбрасывают сырые сточные воды в водоёмы и на пляжи"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Отключения электроэнергии",
+      "description": "Перебои в подаче электроэнергии, медленное восстановление, неадекватная компенсация"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Проблемы с умными счётчиками",
+      "description": "Умные счётчики не работают, теряют функциональность после смены поставщика"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Закрытие отделений банков",
+      "description": "Закрытие местных отделений банков, оставляя сообщества без доступа"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Скрытые банковские комиссии",
+      "description": "Неожиданные сборы за овердрафты, иностранные операции, обслуживание счёта"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Потери от мошенничества и мошеннических схем",
+      "description": "Банки отказываются возмещать убытки жертв мошенничества и авторизованных платежей под давлением"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Отклонение страховых претензий",
+      "description": "Претензии отклоняются по техническим причинам после лет уплаты премий"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Шок ипотечных ставок",
+      "description": "Фиксированная ставка заканчивается и переходит на гораздо более высокую переменную ставку"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Комиссии за международные переводы",
+      "description": "Чрезмерные комиссии и плохие курсы обмена для международных денежных переводов"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Время ожидания NHS",
+      "description": "Многомесячное или многолетнее ожидание операций и приёма у специалистов"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Доступ к приёму у терапевта",
+      "description": "Невозможно дозвониться для записи к терапевту, недели ожидания"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Наличие услуг стоматолога",
+      "description": "Невозможно найти стоматолога NHS, который принимает новых пациентов"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Время ожидания служб психического здоровья",
+      "description": "Многомесячное ожидание терапии и услуг поддержки психического здоровья"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Стоимость рецептов",
+      "description": "Слишком высокая стоимость за единицу в Англии, несоответствие по странам Великобритании"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Плата за парковку в больнице",
+      "description": "Плата за парковку в больнице во время болезни или посещения больных родственников"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Повышение арендной платы",
+      "description": "Частная аренда растёт намного выше инфляции, угроза выселения без вины арендатора"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Повышение налога на имущество",
+      "description": "Ежегодное повышение налога на имущество при ухудшении местных услуг"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Шумные соседи",
+      "description": "Постоянный шум, советы медленно реагируют, влияет на психическое здоровье"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Изменения в вывозе мусора",
+      "description": "Сокращение вывоза мусора, запутанные правила переработки, переполненные контейнеры"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Злоупотребление разрешением на строительство",
+      "description": "Одобрение нежелательного развития, угроза для зелёных территорий, игнорирование сообщества"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Сырость и плесень в жилом фонде",
+      "description": "Арендодатели и жилищные ассоциации не устраняют сырость и плесень"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Проблемы с доставкой",
+      "description": "Посылки теряются, оставляются под дождём, отмечаются как доставленные, но не получены"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "Сокращение размера упаковки при повышении цены",
+      "description": "Продукты становятся меньше, а цены остаются прежними или растут"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Сложность возврата денег",
+      "description": "Компании намеренно усложняют возврат и возмещение"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Поддельные отзывы",
+      "description": "Невозможно доверять онлайн-отзывам, поддельные положительные отзывы вводят потребителей в заблуждение"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Ловушки подписок",
+      "description": "Бесплатные пробные версии переходят на платные без явного согласия, сложно отменить"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Снижение качества продуктов питания",
+      "description": "Готовые блюда хуже качеством, меньше порций, больше добавок"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Раздражение от самообслуживания",
+      "description": "Машины самообслуживания ненадежны, заменяют персонал"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Стоимость ухода за детьми",
+      "description": "Стоимость ухода за детьми непомерно высока, ограничивает возможность работы"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Погашение студенческого кредита",
+      "description": "Выпускники выплачивают десятилетиями, изменения порога и процентов"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Загрязнение на улицах собаками",
+      "description": "Собачьи экскременты в общественных местах, парках и на тротуарах не убираются"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "ИИ вытесняет рабочие места",
+      "description": "Беспокойство по поводу искусственного интеллекта, автоматизирующего рабочие места без поддержки переходного периода"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Оператор железной дороги Великобритании, обслуживающий линию West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Оператор железной дороги Великобритании, обслуживающий Лондон и юг страны"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Оператор железной дороги Великобритании, обслуживающий север Англии"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Оператор дальних железнодорожных линий Великобритании"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Оператор железной дороги Великобритании, обслуживающий транспеннинские маршруты"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Оператор железной дороги Великобритании, обслуживающий East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Европейская бюджетная авиакомпания"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Британская бюджетная авиакомпания"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Флагманская авиакомпания Великобритании"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Компания по организации отпусков и путешествий"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Крупный британский поставщик широкополосного интернета и мобильной связи"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Британский поставщик широкополосного интернета, ТВ и мобильной связи"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Британский поставщик ТВ, широкополосного интернета и мобильной связи"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Глобальная телекоммуникационная компания со штаб-квартирой в Великобритании"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Британский оператор мобильной сети"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Британский поставщик широкополосного интернета и телефонной связи"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Британский поставщик электроэнергии"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Британский поставщик электроэнергии"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Британский поставщик электроэнергии (принадлежит французской компании)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Британский поставщик возобновляемой энергии"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Британский поставщик электроэнергии"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Британский поставщик электроэнергии (принадлежит немецкой компании)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Компания по водоснабжению и канализации для Лондона и долины Темзы"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Компания по водоснабжению для юга Англии"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Компания по водоснабжению для северо-западной Англии"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Компания по водоснабжению для Мидлендса"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Компания по водоснабжению для Восточной Англии"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Британский многонациональный банк"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Глобальное банковское и финансовое обслуживание"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Британский розничный и коммерческий банк"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Британская банковская группа"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Британский банк (принадлежит испанской компании)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Цифровое банкинг и финтех"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Британская страховая и финансовая услуга"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Британская компания по страхованию автомобилей и жилья"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Британская страховая компания"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Глобальная компания в сфере электронной коммерции и технологий"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Британская почтовая служба"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Британская служба доставки посылок (ранее Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Британская служба доставки посылок"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Британская сеть супермаркетов"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Британская сеть супермаркетов"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Национальная служба здравоохранения Англии"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "Стоматологические услуги NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Поставщик частного здравоохранения"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Британские органы местного самоуправления"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Британский застройщик жилых зданий"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Британская онлайн-платформа по аренде жилья"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Служба потокового видео"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Технологическая компания"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "поезд отменен",
+      "отмененный поезд",
+      "отмена поезда",
+      "поезда не ходят",
+      "отмена железнодорожного сообщения",
+      "служба отменена",
+      "задержки поездов",
+      "задержанный поезд",
+      "поезда опаздывают",
+      "опоздавший поезд",
+      "задержки железнодорожного транспорта"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "железнодорожные билеты",
+      "стоимость билетов",
+      "дорогие поезда",
+      "цены на железнодорожные билеты"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "рейс задержан",
+      "самолет задержан",
+      "рейс отменен",
+      "задержки в аэропорту",
+      "застрял в аэропорту",
+      "рейс опаздывает"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "потеряные сумки",
+      "потерянный чемодан",
+      "сумки не прибыли",
+      "потеряный чемодан",
+      "багаж не на карусели",
+      "сумка потеряна авиакомпанией"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "сокращение автобусного сообщения",
+      "сокращение маршрутов",
+      "закрытие автобусных услуг"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "медленный интернет",
+      "медленный wi-fi",
+      "wi-fi медленный",
+      "скорость интернета",
+      "интернет не работает",
+      "буферизация",
+      "интернет постоянно разрывается",
+      "wi-fi отключается"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "нет сигнала",
+      "нет приема",
+      "мертвая зона мобильной сети",
+      "мертвая зона сигнала"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "увеличение счета во время контракта",
+      "повышение цены контракта",
+      "повышение цены в середине контракта"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "на удержании",
+      "ожидание по телефону",
+      "не могу дозвониться",
+      "никто не отвечает",
+      "телефонная очередь",
+      "центр обслуживания клиентов"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "не могу отменить",
+      "сложно отменить",
+      "отмена подписки",
+      "отписаться"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "счет за газ слишком высокий",
+      "счет за электричество",
+      "цены на энергию",
+      "стоимость отопления",
+      "энергетическая бедность",
+      "не могу позволить себе энергию"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "неправильный счет за энергию",
+      "неправильное расчетное показание",
+      "переплата за энергию"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "тарифы на воду",
+      "плата за воду",
+      "счет за воду слишком высокий"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "сброс сточных вод",
+      "неочищенные сточные воды",
+      "сточные воды на пляже",
+      "загрязнение воды",
+      "переполнение сточных вод",
+      "переполнение объединенной канализации"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "неожиданные комиссии",
+      "скрытые комиссии",
+      "неожиданные платежи",
+      "комиссии за овердрафт",
+      "банковские комиссии"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "обман",
+      "банковское мошенничество",
+      "мошенничество при платеже",
+      "авторизованное мошенничество"
+    ],
+    "Bank Branch Closures": [
+      "закрытие отделений",
+      "местный банк закрывается",
+      "нет банка рядом"
+    ],
+    "Insurance Claim Rejections": [
+      "претензия отклонена",
+      "страховка не платит",
+      "претензия отклонена"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "ожидание NHS",
+      "список ожидания",
+      "ожидание операции",
+      "время ожидания в больнице",
+      "ожидание направления",
+      "ожидание операции"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "не могу записаться на прием к врачу",
+      "прием у врача",
+      "телефонная очередь у врача",
+      "не могу попасть к врачу",
+      "8 утра телефонная схватка"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS стоматолог",
+      "не могу найти стоматолога",
+      "список ожидания у стоматолога"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "финансирование психического здоровья",
+      "доступ к терапии",
+      "ожидание консультирования",
+      "ожидание CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "стоимость лекарств",
+      "цены на лекарства",
+      "комиссии аптеки"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "посылка потеряна",
+      "посылка не доставлена",
+      "оставлена под дождем",
+      "посылка украдена",
+      "курьер",
+      "пропущенная доставка"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "аренда слишком высокая",
+      "аренда растет",
+      "арендодатель повышает арендную плату",
+      "выселение без вины"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "штраф за парковку",
+      "уведомление о парковке",
+      "PCN",
+      "несправедливый штраф за парковку"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "меньшие порции",
+      "меньше за ту же цену",
+      "упаковка меньше",
+      "уменьшающиеся товары"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "выбоины",
+      "повреждение дороги",
+      "повреждение автомобиля выбоиной"
+    ],
+    "Council Tax Rises": [
+      "повышение налога на имущество",
+      "налог на имущество слишком высокий",
+      "местный налог"
+    ],
+    "Damp and Mould in Housing": [
+      "плесневелый дом",
+      "влажная квартира",
+      "черная плесень",
+      "ремонт жилья"
+    ],
+    "Student Loan Repayment": [
+      "студенческие кредиты",
+      "плата за обучение",
+      "образовательный долг",
+      "студенческий долг"
+    ],
+    "AI Replacing Jobs": [
+      "автоматизация работ",
+      "AI забирает рабочие места",
+      "роботы заменяют рабочих"
+    ],
+    "Roaming Charges": [
+      "счет за телефон на отпуске",
+      "плата за данные за границей",
+      "плата за телефон за рубежом"
+    ],
+    "Smart Meter Problems": [
+      "умный счетчик сломан",
+      "счетчик не работает",
+      "счетчик потерял сигнал"
+    ],
+    "Subscription Traps": [
+      "ловушка бесплатного пробного периода",
+      "автоматическое возобновление",
+      "взимание платежей после пробного периода"
+    ],
+    "Fuel Prices": [
+      "цены на бензин",
+      "цены на дизель",
+      "стоимость топлива",
+      "бензин слишком дорогой"
+    ],
+    "Power Cuts": [
+      "отключение электроэнергии",
+      "отключение электричества",
+      "отключение электроэнергии",
+      "нет электроэнергии",
+      "отказ питания"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "увеличение ипотеки",
+      "ипотечная ставка",
+      "рефинансирование",
+      "окончание фиксированной ставки"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "комиссии за переводы",
+      "отправка денег за границу",
+      "комиссии за переводы",
+      "стоимость телеграфного перевода"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "парковка в больнице",
+      "парковка при больнице",
+      "парковка NHS"
+    ],
+    "Noisy Neighbours": [
+      "жалоба на шум",
+      "шум соседей",
+      "громкие соседи",
+      "шумовое загрязнение"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "вывоз мусора",
+      "мусор не вывезен",
+      "путаница с переработкой",
+      "пропущенный вывоз мусора"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "разрешение на строительство",
+      "нежелательное развитие",
+      "зеленая зона",
+      "разрешение на строительство"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "не могу получить возврат",
+      "возврат отказан",
+      "возврат отклонен",
+      "возврат денег"
+    ],
+    "Fake Reviews": [
+      "манипуляция отзывами",
+      "платные отзывы",
+      "поддельные отзывы Trustpilot",
+      "поддельный отзыв"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "качество пищи",
+      "готовое блюдо хуже",
+      "пищевые добавки",
+      "порция меньше"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "самообслуживание",
+      "самообслуживание",
+      "нет кассиров",
+      "машина не работает"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "стоимость присмотра за детьми",
+      "плата в детский сад",
+      "присмотр за детьми дорогой",
+      "стоимость детского сада"
+    ],
+    "Dog Fouling": [
+      "собачий помет",
+      "собачьи какашки",
+      "собачьи отходы",
+      "загрязнение"
+    ]
   },
   "category_assistants": {
     "transport": {

@@ -1,618 +1,731 @@
 {
   "locale": "nl",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
+    "Transport": "Vervoer",
+    "Telecoms": "Telecommunicatie",
+    "Banking": "Bankieren",
+    "Health": "Gezondheid",
+    "Education": "Onderwijs",
+    "Environment": "Milieu",
+    "Energy": "Energie",
     "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Insurance": "Verzekeringen",
+    "Housing": "Huisvesting",
+    "Shopping": "Winkelen",
+    "Delivery": "Bezorging",
+    "Local": "Lokaal",
+    "Employment": "Werkgelegenheid",
+    "Tech": "Technologie",
+    "Other": "Overig"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Treincancelingen",
+      "description": "Treinen geannuleerd of ernstig vertraagd met onvoldoende waarschuwing of compensatie"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Treinkaartprijzen",
+      "description": "Spoorwegtarieven te duur, stijgingen boven inflatie, inconsistente prijzen"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Vluchtverstragingen",
+      "description": "Vluchten vertraagd of geannuleerd, slechte communicatie, moeite met compensatieaanvraag"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Verloren bagage",
+      "description": "Tassen niet op bestemming aangekomen, trage tracering, onvoldoende compensatie"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Buslijnen gesloten",
+      "description": "Routes geannuleerd, frequentie verminderd, plattelandsgemeenschappen verliezen busverbinding"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Schade door kuilen",
+      "description": "Gaten in het wegdek beschadigen voertuigen en gefietsten, gemeenten repareren traag"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Parkeerboetes",
+      "description": "Oneerlijke privéparkeerkosten, agressieve handhaving, onduidelijke bewegwijzering"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Brandstofprijzen",
+      "description": "Benzine- en dieselprijzen te hoog, dalen traag wanneer groothandelsprijzen dalen"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Breedbandsnelheid",
+      "description": "Internetsnelheden veel lager dan geadverteerd en betaald"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Mobiele signaal dode zones",
+      "description": "Geen mobiel signaal in huizen, werkplekken of langs transportroutes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Prijsstijgingen tijdens contract",
+      "description": "Telefoon-, breedband- en tv-rekeningen stijgen tijdens vastgestelde contracten"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Wachttijden klantenservice",
+      "description": "Uren in de wacht om met iemand te spreken"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Moeilijkheid bij opzeggen abonnementen",
+      "description": "Bedrijven maken het opzettelijk moeilijk om op te zeggen of af te melden"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Roamingkosten",
+      "description": "Onverwachte mobiele kosten bij reizen naar het buitenland, prijsstijgingen na Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Energierekening kosten",
+      "description": "Gas- en elektriciteitsbrekeningen onbetaalbaar, prijsplafond nog steeds te hoog"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Onnauwkeurige energierekeningen",
+      "description": "Geschatte aflezingen onjuist, te veel betaald, factureringsfouten"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Waterrekening stijgingen",
+      "description": "Waterrekeningen stijgen sterk terwijl de servicekwaliteit afneemt"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Rioolwater in rivieren",
+      "description": "Waterbedrijven storten ruw rioolwater in waterwegen en stranden"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Stroomonderbrekingen",
+      "description": "Elektriciteitstoevoerstoring, trage herstel, onvoldoende compensatie"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Slimme meter problemen",
+      "description": "Slimme meters werken niet, verliezen functionaliteit na leverancierswisseling"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Bankagentuursluitingen",
+      "description": "Lokale bankkantoren sluiten, waardoor gemeenschappen geen toegang hebben"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Verborgen bankkosten",
+      "description": "Onverwachte kosten voor rood staan, buitenlandse transacties, rekeningbeheer"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Fraude- en oplichting verliezen",
+      "description": "Banken weigeren slachtoffers van fraude en geautoriseerde pushpayment-scams terug te betalen"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Afwijzing verzekeringsclaims",
+      "description": "Claims afgewezen op technische gronden na jaren premie te betalen"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Hypotheekrentesokkenschok",
+      "description": "Vaste rente eindigt en gaat naar veel hogere variabele rente"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Kosten voor overseaoverschrijvingen",
+      "description": "Buitensporige kosten en slechte wisselkoersen voor internationale geldtransfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS wachttijden",
+      "description": "Maanden- of jarenlange wachttijden voor operaties en specialistenafspraken"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Toegang tot huisarts afspraak",
+      "description": "Kan huisarts afspraken niet boeken, wachttijden van weken"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Tandarts beschikbaarheid",
+      "description": "Onmogelijk om een NHS tandarts te vinden die nieuwe patiënten aanneemt"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Wachttijden geestelijke gezondheidszorg",
+      "description": "Maanden wachttijd voor therapie en ondersteuning voor geestelijke gezondheid"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Receptkosten",
+      "description": "Kosten per artikel te hoog in Engeland, inconsistentie in hele Verenigd Koninkrijk"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Parkeerkosten ziekenhuis",
+      "description": "Betalen voor parkeren in ziekenhuis terwijl ziek of zieke familieleden bezoeken"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Huurstijgingen",
+      "description": "Private huur stijgt veel hoger dan inflatie, dreigt ontruiming zonder schuld"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Gemeentebelastingstijgingen",
+      "description": "Jaarlijkse gemeentebelastingstijgingen terwijl lokale diensten slechter worden"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Lawaaierige buren",
+      "description": "Aanhoudende geluidshinder, gemeenten reageren traag, beïnvloedt geestelijke gezondheid"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Afvalophaalveranderingen",
+      "description": "Verminderde afvalophaling, verwarrende recyclingregels, overvolle vuilnisbakken"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Misbruik van bouwvergunning",
+      "description": "Ongewenste ontwikkelingen goedgekeurd, groene zone onder bedreiging, gemeente genegeerd"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Vocht en schimmel in huisvesting",
+      "description": "Verhuurders en woningcorporaties repareren vocht en schimmel niet"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Afleveringsproblemen",
+      "description": "Pakketten verloren, in regen achtergelaten, gemarkeerd als afgeleverd maar niet ontvangen"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "Producten worden kleiner terwijl prijzen gelijk blijven of stijgen"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Retouren en terugbetalingsmoeite",
+      "description": "Bedrijven maken retouren en terugbetalingen onnodig moeilijk"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Nep reviews",
+      "description": "Kan online reviews niet vertrouwen, neprecensies misleiden consumenten"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Abonnementsvallen",
+      "description": "Gratis proefperioden omzetten naar betaald zonder duidelijke toestemming, moeilijk op te zeggen"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Voedselkwaliteit achteruitgang",
+      "description": "Maaltijden klaar slechtere kwaliteit, kleinere porties, meer additieven"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Zelfbedieningskassa frustratie",
+      "description": "Zelfbedieningsapparaten onbetrouwbaar, vervangen menselijk personeel"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Kosten van kinderopvang",
+      "description": "Kinderopvangkosten onbetaalbaar hoog, beperkt vermogen om te werken"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Terugbetaling studielening",
+      "description": "Afgestudeerden betalen decenniadelang terug, drempelveranderingen en rentetarieven"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Hondenpoep",
+      "description": "Hondenuitwerpselen in openbare ruimtes, parken en trottoirs niet schoongemaakt"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI vervangt banen",
+      "description": "Bezorgdheid over kunstmatige intelligentie die banen automatiseert zonder ondersteuning voor overgang"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "UK spoorwegbedrijf dat de West Coast Main Line bedient"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "UK spoorwegbedrijf dat Londen en het zuiden bedient"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "UK spoorwegbedrijf dat het noorden van Engeland bedient"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "UK spoorwegbedrijf voor langeafstandsverkeer"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "UK spoorwegbedrijf dat trans-Pennine routes bedient"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "UK spoorwegbedrijf dat de East Coast Main Line bedient"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Goedkope Europese luchtvaartmaatschappij"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Britse goedkope luchtvaartmaatschappij"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Britse vlaggendrager luchtvaartmaatschappij"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Vakantie- en reisbureau"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Grote Britse breedband- en mobiele provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Britse breedband-, tv- en mobiele provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Britse tv-, breedband- en mobiele provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Wereldwijd telecomsbedrijf gevestigd in het Verenigd Koninkrijk"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Britse mobiele netwerkoperator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Britse breedband- en telefoonprovider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Britse energieleverancier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Britse energieleverancier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Britse energieleverancier (Frans eigendom)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Britse hernieuwbare energieleverancier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Britse energieleverancier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Britse energieleverancier (Duits eigendom)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Water- en riolerings maatschappij voor Londen en de Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Waterbedrijf voor het zuiden van Engeland"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Waterbedrijf voor het noordwesten van Engeland"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Waterbedrijf voor de Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Waterbedrijf voor Oost-Engeland"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Britse multinationaal bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Wereldwijd bank- en financiële diensten"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Britse retail- en zakenbank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Britse bankgroep"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Britse bank (Spaans eigendom)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Digitaal bankieren en fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Britse verzekerings- en financiële diensten"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Britse auto- en huisverzekering"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Brits verzekeringsmaatschappij"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Wereldwijde e-commerce en technologie"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Britse postdienst"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Britse pakkettenbezorgdienst (voorheen Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Britse pakkettenbezorgdienst"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Britse supermarktketen"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Britse supermarktketen"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Nationale Gezondheidsdienst voor Engeland"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS tandheelkundige diensten"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Persoonlijke gezondheidszorgprovider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Britse lokale overheidsinstellingen"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Britse huizenbouwer"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Brits online verhuurplatform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Streamingdienst voor entertainment"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Technologiebedrijf"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "trein geannuleerd",
+      "geannuleerde trein",
+      "treinannulering",
+      "treinen rijden niet",
+      "spoorannulering",
+      "dienst geannuleerd",
+      "treinvertragingen",
+      "vertraagde trein",
+      "treinen zijn laat",
+      "late trein",
+      "spoorvertragingen"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "spoorkaartjes",
+      "kaartjesprijzen",
+      "dure treinen",
+      "treinkaartjes"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "vlucht vertraagd",
+      "vliegtuig vertraagd",
+      "vlucht geannuleerd",
+      "vertragingen op luchthaven",
+      "vast op luchthaven",
+      "vlucht laat"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "vermiste tassen",
+      "verloren koffer",
+      "tassen niet aangekomen",
+      "vermiste koffer",
+      "bagage niet op carrousel",
+      "tas verloren door luchtvaartmaatschappij"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "busbesparingen",
+      "routeverminderingen",
+      "bussluiting"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "langzaam internet",
+      "langzame wifi",
+      "wifi traag",
+      "internetsnelheid",
+      "breedband werkt niet",
+      "bufferen",
+      "internet valt steeds uit",
+      "wifi valt uit"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "geen signaal",
+      "geen ontvangst",
+      "mobiele dode zone",
+      "signaal dode zone"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "rekening verhoogd tijdens contract",
+      "contractprijs stijging",
+      "verhoging tijdens contract"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "in de wacht",
+      "wachten aan de telefoon",
+      "kan niet doorkomen",
+      "niemand neemt op",
+      "telefoonwachtrij",
+      "callcenter"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
+      "kan niet annuleren",
+      "moeilijk om te annuleren",
+      "abonnement opzeggen",
       "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "gasrekening te hoog",
+      "elektriciteitsrekening",
+      "energieprijzen",
+      "verwarmingskosten",
+      "energiearmoede",
+      "kan energiekosten niet betalen"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "foute energierekening",
+      "geschatte meterstand fout",
+      "te veel berekend voor energie"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "watertarieven",
+      "waterrekening",
+      "waterrekening te hoog"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "rioollozing",
+      "ruw riolering",
+      "riolering op strand",
+      "watervervuiling",
+      "rioolverlies",
+      "gemengd riooloverloop"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "onverwachte kosten",
+      "verborgen kosten",
+      "verrassingskosten",
+      "roodstandkosten",
+      "bankkosten"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "opgelicht",
+      "bankfraude",
+      "push payment zwendel",
+      "geautoriseerde fraude"
+    ],
+    "Bank Branch Closures": [
+      "sluitingen van kantoren",
+      "lokale bank sluit",
+      "geen bank in de buurt"
+    ],
+    "Insurance Claim Rejections": [
+      "schadeclaim geweigerd",
+      "verzekering wil niet betalen",
+      "claim afgewezen"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS wachttijd",
+      "wachtlijst",
+      "operatie wachten",
+      "ziekenhuiswachttijd",
+      "verwijzingswachttijd",
+      "wachten op operatie"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "kan geen huisartsafspraak krijgen",
+      "doktersafspraak",
+      "huisartstelefoonwachtrij",
+      "kan niet naar een dokter",
+      "8 uur ochtends telefoonstorm"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS tandarts",
+      "kan tandarts niet vinden",
+      "tandarts wachtlijst"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "financiering geestelijke gezondheid",
+      "therapiebeschikbaarheid",
+      "counselingwachttijd",
+      "CAMHS wachttijd"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "medicijnkosten",
+      "medicijnprijzen",
+      "apothekerskosten"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "pakket verloren",
+      "pakket niet bezorgd",
+      "achtergelaten in regen",
+      "pakket gestolen",
+      "bezorgbestuurder",
+      "gemiste bezorging"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "huur te hoog",
+      "huur stijgt",
+      "huisbaas verhoogt huur",
+      "uitzetting zonder schuld"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "parkeerkaartje",
+      "parkeerverguning",
+      "PCN",
+      "oneerlijke parkeerboete"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "kleinere porties",
+      "minder voor dezelfde prijs",
+      "verpakking kleiner",
+      "producten worden kleiner"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "gaten in de weg",
+      "wegschade",
+      "gat in weg auto schade"
+    ],
+    "Council Tax Rises": [
+      "gemeentebelas stijging",
+      "gemeentebelas te hoog",
+      "lokale belasting"
+    ],
+    "Damp and Mould in Housing": [
+      "schimmelachtig huis",
+      "vochtflat",
+      "zwarte schimmel",
+      "huishoudensslijtage"
+    ],
+    "Student Loan Repayment": [
+      "studentenleningen",
+      "cursusgeld",
+      "onderwijsschuld",
+      "studentenschuld"
+    ],
+    "AI Replacing Jobs": [
+      "taakautomatisering",
+      "AI neemt banen over",
+      "robots vervangen werknemers"
+    ],
+    "Roaming Charges": [
+      "vakantiebiljet",
+      "buitenlands datakosten",
+      "buitenlandse telefoonkosten"
+    ],
+    "Smart Meter Problems": [
+      "slimme meter kapot",
+      "meter werkt niet",
+      "meter verliest signaal"
+    ],
+    "Subscription Traps": [
+      "gratis trialval",
+      "automatische verlenging",
+      "in rekening gebracht na proefperiode"
+    ],
+    "Fuel Prices": [
+      "benzineprijzen",
+      "dieselprijzen",
+      "brandstofkosten",
+      "benzine te duur"
+    ],
+    "Power Cuts": [
+      "stroomstoring",
+      "elektriciteit afgesloten",
+      "blackout",
+      "geen stroom",
+      "stroomfalen"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "hypotheekverhoging",
+      "hypotheekrente",
+      "herzien hypotheek",
+      "vaste rente eindigt"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "transferkosten",
+      "geld naar buitenland sturen",
+      "geldovermakingskosten",
+      "draadoverdrachtkosten"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "ziekenhuisparkering",
+      "parkeren bij ziekenhuis",
+      "NHS parkering"
+    ],
+    "Noisy Neighbours": [
+      "geluidklacht",
+      "buurlawaai",
+      "luide buren",
+      "geluidsoverlast"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "afvalophaling",
+      "vuilnis niet opgehaald",
+      "recyclingverwarring",
+      "gemiste afvalophaling"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "bouwvergunning",
+      "ongewenste ontwikkeling",
+      "groenzone",
+      "bouwvergunning"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "kan geen restitutie krijgen",
+      "terugbetaling geweigerd",
+      "terugzending afgewezen",
+      "geld terug"
+    ],
+    "Fake Reviews": [
+      "manipulatie van beoordelingen",
+      "betaalde beoordelingen",
+      "trustpilot nep",
+      "nep review"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "voedselkwaliteit",
+      "kant-en-klaar maaltijd slechter",
+      "voedseladditieven",
+      "portie kleiner"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "zelfkassa",
+      "zelfbediening",
+      "geen personeelskassa's",
+      "machine werkt niet"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "kinderopvangkosten",
+      "kinderdagverblijftarief",
+      "kinderopvang duur",
+      "dagopvangkosten"
+    ],
+    "Dog Fouling": [
+      "hondenpoep",
+      "hondenpoo",
+      "hondenafval",
+      "vervuiling"
+    ]
   },
   "category_assistants": {
     "transport": {

@@ -125,7 +125,7 @@ npx tsx scripts/seed-translations.ts --apply
 - `--all` — retranslate everything
 - `--locales es,fr,de` — only specific locales (useful for retrying failures)
 - `--dry-run` — preview without calling the API
-- `--model claude-sonnet-4-20250514` — use a different model (default: `claude-haiku-4-20250414`)
+- `--model claude-sonnet-4-20250514` — use a different model (default: `claude-haiku-4-5-20251001`)
 
 **Requires** `ANTHROPIC_API_KEY` in environment or `.env.local`.
 
@@ -179,6 +179,55 @@ npx prettier --write messages/*.json
 - Sub-agents are unpredictable — some batches finish, others fail silently or take 20+ minutes
 - `npm run translate` handles all 44 locales in ~1-2 minutes via parallel API calls
 - A Node.js script handles all 44 UI locale files in <1 second, deterministically
+
+### Translation Verification Protocol (MANDATORY — run at start of every session)
+
+Translations have previously been "applied" with English placeholder values instead of actual translations. This check catches that. Run it at the start of every session and after every `seed-translations.ts --apply`.
+
+**Quick check (run from worktree or main repo):**
+
+```bash
+# Check DB translations are actually translated (not English placeholders)
+# Uses staging DB via with-staging-env.sh
+bash scripts/with-staging-env.sh -e "
+const { createClient } = require('@libsql/client');
+const db = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
+async function check() {
+  const types = ['issue', 'organisation', 'synonym', 'category', 'category_assistant'];
+  for (const t of types) {
+    const r = await db.execute({
+      sql: 'SELECT COUNT(*) as total, SUM(CASE WHEN value = (SELECT value FROM translations t2 WHERE t2.entity_type = t.entity_type AND t2.entity_id = t.entity_id AND t2.field = t.field AND t2.language_code = \"en\") THEN 1 ELSE 0 END) as english FROM translations t WHERE entity_type = ? AND language_code != \"en\"',
+      args: [t]
+    });
+    const row = r.rows[0];
+    const eng = Number(row.english);
+    const tot = Number(row.total);
+    const pct = tot > 0 ? Math.round((eng / tot) * 100) : 0;
+    console.log(t + ': ' + tot + ' rows, ' + eng + ' still English (' + pct + '%)' + (pct > 10 ? ' ⚠️ NEEDS TRANSLATION' : ' ✅'));
+  }
+}
+check();
+"
+```
+
+**If any section shows >10% English:** Run the translation pipeline for that section:
+
+```bash
+source .env.local && npm run translate -- --section <name>
+# Then apply:
+bash scripts/with-staging-env.sh scripts/seed-translations.ts --apply
+# And on production:
+TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npx tsx scripts/seed-translations.ts --apply
+```
+
+**Also check translation JSON files are not English:**
+
+```bash
+# Spot-check: does fr.json have French text for issues?
+node -e "const fr = require('./translations/fr.json'); const v = Object.values(fr.issues)[0]; console.log('FR issue sample:', JSON.stringify(v)); const isEng = v.name && !/[^\x00-\x7F]/.test(v.name) && v.name === Object.keys(fr.issues)[0]; console.log(isEng ? '⚠️ STILL ENGLISH' : '✅ Translated');"
+```
+
+**Key rule:** A feature is not complete until all 5 entity types (issue, organisation, synonym, category, category_assistant) have actual translations in all 44 locales — both in the JSON files AND in the database. English placeholder values don't count.
 
 ## Dual-Surface Protocol (IMPORTANT — follow for every feature)
 
@@ -254,6 +303,8 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **OTP delivery script must use production API key:** The `scripts/deliver-otp-codes.sh` script always talks to production Vercel. It hardcodes the production bot API key (`qr-xx21iIL4s2cepF9WVzHwwlL7QslY4boQGJHEWFYNA1U`) because `.env.local` has the dev fallback key (`qr-bot-dev-key-2026`) which production rejects. Never change this to read from `.env.local`.
 - **WhatsApp delivery from Vercel requires DB queue polling:** `sendWhatsAppMessage()` calls `/opt/homebrew/bin/openclaw` which only exists on the local Mac — it silently fails on Vercel. All WhatsApp delivery must go through the DB queue: write `whatsapp_message` + `whatsapp_expires_at` to the `messages` table, and the local polling script (`scripts/deliver-messages.sh`, 5s interval) handles actual delivery via OpenClaw. Use `sendNotification()` from `src/lib/queries/messages.ts` which handles this automatically. Same pattern as OTP delivery. **This is the standard approach until Twilio replaces OpenClaw.**
 - **Phone/password login must set Auth.js JWT cookie:** `setSession()` sets BOTH the legacy `qr_user_id` cookie (server-side `getSession()`) AND the Auth.js JWT cookie (client-side `useSession()` from next-auth/react). Without the JWT cookie, the nav-bar and auth-gate show the user as logged out even though server-side auth works. The JWT is encoded using `encode()` from `next-auth/jwt` with `AUTH_SECRET`. Cookie name: `__Secure-authjs.session-token` (production) or `authjs.session-token` (dev). All callers of `setSession()` should pass `userInfo` (name, email, image) for the JWT payload.
+- **Translation files can contain English placeholders:** `seed-translations.ts --apply` inserts whatever is in the JSON files — if the files contain English values (because `npm run translate` wasn't run or failed), the DB will have English "translations" for all 44 locales. Always verify translations are actually translated before applying. The Translation Verification Protocol catches this.
+- **Translation model IDs go stale:** The `npm run translate` script defaults to a specific Claude model. When Anthropic retires old model IDs, the script fails with 404. Check `scripts/translate.ts` for the default model and update if needed (current: `claude-haiku-4-5-20251001`).
 - **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
 
 ## Database ID Convention
@@ -275,7 +326,8 @@ At the start of every session (or when asked to "pick up where we left off"):
 1. Read CLAUDE.md → SESSION_LOG.md (lightweight index) → latest session file linked from it
 2. Summarise where we left off and what the priorities are
 3. Run the test suite (`npm test`) and flag any issues
-4. **OpenClaw health check — only if bot work is planned or user mentions bot issues:**
+4. **Translation health check:** Run the Translation Verification Protocol quick check (see i18n section). Flag any entity type with >10% English values — these need `npm run translate` before any other work.
+5. **OpenClaw health check — only if bot work is planned or user mentions bot issues:**
    - `openclaw --version` — report current version
    - `launchctl list | grep ai.openclaw.gateway` — confirm gateway is running
    - `tail -5 ~/.openclaw/logs/watchdog.log` — check for recent auto-recoveries
@@ -345,7 +397,12 @@ After merging a PR, run through this checklist immediately — don't defer to en
    - For CSP or header changes: `curl -sI https://www.quietriots.com | grep -i <header>`
    - If health returns 500: check Vercel deployment logs (`npx vercel inspect <url> --logs`), likely a missing env var
 
-5. **Force redeploy if needed:** If Vercel auto-deploy didn't trigger or deployed stale code:
+5. **Translation check:** If the PR touched `seed-translations.ts`, `translations/*.json`, or any translatable entity (issues, orgs, synonyms, categories, category_assistants):
+   - Run the Translation Verification Protocol quick check against both staging and production
+   - If any entity type shows >10% English values, run `npm run translate -- --section <name>` and re-apply
+   - Always apply to BOTH staging and production: `seed-translations.ts --apply`
+
+6. **Force redeploy if needed:** If Vercel auto-deploy didn't trigger or deployed stale code:
    - `cd /Users/skye/Projects/quiet-riots && git checkout main && git pull origin main && npx vercel --prod`
    - NEVER run `npx vercel --prod` without pulling main first — this deploys stale local files
 

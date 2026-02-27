@@ -1,618 +1,731 @@
 {
   "locale": "he",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "תחבורה",
+    "Telecoms": "טלקומוניקציה",
+    "Banking": "בנקאות",
+    "Health": "בריאות",
+    "Education": "חינוך",
+    "Environment": "סביבה",
+    "Energy": "אנרגיה",
+    "Water": "מים",
+    "Insurance": "ביטוח",
+    "Housing": "דיור",
+    "Shopping": "קניות",
+    "Delivery": "משלוח",
+    "Local": "מקומי",
+    "Employment": "עסקי",
+    "Tech": "טכנולוגיה",
+    "Other": "אחר"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "ביטולי רכבות",
+      "description": "רכבות שבוטלו או התעכבו באופן חמור עם הודעה או פיצוי לא מספיק"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "מחירי כרטיסי רכבת",
+      "description": "תעריפי רכבת יקרים מדי, עלייה מעל האינפלציה, תמחור בלתי עקבי"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "עיכובי טיסות",
+      "description": "טיסות שהתעכבו או בוטלו, תקשורת גרועה, קושי בתביעה לפיצוי"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "מטענים אבודים",
+      "description": "תיקיות שלא הגיעו ליעד, מעקב איטי, פיצוי בלתי מספיק"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "חיתוכי מסלולי אוטובוס",
+      "description": "מסלולים שבוטלו, תדירות מופחתת, קהילות כפריות מאבדות גישה לאוטובוס"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "נזקי חורי כביש",
+      "description": "חורי כביש המוציאים נזק לרכבים ומסכנים רוכבי אופניים, מועצות איטיות בתיקון"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "קנסות חנייה",
+      "description": "עמלות חנייה פרטית לא הוגנות, אכיפה אגרסיבית, שלטים מבלבלים"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "מחירי דלק",
+      "description": "מחירי בנזין וסולר גבוהים מדי, ירידה איטית כאשר מחיר הסיטונאות יורד"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "מהירות הרחב-פס",
+      "description": "מהירויות אינטרנט הרבה יותר נמוכות מהמפורסם ועמו משולם"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "אזורי עלמת כיסוי נייד",
+      "description": "אין אות נייד בבתים, מקומות עבודה, או לאורך מסלולי תחבורה"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "עלייה במחירים באמצע החוזה",
+      "description": "שיחות, רחב-פס וחשבונות טלוויזיה גדלים במהלך חוזים נעולים"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "זמני המתנה בשירות הלקוחות",
+      "description": "שעות בהמתנה בכדי לדבר עם בן אדם"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "קושי בביטול מנויים",
+      "description": "חברות הופכות את זה למכוון קשה לביטול או הסרה מהמנוי"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "עמלות ניידות בחו\"ל",
+      "description": "עמלות נייד בלתי צפויות בעת נסיעה בחו\"ל, עלייה במחירים לאחר ברקזיט"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "עלויות חשבונות אנרגיה",
+      "description": "חשבונות גז וחשמל בלתי משתלמים, תקרת מחיר עדיין גבוהה מדי"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "חשבונות אנרגיה לא מדויקים",
+      "description": "קריאות מוערכות שגויות, תשלום יתר, שגיאות בחישוב"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "עלייה בחשבונות מים",
+      "description": "חשבונות מים גדלים בחדות בזמן שאיכות השירות יורדת"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "ביוב בנהרות",
+      "description": "חברות מים משפכות שפכים גולמיים למימי ושלים וחופים"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "הפסקות חשמל",
+      "description": "הפסקות אספקת חשמל, שיקום איטי, פיצוי בלתי מספיק"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "בעיות מד חכם",
+      "description": "מדי חכמים שאינם עובדים, אובדן פונקציונליות לאחר החלפת ספק"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "סגירה של סניפי בנק",
+      "description": "סניפי בנק מקומיים נסגרים, משאירים קהילות ללא גישה"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "עמלות בנק נסתרות",
+      "description": "עמלות בלתי צפויות להוצאות יתר, עסקאות זרות, תחזוקת חשבון"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "הפסדי הונאה והונאה",
+      "description": "בנקים מסרבים להחזר כסף לקורבנות הונאה והונאות דחיפה מורשות"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "דחיית תביעות ביטוח",
+      "description": "תביעות נדחות בגללי טכניקות לאחר שנים של תשלום פרמיות"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "זעזוע בשיעור משכנתא",
+      "description": "סיום של שיעור קבוע והעברה לשיעור משתנה הרבה יותר גבוה"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "עמלות העברה בחו\"ל",
+      "description": "עמלות יתר וקורסי חליפין גרועים להעברת כסף בינלאומית"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "זמני המתנה ב-NHS",
+      "description": "המתנה של חודשים או שנים על ניתוחים וביקורי מומחים"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "גישה לפגישות רופא",
+      "description": "לא יכול להגיע דרך להזמנת פגישות רופא, המתנה של שבועות"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "זמינות של רופא שיניים",
+      "description": "בלתי אפשרי למצוא רופא שיניים NHS המקבל חולים חדשים"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "זמני המתנה לשירות בריאות נפשית",
+      "description": "המתנה של חודשים לתרפיה ותמיכה בבריאות נפשית"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "עלויות מרשם רפואי",
+      "description": "עלות לפריט גבוהה מדי באנגליה, חוסר עקביות בין מדינות בריטיה"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "עמלות חנייה בבית חולים",
+      "description": "תשלום על חנייה בבית חולים בזמן שאתה חולה או מבקר בקרוב חולה"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "עלייה בשכר דירה",
+      "description": "שכירות פרטית גדלה הרבה מעל האינפלציה, איום של פינוי ללא אשמה"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "עלייה במס מועצה",
+      "description": "עלייה שנתית במס מועצה בזמן ששירותים מקומיים הופכים לגרועים יותר"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "שכנים רועשים",
+      "description": "הפרעות רעש מתמשכות, מועצות איטיות לפעול, משפיע על בריאות נפשית"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "שינויים בהעלאת אשפה",
+      "description": "אוסף פחים מופחת, כללי מיחזור מבלבלים, פחים גולשים"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "התעללות בהיתר תכנון",
+      "description": "פיתוחים לא רצויים אושרו, חגורת ירוקה בסכנה, קהילה בחוסר חשיבות"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "לחות וטל בדיור",
+      "description": "בעלי דירות וכיתות דיור כושלים בתיקון לחות וטל"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "בעיות משלוח",
+      "description": "חבילות אבודות, הוצאו בגשם, מסומנות כמושלחות אך לא התקבלו"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "הצטמקות-האינפלציה",
+      "description": "מוצרים מצטמקים בזמן שמחירים נשארים זהים או גדלים"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "קושי בהחזרות",
+      "description": "חברות הופכות תשובות והחזרות כספיות לקשה כל הצורך"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "ביקורות מזויפות",
+      "description": "לא יכול להאמין לביקורות אונליין, ביקורות חיוביות מזויפות מטעות צרכנים"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "מלכודות מנוי",
+      "description": "ניסיונות חינם המתהפכים לתשלום ללא הסכמה ברורה, קשה לביטול"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "ירידה באיכות המזון",
+      "description": "ארוחות מוכנות בעלות איכות גרועה יותר, מנות קטנות יותר, יותר תוספים"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "תסכול עם קופה עצמית",
+      "description": "מכונות שירות עצמי בלתי אמינות, החלפת צוות אנושי"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "עלות הטיפול בילדים",
+      "description": "עלויות הטיפול בילדים יקרות בצורה גלויה, מגבילות את היכולת לעבוד"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "החזר הלוואה לסטודנטים",
+      "description": "בוגרים משלמים עבור עשרות שנים, שינויים בסף וריבית"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "זיהום כלבים",
+      "description": "צואת כלבים במרחבים ציבוריים, פארקים ומדרכות שלא מנוקים"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI מחליף מקומות עבודה",
+      "description": "חרדה מלאומנות מלאכותית המחליפה מקומות עבודה ללא תמיכת מעבר"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "מפעיל רכבות בריטי המשרת את קו West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "מפעיל רכבות בריטי המשרת את לונדון והדרום"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "מפעיל רכבות בריטי המשרת את צפון אנגליה"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "מפעיל רכבות למרחקים ארוכים בריטי"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "מפעיל רכבות בריטי המשרת מסלולים trans-Pennine"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "מפעיל רכבות בריטי המשרת את East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "חברת תעופה אירופית בעלות נמוכה"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "חברת תעופה בעלות נמוכה מבסיס בריטי"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "חברת התעופה הלאומית של בריטניה"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "חברת חופשות ונסיעות"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "ספק אינטרנט ונייד ברחוב של בריטניה"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "ספק אינטרנט, טלוויזיה וטלפוניה סלולרית בבריטניה"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "ספק טלוויזיה, אינטרנט וטלפוניה סלולרית בבריטניה"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "חברת תקשורת גלובלית בעלת מטה בבריטניה"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "מפעיל רשת נייד בבריטניה"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "ספק אינטרנט וטלפון בבריטניה"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "ספק אנרגיה בבריטניה"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "ספק אנרגיה בבריטניה"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "ספק אנרגיה בבריטניה (בבעלות צרפתית)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "ספק אנרגיה מתחדשת בבריטניה"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "ספק אנרגיה בבריטניה"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "ספק אנרגיה בבריטניה (בבעלות גרמנית)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "חברת מים וביוב ללונדון ועמק Thames"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "חברת מים לדרום אנגליה"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "חברת מים לצפון מערב אנגליה"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "חברת מים ל-Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "חברת מים ל-East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "בנק רב-לאומי בריטי"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "שירותי בנקאות ופיננסיים גלובליים"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "בנק קמעוני ומסחרי בריטי"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "קבוצת בנקאות בריטית"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "בנק בבריטניה (בבעלות ספרדית)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "בנקאות דיגיטלית וטכנולוגיה פיננסית"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "בטוח ושירותים פיננסיים בבריטניה"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "ביטוח רכב וביתי בבריטניה"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "חברת ביטוח בבריטניה"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "מסחר אלקטרוני וטכנולוגיה גלובליים"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "שירות דואר בבריטניה"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "שירות משלוח חבילות בבריטניה (לשעבר Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "שירות משלוח חבילות בבריטניה"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "רשת סופרמרקט בריטית"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "רשת סופרמרקט בריטית"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "שירות הבריאות הלאומי לאנגליה"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "שירותי שיניים של NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "ספק healthcare פרטי"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "רשויות ממשל מקומי בבריטניה"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "בנאי בתים בריטי"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "פלטפורמת השכרה מקוונת בבריטניה"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "שירות בידור בזרימה"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "חברת טכנולוגיה"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "רכבת בוטלה",
+      "רכבת מבוטלת",
+      "ביטול רכבת",
+      "רכבות לא פועלות",
+      "ביטול שירות רכבות",
+      "שירות בוטל",
+      "עיכובי רכבות",
+      "רכבת מעוכבת",
+      "רכבות באיחור",
+      "רכבת באיחור",
+      "עיכובי רכבות"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "מחירי כרטיסי רכבות",
+      "עלויות כרטיסים",
+      "רכבות יקרות",
+      "מחירי כרטיסי רכבות"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "טיסה מעוכבת",
+      "מטוס מעוכב",
+      "טיסה בוטלה",
+      "עיכובים בשדה התעופה",
+      "תקוע בשדה התעופה",
+      "טיסה באיחור"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "תיקים חסרים",
+      "מזוודה אבודה",
+      "תיקים לא הגיעו",
+      "מזוודה חסרה",
+      "מזוודה לא על הקרוסלה",
+      "תיק אבוד על ידי חברת התעופה"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "קיצוצים באוטובוסים",
+      "הפחתת מסלולים",
+      "סגירת שירותי אוטובוסים"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "אינטרנט איטי",
+      "wifi איטי",
+      "wifi איטי",
+      "מהירות אינטרנט",
+      "ברודבנד לא פועל",
+      "באפרינג",
+      "אינטרנט מנותק כל הזמן",
+      "wifi מנתק"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "אין אות",
+      "אין קליטה",
+      "אזור ללא אות סלולרי",
+      "אזור מת של אות"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "עלייה בחשבון באמצע החוזה",
+      "עלייה בחוזה",
+      "העלאת מחיר באמצע החוזה"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "בהמתנה",
+      "בהמתנה בטלפון",
+      "לא יכול להעביר",
+      "אף אחד לא משיב",
+      "תור בטלפון",
+      "מרכז שירות"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "לא יכול לבטל",
+      "קשה לבטל",
+      "ביטול מנוי",
+      "הסרת הרשמה"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "חשבון גז גבוה מדי",
+      "חשבון חשמל",
+      "מחירי אנרגיה",
+      "עלויות חימום",
+      "עוני דלק",
+      "לא יכול להרשות לעצמי אנרגיה"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "חשבון אנרגיה שגוי",
+      "קריאה משוערת שגויה",
+      "חוייב יתר על המידה בחשמל"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "שיעורי מים",
+      "תשלום מים",
+      "חשבון מים גבוה מדי"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "זריקת שפכים",
+      "שפכים גולמיים",
+      "שפכים בחוף",
+      "זיהום מים",
+      "הצפת שפכים",
+      "הצפת צינורות משותפים"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "עמלות בלתי צפויות",
+      "עמלות סמויות",
+      "חיובים מפתיעים",
+      "עמלות גובה",
+      "עמלות בנק"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "הונה",
+      "הונאה בנקאית",
+      "הונאת תשלום מאומתת",
+      "הונאה מאומתת"
+    ],
+    "Bank Branch Closures": [
+      "סגירת סניפים",
+      "בנק מקומי סוגר",
+      "אין בנק קרוב"
+    ],
+    "Insurance Claim Rejections": [
+      "תביעה נדחית",
+      "ביטוח לא ישלם",
+      "תביעה דחויה"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "המתנה ל-NHS",
+      "רשימת המתנה",
+      "המתנה לניתוח",
+      "זמן ההמתנה בבית החולים",
+      "המתנה להפניה",
+      "המתנה לניתוח"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "לא יכול לקבוע פגישה עם רופא",
+      "פגישה עם רופא",
+      "תור בטלפון של הרופא",
+      "לא יכול לפגוש רופא",
+      "התור בשעה 8 בבוקר"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "רופא שיניים של NHS",
+      "לא יכול למצוא רופא שיניים",
+      "רשימת המתנה לרופא שיניים"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "מימון בריאות נפשית",
+      "גישה לטיפול",
+      "המתנה להנחיה",
+      "המתנה ל-CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "עלויות תרופות",
+      "מחירי תרופות",
+      "עמלות בית מרקחת"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "חבילה אבודה",
+      "חבילה לא נמסרה",
+      "הושארה בגשם",
+      "חבילה גנובה",
+      "נהג משלוח",
+      "משלוח שהוחמץ"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "שכר דירה גבוה מדי",
+      "שכר דירה עולה",
+      "בעל דירה מעלה שכר דירה",
+      "פינוי ללא אשמה"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "דמי חניה",
+      "הודעת דמי חניה",
+      "PCN",
+      "קנס חניה לא הוגן"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "פורציות קטנות יותר",
+      "פחות כמות באותו מחיר",
+      "חבילה קטנה יותר",
+      "מוצרים מתכווצים"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "חורי כביש",
+      "נזק לכביש",
+      "נזק למכונית מחור בכביש"
+    ],
+    "Council Tax Rises": [
+      "עלייה בתשלום המס המקומי",
+      "תשלום המס המקומי גבוה מדי",
+      "מס מקומי"
+    ],
+    "Damp and Mould in Housing": [
+      "בית עובש",
+      "דירה לחה",
+      "עובש שחור",
+      "נזק לדיור"
+    ],
+    "Student Loan Repayment": [
+      "הלוואות סטודנטים",
+      "דמי שכלול",
+      "חוב חינוכי",
+      "חוב סטודנט"
+    ],
+    "AI Replacing Jobs": [
+      "אוטומציה של מקומות עבודה",
+      "AI משוללת מקומות עבודה",
+      "רובוטים החלפת עובדים"
+    ],
+    "Roaming Charges": [
+      "חשבון טלפון בחופשה",
+      "עמלות נתונים בחול",
+      "עמלות טלפון בחו\"ל"
+    ],
+    "Smart Meter Problems": [
+      "מונה חכם שבור",
+      "מונה לא פועל",
+      "מונה איבד אות"
+    ],
+    "Subscription Traps": [
+      "מלכודת ניסיון חינם",
+      "חידוש אוטומטי",
+      "נחייב לאחר ניסיון"
+    ],
+    "Fuel Prices": [
+      "מחירי בנזין",
+      "מחירי דיזל",
+      "עלות דלק",
+      "בנזין יקר מדי"
+    ],
+    "Power Cuts": [
+      "הפסקת חשמל",
+      "הפסקת חשמל",
+      "הפסקת זרם",
+      "אין חשמל",
+      "כשל בחשמל"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "עלייה בחזקת משכנתא",
+      "שיעור משכנתא",
+      "השכרה מחדש של משכנתא",
+      "תום תקופת ריבית קבועה"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "עמלות העברה",
+      "שליחת כסף לחו\"ל",
+      "עמלות העברה כספית",
+      "עלות העברה בחיווט"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "חניה בבית החולים",
+      "חניה בבית חולים",
+      "חניה של NHS"
+    ],
+    "Noisy Neighbours": [
+      "תלונת רעש",
+      "רעש של שכן",
+      "שכנים חומקים",
+      "הטרדה רעש"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "אספת פחים",
+      "פחים לא אספו",
+      "התבלבלות במיחזור",
+      "אספת פחים שהוחמצה"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "היתר בנייה",
+      "פיתוח לא רצוי",
+      "חגורת ירוקה",
+      "היתר בנייה"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "לא יכול להחזר כסף",
+      "החזר נדחה",
+      "החזר דחוי",
+      "החזרת כסף"
+    ],
+    "Fake Reviews": [
+      "מניפולציה של ביקורות",
+      "ביקורות בתשלום",
+      "trust pilot מזויף",
+      "ביקורת מזויפת"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "איכות המזון",
+      "ארוחה מוכנה גרועה יותר",
+      "תוספי מזון",
+      "פורציה קטנה יותר"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "קופה עצמית",
+      "שירות עצמי",
+      "אין קופות עם כוח אדם",
+      "מכונה לא פועלת"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "עלות שמירה על ילדים",
+      "דמי גן ילדים",
+      "שמירה על ילדים יקרה",
+      "עלות יום טיפול"
+    ],
+    "Dog Fouling": [
+      "צואת כלבים",
+      "צואת כלב",
+      "פסולת כלבים",
+      "זיהום"
+    ]
   },
   "category_assistants": {
     "transport": {

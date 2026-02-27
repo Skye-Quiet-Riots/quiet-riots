@@ -1,618 +1,731 @@
 {
   "locale": "cs",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "Doprava",
+    "Telecoms": "Telekomunikace",
+    "Banking": "Bankovnictví",
+    "Health": "Zdravotnictví",
+    "Education": "Vzdělání",
+    "Environment": "Životní prostředí",
+    "Energy": "Energie",
+    "Water": "Voda",
+    "Insurance": "Pojištění",
+    "Housing": "Bydlení",
+    "Shopping": "Nakupování",
+    "Delivery": "Doručování",
+    "Local": "Místní",
+    "Employment": "Zaměstnanost",
+    "Tech": "Technologie",
+    "Other": "Ostatní"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Zrušení vlaků",
+      "description": "Vlaky zrušené nebo vážně zpožděné s nedostatečným upozorněním nebo kompenzací"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Ceny jízdenek",
+      "description": "Příliš drahé jízdné, nárůsty nadměrné vůči inflaci, nejednotné ceny"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Zpoždění letů",
+      "description": "Zpoždění nebo zrušení letů, špatná komunikace, potíže s uplatňováním náhrady"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Ztracená zavazadla",
+      "description": "Tašky nedorazí do cíle, pomalé sledování, nedostatečná kompenzace"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Omezení autobusových linek",
+      "description": "Zrušené linky, snížená frekvence, venkovské komunity ztrácejí přístup k autobusům"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Poškození důlky",
+      "description": "Díry v silnici poškozující vozidla a ohrožující cyklisty, pomalá oprava radnicí"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Pokuty za parkování",
+      "description": "Nespravedlivé soukromé poplatky za parkování, agresivní vymáhání, matoucí značení"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Ceny paliva",
+      "description": "Příliš vysoké ceny benzínu a dieselu, pomalý pokles při pádu velkoobchodu"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Rychlost širokopásmového připojení",
+      "description": "Internetová rychlost daleko nižší než inzerovaná a zaplacená"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Zóny bez signálu mobilu",
+      "description": "Žádný signál mobilu doma, na pracovišti nebo podél tras dopravy"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Zvýšení ceny během smlouvy",
+      "description": "Zvyšující se účty za telefon, internet a televizi během uzavřených smluv"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Čekací doba u zákaznické služby",
+      "description": "Hodiny čekání na vyzvednutí člověka"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Obtížné zrušení předplatného",
+      "description": "Společnosti úmyslně ztěžují zrušení nebo odhlášení"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Poplatky za roaming",
+      "description": "Neočekávané mobilní poplatky při cestování do zahraničí, nárůsty cen po Brexitu"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Náklady na energetické faktury",
+      "description": "Neúnosné účty za plyn a elektřinu, cenový strop stále příliš vysoký"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Nepřesné energetické faktury",
+      "description": "Odhadované údaje chybné, přeúčtování, chyby v účetnictví"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Zvýšení vodného",
+      "description": "Účty za vodu se ostře zvyšují, zatímco kvalita služby klesá"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Splachy v řekách",
+      "description": "Vodárenské společnosti vypouští surové splachy do vodotečí a pláží"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Výpadky proudu",
+      "description": "Přerušení dodávky elektřiny, pomalé obnovení, nedostatečná kompenzace"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Problémy chytrých měřičů",
+      "description": "Chytré měřiče nefungují, ztráta funkčnosti po změně dodavatele"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Zavření poboček bank",
+      "description": "Lokální pobočky bank se zavírají, komunity ztrácejí přístup"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Skryté bankovní poplatky",
+      "description": "Neočekávané poplatky za překročení, zahraniční transakce, údržbu účtu"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Ztráty z podvodů a podvodů",
+      "description": "Banky odmítají vrátit peníze obětem podvodů a autorizovaných plateb"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Odmítnutí pojistného nároku",
+      "description": "Nároky zamítnuty na technických základech po letech placení pojistek"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Šok hypotečních sazeb",
+      "description": "Fixní sazba končí a přechází na mnohem vyšší variabilní sazbu"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Poplatky za zahraniční převody",
+      "description": "Nadměrné poplatky a špatné směnné kurzy pro mezinárodní převody peněz"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Čekací doby NHS",
+      "description": "Měsíční nebo roční čekání na operace a konzultace specialistů"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Přístup ke schůzce u lékaře",
+      "description": "Nelze se dostat do ordináce praktického lékaře, týdny trvající čekání"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Dostupnost zubního lékaře",
+      "description": "Nemožné najít NHS zubního lékaře, který by přijímal nové pacienty"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Čekací doby služeb duševního zdraví",
+      "description": "Měsíční čekání na terapii a podporu duševního zdraví"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Náklady na recepty",
+      "description": "Příliš vysoké náklady na položku v Anglii, nejednotnost v celém Spojeném království"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Poplatky za parkování v nemocnici",
+      "description": "Placení za parkování v nemocnici, když jste nemocní nebo navštěvujete nemocné příbuzné"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Zvýšení nájmu",
+      "description": "Soukromý nájem stoupá daleko nad inflaci, hrozba vykázání bez důvodu"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Zvýšení místní daně",
+      "description": "Roční nárůsty místní daně, zatímco místní služby se zhoršují"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Hlučná sousedství",
+      "description": "Trvalá hlučnost, pomalá reakce radnice, ovlivnění duševního zdraví"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Změny svozu odpadu",
+      "description": "Snížená četnost svozu, matoucí pravidla recyklace, přeplněné koše"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Zneužití stavebního povolení",
+      "description": "Nežádoucí stavby schváleny, zelené pásy ohroženy, komunita ignorována"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Vlhkost a plíseň v bydlení",
+      "description": "Pronajímatelé a bytové společnosti neopravují vlhkost a plíseň"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Problémy s doručením",
+      "description": "Ztracené balíky, ponechané v dešti, označené jako doručené, ale nepřijaté"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "Zmenšování výrobků",
+      "description": "Výrobky se zmenšují, zatímco ceny zůstávají stejné nebo se zvyšují"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Obtížnosti se vrácením peněz",
+      "description": "Společnosti zbytečně ztěžují vrácení a vrácení peněz"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Falešné recenze",
+      "description": "Nelze důvěřovat online recenzím, falešné pozitivní recenze zavádějí spotřebitele"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Pasti předplatného",
+      "description": "Bezplatné zkušební verze převádějící na placené bez jasného souhlasu, obtížné zrušení"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Pokles kvality potravin",
+      "description": "Hotová jídla horší kvality, menší porce, více aditiv"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Frustrace samoobslužného pokladu",
+      "description": "Samoobslužné přístroje nespolehlivé, nahrazují lidský personál"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Náklady na péči o děti",
+      "description": "Náklady na péči o děti zakázaně vysoké, omezují schopnost pracovat"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Splácení studentských půjček",
+      "description": "Absolventi splácej po desítky let, změny prahů a úroků"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Psí nečistoty",
+      "description": "Psí výkaly na veřejných místech, v parcích a na chodnících nejsou vyčištěny"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI nahrazující pracovní místa",
+      "description": "Úzkost z umělé inteligence automatizující pracovní místa bez podpory přechodu"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Operátor železniční dopravy UK obsluhující West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Operátor železniční dopravy UK obsluhující Londýn a jih"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Operátor železniční dopravy UK obsluhující sever Anglie"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Operátor dálkové železniční dopravy UK"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Operátor železniční dopravy UK obsluhující trasy přes Penniny"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Operátor železniční dopravy UK obsluhující East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Nízkonákladová evropská letecká společnost"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Nízkonákladová letecká společnost se sídlem v UK"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Státní letecká společnost UK"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Společnost pro dovolenou a cestování"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Hlavní poskytovatel širokopásmového internetu a mobilních služeb v UK"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Poskytovatel širokopásmového internetu, TV a mobilních služeb UK"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Poskytovatel TV, širokopásmového internetu a mobilních služeb UK"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Globální telekomunikační společnost se sídlem v UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Operátor mobilní sítě UK"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Poskytovatel širokopásmového internetu a telefonních služeb UK"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Dodavatel energie UK"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Dodavatel energie UK"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Dodavatel energie UK (vlastněný Francií)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Dodavatel obnovitelné energie UK"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Dodavatel energie UK"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Dodavatel energie UK (vlastněný Německem)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Vodárenská a kanalizační společnost pro Londýn a Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Vodárenská společnost pro jih Anglie"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Vodárenská společnost pro severozápad Anglie"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Vodárenská společnost pro Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Vodárenská společnost pro Východní Anglii"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Britská nadnárodní banka"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Globální bankovnictví a finanční služby"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Britská maloobchodní a komerční banka"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Britská bankovní skupina"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Britská banka (vlastněná Španělskem)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Digitální bankovnictví a fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Britské pojišťování a finanční služby"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Britské pojištění automobilů a domů"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Britská pojišťovna"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Globální e-commerce a technologie"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Britská poštovní služba"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Britská služba doručování balíků (dříve Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Britská služba doručování balíků"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Britský řetězec supermarketů"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Britský řetězec supermarketů"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Národní zdravotnická služba pro Anglii"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS stomatologické služby"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Poskytovatel soukromé zdravotní péče"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Britské místní vládní orgány"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Britský stavitel domů"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Britská online platforma pronájmu"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Služba streamování zábavy"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Technologická společnost"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "vlak zrušen",
+      "zrušený vlak",
+      "zrušení vlaku",
+      "vlaky nejezdí",
+      "zrušení železniční služby",
+      "služba zrušena",
+      "zpoždění vlaku",
+      "zpožděný vlak",
+      "vlaky se zpoždění",
+      "vlak se zpožděním",
+      "zpoždění železniční služby"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "železniční tarify",
+      "cena jízdenky",
+      "drahé vlaky",
+      "jízdné"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "let se zpožděním",
+      "letadlo se zpožděním",
+      "let zrušen",
+      "zpoždění na letišti",
+      "uvězněn na letišti",
+      "let se zpoždění"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "chybějící zavazadla",
+      "ztracený kufr",
+      "zavazadla nedorazila",
+      "chybějící kufr",
+      "zavazadlo se neobjevilo na pásu",
+      "zavazadlo ztracené letuškou"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "omezení autobusů",
+      "zmenšení tras",
+      "uzavření autobusové služby"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "pomalý internet",
+      "pomalé wifi",
+      "wifi pomalé",
+      "rychlost internetu",
+      "internetové připojení nefunguje",
+      "zpomalení",
+      "internet stále vypadá",
+      "wifi vypadá"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "žádný signál",
+      "žádný příjem",
+      "mrtvá zóna mobilu",
+      "mrtvá zóna signálu"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "zvýšení účtu během kontraktu",
+      "zvýšení ceny v průběhu smlouvy",
+      "zvýšení ceny v průběhu kontraktu"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "v čekací lince",
+      "čekání na telefonu",
+      "nemohu se dovolat",
+      "nikdo nezdvihá",
+      "telefonní fronta",
+      "call centrum"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "nemohu zrušit",
+      "těžko se ruší",
+      "zrušit předplatné",
+      "odhlásit se"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "účet za plyn příliš vysoký",
+      "účet za elektřinu",
+      "ceny energií",
+      "náklady na vytápění",
+      "energetická chudoba",
+      "nemohu si dovolit energii"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "nesprávný účet za energii",
+      "odhadovaná hodnota nesprávná",
+      "nadúčtování energií"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "vodné",
+      "poplatek za vodu",
+      "účet za vodu příliš vysoký"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "vypouštění odpadních vod",
+      "surové odpadní vody",
+      "odpadní vody na pláži",
+      "znečištění vody",
+      "přetékání kanalizace",
+      "přetékání jednotné kanalizace"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "neočekávané poplatky",
+      "skryté poplatky",
+      "překvapivé poplatky",
+      "poplatky za překročení",
+      "bankovní poplatky"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "podvedení",
+      "bankovní podvod",
+      "podvod s push platbou",
+      "autorizovaný podvod"
+    ],
+    "Bank Branch Closures": [
+      "zavírání poboček",
+      "zavírání místní banky",
+      "žádná banka v okolí"
+    ],
+    "Insurance Claim Rejections": [
+      "nároku zamítnut",
+      "pojišťovna neplatí",
+      "zamítnutý nárok"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "čekání na NHS",
+      "čekací listina",
+      "čekání na operaci",
+      "čekací doba v nemocnici",
+      "čekání na doporučení",
+      "čekání na chirurgický zákrok"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "nemohu si domluvit schůzku s lékařem",
+      "schůzka u lékaře",
+      "telefonní fronta lékaře",
+      "nemohu vidět lékaře",
+      "8hodinový ranní zmatек"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS zubní lékař",
+      "nemohu najít zubaře",
+      "čekací listina u zubaře"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "financování služeb pro duševní zdraví",
+      "přístup k terapii",
+      "čekání na poradenství",
+      "čekání na CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "náklady na léky",
+      "ceny léků",
+      "poplatky v lékárně"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "balík ztracen",
+      "balík nedoručen",
+      "zanechán v dešti",
+      "balík ukraden",
+      "doručovatel",
+      "zmeškaná dodávka"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "nájemné příliš vysoké",
+      "zvýšení nájemného",
+      "majitel zvyšuje nájemné",
+      "vysídlení bez viny"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "parkingový lístek",
+      "oznámení o parkovacím poplatku",
+      "PCN",
+      "neférová pokuta za parkování"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "menší porce",
+      "méně za stejnou cenu",
+      "menší balení",
+      "zmenšující se produkty"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "výtluky",
+      "poškození vozovky",
+      "poškození auta výtlukem"
+    ],
+    "Council Tax Rises": [
+      "zvýšení daně za majetek",
+      "daň za majetek příliš vysoká",
+      "místní daň"
+    ],
+    "Damp and Mould in Housing": [
+      "plesnivý dům",
+      "vlhký byt",
+      "černá pleseň",
+      "špatný stav domu"
+    ],
+    "Student Loan Repayment": [
+      "studentské půjčky",
+      "školné",
+      "vzdělávací dluh",
+      "studentský dluh"
+    ],
+    "AI Replacing Jobs": [
+      "automatizace práce",
+      "AI zastupuje pracovníky",
+      "roboti nahrazují pracovníky"
+    ],
+    "Roaming Charges": [
+      "účet za telefon během dovolené",
+      "poplatky za data v zahraničí",
+      "poplatky za telefon v zahraničí"
+    ],
+    "Smart Meter Problems": [
+      "chytrý měřák rozbitý",
+      "měřák nefunguje",
+      "měřák ztratil signál"
+    ],
+    "Subscription Traps": [
+      "past zdarma trial",
+      "automatické obnovení",
+      "účtování po skončení zkoušky"
+    ],
+    "Fuel Prices": [
+      "ceny benzínu",
+      "ceny nafty",
+      "náklady na palivo",
+      "benzín příliš drahý"
+    ],
+    "Power Cuts": [
+      "výpadek elektřiny",
+      "přerušení elektřiny",
+      "blackout",
+      "bez proudu",
+      "selhání elektřiny"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "zvýšení hypotéky",
+      "hypoteční sazba",
+      "refinancování",
+      "konec fixní sazby"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "poplatky za převod",
+      "posílání peněz do zahraničí",
+      "poplatky za remitenci",
+      "náklady na bankovní převod"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "parkování v nemocnici",
+      "parkování u nemocnice",
+      "parkování NHS"
+    ],
+    "Noisy Neighbours": [
+      "stížnost na hluk",
+      "hluk od sousedů",
+      "hlasití sousedé",
+      "hluková obtěž"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "sběr tříděného odpadu",
+      "koše se nesbírají",
+      "zmatek při třídění odpadu",
+      "zmeškaný sběr"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "stavební povolení",
+      "nežádoucí výstavba",
+      "chráněné území",
+      "stavební svolení"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "nemohu dostat vrácení peněz",
+      "vrácení zamítnuté",
+      "vrácení odmítnut",
+      "vrácení peněz"
+    ],
+    "Fake Reviews": [
+      "manipulace s recenzemi",
+      "placené recenze",
+      "falešné recenze na Trustpilot",
+      "falešná recenze"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "kvalita potravin",
+      "připravené jídlo horší",
+      "potravinné aditiva",
+      "menší porce"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "samoobslužná pokladna",
+      "samoobsluha",
+      "bez pokladen s obsluhou",
+      "stroj nefunguje"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "náklady na péči o děti",
+      "poplatky v školce",
+      "péče o děti drahá",
+      "náklady na péči o děti"
+    ],
+    "Dog Fouling": [
+      "psí výkaly",
+      "psí výkaly",
+      "psí odpad",
+      "znečišťování"
+    ]
   },
   "category_assistants": {
     "transport": {

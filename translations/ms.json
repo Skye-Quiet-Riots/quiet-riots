@@ -1,618 +1,731 @@
 {
   "locale": "ms",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "Pengangkutan",
+    "Telecoms": "Telekomunikasi",
+    "Banking": "Perbankan",
+    "Health": "Kesihatan",
+    "Education": "Pendidikan",
+    "Environment": "Alam Sekitar",
+    "Energy": "Tenaga",
+    "Water": "Air",
+    "Insurance": "Insurans",
+    "Housing": "Perumahan",
+    "Shopping": "Membeli-belah",
+    "Delivery": "Penghantaran",
+    "Local": "Tempatan",
+    "Employment": "Pekerjaan",
+    "Tech": "Teknologi",
+    "Other": "Lain-lain"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Pembatalan Kereta",
+      "description": "Kereta dibatalkan atau tertangguh teruk dengan notis atau pampasan yang tidak mencukupi"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Harga Tiket Kereta",
+      "description": "Tambang rel terlalu mahal, kenaikan melebihi inflasi, harga tidak konsisten"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Kelewatan Penerbangan",
+      "description": "Penerbangan tertangguh atau dibatalkan, komunikasi buruk, kesulitan menuntut pampasan"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Bagasi Hilang",
+      "description": "Beg tidak sampai ke destinasi, penjejakan lambat, pampasan tidak mencukupi"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Pemotongan Laluan Bas",
+      "description": "Laluan dibatalkan, kekerapan dikurangkan, komuniti luar bandar kehilangan akses bas"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Kerosakan Lubang Jalan",
+      "description": "Lubang jalan merosakkan kenderaan dan membahayakan penunggang basikal, majlis perbandaran lambat membaiki"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Denda Tempat Letak Kenderaan",
+      "description": "Caj tempat letak kenderaan swasta tidak adil, penguatkuasaan agresif, tanda yang membingungkan"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Harga Bahan Api",
+      "description": "Harga petrol dan diesel terlalu tinggi, lambat turun apabila harga grosir menurun"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Kelajuan Jalur Lebar",
+      "description": "Kelajuan internet jauh di bawah yang diiklankan dan dibayar"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Zon Mati Isyarat Mudah Alih",
+      "description": "Tiada isyarat mudah alih di rumah, tempat kerja, atau sepanjang laluan pengangkutan"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Kenaikan Harga Tengah Kontrak",
+      "description": "Bil telefon, jalur lebar dan TV meningkat semasa kontrak terkunci"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Waktu Menunggu Perkhidmatan Pelanggan",
+      "description": "Jam menunggu untuk bercakap dengan seorang manusia"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Kesulitan Membatalkan Langganan",
+      "description": "Syarikat membuat sukar untuk membatalkan atau berhenti melanggan dengan sengaja"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Caj Roaming",
+      "description": "Caj mudah alih yang tidak dijangka apabila melancong ke luar negara, kenaikan harga pasca-Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Kos Bil Tenaga",
+      "description": "Bil gas dan elektrik tidak terjangkau, siling harga masih terlalu tinggi"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Bil Tenaga Tidak Tepat",
+      "description": "Bacaan anggaran salah, caj berlebihan, ralat pengebilan"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Kenaikan Bil Air",
+      "description": "Bil air meningkat tajam sementara kualiti perkhidmatan menurun"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Air Kumbahan di Sungai",
+      "description": "Syarikat air membuang air kumbahan mentah ke dalam saluran air dan pantai"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Gangguan Bekalan Elektrik",
+      "description": "Gangguan bekalan elektrik, pemulihan lambat, pampasan tidak mencukupi"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Masalah Meter Pintar",
+      "description": "Meter pintar tidak berfungsi, kehilangan fungsi selepas menukar pembekal"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Penutupan Cawangan Bank",
+      "description": "Cawangan bank tempatan ditutup, meninggalkan komuniti tanpa akses"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Caj Bank Tersembunyi",
+      "description": "Yuran yang tidak dijangka untuk terlebih debit, transaksi asing, penyelenggaraan akaun"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Kerugian Penipuan dan Scam",
+      "description": "Bank menolak membayar balik mangsa penipuan dan scam pembayaran yang dibenarkan"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Penolakan Tuntutan Insurans",
+      "description": "Tuntutan dinafikan atas dasar teknikal selepas bertahun-tahun membayar premium"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Kejutan Kadar Gadai Janji",
+      "description": "Kadar tetap berakhir dan beralih ke kadar berubah yang jauh lebih tinggi"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Yuran Pemindahan Luar Negara",
+      "description": "Yuran berlebihan dan kadar pertukaran buruk untuk pemindahan wang antarabangsa"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Waktu Menunggu NHS",
+      "description": "Menunggu berbulan-bulan atau bertahun-tahun untuk operasi dan temu janji pakar"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Akses Temu Janji GP",
+      "description": "Tidak dapat menghubungi untuk menempah temu janji GP, menunggu berminggu-minggu"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Ketersediaan Doktor Gigi",
+      "description": "Mustahil mencari doktor gigi NHS yang menerima pesakit baru"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Menunggu Perkhidmatan Kesihatan Mental",
+      "description": "Menunggu berbulan-bulan untuk terapi dan sokongan kesihatan mental"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Kos Preskripsi",
+      "description": "Kos setiap item terlalu tinggi di England, ketidakkonsistenan merentasi negara UK"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Caj Tempat Letak Kenderaan Hospital",
+      "description": "Membayar untuk meletak kenderaan di hospital semasa sakit atau melawat saudara yang sakit"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Kenaikan Sewa",
+      "description": "Sewa persendirian meningkat jauh melebihi inflasi, ancaman pengusiran tanpa kesalahan"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Kenaikan Cukai Majlis",
+      "description": "Kenaikan cukai majlis tahunan sementara perkhidmatan tempatan menjadi lebih buruk"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Jiran Bising",
+      "description": "Gangguan bunyi yang berterusan, majlis perbandaran lambat bertindak, menjejaskan kesihatan mental"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Perubahan Pengumpulan Sampah",
+      "description": "Pengumpulan tong sampah dikurangkan, peraturan kitar semula membingungkan, tong penuh"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Penyalahgunaan Kebenaran Perancangan",
+      "description": "Pembangunan yang tidak diingini diluluskan, taman hijau terancam, komuniti diabaikan"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Lembap dan Kulat dalam Perumahan",
+      "description": "Tuan tanah dan persatuan perumahan gagal membaiki lembap dan kulat"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Masalah Penghantaran",
+      "description": "Parsel hilang, ditinggalkan dalam hujan, ditanda dihantar tetapi tidak diterima"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "Produk menjadi lebih kecil sementara harga tetap sama atau meningkat"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Kesulitan Pengembalian Dana",
+      "description": "Syarikat membuat pulangan dan pengembalian dana tidak perlu sukar"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Ulasan Palsu",
+      "description": "Tidak dapat mempercayai ulasan dalam talian, ulasan positif palsu mengelirukan pengguna"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Perangkap Langganan",
+      "description": "Percubaan percuma berubah menjadi berbayar tanpa persetujuan yang jelas, sukar dibatalkan"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Kemerosotan Kualiti Makanan",
+      "description": "Makanan siap sedia berkualiti lebih rendah, bahagian lebih kecil, lebih banyak aditif"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Frustrasi Daftar Keluar Sendiri",
+      "description": "Mesin perkhidmatan kendiri tidak boleh dipercayai, menggantikan kakitangan manusia"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Kos Penjagaan Kanak-kanak",
+      "description": "Kos penjagaan kanak-kanak terlalu mahal, mengehadkan keupayaan untuk bekerja"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Pembayaran Balik Pinjaman Pelajar",
+      "description": "Graduan membayar balik selama beberapa dekad, perubahan ambang dan faedah"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Kotoran Anjing",
+      "description": "Kotoran anjing di ruang awam, taman, dan jalan pejalan kaki tidak dibersihkan"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI Menggantikan Pekerjaan",
+      "description": "Kebimbangan tentang kecerdasan buatan mengautomasikan pekerjaan tanpa sokongan peralihan"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Operator kereta api UK yang melayani West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Operator kereta api UK yang melayani London dan selatan"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Operator kereta api UK yang melayani utara England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Operator kereta api jarak jauh UK"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Operator kereta api UK yang melayani rute trans-Pennine"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Operator kereta api UK yang melayani East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Maskapai penerbangan Eropah kos rendah"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Maskapai penerbangan kos rendah berbasis UK"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Maskapai penerbangan pembawa bendera UK"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Syarikat percutian dan perjalanan"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Penyedia jalur lebar dan mudah alih UK utama"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Penyedia jalur lebar, TV, dan mudah alih UK"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Penyedia TV, jalur lebar, dan mudah alih UK"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Syarikat telekomunikasi global beribu pejabat di UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Pengendali rangkaian mudah alih UK"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Penyedia jalur lebar dan telefon UK"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Pembekal tenaga UK"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Pembekal tenaga UK"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Pembekal tenaga UK (dimiliki Perancis)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Pembekal tenaga boleh diperbaharui UK"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Pembekal tenaga UK"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Pembekal tenaga UK (dimiliki Jerman)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Syarikat air dan pembetungan untuk London dan Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Syarikat air untuk selatan England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Syarikat air untuk barat laut England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Syarikat air untuk Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Syarikat air untuk East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Bank multinasional British"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Perbankan global dan perkhidmatan kewangan"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Bank runcit dan komersial UK"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Kumpulan perbankan UK"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Bank UK (dimiliki Sepanyol)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Perbankan digital dan fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Insurans dan perkhidmatan kewangan UK"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Insurans kereta dan rumah UK"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Syarikat insurans UK"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "E-dagang dan teknologi global"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Perkhidmatan pos UK"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Perkhidmatan penghantaran bungkusan UK (dahulunya Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Perkhidmatan penghantaran bungkusan UK"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Rangkaian pasar raya UK"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Rangkaian pasar raya UK"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Perkhidmatan Kesihatan Nasional untuk England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "Perkhidmatan pergigian NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Penyedia penjagaan kesihatan swasta"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Pihak berkuasa kerajaan tempatan UK"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Pembina rumah UK"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Platform pajakan dalam talian UK"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Perkhidmatan hiburan penstriman"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Syarikat teknologi"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "kereta api dibatalkan",
+      "kereta api dibatalkan",
+      "pembatalan kereta api",
+      "kereta api tidak beroperasi",
+      "pembatalan rel",
+      "perkhidmatan dibatalkan",
+      "kelewatan kereta api",
+      "kereta api lewat",
+      "kereta api terlambat",
+      "kereta api terlambat",
+      "kelewatan rel"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "harga tiket rel",
+      "kos tiket",
+      "kereta api mahal",
+      "harga tiket kereta api"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "penerbangan terlambat",
+      "pesawat terlambat",
+      "penerbangan dibatalkan",
+      "kelewatan lapangan terbang",
+      "terjebak di lapangan terbang",
+      "penerbangan lewat"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "beg hilang",
+      "beg pakaian hilang",
+      "beg tidak tiba",
+      "beg pakaian hilang",
+      "bagasi tidak pada korsel",
+      "beg hilang oleh syarikat penerbangan"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "pemotongan bas",
+      "pengurangan rute",
+      "penutupan perkhidmatan bas"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "internet perlahan",
+      "wifi perlahan",
+      "wifi perlahan",
+      "kecepatan internet",
+      "broadband tidak berfungsi",
+      "penimbal",
+      "internet terus terputus",
+      "wifi terputus"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "tiada isyarat",
+      "tiada penerimaan",
+      "kawasan titik gelap mudah alih",
+      "zon mati isyarat"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "kenaikan bil pertengahan kontrak",
+      "kenaikan harga kontrak",
+      "kenaikan pertengahan kontrak"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "dalam talian menunggu",
+      "menunggu di telefon",
+      "tidak dapat menghubungi",
+      "tiada siapa menjawab",
+      "barisan telefon",
+      "pusat panggilan"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "tidak dapat membatalkan",
+      "sukar untuk membatalkan",
+      "batal langganan",
+      "nyahlanggani"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "bil gas terlalu tinggi",
+      "bil elektrik",
+      "harga tenaga",
+      "kos pemanasan",
+      "kemiskinan bahan api",
+      "tidak mampu membayar tenaga"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "bil tenaga salah",
+      "bacaan anggaran salah",
+      "tenaga terlebih caj"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "kadar air",
+      "caj air",
+      "bil air terlalu tinggi"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "pembuangan air kumbahan",
+      "air kumbahan mentah",
+      "air kumbahan di pantai",
+      "pencemaran air",
+      "limpahan air kumbahan",
+      "limpahan longkang gabungan"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "yuran tidak terduga",
+      "yuran tersembunyi",
+      "caj mengejut",
+      "caj overdraf",
+      "yuran bank"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "ditipu",
+      "penipuan bank",
+      "penipuan pembayaran dorong",
+      "penipuan dibenarkan"
+    ],
+    "Bank Branch Closures": [
+      "penutupan cawangan",
+      "bank tempatan ditutup",
+      "tiada bank berdekatan"
+    ],
+    "Insurance Claim Rejections": [
+      "tuntutan ditolak",
+      "insurans tidak akan membayar",
+      "tuntutan ditolak"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "menunggu NHS",
+      "senarai menunggu",
+      "menunggu operasi",
+      "masa menunggu hospital",
+      "menunggu rujukan",
+      "menunggu pembedahan"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "tidak dapat membuat janji GP",
+      "janji doktor",
+      "barisan telefon GP",
+      "tidak dapat berjumpa doktor",
+      "cengkeramaan telefon 8 pagi"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "doktor gigi NHS",
+      "tidak dapat mencari doktor gigi",
+      "senarai menunggu doktor gigi"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "pembiayaan kesihatan mental",
+      "akses terapi",
+      "menunggu kaunseling",
+      "menunggu CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "kos ubat",
+      "harga ubat",
+      "caj farmasi"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "bungkusan hilang",
+      "bungkusan tidak dihantar",
+      "ditinggalkan dalam hujan",
+      "pakej dicuri",
+      "pemandu penghantaran",
+      "penghantaran terlepas"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "sewa terlalu tinggi",
+      "sewa meningkat",
+      "tuan rumah menaikkan sewa",
+      "pengusiran tanpa kesalahan"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "saman parkir",
+      "notis caj parkir",
+      "PCN",
+      "denda parkir tidak adil"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "perkadaran lebih kecil",
+      "kurang dengan harga yang sama",
+      "pakej lebih kecil",
+      "produk mengecil"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "lubang jalan",
+      "kerosakan jalan",
+      "kerosakan kereta lubang jalan"
+    ],
+    "Council Tax Rises": [
+      "kenaikan cukai majlis",
+      "cukai majlis terlalu tinggi",
+      "cukai tempatan"
+    ],
+    "Damp and Mould in Housing": [
+      "rumah berlembap",
+      "flat lembap",
+      "acuan hitam",
+      "kerosakan perumahan"
+    ],
+    "Student Loan Repayment": [
+      "pinjaman pelajar",
+      "yuran tuisyen",
+      "hutang pendidikan",
+      "hutang pelajar"
+    ],
+    "AI Replacing Jobs": [
+      "automasi pekerjaan",
+      "AI mengambil pekerjaan",
+      "robot menggantikan pekerja"
+    ],
+    "Roaming Charges": [
+      "bil telefon percutian",
+      "caj data luar negara",
+      "caj telefon luar negara"
+    ],
+    "Smart Meter Problems": [
+      "meter pintar rosak",
+      "meter tidak berfungsi",
+      "meter kehilangan isyarat"
+    ],
+    "Subscription Traps": [
+      "perangkap percubaan percuma",
+      "pembaruan automatik",
+      "dicaj selepas percubaan"
+    ],
+    "Fuel Prices": [
+      "harga petrol",
+      "harga diesel",
+      "kos bahan api",
+      "petrol terlalu mahal"
+    ],
+    "Power Cuts": [
+      "gangguan kuasa",
+      "gangguan elektrik",
+      "pemadaman",
+      "tiada kuasa",
+      "kegagalan kuasa"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "kenaikan gadai janji",
+      "kadar gadai janji",
+      "gadai janji semula",
+      "kadar tetap tamat"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "yuran pemindahan",
+      "menghantar wang ke luar negara",
+      "yuran kiriman",
+      "kos pemindahan dawai"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "parkir hospital",
+      "parkir di hospital",
+      "parkir NHS"
+    ],
+    "Noisy Neighbours": [
+      "aduan bising",
+      "bising jiran",
+      "jiran bising",
+      "gangguan bising"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "pengumpulan sampah",
+      "sampah tidak dikumpul",
+      "kekeliruan kitar semula",
+      "pengumpulan sampah terlepas"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "kebenaran merancang",
+      "pembangunan tidak diingini",
+      "tali hijau",
+      "kebenaran bangunan"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "tidak dapat mendapatkan pengembalian dana",
+      "pengembalian dana ditolak",
+      "pulangan ditolak",
+      "wang kembali"
+    ],
+    "Fake Reviews": [
+      "manipulasi ulasan",
+      "ulasan berbayar",
+      "pilot kepercayaan palsu",
+      "ulasan palsu"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "kualiti makanan",
+      "makanan sedia pakai lebih teruk",
+      "bahan tambahan makanan",
+      "perkadaran lebih kecil"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "daftar keluar sendiri",
+      "perkhidmatan sendiri",
+      "tiada juruwali tukaran",
+      "mesin tidak berfungsi"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "kos penjagaan kanak-kanak",
+      "yuran taska",
+      "penjagaan kanak-kanak mahal",
+      "kos penjaga harian"
+    ],
+    "Dog Fouling": [
+      "najis anjing",
+      "tinja anjing",
+      "sisa anjing",
+      "pencemaran"
+    ]
   },
   "category_assistants": {
     "transport": {

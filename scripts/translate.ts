@@ -17,7 +17,7 @@
  *   # Dry run (show what would be translated without writing):
  *   npx tsx scripts/translate.ts --section category_assistants --dry-run
  *
- *   # Use a specific model (default: claude-haiku-4-20250414):
+ *   # Use a specific model (default: claude-haiku-4-5-20251001):
  *   npx tsx scripts/translate.ts --section issues --model claude-sonnet-4-20250514
  *
  * Environment:
@@ -174,7 +174,7 @@ function parseArgs(): CliArgs {
   let sections: Section[] = [];
   let locales = ALL_LOCALES;
   let dryRun = false;
-  let model = 'claude-haiku-4-20250414';
+  let model = 'claude-haiku-4-5-20251001';
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
@@ -212,7 +212,7 @@ Options:
   --all               Translate all sections
   --locales <list>    Comma-separated locale codes (default: all 44)
   --dry-run           Show what would be translated without writing
-  --model <name>      Anthropic model to use (default: claude-haiku-4-20250414)
+  --model <name>      Anthropic model to use (default: claude-haiku-4-5-20251001)
   --help              Show this help
 
 Sections: ${VALID_SECTIONS.join(', ')}

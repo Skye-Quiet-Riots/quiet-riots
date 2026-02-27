@@ -1,618 +1,731 @@
 {
   "locale": "ko",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "운송",
+    "Telecoms": "통신",
+    "Banking": "뱅킹",
+    "Health": "건강",
+    "Education": "교육",
+    "Environment": "환경",
+    "Energy": "에너지",
+    "Water": "수도",
+    "Insurance": "보험",
+    "Housing": "주택",
+    "Shopping": "쇼핑",
+    "Delivery": "배송",
+    "Local": "지역",
+    "Employment": "고용",
+    "Tech": "기술",
+    "Other": "기타"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "기차 취소",
+      "description": "충분한 공지나 보상 없이 취소되거나 심각하게 지연된 기차"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "기차 요금",
+      "description": "철도 요금이 너무 비싸고, 인플레이션을 초과하는 인상, 일관성 없는 가격 책정"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "항공편 지연",
+      "description": "항공편 지연 또는 취소, 열악한 커뮤니케이션, 보상 청구의 어려움"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "수하물 분실",
+      "description": "수하물이 목적지에 도착하지 않음, 느린 추적, 부적절한 보상"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "버스 노선 축소",
+      "description": "노선 취소, 운행 빈도 감소, 시골 지역의 버스 접근성 상실"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "포트홀 손상",
+      "description": "포트홀로 인한 차량 손상 및 자전거 이용자 위험, 지방자치단체의 느린 수리"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "주차 위반금",
+      "description": "불공정한 민간 주차 요금, 공격적인 단속, 혼란스러운 표지판"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "휘발유 가격",
+      "description": "휘발유 및 디젤 가격이 너무 높고, 도매가 하락할 때 가격 인하가 느림"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "광대역 속도",
+      "description": "인터넷 속도가 광고되고 지불한 것보다 훨씬 낮음"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "이동통신 신호 불감지역",
+      "description": "주택, 직장 또는 운송 경로에서 이동통신 신호 없음"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "계약 중 가격 인상",
+      "description": "계약 잠금 중에 휴대폰, 광대역 및 TV 요금 증가"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "고객 서비스 대기 시간",
+      "description": "실제 담당자와 통화하기 위해 몇 시간을 기다림"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "구독 취소의 어려움",
+      "description": "기업이 의도적으로 취소 또는 구독 해제를 어렵게 만듦"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "로밍 요금",
+      "description": "해외 여행 중 예상치 못한 이동통신 요금, Brexit 이후 가격 인상"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "에너지 요금",
+      "description": "가스 및 전기 요금이 감당할 수 없음, 가격 상한선이 여전히 너무 높음"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "부정확한 에너지 요금",
+      "description": "추정 검침이 잘못됨, 과다 청구, 청구 오류"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "수도 요금 인상",
+      "description": "수도 요금이 급격히 상승하는 동안 서비스 품질 저하"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "강의 하수",
+      "description": "수도회사가 원치 않는 하수를 수로 및 해변에 방류"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "정전",
+      "description": "전기 공급 중단, 느린 복구, 부적절한 보상"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "스마트 미터 문제",
+      "description": "스마트 미터가 작동하지 않음, 공급자 전환 후 기능 상실"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "은행 지점 폐쇄",
+      "description": "지역 은행 지점 폐쇄로 인한 지역사회의 접근성 상실"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "숨겨진 은행 수수료",
+      "description": "당좌차월, 해외 거래, 계좌 유지 관련 예상치 못한 수수료"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "사기 및 사기성 사기 손실",
+      "description": "은행이 사기 및 승인된 푸시 페이먼트 사기 피해자에게 환불 거부"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "보험 청구 거부",
+      "description": "수년간의 보험료 납입 후 기술적 이유로 청구 거부"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "모기지 금리 충격",
+      "description": "고정 금리 만료 후 훨씬 높은 변동 금리로 전환"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "해외 송금 수수료",
+      "description": "국제 송금에 대한 과도한 수수료 및 불리한 환율"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS 대기 시간",
+      "description": "수술 및 전문가 진료 예약에 수개월 또는 수년의 대기 시간"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "일반의 진료 예약 접근",
+      "description": "의사 진료 예약을 예약할 수 없음, 수주의 대기 시간"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "치과의사 가용성",
+      "description": "새로운 환자를 받는 NHS 치과의사를 찾을 수 없음"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "정신 건강 서비스 대기",
+      "description": "치료 및 정신 건강 지원에 대한 수개월의 대기 시간"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "처방약 비용",
+      "description": "영국의 처방약당 비용이 너무 높음, 영국 지역 간 일관성 부족"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "병원 주차 요금",
+      "description": "병원에서 아프거나 아픈 친척을 방문하는 동안 주차 비용 납부"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "임대료 인상",
+      "description": "민간 임대료가 인플레이션을 훨씬 초과하여 상승, 과실 없는 퇴거 위협"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "지역세 인상",
+      "description": "연간 지역세 인상하는 동안 지역 서비스 악화"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "시끄러운 이웃",
+      "description": "지속적인 소음 방해, 지방자치단체의 느린 대응, 정신 건강 영향"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "쓰레기 수거 변경",
+      "description": "쓰레기 수거 감소, 혼란스러운 재활용 규칙, 넘치는 쓰레기통"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "건설 허가 남용",
+      "description": "원치 않는 개발 승인, 녹지 위협, 지역사회 무시"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "주택의 습기 및 곰팡이",
+      "description": "임대주 및 주택협회가 습기 및 곰팡이 수리 실패"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "배송 문제",
+      "description": "소포 분실, 빗속에 방치, 배송됨으로 표시되었지만 받지 못함"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "슈링크플레이션",
+      "description": "제품이 작아지는 동안 가격은 동일하거나 인상됨"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "환불의 어려움",
+      "description": "기업이 반품 및 환불을 불필요하게 어렵게 만듦"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "가짜 리뷰",
+      "description": "온라인 리뷰를 신뢰할 수 없음, 가짜 긍정 리뷰가 소비자를 오도함"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "구독 함정",
+      "description": "무료 체험이 명확한 동의 없이 유료로 전환, 취소가 어려움"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "식품 품질 저하",
+      "description": "즉석밥의 품질 악화, 더 작은 분량, 더 많은 첨가물"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "셀프 계산대 불만",
+      "description": "셀프서비스 기계가 신뢰할 수 없음, 인력을 대체함"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "보육 비용",
+      "description": "보육 비용이 금지적으로 비싸서 일할 능력 제한"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "학생 대출 상환",
+      "description": "졸업생이 수십 년간 상환, 임계값 및 이자 변경"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "개 배설물",
+      "description": "공공 장소, 공원 및 인도의 개 배설물이 정리되지 않음"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "일자리를 대체하는 AI",
+      "description": "전환 지원 없이 일자리를 자동화하는 인공 지능에 대한 불안"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "웨스트코스트 메인라인을 운영하는 영국 철도 운영사"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "런던과 남부를 운영하는 영국 철도 운영사"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "영국 북부를 운영하는 영국 철도 운영사"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "영국 장거리 철도 운영사"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "펜니네 횡단 노선을 운영하는 영국 철도 운영사"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "동부 해안 메인라인을 운영하는 영국 철도 운영사"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "저가 유럽 항공사"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "영국 기반 저가 항공사"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "영국 국기 항공사"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "휴가 및 여행 회사"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "주요 영국 초고속인터넷 및 모바일 제공사"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "영국 초고속인터넷, TV 및 모바일 제공사"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "영국 TV, 초고속인터넷 및 모바일 제공사"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "영국에 본사를 둔 글로벌 통신 회사"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "영국 이동통신 사업자"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "영국 초고속인터넷 및 전화 제공사"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "영국 에너지 공급 업체"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "영국 에너지 공급 업체"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "영국 에너지 공급 업체 (프랑스 소유)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "영국 재생에너지 공급 업체"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "영국 에너지 공급 업체"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "영국 에너지 공급 업체 (독일 소유)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "런던 및 템즈 밸리의 상수도 및 하수 회사"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "영국 남부의 상수도 회사"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "영국 북서부의 상수도 회사"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "미들랜즈의 상수도 회사"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "이스트 앵글리아의 상수도 회사"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "영국 다국적 은행"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "글로벌 뱅킹 및 금융 서비스"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "영국 소매 및 상업 은행"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "영국 뱅킹 그룹"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "영국 은행 (스페인 소유)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "디지털 뱅킹 및 핀테크"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "영국 보험 및 금융 서비스"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "영국 자동차 및 주택 보험"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "영국 보험 회사"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "글로벌 전자상거래 및 기술"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "영국 우편 서비스"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "영국 소포 배송 서비스 (구 Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "영국 소포 배송 서비스"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "영국 슈퍼마켓 체인"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "영국 슈퍼마켓 체인"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "영국 국민보건서비스"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS 치과 서비스"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "민간 의료 제공사"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "영국 지방 정부 기관"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "영국 주택 건설사"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "영국 온라인 임대 플랫폼"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "스트리밍 엔터테인먼트 서비스"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "기술 회사"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "기차 취소됨",
+      "취소된 기차",
+      "기차 운행 중단",
+      "기차 운행 안 함",
+      "철도 운행 중단",
+      "서비스 취소됨",
+      "기차 지연",
+      "지연된 기차",
+      "기차 연착",
+      "연착한 기차",
+      "철도 지연"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "철도 요금",
+      "티켓 비용",
+      "비싼 기차",
+      "기차 운임"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "항공편 지연",
+      "비행기 지연",
+      "항공편 취소",
+      "공항 지연",
+      "공항에 발묶임",
+      "항공편 연착"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "짐 분실",
+      "여행 가방 분실",
+      "짐이 도착하지 않음",
+      "여행 가방 분실",
+      "짐이 회전 수하물 대에 없음",
+      "항공사가 잃어버린 짐"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "버스 감축",
+      "노선 감소",
+      "버스 서비스 폐지"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "느린 인터넷",
+      "느린 와이파이",
+      "와이파이 느림",
+      "인터넷 속도",
+      "광대역 작동 안 함",
+      "버퍼링",
+      "인터넷 계속 끊김",
+      "와이파이 끊김"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "신호 없음",
+      "수신 불가",
+      "모바일 블랙스팟",
+      "신호 데드존"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "계약 중 청구금액 인상",
+      "계약 가격 인상",
+      "계약 중 요금 인상"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "대기 중",
+      "전화 대기 중",
+      "연결 안 됨",
+      "응답 없음",
+      "전화 대기열",
+      "콜센터"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "취소할 수 없음",
+      "취소하기 어려움",
+      "구독 취소",
+      "구독 해제"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "가스비 너무 높음",
+      "전기 요금",
+      "에너지 가격",
+      "난방비",
+      "에너지 빈곤",
+      "에너지 비용을 감당할 수 없음"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "잘못된 에너지 요금",
+      "추정 검침 오류",
+      "에너지 과다 청구"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "수도 요금",
+      "수도 요금",
+      "수도 요금 너무 높음"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "하수 방출",
+      "원유 하수",
+      "해변의 하수",
+      "수질 오염",
+      "하수 범람",
+      "합류식 하수도 범람"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "예상치 못한 수수료",
+      "숨겨진 수수료",
+      "놀라운 요금",
+      "당좌대월 수수료",
+      "은행 수수료"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "사기 당함",
+      "은행 사기",
+      "푸시 페이먼트 사기",
+      "승인된 사기"
+    ],
+    "Bank Branch Closures": [
+      "지점 폐쇄",
+      "지역 은행 폐쇄",
+      "근처 은행 없음"
+    ],
+    "Insurance Claim Rejections": [
+      "청구 거부",
+      "보험에서 지급하지 않음",
+      "청구 거절"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS 대기",
+      "대기 명단",
+      "수술 대기",
+      "병원 대기 시간",
+      "의뢰 대기",
+      "수술 대기 중"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "의사 예약 불가",
+      "의사 예약",
+      "GP 전화 대기열",
+      "의사 진료 불가",
+      "오전 8시 전화 경쟁"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS 치과",
+      "치과의사를 찾을 수 없음",
+      "치과 대기 명단"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "정신 건강 자금",
+      "치료 접근",
+      "상담 대기",
+      "CAMHS 대기"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "의약품 비용",
+      "약값",
+      "약국 요금"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "소포 분실",
+      "소포 배송 안 됨",
+      "빗 속에 방치",
+      "택배 도난",
+      "배송 기사",
+      "배송 실패"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "임대료 너무 높음",
+      "임대료 인상",
+      "임대인이 임대료 인상",
+      "귀책 사유 없는 퇴거"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "주차 티켓",
+      "주차 위반 통지",
+      "PCN",
+      "부당한 주차 위반금"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "더 작은 분량",
+      "같은 가격에 더 적은 양",
+      "더 작은 패키지",
+      "축소되는 제품"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "포트홀",
+      "도로 손상",
+      "포트홀 자동차 손상"
+    ],
+    "Council Tax Rises": [
+      "지방세 인상",
+      "지방세 너무 높음",
+      "지방 세금"
+    ],
+    "Damp and Mould in Housing": [
+      "곰팡이 핀 집",
+      "습한 아파트",
+      "검은 곰팡이",
+      "주택 수리 필요"
+    ],
+    "Student Loan Repayment": [
+      "학생 대출",
+      "등록금",
+      "교육 부채",
+      "학생 빚"
+    ],
+    "AI Replacing Jobs": [
+      "직업 자동화",
+      "AI가 일자리 빼앗음",
+      "로봇이 근로자 대체"
+    ],
+    "Roaming Charges": [
+      "휴가 휴대폰 요금",
+      "해외 데이터 요금",
+      "해외 통화료"
+    ],
+    "Smart Meter Problems": [
+      "스마트 미터 고장",
+      "미터 작동 안 함",
+      "미터 신호 손실"
+    ],
+    "Subscription Traps": [
+      "무료 체험 함정",
+      "자동 갱신",
+      "체험 후 요금 청구"
+    ],
+    "Fuel Prices": [
+      "휘발유 가격",
+      "디젤 가격",
+      "연료 비용",
+      "휘발유 너무 비쌈"
+    ],
+    "Power Cuts": [
+      "정전",
+      "전기 차단",
+      "정전",
+      "전기 없음",
+      "전력 차단"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "모기지 인상",
+      "모기지 이율",
+      "재모기지",
+      "고정금리 종료"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "송금 수수료",
+      "해외로 돈 보내기",
+      "송금 수수료",
+      "해외 송금 비용"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "병원 주차",
+      "병원 주차",
+      "NHS 주차"
+    ],
+    "Noisy Neighbours": [
+      "소음 신고",
+      "이웃 소음",
+      "시끄러운 이웃",
+      "소음 방해"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "쓰레기 수거",
+      "쓰레기가 수거되지 않음",
+      "재활용 혼란",
+      "쓰레기 수거 실패"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "건축 허가",
+      "원치 않는 개발",
+      "녹지",
+      "건축 허가"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "환불 받을 수 없음",
+      "환불 거부",
+      "반품 거절",
+      "환급"
+    ],
+    "Fake Reviews": [
+      "리뷰 조작",
+      "유료 리뷰",
+      "트러스트 파일럿 가짜",
+      "가짜 리뷰"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "음식 품질",
+      "가정식 더 나빠짐",
+      "식품 첨가제",
+      "더 작은 분량"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "셀프 체크아웃",
+      "셀프 서비스",
+      "직원 계산대 없음",
+      "기계 작동 안 함"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "보육 비용",
+      "보육원 요금",
+      "보육료 비쌈",
+      "탁아소 비용"
+    ],
+    "Dog Fouling": [
+      "개 배설물",
+      "개 똥",
+      "개 배변",
+      "배변"
+    ]
   },
   "category_assistants": {
     "transport": {

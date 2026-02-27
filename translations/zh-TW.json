@@ -1,618 +1,731 @@
 {
   "locale": "zh-TW",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "運輸",
+    "Telecoms": "電信",
+    "Banking": "銀行",
+    "Health": "健康",
+    "Education": "教育",
+    "Environment": "環境",
+    "Energy": "能源",
+    "Water": "水務",
+    "Insurance": "保險",
+    "Housing": "房屋",
+    "Shopping": "購物",
+    "Delivery": "快遞",
+    "Local": "地方",
+    "Employment": "就業",
+    "Tech": "科技",
+    "Other": "其他"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "列車取消",
+      "description": "列車被取消或嚴重延誤，通知或賠償不足"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "列車票價",
+      "description": "鐵路票價過高、漲幅超過通膨、定價不一致"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "航班延誤",
+      "description": "航班延誤或取消、溝通不佳、難以索賠"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "行李遺失",
+      "description": "行李未送達目的地、追蹤緩慢、賠償不足"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "公車路線削減",
+      "description": "路線被取消、班次減少、農村社區失去公車服務"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "路面坑洞損害",
+      "description": "路面坑洞損壞車輛並危害騎自行車的人，議會修復緩慢"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "停車罰款",
+      "description": "不公平的私人停車費用、積極執法、標誌令人困惑"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "燃料價格",
+      "description": "汽油和柴油價格過高、批發價下跌時下降緩慢"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "寬頻速度",
+      "description": "網際網路速度遠低於廣告和支付的速度"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "行動信號死角",
+      "description": "家中、工作場所或運輸路線上沒有行動信號"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "合約期間漲價",
+      "description": "電話、寬頻和電視費用在鎖定合約期間上漲"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "客服等待時間",
+      "description": "等待數小時才能與真人通話"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "難以取消訂閱",
+      "description": "公司故意讓取消或退訂變得困難"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "漫遊費用",
+      "description": "出國旅行時出現意外行動費用、脫歐後價格上漲"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "能源費用",
+      "description": "瓦斯和電費無法負擔、價格上限仍然過高"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "不準確的能源費單",
+      "description": "估計讀數錯誤、過度收費、計費錯誤"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "水費上漲",
+      "description": "水費大幅上升，服務品質卻下降"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "河川污水",
+      "description": "供水公司將原始污水排入水道和海灘"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "停電",
+      "description": "電力供應中斷、恢復緩慢、賠償不足"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "智慧電表問題",
+      "description": "智慧電表無法運作、更換供應商後失去功能"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "銀行分行關閉",
+      "description": "當地銀行分行關閉，社區無法獲得服務"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "隱藏的銀行費用",
+      "description": "透支費用、國外交易費、帳戶維護費等意外費用"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "詐欺和詐騙損失",
+      "description": "銀行拒絕賠償詐欺和授權推送付款詐騙的受害者"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "保險理賠拒絕",
+      "description": "支付多年保費後，理賠因技術問題被拒"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "抵押貸款利率震盪",
+      "description": "固定利率結束，轉變為更高的浮動利率"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "海外轉帳費用",
+      "description": "國際匯款費用過高、匯率不佳"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS等待時間",
+      "description": "手術和專科預約等待數月至數年"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "全科醫生預約取得",
+      "description": "無法預約全科醫生，等待數週"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "牙醫服務可用性",
+      "description": "不可能找到接納新患者的NHS牙醫"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "心理健康服務等待",
+      "description": "心理治療和心理健康支援等待數月"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "處方藥費用",
+      "description": "英格蘭處方藥單位費用過高、英國各地不一致"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "醫院停車費",
+      "description": "生病時或探望生病親人時在醫院停車需付費"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "租金上漲",
+      "description": "私人租金遠超通膨上升、無故驅逐威脅"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "市政稅上漲",
+      "description": "年度市政稅上升，而地方服務卻惡化"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "吵鬧鄰居",
+      "description": "持續噪音干擾、議會反應緩慢、影響心理健康"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "垃圾收集變化",
+      "description": "垃圾收集減少、回收規則令人困惑、垃圾桶滿溢"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "規劃許可濫用",
+      "description": "不受歡迎的開發項目被批准、綠地受威脅、社區被忽視"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "住房潮濕和黴菌",
+      "description": "房東和房屋協會未能修復潮濕和黴菌"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "送貨問題",
+      "description": "包裹遺失、被淋雨、標記為已送達但未收到"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "縮小充氣",
+      "description": "產品變小，但價格保持不變或上升"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "退款困難",
+      "description": "公司故意讓退貨和退款變得困難"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "虛假評論",
+      "description": "無法信任線上評論、虛假正面評論誤導消費者"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "訂閱陷阱",
+      "description": "免費試用轉換為付費而沒有明確同意、難以取消"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "食品品質下降",
+      "description": "便當品質變差、份量減少、添加劑更多"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "自助結帳困擾",
+      "description": "自助服務機器不可靠、取代人力員工"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "托兒費用",
+      "description": "托兒費用高昂，限制工作能力"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "學生貸款償還",
+      "description": "畢業生需償還數十年、門檻和利率變化"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "狗隻排便",
+      "description": "公共場所、公園和人行道上的狗糞未清理"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI取代工作",
+      "description": "對人工智慧自動化工作且無過渡支援的焦慮"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "英國西海岸主線鐵路營運商"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "為倫敦及南部地區服務的英國鐵路營運商"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "為英格蘭北部地區服務的英國鐵路營運商"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "英國長途鐵路營運商"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "為跨賓寧路線服務的英國鐵路營運商"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "為東海岸主線服務的英國鐵路營運商"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "低成本歐洲航空公司"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "英國低成本航空公司"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "英國國旗航空公司"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "度假及旅遊公司"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "主要英國寬頻及流動網絡提供商"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "英國寬頻、電視及流動服務提供商"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "英國電視、寬頻及流動服務提供商"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "總部設在英國的全球電訊公司"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "英國流動網絡營運商"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "英國寬頻及電話服務提供商"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "英國能源供應商"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "英國能源供應商"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "英國能源供應商（法國擁有）"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "英國可再生能源供應商"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "英國能源供應商"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "英國能源供應商（德國擁有）"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "為倫敦及泰晤士河谷地區提供供水及污水處理服務的公司"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "為英格蘭南部地區提供供水服務的公司"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "為英格蘭西北部地區提供供水服務的公司"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "為米德蘭地區提供供水服務的公司"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "為東英吉利地區提供供水服務的公司"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "英國跨國銀行"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "全球銀行及金融服務"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "英國零售及商業銀行"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "英國銀行集團"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "英國銀行（西班牙擁有）"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "數位銀行及金融科技"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "英國保險及金融服務"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "英國汽車及家庭保險"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "英國保險公司"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "全球電子商務及科技公司"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "英國郵政服務"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "英國包裹配送服務（前稱Hermes）"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "英國包裹配送服務"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "英國超級市場連鎖店"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "英國超級市場連鎖店"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "英國國民保健服務（英格蘭）"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS牙科服務"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "私營醫療保健提供商"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "英國地方政府機構"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "英國房屋建築商"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "英國線上租賃平台"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "串流娛樂服務"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "科技公司"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "火車被取消",
+      "被取消的火車",
+      "火車取消",
+      "火車沒有運行",
+      "鐵路取消",
+      "服務被取消",
+      "火車延誤",
+      "延誤的火車",
+      "火車晚點",
+      "晚點的火車",
+      "鐵路延誤"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "鐵路票價",
+      "車票成本",
+      "昂貴的火車",
+      "火車票價"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "航班延誤",
+      "飛機延誤",
+      "航班取消",
+      "機場延誤",
+      "被困在機場",
+      "航班晚點"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "行李遺失",
+      "行李箱遺失",
+      "行李未送達",
+      "行李箱遺失",
+      "行李未在轉盤上出現",
+      "行李被航空公司遺失"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "公車削減",
+      "路線縮減",
+      "公車服務關閉"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "網際網路速度慢",
+      "無線網路速度慢",
+      "Wi-Fi 速度慢",
+      "網際網路速度",
+      "寬頻無法正常工作",
+      "緩衝",
+      "網際網路不斷中斷",
+      "Wi-Fi 斷線"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "沒有訊號",
+      "沒有接收",
+      "行動盲點",
+      "訊號死角"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "合約中途帳單增加",
+      "合約價格上漲",
+      "合約中途漲價"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "等待中",
+      "電話等待",
+      "無法接通",
+      "沒人接聽",
+      "電話排隊",
+      "客服中心"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "無法取消",
+      "難以取消",
+      "取消訂閱",
+      "取消訂閱"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "瓦斯帳單過高",
+      "電費帳單",
+      "能源價格",
+      "取暖成本",
+      "燃料貧困",
+      "無法承擔能源費用"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "能源帳單錯誤",
+      "估計讀數錯誤",
+      "能源過度收費"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "水費",
+      "水費收費",
+      "水費過高"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "污水傾倒",
+      "原始污水",
+      "海灘污水",
+      "水污染",
+      "污水溢出",
+      "合流制溢流"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "意外費用",
+      "隱藏費用",
+      "驚人費用",
+      "透支費用",
+      "銀行費用"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "被詐騙",
+      "銀行詐欺",
+      "推送付款詐騙",
+      "授權詐欺"
+    ],
+    "Bank Branch Closures": [
+      "分行關閉",
+      "本地銀行關閉",
+      "附近沒有銀行"
+    ],
+    "Insurance Claim Rejections": [
+      "索賠被拒",
+      "保險不願賠付",
+      "索賠被駁回"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS 等待",
+      "候診名單",
+      "手術等待",
+      "醫院候診時間",
+      "轉診等待",
+      "等待手術"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "無法預約全科醫生",
+      "醫生預約",
+      "全科醫生電話排隊",
+      "無法看醫生",
+      "早上 8 點電話搶約"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS 牙醫",
+      "無法找到牙醫",
+      "牙醫候診名單"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "心理健康資金",
+      "治療獲取",
+      "諮詢等待",
+      "兒童和青少年精神健康服務等待"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "藥物成本",
+      "藥品價格",
+      "藥房收費"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "包裹遺失",
+      "包裹未送達",
+      "放在雨中",
+      "包裹被盜",
+      "送貨司機",
+      "錯過送貨"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "租金過高",
+      "租金上漲",
+      "房東提高租金",
+      "無過失驅逐"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "停車罰單",
+      "停車通知",
+      "停車通知",
+      "不公平的停車罰單"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "份量減少",
+      "同樣價格更少",
+      "包裝變小",
+      "產品縮小"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "坑洞",
+      "道路損壞",
+      "坑洞車損"
+    ],
+    "Council Tax Rises": [
+      "議會稅上漲",
+      "議會稅過高",
+      "地方稅"
+    ],
+    "Damp and Mould in Housing": [
+      "房屋發霉",
+      "公寓潮濕",
+      "黑色霉菌",
+      "住房失修"
+    ],
+    "Student Loan Repayment": [
+      "學生貸款",
+      "學費",
+      "教育債務",
+      "學生債務"
+    ],
+    "AI Replacing Jobs": [
+      "工作自動化",
+      "人工智慧搶走工作",
+      "機器人取代工人"
+    ],
+    "Roaming Charges": [
+      "假期電話帳單",
+      "國外數據費用",
+      "國外電話費用"
+    ],
+    "Smart Meter Problems": [
+      "智慧電表故障",
+      "電表無法工作",
+      "電表失去訊號"
+    ],
+    "Subscription Traps": [
+      "免費試用陷阱",
+      "自動續訂",
+      "試用後被收費"
+    ],
+    "Fuel Prices": [
+      "汽油價格",
+      "柴油價格",
+      "燃料成本",
+      "汽油過於昂貴"
+    ],
+    "Power Cuts": [
+      "停電",
+      "電力中斷",
+      "停電",
+      "沒有電力",
+      "電力故障"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "抵押貸款利率上升",
+      "抵押貸款利率",
+      "重新抵押",
+      "固定利率到期"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "轉帳費用",
+      "國外匯款",
+      "匯款費用",
+      "電匯成本"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "醫院停車",
+      "醫院停車",
+      "NHS 停車"
+    ],
+    "Noisy Neighbours": [
+      "噪音投訴",
+      "鄰居噪音",
+      "吵鬧的鄰居",
+      "噪音滋擾"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "垃圾收集",
+      "垃圾未被收集",
+      "回收困惑",
+      "垃圾未被收集"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "規劃許可",
+      "不想要的開發",
+      "綠地",
+      "建築許可"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "無法獲得退款",
+      "退款被拒",
+      "退貨被拒",
+      "退款"
+    ],
+    "Fake Reviews": [
+      "評論操縱",
+      "付費評論",
+      "Trustpilot 虛假評論",
+      "虛假評論"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "食品質量",
+      "即食餐變差",
+      "食品添加劑",
+      "份量減少"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "自助結帳",
+      "自助服務",
+      "沒有員工收銀台",
+      "機器無法工作"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "幼兒保育成本",
+      "託兒所費用",
+      "幼兒保育昂貴",
+      "日托費用"
+    ],
+    "Dog Fouling": [
+      "狗糞",
+      "狗大便",
+      "狗糞",
+      "糞便污染"
+    ]
   },
   "category_assistants": {
     "transport": {

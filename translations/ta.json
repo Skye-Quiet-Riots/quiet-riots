@@ -1,618 +1,731 @@
 {
   "locale": "ta",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "போக்குவரத்து",
+    "Telecoms": "தொலைத்தொடர்பு",
+    "Banking": "வங்கியியல்",
+    "Health": "சுகாதாரம்",
+    "Education": "கல்வி",
+    "Environment": "சுற்றுச்சenvironment",
+    "Energy": "ஆற்றல்",
+    "Water": "நீர்",
+    "Insurance": "காப்பீடு",
+    "Housing": "வீட்டுவசதி",
+    "Shopping": "வாங்குதல்",
+    "Delivery": "விநியோகம்",
+    "Local": "உள்ளூர்",
+    "Employment": "வேலைவாய்ப்பு",
+    "Tech": "தொழில்நுட்பம்",
+    "Other": "மற்றவை"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "ரயில் ரத்துக்கள்",
+      "description": "ரயில்கள் ரத்து செய்யப்பட்டன அல்லது கடுமையாக தாமதமாகி போதுமான அறிவிப்பு அல்லது ஈடுசெய்தல் இல்லாமல் இருந்தன"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "ரயில் டிக்கட் விலைகள்",
+      "description": "ரயில் கட்டணங்கள் மிக விலை, பணவீக்கத்திற்கு மேலான அதிகரிப்பு, சீரற்ற விலை நির்ধारணை"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "விமான தாமதங்கள்",
+      "description": "விமানங்கள் தாமதமாக அல்லது ரத்து செய்யப்பட்டன, மோசமான தகவல் தொடர்பு, ஈடுசெய்தல் கோருவதில் சிரமம்"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "இழந்த சামान்",
+      "description": "பைகள் இலக்கு வரையில் வரவில்லை, மெதுவான கண்காணிப்பு, போதுமையற்ற ஈடுசெய்தல்"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "பஸ் வழி வெட்டுக்கள்",
+      "description": "வழிகள் ரத்து செய்யப்பட்டன, அதிர்வெண் குறைக்கப்பட்டது, கிராமப்புற சமூதாயங்கள் பஸ் அணுகல் இழந்தன"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "பாதையிலான குழி சேதம்",
+      "description": "பாதையிலான குழிகள் வாகனங்களை சேதப்படுத்தி சைக்கிள் ஓட்டுனர்களை ஆபத்தில் விடுகின்றன, சபைகள் மெதுவாக பழுது செய்கின்றன"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "பார்க்கிங் அபராதங்கள்",
+      "description": "நியாயமற்ற தனியார் பார்க்கிங் கட்டணங்கள், ஆக்கிரமணக் கட்டுப்பாடு, குழப்பமான சாலை குறிப்பு"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "எரிபொருள் விலைகள்",
+      "description": "பெட்ரோல் மற்றும் டீசல் விலைகள் மிக அதிகம், மொத்த விலை குறையும் போது மெதுவாக குறையும்"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "பரந்த பட்ட வேகம்",
+      "description": "இணையம் வேகம் விளம்பரிக்கப்பட்ட மற்றும் செலுத்தப்பட்ட வেகத்திற்கு இருந்து மிகவும் குறைவாக உள்ளது"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "மொபைல் சிக்னல் செத்த மண்டலங்கள்",
+      "description": "வீடுகள், பணிமிடங்கள் அல்லது போக்குவரத்து வழிகளில் மொபைல் சிக்னல் இல்லை"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "ஒப்பந்தத்தின் நடுவில் விலை அதிகரிப்பு",
+      "description": "ফোன், பரந்த பட்ட மற்றும் தொலைக்காட்சி மாத விலைகள் பூட்டிய ஒப்பந்ததின் போது அதிகரிக்கும்"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "வாடிக்கையாளர் சেவை பிடி நேரம்",
+      "description": "மனிதனைப் பேச chown க்கு பிடியில் நேரம்"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "சந்தாக்களை ரத்து செய்ய சிரமம்",
+      "description": "நிறுவனங்கள் ரத்து செய்ய அல்லது திரும்பப் பெற வேண்டாம் என்பதை தப்பாக கடினமாக்குகின்றன"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "ரோமிங் கட்டணங்கள்",
+      "description": "வெளிநாட்டில் பயணம் செய்யும் போது எதிர்பாராத மொபைல் கட்டணங்கள், பிரெக்ஸிட் பிறகு விலை உயர்வு"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "ஆற்றல் மாத கட்டணங்கள்",
+      "description": "வாயு மற்றும் மின்சாரம் மாத கட்டணங்கள் அவசியமற்றவை, விலை தொப்பி இன்னும் மிக அதிகம்"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "தவறான ஆற்றல் மாத சீட்டுக்கள்",
+      "description": "மதிப்பிடப்பட்ட வாசனை தவறாக, அதிக கட்டணம், மாத கணக்கு பிழைகள்"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "நீர் மாத கட்டணம் அதிகரிப்பு",
+      "description": "நீர் மாத கட்டணங்கள் கூர்மையாக உயரும் போது சேவை தரம் வீழ்ச்சியடைகிறது"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "ஆறுகளில் கழிவு நீர்",
+      "description": "நீர் நிறுவனங்கள் நீர்வழிகளில் மற்றும் கடல் சன்னிதியில் மூல கழிவு நீர் இறங்குவது"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "மின்சாரம் வெட்டுக்கள்",
+      "description": "மின்சாரம் வழங்கல் தடைகள், மெதுவான পুনরুদ்ধாரம், போதுமையற்ற ஈடுசெய்தல்"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "ஸ்மார்ட் மீட்டர் சிக்கல்கள்",
+      "description": "ஸ்மார்ட் மீட்டர்கள் வேலை செய்யவில்லை, சப்ளையர் மாற்றுக்கு பிறகு செயல்பாடு இழந்தன"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "வங்கி கிளை மூடல்கள்",
+      "description": "உள்ளூர் வங்கி கிளைகள் மூடப்பட்டு, சமூதாயங்கள் அணுகல் இல்லாது விடப்பட்டன"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "மறைக்கப்பட்ட வங்கி கட்டணங்கள்",
+      "description": "அபரிமிதமான கணக்கு வசতி, வெளிநாட்டு பரிவர்த்தனை, கணக்கு பரிபालன கட்டணங்கள்"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "மோசடி மற்றும் மோடல் நஷ்டங்கள்",
+      "description": "வங்கிகள் மோசடி மற்றும் அனுமதிக்கப்பட்ட தள்ளுவி கொடுப்பனவு மோடல்களின் பாதிக்கப்பட்டவர்களுக்கு பணம் திருப்புவதை மறுக்கின்றன"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "保险 கோரிக்கை நிராகாரங்கள்",
+      "description": "ஆண்டுகளுக்கு பின் பாக்கி பகவான் விண்ணப்பங்கள் தொழில்நுட்பங்களில் நிராகாரங்கள்"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "அடமான விகிதம் அதிர்ச்சி",
+      "description": "நிர்ধারিত விகிதம் முடிந்து மிக அதிக மாறக் விகிதத்திற்கு நகரும்"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "வெளிநாடு இடம்பெயர்ச்சி கட்டணங்கள்",
+      "description": "சர்வதேச பணம் இடம்பெயர்ச்சிக்கு அதிக கட்டணங்கள் மற்றும் மோசமான பரிமாற்ற விகிதங்கள்"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS பிடி நேரங்கள்",
+      "description": "அறுவை சிகிச்சை மற்றும் நிபுணர் நியமனங்களுக்கு பல மাத கள் அல்லது பல வருட பிடி"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "GP நியமன அணுகல்",
+      "description": "GP நியமனங்களை புத்தக செய்ய முடியாது, வாரங்கள் நீண்ட பிடி"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "பல் மருத்துவர் கிடைக்கும் தன்மை",
+      "description": "NHS பல் மருத்துவர் கண்டுபிடிக்க முடியாது புதிய நோগிகளை ஏற்று"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "மனநல சேவை பிடிகள்",
+      "description": "சிகிச்சை மற்றும் மனநல உதவிக்கு மாத பிடிகள்"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "பரிந்துரை செய்யும் செலவு",
+      "description": "இங்கிலாந்தில் ஒரு பொருளுக்கு செலவு மிக அதிகம், ஐக்கிய இராச்சியம் முழுவதும் சீரற்ற தன்மை"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "மருத்துவமனை பார்க்கிங் கட்டணங்கள்",
+      "description": "நோய்வாய்ப்பட்டவர் அல்லது நோய்வாய்ப்பட்ட உறவினர்களைப் பார்க்க மருத்துவமனையில் பார்க்கிங்கு பகவான் செய்தல்"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "வாடை அதிகரிப்பு",
+      "description": "தனியார் வாடை பணவீக்கத்திற்கு மேலே உயரும், பூற்ப-பிழ்பு புറக்கணிப்பு হুमकी"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "சபை வரி உயர்வு",
+      "description": "ஆண்டுவாரம் சபை வரி அதிகரிப்பு உள்ளூர் சேவைகள் மோசமாகும் போது"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "சப்தக் குலீன்",
+      "description": "பிடிக்கப்பட்ட சப்த சிதறல், சபைகள் வேடிக்கை செய்ய மெதுவாக, மனநல பாதிக்கும்"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "குப்பை சொகுப்பு மாற்றங்கள்",
+      "description": "குறைக்கப்பட்ட பேட்டி சொகுப்புகள், குழப்பமான புனரறிக்கை விதிகள், வடிந்த பேட்டிகள்"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "திட்டமிடல் அனுமতி பயன்படுத்தல்",
+      "description": "விரும்பாத வெளிப்பாடுகள் அனுமதிக்கப்பட்டு, பச்சை பெல்ट் அச்சுறுத்தப்பட்டு, சமூதாயங்கள் புறக்கணிக்கப்பட்டு"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "வீட்டில் ஈரப்பதம் மற்றும் அச்ச",
+      "description": "வளாய வாழ்க மற்றும் வீட்டு சங்கங்கள் ஈரப்பதம் மற்றும் அச்சை சரி செய்ய தவறிவிட்டன"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "விநியோக சிக்கல்கள்",
+      "description": "பணிமடை இழந்த, மழையில் விடப்பட்ட, விநியோகிக்கப்பட்ட கண்ணுக்குத் தெரிந்த ஆனால் பெறப்படாது"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "சுக்குப்பொருள் பணவீக்கம்",
+      "description": "பொருட்கள் சிறிய உயரும் போது விலைகள் அதே அல்லது அதிகரிக்க"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "பணம் திரும்பி பெறுவதில் சிரமம்",
+      "description": "நிறுவனங்கள் திரும்ப மற்றும் பணம் திரும்பி பெறுவதை தேவையற்ற கடினமாக்குகின்றன"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "போலி மதிப்பீடுகள்",
+      "description": "இணையம் மதிப்பீடுகளை நம்ப முடியாது, போலி ஧जनीয় மதிப்பீடுகள் நுகர்வோர்களை தவிர்க்கின்றன"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "சந்தா பொறிகள்",
+      "description": "இலவச சோதனைகள் தெளிய சம்मதியொன்றிருந்து ஈட்டிக்கப்பட்ட, ரத்து செய்ய கடினம்"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "உணவு தரம் வீழ்ச்சி",
+      "description": "தயாரிக்கப்பட்ட உணவுகள் மோசமான தரம், சிறிய பகுதிகள், அதிக சேர்க்கைகள்"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "স்ব-சரிபார்ப்பு ஆத்திரம்",
+      "description": "ஸ்ব-சேவை கருவிகள் நம்பமுடியாத, மனுষ்ய কর্মচாரிகளை பதிலாக"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "குழந்தை பராமரிப்பு செலவு",
+      "description": "குழந்தை பராமரிப்பு செலவுகள் கூரிய அதிக, வேலை செய்ய அளவு குறைக்க"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "மாணவர் கடன் திரும்பித் தொகை",
+      "description": "பட்டதாரிகள் தசகை திரும்பி செய்கிறார்கள், வரம்பு மற்றும் வட்டி மாற்றங்கள்"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "நாய் மலம்",
+      "description": "பொது இடங்களில் நாய் குப்பை, பூங்காக்கள் மற்றும் நடைபாதைகளில் தூய்மை செய்யப்படாது"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI வேலைகளை பதிலாக",
+      "description": "செயற்கை புத்திமத்தை வேலைகளை தன்னியக்கமாக செய்யும் பற்றிய கவலை மாறுதல் ஆதரம் இல்லாமல்"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "மேற்கு கடற்கரை பிரதான வரிசையை சேவை செய்யும் UK ரயில் ஆபரேட்டர்"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "லண்டன் மற்றும் தெற்கை சேவை செய்யும் UK ரயில் ஆபரேட்டர்"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "இங்கிலாந்தின் வடக்கை சேவை செய்யும் UK ரயில் ஆபரேட்டர்"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "UK நீண்ட தூர ரயில் ஆபரேட்டர்"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "ட்ரான்ஸ்-பென்னைன் வழிகளை சேவை செய்யும் UK ரயில் ஆபரேட்டர்"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "கிழக்கு கடற்கரை பிரதான வரிசையை சேவை செய்யும் UK ரயில் ஆபரேட்டர்"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "குறைந்த செலவு ஐரோப்பிய விமான சேவை"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "UK அடிப்படையிலான குறைந்த செலவு விமான சேவை"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "UK கொடிய சுமালி விமान சேவை"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "ஆய்வுப்பயணம் மற்றும் பயணக் கம்பनி"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "முக்கிய UK பரந்த அலைவரிசை மற்றும் மொபைல் வழங்குநர்"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "UK பரந்த அலைவரிசை, தொலைக்காட்சி மற்றும் மொபைல் வழங்குநர்"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "UK தொலைக்காட்சி, பரந்த அலைவரிசை மற்றும் மொபைல் வழங்குநர்"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "UK இல் தலைமையிடம் கொண்ட உலகளாவிய தொலைபேசி கம்பனி"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "UK மொபைல் நெட்வொர்க் ஆபரேட்டர்"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "UK பரந்த அலைவரிசை மற்றும் ஃபோன் வழங்குநர்"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "UK ஆற்றல் சப்ளையர்"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "UK ஆற்றல் சப்ளையர்"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "UK ஆற்றல் சப்ளையர் (பிரெஞ்சு소유)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "UK புதுப்பிக்கக்கூடிய ஆற்றல் சப்ளையர்"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "UK ஆற்றல் சப்ளையர்"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "UK ஆற்றல் சப்ளையர் (ஜெர்மன்소유)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "லண்டன் மற்றும் தாமஸ் பள்ளத்தாக்குக்கான நீர் மற்றும் கழிவுநீர் கம்பனி"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "தென் இங்கிலாந்துக்கான நீர் கம்பனி"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "வடமேற்கு இங்கிலாந்துக்கான நீர் கம்பனி"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "மிட்லாண்ட்ஸுக்கான நீர் கம்பனி"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "கிழக்கு ஆங்கிலேயாவுக்கான நீர் கம்பனி"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "பிரிட்டிஷ் பன்னாட்டு வங்கி"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "உலகளாவிய வங்கி மற்றும் நிதி சேவை"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "UK சில்ப மற்றும் வணிக வங்கி"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "UK வங்கி குழு"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "UK வங்கி (ஸ்பெயினிய소유)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "டிஜிட்டல் வங்கி மற்றும் ஃபிনடெக்"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "UK காப்பீடு மற்றும் நிதி சேவை"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "UK கார் மற்றும் வீட்டு காப்பீடு"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "UK காப்பீடு கம்பனி"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "உலகளாவிய ஈ-வர்த்தகம் மற்றும் தொழில்நுட்பம்"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "UK அஞ்சல் சேவை"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "UK பார்சல் விநியோக சேவை (முன்னர் Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "UK பார்சல் விநியோக சேவை"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "UK சூப்பர்மார்க்கெட் சங்கிலி"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "UK சூப்பர்மார்க்கெட் சங்கிலி"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "இங்கிலாந்துக்கான தேசிய சுகாதார சேவை"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS பல் சேவை"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "தனியார் சுகாதாரம் வழங்குநர்"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "UK உள்ளூர் அரசு அதிகாரங்கள்"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "UK வீடு கட்டுநர்"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "UK ஆன்லைன் வாடகை தளம்"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "நெறிப்படுத்தல் பொழுதுபோக்கு சேவை"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "தொழில்நுட்ப கம்பனி"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "ரயில் ரத்து செய்யப்பட்டது",
+      "ரத்து செய்யப்பட்ட ரயில்",
+      "ரயில் ரத்து",
+      "ரயில்கள் இயங்கவில்லை",
+      "রেல ரத்து",
+      "சேவை ரத்து செய்யப்பட்டது",
+      "ரயில் தாமதம்",
+      "தாமதமான ரயில்",
+      "ரயில்கள் தாமதம்",
+      "தாமதமான ரயில்",
+      "రेల تاخیر"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "რეილ요금",
+      "టిकెట్ ఖర్చులు",
+      "महंगी ট्रेनें",
+      "ট্রেন ভাড়া"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "ফ্লাইট বিলম্বিত",
+      "विमान বिलंबित",
+      "ফ্লাইট ರத್தು",
+      "हवाई अड्डे देरी",
+      "हवाई अड्डे पर फंसे",
+      "ফ্লাইট देরी"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "लापता बैग",
+      "खोया सूटकेस",
+      "बैग नहीं आया",
+      "लापता सूटकेस",
+      "सामान कैरोसेल पर नहीं",
+      "एयरलाइन द्वारा खोया गया बैग"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "બસ કટ",
+      "మార్గ తగ్గింపులు",
+      "বাস সেবা বন্ধ"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "నెమ్మదిగా ఇంటర్నెట్",
+      "నెమ్మది wifi",
+      "wifi నెమ్మది",
+      "ఇంటర్నెట్ వేగం",
+      "బ్రాడ్‌బ్యాండ్ పని చేయడం లేదు",
+      "బাఫరింగ్",
+      "ఇంటర్నెట్ చిందులు పడుతుంది",
+      "wifi పడిపోతున్నది"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "సంకేతం లేదు",
+      "రిసెప్షన్ లేదు",
+      "మొబైల్ బ్లాక్‌స్పాట్",
+      "సిగ్నల్ మృత జోన్"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "ఒప్పందం మధ్యలో బిల్లు పెరిగింది",
+      "ఒప్పంద ధర పెరుగుదల",
+      "ఒప్పందం మధ్యలో పెరుగుదల"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "నిలిపివేయబడిన స్థితిలో",
+      "ఫోన్‌లో వేచి ఉన్నాను",
+      "పొందలేనిది",
+      "ఎవరూ సమాధానం చెప్పట్లేదు",
+      "ఫోన్ కిউ",
+      "కాల్ సెంటర్"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "రద్దు చేయలేనిది",
+      "రద్దు చేయడం కష్టం",
+      "సబ్‌స్క్రిప్షన్ రద్దు చేయండి",
+      "అన్‌సబ్‌స్క్రైబ్ చేయండి"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "గ్యాస్ బిల్లు చాలా ఎక్కువ",
+      "విద్యుత్ బిల్లు",
+      "శక్తి ధరలు",
+      "తాపన ఖర్చులు",
+      "ఇంధన పేదరికం",
+      "శక్తిని కూడా ఖర్చు చేయలేనిది"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "తప్పు శక్తి బిల్లు",
+      "అంచనా చదవడం తప్పు",
+      "అధిక శక్తి బిల్లు"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "నీటి రేట్లు",
+      "నీటి ఛార్జ్",
+      "నీటి బిల్లు చాలా ఎక్కువ"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "మురుగు డంపింగ్",
+      "ముడిగా మురుగు",
+      "బీచ్‌లో మురుగు",
+      "నీటి కాలుష్యం",
+      "మురుగు ఓవర్‌ఫ్లో",
+      "సంయుక్త మురుగు ఓవర్‌ఫ్లో"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "unexpected ఫీజు",
+      "దాచిన ఫీజు",
+      "ఆశ్చర్య ఛార్జ్",
+      "ఓవర్‌డ్రాఫ్ట్ ఛార్జ్",
+      "బ్యాంక్ ఫీజు"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "ఠేక",
+      "బ్యాంక్欺诈",
+      "పుష్ చెల్లింపు స్కామ్",
+      "అనుమతించిన欺诈"
+    ],
+    "Bank Branch Closures": [
+      "శాఖ మూసివేత",
+      "స్థానిక బ్యాంక్ మూసిపోవడం",
+      "సమీపంలో బ్యాంక్ లేదు"
+    ],
+    "Insurance Claim Rejections": [
+      "క్లెయిమ్ తిరస్కరించబడింది",
+      "బీమా చెల్లించదు",
+      "రిజెక్ట్ చేయబడిన క్లెయిమ్"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS వేచ్చు",
+      "వేచుకుంటూ ఉన్న జాబితా",
+      "ఆపరేషన్ వేచ్చు",
+      "ఆసుపత్రి వేచేసరికి",
+      "రెఫరల్ వేచ్చు",
+      "సర్జరీ కోసం వేచ్చు"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "GP నియామకం పొందలేనిది",
+      "డాక్టర్ నియామకం",
+      "GP ఫోన్ కిউ",
+      "డాక్టర్‌ను చూడలేనిది",
+      "8am ఫోన్ స్క్రాంబుల్"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS దంత వైద్యుడు",
+      "దంత వైద్యుడు కనుగొనలేనిది",
+      "దంత వైద్యుడు వేచుకుంటూ ఉన్న జాబితా"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "మానసిక ఆరోగ్య నిధि",
+      "చికిత్స ప్రవేశం",
+      "సలహా వేచ్చు",
+      "CAMHS వేచ్చు"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "ఔషధ ఖర్చులు",
+      "మందు ధరలు",
+      "ఫార్మసీ ఛార్జ్"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "పార్సల్ కోల్పోయినది",
+      "పార్సల్ డెలివర్ చేయబడలేదు",
+      "వర్షంలో వదిలివేయబడిన",
+      "చదిలిన ప్యాకేజీ",
+      "డెలివరీ డ్రైవర్",
+      "మిస్‌డ్ డెలివరీ"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "అద్దెకు చాలా ఎక్కువ",
+      "అద్దె పెరుగుతుంది",
+      "భూస్వామి అద్దె పెంచుతున్నారు",
+      "లోపం లేని తొలగింపు"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "పార్కింగ్ టిక్కెట్",
+      "పార్కింగ్ ఛార్జ్ నోటీసు",
+      "PCN",
+      "న్యాయమైనం కాని పార్కింగ్ జరిమానా"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "చిన్న భాగాలు",
+      "ఒకే ధరకు తక్కువ",
+      "ప్యాకేజీ చిన్నది",
+      "సంకోచం చెందుతున్న ఉత్పత్తులు"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "పొట్లు",
+      "రోడ్డు నష్టం",
+      "పొట్టు కారు నష్టం"
+    ],
+    "Council Tax Rises": [
+      "కౌన్సిల్ ట్యాక్స్ పెరుగుదల",
+      "కౌన్సిల్ ట్యాక్స్ చాలా ఎక్కువ",
+      "స్థానిక ట్యాక్స్"
+    ],
+    "Damp and Mould in Housing": [
+      "నీటిపోక ఇల్లు",
+      "చిત్రం నుండి చెత్త",
+      "నల్ల అచ్చు",
+      "గృహ అస్తిత్వం మరమ్మత్"
+    ],
+    "Student Loan Repayment": [
+      "విద్యార్థి రుణాలు",
+      "ట్యూషన్ ఫీజు",
+      "విద్యారుణ ఋణం",
+      "విద్యార్థి రుణం"
+    ],
+    "AI Replacing Jobs": [
+      "ఉద్యోగ ఆటోమేషన్",
+      "AI ఉద్యోగాలను తీసుకుంటుంది",
+      "రోబోట్లు కార్మికులను భర్తీ చేస్తున్నాయి"
+    ],
+    "Roaming Charges": [
+      "సెలవుల ఫోన్ బిల్లు",
+      "విదేశ డేటా ఛార్జ్",
+      "విదేశీ ఫోన్ ఛార్జ్"
+    ],
+    "Smart Meter Problems": [
+      "స్మార్ట్ మీటర్ విచ్ఛిన్నమైంది",
+      "మీటర్ పని చేయడం లేదు",
+      "మీటర్ సిగ్నల్ కోల్పోయినది"
+    ],
+    "Subscription Traps": [
+      "ఉచిత ట్రయల్ ట్రాప్",
+      "స్వయంచాలక పునరుద్ధరణ",
+      "ట్రయల్ తర్వాత ఛార్జ్ చేయబడిన"
+    ],
+    "Fuel Prices": [
+      "పెట్రోల్ ధరలు",
+      "డీజిల్ ధరలు",
+      "ఇంధన ఖర్చు",
+      "పెట్రోల్ చాలా ఖరీదైనది"
+    ],
+    "Power Cuts": [
+      "విద్యుత్ చిచ్చుకోత",
+      "విద్యుత్ కోతలు",
+      "బ్లాక్‌అవుట్",
+      "విద్యుత్ లేనిది",
+      "విద్యుత్ విఫలం"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "గిరాయీ పెరుగుదల",
+      "గిరాయీ రేటు",
+      "పునర్గిరాయీ",
+      "స్థిర రేటు ముగిసింది"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "బదిలీ ఫీజు",
+      "విదేశాలకు డబ్బు పంపడం",
+      "రెమిటెన్స్ ఫీజు",
+      "వైర్ బదిలీ ఖర్చు"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "ఆసుపత్రి పార్కింగ్",
+      "ఆసుపత్రిలో పార్కింగ్",
+      "NHS పార్కింగ్"
+    ],
+    "Noisy Neighbours": [
+      "శబ్ద ఫిర్యాదు",
+      "పొరుగువారి శబ్దం",
+      "గర్జనీయ పొరుగువారు",
+      "శబ్ద ఇబ్బంది"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "బిన్ సంగ్రహణ",
+      "బిన్‌లు సేకరించబడలేదు",
+      "రీసైక్లింగ్ గందరగోళం",
+      "మిస్‌డ్ బిన్ సంగ్రహణ"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "ప్లాన్నింగ్ అనుమతి",
+      "అవాంఛిత అభివృద్ధి",
+      "ఆకుపచ్చ బెల్ట్",
+      "నిర్మాణ అనుమతి"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "రిఫండ్ పొందలేనిది",
+      "రిఫండ్ తిరస్కరించబడింది",
+      "రిటర్న్ తిరస్కరించబడిన",
+      "డబ్బు తిరిగి ఇవ్వండి"
+    ],
+    "Fake Reviews": [
+      "సమీక్ష తిరిగిక",
+      "చెల్లించిన సమీక్షలు",
+      "trust pilot నకిలీ",
+      "నకిలీ సమీక్ష"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "ఆహార గుణవత్త",
+      "సిద్ధ భోజనం అధ్వాన్నమైనది",
+      "ఆహార సంకలితాలు",
+      "భాగం చిన్నది"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "స్వయం చెక్‌అవుట్",
+      "స్వీయ సేవ",
+      "సిబ్బంది టిల్లులు లేవు",
+      "యంత్రం పని చేయడం లేదు"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "చిల్డ్‌కేర్ ఖర్చు",
+      "నర్సరీ ఫీజు",
+      "చిల్డ్‌కేర్ ఖరీదైనది",
+      "డేకేర్ ఖర్చు"
+    ],
+    "Dog Fouling": [
+      "కుక్క గందరగోళం",
+      "కుక్క పూ",
+      "కుక్క వ్యర్థాలు",
+      "కాలుష్యం"
+    ]
   },
   "category_assistants": {
     "transport": {

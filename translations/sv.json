@@ -2,617 +2,730 @@
   "locale": "sv",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
+    "Telecoms": "Telekommunikation",
+    "Banking": "Bank",
+    "Health": "Hälsa",
+    "Education": "Utbildning",
+    "Environment": "Miljö",
+    "Energy": "Energi",
+    "Water": "Vatten",
+    "Insurance": "Försäkring",
+    "Housing": "Bostäder",
     "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Delivery": "Leverans",
+    "Local": "Lokalt",
+    "Employment": "Sysselsättning",
+    "Tech": "Teknik",
+    "Other": "Övrigt"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Tågavgångar inställda",
+      "description": "Tåg inställda eller allvarligt försenade med otillräckligt meddelande eller kompensation"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Tågbiljettpriser",
+      "description": "Järnvägsbiljetter för dyra, höjningar över inflationen, inkonsistent prissättning"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Flygförseningar",
+      "description": "Flyg försenade eller inställda, dålig kommunikation, svårighet att kräva kompensation"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Förlorad bagage",
+      "description": "Väskor som inte anländer till destinationen, långsam spårning, otillräcklig kompensation"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Busslinjeavgångar",
+      "description": "Linjer inställda, minskad frekvens, landsbygdssamhällen förlorar bussåtkomst"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Skador från väggropar",
+      "description": "Väggropar som skadar fordon och utgör fara för cyklister, kommuner är långsamma att reparera"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Parkeringsböter",
+      "description": "Orättvisa privata parkeringsavgifter, aggressiv verkställighet, förvirrande skyltar"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Bränslepriser",
+      "description": "Bensin- och dieselpriser för höga, långsamma att sjunka när grossistpriserna faller"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Bredbandshastighet",
+      "description": "Internethastigheter långt under vad som annonseras och betalas för"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Mobila signaldöda zoner",
+      "description": "Ingen mobilsignal i hem, arbetsplatser eller längs transportvägar"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Prisökningar under kontraktet",
+      "description": "Telefon-, bredbands- och TV-räkningar som ökar under låsta kontrakt"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Väntestider för kundservice",
+      "description": "Timmar i väntekön för att tala med en människa"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Svårighet att säga upp prenumerationer",
+      "description": "Företag gör det avsiktligt svårt att säga upp eller avsluta prenumerationen"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Roamingavgifter",
+      "description": "Oväntade mobilavgifter vid resor utomlands, prisökningar efter Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Energiräkningskostnader",
+      "description": "Gas- och elräkningar som är oöverkomliga, pristak fortfarande för högt"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Felaktiga energiräkningar",
+      "description": "Uppskattade avläsningar är felaktiga, överdebitering, faktureringsfel"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Vattenräkningsökningar",
+      "description": "Vattenräkningar stiger kraftigt medan servicekvaliteten försämras"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Avlopp i vattendrag",
+      "description": "Vattenföretag som dumpar rått avlopp i vattendrag och på strander"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Strömavbrott",
+      "description": "Avbrott i elförsörjningen, långsam återställning, otillräcklig kompensation"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Problem med smarta mätare",
+      "description": "Smarta mätare som inte fungerar, förlorad funktionalitet efter leverantörsöverföring"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Bankfilialstängningar",
+      "description": "Lokala bankfilialer stängs, vilket lämnar samhällen utan åtkomst"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Dolda bankavgifter",
+      "description": "Oväntade avgifter för övertrassering, utländska transaktioner, kontounderhåll"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Förluster från bedrägerier och bedrägerier",
+      "description": "Banker vägrar att ersätta offer för bedrägerier och auktoriserade push-betalningsbedrägeri"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Försäkringsanspråk avslagna",
+      "description": "Anspråk nekas på teknikaliteter efter år av premiebetalningar"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Chock från bolåneränta",
+      "description": "Fast ränta slutar och går över till mycket högre variabel ränta"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Avgifter för överföring utomlands",
+      "description": "Överdrivna avgifter och dåliga växelkurser för internationella penningöverföringar"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS väntider",
+      "description": "Väntider på flera månader eller flera år för operationer och specialistmöten"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Åtkomst till läkarmöten",
+      "description": "Kan inte komma fram för att boka läkarmöten, veckolånga väntider"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Tandläkartillgänglighet",
+      "description": "Omöjligt att hitta en NHS-tandläkare som tar nya patienter"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Väntider för psykisk hälsovård",
+      "description": "Veckolånga väntider för terapi och stöd för psykisk hälsa"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Receptkostnader",
+      "description": "Kostnad per artikel för hög i England, variation mellan brittiska nationer"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Sjukhusparkeringsavgifter",
+      "description": "Betala för parkering på sjukhus medan man är sjuk eller besöker sjuka släktingar"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Hyresökningar",
+      "description": "Privat hyra stiger långt över inflationen, hot om vräkning utan fel"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Kommunalskattehöjningar",
+      "description": "Årliga kommunalskattehöjningar medan lokala tjänster blir sämre"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Bullriga grannar",
+      "description": "Ihållande bullerstörning, kommuner är långsamma att agera, påverkar psykisk hälsa"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Förändringar i sophämtning",
+      "description": "Minskad sophämtning, förvirrande återvinningsregler, överfulla soptunnor"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Missbruk av bygglov",
+      "description": "Oönskade utvecklingar godkända, grönområden hotas, samfundet ignoreras"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Fukt och mögel i bostäder",
+      "description": "Hyresvärdar och bostadsföreningar som inte åtgärdar fukt och mögel"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Leveransproblem",
+      "description": "Paket förlorade, lämnades i regn, markerade som levererade men inte mottagna"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "Produkter blir mindre medan priserna förblir desamma eller ökar"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Svårighet att få återbetalning",
+      "description": "Företag gör returer och återbetalningar onödigt svåra"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Falska recensioner",
+      "description": "Kan inte lita på onlinerecensioner, falska positiva recensioner vilseleder konsumenter"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Prenumerationsfällor",
+      "description": "Kostnadsfria provperioder konverteras till betalda utan tydligt samtycke, svårt att säga upp"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Försämring av livsmedelskvaliteten",
+      "description": "Färdigrätter av sämre kvalitet, mindre portioner, fler tillsatser"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Frustration med självbetjäningskassor",
+      "description": "Självbetjäningsmaskinerna är opålitliga, ersätter personalpersonal"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Kostnaden för barnomsorg",
+      "description": "Barnomsorgskostnader är oöverkomligt dyra, begränsar möjligheten att arbeta"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Återbetalning av studielån",
+      "description": "Akademiker betalar tillbaka i årtionden, ändring av tröskelvärde och ränta"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Hundorenlighet",
+      "description": "Hundbajsning på offentliga platser, parker och trottoarer rensas inte"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI ersätter jobb",
+      "description": "Oro över artificiell intelligens som automatiserar jobb utan övergångsstöd"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "UK järnvägsoperatör som betjänar West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "UK järnvägsoperatör som betjänar London och södra England"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "UK järnvägsoperatör som betjänar norra England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "UK långväga järnvägsoperatör"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "UK järnvägsoperatör som betjänar trans-Pennine rutter"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "UK järnvägsoperatör som betjänar East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Lågprisflyg inom Europa"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Brittiskt lågprisflyg"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "UK flaggbärare flygbolag"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Semester- och reseturistföretag"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Stor UK bredbands- och mobiloperatör"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "UK bredbands-, TV- och mobiloperatör"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "UK TV-, bredbands- och mobiloperatör"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Globalt telekomföretag med huvudkontor i UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "UK mobil nätverksoperatör"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "UK bredbands- och telefonleverantör"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "UK energileverantör"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "UK energileverantör"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "UK energileverantör (fransk ägd)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "UK förnybar energileverantör"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "UK energileverantör"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "UK energileverantör (tysk ägd)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Vatten- och avloppsföretag för London och Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Vattenföretag för södra England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Vattenföretag för nordvästra England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Vattenföretag för Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Vattenföretag för East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Brittisk multinationell bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Global bank- och finansiell tjänst"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "UK privat- och affärsbank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "UK bankgrupp"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "UK bank (spansk ägd)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Digital bank och fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "UK försäkrings- och finansiell tjänst"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "UK bil- och hemförsäkring"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "UK försäkringsföretag"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Global e-handel och teknik"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "UK postservice"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "UK paketleveranstjänst (tidigare Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "UK paketleveranstjänst"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "UK stormarknadskedja"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "UK stormarknadskedja"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "National Health Service för England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS tandvårdstjänster"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Privat sjukvårdsleverantör"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "UK lokala myndigheter"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "UK husbyggare"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "UK online uthyrningsplattform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Streamingunderhållningstjänst"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Teknikföretag"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "tåg inställt",
+      "inställt tåg",
+      "tågavgång inställd",
+      "tåg går inte",
+      "järnvägsavgång inställd",
+      "tjänst inställd",
+      "tågförseningar",
+      "försenat tåg",
+      "tåg försenade",
+      "sent tåg",
+      "järnvägsförseningar"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "järnvägsbiljetter",
+      "biljettpris",
+      "dyra tåg",
+      "tågbiljetter"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "flygning försenad",
+      "flygplan försenat",
+      "flygning inställd",
+      "flygplatsförseningar",
+      "fastna på flygplatsen",
+      "flygning sen"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "saknade väskor",
+      "förlorad resväska",
+      "väskor ankommer inte",
+      "saknad resväska",
+      "bagage inte på bagageslussen",
+      "väska förlorad av flygbolaget"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "busskörningar",
+      "ruttnedskärningar",
+      "bussservice stängningar"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "långsam internet",
+      "långsamt wifi",
+      "wifi långsamt",
+      "internethastig",
+      "bredbandet fungerar inte",
+      "buffring",
+      "internet tappar",
+      "wifi droppar ut"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "ingen signal",
+      "ingen mottagning",
+      "mobil död zon",
+      "signal död zon"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "räkningsökning under avtal",
+      "avtalsökning",
+      "ökning under avtal"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "väntar",
+      "väntar i telefon",
+      "kan inte få kontakt",
+      "ingen svarar",
+      "telefonkö",
+      "kundtjänst"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "kan inte avbryta",
+      "svårt att avbryta",
+      "avbryt prenumeration",
+      "avanmäl"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "gasräkning för hög",
+      "elräkning",
+      "energipriser",
+      "värmekostnader",
+      "energifattigdom",
+      "kan inte ha råd med energi"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "fel energiräkning",
+      "uppskattad avläsning fel",
+      "överdebiterad energi"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "vattentariffer",
+      "vattenavgift",
+      "vattenräkning för hög"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "avloppsöverflöde",
+      "råa avlopp",
+      "avlopp på strand",
+      "vattenpollution",
+      "avloppsöverflöde",
+      "kombinerat avloppsöverflöde"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "oväntade avgifter",
+      "dolda avgifter",
+      "överraskande debiteringar",
+      "övertrasseringsavgifter",
+      "bankavgifter"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "bedriven",
+      "bankbedrägeri",
+      "pushbetalningsbedrägeri",
+      "auktoriserat bedrägeri"
+    ],
+    "Bank Branch Closures": [
+      "filialstängningar",
+      "lokal bank stängs",
+      "ingen bank i närheten"
+    ],
+    "Insurance Claim Rejections": [
+      "anspråk avslaget",
+      "försäkring betalar inte",
+      "avslaget anspråk"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS väntan",
+      "väntelista",
+      "operationsväntan",
+      "sjukhusvätetid",
+      "remissväntan",
+      "väntar på operation"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "kan inte få läkarbesök",
+      "läkarbesök",
+      "läkartelefon kö",
+      "kan inte träffa läkare",
+      "8 am telefonskamling"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS tandläkare",
+      "kan inte hitta tandläkare",
+      "tandlækar väntelista"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "psykisk hälsa finansiering",
+      "terapi tillgång",
+      "rådgivning väntan",
+      "CAMHS väntan"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "läkemedelskostnader",
+      "läkemedelspriser",
+      "apoteksavgifter"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "paket förlorat",
+      "paket ej levererat",
+      "lämnat i regn",
+      "paket stulet",
+      "leveranschaufför",
+      "missad leverans"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "hyra för hög",
+      "hyra stiger",
+      "hyresvärd höjer hyra",
+      "vräkning utan skäl"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "parkeringsbot",
+      "parkeringsavgiftsmeddelande",
+      "PCN",
+      "orättvis parkeringsbot"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "mindre portioner",
+      "mindre för samma pris",
+      "paket mindre",
+      "krympande produkter"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "väggropar",
+      "väganskador",
+      "väggrop bilskador"
+    ],
+    "Council Tax Rises": [
+      "kommunalskatteökning",
+      "kommunalskatt för hög",
+      "lokal skatt"
+    ],
+    "Damp and Mould in Housing": [
+      "möglig hus",
+      "fuktig lägenhet",
+      "svart mögel",
+      "bostädernas förfall"
+    ],
+    "Student Loan Repayment": [
+      "studielån",
+      "undervisningsavgifter",
+      "utbildningsskuld",
+      "studentlån"
+    ],
+    "AI Replacing Jobs": [
+      "jobautomation",
+      "AI tar jobb",
+      "robotar ersätter arbetare"
+    ],
+    "Roaming Charges": [
+      "semestertelefonsedel",
+      "utlandsdata avgifter",
+      "utländska telefonavgifter"
+    ],
+    "Smart Meter Problems": [
+      "smart meter bruten",
+      "mätare fungerar inte",
+      "mätare förlorad signal"
+    ],
+    "Subscription Traps": [
+      "gratis provperiod fälla",
+      "automatisk förnyelse",
+      "debiterad efter provperiod"
+    ],
+    "Fuel Prices": [
+      "bensinpriser",
+      "dieselpriser",
+      "bränslekostat",
+      "bensin för dyrt"
+    ],
+    "Power Cuts": [
+      "strömavbrott",
+      "elstopp",
+      "svart ut",
+      "ingen ström",
+      "strömfel"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "bolåneökning",
+      "bolånetal",
+      "omfinansiera",
+      "räntefast slut"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "överföringsavgifter",
+      "pengar till utlandet",
+      "överföringsavgifter",
+      "trådöverföringskostnad"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "sjukhuasparkering",
+      "parkering på sjukhus",
+      "NHS parkering"
+    ],
+    "Noisy Neighbours": [
+      "bullerklagomål",
+      "grannebullret",
+      "högljudda grannar",
+      "bullerstörning"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "sophämtning",
+      "sopor inte hämtade",
+      "återvinningsförvirring",
+      "missad sophämtning"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "bygglov",
+      "oönskad utveckling",
+      "grönområde",
+      "bygglov"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "kan inte få återbetalning",
+      "återbetalning vägrad",
+      "retur avslagem",
+      "pengar tillbaka"
+    ],
+    "Fake Reviews": [
+      "recensionsmanipulation",
+      "betalda recensioner",
+      "trust pilot falsk",
+      "falsk recension"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "matkvalitet",
+      "färdigmat sämre",
+      "matkemikalier",
+      "portion mindre"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "självscanande kassa",
+      "självbetjäning",
+      "ingen personalkassa",
+      "maskin fungerar inte"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "barnomsorgskostat",
+      "förskoleavgifter",
+      "barnomsorg dyr",
+      "dagvårdskostat"
+    ],
+    "Dog Fouling": [
+      "hundskit",
+      "hundbajj",
+      "hundavfall",
+      "skitande"
+    ]
   },
   "category_assistants": {
     "transport": {

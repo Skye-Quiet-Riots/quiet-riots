@@ -1,618 +1,731 @@
 {
   "locale": "fa",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "حمل و نقل",
+    "Telecoms": "مخابرات",
+    "Banking": "بانکداری",
+    "Health": "سلامت",
+    "Education": "آموزش",
+    "Environment": "محیط زیست",
+    "Energy": "انرژی",
+    "Water": "آب",
+    "Insurance": "بیمه",
+    "Housing": "مسکن",
+    "Shopping": "خریدوفروش",
+    "Delivery": "تحویل",
+    "Local": "محلی",
+    "Employment": "اشتغال",
+    "Tech": "فناوری",
+    "Other": "سایر"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "لغو قطارات",
+      "description": "قطارات لغو شده یا با تأخیر شدید بدون اطلاع کافی یا جبران خسارت"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "قیمت بلیط قطار",
+      "description": "کرایه ریل بسیار گران، افزایش بالاتر از تورم، قیمت گذاری نامتسق"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "تأخیر پروازها",
+      "description": "پروازهای تأخیر داشته یا لغو شده، ارتباطات ضعیف، دشواری در ادعای جبران خسارت"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "بار گمشده",
+      "description": "چمدانها به مقصد نرسیده، ردیابی کند، جبران خسارت ناکافی"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "کاهش خطوط اتوبوس",
+      "description": "لغو مسیرها، کاهش فرکانس، جوامع روستایی از دسترسی اتوبوس محروم می شوند"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "خسارت چاله های جاده",
+      "description": "چاله های جاده خودروها را آسیب می رسانند و دوچرخه سواران را در معرض خطر قرار می دهند، شوراها کند ترمیم می کنند"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "جریمه پارکینگ",
+      "description": "هزینه پارکینگ خصوصی نامنصفانه، اجرای تهاجمی، نشانه های گیج کننده"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "قیمت سوخت",
+      "description": "قیمت بنزین و دیزل بسیار بالا، کند کاهش زمانی که قیمت عمده فروشی کاهش می یابد"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "سرعت پهن باند",
+      "description": "سرعت اینترنت بسیار کمتر از آنچه تبلیغ و پرداخت شده است"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "مناطق بدون سیگنال موبایل",
+      "description": "بدون سیگنال موبایل در منازل، محل کار، یا در امتداد مسیرهای حمل و نقل"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "افزایش قیمت در میانه قرارداد",
+      "description": "صورت حسابهای تلفن، پهن باند و تلویزیون در طول قراردادهای قفل شده افزایش می یابد"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "زمان انتظار خدمات مشتری",
+      "description": "ساعت ها در انتظار صحبت کردن با یک انسان"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "دشواری لغو اشتراک",
+      "description": "شرکت ها عمداً لغو یا لغو اشتراک را سخت می کنند"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "هزینه های رومینگ",
+      "description": "هزینه های موبایل غیرمنتظره هنگام سفر به خارج، افزایش قیمت پس از برکسیت"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "هزینه صورت حساب انرژی",
+      "description": "صورت حسابهای گاز و برق غیر قابل تحمل، سقف قیمت هنوز بسیار بالا"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "صورت حساب انرژی نادقیق",
+      "description": "خوانش های تخمینی غلط، اضافه شارژ، خطاهای صورتحساب"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "افزایش قبض آب",
+      "description": "صورت حسابهای آب به شدت افزایش می یابد در حالی که کیفیت خدمات کاهش می یابد"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "فاضلاب در رودخانه ها",
+      "description": "شرکت های آب دفع فاضلاب خام در آبراه ها و سواحل"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "قطع برق",
+      "description": "قطع تامین برق، بازگردانی کند، جبران خسارت ناکافی"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "مشکلات کنتور هوشمند",
+      "description": "کنتورهای هوشمند کار نمی کنند، از دست دادن عملکرد پس از تغییر تامین کننده"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "بستن شعب بانک",
+      "description": "بستن شعب بانک های محلی، ترک جوامع بدون دسترسی"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "هزینه های مخفی بانک",
+      "description": "هزینه های غیرمنتظره برای اضافه برداشت، معاملات خارجی، نگهداری حساب"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "تقلب و تلفات کلاهبرداری",
+      "description": "بانک ها از جبران خسارت قربانیان تقلب و کلاهبرداری های مصرح شده خودداری می کنند"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "رد کردن ادعاهای بیمه",
+      "description": "ادعاهای رد شده بر اساس جزئیات پس از سالها پرداخت حق بیمه"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "شوک نرخ وام",
+      "description": "نرخ ثابت پایان می یابد و به نرخ متغیر بسیار بالاتر منتقل می شود"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "هزینه های انتقال خارج از کشور",
+      "description": "هزینه های بیش از حد و نرخ ارز ضعیف برای انتقال پول بین المللی"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "زمان های انتظار NHS",
+      "description": "انتظار چند ماهه یا چند ساله برای عملیات و قرارهای متخصص"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "دسترسی به قرار پزشک خانواده",
+      "description": "نمی توان برای رزرو قرار پزشک خانواده، انتظار هفته ای درازمدت"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "دسترسی به دندانپزشک",
+      "description": "غیرممکن پیدا کردن دندانپزشک NHS که بیماران جدید را می پذیرد"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "انتظار خدمات سلامت روان",
+      "description": "انتظار ماه ها برای درمان و پشتیبانی سلامت روان"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "هزینه نسخه",
+      "description": "هزینه به ازای هر مورد در انگلستان بسیار بالا، عدم سازگاری در سراسر ملت های بریتانیا"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "هزینه پارکینگ بیمارستان",
+      "description": "پرداخت برای پارکینگ در بیمارستان در حالی که بیمار هستید یا بیماران را ملاقات می کنید"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "افزایش اجاره",
+      "description": "اجاره خصوصی به شدت بالاتر از تورم، تهدید تخلیه بدون علت"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "افزایش عوارض شهرداری",
+      "description": "افزایش عوارض شهرداری سالانه در حالی که خدمات محلی بدتر می شوند"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "همسایگان پرسروصدا",
+      "description": "اختلال سر و صدای مداوم، شهرداری کند عمل می کنند، بر سلامت روان تاثیر می گذارد"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "تغییرات جمع آوری زباله",
+      "description": "کاهش جمع آوری زباله، قوانین بازیافت گیج کننده، سطل های سرریز"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "سوء استفاده از اجازه شهرسازی",
+      "description": "توسعه های نخواسته تایید شده، کمربند سبز تحت تهدید، جامعه نادیده گرفته شده"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "رطوبت و کپک در مسکن",
+      "description": "صاحبان خانه و سازمان های مسکن عدم رفع رطوبت و کپک"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "مشکلات تحویل",
+      "description": "بسته های گمشده، در باران باقی مانده، علامت گذاری شده تحویل شده اما دریافت نشده"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "کوچک کردن محصولات",
+      "description": "محصولات کوچک تر می شوند در حالی که قیمت ها برابر می مانند یا افزایش می یابد"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "دشواری بازپرداخت",
+      "description": "شرکت ها بازگشت و بازپرداخت را غیر ضروری سخت می کنند"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "نقادی های جعلی",
+      "description": "نمی توان به نقادی های آنلاین اعتماد کرد، نقادی های مثبت جعلی مصرف کنندگان را گمراه می کند"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "دام های اشتراک",
+      "description": "آزمایش رایگان تبدیل به پرداخت بدون رضایت واضح، لغو دشوار"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "کاهش کیفیت غذا",
+      "description": "غذاهای آماده شده با کیفیت بدتر، حصص کوچک تر، افزودنی های بیشتر"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "ناراحتی پرداخت خود سرویس",
+      "description": "دستگاه های خود سرویس غیر قابل اعتماد، جایگزینی کارمندان انسانی"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "هزینه مراقبت کودک",
+      "description": "هزینه های مراقبت کودک بسیار گران، محدود کردن توانایی کار"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "بازپرداخت وام دانشجویی",
+      "description": "فارغ التحصیلان برای دهه ها پرداخت می کنند، تغییر آستانه و سود"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "فاضلاب سگ",
+      "description": "مدفوع سگ در فضاهای عمومی، پارک ها، و پیاده روها پاکیزه نمی شوند"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "هوش مصنوعی جایگزین شغل",
+      "description": "اضطراب در مورد هوش مصنوعی خودکار سازی مشاغل بدون پشتیبانی انتقال"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "اپراتور راه آهن انگلستان که خط اصلی ساحل غربی را سرو می‌کند"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "اپراتور راه آهن انگلستان که لندن و جنوب را سرو می‌کند"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "اپراتور راه آهن انگلستان که شمال انگلیس را سرو می‌کند"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "اپراتور راه آهن دوربرد انگلستان"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "اپراتور راه آهن انگلستان که مسیرهای عبور پنین را سرو می‌کند"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "اپراتور راه آهن انگلستان که خط اصلی ساحل شرقی را سرو می‌کند"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "ایرلاین کم‌هزینه اروپایی"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "ایرلاین کم‌هزینه مقیم انگلستان"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "ایرلاین پرچمدار انگلستان"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "شرکت تعطیلات و سفر"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "ارائه‌دهنده پهن‌باند و تلفن همراه بزرگ انگلستان"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "ارائه‌دهنده پهن‌باند، تلویزیون و تلفن همراه انگلستان"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "ارائه‌دهنده تلویزیون، پهن‌باند و تلفن همراه انگلستان"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "شرکت ارتباطات جهانی با مقر در انگلستان"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "اپراتور شبکه تلفن همراه انگلستان"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "ارائه‌دهنده پهن‌باند و تلفن انگلستان"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "تامین‌کننده انرژی انگلستان"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "تامین‌کننده انرژی انگلستان"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "تامین‌کننده انرژی انگلستان (متعلق به فرانسه)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "تامین‌کننده انرژی تجدیدپذیر انگلستان"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "تامین‌کننده انرژی انگلستان"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "تامین‌کننده انرژی انگلستان (متعلق به آلمان)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "شرکت آب و فاضلاب لندن و دره تیمز"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "شرکت آب برای جنوب انگلیس"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "شرکت آب برای شمال‌غرب انگلیس"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "شرکت آب برای میدلندز"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "شرکت آب برای شرق انگلیا"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "بانک چندملی‌تابع بریتانیایی"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "خدمات بانکی و مالی جهانی"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "بانک خرده‌فروشی و تجاری انگلستان"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "گروه بانکی انگلستان"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "بانک انگلستان (متعلق به اسپانیا)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "بانک دیجیتال و فین‌تک"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "بیمه و خدمات مالی انگلستان"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "بیمه خودرو و منزل انگلستان"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "شرکت بیمه انگلستان"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "تجارت الکترونیک و فناوری جهانی"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "سرویس پستی انگلستان"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "سرویس تحویل بسته انگلستان (پیشین‌تر Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "سرویس تحویل بسته انگلستان"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "زنجیره فروشگاه‌های میادین انگلستان"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "زنجیره فروشگاه‌های میادین انگلستان"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "خدمات بهداشتی ملی برای انگلیس"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "خدمات دندانپزشکی خدمات بهداشتی ملی"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "ارائه‌دهنده مراقبت‌های بهداشتی خصوصی"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "مقامات دولت محلی انگلستان"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "سازنده خانه انگلستان"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "پلتفرم اجاره‌نشینی آنلاین انگلستان"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "سرویس سرویس پخش تفریحی"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "شرکت فناوری"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "قطار لغو شد",
+      "قطار لغو شده",
+      "لغو قطار",
+      "قطارها در حال تردد نیستند",
+      "لغو سرویس ریلی",
+      "سرویس لغو شد",
+      "تأخیر قطار",
+      "قطار تأخیر دارد",
+      "قطارها دیر می‌رسند",
+      "قطار دیر",
+      "تأخیر ریلی"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "کرایه ریلی",
+      "هزینه بلیت",
+      "قطارهای گران",
+      "کرایه قطار"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "پرواز تأخیر دارد",
+      "هواپیما تأخیر دارد",
+      "پرواز لغو شد",
+      "تأخیر فرودگاه",
+      "گیر کردن در فرودگاه",
+      "پرواز دیر"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "چمدان گم شده",
+      "کوله‌بار گم شده",
+      "چمدان‌ها نیامده‌اند",
+      "چمدان گم شده",
+      "چمدان روی نوار نبود",
+      "چمدان توسط هواپیمایی گم شده"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "کاهش خطوط اتوبوس",
+      "کاهش مسیرها",
+      "بسته شدن سرویس اتوبوس"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "اینترنت کند",
+      "وای‌فای کند",
+      "وای‌فای کند",
+      "سرعت اینترنت",
+      "اینترنت کار نمی‌کند",
+      "بافرینگ",
+      "اینترنت همچنان قطع می‌شود",
+      "وای‌فای قطع می‌شود"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "بدون سیگنال",
+      "بدون دریافت سیگنال",
+      "نقطه سیاه تلفن همراه",
+      "منطقه بدون سیگنال"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "افزایش صورت‌حساب در میان قرارداد",
+      "افزایش قیمت قرارداد",
+      "افزایش قیمت در میان قرارداد"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "در انتظار",
+      "انتظار در تلفن",
+      "نمی‌تواند متصل شود",
+      "کسی پاسخ نمی‌دهد",
+      "صف تلفنی",
+      "مرکز تماس"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "نمی‌تواند لغو کند",
+      "لغو دشوار است",
+      "لغو اشتراک",
+      "لغو اشتراک"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "صورت‌حساب گاز خیلی زیاد",
+      "صورت‌حساب برق",
+      "قیمت انرژی",
+      "هزینه گرمایش",
+      "فقر انرژی",
+      "نمی‌تواند انرژی خریداری کند"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "صورت‌حساب انرژی نادرست",
+      "خواندن تخمینی نادرست",
+      "اضافه‌پرداخت انرژی"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "نرخ آب",
+      "هزینه آب",
+      "صورت‌حساب آب خیلی زیاد"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "تخلیه فاضلاب",
+      "فاضلاب خام",
+      "فاضلاب روی ساحل",
+      "آلودگی آب",
+      "سرریز فاضلاب",
+      "سرریز فاضلاب ترکیبی"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "هزینه‌های غیرمنتظره",
+      "هزینه‌های پنهان",
+      "هزینه‌های تعجب‌آور",
+      "هزینه تجاوز مانده",
+      "هزینه‌های بانکی"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "تقلب",
+      "تقلب بانکی",
+      "کلاهبرداری پرداخت تأیید شده",
+      "تقلب تأیید شده"
+    ],
+    "Bank Branch Closures": [
+      "بسته شدن شعب",
+      "بسته شدن بانک محلی",
+      "بدون بانک نزدیک"
+    ],
+    "Insurance Claim Rejections": [
+      "ادعا رد شد",
+      "بیمه پرداخت نمی‌کند",
+      "ادعا رد شده"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "انتظار NHS",
+      "لیست انتظار",
+      "انتظار برای جراحی",
+      "مدت انتظار بیمارستان",
+      "انتظار برای ارجاع",
+      "انتظار برای جراحی"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "نمی‌تواند نوبت پزشک عمومی بگیرد",
+      "نوبت پزشک",
+      "صف تلفنی پزشک عمومی",
+      "نمی‌تواند پزشک ببیند",
+      "شلوغی تلفن ساعت ۸ صبح"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "دندان‌پزشک NHS",
+      "نمی‌تواند دندان‌پزشک پیدا کند",
+      "لیست انتظار دندان‌پزشک"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "تأمین منابع سلامت روان",
+      "دسترسی به درمان",
+      "انتظار مشاوره",
+      "انتظار CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "هزینه دارو",
+      "قیمت داروها",
+      "هزینه داروخانه"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "بسته گم شده",
+      "بسته تحویل داده نشد",
+      "گذاشتن در باران",
+      "بسته دزدیده شد",
+      "راننده تحویل",
+      "تحویل از دست رفته"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "اجاره خیلی زیاد",
+      "افزایش اجاره",
+      "افزایش اجاره توسط مالک",
+      "اخراج بدون دلیل"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "جریمه پارکینگ",
+      "اخطار پارکینگ",
+      "PCN",
+      "جریمه پارکینگ ظالمانه"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "حصص کوچک‌تر",
+      "کمتر به ازای همان قیمت",
+      "بسته کوچک‌تر",
+      "محصولات کوچک‌شونده"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "سوراخ‌های جاده",
+      "آسیب جاده",
+      "آسیب خودرو توسط سوراخ جاده"
+    ],
+    "Council Tax Rises": [
+      "افزایش عوارض شهری",
+      "عوارض شهری خیلی زیاد",
+      "مالیات محلی"
+    ],
+    "Damp and Mould in Housing": [
+      "خانه کپک‌زده",
+      "آپارتمان مرطوب",
+      "کپک سیاه",
+      "خرابی مسکن"
+    ],
+    "Student Loan Repayment": [
+      "وام‌های دانشجویی",
+      "هزینه تحصیل",
+      "بدهی تحصیلی",
+      "بدهی دانشجویی"
+    ],
+    "AI Replacing Jobs": [
+      "خودکارسازی شغل",
+      "هوش مصنوعی جایگزین شغل‌ها می‌شود",
+      "رباتیک‌ها کارگران را جایگزین می‌کند"
+    ],
+    "Roaming Charges": [
+      "صورت‌حساب تلفن تعطیلات",
+      "هزینه داده خارج از کشور",
+      "هزینه تلفن خارج از کشور"
+    ],
+    "Smart Meter Problems": [
+      "کنتور هوشمند خراب",
+      "کنتور کار نمی‌کند",
+      "کنتور سیگنال از دست داده"
+    ],
+    "Subscription Traps": [
+      "دام آزمایش رایگان",
+      "تمدید خودکار",
+      "شارژ شدن بعد از آزمایش"
+    ],
+    "Fuel Prices": [
+      "قیمت بنزین",
+      "قیمت گازوئیل",
+      "هزینه سوخت",
+      "بنزین خیلی گران"
+    ],
+    "Power Cuts": [
+      "قطع برق",
+      "قطع برق",
+      "خاموشی",
+      "بدون برق",
+      "شکست برق"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "افزایش وام مسکن",
+      "نرخ وام مسکن",
+      "تجدید وام مسکن",
+      "پایان نرخ ثابت"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "هزینه انتقال",
+      "ارسال پول خارج از کشور",
+      "هزینه حواله",
+      "هزینه انتقال سیمی"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "پارکینگ بیمارستان",
+      "پارکینگ در بیمارستان",
+      "پارکینگ NHS"
+    ],
+    "Noisy Neighbours": [
+      "شکایت از سر و صدا",
+      "سر و صدای همسایه",
+      "همسایه‌های پرسر و صدا",
+      "آزار و اذیت صدایی"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "جمع‌آوری زباله",
+      "زباله جمع نشده",
+      "ابهام در بازیافت",
+      "جمع‌آوری زباله فراموش شده"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "اجازه شهرسازی",
+      "توسعه ناخواسته",
+      "کمربند سبز",
+      "اجازه ساخت"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "نمی‌تواند بازپرداخت بگیرد",
+      "بازپرداخت رد شد",
+      "بازگشت رد شد",
+      "بازگرداندن پول"
+    ],
+    "Fake Reviews": [
+      "دستکاری نظرات",
+      "نظرات پرداختی",
+      "Trustpilot جعلی",
+      "نظر جعلی"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "کیفیت غذا",
+      "غذای آماده بدتر شده",
+      "افزودنی‌های غذایی",
+      "حصه کوچک‌تر"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "صندوق خود‌سرویس",
+      "خود‌سرویس",
+      "بدون تعرفه کارمندی",
+      "ماشین کار نمی‌کند"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "هزینه مراقبت از کودک",
+      "هزینه مهدکودک",
+      "مراقبت از کودک گران",
+      "هزینه خدمات نگهداری روزانه"
+    ],
+    "Dog Fouling": [
+      "مدفوع سگ",
+      "مدفوع سگ",
+      "زباله سگ",
+      "آلودگی"
+    ]
   },
   "category_assistants": {
     "transport": {

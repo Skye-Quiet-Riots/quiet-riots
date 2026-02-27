@@ -2,617 +2,730 @@
   "locale": "pl",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Telecoms": "Telekomunikacja",
+    "Banking": "Bankowość",
+    "Health": "Zdrowie",
+    "Education": "Edukacja",
+    "Environment": "Środowisko",
+    "Energy": "Energia",
+    "Water": "Woda",
+    "Insurance": "Ubezpieczenia",
+    "Housing": "Mieszkalnictwo",
+    "Shopping": "Zakupy",
+    "Delivery": "Dostarczanie",
+    "Local": "Lokalne",
+    "Employment": "Zatrudnienie",
+    "Tech": "Technologia",
+    "Other": "Inne"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Odwołania pociągów",
+      "description": "Pociągi odwołane lub znacznie opóźnione z niedostatecznym powiadomieniem lub odszkodowaniem"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Ceny biletów kolejowych",
+      "description": "Ceny biletów kolejowych zbyt wysokie, podwyżki powyżej inflacji, niespójna wycena"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Opóźnienia lotów",
+      "description": "Loty opóźnione lub odwołane, słaba komunikacja, trudności w dochodzeniu odszkodowania"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Zagubiony bagaż",
+      "description": "Bagaż nie dociera do celu, powolne śledzenie, niedostateczne odszkodowanie"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Cięcia linii autobusowych",
+      "description": "Linie anulowane, zmniejszona częstotliwość, społeczności wiejskie tracą dostęp do autobusów"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Uszkodzenia spowodowane wybojami",
+      "description": "Wyboje uszkadzające pojazdy i zagrażające rowerzystom, gminy powoli naprawiają"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Mandaty parkingowe",
+      "description": "Niesprawiedliwe opłaty za parkowanie prywatne, agresywne egzekwowanie, mylące znaki"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Ceny paliwa",
+      "description": "Ceny benzyny i oleju napędowego zbyt wysokie, powoli spadają gdy spadają ceny hurtowe"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Prędkość szerokopasmowa",
+      "description": "Prędkości internetowe znacznie poniżej tego, co jest reklamowane i za co się płaci"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Martwe strefy sygnału komórkowego",
+      "description": "Brak sygnału komórkowego w domach, miejscach pracy lub wzdłuż tras transportu"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Podwyżki cen w trakcie umowy",
+      "description": "Rachunki za telefon, internet i telewizję rosną podczas zablokowanych umów"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Czasy oczekiwania w obsłudze klienta",
+      "description": "Godziny na czekaniu, aby porozmawiać z człowiekiem"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Trudności w anulowaniu subskrypcji",
+      "description": "Firmy celowo utrudniają anulowanie lub rezygnację z subskrypcji"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Opłaty za roaming",
+      "description": "Nieoczekiwane opłaty za telefon komórkowy podczas podróży za granicę, podwyżki cen po Brexicie"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Koszty rachunków energii",
+      "description": "Rachunki za gaz i prąd niedostępne, pułap cenowy wciąż zbyt wysoki"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Niedokładne rachunki energii",
+      "description": "Szacunkowe odczyty błędne, przebilansowanie, błędy w rozliczeniach"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Wzrosty rachunków za wodę",
+      "description": "Rachunki za wodę znacznie rosną, podczas gdy jakość usług spada"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Ścieki w rzekach",
+      "description": "Firmy wodociągowe wylewają surowe ścieki do rzek i na plaże"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Przerwy w dostawie prądu",
+      "description": "Przerwania zasilania elektrycznego, powolne przywrócenie, niedostateczne odszkodowanie"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Problemy z inteligentnymi licznikami",
+      "description": "Inteligentne liczniki nie działają, tracą funkcjonalność po zmianie dostawcy"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Zamykanie oddziałów banków",
+      "description": "Lokalne oddziały banków się zamykają, społeczności tracą dostęp"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Ukryte opłaty bankowe",
+      "description": "Nieoczekiwane opłaty za kredyt w rachunku bieżącym, transakcje zagraniczne, utrzymanie konta"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Straty z powodu oszustw i oszustw",
+      "description": "Banki odmawiają zwrotu pieniędzy ofiarom oszustw i autoryzowanych ataków wypychających płatności"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Odrzucenia roszczeń ubezpieczeniowych",
+      "description": "Roszczenia odrzucane na podstawie technicznych detali po latach płacenia składek"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Szok stopy hipotecznej",
+      "description": "Koniec oprocentowania stałego i przejście na znacznie wyższe oprocentowanie zmienne"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Opłaty za transfery za granicę",
+      "description": "Nadmierne opłaty i słabe kursy wymiany dla międzynarodowych transferów pieniędzy"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Czasy oczekiwania NHS",
+      "description": "Wielomiesięczne lub wieloletnie czasy oczekiwania na operacje i wizyty u specjalistów"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Dostęp do wizyt u lekarza rodzinnego",
+      "description": "Nie można się połączyć, aby umówić wizytę u lekarza rodzinnego, czasy oczekiwania tygodniami"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Dostępność dentysty",
+      "description": "Niemożliwe znalezienie dentysty NHS przyjmującego nowych pacjentów"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Czasy oczekiwania na usługi zdrowia psychicznego",
+      "description": "Wielomiesięczne czasy oczekiwania na terapię i wsparcie zdrowia psychicznego"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Koszty leków na receptę",
+      "description": "Koszt na sztukę zbyt wysoki w Anglii, niespójność między krajami Wielkiej Brytanii"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Opłaty za parkowanie w szpitalu",
+      "description": "Płacenie za parkowanie w szpitalu podczas choroby lub odwiedzania chorych krewnych"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Wzrosty czynszu",
+      "description": "Wynajem prywatny rośnie znacznie powyżej inflacji, zagrożenie eksmisją bez przyczyny"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Wzrosty podatku lokalnego",
+      "description": "Roczne wzrosty podatku lokalnego podczas gdy usługi lokalne się pogarszają"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Hałaśliwi sąsiedzi",
+      "description": "Utrwalone zakłócenia hałasem, gminy powoli reagują, wpływając na zdrowie psychiczne"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Zmiany w odbiorze śmieci",
+      "description": "Zmniejszona częstotliwość odboru, mylące zasady recyklingu, przepełnione pojemniki"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Nadużywanie pozwoleń na budowę",
+      "description": "Niechciane inwestycje zatwierdzone, zielone tereny zagrożone, społeczność ignorowana"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Wilgoć i pleśń w mieszkaniach",
+      "description": "Właściciele i spółdzielnie mieszkaniowe nie naprawiają wilgoci i pleśni"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Problemy z dostawą",
+      "description": "Paczki zagubione, pozostawione na deszczu, oznaczone dostarczone ale nie otrzymane"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "Zmniejszenie rozmiaru produktów",
+      "description": "Produkty się zmniejszają podczas gdy ceny pozostają takie same lub rosną"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Trudności ze zwrotami",
+      "description": "Firmy niepotrzebnie utrudniają zwroty i zwroty pieniędzy"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Fałszywe recenzje",
+      "description": "Nie można zaufać recenzjom online, fałszywe pozytywne recenzje wprowadzają konsumentów w błąd"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Pułapki subskrypcji",
+      "description": "Bezpłatne okresy próbne zamieniają się na płatne bez wyraźnej zgody, trudne do anulowania"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Spadek jakości żywności",
+      "description": "Gotowe posiłki gorszej jakości, mniejsze porcje, więcej dodatków"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Frustracja przy samodzielnej kasie",
+      "description": "Maszyny samoobsługowe zawodne, zastępują pracowników"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Koszt opieki nad dziećmi",
+      "description": "Koszty opieki nad dziećmi zakazane, ograniczają zdolność do pracy"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Spłata pożyczki studenckiej",
+      "description": "Absolwenci spłacają przez dziesięciolecia, zmiany progów i odsetek"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Psie odchody",
+      "description": "Psie odchody w przestrzeniach publicznych, parkach i chodnikach nie są czyszczone"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI zastępujące pracę",
+      "description": "Obawy dotyczące sztucznej inteligencji automatyzującej pracę bez wsparcia przejścia"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Operator kolei żelaznej na terenie Wielkiej Brytanii obsługujący West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Operator kolei żelaznej na terenie Wielkiej Brytanii obsługujący Londyn i południe"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Operator kolei żelaznej na terenie Wielkiej Brytanii obsługujący północ Anglii"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Brytyjski operator kolei żelaznej na trasach międzyregionalnych"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Operator kolei żelaznej na terenie Wielkiej Brytanii obsługujący trasy transgórskie"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Operator kolei żelaznej na terenie Wielkiej Brytanii obsługujący East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Niskokosztowe europejskie linie lotnicze"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Niskokosztowe linie lotnicze z siedzibą w Wielkiej Brytanii"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Narodowy przewoźnik lotniczy Wielkiej Brytanii"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Firma zajmująca się wyjazdami i podróżami"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Główny brytyjski dostawca internetu szerokopasmowego i usług mobilnych"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Brytyjski dostawca internetu szerokopasmowego, telewizji i usług mobilnych"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Brytyjski dostawca telewizji, internetu szerokopasmowego i usług mobilnych"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Globalna firma telekomunikacyjna z siedzibą w Wielkiej Brytanii"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Brytyjski operator sieci mobilnej"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Brytyjski dostawca internetu szerokopasmowego i usług telefonicznych"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Brytyjski dostawca energii"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Brytyjski dostawca energii"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Brytyjski dostawca energii (właściciel francuski)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Brytyjski dostawca energii odnawialnej"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Brytyjski dostawca energii"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Brytyjski dostawca energii (właściciel niemiecki)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Firma wodociągowo-kanalizacyjna obsługująca Londyn i dolinę Tamizy"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Firma wodociągowa obsługująca południe Anglii"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Firma wodociągowa obsługująca północny zachód Anglii"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Firma wodociągowa obsługująca Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Firma wodociągowa obsługująca East Anglię"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Brytyjski bank międzynarodowy"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Globalne usługi bankowe i finansowe"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Brytyjski bank detaliczny i komercyjny"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Brytyjska grupa bankowa"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Brytyjski bank (właściciel hiszpański)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Bankowość cyfrowa i fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Brytyjskie usługi ubezpieczeniowe i finansowe"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Brytyjskie ubezpieczenia samochodowe i mieszkaniowe"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Brytyjska firma ubezpieczeniowa"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Globalna platforma e-commerce i technologia"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Brytyjska usługa pocztowa"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Brytyjska usługa dostarczania paczek (wcześniej Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Brytyjska usługa dostarczania paczek"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Brytyjska sieć supermarketów"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Brytyjska sieć supermarketów"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Narodowa Służba Zdrowia dla Anglii"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "Usługi stomatologiczne NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Prywatny dostawca usług opieki zdrowotnej"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Brytyjskie władze samorządowe"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Brytyjski deweloper domów"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Brytyjska platforma wynajmu online"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Usługa streamingu rozrywki"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Firma technologiczna"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "pociąg odwołany",
+      "odwołany pociąg",
+      "odwołanie pociągu",
+      "pociągi nie jeżdżą",
+      "odwołanie połączenia kolejowego",
+      "usługa odwołana",
+      "opóźnienia pociągów",
+      "opóźniony pociąg",
+      "pociągi spóźnione",
+      "spóźniony pociąg",
+      "opóźnienia kolei"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "ceny biletów kolejowych",
+      "koszty biletów",
+      "drogie pociągi",
+      "ceny biletów pociągowych"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "lot opóźniony",
+      "samolot opóźniony",
+      "lot odwołany",
+      "opóźnienia na lotnisku",
+      "utknąć na lotnisku",
+      "lot spóźniony"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "brakujące bagaże",
+      "zagubiona walizka",
+      "bagaż nie dotarł",
+      "brakująca walizka",
+      "bagaż nie pojawił się na karuzeli",
+      "bagaż zagubiony przez linię lotniczą"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "cięcia autobusów",
+      "zmniejszenie tras",
+      "zamknięcie usług autobusowych"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "wolny internet",
+      "wolne wifi",
+      "wifi wolne",
+      "prędkość internetu",
+      "internet nie działa",
+      "buforowanie",
+      "internet ciągle się zerwie",
+      "wifi się zerwie"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "brak sygnału",
+      "brak zasięgu",
+      "martwa strefa mobilna",
+      "martwa strefa sygnału"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "podwyżka rachunku w trakcie umowy",
+      "podwyżka ceny umowy",
+      "podwyżka w trakcie umowy"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "na linii",
+      "czekanie przez telefon",
+      "nie mogę się dodzwonić",
+      "nikt nie odbiera",
+      "kolejka telefoniczna",
+      "centrum obsługi klienta"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "nie mogę anulować",
+      "trudne do anulowania",
+      "anulowanie subskrypcji",
+      "wypisanie się"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "rachunek za gaz zbyt wysoki",
+      "rachunek za energię elektryczną",
+      "ceny energii",
+      "koszty ogrzewania",
+      "ubóstwo energetyczne",
+      "nie mogę sobie pozwolić na energię"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "błędny rachunek za energię",
+      "błędny szacunkowy odczyt",
+      "przekalkulowana energia"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "stawki wodne",
+      "opłata za wodę",
+      "rachunek za wodę zbyt wysoki"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "zrzucanie ścieków",
+      "surowe ścieki",
+      "ścieki na plaży",
+      "zanieczyszczenie wody",
+      "przepełnienie kanalizacji",
+      "przepełnienie kanalizacji deszczowej"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "nieoczekiwane opłaty",
+      "ukryte opłaty",
+      "zaskakujące opłaty",
+      "opłaty za debet",
+      "opłaty bankowe"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "oszukany",
+      "oszustwo bankowe",
+      "oszustwo przy płatności push",
+      "oszustwo na autoryzowaną płatność"
+    ],
+    "Bank Branch Closures": [
+      "zamknięcie oddziałów",
+      "lokalne zamknięcie banku",
+      "brak banku w pobliżu"
+    ],
+    "Insurance Claim Rejections": [
+      "roszczenie odrzucone",
+      "ubezpieczenie nie zapłaci",
+      "odrzucone roszczenie"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "oczekiwanie NHS",
+      "lista oczekujących",
+      "oczekiwanie na operację",
+      "czas oczekiwania w szpitalu",
+      "oczekiwanie na skierowanie",
+      "oczekiwanie na operację"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "nie mogę dostać wizytę u lekarza",
+      "wizyta u lekarza",
+      "kolejka telefoniczna do lekarza",
+      "nie mogę zobaczyć lekarza",
+      "poranna godzina 8 w szpitalu"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "dentysta NHS",
+      "nie mogę znaleźć dentystę",
+      "lista oczekujących do dentysty"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "finansowanie zdrowia psychicznego",
+      "dostęp do terapii",
+      "oczekiwanie na doradztwo",
+      "oczekiwanie CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "koszty leków",
+      "ceny leków",
+      "opłaty apteczne"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "paczka zagubiona",
+      "paczka nie dostarczona",
+      "zostawiona na deszczu",
+      "paczka skradziona",
+      "kierowca dostawy",
+      "nieodebranie dostawy"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "czynsz zbyt wysoki",
+      "czynsz rośnie",
+      "wynajmujący podnosi czynsz",
+      "eksmisja bez winy najemcy"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "mandat za parkowanie",
+      "zawiadomienie o opłacie za parkowanie",
+      "PCN",
+      "niesprawiedliwy mandat za parkowanie"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "mniejsze porcje",
+      "mniej za tę samą cenę",
+      "mniejsze opakowanie",
+      "zmniejszające się produkty"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "wyboje",
+      "uszkodzenie drogi",
+      "uszkodzenie samochodu przez wybój"
+    ],
+    "Council Tax Rises": [
+      "wzrost podatku lokalnego",
+      "podatek lokalny zbyt wysoki",
+      "podatek lokalny"
+    ],
+    "Damp and Mould in Housing": [
+      "pleśniały dom",
+      "wilgotne mieszkanie",
+      "czarna pleśń",
+      "brak konserwacji budynku"
+    ],
+    "Student Loan Repayment": [
+      "pożyczki studenckie",
+      "opłaty za naukę",
+      "dług edukacyjny",
+      "dług studencki"
+    ],
+    "AI Replacing Jobs": [
+      "automatyzacja pracy",
+      "AI przejmuje pracę",
+      "roboty zastępują pracowników"
+    ],
+    "Roaming Charges": [
+      "rachunek za telefon na wakacjach",
+      "opłaty za dane za granicą",
+      "zagraniczna opłata za telefon"
+    ],
+    "Smart Meter Problems": [
+      "inteligentny licznik zepsuty",
+      "licznik nie działa",
+      "licznik stracił sygnał"
+    ],
+    "Subscription Traps": [
+      "pułapka bezpłatnej próby",
+      "automatyczne odnowienie",
+      "obciążenie po próbie"
+    ],
+    "Fuel Prices": [
+      "ceny paliwa",
+      "ceny oleju napędowego",
+      "koszt paliwa",
+      "paliwo zbyt drogie"
+    ],
+    "Power Cuts": [
+      "przerwa w zasilaniu",
+      "przerwanie dostawy energii elektrycznej",
+      "blackout",
+      "brak prądu",
+      "awaria zasilania"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "podwyżka hipoteki",
+      "oprocentowanie hipoteki",
+      "refinansowanie",
+      "koniec stałej stawki"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "opłaty za transfer",
+      "wysyłanie pieniędzy za granicę",
+      "opłaty za przelewy",
+      "koszt przelewu bankowego"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "parkowanie szpitalne",
+      "parkowanie przy szpitalu",
+      "parkowanie NHS"
+    ],
+    "Noisy Neighbours": [
+      "skarga na hałas",
+      "hałas od sąsiada",
+      "głośni sąsiedzi",
+      "uciążliwość hałasu"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "odbiór śmieci",
+      "śmieci nie zostały odebrane",
+      "zamieszanie z recyklingiem",
+      "nieodebranie śmieci"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "pozwolenie na budowę",
+      "niechciana inwestycja",
+      "zielone tereny",
+      "pozwolenie na budynek"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "nie mogę dostać zwrotu pieniędzy",
+      "zwrot pieniędzy odmówiony",
+      "zwrot towaru odrzucony",
+      "zwrot pieniędzy"
+    ],
+    "Fake Reviews": [
+      "manipulacja opiniami",
+      "opinie za pieniądze",
+      "fałszywa opinia Trustpilot",
+      "fałszywa opinia"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "jakość jedzenia",
+      "posiłek gotowy gorszej jakości",
+      "dodatki do żywności",
+      "mniejsza porcja"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "samoobsługa kasy",
+      "samoobsługa",
+      "brak kas obsługiwanych przez personel",
+      "maszyna nie działa"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "koszt opieki nad dziećmi",
+      "opłaty za żłobek",
+      "opieka nad dziećmi droga",
+      "koszt przedszkolnej opieki"
+    ],
+    "Dog Fouling": [
+      "psie odchody",
+      "psie gówno",
+      "psie odchody",
+      "zaśmiecanie"
+    ]
   },
   "category_assistants": {
     "transport": {

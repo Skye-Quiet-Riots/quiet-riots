@@ -1,618 +1,731 @@
 {
   "locale": "eu",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "Garraioa",
+    "Telecoms": "Telekomunikazioak",
+    "Banking": "Bankaketa",
+    "Health": "Osasuna",
+    "Education": "Hezkuntza",
+    "Environment": "Ingurumena",
+    "Energy": "Energia",
+    "Water": "Ura",
+    "Insurance": "Asegurua",
+    "Housing": "Etxebizitza",
+    "Shopping": "Erosketak",
+    "Delivery": "Entrega",
+    "Local": "Lokala",
+    "Employment": "Enpleguak",
+    "Tech": "Teknologia",
+    "Other": "Bestea"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Trenen Bertan Behera",
+      "description": "Trenak bertan behera edo neurri batean atzera eginda, abisu ezbakia edo konpentsazioa gabe"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Trenen Txartelaren Prezioak",
+      "description": "Tren tarifak garestiak, inflazioa gainditzen duten igoerak, prezio inconsistentenak"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Hegazkinen Atzerapenak",
+      "description": "Hegaldiak atzerapetan edo bertan beherak, komunikazio txarra, konpentsazioa eskatzeko zailtasunak"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Galdu den Bagajea",
+      "description": "Bolsak ez dira helburura iristen, jarraipenean motelak, konpentsazio ezbakia"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Autobus Itinerarioen Ebaketa",
+      "description": "Itinerarioak bertan beherak, maiztasuna gutxitua, landa inguruko komunitateek autobus sarbidea galtzen dute"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Zuloen Kalte",
+      "description": "Zuloak ibilgailuei kalte egiten diete eta bisiklariak arriskuan jartzen ditu, kontseiluak moteletan konpontzen ditu"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Aparkalekuaren Isuna",
+      "description": "Aparkalekuaren karga ez-berdintsunak pribatu, agintza bortitza, seinaleak nahasgarriak"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Erregaiaren Prezioak",
+      "description": "Gasolio eta diesel prezioak garestiak, salgai gelditzean behera egiteko motelak"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Banda Zabalaren Abiadura",
+      "description": "Internet abiadura iragarkitan eta baitatzen denaren zein behean daude"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Mugikor Seinalearen Hil Eremuak",
+      "description": "Etxeetan, langeluetan edo garraio itinerarioetan mugikor seinalerik ez"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Prezioen Igoerak Kontratuan",
+      "description": "Telefonoa, banda zabalaren eta telebista fakturak kontratua blokeatuta dagoen bitartean igotzen dira"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Bezero Zerbitzuaren Itxaron Denborak",
+      "description": "Orduak itxaroten giza kasuetara hitz egin ahal izateko"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Harpidetzak Bertan Behera Uztzeko Zailtasuna",
+      "description": "Enpresak bertan behera uztu edo harpidetza bertan behera uzten deliberatoki zailtzea"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Roaming Kargak",
+      "description": "Mugikor karga neurtuta kanpoan, Brexit ondorengo prezio igoerak"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Energia Fakturaren Kostuak",
+      "description": "Gas eta elektrizitate fakturak astu ezinezkoak, prezioen tapa oraindik garestiegia"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Zehazgabeak Energia Fakturak",
+      "description": "Irakurketa estimatuak gaizki, sobrekargak, fakturatze erroreak"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Ur Fakturaren Igoerak",
+      "description": "Ur fakturak biziki igotzen ari dira zerbitzu kalitatea gero eta txarragoa dagoen bitartean"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Ur lizunketaren Isurketa",
+      "description": "Ur enpresak ur lizunketa gordinak ibarretan eta hondartzetan botatzen dituzte"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Elektrizitate Eteteak",
+      "description": "Elektrizitate hornitzailearen eteteak, itzulpenean motelak, konpentsazio ezbakia"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Smart Kontagailuaren Arazoak",
+      "description": "Smart kontagailuak ez daude lanean, hornitzailea aldatzean funtzionaltasuna galtzen dute"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Bankuaren Adarren Itxiera",
+      "description": "Tokiko banku adarrak itxi egiten dira, komunitateek sarbidea galtzen dute"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Ezkutuko Bankuaren Kargak",
+      "description": "Aurtentzeko-ez den kargak eguna, atzealde transakzioetan, kontuaren mantenuan"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Dolartak eta Truke Galerak",
+      "description": "Bankuak dolarren biktimen eta baimendutako push payment trukeen biktimen dituzten dirua itzuli nahi ez"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Asegurua Aldarriaren Ukapena",
+      "description": "Aldarriak teknikan ukatzen dituzten urtetan prima ordaintzen dituzten ondoren"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Hipoteka Tasaren Astipena",
+      "description": "Finkoa amaitu eta asko handiago mailegu aldakorra doa"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Atzerriko Transferentziaren Kargak",
+      "description": "Karga sobera eta truke tasa txarra nazioarteko diru transferentzientzat"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "NHS Itxaron Denborak",
+      "description": "Hilabete edo urte asko itxaron eragiketentzat eta espezialista kontsultentzat"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "GP Hitzorduaren Sarbidea",
+      "description": "GP hitzorduak libratzen ezin, astebetea baino gehiago itxaroten"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Hagin Ospitalea Eskaintzea",
+      "description": "NHS hagin ospitalea topatzea ezinezkoa bezero berriak onartzen duena"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Buruko Osasunaren Zerbitzuaren Itxaron Denborak",
+      "description": "Terapia eta buruko osasun laguntza astea gehiago itxaroten"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Errezeta Kostuak",
+      "description": "Kostua garestiegia Ingalaterran, inkontsistentzeak UK nazioetan"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Ospitalea Aparkalekua Kargak",
+      "description": "Ospitalean aparkalua ordaintzen laguntza bitartean dago osasuntsu edo adinekoak laguntza ditzaten"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Alokalaren Igoerak",
+      "description": "Pribatu alokala inflazioa gainditzen duen, ez-faltan kaltearen mehatxua"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Kontseiluaren Zergaren Igoerak",
+      "description": "Urtero kontseiluaren zergaren igoerak zerbitzu lokal gero eta txarragoak direla"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Zabarra Auzoak",
+      "description": "Etengabea zabar perturbazioa, kontseiluak moteletan jardutea, buruko osasuna kalte egiten dute"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Zabor Bilketaren Aldaketak",
+      "description": "Zabor bilketa gutxitua, birziklatzeen arau nahasgarriak, zaborkakoak betetako"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Plangintza Baimena Abusua",
+      "description": "Nahi ez den garapenetan baimena emana, berde beltza arriskuan, komunitatea baztertua"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Hezetasun eta Lohatza Etxebizitzan",
+      "description": "Jabea eta etxebizitza asozioa hezetasun eta lohatza konpondu nahi ez"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Entregaren Arazoak",
+      "description": "Paketeak galtzen dira, euria batean uzten dira, entregatua markatzen da baina ez da jasota"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "Produktuak txikitxago direla prezioak berdin jarraitzen dute edo igotzen dira"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Itzulketa Zailtasunak",
+      "description": "Enpresak itzulketak eta itzulketak beharturik zailak egiten dituzte"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Faltsu Balorazioak",
+      "description": "Online balorazioak ez dituzte sinesta daitezke, faltsu positive balorazioak kontsumitzaileak engañatzen"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Harpidetza Trukeak",
+      "description": "Doako entsaioek ordain bihurtzen direla baimendu gabe, bertan behera uzten zailak"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Janaria Kalitatearen Murriztea",
+      "description": "Harrera beherakoak kalitate txarragoa, zatia txikiak, gehiago aditiboak"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Auto-Ordezkako Frustrazioa",
+      "description": "Autoberbitzua makinak sartzen berriak, giza langilea ordezkatzen dute"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Umeen Zaintzaren Kostua",
+      "description": "Umeen zaintzaren kostuak garestiegia, lana egiteko gaitasuna mugatzen du"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Ikaslearen Maileguaren Itzulketa",
+      "description": "Graduatuak hamaika urte itzulten ari dira, atala eta interes aldaketak"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Txakurraren Koipearen Kalte",
+      "description": "Txakurraren koipearen kalte espazio publikoan, parkean, eta kalean garbitzen ez"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI Enpleguak Ordezkatzen",
+      "description": "Neurrixe adimen artifizialak enpleguak automatizatzen dituzte trantsizio laguntza gabe"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "UK trenbidea mendebaldeko lerroa zerbitzatzen duen operadorea"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Londresa eta hegoaldea zerbitzatzen duen UK trenbidea operadorea"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Ingelaterraren iparraldea zerbitzatzen duen UK trenbidea operadorea"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "UK batean zehar luzera handiko trenbidea operadorea"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Pennine arteko bide-sareak zerbitzatzen duen UK trenbidea operadorea"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Ekialdeko Kosta Nagusiaren lerroa zerbitzatzen duen UK trenbidea operadorea"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Europako kostu baxuko aerolinea"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "UK-eko kostu baxuko aerolinea"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "UK-eko bandera aerolinea"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Egunak eta bidaia enpresa"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "UK-ko zabaleko banda eta mugikorreko hornitzaile nagusia"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "UK-ko zabaleko banda, telebista eta mugikorreko hornitzailea"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "UK-ko telebista, zabaleko banda eta mugikorreko hornitzailea"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Mundu mailako telekomunikazio enpresa, UK-n kokatua"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "UK-ko mugikor sare operadorea"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "UK-ko zabaleko banda eta telefono hornitzailea"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "UK-ko energia hornitzailea"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "UK-ko energia hornitzailea"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "UK-ko energia hornitzailea (Frantses jabetzakoa)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "UK-ko energia berriztagarri hornitzailea"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "UK-ko energia hornitzailea"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "UK-ko energia hornitzailea (Alemania jabetzakoa)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Thames Water"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Ingelaterraren hegoaldea zerbitzatzen duen ura enpresa"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Ingelaterraren ipar-mendebaldea zerbitzatzen duen ura enpresa"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Midlands zerbitzatzen duen ura enpresa"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "East Anglia zerbitzatzen duen ura enpresa"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Barclays"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "HSBC"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "UK-ko merkataritza eta komertziala bankua"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "UK-ko banku taldea"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "UK-ko bankua (Espainiako jabetzakoa)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Banku digitala eta fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Aviva"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "UK-ko autoa eta etxea asegurua"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "UK-ko aseguru enpresa"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Mundu mailako e-salmentak eta teknologia"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "UK-ko posta zerbitzua"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Evri"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "DPD"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "UK-ko supermerkatua kate"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "UK-ko supermerkatua kate"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Ingelaterraren Osasun Zerbitzua"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "NHS entzutegi zerbitzuak"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Osasun pribatua hornitzailea"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "UK-ko tokiko gobernu agintariak"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "UK-ko etxe eraikitzailea"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "UK-ko online etxebizitza plataforma"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Bideoaren transmisio zerbitzua"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Teknologia enpresa"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "trena bertan behera utzia",
+      "bertan behera utzia den trena",
+      "trenaren bertan behera utzia",
+      "trenak ez daude martxan",
+      "bide-lurrenaren bertan behera utzia",
+      "zerbitzua bertan behera utzia",
+      "trenaren atzerapena",
+      "atzeratuta dagoen trena",
+      "trenak atzeratuta",
+      "atzeratuta dagoen trena",
+      "bide-lurrenaren atzerapena"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "bide-lurrenaren tarifak",
+      "txartelaren kostua",
+      "trenak garestia",
+      "trenaren tarifak"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "hegaldia atzeratuta",
+      "aeroplanoa atzeratuta",
+      "hegaldia bertan behera utzia",
+      "aireportuko atzerapenak",
+      "aireportuan itsita",
+      "hegaldia atzeratuta"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "galdutako boltsak",
+      "galdutako maleta",
+      "boltsak ez dira iritsi",
+      "galdutako maleta",
+      "maleta ez dago karusolean",
+      "airelineek galdutako boltsak"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "autobusaren murrizketak",
+      "itinerarioen murrizketak",
+      "autobusaren zerbitzuaren itxierak"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "internet motela",
+      "wifi motela",
+      "wifi motela",
+      "internetaren abiadura",
+      "broadband ez dago funtzionatzen",
+      "buffer-a",
+      "internetak ez du uzten konektatzea",
+      "wifi-ak konexioa galtzen du"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "seinalea ez",
+      "harrera ez",
+      "mugikorren zona iluna",
+      "seinalearen zona iluna"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "fatura handitzea kontratuan zehar",
+      "kontrataren prezioaren igoera",
+      "kontratua zehar doan igoera"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "telefonoan zain",
+      "telefonoan itxaroten",
+      "ezin du konektatu",
+      "inork ez du erantzuten",
+      "telefonoaren ilara",
+      "atenditzaile gunea"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "ezin du bertan behera utzi",
+      "zaila da bertan behera utzea",
+      "harpidetzari bertan behera utzea",
+      "harpidetza desaktibatzea"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "gasaren fatura oso altua",
+      "elektrizitatearen fatura",
+      "energiaren prezioak",
+      "berogailuaren kostua",
+      "erregaiaren pobrezia",
+      "ezin du energiaren kostua ordaindu"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "energia fatura okerra",
+      "irakurketaren estimazioa okerra",
+      "energia soberamaila"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "uraren tarifak",
+      "uraren kargu",
+      "uraren fatura oso altua"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "hondakinen bota",
+      "hondakin garbia",
+      "hondakina playan",
+      "uraren kutsadura",
+      "hondakinen isurpena",
+      "hondakinen isurpena konbinatua"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "aurreikusitako tasak",
+      "ezkutuko tasak",
+      "sorpresa kargak",
+      "sobregiroa tasak",
+      "bankaren tasak"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "engainatu",
+      "bankaren frauda",
+      "bultzada ordainketa engaina",
+      "baimendutako frauda"
+    ],
+    "Bank Branch Closures": [
+      "adarra ixterakoak",
+      "tokiko bankak itxita",
+      "bankua hurbila ez"
+    ],
+    "Insurance Claim Rejections": [
+      "eskaera baztertuta",
+      "asegurua ez du ordainduko",
+      "eskaera baztertuta"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "NHS zain",
+      "zain zerrenda",
+      "operazioa zain",
+      "ospitaleko zain denbora",
+      "orientazioa zain",
+      "kirurgia zain"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "ezin da GP apolik lortu",
+      "mediku apoila",
+      "GP telefonoen ilara",
+      "ezin da medikua ikusi",
+      "8am telefonoaren nahasketa"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "NHS hortzilegia",
+      "ezin da hortzilegia aurkitu",
+      "hortzilegiaren zain zerrenda"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "osasun mentalaren finantzazioa",
+      "terapiaren sarbidea",
+      "aholkuaren zain",
+      "CAMHS zain"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "medikamentuaren kostua",
+      "droga prezioak",
+      "farmazien kargak"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "pakete galduta",
+      "paketea ez da entregatu",
+      "eurian utzia",
+      "paketea lapurreta",
+      "entrega dribelaria",
+      "entrega falta"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "alokairua oso altua",
+      "alokairua igotzen ari da",
+      "jabeak alokairua igotzen ari du",
+      "kausa gabeko desahuzio"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "aparkalekuko multa",
+      "aparkalekuko avis",
+      "PCN",
+      "aparkalekuko multa ez berdina"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "atal txikiagoak",
+      "gutxiago berdina prezioan",
+      "paketea txikiagoa",
+      "produktuak murriztuta"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "zuloak",
+      "bidearen estropea",
+      "zuloaren autoa kaltea"
+    ],
+    "Council Tax Rises": [
+      "udal zergaren igoera",
+      "udal zerga oso altua",
+      "tokiko zerga"
+    ],
+    "Damp and Mould in Housing": [
+      "etxea mildota",
+      "etxola hezetasunduna",
+      "mildota beltza",
+      "etxebizitzaren estropea"
+    ],
+    "Student Loan Repayment": [
+      "ikasleen maileguak",
+      "ikastaroen tasak",
+      "hezkuntza zorra",
+      "ikasleen zorra"
+    ],
+    "AI Replacing Jobs": [
+      "lana automatizatzea",
+      "AI-ak enpleguak hartzen ari du",
+      "robotak langileek ordezten ditu"
+    ],
+    "Roaming Charges": [
+      "oporren telefonoaren fatura",
+      "atzerrian datu kargak",
+      "atzerriko telefonoaren kargak"
+    ],
+    "Smart Meter Problems": [
+      "kontatzaile inteligentea hautsia",
+      "kontatzailea ez dago funtzionatzen",
+      "kontatzailea seinalea galdu du"
+    ],
+    "Subscription Traps": [
+      "doan froga amaiezina",
+      "automatiko birnobatzea",
+      "saiakuntza ondoren kargua"
+    ],
+    "Fuel Prices": [
+      "gasolina prezioak",
+      "diesel prezioak",
+      "erregaiaren kostua",
+      "gasolina oso garestia"
+    ],
+    "Power Cuts": [
+      "elektrizitatearen eten",
+      "elektrizitate moztu",
+      "itzaltzea",
+      "elektrizitaterik ez",
+      "elektrizitatearen akats"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "hipotekaren igoera",
+      "hipotekaren tasa",
+      "hipoteka berritua",
+      "finkoa amaitu"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "transferentziaren tasak",
+      "dirua atzerrian bidaltzea",
+      "remesa tasak",
+      "bidalketa kostu"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "ospitaleko aparkalekua",
+      "ospitalean aparkalekua",
+      "NHS aparkalekua"
+    ],
+    "Noisy Neighbours": [
+      "zarataren salaketa",
+      "auzoen zarata",
+      "zaratak jota auzoak",
+      "zarataren istilua"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "zabor biltzea",
+      "zaborra ez da biltzen",
+      "birziklatzearen nahasketa",
+      "zabor biltzea falta"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "obren baimena",
+      "nahi gabeko garapena",
+      "berdea beltza",
+      "eraikitzeko baimena"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "ezin da itzulketa lortu",
+      "itzulketa ukatu",
+      "itzulketa baztertuta",
+      "dirua itzuli"
+    ],
+    "Fake Reviews": [
+      "iritziaren manipulazioa",
+      "ordaintako iritzia",
+      "trustpilot faltsua",
+      "faltsua iritzia"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "lurrin kalitatea",
+      "prest otordua txarrago",
+      "lurrinaren gehigarriak",
+      "atal txikiagoa"
     ],
     "Self-Checkout Frustration": [
       "self checkout",
       "self service",
-      "no staff tills",
-      "machine not working"
+      "ez dago langile kaxa",
+      "makinak ez dago funtzionatzen"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "haurrentzako laguntza kostua",
+      "haurtzindegia tasak",
+      "haurrentzako laguntza garestia",
+      "eguneko zainketa kostua"
+    ],
+    "Dog Fouling": [
+      "txakurraren zkia",
+      "txakurraren kaka",
+      "txakurraren hondakina",
+      "kutsadura"
+    ]
   },
   "category_assistants": {
     "transport": {

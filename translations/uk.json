@@ -1,618 +1,731 @@
 {
   "locale": "uk",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "Транспорт",
+    "Telecoms": "Телекомунікації",
+    "Banking": "Банківські послуги",
+    "Health": "Охорона здоров'я",
+    "Education": "Освіта",
+    "Environment": "Навколишнє середовище",
+    "Energy": "Енергетика",
+    "Water": "Водопостачання",
+    "Insurance": "Страхування",
+    "Housing": "Житло",
+    "Shopping": "Покупки",
+    "Delivery": "Доставка",
+    "Local": "Місцеве",
+    "Employment": "Працевлаштування",
+    "Tech": "Технології",
+    "Other": "Інше"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "Скасування поїздів",
+      "description": "Поїзди скасовані або значно затримані без належного повідомлення або компенсації"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "Ціни на залізничні квитки",
+      "description": "Залізничні тарифи занадто дорогі, збільшення вище за інфляцію, непослідовне ціноутворення"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "Затримання рейсів",
+      "description": "Рейси затримані або скасовані, погана комунікація, складність з подачею позову про компенсацію"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "Втрачений багаж",
+      "description": "Сумки не прибули до місця призначення, повільне відстеження, неадекватна компенсація"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "Скорочення автобусних маршрутів",
+      "description": "Маршрути скасовані, зменшена частота, сільські громади втрачають доступ до автобусів"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "Пошкодження від вибоїн",
+      "description": "Вибоїни пошкоджують автомобілі та загрожують велосипедистам, ради повільно проводять ремонт"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "Штрафи за паркування",
+      "description": "Несправедливі приватні збори за паркування, агресивне застосування, незрозумілі позначення"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "Ціни на паливо",
+      "description": "Ціни на бензин і дизель занадто високі, повільно падають при падінні оптових цін"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "Швидкість широкосмугового доступу",
+      "description": "Швидкість інтернету значно нижче за оголошену та оплачену"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "Мертві зони мобільного сигналу",
+      "description": "Немає мобільного сигналу в домах, на робочих місцях або вздовж маршрутів транспорту"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "Підвищення ціни посередині контракту",
+      "description": "Рахунки за телефон, широкосмуговий доступ та ТБ зростають під час зафіксованих контрактів"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "Час очікування служби підтримки клієнтів",
+      "description": "Години очікування в черзі, щоб поговорити з живою людиною"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "Складність з відміною підписок",
+      "description": "Компанії навмисне ускладнюють скасування або відписку"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "Збори за роумінг",
+      "description": "Несподівані мобільні збори при подорожах за кордон, підвищення цін після Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "Вартість рахунків за енергію",
+      "description": "Рахунки за газ та електроенергію недоступні, граничне значення ціни все ще занадто високе"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "Неточні рахунки за енергію",
+      "description": "Орієнтовані показання неправильні, завищення, помилки в рахунках"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "Збільшення рахунків за воду",
+      "description": "Рахунки за воду зростають різко, а якість послуг погіршується"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "Каналізація у річках",
+      "description": "Водопровідні компанії скидають сирі стічні води у водойми та на пляжі"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "Відключення електроенергії",
+      "description": "Перебої в подачі електроенергії, повільне відновлення, неадекватна компенсація"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "Проблеми з розумними лічильниками",
+      "description": "Розумні лічильники не працюють, втрачають функціональність після переходу до іншого постачальника"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "Закриття відділень банку",
+      "description": "Місцеві відділення банків закриваються, залишаючи громади без доступу"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "Приховані банківські збори",
+      "description": "Неочікувані комісії за овердрафти, іноземні операції, обслуговування рахунку"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "Збитки від шахрайства та аферу",
+      "description": "Банки відмовляють відшкодовувати жертв шахрайства та авторизованих платежів обман"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "Відхилення страхових претензій",
+      "description": "Претензії відхилені за формальностями після років сплати премій"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "Шок від ставки іпотеки",
+      "description": "Фіксована ставка закінчується та переходить на набагато вищу змінну ставку"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "Комісії за закордонні переводи",
+      "description": "Надмірні комісії та погані курси обміну для міжнародних грошових переводів"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "Часи очікування NHS",
+      "description": "Чекання на декілька місяців або років на операції та прийом у спеціалістів"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "Доступ до запису до лікаря",
+      "description": "Неможливо записатися на прийом до лікаря, чекання тижнями"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "Доступність стоматолога",
+      "description": "Неможливо знайти стоматолога NHS, який приймає нових пацієнтів"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "Чекання на психічне здоров'я",
+      "description": "Чекання на місяці на терапію та послуги психічного здоров'я"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "Вартість рецептів",
+      "description": "Вартість предмета занадто висока в Англії, непослідовність у різних частинах Великобританії"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "Паркування в лікарні",
+      "description": "Оплата паркування в лікарні під час хвороби або відвідування хворих родичів"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "Підвищення орендної плати",
+      "description": "Приватна орендна плата зростає значно вище за інфляцію, загроза виселення без причини"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "Збільшення місцевого податку",
+      "description": "Щорічне збільшення місцевого податку в той час як місцеві послуги гіршають"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "Шумні сусіди",
+      "description": "Постійне шумове порушення, ради повільно діють, впливає на психічне здоров'я"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "Зміни в збиранні сміття",
+      "description": "Зменшена збірка сміття, незрозумілі правила переробки, переповнені сміттєві баки"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "Зловживання дозволами на будівництво",
+      "description": "Небажані розробки затвердені, зелені пояси під загрозою, громада проігнорована"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "Вологість і цвіль в житлі",
+      "description": "Орендодавці та житлові асоціації не усувають вологість і цвіль"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "Проблеми з доставкою",
+      "description": "Посилки втрачені, залишені в дощі, позначені як доставлені, але не отримані"
     },
     "Shrinkflation": {
-      "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "name": "Зменшення розміру з урахуванням інфляції",
+      "description": "Продукти стають менше, а ціни залишаються незмінними або зростають"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "Складність з поверненням коштів",
+      "description": "Компанії роблять повернення та відшкодування необґрунтовано складними"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "Підроблені відгуки",
+      "description": "Неможливо довіряти онлайн-відгукам, підроблені позитивні відгуки вводять в оману споживачів"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "Пастки для підписок",
+      "description": "Безкоштовні пробні версії перетворюються на платні без чіткої згоди, складність скасування"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "Погіршення якості продуктів",
+      "description": "Готові страви гіршої якості, менші порції, більше добавок"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "Розчарування самообслуговуючися касами",
+      "description": "Автомати самообслуговування ненадійні, замінюють людський персонал"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "Вартість догляду за дітьми",
+      "description": "Вартість догляду за дітьми забагато дорога, обмежує можливість роботи"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "Повернення студентського кредиту",
+      "description": "Випускники повертають кредити протягом десятиліть, зміни порогу та відсотків"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "Кал собак",
+      "description": "Собаче лайно у громадських місцях, парках і на тротуарах не прибирається"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "Штучний інтелект замінює робочі місця",
+      "description": "Занепокоєння щодо штучного інтелекту, який автоматизує робочі місця без підтримки переходу"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "Оператор залізниці Великобританії, що обслуговує西берегову магістраль"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "Оператор залізниці Великобританії, що обслуговує Лондон і південь"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "Оператор залізниці Великобританії, що обслуговує північ Англії"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "Оператор дальних залізничних маршрутів Великобританії"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "Оператор залізниці Великобританії, що обслуговує трансарпеннінські маршрути"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "Оператор залізниці Великобританії, що обслуговує східну берегову магістраль"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "Європейська дешева авіакомпанія"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "Британська дешева авіакомпанія"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "Британська флагова авіакомпанія"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "Туристична та подорожна компанія"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "Основний британський провайдер широкосмугового Інтернету та мобільного зв'язку"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "Британський провайдер широкосмугового Інтернету, ТБ та мобільного зв'язку"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "Британський провайдер ТБ, широкосмугового Інтернету та мобільного зв'язку"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "Глобальна телекомунікаційна компанія з штаб-квартирою у Великобританії"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "Британський оператор мобільної мережі"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "Британський провайдер широкосмугового Інтернету та телефонного зв'язку"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "Британський енергопостачальник"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "Британський енергопостачальник"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "Британський енергопостачальник (французька власність)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "Британський постачальник відновлюваної енергії"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "Британський енергопостачальник"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "Британський енергопостачальник (німецька власність)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "Компанія водопостачання та каналізації для Лондона та долини Темзи"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "Компанія водопостачання для півдня Англії"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "Компанія водопостачання для північно-західної Англії"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "Компанія водопостачання для Мідленсу"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "Компанія водопостачання для Східної Англії"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "Британський багатонаціональний банк"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "Глобальні банківські та фінансові послуги"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "Британський роздрібний та комерційний банк"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "Британська банківська група"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "Британський банк (іспанська власність)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "Цифрове банківництво та фінтех"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "Британські страхування та фінансові послуги"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "Британське страхування автомобілів та житла"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "Британська страхова компанія"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "Глобальна електронна комерція та технологія"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "Британська поштова служба"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "Британська служба доставки посилок (раніше Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "Британська служба доставки посилок"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "Британська мережа супермаркетів"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "Британська мережа супермаркетів"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "Національна служба охорони здоров'я для Англії"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "Послуги стоматології NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "Приватний провайдер охорони здоров'я"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "Британські органи місцевого самоврядування"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "Британський будівельник будинків"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "Британська онлайн-платформа для здачі квартир"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "Служба потокового відтворення розважального контенту"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "Технологічна компанія"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "поїзд скасований",
+      "скасований поїзд",
+      "скасування поїзда",
+      "поїзди не ходять",
+      "скасування залізничного сервісу",
+      "сервіс скасований",
+      "затримки поїздів",
+      "затриманий поїзд",
+      "поїзди з запізненням",
+      "поїзд з запізненням",
+      "затримки залізниці"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "залізничні тарифи",
+      "вартість квитків",
+      "дорогі поїзди",
+      "тарифи на поїзди"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "затримка рейсу",
+      "затримка літака",
+      "скасування рейсу",
+      "затримки в аеропорту",
+      "застрягли в аеропорту",
+      "рейс з запізненням"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "втрачені сумки",
+      "втрачена валіза",
+      "сумки не прибули",
+      "втрачена валіза",
+      "багаж не на carouselu",
+      "сумка втрачена авіакомпанією"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "скорочення автобусних маршрутів",
+      "скорочення маршрутів",
+      "закриття автобусних сервісів"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "повільний інтернет",
+      "повільний wifi",
+      "wifi повільний",
+      "швидкість інтернету",
+      "широкосмуговий інтернет не працює",
+      "буферизація",
+      "інтернет постійно вирубається",
+      "wifi вирубається"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "немає сигналу",
+      "немає приймання",
+      "мертва зона мобільного зв'язку",
+      "мертва зона сигналу"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "збільшення рахунку під час контракту",
+      "підвищення ціни контракту",
+      "підвищення ціни в середині контракту"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "в очікуванні",
+      "очікування по телефону",
+      "не можу дозвонитися",
+      "ніхто не відповідає",
+      "черга по телефону",
+      "центр обслуговування"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "не можу скасувати",
+      "складно скасувати",
+      "скасувати підписку",
+      "відписатися"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "рахунок за газ занадто високий",
+      "рахунок за електроенергію",
+      "ціни на енергію",
+      "вартість опалення",
+      "енергетична бідність",
+      "не можу собі дозволити енергію"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "неправильний рахунок за енергію",
+      "неправильне орієнтовне показання",
+      "надмірна плата за енергію"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "водні тарифи",
+      "водопровідна плата",
+      "рахунок за воду занадто високий"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "скидання каналізації",
+      "сира каналізація",
+      "каналізація на пляжі",
+      "забруднення води",
+      "переповнення каналізації",
+      "переповнення змішаної каналізації"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "непередбачені збори",
+      "приховані збори",
+      "несподівані платежі",
+      "комісії за овердрафт",
+      "банківські комісії"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "обманутий",
+      "банківське шахрайство",
+      "шахрайство з push платежем",
+      "авторизоване шахрайство"
+    ],
+    "Bank Branch Closures": [
+      "закриття відділень",
+      "закриття місцевого банку",
+      "немає банку поблизу"
+    ],
+    "Insurance Claim Rejections": [
+      "претензія відхилена",
+      "страховка не платить",
+      "відхилена претензія"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "очікування NHS",
+      "лист очікування",
+      "очікування операції",
+      "час очікування в лікарні",
+      "очікування направлення",
+      "очікування хірургічного втручання"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "не можу записатися до лікаря",
+      "прийом у лікаря",
+      "черга телефону до лікаря",
+      "не можу потрапити до лікаря",
+      "телефонна сутичка о 8 ранку"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "стоматолог NHS",
+      "не можу знайти стоматолога",
+      "лист очікування до стоматолога"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "фінансування служби психічного здоров'я",
+      "доступ до терапії",
+      "очікування консультацій",
+      "очікування CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "вартість ліків",
+      "ціни на ліки",
+      "комісії аптеки"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "посилка втрачена",
+      "посилка не доставлена",
+      "залишена під дощем",
+      "посилка викрадена",
+      "кур'єр доставки",
+      "пропущена доставка"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "орендна плата занадто висока",
+      "орендна плата зростає",
+      "орендодавець підвищує орендну плату",
+      "виселення без причини"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "штраф за паркування",
+      "повідомлення про паркування",
+      "PCN",
+      "несправедливий штраф за паркування"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "менші порції",
+      "менше за ту ж ціну",
+      "менша упаковка",
+      "зменшення продуктів"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "вибоїни",
+      "пошкодження дороги",
+      "пошкодження автомобіля від вибоїни"
+    ],
+    "Council Tax Rises": [
+      "збільшення місцевого податку",
+      "місцевий податок занадто високий",
+      "місцевий податок"
+    ],
+    "Damp and Mould in Housing": [
+      "заплісніла квартира",
+      "вологе житло",
+      "чорна цвіль",
+      "непридатність житла"
+    ],
+    "Student Loan Repayment": [
+      "студентські позики",
+      "навчальні збори",
+      "борг за освіту",
+      "студентський борг"
+    ],
+    "AI Replacing Jobs": [
+      "автоматизація роботи",
+      "штучний інтелект забирає робочі місця",
+      "роботи замінюють працівників"
+    ],
+    "Roaming Charges": [
+      "телефонний рахунок у відпустці",
+      "комісії за дані за кордоном",
+      "комісії за телефон за кордоном"
+    ],
+    "Smart Meter Problems": [
+      "розумний лічильник неправильно працює",
+      "лічильник не працює",
+      "лічильник втратив сигнал"
+    ],
+    "Subscription Traps": [
+      "пастка безплатної пробної версії",
+      "автоматичне поновлення",
+      "плата після пробної версії"
+    ],
+    "Fuel Prices": [
+      "ціни на бензин",
+      "ціни на дизель",
+      "вартість палива",
+      "бензин занадто дорогий"
+    ],
+    "Power Cuts": [
+      "відключення електроенергії",
+      "відключення електрики",
+      "відключення електроенергії",
+      "немає електроенергії",
+      "відмова електроенергії"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "збільшення іпотеки",
+      "іпотечна ставка",
+      "перерахунок іпотеки",
+      "закінчення фіксованої ставки"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "комісії за переведення",
+      "відправлення грошей за кордон",
+      "комісії за трансферт",
+      "вартість міжнародного переведення"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "паркування при лікарні",
+      "паркування в лікарні",
+      "паркування NHS"
+    ],
+    "Noisy Neighbours": [
+      "скарга на шум",
+      "шум від сусідів",
+      "шумні сусіди",
+      "шумова перешкода"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "збір сміття",
+      "сміття не збиралося",
+      "плутанина з переробкою",
+      "пропущене збирання сміття"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "дозвіл на планування",
+      "небажаний розвиток",
+      "зелена зона",
+      "дозвіл на будівництво"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "не можу отримати повернення грошей",
+      "повернення грошей відхилено",
+      "повернення товару відхилено",
+      "повернення грошей"
+    ],
+    "Fake Reviews": [
+      "маніпуляція відгуками",
+      "платні відгуки",
+      "підроблені відгуки на Trustpilot",
+      "підроблений відгук"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "якість їжі",
+      "готова їжа гірша",
+      "харчові добавки",
+      "менша порція"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "самообслуговування",
+      "самообслуговування",
+      "немає касирів",
+      "касса не працює"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "вартість догляду за дітьми",
+      "плата в дитячому садку",
+      "дорогий догляд за дітьми",
+      "вартість денного догляду"
+    ],
+    "Dog Fouling": [
+      "собачі екскременти",
+      "собаче лайно",
+      "собаче лайно",
+      "забруднення"
+    ]
   },
   "category_assistants": {
     "transport": {

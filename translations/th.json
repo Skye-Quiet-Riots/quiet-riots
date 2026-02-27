@@ -1,618 +1,731 @@
 {
   "locale": "th",
   "categories": {
-    "Transport": "Transport",
-    "Telecoms": "Telecoms",
-    "Banking": "Banking",
-    "Health": "Health",
-    "Education": "Education",
-    "Environment": "Environment",
-    "Energy": "Energy",
-    "Water": "Water",
-    "Insurance": "Insurance",
-    "Housing": "Housing",
-    "Shopping": "Shopping",
-    "Delivery": "Delivery",
-    "Local": "Local",
-    "Employment": "Employment",
-    "Tech": "Tech",
-    "Other": "Other"
+    "Transport": "ขนส่ง",
+    "Telecoms": "โทรคมนาคม",
+    "Banking": "การธนาคาร",
+    "Health": "สุขภาพ",
+    "Education": "การศึกษา",
+    "Environment": "สิ่งแวดล้อม",
+    "Energy": "พลังงาน",
+    "Water": "น้ำ",
+    "Insurance": "保険",
+    "Housing": "บ้านอยู่อาศัย",
+    "Shopping": "การช้อปปิ้ง",
+    "Delivery": "การจัดส่ง",
+    "Local": "ท้องถิ่น",
+    "Employment": "การจ้างงาน",
+    "Tech": "เทคโนโลยี",
+    "Other": "อื่น ๆ"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Train Cancellations",
-      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
+      "name": "ยกเลิกรถไฟ",
+      "description": "รถไฟถูกยกเลิกหรือล่าช้าอย่างรุนแรงโดยมีการแจ้งเตือนหรือค่าชดเชยไม่เพียงพอ"
     },
     "Train Ticket Prices": {
-      "name": "Train Ticket Prices",
-      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
+      "name": "ราคาตั๋วรถไฟ",
+      "description": "ค่าโดยสารรถไฟแพงเกินไป การเพิ่มราคาเกินกว่าอัตราเงินเฟ้อ และการกำหนดราคาที่ไม่สอดคล้องกัน"
     },
     "Flight Delays": {
-      "name": "Flight Delays",
-      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
+      "name": "เที่ยวบินล่าช้า",
+      "description": "เที่ยวบินล่าช้าหรือถูกยกเลิก การสื่อสารที่ไม่ดี ความยากลำบากในการเรียกร้องค่าชดเชย"
     },
     "Lost Luggage": {
-      "name": "Lost Luggage",
-      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
+      "name": "กระเป๋าหายไป",
+      "description": "กระเป๋าไม่ถึงจุดหมายปลายทาง การติดตามที่ช้า ค่าชดเชยไม่เพียงพอ"
     },
     "Bus Route Cuts": {
-      "name": "Bus Route Cuts",
-      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
+      "name": "การตัดเส้นทางรถบัส",
+      "description": "เส้นทางถูกยกเลิก ความถี่ลดลง ชุมชนชนบทสูญเสียการเข้าถึงรถบัส"
     },
     "Pothole Damage": {
-      "name": "Pothole Damage",
-      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
+      "name": "ความเสียหายจากรูหลุมถนน",
+      "description": "รูหลุมถนนทำให้รถเสียหาย และเป็นอันตรายต่อนักปั่นจักรยาน สภาท้องถิ่นซ่อมแซมช้า"
     },
     "Parking Fines": {
-      "name": "Parking Fines",
-      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+      "name": "ค่าปรับที่จอดรถ",
+      "description": "ค่าจอดรถเอกชนที่ไม่ยุติธรรม การบังคับใจ ป้ายจอดรถที่สับสน"
     },
     "Fuel Prices": {
-      "name": "Fuel Prices",
-      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
+      "name": "ราคาน้ำมันเชื้อเพลิง",
+      "description": "ราคาเบนซินและดีเซลสูงเกินไป ราคาลดลงช้าเมื่อราคาส่งลดลง"
     },
     "Broadband Speed": {
-      "name": "Broadband Speed",
-      "description": "Internet speeds far below what is advertised and paid for"
+      "name": "ความเร็วบรอดแบนด์",
+      "description": "ความเร็วอินเทอร์เน็ตต่ำกว่าที่โฆษณาและจ่ายอย่างมากมาย"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobile Signal Dead Zones",
-      "description": "No mobile signal in homes, workplaces, or along transport routes"
+      "name": "พื้นที่ไม่มีสัญญาณมือถือ",
+      "description": "ไม่มีสัญญาณมือถือในบ้าน สถานที่ทำงาน หรือเส้นทางคมนาคม"
     },
     "Price Rises Mid-Contract": {
-      "name": "Price Rises Mid-Contract",
-      "description": "Phone, broadband and TV bills increasing during locked contracts"
+      "name": "ราคาเพิ่มขึ้นระหว่างสัญญา",
+      "description": "ค่าโทรศัพท์ บรอดแบนด์ และค่า TV เพิ่มขึ้นระหว่างสัญญาล็อก"
     },
     "Customer Service Hold Times": {
-      "name": "Customer Service Hold Times",
-      "description": "Hours on hold waiting to speak to a human being"
+      "name": "เวลาคอยในบริการลูกค้า",
+      "description": "รอนานหลายชั่วโมงเพื่อพูดคุยกับมนุษย์"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Difficulty Cancelling Subscriptions",
-      "description": "Companies making it deliberately hard to cancel or unsubscribe"
+      "name": "ความยากลำบากในการยกเลิกการสมัครสมาชิก",
+      "description": "บริษัททำให้การยกเลิกหรือเลิกสมัครเป็นเรื่องยากโดยจงใจ"
     },
     "Roaming Charges": {
-      "name": "Roaming Charges",
-      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
+      "name": "ค่าโรมมิ่ง",
+      "description": "ค่าโทรศัพท์มือถือที่ไม่คาดคิดเมื่อเดินทางไปต่างประเทศ การเพิ่มราคาหลังเบรกซิต"
     },
     "Energy Bill Costs": {
-      "name": "Energy Bill Costs",
-      "description": "Gas and electricity bills unaffordable, price cap still too high"
+      "name": "ค่าใช้พลังงาน",
+      "description": "ค่าแก๊สและไฟฟ้าแพงเกินไป ราคาหลังคลังยังคงสูงเกินไป"
     },
     "Inaccurate Energy Bills": {
-      "name": "Inaccurate Energy Bills",
-      "description": "Estimated readings wrong, overcharging, billing errors"
+      "name": "ใบแจ้งหนี้พลังงานที่ไม่ถูกต้อง",
+      "description": "การอ่านค่ามิเตอร์โดยประมาณผิด การเรียกเก็บเงินเกิน ข้อผิดพลาดในการเรียกเก็บเงิน"
     },
     "Water Bill Increases": {
-      "name": "Water Bill Increases",
-      "description": "Water bills rising sharply while service quality declines"
+      "name": "การเพิ่มขึ้นของค่าน้ำ",
+      "description": "ค่าน้ำเพิ่มขึ้นอย่างมากในขณะที่คุณภาพบริการลดลง"
     },
     "Sewage in Rivers": {
-      "name": "Sewage in Rivers",
-      "description": "Water companies dumping raw sewage into waterways and beaches"
+      "name": "น้ำเสียในแม่น้ำ",
+      "description": "บริษัทน้ำทิ้งน้ำเสียดิบลงในแม่น้ำและหาด"
     },
     "Power Cuts": {
-      "name": "Power Cuts",
-      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+      "name": "การหยุดไฟฟ้า",
+      "description": "การหยุดจำหน่ายไฟฟ้า การฟื้นฟูช้า ค่าชดเชยไม่เพียงพอ"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Problems",
-      "description": "Smart meters not working, losing functionality after switching supplier"
+      "name": "ปัญหามิเตอร์อัจฉริยะ",
+      "description": "มิเตอร์อัจฉริยะไม่ทำงาน สูญเสียการทำงานหลังจากเปลี่ยนผู้จัดจำหน่าย"
     },
     "Bank Branch Closures": {
-      "name": "Bank Branch Closures",
-      "description": "Local bank branches closing, leaving communities without access"
+      "name": "การปิดสาขาธนาคาร",
+      "description": "สาขาธนาคารท้องถิ่นปิด ทำให้ชุมชนไม่มีการเข้าถึง"
     },
     "Hidden Bank Charges": {
-      "name": "Hidden Bank Charges",
-      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
+      "name": "ค่าธนาคารที่ซ่อนอยู่",
+      "description": "ค่าธรรมเนียมที่ไม่คาดคิดสำหรับการเบิกเกิน ธุรกรรมต่างประเทศ การดูแลบัญชี"
     },
     "Fraud and Scam Losses": {
-      "name": "Fraud and Scam Losses",
-      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
+      "name": "การสูญเสียจากการฉ้อโกงและหลอกลวง",
+      "description": "ธนาคารปฏิเสธการคืนเงินให้กับผู้ที่เสียหายจากการฉ้อโกงและการโอนเงินที่ได้รับการอนุมัติ"
     },
     "Insurance Claim Rejections": {
-      "name": "Insurance Claim Rejections",
-      "description": "Claims denied on technicalities after years of paying premiums"
+      "name": "การปฏิเสธการเรียกร้องประกันภัย",
+      "description": "การเรียกร้องถูกปฏิเสธในเหตุผลทางเทคนิคหลังจากจ่ายเบี้ยประกันหลายปี"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Rate Shock",
-      "description": "Fixed rate ending and moving to much higher variable rate"
+      "name": "การช็อคจากอัตราดอกเบี้ยจำนอง",
+      "description": "อัตราคงที่สิ้นสุดและเปลี่ยนเป็นอัตราผันแปรที่สูงกว่ามาก"
     },
     "Overseas Transfer Fees": {
-      "name": "Overseas Transfer Fees",
-      "description": "Excessive fees and poor exchange rates for international money transfers"
+      "name": "ค่าธรรมเนียมการโอนเงินต่างประเทศ",
+      "description": "ค่าธรรมเนียมสูงและอัตราแลกเปลี่ยนที่ไม่ดีสำหรับการโอนเงินระหว่างประเทศ"
     },
     "NHS Waiting Times": {
-      "name": "NHS Waiting Times",
-      "description": "Multi-month or multi-year waits for operations and specialist appointments"
+      "name": "เวลารอคอย NHS",
+      "description": "รอการผ่าตัดหรือนัดหมายผู้เชี่ยวชาญหลายเดือนหรือหลายปี"
     },
     "GP Appointment Access": {
-      "name": "GP Appointment Access",
-      "description": "Cannot get through to book GP appointments, weeks-long waits"
+      "name": "การเข้าถึงการนัดหมายแพทย์",
+      "description": "ไม่สามารถโทรจองนัดหมายแพทย์ รอสัปดาห์ยาว"
     },
     "Dentist Availability": {
-      "name": "Dentist Availability",
-      "description": "Impossible to find an NHS dentist accepting new patients"
+      "name": "การมีจำนวนทันตแพทย์",
+      "description": "เป็นไปไม่ได้ที่จะหาทันตแพทย์ NHS ที่ยอมรับผู้ป่วยใหม่"
     },
     "Mental Health Service Waits": {
-      "name": "Mental Health Service Waits",
-      "description": "Months-long waits for therapy and mental health support"
+      "name": "เวลารอบริการสุขภาพจิต",
+      "description": "รอการบำบัดและการสนับสนุนสุขภาพจิตหลายเดือน"
     },
     "Prescription Costs": {
-      "name": "Prescription Costs",
-      "description": "Cost per item too high in England, inconsistency across UK nations"
+      "name": "ค่าใบสั่งยา",
+      "description": "ค่าต่อรายการสูงเกินไปในอังกฤษ ความไม่สอดคล้องกันในประเทศสหราชอาณาจักร"
     },
     "Hospital Parking Charges": {
-      "name": "Hospital Parking Charges",
-      "description": "Paying to park at hospital while sick or visiting sick relatives"
+      "name": "ค่าจอดรถที่โรงพยาบาล",
+      "description": "จ่ายค่าจอดรถที่โรงพยาบาลขณะป่วยหรือเยี่ยมญาติที่ป่วย"
     },
     "Rent Increases": {
-      "name": "Rent Increases",
-      "description": "Private rent rising far above inflation, no-fault eviction threat"
+      "name": "การเพิ่มขึ้นของค่าเช่า",
+      "description": "ค่าเช่าเอกชนเพิ่มขึ้นไกลเกินอัตราเงินเฟ้อ ภัยคุกคามการเวียนออกโดยไม่มีเหตุผล"
     },
     "Council Tax Rises": {
-      "name": "Council Tax Rises",
-      "description": "Annual council tax increases while local services get worse"
+      "name": "การเพิ่มขึ้นของภาษีสภา",
+      "description": "ภาษีสภาประจำปีเพิ่มขึ้นในขณะที่บริการท้องถิ่นแย่ลง"
     },
     "Noisy Neighbours": {
-      "name": "Noisy Neighbours",
-      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
+      "name": "เพื่อนบ้านที่มีเสียงดัง",
+      "description": "การรบกวนจากเสียงที่ยาวนาน สภาท้องถิ่นยังช้า ส่งผลกระทบต่อสุขภาพจิต"
     },
     "Rubbish Collection Changes": {
-      "name": "Rubbish Collection Changes",
-      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
+      "name": "การเปลี่ยนแปลงการเก็บขยะ",
+      "description": "การเก็บขยะลดลง กฎการรีไซเคิลที่สับสน ขยะเต็ม"
     },
     "Planning Permission Abuse": {
-      "name": "Planning Permission Abuse",
-      "description": "Unwanted developments approved, green belt under threat, community ignored"
+      "name": "การใช้สิทธิ์อนุญาตการก่อสร้างอย่างไม่เหมาะสม",
+      "description": "การพัฒนาที่ไม่ต้องการได้รับการอนุมัติ เขตสีเขียวอยู่ภายใต้การคุกคาม ชุมชนถูกละเว้น"
     },
     "Damp and Mould in Housing": {
-      "name": "Damp and Mould in Housing",
-      "description": "Landlords and housing associations failing to fix damp and mould"
+      "name": "ความชื้นและราในที่อยู่อาศัย",
+      "description": "เจ้าของบ้านและหน่วยงานสัมปทานบ้านไม่แก้ไขความชื้นและรา"
     },
     "Delivery Problems": {
-      "name": "Delivery Problems",
-      "description": "Parcels lost, left in rain, marked delivered but not received"
+      "name": "ปัญหาการส่งมอบ",
+      "description": "พัสดุหายไป ทิ้งไว้ในฝน ทำเครื่องหมายว่าส่งแล้ว แต่ไม่ได้รับ"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Products getting smaller while prices stay the same or increase"
+      "description": "สินค้าเล็กลงในขณะที่ราคายังคงเท่าเดิมหรือเพิ่มขึ้น"
     },
     "Refund Difficulties": {
-      "name": "Refund Difficulties",
-      "description": "Companies making returns and refunds unnecessarily difficult"
+      "name": "ความยากลำบากในการขอเงินคืน",
+      "description": "บริษัททำให้การส่งคืนและเงินคืนยากเกินความจำเป็น"
     },
     "Fake Reviews": {
-      "name": "Fake Reviews",
-      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
+      "name": "บทวิจารณ์ปลอม",
+      "description": "ไม่สามารถเชื่อบทวิจารณ์ออนไลน์ บทวิจารณ์ที่ดีปลอมทำให้ผู้บริโภคเข้าใจผิด"
     },
     "Subscription Traps": {
-      "name": "Subscription Traps",
-      "description": "Free trials converting to paid without clear consent, hard to cancel"
+      "name": "กับดักการสมัครสมาชิก",
+      "description": "ทดลองใช้ฟรีแปลงเป็นการจ่ายเงินโดยไม่ได้รับความยินยอมที่ชัดเจน ยากต่อการยกเลิก"
     },
     "Food Quality Decline": {
-      "name": "Food Quality Decline",
-      "description": "Ready meals worse quality, smaller portions, more additives"
+      "name": "การลดลงของคุณภาพอาหาร",
+      "description": "อาหารสำเร็จรูปมีคุณภาพแย่ลง ส่วนน้อยลง วัตถุเติมแต่งมากขึ้น"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Checkout Frustration",
-      "description": "Self-service machines unreliable, replacing human staff"
+      "name": "ความสำคัญของการชำระเงินด้วยตนเอง",
+      "description": "เครื่องบริการตนเองไม่น่าเชื่อถือ แทนที่พนักงาน"
     },
     "Cost of Childcare": {
-      "name": "Cost of Childcare",
-      "description": "Childcare costs prohibitively expensive, limiting ability to work"
+      "name": "ค่าใช้จ่ายการดูแลเด็ก",
+      "description": "ค่าใช้จ่ายการดูแลเด็กแพงมากจนถึงขั้นห้าม จำกัดความสามารถในการทำงาน"
     },
     "Student Loan Repayment": {
-      "name": "Student Loan Repayment",
-      "description": "Graduates paying back for decades, threshold and interest changes"
+      "name": "การชำระคืนเงินกู้นักเรียน",
+      "description": "ผู้สำเร็จการศึกษาจ่ายคืนเป็นเวลาหลายทศวรรษ การเปลี่ยนแปลงเกณฑ์และดอกเบี้ย"
     },
     "Dog Fouling": {
-      "name": "Dog Fouling",
-      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
+      "name": "การขี้สุนัขในสถานที่สาธารณะ",
+      "description": "ขี้สุนัขในพื้นที่สาธารณะ สวนสาธารณะ และทางเท้าไม่ได้ถูกทำความสะอาด"
     },
     "AI Replacing Jobs": {
-      "name": "AI Replacing Jobs",
-      "description": "Anxiety about artificial intelligence automating jobs without transition support"
+      "name": "AI แทนที่งาน",
+      "description": "ความกังวลเกี่ยวกับปัญญาประดิษฐ์ที่ทำให้งานเป็นไปโดยอัตโนมัติโดยไม่มีการสนับสนุนการเปลี่ยนแปลง"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UK rail operator serving the West Coast Main Line"
+      "description": "ผู้ประกอบการรถไฟสหราชอาณาจักรที่ให้บริการสายรถไฟชายฝั่งตะวันตก"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UK rail operator serving London and the south"
+      "description": "ผู้ประกอบการรถไฟสหราชอาณาจักรที่ให้บริการลอนดอนและภาคใต้"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UK rail operator serving the north of England"
+      "description": "ผู้ประกอบการรถไฟสหราชอาณาจักรที่ให้บริการภาคเหนือของอังกฤษ"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK long-distance rail operator"
+      "description": "ผู้ประกอบการรถไฟระยะไกลของสหราชอาณาจักร"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UK rail operator serving trans-Pennine routes"
+      "description": "ผู้ประกอบการรถไฟสหราชอาณาจักรที่ให้บริการเส้นทางข้ามเพนนาइน"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UK rail operator serving the East Coast Main Line"
+      "description": "ผู้ประกอบการรถไฟสหราชอาณาจักรที่ให้บริการสายรถไฟชายฝั่งตะวันออก"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Low-cost European airline"
+      "description": "สายการบินยุโรปราคาประหยัด"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-based low-cost airline"
+      "description": "สายการบินราคาประหยัดของสหราชอาณาจักร"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK flag carrier airline"
+      "description": "สายการบินแฟล็กแคริเยอร์ของสหราชอาณาจักร"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Holiday and travel company"
+      "description": "บริษัทวันและการท่องเที่ยว"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Major UK broadband and mobile provider"
+      "description": "ผู้ให้บริการอินเทอร์เน็ตแบรนด์กว้างและมือถือหลักของสหราชอาณาจักร"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK broadband, TV, and mobile provider"
+      "description": "ผู้ให้บริการอินเทอร์เน็ต ทีวี และมือถือของสหราชอาณาจักร"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK TV, broadband, and mobile provider"
+      "description": "ผู้ให้บริการทีวี อินเทอร์เน็ต และมือถือของสหราชอาณาจักร"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Global telecoms company headquartered in the UK"
+      "description": "บริษัทโทรคมนาคมระดับโลกที่มีสำนักงานใหญ่ในสหราชอาณาจักร"
     },
     "Three": {
       "name": "Three",
-      "description": "UK mobile network operator"
+      "description": "ผู้ประกอบการเครือข่ายมือถือของสหราชอาณาจักร"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK broadband and phone provider"
+      "description": "ผู้ให้บริการอินเทอร์เน็ตและโทรศัพท์ของสหราชอาณาจักร"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK energy supplier"
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK energy supplier"
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK energy supplier (French-owned)"
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เป็นเจ้าของโดยฝรั่งเศส)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK renewable energy supplier"
+      "description": "ผู้จัดหาพลังงานหมุนเวียนของสหราชอาณาจักร"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK energy supplier"
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK energy supplier (German-owned)"
+      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เป็นเจ้าของโดยเยอรมนี)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water and sewerage company for London and the Thames Valley"
+      "description": "บริษัทน้ำและสิ่งสุขาภิบาลสำหรับลอนดอนและหุบเขาแม่น้ำเทมส์"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Water company for the south of England"
+      "description": "บริษัทน้ำสำหรับภาคใต้ของอังกฤษ"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Water company for the north west of England"
+      "description": "บริษัทน้ำสำหรับภาคเหนือตะวันตกของอังกฤษ"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Water company for the Midlands"
+      "description": "บริษัทน้ำสำหรับเมดแลนด์"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Water company for East Anglia"
+      "description": "บริษัทน้ำสำหรับอังเกีย"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "British multinational bank"
+      "description": "ธนาคารอเมริกาลาตินของบริเทน"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global banking and financial services"
+      "description": "บริการทนาคารและการเงินระดับโลก"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK retail and commercial bank"
+      "description": "ธนาคารค้าปลีกและพาณิชยของสหราชอาณาจักร"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK banking group"
+      "description": "กลุ่มธนาคารของสหราชอาณาจักร"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK bank (Spanish-owned)"
+      "description": "ธนาคารของสหราชอาณาจักร (เป็นเจ้าของโดยสเปน)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital banking and fintech"
+      "description": "ธนาคารดิจิทัลและเทคโนโลยีการเงิน"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK insurance and financial services"
+      "description": "บริการประกันและการเงินของสหราชอาณาจักร"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK car and home insurance"
+      "description": "ประกันรถยนต์และบ้านของสหราชอาณาจักร"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK insurance company"
+      "description": "บริษัทประกันของสหราชอาณาจักร"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Global e-commerce and tech"
+      "description": "อีคอมเมิร์สและเทคโนโลยีระดับโลก"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK postal service"
+      "description": "บริการไปรษณีย์ของสหราชอาณาจักร"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK parcel delivery service (formerly Hermes)"
+      "description": "บริการส่งพัสดุของสหราชอาณาจักร (เดิมชื่อ Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK parcel delivery service"
+      "description": "บริการส่งพัสดุของสหราชอาณาจักร"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK supermarket chain"
+      "description": "สายซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK supermarket chain"
+      "description": "สายซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "National Health Service for England"
+      "description": "บริการสุขภาพแห่งชาติสำหรับอังกฤษ"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS dental services"
+      "description": "บริการจัดฟันของ NHS"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Private healthcare provider"
+      "description": "ผู้ให้บริการสุขภาพเอกชน"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK local government authorities"
+      "description": "หน่วยงานท้องถิ่นของสหราชอาณาจักร"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK housebuilder"
+      "description": "ผู้สร้างบ้านของสหราชอาณาจักร"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK online lettings platform"
+      "description": "แพลตฟอร์มให้เช่าออนไลน์ของสหราชอาณาจักร"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainment service"
+      "description": "บริการการสตรีมความบันเทิง"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technology company"
+      "description": "บริษัทเทคโนโลยี"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "train cancelled",
-      "cancelled train",
-      "train cancellation",
-      "trains not running",
-      "rail cancellation",
-      "service cancelled",
-      "train delays",
-      "delayed train",
-      "trains late",
-      "late train",
-      "rail delays"
+      "รถไฟยกเลิก",
+      "รถไฟที่ยกเลิก",
+      "การยกเลิกรถไฟ",
+      "รถไฟไม่ใช้งาน",
+      "ยกเลิกบริการรถไฟ",
+      "บริการยกเลิก",
+      "รถไฟล่าช้า",
+      "รถไฟที่ล่าช้า",
+      "รถไฟมาสาย",
+      "รถไฟมาสาย",
+      "รถไฟล่าช้า"
     ],
-    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
+    "Train Ticket Prices": [
+      "ราคาตั๋วรถไฟ",
+      "ราคาตั๋ว",
+      "รถไฟแพง",
+      "ราคาตั๋วรถไฟ"
+    ],
     "Flight Delays": [
-      "flight delayed",
-      "plane delayed",
-      "flight cancelled",
-      "airport delays",
-      "stuck at airport",
-      "flight late"
+      "เที่ยวบินล่าช้า",
+      "เครื่องบินล่าช้า",
+      "เที่ยวบินยกเลิก",
+      "สนามบินล่าช้า",
+      "ติดอยู่ที่สนามบิน",
+      "เที่ยวบินมาสาย"
     ],
     "Lost Luggage": [
-      "missing bags",
-      "lost suitcase",
-      "bags not arrived",
-      "missing suitcase",
-      "luggage not on carousel",
-      "bag lost by airline"
+      "กระเป๋าหาย",
+      "กระเป๋าเดินทางหาย",
+      "กระเป๋าไม่มาถึง",
+      "กระเป๋าเดินทางหาย",
+      "กระเป๋าไม่อยู่บนสายพานหมุน",
+      "กระเป๋าหายไปจากสายการบิน"
     ],
-    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
+    "Bus Route Cuts": [
+      "ตัดเส้นทางรถเมล์",
+      "ลดเส้นทาง",
+      "ปิดบริการรถเมล์"
+    ],
     "Broadband Speed": [
-      "slow internet",
-      "slow wifi",
-      "wifi slow",
-      "internet speed",
-      "broadband not working",
-      "buffering",
-      "internet keeps dropping",
-      "wifi dropping out"
+      "อินเทอร์เน็ตช้า",
+      "ไวไฟช้า",
+      "ไวไฟช้า",
+      "ความเร็วอินเทอร์เน็ต",
+      "บอร์ดแบนด์ไม่ทำงาน",
+      "ปั่น",
+      "อินเทอร์เน็ตหลุดอยู่เรื่อย",
+      "ไวไฟหลุด"
     ],
     "Mobile Signal Dead Zones": [
-      "no signal",
-      "no reception",
-      "mobile blackspot",
-      "signal dead zone"
+      "ไม่มีสัญญาณ",
+      "ไม่มีการรับสัญญาณ",
+      "จุดมัวตรสัญญาณมือถือ",
+      "โซนสัญญาณตาย"
     ],
     "Price Rises Mid-Contract": [
-      "bill increase mid contract",
-      "contract price rise",
-      "mid contract hike"
+      "เพิ่มค่าใช้จ่ายตรงกลางสัญญา",
+      "เพิ่มราคาสัญญา",
+      "เพิ่มราคากลางสัญญา"
     ],
     "Customer Service Hold Times": [
-      "on hold",
-      "waiting on phone",
-      "cant get through",
-      "no one answering",
-      "phone queue",
-      "call centre"
+      "รอสาย",
+      "รอสายโทรศัพท์",
+      "ไม่สามารถติดต่อได้",
+      "ไม่มีใครรับสาย",
+      "คิวโทรศัพท์",
+      "ศูนย์บริการลูกค้า"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "cant cancel",
-      "hard to cancel",
-      "cancel subscription",
-      "unsubscribe"
+      "ไม่สามารถยกเลิก",
+      "ยากที่จะยกเลิก",
+      "ยกเลิกการสมัครสมาชิก",
+      "เลิกติดตาม"
     ],
     "Energy Bill Costs": [
-      "gas bill too high",
-      "electricity bill",
-      "energy prices",
-      "heating costs",
-      "fuel poverty",
-      "cant afford energy"
+      "ค่าแก๊สสูง",
+      "ค่าไฟฟ้า",
+      "ราคาพลังงาน",
+      "ค่าน้ำมันเชื้อเพลิง",
+      "ความยากจนด้านพลังงาน",
+      "ไม่สามารถจ่ายค่าพลังงาน"
     ],
     "Inaccurate Energy Bills": [
-      "wrong energy bill",
-      "estimated reading wrong",
-      "overcharged energy"
+      "ค่าพลังงานไม่ถูกต้อง",
+      "การอ่านมิเตอร์โดยประมาณผิด",
+      "เรียกเก็บเงินมากเกินไป"
     ],
-    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
+    "Water Bill Increases": [
+      "อัตราค่าน้ำ",
+      "ค่าน้ำ",
+      "ค่าน้ำสูง"
+    ],
     "Sewage in Rivers": [
-      "sewage dumping",
-      "raw sewage",
-      "sewage on beach",
-      "water pollution",
-      "sewage overflow",
-      "combined sewer overflow"
+      "ปล่อยน้ำเสีย",
+      "น้ำเสียดิบ",
+      "น้ำเสียบนชายหาด",
+      "มลพิษน้ำ",
+      "น้ำเสียล้น",
+      "น้ำเสียจากท่อร่วม"
     ],
     "Hidden Bank Charges": [
-      "unexpected fees",
-      "hidden fees",
-      "surprise charges",
-      "overdraft charges",
-      "bank fees"
+      "ค่าธรรมเนียมที่ไม่คาดคิด",
+      "ค่าธรรมเนียมที่ซ่อนอยู่",
+      "ค่าธรรมเนียมแปลกใจ",
+      "ค่าธรรมเนียมเงินเบิกเกิน",
+      "ค่าธรรมเนียมธนาคาร"
     ],
-    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
-    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
-    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
+    "Fraud and Scam Losses": [
+      "ถูกหลอก",
+      "การฉ้อโกงธนาคาร",
+      "การหลอกลวงการเบิกเงิน",
+      "การฉ้อโกงที่อนุมัติ"
+    ],
+    "Bank Branch Closures": [
+      "ปิดสาขา",
+      "ธนาคารท้องถิ่นปิด",
+      "ไม่มีธนาคารใกล้เคียง"
+    ],
+    "Insurance Claim Rejections": [
+      "สิทธิเรียกร้องถูกปฏิเสธ",
+      "ประกันไม่จ่าย",
+      "สิทธิเรียกร้องถูกปฏิเสธ"
+    ],
     "NHS Waiting Times": [
-      "NHS wait",
-      "waiting list",
-      "operation wait",
-      "hospital waiting time",
-      "referral wait",
-      "waiting for surgery"
+      "การรอ NHS",
+      "รายชื่อการรอ",
+      "การรอผ่าตัด",
+      "เวลารอที่โรงพยาบาล",
+      "การรอการส่งต่อ",
+      "รอการผ่าตัด"
     ],
     "GP Appointment Access": [
-      "cant get GP appointment",
-      "doctor appointment",
-      "GP phone queue",
-      "cant see a doctor",
-      "8am phone scramble"
+      "ไม่สามารถนัดหมายแพทย์ได้",
+      "นัดหมายแพทย์",
+      "คิวโทรศัพท์แพทย์",
+      "ไม่สามารถพบแพทย์ได้",
+      "การทะเลาะวิวาทโทรศัพท์เวลา 8 นาฬิกา"
     ],
-    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Dentist Availability": [
+      "ทันตแพทย์ NHS",
+      "ไม่สามารถหาทันตแพทย์",
+      "รายชื่อรอทันตแพทย์"
+    ],
     "Mental Health Service Waits": [
-      "mental health funding",
-      "therapy access",
-      "counselling wait",
-      "CAMHS wait"
+      "การจัดสรรงบประมาณสุขภาพจิต",
+      "การเข้าถึงการบำบัด",
+      "การรอการให้คำปรึกษา",
+      "การรอ CAMHS"
     ],
-    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
+    "Prescription Costs": [
+      "ค่าซื้อยา",
+      "ราคายา",
+      "ค่าธรรมเนียมร้านขายยา"
+    ],
     "Delivery Problems": [
-      "parcel lost",
-      "parcel not delivered",
-      "left in rain",
-      "package stolen",
-      "delivery driver",
-      "missed delivery"
+      "พัสดุหาย",
+      "พัสดุไม่ส่งถึง",
+      "ปล่อยไว้ในฝน",
+      "พัสดุถูกขโมย",
+      "คนส่งของ",
+      "ส่งของไม่ถึง"
     ],
     "Rent Increases": [
-      "rent too high",
-      "rent going up",
-      "landlord increasing rent",
-      "no fault eviction"
+      "ค่าเช่าสูง",
+      "ค่าเช่าเพิ่มขึ้น",
+      "เจ้าของบ้านเพิ่มค่าเช่า",
+      "การไล่ออกโดยไม่มีเหตุผล"
     ],
-    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Parking Fines": [
+      "บัตรจอดรถ",
+      "หมายเหตุค่าจอดรถ",
+      "PCN",
+      "บัตรจอดรถที่ไม่ยุติธรรม"
+    ],
     "Shrinkflation": [
-      "smaller portions",
-      "less for same price",
-      "package smaller",
-      "shrinking products"
+      "ส่วนแบ่งน้อยลง",
+      "ได้น้อยลงในราคาเดียวกัน",
+      "บรรจุภัณฑ์เล็กลง",
+      "ผลิตภัณฑ์หด"
     ],
-    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
-    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
-    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
-    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
-    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
-    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
-    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
-    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
-    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
-    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Pothole Damage": [
+      "หลุมในถนน",
+      "ความเสียหายของถนน",
+      "ความเสียหายรถจากหลุมถนน"
+    ],
+    "Council Tax Rises": [
+      "เพิ่มค่าทั่วไป",
+      "ค่าทั่วไปสูง",
+      "ภาษีท้องถิ่น"
+    ],
+    "Damp and Mould in Housing": [
+      "บ้านเปียก",
+      "ห้องปลอดโปร่ง",
+      "ราเชื้อดำ",
+      "ซ่อมแซมบ้าน"
+    ],
+    "Student Loan Repayment": [
+      "เงินกู้นักเรียน",
+      "ค่าเรียน",
+      "หนี้การศึกษา",
+      "หนี้นักเรียน"
+    ],
+    "AI Replacing Jobs": [
+      "การทำให้งานอัตโนมัติ",
+      "AI เอาเงินงาน",
+      "หุ่นยนต์แทนที่คนงาน"
+    ],
+    "Roaming Charges": [
+      "ค่าโทรศัพท์วันหยุด",
+      "ค่าใช้งานข้อมูลต่างประเทศ",
+      "ค่าโทรศัพท์ต่างประเทศ"
+    ],
+    "Smart Meter Problems": [
+      "มิเตอร์อัจฉริยะเสีย",
+      "มิเตอร์ไม่ทำงาน",
+      "มิเตอร์สัญญาณหลุด"
+    ],
+    "Subscription Traps": [
+      "กับดักทดลองใช้ฟรี",
+      "การต่ออายุอัตโนมัติ",
+      "เรียกเก็บเงินหลังทดลอง"
+    ],
+    "Fuel Prices": [
+      "ราคาน้ำมันเบนซิน",
+      "ราคาดีเซล",
+      "ค่าน้ำมันเชื้อเพลิง",
+      "น้ำมันเบนซินแพงเกินไป"
+    ],
+    "Power Cuts": [
+      "ไฟฟ้าขาด",
+      "ไฟฟ้าตัด",
+      "ไฟดับ",
+      "ไม่มีไฟ",
+      "ไฟฟ้าขาด"
+    ],
     "Mortgage Rate Shock": [
-      "mortgage increase",
-      "mortgage rate",
-      "remortgage",
-      "fixed rate ending"
+      "เพิ่มสินเชื่อบ้าน",
+      "อัตราดอกเบี้ยสินเชื่อบ้าน",
+      "รีไฟแนนซ์",
+      "สิ้นสุดอัตราคงที่"
     ],
     "Overseas Transfer Fees": [
-      "transfer fees",
-      "sending money abroad",
-      "remittance fees",
-      "wire transfer cost"
+      "ค่าธรรมเนียมการโอน",
+      "ส่งเงินไปต่างประเทศ",
+      "ค่าธรรมเนียมการโอนเงิน",
+      "ค่าใช้งานการโอนสายลวด"
     ],
-    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
-    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Hospital Parking Charges": [
+      "จอดรถที่โรงพยาบาล",
+      "จอดรถที่โรงพยาบาล",
+      "จอดรถ NHS"
+    ],
+    "Noisy Neighbours": [
+      "ร้องเรียนเรื่องเสียง",
+      "เสียงจากเพื่อนบ้าน",
+      "เพื่อนบ้านดัง",
+      "ความรำคาญจากเสียง"
+    ],
     "Rubbish Collection Changes": [
-      "bin collection",
-      "bins not collected",
-      "recycling confusion",
-      "missed bin collection"
+      "การเก็บถังขยะ",
+      "ถังขยะไม่เก็บ",
+      "ความสับสนในการรีไซเคิล",
+      "เก็บถังขยะไม่ถึง"
     ],
     "Planning Permission Abuse": [
-      "planning permission",
-      "unwanted development",
-      "green belt",
-      "building permission"
+      "ใบอนุญาตการจัดสรร",
+      "การพัฒนาที่ไม่ต้องการ",
+      "พื้นที่สีเขียว",
+      "ใบอนุญาตการก่อสร้าง"
     ],
-    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
-    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Refund Difficulties": [
+      "ไม่สามารถได้รับเงินคืน",
+      "การคืนเงินถูกปฏิเสธ",
+      "การส่งคืนถูกปฏิเสธ",
+      "ได้เงินคืน"
+    ],
+    "Fake Reviews": [
+      "การจัดการการวิจารณ์",
+      "รีวิวเงินสด",
+      "ไทรทรัสตพิลต์ปลอม",
+      "รีวิวปลอม"
+    ],
     "Food Quality Decline": [
-      "food quality",
-      "ready meal worse",
-      "food additives",
-      "portion smaller"
+      "คุณภาพอาหาร",
+      "อาหารสำเร็จรูปแย่ลง",
+      "สารเติมแต่งอาหาร",
+      "ส่วนแบ่งเล็กลง"
     ],
     "Self-Checkout Frustration": [
-      "self checkout",
-      "self service",
-      "no staff tills",
-      "machine not working"
+      "เช็คเอาท์ด้วยตนเอง",
+      "บริการตนเอง",
+      "ไม่มีเคาน์เตอร์พนักงาน",
+      "เครื่องไม่ทำงาน"
     ],
-    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
-    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+    "Cost of Childcare": [
+      "ค่าเลี้ยงเด็ก",
+      "ค่าสถานรับเลี้ยงเด็ก",
+      "เลี้ยงเด็กแพง",
+      "ค่าบริการเลี้ยงเด็ก"
+    ],
+    "Dog Fouling": [
+      "อุจจาระของสุนัข",
+      "อุจจาระสุนัข",
+      "ของเสียจากสุนัข",
+      "ของเสีย"
+    ]
   },
   "category_assistants": {
     "transport": {
