@@ -987,6 +987,209 @@ describe('Bot API: translated issue data', () => {
   );
 });
 
+// ─── Phone-Based Language Fallback ────────────────────────
+
+describe('Bot API: phone-based language fallback', () => {
+  const marcioPhone = '+5511999999999';
+
+  // Set Marcio to Spanish for these tests (earlier tests may have set him to Polish)
+  beforeAll(async () => {
+    await callBot('set_language', { phone: marcioPhone, language_code: 'es' });
+  });
+
+  // ─── Phone fallback delivers correct translations ───
+
+  it('search_issues uses stored language when phone provided without language_code', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      phone: marcioPhone,
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Cancelaciones de trenes');
+  });
+
+  it('get_issue uses stored language when phone provided without language_code', async () => {
+    const { status, body } = await callBot('get_issue', {
+      issue_id: 'issue-rail',
+      phone: marcioPhone,
+    });
+    expect(status).toBe(200);
+    expect(body.data.issue.name).toBe('Cancelaciones de trenes');
+  });
+
+  it('get_trending uses stored language when phone provided without language_code', async () => {
+    const { status, body } = await callBot('get_trending', {
+      limit: 20,
+      phone: marcioPhone,
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    if (rail) {
+      expect(rail.name).toBe('Cancelaciones de trenes');
+    }
+  });
+
+  // ─── Priority: explicit language_code > stored preference ───
+
+  it('explicit language_code overrides stored user preference from phone', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      phone: marcioPhone,
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Odwołania pociągów');
+  });
+
+  // ─── Edge cases ───
+
+  it('defaults to English when neither phone nor language_code provided', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Rail Cancellations');
+  });
+
+  it('defaults to English when phone matches no user', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      phone: '+19999999999',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Rail Cancellations');
+  });
+
+  it('explicit language_code without phone works (backwards compat)', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Odwołania pociągów');
+  });
+
+  it('phone of user with default en language returns English', async () => {
+    // Sarah has default 'en' language (or was set to fr/es in earlier tests — reset to en)
+    await callBot('set_language', { phone: '+447700900001', language_code: 'en' });
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    const rail = body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Rail Cancellations');
+  });
+
+  // ─── Structural guard: all translating actions accept phone ───
+
+  const PHONE_ACCEPTING_DATA_ACTIONS: { action: string; minParams: Record<string, unknown> }[] = [
+    { action: 'search_issues', minParams: { query: 'test' } },
+    { action: 'get_trending', minParams: {} },
+    { action: 'get_issue', minParams: { issue_id: 'issue-rail' } },
+    { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
+    { action: 'get_orgs', minParams: {} },
+    { action: 'get_action_initiatives', minParams: {} },
+  ];
+
+  it.each(PHONE_ACCEPTING_DATA_ACTIONS)(
+    '$action accepts phone param without validation error',
+    async ({ action, minParams }) => {
+      const { status, body } = await callBot(action, {
+        ...minParams,
+        phone: '+447700900001',
+      });
+      expect(status).not.toBe(400);
+      if (status === 400) {
+        expect(body.error).not.toContain('phone');
+      }
+    },
+  );
+});
+
+// ─── Identify Language Auto-Update ────────────────────────
+
+describe('Bot API: identify language auto-update', () => {
+  const testPhone = '+12025551234';
+
+  it('creates new user with default en when no language_code passed', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: testPhone,
+      name: 'Lang Test User',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('en');
+    expect(body.data.language_code).toBe('en');
+  });
+
+  it('auto-updates language when identify called with different language_code', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: testPhone,
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('es');
+    expect(body.data.language_code).toBe('es');
+  });
+
+  it('preserves language when identify called without language_code', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: testPhone,
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('es');
+    expect(body.data.language_code).toBe('es');
+  });
+
+  it('no-op when identify called with same language_code as stored', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: testPhone,
+      language_code: 'es',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('es');
+    expect(body.data.language_code).toBe('es');
+  });
+});
+
+// ─── Regression: Full Flow (identify → search with phone fallback) ───
+
+describe('Bot API: language fallback regression test', () => {
+  const regressionPhone = '+34612345001';
+
+  it('identify sets language, then search uses phone fallback for translations', async () => {
+    // Step 1: User identified with language_code: 'es' (as OpenClaw would do)
+    const identifyResult = await callBot('identify', {
+      phone: regressionPhone,
+      name: 'Spanish User',
+      language_code: 'es',
+    });
+    expect(identifyResult.status).toBe(200);
+    expect(identifyResult.body.data.language_code).toBe('es');
+
+    // Step 2: Search with phone only (no language_code) — simulates LLM forgetting the param
+    const searchResult = await callBot('search_issues', {
+      query: 'Rail',
+      phone: regressionPhone,
+    });
+    expect(searchResult.status).toBe(200);
+    const rail = searchResult.body.data.issues.find((i: { id: string }) => i.id === 'issue-rail');
+    expect(rail).toBeDefined();
+    expect(rail.name).toBe('Cancelaciones de trenes');
+  });
+});
+
 // ─── User Memory ──────────────────────────────────────────
 
 describe('Bot API: save_memory', () => {
