@@ -609,7 +609,7 @@ export interface NotificationPreferences {
   user_id: string;
   security: number;
   product_updates: number;
-  campaign_updates: number;
+  action_initiative_updates: number;
   weekly_digest: number;
 }
 

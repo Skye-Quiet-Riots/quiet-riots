@@ -430,7 +430,7 @@ export async function createTables() {
       user_id TEXT PRIMARY KEY REFERENCES users(id),
       security INTEGER NOT NULL DEFAULT 1,
       product_updates INTEGER NOT NULL DEFAULT 1,
-      campaign_updates INTEGER NOT NULL DEFAULT 1,
+      action_initiative_updates INTEGER NOT NULL DEFAULT 1,
       weekly_digest INTEGER NOT NULL DEFAULT 0
     );
 
@@ -747,7 +747,6 @@ export async function dropTables() {
     DROP TABLE IF EXISTS category_assistants;
     DROP TABLE IF EXISTS wallet_transactions;
     DROP TABLE IF EXISTS wallets;
-    DROP VIEW IF EXISTS campaigns;
     DROP TABLE IF EXISTS action_initiatives;
     DROP TABLE IF EXISTS reel_shown_log;
     DROP TABLE IF EXISTS reel_votes;

@@ -230,12 +230,12 @@ const actionSchemas = {
     phone: phoneField,
     amount_pence: z.number().int().min(100, 'Minimum top-up is £1').max(1000000),
   }),
-  contribute: z.object({
+  pay: z.object({
     phone: phoneField,
-    campaign_id: idField,
+    action_initiative_id: idField,
     amount_pence: z.number().int().min(10, 'Minimum payment is 10p').max(1000000),
   }),
-  get_campaigns: z.object({
+  get_action_initiatives: z.object({
     issue_id: idField.optional(),
     status: z.enum(['active', 'goal_reached', 'delivered', 'cancelled']).optional(),
     language_code: langField,
@@ -948,8 +948,7 @@ export async function POST(request: NextRequest) {
 
         // Translate to English if user's language is not English
         const userLang = user.language_code || 'en';
-        const englishName =
-          userLang !== 'en' ? await translateToEnglish(name, userLang) : name;
+        const englishName = userLang !== 'en' ? await translateToEnglish(name, userLang) : name;
         const englishDescription =
           userLang !== 'en' && description
             ? await translateToEnglish(description, userLang)
@@ -1075,10 +1074,9 @@ export async function POST(request: NextRequest) {
         return ok({ transaction, wallet: updatedWallet });
       }
 
-      case 'contribute': {
-        // Keep bot action name 'contribute' for SKILL.md compatibility
+      case 'pay': {
         const phone = p.phone as string;
-        const actionInitiativeId = p.campaign_id as string;
+        const actionInitiativeId = p.action_initiative_id as string;
         const amountPence = p.amount_pence as number;
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
@@ -1088,7 +1086,7 @@ export async function POST(request: NextRequest) {
           const wallet = await getOrCreateWallet(user.id);
           return ok({
             transaction: result.transaction,
-            campaign: result.actionInitiative,
+            action_initiative: result.actionInitiative,
             wallet_balance_pence: wallet.balance_pence,
           });
         } catch (e) {
@@ -1101,14 +1099,13 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      case 'get_campaigns': {
-        // Keep bot action name 'get_campaigns' for SKILL.md compatibility
+      case 'get_action_initiatives': {
         const issueId = p.issue_id as string | undefined;
         const status = p.status as import('@/types').ActionInitiativeStatus | undefined;
         const locale = (p.language_code as string) || 'en';
         let actionInitiatives = await getActionInitiatives(issueId, status);
         actionInitiatives = await translateActionInitiatives(actionInitiatives, locale);
-        return ok({ campaigns: actionInitiatives });
+        return ok({ action_initiatives: actionInitiatives });
       }
 
       // ─── Category Assistants ────────────────────────────────

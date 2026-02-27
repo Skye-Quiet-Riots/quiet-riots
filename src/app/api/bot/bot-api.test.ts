@@ -422,23 +422,23 @@ describe('Bot API: topup_wallet', () => {
   });
 });
 
-describe('Bot API: contribute', () => {
+describe('Bot API: pay', () => {
   it('deducts from wallet and credits action initiative', async () => {
     // Sarah has wallet with £5 balance (seeded) — pay 10p
-    const { status, body } = await callBot('contribute', {
+    const { status, body } = await callBot('pay', {
       phone: '+447700900001', // Sarah
-      campaign_id: 'camp-water-test',
+      action_initiative_id: 'camp-water-test',
       amount_pence: 10,
     });
     expect(status).toBe(200);
     expect(body.data.transaction.amount_pence).toBe(10);
-    expect(body.data.campaign).toBeDefined();
+    expect(body.data.action_initiative).toBeDefined();
   });
 
   it('returns error for non-existent action initiative', async () => {
-    const { status, body } = await callBot('contribute', {
+    const { status, body } = await callBot('pay', {
       phone: '+5511999999999',
-      campaign_id: 'camp-nonexistent',
+      action_initiative_id: 'camp-nonexistent',
       amount_pence: 100,
     });
     expect(status).toBe(404);
@@ -446,40 +446,40 @@ describe('Bot API: contribute', () => {
   });
 
   it('fails for unknown user', async () => {
-    const { status } = await callBot('contribute', {
+    const { status } = await callBot('pay', {
       phone: '+19999999999',
-      campaign_id: 'camp-water-test',
+      action_initiative_id: 'camp-water-test',
       amount_pence: 100,
     });
     expect(status).toBe(404);
   });
 });
 
-describe('Bot API: get_campaigns', () => {
-  it('returns all campaigns', async () => {
-    const { status, body } = await callBot('get_campaigns', {});
+describe('Bot API: get_action_initiatives', () => {
+  it('returns all action initiatives', async () => {
+    const { status, body } = await callBot('get_action_initiatives', {});
     expect(status).toBe(200);
-    expect(body.data.campaigns.length).toBeGreaterThanOrEqual(2);
+    expect(body.data.action_initiatives.length).toBeGreaterThanOrEqual(2);
   });
 
   it('filters by issue_id', async () => {
-    const { status, body } = await callBot('get_campaigns', {
+    const { status, body } = await callBot('get_action_initiatives', {
       issue_id: 'issue-rail',
     });
     expect(status).toBe(200);
     expect(
-      body.data.campaigns.every((c: { issue_id: string }) => c.issue_id === 'issue-rail'),
+      body.data.action_initiatives.every((c: { issue_id: string }) => c.issue_id === 'issue-rail'),
     ).toBe(true);
   });
 
   it('filters by status', async () => {
-    const { status, body } = await callBot('get_campaigns', {
+    const { status, body } = await callBot('get_action_initiatives', {
       status: 'goal_reached',
     });
     expect(status).toBe(200);
-    expect(body.data.campaigns.every((c: { status: string }) => c.status === 'goal_reached')).toBe(
-      true,
-    );
+    expect(
+      body.data.action_initiatives.every((c: { status: string }) => c.status === 'goal_reached'),
+    ).toBe(true);
   });
 });
 
@@ -855,13 +855,15 @@ describe('Bot API: translated issue data', () => {
     expect(southern.description).toBe('Brytyjski operator kolejowy');
   });
 
-  it('get_campaigns returns translated action initiative titles', async () => {
-    const { status, body } = await callBot('get_campaigns', {
+  it('get_action_initiatives returns translated action initiative titles', async () => {
+    const { status, body } = await callBot('get_action_initiatives', {
       issue_id: 'issue-rail',
       language_code: 'pl',
     });
     expect(status).toBe(200);
-    const camp = body.data.campaigns.find((c: { id: string }) => c.id === 'camp-water-test');
+    const camp = body.data.action_initiatives.find(
+      (c: { id: string }) => c.id === 'camp-water-test',
+    );
     expect(camp).toBeDefined();
     expect(camp.title).toBe('Przegląd prawny kolei');
     expect(camp.description).toBe('Finansowanie niezależnego przeglądu prawnego');
@@ -966,7 +968,7 @@ describe('Bot API: translated issue data', () => {
     { action: 'get_community', minParams: { issue_id: 'issue-rail' } },
     { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
     { action: 'get_orgs', minParams: {} },
-    { action: 'get_campaigns', minParams: {} },
+    { action: 'get_action_initiatives', minParams: {} },
   ];
 
   it.each(DATA_FETCHING_ACTIONS)(
