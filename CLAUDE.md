@@ -42,7 +42,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - Skip tests for one-off scripts, styling, and rapid prototypes unless asked
 - Environment variables go in `.env.local` (see `.env.example` for shape)
 - Use feature branches for new work; commit to `main` only when ready
-- IMPORTANT: Never merge to main directly — always push the feature branch, create/update a PR, and let the user review and merge. Vercel auto-deploys a preview for every PR.
+- IMPORTANT: Never merge to main directly — always push the feature branch, create a PR, wait for CI to pass, then merge immediately. Do not wait for user approval — merge as soon as CI is green and run the post-merge checklist. Vercel auto-deploys a preview for every PR.
 
 ## Branching Workflow (IMPORTANT — follow exactly)
 
@@ -341,7 +341,7 @@ At the start of every session (or when asked to "pick up where we left off"):
 - Follow the Branching Workflow exactly — fresh branch from `origin/main` for every piece of work
 - After creating a PR: wait for CI → check if production DB needs migration/seed → merge → verify deployment
 - After merging a PR, immediately create a fresh branch if more work follows
-- **Merge PRs within the same session they're created.** A PR left open across sessions will go stale — main moves on, the branch conflicts, and it has to be rebased or recreated. If a PR can't be merged this session (e.g. needs user review), note it in "Next steps" of the session log so the next session deals with it immediately.
+- **Merge PRs within the same session they're created.** A PR left open across sessions will go stale — main moves on, the branch conflicts, and it has to be rebased or recreated. Never leave a PR open — merge as soon as CI passes.
 
 ### Post-merge checklist (run after EVERY merge to main)
 
