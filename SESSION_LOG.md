@@ -6,20 +6,23 @@
 
 ## Latest Session
 
-**Session 55** (2026-02-27) — Category Assistant i18n + API Translation Pipeline
-→ [`session-logs/2026-02-session-55.md`](session-logs/2026-02-session-55.md)
+**Session 56** (2026-02-27) — Romanised Locales + Locale Architecture Refactor + Security Hardening
+→ [`session-logs/2026-02-session-56.md`](session-logs/2026-02-session-56.md)
 
 ## Current Priorities
 
+- **Merge PR #137** — romanised locales feature, CI passing, needs user review
+- **Post-merge: seed reference data + translations** on staging + production
+- **Post-merge: clear OpenClaw sessions + restart gateway** (SKILL.md changed)
+- **End-to-end testing** — send Banglish message on WhatsApp, verify `bn-Latn` responses
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
-- **End-to-end testing** — manually test Bengali bot responses on production to verify assistant i18n fix
-- **Add ANTHROPIC_API_KEY to .env.local** — needed for `npm run translate` to work locally
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 56  | 2026-02-27    | Romanised Locales + Architecture Refactor + Security  | [`session-56`](session-logs/2026-02-session-56.md)                                                             |
 | 55  | 2026-02-27    | Category Assistant i18n + API Translation Pipeline    | [`session-55`](session-logs/2026-02-session-55.md)                                                             |
 | 54  | 2026-02-27    | Stripe Display Text Compliance + Translation Protocol | [`session-54`](session-logs/2026-02-session-54.md)                                                             |
 | 53  | 2026-02-27    | Stripe-Compliant i18n Key Renames                     | [`session-53`](session-logs/2026-02-session-53.md)                                                             |

@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 1952 tests (~13s)                       |
+| `npm test`                | Run 2169 tests (~13s)                       |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -79,11 +79,11 @@ git checkout -b claude/<next-task-name> origin/main
 - Mobile-first CSS — design for small screens, scale up with breakpoints
 - Follow existing code patterns before introducing new ones
 - TypeScript strict mode — no `any` without justification
-- IMPORTANT: **Design for multiple languages and countries from the outset.** Every feature must work for all 45 locales and international users from day one — never build English-only and retrofit i18n later. This applies to UI text, emails, URLs (locale-aware callbacks), form validation, date/currency formatting, and any user-facing content.
+- IMPORTANT: **Design for multiple languages and countries from the outset.** Every feature must work for all 56 locales and international users from day one — never build English-only and retrofit i18n later. This applies to UI text, emails, URLs (locale-aware callbacks), form validation, date/currency formatting, and any user-facing content.
 
 ## Internationalisation Protocol (IMPORTANT — follow for every feature)
 
-Every user-facing text must be translated into all 44 non-English locales. A feature is not complete until translations exist in all locales.
+Every user-facing text must be translated into all 55 non-English locales. A feature is not complete until translations exist in all locales.
 
 ### Checklist for new DB fields/entities
 
@@ -95,7 +95,7 @@ Every user-facing text must be translated into all 44 non-English locales. A fea
 
 ### Rules
 
-- **Seed scripts must seed all 44 locales**, not just English — any new entity type must be added to `seed-translations.ts`
+- **Seed scripts must seed all 55 locales**, not just English — any new entity type must be added to `seed-translations.ts`
 - **Never ship English-only** — if a feature adds user-facing text and doesn't include translations, it's incomplete
 - **Translation files** live in `translations/*.json` — one per locale, keyed by English source text
 - **Translation table** stores `(entity_type, entity_id, field, language_code, value)` with UNIQUE constraint on `(entity_type, entity_id, field, language_code)`
@@ -109,7 +109,7 @@ When a feature adds or modifies translatable DB entities (issues, organisations,
 # 1. Update the English baseline (adds new entities to en.json)
 npx tsx scripts/seed-translations.ts --generate
 
-# 2. Translate the section that changed (all 44 locales, ~1-2 minutes)
+# 2. Translate the section that changed (all 55 locales, ~1-2 minutes)
 npm run translate -- --section category_assistants
 
 # 3. Verify all files are valid JSON
@@ -131,7 +131,7 @@ npx tsx scripts/seed-translations.ts --apply
 
 ### UI Translation Protocol (MANDATORY — follow this exact pattern)
 
-When a feature adds or changes keys in `messages/en.json`, the same changes must be applied to all 44 non-English locale files. **ALWAYS use the script-first approach below.** Never use sub-agents for translations — they are slow, hit context limits on large locale files, and fail silently.
+When a feature adds or changes keys in `messages/en.json`, the same changes must be applied to all 55 non-English locale files. **ALWAYS use the script-first approach below.** Never use sub-agents for translations — they are slow, hit context limits on large locale files, and fail silently.
 
 **Step 1: Identify what needs translating**
 
@@ -150,7 +150,7 @@ node -e "const en = require('./messages/en.json'); const fr = require('./message
 Launch ONE Task agent (not 6 — one is enough) that produces a JSON object mapping each locale to its translations. The agent returns ONLY the translation data, not file edits:
 
 ```
-Prompt: "Translate these keys into all 44 locales. Return a JSON object:
+Prompt: "Translate these keys into all 55 locales. Return a JSON object:
 { 'ar': { 'Namespace.key': 'translated value', ... }, 'bg': { ... }, ... }
 Rules: keep {variable} placeholders as-is, keep brand names (Quiet Riots) as-is,
 keep technical terms (IPO, Pre-Seed) as-is, keep currency amounts ($10m, 10p) as-is."
@@ -177,8 +177,8 @@ npx prettier --write messages/*.json
 
 - Sub-agents hit "Prompt is too long" on locale files (>25K tokens each)
 - Sub-agents are unpredictable — some batches finish, others fail silently or take 20+ minutes
-- `npm run translate` handles all 44 locales in ~1-2 minutes via parallel API calls
-- A Node.js script handles all 44 UI locale files in <1 second, deterministically
+- `npm run translate` handles all 55 locales in ~1-2 minutes via parallel API calls
+- A Node.js script handles all 55 UI locale files in <1 second, deterministically
 
 ## Dual-Surface Protocol (IMPORTANT — follow for every feature)
 
@@ -249,6 +249,8 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **CSP `media-src` needed for video blob playback:** Without an explicit `media-src` directive in the CSP (`src/proxy.ts`), `default-src 'self'` blocks cross-origin `<video>` loading. The video element renders with controls but content is blocked — looks like a black box that isn't clickable. Must allowlist `https://*.public.blob.vercel-storage.com` in both `img-src` and `media-src`.
 - **libSQL rows return `Value` objects, not plain JS types:** When using `db.execute()` directly (e.g. in scripts), row fields are libSQL `Value` objects. Use `String(row.field)` and `Number(row.field)` to coerce before passing as SQL args — `as string` type casts don't convert at runtime.
 - **Merge script ordering matters:** In `merge-users.ts`, soft-delete the source user (freeing their email) BEFORE upgrading the target's email, and move wallet transactions BEFORE deleting the source wallet. Batch statements execute in order.
+- **Romanised locales need native script cleanup:** AI translation models (Haiku and Sonnet) leak native script characters into `-Latn` romanised output. After running `npm run translate` for `-Latn` locales, always run a Unicode range check and transliteration cleanup pass. Cross-script contamination also happens (e.g., Cyrillic chars in Arabic files). The cleanup script is documented in session 56.
+- **Locale lists live in `src/i18n/locales.ts`:** This is the single source of truth for ALL locale-related constants. To add a new locale, edit ONLY this file (plus create message/translation files). All 9 consumer files import from it. Do NOT add locale codes to `routing.ts`, `ai.ts`, or any script directly — they all re-export from `locales.ts`.
 - **Merged branches are dead — never reuse them:** After a PR is merged, that branch is done. Pushing more commits to it won't reach main. Always `git fetch origin main && git checkout -b claude/<new-name> origin/main` before starting any new work, even a one-line fix. This is the #1 cause of "I pushed but it didn't deploy" bugs.
 - **New env vars need a redeploy AFTER being added:** Vercel injects env vars at build time. If you add an env var via `npx vercel env add` after the auto-deploy has already built, the deployed functions won't have it. Always run `npx vercel --prod` after adding new env vars (pull main first). The post-merge health check (`/api/health`) only tests DB connectivity — it won't catch missing Resend/OAuth keys.
 - **OTP delivery script must use production API key:** The `scripts/deliver-otp-codes.sh` script always talks to production Vercel. It hardcodes the production bot API key (`qr-xx21iIL4s2cepF9WVzHwwlL7QslY4boQGJHEWFYNA1U`) because `.env.local` has the dev fallback key (`qr-bot-dev-key-2026`) which production rejects. Never change this to read from `.env.local`.
