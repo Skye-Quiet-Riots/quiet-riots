@@ -6,11 +6,12 @@
 
 ## Latest Session
 
-**Session 53** (2026-02-27) — Stripe-Compliant i18n Key Renames
-→ [`session-logs/2026-02-session-53.md`](session-logs/2026-02-session-53.md)
+**Session 54** (2026-02-27) — Server-Side Language Fallback for WhatsApp Bot
+→ [`session-logs/2026-02-session-54.md`](session-logs/2026-02-session-54.md)
 
 ## Current Priorities
 
+- **Merge PR #129** — server-side language fallback (CI green), then clear OpenClaw sessions and verify Spanish bot responses
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 - **End-to-end testing** — manually test the full share lifecycle on production
@@ -19,6 +20,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 54  | 2026-02-27    | Server-Side Language Fallback for WhatsApp Bot        | [`session-54`](session-logs/2026-02-session-54.md)                                                             |
 | 53  | 2026-02-27    | Stripe-Compliant i18n Key Renames                     | [`session-53`](session-logs/2026-02-session-53.md)                                                             |
 | 52  | 2026-02-26    | Rename campaigns → action_initiatives (Full Refactor) | [`session-52`](session-logs/2026-02-session-52.md)                                                             |
 | 51  | 2026-02-26    | Recovery + End-of-Session                             | [`session-51`](session-logs/2026-02-session-51.md)                                                             |
