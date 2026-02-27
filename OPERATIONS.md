@@ -91,11 +91,12 @@
 - **Log:** `~/.openclaw/logs/log-rotate.log`
 - **Manage:** `launchctl load/unload ~/Library/LaunchAgents/com.quietriots.openclaw-logrotate.plist`
 
-## Daily Backup (Private GitHub Repo)
+## Hourly Backup (Private GitHub Repo)
 
 - **Repo:** `Skye-Quiet-Riots/quiet-riots-backup` (private)
 - **Script:** `~/.openclaw/scripts/backup.sh` — copies config, encrypts secrets, pushes to GitHub
-- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.backup.plist` — daily at 03:00
+- **LaunchAgent:** `~/Library/LaunchAgents/com.quietriots.backup.plist` — every 60 minutes
+- **Also runs:** manually after every plan delivery and at end of every session (see CLAUDE.md)
 - **Encryption:** AES-256-CBC via openssl, passphrase at `~/.openclaw/.backup-passphrase`
 - **IMPORTANT:** Store the passphrase somewhere safe outside this laptop (password manager)
 - **Log:** `~/.openclaw/logs/backup.log`
@@ -130,6 +131,6 @@
 | Watchdog         | `com.quietriots.openclaw-watchdog`  | Every 120s         | Restart gateway after WiFi drops           |
 | OTP delivery     | `com.quietriots.otp-delivery`       | Every 3s           | Deliver phone OTP codes via WhatsApp       |
 | Msg delivery     | `com.quietriots.message-delivery`   | Every 5s           | Deliver notification messages via WhatsApp |
-| Backup           | `com.quietriots.backup`             | Daily 03:00        | Encrypted backup to GitHub                 |
+| Backup           | `com.quietriots.backup`             | Every 60 min       | Encrypted backup to GitHub                 |
 | Log rotation     | `com.quietriots.openclaw-logrotate` | Daily 03:30        | Rotate logs over 10MB                      |
 | Auto-update      | `com.quietriots.openclaw-update`    | Daily 04:00        | Update OpenClaw + run tests + restart      |

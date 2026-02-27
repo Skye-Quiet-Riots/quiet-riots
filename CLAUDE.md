@@ -302,6 +302,7 @@ At the start of every session (or when asked to "pick up where we left off"):
   - **What to include:** Problem statement, scope, all phases/steps, file list, deployment/rollback notes.
   - **When to update:** If the plan changes mid-execution (e.g. a step is added or removed), update PLAN.md and push before continuing.
 - **Never rely on uncommitted work surviving a session.** The previous session lost all 5 phases of work because nothing was committed. Another session lost its plan because it was only in the conversation, not in PLAN.md.
+- **MANDATORY: Run backup after every plan is delivered.** After creating a PR (plan delivered) and before moving on to the next task, run `bash ~/.openclaw/scripts/backup.sh`. This captures SKILL.md, workspace files, env vars, and all local-only config that isn't in git. Don't rely on the hourly LaunchAgent alone — a session crash between backups could lose critical local changes.
 - Pattern for multi-phase work:
   ```
   1. Write PLAN.md → commit + push (BEFORE any implementation)
@@ -309,6 +310,7 @@ At the start of every session (or when asked to "pick up where we left off"):
   3. Phase 2 code + tests → commit + push
   ... repeat for each phase
   N. Create PR after final phase
+  N+1. Run backup: bash ~/.openclaw/scripts/backup.sh
   ```
 
 ### Branching & PRs
@@ -372,7 +374,7 @@ At the end of every session (or when asked to "wrap up" / "good night"). Steps a
 5. **Merge open PRs:** Run `gh pr list --state open`. Handle each:
    - **Our PRs** (`--author Simon-Quiet-Riots`): Wait for CI (`gh pr checks <number> --watch`), then merge: `gh pr merge <number> --squash --admin`. The `--admin` flag bypasses the 1-approval branch protection rule. If `gh pr merge` fails in a worktree ("`main` already used"), use: `gh api repos/Skye-Quiet-Riots/quiet-riots/pulls/<number>/merge -X PUT -f merge_method=squash`. Don't leave PRs open across sessions.
    - **Dependabot PRs:** Check CI with `gh pr checks <number>`. Minor/patch with passing CI → `gh pr merge <number> --squash --admin`. Major bumps → evaluate. If CI is still running, skip.
-6. **Run backup:** `bash ~/.openclaw/scripts/backup.sh`
+6. **Run backup (MANDATORY):** `bash ~/.openclaw/scripts/backup.sh` — captures SKILL.md, workspace, env vars, scripts, and all local-only config. This runs hourly via LaunchAgent but MUST also run explicitly at end of session to catch any changes made since the last hourly run. Never skip this step.
 7. **If bot files changed** (SKILL.md, bot API, OPERATIONS.md): flag that OpenClaw sessions may need clearing (`rm ~/.openclaw/agents/main/sessions/*.jsonl`) and gateway may need restarting
 8. **Worktree cleanup (MUST be the very last command):** If this session's branch has been merged to main, run a fire-and-forget background cleanup: `nohup bash -c 'sleep 5 && cd /Users/skye/Projects/quiet-riots && git worktree remove .claude/worktrees/<name> 2>/dev/null; git branch -d <branch-names> 2>/dev/null' &>/dev/null &`. The 5-second delay lets the session exit before the worktree directory is removed. **Do not run any other commands after this** — the shell will break once the cwd is deleted.
 
