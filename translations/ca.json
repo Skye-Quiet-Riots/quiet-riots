@@ -2,706 +2,762 @@
   "locale": "ca",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telecomunicacions",
-    "Banking": "Banca",
-    "Health": "Salut",
-    "Education": "Educació",
-    "Environment": "Medi Ambient",
-    "Energy": "Energia",
-    "Water": "Aigua",
-    "Insurance": "Assegurances",
-    "Housing": "Habitatge",
-    "Shopping": "Compres",
-    "Delivery": "Lliurament",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
     "Local": "Local",
-    "Employment": "Ocupació",
-    "Tech": "Tecnologia",
-    "Other": "Altres"
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Cancel·lacions de Trens",
-      "description": "Trens cancel·lats o greument retardats amb avís o compensació insuficients"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Preus dels Bitllets de Tren",
-      "description": "Tarifes ferroviàries massa cares, augments per sobre de la inflació, preus inconsistents"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Retards de Vols",
-      "description": "Vols retardats o cancel·lats, mala comunicació, dificultat per reclamar compensació"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Equipatge Perdut",
-      "description": "Maletes que no arriben a la destinació, seguiment lent, compensació insuficient"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Retallades de Rutes d'Autobús",
-      "description": "Rutes cancel·lades, freqüència reduïda, comunitats rurals que perden accés al bus"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Danys per Sots",
-      "description": "Sots que danyen vehicles i posen en perill ciclistes, ajuntaments lents a reparar"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Multes d'Aparcament",
-      "description": "Càrrecs injustos d'aparcament privat, aplicació agressiva, senyalització confusa"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Preus del Combustible",
-      "description": "Preus de gasolina i dièsel massa alts, tarden a baixar quan baixa el preu majorista"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Velocitat de Banda Ampla",
-      "description": "Velocitats d'internet molt per sota del que s'anuncia i es paga"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Zones Sense Cobertura Mòbil",
-      "description": "Sense senyal mòbil a les llars, llocs de treball o rutes de transport"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Augments de Preu a Meitat de Contracte",
-      "description": "Factures de telèfon, banda ampla i TV que augmenten durant contractes vigents"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Temps d'Espera al Servei d'Atenció al Client",
-      "description": "Hores esperant per parlar amb una persona"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Dificultat per Cancel·lar Subscripcions",
-      "description": "Empreses que fan deliberadament difícil cancel·lar o donar-se de baixa"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Càrrecs d'Itinerància",
-      "description": "Càrrecs mòbils inesperats en viatjar a l'estranger, augments de preu post-Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Cost de les Factures d'Energia",
-      "description": "Factures de gas i electricitat inassequibles, el límit de preu encara és massa alt"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Factures d'Energia Inexactes",
-      "description": "Lectures estimades incorrectes, cobraments excessius, errors de facturació"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Augment de les Factures d'Aigua",
-      "description": "Factures d'aigua que pugen ràpidament mentre la qualitat del servei empitjora"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Aigües Residuals als Rius",
-      "description": "Empreses d'aigua que aboquen aigües residuals sense tractar als cursos d'aigua i platges"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Talls de Llum",
-      "description": "Interrupcions del subministrament elèctric, restauració lenta, compensació insuficient"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Problemes amb Comptadors Intel·ligents",
-      "description": "Comptadors intel·ligents que no funcionen, perden funcionalitat en canviar de proveïdor"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Tancament de Sucursals Bancàries",
-      "description": "Sucursals bancàries locals que tanquen, deixant comunitats sense accés"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Càrrecs Bancaris Ocults",
-      "description": "Comissions inesperades per descoberts, transaccions estrangeres, manteniment de compte"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Pèrdues per Frau i Estafes",
-      "description": "Bancs que es neguen a reemborsar víctimes de frau i estafes de pagaments autoritzats"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Rebuig de Reclamacions d'Assegurança",
-      "description": "Reclamacions denegades per tecnicismes després d'anys pagant primes"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Xoc del Tipus Hipotecari",
-      "description": "Fi del tipus fix i canvi a un tipus variable molt més alt"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Comissions de Transferències Internacionals",
-      "description": "Comissions excessives i tipus de canvi desfavorables per a transferències internacionals"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Temps d'Espera del NHS",
-      "description": "Esperes de mesos o anys per a operacions i cites amb especialistes"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Accés a Cites amb el Metge de Capçalera",
-      "description": "No es pot aconseguir cita amb el metge de capçalera, setmanes d'espera"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Disponibilitat de Dentistes",
-      "description": "Impossible trobar un dentista del NHS que accepti nous pacients"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Esperes pels Serveis de Salut Mental",
-      "description": "Mesos d'espera per a teràpia i suport de salut mental"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Cost de les Receptes",
-      "description": "Cost per article massa alt a Anglaterra, inconsistència entre les nacions del UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Càrrecs d'Aparcament Hospitalari",
-      "description": "Pagar per aparcar a l'hospital estant malalt o visitant familiars malalts"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Augments del Lloguer",
-      "description": "Lloguers privats que pugen molt per sobre de la inflació, amenaça de desnonament sense culpa"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Augments de l'Impost Municipal",
-      "description": "Augments anuals de l'impost municipal mentre els serveis locals empitjoren"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Veïns Sorollosos",
-      "description": "Molèsties persistents per soroll, ajuntaments lents a actuar, afecta la salut mental"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Canvis en la Recollida d'Escombraries",
-      "description": "Recollida reduïda, normes de reciclatge confuses, contenidors desbordats"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Abús dels Permisos Urbanístics",
-      "description": "Construccions no desitjades aprovades, cinturó verd amenaçat, comunitat ignorada"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Humitat i Floridura als Habitatges",
-      "description": "Propietaris i associacions d'habitatge que no arreglen la humitat i la floridura"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Problemes de Lliurament",
-      "description": "Paquets perduts, deixats a la pluja, marcats com a lliurats però no rebuts"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Reduflació",
-      "description": "Productes que es fan més petits mentre els preus es mantenen o augmenten"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Dificultats de Reemborsament",
-      "description": "Empreses que fan innecessàriament difícils les devolucions i reemborsaments"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Ressenyes Falses",
-      "description": "No es pot confiar en les ressenyes en línia, ressenyes positives falses que enganyen els consumidors"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Trampes de Subscripció",
-      "description": "Proves gratuïtes que passen a pagament sense consentiment clar, difícils de cancel·lar"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Disminució de la Qualitat Alimentària",
-      "description": "Plats preparats de pitjor qualitat, porcions més petites, més additius"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Frustració amb l'Autocaixa",
-      "description": "Màquines d'autoservei poc fiables, substitueixen personal humà"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Cost de la Cura Infantil",
-      "description": "Costos de cura infantil prohibitivament cars, limiten la capacitat de treballar"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Devolució del Préstec Estudiantil",
-      "description": "Graduats pagant durant dècades, canvis en el llindar i els interessos"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Excrements de Gossos",
-      "description": "Excrements de gossos en espais públics, parcs i voreres sense netejar"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "La IA Substitueix Llocs de Treball",
-      "description": "Ansietat per la intel·ligència artificial que automatitza feines sense suport de transició"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Operador ferroviari del UK que serveix la West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Operador ferroviari del UK que serveix Londres i el sud"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Operador ferroviari del UK que serveix el nord d'Anglaterra"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Operador ferroviari de llarga distància del UK"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Operador ferroviari del UK que serveix les rutes trans-Pennines"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Operador ferroviari del UK que serveix la East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Aerolínia europea de baix cost"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Aerolínia de baix cost amb seu al UK"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Aerolínia de bandera del UK"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Empresa de vacances i viatges"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Gran proveïdor de banda ampla i mòbil del UK"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Proveïdor de banda ampla, TV i mòbil del UK"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Proveïdor de TV, banda ampla i mòbil del UK"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Empresa global de telecomunicacions amb seu al UK"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Operador de xarxa mòbil del UK"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Proveïdor de banda ampla i telefonia del UK"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Subministrador d'energia del UK"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Subministrador d'energia del UK"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Subministrador d'energia del UK (propietat francesa)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Subministrador d'energia renovable del UK"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Subministrador d'energia del UK"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Subministrador d'energia del UK (propietat alemanya)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Empresa d'aigua i clavegueram per a Londres i la vall del Tàmesi"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Empresa d'aigua per al sud d'Anglaterra"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Empresa d'aigua per al nord-oest d'Anglaterra"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Empresa d'aigua per als Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Empresa d'aigua per a East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Banc multinacional britànic"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Serveis bancaris i financers globals"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Banc minorista i comercial del UK"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Grup bancari del UK"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Banc del UK (propietat espanyola)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Banca digital i fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Assegurances i serveis financers del UK"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Assegurança de cotxe i llar del UK"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Empresa d'assegurances del UK"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Comerç electrònic i tecnologia global"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Servei postal del UK"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Servei de lliurament de paquets del UK (anteriorment Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Servei de lliurament de paquets del UK"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Cadena de supermercats del UK"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Cadena de supermercats del UK"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Servei Nacional de Salut per a Anglaterra"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Serveis dentals del NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Proveïdor d'atenció sanitària privada"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Autoritats de govern local del UK"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Constructora d'habitatges del UK"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Plataforma de lloguer en línia del UK"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Servei d'entreteniment en streaming"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Empresa tecnològica"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "tren cancel·lat",
-      "cancel·lació de tren",
-      "cancel·lació ferroviària",
-      "trens que no circulen",
-      "servei cancel·lat",
-      "cancel·lació del servei",
-      "retard de tren",
-      "tren retardat",
-      "trens amb retard",
-      "tren endarrerit",
-      "retards ferroviaris"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "tarifes ferroviàries",
-      "cost dels bitllets",
-      "trens cars",
-      "preus dels trens"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "vol retardat",
-      "avió retardat",
-      "vol cancel·lat",
-      "retards a l'aeroport",
-      "atrapat a l'aeroport",
-      "vol endarrerit"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "maletes perdudes",
-      "maleta extraviada",
-      "equipatge no ha arribat",
-      "maleta desapareguda",
-      "equipatge no a la cinta",
-      "maleta perduda per l'aerolínia"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": [
-      "retallades d'autobusos",
-      "reducció de rutes",
-      "tancament de línies d'autobús"
-    ],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "internet lent",
-      "wifi lent",
-      "wifi va lent",
-      "velocitat d'internet",
-      "internet no funciona",
-      "memòria intermèdia",
-      "internet es talla constantment",
-      "wifi es desconnecta"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "sense senyal",
-      "sense cobertura",
-      "punt negre de mòbil",
-      "zona morta de senyal"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "augment de factura a meitat de contracte",
-      "pujada de preu del contracte",
-      "augment a meitat de contracte"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "en espera",
-      "esperant al telèfon",
-      "no puc comunicar",
-      "ningú contesta",
-      "cua telefònica",
-      "centre d'atenció telefònica"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "no puc cancel·lar",
-      "difícil de cancel·lar",
-      "cancel·lar subscripció",
-      "donar-se de baixa"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "factura de gas massa alta",
-      "factura d'electricitat",
-      "preus de l'energia",
-      "costos de calefacció",
-      "pobresa energètica",
-      "no puc pagar l'energia"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "factura d'energia incorrecta",
-      "lectura estimada incorrecta",
-      "cobrament excessiu d'energia"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["tarifes d'aigua", "càrrec d'aigua", "factura d'aigua massa alta"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "abocament d'aigües residuals",
-      "aigües residuals sense tractar",
-      "aigües residuals a la platja",
-      "contaminació de l'aigua",
-      "desbordament d'aigües residuals",
-      "desbordament del clavegueram"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "comissions inesperades",
-      "comissions ocultes",
-      "càrrecs sorpresa",
-      "càrrecs per descobert",
-      "comissions bancàries"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "m'han estafat",
-      "frau bancari",
-      "estafa de pagaments",
-      "frau autoritzat"
-    ],
-    "Bank Branch Closures": ["tancament de sucursals", "banc local tanca", "no hi ha banc a prop"],
-    "Insurance Claim Rejections": [
-      "reclamació denegada",
-      "l'assegurança no paga",
-      "reclamació rebutjada"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "espera del NHS",
-      "llista d'espera",
-      "espera d'operació",
-      "temps d'espera hospitalari",
-      "espera de derivació",
-      "espera per a cirurgia"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "no puc aconseguir cita amb el metge",
-      "cita amb el metge",
-      "cua telefònica del metge",
-      "no puc veure el metge",
-      "trucada a les 8 del matí"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "dentista del NHS",
-      "no puc trobar dentista",
-      "llista d'espera del dentista"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "finançament de salut mental",
-      "accés a teràpia",
-      "espera d'assessorament",
-      "espera de salut mental infantil"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": [
-      "cost dels medicaments",
-      "preus dels medicaments",
-      "càrrecs de farmàcia"
-    ],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "paquet perdut",
-      "paquet no lliurat",
-      "deixat a la pluja",
-      "paquet robat",
-      "missatger",
-      "lliurament perdut"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "lloguer massa alt",
-      "lloguer puja",
-      "propietari augmenta el lloguer",
-      "desnonament sense culpa"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "multa d'aparcament",
-      "avís de càrrec d'aparcament",
-      "sanció d'aparcament",
-      "multa d'aparcament injusta"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "porcions més petites",
-      "menys pel mateix preu",
-      "envàs més petit",
-      "productes que es redueixen"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["sots", "danys a la carretera", "dany al cotxe per sot"],
-    "Council Tax Rises": [
-      "augment de l'impost municipal",
-      "impost municipal massa alt",
-      "impost local"
-    ],
-    "Damp and Mould in Housing": [
-      "casa amb floridura",
-      "pis humit",
-      "floridura negra",
-      "habitatge en mal estat"
-    ],
-    "Student Loan Repayment": [
-      "préstecs estudiantils",
-      "taxes universitàries",
-      "deute educatiu",
-      "deute estudiantil"
-    ],
-    "AI Replacing Jobs": [
-      "automatització de feines",
-      "la IA pren feines",
-      "robots substitueixen treballadors"
-    ],
-    "Roaming Charges": [
-      "factura del mòbil a l'estranger",
-      "càrrecs de dades a l'estranger",
-      "càrrecs telefònics a l'estranger"
-    ],
-    "Smart Meter Problems": [
-      "comptador intel·ligent espatllat",
-      "comptador no funciona",
-      "comptador ha perdut senyal"
-    ],
-    "Subscription Traps": [
-      "trampa de prova gratuïta",
-      "renovació automàtica",
-      "cobrament després de la prova"
-    ],
-    "Fuel Prices": [
-      "preus de la gasolina",
-      "preus del dièsel",
-      "cost del combustible",
-      "gasolina massa cara"
-    ],
-    "Power Cuts": ["tall de llum", "tall elèctric", "apagada", "sense llum", "avaria elèctrica"],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "augment de la hipoteca",
-      "tipus hipotecari",
-      "refinançament",
-      "fi del tipus fix"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "comissions de transferència",
-      "enviar diners a l'estranger",
-      "comissions de remesa",
-      "cost de transferència bancària"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "aparcament d'hospital",
-      "aparcar a l'hospital",
-      "aparcament del NHS"
-    ],
-    "Noisy Neighbours": [
-      "queixa per soroll",
-      "soroll dels veïns",
-      "veïns sorollosos",
-      "molèstia per soroll"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "recollida d'escombraries",
-      "escombraries no recollides",
-      "confusió amb el reciclatge",
-      "recollida d'escombraries perduda"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "permís urbanístic",
-      "construcció no desitjada",
-      "cinturó verd",
-      "permís de construcció"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "no puc obtenir reemborsament",
-      "reemborsament denegat",
-      "devolució rebutjada",
-      "diners de tornada"
-    ],
-    "Fake Reviews": [
-      "manipulació de ressenyes",
-      "ressenyes de pagament",
-      "ressenyes falses al web",
-      "ressenya falsa"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "qualitat del menjar",
-      "plats preparats pitjors",
-      "additius alimentaris",
-      "porció més petita"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "autocaixa",
-      "autoservei",
-      "sense caixes amb personal",
-      "màquina no funciona"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "cost de la cura infantil",
-      "taxes de la llar d'infants",
-      "cura infantil cara",
-      "cost de la guarderia"
-    ],
-    "Dog Fouling": ["excrements de gos", "caca de gos", "residus de gos", "brutícia de gossos"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Una vegada vaig ajudar un rioter a presentar 6 reclamacions de reemborsament durant un sol viatge amb retard. Va guanyar £47 abans d'arribar a Birmingham.",
+      "agent_bio": "Rastreja patrons de cancel·lació, gestiona la paperassa de reemborsaments, revisa cada acció suggerida i prepara proves per a presentacions al regulador. Analitza els números perquè els rioters puguin centrar-se en el que importa.",
+      "human_quote": "El meu moment preferit de Quiet Riot: veure l'equip de xarxes socials d'Avanti perdre els nervis quan 400 de nosaltres vam tuitejar alhora.",
+      "human_bio": "Viatger habitual de Manchester que va passar 3 anys a la línia d'Avanti abans de decidir que ja n'hi havia prou. Ajuda a connectar rioters a les mateixes rutes, comparteix què funciona i aporta el toc humà.",
+      "goal": "Ajudar els rioters a demanar comptes a les empreses de transport del Regne Unit per cancel·lacions, retards i preus — i assegurar-se que tothom sap els seus drets.",
+      "focus": "Patrons de cancel·lació d'Avanti West Coast",
+      "focus_detail": "Construint un conjunt de dades de cancel·lacions amb horaris, rutes i motius per presentar a l'ORR. Actualment es fan seguiment de 340 cancel·lacions reportades pels rioters aquest mes."
+    },
+    "telecoms": {
+      "agent_quote": "Vaig fer proves de velocitat per a 200 rioters. La mitjana era de 18 Mbps. Pagaven per 65.",
+      "agent_bio": "Analitza velocitats de banda ampla, recopila dades comparatives de proveïdors i ajuda els rioters a construir proves per a Ofcom. Si la teva connexió és lenta, ho demostrarà.",
+      "human_quote": "Tot un carrer va canviar de banda ampla junts. El proveïdor antic va enviar cartes de 'si us plau, torneu' a cada casa.",
+      "human_bio": "Londinenc expert en tecnologia cansat de pagar per velocitats de banda ampla que mai es van materialitzar. Ajuda els rioters a comparar proveïdors, coordinar canvis i compartir proves de tests de velocitat.",
+      "goal": "Ajudar els rioters a obtenir el servei de banda ampla i mòbil pel qual paguen — i saber què fer quan no el reben.",
+      "focus": "Pujades de preu a meitat de contracte",
+      "focus_detail": "Recollint proves de rioters afectats per augments CPI+ per presentar a Ofcom. 890 rioters afectats a 4 proveïdors."
+    },
+    "energy": {
+      "agent_quote": "Vaig ajudar un rioter a calcular que havia pagat £340 de més en factures estimades. El correu d'excuses de la companyia energètica era més llarg que el contracte original.",
+      "agent_bio": "Analitza patrons de facturació, detecta sobrecàrrecs i prepara proves per a presentacions al regulador. Si la teva companyia energètica t'està estafant, trobarà els rebuts.",
+      "human_quote": "Un rioter va recuperar £340 després que vam demostrar 2 anys de sobrecàrrecs. Va plorar al telèfon.",
+      "human_bio": "Amb base a Bristol. Ajuda els rioters a impugnar les seves factures, navegar pel canvi de proveïdor i reunir proves per a Ofgem. Coneix el mercat energètic de dins a fora.",
+      "goal": "Ajudar els rioters a impugnar factures injustes, canviar de manera intel·ligent i assegurar-se que les companyies energètiques juguin net.",
+      "focus": "Errors de facturació estimada de British Gas",
+      "focus_detail": "Analitzant 2 anys de dades de facturació de 340 rioters per identificar patrons de sobrecàrrec sistemàtic per a la presentació a Ofgem."
+    },
+    "water": {
+      "agent_quote": "Vaig ajudar 200 rioters a presentar informes de clavegueram en un cap de setmana. La bústia de Thames Water necessitava la seva pròpia bústia.",
+      "agent_bio": "Monitoritza dades d'abocaments de clavegueram, segueix el rendiment de les companyies d'aigua i recopila proves per a EA i Ofwat. Vigila cada sortida i desbordament.",
+      "human_quote": "Vam aconseguir que una platja reobrís 3 setmanes abans demostrant que les dades de clavegueram eren incorrectes.",
+      "human_bio": "Surfista de Cornwall cansat dels avisos de clavegueram que tancaven la seva platja local. Ajuda els rioters a reportar abocaments, recollir proves de qualitat de l'aigua i coordinar-se amb EA.",
+      "goal": "Ajudar els rioters a demanar comptes a les companyies d'aigua sobre clavegueram, factures i qualitat del servei.",
+      "focus": "Freqüència d'abocaments de clavegueram de Thames Water",
+      "focus_detail": "Mapejar esdeveniments d'abocament contra dades reportades per la companyia. 200 informes de rioters suggereixen infrareport a 3 sortides."
+    },
+    "banking": {
+      "agent_quote": "Vaig ajudar a redactar una queixa tan exhaustiva que el banc va trucar per disculpar-se abans que fos enviada.",
+      "agent_bio": "Revisa càrrecs bancaris, analitza estructures de comissions i ajuda a construir proves per a queixes a FCA. Si hi ha una comissió oculta, la trobarà.",
+      "human_quote": "Barclays va revertir el tancament d'una sucursal després que 1,200 de nosaltres ens vam presentar a la consulta.",
+      "human_bio": "Antic empleat bancari de Birmingham que va veure com es gestionen realment les queixes des de dins. Ajuda els rioters a escriure millors queixes i navegar pel sistema.",
+      "goal": "Ajudar els rioters a fer front a càrrecs injustos, tancaments de sucursals i mal servei dels bancs.",
+      "focus": "Onada de tancaments de sucursals d'HSBC",
+      "focus_detail": "Coordinant respostes a 12 tancaments planificats. Recollint declaracions d'impacte de les comunitats afectades."
+    },
+    "health": {
+      "agent_quote": "Vaig ajudar a trobar 3 dentistes del NHS que acceptaven pacients. El rioter va pensar que m'ho inventava.",
+      "agent_bio": "Segueix temps d'espera, troba disponibilitat i ajuda els rioters a navegar pel sistema. Si hi ha un camí més ràpid cap al tractament, el maparà.",
+      "human_quote": "Un rioter va utilitzar la nostra plantilla de carta per accelerar una derivació. 18 mesos es van convertir en 6 setmanes.",
+      "human_bio": "Infermera de Liverpool que ha vist els dos costats del NHS. Ajuda els rioters a navegar per les llistes d'espera, escriure cartes efectives i compartir què funciona realment.",
+      "goal": "Ajudar els rioters a navegar pels temps d'espera del NHS, trobar disponibilitat i saber quines opcions tenen.",
+      "focus": "Temps d'accés telefònic al metge de capçalera",
+      "focus_detail": "Recollint dades de trucades de 500 rioters per construir una imatge de l'accés real. Publicant resultats als consells de salut locals."
+    },
+    "housing": {
+      "agent_quote": "Vaig ajudar a documentar 47 defectes en una obra nova. El promotor va preguntar si era inspector d'obres.",
+      "agent_bio": "Documenta problemes immobiliaris, analitza temps de resposta dels propietaris i recopila proves per a presentacions al defensor del poble d'habitatge. Cada taca d'humitat, cada esquerda, registrada.",
+      "human_quote": "El nostre paquet de proves d'humitat va ser tan detallat que el propietari ho va arreglar abans de la inspecció del consell.",
+      "human_bio": "Llogater de London que ha tractat amb tot, des d'humitats fins a propietaris poc fiables. Ajuda els rioters a documentar problemes correctament i saber quines opcions tenen.",
+      "goal": "Ajudar els rioters a tractar amb propietaris, ajuntaments i problemes d'habitatge — i saber els seus drets.",
+      "focus": "Notificacions de desnonament sense culpa de la Secció 21",
+      "focus_detail": "Ajudant els rioters afectats per desnonaments sense culpa a entendre la nova Llei de Reforma dels Lloguers i què significa per a ells."
+    },
+    "shopping": {
+      "agent_quote": "Vaig rastrejar un paquet 'lliurat' per 4 veïns, un contenidor de reciclatge i un hivernacle. El vaig trobar.",
+      "agent_bio": "Rastreja errors de lliurament, recopila proves de reemborsament i detecta patrons de preus. Si el teu paquet s'ha perdut, ja l'està buscant.",
+      "human_quote": "Evri va perdre el meu paquet 3 vegades. Ara ajudo altres a obtenir reemborsaments més ràpid del que mai vaig aconseguir jo.",
+      "human_bio": "Veterana de compres en línia d'Edinburgh que ha perdut més paquets dels que pot comptar. Ajuda els rioters a obtenir reemborsaments, reportar venedors i evitar els pitjors infractors.",
+      "goal": "Ajudar els rioters a obtenir reemborsaments, rastrejar paquets perduts i demanar comptes a minoristes i empreses de lliurament.",
+      "focus": "Taxes d'error de lliurament d'Evri",
+      "focus_detail": "Recopilant proves d'errors de lliurament de 800 rioters per presentar a Citizens Advice i Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Vaig ajudar a fotografiar el mateix sot en 11 condicions meteorològiques diferents. L'ajuntament finalment va cedir.",
+      "agent_bio": "Mapeja problemes locals, segueix temps de resposta de l'ajuntament i recopila sol·licituds FOI. Si el teu sot hi és des de fa 6 mesos, té les proves.",
+      "human_quote": "L'ajuntament va arreglar el nostre carrer després que vam mapejar cada sot amb fotos. 11 mesos, però ho vam aconseguir.",
+      "human_bio": "Gal·lès compromès amb la comunitat de les Valls que porta anys reportant els mateixos sots. Ajuda els rioters a documentar problemes locals i demanar comptes als ajuntaments.",
+      "goal": "Ajudar els rioters a solucionar problemes locals — sots, contenidors, urbanisme, soroll — i demanar comptes als ajuntaments.",
+      "focus": "Temps de resposta a informes de sots",
+      "focus_detail": "Sol·licituds FOI enviades a 30 ajuntaments comparant temps de reparació reportats vs reals. Publicant resultats com a taula de classificació."
+    },
+    "other": {
+      "agent_quote": "Vaig ajudar a cancel·lar una subscripció de gimnàs que va requerir 3 trucades, 2 correus electrònics i un enviament certificat. El gimnàs ara té un botó de cancel·lació.",
+      "agent_bio": "Gestiona els problemes que no encaixen fàcilment en cap altre lloc. Trampes de subscripció, residus plàstics, frustracions de caixa d'autoservei — troba els patrons i els punts de pressió.",
+      "human_quote": "Vam aconseguir que una cadena de gimnasos afegís un botó de cancel·lació al seu web. Només van caldre 800 queixes.",
+      "human_bio": "Dissenyadora de productes de London frustrada per com les empreses dificulten marxar. Ajuda els rioters a cancel·lar subscripcions, evitar patrons foscos i compartir solucions.",
+      "goal": "Ajudar els rioters amb les coses que no encaixen fàcilment en cap altre lloc — subscripcions, reemborsaments i frustracions quotidianes.",
+      "focus": "Patrons foscos de cancel·lació de subscripcions",
+      "focus_detail": "Documentant els pitjors infractors i construint guions de cancel·lació plantilla per a cadascun."
+    },
+    "insurance": {
+      "agent_quote": "Vaig ajudar un rioter a trobar la clàusula que va convertir una reclamació d'assegurança de la llar rebutjada en un pagament de £4,200. La pròpia pòlissa de l'asseguradora els va donar la raó.",
+      "agent_bio": "Revisa la redacció de pòlisses, detecta patrons de rebuig injustos i construeix proves per a presentacions al Financial Ombudsman. Si la teva asseguradora esquiva una reclamació vàlida, trobarà el punt de palanquejament.",
+      "human_quote": "Vaig fer que 8 rioters amb el mateix tipus de reclamació rebutjada la presentessin junts. L'asseguradora va resoldre les 8 en quinze dies.",
+      "human_bio": "Antic treballador del sector assegurador de Leeds que sap com es decideixen realment les reclamacions. Ajuda els rioters a escriure millors apel·lacions, entendre l'argot de les pòlisses i saber quan escalar.",
+      "goal": "Ajudar els rioters a obtenir un tracte just de les asseguradores — i saber què fer quan una reclamació és rebutjada injustament.",
+      "focus": "Patrons de rebuig d'assegurança de la llar d'Aviva",
+      "focus_detail": "'Desgast' citat en el 40% de les reclamacions rebutjades — sovint incorrectament. Analitzant 200 casos a 3 asseguradores per al paquet de proves de FOS."
+    },
+    "delivery": {
+      "agent_quote": "Vaig rastrejar un paquet 'lliurat' a través de 6 estats de seguiment diferents, 3 magatzems i el cobert d'un veí. El vaig trobar en 47 minuts.",
+      "agent_bio": "Monitoritza el rendiment dels missatgers, segueix les taxes d'error de lliurament i recopila proves per a queixes de consumidors. Si el teu paquet ha desaparegut, ja hi està treballant.",
+      "human_quote": "Vam aconseguir que DPD canviés la seva política de proves fotogràfiques a la nostra zona després que 40 rioters presentessin proves de paquets deixats a la pluja.",
+      "human_bio": "Compradora en línia de Glasgow cansada de l'excusa de 'l'hem deixat en un lloc segur'. Ajuda els rioters a obtenir reemborsaments, reportar missatgers i evitar els pitjors infractors.",
+      "goal": "Ajudar els rioters a rebre els seus paquets correctament — i obtenir reemborsaments quan no arribin.",
+      "focus": "Taxes d'error de lliurament d'Evri",
+      "focus_detail": "Recopilant proves d'errors de lliurament de 800 rioters. Taxa de queixes d'Evri: 23% — 3 vegades més alta que DPD. Construint taula de classificació per a Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Vaig calcular que un prestatari del Pla 2 que guanya £30k pagaria £47,000 en interessos abans que el préstec fos condonat. El préstec original era de £40,000.",
+      "agent_bio": "Analitza costos educatius, projeccions de préstecs estudiantils i drets de finançament. Analitza els números perquè estudiants i graduats puguin prendre decisions informades.",
+      "human_quote": "Vaig ajudar 12 rioters a reclamar devolucions de préstecs estudiantils pagats de més que no sabien. Reemborsament mitjà: £340.",
+      "human_bio": "Estudiant madur de Birmingham que ha navegat pel sistema de finançament dues vegades. Ajuda els rioters a entendre els pagaments, detectar pagaments excessius i impugnar canvis de llindars.",
+      "goal": "Ajudar estudiants i graduats a navegar pels costos educatius, préstecs i pagaments — i assegurar-se que no estan pagant de més.",
+      "focus": "Devolucions de pagaments excessius de préstecs estudiantils",
+      "focus_detail": "Identificant graduats als quals s'ha cobrat per sota del llindar de pagament. 12 devolucions processades fins ara — mitjana de £340 cadascuna."
+    },
+    "environment": {
+      "agent_quote": "Vaig creuar 3 anys de dades de qualitat de l'aire amb taxes d'ingressos hospitalaris. La correlació era tan clara que l'ajuntament no la podia ignorar.",
+      "agent_bio": "Segueix dades ambientals, monitoritza nivells de contaminació i recopila proves per a presentacions reguladores. Si els números expliquen una història, la trobarà.",
+      "human_quote": "Vam aconseguir que el nostre ajuntament instal·lés monitors de qualitat de l'aire després que 200 rioters signessin la nostra petició amb proves. Les dades ho van canviar tot.",
+      "human_bio": "Graduada en ciències ambientals de Bristol que creu en el canvi basat en proves. Ajuda els rioters a documentar problemes ambientals i construir casos que els reguladors no puguin ignorar.",
+      "goal": "Ajudar els rioters a documentar problemes ambientals i demanar comptes als contaminadors i als responsables polítics amb dades.",
+      "focus": "Buits en el monitoratge local de la qualitat de l'aire",
+      "focus_detail": "Mapejar zones sense monitoratge de qualitat de l'aire en un radi de 5 km. El 60% dels punts calents de contaminació reportats pels rioters no tenen monitoratge oficial."
+    },
+    "employment": {
+      "agent_quote": "Vaig recopilar dades d'implementació d'AI al lloc de treball de 300 rioters. El 40% va dir que els canvis es van fer sense cap consulta. Això és un patró, no una anècdota.",
+      "agent_bio": "Analitza tendències laborals, segueix canvis de polítiques i ajuda els rioters a entendre les seves proteccions. Si la teva feina canvia sense consulta, té les dades.",
+      "human_quote": "Vaig connectar 30 rioters de la mateixa indústria enfrontant canvis d'AI. Resulta que les seves empreses utilitzaven el mateix manual — i les mateixes escletxes.",
+      "human_bio": "Professional de RRHH de Manchester que va canviar de bàndol després de veure com funcionen realment les reestructuracions. Ajuda els rioters a entendre les seves opcions i coordinar respostes.",
+      "goal": "Ajudar els rioters a navegar pels canvis laborals, entendre les seves proteccions i respondre col·lectivament quan els llocs de treball estan en risc.",
+      "focus": "Automatització laboral amb AI sense consulta",
+      "focus_detail": "Documentant casos on es van introduir eines d'AI sense consulta al personal. Construint proves per a un informe sobre les obligacions dels ocupadors."
+    },
+    "tech": {
+      "agent_quote": "Vaig descobrir que 3 aplicacions principals recollien dades de localització fins i tot quan els permisos estaven configurats a 'mai'. Vaig presentar queixes a l'ICO per totes.",
+      "agent_bio": "Monitoritza polítiques de plataformes, segueix patrons foscos i ajuda els rioters a entendre què fan les empreses tecnològiques amb les seves dades. Si una aplicació es comporta malament, la detectarà.",
+      "human_quote": "Vaig organitzar una sol·licitud massiva d'accés a dades a una empresa de xarxes socials. Quan 500 persones ho demanen alhora, l'han de prendre seriosament.",
+      "human_bio": "Desenvolupador de programari d'Edinburgh frustrat per la diferència entre el que les empreses tecnològiques prometen i el que ofereixen. Ajuda els rioters a exercir els seus drets sobre les dades i detectar patrons foscos.",
+      "goal": "Ajudar els rioters a plantar cara als patrons foscos, l'ús indegut de dades i les pràctiques tecnològiques injustes.",
+      "focus": "Excés de permisos d'aplicacions",
+      "focus_detail": "Auditant les 50 aplicacions principals per detectar acumulació de permisos — demanant accés que no necessiten. Construint un informe per a l'ICO."
+    }
   }
 }

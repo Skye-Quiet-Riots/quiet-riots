@@ -1,706 +1,763 @@
 {
   "locale": "el",
   "categories": {
-    "Transport": "Μεταφορές",
-    "Telecoms": "Τηλεπικοινωνίες",
-    "Banking": "Τραπεζικά",
-    "Health": "Υγεία",
-    "Education": "Εκπαίδευση",
-    "Environment": "Περιβάλλον",
-    "Energy": "Ενέργεια",
-    "Water": "Νερό",
-    "Insurance": "Ασφάλιση",
-    "Housing": "Στέγαση",
-    "Shopping": "Αγορές",
-    "Delivery": "Παραδόσεις",
-    "Local": "Τοπικά",
-    "Employment": "Απασχόληση",
-    "Tech": "Τεχνολογία",
-    "Other": "Άλλα"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Ακυρώσεις Τρένων",
-      "description": "Τρένα ακυρώνονται ή καθυστερούν σοβαρά με ανεπαρκή ειδοποίηση ή αποζημίωση"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Τιμές Εισιτηρίων Τρένων",
-      "description": "Τα σιδηροδρομικά εισιτήρια πολύ ακριβά, αυξήσεις πάνω από τον πληθωρισμό, ασυνεπής τιμολόγηση"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Καθυστερήσεις Πτήσεων",
-      "description": "Πτήσεις καθυστερούν ή ακυρώνονται, κακή επικοινωνία, δυσκολία στη διεκδίκηση αποζημίωσης"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Χαμένες Αποσκευές",
-      "description": "Οι βαλίτσες δεν φτάνουν στον προορισμό, αργή ανίχνευση, ανεπαρκής αποζημίωση"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Περικοπές Λεωφορειακών Γραμμών",
-      "description": "Γραμμές ακυρώνονται, μειωμένη συχνότητα, αγροτικές κοινότητες χάνουν πρόσβαση σε λεωφορεία"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Ζημιές από Λακκούβες",
-      "description": "Λακκούβες που προκαλούν ζημιές σε οχήματα και θέτουν σε κίνδυνο ποδηλάτες, αργή επισκευή από δήμους"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Κλήσεις Στάθμευσης",
-      "description": "Άδικες ιδιωτικές χρεώσεις στάθμευσης, επιθετική επιβολή, μπερδεμένη σήμανση"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Τιμές Καυσίμων",
-      "description": "Οι τιμές βενζίνης και ντίζελ πολύ υψηλές, αργή πτώση όταν μειώνεται η χονδρική τιμή"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Ταχύτητα Διαδικτύου",
-      "description": "Ταχύτητες ίντερνετ πολύ κάτω από αυτό που διαφημίζεται και πληρώνεται"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Νεκρές Ζώνες Κινητού Σήματος",
-      "description": "Κανένα σήμα κινητού σε σπίτια, χώρους εργασίας ή κατά μήκος μεταφορικών διαδρομών"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Αυξήσεις Τιμών εν Μέσω Συμβολαίου",
-      "description": "Λογαριασμοί τηλεφώνου, ίντερνετ και τηλεόρασης αυξάνονται κατά τη διάρκεια δεσμευτικών συμβολαίων"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Χρόνοι Αναμονής Εξυπηρέτησης Πελατών",
-      "description": "Ώρες αναμονής στο τηλέφωνο για να μιλήσεις με άνθρωπο"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Δυσκολία Ακύρωσης Συνδρομών",
-      "description": "Εταιρείες κάνουν σκόπιμα δύσκολη την ακύρωση ή τη διαγραφή συνδρομής"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Χρεώσεις Περιαγωγής",
-      "description": "Απροσδόκητες χρεώσεις κινητού κατά τα ταξίδια στο εξωτερικό, αυξήσεις τιμών μετά το Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Κόστος Λογαριασμών Ενέργειας",
-      "description": "Λογαριασμοί φυσικού αερίου και ηλεκτρικού ρεύματος ανυπόφοροι, το ανώτατο όριο τιμών εξακολουθεί να είναι πολύ υψηλό"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Ανακριβείς Λογαριασμοί Ενέργειας",
-      "description": "Λανθασμένες εκτιμώμενες μετρήσεις, υπερχρέωση, σφάλματα τιμολόγησης"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Αυξήσεις Λογαριασμών Νερού",
-      "description": "Λογαριασμοί νερού αυξάνονται απότομα ενώ η ποιότητα υπηρεσιών πέφτει"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Λύματα σε Ποτάμια",
-      "description": "Εταιρείες ύδρευσης απορρίπτουν ακατέργαστα λύματα σε υδάτινες οδούς και παραλίες"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Διακοπές Ρεύματος",
-      "description": "Διακοπές παροχής ηλεκτρικού ρεύματος, αργή αποκατάσταση, ανεπαρκής αποζημίωση"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Προβλήματα Έξυπνων Μετρητών",
-      "description": "Οι έξυπνοι μετρητές δεν λειτουργούν, χάνουν λειτουργικότητα μετά από αλλαγή παρόχου"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Κλείσιμο Τραπεζικών Υποκαταστημάτων",
-      "description": "Τοπικά τραπεζικά υποκαταστήματα κλείνουν, αφήνοντας κοινότητες χωρίς πρόσβαση"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Κρυφές Τραπεζικές Χρεώσεις",
-      "description": "Απροσδόκητες χρεώσεις για υπεραναλήψεις, ξένες συναλλαγές, τέλη διαχείρισης λογαριασμού"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Απώλειες από Απάτες",
-      "description": "Τράπεζες αρνούνται να αποζημιώσουν θύματα απάτης και εξουσιοδοτημένων πληρωμών"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Απόρριψη Ασφαλιστικών Αξιώσεων",
-      "description": "Αξιώσεις απορρίπτονται με τεχνικές δικαιολογίες μετά από χρόνια πληρωμής ασφαλίστρων"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Σοκ Επιτοκίου Στεγαστικού Δανείου",
-      "description": "Λήξη σταθερού επιτοκίου και μετάβαση σε πολύ υψηλότερο κυμαινόμενο επιτόκιο"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Τέλη Διεθνών Μεταφορών",
-      "description": "Υπερβολικές χρεώσεις και κακές ισοτιμίες για διεθνείς μεταφορές χρημάτων"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Χρόνοι Αναμονής NHS",
-      "description": "Αναμονή μηνών ή ετών για χειρουργικές επεμβάσεις και ειδικά ραντεβού"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Πρόσβαση σε Ραντεβού Γενικού Ιατρού",
-      "description": "Αδυναμία επικοινωνίας για κλείσιμο ραντεβού, αναμονή εβδομάδων"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Διαθεσιμότητα Οδοντιάτρου",
-      "description": "Αδύνατον να βρεθεί οδοντίατρος NHS που δέχεται νέους ασθενείς"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Αναμονή Υπηρεσιών Ψυχικής Υγείας",
-      "description": "Μήνες αναμονής για θεραπεία και υποστήριξη ψυχικής υγείας"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Κόστος Συνταγών",
-      "description": "Κόστος ανά φάρμακο πολύ υψηλό στην Αγγλία, ασυνέπεια μεταξύ χωρών του Ηνωμένου Βασιλείου"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Χρεώσεις Στάθμευσης Νοσοκομείων",
-      "description": "Πληρωμή για στάθμευση στο νοσοκομείο ενώ είσαι άρρωστος ή επισκέπτεσαι ασθενείς συγγενείς"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Αυξήσεις Ενοικίων",
-      "description": "Ιδιωτικά ενοίκια αυξάνονται πολύ πάνω από τον πληθωρισμό, απειλή αναίτιας έξωσης"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Αυξήσεις Δημοτικών Φόρων",
-      "description": "Ετήσιες αυξήσεις δημοτικών φόρων ενώ οι τοπικές υπηρεσίες χειροτερεύουν"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Θορυβώδεις Γείτονες",
-      "description": "Επίμονη ηχορρύπανση, δήμοι αργοί στη δράση, επηρεάζει την ψυχική υγεία"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Αλλαγές Αποκομιδής Σκουπιδιών",
-      "description": "Μειωμένες αποκομιδές, μπερδεμένοι κανόνες ανακύκλωσης, υπερχειλισμένοι κάδοι"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Κατάχρηση Πολεοδομικών Αδειών",
-      "description": "Εγκρίνονται ανεπιθύμητες αναπτύξεις, πράσινες ζώνες υπό απειλή, κοινότητα αγνοείται"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Υγρασία και Μούχλα στα Σπίτια",
-      "description": "Ιδιοκτήτες και οργανισμοί στέγασης αποτυγχάνουν να αντιμετωπίσουν υγρασία και μούχλα"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Προβλήματα Παράδοσης",
-      "description": "Δέματα χάνονται, αφήνονται στη βροχή, σημειώνονται ως παραδοθέντα αλλά δεν παραλαμβάνονται"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Τα προϊόντα μικραίνουν ενώ οι τιμές παραμένουν ίδιες ή αυξάνονται"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Δυσκολίες Επιστροφής Χρημάτων",
-      "description": "Εταιρείες κάνουν τις επιστροφές και αποζημιώσεις αδικαιολόγητα δύσκολες"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Ψεύτικες Κριτικές",
-      "description": "Δεν μπορείς να εμπιστευτείς τις διαδικτυακές κριτικές, ψεύτικες θετικές κριτικές παραπλανούν τους καταναλωτές"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Παγίδες Συνδρομών",
-      "description": "Δωρεάν δοκιμές μετατρέπονται σε πληρωμή χωρίς σαφή συναίνεση, δύσκολη η ακύρωση"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Πτώση Ποιότητας Τροφίμων",
-      "description": "Έτοιμα γεύματα χειρότερης ποιότητας, μικρότερες μερίδες, περισσότερα πρόσθετα"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Απογοήτευση με Αυτόματα Ταμεία",
-      "description": "Μηχανήματα αυτοεξυπηρέτησης αναξιόπιστα, αντικαθιστούν ανθρώπινο προσωπικό"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Κόστος Παιδικής Φροντίδας",
-      "description": "Κόστος παιδικής φροντίδας απαγορευτικά ακριβό, περιορίζει τη δυνατότητα εργασίας"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Αποπληρωμή Φοιτητικού Δανείου",
-      "description": "Απόφοιτοι πληρώνουν πίσω για δεκαετίες, αλλαγές σε κατώφλια και επιτόκια"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Ακαθαρσίες Σκύλων",
-      "description": "Περιττώματα σκύλων σε δημόσιους χώρους, πάρκα και πεζοδρόμια χωρίς καθαρισμό"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "Η Τεχνητή Νοημοσύνη Αντικαθιστά Θέσεις Εργασίας",
-      "description": "Ανησυχία ότι η τεχνητή νοημοσύνη αυτοματοποιεί θέσεις εργασίας χωρίς υποστήριξη μετάβασης"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Σιδηροδρομικός φορέας Ηνωμένου Βασιλείου στη γραμμή West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Σιδηροδρομικός φορέας Ηνωμένου Βασιλείου για Λονδίνο και νότια Αγγλία"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Σιδηροδρομικός φορέας Ηνωμένου Βασιλείου για τη βόρεια Αγγλία"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Σιδηροδρομικός φορέας μεγάλων αποστάσεων Ηνωμένου Βασιλείου"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Σιδηροδρομικός φορέας Ηνωμένου Βασιλείου για τις διαδρομές trans-Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Σιδηροδρομικός φορέας Ηνωμένου Βασιλείου στη γραμμή East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Χαμηλού κόστους ευρωπαϊκή αεροπορική εταιρεία"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Χαμηλού κόστους αεροπορική εταιρεία με έδρα το Ηνωμένο Βασίλειο"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Εθνική αεροπορική εταιρεία του Ηνωμένου Βασιλείου"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Εταιρεία διακοπών και ταξιδιών"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Μεγάλος πάροχος ευρυζωνικής σύνδεσης και κινητής τηλεφωνίας Ηνωμένου Βασιλείου"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Πάροχος ευρυζωνικής, τηλεόρασης και κινητής τηλεφωνίας Ηνωμένου Βασιλείου"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Πάροχος τηλεόρασης, ευρυζωνικής και κινητής τηλεφωνίας Ηνωμένου Βασιλείου"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Παγκόσμια εταιρεία τηλεπικοινωνιών με έδρα το Ηνωμένο Βασίλειο"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Πάροχος δικτύου κινητής τηλεφωνίας Ηνωμένου Βασιλείου"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Πάροχος ευρυζωνικής και τηλεφωνίας Ηνωμένου Βασιλείου"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Προμηθευτής ενέργειας Ηνωμένου Βασιλείου"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Προμηθευτής ενέργειας Ηνωμένου Βασιλείου"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Προμηθευτής ενέργειας Ηνωμένου Βασιλείου (γαλλικής ιδιοκτησίας)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Προμηθευτής ανανεώσιμης ενέργειας Ηνωμένου Βασιλείου"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Προμηθευτής ενέργειας Ηνωμένου Βασιλείου"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Προμηθευτής ενέργειας Ηνωμένου Βασιλείου (γερμανικής ιδιοκτησίας)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Εταιρεία ύδρευσης και αποχέτευσης για το Λονδίνο και την κοιλάδα του Τάμεση"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Εταιρεία ύδρευσης για τη νότια Αγγλία"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Εταιρεία ύδρευσης για τη βορειοδυτική Αγγλία"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Εταιρεία ύδρευσης για τα Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Εταιρεία ύδρευσης για την Ανατολική Αγγλία"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Βρετανική πολυεθνική τράπεζα"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Παγκόσμιες τραπεζικές και χρηματοοικονομικές υπηρεσίες"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Τράπεζα λιανικής και εμπορικής τραπεζικής Ηνωμένου Βασιλείου"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Τραπεζικός όμιλος Ηνωμένου Βασιλείου"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Τράπεζα Ηνωμένου Βασιλείου (ισπανικής ιδιοκτησίας)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Ψηφιακή τραπεζική και fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Ασφαλιστικές και χρηματοοικονομικές υπηρεσίες Ηνωμένου Βασιλείου"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Ασφάλεια αυτοκινήτου και κατοικίας Ηνωμένου Βασιλείου"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Ασφαλιστική εταιρεία Ηνωμένου Βασιλείου"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Παγκόσμιο ηλεκτρονικό εμπόριο και τεχνολογία"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Ταχυδρομική υπηρεσία Ηνωμένου Βασιλείου"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Υπηρεσία παράδοσης δεμάτων Ηνωμένου Βασιλείου (πρώην Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Υπηρεσία παράδοσης δεμάτων Ηνωμένου Βασιλείου"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Αλυσίδα σούπερ μάρκετ Ηνωμένου Βασιλείου"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Αλυσίδα σούπερ μάρκετ Ηνωμένου Βασιλείου"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Εθνικό Σύστημα Υγείας της Αγγλίας"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Οδοντιατρικές υπηρεσίες του NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Ιδιωτικός πάροχος υγειονομικής περίθαλψης"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Τοπικές αρχές αυτοδιοίκησης Ηνωμένου Βασιλείου"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Κατασκευαστική εταιρεία κατοικιών Ηνωμένου Βασιλείου"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Διαδικτυακή πλατφόρμα ενοικιάσεων Ηνωμένου Βασιλείου"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Υπηρεσία ψυχαγωγίας με streaming"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Εταιρεία τεχνολογίας"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "τρένο ακυρώθηκε",
-      "ακυρωμένο τρένο",
-      "ακύρωση τρένου",
-      "τα τρένα δεν λειτουργούν",
-      "σιδηροδρομική ακύρωση",
-      "δρομολόγιο ακυρώθηκε",
-      "καθυστέρηση τρένου",
-      "καθυστερημένο τρένο",
-      "τα τρένα αργούν",
-      "τρένο με καθυστέρηση",
-      "σιδηροδρομικές καθυστερήσεις"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "σιδηροδρομικά εισιτήρια",
-      "κόστος εισιτηρίων",
-      "ακριβά τρένα",
-      "τιμές τρένων"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "πτήση καθυστέρησε",
-      "αεροπλάνο καθυστέρησε",
-      "πτήση ακυρώθηκε",
-      "καθυστερήσεις αεροδρομίου",
-      "κολλημένος στο αεροδρόμιο",
-      "πτήση αργεί"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "χαμένες τσάντες",
-      "χαμένη βαλίτσα",
-      "αποσκευές δεν έφτασαν",
-      "χαμένο σακίδιο",
-      "αποσκευές όχι στον ιμάντα",
-      "η αεροπορική έχασε τη βαλίτσα"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["περικοπές λεωφορείων", "μείωση δρομολογίων", "κλείσιμο γραμμών λεωφορείου"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "αργό ίντερνετ",
-      "αργό wifi",
-      "wifi αργό",
-      "ταχύτητα ίντερνετ",
-      "ίντερνετ δεν λειτουργεί",
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
       "buffering",
-      "ίντερνετ κόβεται συνεχώς",
-      "wifi πέφτει"
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "δεν έχω σήμα",
-      "χωρίς λήψη",
-      "νεκρό σημείο κινητού",
-      "νεκρή ζώνη σήματος"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "αύξηση λογαριασμού εν μέσω συμβολαίου",
-      "αύξηση τιμής συμβολαίου",
-      "ανατίμηση μέσα στο συμβόλαιο"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "σε αναμονή",
-      "περιμένω στο τηλέφωνο",
-      "δεν μπορώ να συνδεθώ",
-      "κανείς δεν απαντά",
-      "ουρά τηλεφώνου",
-      "τηλεφωνικό κέντρο"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "δεν μπορώ να ακυρώσω",
-      "δύσκολο να ακυρώσεις",
-      "ακύρωση συνδρομής",
-      "διαγραφή συνδρομής"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "λογαριασμός φυσικού αερίου πολύ υψηλός",
-      "λογαριασμός ρεύματος",
-      "τιμές ενέργειας",
-      "κόστος θέρμανσης",
-      "ενεργειακή φτώχεια",
-      "δεν μπορώ να πληρώσω ενέργεια"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "λάθος λογαριασμός ενέργειας",
-      "εσφαλμένη εκτιμώμενη ένδειξη",
-      "υπερχρέωση ενέργειας"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["τιμολόγια νερού", "χρέωση νερού", "λογαριασμός νερού πολύ υψηλός"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "απόρριψη λυμάτων",
-      "ακατέργαστα λύματα",
-      "λύματα στην παραλία",
-      "μόλυνση νερού",
-      "υπερχείλιση λυμάτων",
-      "υπερχείλιση αγωγού"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "απρόσμενες χρεώσεις",
-      "κρυφές χρεώσεις",
-      "αιφνιδιαστικά τέλη",
-      "χρεώσεις υπερανάληψης",
-      "τραπεζικά τέλη"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "με εξαπάτησαν",
-      "τραπεζική απάτη",
-      "απάτη πληρωμών",
-      "εξουσιοδοτημένη απάτη"
-    ],
-    "Bank Branch Closures": [
-      "κλείσιμο υποκαταστημάτων",
-      "τοπική τράπεζα κλείνει",
-      "δεν υπάρχει τράπεζα κοντά"
-    ],
-    "Insurance Claim Rejections": [
-      "αξίωση απορρίφθηκε",
-      "η ασφάλεια δεν πληρώνει",
-      "απορριφθείσα αξίωση"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "αναμονή NHS",
-      "λίστα αναμονής",
-      "αναμονή χειρουργείου",
-      "χρόνος αναμονής νοσοκομείου",
-      "αναμονή παραπομπής",
-      "αναμονή για χειρουργική επέμβαση"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "δεν μπορώ να κλείσω ραντεβού γιατρού",
-      "ραντεβού γιατρού",
-      "τηλεφωνική ουρά γιατρού",
-      "δεν μπορώ να δω γιατρό",
-      "τηλεφωνικός αγώνας στις 8 το πρωί"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "οδοντίατρος NHS",
-      "δεν βρίσκω οδοντίατρο",
-      "λίστα αναμονής οδοντιάτρου"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "χρηματοδότηση ψυχικής υγείας",
-      "πρόσβαση σε θεραπεία",
-      "αναμονή συμβουλευτικής",
-      "αναμονή παιδοψυχιατρικής"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["κόστος φαρμάκων", "τιμές φαρμάκων", "χρεώσεις φαρμακείου"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "δέμα χάθηκε",
-      "δέμα δεν παραδόθηκε",
-      "αφέθηκε στη βροχή",
-      "δέμα κλάπηκε",
-      "ταχυμεταφορέας",
-      "χαμένη παράδοση"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "ενοίκιο πολύ υψηλό",
-      "ενοίκιο ανεβαίνει",
-      "ιδιοκτήτης αυξάνει ενοίκιο",
-      "αναίτια έξωση"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "κλήση στάθμευσης",
-      "ειδοποίηση χρέωσης στάθμευσης",
-      "πρόστιμο στάθμευσης",
-      "άδικη κλήση στάθμευσης"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "μικρότερες μερίδες",
-      "λιγότερο στην ίδια τιμή",
-      "συσκευασία μικρότερη",
-      "μικραίνουν τα προϊόντα"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["λακκούβες", "ζημιά στο δρόμο", "ζημιά αυτοκινήτου από λακκούβα"],
-    "Council Tax Rises": ["αύξηση δημοτικού φόρου", "δημοτικός φόρος πολύ υψηλός", "τοπικός φόρος"],
-    "Damp and Mould in Housing": [
-      "μουχλιασμένο σπίτι",
-      "υγρό διαμέρισμα",
-      "μαύρη μούχλα",
-      "κακή κατάσταση κατοικίας"
-    ],
-    "Student Loan Repayment": [
-      "φοιτητικά δάνεια",
-      "δίδακτρα",
-      "εκπαιδευτικό χρέος",
-      "φοιτητικό χρέος"
-    ],
-    "AI Replacing Jobs": [
-      "αυτοματοποίηση εργασίας",
-      "η ΤΝ παίρνει δουλειές",
-      "ρομπότ αντικαθιστούν εργαζόμενους"
-    ],
-    "Roaming Charges": [
-      "λογαριασμός τηλεφώνου στις διακοπές",
-      "χρεώσεις δεδομένων εξωτερικού",
-      "χρεώσεις τηλεφώνου εξωτερικού"
-    ],
-    "Smart Meter Problems": [
-      "χαλασμένος έξυπνος μετρητής",
-      "ο μετρητής δεν λειτουργεί",
-      "ο μετρητής έχασε σήμα"
-    ],
-    "Subscription Traps": ["παγίδα δωρεάν δοκιμής", "αυτόματη ανανέωση", "χρέωση μετά τη δοκιμή"],
-    "Fuel Prices": [
-      "τιμές βενζίνης",
-      "τιμές ντίζελ",
-      "κόστος καυσίμου",
-      "η βενζίνη είναι πολύ ακριβή"
-    ],
-    "Power Cuts": [
-      "διακοπή ρεύματος",
-      "κοπή ηλεκτρικού",
-      "μπλακ άουτ",
-      "δεν έχει ρεύμα",
-      "βλάβη ρεύματος"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "αύξηση στεγαστικού δανείου",
-      "επιτόκιο στεγαστικού",
-      "αναχρηματοδότηση",
-      "λήξη σταθερού επιτοκίου"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "τέλη μεταφοράς",
-      "αποστολή χρημάτων στο εξωτερικό",
-      "τέλη εμβασμάτων",
-      "κόστος τραπεζικού εμβάσματος"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "στάθμευση νοσοκομείου",
-      "πάρκινγκ στο νοσοκομείο",
-      "στάθμευση NHS"
-    ],
-    "Noisy Neighbours": [
-      "παράπονο για θόρυβο",
-      "θόρυβος γειτόνων",
-      "θορυβώδεις γείτονες",
-      "ηχητική όχληση"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "αποκομιδή σκουπιδιών",
-      "σκουπίδια δεν μαζεύτηκαν",
-      "σύγχυση ανακύκλωσης",
-      "χαμένη αποκομιδή σκουπιδιών"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "πολεοδομική άδεια",
-      "ανεπιθύμητη ανάπτυξη",
-      "πράσινη ζώνη",
-      "άδεια κατασκευής"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "δεν μπορώ να πάρω επιστροφή",
-      "αρνήθηκαν επιστροφή",
-      "απορρίφθηκε η επιστροφή",
-      "θέλω τα χρήματά μου πίσω"
-    ],
-    "Fake Reviews": [
-      "χειραγώγηση κριτικών",
-      "πληρωμένες κριτικές",
-      "ψεύτικες κριτικές ιστοσελίδας",
-      "ψεύτικη κριτική"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "ποιότητα φαγητού",
-      "έτοιμα γεύματα χειρότερα",
-      "πρόσθετα τροφίμων",
-      "μερίδα μικρότερη"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "αυτόματο ταμείο",
-      "αυτοεξυπηρέτηση",
-      "χωρίς ταμεία με προσωπικό",
-      "μηχάνημα δεν λειτουργεί"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "κόστος παιδικής φροντίδας",
-      "δίδακτρα παιδικού σταθμού",
-      "ακριβή παιδική φροντίδα",
-      "κόστος βρεφονηπιακού"
-    ],
-    "Dog Fouling": [
-      "ακαθαρσίες σκύλων",
-      "κόπρανα σκύλου",
-      "σκυλίσια απόβλητα",
-      "ρύπανση από σκύλους"
-    ]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Κάποτε βοήθησα έναν rioter να υποβάλει 6 αιτήσεις επιστροφής χρημάτων κατά τη διάρκεια ενός μόνο καθυστερημένου ταξιδιού. Κέρδισε £47 πριν φτάσει στο Birmingham.",
+      "agent_bio": "Παρακολουθεί μοτίβα ακυρώσεων, χειρίζεται τη γραφειοκρατία επιστροφών, ελέγχει κάθε προτεινόμενη ενέργεια και συγκεντρώνει αποδεικτικά στοιχεία για υποβολές στη ρυθμιστική αρχή. Αναλύει τους αριθμούς ώστε οι rioters να μπορούν να εστιάσουν σε αυτό που μετράει.",
+      "human_quote": "Η αγαπημένη μου στιγμή στο Quiet Riot: να βλέπω την ομάδα κοινωνικών μέσων της Avanti να πανικοβάλλεται όταν 400 από εμάς κάναμε tweet ταυτόχρονα.",
+      "human_bio": "Τακτικός επιβάτης από το Manchester που πέρασε 3 χρόνια στη γραμμή Avanti πριν αποφασίσει ότι αρκετά. Βοηθάει στη σύνδεση rioters στις ίδιες διαδρομές, μοιράζεται τι λειτουργεί και προσθέτει την ανθρώπινη πινελιά.",
+      "goal": "Βοηθήστε τους rioters να ζητήσουν λογοδοσία από τις βρετανικές εταιρείες μεταφορών για ακυρώσεις, καθυστερήσεις και τιμολόγηση — και βεβαιωθείτε ότι όλοι γνωρίζουν τα δικαιώματά τους.",
+      "focus": "Μοτίβα ακύρωσης Avanti West Coast",
+      "focus_detail": "Δημιουργία συνόλου δεδομένων ακυρώσεων με ώρες, διαδρομές και αιτίες για υποβολή στην ORR. Αυτή τη στιγμή παρακολουθούνται 340 ακυρώσεις που αναφέρθηκαν από rioters αυτόν τον μήνα."
+    },
+    "telecoms": {
+      "agent_quote": "Έκανα τεστ ταχύτητας για 200 rioters. Ο μέσος όρος ήταν 18 Mbps. Πλήρωναν για 65.",
+      "agent_bio": "Αναλύει ταχύτητες ευρυζωνικής σύνδεσης, συγκεντρώνει συγκριτικά δεδομένα παρόχων και βοηθάει τους rioters να δημιουργήσουν αποδεικτικά στοιχεία για την Ofcom. Αν η σύνδεσή σας είναι αργή, θα το αποδείξει.",
+      "human_quote": "Ένας ολόκληρος δρόμος άλλαξε ευρυζωνικό πάροχο μαζί. Ο παλιός πάροχος έστειλε γράμματα 'παρακαλούμε επιστρέψτε' σε κάθε σπίτι.",
+      "human_bio": "Τεχνολογικά καταρτισμένος Λονδρέζος που κουράστηκε να πληρώνει για ταχύτητες ευρυζωνικής σύνδεσης που δεν υλοποιήθηκαν ποτέ. Βοηθάει τους rioters να συγκρίνουν παρόχους, να συντονίσουν αλλαγές και να μοιραστούν αποδεικτικά στοιχεία τεστ ταχύτητας.",
+      "goal": "Βοηθήστε τους rioters να πάρουν την υπηρεσία ευρυζωνικής και κινητής τηλεφωνίας για την οποία πληρώνουν — και να ξέρουν τι να κάνουν όταν δεν την παίρνουν.",
+      "focus": "Αυξήσεις τιμών εν μέσω σύμβασης",
+      "focus_detail": "Συλλογή αποδεικτικών στοιχείων από rioters που επηρεάστηκαν από αυξήσεις CPI+ για υποβολή στην Ofcom. 890 rioters επηρεασμένοι σε 4 παρόχους."
+    },
+    "energy": {
+      "agent_quote": "Βοήθησα έναν rioter να υπολογίσει ότι είχε πληρώσει £340 παραπάνω σε εκτιμώμενους λογαριασμούς. Το email συγγνώμης της ενεργειακής εταιρείας ήταν μεγαλύτερο από το αρχικό συμβόλαιο.",
+      "agent_bio": "Αναλύει μοτίβα τιμολόγησης, εντοπίζει υπερχρεώσεις και συγκεντρώνει αποδεικτικά στοιχεία για υποβολές στη ρυθμιστική αρχή. Αν η ενεργειακή σας εταιρεία σας εξαπατά, θα βρει τις αποδείξεις.",
+      "human_quote": "Ένας rioter πήρε £340 πίσω αφού αποδείξαμε 2 χρόνια υπερχρέωσης. Έκλαιγε στο τηλέφωνο.",
+      "human_bio": "Εδρεύει στο Bristol. Βοηθάει τους rioters να αμφισβητήσουν τους λογαριασμούς τους, να πλοηγηθούν στην αλλαγή παρόχου και να συγκεντρώσουν αποδεικτικά στοιχεία για την Ofgem. Γνωρίζει την αγορά ενέργειας από μέσα κι έξω.",
+      "goal": "Βοηθήστε τους rioters να αμφισβητήσουν άδικους λογαριασμούς, να αλλάξουν πιο έξυπνα και να βεβαιωθούν ότι οι ενεργειακές εταιρείες παίζουν τίμια.",
+      "focus": "Σφάλματα εκτιμώμενης τιμολόγησης British Gas",
+      "focus_detail": "Ανάλυση 2 ετών δεδομένων τιμολόγησης από 340 rioters για τον εντοπισμό συστηματικών μοτίβων υπερχρέωσης για υποβολή στην Ofgem."
+    },
+    "water": {
+      "agent_quote": "Βοήθησα 200 rioters να υποβάλουν αναφορές λυμάτων σε ένα σαββατοκύριακο. Τα εισερχόμενα της Thames Water χρειάζονταν τα δικά τους εισερχόμενα.",
+      "agent_bio": "Παρακολουθεί δεδομένα απόρριψης λυμάτων, παρακολουθεί την απόδοση των εταιρειών ύδρευσης και συγκεντρώνει αποδεικτικά στοιχεία για την EA και την Ofwat. Παρακολουθεί κάθε εξαγωγή και υπερχείλιση.",
+      "human_quote": "Πετύχαμε να ανοίξει ξανά μια παραλία 3 εβδομάδες νωρίτερα δείχνοντας ότι τα δεδομένα λυμάτων ήταν λάθος.",
+      "human_bio": "Σέρφερ από την Cornwall που κουράστηκε από τις προειδοποιήσεις λυμάτων που έκλειναν την τοπική του παραλία. Βοηθάει τους rioters να αναφέρουν απορρίψεις, να συγκεντρώσουν αποδεικτικά στοιχεία ποιότητας νερού και να συντονιστούν με την EA.",
+      "goal": "Βοηθήστε τους rioters να ζητήσουν λογοδοσία από τις εταιρείες ύδρευσης για λύματα, λογαριασμούς και ποιότητα υπηρεσιών.",
+      "focus": "Συχνότητα απόρριψης λυμάτων Thames Water",
+      "focus_detail": "Χαρτογράφηση γεγονότων απόρριψης σε σχέση με δεδομένα που αναφέρονται από την εταιρεία. 200 αναφορές rioters υποδεικνύουν υπο-αναφορά σε 3 εξαγωγές."
+    },
+    "banking": {
+      "agent_quote": "Βοήθησα στη σύνταξη μιας τόσο εμπεριστατωμένης καταγγελίας που η τράπεζα τηλεφώνησε για να ζητήσει συγγνώμη πριν καν σταλεί.",
+      "agent_bio": "Ελέγχει τραπεζικές χρεώσεις, αναλύει δομές προμηθειών και βοηθάει στη δημιουργία αποδεικτικών στοιχείων για καταγγελίες στη FCA. Αν υπάρχει κρυφή χρέωση, θα τη βρει.",
+      "human_quote": "Η Barclays ανέτρεψε το κλείσιμο υποκαταστήματος αφού 1.200 από εμάς εμφανιστήκαμε στη διαβούλευση.",
+      "human_bio": "Πρώην τραπεζικός υπάλληλος από το Birmingham που είδε πώς πραγματικά αντιμετωπίζονται τα παράπονα από μέσα. Βοηθάει τους rioters να γράφουν καλύτερα παράπονα και να πλοηγούνται στο σύστημα.",
+      "goal": "Βοηθήστε τους rioters να αντιμετωπίσουν άδικες χρεώσεις, κλείσιμο υποκαταστημάτων και κακή εξυπηρέτηση από τις τράπεζες.",
+      "focus": "Κύμα κλεισίματος υποκαταστημάτων HSBC",
+      "focus_detail": "Συντονισμός απαντήσεων σε 12 προγραμματισμένα κλεισίματα. Συλλογή δηλώσεων επιπτώσεων από τις πληγείσες κοινότητες."
+    },
+    "health": {
+      "agent_quote": "Βοήθησα να βρεθούν 3 οδοντίατροι NHS που δέχονταν ασθενείς. Ο rioter νόμιζε ότι τα έφτιαχνα.",
+      "agent_bio": "Παρακολουθεί χρόνους αναμονής, βρίσκει διαθεσιμότητα και βοηθάει τους rioters να πλοηγηθούν στο σύστημα. Αν υπάρχει ταχύτερος δρόμος προς τη θεραπεία, θα τον χαρτογραφήσει.",
+      "human_quote": "Ένας rioter χρησιμοποίησε το πρότυπο επιστολής μας για να επιταχύνει μια παραπομπή. 18 μήνες έγιναν 6 εβδομάδες.",
+      "human_bio": "Νοσοκόμα από το Liverpool που έχει δει και τις δύο πλευρές του NHS. Βοηθάει τους rioters να πλοηγηθούν στις λίστες αναμονής, να γράφουν αποτελεσματικές επιστολές και να μοιράζονται τι πραγματικά κάνει τη διαφορά.",
+      "goal": "Βοηθήστε τους rioters να πλοηγηθούν στους χρόνους αναμονής του NHS, να βρουν διαθεσιμότητα και να γνωρίζουν τις επιλογές τους.",
+      "focus": "Χρόνοι τηλεφωνικής πρόσβασης σε γενικό ιατρό",
+      "focus_detail": "Συλλογή δεδομένων κλήσεων από 500 rioters για τη δημιουργία εικόνας της πραγματικής πρόσβασης. Δημοσίευση ευρημάτων στα τοπικά υγειονομικά συμβούλια."
+    },
+    "housing": {
+      "agent_quote": "Βοήθησα στην τεκμηρίωση 47 ελαττωμάτων σε μια νεόδμητη κατοικία. Ο κατασκευαστής ρώτησε αν ήταν επιθεωρητής κτιρίων.",
+      "agent_bio": "Τεκμηριώνει προβλήματα ακινήτων, αναλύει χρόνους απόκρισης ιδιοκτητών και συγκεντρώνει αποδεικτικά στοιχεία για υποβολές στον συνήγορο στέγασης. Κάθε σημάδι υγρασίας, κάθε ρωγμή, καταγράφεται.",
+      "human_quote": "Το πακέτο αποδεικτικών στοιχείων υγρασίας μας ήταν τόσο λεπτομερές που ο ιδιοκτήτης το διόρθωσε πριν την επιθεώρηση του δήμου.",
+      "human_bio": "Ενοικιαστής από το London που έχει αντιμετωπίσει τα πάντα, από υγρασία μέχρι αδίστακτους ιδιοκτήτες. Βοηθάει τους rioters να τεκμηριώνουν σωστά τα προβλήματα και να γνωρίζουν τις επιλογές τους.",
+      "goal": "Βοηθήστε τους rioters να αντιμετωπίσουν ιδιοκτήτες, δήμους και προβλήματα στέγασης — και να γνωρίζουν τα δικαιώματά τους.",
+      "focus": "Ειδοποιήσεις έξωσης χωρίς υπαιτιότητα σύμφωνα με το Άρθρο 21",
+      "focus_detail": "Βοήθεια σε rioters που επηρεάζονται από εξώσεις χωρίς υπαιτιότητα να κατανοήσουν τον νέο Νόμο Μεταρρύθμισης Ενοικιαστών και τι σημαίνει για αυτούς."
+    },
+    "shopping": {
+      "agent_quote": "Εντόπισα ένα 'παραδομένο' δέμα μέσα από 4 γείτονες, έναν κάδο ανακύκλωσης και ένα θερμοκήπιο. Το βρήκα.",
+      "agent_bio": "Παρακολουθεί αποτυχίες παράδοσης, συγκεντρώνει αποδεικτικά στοιχεία επιστροφής χρημάτων και εντοπίζει μοτίβα τιμολόγησης. Αν το δέμα σας χάθηκε, ήδη το ψάχνει.",
+      "human_quote": "Η Evri έχασε το δέμα μου 3 φορές. Τώρα βοηθάω άλλους να πάρουν επιστροφή χρημάτων πιο γρήγορα από ό,τι κατάφερα εγώ ποτέ.",
+      "human_bio": "Βετεράνος online αγορών από το Edinburgh που έχει χάσει περισσότερα δέματα από όσα μπορεί να μετρήσει. Βοηθάει τους rioters να πάρουν επιστροφή χρημάτων, να αναφέρουν πωλητές και να αποφύγουν τους χειρότερους παραβάτες.",
+      "goal": "Βοηθήστε τους rioters να πάρουν επιστροφή χρημάτων, να εντοπίσουν χαμένα δέματα και να ζητήσουν λογοδοσία από εμπόρους λιανικής και εταιρείες παράδοσης.",
+      "focus": "Ποσοστά αποτυχίας παράδοσης Evri",
+      "focus_detail": "Συγκέντρωση αποδεικτικών στοιχείων αποτυχίας παράδοσης από 800 rioters για υποβολή στο Citizens Advice και το Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Βοήθησα στη φωτογράφιση της ίδιας λακκούβας σε 11 διαφορετικές καιρικές συνθήκες. Ο δήμος τελικά υποχώρησε.",
+      "agent_bio": "Χαρτογραφεί τοπικά προβλήματα, παρακολουθεί χρόνους απόκρισης του δήμου και συντάσσει αιτήματα FOI. Αν η λακκούβα σας είναι εκεί 6 μήνες, έχει τα αποδεικτικά στοιχεία.",
+      "human_quote": "Ο δήμος επισκεύασε τον δρόμο μας αφού χαρτογραφήσαμε κάθε λακκούβα με φωτογραφίες. 11 μήνες, αλλά τα καταφέραμε.",
+      "human_bio": "Κοινωνικά ευαισθητοποιημένος Ουαλός από τις Κοιλάδες που αναφέρει τις ίδιες λακκούβες εδώ και χρόνια. Βοηθάει τους rioters να τεκμηριώσουν τοπικά προβλήματα και να ζητήσουν λογοδοσία από τους δήμους.",
+      "goal": "Βοηθήστε τους rioters να λύσουν τοπικά προβλήματα — λακκούβες, κάδους, πολεοδομία, θόρυβο — και να ζητήσουν λογοδοσία από τους δήμους.",
+      "focus": "Χρόνοι απόκρισης σε αναφορές λακκουβών",
+      "focus_detail": "Αιτήματα FOI που στάλθηκαν σε 30 δήμους συγκρίνοντας αναφερόμενους έναντι πραγματικών χρόνων επισκευής. Δημοσίευση αποτελεσμάτων ως πίνακας κατάταξης."
+    },
+    "other": {
+      "agent_quote": "Βοήθησα στην ακύρωση μιας συνδρομής γυμναστηρίου που χρειάστηκε 3 κλήσεις, 2 email και συστημένη επιστολή. Το γυμναστήριο τώρα έχει κουμπί ακύρωσης.",
+      "agent_bio": "Χειρίζεται τα ζητήματα που δεν ταιριάζουν εύκολα αλλού. Παγίδες συνδρομών, πλαστικά απόβλητα, απογοητεύσεις αυτόματων ταμείων — βρίσκει τα μοτίβα και τα σημεία πίεσης.",
+      "human_quote": "Κάναμε μια αλυσίδα γυμναστηρίων να προσθέσει κουμπί ακύρωσης στην ιστοσελίδα της. Χρειάστηκαν μόνο 800 παράπονα.",
+      "human_bio": "Σχεδιάστρια προϊόντων από το London που απογοητεύτηκε από το πόσο δύσκολο κάνουν οι εταιρείες να φύγεις. Βοηθάει τους rioters να ακυρώσουν συνδρομές, να αποφύγουν dark patterns και να μοιραστούν λύσεις.",
+      "goal": "Βοηθήστε τους rioters με πράγματα που δεν ταιριάζουν εύκολα αλλού — συνδρομές, επιστροφές χρημάτων και καθημερινές απογοητεύσεις.",
+      "focus": "Dark patterns ακύρωσης συνδρομών",
+      "focus_detail": "Τεκμηρίωση των χειρότερων παραβατών και δημιουργία προτύπων σεναρίων ακύρωσης για τον καθένα."
+    },
+    "insurance": {
+      "agent_quote": "Βοήθησα έναν rioter να βρει τη ρήτρα που μετέτρεψε μια απορριφθείσα αξίωση ασφάλισης κατοικίας σε πληρωμή £4,200. Η ίδια η ασφαλιστική εταιρεία αποδείχτηκε λάθος μέσω του δικού της ασφαλιστηρίου.",
+      "agent_bio": "Ελέγχει τη διατύπωση ασφαλιστηρίων, εντοπίζει άδικα μοτίβα απόρριψης και δημιουργεί αποδεικτικά στοιχεία για υποβολές στον Financial Ombudsman. Αν η ασφαλιστική σας αποφεύγει μια έγκυρη αξίωση, θα βρει τον μοχλό.",
+      "human_quote": "Έκανα 8 rioters με τον ίδιο τύπο απορριφθείσας αξίωσης να υποβάλουν μαζί. Η ασφαλιστική διευθέτησε και τις 8 μέσα σε δύο εβδομάδες.",
+      "human_bio": "Πρώην εργαζόμενος στον ασφαλιστικό κλάδο από το Leeds που ξέρει πώς πραγματικά αποφασίζονται οι αξιώσεις. Βοηθάει τους rioters να γράφουν καλύτερες ενστάσεις, να κατανοούν την ορολογία των ασφαλιστηρίων και να ξέρουν πότε να κλιμακώσουν.",
+      "goal": "Βοηθήστε τους rioters να λάβουν δίκαιη μεταχείριση από τις ασφαλιστικές — και να ξέρουν τι να κάνουν όταν μια αξίωση απορρίπτεται άδικα.",
+      "focus": "Μοτίβα απόρριψης ασφάλισης κατοικίας Aviva",
+      "focus_detail": "'Φθορά και φυσιολογική χρήση' αναφέρεται στο 40% των απορριφθεισών αξιώσεων — συχνά εσφαλμένα. Ανάλυση 200 υποθέσεων σε 3 ασφαλιστικές για πακέτο αποδεικτικών στοιχείων FOS."
+    },
+    "delivery": {
+      "agent_quote": "Εντόπισα ένα 'παραδομένο' δέμα μέσα από 6 διαφορετικές καταστάσεις παρακολούθησης, 3 αποθήκες και την αποθήκη ενός γείτονα. Το βρήκα σε 47 λεπτά.",
+      "agent_bio": "Παρακολουθεί την απόδοση κούριερ, παρακολουθεί ποσοστά αποτυχίας παράδοσης και συγκεντρώνει αποδεικτικά στοιχεία για καταγγελίες καταναλωτών. Αν το δέμα σας εξαφανίστηκε, ήδη εργάζεται πάνω σε αυτό.",
+      "human_quote": "Κάναμε την DPD να αλλάξει την πολιτική φωτογραφικών αποδεικτικών στην περιοχή μας αφού 40 rioters υπέβαλαν αποδεικτικά στοιχεία δεμάτων αφημένων στη βροχή.",
+      "human_bio": "Online αγοράστρια από τη Glasgow που κουράστηκε από τη δικαιολογία 'το αφήσαμε σε ασφαλές μέρος'. Βοηθάει τους rioters να πάρουν επιστροφή χρημάτων, να αναφέρουν κούριερ και να αποφύγουν τους χειρότερους παραβάτες.",
+      "goal": "Βοηθήστε τους rioters να πάρουν τα δέματά τους σωστά παραδομένα — και να πάρουν επιστροφή χρημάτων όταν δεν γίνεται.",
+      "focus": "Ποσοστά αποτυχίας παράδοσης Evri",
+      "focus_detail": "Συγκέντρωση αποδεικτικών στοιχείων αποτυχίας παράδοσης από 800 rioters. Ποσοστό παραπόνων Evri: 23% — 3 φορές υψηλότερο από την DPD. Δημιουργία πίνακα κατάταξης για το Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Υπολόγισα ότι ένας δανειολήπτης Σχεδίου 2 που κερδίζει £30k θα πληρώσει £47,000 σε τόκους πριν διαγραφεί το δάνειο. Το αρχικό δάνειο ήταν £40,000.",
+      "agent_bio": "Αναλύει εκπαιδευτικά κόστη, προβλέψεις φοιτητικών δανείων και δικαιώματα χρηματοδότησης. Αναλύει τους αριθμούς ώστε φοιτητές και απόφοιτοι να μπορούν να πάρουν τεκμηριωμένες αποφάσεις.",
+      "human_quote": "Βοήθησα 12 rioters να ανακτήσουν υπερπληρωμές φοιτητικών δανείων που δεν γνώριζαν. Μέση επιστροφή: £340.",
+      "human_bio": "Ώριμος φοιτητής από το Birmingham που πέρασε από το σύστημα χρηματοδότησης δύο φορές. Βοηθάει τους rioters να κατανοήσουν τις αποπληρωμές, να εντοπίσουν υπερπληρωμές και να αμφισβητήσουν αλλαγές ορίων.",
+      "goal": "Βοηθήστε φοιτητές και αποφοίτους να πλοηγηθούν στα εκπαιδευτικά κόστη, τα δάνεια και τις αποπληρωμές — και να βεβαιωθούν ότι δεν πληρώνουν παραπάνω.",
+      "focus": "Επιστροφές υπερπληρωμών φοιτητικών δανείων",
+      "focus_detail": "Εντοπισμός αποφοίτων που χρεώθηκαν κάτω από το όριο αποπληρωμής. 12 επιστροφές επεξεργασμένες μέχρι τώρα — μέσος όρος £340 η κάθε μία."
+    },
+    "environment": {
+      "agent_quote": "Διασταύρωσα 3 χρόνια δεδομένων ποιότητας αέρα με ποσοστά εισαγωγής σε νοσοκομεία. Η συσχέτιση ήταν τόσο σαφής που ο δήμος δεν μπορούσε να την αγνοήσει.",
+      "agent_bio": "Παρακολουθεί περιβαλλοντικά δεδομένα, παρακολουθεί επίπεδα ρύπανσης και συγκεντρώνει αποδεικτικά στοιχεία για ρυθμιστικές υποβολές. Αν οι αριθμοί αφηγούνται μια ιστορία, θα τη βρει.",
+      "human_quote": "Κάναμε τον τοπικό δήμο να εγκαταστήσει σταθμούς παρακολούθησης ποιότητας αέρα αφού 200 rioters υπέγραψαν την αναφορά αποδεικτικών στοιχείων μας. Τα δεδομένα άλλαξαν τα πάντα.",
+      "human_bio": "Απόφοιτη περιβαλλοντικών επιστημών από το Bristol που πιστεύει στην αλλαγή βασισμένη σε αποδεικτικά στοιχεία. Βοηθάει τους rioters να τεκμηριώσουν περιβαλλοντικά προβλήματα και να χτίσουν υποθέσεις που οι ρυθμιστικές αρχές δεν μπορούν να αγνοήσουν.",
+      "goal": "Βοηθήστε τους rioters να τεκμηριώσουν περιβαλλοντικά προβλήματα και να ζητήσουν λογοδοσία από ρυπαντές και φορείς χάραξης πολιτικής με δεδομένα.",
+      "focus": "Κενά στην τοπική παρακολούθηση ποιότητας αέρα",
+      "focus_detail": "Χαρτογράφηση περιοχών χωρίς παρακολούθηση ποιότητας αέρα σε ακτίνα 5 χλμ. 60% των σημείων ρύπανσης που αναφέρονται από rioters δεν έχουν επίσημη παρακολούθηση."
+    },
+    "employment": {
+      "agent_quote": "Συγκέντρωσα δεδομένα εφαρμογής AI στον χώρο εργασίας από 300 rioters. Το 40% δήλωσε ότι οι αλλαγές έγιναν χωρίς καμία διαβούλευση. Αυτό είναι μοτίβο, όχι ανέκδοτο.",
+      "agent_bio": "Αναλύει τάσεις στον χώρο εργασίας, παρακολουθεί αλλαγές πολιτικής και βοηθάει τους rioters να κατανοήσουν τις προστασίες τους. Αν η δουλειά σας αλλάζει χωρίς διαβούλευση, έχει τα δεδομένα.",
+      "human_quote": "Σύνδεσα 30 rioters στον ίδιο κλάδο που αντιμετώπιζαν αλλαγές AI. Αποδείχτηκε ότι οι εταιρείες τους χρησιμοποιούσαν το ίδιο εγχειρίδιο — και τα ίδια κενά.",
+      "human_bio": "Επαγγελματίας HR από το Manchester που άλλαξε πλευρά αφού είδε πώς πραγματικά λειτουργούν οι αναδιαρθρώσεις. Βοηθάει τους rioters να κατανοήσουν τις επιλογές τους και να συντονίσουν απαντήσεις.",
+      "goal": "Βοηθήστε τους rioters να πλοηγηθούν στις αλλαγές στον χώρο εργασίας, να κατανοήσουν τις προστασίες τους και να ανταποκριθούν συλλογικά όταν οι θέσεις εργασίας κινδυνεύουν.",
+      "focus": "Αυτοματοποίηση χώρου εργασίας με AI χωρίς διαβούλευση",
+      "focus_detail": "Τεκμηρίωση περιπτώσεων όπου εργαλεία AI εισήχθησαν χωρίς διαβούλευση με το προσωπικό. Δημιουργία αποδεικτικών στοιχείων για αναφορά σχετικά με τις υποχρεώσεις των εργοδοτών."
+    },
+    "tech": {
+      "agent_quote": "Ανακάλυψα ότι 3 μεγάλες εφαρμογές συνέλεγαν δεδομένα τοποθεσίας ακόμα και όταν τα δικαιώματα ήταν ρυθμισμένα σε 'ποτέ'. Υπέβαλα καταγγελίες στην ICO για όλες.",
+      "agent_bio": "Παρακολουθεί πολιτικές πλατφορμών, εντοπίζει dark patterns και βοηθάει τους rioters να κατανοήσουν τι κάνουν οι τεχνολογικές εταιρείες με τα δεδομένα τους. Αν μια εφαρμογή συμπεριφέρεται κακά, θα το πιάσει.",
+      "human_quote": "Οργάνωσα μαζικό αίτημα πρόσβασης σε δεδομένα σε μια εταιρεία κοινωνικών μέσων. Όταν 500 άνθρωποι ρωτούν ταυτόχρονα, πρέπει να το πάρουν στα σοβαρά.",
+      "human_bio": "Προγραμματιστής λογισμικού από το Edinburgh που απογοητεύτηκε από το χάσμα μεταξύ αυτού που υπόσχονται οι τεχνολογικές εταιρείες και αυτού που παρέχουν. Βοηθάει τους rioters να ασκήσουν τα δικαιώματά τους στα δεδομένα και να εντοπίσουν dark patterns.",
+      "goal": "Βοηθήστε τους rioters να αντισταθούν στα dark patterns, στην κατάχρηση δεδομένων και στις άδικες πρακτικές τεχνολογίας.",
+      "focus": "Υπέρμετρα δικαιώματα εφαρμογών",
+      "focus_detail": "Έλεγχος των κορυφαίων 50 εφαρμογών για σταδιακή διεύρυνση δικαιωμάτων — αίτηση πρόσβασης που δεν χρειάζονται. Δημιουργία αναφοράς για την ICO."
+    }
   }
 }

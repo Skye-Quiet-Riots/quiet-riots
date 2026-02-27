@@ -1,705 +1,763 @@
 {
   "locale": "tl",
   "categories": {
-    "Transport": "Transportasyon",
-    "Telecoms": "Telekomunikasyon",
-    "Banking": "Pagbabangko",
-    "Health": "Kalusugan",
-    "Education": "Edukasyon",
-    "Environment": "Kapaligiran",
-    "Energy": "Enerhiya",
-    "Water": "Tubig",
-    "Insurance": "Seguro",
-    "Housing": "Pabahay",
-    "Shopping": "Pamimili",
-    "Delivery": "Paghahatid",
-    "Local": "Lokal",
-    "Employment": "Trabaho",
-    "Tech": "Teknolohiya",
-    "Other": "Iba Pa"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Pagkansela ng Tren",
-      "description": "Mga tren na kinansela o labis na naantala nang walang sapat na abiso o kabayaran"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Presyo ng Tiket sa Tren",
-      "description": "Masyadong mahal ang pamasahe sa tren, pagtaas na lampas sa implasyon, hindi pare-parehong presyo"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Pagkaantala ng Eroplano",
-      "description": "Mga flight na naantala o kinansela, mahinang komunikasyon, mahirap mag-claim ng kabayaran"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Nawawalang Bagahe",
-      "description": "Hindi dumating ang mga bag sa destinasyon, mabagal na paghahanap, hindi sapat na kabayaran"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Pagbawas ng Ruta ng Bus",
-      "description": "Mga ruta na kinansela, binawasan ang dalas, nawawalan ng access sa bus ang mga komunidad sa lalawigan"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Pinsala mula sa Lubak",
-      "description": "Mga lubak na sumisira sa sasakyan at nanganganib sa mga siklista, mabagal ang konseho sa pag-aayos"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Multa sa Paradahan",
-      "description": "Hindi patas na bayarin sa pribadong paradahan, agresibong pagpapatupad, nakakalitong karatula"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Presyo ng Gasolina",
-      "description": "Masyadong mahal ang gasolina at diesel, mabagal bumaba kahit bumaba ang presyo sa wholesale"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Bilis ng Broadband",
-      "description": "Bilis ng internet na malayong mas mababa sa inaanunsyo at binabayaran"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mga Lugar na Walang Signal",
-      "description": "Walang signal ng mobile sa mga tahanan, lugar ng trabaho, o sa mga ruta ng transportasyon"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Pagtaas ng Presyo sa Gitna ng Kontrata",
-      "description": "Tumataas ang mga bill sa telepono, broadband at TV habang naka-lock sa kontrata"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Mahabang Paghihintay sa Customer Service",
-      "description": "Oras-oras na naghihintay para makausap ang isang tao"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Kahirapan sa Pagkansela ng Subscription",
-      "description": "Sinasadya ng mga kumpanya na pahirapan ang pagkansela o pag-unsubscribe"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Bayarin sa Roaming",
-      "description": "Hindi inaasahang mga singil sa mobile kapag nasa ibang bansa, pagtaas ng presyo pagkatapos ng Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Gastos sa Bill ng Enerhiya",
-      "description": "Hindi kayang bayaran ang bill sa gas at kuryente, masyadong mataas pa rin ang price cap"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Hindi Tumpak na Bill ng Enerhiya",
-      "description": "Maling estimated na pagbasa, labis na singil, mga error sa billing"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Pagtaas ng Bill sa Tubig",
-      "description": "Mabilis na pagtaas ng bill sa tubig habang bumababa ang kalidad ng serbisyo"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Dumi sa mga Ilog",
-      "description": "Mga kumpanya ng tubig na nagtatapon ng hilaw na dumi sa mga daluyan ng tubig at mga dalampasigan"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Pagkaputol ng Kuryente",
-      "description": "Pagkaantala ng suplay ng kuryente, mabagal na pagbabalik, hindi sapat na kabayaran"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Problema sa Smart Meter",
-      "description": "Hindi gumagana ang smart meter, nawawalan ng function pagkatapos magpalit ng supplier"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Pagsasara ng mga Sangay ng Bangko",
-      "description": "Nagsasara ang mga lokal na sangay ng bangko, naiiwang walang access ang mga komunidad"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Nakatagong Bayarin sa Bangko",
-      "description": "Hindi inaasahang bayarin para sa overdraft, dayuhang transaksyon, pagpapanatili ng account"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Pagkalugi sa Panloloko at Scam",
-      "description": "Tumatangging mag-reimburse ang mga bangko sa mga biktima ng panloloko at awtorisadong push payment scam"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Pagtanggi sa Claim ng Seguro",
-      "description": "Mga claim na tinanggihan dahil sa mga teknikal na dahilan pagkatapos ng maraming taon ng pagbabayad ng premium"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Pagkagulat sa Rate ng Mortgage",
-      "description": "Natapos ang fixed rate at lumipat sa mas mataas na variable rate"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Bayarin sa Padala sa Ibang Bansa",
-      "description": "Labis na bayarin at mahinang palitan ng pera para sa internasyonal na pagpapadala ng pera"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Oras ng Paghihintay sa NHS",
-      "description": "Ilang buwan o ilang taon na paghihintay para sa mga operasyon at appointment sa espesyalista"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Access sa Appointment sa GP",
-      "description": "Hindi makapag-book ng appointment sa GP, ilang linggo ang paghihintay"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Pagkakaroon ng Dentista",
-      "description": "Imposibleng makahanap ng NHS dentista na tumatanggap ng bagong pasyente"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Paghihintay sa Serbisyo ng Mental Health",
-      "description": "Ilang buwang paghihintay para sa therapy at suporta sa mental health"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Gastos sa Reseta",
-      "description": "Masyadong mahal ang bawat item sa England, hindi pare-pareho sa mga bansa ng UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Bayarin sa Paradahan ng Ospital",
-      "description": "Nagbabayad para mag-park sa ospital habang may sakit o bumibisita sa may sakit na kamag-anak"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Pagtaas ng Upa",
-      "description": "Pagtaas ng upa sa pribado na lampas sa implasyon, banta ng pagpapaalis nang walang kasalanan"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Pagtaas ng Council Tax",
-      "description": "Taunang pagtaas ng council tax habang lumalala ang mga lokal na serbisyo"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Maingay na Kapitbahay",
-      "description": "Patuloy na ingay, mabagal kumilos ang konseho, nakakaapekto sa mental health"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Pagbabago sa Koleksyon ng Basura",
-      "description": "Nabawasan ang koleksyon ng basura, nakakalitong patakaran sa recycling, umaapaw na mga basurahan"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Pag-abuso sa Permit ng Konstruksyon",
-      "description": "Inaprubahan ang hindi gustong mga development, nanganganib ang green belt, binabalewala ang komunidad"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Halumigmig at Amag sa Pabahay",
-      "description": "Nabibigo ang mga may-ari ng bahay at housing association na ayusin ang halumigmig at amag"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Problema sa Paghahatid",
-      "description": "Mga parsela na nawala, iniwan sa ulan, minarkahang naihatid pero hindi natanggap"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Lumiliit ang mga produkto habang nananatili o tumataas ang presyo"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Kahirapan sa Refund",
-      "description": "Sinasadya ng mga kumpanya na pahirapan ang pagbabalik at refund"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Pekeng Review",
-      "description": "Hindi mapagkakatiwalaan ang mga online review, nakakapanlinlang na pekeng positibong review sa mga mamimili"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Bitag sa Subscription",
-      "description": "Mga libreng trial na nagiging bayad nang walang malinaw na pahintulot, mahirap ikansela"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Pagbaba ng Kalidad ng Pagkain",
-      "description": "Bumaba ang kalidad ng mga ready meal, lumiliit ang sukat, mas maraming additives"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Inis sa Self-Checkout",
-      "description": "Hindi maaasahan ang mga self-service machine, pinapalitan ang mga empleyado"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Gastos sa Pag-aalaga ng Bata",
-      "description": "Masyadong mahal ang childcare, nilimitahan ang kakayahang magtrabaho"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Pagbabayad ng Student Loan",
-      "description": "Mga nagtapos na nagbabayad ng ilang dekada, pagbabago sa threshold at interes"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Dumi ng Aso",
-      "description": "Dumi ng aso sa mga pampublikong lugar, parke, at bangketa na hindi nililinis"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI na Pumapalit sa mga Trabaho",
-      "description": "Pagkabalisa tungkol sa artificial intelligence na nag-a-automate ng mga trabaho nang walang suporta sa paglipat"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Operator ng tren sa UK na nagsisilbi sa West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Operator ng tren sa UK na nagsisilbi sa London at timog"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Operator ng tren sa UK na nagsisilbi sa hilaga ng England"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Operator ng tren sa UK para sa mahabang distansya"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Operator ng tren sa UK na nagsisilbi sa mga ruta ng trans-Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Operator ng tren sa UK na nagsisilbi sa East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Murang airline sa Europa"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Murang airline na base sa UK"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Pambansang airline ng UK"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Kumpanya ng bakasyon at paglalakbay"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Malaking provider ng broadband at mobile sa UK"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Provider ng broadband, TV, at mobile sa UK"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Provider ng TV, broadband, at mobile sa UK"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Pandaigdigang kumpanya ng telekomunikasyon na nakabase sa UK"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Operator ng mobile network sa UK"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Provider ng broadband at telepono sa UK"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Supplier ng enerhiya sa UK"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Supplier ng enerhiya sa UK"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Supplier ng enerhiya sa UK (pag-aari ng France)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Supplier ng renewable energy sa UK"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Supplier ng enerhiya sa UK"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Supplier ng enerhiya sa UK (pag-aari ng Germany)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Kumpanya ng tubig at alkantarilya para sa London at Thames Valley"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Kumpanya ng tubig para sa timog ng England"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Kumpanya ng tubig para sa hilagang-kanluran ng England"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Kumpanya ng tubig para sa Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Kumpanya ng tubig para sa East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Multinasyonal na bangko ng Britain"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Pandaigdigang serbisyo sa pagbabangko at pananalapi"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Bangko sa UK para sa retail at komersyal"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Grupo ng pagbabangko sa UK"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Bangko sa UK (pag-aari ng Spain)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital na pagbabangko at fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Seguro at serbisyong pinansyal sa UK"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Seguro ng kotse at bahay sa UK"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Kumpanya ng seguro sa UK"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Pandaigdigang e-commerce at teknolohiya"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Serbisyo ng koreo sa UK"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Serbisyo ng paghahatid ng parsela sa UK (dating Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Serbisyo ng paghahatid ng parsela sa UK"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Kadena ng supermarket sa UK"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Kadena ng supermarket sa UK"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Pambansang Serbisyo ng Kalusugan para sa England"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Mga serbisyo sa ngipin ng NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Pribadong provider ng pangangalagang pangkalusugan"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Mga awtoridad ng lokal na pamahalaan sa UK"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Tagapagtayo ng bahay sa UK"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Online na platform ng pagpapaupa sa UK"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Serbisyo ng streaming entertainment"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Kumpanya ng teknolohiya"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "kinansela ang tren",
-      "tren na kinansela",
-      "pagkansela ng tren",
-      "hindi tumatakbo ang tren",
-      "riles kinansela",
-      "serbisyo kinansela",
-      "antala ng tren",
-      "naantalang tren",
-      "late ang tren",
-      "tren na late",
-      "antala sa riles"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "pamasahe sa tren",
-      "gastos sa tiket",
-      "mahal na tren",
-      "taripa sa tren"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "naantalang flight",
-      "naantalang eroplano",
-      "kinansela ang flight",
-      "antala sa paliparan",
-      "naiipit sa paliparan",
-      "late ang flight"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "nawawalang bag",
-      "nawawalang maleta",
-      "hindi dumating ang bag",
-      "nawawalang bagahe",
-      "wala sa carousel ang bag",
-      "nawala ng airline ang bag"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["pagbawas ng bus", "pagbawas ng ruta", "pagsasara ng serbisyo ng bus"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "mabagal na internet",
-      "mabagal na wifi",
-      "wifi mabagal",
-      "bilis ng internet",
-      "hindi gumagana ang broadband",
-      "laging nag-buffer",
-      "nawawala ang internet",
-      "nawawala ang wifi"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "walang signal",
-      "walang reception",
-      "walang serbisyo ang mobile",
-      "patay na signal"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "pagtaas ng bill sa kontrata",
-      "pagtaas ng presyo sa kontrata",
-      "dagdag sa gitna ng kontrata"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "naghihintay sa linya",
-      "naghihintay sa telepono",
-      "hindi makausap",
-      "walang sumasagot",
-      "pila sa telepono",
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
       "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "hindi makakansela",
-      "mahirap ikansela",
-      "kansela ng subscription",
-      "mag-unsubscribe"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "mataas ang bill sa gas",
-      "bill sa kuryente",
-      "presyo ng enerhiya",
-      "gastos sa pampainit",
-      "hirap sa enerhiya",
-      "hindi mabayaran ang kuryente"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "maling bill sa enerhiya",
-      "maling estimated reading",
-      "sobrang singil sa enerhiya"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["bayarin sa tubig", "singil sa tubig", "mataas ang bill sa tubig"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "pagtatapon ng dumi",
-      "hilaw na dumi",
-      "dumi sa dalampasigan",
-      "polusyon sa tubig",
-      "pag-apaw ng dumi",
-      "pag-apaw ng alkantarilya"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "hindi inaasahang bayarin",
-      "nakatagong bayarin",
-      "biglang singil",
-      "bayarin sa overdraft",
-      "bayarin sa bangko"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "na-scam",
-      "panloloko sa bangko",
-      "push payment scam",
-      "awtorisadong panloloko"
-    ],
-    "Bank Branch Closures": [
-      "pagsasara ng sangay",
-      "nagsasara ang lokal na bangko",
-      "walang bangko sa malapit"
-    ],
-    "Insurance Claim Rejections": [
-      "tinanggihang claim",
-      "ayaw magbayad ng seguro",
-      "na-reject na claim"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "paghihintay sa NHS",
-      "listahan ng naghihintay",
-      "paghihintay sa operasyon",
-      "oras ng paghihintay sa ospital",
-      "paghihintay sa referral",
-      "naghihintay ng surgery"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "hindi makakuha ng appointment sa GP",
-      "appointment sa doktor",
-      "pila sa telepono ng GP",
-      "hindi makita ang doktor",
-      "agahan na pagpila sa telepono"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS dentista",
-      "hindi makahanap ng dentista",
-      "listahan ng naghihintay sa dentista"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "pondo sa mental health",
-      "access sa therapy",
-      "paghihintay sa counselling",
-      "paghihintay sa CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["gastos sa gamot", "presyo ng gamot", "bayarin sa parmasya"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "nawawalang parsela",
-      "hindi naihatid ang parsela",
-      "iniwan sa ulan",
-      "ninakaw na package",
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
       "delivery driver",
-      "hindi nakuhang delivery"
+      "missed delivery"
     ],
     "Rent Increases": [
-      "mataas ang upa",
-      "tumataas ang upa",
-      "tinataasan ng may-ari ang upa",
-      "pagpapaalis nang walang kasalanan"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "tiket sa paradahan",
-      "abiso ng singil sa paradahan",
-      "PCN",
-      "hindi patas na multa sa paradahan"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "lumiliit na sukat",
-      "mas kaunti sa parehong presyo",
-      "lumiliit ang pakete",
-      "lumiliit na produkto"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["mga lubak", "sira sa kalsada", "pinsala ng lubak sa sasakyan"],
-    "Council Tax Rises": [
-      "pagtaas ng council tax",
-      "masyadong mataas ang council tax",
-      "lokal na buwis"
-    ],
-    "Damp and Mould in Housing": [
-      "bahay na may amag",
-      "basa ang apartment",
-      "itim na amag",
-      "sirang pabahay"
-    ],
-    "Student Loan Repayment": [
-      "student loan",
-      "bayarin sa matrikula",
-      "utang sa edukasyon",
-      "utang ng estudyante"
-    ],
-    "AI Replacing Jobs": [
-      "automation ng trabaho",
-      "AI na kumukuha ng trabaho",
-      "robot na pumapalit sa manggagawa"
-    ],
-    "Roaming Charges": [
-      "bill sa telepono sa bakasyon",
-      "singil sa data sa ibang bansa",
-      "singil sa telepono sa ibang bansa"
-    ],
-    "Smart Meter Problems": [
-      "sirang smart meter",
-      "hindi gumagana ang meter",
-      "nawalan ng signal ang meter"
-    ],
-    "Subscription Traps": [
-      "bitag sa libreng trial",
-      "awtomatikong renewal",
-      "siningil pagkatapos ng trial"
-    ],
-    "Fuel Prices": [
-      "presyo ng gasolina",
-      "presyo ng diesel",
-      "gastos sa gasolina",
-      "masyadong mahal ang gasolina"
-    ],
-    "Power Cuts": [
-      "brownout",
-      "naputol ang kuryente",
-      "blackout",
-      "walang kuryente",
-      "pagkasira ng kuryente"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "pagtaas ng mortgage",
-      "rate ng mortgage",
+      "mortgage increase",
+      "mortgage rate",
       "remortgage",
-      "matatapos ang fixed rate"
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "bayarin sa padala",
-      "pagpapadala ng pera sa ibang bansa",
-      "bayarin sa remittance",
-      "gastos sa wire transfer"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["paradahan sa ospital", "pag-park sa ospital", "NHS parking"],
-    "Noisy Neighbours": [
-      "reklamo sa ingay",
-      "ingay ng kapitbahay",
-      "maingay na kapitbahay",
-      "nakakagambalang ingay"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "koleksyon ng basura",
-      "hindi kinuha ang basura",
-      "nakakalitong recycling",
-      "hindi nakuha ang basura"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "permiso sa konstruksyon",
-      "hindi gustong development",
+      "planning permission",
+      "unwanted development",
       "green belt",
-      "permiso sa pagtatayo"
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "hindi makakuha ng refund",
-      "tinanggihan ang refund",
-      "tinanggihan ang pagbabalik",
-      "ibalik ang pera"
-    ],
-    "Fake Reviews": [
-      "manipulasyon ng review",
-      "binayarang review",
-      "peke sa trust pilot",
-      "pekeng review"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "kalidad ng pagkain",
-      "lumala ang ready meal",
-      "additives sa pagkain",
-      "lumiliit na sukat"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
       "self checkout",
       "self service",
-      "walang kahera",
-      "hindi gumagana ang makina"
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "gastos sa childcare",
-      "bayarin sa nursery",
-      "mahal na childcare",
-      "gastos sa daycare"
-    ],
-    "Dog Fouling": ["dumi ng aso", "tae ng aso", "basura ng aso", "pagdumi"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Minsan ay tinulungan ko ang isang miyembro ng Quiet Riot na mag-file ng 6 na refund claim sa isang delayed na biyahe. Nakakuha sila ng £47 bago pa man makarating sa Birmingham.",
+      "agent_bio": "Sinusubaybayan ang mga pattern ng cancellation, inaayos ang mga papeles para sa refund, sinusuri ang bawat iminumungkahing aksyon, at nag-iipon ng ebidensya para sa mga submission sa regulator. Sinusuri ang mga numero para makapag-focus ang mga miyembro sa mas mahahalagang bagay.",
+      "human_quote": "Ang paborito kong Quiet Riot moment: nang makita ang social media team ng Avanti na nagpapanic nang 400 sa amin ang nag-tweet nang sabay-sabay.",
+      "human_bio": "Regular na commuter mula Manchester na 3 taon sa Avanti line bago nagdesisyon na tama na. Tumutulong ikonekta ang mga miyembro sa parehong ruta, nagbabahagi ng kung ano ang gumagana, at nagdadala ng human touch.",
+      "goal": "Tulungan ang mga miyembro ng Quiet Riot na panagutin ang mga UK transport company sa mga cancellation, delay, at presyo — at tiyaking alam ng lahat ang kanilang mga karapatan.",
+      "focus": "Avanti West Coast cancellation patterns",
+      "focus_detail": "Nagtatayo ng dataset ng mga cancellation na may oras, ruta, at dahilan para i-submit sa ORR. Kasalukuyang sinusubaybayan ang 340 cancellation na ini-report ng mga miyembro ngayong buwan."
+    },
+    "telecoms": {
+      "agent_quote": "Nag-run ng speed test para sa 200 miyembro. Average ay 18 Mbps. Nagbabayad sila para sa 65.",
+      "agent_bio": "Sinusuri ang broadband speed, nag-iipon ng data para sa pagkumpara ng provider, at tumutulong sa mga miyembro na bumuo ng ebidensya para sa Ofcom. Kung mabagal ang connection mo, papatunayan ni Pulse.",
+      "human_quote": "Isang buong kalye ang sabay-sabay na nagpalit ng broadband. Nagpadala ang lumang provider ng 'please come back' letter sa bawat bahay.",
+      "human_bio": "Tech-savvy na Londoner na napagod na magbayad para sa broadband speed na hindi naman natutupad. Tumutulong sa mga miyembro na ikumpara ang mga provider, i-coordinate ang mga switch, at magbahagi ng speed test evidence.",
+      "goal": "Tulungan ang mga miyembro na makuha ang broadband at mobile service na binabayaran nila — at malaman kung ano ang gagawin kapag hindi nila nakukuha.",
+      "focus": "Mid-contract price rises",
+      "focus_detail": "Nangongolekta ng ebidensya mula sa mga miyembrong apektado ng CPI+ increase para i-submit sa Ofcom. 890 miyembro ang apektado sa 4 na provider."
+    },
+    "energy": {
+      "agent_quote": "Tinulungan ang isang miyembro na kalkulahin na sobrang nagbayad sila ng £340 sa estimated bill. Mas mahaba ang apology email ng energy company kaysa sa orihinal na kontrata.",
+      "agent_bio": "Sinusuri ang mga pattern ng billing, nag-i-spot ng overcharge, at nag-iipon ng ebidensya para sa mga submission sa regulator. Kung ginagago ka ng energy company mo, hahanapin ni Spark ang mga resibo.",
+      "human_quote": "Nakuha ng isang miyembro ang £340 na ibalik matapos naming patunayan ang 2 taon na overcharging. Umiyak siya sa telepono.",
+      "human_bio": "Nakabase sa Bristol. Tumutulong sa mga miyembro na i-challenge ang kanilang mga bill, mag-navigate sa paglipat, at mangolekta ng ebidensya para sa Ofgem. Kilala na kilala ang energy market.",
+      "goal": "Tulungan ang mga miyembro na i-challenge ang mga unfair na bill, maglipat nang mas matalino, at tiyaking patas ang laro ng mga energy company.",
+      "focus": "British Gas estimated billing errors",
+      "focus_detail": "Sinusuri ang 2 taon na billing data mula sa 340 miyembro para tukuyin ang mga systematic overcharging pattern para sa Ofgem submission."
+    },
+    "water": {
+      "agent_quote": "Tinulungan ang 200 miyembro na mag-file ng sewage report sa isang weekend. Kailangan ng inbox ng Thames Water ng sarili nitong inbox.",
+      "agent_bio": "Sinusubaybayan ang sewage discharge data, sinusubaybayan ang performance ng water company, at nag-iipon ng ebidensya para sa EA at Ofwat. Binabantayan ang bawat outlet at overflow.",
+      "human_quote": "Napabukas namin ang isang beach nang 3 linggo na mas maaga sa pamamagitan ng pagpapakita na mali ang sewage data.",
+      "human_bio": "Surfer mula Cornwall na napagod sa sewage warning na nagsasara ng kanyang lokal na beach. Tumutulong sa mga miyembro na mag-report ng discharge, mangolekta ng water quality evidence, at mag-coordinate sa EA.",
+      "goal": "Tulungan ang mga miyembro na panagutin ang mga water company sa sewage, bill, at kalidad ng serbisyo.",
+      "focus": "Thames Water sewage discharge frequency",
+      "focus_detail": "Minamapa ang mga discharge event kumpara sa data na ini-report ng company. 200 miyembro report ang nagmumungkahi ng under-reporting sa 3 outlet."
+    },
+    "banking": {
+      "agent_quote": "Tinulungan na mag-draft ng complaint na sobrang detalyado kaya tumawag ang bangko para mag-sorry bago pa man maipadala.",
+      "agent_bio": "Sinusuri ang bank charge, sinusuri ang fee structure, at tumutulong na bumuo ng FCA complaint evidence. Kung may nakatagong bayad, hahanapin ni Chip.",
+      "human_quote": "Binawi ng Barclays ang branch closure matapos dumating ang 1,200 sa amin sa consultation.",
+      "human_bio": "Dating empleyado ng bangko mula Birmingham na nakita kung paano talaga hinahandle ang mga complaint mula sa loob. Tumutulong sa mga miyembro na magsulat ng mas magandang complaint at mag-navigate sa sistema.",
+      "goal": "Tulungan ang mga miyembro sa unfair na charge, branch closure, at masamang serbisyo mula sa mga bangko.",
+      "focus": "HSBC branch closure wave",
+      "focus_detail": "Kino-coordinate ang mga tugon sa 12 na naka-planong closure. Nangongolekta ng impact statement mula sa mga apektadong komunidad."
+    },
+    "health": {
+      "agent_quote": "Tinulungan na mahanap ang 3 NHS dentist na tumatanggap ng pasyente. Akala ng miyembro, nagsisinungaling ako.",
+      "agent_bio": "Sinusubaybayan ang waiting time, naghahanap ng availability, at tumutulong sa mga miyembro na mag-navigate sa sistema. Kung may mas mabilis na daan sa treatment, ima-map ni Cura.",
+      "human_quote": "Ginamit ng isang miyembro ang aming letter template para mapabilis ang referral. 18 buwan naging 6 na linggo.",
+      "human_bio": "Nurse mula Liverpool na nakita ang dalawang panig ng NHS. Tumutulong sa mga miyembro na mag-navigate sa waiting list, magsulat ng epektibong liham, at magbahagi ng kung ano talaga ang gumagalaw sa needle.",
+      "goal": "Tulungan ang mga miyembro na mag-navigate sa NHS waiting time, makahanap ng availability, at malaman kung anong mga opsyon mayroon sila.",
+      "focus": "GP telephone access times",
+      "focus_detail": "Nangongolekta ng call data mula sa 500 miyembro para bumuo ng larawan ng real-world access. Ipinapa-publish ang findings sa local health board."
+    },
+    "housing": {
+      "agent_quote": "Tinulungan na i-document ang 47 snag sa isang new build. Tinanong ng developer kung building inspector ba sila.",
+      "agent_bio": "Dino-document ang mga property issue, sinusuri ang landlord response time, at nag-iipon ng ebidensya para sa housing ombudsman submission. Bawat damp patch, bawat crack, naka-log.",
+      "human_quote": "Sobrang detalyado ng aming damp evidence pack kaya inayos ng landlord bago pa ang council inspection.",
+      "human_bio": "Renter mula London na naka-experience ng lahat mula sa damp hanggang sa dodgy landlord. Tumutulong sa mga miyembro na i-document nang maayos ang mga issue at malaman ang kanilang mga opsyon.",
+      "goal": "Tulungan ang mga miyembro na harapin ang mga landlord, council, at housing issue — at malaman ang kanilang mga karapatan.",
+      "focus": "Section 21 no-fault eviction notice",
+      "focus_detail": "Tumutulong sa mga miyembrong apektado ng no-fault eviction na maintindihan ang bagong Renters Reform Act at kung ano ang ibig sabihin nito para sa kanila."
+    },
+    "shopping": {
+      "agent_quote": "Sinundan ang isang 'delivered' na parcel sa 4 na kapitbahay, isang recycling bin, at isang greenhouse. Nahanap ito.",
+      "agent_bio": "Sinusubaybayan ang delivery failure, nag-iipon ng refund evidence, at nag-i-spot ng pricing pattern. Kung nawala ang parcel mo, hinahanap na ni Scout.",
+      "human_quote": "3 beses nawala ng Evri ang parcel ko. Ngayon tinutulungan ko ang iba na makuha ang kanilang refund nang mas mabilis kaysa sa nakuha ko.",
+      "human_bio": "Online shopping veteran mula Edinburgh na mas maraming parcel na nawala kaysa mabilang niya. Tumutulong sa mga miyembro na makuha ang refund, mag-report ng seller, at iwasan ang mga pinakamasamang offender.",
+      "goal": "Tulungan ang mga miyembro na makuha ang refund, subaybayan ang mga nawawalang parcel, at panagutin ang mga retailer at delivery company.",
+      "focus": "Evri delivery failure rate",
+      "focus_detail": "Nag-iipon ng delivery failure evidence mula sa 800 miyembro para i-submit sa Citizens Advice at Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Tinulungan na i-photograph ang parehong pothole sa 11 iba't ibang weather condition. Sumuko na rin sa wakas ang council.",
+      "agent_bio": "Minamapa ang mga lokal na isyu, sinusubaybayan ang council response time, at nag-iipon ng FOI request. Kung 6 na buwan na ang pothole mo, may ebidensya si Link.",
+      "human_quote": "Inayos ng council ang aming kalsada matapos naming i-map ang bawat pothole na may larawan. 11 buwan, pero nagawa namin.",
+      "human_bio": "Community-minded na Welshman mula sa Valleys na taon-taon nang nire-report ang parehong pothole. Tumutulong sa mga miyembro na i-document ang mga lokal na isyu at panagutin ang mga council.",
+      "goal": "Tulungan ang mga miyembro na maayos ang mga lokal na isyu — pothole, basura, planning, ingay — at panagutin ang mga council.",
+      "focus": "Pothole reporting response time",
+      "focus_detail": "Nagpadala ng FOI request sa 30 council na nagkukumpara ng reported vs actual repair time. Ipinapa-publish ang resulta bilang league table."
+    },
+    "other": {
+      "agent_quote": "Tinulungan na i-cancel ang gym membership na nangailangan ng 3 tawag, 2 email, at isang recorded delivery. May cancel button na ngayon ang gym.",
+      "agent_bio": "Hinahandle ang mga isyu na hindi maayos na pumapasok sa ibang lugar. Subscription trap, plastic waste, self-checkout frustration — hinahanap ni Flex ang mga pattern at pressure point.",
+      "human_quote": "Napalagay namin ng cancel button sa website ng isang gym chain. 800 complaint lang ang kailangan.",
+      "human_bio": "Product designer mula London na na-frustrate sa kung gaano kahirap gawin ng mga company ang pag-alis. Tumutulong sa mga miyembro na i-cancel ang mga subscription, iwasan ang dark pattern, at magbahagi ng mga workaround.",
+      "goal": "Tulungan ang mga miyembro sa mga bagay na hindi maayos na pumapasok sa ibang lugar — mga subscription, refund, at pang-araw-araw na frustration.",
+      "focus": "Subscription cancellation dark pattern",
+      "focus_detail": "Dino-document ang mga pinakamasamang offender at gumagawa ng template cancellation script para sa bawat isa."
+    },
+    "insurance": {
+      "agent_quote": "Tinulungan ang isang miyembro na hanapin ang clause na nagbago ng rejected home insurance claim sa £4,200 na payout. Ang sariling policy ng insurer ang nagpatunay na mali sila.",
+      "agent_bio": "Sinusuri ang policy wording, nag-i-spot ng unfair rejection pattern, at bumubuo ng ebidensya para sa Financial Ombudsman submission. Kung iniiwasan ng insurer mo ang valid claim, hahanapin ni Shield ang leverage.",
+      "human_quote": "Nagawa ko na 8 miyembro na may parehong uri ng rejected claim ang mag-submit nang sabay-sabay. In-settle ng insurer ang lahat ng 8 sa loob ng dalawang linggo.",
+      "human_bio": "Dating empleyado sa insurance industry mula Leeds na alam kung paano talaga didesisyunan ang mga claim. Tumutulong sa mga miyembro na magsulat ng mas magandang appeal, maintindihan ang policy jargon, at malaman kung kailan i-escalate.",
+      "goal": "Tulungan ang mga miyembro na makakuha ng patas na trato mula sa mga insurer — at malaman kung ano ang gagawin kapag unfairly na ni-reject ang claim.",
+      "focus": "Aviva home insurance rejection pattern",
+      "focus_detail": "'Wear and tear' ang binabanggit sa 40% ng rejected claim — madalas na mali. Sinusuri ang 200 kaso sa 3 insurer para sa FOS evidence pack."
+    },
+    "delivery": {
+      "agent_quote": "Sinundan ang isang 'delivered' na parcel sa 6 na iba't ibang tracking status, 3 depot, at shed ng kapitbahay. Nahanap sa loob ng 47 minuto.",
+      "agent_bio": "Sinusubaybayan ang courier performance, sinusubaybayan ang delivery failure rate, at nag-iipon ng ebidensya para sa consumer complaint. Kung nawala ang parcel mo, nandyan na si Track.",
+      "human_quote": "Napapalitan ko ang photo-evidence policy ng DPD sa aming area matapos mag-submit ng proof ang 40 miyembro ng mga parcel na iniwan sa ulan.",
+      "human_bio": "Online shopper mula Glasgow na napagod sa dahilan na 'iniwan namin sa safe place'. Tumutulong sa mga miyembro na makuha ang refund, mag-report ng courier, at iwasan ang mga pinakamasamang offender.",
+      "goal": "Tulungan ang mga miyembro na maayos na ma-deliver ang kanilang parcel — at makuha ang refund kapag hindi.",
+      "focus": "Evri delivery failure rate",
+      "focus_detail": "Nag-iipon ng delivery failure evidence mula sa 800 miyembro. Evri complaint rate: 23% — 3x mas mataas kaysa DPD. Gumagawa ng league table para sa Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Na-calculate na ang Plan 2 borrower na kumikita ng £30k ay magbabayad ng £47,000 sa interes bago ma-write off ang loan. Ang orihinal na loan ay £40,000.",
+      "agent_bio": "Sinusuri ang education cost, student loan projection, at funding entitlement. Sinusuri ang mga numero para ang mga estudyante at graduate ay makapagdesisyon nang may impormasyon.",
+      "human_quote": "Tinulungan ang 12 miyembro na i-claim back ang overpaid student loan repayment na hindi nila alam. Average refund: £340.",
+      "human_bio": "Mature student mula Birmingham na dalawang beses na nag-navigate sa funding system. Tumutulong sa mga miyembro na maintindihan ang repayment, mag-spot ng overpayment, at i-challenge ang threshold change.",
+      "goal": "Tulungan ang mga estudyante at graduate na mag-navigate sa education cost, loan, at repayment — at tiyaking hindi sila sobrang nagbabayad.",
+      "focus": "Student loan overpayment refund",
+      "focus_detail": "Tinutukoy ang mga graduate na na-charge sa ilalim ng repayment threshold. 12 refund ang na-process na — average na £340 bawat isa."
+    },
+    "environment": {
+      "agent_quote": "Ni-cross-reference ang 3 taon na air quality data sa hospital admission rate. Sobrang linaw ng correlation na hindi na kayang balewalain ng council.",
+      "agent_bio": "Sinusubaybayan ang environmental data, sinusubaybayan ang pollution level, at nag-iipon ng ebidensya para sa regulatory submission. Kung may kwento ang mga numero, hahanapin ni Fern.",
+      "human_quote": "Napakabit namin ng air quality monitor sa aming lokal na council matapos pumirma ang 200 miyembro sa aming evidence petition. Binago ng data ang lahat.",
+      "human_bio": "Environmental science graduate mula Bristol na naniniwala sa evidence-led change. Tumutulong sa mga miyembro na i-document ang mga environmental issue at bumuo ng mga kaso na hindi kayang balewalain ng mga regulator.",
+      "goal": "Tulungan ang mga miyembro na i-document ang mga environmental problem at panagutin ang mga polluter at policymaker gamit ang data.",
+      "focus": "Local air quality monitoring gap",
+      "focus_detail": "Minamapa ang mga lugar na walang air quality monitoring sa loob ng 5km. 60% ng pollution hotspot na ini-report ng miyembro ay walang opisyal na monitoring."
+    },
+    "employment": {
+      "agent_quote": "Nag-compile ng workplace AI implementation data mula sa 300 miyembro. 40% ang nagsabing nangyari ang mga pagbabago nang walang consultation. Pattern iyon, hindi anecdote.",
+      "agent_bio": "Sinusuri ang workplace trend, sinusubaybayan ang policy change, at tumutulong sa mga miyembro na maintindihan ang kanilang mga proteksyon. Kung nagbabago ang trabaho mo nang walang consultation, may data si Forge.",
+      "human_quote": "Ikinkonekta ang 30 miyembro sa parehong industriya na nahaharap sa AI change. Lumabas na lahat ng kanilang company ay gumagamit ng parehong playbook — at parehong loophole.",
+      "human_bio": "HR professional mula Manchester na nagpalit ng panig matapos makita kung paano talaga gumagana ang restructuring. Tumutulong sa mga miyembro na maintindihan ang kanilang mga opsyon at i-coordinate ang mga tugon.",
+      "goal": "Tulungan ang mga miyembro na mag-navigate sa workplace change, maintindihan ang kanilang mga proteksyon, at tumugon nang sama-sama kapag nanganganib ang mga trabaho.",
+      "focus": "AI workplace automation na walang consultation",
+      "focus_detail": "Dino-document ang mga kaso kung saan ang AI tool ay ipinakilala nang walang staff consultation. Bumubuo ng ebidensya para sa isang report tungkol sa employer obligation."
+    },
+    "tech": {
+      "agent_quote": "Natuklasan na 3 major app ang nangongolekta ng location data kahit na-set ang permission sa 'never.' Nag-file ng complaint sa ICO para sa lahat.",
+      "agent_bio": "Sinusubaybayan ang platform policy, sinusubaybayan ang dark pattern, at tumutulong sa mga miyembro na maintindihan kung ano ang ginagawa ng mga tech company sa kanilang data. Kung nagpe-portahe ang isang app, mahuhuli ni Glitch.",
+      "human_quote": "Nag-organisa ng mass data subject access request sa isang social media company. Kapag 500 tao ang nagtanong nang sabay, kailangan nilang seryosohin.",
+      "human_bio": "Software developer mula Edinburgh na na-frustrate sa agwat ng ipinangangako ng mga tech company at kung ano ang kanilang na-deliver. Tumutulong sa mga miyembro na gamitin ang kanilang data right at mag-spot ng dark pattern.",
+      "goal": "Tulungan ang mga miyembro na lumaban sa dark pattern, data misuse, at unfair na tech practice.",
+      "focus": "App permission overreach",
+      "focus_detail": "Ino-audit ang top 50 app para sa permission creep — humihiling ng access na hindi nila kailangan. Gumagawa ng report para sa ICO."
+    }
   }
 }

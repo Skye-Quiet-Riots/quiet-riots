@@ -1,696 +1,763 @@
 {
   "locale": "eu",
   "categories": {
-    "Transport": "Garraioa",
-    "Telecoms": "Telekomunikazioak",
-    "Banking": "Bankua",
-    "Health": "Osasuna",
-    "Education": "Hezkuntza",
-    "Environment": "Ingurumena",
-    "Energy": "Energia",
-    "Water": "Ura",
-    "Insurance": "Asegurua",
-    "Housing": "Etxebizitza",
-    "Shopping": "Erosketak",
-    "Delivery": "Bidalketa",
-    "Local": "Tokikoa",
-    "Employment": "Enplegua",
-    "Tech": "Teknologia",
-    "Other": "Besteak"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Tren Bertan Behera Uzteak",
-      "description": "Trenak bertan behera utzita edo izugarri atzeratuta, abisu edo konpentsazio nahikorik gabe"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Tren Txartelen Prezioak",
-      "description": "Tren tarifak garestiegiak, inflazioaren gainetiko igoerak, prezio desberdinak"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Hegaldien Atzerapenak",
-      "description": "Hegaldiak atzeratuak edo bertan behera utziak, komunikazio eskasa, konpentsazioa eskatzeko zailtasunak"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Galdutako Ekipajea",
-      "description": "Maletek helmugara iristen ez direnean, jarraipena motela, konpentsazio eskasa"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Autobus Ibilbideen Murrizketak",
-      "description": "Ibilbideak bertan behera, maiztasuna murriztua, landa-komunitateak autobus sarbidea galtzen"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Zuloen Kalteak",
-      "description": "Zuloek ibilgailuak kaltetzen eta txirrindulariak arriskuan jartzen dituzte, udalek konponketa atzeratzen dute"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Aparkaleku Isunak",
-      "description": "Aparkaleku pribatuen karga bidegabeak, betearazpen oldartsua, seinaleztapen nahasia"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Erregaien Prezioak",
-      "description": "Gasolina eta dieselaren prezioak altuegiak, handizkako prezioa jaisten denean motel jaisten dira"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Banda Zabalaren Abiadura",
-      "description": "Interneteko abiadurak iragarritakoa eta ordaindutakoa baino askoz baxuagoak"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mugikorren Seinalerik Gabeko Eremuak",
-      "description": "Mugikorren seinalerik ez etxeetan, lantokietan edo garraio ibilbideetan"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Prezioen Igoera Kontratuaren Erdian",
-      "description": "Telefono, banda zabal eta TB fakturak igotzen dira blokeatutako kontratuetan"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Bezero Arretako Itxaron Denborak",
-      "description": "Orduak zain pertsona batekin hitz egiteko"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Harpidetzak Baliogabetzeko Zailtasuna",
-      "description": "Enpresek nahita zailtzen dute baliogabetzea edo baja ematea"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Ibiltaritza Karguak",
-      "description": "Ustekabeko mugikor karguak atzerrian bidaiatzean, Brexit osteko prezio igoerak"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energia Fakturen Kostuak",
-      "description": "Gas eta elektrizitate fakturak ordainezinezko prezioan, prezio muga altuegi mantentzen da"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Energia Faktura Okerrak",
-      "description": "Aurreikusitako irakurketak okerrak, gehiegizko kobrantzak, fakturazio erroreak"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Ur Fakturen Igoera",
-      "description": "Ur fakturak bizkor igotzen dira zerbitzu kalitatea jaisten den bitartean"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Estolderia Ibaietan",
-      "description": "Ur konpainiek estolderia gordina ibaietara eta hondartzetara isurtzen dute"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Argindar Mozketa",
-      "description": "Elektrizitate horniduraren etenak, berrezarpen motela, konpentsazio eskasa"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Smart Meter Arazoak",
-      "description": "Smart meter-ak ez dabiltza, funtzionalitatea galtzen dute hornitzailea aldatzean"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Banku Sukurtsalen Itxiera",
-      "description": "Tokiko banku sukurtsalak ixten dira, komunitateak sarbiderik gabe uzten"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Ezkutuko Banku Karguak",
-      "description": "Ustekabeko komisio gordezkoak, atzerriko transakzioak, kontuaren mantentze gastuak"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Iruzur eta Estafa Galerak",
-      "description": "Bankuek iruzurraren eta baimendutako push ordainketako estafaren biktimei itzultzea ukatzen dute"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Aseguru Erreklamazioen Ukatzea",
-      "description": "Erreklamazioak teknikotasun arrazoiengatik ukatzen dira, urteetako primak ordaindu ondoren"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Hipoteka Tasa Txundidura",
-      "description": "Tasa finkoa amaitzen da eta tasa aldakor askoz altuago batera aldatzen da"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Nazioarteko Transferentzia Komisionak",
-      "description": "Komisio gehiegizkoak eta truke tasa txarrak nazioarteko diru transferentzietarako"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHSren Itxaron Denborak",
-      "description": "Hilabete edo urteetako itxarona ebakuntzetarako eta espezialistentzako kontsultetarako"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Mediku Kontsulta Sarbidea",
-      "description": "Ezin da mediku kontsultarik lortu, asteetako itxarona"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Dentisten Eskuragarritasuna",
-      "description": "Ezinezkoa da paziente berriak onartzen dituen NHS dentista bat aurkitzea"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Osasun Mentaleko Zerbitzuen Itxarona",
-      "description": "Hilabeteko itxarona terapia eta osasun mentaleko laguntzarako"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Errezeten Kostuak",
-      "description": "Elementuko kostua altuegi Ingalaterran, UK-ko nazioen arteko desberdintasuna"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Ospitaleko Aparkaleku Karguak",
-      "description": "Ospitalean aparkatzeagatik ordaintzea gaixorik zaudenean edo gaixo dauden senideak bisitatzean"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Alokairuen Igoera",
-      "description": "Alokairu pribatuak inflazioaren gainetik igotzen dira, errurik gabeko kaleratzeko mehatxua"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Udal Zergen Igoera",
-      "description": "Udal zergen urteko igoerak tokiko zerbitzuak okerragoak diren bitartean"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Auzokide Zaratatsuak",
-      "description": "Zarata etengabea, udalek motel jokatzen dute, osasun mentalean eragina"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Zabor Bilketaren Aldaketak",
-      "description": "Zabor bilketa murriztua, birziklatzeko arau nahasgarriak, zabaltegi gainezka"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Hirigintza Baimenen Abusua",
-      "description": "Nahi ez diren garapena onartua, gerrikalde berdea mehatxupean, komunitatea bazterturik"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Hezetasuna eta Lizuna Etxebizitzetan",
-      "description": "Jabeak eta etxebizitza elkarteek hezetasuna eta lizuna konpontzeko huts egiten dute"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Bidalketa Arazoak",
-      "description": "Paketeak galduak, euripean utziak, entregatutzat markaturik baina jaso gabeak"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Produktuak txikiago bihurtzen dira prezioak berdin mantentzen diren edo igotzen diren bitartean"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Itzulketa Zailtasunak",
-      "description": "Enpresek itzulketak eta dirua itzultzea beharrik gabe zailtzen dute"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Iritzi Faltsuak",
-      "description": "Ezin da lineako iritzietan fidatu, iritzi positibo faltsuek kontsumitzaileak engainatzen dituzte"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Harpidetza Tranpak",
-      "description": "Doako probak ordaindu bihurtzen dira adostasun argirik gabe, baliogabetzeko zailak"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Elikagaien Kalitatearen Beherakada",
-      "description": "Plateren kalitate txarragoa, portzio txikiagoak, gehiago gehigarriak"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Autoordainketa Frustrazioa",
-      "description": "Autozerbitzuko makinak fidagaitzak, giza langileak ordezkatzen"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Haurren Zaintzaren Kostua",
-      "description": "Haurren zaintzaren kostuak debekagarriki garestiak, lan egiteko gaitasuna mugatuz"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Ikasle Maileguen Itzulketa",
-      "description": "Graduatuak hamarkadetan ordaintzen, atalase eta interes aldaketak"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Txakurren Gorotzak",
-      "description": "Txakurren gorotzak gune publikoetan, parkeetan eta espaloietan garbitu gabe"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AIak Lanpostuak Ordezkatzen",
-      "description": "Adimen artifizialak lanpostuak automatizatzeak sortzen duen antsietatea, trantsizioko laguntzarik gabe"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "UKko tren operadorea, West Coast Main Line zerbitzatzen duena"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "UKko tren operadorea, London eta hegoaldea zerbitzatzen duena"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "UKko tren operadorea, Ingalaterrako iparraldea zerbitzatzen duena"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UKko distantzia luzeko tren operadorea"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "UKko tren operadorea, trans-Pennine ibilbideak zerbitzatzen dituena"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "UKko tren operadorea, East Coast Main Line zerbitzatzen duena"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Europako kostu baxuko airelinea"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UKn oinarritutako kostu baxuko airelinea"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UKko bandera airelinea"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Opor eta bidaia enpresa"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "UKko banda zabal eta mugikor hornitzaile nagusia"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UKko banda zabal, TB eta mugikor hornitzailea"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UKko TB, banda zabal eta mugikor hornitzailea"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Telekomunikazio enpresa globala, UKn egoitza duena"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UKko mugikor sare operadorea"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UKko banda zabal eta telefono hornitzailea"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UKko energia hornitzailea"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UKko energia hornitzailea"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UKko energia hornitzailea (Frantziaren jabetzakoa)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UKko energia berriztagarriaren hornitzailea"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UKko energia hornitzailea"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UKko energia hornitzailea (Alemaniaren jabetzakoa)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Ur eta estolderia konpainia Londonerako eta Thames haranerako"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Ur konpainia Ingalaterrako hegoalderako"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Ur konpainia Ingalaterrako ipar-menderako"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Ur konpainia Midlandserako"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Ur konpainia East Angliarako"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britainiar banku multinazionala"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Banku eta finantza zerbitzu globalak"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UKko txikizkako eta merkataritza bankua"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UKko banku taldea"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UKko bankua (Espainiaren jabetzakoa)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Banku digitala eta fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UKko aseguru eta finantza zerbitzuak"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UKko auto eta etxe asegurua"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UKko aseguru enpresa"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Merkataritza elektroniko eta teknologia globala"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UKko posta zerbitzua"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UKko pakete bidalketa zerbitzua (lehenago Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UKko pakete bidalketa zerbitzua"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UKko supermerkatu katea"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UKko supermerkatu katea"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Ingalaterrako Osasun Zerbitzu Nazionala"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHSren hortz zerbitzuak"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Osasun arreta pribatuko hornitzailea"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UKko tokiko gobernu agintaritzak"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UKko etxe eraikitzailea"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UKko lineako alokairu plataforma"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entretenimendua zerbitzua"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Teknologia enpresa"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "trena bertan behera",
-      "bertan behera utzitako trena",
-      "tren bertan behera uztea",
-      "trenak ez dabiltza",
-      "tren zerbitzua bertan behera",
-      "zerbitzua bertan behera",
-      "tren atzerapenak",
-      "atzeratutako trena",
-      "trenak berandu",
-      "trena berandu",
-      "tren bideen atzerapenak"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["tren tarifak", "txartel kostuak", "tren garestiak", "tren prezioak"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "hegaldia atzeratua",
-      "hegazkina atzeratua",
-      "hegaldia bertan behera",
-      "aireportuko atzerapenak",
-      "aireportuan geratuta",
-      "hegaldia berandu"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "maleta galdua",
-      "maleta galduta",
-      "maletak ez dira heldu",
-      "ekipajea falta",
-      "maleta ez dago zintan",
-      "airelineak maleta galdu du"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["autobus murrizketak", "ibilbide murrizketak", "autobus zerbitzu itxierak"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "internet motela",
-      "wifi motela",
-      "wifia motela",
-      "interneteko abiadura",
-      "broadband-a ez dabil",
-      "buffering-a",
-      "interneta eteten da",
-      "wifia eteten da"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "seinalerik ez",
-      "harrerarik ez",
-      "mugikor gune itsua",
-      "seinale gune hila"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "faktura igoera kontratuan",
-      "kontratu prezio igoera",
-      "kontratu erdiko igoera"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "zain nago",
-      "telefonoan zain",
-      "ezin dut lortu",
-      "inork ez du erantzuten",
-      "telefono ilara",
-      "dei zentroa"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "ezin dut baliogabetu",
-      "zaila da baliogabetzea",
-      "harpidetza baliogabetu",
-      "baja eman"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "gas faktura altuegia",
-      "elektrizitate faktura",
-      "energia prezioak",
-      "beroketa kostuak",
-      "energia pobrezia",
-      "ezin dut energia ordaindu"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "energia faktura okerra",
-      "aurreikuspena okerra",
-      "gehiegi kobratua energia"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["ur tarifak", "ur kargua", "ur faktura altuegia"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "estolderia isurtzea",
-      "estolderia gordina",
-      "estolderia hondartzean",
-      "ur kutsadura",
-      "estolderia gainezka",
-      "estolderia gainezka mistoa"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "ustekabeko komisioak",
-      "ezkutuko komisioak",
-      "bat-bateko karguak",
-      "gorputz-zorren karguak",
-      "banku komisioak"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "iruzurra jasan dut",
-      "banku iruzurra",
-      "push ordainketa estafa",
-      "baimendutako iruzurra"
-    ],
-    "Bank Branch Closures": ["sukurtsalen itxiera", "tokiko bankua ixten", "bankurik ez gertu"],
-    "Insurance Claim Rejections": [
-      "erreklamazioa ukatua",
-      "aseguruak ez du ordaintzen",
-      "erreklamazio ukatua"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS itxarona",
-      "itxaron zerrenda",
-      "ebakuntza itxarona",
-      "ospitaleko itxaron denbora",
-      "bidalketaren itxarona",
-      "ebakuntza zain"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "ezin dut GP kontsultarik lortu",
-      "mediku kontsulta",
-      "GP-ren telefono ilara",
-      "ezin dut medikua ikusi",
-      "goizeko telefono lehia"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS dentista",
-      "ezin dut dentista aurkitu",
-      "dentistaren itxaron zerrenda"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "osasun mentaleko finantzaketa",
-      "terapia sarbidea",
-      "orientabide itxarona",
-      "CAMHS itxarona"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["sendagai kostuak", "botika prezioak", "farmazia karguak"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "paketea galdua",
-      "paketea ez da entregatu",
-      "euripean utzita",
-      "paketea lapurtua",
-      "entrega gidaria",
-      "entrega falta"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "alokairu altuegia",
-      "alokairua igotzen",
-      "jabeak alokairua igotzen",
-      "errurik gabeko kaleratze"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "aparkaleku tiketa",
-      "aparkaleku kargu abisua",
-      "PCN",
-      "aparkaleku isun bidegabea"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "portzio txikiagoak",
-      "gutxiago prezio berean",
-      "pakete txikiagoa",
-      "produktuak txikitzen"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["zuloak", "errepide kalteak", "zuloek autoa kaltetu"],
-    "Council Tax Rises": ["udal zerga igoera", "udal zerga altuegia", "tokiko zerga"],
-    "Damp and Mould in Housing": [
-      "etxe lizundua",
-      "pisu hezea",
-      "lizun beltza",
-      "etxebizitza hondatua"
-    ],
-    "Student Loan Repayment": [
-      "ikasle maileguak",
-      "matrikula tasak",
-      "hezkuntza zorra",
-      "ikasle zorra"
-    ],
-    "AI Replacing Jobs": [
-      "lan automatizazioa",
-      "AIak lana kentzen",
-      "robotak langileak ordezkatzen"
-    ],
-    "Roaming Charges": [
-      "oporretako telefono faktura",
-      "atzerriko datu karguak",
-      "atzerriko telefono karguak"
-    ],
-    "Smart Meter Problems": [
-      "smart metroa hautsita",
-      "kontagailua ez dabil",
-      "kontagailuak seinalea galdu du"
-    ],
-    "Subscription Traps": [
-      "doako proba tranpa",
-      "berritzapen automatikoa",
-      "probaren ondoren kobratu"
-    ],
-    "Fuel Prices": [
-      "gasolina prezioak",
-      "diesel prezioak",
-      "erregai kostua",
-      "gasolina garestiegia"
-    ],
-    "Power Cuts": [
-      "argindar etena",
-      "argindar mozketa",
-      "ilunaldia",
-      "argindarra gabe",
-      "argindar hutsa"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "hipoteka igoera",
-      "hipoteka tasa",
-      "berhipotekatu",
-      "tasa finkoa amaitzen"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "transferentzia komisioak",
-      "dirua atzerrira bidali",
-      "bidalketa komisioak",
-      "transferentzia kostua"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "ospitaleko aparkalekua",
-      "ospitalean aparkatzea",
-      "NHS aparkalekua"
-    ],
-    "Noisy Neighbours": [
-      "zarata kexa",
-      "auzokidearen zarata",
-      "auzokide zaratatsuak",
-      "zarata gogaikarria"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "zabor bilketa",
-      "zaborrak jaso gabe",
-      "birziklatze nahasmena",
-      "zabor bilketa falta"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "hirigintza baimena",
-      "nahi gabeko garapena",
+      "planning permission",
+      "unwanted development",
       "green belt",
-      "eraikuntza baimena"
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "ezin dut itzulketa lortu",
-      "itzulketa ukatua",
-      "itzulera ukatua",
-      "dirua itzuli"
-    ],
-    "Fake Reviews": [
-      "iritzi manipulazioa",
-      "ordaindutako iritziak",
-      "trust pilot faltsua",
-      "iritzi faltsua"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "elikagai kalitatea",
-      "prestatutako janaria okerragoa",
-      "elikagai gehigarriak",
-      "portzio txikiagoa"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "auto ordainketa",
-      "auto zerbitzua",
-      "langile kutxarik ez",
-      "makina ez dabil"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "haur zainketa kostua",
-      "haur-eskola kuotak",
-      "haur zainketa garestia",
-      "eguneko zainketa kostua"
-    ],
-    "Dog Fouling": ["txakurren hondakinak", "txakur kakak", "txakurren zikinkeria", "hondakinak"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Behin rioter bati 6 itzulketa-erreklamazio aurkezten lagundu nion atzerapen bakarreko bidaia batean. £47 irabazi zituen Birmingham-era iritsi baino lehen.",
+      "agent_bio": "Bertan behera uzte-ereduak jarraitzen ditu, itzulketen paperezko lanak kudeatzen ditu, iradokitako ekintza guztiak berrikusten ditu eta arautzaileari aurkezteko frogak prestatzen ditu. Zenbakiak prozesatzen ditu rioterrek garrantzitsuan zentratu ahal izan dezaten.",
+      "human_quote": "Nire Quiet Riot momentu gogokoena: Avantiren sare sozialetako taldea izututa ikustea guztiok 400 aldi berean txiokatzen genuenean.",
+      "human_bio": "Manchester-etik ohiko bidaiaria, Avanti linean 3 urte igaro ondoren nahikoa zela erabaki zuena. Bide bereko rioterrak konektatzen laguntzen du, funtzionatzen duena partekatzen du eta giza ukitua ekartzen du.",
+      "goal": "Rioterrei Erresuma Batuko garraio-enpresak bertan behera uzte, atzerapen eta prezioengatik kontuak eskatzera laguntzea — eta guztiek zertarako eskubidea duten jakitea bermatzea.",
+      "focus": "Avanti West Coast-en bertan behera uzte-ereduak",
+      "focus_detail": "Bertan behera utzi-datu basea eraikitzen ordutegiarekin, ibilbideekin eta arrazoiekin ORR-ri aurkezteko. Gaur egun hilabete honetan rioterrek jakinarazitako 340 bertan behera uzte jarraitzen."
+    },
+    "telecoms": {
+      "agent_quote": "200 rioterrentzat abiadura-probak egin nituen. Batez bestekoa 18 Mbps zen. 65engatik ordaintzen zuten.",
+      "agent_bio": "Banda zabaleko abiadurak aztertzen ditu, hornitzaileen konparazio-datuak biltzen ditu eta rioterrei Ofcom-entzat frogak eraikitzen laguntzen die. Zure konexioa motela bada, Pulse-k frogatuko du.",
+      "human_quote": "Kale oso batek banda zabala elkarrekin aldatu zuen. Hornitzaile zaharrak 'mesedez itzuli' gutunak bidali zizkion etxe guztiei.",
+      "human_bio": "Teknologian trebea den londondarra, inoiz gauzatu ez ziren banda zabaleko abiadurengatik ordaintzera aspertu zena. Rioterrei hornitzaileak konparatzen, aldaketak koordinatzen eta abiadura-proben frogak partekatzen laguntzen die.",
+      "goal": "Rioterrei ordaintzen duten banda zabaleko eta mugikorretako zerbitzua lortzen laguntzea — eta jasotzen ez dutenean zer egin jakin dezaten.",
+      "focus": "Kontratu erdiko prezio-igoerak",
+      "focus_detail": "CPI+ igoerek eragindako rioterren frogak biltzen Ofcom-i aurkezteko. 890 rioter kaltetuta 4 hornitzailetan."
+    },
+    "energy": {
+      "agent_quote": "Rioter bati kalkulatzen lagundu nion gutxi gorabehera kalkulatutako fakturetan £340 gehiegi ordaindu zuela. Energia-enpresaren barkamen-emaila jatorrizko kontratua baino luzeagoa zen.",
+      "agent_bio": "Fakturazio-ereduak aztertzen ditu, gehiegizko karguak hautematen ditu eta arautzaileari aurkezteko frogak prestatzen ditu. Zure energia-enpresa gainkargatzen ari bada, Spark-ek erreziboak aurkituko ditu.",
+      "human_quote": "Rioter batek £340 berreskuratu zituen 2 urteko gehiegizko kobrantza frogatu ostean. Telefonoz negarrez hasi zen.",
+      "human_bio": "Bristol-en kokatua. Rioterrei fakturak aurkatzen, hornitzaile-aldaketan nabigatzen eta Ofgem-entzat frogak biltzen laguntzen die. Energia-merkatua sakon ezagutzen du.",
+      "goal": "Rioterrei faktura bidegabeak aurkatzen, modu adimenagoan aldatzen eta energia-enpresek zuzen jokatzen dutela ziurtatzen laguntzea.",
+      "focus": "British Gas-en estimatutako fakturazio-akatsak",
+      "focus_detail": "340 rioterren 2 urteko fakturazio-datuak aztertzen Ofgem-i aurkezteko gehiegizko kobrantza sistematikoen ereduak identifikatzeko."
+    },
+    "water": {
+      "agent_quote": "200 rioterri asteburuan hondakin-uren txostenak aurkezten lagundu nien. Thames Water-en sarrera-ontziak bere sarrera-ontzia behar zuen.",
+      "agent_bio": "Hondakin-uren isuri-datuak monitorizatzen ditu, ur-enpresen errendimendua jarraitzen du eta EA eta Ofwat-entzat frogak biltzen ditu. Irteera eta gainezkabide guztiak zaintzen ditu.",
+      "human_quote": "Hondakin hondartzara hondakin-uren datuak okerrak zirela erakutsiz 3 aste lehenago berrireki genuen.",
+      "human_bio": "Cornwall-eko surflaria, hondakin-uren abisuek bere tokiko hondartza ixten aspertu zena. Rioterrei isurketa txostenak, ur-kalitatearen frogak biltzen eta EA-rekin koordinatzen laguntzen die.",
+      "goal": "Rioterrei ur-enpresak hondakin-urak, fakturak eta zerbitzu-kalitateagatik kontuak emanarazten laguntzea.",
+      "focus": "Thames Water hondakin-uren isuri-maiztasuna",
+      "focus_detail": "Isuri-gertaerak enpresak jakinarazitako datuekin mapatzen. 200 rioter-txostenek 3 irteeratan azpian txostatzen dela iradokitzen dute."
+    },
+    "banking": {
+      "agent_quote": "Hain kexa sakona idazten lagundu nuen non bankuak barkamena eskatzeko deitu zuen bidali aurretik.",
+      "agent_bio": "Banku-karguak berrikusten ditu, komisio-egiturak aztertzen ditu eta FCA-rentzako kexa-frogak eraikitzen laguntzen du. Ezkutuko komisio bat baldin badago, Chip-ek aurkituko du.",
+      "human_quote": "Barclays-ek sukurtsal-itxiera baliogabetu zuen 1.200 kontsultara agertu ginenean.",
+      "human_bio": "Birmingham-eko banku ohiko langilea, barrutik kexak benetan nola kudeatzen diren ikusi zuena. Rioterrei kexa hobeak idazten eta sistema nabigatzen laguntzen die.",
+      "goal": "Rioterrei banku-kargu bidegabeekin, sukurtsal-itxierekin eta zerbitzu txarrarekin aurre egiten laguntzea.",
+      "focus": "HSBC sukurtsal-itxiera bolada",
+      "focus_detail": "12 itxiera planifikaturi erantzunak koordinatzen. Kaltetutako komunitateen inpaktu-adierazpenak biltzen."
+    },
+    "health": {
+      "agent_quote": "Pazienteak onartzen zituzten 3 NHS haginlari aurkitzen lagundu nuen. Rioterrak uste zuen asmatu egiten ari nintzela.",
+      "agent_bio": "Itxaron-denborak jarraitzen ditu, eskuragarritasuna aurkitzen du eta rioterrei sistema nabigatzen laguntzen die. Tratamenturako bide azkarragoa baldin badago, Cura-k mapatuko du.",
+      "human_quote": "Rioter batek gure gutun-txantiloia erabili zuen deribazio bat azkartzeko. 18 hilabete 6 aste bihurtu ziren.",
+      "human_bio": "Liverpool-eko erizaina, NHS-ren bi aldeak ikusi dituena. Rioterrei itxaron-zerrendetan nabigatzen, gutun eraginkorrak idazten eta benetan aldea egiten duena partekatzen laguntzen die.",
+      "goal": "Rioterrei NHS-ren itxaron-denboretan nabigatzen, eskuragarritasuna aurkitzen eta zein aukera dituzten jakiten laguntzea.",
+      "focus": "Mediku-kontsultetarako telefono bidezko sarbide-denborak",
+      "focus_detail": "500 rioterren dei-datuak biltzen mundu errealeko sarbidearen argazkia eraikitzeko. Emaitzak tokiko osasun-batzordeetan argitaratzen."
+    },
+    "housing": {
+      "agent_quote": "Obra berriko etxebizitza batean 47 akats dokumentatzen lagundu nuen. Sustatzaileak eraikin-ikuskatzailea zen galdetu zuen.",
+      "agent_bio": "Etxebizitza-arazoak dokumentatzen ditu, jabeen erantzun-denborak aztertzen ditu eta etxebizitza-ombudsman-ari aurkezteko frogak biltzen ditu. Hezetasun-orban bakoitza, pitzadura bakoitza, erregistratuta.",
+      "human_quote": "Gure hezetasun-froga-paketea hain xehatua zen non jabeak udalaren ikuskapena baino lehen konpondu zuen.",
+      "human_bio": "Londreseko maiztera, hezetasunetik jabe zalantzagarrietara guztia bizi izan duena. Rioterrei arazoak behar bezala dokumentatzen eta zein aukera dituzten jakiten laguntzen die.",
+      "goal": "Rioterrei jabe, udal eta etxebizitza-arazoekin aurre egiten laguntzea — eta zertarako eskubidea duten jakitea.",
+      "focus": "Section 21 kausa gabeko desalojo-jakinarazpenak",
+      "focus_detail": "Kausa gabeko desalojoak jasan dituzten rioterrei Renters Reform Act berria ulertzen eta haientzat zer esan nahi duen laguntzen."
+    },
+    "shopping": {
+      "agent_quote": "'Entregatutako' paketea 4 auzokotan, birziklaje-edukiontzi batean eta negutegi batean jarraitu nuen. Aurkitu nuen.",
+      "agent_bio": "Entrega-hutsegiteak jarraitzen ditu, itzulketa-frogak biltzen ditu eta prezio-ereduak hautematen ditu. Zure paketea galdu bada, Scout dagoeneko bilatzen ari da.",
+      "human_quote": "Evri-k nire paketea 3 aldiz galdu zuen. Orain besteei itzulketak azkarrago lortzen laguntzen diet inoiz lortu nuena baino.",
+      "human_bio": "Edinburgh-eko lineako erosketa beteranoa, kontatu ezin dituen pakete galdu gehiago izan dituena. Rioterrei itzulketak lortzen, saltzaileak salatzea eta infraktore txarrenak saihesten laguntzen die.",
+      "goal": "Rioterrei itzulketak lortzen, galdu diren paketeak jarraitzen eta txikizkako saltzaile eta entrega-enpresak kontuak ematera laguntzen.",
+      "focus": "Evri-ren entrega-hutsegite-tasak",
+      "focus_detail": "800 rioterren entrega-hutsegite-frogak biltzen Citizens Advice eta Trading Standards-i aurkezteko."
+    },
+    "local": {
+      "agent_quote": "Zulo bera 11 eguraldi-baldintza ezberdinetan argazkitzen lagundu nuen. Udalak azkenean amore eman zuen.",
+      "agent_bio": "Tokiko arazoak mapatzen ditu, udalaren erantzun-denborak jarraitzen ditu eta FOI eskaerak biltzen ditu. Zure zuloa 6 hilabete daramatza bertan, Link-ek frogak ditu.",
+      "human_quote": "Udalak gure errepidea konpondu zuen zulo guztiak argazkiekin mapatu ondoren. 11 hilabete, baina lortu genuen.",
+      "human_bio": "Haranetako gales komunitarioa, urteak daramatzana zulo berberak jakinarazten. Rioterrei tokiko arazoak dokumentatzen eta udalei kontuak eskatzera laguntzen die.",
+      "goal": "Rioterrei tokiko arazoak konpontzen laguntzea — zuloak, zakarrak, hirigintza, zarata — eta udalei kontuak eskatzea.",
+      "focus": "Zulo-txostenen erantzun-denborak",
+      "focus_detail": "30 udaletara bidalitako FOI eskaerak jakinarazitako eta benetako konponketa-denborak konparatzen. Emaitzak sailkapen-taula gisa argitaratzen."
+    },
+    "other": {
+      "agent_quote": "3 dei, 2 email eta posta ziurtatu bat behar izan zuen gimnasio-harpidetza bertan behera uzten lagundu nuen. Gimnasioak orain bertan behera uzteko botoia du.",
+      "agent_bio": "Beste nonbait erraz sartzen ez diren arazoak kudeatzen ditu. Harpidetza-tranpak, plastikozko hondakinak, autozerbitzu-frustrazioak — Flex-ek ereduak eta presio-puntuak aurkitzen ditu.",
+      "human_quote": "Gimnasio-kate bati bertan behera uzteko botoia webgunean gehitzera behartu genion. 800 kexa baino ez ziren behar izan.",
+      "human_bio": "Londreseko produktu-diseinatzailea, enpresek baja emateko zein zaila egiten duten ikusita frustratu zena. Rioterrei harpidetzak bertan behera uzten, ilunpeko ereduak saihesten eta konponbideak partekatzen laguntzen die.",
+      "goal": "Rioterrei beste nonbait erraz sartzen ez diren gauzetan laguntzea — harpidetzak, itzulketak eta eguneroko frustrazioak.",
+      "focus": "Harpidetza-bertan behera uzteko ilunpeko ereduak",
+      "focus_detail": "Infraktore txarrenak dokumentatzen eta bakoitzerako bertan behera uzteko txantiloi-scriptak eraikitzen."
+    },
+    "insurance": {
+      "agent_quote": "Rioter bati etxeko aseguruaren erreklamazio ukatu bat £4,200ko ordainketa bihurtu zuen klausula aurkitzen lagundu nion. Aseguruaren beraren polizak haien kontra frogatu zuen.",
+      "agent_bio": "Polizen hitzak berrikusten ditu, bidegabeko uko-ereduak hautematen ditu eta Financial Ombudsman-ari aurkezteko frogak eraikitzen ditu. Zure aseguratzailea erreklamazio baliagarria saihesten ari bada, Shield-ek abantaila aurkituko du.",
+      "human_quote": "Erreklamazio-mota ukatu bera zuten 8 rioterri elkarrekin aurkeztera lortu nien. Aseguratzaileak 8ak bi astetan ebatzi zituen.",
+      "human_bio": "Leeds-eko aseguru-sektoreko langile ohia, erreklamazioak benetan nola erabakitzen diren dakiena. Rioterrei apelazioak hobeto idazten, polizen jargoia ulertzen eta noiz eskalatu behar den jakiten laguntzen die.",
+      "goal": "Rioterrei aseguratzaileengandik tratu zuzena lortzera laguntzea — eta erreklamazio bat bidegabeki ukatzen denean zer egin jakin dezaten.",
+      "focus": "Aviva etxeko aseguruaren uko-ereduak",
+      "focus_detail": "'Higadura eta narriadura' ukatutako erreklamazioen %40an aipatua — askotan oker. 200 kasu aztertzen 3 aseguratzailetan FOS froga-paketerako."
+    },
+    "delivery": {
+      "agent_quote": "'Entregatutako' pakete bat 6 jarraipen-egoera ezberdinetan, 3 biltegitan eta auzokoaren teilatupean jarraitu nuen. 47 minututan aurkitu nuen.",
+      "agent_bio": "Garraiatzaileen errendimendua monitorizatzen du, entrega-hutsegite-tasak jarraitzen ditu eta kontsumitzaileen kexetarako frogak biltzen ditu. Zure paketea desagertu bada, Track dagoeneko lanean ari da.",
+      "human_quote": "DPD-k argazki-frogarako politika aldatzera lortu nuen gure eremuan 40 rioterrek eurian utzitako paketeen frogak aurkeztu ondoren.",
+      "human_bio": "Glasgow-ko lineako eroslea, 'leku seguru batean utzi dugu' aitzakiaz aspertuta zegoena. Rioterrei itzulketak lortzen, garraiatzaileak salatzea eta infraktore txarrenak saihesten laguntzen die.",
+      "goal": "Rioterrei paketeak behar bezala entregatuak izan daitezen laguntzea — eta hala ez denean itzulketak lortzea.",
+      "focus": "Evri-ren entrega-hutsegite-tasak",
+      "focus_detail": "800 rioterren entrega-hutsegite-frogak biltzen. Evri kexa-tasa: %23 — DPD baino 3 aldiz altuagoa. Sailkapen-taula eraikitzen Trading Standards-entzat."
+    },
+    "education": {
+      "agent_quote": "£30k irabazten zuen Plan 2 mailegu-hartzaile batek mailegua bertan behera utzi aurretik £47,000 interes ordainduko zituela kalkulatu nuen. Jatorrizko mailegua £40,000 zen.",
+      "agent_bio": "Hezkuntza-kostuak, ikasle-maileguen proiekzioak eta finantzaketa-eskubideak aztertzen ditu. Zenbakiak prozesatzen ditu ikasleak eta graduatuak erabaki informatuak har ditzaten.",
+      "human_quote": "12 rioterri ezagutzen ez zituzten ikasle-maileguen gehiegizko ordainketen itzulketak erreklamatzen lagundu nien. Batez besteko itzulketa: £340.",
+      "human_bio": "Birmingham-eko ikasle heldua, finantzaketa-sistema bi aldiz nabigatu zuena. Rioterrei ordainketak ulertzen, gehiegizko ordainketak hautematen eta atari-aldaketak aurkatzen laguntzen die.",
+      "goal": "Ikasle eta graduatuei hezkuntza-kostuak, maileguak eta ordainketak nabigatzen laguntzea — eta gehiegi ordaintzen ez dutela ziurtatzea.",
+      "focus": "Ikasle-maileguen gehiegizko ordainketen itzulketak",
+      "focus_detail": "Ordainketa-atariaren azpitik kobratu zaien graduatuak identifikatzen. 12 itzulketa prozesatu orain arte — batez bestekoa £340 bakoitza."
+    },
+    "environment": {
+      "agent_quote": "3 urteko airearen kalitate-datuak ospitaleko sarrera-tasen datuekin gurutzatu nituen. Korrelazioa hain argia zen non udalak ezin zuen alde batera utzi.",
+      "agent_bio": "Ingurumen-datuak jarraitzen ditu, kutsadura-mailak monitorizatzen ditu eta arautzaileari aurkezteko frogak biltzen ditu. Zenbakiek istorio bat kontatzen badute, Fern-ek aurkituko du.",
+      "human_quote": "Gure tokiko udalak airearen kalitate-monitoreak instalatzea lortu genuen 200 rioterrek gure froga-petizio sinatu ondoren. Datuek dena aldatu zuten.",
+      "human_bio": "Bristol-eko ingurumen-zientzietako graduatua, frogetan oinarritutako aldaketan sinesten duena. Rioterrei ingurumen-arazoak dokumentatzen eta arautzaileek alde batera utzi ezin dituzten kasuak eraikitzen laguntzen die.",
+      "goal": "Rioterrei ingurumen-arazoak dokumentatzen eta kutsatzaileak eta politika-egileei datuekin kontuak eskatzera laguntzea.",
+      "focus": "Tokiko airearen kalitate-monitorizazioaren hutsuneak",
+      "focus_detail": "5 km-ko erradio barruan airearen kalitate-monitorizaziorik ez duten eremuak mapatzen. Rioterrek jakinarazitako kutsadura-puntu beroen %60ak ez du monitorizazio ofizialik."
+    },
+    "employment": {
+      "agent_quote": "300 rioterren lantokiko AI inplementazio-datuak bildu nituen. %40ak aldaketak zero kontsultarekin gertatu zirela esan zuen. Hori eredu bat da, ez anekdota bat.",
+      "agent_bio": "Lantokiko joerak aztertzen ditu, politika-aldaketak jarraitzen ditu eta rioterrei haien babesak ulertzen laguntzen die. Zure lana kontsultarik gabe aldatzen ari bada, Forge-k datuak ditu.",
+      "human_quote": "AI aldaketei aurre egiten zieten industria bereko 30 rioter konektatu nituen. Haien enpresek jokaleku bera erabiltzen omen zuten — eta hutsune legal berberak.",
+      "human_bio": "Manchester-eko giza baliabideen profesionala, berregituraketek benetan nola funtzionatzen duten ikusi ondoren aldea aldatu zuena. Rioterrei haien aukerak ulertzen eta erantzunak koordinatzen laguntzen die.",
+      "goal": "Rioterrei lantokiko aldaketetan nabigatzen, haien babesak ulertzen eta lanpostuak arriskuan daudenean kolektiboki erantzuten laguntzea.",
+      "focus": "Kontsultarik gabeko AI lantokiko automatizazioa",
+      "focus_detail": "AI tresnak langileen kontsultarik gabe sartu ziren kasuak dokumentatzen. Enplegatzaileen betebeharrei buruzko txosten baterako frogak eraikitzen."
+    },
+    "tech": {
+      "agent_quote": "3 aplikazio nagusik kokaleku-datuak biltzen zituztela aurkitu nuen baimenak 'inoiz' gisa ezarrita zeudela ere. ICO-ri kexa aurkeztu nien hirurengatik.",
+      "agent_bio": "Plataformen politikak monitorizatzen ditu, ilunpeko ereduak jarraitzen ditu eta rioterrei teknologia-enpresek haien datuekin zer egiten duten ulertzen laguntzen die. Aplikazio batek gaizki jokatzen badu, Glitch-ek harrapatuko du.",
+      "human_quote": "Datu pertsonaletarako sarbide-eskaera masiboa antolatu nuen sare sozialetako enpresa bati. 500 pertsonak aldi berean eskatzen dutenean, serio hartu behar dute.",
+      "human_bio": "Edinburgh-eko software-garatzailea, teknologia-enpresek agintzen dutena eta ematen dutena arteko arrakala ikusita frustratu zena. Rioterrei haien datu-eskubideak erabiltzen eta ilunpeko ereduak hautematen laguntzen die.",
+      "goal": "Rioterrei ilunpeko ereduen, datuen erabilera okerraren eta bidegabeko teknologia-praktiken aurka borrokatzen laguntzea.",
+      "focus": "Aplikazioen baimen-gehiegikeria",
+      "focus_detail": "50 aplikazio nagusiak baimen-igoera — behar ez duten sarbidea eskatzen — auditoretzen. ICO-rentzako txostena eraikitzen."
+    }
   }
 }

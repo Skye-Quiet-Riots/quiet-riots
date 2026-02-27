@@ -1,588 +1,763 @@
 {
   "locale": "th",
   "categories": {
-    "Transport": "การขนส่ง",
-    "Telecoms": "โทรคมนาคม",
-    "Banking": "การธนาคาร",
-    "Health": "สุขภาพ",
-    "Education": "การศึกษา",
-    "Environment": "สิ่งแวดล้อม",
-    "Energy": "พลังงาน",
-    "Water": "น้ำประปา",
-    "Insurance": "ประกันภัย",
-    "Housing": "ที่อยู่อาศัย",
-    "Shopping": "การจับจ่ายซื้อของ",
-    "Delivery": "การจัดส่งสินค้า",
-    "Local": "ท้องถิ่น",
-    "Employment": "การจ้างงาน",
-    "Tech": "เทคโนโลยี",
-    "Other": "อื่น ๆ"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "รถไฟถูกยกเลิก",
-      "description": "รถไฟถูกยกเลิกหรือล่าช้าอย่างรุนแรงโดยไม่มีการแจ้งเตือนหรือชดเชยอย่างเพียงพอ"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "ราคาตั๋วรถไฟ",
-      "description": "ค่าโดยสารรถไฟแพงเกินไป ปรับขึ้นเกินอัตราเงินเฟ้อ การตั้งราคาไม่สม่ำเสมอ"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "เที่ยวบินล่าช้า",
-      "description": "เที่ยวบินล่าช้าหรือถูกยกเลิก การสื่อสารไม่ดี การเรียกร้องค่าชดเชยทำได้ยาก"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "กระเป๋าสูญหาย",
-      "description": "กระเป๋าไม่มาถึงจุดหมาย การติดตามล่าช้า การชดเชยไม่เพียงพอ"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "การตัดเส้นทางรถเมล์",
-      "description": "เส้นทางถูกยกเลิก ลดความถี่ ชุมชนในชนบทสูญเสียการเข้าถึงรถเมล์"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "ความเสียหายจากหลุมบ่อ",
-      "description": "หลุมบ่อทำให้รถเสียหายและเป็นอันตรายต่อนักปั่นจักรยาน เทศบาลซ่อมแซมล่าช้า"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "ค่าปรับที่จอดรถ",
-      "description": "ค่าจอดรถเอกชนที่ไม่เป็นธรรม การบังคับใช้กฎอย่างก้าวร้าว ป้ายบอกทางสับสน"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "ราคาน้ำมัน",
-      "description": "ราคาน้ำมันเบนซินและดีเซลสูงเกินไป ลดลงช้าเมื่อราคาขายส่งลดลง"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "ความเร็วอินเทอร์เน็ต",
-      "description": "ความเร็วอินเทอร์เน็ตต่ำกว่าที่โฆษณาและจ่ายเงินไปมาก"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "พื้นที่ไม่มีสัญญาณมือถือ",
-      "description": "ไม่มีสัญญาณมือถือในบ้าน ที่ทำงาน หรือตามเส้นทางขนส่ง"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "ขึ้นราคาระหว่างสัญญา",
-      "description": "ค่าโทรศัพท์ อินเทอร์เน็ต และทีวีเพิ่มขึ้นระหว่างสัญญาที่ถูกล็อค"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "เวลารอสายบริการลูกค้า",
-      "description": "รอสายเป็นชั่วโมงเพื่อพูดคุยกับเจ้าหน้าที่จริง"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "ยกเลิกการสมัครสมาชิกยาก",
-      "description": "บริษัทจงใจทำให้การยกเลิกหรือเลิกสมัครทำได้ยาก"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "ค่าโรมมิ่ง",
-      "description": "ค่าใช้จ่ายมือถือที่ไม่คาดคิดเมื่อเดินทางไปต่างประเทศ ราคาเพิ่มหลัง Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "ค่าพลังงาน",
-      "description": "ค่าแก๊สและไฟฟ้าสูงจนรับไม่ไหว เพดานราคายังสูงเกินไป"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "ใบแจ้งค่าพลังงานไม่ถูกต้อง",
-      "description": "การอ่านมิเตอร์โดยประมาณผิดพลาด คิดเงินเกิน ข้อผิดพลาดในการเรียกเก็บ"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "ค่าน้ำประปาเพิ่มขึ้น",
-      "description": "ค่าน้ำประปาเพิ่มขึ้นอย่างรวดเร็วขณะที่คุณภาพบริการลดลง"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "น้ำเสียในแม่น้ำ",
-      "description": "บริษัทประปาปล่อยน้ำเสียดิบลงในทางน้ำและชายหาด"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "ไฟดับ",
-      "description": "กระแสไฟฟ้าหยุดจ่าย การกู้คืนล่าช้า การชดเชยไม่เพียงพอ"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "ปัญหามิเตอร์อัจฉริยะ",
-      "description": "มิเตอร์อัจฉริยะไม่ทำงาน สูญเสียฟังก์ชันหลังเปลี่ยนผู้ให้บริการ"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "ธนาคารสาขาปิดตัว",
-      "description": "ธนาคารสาขาในท้องถิ่นปิดตัว ชุมชนขาดการเข้าถึงบริการ"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "ค่าธรรมเนียมธนาคารแอบแฝง",
-      "description": "ค่าธรรมเนียมที่ไม่คาดคิดสำหรับการเบิกเกินบัญชี ธุรกรรมต่างประเทศ การดูแลบัญชี"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "ความสูญเสียจากการฉ้อโกง",
-      "description": "ธนาคารปฏิเสธการคืนเงินให้เหยื่อฉ้อโกงและหลอกลวงทางการเงิน"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "การปฏิเสธเคลมประกัน",
-      "description": "เคลมถูกปฏิเสธด้วยเหตุผลทางเทคนิคหลังจ่ายเบี้ยมาหลายปี"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "อัตราสินเชื่อบ้านช็อก",
-      "description": "อัตราดอกเบี้ยคงที่สิ้นสุดและเปลี่ยนเป็นอัตราลอยตัวที่สูงขึ้นมาก"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "ค่าธรรมเนียมโอนเงินต่างประเทศ",
-      "description": "ค่าธรรมเนียมสูงเกินไปและอัตราแลกเปลี่ยนไม่ดีสำหรับการโอนเงินระหว่างประเทศ"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "เวลารอ NHS",
-      "description": "รอหลายเดือนหรือหลายปีสำหรับการผ่าตัดและพบแพทย์เฉพาะทาง"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "การเข้าถึงนัดแพทย์ทั่วไป",
-      "description": "ไม่สามารถโทรจองนัดแพทย์ได้ ต้องรอหลายสัปดาห์"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "ทันตแพทย์มีจำกัด",
-      "description": "ไม่สามารถหาทันตแพทย์ NHS ที่รับผู้ป่วยใหม่ได้"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "รอบริการสุขภาพจิต",
-      "description": "รอหลายเดือนสำหรับการบำบัดและบริการสุขภาพจิต"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "ค่ายา",
-      "description": "ค่ายาต่อรายการสูงเกินไปในอังกฤษ ความไม่สอดคล้องระหว่างประเทศในสหราชอาณาจักร"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "ค่าจอดรถโรงพยาบาล",
-      "description": "ต้องจ่ายค่าจอดรถที่โรงพยาบาลขณะป่วยหรือเยี่ยมผู้ป่วย"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "ค่าเช่าเพิ่มขึ้น",
-      "description": "ค่าเช่าเอกชนเพิ่มขึ้นมากกว่าอัตราเงินเฟ้อ ภัยคุกคามการขับไล่โดยไม่มีความผิด"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "ภาษีท้องถิ่นเพิ่มขึ้น",
-      "description": "ภาษีท้องถิ่นเพิ่มขึ้นทุกปีขณะที่บริการท้องถิ่นแย่ลง"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "เพื่อนบ้านเสียงดัง",
-      "description": "เสียงรบกวนต่อเนื่อง เทศบาลดำเนินการล่าช้า ส่งผลต่อสุขภาพจิต"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "เปลี่ยนแปลงการเก็บขยะ",
-      "description": "ลดการเก็บขยะ กฎการรีไซเคิลสับสน ถังขยะล้น"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "การใช้ใบอนุญาตก่อสร้างในทางที่ผิด",
-      "description": "โครงการพัฒนาที่ไม่ต้องการได้รับอนุมัติ พื้นที่สีเขียวถูกคุกคาม ชุมชนถูกเพิกเฉย"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "ความชื้นและเชื้อราในที่อยู่อาศัย",
-      "description": "เจ้าของบ้านและสมาคมที่อยู่อาศัยไม่ยอมแก้ไขปัญหาความชื้นและเชื้อรา"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "ปัญหาการจัดส่ง",
-      "description": "พัสดุสูญหาย ถูกทิ้งกลางฝน แจ้งว่าจัดส่งแล้วแต่ไม่ได้รับ"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "การลดขนาดสินค้า",
-      "description": "สินค้ามีขนาดเล็กลงขณะที่ราคาเท่าเดิมหรือเพิ่มขึ้น"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "การคืนเงินยาก",
-      "description": "บริษัททำให้การคืนสินค้าและการคืนเงินยุ่งยากโดยไม่จำเป็น"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "รีวิวปลอม",
-      "description": "ไม่สามารถเชื่อถือรีวิวออนไลน์ได้ รีวิวเชิงบวกปลอมหลอกลวงผู้บริโภค"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "กับดักการสมัครสมาชิก",
-      "description": "ทดลองฟรีเปลี่ยนเป็นเสียเงินโดยไม่ได้ยินยอมชัดเจน ยกเลิกยาก"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "คุณภาพอาหารลดลง",
-      "description": "อาหารสำเร็จรูปคุณภาพแย่ลง ปริมาณน้อยลง สารปรุงแต่งมากขึ้น"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "ความหงุดหงิดกับเครื่องชำระเงินอัตโนมัติ",
-      "description": "เครื่องบริการตนเองไม่น่าเชื่อถือ มาแทนที่พนักงานจริง"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "ค่าดูแลเด็ก",
-      "description": "ค่าดูแลเด็กแพงจนรับไม่ไหว จำกัดความสามารถในการทำงาน"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "การชำระคืนเงินกู้นักศึกษา",
-      "description": "ผู้สำเร็จการศึกษาต้องจ่ายคืนหลายสิบปี มีการเปลี่ยนเกณฑ์และดอกเบี้ย"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "มูลสุนัขในที่สาธารณะ",
-      "description": "มูลสุนัขตามพื้นที่สาธารณะ สวน และทางเท้าไม่ถูกทำความสะอาด"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI แทนที่งาน",
-      "description": "ความกังวลเรื่องปัญญาประดิษฐ์ที่ทำให้งานเป็นระบบอัตโนมัติโดยไม่มีการสนับสนุนการเปลี่ยนผ่าน"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทาง West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรให้บริการลอนดอนและภาคใต้"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรให้บริการภาคเหนือของอังกฤษ"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "ผู้ให้บริการรถไฟทางไกลของสหราชอาณาจักร"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทางข้ามเทือกเขา Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "ผู้ให้บริการรถไฟสหราชอาณาจักรเส้นทาง East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "สายการบินราคาประหยัดของยุโรป"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "สายการบินราคาประหยัดสัญชาติสหราชอาณาจักร"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "สายการบินแห่งชาติของสหราชอาณาจักร"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "บริษัทท่องเที่ยวและวันหยุดพักผ่อน"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "ผู้ให้บริการอินเทอร์เน็ตและมือถือรายใหญ่ของสหราชอาณาจักร"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "ผู้ให้บริการอินเทอร์เน็ต ทีวี และมือถือของสหราชอาณาจักร"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "ผู้ให้บริการทีวี อินเทอร์เน็ต และมือถือของสหราชอาณาจักร"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "บริษัทโทรคมนาคมระดับโลกที่มีสำนักงานใหญ่ในสหราชอาณาจักร"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "ผู้ให้บริการเครือข่ายมือถือของสหราชอาณาจักร"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "ผู้ให้บริการอินเทอร์เน็ตและโทรศัพท์ของสหราชอาณาจักร"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เจ้าของเป็นบริษัทฝรั่งเศส)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "ผู้จัดหาพลังงานหมุนเวียนของสหราชอาณาจักร"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "ผู้จัดหาพลังงานของสหราชอาณาจักร (เจ้าของเป็นบริษัทเยอรมัน)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "บริษัทน้ำประปาและสุขาภิบาลสำหรับลอนดอนและหุบเขา Thames"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "บริษัทน้ำประปาสำหรับภาคใต้ของอังกฤษ"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "บริษัทน้ำประปาสำหรับภาคตะวันตกเฉียงเหนือของอังกฤษ"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "บริษัทน้ำประปาสำหรับภาค Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "บริษัทน้ำประปาสำหรับภาค East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "ธนาคารข้ามชาติของอังกฤษ"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "ธนาคารและบริการทางการเงินระดับโลก"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "ธนาคารค้าปลีกและพาณิชย์ของสหราชอาณาจักร"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "กลุ่มธนาคารของสหราชอาณาจักร"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "ธนาคารในสหราชอาณาจักร (เจ้าของเป็นบริษัทสเปน)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "ธนาคารดิจิทัลและฟินเทค"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "บริษัทประกันภัยและบริการทางการเงินของสหราชอาณาจักร"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "บริษัทประกันรถยนต์และบ้านของสหราชอาณาจักร"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "บริษัทประกันภัยของสหราชอาณาจักร"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "บริษัทอีคอมเมิร์ซและเทคโนโลยีระดับโลก"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "บริการไปรษณีย์ของสหราชอาณาจักร"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "บริการจัดส่งพัสดุของสหราชอาณาจักร (เดิมชื่อ Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "บริการจัดส่งพัสดุของสหราชอาณาจักร"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "เครือซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "เครือซูเปอร์มาร์เก็ตของสหราชอาณาจักร"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "บริการสุขภาพแห่งชาติสำหรับอังกฤษ"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "บริการทันตกรรม NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "ผู้ให้บริการสุขภาพเอกชน"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "หน่วยงานปกครองส่วนท้องถิ่นของสหราชอาณาจักร"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "บริษัทสร้างบ้านของสหราชอาณาจักร"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "แพลตฟอร์มเช่าบ้านออนไลน์ของสหราชอาณาจักร"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "บริการสตรีมมิ่งบันเทิง"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "บริษัทเทคโนโลยี"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "รถไฟยกเลิก",
-      "ยกเลิกรถไฟ",
-      "รถไฟถูกยกเลิก",
-      "รถไฟไม่วิ่ง",
-      "ยกเลิกขบวนรถ",
-      "บริการยกเลิก",
-      "รถไฟล่าช้า",
-      "รถไฟดีเลย์",
-      "รถไฟสาย",
-      "รถไฟช้า",
-      "ดีเลย์รถไฟ"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["ค่าโดยสารรถไฟ", "ค่าตั๋วรถไฟ", "รถไฟแพง", "ค่ารถไฟ"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "เที่ยวบินล่าช้า",
-      "เครื่องบินดีเลย์",
-      "เที่ยวบินยกเลิก",
-      "ดีเลย์ที่สนามบิน",
-      "ติดสนามบิน",
-      "เครื่องบินสาย"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "กระเป๋าหาย",
-      "กระเป๋าเดินทางหาย",
-      "กระเป๋าไม่มา",
-      "กระเป๋าเดินทางสูญหาย",
-      "กระเป๋าไม่ออกสายพาน",
-      "สายการบินทำกระเป๋าหาย"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["ตัดเส้นทางรถเมล์", "ลดเส้นทางรถเมล์", "ยกเลิกรถเมล์"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "เน็ตช้า",
-      "ไวไฟช้า",
-      "อินเทอร์เน็ตช้า",
-      "ความเร็วเน็ต",
-      "เน็ตใช้ไม่ได้",
-      "บัฟเฟอริ่ง",
-      "เน็ตหลุดบ่อย",
-      "ไวไฟหลุด"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
-    "Mobile Signal Dead Zones": ["ไม่มีสัญญาณ", "สัญญาณไม่ดี", "จุดอับสัญญาณ", "สัญญาณมือถือไม่มี"],
+    "Mobile Signal Dead Zones": [
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
     "Price Rises Mid-Contract": [
-      "ขึ้นราคาระหว่างสัญญา",
-      "ค่าบริการขึ้นกลางสัญญา",
-      "ขึ้นราคากลางสัญญา"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "รอสาย",
-      "รอโทรศัพท์",
-      "โทรไม่ติด",
-      "ไม่มีคนรับ",
-      "คิวโทรศัพท์",
-      "คอลเซ็นเตอร์"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "ยกเลิกไม่ได้",
-      "ยกเลิกยาก",
-      "ยกเลิกสมาชิก",
-      "เลิกสมัคร"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "ค่าแก๊สแพง",
-      "ค่าไฟฟ้า",
-      "ราคาพลังงาน",
-      "ค่าทำความร้อน",
-      "ค่าพลังงานจ่ายไม่ไหว",
-      "จ่ายค่าพลังงานไม่ไหว"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
-    "Inaccurate Energy Bills": ["บิลค่าไฟผิด", "มิเตอร์อ่านผิด", "คิดค่าไฟเกิน"],
-    "Water Bill Increases": ["ค่าน้ำประปา", "ค่าน้ำ", "ค่าน้ำแพง"],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "ปล่อยน้ำเสีย",
-      "น้ำเสียดิบ",
-      "น้ำเสียชายหาด",
-      "มลพิษทางน้ำ",
-      "น้ำเสียล้น",
-      "ท่อน้ำเสียล้น"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "ค่าธรรมเนียมแอบแฝง",
-      "ค่าธรรมเนียมซ่อน",
-      "โดนชาร์จไม่รู้ตัว",
-      "ค่าเบิกเกินบัญชี",
-      "ค่าธรรมเนียมธนาคาร"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": ["โดนหลอก", "ฉ้อโกงธนาคาร", "หลอกโอนเงิน", "โกงทางการเงิน"],
-    "Bank Branch Closures": ["ปิดสาขาธนาคาร", "ธนาคารท้องถิ่นปิด", "ไม่มีธนาคารใกล้บ้าน"],
-    "Insurance Claim Rejections": ["เคลมถูกปฏิเสธ", "ประกันไม่จ่าย", "ปฏิเสธเคลม"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "รอ NHS",
-      "คิวรอรักษา",
-      "รอผ่าตัด",
-      "รอโรงพยาบาล",
-      "รอส่งต่อ",
-      "รอคิวผ่าตัด"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "นัดหมอไม่ได้",
-      "นัดพบแพทย์",
-      "โทรหาหมอไม่ติด",
-      "พบหมอไม่ได้",
-      "แย่งนัดหมอตอนเช้า"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["หมอฟัน NHS", "หาหมอฟันไม่ได้", "คิวรอหมอฟัน"],
-    "Mental Health Service Waits": ["งบสุขภาพจิต", "เข้าถึงจิตบำบัด", "รอพบจิตแพทย์", "รอ CAMHS"],
-    "Prescription Costs": ["ค่ายา", "ราคายา", "ค่าเภสัชกร"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
+    "Mental Health Service Waits": [
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
+    ],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "พัสดุหาย",
-      "พัสดุไม่มาส่ง",
-      "ทิ้งกลางฝน",
-      "พัสดุถูกขโมย",
-      "คนส่งของ",
-      "พลาดรอบส่ง"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
-    "Rent Increases": ["ค่าเช่าแพง", "ค่าเช่าขึ้น", "เจ้าของบ้านขึ้นค่าเช่า", "ถูกไล่ออกจากบ้าน"],
-    "Parking Fines": ["ใบสั่งจอดรถ", "ค่าปรับจอดรถ", "PCN", "ค่าจอดรถไม่ยุติธรรม"],
-    "Shrinkflation": ["ปริมาณน้อยลง", "จ่ายเท่าเดิมได้น้อยลง", "แพ็คเกจเล็กลง", "สินค้าหดตัว"],
-    "Pothole Damage": ["หลุมบ่อ", "ถนนพัง", "หลุมบ่อทำรถเสีย"],
-    "Council Tax Rises": ["ภาษีท้องถิ่นเพิ่ม", "ภาษีท้องถิ่นแพง", "ภาษีเทศบาล"],
-    "Damp and Mould in Housing": ["บ้านขึ้นรา", "ห้องชื้น", "เชื้อราดำ", "บ้านชำรุด"],
-    "Student Loan Repayment": ["กู้ยืมนักศึกษา", "ค่าเล่าเรียน", "หนี้การศึกษา", "หนี้นักศึกษา"],
-    "AI Replacing Jobs": ["งานถูกแทนที่อัตโนมัติ", "AI แย่งงาน", "หุ่นยนต์แทนคน"],
-    "Roaming Charges": ["ค่ามือถือตอนเที่ยว", "ค่าเน็ตต่างประเทศ", "ค่าโทรต่างประเทศ"],
-    "Smart Meter Problems": ["มิเตอร์อัจฉริยะเสีย", "มิเตอร์ไม่ทำงาน", "มิเตอร์สัญญาณหลุด"],
-    "Subscription Traps": ["กับดักทดลองฟรี", "ต่ออายุอัตโนมัติ", "โดนเก็บเงินหลังทดลอง"],
-    "Fuel Prices": ["ราคาเบนซิน", "ราคาดีเซล", "ค่าน้ำมัน", "น้ำมันแพง"],
-    "Power Cuts": ["ไฟดับ", "ไฟตัด", "ไฟดำ", "ไม่มีไฟ", "ไฟเสีย"],
+    "Rent Increases": [
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
+    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Shrinkflation": [
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
+    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "สินเชื่อบ้านขึ้น",
-      "ดอกเบี้ยบ้าน",
-      "รีไฟแนนซ์",
-      "ดอกเบี้ยคงที่หมดอายุ"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "ค่าโอนเงิน",
-      "โอนเงินต่างประเทศ",
-      "ค่าส่งเงินกลับบ้าน",
-      "ค่าโอนผ่านธนาคาร"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["ค่าจอดรถโรงพยาบาล", "จอดรถที่โรงพยาบาล", "ค่าจอดรถ NHS"],
-    "Noisy Neighbours": [
-      "ร้องเรียนเสียงดัง",
-      "เพื่อนบ้านส่งเสียง",
-      "เพื่อนบ้านเสียงดัง",
-      "เสียงรบกวน"
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
+    "Rubbish Collection Changes": [
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
-    "Rubbish Collection Changes": ["เก็บขยะ", "ไม่มาเก็บขยะ", "รีไซเคิลสับสน", "ขยะไม่ได้เก็บ"],
     "Planning Permission Abuse": [
-      "ใบอนุญาตก่อสร้าง",
-      "โครงการไม่ต้องการ",
-      "พื้นที่สีเขียว",
-      "ขออนุญาตก่อสร้าง"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": ["คืนเงินไม่ได้", "ปฏิเสธคืนเงิน", "ส่งคืนไม่ได้", "ขอเงินคืน"],
-    "Fake Reviews": ["รีวิวปั้น", "รีวิวจ้าง", "รีวิวปลอม", "รีวิวไม่จริง"],
-    "Food Quality Decline": ["คุณภาพอาหาร", "อาหารสำเร็จรูปแย่ลง", "สารปรุงแต่ง", "ปริมาณน้อยลง"],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Food Quality Decline": [
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
+    ],
     "Self-Checkout Frustration": [
-      "เครื่องชำระเงินอัตโนมัติ",
-      "เครื่องเซลฟ์เซอร์วิส",
-      "ไม่มีแคชเชียร์",
-      "เครื่องไม่ทำงาน"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": ["ค่าเลี้ยงเด็ก", "ค่าเนอสเซอรี่", "ค่าเลี้ยงเด็กแพง", "ค่ารับเลี้ยงเด็ก"],
-    "Dog Fouling": ["ขี้หมา", "อึหมา", "มูลสุนัข", "สุนัขขับถ่าย"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "เคยช่วยสมาชิก Quiet Riot ยื่นเรื่องขอเงินคืน 6 ครั้งในการเดินทางที่ล่าช้าครั้งเดียว พวกเขาได้ £47 ก่อนจะถึง Birmingham",
+      "agent_bio": "ติดตามรูปแบบการยกเลิก จัดการเอกสารการขอเงินคืน ตรวจสอบทุกการดำเนินการที่แนะนำ และรวบรวมหลักฐานสำหรับการยื่นต่อหน่วยงานกำกับดูแล วิเคราะห์ตัวเลขเพื่อให้สมาชิกสามารถมุ่งเน้นสิ่งที่สำคัญได้",
+      "human_quote": "ช่วงเวลาที่ชอบที่สุดของ Quiet Riot: ได้เห็นทีมโซเชียลมีเดียของ Avanti ตื่นตระหนกเมื่อพวกเรา 400 คนทวีตพร้อมกัน",
+      "human_bio": "ผู้โดยสารประจำจาก Manchester ที่ใช้สาย Avanti มา 3 ปีก่อนจะตัดสินใจว่าพอแล้ว ช่วยเชื่อมต่อสมาชิกบนเส้นทางเดียวกัน แบ่งปันสิ่งที่ได้ผล และนำความเป็นมนุษย์เข้ามา",
+      "goal": "ช่วยสมาชิก Quiet Riot ให้บริษัทขนส่งของสหราชอาณาจักรรับผิดชอบเรื่องการยกเลิก ความล่าช้า และการกำหนดราคา — และทำให้ทุกคนรู้ว่ามีสิทธิ์ได้รับอะไร",
+      "focus": "รูปแบบการยกเลิกของ Avanti West Coast",
+      "focus_detail": "กำลังสร้างฐานข้อมูลการยกเลิกพร้อมเวลา เส้นทาง และเหตุผลเพื่อยื่นต่อ ORR ขณะนี้ติดตามการยกเลิก 340 ครั้งที่สมาชิกรายงานในเดือนนี้"
+    },
+    "telecoms": {
+      "agent_quote": "ทดสอบความเร็วให้สมาชิก 200 คน ค่าเฉลี่ยอยู่ที่ 18 Mbps พวกเขาจ่ายเงินสำหรับ 65",
+      "agent_bio": "วิเคราะห์ความเร็วบรอดแบนด์ รวบรวมข้อมูลเปรียบเทียบผู้ให้บริการ และช่วยสมาชิกสร้างหลักฐานสำหรับ Ofcom ถ้าการเชื่อมต่อของคุณช้า Pulse จะพิสูจน์ให้",
+      "human_quote": "ทั้งถนนเปลี่ยนบรอดแบนด์ด้วยกัน ผู้ให้บริการเก่าส่งจดหมาย 'กรุณากลับมา' ถึงทุกบ้าน",
+      "human_bio": "ชาว London ที่เชี่ยวชาญเทคโนโลยี เบื่อกับการจ่ายเงินสำหรับความเร็วบรอดแบนด์ที่ไม่เคยเป็นจริง ช่วยสมาชิกเปรียบเทียบผู้ให้บริการ ประสานการเปลี่ยน และแบ่งปันหลักฐานความเร็ว",
+      "goal": "ช่วยสมาชิกให้ได้รับบริการบรอดแบนด์และมือถือที่จ่ายเงินไป — และรู้ว่าต้องทำอย่างไรเมื่อไม่ได้รับ",
+      "focus": "การขึ้นราคาระหว่างสัญญา",
+      "focus_detail": "รวบรวมหลักฐานจากสมาชิกที่ได้รับผลกระทบจากการขึ้นราคา CPI+ เพื่อยื่นต่อ Ofcom สมาชิก 890 คนได้รับผลกระทบจาก 4 ผู้ให้บริการ"
+    },
+    "energy": {
+      "agent_quote": "ช่วยสมาชิกคำนวณว่าพวกเขาจ่ายเกิน £340 จากบิลประมาณการ อีเมลขอโทษของบริษัทพลังงานยาวกว่าสัญญาเดิม",
+      "agent_bio": "วิเคราะห์รูปแบบการเรียกเก็บเงิน ตรวจพบการเก็บเงินเกิน และรวบรวมหลักฐานสำหรับการยื่นต่อหน่วยงานกำกับดูแล ถ้าบริษัทพลังงานของคุณเอาเปรียบ Spark จะหาใบเสร็จ",
+      "human_quote": "สมาชิกได้เงิน £340 คืนหลังจากที่เราพิสูจน์การเก็บเงินเกิน 2 ปี เธอร้องไห้ทางโทรศัพท์",
+      "human_bio": "อยู่ใน Bristol ช่วยสมาชิกคัดค้านบิล นำทางการเปลี่ยนผู้ให้บริการ และรวบรวมหลักฐานสำหรับ Ofgem รู้จักตลาดพลังงานอย่างถ่องแท้",
+      "goal": "ช่วยสมาชิกคัดค้านบิลที่ไม่เป็นธรรม เปลี่ยนผู้ให้บริการอย่างชาญฉลาด และทำให้บริษัทพลังงานเล่นอย่างยุติธรรม",
+      "focus": "ข้อผิดพลาดการเรียกเก็บเงินประมาณการของ British Gas",
+      "focus_detail": "วิเคราะห์ข้อมูลการเรียกเก็บเงิน 2 ปีจากสมาชิก 340 คนเพื่อระบุรูปแบบการเก็บเงินเกินอย่างเป็นระบบสำหรับการยื่นต่อ Ofgem"
+    },
+    "water": {
+      "agent_quote": "ช่วยสมาชิก 200 คนยื่นรายงานน้ำเสียในสุดสัปดาห์เดียว กล่องจดหมายของ Thames Water ต้องการกล่องจดหมายของตัวเอง",
+      "agent_bio": "ตรวจสอบข้อมูลการปล่อยน้ำเสีย ติดตามประสิทธิภาพของบริษัทน้ำ และรวบรวมหลักฐานสำหรับ EA และ Ofwat เฝ้าดูทุกจุดปล่อยและน้ำล้น",
+      "human_quote": "เราทำให้ชายหาดเปิดใหม่เร็วขึ้น 3 สัปดาห์โดยแสดงให้เห็นว่าข้อมูลน้ำเสียผิด",
+      "human_bio": "นักเซิร์ฟจาก Cornwall ที่เบื่อกับคำเตือนน้ำเสียที่ปิดชายหาดท้องถิ่น ช่วยสมาชิกรายงานการปล่อย รวบรวมหลักฐานคุณภาพน้ำ และประสานงานกับ EA",
+      "goal": "ช่วยสมาชิกให้บริษัทน้ำรับผิดชอบเรื่องน้ำเสีย บิล และคุณภาพบริการ",
+      "focus": "ความถี่ของการปล่อยน้ำเสียของ Thames Water",
+      "focus_detail": "แมปเหตุการณ์การปล่อยเทียบกับข้อมูลที่บริษัทรายงาน รายงานจากสมาชิก 200 คนชี้ว่ามีการรายงานต่ำกว่าความเป็นจริงที่จุดปล่อย 3 จุด"
+    },
+    "banking": {
+      "agent_quote": "ช่วยร่างเรื่องร้องเรียนที่ละเอียดมากจนธนาคารโทรมาขอโทษก่อนที่จะส่งไป",
+      "agent_bio": "ตรวจสอบค่าธรรมเนียมธนาคาร วิเคราะห์โครงสร้างค่าธรรมเนียม และช่วยสร้างหลักฐานสำหรับการร้องเรียนต่อ FCA ถ้ามีค่าธรรมเนียมแอบแฝง Chip จะหาเจอ",
+      "human_quote": "Barclays ยกเลิกการปิดสาขาหลังจากพวกเรา 1,200 คนมาร่วมการปรึกษาหารือ",
+      "human_bio": "อดีตพนักงานธนาคารจาก Birmingham ที่เห็นว่าเรื่องร้องเรียนถูกจัดการอย่างไรจากข้างใน ช่วยสมาชิกเขียนเรื่องร้องเรียนที่ดีขึ้นและนำทางระบบ",
+      "goal": "ช่วยสมาชิกจัดการกับค่าธรรมเนียมที่ไม่เป็นธรรม การปิดสาขา และบริการที่ไม่ดีจากธนาคาร",
+      "focus": "คลื่นการปิดสาขาของ HSBC",
+      "focus_detail": "ประสานการตอบสนองต่อการปิด 12 แห่งที่วางแผนไว้ รวบรวมคำแถลงผลกระทบจากชุมชนที่ได้รับผลกระทบ"
+    },
+    "health": {
+      "agent_quote": "ช่วยหาทันตแพทย์ NHS 3 คนที่รับผู้ป่วย สมาชิกคิดว่าผมแต่งเรื่อง",
+      "agent_bio": "ติดตามเวลารอ หาความพร้อม และช่วยสมาชิกนำทางระบบ ถ้ามีทางเร็วกว่าไปรับการรักษา Cura จะแมปให้",
+      "human_quote": "สมาชิกใช้แบบจดหมายของเราเพื่อเร่งการส่งต่อ 18 เดือนเหลือ 6 สัปดาห์",
+      "human_bio": "พยาบาลจาก Liverpool ที่เห็นทั้งสองด้านของ NHS ช่วยสมาชิกนำทางรายชื่อรอ เขียนจดหมายที่มีประสิทธิภาพ และแบ่งปันสิ่งที่ได้ผลจริง",
+      "goal": "ช่วยสมาชิกนำทางเวลารอของ NHS หาความพร้อม และรู้ว่ามีตัวเลือกอะไร",
+      "focus": "เวลาการเข้าถึงแพทย์ประจำตัวทางโทรศัพท์",
+      "focus_detail": "รวบรวมข้อมูลการโทรจากสมาชิก 500 คนเพื่อสร้างภาพการเข้าถึงจริง เผยแพร่ผลการค้นพบต่อคณะกรรมการสุขภาพท้องถิ่น"
+    },
+    "housing": {
+      "agent_quote": "ช่วยบันทึกข้อบกพร่อง 47 จุดในบ้านสร้างใหม่ ผู้พัฒนาถามว่าพวกเขาเป็นผู้ตรวจสอบอาคารหรือเปล่า",
+      "agent_bio": "บันทึกปัญหาทรัพย์สิน วิเคราะห์เวลาตอบสนองของเจ้าของบ้าน และรวบรวมหลักฐานสำหรับการยื่นต่อผู้ตรวจการแผ่นดินด้านที่อยู่อาศัย ทุกจุดชื้น ทุกรอยแตก บันทึกไว้หมด",
+      "human_quote": "ชุดหลักฐานความชื้นของเราละเอียดมากจนเจ้าของบ้านซ่อมก่อนการตรวจสอบของสภา",
+      "human_bio": "ผู้เช่าจาก London ที่เผชิญกับทุกอย่างตั้งแต่ความชื้นถึงเจ้าของบ้านที่ไม่น่าเชื่อถือ ช่วยสมาชิกบันทึกปัญหาอย่างถูกต้องและรู้ว่ามีตัวเลือกอะไร",
+      "goal": "ช่วยสมาชิกจัดการกับเจ้าของบ้าน สภา และปัญหาที่อยู่อาศัย — และรู้ว่ามีสิทธิ์อะไร",
+      "focus": "หนังสือแจ้งขับไล่โดยไม่มีความผิดตามมาตรา 21",
+      "focus_detail": "ช่วยสมาชิกที่ได้รับผลกระทบจากการขับไล่โดยไม่มีความผิดเข้าใจกฎหมายปฏิรูปผู้เช่าใหม่และความหมายสำหรับพวกเขา"
+    },
+    "shopping": {
+      "agent_quote": "ติดตามพัสดุที่ระบุว่า 'จัดส่งแล้ว' ผ่านเพื่อนบ้าน 4 คน ถังรีไซเคิล และเรือนกระจก พบแล้ว",
+      "agent_bio": "ติดตามการจัดส่งที่ล้มเหลว รวบรวมหลักฐานการขอเงินคืน และตรวจพบรูปแบบราคา ถ้าพัสดุของคุณหาย Scout กำลังหาอยู่แล้ว",
+      "human_quote": "Evri ทำพัสดุของฉันหาย 3 ครั้ง ตอนนี้ฉันช่วยคนอื่นได้เงินคืนเร็วกว่าที่ฉันเคยได้",
+      "human_bio": "นักช้อปออนไลน์รุ่นเก่าจาก Edinburgh ที่พัสดุหายมากกว่าจะนับได้ ช่วยสมาชิกได้เงินคืน รายงานผู้ขาย และหลีกเลี่ยงผู้กระทำผิดที่แย่ที่สุด",
+      "goal": "ช่วยสมาชิกได้เงินคืน ติดตามพัสดุที่หาย และให้ร้านค้าปลีกและบริษัทจัดส่งรับผิดชอบ",
+      "focus": "อัตราการจัดส่งล้มเหลวของ Evri",
+      "focus_detail": "รวบรวมหลักฐานการจัดส่งล้มเหลวจากสมาชิก 800 คนเพื่อยื่นต่อ Citizens Advice และ Trading Standards"
+    },
+    "local": {
+      "agent_quote": "ช่วยถ่ายรูปหลุมบ่อเดิมใน 11 สภาพอากาศต่างกัน สภาท้องถิ่นยอมในที่สุด",
+      "agent_bio": "แมปปัญหาท้องถิ่น ติดตามเวลาตอบสนองของสภา และรวบรวมคำขอ FOI ถ้าหลุมบ่อของคุณอยู่มา 6 เดือน Link มีหลักฐาน",
+      "human_quote": "สภาซ่อมถนนของเราหลังจากที่เราแมปทุกหลุมบ่อพร้อมรูปถ่าย 11 เดือน แต่เราทำสำเร็จ",
+      "human_bio": "ชาว Welsh จาก Valleys ที่มีจิตสาธารณะ รายงานหลุมบ่อเดิมมาหลายปี ช่วยสมาชิกบันทึกปัญหาท้องถิ่นและให้สภารับผิดชอบ",
+      "goal": "ช่วยสมาชิกแก้ปัญหาท้องถิ่น — หลุมบ่อ ถังขยะ การวางผัง เสียงรบกวน — และให้สภารับผิดชอบ",
+      "focus": "เวลาตอบสนองการรายงานหลุมบ่อ",
+      "focus_detail": "คำขอ FOI ส่งถึง 30 สภาเพื่อเปรียบเทียบเวลาซ่อมที่รายงานกับเวลาจริง เผยแพร่ผลลัพธ์เป็นตารางจัดอันดับ"
+    },
+    "other": {
+      "agent_quote": "ช่วยยกเลิกสมาชิกยิมที่ต้องโทร 3 ครั้ง ส่งอีเมล 2 ฉบับ และจดหมายลงทะเบียน ตอนนี้ยิมมีปุ่มยกเลิกแล้ว",
+      "agent_bio": "จัดการปัญหาที่ไม่เข้าพวกที่อื่น กับดักสมัครสมาชิก ขยะพลาสติก ความหงุดหงิดกับเครื่องเก็บเงินอัตโนมัติ — Flex หารูปแบบและจุดกดดัน",
+      "human_quote": "เราทำให้เครือยิมเพิ่มปุ่มยกเลิกบนเว็บไซต์ ใช้แค่ 800 เรื่องร้องเรียน",
+      "human_bio": "นักออกแบบผลิตภัณฑ์จาก London ที่หงุดหงิดกับความยากที่บริษัททำให้การออกจากบริการ ช่วยสมาชิกยกเลิกสมัครสมาชิก หลีกเลี่ยง dark pattern และแบ่งปันวิธีแก้",
+      "goal": "ช่วยสมาชิกกับเรื่องที่ไม่เข้าพวกที่อื่น — สมัครสมาชิก การขอเงินคืน และความหงุดหงิดในชีวิตประจำวัน",
+      "focus": "Dark pattern ในการยกเลิกสมัครสมาชิก",
+      "focus_detail": "บันทึกผู้กระทำผิดที่แย่ที่สุดและสร้างสคริปต์ยกเลิกแม่แบบสำหรับแต่ละราย"
+    },
+    "insurance": {
+      "agent_quote": "ช่วยสมาชิกหาข้อกำหนดที่เปลี่ยนเคลมประกันบ้านที่ถูกปฏิเสธเป็นการจ่ายเงิน £4,200 กรมธรรม์ของบริษัทประกันเองพิสูจน์ว่าพวกเขาผิด",
+      "agent_bio": "ตรวจสอบข้อความกรมธรรม์ ตรวจพบรูปแบบการปฏิเสธที่ไม่เป็นธรรม และสร้างหลักฐานสำหรับการยื่นต่อ Financial Ombudsman ถ้าบริษัทประกันหลบเคลมที่ถูกต้อง Shield จะหาจุดกดดัน",
+      "human_quote": "ทำให้สมาชิก 8 คนที่มีเคลมถูกปฏิเสธประเภทเดียวกันยื่นร่วมกัน บริษัทประกันตกลงทั้ง 8 รายภายในสองสัปดาห์",
+      "human_bio": "อดีตพนักงานอุตสาหกรรมประกันภัยจาก Leeds ที่รู้ว่าเคลมถูกตัดสินอย่างไรจริง ช่วยสมาชิกเขียนอุทธรณ์ที่ดีขึ้น เข้าใจศัพท์กรมธรรม์ และรู้ว่าเมื่อไหร่ควรยกระดับ",
+      "goal": "ช่วยสมาชิกได้รับการปฏิบัติที่เป็นธรรมจากบริษัทประกัน — และรู้ว่าต้องทำอย่างไรเมื่อเคลมถูกปฏิเสธอย่างไม่เป็นธรรม",
+      "focus": "รูปแบบการปฏิเสธประกันบ้านของ Aviva",
+      "focus_detail": "'การสึกหรอ' ถูกอ้างใน 40% ของเคลมที่ถูกปฏิเสธ — มักจะผิดพลาด วิเคราะห์ 200 คดีจาก 3 บริษัทประกันสำหรับชุดหลักฐาน FOS"
+    },
+    "delivery": {
+      "agent_quote": "ติดตามพัสดุที่ระบุว่า 'จัดส่งแล้ว' ผ่าน 6 สถานะติดตาม 3 คลังสินค้า และโรงเก็บของเพื่อนบ้าน พบใน 47 นาที",
+      "agent_bio": "ตรวจสอบประสิทธิภาพของผู้จัดส่ง ติดตามอัตราการจัดส่งล้มเหลว และรวบรวมหลักฐานสำหรับการร้องเรียนผู้บริโภค ถ้าพัสดุของคุณหายไป Track ดำเนินการอยู่แล้ว",
+      "human_quote": "ทำให้ DPD เปลี่ยนนโยบายหลักฐานภาพถ่ายในพื้นที่ของเราหลังจากสมาชิก 40 คนยื่นหลักฐานพัสดุที่ถูกทิ้งตากฝน",
+      "human_bio": "นักช้อปออนไลน์จาก Glasgow ที่เบื่อข้ออ้าง 'เราวางไว้ในที่ปลอดภัย' ช่วยสมาชิกได้เงินคืน รายงานผู้จัดส่ง และหลีกเลี่ยงผู้กระทำผิดที่แย่ที่สุด",
+      "goal": "ช่วยสมาชิกให้พัสดุถูกจัดส่งอย่างถูกต้อง — และได้เงินคืนเมื่อไม่ได้รับ",
+      "focus": "อัตราการจัดส่งล้มเหลวของ Evri",
+      "focus_detail": "รวบรวมหลักฐานการจัดส่งล้มเหลวจากสมาชิก 800 คน อัตราร้องเรียน Evri: 23% — สูงกว่า DPD 3 เท่า สร้างตารางจัดอันดับสำหรับ Trading Standards"
+    },
+    "education": {
+      "agent_quote": "คำนวณว่าผู้กู้ Plan 2 ที่มีรายได้ £30k จะจ่ายดอกเบี้ย £47,000 ก่อนที่เงินกู้จะถูกยกเลิก เงินกู้เดิมคือ £40,000",
+      "agent_bio": "วิเคราะห์ค่าใช้จ่ายด้านการศึกษา การประมาณการเงินกู้นักศึกษา และสิทธิ์ในการรับเงินทุน วิเคราะห์ตัวเลขเพื่อให้นักศึกษาและบัณฑิตตัดสินใจได้อย่างมีข้อมูล",
+      "human_quote": "ช่วยสมาชิก 12 คนเรียกคืนเงินชำระเกินเงินกู้นักศึกษาที่พวกเขาไม่รู้ เงินคืนเฉลี่ย: £340",
+      "human_bio": "นักศึกษาผู้ใหญ่จาก Birmingham ที่ผ่านระบบเงินทุนมาสองครั้ง ช่วยสมาชิกเข้าใจการชำระคืน ตรวจพบการจ่ายเกิน และคัดค้านการเปลี่ยนแปลงเกณฑ์",
+      "goal": "ช่วยนักศึกษาและบัณฑิตนำทางค่าใช้จ่ายด้านการศึกษา เงินกู้ และการชำระคืน — และทำให้แน่ใจว่าไม่ได้จ่ายเกิน",
+      "focus": "การคืนเงินจ่ายเกินเงินกู้นักศึกษา",
+      "focus_detail": "ระบุบัณฑิตที่ถูกเรียกเก็บต่ำกว่าเกณฑ์การชำระคืน ดำเนินการคืนเงิน 12 รายจนถึงตอนนี้ — เฉลี่ย £340 ต่อราย"
+    },
+    "environment": {
+      "agent_quote": "เปรียบเทียบข้อมูลคุณภาพอากาศ 3 ปีกับอัตราการรับเข้าโรงพยาบาล ความสัมพันธ์ชัดเจนจนสภาเพิกเฉยไม่ได้",
+      "agent_bio": "ติดตามข้อมูลสิ่งแวดล้อม ตรวจสอบระดับมลพิษ และรวบรวมหลักฐานสำหรับการยื่นต่อหน่วยงานกำกับดูแล ถ้าตัวเลขเล่าเรื่อง Fern จะหาเจอ",
+      "human_quote": "ทำให้สภาท้องถิ่นติดตั้งเครื่องวัดคุณภาพอากาศหลังจากสมาชิก 200 คนลงนามในคำร้องหลักฐาน ข้อมูลเปลี่ยนทุกอย่าง",
+      "human_bio": "บัณฑิตวิทยาศาสตร์สิ่งแวดล้อมจาก Bristol ที่เชื่อในการเปลี่ยนแปลงที่นำโดยหลักฐาน ช่วยสมาชิกบันทึกปัญหาสิ่งแวดล้อมและสร้างกรณีที่หน่วยงานกำกับดูแลเพิกเฉยไม่ได้",
+      "goal": "ช่วยสมาชิกบันทึกปัญหาสิ่งแวดล้อมและใช้ข้อมูลให้ผู้ก่อมลพิษและผู้กำหนดนโยบายรับผิดชอบ",
+      "focus": "ช่องว่างในการตรวจสอบคุณภาพอากาศท้องถิ่น",
+      "focus_detail": "แมปพื้นที่ที่ไม่มีการตรวจสอบคุณภาพอากาศภายในรัศมี 5 กม. 60% ของจุดมลพิษที่สมาชิกรายงานไม่มีการตรวจสอบอย่างเป็นทางการ"
+    },
+    "employment": {
+      "agent_quote": "รวบรวมข้อมูลการนำ AI มาใช้ในที่ทำงานจากสมาชิก 300 คน 40% บอกว่าการเปลี่ยนแปลงเกิดขึ้นโดยไม่มีการปรึกษาหารือ นั่นเป็นรูปแบบ ไม่ใช่เรื่องเล่า",
+      "agent_bio": "วิเคราะห์แนวโน้มในที่ทำงาน ติดตามการเปลี่ยนแปลงนโยบาย และช่วยสมาชิกเข้าใจการคุ้มครอง ถ้างานของคุณเปลี่ยนโดยไม่มีการปรึกษาหารือ Forge มีข้อมูล",
+      "human_quote": "เชื่อมต่อสมาชิก 30 คนในอุตสาหกรรมเดียวกันที่เผชิญกับการเปลี่ยนแปลง AI ปรากฏว่าบริษัทของพวกเขาทั้งหมดใช้แผนเดียวกัน — และช่องโหว่เดียวกัน",
+      "human_bio": "ผู้เชี่ยวชาญ HR จาก Manchester ที่เปลี่ยนข้างหลังจากเห็นว่าการปรับโครงสร้างทำงานอย่างไรจริง ช่วยสมาชิกเข้าใจตัวเลือกและประสานการตอบสนอง",
+      "goal": "ช่วยสมาชิกนำทางการเปลี่ยนแปลงในที่ทำงาน เข้าใจการคุ้มครอง และตอบสนองร่วมกันเมื่อตำแหน่งงานตกอยู่ในความเสี่ยง",
+      "focus": "ระบบอัตโนมัติ AI ในที่ทำงานโดยไม่มีการปรึกษาหารือ",
+      "focus_detail": "บันทึกกรณีที่เครื่องมือ AI ถูกนำมาใช้โดยไม่ปรึกษาพนักงาน สร้างหลักฐานสำหรับรายงานเกี่ยวกับหน้าที่ของนายจ้าง"
+    },
+    "tech": {
+      "agent_quote": "พบว่าแอปหลัก 3 ตัวเก็บข้อมูลตำแหน่งแม้ว่าสิทธิ์จะตั้งเป็น 'ไม่เคย' ยื่นเรื่องร้องเรียนต่อ ICO สำหรับทั้งหมด",
+      "agent_bio": "ตรวจสอบนโยบายแพลตฟอร์ม ติดตาม dark pattern และช่วยสมาชิกเข้าใจว่าบริษัทเทคโนโลยีทำอะไรกับข้อมูลของพวกเขา ถ้าแอปทำตัวไม่ดี Glitch จะจับได้",
+      "human_quote": "จัดให้มีการขอเข้าถึงข้อมูลส่วนบุคคลร่วมกันจำนวนมากต่อบริษัทโซเชียลมีเดีย เมื่อ 500 คนถามพร้อมกัน พวกเขาต้องจริงจัง",
+      "human_bio": "นักพัฒนาซอฟต์แวร์จาก Edinburgh ที่หงุดหงิดกับช่องว่างระหว่างสิ่งที่บริษัทเทคโนโลยีสัญญาและสิ่งที่ส่งมอบ ช่วยสมาชิกใช้สิทธิ์ด้านข้อมูลและตรวจพบ dark pattern",
+      "goal": "ช่วยสมาชิกต่อต้าน dark pattern การใช้ข้อมูลในทางที่ผิด และแนวปฏิบัติที่ไม่เป็นธรรมของเทคโนโลยี",
+      "focus": "แอปขอสิทธิ์เกินความจำเป็น",
+      "focus_detail": "ตรวจสอบ 50 แอปยอดนิยมสำหรับการขยายสิทธิ์ — ขอเข้าถึงที่ไม่จำเป็น สร้างรายงานสำหรับ ICO"
+    }
   }
 }

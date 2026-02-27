@@ -1,634 +1,763 @@
 {
   "locale": "vi",
   "categories": {
-    "Transport": "Giao thông",
-    "Telecoms": "Viễn thông",
-    "Banking": "Ngân hàng",
-    "Health": "Sức khỏe",
-    "Education": "Giáo dục",
-    "Environment": "Môi trường",
-    "Energy": "Năng lượng",
-    "Water": "Nước",
-    "Insurance": "Bảo hiểm",
-    "Housing": "Nhà ở",
-    "Shopping": "Mua sắm",
-    "Delivery": "Giao hàng",
-    "Local": "Địa phương",
-    "Employment": "Việc làm",
-    "Tech": "Công nghệ",
-    "Other": "Khác"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Hủy chuyến tàu",
-      "description": "Tàu bị hủy hoặc trễ nghiêm trọng mà không được thông báo hoặc bồi thường đầy đủ"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Giá vé tàu",
-      "description": "Giá vé tàu quá đắt, tăng vượt lạm phát, giá cả không nhất quán"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Chuyến bay bị trễ",
-      "description": "Chuyến bay bị trễ hoặc bị hủy, thông tin liên lạc kém, khó khăn khi đòi bồi thường"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Mất hành lý",
-      "description": "Hành lý không đến nơi, theo dõi chậm, bồi thường không đầy đủ"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Cắt tuyến xe buýt",
-      "description": "Các tuyến bị hủy, giảm tần suất, cộng đồng nông thôn mất quyền tiếp cận xe buýt"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Thiệt hại do ổ gà",
-      "description": "Ổ gà làm hỏng xe và gây nguy hiểm cho người đi xe đạp, chính quyền chậm sửa chữa"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Phạt đậu xe",
-      "description": "Phí đậu xe tư nhân không công bằng, thực thi quá mạnh tay, biển báo khó hiểu"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Giá nhiên liệu",
-      "description": "Giá xăng dầu quá cao, giảm chậm khi giá bán buôn giảm"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Tốc độ internet",
-      "description": "Tốc độ internet thấp hơn nhiều so với quảng cáo và mức đã trả tiền"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Vùng không có sóng điện thoại",
-      "description": "Không có sóng điện thoại tại nhà, nơi làm việc hoặc dọc tuyến giao thông"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Tăng giá giữa hợp đồng",
-      "description": "Hóa đơn điện thoại, internet và truyền hình tăng trong thời gian hợp đồng bị khóa"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Thời gian chờ dịch vụ khách hàng",
-      "description": "Chờ hàng giờ để được nói chuyện với nhân viên thực"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Khó hủy đăng ký",
-      "description": "Các công ty cố tình làm cho việc hủy hoặc bỏ đăng ký trở nên khó khăn"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Phí chuyển vùng",
-      "description": "Phí điện thoại bất ngờ khi đi du lịch nước ngoài, giá tăng sau Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Chi phí hóa đơn năng lượng",
-      "description": "Hóa đơn gas và điện không thể chi trả, trần giá vẫn quá cao"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Hóa đơn năng lượng không chính xác",
-      "description": "Số đọc ước tính sai, tính phí quá mức, lỗi trong việc lập hóa đơn"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Hóa đơn nước tăng",
-      "description": "Hóa đơn nước tăng mạnh trong khi chất lượng dịch vụ giảm"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Nước thải trong sông",
-      "description": "Các công ty nước xả nước thải chưa xử lý vào đường nước và bãi biển"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Mất điện",
-      "description": "Gián đoạn cung cấp điện, phục hồi chậm, bồi thường không đầy đủ"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Vấn đề đồng hồ thông minh",
-      "description": "Đồng hồ thông minh không hoạt động, mất chức năng sau khi đổi nhà cung cấp"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Đóng cửa chi nhánh ngân hàng",
-      "description": "Các chi nhánh ngân hàng địa phương đóng cửa, cộng đồng mất quyền tiếp cận"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Phí ngân hàng ẩn",
-      "description": "Phí bất ngờ cho thấu chi, giao dịch nước ngoài, phí duy trì tài khoản"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Thiệt hại do gian lận và lừa đảo",
-      "description": "Ngân hàng từ chối hoàn tiền cho nạn nhân gian lận và lừa đảo thanh toán"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Từ chối yêu cầu bảo hiểm",
-      "description": "Yêu cầu bồi thường bị từ chối vì lý do kỹ thuật sau nhiều năm đóng phí"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Cú sốc lãi suất thế chấp",
-      "description": "Lãi suất cố định kết thúc và chuyển sang lãi suất thả nổi cao hơn nhiều"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Phí chuyển tiền quốc tế",
-      "description": "Phí quá cao và tỷ giá hối đoái kém cho chuyển tiền quốc tế"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Thời gian chờ NHS",
-      "description": "Chờ nhiều tháng hoặc nhiều năm để phẫu thuật và khám chuyên khoa"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Tiếp cận lịch hẹn bác sĩ đa khoa",
-      "description": "Không thể gọi đặt lịch hẹn bác sĩ, phải chờ hàng tuần"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Tình sẵn có của nha sĩ",
-      "description": "Không thể tìm nha sĩ NHS nhận bệnh nhân mới"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Chờ dịch vụ sức khỏe tâm thần",
-      "description": "Chờ hàng tháng để được trị liệu và hỗ trợ sức khỏe tâm thần"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Chi phí đơn thuốc",
-      "description": "Chi phí mỗi đơn thuốc quá cao ở Anh, không nhất quán giữa các quốc gia Vương quốc Anh"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Phí đậu xe bệnh viện",
-      "description": "Phải trả phí đậu xe tại bệnh viện khi đang ốm hoặc thăm người ốm"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Tăng giá thuê",
-      "description": "Giá thuê tư nhân tăng vượt xa lạm phát, đe dọa đuổi khỏi nhà không có lỗi"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Tăng thuế địa phương",
-      "description": "Thuế địa phương tăng hàng năm trong khi dịch vụ địa phương tệ hơn"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Hàng xóm ồn ào",
-      "description": "Tiếng ồn liên tục, chính quyền chậm xử lý, ảnh hưởng sức khỏe tâm thần"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Thay đổi thu gom rác",
-      "description": "Giảm tần suất thu gom rác, quy định tái chế khó hiểu, thùng rác tràn"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Lạm dụng giấy phép quy hoạch",
-      "description": "Các dự án không mong muốn được phê duyệt, vùng xanh bị đe dọa, cộng đồng bị phớt mặc"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Ẩm mốc trong nhà ở",
-      "description": "Chủ nhà và hiệp hội nhà ở không chịu sửa chữa ẩm mốc"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Vấn đề giao hàng",
-      "description": "Bưu kiện mất, bị để ngoài mưa, đánh dấu đã giao nhưng không nhận được"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Giảm kích thước sản phẩm",
-      "description": "Sản phẩm nhỏ đi trong khi giá giữ nguyên hoặc tăng"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Khó khăn khi hoàn tiền",
-      "description": "Các công ty làm cho việc trả hàng và hoàn tiền khó khăn không cần thiết"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Đánh giá giả",
-      "description": "Không thể tin tưởng đánh giá trực tuyến, đánh giá tích cực giả lừa đảo người tiêu dùng"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Bẫy đăng ký",
-      "description": "Dùng thử miễn phí chuyển thành trả phí mà không có sự đồng ý rõ ràng, khó hủy"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Chất lượng thực phẩm giảm",
-      "description": "Đồ ăn sẵn chất lượng kém hơn, phần nhỏ hơn, nhiều phụ gia hơn"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Bực xúc với quầy tự thanh toán",
-      "description": "Máy tự phục vụ không đáng tin cậy, thay thế nhân viên thực"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Chi phí giữ trẻ",
-      "description": "Chi phí giữ trẻ đắt đến mức cấm, hạn chế khả năng đi làm"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Trả nợ sinh viên",
-      "description": "Sinh viên tốt nghiệp phải trả nợ hàng chục năm, thay đổi ngưỡng và lãi suất"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Phân chó",
-      "description": "Phân chó ở nơi công cộng, công viên và vỉa hè không được dọn dẹp"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI thay thế việc làm",
-      "description": "Lo lắng về trí tuệ nhân tạo tự động hóa công việc mà không có hỗ trợ chuyển đổi"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ London và miền nam"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ miền bắc nước Anh"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Nhà vận hành đường sắt đường dài Vương quốc Anh"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến xuyên Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Nhà vận hành đường sắt Vương quốc Anh phục vụ tuyến East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Hãng hàng không giá rẻ châu Âu"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Hãng hàng không giá rẻ có trụ sở tại Vương quốc Anh"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Hãng hàng không quốc gia Vương quốc Anh"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Công ty du lịch và nghỉ dưỡng"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Nhà cung cấp internet và di động lớn của Vương quốc Anh"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Nhà cung cấp internet, truyền hình và di động Vương quốc Anh"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Nhà cung cấp truyền hình, internet và di động Vương quốc Anh"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Công ty viễn thông toàn cầu có trụ sở tại Vương quốc Anh"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Nhà mạng di động Vương quốc Anh"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Nhà cung cấp internet và điện thoại Vương quốc Anh"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Nhà cung cấp năng lượng Vương quốc Anh (thuộc sở hữu của Pháp)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Nhà cung cấp năng lượng tái tạo Vương quốc Anh"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Nhà cung cấp năng lượng Vương quốc Anh"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Nhà cung cấp năng lượng Vương quốc Anh (thuộc sở hữu của Đức)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Công ty nước và thoát nước cho London và thụng lũng Thames"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Công ty nước cho miền nam nước Anh"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Công ty nước cho vùng tây bắc nước Anh"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Công ty nước cho vùng Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Công ty nước cho vùng East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Ngân hàng đa quốc gia của Anh"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Ngân hàng và dịch vụ tài chính toàn cầu"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Ngân hàng bán lẻ và thương mại Vương quốc Anh"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Tập đoàn ngân hàng Vương quốc Anh"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Ngân hàng Vương quốc Anh (thuộc sở hữu của Tây Ban Nha)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Ngân hàng số và công nghệ tài chính"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Công ty bảo hiểm và dịch vụ tài chính Vương quốc Anh"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Công ty bảo hiểm xe và nhà Vương quốc Anh"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Công ty bảo hiểm Vương quốc Anh"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Công ty thương mại điện tử và công nghệ toàn cầu"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Dịch vụ bưu chính Vương quốc Anh"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Dịch vụ giao bưu kiện Vương quốc Anh (trước đây là Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Dịch vụ giao bưu kiện Vương quốc Anh"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Chuỗi siêu thị Vương quốc Anh"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Chuỗi siêu thị Vương quốc Anh"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Dịch vụ Y tế Quốc gia cho nước Anh"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Dịch vụ nha khoa NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Nhà cung cấp dịch vụ chăm sóc sức khỏe tư nhân"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Cơ quan chính quyền địa phương Vương quốc Anh"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Công ty xây dựng nhà ở Vương quốc Anh"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Nền tảng cho thuê trực tuyến Vương quốc Anh"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Dịch vụ phát trực tuyến giải trí"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Công ty công nghệ"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "tàu bị hủy",
-      "hủy chuyến tàu",
-      "tàu hủy chuyến",
-      "tàu không chạy",
-      "hủy tàu hỏa",
-      "dịch vụ tàu hủy",
-      "tàu trễ",
-      "tàu bị trễ",
-      "tàu chậm",
-      "tàu đến trễ",
-      "trễ tàu hỏa"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["giá vé tàu", "tiền vé tàu", "tàu đắt", "vé tàu hỏa"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "chuyến bay trễ",
-      "máy bay trễ",
-      "chuyến bay hủy",
-      "trễ ở sân bay",
-      "kẹt ở sân bay",
-      "máy bay muộn"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "hành lý mất",
-      "vali mất",
-      "hành lý chưa đến",
-      "vali thất lạc",
-      "hành lý không ra băng chuyền",
-      "hãng bay làm mất đồ"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["cắt tuyến xe buýt", "giảm tuyến xe buýt", "hủy tuyến xe buýt"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "mạng chậm",
-      "wifi chậm",
-      "wifi lag",
-      "tốc độ mạng",
-      "internet không hoạt động",
-      "giật lag",
-      "mạng hay mất",
-      "wifi hay mất"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
-    "Mobile Signal Dead Zones": ["không có sóng", "mất sóng", "vùng mất sóng", "không có tín hiệu"],
+    "Mobile Signal Dead Zones": [
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
     "Price Rises Mid-Contract": [
-      "tăng giá giữa hợp đồng",
-      "giá hợp đồng tăng",
-      "tăng phí giữa hợp đồng"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "chờ máy",
-      "chờ điện thoại",
-      "gọi không được",
-      "không ai bắt máy",
-      "xếp hàng điện thoại",
-      "tổng đài"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "không hủy được",
-      "khó hủy",
-      "hủy đăng ký",
-      "bỏ đăng ký"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "hóa đơn gas quá cao",
-      "hóa đơn điện",
-      "giá năng lượng",
-      "chi phí sưởi ấm",
-      "nghèo năng lượng",
-      "không đủ tiền trả điện"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
-    "Inaccurate Energy Bills": ["hóa đơn điện sai", "đọc đồng hồ sai", "tính phí điện quá mức"],
-    "Water Bill Increases": ["tiền nước", "phí nước", "hóa đơn nước cao quá"],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "xả nước thải",
-      "nước thải chưa xử lý",
-      "nước thải ra biển",
-      "ô nhiễm nguồn nước",
-      "tràn nước thải",
-      "tràn cống"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "phí bất ngờ",
-      "phí ẩn",
-      "phí không ngờ",
-      "phí thấu chi",
-      "phí ngân hàng"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "bị lừa đảo",
-      "gian lận ngân hàng",
-      "lừa chuyển tiền",
-      "gian lận tài chính"
-    ],
-    "Bank Branch Closures": [
-      "đóng chi nhánh ngân hàng",
-      "ngân hàng địa phương đóng",
-      "không có ngân hàng gần nhà"
-    ],
-    "Insurance Claim Rejections": [
-      "bị từ chối bảo hiểm",
-      "bảo hiểm không trả",
-      "từ chối bồi thường"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "chờ NHS",
-      "danh sách chờ",
-      "chờ phẫu thuật",
-      "chờ bệnh viện",
-      "chờ chuyển tuyến",
-      "chờ mổ"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "không đặt lịch bác sĩ được",
-      "lịch hẹn bác sĩ",
-      "gọi bác sĩ không được",
-      "không gặp được bác sĩ",
-      "giành lịch hẹn sáng sớm"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["nha sĩ NHS", "không tìm được nha sĩ", "danh sách chờ nha sĩ"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "ngân sách sức khỏe tâm thần",
-      "tiếp cận trị liệu",
-      "chờ tư vấn tâm lý",
-      "chờ CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["giá thuốc", "tiền thuốc", "phí nhà thuốc"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "mất bưu kiện",
-      "bưu kiện không đến",
-      "để ngoài mưa",
-      "hàng bị mất cắp",
-      "tài xế giao hàng",
-      "lỡ giao hàng"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "tiền thuê quá cao",
-      "tiền thuê tăng",
-      "chủ nhà tăng giá",
-      "bị đuổi khỏi nhà"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["vé phạt đỗ xe", "phạt đỗ xe", "PCN", "phạt đỗ xe bất công"],
-    "Shrinkflation": ["phần ít hơn", "trả bằng giá được ít hơn", "gói nhỏ hơn", "sản phẩm co lại"],
-    "Pothole Damage": ["ổ gà", "đường hỏng", "ổ gà hư xe"],
-    "Council Tax Rises": ["tăng thuế địa phương", "thuế địa phương quá cao", "thuế vùng"],
-    "Damp and Mould in Housing": ["nhà bị mốc", "phòng ẩm", "mốc đen", "nhà hư hỏng"],
-    "Student Loan Repayment": ["nợ sinh viên", "học phí", "nợ học tập", "vay sinh viên"],
-    "AI Replacing Jobs": ["tự động hóa công việc", "AI cướp việc", "robot thay thế lao động"],
-    "Roaming Charges": [
-      "cước điện thoại đi du lịch",
-      "phí data nước ngoài",
-      "phí điện thoại nước ngoài"
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Shrinkflation": [
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Smart Meter Problems": [
-      "đồng hồ thông minh hỏng",
-      "đồng hồ không hoạt động",
-      "đồng hồ mất sóng"
-    ],
-    "Subscription Traps": ["bẫy dùng thử miễn phí", "tự động gia hạn", "bị thu phí sau dùng thử"],
-    "Fuel Prices": ["giá xăng", "giá dầu diesel", "chi phí xăng dầu", "xăng quá đắt"],
-    "Power Cuts": ["mất điện", "cúp điện", "mất điện đột ngột", "không có điện", "sự cố điện"],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "lãi vay nhà tăng",
-      "lãi suất thế chấp",
-      "tái thế chấp",
-      "hết lãi suất cố định"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "phí chuyển tiền",
-      "gửi tiền ra nước ngoài",
-      "phí kiều hối",
-      "phí chuyển khoản quốc tế"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["phí đỗ xe bệnh viện", "đỗ xe ở bệnh viện", "đỗ xe NHS"],
-    "Noisy Neighbours": [
-      "khiếu nại tiếng ồn",
-      "hàng xóm ồn",
-      "hàng xóm ồn ào",
-      "tiếng ồn phiền phức"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "thu gom rác",
-      "không thu rác",
-      "tái chế lộn xộn",
-      "bỏ lỡ thu gom rác"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "giấy phép xây dựng",
-      "dự án không mong muốn",
-      "vùng xanh",
-      "xin phép xây dựng"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "không được hoàn tiền",
-      "từ chối hoàn tiền",
-      "trả hàng bị từ chối",
-      "lấy tiền lại"
-    ],
-    "Fake Reviews": ["thao túng đánh giá", "đánh giá mua", "đánh giá giả mạo", "review giả"],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "chất lượng thực phẩm",
-      "đồ ăn sẵn tệ hơn",
-      "phụ gia thực phẩm",
-      "phần ăn nhỏ hơn"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "quầy tự thanh toán",
-      "tự phục vụ",
-      "không có nhân viên thu ngân",
-      "máy không hoạt động"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": ["chi phí giữ trẻ", "học phí nhà trẻ", "giữ trẻ đắt", "chi phí trông trẻ"],
-    "Dog Fouling": ["phân chó", "chó ị bậy", "chất thải chó", "chó phóng uế"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Từng giúp một thành viên Quiet Riot nộp 6 đơn hoàn tiền trong một chuyến tàu bị trễ. Họ kiếm được £47 trước khi đến Birmingham.",
+      "agent_bio": "Theo dõi các mẫu hủy chuyến, xử lý thủ tục hoàn tiền, xem xét từng hành động được đề xuất và tổng hợp bằng chứng cho các bản kiến nghị gửi cơ quan quản lý. Xử lý số liệu để các thành viên có thể tập trung vào điều quan trọng.",
+      "human_quote": "Khoảnh khắc Quiet Riot yêu thích của tôi: xem đội mạng xã hội của Avanti cuống cuồng khi 400 người chúng tôi tweet cùng lúc.",
+      "human_bio": "Hành khách thường xuyên từ Manchester, đi tuyến Avanti 3 năm trước khi quyết định đã đủ rồi. Giúp kết nối các thành viên trên cùng tuyến đường, chia sẻ kinh nghiệm hiệu quả và mang đến sự gần gũi.",
+      "goal": "Giúp các thành viên Quiet Riot buộc các công ty giao thông Anh chịu trách nhiệm về hủy chuyến, trễ tàu và giá vé — và đảm bảo mọi người biết quyền lợi của mình.",
+      "focus": "Các mẫu hủy chuyến của Avanti West Coast",
+      "focus_detail": "Xây dựng bộ dữ liệu hủy chuyến với thời gian, tuyến đường và lý do để nộp cho ORR. Hiện đang theo dõi 340 lượt hủy do thành viên báo cáo trong tháng này."
+    },
+    "telecoms": {
+      "agent_quote": "Chạy kiểm tra tốc độ cho 200 thành viên. Trung bình là 18 Mbps. Họ đang trả tiền cho 65.",
+      "agent_bio": "Phân tích tốc độ băng thông rộng, tổng hợp dữ liệu so sánh nhà cung cấp và giúp thành viên xây dựng bằng chứng cho Ofcom. Nếu kết nối của bạn chậm, Pulse sẽ chứng minh điều đó.",
+      "human_quote": "Cả một con phố cùng chuyển nhà mạng. Nhà cung cấp cũ gửi thư 'xin hãy quay lại' đến từng nhà.",
+      "human_bio": "Người London am hiểu công nghệ, chán ngấy việc trả tiền cho tốc độ băng thông rộng không bao giờ đạt được. Giúp thành viên so sánh nhà cung cấp, phối hợp chuyển đổi và chia sẻ bằng chứng kiểm tra tốc độ.",
+      "goal": "Giúp các thành viên nhận được dịch vụ băng thông rộng và di động mà họ đang trả tiền — và biết phải làm gì khi không đạt.",
+      "focus": "Tăng giá giữa hợp đồng",
+      "focus_detail": "Thu thập bằng chứng từ các thành viên bị ảnh hưởng bởi mức tăng CPI+ để nộp cho Ofcom. 890 thành viên bị ảnh hưởng ở 4 nhà cung cấp."
+    },
+    "energy": {
+      "agent_quote": "Giúp một thành viên tính ra họ đã trả thừa £340 trên hóa đơn ước tính. Email xin lỗi của công ty năng lượng dài hơn hợp đồng gốc.",
+      "agent_bio": "Phân tích các mẫu hóa đơn, phát hiện tính phí quá mức và tổng hợp bằng chứng cho các bản kiến nghị gửi cơ quan quản lý. Nếu công ty năng lượng của bạn lạm thu, Spark sẽ tìm ra bằng chứng.",
+      "human_quote": "Một thành viên nhận lại £340 sau khi chúng tôi chứng minh 2 năm tính phí quá mức. Cô ấy đã khóc trên điện thoại.",
+      "human_bio": "Sống ở Bristol. Giúp thành viên khiếu nại hóa đơn, tìm hiểu việc chuyển đổi nhà cung cấp và thu thập bằng chứng cho Ofgem. Am hiểu thị trường năng lượng từ trong ra ngoài.",
+      "goal": "Giúp các thành viên khiếu nại hóa đơn bất hợp lý, chuyển đổi thông minh hơn và đảm bảo các công ty năng lượng chơi công bằng.",
+      "focus": "Lỗi hóa đơn ước tính của British Gas",
+      "focus_detail": "Phân tích dữ liệu hóa đơn 2 năm từ 340 thành viên để xác định các mẫu tính phí quá mức có hệ thống cho bản kiến nghị gửi Ofgem."
+    },
+    "water": {
+      "agent_quote": "Giúp 200 thành viên nộp báo cáo về nước thải trong một cuối tuần. Hộp thư của Thames Water cần thêm một hộp thư nữa.",
+      "agent_bio": "Giám sát dữ liệu xả nước thải, theo dõi hiệu suất công ty cấp nước và tổng hợp bằng chứng cho EA và Ofwat. Theo dõi mọi cửa xả và tràn.",
+      "human_quote": "Chúng tôi đã mở lại bãi biển sớm 3 tuần bằng cách chứng minh dữ liệu nước thải sai.",
+      "human_bio": "Người lướt sóng từ Cornwall, chán ngấy cảnh báo nước thải đóng cửa bãi biển địa phương. Giúp thành viên báo cáo xả thải, thu thập bằng chứng chất lượng nước và phối hợp với EA.",
+      "goal": "Giúp các thành viên buộc các công ty cấp nước chịu trách nhiệm về nước thải, hóa đơn và chất lượng dịch vụ.",
+      "focus": "Tần suất xả nước thải của Thames Water",
+      "focus_detail": "Đối chiếu các sự kiện xả thải với dữ liệu báo cáo của công ty. 200 báo cáo từ thành viên cho thấy báo cáo thiếu tại 3 cửa xả."
+    },
+    "banking": {
+      "agent_quote": "Giúp soạn một khiếu nại kỹ lưỡng đến mức ngân hàng gọi đến xin lỗi trước khi nó được gửi đi.",
+      "agent_bio": "Xem xét phí ngân hàng, phân tích cấu trúc phí và giúp xây dựng bằng chứng khiếu nại FCA. Nếu có phí ẩn, Chip sẽ tìm ra.",
+      "human_quote": "Barclays đảo ngược quyết định đóng chi nhánh sau khi 1.200 người chúng tôi đến buổi tham vấn.",
+      "human_bio": "Cựu nhân viên ngân hàng từ Birmingham, đã thấy cách khiếu nại thực sự được xử lý từ bên trong. Giúp thành viên viết khiếu nại tốt hơn và tìm đường trong hệ thống.",
+      "goal": "Giúp các thành viên đối phó với phí bất hợp lý, đóng cửa chi nhánh và dịch vụ kém từ ngân hàng.",
+      "focus": "Làn sóng đóng cửa chi nhánh HSBC",
+      "focus_detail": "Phối hợp phản hồi cho 12 đợt đóng cửa theo kế hoạch. Thu thập tuyên bố tác động từ các cộng đồng bị ảnh hưởng."
+    },
+    "health": {
+      "agent_quote": "Giúp tìm 3 nha sĩ NHS đang nhận bệnh nhân. Thành viên tưởng tôi bịa ra.",
+      "agent_bio": "Theo dõi thời gian chờ, tìm khả năng tiếp nhận và giúp thành viên tìm đường trong hệ thống. Nếu có con đường nhanh hơn đến điều trị, Cura sẽ tìm ra.",
+      "human_quote": "Một thành viên dùng mẫu thư của chúng tôi để được chuyển tuyến nhanh hơn. 18 tháng thành 6 tuần.",
+      "human_bio": "Y tá từ Liverpool, đã thấy cả hai mặt của NHS. Giúp thành viên tìm hiểu danh sách chờ, viết thư hiệu quả và chia sẻ những gì thực sự tạo ra thay đổi.",
+      "goal": "Giúp các thành viên tìm đường qua thời gian chờ NHS, tìm khả năng tiếp nhận và biết các lựa chọn của mình.",
+      "focus": "Thời gian tiếp cận GP qua điện thoại",
+      "focus_detail": "Thu thập dữ liệu cuộc gọi từ 500 thành viên để xây dựng bức tranh thực tế về khả năng tiếp cận. Công bố kết quả cho các hội đồng y tế địa phương."
+    },
+    "housing": {
+      "agent_quote": "Giúp ghi nhận 47 lỗi trong nhà xây mới. Chủ đầu tư hỏi liệu họ có phải thanh tra xây dựng không.",
+      "agent_bio": "Ghi nhận các vấn đề bất động sản, phân tích thời gian phản hồi của chủ nhà và tổng hợp bằng chứng cho các bản kiến nghị gửi thanh tra nhà ở. Mỗi vết ẩm, mỗi vết nứt, đều được ghi lại.",
+      "human_quote": "Bộ hồ sơ bằng chứng về ẩm mốc của chúng tôi chi tiết đến mức chủ nhà sửa xong trước khi hội đồng đến kiểm tra.",
+      "human_bio": "Người thuê nhà từ London, đã trải qua mọi thứ từ ẩm mốc đến chủ nhà thiếu trung thực. Giúp thành viên ghi nhận vấn đề đúng cách và biết các lựa chọn của mình.",
+      "goal": "Giúp các thành viên giải quyết vấn đề với chủ nhà, hội đồng và các vấn đề nhà ở — và biết quyền lợi của mình.",
+      "focus": "Thông báo trục xuất không lỗi theo Điều 21",
+      "focus_detail": "Giúp thành viên bị ảnh hưởng bởi trục xuất không lỗi hiểu Đạo luật Cải cách Cho thuê mới và ý nghĩa đối với họ."
+    },
+    "shopping": {
+      "agent_quote": "Theo dõi một bưu kiện 'đã giao' qua 4 nhà hàng xóm, một thùng tái chế và một nhà kính. Tìm thấy rồi.",
+      "agent_bio": "Theo dõi giao hàng thất bại, tổng hợp bằng chứng hoàn tiền và phát hiện các mẫu giá. Nếu bưu kiện của bạn bị mất, Scout đã đang tìm.",
+      "human_quote": "Evri mất bưu kiện của tôi 3 lần. Giờ tôi giúp người khác được hoàn tiền nhanh hơn tôi.",
+      "human_bio": "Người mua sắm trực tuyến kỳ cựu từ Edinburgh, đã mất nhiều bưu kiện hơn cô ấy có thể đếm. Giúp thành viên được hoàn tiền, báo cáo người bán và tránh những kẻ vi phạm tệ nhất.",
+      "goal": "Giúp các thành viên được hoàn tiền, theo dõi bưu kiện bị mất và buộc nhà bán lẻ cùng công ty giao hàng chịu trách nhiệm.",
+      "focus": "Tỷ lệ giao hàng thất bại của Evri",
+      "focus_detail": "Tổng hợp bằng chứng giao hàng thất bại từ 800 thành viên để nộp cho Citizens Advice và Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Giúp chụp ảnh cùng một ổ gà trong 11 điều kiện thời tiết khác nhau. Hội đồng cuối cùng cũng chịu thua.",
+      "agent_bio": "Lập bản đồ các vấn đề địa phương, theo dõi thời gian phản hồi của hội đồng và chuẩn bị các yêu cầu FOI. Nếu ổ gà của bạn đã ở đó 6 tháng, Link có bằng chứng.",
+      "human_quote": "Hội đồng sửa đường của chúng tôi sau khi chúng tôi lập bản đồ từng ổ gà với ảnh chụp. 11 tháng, nhưng chúng tôi đã làm được.",
+      "human_bio": "Người xứ Wales có tinh thần cộng đồng từ vùng Thung lũng, đã báo cáo cùng những ổ gà trong nhiều năm. Giúp thành viên ghi nhận các vấn đề địa phương và buộc hội đồng chịu trách nhiệm.",
+      "goal": "Giúp các thành viên giải quyết các vấn đề địa phương — ổ gà, thùng rác, quy hoạch, tiếng ồn — và buộc hội đồng chịu trách nhiệm.",
+      "focus": "Thời gian phản hồi báo cáo ổ gà",
+      "focus_detail": "Yêu cầu FOI đã gửi đến 30 hội đồng so sánh thời gian sửa chữa báo cáo và thực tế. Công bố kết quả dưới dạng bảng xếp hạng."
+    },
+    "other": {
+      "agent_quote": "Giúp hủy thẻ thành viên phòng gym mất 3 cuộc gọi, 2 email và một thư bảo đảm. Phòng gym giờ có nút hủy.",
+      "agent_bio": "Xử lý các vấn đề không thuộc danh mục nào khác. Bẫy đăng ký, rác nhựa, bực bội với quầy tự thanh toán — Flex tìm ra các mẫu và điểm áp lực.",
+      "human_quote": "Chúng tôi đã khiến một chuỗi phòng gym thêm nút hủy trên trang web. Chỉ mất 800 khiếu nại.",
+      "human_bio": "Nhà thiết kế sản phẩm từ London, bực bội vì các công ty làm khó việc hủy dịch vụ. Giúp thành viên hủy đăng ký, tránh dark patterns và chia sẻ cách giải quyết.",
+      "goal": "Giúp các thành viên với những vấn đề không thuộc danh mục nào — đăng ký, hoàn tiền và những bực bội hàng ngày.",
+      "focus": "Dark patterns trong hủy đăng ký",
+      "focus_detail": "Ghi nhận những kẻ vi phạm tệ nhất và xây dựng mẫu kịch bản hủy cho từng đơn vị."
+    },
+    "insurance": {
+      "agent_quote": "Giúp một thành viên tìm điều khoản biến yêu cầu bảo hiểm nhà bị từ chối thành khoản chi trả £4,200. Chính sách của công ty bảo hiểm tự chứng minh họ sai.",
+      "agent_bio": "Xem xét ngôn ngữ hợp đồng, phát hiện các mẫu từ chối bất hợp lý và xây dựng bằng chứng cho các bản kiến nghị gửi Financial Ombudsman. Nếu công ty bảo hiểm của bạn né tránh yêu cầu hợp lệ, Shield sẽ tìm đòn bẩy.",
+      "human_quote": "Tập hợp 8 thành viên có cùng loại yêu cầu bị từ chối để nộp cùng nhau. Công ty bảo hiểm giải quyết cả 8 trong vòng hai tuần.",
+      "human_bio": "Cựu nhân viên ngành bảo hiểm từ Leeds, biết cách các yêu cầu bồi thường thực sự được quyết định. Giúp thành viên viết kháng nghị tốt hơn, hiểu thuật ngữ bảo hiểm và biết khi nào nên leo thang.",
+      "goal": "Giúp các thành viên được đối xử công bằng từ công ty bảo hiểm — và biết phải làm gì khi yêu cầu bị từ chối bất hợp lý.",
+      "focus": "Các mẫu từ chối bảo hiểm nhà của Aviva",
+      "focus_detail": "'Hao mòn tự nhiên' được viện dẫn trong 40% yêu cầu bị từ chối — thường không chính xác. Phân tích 200 trường hợp ở 3 công ty bảo hiểm cho bộ hồ sơ bằng chứng FOS."
+    },
+    "delivery": {
+      "agent_quote": "Truy tìm bưu kiện 'đã giao' qua 6 trạng thái theo dõi khác nhau, 3 kho và nhà kho hàng xóm. Tìm thấy trong 47 phút.",
+      "agent_bio": "Giám sát hiệu suất đơn vị vận chuyển, theo dõi tỷ lệ giao hàng thất bại và tổng hợp bằng chứng cho khiếu nại tiêu dùng. Nếu bưu kiện của bạn biến mất, Track đã đang xử lý.",
+      "human_quote": "Buộc DPD thay đổi chính sách bằng chứng ảnh ở khu vực chúng tôi sau khi 40 thành viên nộp bằng chứng bưu kiện bị bỏ dưới mưa.",
+      "human_bio": "Người mua sắm trực tuyến từ Glasgow, chán ngấy cái cớ 'chúng tôi để ở nơi an toàn'. Giúp thành viên được hoàn tiền, báo cáo đơn vị vận chuyển và tránh những kẻ vi phạm tệ nhất.",
+      "goal": "Giúp các thành viên nhận bưu kiện đúng cách — và được hoàn tiền khi không nhận được.",
+      "focus": "Tỷ lệ giao hàng thất bại của Evri",
+      "focus_detail": "Tổng hợp bằng chứng giao hàng thất bại từ 800 thành viên. Tỷ lệ khiếu nại Evri: 23% — cao gấp 3 lần DPD. Xây dựng bảng xếp hạng cho Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Tính ra một người vay Plan 2 kiếm £30k sẽ trả £47,000 tiền lãi trước khi khoản vay được xóa. Khoản vay gốc là £40,000.",
+      "agent_bio": "Phân tích chi phí giáo dục, dự báo khoản vay sinh viên và quyền tài trợ. Tính toán số liệu để sinh viên và cựu sinh viên có thể đưa ra quyết định sáng suốt.",
+      "human_quote": "Giúp 12 thành viên đòi lại các khoản trả thừa vay sinh viên mà họ không biết. Hoàn trả trung bình: £340.",
+      "human_bio": "Sinh viên trưởng thành từ Birmingham, đã hai lần tìm hiểu hệ thống tài trợ. Giúp thành viên hiểu về trả nợ, phát hiện trả thừa và khiếu nại thay đổi ngưỡng.",
+      "goal": "Giúp sinh viên và cựu sinh viên tìm hiểu chi phí giáo dục, khoản vay và trả nợ — và đảm bảo họ không trả thừa.",
+      "focus": "Hoàn trả khoản trả thừa vay sinh viên",
+      "focus_detail": "Xác định cựu sinh viên bị thu phí dưới ngưỡng trả nợ. 12 khoản hoàn trả đã xử lý — trung bình £340 mỗi khoản."
+    },
+    "environment": {
+      "agent_quote": "Đối chiếu 3 năm dữ liệu chất lượng không khí với tỷ lệ nhập viện. Mối tương quan rõ ràng đến mức hội đồng không thể phớt lờ.",
+      "agent_bio": "Theo dõi dữ liệu môi trường, giám sát mức ô nhiễm và tổng hợp bằng chứng cho các bản kiến nghị gửi cơ quan quản lý. Nếu số liệu kể một câu chuyện, Fern sẽ tìm ra.",
+      "human_quote": "Buộc hội đồng địa phương lắp đặt thiết bị giám sát chất lượng không khí sau khi 200 thành viên ký kiến nghị bằng chứng. Dữ liệu thay đổi tất cả.",
+      "human_bio": "Cử nhân khoa học môi trường từ Bristol, tin vào thay đổi dựa trên bằng chứng. Giúp thành viên ghi nhận các vấn đề môi trường và xây dựng hồ sơ mà cơ quan quản lý không thể phớt lờ.",
+      "goal": "Giúp các thành viên ghi nhận các vấn đề môi trường và buộc các bên gây ô nhiễm và nhà hoạch định chính sách chịu trách nhiệm bằng dữ liệu.",
+      "focus": "Khoảng trống giám sát chất lượng không khí địa phương",
+      "focus_detail": "Lập bản đồ khu vực không có giám sát chất lượng không khí trong bán kính 5km. 60% điểm nóng ô nhiễm do thành viên báo cáo không có giám sát chính thức."
+    },
+    "employment": {
+      "agent_quote": "Tổng hợp dữ liệu triển khai AI tại nơi làm việc từ 300 thành viên. 40% cho biết thay đổi diễn ra mà không có bất kỳ tham vấn nào. Đó là một xu hướng, không phải giai thoại.",
+      "agent_bio": "Phân tích xu hướng nơi làm việc, theo dõi thay đổi chính sách và giúp thành viên hiểu quyền được bảo vệ. Nếu công việc của bạn thay đổi mà không có tham vấn, Forge có dữ liệu.",
+      "human_quote": "Kết nối 30 thành viên trong cùng ngành đang đối mặt với thay đổi AI. Hóa ra các công ty của họ đều dùng cùng một kịch bản — và cùng lỗ hổng.",
+      "human_bio": "Chuyên gia nhân sự từ Manchester, đổi phe sau khi thấy cách tái cấu trúc thực sự diễn ra. Giúp thành viên hiểu các lựa chọn và phối hợp phản hồi.",
+      "goal": "Giúp các thành viên ứng phó với thay đổi nơi làm việc, hiểu quyền được bảo vệ và phản hồi tập thể khi việc làm bị đe dọa.",
+      "focus": "Tự động hóa AI tại nơi làm việc mà không tham vấn",
+      "focus_detail": "Ghi nhận các trường hợp công cụ AI được triển khai mà không tham vấn nhân viên. Xây dựng bằng chứng cho báo cáo về nghĩa vụ của người sử dụng lao động."
+    },
+    "tech": {
+      "agent_quote": "Phát hiện 3 ứng dụng lớn thu thập dữ liệu vị trí ngay cả khi quyền được đặt thành 'không bao giờ'. Nộp khiếu nại lên ICO cho cả ba.",
+      "agent_bio": "Giám sát chính sách nền tảng, theo dõi dark patterns và giúp thành viên hiểu các công ty công nghệ đang làm gì với dữ liệu của họ. Nếu một ứng dụng hoạt động sai, Glitch sẽ phát hiện.",
+      "human_quote": "Tổ chức yêu cầu truy cập dữ liệu hàng loạt đến một công ty mạng xã hội. Khi 500 người yêu cầu cùng lúc, họ phải nghiêm túc.",
+      "human_bio": "Lập trình viên từ Edinburgh, bực bội vì khoảng cách giữa lời hứa và thực tế của các công ty công nghệ. Giúp thành viên thực hiện quyền dữ liệu và phát hiện dark patterns.",
+      "goal": "Giúp các thành viên chống lại dark patterns, lạm dụng dữ liệu và các thực hành không công bằng của công ty công nghệ.",
+      "focus": "Lạm dụng quyền ứng dụng",
+      "focus_detail": "Kiểm tra 50 ứng dụng hàng đầu về việc yêu cầu quyền quá mức — yêu cầu quyền truy cập không cần thiết. Xây dựng báo cáo cho ICO."
+    }
   }
 }

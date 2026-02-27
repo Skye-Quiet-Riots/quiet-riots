@@ -1,573 +1,763 @@
 {
   "locale": "ja",
   "categories": {
-    "Transport": "交通",
-    "Telecoms": "通信",
-    "Banking": "銀行・金融",
-    "Health": "医療・健康",
-    "Education": "教育",
-    "Environment": "環境",
-    "Energy": "エネルギー",
-    "Water": "水道",
-    "Insurance": "保険",
-    "Housing": "住宅",
-    "Shopping": "買い物・消費",
-    "Delivery": "配送・物流",
-    "Local": "地域",
-    "Employment": "雇用",
-    "Tech": "テクノロジー",
-    "Other": "その他"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "列車の運休",
-      "description": "列車が運休または大幅に遅延し、通知や補償が不十分"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "鉄道運賃",
-      "description": "鉄道運賃が高すぎ、物価上昇率を上回る値上げ、料金体系が不統一"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "フライトの遅延",
-      "description": "フライトの遅延や欠航、情報伝達の不備、補償請求の困難さ"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "手荷物の紛失",
-      "description": "荷物が目的地に届かない、追跡が遅い、補償が不十分"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "バス路線の削減",
-      "description": "路線の廃止、運行本数の削減、地方がバスサービスを失う"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "路面の陥没被害",
-      "description": "道路の陥没が車両を損傷し自転車利用者を危険にさらす、自治体の補修が遅い"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "駐車違反金",
-      "description": "不当な民間駐車場の料金、強引な取り締まり、分かりにくい標識"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "燃料価格",
-      "description": "ガソリン・軽油価格が高すぎ、卸売価格が下がっても小売価格の値下がりが遅い"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "ブロードバンド速度",
-      "description": "実際の通信速度が広告や契約で謳われている速度を大きく下回る"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "携帯電話の圏外エリア",
-      "description": "自宅、職場、交通路線沿いで携帯電話の電波が入らない"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "契約期間中の値上げ",
-      "description": "携帯電話、ブロードバンド、テレビの料金が契約期間中に値上げされる"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "カスタマーサービスの待ち時間",
-      "description": "オペレーターにつながるまで何時間も待たされる"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "サブスクリプションの解約困難",
-      "description": "企業が意図的に解約や退会を難しくしている"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "ローミング料金",
-      "description": "海外旅行時に予想外の携帯電話ローミング料金が発生、EU離脱後の値上げ"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "エネルギー料金",
-      "description": "ガス・電気料金が支払えないほど高額、価格上限もまだ高すぎる"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "不正確なエネルギー請求",
-      "description": "推定検針値の誤り、過大請求、請求書のミス"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "水道料金の値上げ",
-      "description": "水道料金が急騰する一方、サービス品質は低下"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "河川への下水放流",
-      "description": "水道会社が未処理の下水を河川や海岸に放流"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "停電",
-      "description": "電力供給の中断、復旧の遅さ、補償の不十分さ"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "スマートメーターの問題",
-      "description": "スマートメーターが正常に動作しない、供給会社を変更すると機能しなくなる"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "銀行支店の閉鎖",
-      "description": "地域の銀行支店が閉鎖され、地域住民が銀行サービスを利用できなくなる"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "銀行の隠れた手数料",
-      "description": "当座貸越、外貨取引、口座維持の予想外の手数料"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "詐欺被害",
-      "description": "銀行が詐欺やプッシュ型決済詐欺の被害者への返金を拒否"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "保険金請求の拒否",
-      "description": "長年保険料を支払った後、技術的な理由で保険金請求が却下される"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "住宅ローン金利の急変",
-      "description": "固定金利期間が終了し、はるかに高い変動金利に移行"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "海外送金手数料",
-      "description": "国際送金の手数料が高額、為替レートが不利"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS待機時間",
-      "description": "手術や専門医の予約に数か月から数年待ち"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "かかりつけ医の予約困難",
-      "description": "電話がつながらず予約ができない、数週間待ち"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "歯科医の不足",
-      "description": "新規患者を受け入れるNHS歯科医がほとんど見つからない"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "メンタルヘルスサービスの待機",
-      "description": "心理療法やメンタルヘルス支援に数か月待ち"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "処方薬の費用",
-      "description": "イングランドでの処方薬1品目あたりの費用が高い、英国各地で基準が不統一"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "病院の駐車料金",
-      "description": "通院や見舞いの際に病院の駐車料金を支払わなければならない"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "家賃の値上げ",
-      "description": "民間賃貸の家賃が物価上昇率を大きく上回って上昇、無過失立退きの脅威"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "カウンシルタックスの値上げ",
-      "description": "地方税が毎年値上がりする一方、地方行政サービスは悪化"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "騒音問題のある隣人",
-      "description": "持続的な騒音問題、自治体の対応が遅い、精神的健康に影響"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "ごみ収集の変更",
-      "description": "ごみ収集回数の削減、分別ルールの混乱、ごみ箱があふれる"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "建築許可の濫用",
-      "description": "望まれない開発計画が承認、グリーンベルトへの脅威、地域の意見が無視される"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "住宅の湿気とカビ",
-      "description": "家主や住宅組合が湿気やカビの問題を修繕しない"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "配送トラブル",
-      "description": "荷物の紛失、雨ざらしで放置、配達済みと表示されるが届いていない"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "シュリンクフレーション",
-      "description": "商品が小さくなっているのに価格は据え置きか値上げ"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "返金の困難さ",
-      "description": "企業が返品・返金手続きを不必要に複雑にしている"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "やらせレビュー",
-      "description": "ネット上のレビューが信頼できない、虚偽の高評価が消費者を誤導"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "サブスクリプションの罠",
-      "description": "無料お試しが明確な同意なく有料に切り替わり、解約が困難"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "食品品質の低下",
-      "description": "調理済み食品の品質低下、分量の減少、添加物の増加"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "セルフレジへの不満",
-      "description": "セルフレジが不安定、有人レジの人員削減"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "保育費用",
-      "description": "保育料が高すぎて働くことが難しい"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "学生ローンの返済",
-      "description": "卒業生が数十年にわたって返済、返済基準額や金利の変更"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "犬のフン放置",
-      "description": "公共の場、公園、歩道にある犬のフンが清掃されない"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AIによる雇用の代替",
-      "description": "移行支援のないまま人工知能が仕事を自動化することへの不安"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "ウェストコースト本線を運行する英国の鉄道事業者"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "ロンドンおよび南部地域を運行する英国の鉄道事業者"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "イングランド北部を運行する英国の鉄道事業者"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "英国の長距離鉄道事業者"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "ペナイン山脈横断路線を運行する英国の鉄道事業者"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "イーストコースト本線を運行する英国の鉄道事業者"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "ヨーロッパの格安航空会社"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "英国の格安航空会社"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "英国のフラッグキャリア航空会社"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "旅行・ホリデー会社"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "英国の大手ブロードバンド・モバイル通信プロバイダー"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "英国のブロードバンド・テレビ・モバイル通信プロバイダー"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "英国のテレビ・ブロードバンド・モバイル通信プロバイダー"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "英国に本社を置くグローバル通信会社"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "英国のモバイルネットワーク事業者"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "英国のブロードバンド・電話プロバイダー"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "英国のエネルギー供給会社"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "英国のエネルギー供給会社"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "英国のエネルギー供給会社（仏系）"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "英国の再生可能エネルギー供給会社"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "英国のエネルギー供給会社"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "英国のエネルギー供給会社（独系）"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "ロンドンおよびテムズ渓谷の上下水道会社"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "イングランド南部の水道会社"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "イングランド北西部の水道会社"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "ミッドランズ地方の水道会社"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "イーストアングリアの水道会社"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "英国の多国籍銀行"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "グローバルな銀行・金融サービスグループ"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "英国のリテール・商業銀行"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "英国の銀行グループ"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "英国の銀行（スペイン系）"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "デジタルバンキング・フィンテック企業"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "英国の保険・金融サービス会社"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "英国の自動車・住宅保険会社"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "英国の保険会社"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "グローバルなEコマース・テクノロジー企業"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "英国の郵便サービス"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "英国の宅配サービス（旧Hermes）"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "英国の宅配サービス"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "英国のスーパーマーケットチェーン"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "英国のスーパーマーケットチェーン"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "イングランドの国民保健サービス"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHSの歯科サービス"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "民間医療サービスプロバイダー"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "英国の地方自治体"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "英国の住宅建設会社"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "英国のオンライン賃貸プラットフォーム"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "動画配信サービス"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "テクノロジー企業"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "電車が運休",
-      "運休した電車",
-      "列車の運休",
-      "電車が動いていない",
-      "鉄道の運休",
-      "運行中止",
-      "電車の遅延",
-      "遅延した電車",
-      "電車が遅れている",
-      "電車が遅い",
-      "鉄道の遅延"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["鉄道運賃", "切符の値段", "電車が高い", "電車の料金"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "フライト遅延",
-      "飛行機の遅れ",
-      "フライトが欠航",
-      "空港での遅延",
-      "空港で足止め",
-      "フライトが遅い"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "荷物がない",
-      "スーツケース紛失",
-      "荷物が届かない",
-      "スーツケースが見つからない",
-      "荷物がターンテーブルにない",
-      "航空会社に荷物をなくされた"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["バスの削減", "路線の縮小", "バス路線の廃止"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "ネットが遅い",
-      "wifiが遅い",
-      "無線が遅い",
-      "通信速度",
-      "ブロードバンドが使えない",
-      "バッファリング",
-      "ネットが切れる",
-      "wifiが切れる"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
-    "Mobile Signal Dead Zones": ["電波がない", "圏外", "携帯の不感地帯", "電波の届かないエリア"],
-    "Price Rises Mid-Contract": ["契約中の値上げ", "契約期間中の料金値上げ", "契約途中の値上げ"],
+    "Mobile Signal Dead Zones": [
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
+    "Price Rises Mid-Contract": [
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
+    ],
     "Customer Service Hold Times": [
-      "保留中",
-      "電話で待たされる",
-      "つながらない",
-      "誰も出ない",
-      "電話の待ち行列",
-      "コールセンター"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
-    "Difficulty Cancelling Subscriptions": ["解約できない", "解約が難しい", "サブスク解約", "退会"],
+    "Difficulty Cancelling Subscriptions": [
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
+    ],
     "Energy Bill Costs": [
-      "ガス代が高すぎる",
-      "電気代の請求",
-      "エネルギー価格",
-      "暖房費",
-      "エネルギー貧困",
-      "光熱費が払えない"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
-    "Inaccurate Energy Bills": ["エネルギー請求の誤り", "推定検針値の間違い", "光熱費の過大請求"],
-    "Water Bill Increases": ["水道料金", "水道代", "水道代が高すぎる"],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "下水の放流",
-      "未処理の下水",
-      "海岸の下水",
-      "水質汚染",
-      "下水のオーバーフロー",
-      "合流式下水道の溢水"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "予想外の手数料",
-      "隠れた手数料",
-      "予期せぬ手数料",
-      "当座貸越手数料",
-      "銀行手数料"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": ["詐欺に遭った", "銀行詐欺", "プッシュ型決済詐欺", "承認済み詐欺"],
-    "Bank Branch Closures": ["支店の閉鎖", "地元の銀行が閉店", "近くに銀行がない"],
-    "Insurance Claim Rejections": ["保険金請求が却下", "保険が支払われない", "請求の却下"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHSの待ち",
-      "待機リスト",
-      "手術の待ち時間",
-      "病院の待ち時間",
-      "紹介状の待ち",
-      "手術を待っている"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "かかりつけ医の予約が取れない",
-      "医師の予約",
-      "かかりつけ医の電話が混雑",
-      "医者に診てもらえない",
-      "朝8時の予約争い"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS歯科", "歯医者が見つからない", "歯科の待ちリスト"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "メンタルヘルスの予算",
-      "心理療法の利用",
-      "カウンセリングの待ち",
-      "CAMHSの待ち"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["薬代", "薬の値段", "薬局の料金"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "荷物が届かない",
-      "配達されていない",
-      "雨ざらし",
-      "荷物が盗まれた",
-      "配達ドライバー",
-      "配達ミス"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
-    "Rent Increases": ["家賃が高すぎる", "家賃が上がる", "家主が家賃を上げる", "無過失立退き"],
-    "Parking Fines": ["駐車違反切符", "駐車料金の通知", "PCN", "不当な駐車違反金"],
-    "Shrinkflation": ["量が減った", "同じ値段で量が減る", "パッケージが小さくなった", "商品が縮小"],
-    "Pothole Damage": ["道路の穴", "道路の損傷", "穴で車が損傷"],
-    "Council Tax Rises": ["カウンシルタックスの値上げ", "カウンシルタックスが高い", "地方税"],
-    "Damp and Mould in Housing": ["カビの生えた家", "湿気のある部屋", "黒カビ", "住居の荒廃"],
-    "Student Loan Repayment": ["学生ローン", "授業料", "教育ローン", "学生の借金"],
-    "AI Replacing Jobs": ["仕事の自動化", "AIが仕事を奪う", "ロボットが労働者を代替"],
-    "Roaming Charges": ["旅行中の電話代", "海外データ料金", "海外の電話料金"],
-    "Smart Meter Problems": [
-      "スマートメーターの故障",
-      "メーターが動かない",
-      "メーターが電波を失った"
+    "Rent Increases": [
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Subscription Traps": ["無料お試しの罠", "自動更新", "お試し後に課金された"],
-    "Fuel Prices": ["ガソリン価格", "軽油価格", "燃料費", "ガソリンが高すぎる"],
-    "Power Cuts": ["停電", "電力カット", "ブラックアウト", "電気がない", "電力障害"],
-    "Mortgage Rate Shock": ["住宅ローンの値上げ", "住宅ローン金利", "借り換え", "固定金利の終了"],
-    "Overseas Transfer Fees": ["送金手数料", "海外への送金", "仕送り手数料", "電信送金の費用"],
-    "Hospital Parking Charges": ["病院の駐車場", "病院での駐車", "NHSの駐車場"],
-    "Noisy Neighbours": ["騒音の苦情", "隣人の騒音", "うるさい隣人", "騒音の迷惑"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Shrinkflation": [
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
+    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
+    ],
+    "Overseas Transfer Fees": [
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
+    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "ごみ収集",
-      "ごみが回収されない",
-      "分別の混乱",
-      "ごみ収集の遅れ"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
-    "Planning Permission Abuse": ["建築許可", "望まれない開発", "グリーンベルト", "建設許可"],
-    "Refund Difficulties": ["返金されない", "返金拒否", "返品拒否", "お金を返して"],
-    "Fake Reviews": ["レビュー操作", "やらせレビュー", "口コミの捏造", "偽レビュー"],
-    "Food Quality Decline": ["食品の品質", "レトルト食品が劣化", "食品添加物", "量が減った"],
+    "Planning Permission Abuse": [
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
+    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Food Quality Decline": [
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
+    ],
     "Self-Checkout Frustration": [
-      "セルフレジ",
-      "セルフサービス",
-      "有人レジがない",
-      "機械が動かない"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": ["保育料", "保育園の費用", "保育が高い", "託児所の費用"],
-    "Dog Fouling": ["犬のフン", "犬のうんち", "犬の排泄物", "フン害"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "かつて、1回の遅延した旅行中にライオターが6件の払い戻し請求を提出するのを手伝いました。バーミンガムに到着する前に£47を稼ぎました。",
+      "agent_bio": "運休パターンを追跡し、払い戻しの書類手続きを処理し、提案されたすべてのアクションをレビューし、規制当局への提出用の証拠をまとめます。ライオターが重要なことに集中できるよう、数字を分析します。",
+      "human_quote": "私のお気に入りのQuiet Riotの瞬間：400人が同時にツイートしたとき、Avantiのソーシャルメディアチームが慌てふためくのを見たこと。",
+      "human_bio": "マンチェスターからの定期通勤者で、もう十分だと決断する前にAvantiの路線で3年間過ごしました。同じルートのライオターをつなぎ、うまくいっていることを共有し、人間味を加えます。",
+      "goal": "英国の交通会社の運休、遅延、価格設定について責任を追及するライオターを支援し、全員が自分の権利を知れるようにする。",
+      "focus": "Avanti West Coastの運休パターン",
+      "focus_detail": "ORRに提出するための時間、ルート、理由を含む運休データセットを構築中。今月ライオターが報告した340件の運休を現在追跡中。"
+    },
+    "telecoms": {
+      "agent_quote": "200人のライオターの速度テストを実施しました。平均は18 Mbpsでした。65 Mbpsに対して支払っていたのに。",
+      "agent_bio": "ブロードバンド速度を分析し、プロバイダー比較データを編集し、ライオターがOfcom向けの証拠を構築するのを支援します。接続が遅い場合、Pulseがそれを証明します。",
+      "human_quote": "通り全体が一緒にブロードバンドを乗り換えました。旧プロバイダーは全家庭に「お戻りください」という手紙を送りました。",
+      "human_bio": "実現しなかったブロードバンド速度に支払うことに嫌気がさした、技術に精通したロンドン市民。ライオターがプロバイダーを比較し、乗り換えを調整し、速度テストの証拠を共有するのを支援します。",
+      "goal": "ライオターが支払っているブロードバンドとモバイルサービスを受け取れるよう支援し、受け取れないときにどうすればよいかを知らせる。",
+      "focus": "契約期間中の値上げ",
+      "focus_detail": "Ofcomへの提出のためにCPI+値上げの影響を受けたライオターから証拠を収集中。4プロバイダーで890人のライオターが影響を受けています。"
+    },
+    "energy": {
+      "agent_quote": "あるライオターが見積もり請求書で£340を過払いしていたことを計算するのを手伝いました。エネルギー会社のお詫びメールは元の契約書より長かったです。",
+      "agent_bio": "請求パターンを分析し、過払いを発見し、規制当局への提出用の証拠をまとめます。エネルギー会社がずるいことをしている場合、Sparkが証拠を見つけます。",
+      "human_quote": "2年間の過剰請求を証明した後、ライオターが£340を取り戻しました。彼女は電話で泣きました。",
+      "human_bio": "ブリストル在住。ライオターが請求書に異議を申し立て、プロバイダーの乗り換えを進め、Ofgem向けの証拠を収集するのを支援します。エネルギー市場を隅々まで知っています。",
+      "goal": "ライオターが不当な請求書に異議を申し立て、よりスマートに乗り換え、エネルギー会社が公正に行動するよう支援する。",
+      "focus": "British Gasの見積もり請求エラー",
+      "focus_detail": "Ofgemへの提出のため、340人のライオターの2年間の請求データを分析し、体系的な過剰請求パターンを特定中。"
+    },
+    "water": {
+      "agent_quote": "週末に200人のライオターが下水報告書を提出するのを手伝いました。Thames Waterの受信箱には受信箱が必要でした。",
+      "agent_bio": "下水排出データを監視し、水道会社のパフォーマンスを追跡し、EAとOfwat向けの証拠を編集します。すべての排出口とオーバーフローを監視します。",
+      "human_quote": "下水データが間違っていることを示して、ビーチを3週間早く再開させました。",
+      "human_bio": "地元のビーチを閉鎖する下水警告に嫌気がさしたコーンウォールのサーファー。ライオターが排出を報告し、水質の証拠を収集し、EAと調整するのを支援します。",
+      "goal": "下水、請求書、サービス品質について水道会社の責任を追及するライオターを支援する。",
+      "focus": "Thames Waterの下水排出頻度",
+      "focus_detail": "会社が報告したデータに対する排出イベントのマッピング。200件のライオター報告は3つの排出口での過少報告を示唆しています。"
+    },
+    "banking": {
+      "agent_quote": "あまりにも徹底的な苦情を起草するのを手伝ったため、送信される前に銀行から謝罪の電話がありました。",
+      "agent_bio": "銀行手数料をレビューし、料金体系を分析し、FCA苦情の証拠構築を支援します。隠れた手数料があれば、Chipが見つけます。",
+      "human_quote": "1,200人が協議に現れた後、Barclaysは支店閉鎖を撤回しました。",
+      "human_bio": "内部から苦情が実際にどのように処理されるかを見たバーミンガム出身の元銀行員。ライオターがより良い苦情を書き、システムをナビゲートするのを支援します。",
+      "goal": "不当な手数料、支店閉鎖、銀行からの劣悪なサービスに対処するライオターを支援する。",
+      "focus": "HSBC支店閉鎖の波",
+      "focus_detail": "12件の計画された閉鎖への対応を調整中。影響を受けたコミュニティから影響声明を収集中。"
+    },
+    "health": {
+      "agent_quote": "患者を受け入れている3人のNHS歯科医を見つけるのを手伝いました。ライオターは私が作り話をしていると思いました。",
+      "agent_bio": "待ち時間を追跡し、空き状況を見つけ、ライオターがシステムをナビゲートするのを支援します。治療へのより速い経路がある場合、Curaがそれを見つけます。",
+      "human_quote": "ライオターが私たちの手紙テンプレートを使って紹介を早めました。18ヶ月が6週間になりました。",
+      "human_bio": "NHSの両面を見てきたリバプール出身の看護師。ライオターが待機リストをナビゲートし、効果的な手紙を書き、実際に変化をもたらすものを共有するのを支援します。",
+      "goal": "NHSの待ち時間をナビゲートし、空き状況を見つけ、どのような選択肢があるかを知るライオターを支援する。",
+      "focus": "かかりつけ医の電話アクセス時間",
+      "focus_detail": "実際のアクセス状況の全体像を構築するため、500人のライオターから通話データを収集中。地元の保健委員会に調査結果を公表。"
+    },
+    "housing": {
+      "agent_quote": "新築住宅で47件の不具合を文書化するのを手伝いました。開発業者は建築検査官かどうか尋ねました。",
+      "agent_bio": "不動産の問題を文書化し、家主の対応時間を分析し、住宅オンブズマンへの提出用の証拠を編集します。すべての湿気のシミ、すべてのひび割れを記録します。",
+      "human_quote": "私たちの湿気の証拠パックは非常に詳細だったので、家主は議会の検査前に修理しました。",
+      "human_bio": "湿気から怪しい家主まですべてに対処してきたロンドンの賃借人。ライオターが問題を適切に文書化し、選択肢を知るのを支援します。",
+      "goal": "家主、議会、住宅問題に対処し、自分の権利を知るライオターを支援する。",
+      "focus": "セクション21無過失退去通知",
+      "focus_detail": "無過失退去の影響を受けたライオターが新しい賃借人改革法とそれが彼らにとって何を意味するかを理解するのを支援。"
+    },
+    "shopping": {
+      "agent_quote": "「配達済み」の荷物を4軒の隣人、リサイクルボックス、温室を通って追跡しました。見つけました。",
+      "agent_bio": "配達の失敗を追跡し、返金の証拠を編集し、価格パターンを発見します。荷物が紛失した場合、Scoutはすでに探しています。",
+      "human_quote": "Evriは私の荷物を3回紛失しました。今は他の人が私よりも早く返金を受けられるよう手伝っています。",
+      "human_bio": "数え切れないほどの荷物を紛失したエディンバラ出身のオンラインショッピングのベテラン。ライオターが返金を受け、販売者を報告し、最悪の違反者を避けるのを支援します。",
+      "goal": "返金を受け、紛失した荷物を追跡し、小売業者と配送会社の責任を追及するライオターを支援する。",
+      "focus": "Evriの配達失敗率",
+      "focus_detail": "Citizens AdviceとTrading Standardsへの提出のため、800人のライオターからの配達失敗の証拠を編集中。"
+    },
+    "local": {
+      "agent_quote": "11の異なる天候条件で同じ路面のくぼみを撮影するのを手伝いました。議会はついに屈しました。",
+      "agent_bio": "地域の問題をマッピングし、議会の対応時間を追跡し、FOIリクエストを編集します。あなたのくぼみが6ヶ月そこにある場合、Linkが証拠を持っています。",
+      "human_quote": "すべてのくぼみを写真で記録した後、議会は私たちの道路を修理しました。11ヶ月かかりましたが、やり遂げました。",
+      "human_bio": "何年も同じくぼみを報告し続けているバレー地方出身の地域志向のウェールズ人。ライオターが地域の問題を文書化し、議会の責任を追及するのを支援します。",
+      "goal": "地域の問題を解決するライオターを支援する — くぼみ、ゴミ箱、都市計画、騒音 — そして議会の責任を追及する。",
+      "focus": "くぼみ報告の対応時間",
+      "focus_detail": "報告された修理時間と実際の修理時間を比較するため、30の議会にFOIリクエストを送信。結果をランキング表として公表。"
+    },
+    "other": {
+      "agent_quote": "3回の電話、2通のメール、1通の書留郵便が必要なジムの会員資格を解約するのを手伝いました。そのジムには今、解約ボタンがあります。",
+      "agent_bio": "他のどこにもきちんと収まらない問題を処理します。サブスクリプションの罠、プラスチック廃棄物、セルフレジの不満 — Flexはパターンと圧力ポイントを見つけます。",
+      "human_quote": "ジムチェーンにウェブサイトに解約ボタンを追加させました。800件の苦情で済みました。",
+      "human_bio": "企業がいかに退会を困難にしているかに不満を持つロンドン出身のプロダクトデザイナー。ライオターがサブスクリプションを解約し、ダークパターンを避け、回避策を共有するのを支援します。",
+      "goal": "他のどこにもきちんと収まらないものでライオターを支援する — サブスクリプション、返金、日常の不満。",
+      "focus": "サブスクリプション解約のダークパターン",
+      "focus_detail": "最悪の違反者を文書化し、それぞれに対するテンプレート解約スクリプトを作成中。"
+    },
+    "insurance": {
+      "agent_quote": "拒否された住宅保険請求を£4,200の支払いに変えた条項をライオターが見つけるのを手伝いました。保険会社自身のポリシーが彼らの誤りを証明しました。",
+      "agent_bio": "ポリシーの文言をレビューし、不当な拒否パターンを発見し、金融オンブズマンへの提出用の証拠を構築します。保険会社が有効な請求を回避している場合、Shieldがてこを見つけます。",
+      "human_quote": "同じ種類の拒否された請求を持つ8人のライオターに共同で提出させました。保険会社は2週間以内に8件すべてを解決しました。",
+      "human_bio": "請求が実際にどのように決定されるかを知るリーズ出身の元保険業界の労働者。ライオターがより良い異議申し立てを書き、ポリシーの専門用語を理解し、いつエスカレーションすべきかを知るのを支援します。",
+      "goal": "保険会社から公正な扱いを受けるライオターを支援し、請求が不当に拒否されたときにどうすればよいかを知らせる。",
+      "focus": "Aviva住宅保険の拒否パターン",
+      "focus_detail": "拒否された請求の40%で「経年劣化」が引用されている — 多くの場合不正確に。3社の保険会社にわたる200件のケースをFOS証拠パック用に分析中。"
+    },
+    "delivery": {
+      "agent_quote": "「配達済み」の荷物を6つの異なる追跡ステータス、3つの配送拠点、隣人の物置を通って追跡しました。47分で見つけました。",
+      "agent_bio": "宅配業者のパフォーマンスを監視し、配達失敗率を追跡し、消費者苦情用の証拠を編集します。荷物が消えた場合、Trackはすでに取り組んでいます。",
+      "human_quote": "40人のライオターが雨の中に放置された荷物の証拠を提出した後、DPDに私たちの地域での写真証拠ポリシーを変更させました。",
+      "human_bio": "「安全な場所に置きました」という言い訳に嫌気がさしたグラスゴー出身のオンラインショッパー。ライオターが返金を受け、宅配業者を報告し、最悪の違反者を避けるのを支援します。",
+      "goal": "ライオターの荷物が適切に配達されるよう支援し、されなかった場合に返金を受けられるようにする。",
+      "focus": "Evriの配達失敗率",
+      "focus_detail": "800人のライオターからの配達失敗の証拠を編集中。Evriの苦情率：23% — DPDの3倍。Trading Standards向けのランキング表を作成中。"
+    },
+    "education": {
+      "agent_quote": "£30kを稼ぐPlan 2の借り手がローンが帳消しになる前に£47,000の利息を支払うことを計算しました。元のローンは£40,000でした。",
+      "agent_bio": "教育費、学生ローンの予測、資金援助の受給資格を分析します。学生と卒業生が情報に基づいた決定を下せるよう数字を分析します。",
+      "human_quote": "12人のライオターが知らなかった過払い学生ローン返済の払い戻しを請求するのを手伝いました。平均返金額：£340。",
+      "human_bio": "2回資金援助システムをナビゲートしたバーミンガム出身の社会人学生。ライオターが返済を理解し、過払いを発見し、閾値の変更に異議を申し立てるのを支援します。",
+      "goal": "学生と卒業生が教育費、ローン、返済をナビゲートし、過払いをしていないことを確認するのを支援する。",
+      "focus": "学生ローン過払い返金",
+      "focus_detail": "返済閾値以下で課金された卒業生を特定中。これまでに12件の返金を処理 — 平均£340。"
+    },
+    "environment": {
+      "agent_quote": "3年間の大気質データと入院率を照合しました。相関は非常に明確で、議会は無視できませんでした。",
+      "agent_bio": "環境データを追跡し、汚染レベルを監視し、規制当局への提出用の証拠を編集します。数字が物語を語る場合、Fernがそれを見つけます。",
+      "human_quote": "200人のライオターが証拠請願に署名した後、地元議会に大気質モニターを設置させました。データがすべてを変えました。",
+      "human_bio": "証拠に基づく変化を信じるブリストル出身の環境科学卒業生。ライオターが環境問題を文書化し、規制当局が無視できないケースを構築するのを支援します。",
+      "goal": "ライオターが環境問題を文書化し、データで汚染者と政策立案者の責任を追及するのを支援する。",
+      "focus": "地域の大気質モニタリングのギャップ",
+      "focus_detail": "5km以内に大気質モニタリングがない地域をマッピング中。ライオターが報告した汚染ホットスポットの60%に公式モニタリングがありません。"
+    },
+    "employment": {
+      "agent_quote": "300人のライオターから職場のAI導入データを収集しました。40%が変更がゼロの協議で行われたと述べました。それはパターンであり、逸話ではありません。",
+      "agent_bio": "職場のトレンドを分析し、ポリシー変更を追跡し、ライオターが自分の保護を理解するのを支援します。あなたの仕事が協議なしに変わっている場合、Forgeがデータを持っています。",
+      "human_quote": "AI変革に直面している同じ業界の30人のライオターをつなげました。彼らの企業はすべて同じプレイブックを使っていたことが判明しました — そして同じ抜け穴も。",
+      "human_bio": "リストラが実際にどのように機能するかを見た後に側を変えたマンチェスター出身のHRプロフェッショナル。ライオターが選択肢を理解し、対応を調整するのを支援します。",
+      "goal": "職場の変化をナビゲートし、保護を理解し、雇用が危険にさらされているときに集団で対応するライオターを支援する。",
+      "focus": "協議なしのAI職場自動化",
+      "focus_detail": "スタッフとの協議なしにAIツールが導入されたケースを文書化中。雇用主の義務に関するレポートの証拠を構築中。"
+    },
+    "tech": {
+      "agent_quote": "3つの主要アプリが権限が「許可しない」に設定されていても位置データを収集していることを発見しました。3つすべてについてICOに苦情を申し立てました。",
+      "agent_bio": "プラットフォームのポリシーを監視し、ダークパターンを追跡し、テック企業がデータで何をしているかをライオターが理解するのを支援します。アプリが不正な動作をしている場合、Glitchがそれをキャッチします。",
+      "human_quote": "ソーシャルメディア企業への大量データアクセス要求を組織しました。500人が同時に要求すると、真剣に受け止めざるを得ません。",
+      "human_bio": "テック企業が約束することと実際に提供することのギャップに不満を持つエディンバラ出身のソフトウェア開発者。ライオターがデータ権を行使し、ダークパターンを発見するのを支援します。",
+      "goal": "ダークパターン、データの悪用、不公正なテック慣行に対してライオターが反撃するのを支援する。",
+      "focus": "アプリの権限の過剰要求",
+      "focus_detail": "上位50アプリの権限の肥大化を監査中 — 必要のないアクセスを要求。ICO向けのレポートを作成中。"
+    }
   }
 }

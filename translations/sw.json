@@ -1,695 +1,763 @@
 {
   "locale": "sw",
   "categories": {
-    "Transport": "Usafiri",
-    "Telecoms": "Mawasiliano",
-    "Banking": "Benki",
-    "Health": "Afya",
-    "Education": "Elimu",
-    "Environment": "Mazingira",
-    "Energy": "Nishati",
-    "Water": "Maji",
-    "Insurance": "Bima",
-    "Housing": "Makazi",
-    "Shopping": "Ununuzi",
-    "Delivery": "Uwasilishaji",
-    "Local": "Mitaa",
-    "Employment": "Ajira",
-    "Tech": "Teknolojia",
-    "Other": "Nyingine"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Kufutwa kwa Treni",
-      "description": "Treni zinafutwa au kucheleweshwa sana bila taarifa au fidia ya kutosha"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Bei za Tiketi za Treni",
-      "description": "Nauli za treni ni ghali sana, ongezeko zaidi ya mfumuko wa bei, bei zisizo sawa"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Ucheleweshaji wa Ndege",
-      "description": "Ndege zinacheleweshwa au kufutwa, mawasiliano duni, ugumu wa kudai fidia"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Mizigo Iliyopotea",
-      "description": "Mifuko haifiki mahali pa kwenda, ufuatiliaji wa polepole, fidia isiyotosha"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Kupunguzwa kwa Njia za Basi",
-      "description": "Njia zinafutwa, marudio yanapunguzwa, jamii za vijijini zinapoteza ufikiaji wa basi"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Uharibifu wa Mashimo ya Barabara",
-      "description": "Mashimo yanayoharibu magari na kuhatarisha waendesha baiskeli, halmashauri zinachelewa kurekebisha"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Faini za Maegesho",
-      "description": "Malipo yasiyo ya haki ya maegesho ya kibinafsi, utekelezaji mkali, alama za kuchanganya"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Bei za Mafuta",
-      "description": "Bei za petroli na dizeli ni kubwa sana, zinashuka polepole wakati bei ya jumla inaposhuka"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Kasi ya Broadband",
-      "description": "Kasi ya intaneti iko chini sana kuliko inavyotangazwa na kulipwa"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Maeneo Yasiyo na Mtandao",
-      "description": "Hakuna mtandao wa simu katika nyumba, sehemu za kazi, au njia za usafiri"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Kupanda kwa Bei Katikati ya Mkataba",
-      "description": "Bili za simu, broadband na TV zinaongezeka wakati wa mikataba iliyofungwa"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Muda wa Kusubiri Huduma kwa Wateja",
-      "description": "Masaa ya kusubiri kuzungumza na mtu halisi"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Ugumu wa Kufuta Usajili",
-      "description": "Makampuni yanafanya kuwa vigumu kwa makusudi kufuta au kujitoa"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Malipo ya Roaming",
-      "description": "Malipo yasiyotarajiwa ya simu unaposafiria nje ya nchi, ongezeko la bei baada ya Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Gharama za Bili ya Nishati",
-      "description": "Bili za gesi na umeme haziwezi kulipika, kikomo cha bei bado ni cha juu sana"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Bili za Nishati Zisizo Sahihi",
-      "description": "Makadirio ya usomaji yasiyo sahihi, kutoza zaidi, makosa ya bili"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Ongezeko la Bili ya Maji",
-      "description": "Bili za maji zinapanda kwa kasi wakati ubora wa huduma unapungua"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Maji Machafu Mitoni",
-      "description": "Makampuni ya maji yanatupa maji machafu ghafi kwenye njia za maji na ufukweni"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Kukatika kwa Umeme",
-      "description": "Usumbufu wa ugavi wa umeme, urejesho wa polepole, fidia isiyotosha"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Matatizo ya Smart Meter",
-      "description": "Smart meter hazifanyi kazi, zinapoteza utendakazi baada ya kubadilisha mtoa huduma"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Kufungwa kwa Matawi ya Benki",
-      "description": "Matawi ya benki za mitaa yanafungwa, jamii zinabaki bila ufikiaji"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Malipo ya Benki Yaliyofichwa",
-      "description": "Ada zisizotarajiwa za overdraft, miamala ya kigeni, utunzaji wa akaunti"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Hasara za Ulaghai na Udanganyifu",
-      "description": "Benki zinakataa kufidia waathirika wa ulaghai na kashfa za malipo ya kusukumwa"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Kukataliwa kwa Madai ya Bima",
-      "description": "Madai yanakataliwa kwa sababu za kiufundi baada ya miaka ya kulipa primi"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Mshtuko wa Kiwango cha Rehani",
-      "description": "Kiwango kisichobadilika kinaisha na kubadilika kuwa kiwango cha juu zaidi kinachobadilika"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Ada za Uhamisho wa Kimataifa",
-      "description": "Ada kubwa na viwango duni vya ubadilishaji kwa uhamisho wa pesa wa kimataifa"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Muda wa Kusubiri wa NHS",
-      "description": "Miezi au miaka ya kusubiri upasuaji na miadi ya wataalamu"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Ufikiaji wa Miadi ya GP",
-      "description": "Huwezi kupata nafasi ya kuona GP, wiki za kusubiri"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Upatikanaji wa Daktari wa Meno",
-      "description": "Haiwezekani kupata daktari wa meno wa NHS anayekubali wagonjwa wapya"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Kusubiri Huduma za Afya ya Akili",
-      "description": "Miezi ya kusubiri tiba na msaada wa afya ya akili"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Gharama za Dawa",
-      "description": "Gharama kwa kila bidhaa ni kubwa sana nchini Uingereza, kutofautiana kati ya nchi za UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Malipo ya Maegesho ya Hospitali",
-      "description": "Kulipa kuegesha hospitalini wakati mgonjwa au kumtembelea jamaa mgonjwa"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Ongezeko la Kodi ya Nyumba",
-      "description": "Kodi ya nyumba ya kibinafsi inapanda zaidi ya mfumuko wa bei, tishio la kufukuzwa bila kosa"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Ongezeko la Kodi ya Halmashauri",
-      "description": "Ongezeko la kila mwaka la kodi ya halmashauri wakati huduma za mitaa zinazidi kuwa mbaya"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Majirani Wenye Kelele",
-      "description": "Kelele zinazoendelea, halmashauri zinachelewa kuchukua hatua, kuathiri afya ya akili"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Mabadiliko ya Ukusanyaji Taka",
-      "description": "Kupunguzwa kwa ukusanyaji wa taka, sheria za kuchakata zinazovuruga, mapipa yanayofurika"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Unyanyasaji wa Ruhusa ya Ujenzi",
-      "description": "Maendeleo yasiyotakiwa yanaidhinishwa, eneo la kijani liko hatarini, jamii inapuuzwa"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Unyevu na Ukungu katika Makazi",
-      "description": "Wamiliki na vyama vya nyumba wanashindwa kurekebisha unyevu na ukungu"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Matatizo ya Uwasilishaji",
-      "description": "Vifurushi vinapotea, kuachwa mvuani, kuonyeshwa kuwa vimewasilishwa lakini havikupokelewa"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Bidhaa zinakuwa ndogo wakati bei zinabaki sawa au kuongezeka"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Ugumu wa Kurejeshewa Pesa",
-      "description": "Makampuni yanafanya kurejesha na kurejeshewa pesa kuwa vigumu bila sababu"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Maoni Bandia",
-      "description": "Huwezi kuamini maoni ya mtandaoni, maoni bandia chanya yanapotosha wateja"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Mitego ya Usajili",
-      "description": "Majaribio ya bure yanabadilika kuwa ya kulipa bila idhini wazi, vigumu kufuta"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Kupungua kwa Ubora wa Chakula",
-      "description": "Milo tayari ubora wake umeshuka, sehemu ndogo, viongeza zaidi"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Kero ya Self-Checkout",
-      "description": "Mashine za kujihudumia hazitegemeki, zinachukua nafasi ya wafanyakazi"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Gharama ya Malezi ya Watoto",
-      "description": "Gharama za malezi ya watoto ni kubwa kupita kiasi, zinazuia uwezo wa kufanya kazi"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Ulipaji wa Mkopo wa Masomo",
-      "description": "Wahitimu wanalipa kwa miongo, mabadiliko ya kiwango na riba"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Uchafu wa Mbwa",
-      "description": "Kinyesi cha mbwa katika maeneo ya umma, mbuga, na njia za watembea kwa miguu hakisafishwi"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI Inachukua Nafasi ya Kazi",
-      "description": "Wasiwasi kuhusu akili bandia inayoondoa kazi bila msaada wa mpito"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Opereta wa treni wa UK anayehudumia West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Opereta wa treni wa UK anayehudumia London na kusini"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Opereta wa treni wa UK anayehudumia kaskazini mwa England"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Opereta wa treni wa UK wa masafa marefu"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Opereta wa treni wa UK anayehudumia njia za trans-Pennine"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Opereta wa treni wa UK anayehudumia East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Ndege ya bei nafuu ya Ulaya"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Ndege ya bei nafuu yenye makao makuu UK"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Ndege ya taifa ya UK"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Kampuni ya likizo na usafiri"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Mtoa huduma mkubwa wa broadband na simu UK"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Mtoa huduma wa broadband, TV, na simu UK"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Mtoa huduma wa TV, broadband, na simu UK"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Kampuni ya mawasiliano ya kimataifa yenye makao makuu UK"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Opereta wa mtandao wa simu UK"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Mtoa huduma wa broadband na simu UK"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Mtoa nishati wa UK"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Mtoa nishati wa UK"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Mtoa nishati wa UK (umiliki wa Ufaransa)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Mtoa nishati mbadala wa UK"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Mtoa nishati wa UK"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Mtoa nishati wa UK (umiliki wa Ujerumani)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Kampuni ya maji na maji taka kwa London na Thames Valley"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Kampuni ya maji kwa kusini mwa England"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Kampuni ya maji kwa kaskazini-magharibi mwa England"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Kampuni ya maji kwa Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Kampuni ya maji kwa East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Benki ya kimataifa ya Uingereza"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Huduma za benki na fedha za kimataifa"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Benki ya rejareja na biashara ya UK"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Kundi la benki la UK"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Benki ya UK (umiliki wa Uhispania)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Benki ya kidijitali na fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Bima na huduma za kifedha za UK"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Bima ya gari na nyumba ya UK"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Kampuni ya bima ya UK"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Biashara ya mtandaoni na teknolojia ya kimataifa"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Huduma ya posta ya UK"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Huduma ya uwasilishaji vifurushi ya UK (zamani Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Huduma ya uwasilishaji vifurushi ya UK"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Mtandao wa maduka makubwa ya UK"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Mtandao wa maduka makubwa ya UK"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Huduma ya Afya ya Taifa kwa England"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Huduma za meno za NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Mtoa huduma za afya za kibinafsi"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Mamlaka za serikali za mitaa za UK"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Mjenzi wa nyumba wa UK"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Jukwaa la kukodisha mtandaoni la UK"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Huduma ya utiririshaji wa burudani"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Kampuni ya teknolojia"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "treni imefutwa",
-      "treni iliyofutwa",
-      "kufutwa kwa treni",
-      "treni haifanyi kazi",
-      "reli imefutwa",
-      "huduma imefutwa",
-      "ucheleweshaji wa treni",
-      "treni imechelewa",
-      "treni zimechelewa",
-      "treni ya kuchelewa",
-      "ucheleweshaji wa reli"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["nauli za reli", "gharama za tiketi", "treni ghali", "nauli za treni"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "ndege imechelewa",
-      "ndege imecheleweshwa",
-      "ndege imefutwa",
-      "ucheleweshaji uwanja wa ndege",
-      "nimekwama uwanja wa ndege",
-      "ndege imechelewa"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "mifuko iliyopotea",
-      "sanduku limepotea",
-      "mifuko haijafika",
-      "sanduku limepotea",
-      "mizigo haipo kwenye mzunguko",
-      "mfuko umepotezwa na ndege"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["kupunguzwa kwa basi", "kupunguzwa kwa njia", "kufungwa kwa huduma za basi"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "intaneti polepole",
-      "wifi polepole",
-      "wifi ndogo",
-      "kasi ya intaneti",
-      "broadband haifanyi kazi",
-      "inasimama sana",
-      "intaneti inakatika",
-      "wifi inakatika"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "hakuna mtandao",
-      "hakuna mapokezi",
-      "eneo lisilo na mtandao",
-      "eneo lililokufa la mtandao"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "ongezeko la bili katikati ya mkataba",
-      "kupanda kwa bei ya mkataba",
-      "ongezeko katikati ya mkataba"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "niko kwenye foleni",
-      "ninasubiri kwenye simu",
-      "siwezi kupata mtu",
-      "hakuna anayejibu",
-      "foleni ya simu",
-      "kituo cha simu"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "siwezi kufuta",
-      "vigumu kufuta",
-      "futa usajili",
-      "jitoe"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "bili ya gesi kubwa sana",
-      "bili ya umeme",
-      "bei za nishati",
-      "gharama za kupasha joto",
-      "umaskini wa nishati",
-      "siwezi kumudu nishati"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "bili ya nishati isiyo sahihi",
-      "makadirio yasiyo sahihi",
-      "kutozwa zaidi nishati"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["kiwango cha maji", "malipo ya maji", "bili ya maji kubwa sana"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "kutupa maji machafu",
-      "maji machafu ghafi",
-      "maji machafu ufukweni",
-      "uchafuzi wa maji",
-      "kufurika kwa maji machafu",
-      "kufurika kwa mfereji"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "ada zisizotarajiwa",
-      "ada zilizofichwa",
-      "malipo ya ghafla",
-      "malipo ya overdraft",
-      "ada za benki"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "nimedanganywa",
-      "ulaghai wa benki",
-      "kashfa ya malipo",
-      "ulaghai ulioidhinishwa"
-    ],
-    "Bank Branch Closures": [
-      "kufungwa kwa matawi",
-      "benki ya mtaa inafungwa",
-      "hakuna benki karibu"
-    ],
-    "Insurance Claim Rejections": ["dai limekataliwa", "bima hailipii", "dai lililokataliwa"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "kusubiri NHS",
-      "orodha ya kusubiri",
-      "kusubiri upasuaji",
-      "muda wa kusubiri hospitalini",
-      "kusubiri rufaa",
-      "ninasubiri upasuaji"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "siwezi kupata miadi ya GP",
-      "miadi ya daktari",
-      "foleni ya simu ya GP",
-      "siwezi kuona daktari",
-      "kupigania simu asubuhi"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS dentist",
-      "siwezi kupata daktari wa meno",
-      "orodha ya kusubiri daktari wa meno"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "ufadhili wa afya ya akili",
-      "ufikiaji wa tiba",
-      "kusubiri ushauri nasaha",
-      "kusubiri CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["gharama za dawa", "bei za dawa", "malipo ya duka la dawa"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "kifurushi kimepotea",
-      "kifurushi hakijawasilishwa",
-      "kimeachwa mvuani",
-      "kifurushi kimeibwa",
-      "dereva wa uwasilishaji",
-      "uwasilishaji uliokosekana"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "kodi ya nyumba kubwa sana",
-      "kodi inapanda",
-      "mwenye nyumba anaongeza kodi",
-      "kufukuzwa bila kosa"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "tiketi ya maegesho",
-      "notisi ya malipo ya maegesho",
-      "PCN",
-      "faini isiyo ya haki ya maegesho"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "sehemu ndogo zaidi",
-      "kidogo kwa bei ile ile",
-      "pakiti ndogo zaidi",
-      "bidhaa zinazopungua"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": [
-      "mashimo ya barabara",
-      "uharibifu wa barabara",
-      "gari limeharibika na shimo"
-    ],
-    "Council Tax Rises": [
-      "ongezeko la kodi ya halmashauri",
-      "kodi ya halmashauri kubwa sana",
-      "kodi ya mtaa"
-    ],
-    "Damp and Mould in Housing": [
-      "nyumba yenye ukungu",
-      "ghorofa yenye unyevu",
-      "ukungu mweusi",
-      "nyumba isiyotengenezwa"
-    ],
-    "Student Loan Repayment": [
-      "mikopo ya masomo",
-      "ada za masomo",
-      "deni la elimu",
-      "deni la mwanafunzi"
-    ],
-    "AI Replacing Jobs": [
-      "uotomatishaji wa kazi",
-      "AI inachukua kazi",
-      "roboti zinachukua nafasi ya wafanyakazi"
-    ],
-    "Roaming Charges": [
-      "bili ya simu likizoni",
-      "malipo ya data nje ya nchi",
-      "malipo ya simu nje ya nchi"
-    ],
-    "Smart Meter Problems": [
-      "smart meter imeharibika",
-      "mita haifanyi kazi",
-      "mita imepoteza mtandao"
-    ],
-    "Subscription Traps": [
-      "mtego wa jaribio la bure",
-      "upyaji wa kiotomatiki",
-      "nimetozwa baada ya jaribio"
-    ],
-    "Fuel Prices": ["bei za petroli", "bei za dizeli", "gharama ya mafuta", "petroli ghali sana"],
-    "Power Cuts": [
-      "kukatika kwa umeme",
-      "umeme umekatika",
-      "giza",
-      "hakuna umeme",
-      "kushindwa kwa umeme"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "ongezeko la rehani",
-      "kiwango cha rehani",
-      "kurekebisha rehani",
-      "kiwango fasta kinaisha"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "ada za uhamisho",
-      "kutuma pesa nje ya nchi",
-      "ada za pesa",
-      "gharama ya uhamisho wa fedha"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["maegesho ya hospitali", "kuegesha hospitalini", "NHS parking"],
-    "Noisy Neighbours": [
-      "malalamiko ya kelele",
-      "kelele ya jirani",
-      "majirani wenye kelele",
-      "usumbufu wa kelele"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "ukusanyaji wa taka",
-      "taka hazikukusanywa",
-      "mkanganyiko wa kuchakata",
-      "ukusanyaji uliokosekana"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "ruhusa ya ujenzi",
-      "maendeleo yasiyotakiwa",
+      "planning permission",
+      "unwanted development",
       "green belt",
-      "kibali cha ujenzi"
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "siwezi kupata pesa zangu",
-      "marejesho yamekataliwa",
-      "kurudisha kumekataliwa",
-      "pesa yangu"
-    ],
-    "Fake Reviews": [
-      "udanganyifu wa maoni",
-      "maoni yaliyolipwa",
-      "trust pilot bandia",
-      "maoni bandia"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "ubora wa chakula",
-      "chakula tayari kimeshuka",
-      "viongeza vya chakula",
-      "sehemu ndogo zaidi"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
       "self checkout",
-      "kujihudumia",
-      "hakuna kaunta za wafanyakazi",
-      "mashine haifanyi kazi"
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "gharama ya malezi",
-      "ada za kitalu",
-      "malezi ghali",
-      "gharama ya daycare"
-    ],
-    "Dog Fouling": ["uchafu wa mbwa", "kinyesi cha mbwa", "taka za mbwa", "uchafuzi"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Nilisaidia mshiriki wa Quiet Riot kuwasilisha madai 6 ya fidia wakati wa safari moja iliyocheleweshwa. Walipata £47 kabla ya kufika Birmingham.",
+      "agent_bio": "Inafuatilia mifumo ya kufutwa safari, inashughulikia nyaraka za fidia, inakagua kila hatua iliyopendekezwa, na inakusanya ushahidi kwa mawasilisho ya wasimamizi. Inachambua nambari ili washiriki waweze kuzingatia mambo muhimu.",
+      "human_quote": "Wakati wangu ninaoupenda zaidi wa Quiet Riot: kuona timu ya mitandao ya kijamii ya Avanti ikihangaika wakati 400 kati yetu tulipotuma tweet kwa wakati mmoja.",
+      "human_bio": "Msafiri wa kawaida kutoka Manchester aliyetumia miaka 3 kwenye njia ya Avanti kabla ya kuamua kuwa imetosha. Anasaidia kuunganisha washiriki kwenye njia zile zile, anashiriki kinachofanya kazi, na analeta mguso wa kibinadamu.",
+      "goal": "Kusaidia washiriki wa Quiet Riot kuhakikisha makampuni ya usafiri ya Uingereza yanawajibika kwa safari zilizofutwa, ucheleweshaji, na bei — na kuhakikisha kila mtu anajua haki zake.",
+      "focus": "Mifumo ya kufutwa safari ya Avanti West Coast",
+      "focus_detail": "Kujenga hifadhidata ya safari zilizofutwa pamoja na nyakati, njia, na sababu za kuwasilisha kwa ORR. Kwa sasa tunafuatilia safari 340 zilizofutwa zilizoripotiwa na washiriki mwezi huu."
+    },
+    "telecoms": {
+      "agent_quote": "Nilifanya majaribio ya kasi kwa washiriki 200. Wastani ulikuwa 18 Mbps. Walikuwa wanalipa kwa 65.",
+      "agent_bio": "Inachambua kasi za broadband, inakusanya data ya kulinganisha watoa huduma, na inasaidia washiriki kujenga ushahidi kwa Ofcom. Ikiwa muunganisho wako ni polepole, Pulse atathibitisha.",
+      "human_quote": "Mtaa mzima ulibadilisha broadband pamoja. Mtoa huduma wa zamani alituma barua za 'tafadhali rudini' kwa kila nyumba.",
+      "human_bio": "Mkaaji wa London mwenye ujuzi wa teknolojia aliyechoshwa na kulipa kasi za broadband ambazo hazikutimizwa kamwe. Anasaidia washiriki kulinganisha watoa huduma, kuratibu mabadiliko, na kushiriki ushahidi wa kasi.",
+      "goal": "Kusaidia washiriki kupata huduma ya broadband na simu ya mkononi wanayolipa — na kujua nini cha kufanya wanapokosa.",
+      "focus": "Ongezeko la bei katikati ya mkataba",
+      "focus_detail": "Kukusanya ushahidi kutoka kwa washiriki walioathirika na ongezeko la CPI+ kuwasilisha kwa Ofcom. Washiriki 890 walioathirika kwa watoa huduma 4."
+    },
+    "energy": {
+      "agent_quote": "Nilisaidia mshiriki kuhesabu kuwa walilipa zaidi £340 kwenye bili zilizokadiria. Barua pepe ya msamaha ya kampuni ya nishati ilikuwa ndefu kuliko mkataba wa awali.",
+      "agent_bio": "Inachambua mifumo ya bili, inagundua malipo ya zaidi, na inakusanya ushahidi kwa mawasilisho ya wasimamizi. Ikiwa kampuni yako ya nishati inakudanganya, Spark atapata stakabadhi.",
+      "human_quote": "Mshiriki alipata £340 baada ya kuthibitisha miaka 2 ya malipo ya zaidi. Alikuwa akilia kwenye simu.",
+      "human_bio": "Mkaaji wa Bristol. Anasaidia washiriki kupinga bili zao, kuvinjari mabadiliko, na kukusanya ushahidi kwa Ofgem. Anajua soko la nishati kwa undani.",
+      "goal": "Kusaidia washiriki kupinga bili zisizo za haki, kubadilisha kwa akili zaidi, na kuhakikisha makampuni ya nishati yanacheza kwa haki.",
+      "focus": "Makosa ya bili zilizokadiria za British Gas",
+      "focus_detail": "Kuchambua miaka 2 ya data ya bili kutoka kwa washiriki 340 kutambua mifumo ya kimfumo ya malipo ya zaidi kwa mawasilisho ya Ofgem."
+    },
+    "water": {
+      "agent_quote": "Nilisaidia washiriki 200 kuwasilisha ripoti za maji taka katika wikendi moja. Kisanduku cha barua cha Thames Water kilihitaji kisanduku chake.",
+      "agent_bio": "Inafuatilia data ya utiririshaji wa maji taka, inafuatilia utendaji wa makampuni ya maji, na inakusanya ushahidi kwa EA na Ofwat. Inafuatilia kila njia ya kutoa na kufurika.",
+      "human_quote": "Tulifanikiwa kufunguliwa tena kwa ufuko wiki 3 mapema kwa kuonyesha kuwa data ya maji taka ilikuwa mbaya.",
+      "human_bio": "Mvumbuaji kutoka Cornwall aliyechoshwa na maonyo ya maji taka yanayofunga ufuko wake wa karibu. Anasaidia washiriki kuripoti utiririshaji, kukusanya ushahidi wa ubora wa maji, na kuratibu na EA.",
+      "goal": "Kusaidia washiriki kuhakikisha makampuni ya maji yanawajibika kwa maji taka, bili, na ubora wa huduma.",
+      "focus": "Mzunguko wa utiririshaji wa maji taka wa Thames Water",
+      "focus_detail": "Kupanga matukio ya utiririshaji dhidi ya data iliyoripotiwa na makampuni. Ripoti 200 za washiriki zinaonyesha kuripoti chini katika njia 3 za kutoa."
+    },
+    "banking": {
+      "agent_quote": "Nilisaidia kuandika malalamiko yaliyokuwa na undani sana hadi benki ilipiga simu kuomba msamaha kabla ya kutumwa.",
+      "agent_bio": "Inakagua ada za benki, inachambua miundo ya ada, na inasaidia kujenga ushahidi wa malalamiko ya FCA. Ikiwa kuna ada iliyofichwa, Chip ataipata.",
+      "human_quote": "Barclays ilibatilisha kufungwa kwa tawi baada ya 1,200 kati yetu tulipofika kwenye mashauriano.",
+      "human_bio": "Mfanyakazi wa zamani wa benki kutoka Birmingham aliyeona jinsi malalamiko yanavyoshughulikiwa kweli kutoka ndani. Anasaidia washiriki kuandika malalamiko bora na kuvinjari mfumo.",
+      "goal": "Kusaidia washiriki kushughulikia ada zisizo za haki, kufungwa kwa matawi, na huduma mbaya kutoka kwa benki.",
+      "focus": "Wimbi la kufungwa matawi la HSBC",
+      "focus_detail": "Kuratibu majibu kwa kufungwa 12 kulivyopangwa. Kukusanya taarifa za athari kutoka kwa jamii zilizoathirika."
+    },
+    "health": {
+      "agent_quote": "Nilisaidia kupata madaktari 3 wa meno wa NHS wanaokubali wagonjwa. Mshiriki alidhani ninabuni.",
+      "agent_bio": "Inafuatilia nyakati za kusubiri, inapata upatikanaji, na inasaidia washiriki kuvinjari mfumo. Ikiwa kuna njia ya haraka zaidi ya matibabu, Cura ataipanga.",
+      "human_quote": "Mshiriki alitumia kiolezo chetu cha barua kupata rufaa iliyoharakishwa. Miezi 18 ikawa wiki 6.",
+      "human_bio": "Muuguzi kutoka Liverpool ambaye ameona pande zote mbili za NHS. Anasaidia washiriki kuvinjari orodha za kusubiri, kuandika barua zenye ufanisi, na kushiriki kinachosogeza sana mambo.",
+      "goal": "Kusaidia washiriki kuvinjari nyakati za kusubiri za NHS, kupata upatikanaji, na kujua chaguzi zao.",
+      "focus": "Nyakati za kupata daktari mkuu kwa simu",
+      "focus_detail": "Kukusanya data ya simu kutoka kwa washiriki 500 kujenga picha ya upatikanaji wa kweli. Kuchapisha matokeo kwa bodi za afya za mitaa."
+    },
+    "housing": {
+      "agent_quote": "Nilisaidia kuandika kasoro 47 katika jengo jipya. Mjenzi aliuliza kama walikuwa mkaguzi wa majengo.",
+      "agent_bio": "Inaandika matatizo ya makazi, inachambua nyakati za majibu ya wamiliki, na inakusanya ushahidi kwa mawasilisho ya ombudsman wa makazi. Kila doa la unyevunyevu, kila nyufa, imeandikwa.",
+      "human_quote": "Pakiti yetu ya ushahidi wa unyevunyevu ilikuwa na undani sana hadi mmiliki aliporekebisha kabla ya ukaguzi wa baraza.",
+      "human_bio": "Mpangaji kutoka London ambaye ameshughulikia kila kitu kutoka unyevunyevu hadi wamiliki wasio waaminifu. Anasaidia washiriki kuandika matatizo ipasavyo na kujua chaguzi zao.",
+      "goal": "Kusaidia washiriki kushughulikia wamiliki, mabaraza, na matatizo ya makazi — na kujua haki zao.",
+      "focus": "Notisi za kuondolewa bila kosa chini ya Kifungu 21",
+      "focus_detail": "Kusaidia washiriki walioathirika na kuondolewa bila kosa kuelewa Sheria mpya ya Marekebisho ya Wapangaji na maana yake kwao."
+    },
+    "shopping": {
+      "agent_quote": "Nilifuatilia kifurushi kilichoandikwa 'kimetumwa' kupitia majirani 4, pipa la kuchakata, na chafu cha mimea. Nilikipata.",
+      "agent_bio": "Inafuatilia kushindwa kwa utoaji, inakusanya ushahidi wa fidia, na inagundua mifumo ya bei. Ikiwa kifurushi chako kimepotea, Scout tayari anakitafuta.",
+      "human_quote": "Evri ilipoteza kifurushi changu mara 3. Sasa ninasaidia wengine kupata fidia zao haraka zaidi kuliko mimi.",
+      "human_bio": "Mtaalamu wa ununuzi mtandaoni kutoka Edinburgh ambaye amepoteza vifurushi vingi zaidi ya anavyoweza kuhesabu. Anasaidia washiriki kupata fidia, kuripoti wauzaji, na kuepuka wahalifu wabaya zaidi.",
+      "goal": "Kusaidia washiriki kupata fidia, kufuatilia vifurushi vilivyopotea, na kuhakikisha wauzaji na makampuni ya utoaji wanawajibika.",
+      "focus": "Viwango vya kushindwa kwa utoaji vya Evri",
+      "focus_detail": "Kukusanya ushahidi wa kushindwa kwa utoaji kutoka kwa washiriki 800 kuwasilisha kwa Citizens Advice na Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Nilisaidia kupiga picha shimo lile lile la barabara katika hali 11 tofauti za hewa. Baraza hatimaye lilikubali.",
+      "agent_bio": "Inapanga matatizo ya mitaa, inafuatilia nyakati za majibu ya baraza, na inakusanya maombi ya FOI. Ikiwa shimo lako la barabara limekuwepo miezi 6, Link ana ushahidi.",
+      "human_quote": "Baraza lilirekebisha barabara yetu baada ya kupanga kila shimo moja la barabara na picha. Miezi 11, lakini tulifanikiwa.",
+      "human_bio": "Mwelshi mwenye nia ya jamii kutoka Bonde ambaye amekuwa akiripoti mashimo yale yale ya barabara kwa miaka. Anasaidia washiriki kuandika matatizo ya mitaa na kuhakikisha mabaraza yanawajibika.",
+      "goal": "Kusaidia washiriki kurekebisha matatizo ya mitaa — mashimo ya barabara, mapipa ya takataka, mipango, kelele — na kuhakikisha mabaraza yanawajibika.",
+      "focus": "Nyakati za majibu ya kuripoti mashimo ya barabara",
+      "focus_detail": "Maombi ya FOI yaliyotumwa kwa mabaraza 30 kulinganisha nyakati za ukarabati zilizoripotiwa na halisi. Kuchapisha matokeo kama jedwali la msimamo."
+    },
+    "other": {
+      "agent_quote": "Nilisaidia kufuta uanachama wa gym ulioitisha simu 3, barua pepe 2, na barua iliyorekodiwa. Gym sasa ina kitufe cha kufuta.",
+      "agent_bio": "Inashughulikia matatizo ambayo hayaingii vizuri mahali pengine. Mitego ya usajili, taka za plastiki, msongo wa kutumia mashine za kujihudumia — Flex inapata mifumo na sehemu za shinikizo.",
+      "human_quote": "Tulifanikiwa kufanya mnyororo wa gym kuongeza kitufe cha kufuta kwenye tovuti yao. Ilihitaji malalamiko 800 tu.",
+      "human_bio": "Mbuni wa bidhaa kutoka London aliyekerwa na jinsi makampuni yanavyofanya iwe vigumu kuondoka. Anasaidia washiriki kufuta usajili, kuepuka mifumo ya giza, na kushiriki njia mbadala.",
+      "goal": "Kusaidia washiriki na mambo ambayo hayaingii vizuri mahali pengine — usajili, fidia, na matatizo ya kila siku.",
+      "focus": "Mifumo ya giza ya kufuta usajili",
+      "focus_detail": "Kuandika wahalifu wabaya zaidi na kujenga violezo vya hati za kufuta kwa kila mmoja."
+    },
+    "insurance": {
+      "agent_quote": "Nilisaidia mshiriki kupata kifungu kilichobadilisha dai la bima ya nyumba lililokataliwa kuwa malipo ya £4,200. Sera ya bima yenyewe ya kampuni ilithibitisha walikuwa na makosa.",
+      "agent_bio": "Inakagua maneno ya sera, inagundua mifumo ya kukataliwa isiyokuwa ya haki, na inajenga ushahidi kwa mawasilisho ya Ombudsman wa Fedha. Ikiwa kampuni yako ya bima inaepuka dai halali, Shield atapata nguvu.",
+      "human_quote": "Nilifanikiwa kushawishi washiriki 8 walio na aina sawa ya dai lililokataliwa kuwasilisha pamoja. Kampuni ya bima ilisuluhisha yote 8 ndani ya wiki mbili.",
+      "human_bio": "Mfanyakazi wa zamani wa sekta ya bima kutoka Leeds anayejua jinsi madai yanavyoamuliwa kweli. Anasaidia washiriki kuandika rufaa bora, kuelewa lugha ya kitaalamu ya sera, na kujua wakati wa kupandisha.",
+      "goal": "Kusaidia washiriki kupata matibabu ya haki kutoka kwa makampuni ya bima — na kujua nini cha kufanya dai linapokataliwa kwa njia isiyo ya haki.",
+      "focus": "Mifumo ya kukataliwa ya bima ya nyumba ya Aviva",
+      "focus_detail": "'Uchakavu' umetajwa katika 40% ya madai yaliyokataliwa — mara nyingi kwa makosa. Kuchambua kesi 200 kwa makampuni 3 ya bima kwa pakiti ya ushahidi wa FOS."
+    },
+    "delivery": {
+      "agent_quote": "Nilifuatilia kifurushi kilichoandikwa 'kimetumwa' kupitia hali 6 tofauti za ufuatiliaji, maghala 3, na kibanda cha jirani. Nilikipata katika dakika 47.",
+      "agent_bio": "Inafuatilia utendaji wa wapelekaji, inafuatilia viwango vya kushindwa kwa utoaji, na inakusanya ushahidi kwa malalamiko ya watumiaji. Ikiwa kifurushi chako kimepotea, Track tayari yupo.",
+      "human_quote": "Nilifanikiwa kufanya DPD kubadilisha sera yao ya ushahidi wa picha katika eneo letu baada ya washiriki 40 kuwasilisha uthibitisho wa vifurushi vilivyoachwa mvuani.",
+      "human_bio": "Mnunuzi wa mtandaoni kutoka Glasgow aliyechoshwa na kisingizio cha 'tulikiacha mahali salama'. Anasaidia washiriki kupata fidia, kuripoti wapelekaji, na kuepuka wahalifu wabaya zaidi.",
+      "goal": "Kusaidia washiriki kupata vifurushi vyao vikipelekwa ipasavyo — na kupata fidia vinaposhindwa.",
+      "focus": "Viwango vya kushindwa kwa utoaji vya Evri",
+      "focus_detail": "Kukusanya ushahidi wa kushindwa kwa utoaji kutoka kwa washiriki 800. Kiwango cha malalamiko ya Evri: 23% — mara 3 zaidi ya DPD. Kujenga jedwali la msimamo kwa Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Nilihesabu kuwa mkopaji wa Mpango 2 anayepata £30k angelipa £47,000 kama riba kabla ya mkopo kufutwa. Mkopo wa awali ulikuwa £40,000.",
+      "agent_bio": "Inachambua gharama za elimu, makadirio ya mikopo ya wanafunzi, na ustahiki wa ufadhili. Inachambua nambari ili wanafunzi na wahitimu waweze kufanya maamuzi yenye ufahamu.",
+      "human_quote": "Nilisaidia washiriki 12 kudai fidia ya malipo ya ziada ya mkopo wa mwanafunzi ambayo hawakujua. Fidia ya wastani: £340.",
+      "human_bio": "Mwanafunzi mzima kutoka Birmingham aliyevinjari mfumo wa ufadhili mara mbili. Anasaidia washiriki kuelewa malipo ya kurudisha, kugundua malipo ya ziada, na kupinga mabadiliko ya kizingiti.",
+      "goal": "Kusaidia wanafunzi na wahitimu kuvinjari gharama za elimu, mikopo, na malipo ya kurudisha — na kuhakikisha hawalipii zaidi.",
+      "focus": "Fidia za malipo ya ziada ya mikopo ya wanafunzi",
+      "focus_detail": "Kutambua wahitimu ambao wametozwa chini ya kizingiti cha malipo ya kurudisha. Fidia 12 zimechakatwa hadi sasa — wastani wa £340 kila moja."
+    },
+    "environment": {
+      "agent_quote": "Nililinganisha miaka 3 ya data ya ubora wa hewa na viwango vya kulazwa hospitalini. Uhusiano ulikuwa wazi sana hadi baraza halikuweza kupuuza.",
+      "agent_bio": "Inafuatilia data ya mazingira, inafuatilia viwango vya uchafuzi, na inakusanya ushahidi kwa mawasilisho ya wasimamizi. Ikiwa nambari zinaeleza hadithi, Fern ataipata.",
+      "human_quote": "Tulifanikiwa kufanya baraza letu la mtaa kusakinisha vifaa vya kupima ubora wa hewa baada ya washiriki 200 kutia saini ombi letu la ushahidi. Data ilibadilisha kila kitu.",
+      "human_bio": "Mhitimu wa sayansi ya mazingira kutoka Bristol anayeamini katika mabadiliko yanayoongozwa na ushahidi. Anasaidia washiriki kuandika matatizo ya mazingira na kujenga kesi ambazo wasimamizi hawawezi kupuuza.",
+      "goal": "Kusaidia washiriki kuandika matatizo ya mazingira na kuhakikisha wachafuzi na watunga sera wanawajibika kwa data.",
+      "focus": "Mapungufu ya ufuatiliaji wa ubora wa hewa wa mtaa",
+      "focus_detail": "Kupanga maeneo yasiyo na ufuatiliaji wa ubora wa hewa ndani ya km 5. 60% ya maeneo yenye uchafuzi yaliyoripotiwa na washiriki hayana ufuatiliaji rasmi."
+    },
+    "employment": {
+      "agent_quote": "Nilikusanya data ya utekelezaji wa AI mahali pa kazi kutoka kwa washiriki 300. 40% walisema mabadiliko yalitokea bila mashauriano yoyote. Hiyo ni mfumo, si hadithi tu.",
+      "agent_bio": "Inachambua mitindo ya mahali pa kazi, inafuatilia mabadiliko ya sera, na inasaidia washiriki kuelewa ulinzi wao. Ikiwa kazi yako inabadilika bila mashauriano, Forge ana data.",
+      "human_quote": "Niliunganisha washiriki 30 katika sekta moja wanaokabili mabadiliko ya AI. Ilibainika makampuni yao yote yalikuwa yakitumia mkakati sawa — na mianya sawa.",
+      "human_bio": "Mtaalamu wa HR kutoka Manchester aliyebadilisha upande baada ya kuona jinsi upangaji upya unavyofanya kazi kweli. Anasaidia washiriki kuelewa chaguzi zao na kuratibu majibu.",
+      "goal": "Kusaidia washiriki kuvinjari mabadiliko ya mahali pa kazi, kuelewa ulinzi wao, na kujibu kwa pamoja wakati kazi ziko hatarini.",
+      "focus": "Otomatiki ya AI mahali pa kazi bila mashauriano",
+      "focus_detail": "Kuandika kesi ambapo zana za AI zilianzishwa bila mashauriano na wafanyakazi. Kujenga ushahidi kwa ripoti kuhusu wajibu wa waajiri."
+    },
+    "tech": {
+      "agent_quote": "Niligundua kuwa programu 3 kuu zilikuwa zinakusanya data ya eneo hata ruhusa zilipowekwa 'kamwe'. Niliwasilisha malalamiko kwa ICO kwa zote.",
+      "agent_bio": "Inafuatilia sera za majukwaa, inafuatilia mifumo ya giza, na inasaidia washiriki kuelewa makampuni ya teknolojia yanafanya nini na data yao. Ikiwa programu inajiendesha vibaya, Glitch ataigundua.",
+      "human_quote": "Niliratibu ombi la pamoja la kupata data ya kibinafsi kwa kampuni ya mitandao ya kijamii. Watu 500 wanapoomba kwa wakati mmoja, lazima walichukulie kwa uzito.",
+      "human_bio": "Mtengenezaji wa programu kutoka Edinburgh aliyekerwa na pengo kati ya kile makampuni ya teknolojia yanaahidi na kile wanachotoa. Anasaidia washiriki kutumia haki zao za data na kugundua mifumo ya giza.",
+      "goal": "Kusaidia washiriki kupinga mifumo ya giza, matumizi mabaya ya data, na mazoea yasiyo ya haki ya teknolojia.",
+      "focus": "Programu zinazoomba ruhusa kupita kiasi",
+      "focus_detail": "Kukagua programu 50 maarufu zaidi kwa upanuzi wa ruhusa — kuomba ufikiaji wasiohitaji. Kujenga ripoti kwa ICO."
+    }
   }
 }

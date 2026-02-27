@@ -1,666 +1,763 @@
 {
   "locale": "de",
   "categories": {
-    "Transport": "Verkehr",
-    "Telecoms": "Telekommunikation",
-    "Banking": "Bankwesen",
-    "Health": "Gesundheit",
-    "Education": "Bildung",
-    "Environment": "Umwelt",
-    "Energy": "Energie",
-    "Water": "Wasser",
-    "Insurance": "Versicherung",
-    "Housing": "Wohnen",
-    "Shopping": "Einkaufen",
-    "Delivery": "Zustellung",
-    "Local": "Kommunales",
-    "Employment": "Beschaeftigung",
-    "Tech": "Technik",
-    "Other": "Sonstiges"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Zugausfaelle",
-      "description": "Zuege werden gestrichen oder stark verspaetet, ohne ausreichende Vorankuendigung oder Entschaedigung"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Zugticketpreise",
-      "description": "Bahnpreise zu teuer, Erhoehungen ueber der Inflationsrate, uneinheitliche Preisgestaltung"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Flugverspaetungen",
-      "description": "Fluege verspaetet oder gestrichen, schlechte Kommunikation, Schwierigkeiten bei der Entschaedigungsforderung"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Gepaeckverlust",
-      "description": "Gepaeck kommt nicht am Zielort an, langsame Nachverfolgung, unzureichende Entschaedigung"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Buslinien-Kuerzungen",
-      "description": "Strecken gestrichen, Taktung reduziert, laendliche Gemeinden verlieren Busanbindung"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Schlaglochschaeden",
-      "description": "Schlagloecher beschaedigen Fahrzeuge und gefaehrden Radfahrer, Kommunen reparieren zu langsam"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Parkstrafen",
-      "description": "Unfaire private Parkgebuehren, aggressive Durchsetzung, verwirrende Beschilderung"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Kraftstoffpreise",
-      "description": "Benzin- und Dieselpreise zu hoch, sinken zu langsam wenn der Grosshandelspreis faellt"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Breitbandgeschwindigkeit",
-      "description": "Internetgeschwindigkeiten weit unter dem, was beworben und bezahlt wird"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobilfunk-Funkloecher",
-      "description": "Kein Mobilfunksignal in Wohnungen, am Arbeitsplatz oder entlang von Verkehrswegen"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Preiserhoehungen waehrend der Vertragslaufzeit",
-      "description": "Telefon-, Breitband- und TV-Rechnungen steigen waehrend laufender Vertraege"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Wartezeiten beim Kundenservice",
-      "description": "Stundenlang in der Warteschleife, um mit einem Menschen zu sprechen"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Schwierigkeiten beim Kuendigen von Abonnements",
-      "description": "Unternehmen machen es absichtlich schwer, zu kuendigen oder sich abzumelden"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Roaming-Gebuehren",
-      "description": "Unerwartete Mobilfunkkosten auf Auslandsreisen, Preiserhoehungen nach dem Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energiekosten",
-      "description": "Gas- und Stromrechnungen unbezahlbar, Preisdeckel immer noch zu hoch"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Fehlerhafte Energierechnungen",
-      "description": "Geschaetzte Zaehlerstaende falsch, Ueberberechnung, Abrechnungsfehler"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Steigende Wasserrechnungen",
-      "description": "Wasserrechnungen steigen stark, waehrend die Servicequalitaet sinkt"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Abwasser in Fluessen",
-      "description": "Wasserunternehmen leiten ungeklaertes Abwasser in Gewaesser und an Straende"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Stromausfaelle",
-      "description": "Unterbrechungen der Stromversorgung, langsame Wiederherstellung, unzureichende Entschaedigung"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Probleme mit Smart Metern",
-      "description": "Smart Meter funktionieren nicht, verlieren Funktionalitaet nach Anbieterwechsel"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Bankfilialschliessungen",
-      "description": "Oertliche Bankfilialen schliessen und lassen Gemeinden ohne Zugang zurueck"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Versteckte Bankgebuehren",
-      "description": "Unerwartete Gebuehren fuer Ueberziehungen, Auslandstransaktionen, Kontofuehrung"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Betrugs- und Scam-Verluste",
-      "description": "Banken weigern sich, Betrugsopfern und Opfern von autorisierten Push-Zahlungsbetruegen Geld zurueckzuerstatten"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Ablehnung von Versicherungsanspruechen",
-      "description": "Ansprueche werden aus formalen Gruenden abgelehnt, nachdem jahrelang Praemien gezahlt wurden"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Hypothekenzins-Schock",
-      "description": "Festzinsphase endet und wechselt zu einem deutlich hoeheren variablen Zinssatz"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Auslandsueberweisungsgebuehren",
-      "description": "Ueberhoehte Gebuehren und schlechte Wechselkurse bei internationalen Geldtransfers"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS-Wartezeiten",
-      "description": "Monatelange oder jahrelange Wartezeiten fuer Operationen und Facharzttermine"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Zugang zu Hausarztterminen",
-      "description": "Unmoeglich, telefonisch einen GP-Termin zu buchen, wochenlange Wartezeiten"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Zahnarzt-Verfuegbarkeit",
-      "description": "Unmoeglich, einen NHS-Zahnarzt zu finden, der neue Patienten annimmt"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Wartezeiten fuer psychische Gesundheitsdienste",
-      "description": "Monatelange Wartezeiten auf Therapie und psychologische Unterstuetzung"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Rezeptkosten",
-      "description": "Kosten pro Medikament zu hoch in England, Unterschiede zwischen den britischen Landesteilen"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Krankenhausgebuehren",
-      "description": "Parkgebuehren am Krankenhaus zahlen, waehrend man krank ist oder Kranke besucht"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Mieterhoehungen",
-      "description": "Private Mieten steigen weit ueber die Inflation, Bedrohung durch grundlose Kuendigung"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Council-Tax-Erhoehungen",
-      "description": "Jaehrliche Council-Tax-Erhoehungen, waehrend kommunale Dienste schlechter werden"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Laermende Nachbarn",
-      "description": "Dauerhafte Laermbelaestigung, Kommunen handeln zu langsam, beeintraechtigt die psychische Gesundheit"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Aenderungen bei der Muellabfuhr",
-      "description": "Weniger Abholungen, verwirrende Recyclingregeln, ueberquellende Tonnen"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Missbrauch von Baugenehmigungen",
-      "description": "Unerwuenschte Bauvorhaben genehmigt, Gruenguertel bedroht, Gemeinden werden ignoriert"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Feuchtigkeit und Schimmel in Wohnungen",
-      "description": "Vermieter und Wohnungsbaugesellschaften versaeumen es, Feuchtigkeit und Schimmel zu beheben"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Lieferprobleme",
-      "description": "Pakete verloren, im Regen abgestellt, als zugestellt markiert aber nicht erhalten"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Produkte werden kleiner, waehrend die Preise gleich bleiben oder steigen"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Schwierigkeiten bei Rueckerstattungen",
-      "description": "Unternehmen machen Rueckgaben und Rueckerstattungen unnoetig schwierig"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Gefaelschte Bewertungen",
-      "description": "Online-Bewertungen nicht vertrauenswuerdig, gefaelschte positive Bewertungen fuehren Verbraucher in die Irre"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Abo-Fallen",
-      "description": "Kostenlose Testphasen wandeln sich ohne klare Zustimmung in kostenpflichtige Abonnements um, schwer zu kuendigen"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Sinkende Lebensmittelqualitaet",
-      "description": "Fertiggerichte schlechtere Qualitaet, kleinere Portionen, mehr Zusatzstoffe"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Frust an der Selbstbedienungskasse",
-      "description": "Selbstbedienungskassen unzuverlaessig, ersetzen menschliches Personal"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Kinderbetreuungskosten",
-      "description": "Kinderbetreuung unerschwinglich teuer, schraenkt die Arbeitsmoeglichkeiten ein"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Studienkreditrueckzahlung",
-      "description": "Absolventen zahlen jahrzehntelang zurueck, Aenderungen bei Freibetraegen und Zinsen"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Hundekot",
-      "description": "Hundekot in oeffentlichen Raeumen, Parks und auf Gehwegen wird nicht beseitigt"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "KI ersetzt Arbeitsplaetze",
-      "description": "Angst vor kuenstlicher Intelligenz, die Arbeitsplaetze ohne Uebergangshilfe automatisiert"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Britischer Bahnbetreiber auf der West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Britischer Bahnbetreiber fuer London und den Sueden"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Britischer Bahnbetreiber fuer den Norden Englands"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Britischer Fernverkehrs-Bahnbetreiber"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Britischer Bahnbetreiber fuer Trans-Pennine-Strecken"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Britischer Bahnbetreiber auf der East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Europaeische Billigfluggesellschaft"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Britische Billigfluggesellschaft"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Britische Nationalfluggesellschaft"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Urlaubs- und Reiseunternehmen"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Grosser britischer Breitband- und Mobilfunkanbieter"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Britischer Breitband-, TV- und Mobilfunkanbieter"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Britischer TV-, Breitband- und Mobilfunkanbieter"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Globales Telekommunikationsunternehmen mit Hauptsitz in Grossbritannien"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Britischer Mobilfunknetzbetreiber"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Britischer Breitband- und Telefonanbieter"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Britischer Energieversorger"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Britischer Energieversorger"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Britischer Energieversorger (in franzoesischem Besitz)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Britischer Oekostrom-Anbieter"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Britischer Energieversorger"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Britischer Energieversorger (in deutschem Besitz)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Wasser- und Abwasserunternehmen fuer London und das Thames Valley"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Wasserunternehmen fuer den Sueden Englands"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Wasserunternehmen fuer den Nordwesten Englands"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Wasserunternehmen fuer die Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Wasserunternehmen fuer East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britische multinationale Bank"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Globaler Bank- und Finanzdienstleister"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Britische Privat- und Geschaeftsbank"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Britische Bankengruppe"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Britische Bank (in spanischem Besitz)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digitale Bank und Fintech-Unternehmen"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Britischer Versicherungs- und Finanzdienstleister"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Britische Kfz- und Hausratversicherung"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Britisches Versicherungsunternehmen"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Globales E-Commerce- und Technologieunternehmen"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Britischer Postdienst"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Britischer Paketzustelldienst (ehemals Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Britischer Paketzustelldienst"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Britische Supermarktkette"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Britische Supermarktkette"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Nationaler Gesundheitsdienst fuer England"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Zahnmedizinische Dienste des NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Privater Gesundheitsdienstleister"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Britische Kommunalverwaltungen"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Britisches Wohnungsbauunternehmen"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Britische Online-Vermietungsplattform"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming-Unterhaltungsdienst"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technologieunternehmen"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "Zug ausgefallen",
-      "Zugausfall",
-      "Zug gestrichen",
-      "Zuege fahren nicht",
-      "Zugstreichung",
-      "Verbindung gestrichen",
-      "Zugverspaetungen",
-      "Zug verspaetet",
-      "Zuege verspaetet",
-      "Zug zu spaet",
-      "Bahnverspaetungen"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["Bahntarife", "Ticketkosten", "teure Zuege", "Fahrpreise"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "Flug verspaetet",
-      "Flugzeug verspaetet",
-      "Flug gestrichen",
-      "Verspaetung am Flughafen",
-      "am Flughafen festsitzen",
-      "Flug zu spaet"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "Koffer weg",
-      "Koffer verloren",
-      "Gepaeck nicht angekommen",
-      "Koffer verschwunden",
-      "Gepaeck nicht auf dem Band",
-      "Koffer von Airline verloren"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["Buslinie gestrichen", "Linienreduzierung", "Busverbindung eingestellt"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "langsames Internet",
-      "langsames WLAN",
-      "WLAN langsam",
-      "Internetgeschwindigkeit",
-      "Breitband geht nicht",
-      "Pufferung",
-      "Internet bricht ab",
-      "WLAN bricht ab"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
-    "Mobile Signal Dead Zones": ["kein Empfang", "kein Signal", "Funkloch", "tote Zone Mobilfunk"],
+    "Mobile Signal Dead Zones": [
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
     "Price Rises Mid-Contract": [
-      "Preiserhoehung waehrend Vertrag",
-      "Vertragspreis steigt",
-      "Preisanstieg im Vertrag"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "in der Warteschleife",
-      "am Telefon warten",
-      "komme nicht durch",
-      "keiner geht ran",
-      "Telefonwarteschlange",
-      "Kundenservice"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "kann nicht kuendigen",
-      "schwer zu kuendigen",
-      "Abo kuendigen",
-      "abmelden"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "Gasrechnung zu hoch",
-      "Stromrechnung",
-      "Energiepreise",
-      "Heizkosten",
-      "Energiearmut",
-      "kann Energie nicht bezahlen"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "falsche Energierechnung",
-      "geschaetzter Zaehlerstand falsch",
-      "zu viel berechnet Energie"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["Wassergebuehren", "Wasserkosten", "Wasserrechnung zu hoch"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "Abwassereinleitung",
-      "ungeklaertes Abwasser",
-      "Abwasser am Strand",
-      "Wasserverschmutzung",
-      "Abwasserueberblauf",
-      "Kanalisation uebergelaufen"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "unerwartete Gebuehren",
-      "versteckte Gebuehren",
-      "ueberraschende Kosten",
-      "Ueberziehungsgebuehren",
-      "Bankgebuehren"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "betrogen",
-      "Bankbetrug",
-      "Ueberweisungsbetrug",
-      "autorisierter Betrug"
-    ],
-    "Bank Branch Closures": [
-      "Filialschliessung",
-      "Bankfiliale schliesst",
-      "keine Bank in der Naehe"
-    ],
-    "Insurance Claim Rejections": [
-      "Anspruch abgelehnt",
-      "Versicherung zahlt nicht",
-      "Schadensfall abgelehnt"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS Wartezeit",
-      "Warteliste",
-      "Wartezeit fuer OP",
-      "Wartezeit im Krankenhaus",
-      "Wartezeit Ueberweisung",
-      "warten auf Operation"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "kein Termin beim Hausarzt",
-      "Arzttermin",
-      "GP Telefonwarteschlange",
-      "kann keinen Arzt sehen",
-      "morgens um 8 anrufen"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS Zahnarzt", "keinen Zahnarzt finden", "Zahnarzt Warteliste"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "psychische Gesundheit Finanzierung",
-      "Zugang zu Therapie",
-      "Wartezeit Therapie",
-      "CAMHS Wartezeit"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["Medikamentenkosten", "Arzneimittelpreise", "Apothekengebuehren"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "Paket verloren",
-      "Paket nicht geliefert",
-      "im Regen abgestellt",
-      "Paket gestohlen",
-      "Lieferfahrer",
-      "verpasste Lieferung"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "Miete zu hoch",
-      "Miete steigt",
-      "Vermieter erhoeht Miete",
-      "grundlose Kuendigung"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["Strafzettel", "Parkgebuehrenbenachrichtigung", "PCN", "unfaire Parkstrafe"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "kleinere Portionen",
-      "weniger fuer gleichen Preis",
-      "Packung kleiner",
-      "schrumpfende Produkte"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["Schlagloecher", "Strassenschaeden", "Schlagloch Autoschaden"],
-    "Council Tax Rises": ["Council Tax Erhoehung", "Council Tax zu hoch", "Kommunalsteuer"],
-    "Damp and Mould in Housing": [
-      "Schimmel im Haus",
-      "feuchte Wohnung",
-      "Schwarzschimmel",
-      "Wohnungsmaengel"
-    ],
-    "Student Loan Repayment": [
-      "Studienkredit",
-      "Studiengebuehren",
-      "Bildungsschulden",
-      "Studentenschulden"
-    ],
-    "AI Replacing Jobs": [
-      "Jobautomatisierung",
-      "KI nimmt Arbeitsplaetze weg",
-      "Roboter ersetzen Arbeiter"
-    ],
-    "Roaming Charges": [
-      "Handyrechnung im Urlaub",
-      "Datenkosten im Ausland",
-      "Handykosten im Ausland"
-    ],
-    "Smart Meter Problems": [
-      "Smart Meter kaputt",
-      "Zaehler funktioniert nicht",
-      "Zaehler ohne Signal"
-    ],
-    "Subscription Traps": [
-      "Gratis-Testfalle",
-      "automatische Verlaengerung",
-      "Kosten nach Testphase"
-    ],
-    "Fuel Prices": ["Benzinpreise", "Dieselpreise", "Spritkosten", "Benzin zu teuer"],
-    "Power Cuts": ["Stromausfall", "Stromunterbrechung", "Blackout", "kein Strom", "Netzausfall"],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "Hypothek teurer",
-      "Hypothekenzins",
-      "Umfinanzierung",
-      "Festzins laeuft aus"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "Ueberweisungsgebuehren",
-      "Geld ins Ausland senden",
-      "Transfergebuehren",
-      "Kosten fuer Ueberweisung"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["Krankenhaus Parkplatz", "Parken am Krankenhaus", "NHS Parken"],
-    "Noisy Neighbours": ["Laermbeschwerde", "Nachbarlaerm", "laute Nachbarn", "Laermbelaestigung"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "Muellabfuhr",
-      "Muell nicht abgeholt",
-      "Recycling Verwirrung",
-      "Muellabfuhr verpasst"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "Baugenehmigung",
-      "unerwuenschter Bau",
-      "Gruenguertel",
-      "Bauerlaubnis"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "kein Geld zurueck",
-      "Erstattung verweigert",
-      "Ruecksendung abgelehnt",
-      "Geld zurueck"
-    ],
-    "Fake Reviews": [
-      "Bewertungsmanipulation",
-      "bezahlte Bewertungen",
-      "Trustpilot falsch",
-      "gefaelschte Bewertung"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "Lebensmittelqualitaet",
-      "Fertiggericht schlechter",
-      "Lebensmittelzusatzstoffe",
-      "Portion kleiner"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "Selbstbedienungskasse",
-      "Selbstbedienung",
-      "keine Kassen mit Personal",
-      "Automat funktioniert nicht"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "Kinderbetreuungskosten",
-      "Kitagebuehren",
-      "Kinderbetreuung teuer",
-      "Tagespflege Kosten"
-    ],
-    "Dog Fouling": ["Hundekot", "Hundehaufen", "Hundedreck", "Verschmutzung durch Hunde"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Habe einmal einem Rioter geholfen, 6 Erstattungsansprüche während einer einzigen verspäteten Reise einzureichen. Er hat £47 verdient, bevor er Birmingham erreichte.",
+      "agent_bio": "Verfolgt Ausfallmuster, erledigt den Erstattungs-Papierkram, prüft jede vorgeschlagene Aktion und stellt Beweise für Eingaben bei der Regulierungsbehörde zusammen. Analysiert die Zahlen, damit sich die Rioter auf das Wesentliche konzentrieren können.",
+      "human_quote": "Mein liebster Quiet Riot Moment: zuzusehen, wie das Social-Media-Team von Avanti in Panik geriet, als 400 von uns gleichzeitig tweeteten.",
+      "human_bio": "Regelmäßiger Pendler aus Manchester, der 3 Jahre auf der Avanti-Strecke verbrachte, bevor er entschied, dass es genug war. Hilft, Rioter auf denselben Strecken zu verbinden, teilt was funktioniert und bringt die menschliche Note ein.",
+      "goal": "Riotern helfen, britische Transportunternehmen für Ausfälle, Verspätungen und Preisgestaltung zur Verantwortung zu ziehen — und sicherstellen, dass alle ihre Rechte kennen.",
+      "focus": "Avanti West Coast Ausfallmuster",
+      "focus_detail": "Aufbau eines Datensatzes von Ausfällen mit Zeiten, Strecken und Gründen zur Einreichung beim ORR. Derzeit werden 340 von Riotern gemeldete Ausfälle in diesem Monat verfolgt."
+    },
+    "telecoms": {
+      "agent_quote": "Habe Geschwindigkeitstests für 200 Rioter durchgeführt. Der Durchschnitt lag bei 18 Mbps. Sie zahlten für 65.",
+      "agent_bio": "Analysiert Breitbandgeschwindigkeiten, stellt Anbietervergleichsdaten zusammen und hilft Riotern, Beweise für Ofcom aufzubauen. Wenn Ihre Verbindung langsam ist, wird es bewiesen.",
+      "human_quote": "Eine ganze Straße wechselte gemeinsam den Breitbandanbieter. Der alte Anbieter schickte 'Bitte kommen Sie zurück'-Briefe an jedes Haus.",
+      "human_bio": "Technikaffiner Londoner, der es leid war, für Breitbandgeschwindigkeiten zu zahlen, die nie eintrafen. Hilft Riotern, Anbieter zu vergleichen, Wechsel zu koordinieren und Geschwindigkeitstest-Beweise zu teilen.",
+      "goal": "Riotern helfen, den Breitband- und Mobilfunkservice zu bekommen, für den sie bezahlen — und zu wissen, was zu tun ist, wenn sie ihn nicht bekommen.",
+      "focus": "Preiserhöhungen während der Vertragslaufzeit",
+      "focus_detail": "Sammlung von Beweisen von Riotern, die von CPI+-Erhöhungen betroffen sind, zur Einreichung bei Ofcom. 890 betroffene Rioter bei 4 Anbietern."
+    },
+    "energy": {
+      "agent_quote": "Habe einem Rioter geholfen zu berechnen, dass er £340 zu viel auf geschätzten Rechnungen bezahlt hat. Die Entschuldigungs-E-Mail des Energieunternehmens war länger als der ursprüngliche Vertrag.",
+      "agent_bio": "Analysiert Abrechnungsmuster, entdeckt Überberechnungen und stellt Beweise für Eingaben bei der Regulierungsbehörde zusammen. Wenn Ihr Energieunternehmen Sie übers Ohr haut, findet es die Belege.",
+      "human_quote": "Ein Rioter bekam £340 zurück, nachdem wir 2 Jahre Überberechnung nachgewiesen hatten. Sie weinte am Telefon.",
+      "human_bio": "Ansässig in Bristol. Hilft Riotern, ihre Rechnungen anzufechten, den Anbieterwechsel zu navigieren und Beweise für Ofgem zu sammeln. Kennt den Energiemarkt in- und auswendig.",
+      "goal": "Riotern helfen, unfaire Rechnungen anzufechten, klüger zu wechseln und sicherzustellen, dass Energieunternehmen fair spielen.",
+      "focus": "British Gas geschätzte Abrechnungsfehler",
+      "focus_detail": "Analyse von 2 Jahren Abrechnungsdaten von 340 Riotern zur Identifizierung systematischer Überberechnungsmuster für die Ofgem-Einreichung."
+    },
+    "water": {
+      "agent_quote": "Habe 200 Riotern geholfen, an einem Wochenende Abwasserberichte einzureichen. Der Posteingang von Thames Water brauchte seinen eigenen Posteingang.",
+      "agent_bio": "Überwacht Abwassereinleitungsdaten, verfolgt die Leistung der Wasserunternehmen und stellt Beweise für EA und Ofwat zusammen. Behält jeden Auslass und Überlauf im Auge.",
+      "human_quote": "Wir haben einen Strand 3 Wochen früher wiedereröffnen lassen, indem wir gezeigt haben, dass die Abwasserdaten falsch waren.",
+      "human_bio": "Surfer aus Cornwall, der es leid war, dass Abwasserwarnungen seinen Strand schlossen. Hilft Riotern, Einleitungen zu melden, Wasserqualitätsbeweise zu sammeln und sich mit der EA zu koordinieren.",
+      "goal": "Riotern helfen, Wasserunternehmen für Abwasser, Rechnungen und Servicequalität zur Verantwortung zu ziehen.",
+      "focus": "Thames Water Abwassereinleitungshäufigkeit",
+      "focus_detail": "Kartierung von Einleitungsereignissen im Vergleich zu vom Unternehmen gemeldeten Daten. 200 Rioter-Berichte deuten auf Untermeldung an 3 Auslässen hin."
+    },
+    "banking": {
+      "agent_quote": "Habe bei der Erstellung einer so gründlichen Beschwerde geholfen, dass die Bank anrief, um sich zu entschuldigen, bevor sie überhaupt abgeschickt wurde.",
+      "agent_bio": "Prüft Bankgebühren, analysiert Gebührenstrukturen und hilft beim Aufbau von FCA-Beschwerdebeweisen. Wenn es eine versteckte Gebühr gibt, wird sie gefunden.",
+      "human_quote": "Barclays hat eine Filialschließung rückgängig gemacht, nachdem 1.200 von uns zur Anhörung erschienen waren.",
+      "human_bio": "Ehemaliger Bankangestellter aus Birmingham, der gesehen hat, wie Beschwerden wirklich von innen bearbeitet werden. Hilft Riotern, bessere Beschwerden zu schreiben und das System zu navigieren.",
+      "goal": "Riotern helfen, mit unfairen Gebühren, Filialschließungen und schlechtem Service von Banken umzugehen.",
+      "focus": "HSBC Filialschließungswelle",
+      "focus_detail": "Koordination der Antworten auf 12 geplante Schließungen. Sammlung von Folgenabschätzungen aus betroffenen Gemeinden."
+    },
+    "health": {
+      "agent_quote": "Habe geholfen, 3 NHS-Zahnärzte zu finden, die Patienten aufnehmen. Der Rioter dachte, ich erfinde das.",
+      "agent_bio": "Verfolgt Wartezeiten, findet Verfügbarkeit und hilft Riotern, das System zu navigieren. Wenn es einen schnelleren Weg zur Behandlung gibt, wird er kartiert.",
+      "human_quote": "Ein Rioter hat unsere Briefvorlage verwendet, um eine Überweisung zu beschleunigen. 18 Monate wurden zu 6 Wochen.",
+      "human_bio": "Krankenschwester aus Liverpool, die beide Seiten des NHS gesehen hat. Hilft Riotern, Wartelisten zu navigieren, wirksame Briefe zu schreiben und zu teilen, was wirklich etwas bewirkt.",
+      "goal": "Riotern helfen, NHS-Wartezeiten zu navigieren, Verfügbarkeit zu finden und ihre Optionen zu kennen.",
+      "focus": "Telefonische Erreichbarkeit des Hausarztes",
+      "focus_detail": "Sammlung von Anrufdaten von 500 Riotern, um ein Bild der realen Erreichbarkeit zu erstellen. Veröffentlichung der Ergebnisse an lokale Gesundheitsbehörden."
+    },
+    "housing": {
+      "agent_quote": "Habe geholfen, 47 Mängel in einem Neubau zu dokumentieren. Der Bauträger fragte, ob er Bauinspektor sei.",
+      "agent_bio": "Dokumentiert Immobilienprobleme, analysiert Reaktionszeiten von Vermietern und stellt Beweise für Eingaben beim Wohnungsombudsmann zusammen. Jeder Feuchtigkeitsfleck, jeder Riss, dokumentiert.",
+      "human_quote": "Unser Feuchtigkeitsbeweispaket war so detailliert, dass der Vermieter es vor der Inspektion durch die Behörde repariert hat.",
+      "human_bio": "Mieter aus London, der alles von Feuchtigkeit bis zu unseriösen Vermietern erlebt hat. Hilft Riotern, Probleme richtig zu dokumentieren und ihre Optionen zu kennen.",
+      "goal": "Riotern helfen, mit Vermietern, Behörden und Wohnungsproblemen umzugehen — und ihre Rechte zu kennen.",
+      "focus": "Sektion 21 verschuldensunabhängige Räumungsbescheide",
+      "focus_detail": "Hilfe für Rioter, die von verschuldensunabhängigen Räumungen betroffen sind, das neue Mieterreformgesetz zu verstehen und was es für sie bedeutet."
+    },
+    "shopping": {
+      "agent_quote": "Habe ein 'zugestelltes' Paket über 4 Nachbarn, eine Recyclingtonne und ein Gewächshaus verfolgt. Gefunden.",
+      "agent_bio": "Verfolgt Zustellungsfehler, sammelt Erstattungsbeweise und erkennt Preismuster. Wenn Ihr Paket verloren ist, wird bereits danach gesucht.",
+      "human_quote": "Evri hat mein Paket 3 Mal verloren. Jetzt helfe ich anderen, schneller Erstattungen zu bekommen, als ich es je geschafft habe.",
+      "human_bio": "Erfahrene Online-Shopperin aus Edinburgh, die mehr Pakete verloren hat, als sie zählen kann. Hilft Riotern, Erstattungen zu bekommen, Verkäufer zu melden und die schlimmsten Täter zu meiden.",
+      "goal": "Riotern helfen, Erstattungen zu bekommen, verlorene Pakete zu verfolgen und Einzelhändler und Zustellunternehmen zur Verantwortung zu ziehen.",
+      "focus": "Evri Zustellungsfehlerrate",
+      "focus_detail": "Zusammenstellung von Zustellungsfehlerbeweisen von 800 Riotern zur Einreichung bei Citizens Advice und Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Habe geholfen, dasselbe Schlagloch bei 11 verschiedenen Wetterbedingungen zu fotografieren. Die Gemeinde hat schließlich nachgegeben.",
+      "agent_bio": "Kartiert lokale Probleme, verfolgt Reaktionszeiten der Gemeinde und erstellt FOI-Anfragen. Wenn Ihr Schlagloch seit 6 Monaten da ist, hat er die Beweise.",
+      "human_quote": "Die Gemeinde hat unsere Straße repariert, nachdem wir jedes einzelne Schlagloch mit Fotos kartiert hatten. 11 Monate, aber wir haben es geschafft.",
+      "human_bio": "Gemeindeorientierter Waliser aus den Tälern, der seit Jahren dieselben Schlaglöcher meldet. Hilft Riotern, lokale Probleme zu dokumentieren und Gemeindeverwaltungen zur Verantwortung zu ziehen.",
+      "goal": "Riotern helfen, lokale Probleme zu lösen — Schlaglöcher, Mülltonnen, Planung, Lärm — und Gemeindeverwaltungen zur Verantwortung zu ziehen.",
+      "focus": "Reaktionszeiten auf Schlagloch-Meldungen",
+      "focus_detail": "FOI-Anfragen an 30 Gemeinden gesendet, die gemeldete vs. tatsächliche Reparaturzeiten vergleichen. Veröffentlichung der Ergebnisse als Rangliste."
+    },
+    "other": {
+      "agent_quote": "Habe bei der Kündigung einer Fitnessstudio-Mitgliedschaft geholfen, die 3 Anrufe, 2 E-Mails und ein Einschreiben erforderte. Das Fitnessstudio hat jetzt einen Kündigungsbutton.",
+      "agent_bio": "Kümmert sich um Probleme, die nirgendwo anders hinpassen. Abo-Fallen, Plastikmüll, Selbstbedienungskassen-Frust — findet die Muster und die Druckpunkte.",
+      "human_quote": "Wir haben eine Fitnesskette dazu gebracht, einen Kündigungsbutton auf ihrer Website hinzuzufügen. Hat nur 800 Beschwerden gedauert.",
+      "human_bio": "Produktdesignerin aus London, die frustriert darüber war, wie schwer Unternehmen das Verlassen machen. Hilft Riotern, Abonnements zu kündigen, Dark Patterns zu vermeiden und Lösungen zu teilen.",
+      "goal": "Riotern bei Dingen helfen, die nirgendwo anders hinpassen — Abonnements, Erstattungen und alltägliche Frustrationen.",
+      "focus": "Dark Patterns bei Abo-Kündigungen",
+      "focus_detail": "Dokumentation der schlimmsten Täter und Erstellung von Vorlagen-Kündigungsskripten für jeden."
+    },
+    "insurance": {
+      "agent_quote": "Habe einem Rioter geholfen, die Klausel zu finden, die einen abgelehnten Hausratversicherungsanspruch in eine Auszahlung von £4,200 verwandelte. Die eigene Police des Versicherers bewies, dass sie falsch lagen.",
+      "agent_bio": "Prüft Policenformulierungen, erkennt unfaire Ablehnungsmuster und baut Beweise für Eingaben beim Financial Ombudsman auf. Wenn Ihr Versicherer einen berechtigten Anspruch abwehrt, findet er den Hebel.",
+      "human_quote": "Habe 8 Rioter mit demselben abgelehnten Anspruchstyp dazu gebracht, gemeinsam einzureichen. Der Versicherer hat alle 8 innerhalb von zwei Wochen reguliert.",
+      "human_bio": "Ehemaliger Versicherungsbranche-Mitarbeiter aus Leeds, der weiß, wie Ansprüche wirklich entschieden werden. Hilft Riotern, bessere Einsprüche zu schreiben, Policenjargon zu verstehen und zu wissen, wann eskaliert werden sollte.",
+      "goal": "Riotern helfen, faire Behandlung von Versicherern zu bekommen — und zu wissen, was zu tun ist, wenn ein Anspruch unfair abgelehnt wird.",
+      "focus": "Aviva Hausratversicherungs-Ablehnungsmuster",
+      "focus_detail": "'Verschleiß' wird in 40 % der abgelehnten Ansprüche angeführt — oft fälschlicherweise. Analyse von 200 Fällen bei 3 Versicherern für das FOS-Beweispaket."
+    },
+    "delivery": {
+      "agent_quote": "Habe ein 'zugestelltes' Paket über 6 verschiedene Tracking-Status, 3 Depots und den Schuppen eines Nachbarn verfolgt. In 47 Minuten gefunden.",
+      "agent_bio": "Überwacht die Leistung von Kurieren, verfolgt Zustellungsfehlerquoten und sammelt Beweise für Verbraucherbeschwerden. Wenn Ihr Paket verschwunden ist, wird bereits daran gearbeitet.",
+      "human_quote": "Haben DPD dazu gebracht, ihre Fotonachweis-Richtlinie in unserem Gebiet zu ändern, nachdem 40 Rioter Beweise für im Regen liegen gelassene Pakete eingereicht hatten.",
+      "human_bio": "Online-Shopperin aus Glasgow, die die Ausrede 'wir haben es an einem sicheren Ort hinterlegt' leid war. Hilft Riotern, Erstattungen zu bekommen, Kuriere zu melden und die schlimmsten Täter zu meiden.",
+      "goal": "Riotern helfen, ihre Pakete richtig zugestellt zu bekommen — und Erstattungen zu bekommen, wenn das nicht passiert.",
+      "focus": "Evri Zustellungsfehlerrate",
+      "focus_detail": "Zusammenstellung von Zustellungsfehlerbeweisen von 800 Riotern. Evri-Beschwerderate: 23 % — 3x höher als DPD. Erstellung einer Rangliste für Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Habe berechnet, dass ein Plan-2-Kreditnehmer mit £30k Einkommen £47,000 an Zinsen zahlen würde, bevor das Darlehen erlassen wird. Das ursprüngliche Darlehen betrug £40,000.",
+      "agent_bio": "Analysiert Bildungskosten, Studienkreditprognosen und Finanzierungsansprüche. Analysiert die Zahlen, damit Studierende und Absolventen fundierte Entscheidungen treffen können.",
+      "human_quote": "Habe 12 Riotern geholfen, Überzahlungen bei Studienkrediten zurückzufordern, von denen sie nichts wussten. Durchschnittliche Erstattung: £340.",
+      "human_bio": "Reifer Student aus Birmingham, der das Finanzierungssystem zweimal durchlaufen hat. Hilft Riotern, Rückzahlungen zu verstehen, Überzahlungen zu erkennen und Schwellenwertänderungen anzufechten.",
+      "goal": "Studierenden und Absolventen helfen, Bildungskosten, Darlehen und Rückzahlungen zu navigieren — und sicherzustellen, dass sie nicht zu viel zahlen.",
+      "focus": "Erstattung von Studienkredit-Überzahlungen",
+      "focus_detail": "Identifizierung von Absolventen, denen unterhalb der Rückzahlungsschwelle Beträge berechnet wurden. 12 Erstattungen bisher bearbeitet — durchschnittlich £340 pro Stück."
+    },
+    "environment": {
+      "agent_quote": "Habe 3 Jahre Luftqualitätsdaten mit Krankenhauseinweisungsraten abgeglichen. Die Korrelation war so klar, dass die Gemeinde sie nicht ignorieren konnte.",
+      "agent_bio": "Verfolgt Umweltdaten, überwacht Schadstoffwerte und stellt Beweise für behördliche Eingaben zusammen. Wenn die Zahlen eine Geschichte erzählen, wird sie gefunden.",
+      "human_quote": "Haben unsere Gemeindeverwaltung dazu gebracht, Luftqualitätsmonitore zu installieren, nachdem 200 Rioter unsere Beweispetition unterschrieben hatten. Daten haben alles verändert.",
+      "human_bio": "Umweltwissenschafts-Absolventin aus Bristol, die an evidenzbasierten Wandel glaubt. Hilft Riotern, Umweltprobleme zu dokumentieren und Fälle aufzubauen, die Regulierungsbehörden nicht ignorieren können.",
+      "goal": "Riotern helfen, Umweltprobleme zu dokumentieren und Umweltverschmutzer und Entscheidungsträger mit Daten zur Verantwortung zu ziehen.",
+      "focus": "Lücken in der lokalen Luftqualitätsüberwachung",
+      "focus_detail": "Kartierung von Gebieten ohne Luftqualitätsüberwachung im Umkreis von 5 km. 60 % der von Riotern gemeldeten Schadstoff-Hotspots haben keine offizielle Überwachung."
+    },
+    "employment": {
+      "agent_quote": "Habe Daten zur KI-Implementierung am Arbeitsplatz von 300 Riotern gesammelt. 40 % sagten, die Änderungen geschahen ohne jegliche Konsultation. Das ist ein Muster, keine Anekdote.",
+      "agent_bio": "Analysiert Arbeitsplatztrends, verfolgt Politikänderungen und hilft Riotern, ihren Schutz zu verstehen. Wenn sich Ihr Job ohne Konsultation ändert, hat er die Daten.",
+      "human_quote": "Habe 30 Rioter in derselben Branche verbunden, die mit KI-Änderungen konfrontiert waren. Es stellte sich heraus, dass ihre Unternehmen alle dasselbe Drehbuch verwendeten — und dieselben Schlupflöcher.",
+      "human_bio": "HR-Fachfrau aus Manchester, die die Seite wechselte, nachdem sie gesehen hatte, wie Umstrukturierungen wirklich ablaufen. Hilft Riotern, ihre Optionen zu verstehen und Antworten zu koordinieren.",
+      "goal": "Riotern helfen, Veränderungen am Arbeitsplatz zu navigieren, ihren Schutz zu verstehen und kollektiv zu reagieren, wenn Arbeitsplätze gefährdet sind.",
+      "focus": "KI-Automatisierung am Arbeitsplatz ohne Konsultation",
+      "focus_detail": "Dokumentation von Fällen, in denen KI-Tools ohne Mitarbeiterkonsultation eingeführt wurden. Aufbau von Beweisen für einen Bericht über Arbeitgeberpflichten."
+    },
+    "tech": {
+      "agent_quote": "Habe festgestellt, dass 3 große Apps Standortdaten sammelten, selbst wenn die Berechtigungen auf 'nie' gesetzt waren. Habe Beschwerden beim ICO für alle eingereicht.",
+      "agent_bio": "Überwacht Plattformrichtlinien, verfolgt Dark Patterns und hilft Riotern zu verstehen, was Tech-Unternehmen mit ihren Daten machen. Wenn sich eine App schlecht verhält, wird sie erwischt.",
+      "human_quote": "Habe eine Massen-Datenauskunftsanfrage bei einem Social-Media-Unternehmen organisiert. Wenn 500 Leute gleichzeitig fragen, müssen sie es ernst nehmen.",
+      "human_bio": "Softwareentwickler aus Edinburgh, frustriert über die Kluft zwischen dem, was Tech-Unternehmen versprechen und dem, was sie liefern. Hilft Riotern, ihre Datenrechte auszuüben und Dark Patterns zu erkennen.",
+      "goal": "Riotern helfen, gegen Dark Patterns, Datenmissbrauch und unfaire Tech-Praktiken vorzugehen.",
+      "focus": "Übermäßige App-Berechtigungen",
+      "focus_detail": "Audit der Top-50-Apps auf schleichende Berechtigungserweiterung — Anforderung von Zugriff, den sie nicht benötigen. Erstellung eines Berichts für das ICO."
+    }
   }
 }

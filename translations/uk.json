@@ -1,705 +1,763 @@
 {
   "locale": "uk",
   "categories": {
-    "Transport": "Транспорт",
-    "Telecoms": "Телекомунікації",
-    "Banking": "Банківська справа",
-    "Health": "Охорона здоров'я",
-    "Education": "Освіта",
-    "Environment": "Довкілля",
-    "Energy": "Енергетика",
-    "Water": "Водопостачання",
-    "Insurance": "Страхування",
-    "Housing": "Житло",
-    "Shopping": "Покупки",
-    "Delivery": "Доставка",
-    "Local": "Місцеве",
-    "Employment": "Зайнятість",
-    "Tech": "Технології",
-    "Other": "Інше"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Скасування поїздів",
-      "description": "Поїзди скасовують або затримують без належного попередження чи компенсації"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Ціни на залізничні квитки",
-      "description": "Занадто дорогі залізничні квитки, подорожчання вище інфляції, непослідовне ціноутворення"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Затримки рейсів",
-      "description": "Рейси затримуються або скасовуються, погана комунікація, складнощі з отриманням компенсації"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Втрачений багаж",
-      "description": "Багаж не прибуває до місця призначення, повільне відстеження, недостатня компенсація"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Скорочення автобусних маршрутів",
-      "description": "Маршрути скасовано, частоту зменшено, сільські громади втрачають доступ до автобусів"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Пошкодження від вибоїн",
-      "description": "Вибоїни пошкоджують транспорт і загрожують велосипедистам, ради повільно ремонтують"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Штрафи за паркування",
-      "description": "Несправедливі приватні паркувальні збори, агресивне стягнення, заплутана розмітка"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Ціни на пальне",
-      "description": "Ціни на бензин та дизель занадто високі, повільно падають при зниженні оптових цін"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Швидкість широкосмугового інтернету",
-      "description": "Швидкість інтернету значно нижча за рекламовану та оплачену"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Мертві зони мобільного зв'язку",
-      "description": "Немає мобільного сигналу вдома, на роботі або вздовж транспортних маршрутів"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Подорожчання посеред контракту",
-      "description": "Рахунки за телефон, інтернет та ТБ зростають під час дії контракту"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Очікування на лінії підтримки",
-      "description": "Годинами на лінії в очікуванні живого оператора"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Складнощі зі скасуванням підписок",
-      "description": "Компанії навмисно ускладнюють скасування або відписку"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Плата за роумінг",
-      "description": "Несподівані мобільні збори під час подорожей за кордон, подорожчання після Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Вартість рахунків за енергію",
-      "description": "Рахунки за газ та електрику неподъємні, цінова стеля все ще занадто висока"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Неточні рахунки за енергію",
-      "description": "Помилкові оціночні показники, завищення оплати, помилки у рахунках"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Подорожчання рахунків за воду",
-      "description": "Рахунки за воду стрімко зростають, тоді як якість послуг падає"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Стоки у річках",
-      "description": "Водопостачальні компанії скидають неочищені стоки у водойми та на пляжі"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Відключення електрики",
-      "description": "Перебої з електропостачанням, повільне відновлення, недостатня компенсація"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Проблеми з розумними лічильниками",
-      "description": "Розумні лічильники не працюють, втрачають функціональність після зміни постачальника"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Закриття банківських відділень",
-      "description": "Місцеві банківські відділення закриваються, громади залишаються без доступу"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Приховані банківські збори",
-      "description": "Несподівані комісії за овердрафт, іноземні операції, обслуговування рахунку"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Втрати від шахрайства",
-      "description": "Банки відмовляються відшкодовувати жертвам шахрайства та авторизованих шахрайських платежів"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Відмова у страхових виплатах",
-      "description": "Заяви відхиляються через формальності після років сплати страхових внесків"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Шок від іпотечної ставки",
-      "description": "Закінчення фіксованої ставки та перехід на значно вищу змінну ставку"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Комісії за міжнародні перекази",
-      "description": "Надмірні комісії та невигідні курси обміну для міжнародних грошових переказів"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Черги в NHS",
-      "description": "Багатомісячне або багаторічне очікування операцій та прийомів у спеціалістів"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Доступ до сімейного лікаря",
-      "description": "Неможливо записатися до сімейного лікаря, тижні очікування"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Доступність стоматолога",
-      "description": "Неможливо знайти стоматолога NHS, який приймає нових пацієнтів"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Очікування послуг психічного здоров'я",
-      "description": "Місяці очікування терапії та підтримки психічного здоров'я"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Вартість рецептів",
-      "description": "Ціна за рецепт занадто висока в Англії, нерівність між частинами Великої Британії"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Плата за паркування у лікарнях",
-      "description": "Оплата паркування у лікарні, коли хворієте або відвідуєте хворих рідних"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Підвищення орендної плати",
-      "description": "Приватна оренда зростає значно вище інфляції, загроза виселення без провини"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Підвищення муніципального податку",
-      "description": "Щорічне підвищення муніципального податку, тоді як місцеві послуги погіршуються"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Шумні сусіди",
-      "description": "Постійний шум, ради повільно реагують, вплив на психічне здоров'я"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Зміни у вивезенні сміття",
-      "description": "Скорочення вивезення сміття, заплутані правила сортування, переповнені контейнери"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Зловживання дозволами на забудову",
-      "description": "Небажані забудови схвалено, зелені зони під загрозою, громаду ігнорують"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Вологість та цвіль у житлі",
-      "description": "Орендодавці та житлові асоціації не усувають вологість та цвіль"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Проблеми з доставкою",
-      "description": "Посилки втрачено, залишено під дощем, позначено як доставлені, але не отримано"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Шрінкфляція",
-      "description": "Продукти зменшуються, тоді як ціни залишаються такими ж або зростають"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Складнощі з поверненням коштів",
-      "description": "Компанії безпідставно ускладнюють повернення товарів та коштів"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Фальшиві відгуки",
-      "description": "Онлайн-відгукам не можна довіряти, фальшиві позитивні відгуки вводять споживачів в оману"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Пастки підписок",
-      "description": "Безкоштовні пробні періоди переходять у платні без чіткої згоди, важко скасувати"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Зниження якості їжі",
-      "description": "Готові страви гіршої якості, менші порції, більше добавок"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Роздратування від кас самообслуговування",
-      "description": "Каси самообслуговування ненадійні, замінюють живий персонал"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Вартість догляду за дітьми",
-      "description": "Догляд за дітьми непомірно дорогий, обмежує можливість працювати"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Погашення студентського кредиту",
-      "description": "Випускники сплачують десятиліттями, зміни порогу та процентної ставки"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Собачі екскременти",
-      "description": "Собачі екскременти на громадських територіях, у парках та на тротуарах, які не прибирають"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "ШІ замінює робочі місця",
-      "description": "Тривога через автоматизацію робочих місць штучним інтелектом без підтримки при переході"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Британський залізничний оператор на лінії West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Британський залізничний оператор для Лондона та півдня Англії"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Британський залізничний оператор для півночі Англії"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Британський залізничний оператор далекого сполучення"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Британський залізничний оператор на транс-пенінських маршрутах"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Британський залізничний оператор на лінії East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Європейська бюджетна авіакомпанія"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Британська бюджетна авіакомпанія"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Національна авіакомпанія Великої Британії"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Компанія з організації відпочинку та подорожей"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Великий британський провайдер широкосмугового інтернету та мобільного зв'язку"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Британський провайдер широкосмугового інтернету, ТБ та мобільного зв'язку"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Британський провайдер ТБ, широкосмугового інтернету та мобільного зв'язку"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Глобальна телекомунікаційна компанія зі штаб-квартирою у Великій Британії"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Британський оператор мобільної мережі"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Британський провайдер широкосмугового інтернету та телефонного зв'язку"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Британський постачальник енергії"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Британський постачальник енергії"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Британський постачальник енергії (у французькій власності)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Британський постачальник відновлюваної енергії"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Британський постачальник енергії"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Британський постачальник енергії (у німецькій власності)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Компанія водопостачання та каналізації для Лондона та долини Темзи"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Водопостачальна компанія для півдня Англії"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Водопостачальна компанія для північного заходу Англії"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Водопостачальна компанія для Мідлендсу"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Водопостачальна компанія для Східної Англії"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Британський транснаціональний банк"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Глобальна банківська та фінансова група"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Британський роздрібний та комерційний банк"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Британська банківська група"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Британський банк (в іспанській власності)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Цифровий банк та фінтех-компанія"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Британське страхування та фінансові послуги"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Британське страхування автомобілів та житла"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Британська страхова компанія"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Глобальна електронна комерція та технології"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Британська поштова служба"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Британська служба доставки посилок (раніше Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Британська служба доставки посилок"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Британська мережа супермаркетів"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Британська мережа супермаркетів"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Національна служба охорони здоров'я Англії"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Стоматологічні послуги NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Приватний постачальник медичних послуг"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Британські органи місцевого самоврядування"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Британський забудовник житла"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Британська онлайн-платформа для оренди житла"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Стрімінговий розважальний сервіс"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Технологічна компанія"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "поїзд скасовано",
-      "скасований поїзд",
-      "скасування поїзда",
-      "поїзди не ходять",
-      "скасування рейсу потяга",
-      "рейс скасовано",
-      "затримка поїзда",
-      "затриманий поїзд",
-      "поїзди запізнюються",
-      "потяг спізнюється",
-      "затримки на залізниці"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "залізничні тарифи",
-      "вартість квитків",
-      "дорогі поїзди",
-      "ціни на поїзди"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "рейс затриманий",
-      "літак затриманий",
-      "рейс скасовано",
-      "затримки в аеропорту",
-      "застряг в аеропорту",
-      "рейс запізнюється"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "зниклі сумки",
-      "загублена валіза",
-      "багаж не прибув",
-      "зникла валіза",
-      "багаж не на стрічці",
-      "сумка загублена авіакомпанією"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": [
-      "скорочення автобусів",
-      "скорочення маршрутів",
-      "закриття автобусних маршрутів"
-    ],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "повільний інтернет",
-      "повільний wifi",
-      "wifi гальмує",
-      "швидкість інтернету",
-      "інтернет не працює",
-      "буферизація",
-      "інтернет постійно обривається",
-      "wifi зникає"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "немає сигналу",
-      "немає прийому",
-      "мертва зона зв'язку",
-      "зона без покриття"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "підвищення рахунку посеред контракту",
-      "подорожчання за контрактом",
-      "зростання ціни посеред контракту"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "на утриманні",
-      "очікування по телефону",
-      "неможливо додзвонитися",
-      "ніхто не відповідає",
-      "черга по телефону",
-      "кол-центр"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "не можу скасувати",
-      "важко скасувати",
-      "скасування підписки",
-      "відписатися"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "рахунок за газ занадто високий",
-      "рахунок за електрику",
-      "ціни на енергію",
-      "витрати на опалення",
-      "енергетична бідність",
-      "не можу оплатити енергію"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "неправильний рахунок за енергію",
-      "помилкові показники лічильника",
-      "переплата за енергію"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["тарифи на воду", "плата за воду", "рахунок за воду занадто високий"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "скидання каналізації",
-      "неочищені стоки",
-      "каналізація на пляжі",
-      "забруднення води",
-      "перелив каналізації",
-      "перелив зливової каналізації"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "несподівані комісії",
-      "приховані комісії",
-      "несподівані збори",
-      "плата за овердрафт",
-      "банківські комісії"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "ошукали",
-      "банківське шахрайство",
-      "шахрайство з платежами",
-      "авторизоване шахрайство"
-    ],
-    "Bank Branch Closures": [
-      "закриття відділень",
-      "місцевий банк закривається",
-      "немає банку поблизу"
-    ],
-    "Insurance Claim Rejections": ["заяву відхилено", "страхова не платить", "відмова у виплаті"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "черга в NHS",
-      "лист очікування",
-      "очікування операції",
-      "черга в лікарню",
-      "очікування направлення",
-      "очікування хірургії"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "не можу записатися до лікаря",
-      "прийом у лікаря",
-      "черга до терапевта",
-      "не можу потрапити до лікаря",
-      "ранкове додзвонювання до лікаря"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "стоматолог NHS",
-      "не можу знайти стоматолога",
-      "черга до стоматолога"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "фінансування психічного здоров'я",
-      "доступ до терапії",
-      "очікування консультації",
-      "черга на психотерапію"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["вартість ліків", "ціни на ліки", "аптечні збори"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "посилку загублено",
-      "посилку не доставлено",
-      "залишили під дощем",
-      "пакунок вкрадено",
-      "кур'єр",
-      "пропущена доставка"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "оренда занадто дорога",
-      "оренда зростає",
-      "орендодавець підвищує оренду",
-      "виселення без причини"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "штраф за паркування",
-      "повідомлення про паркування",
-      "паркувальний штраф",
-      "несправедливий штраф за паркування"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "менші порції",
-      "менше за ту саму ціну",
-      "упаковка стала меншою",
-      "продукти зменшуються"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["вибоїни", "пошкодження дороги", "пошкодження авто від вибоїни"],
-    "Council Tax Rises": [
-      "підвищення муніципального податку",
-      "муніципальний податок занадто високий",
-      "місцевий податок"
-    ],
-    "Damp and Mould in Housing": [
-      "запліснявілий будинок",
-      "волога квартира",
-      "чорна цвіль",
-      "аварійне житло"
-    ],
-    "Student Loan Repayment": [
-      "студентські кредити",
-      "плата за навчання",
-      "борг за освіту",
-      "студентський борг"
-    ],
-    "AI Replacing Jobs": [
-      "автоматизація робочих місць",
-      "ШІ забирає роботу",
-      "роботи замінюють працівників"
-    ],
-    "Roaming Charges": [
-      "рахунок за телефон у відпустці",
-      "плата за дані за кордоном",
-      "закордонні телефонні збори"
-    ],
-    "Smart Meter Problems": [
-      "розумний лічильник зламався",
-      "лічильник не працює",
-      "лічильник втратив сигнал"
-    ],
-    "Subscription Traps": [
-      "пастка безкоштовного пробного періоду",
-      "автопоновлення",
-      "списання після пробного періоду"
-    ],
-    "Fuel Prices": [
-      "ціни на бензин",
-      "ціни на дизель",
-      "вартість пального",
-      "бензин занадто дорогий"
-    ],
-    "Power Cuts": [
-      "відключення електрики",
-      "обрив електропостачання",
-      "блекаут",
-      "немає електрики",
-      "аварія на електромережі"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "підвищення іпотеки",
-      "іпотечна ставка",
-      "рефінансування",
-      "закінчення фіксованої ставки"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "комісії за переказ",
-      "відправлення грошей за кордон",
-      "комісії за переказ грошей",
-      "вартість банківського переказу"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["парковка у лікарні", "паркування при лікарні", "парковка NHS"],
-    "Noisy Neighbours": ["скарга на шум", "шум від сусідів", "гучні сусіди", "шумове занепокоєння"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "вивезення сміття",
-      "сміття не вивозять",
-      "плутанина з сортуванням",
-      "пропущене вивезення сміття"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "дозвіл на будівництво",
-      "небажана забудова",
-      "зелена зона",
-      "дозвіл на забудову"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "не можу отримати повернення",
-      "у поверненні відмовлено",
-      "повернення відхилено",
-      "гроші назад"
-    ],
-    "Fake Reviews": [
-      "маніпуляція відгуками",
-      "проплачені відгуки",
-      "фальшиві відгуки на сайті",
-      "підроблений відгук"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "якість їжі",
-      "готові страви гірші",
-      "добавки в їжі",
-      "порції стали меншими"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "каса самообслуговування",
-      "автоматична каса",
-      "немає живих кас",
-      "апарат не працює"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "вартість дитячого садка",
-      "плата за ясла",
-      "дорогий догляд за дітьми",
-      "вартість няні"
-    ],
-    "Dog Fouling": [
-      "собачі екскременти",
-      "собачий послід",
-      "собачі відходи",
-      "забруднення від собак"
-    ]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Одного разу допоміг учаснику Quiet Riot подати 6 заявок на повернення коштів за одну затриману поїздку. Він заробив £47 ще до прибуття до Бірмінгема.",
+      "agent_bio": "Відстежує закономірності скасувань, оформлює документи на повернення коштів, перевіряє кожну запропоновану дію та готує доказову базу для подань до регулятора. Аналізує цифри, щоб учасники могли зосередитися на головному.",
+      "human_quote": "Мій улюблений момент у Quiet Riot: спостерігати, як команда Avanti в соцмережах панікувала, коли 400 з нас написали одночасно.",
+      "human_bio": "Постійний пасажир із Манчестера, який 3 роки їздив лінією Avanti, перш ніж вирішив, що досить. Допомагає зʼєднувати учасників на одних маршрутах, ділиться досвідом і додає людський підхід.",
+      "goal": "Допомогти учасникам Quiet Riot притягнути британські транспортні компанії до відповідальності за скасування, затримки та ціноутворення — і переконатися, що всі знають свої права.",
+      "focus": "Закономірності скасувань Avanti West Coast",
+      "focus_detail": "Формуємо базу даних скасувань із зазначенням часу, маршрутів і причин для подання до ORR. Наразі відстежуємо 340 скасувань, про які повідомили учасники цього місяця."
+    },
+    "telecoms": {
+      "agent_quote": "Провів тести швидкості для 200 учасників. Середня — 18 Mbps. Вони платили за 65.",
+      "agent_bio": "Аналізує швидкість інтернету, збирає порівняльні дані провайдерів і допомагає учасникам готувати докази для Ofcom. Якщо ваше зʼєднання повільне, Pulse це доведе.",
+      "human_quote": "Ціла вулиця разом перейшла до іншого провайдера. Старий провайдер надіслав листи «будь ласка, поверніться» кожному будинку.",
+      "human_bio": "Технічно підкований лондонець, якому набридло платити за швидкість інтернету, якої насправді немає. Допомагає учасникам порівнювати провайдерів, координувати перехід і ділитися результатами тестів швидкості.",
+      "goal": "Допомогти учасникам отримувати ту якість інтернету та мобільного звʼязку, за яку вони платять — і знати, що робити, коли це не так.",
+      "focus": "Підвищення цін посеред контракту",
+      "focus_detail": "Збираємо докази від учасників, яких зачепило підвищення на CPI+, для подання до Ofcom. 890 учасників постраждали у 4 провайдерів."
+    },
+    "energy": {
+      "agent_quote": "Допоміг учаснику підрахувати, що він переплатив £340 за приблизними рахунками. Лист-вибачення від енергокомпанії був довшим за сам контракт.",
+      "agent_bio": "Аналізує закономірності рахунків, виявляє переплати та готує доказову базу для подань до регулятора. Якщо ваша енергокомпанія зловживає, Spark знайде квитанції.",
+      "human_quote": "Учасниця отримала назад £340 після того, як ми довели 2 роки переплат. Вона плакала по телефону.",
+      "human_bio": "Живе в Бристолі. Допомагає учасникам оскаржувати рахунки, орієнтуватися при зміні постачальника та збирати докази для Ofgem. Знає енергетичний ринок зсередини.",
+      "goal": "Допомогти учасникам оскаржувати несправедливі рахунки, розумніше змінювати постачальників і переконатися, що енергокомпанії грають чесно.",
+      "focus": "Помилки в приблизних рахунках British Gas",
+      "focus_detail": "Аналізуємо дані рахунків за 2 роки від 340 учасників для виявлення систематичних переплат для подання до Ofgem."
+    },
+    "water": {
+      "agent_quote": "Допоміг 200 учасникам подати звіти про скиди стічних вод за один вікенд. Поштовій скриньці Thames Water знадобилася своя поштова скринька.",
+      "agent_bio": "Моніторить дані про скиди стічних вод, відстежує роботу водних компаній і збирає докази для EA та Ofwat. Стежить за кожним випуском та переливом.",
+      "human_quote": "Ми домоглися відкриття пляжу на 3 тижні раніше, довівши, що дані про стічні води були неправильними.",
+      "human_bio": "Серфер із Корнуолу, якому набридли попередження про стічні води, що закривали його місцевий пляж. Допомагає учасникам повідомляти про скиди, збирати дані про якість води та координуватися з EA.",
+      "goal": "Допомогти учасникам притягнути водні компанії до відповідальності за стічні води, рахунки та якість послуг.",
+      "focus": "Частота скидів стічних вод Thames Water",
+      "focus_detail": "Зіставляємо випадки скидів із даними, які повідомляє компанія. 200 звітів учасників свідчать про заниження даних на 3 випусках."
+    },
+    "banking": {
+      "agent_quote": "Допоміг скласти настільки ґрунтовну скаргу, що банк зателефонував з вибаченнями ще до її надсилання.",
+      "agent_bio": "Перевіряє банківські комісії, аналізує структуру зборів і допомагає готувати докази для скарг до FCA. Якщо є прихована комісія, Chip її знайде.",
+      "human_quote": "Barclays скасував закриття відділення після того, як 1 200 з нас прийшли на консультацію.",
+      "human_bio": "Колишній працівник банку з Бірмінгема, який бачив зсередини, як насправді розглядаються скарги. Допомагає учасникам писати кращі скарги та орієнтуватися в системі.",
+      "goal": "Допомогти учасникам боротися з несправедливими комісіями, закриттям відділень і поганим обслуговуванням банків.",
+      "focus": "Хвиля закриттів відділень HSBC",
+      "focus_detail": "Координуємо відповіді на 12 запланованих закриттів. Збираємо заяви про вплив від постраждалих громад."
+    },
+    "health": {
+      "agent_quote": "Допоміг знайти 3 стоматологів NHS, які приймають пацієнтів. Учасник думав, що я вигадую.",
+      "agent_bio": "Відстежує час очікування, знаходить доступність і допомагає учасникам орієнтуватися в системі. Якщо є швидший шлях до лікування, Cura його знайде.",
+      "human_quote": "Учасник використав наш шаблон листа, щоб прискорити направлення. 18 місяців стали 6 тижнями.",
+      "human_bio": "Медсестра з Ліверпуля, яка бачила NHS з обох боків. Допомагає учасникам орієнтуватися в чергах очікування, писати ефективні листи та ділитися тим, що справді працює.",
+      "goal": "Допомогти учасникам орієнтуватися в чергах NHS, знаходити доступність і знати свої варіанти.",
+      "focus": "Час доступу до GP по телефону",
+      "focus_detail": "Збираємо дані дзвінків від 500 учасників для створення реальної картини доступності. Публікуємо результати для місцевих рад охорони здоровʼя."
+    },
+    "housing": {
+      "agent_quote": "Допоміг задокументувати 47 дефектів у новобудові. Забудовник запитав, чи він будівельний інспектор.",
+      "agent_bio": "Документує проблеми з нерухомістю, аналізує час реагування орендодавців і збирає докази для подань до житлового омбудсмена. Кожна пляма вологи, кожна тріщина — все зафіксовано.",
+      "human_quote": "Наш пакет доказів про вологість був настільки детальним, що орендодавець усе виправив до інспекції ради.",
+      "human_bio": "Орендар з Лондона, який стикався з усім — від вологості до несумлінних орендодавців. Допомагає учасникам правильно документувати проблеми та знати свої варіанти.",
+      "goal": "Допомогти учасникам вирішувати питання з орендодавцями, радами та житловими проблемами — і знати свої права.",
+      "focus": "Повідомлення про виселення без причини за статтею 21",
+      "focus_detail": "Допомагаємо учасникам, яких зачепило виселення без причини, зрозуміти новий Закон про реформу оренди та що він для них означає."
+    },
+    "shopping": {
+      "agent_quote": "Відстежив «доставлену» посилку через 4 сусідів, контейнер для переробки та теплицю. Знайшов.",
+      "agent_bio": "Відстежує невдалі доставки, збирає докази для повернення коштів і виявляє цінові закономірності. Якщо ваша посилка загубилася, Scout вже шукає.",
+      "human_quote": "Evri загубив мою посилку 3 рази. Тепер я допомагаю іншим отримати повернення коштів швидше, ніж це вдалося мені.",
+      "human_bio": "Досвідчена онлайн-покупниця з Единбурга, у якої загубилося більше посилок, ніж вона може підрахувати. Допомагає учасникам отримувати повернення коштів, повідомляти про продавців і уникати найгірших порушників.",
+      "goal": "Допомогти учасникам отримувати повернення коштів, відстежувати загублені посилки та притягати роздрібних продавців і курʼєрські компанії до відповідальності.",
+      "focus": "Рівень невдалих доставок Evri",
+      "focus_detail": "Збираємо докази невдалих доставок від 800 учасників для подання до Citizens Advice та Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Допоміг сфотографувати ту саму яму на дорозі за 11 різних погодних умов. Рада нарешті здалася.",
+      "agent_bio": "Картографує місцеві проблеми, відстежує час реагування ради та готує запити на доступ до інформації (FOI). Якщо ваша яма на дорозі існує вже 6 місяців, Link має докази.",
+      "human_quote": "Рада полагодила нашу дорогу після того, як ми нанесли на карту кожну яму з фотографіями. 11 місяців, але ми домоглися свого.",
+      "human_bio": "Суспільно активний валієць із Долин, який роками повідомляє про одні й ті ж ями на дорогах. Допомагає учасникам документувати місцеві проблеми та притягати ради до відповідальності.",
+      "goal": "Допомогти учасникам вирішити місцеві проблеми — ями, сміття, планування, шум — і притягнути ради до відповідальності.",
+      "focus": "Час реагування на повідомлення про ями",
+      "focus_detail": "FOI-запити надіслано до 30 рад для порівняння заявленого та фактичного часу ремонту. Публікуємо результати у вигляді рейтингової таблиці."
+    },
+    "other": {
+      "agent_quote": "Допоміг скасувати членство в спортзалі, яке потребувало 3 дзвінків, 2 листів і рекомендованого відправлення. Тепер у спортзалі є кнопка скасування.",
+      "agent_bio": "Займається проблемами, які не вписуються в інші категорії. Пастки підписок, пластикові відходи, роздратування від самообслуговування — Flex знаходить закономірності та точки тиску.",
+      "human_quote": "Ми домоглися, щоб мережа спортзалів додала кнопку скасування на свій сайт. Знадобилося лише 800 скарг.",
+      "human_bio": "Продуктовий дизайнер з Лондона, якого дратувало, як компанії ускладнюють процес відмови від послуг. Допомагає учасникам скасовувати підписки, уникати темних патернів і ділитися обхідними шляхами.",
+      "goal": "Допомогти учасникам із речами, які не вписуються в інші категорії — підписки, повернення коштів і повсякденні роздратування.",
+      "focus": "Темні патерни скасування підписок",
+      "focus_detail": "Документуємо найгірших порушників і створюємо шаблони скриптів для скасування для кожного."
+    },
+    "insurance": {
+      "agent_quote": "Допоміг учаснику знайти пункт, який перетворив відхилену заявку на страхування житла у виплату £4,200. Власний поліс страховика довів його неправоту.",
+      "agent_bio": "Перевіряє формулювання полісів, виявляє несправедливі відмови та готує докази для подань до Financial Ombudsman. Якщо ваш страховик ухиляється від обґрунтованої заявки, Shield знайде важіль впливу.",
+      "human_quote": "Обʼєднали 8 учасників з однаковим типом відхиленої заявки для спільного подання. Страховик врегулював усі 8 протягом двох тижнів.",
+      "human_bio": "Колишній працівник страхової галузі з Лідса, який знає, як насправді приймаються рішення по заявках. Допомагає учасникам писати кращі апеляції, розуміти страховий жаргон і знати, коли ескалювати.",
+      "goal": "Допомогти учасникам отримати справедливе ставлення від страховиків — і знати, що робити, коли заявку несправедливо відхиляють.",
+      "focus": "Закономірності відмов у страхуванні житла Aviva",
+      "focus_detail": "«Знос і зношування» зазначено у 40% відхилених заявок — часто неправильно. Аналізуємо 200 справ у 3 страховиків для доказового пакета FOS."
+    },
+    "delivery": {
+      "agent_quote": "Відстежив «доставлену» посилку через 6 різних статусів відстеження, 3 депо та сарай сусіда. Знайшов за 47 хвилин.",
+      "agent_bio": "Моніторить роботу курʼєрів, відстежує рівень невдалих доставок і збирає докази для споживчих скарг. Якщо ваша посилка зникла, Track уже на це дивиться.",
+      "human_quote": "Домоглися, щоб DPD змінив свою політику фотодоказів у нашому районі після того, як 40 учасників подали докази посилок, залишених під дощем.",
+      "human_bio": "Онлайн-покупець із Глазго, якому набридла відмовка «ми залишили в безпечному місці». Допомагає учасникам отримувати повернення коштів, повідомляти про курʼєрів і уникати найгірших порушників.",
+      "goal": "Допомогти учасникам отримувати свої посилки вчасно — і повернення коштів, коли доставка не відбулася.",
+      "focus": "Рівень невдалих доставок Evri",
+      "focus_detail": "Збираємо докази невдалих доставок від 800 учасників. Рівень скарг Evri: 23% — утричі вищий за DPD. Готуємо рейтингову таблицю для Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Підрахував, що позичальник за Планом 2 із заробітком £30k заплатить £47,000 відсотків до списання кредиту. Початковий кредит був £40,000.",
+      "agent_bio": "Аналізує витрати на освіту, прогнози студентських кредитів і право на фінансування. Обчислює цифри, щоб студенти та випускники могли приймати обґрунтовані рішення.",
+      "human_quote": "Допоміг 12 учасникам повернути переплачені платежі за студентський кредит, про які вони не знали. Середнє повернення: £340.",
+      "human_bio": "Дорослий студент із Бірмінгема, який двічі пройшов через систему фінансування. Допомагає учасникам розуміти виплати, виявляти переплати та оскаржувати зміни порогів.",
+      "goal": "Допомогти студентам і випускникам орієнтуватися у витратах на освіту, кредитах і виплатах — і переконатися, що вони не переплачують.",
+      "focus": "Повернення переплат за студентськими кредитами",
+      "focus_detail": "Виявляємо випускників, з яких стягували кошти нижче порогу виплати. 12 повернень оброблено — у середньому £340 кожне."
+    },
+    "environment": {
+      "agent_quote": "Зіставив 3 роки даних про якість повітря з показниками госпіталізацій. Кореляція була настільки очевидною, що рада не могла її ігнорувати.",
+      "agent_bio": "Відстежує екологічні дані, моніторить рівень забруднення та збирає докази для подань до регуляторів. Якщо цифри розповідають історію, Fern її знайде.",
+      "human_quote": "Домоглися від місцевої ради встановлення моніторів якості повітря після того, як 200 учасників підписали нашу доказову петицію. Дані змінили все.",
+      "human_bio": "Випускниця екологічних наук із Бристоля, яка вірить у зміни на основі доказів. Допомагає учасникам документувати екологічні проблеми та будувати справи, які регулятори не можуть ігнорувати.",
+      "goal": "Допомогти учасникам документувати екологічні проблеми та притягати забруднювачів і політиків до відповідальності за допомогою даних.",
+      "focus": "Прогалини в моніторингу якості повітря",
+      "focus_detail": "Картографуємо зони без моніторингу якості повітря в радіусі 5 км. 60% повідомлених учасниками осередків забруднення не мають офіційного моніторингу."
+    },
+    "employment": {
+      "agent_quote": "Зібрав дані про впровадження AI на робочих місцях від 300 учасників. 40% сказали, що зміни відбувалися без жодних консультацій. Це закономірність, а не випадковість.",
+      "agent_bio": "Аналізує тенденції на робочих місцях, відстежує зміни в політиці та допомагає учасникам розуміти свій захист. Якщо ваша робота змінюється без консультацій, Forge має дані.",
+      "human_quote": "Зʼєднав 30 учасників з однієї галузі, які стикнулися зі змінами через AI. Виявилося, що їхні компанії використовували один і той же підхід — і ті ж лазівки.",
+      "human_bio": "HR-професіонал із Манчестера, який перейшов на інший бік після того, як побачив, як насправді проводяться реструктуризації. Допомагає учасникам розуміти свої варіанти та координувати відповіді.",
+      "goal": "Допомогти учасникам орієнтуватися в змінах на робочому місці, розуміти свій захист і колективно реагувати, коли робочі місця під загрозою.",
+      "focus": "AI-автоматизація робочих місць без консультацій",
+      "focus_detail": "Документуємо випадки впровадження AI-інструментів без консультацій з персоналом. Збираємо докази для звіту про обовʼязки роботодавців."
+    },
+    "tech": {
+      "agent_quote": "Виявив, що 3 великі додатки збирали дані про місцезнаходження навіть коли дозволи були встановлені на «ніколи». Подав скарги до ICO щодо всіх трьох.",
+      "agent_bio": "Моніторить політики платформ, відстежує темні патерни та допомагає учасникам зрозуміти, що техкомпанії роблять з їхніми даними. Якщо додаток поводиться некоректно, Glitch це виявить.",
+      "human_quote": "Організував масовий запит на доступ до даних до соціальної мережі. Коли 500 людей просять одночасно, це доводиться сприймати серйозно.",
+      "human_bio": "Розробник програмного забезпечення з Единбурга, якого розчарував розрив між обіцянками техкомпаній і реальністю. Допомагає учасникам реалізувати свої права на дані та виявляти темні патерни.",
+      "goal": "Допомогти учасникам протистояти темним патернам, зловживанню даними та несправедливим практикам техкомпаній.",
+      "focus": "Зловживання дозволами додатків",
+      "focus_detail": "Аудит топ-50 додатків на надмірні запити дозволів — запитують доступ, який їм не потрібен. Готуємо звіт для ICO."
+    }
   }
 }

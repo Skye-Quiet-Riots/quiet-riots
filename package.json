@@ -16,6 +16,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "translate": "tsx scripts/translate.ts",
     "prepare": "husky"
   },
   "dependencies": {

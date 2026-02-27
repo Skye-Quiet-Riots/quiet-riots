@@ -1,696 +1,763 @@
 {
   "locale": "ml",
   "categories": {
-    "Transport": "ഗതാഗതം",
-    "Telecoms": "ടെലികോം",
-    "Banking": "ബാങ്കിംഗ്",
-    "Health": "ആരോഗ്യം",
-    "Education": "വിദ്യാഭ്യാസം",
-    "Environment": "പരിസ്ഥിതി",
-    "Energy": "ഊര്‍ജം",
-    "Water": "ജലം",
-    "Insurance": "ഇന്‍ഷുറന്‍സ്",
-    "Housing": "ഭവനം",
-    "Shopping": "ഷോപ്പിംഗ്",
-    "Delivery": "ഡെലിവറി",
-    "Local": "പ്രാദേശിക",
-    "Employment": "തൊഴില്‍",
-    "Tech": "സാങ്കേതികവിദ്യ",
-    "Other": "മറ്റുള്ളവ"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "ട്രെയിന്‍ റദ്ദാക്കലുകള്‍",
-      "description": "ട്രെയിനുകള്‍ റദ്ദാക്കപ്പെടുകയോ കടുത്ത താമസം നേരിടുകയോ, മതിയായ അറിയിപ്പോ നഷ്ടപരിഹാരമോ ഇല്ല"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "ട്രെയിന്‍ ടിക്കറ്റ് വിലകള്‍",
-      "description": "റെയില്‍ നിരക്കുകള്‍ വളരെ ചെലവേറിയത്, പണപ്പെരുപ്പത്തിന് മുകളിലുള്ള വര്‍ദ്ധന, പൊരുത്തമില്ലാത്ത വിലനിര്‍ണ്ണയം"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "വിമാന കാലതാമസം",
-      "description": "വിമാനങ്ങള്‍ താമസിക്കുകയോ റദ്ദാക്കപ്പെടുകയോ, മോശം ആശയവിനിമയം, നഷ്ടപരിഹാരം ക്ലെയിം ചെയ്യാന്‍ ബുദ്ധിമുട്ട്"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "നഷ്ടപ്പെട്ട ലഗേജ്",
-      "description": "ബാഗുകള്‍ ലക്ഷ്യസ്ഥാനത്ത് എത്തുന്നില്ല, മന്ദഗതിയിലുള്ള ട്രാക്കിംഗ്, മതിയായ നഷ്ടപരിഹാരം ഇല്ല"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "ബസ് റൂട്ട് വെട്ടിക്കുറയ്ക്കല്‍",
-      "description": "റൂട്ടുകള്‍ റദ്ദാക്കപ്പെട്ടു, ഫ്രീക്വന്‍സി കുറഞ്ഞു, ഗ്രാമീണ സമൂഹങ്ങള്‍ക്ക് ബസ് സേവനം നഷ്ടമാകുന്നു"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "കുഴികള്‍ മൂലമുള്ള നാശം",
-      "description": "കുഴികള്‍ വാഹനങ്ങള്‍ക്ക് കേടുവരുത്തുകയും സൈക്ലിസ്റ്റുകളെ അപകടത്തിലാക്കുകയും ചെയ്യുന്നു, കൗണ്‍സില്‍ അറ്റകുറ്റപ്പണിയില്‍ മന്ദഗതി"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "പാര്‍ക്കിംഗ് പിഴകള്‍",
-      "description": "അന്യായമായ സ്വകാര്യ പാര്‍ക്കിംഗ് ചാര്‍ജുകള്‍, ആക്രമണാത്മക നിര്‍വ്വഹണം, ആശയക്കുഴപ്പമുണ്ടാക്കുന്ന സൈന്‍ബോര്‍ഡുകള്‍"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "ഇന്ധന വിലകള്‍",
-      "description": "പെട്രോളും ഡീസലും വളരെ വിലകൂടിയത്, മൊത്തവ്യാപാര വില കുറയുമ്പോള്‍ മന്ദഗതിയില്‍ കുറയുന്നു"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "ബ്രോഡ്ബാന്‍ഡ് വേഗം",
-      "description": "ഇന്‍റര്‍നെറ്റ് വേഗത പരസ്യം ചെയ്തതിനേക്കാളും പണം നല്‍കിയതിനേക്കാളും വളരെ കുറവ്"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "മൊബൈല്‍ സിഗ്നല്‍ ഇല്ലാത്ത മേഖലകള്‍",
-      "description": "വീടുകളിലോ ജോലിസ്ഥലങ്ങളിലോ ഗതാഗത മാര്‍ഗ്ഗങ്ങളിലോ മൊബൈല്‍ സിഗ്നല്‍ ഇല്ല"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "കരാറിനിടയില്‍ വില വര്‍ദ്ധന",
-      "description": "ഫോണ്‍, ബ്രോഡ്ബാന്‍ഡ്, ടിവി ബില്ലുകള്‍ ലോക്ക് ചെയ്ത കരാറുകള്‍ക്കിടയില്‍ വര്‍ദ്ധിക്കുന്നു"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "കസ്റ്റമര്‍ സര്‍വ്വീസ് കാത്തിരിപ്പ് സമയം",
-      "description": "ഒരു മനുഷ്യനോട് സംസാരിക്കാന്‍ മണിക്കൂറുകളോളം ഹോള്‍ഡില്‍ കാത്തിരിക്കല്‍"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "സബ്സ്ക്രിപ്ഷന്‍ റദ്ദാക്കാനുള്ള ബുദ്ധിമുട്ട്",
-      "description": "കമ്പനികള്‍ മനഃപൂര്‍വ്വം റദ്ദാക്കല്‍ അല്ലെങ്കില്‍ അണ്‍സബ്സ്ക്രൈബ് ചെയ്യല്‍ ബുദ്ധിമുട്ടാക്കുന്നു"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "റോമിംഗ് ചാര്‍ജുകള്‍",
-      "description": "വിദേശ യാത്രയ്ക്കിടെ അപ്രതീക്ഷിത മൊബൈല്‍ ചാര്‍ജുകള്‍, Brexit-ന് ശേഷമുള്ള വില വര്‍ദ്ധന"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "ഊര്‍ജ ബില്‍ ചെലവുകള്‍",
-      "description": "ഗ്യാസും വൈദ്യുതിയും ബില്ലുകള്‍ താങ്ങാനാകാത്തത്, പ്രൈസ് ക്യാപ് ഇപ്പോഴും വളരെ ഉയര്‍ന്നത്"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "തെറ്റായ ഊര്‍ജ ബില്ലുകള്‍",
-      "description": "കണക്കാക്കിയ റീഡിംഗുകള്‍ തെറ്റ്, അധിക ചാര്‍ജ്, ബില്ലിംഗ് പിശകുകള്‍"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "ജല ബില്‍ വര്‍ദ്ധന",
-      "description": "സേവന ഗുണനിലവാരം കുറയുമ്പോള്‍ ജല ബില്ലുകള്‍ കുത്തനെ ഉയരുന്നു"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "നദികളില്‍ മലിനജലം",
-      "description": "ജല കമ്പനികള്‍ നദികളിലും കടല്‍ത്തീരങ്ങളിലും ശുദ്ധീകരിക്കാത്ത മലിനജലം തള്ളുന്നു"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "വൈദ്യുതി തടസ്സം",
-      "description": "വൈദ്യുതി വിതരണ തടസ്സങ്ങള്‍, മന്ദഗതിയിലുള്ള പുനഃസ്ഥാപനം, മതിയായ നഷ്ടപരിഹാരം ഇല്ല"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "സ്മാര്‍ട്ട് മീറ്റര്‍ പ്രശ്നങ്ങള്‍",
-      "description": "സ്മാര്‍ട്ട് മീറ്ററുകള്‍ പ്രവര്‍ത്തിക്കുന്നില്ല, വിതരണക്കാരനെ മാറ്റിയ ശേഷം പ്രവര്‍ത്തനക്ഷമത നഷ്ടമാകുന്നു"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "ബാങ്ക് ശാഖ അടച്ചുപൂട്ടലുകള്‍",
-      "description": "പ്രാദേശിക ബാങ്ക് ശാഖകള്‍ അടയ്ക്കുന്നു, സമൂഹങ്ങള്‍ക്ക് ആക്‌സസ് ഇല്ലാതാകുന്നു"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "മറച്ചുവെച്ച ബാങ്ക് ചാര്‍ജുകള്‍",
-      "description": "ഓവര്‍ഡ്രാഫ്റ്റുകള്‍, വിദേശ ഇടപാടുകള്‍, അക്കൗണ്ട് പരിപാലനത്തിനുള്ള അപ്രതീക്ഷിത ഫീസുകള്‍"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "തട്ടിപ്പ് നഷ്ടങ്ങള്‍",
-      "description": "തട്ടിപ്പിന്‍റെയും ഓതറൈസ്ഡ് പുഷ് പേമെന്‍റ് സ്കാമുകളുടെയും ഇരകള്‍ക്ക് ബാങ്കുകള്‍ തിരിച്ചടയ്ക്കാന്‍ വിസമ്മതിക്കുന്നു"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "ഇന്‍ഷുറന്‍സ് ക്ലെയിം നിരസിക്കലുകള്‍",
-      "description": "വര്‍ഷങ്ങളോളം പ്രീമിയം അടച്ച ശേഷം സാങ്കേതിക കാരണങ്ങളാല്‍ ക്ലെയിമുകള്‍ നിരസിക്കപ്പെടുന്നു"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "മോര്‍ട്ട്ഗേജ് നിരക്ക് ഷോക്ക്",
-      "description": "ഫിക്സ്ഡ് നിരക്ക് അവസാനിച്ച് വളരെ ഉയര്‍ന്ന വേരിയബിള്‍ നിരക്കിലേക്ക് മാറല്‍"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "വിദേശ പണ കൈമാറ്റ ഫീസ്",
-      "description": "അന്തര്‍ദേശീയ പണ കൈമാറ്റങ്ങള്‍ക്ക് അമിത ഫീസും മോശം വിനിമയ നിരക്കുകളും"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS കാത്തിരിപ്പ് സമയം",
-      "description": "ശസ്ത്രക്രിയകള്‍ക്കും സ്പെഷ്യലിസ്റ്റ് അപ്പോയിന്‍റ്മെന്‍റുകള്‍ക്കും പല മാസങ്ങളോ വര്‍ഷങ്ങളോ കാത്തിരിക്കല്‍"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "GP അപ്പോയിന്‍റ്മെന്‍റ് ആക്‌സസ്",
-      "description": "GP അപ്പോയിന്‍റ്മെന്‍റ് ബുക്ക് ചെയ്യാന്‍ ഫോണ്‍ കണക്ട് ആകുന്നില്ല, ആഴ്ചകളോളം കാത്തിരിപ്പ്"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "ദന്തഡോക്ടറുടെ ലഭ്യത",
-      "description": "പുതിയ രോഗികളെ സ്വീകരിക്കുന്ന NHS ദന്തഡോക്ടറെ കണ്ടെത്തുക അസാധ്യം"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "മാനസികാരോഗ്യ സേവന കാത്തിരിപ്പ്",
-      "description": "തെറാപ്പിക്കും മാനസികാരോഗ്യ പിന്തുണയ്ക്കും മാസങ്ങളോളം കാത്തിരിപ്പ്"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "പ്രിസ്ക്രിപ്ഷന്‍ ചെലവുകള്‍",
-      "description": "ഇംഗ്ലണ്ടില്‍ ഓരോ മരുന്നിന്‍റെയും ചെലവ് വളരെ കൂടുതല്‍, UK രാജ്യങ്ങള്‍ക്കിടയില്‍ അസമത്വം"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "ആശുപത്രി പാര്‍ക്കിംഗ് ചാര്‍ജുകള്‍",
-      "description": "രോഗിയായിരിക്കുമ്പോഴോ രോഗികളായ ബന്ധുക്കളെ സന്ദര്‍ശിക്കുമ്പോഴോ ആശുപത്രിയില്‍ പാര്‍ക്ക് ചെയ്യാന്‍ പണം നല്‍കല്‍"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "വാടക വര്‍ദ്ധന",
-      "description": "സ്വകാര്യ വാടക പണപ്പെരുപ്പത്തേക്കാള്‍ വളരെ ഉയര്‍ന്ന രീതിയില്‍ വര്‍ദ്ധിക്കുന്നു, കുറ്റമില്ലാത്ത ഒഴിപ്പിക്കല്‍ ഭീഷണി"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "കൗണ്‍സില്‍ ടാക്‌സ് വര്‍ദ്ധന",
-      "description": "പ്രാദേശിക സേവനങ്ങള്‍ മോശമാകുമ്പോള്‍ വാര്‍ഷിക കൗണ്‍സില്‍ ടാക്‌സ് വര്‍ദ്ധന"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "ശല്യമുണ്ടാക്കുന്ന അയല്‍ക്കാര്‍",
-      "description": "നിരന്തരമായ ശബ്ദ ശല്യം, കൗണ്‍സില്‍ നടപടിയെടുക്കാന്‍ മന്ദഗതി, മാനസികാരോഗ്യത്തെ ബാധിക്കുന്നു"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "മാലിന്യ ശേഖരണ മാറ്റങ്ങള്‍",
-      "description": "കുറഞ്ഞ ബിന്‍ ശേഖരണം, ആശയക്കുഴപ്പമുണ്ടാക്കുന്ന റീസൈക്ലിംഗ് നിയമങ്ങള്‍, നിറഞ്ഞുകവിയുന്ന ബിന്നുകള്‍"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "പ്ലാനിംഗ് പെര്‍മിഷന്‍ ദുരുപയോഗം",
-      "description": "അനാവശ്യ വികസനങ്ങള്‍ അംഗീകരിക്കപ്പെട്ടു, ഗ്രീന്‍ ബെല്‍റ്റ് ഭീഷണിയില്‍, സമൂഹം അവഗണിക്കപ്പെട്ടു"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "ഭവനത്തിലെ ഈര്‍പ്പവും പൂപ്പലും",
-      "description": "ഉടമസ്ഥരും ഭവന സംഘടനകളും ഈര്‍പ്പവും പൂപ്പലും പരിഹരിക്കുന്നതില്‍ പരാജയപ്പെടുന്നു"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "ഡെലിവറി പ്രശ്നങ്ങള്‍",
-      "description": "പാഴ്‌സലുകള്‍ നഷ്ടമായി, മഴയില്‍ ഉപേക്ഷിച്ചു, ഡെലിവര്‍ ചെയ്തതായി അടയാളപ്പെടുത്തി എന്നാല്‍ ലഭിച്ചില്ല"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "ഷ്രിങ്ക്ഫ്ലേഷന്‍",
-      "description": "വിലകള്‍ അതേപടി നില്‍ക്കുകയോ വര്‍ദ്ധിക്കുകയോ ചെയ്യുമ്പോള്‍ ഉല്‍പ്പന്നങ്ങള്‍ ചെറുതാകുന്നു"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "റീഫണ്ട് ബുദ്ധിമുട്ടുകള്‍",
-      "description": "കമ്പനികള്‍ റിട്ടേണ്‍, റീഫണ്ട് എന്നിവ അനാവശ്യമായി ബുദ്ധിമുട്ടാക്കുന്നു"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "വ്യാജ അവലോകനങ്ങള്‍",
-      "description": "ഓണ്‍ലൈന്‍ അവലോകനങ്ങള്‍ വിശ്വസിക്കാനാകില്ല, വ്യാജ പോസിറ്റീവ് അവലോകനങ്ങള്‍ ഉപഭോക്താക്കളെ തെറ്റിദ്ധരിപ്പിക്കുന്നു"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "സബ്സ്ക്രിപ്ഷന്‍ കെണികള്‍",
-      "description": "ഫ്രീ ട്രയലുകള്‍ വ്യക്തമായ സമ്മതമില്ലാതെ പെയ്ഡ് ആയി മാറുന്നു, റദ്ദാക്കാന്‍ ബുദ്ധിമുട്ട്"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "ഭക്ഷ്യ ഗുണനിലവാര തകര്‍ച്ച",
-      "description": "റെഡി മീലുകളുടെ ഗുണനിലവാരം മോശമായി, ചെറിയ പോര്‍ഷനുകള്‍, കൂടുതല്‍ ആഡിറ്റീവുകള്‍"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "സെല്‍ഫ്-ചെക്ക്ഔട്ട് നിരാശ",
-      "description": "സെല്‍ഫ്-സര്‍വ്വീസ് യന്ത്രങ്ങള്‍ വിശ്വസനീയമല്ല, മനുഷ്യ ജീവനക്കാരെ മാറ്റിസ്ഥാപിക്കുന്നു"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "ശിശു പരിപാലന ചെലവ്",
-      "description": "ശിശു പരിപാലന ചെലവ് വളരെ ചെലവേറിയത്, ജോലി ചെയ്യാനുള്ള കഴിവ് പരിമിതപ്പെടുത്തുന്നു"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "വിദ്യാര്‍ത്ഥി വായ്പ തിരിച്ചടവ്",
-      "description": "ബിരുദധാരികള്‍ ദശാബ്ദങ്ങളോളം തിരിച്ചടയ്ക്കുന്നു, പരിധിയും പലിശ നിരക്കും മാറ്റങ്ങള്‍"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "നായ്ക്കളുടെ വിസര്‍ജ്ജ്യം",
-      "description": "പൊതു ഇടങ്ങള്‍, പാര്‍ക്കുകള്‍, ഫുട്‌പാത്തുകള്‍ എന്നിവിടങ്ങളില്‍ നായ്ക്കളുടെ വിസര്‍ജ്ജ്യം വൃത്തിയാക്കുന്നില്ല"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI ജോലികള്‍ മാറ്റിസ്ഥാപിക്കുന്നു",
-      "description": "പരിവര്‍ത്തന പിന്തുണയില്ലാതെ കൃത്രിമ ബുദ്ധി ജോലികള്‍ ഓട്ടോമേറ്റ് ചെയ്യുന്നതിനെക്കുറിച്ചുള്ള ആശങ്ക"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "വെസ്റ്റ് കോസ്റ്റ് മെയിന്‍ ലൈനില്‍ സേവനം നല്‍കുന്ന UK റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "ലണ്ടനിലും തെക്കും സേവനം നല്‍കുന്ന UK റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "വടക്കന്‍ ഇംഗ്ലണ്ടില്‍ സേവനം നല്‍കുന്ന UK റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK ദീര്‍ഘദൂര റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "ട്രാന്‍സ്-പെന്നൈന്‍ റൂട്ടുകളില്‍ സേവനം നല്‍കുന്ന UK റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "ഈസ്റ്റ് കോസ്റ്റ് മെയിന്‍ ലൈനില്‍ സേവനം നല്‍കുന്ന UK റെയില്‍ ഓപ്പറേറ്റര്‍"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "കുറഞ്ഞ ചെലവിലുള്ള യൂറോപ്യന്‍ എയര്‍ലൈന്‍"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK ആസ്ഥാനമായ കുറഞ്ഞ ചെലവിലുള്ള എയര്‍ലൈന്‍"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK-യുടെ പ്രധാന ദേശീയ എയര്‍ലൈന്‍"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "അവധിക്കാല, യാത്ര കമ്പനി"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "പ്രധാന UK ബ്രോഡ്ബാന്‍ഡ്, മൊബൈല്‍ ദാതാവ്"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK ബ്രോഡ്ബാന്‍ഡ്, ടിവി, മൊബൈല്‍ ദാതാവ്"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK ടിവി, ബ്രോഡ്ബാന്‍ഡ്, മൊബൈല്‍ ദാതാവ്"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "UK-യില്‍ ആസ്ഥാനമായുള്ള ആഗോള ടെലികോം കമ്പനി"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK മൊബൈല്‍ നെറ്റ്‌വര്‍ക്ക് ഓപ്പറേറ്റര്‍"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK ബ്രോഡ്ബാന്‍ഡ്, ഫോണ്‍ ദാതാവ്"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK ഊര്‍ജ വിതരണക്കാരന്‍"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK ഊര്‍ജ വിതരണക്കാരന്‍"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK ഊര്‍ജ വിതരണക്കാരന്‍ (ഫ്രഞ്ച് ഉടമസ്ഥത)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK പുനരുപയോഗ ഊര്‍ജ വിതരണക്കാരന്‍"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK ഊര്‍ജ വിതരണക്കാരന്‍"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK ഊര്‍ജ വിതരണക്കാരന്‍ (ജര്‍മ്മന്‍ ഉടമസ്ഥത)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "ലണ്ടനും തേംസ് വാലിക്കുമുള്ള ജല, മലിനജല കമ്പനി"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "തെക്കന്‍ ഇംഗ്ലണ്ടിനുള്ള ജല കമ്പനി"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "വടക്കുപടിഞ്ഞാറന്‍ ഇംഗ്ലണ്ടിനുള്ള ജല കമ്പനി"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "മിഡ്ലാന്‍ഡ്സിനുള്ള ജല കമ്പനി"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "ഈസ്റ്റ് ആംഗ്ലിയയ്ക്കുള്ള ജല കമ്പനി"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "ബ്രിട്ടീഷ് ബഹുരാഷ്ട്ര ബാങ്ക്"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "ആഗോള ബാങ്കിംഗ്, ധനകാര്യ സേവനങ്ങള്‍"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK ചില്ലറ, വാണിജ്യ ബാങ്ക്"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK ബാങ്കിംഗ് ഗ്രൂപ്പ്"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK ബാങ്ക് (സ്പാനിഷ് ഉടമസ്ഥത)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "ഡിജിറ്റല്‍ ബാങ്കിംഗ്, ഫിന്‍ടെക്"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK ഇന്‍ഷുറന്‍സ്, ധനകാര്യ സേവനങ്ങള്‍"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK കാര്‍, ഭവന ഇന്‍ഷുറന്‍സ്"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK ഇന്‍ഷുറന്‍സ് കമ്പനി"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "ആഗോള ഇ-കൊമേഴ്‌സ്, സാങ്കേതികവിദ്യ"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK തപാല്‍ സേവനം"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK പാഴ്‌സല്‍ ഡെലിവറി സേവനം (മുമ്പ് Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK പാഴ്‌സല്‍ ഡെലിവറി സേവനം"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK സൂപ്പര്‍മാര്‍ക്കറ്റ് ശൃംഖല"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK സൂപ്പര്‍മാര്‍ക്കറ്റ് ശൃംഖല"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "ഇംഗ്ലണ്ടിന്‍റെ ദേശീയ ആരോഗ്യ സേവനം"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS ദന്ത സേവനങ്ങള്‍"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "സ്വകാര്യ ആരോഗ്യ സംരക്ഷണ ദാതാവ്"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK പ്രാദേശിക ഭരണ സ്ഥാപനങ്ങള്‍"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK ഭവന നിര്‍മ്മാതാവ്"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK ഓണ്‍ലൈന്‍ വാടക പ്ലാറ്റ്‌ഫോം"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "സ്ട്രീമിംഗ് വിനോദ സേവനം"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "സാങ്കേതിക കമ്പനി"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "ട്രെയിന്‍ റദ്ദാക്കി",
-      "റദ്ദാക്കിയ ട്രെയിന്‍",
-      "ട്രെയിന്‍ റദ്ദാക്കല്‍",
-      "ട്രെയിനുകള്‍ ഓടുന്നില്ല",
-      "റെയില്‍ റദ്ദാക്കല്‍",
-      "സേവനം റദ്ദാക്കി",
-      "ട്രെയിന്‍ താമസം",
-      "താമസിച്ച ട്രെയിന്‍",
-      "ട്രെയിനുകള്‍ ലേറ്റ്",
-      "ലേറ്റ് ട്രെയിന്‍",
-      "റെയില്‍ കാലതാമസം"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "റെയില്‍ കട്ടണം",
-      "ടിക്കറ്റ് വില",
-      "ചെലവേറിയ ട്രെയിനുകള്‍",
-      "ട്രെയിന്‍ നിരക്ക്"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "ഫ്ലൈറ്റ് ലേറ്റ്",
-      "വിമാനം ലേറ്റ്",
-      "ഫ്ലൈറ്റ് റദ്ദാക്കി",
-      "എയര്‍പോര്‍ട്ടില്‍ താമസം",
-      "എയര്‍പോര്‍ട്ടില്‍ കുടുങ്ങി",
-      "പറക്കല്‍ ലേറ്റ്"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "ബാഗ് കാണാനില്ല",
-      "സൂട്ട്കേസ് നഷ്ടപ്പെട്ടു",
-      "ബാഗുകള്‍ എത്തിയില്ല",
-      "സൂട്ട്കേസ് കിട്ടിയില്ല",
-      "ലഗേജ് ബെല്‍റ്റില്‍ ഇല്ല",
-      "എയര്‍ലൈന്‍ ബാഗ് നഷ്ടപ്പെടുത്തി"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["ബസ് കുറയ്ക്കല്‍", "റൂട്ട് കുറയ്ക്കല്‍", "ബസ് സേവനം നിര്‍ത്തല്‍"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "സ്ലോ ഇന്‍റര്‍നെറ്റ്",
-      "സ്ലോ വൈഫൈ",
-      "വൈഫൈ സ്ലോ",
-      "ഇന്‍റര്‍നെറ്റ് വേഗം",
-      "ബ്രോഡ്ബാന്‍ഡ് പ്രവര്‍ത്തിക്കുന്നില്ല",
-      "ബഫറിംഗ്",
-      "ഇന്‍റര്‍നെറ്റ് ഇടയ്ക്കിടെ പോകുന്നു",
-      "വൈഫൈ ഇടയ്ക്കിടെ പോകുന്നു"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "സിഗ്നല്‍ ഇല്ല",
-      "നെറ്റ്‌വര്‍ക്ക് ഇല്ല",
-      "മൊബൈല്‍ ബ്ലാക്ക്സ്പോട്ട്",
-      "സിഗ്നല്‍ ഡെഡ് സോണ്‍"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "കരാറിനിടെ ബില്‍ കൂടി",
-      "കരാര്‍ വില വര്‍ദ്ധന",
-      "മധ്യത്തില്‍ വില കൂടി"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "ഹോള്‍ഡില്‍ ആണ്",
-      "ഫോണില്‍ കാത്തിരിക്കുന്നു",
-      "ഫോണ്‍ കണക്ട് ആകുന്നില്ല",
-      "ആരും എടുക്കുന്നില്ല",
-      "ഫോണ്‍ ക്യൂ",
-      "കോള്‍ സെന്‍റര്‍"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "റദ്ദാക്കാന്‍ പറ്റുന്നില്ല",
-      "റദ്ദാക്കല്‍ ബുദ്ധിമുട്ടാണ്",
-      "സബ്സ്ക്രിപ്ഷന്‍ റദ്ദാക്കല്‍",
-      "അണ്‍സബ്സ്ക്രൈബ്"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "ഗ്യാസ് ബില്‍ കൂടുതല്‍",
-      "വൈദ്യുതി ബില്‍",
-      "ഊര്‍ജ വില",
-      "ചൂടാക്കല്‍ ചെലവ്",
-      "ഇന്ധന ദാരിദ്ര്യം",
-      "ഊര്‍ജം വഹിക്കാനാവുന്നില്ല"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "തെറ്റായ ഊര്‍ജ ബില്‍",
-      "കണക്കാക്കിയ റീഡിംഗ് തെറ്റ്",
-      "ഊര്‍ജത്തില്‍ അധിക ചാര്‍ജ്"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["ജല നിരക്ക്", "ജല ചാര്‍ജ്", "ജല ബില്‍ വളരെ കൂടുതല്‍"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "മലിനജലം തള്ളല്‍",
-      "ശുദ്ധീകരിക്കാത്ത മലിനജലം",
-      "കടല്‍ത്തീരത്ത് മലിനജലം",
-      "ജല മലിനീകരണം",
-      "മലിനജലം കവിയല്‍",
-      "സംയുക്ത മലിനജലം കവിയല്‍"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "അപ്രതീക്ഷിത ഫീസ്",
-      "മറച്ചുവെച്ച ഫീസ്",
-      "ആശ്ചര്യകരമായ ചാര്‍ജ്",
-      "ഓവര്‍ഡ്രാഫ്റ്റ് ചാര്‍ജ്",
-      "ബാങ്ക് ഫീസ്"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "പറ്റിക്കപ്പെട്ടു",
-      "ബാങ്ക് തട്ടിപ്പ്",
-      "പുഷ് പേമെന്‍റ് സ്കാം",
-      "അധികൃത തട്ടിപ്പ്"
-    ],
-    "Bank Branch Closures": [
-      "ശാഖ അടച്ചുപൂട്ടല്‍",
-      "ലോക്കല്‍ ബാങ്ക് അടയ്ക്കുന്നു",
-      "അടുത്ത് ബാങ്ക് ഇല്ല"
-    ],
-    "Insurance Claim Rejections": [
-      "ക്ലെയിം നിരസിച്ചു",
-      "ഇന്‍ഷുറന്‍സ് പണം തരുന്നില്ല",
-      "നിരസിക്കപ്പെട്ട ക്ലെയിം"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS കാത്തിരിപ്പ്",
-      "കാത്തിരിപ്പ് ലിസ്റ്റ്",
-      "ഓപ്പറേഷന്‍ കാത്തിരിപ്പ്",
-      "ആശുപത്രി കാത്തിരിപ്പ് സമയം",
-      "റഫറല്‍ കാത്തിരിപ്പ്",
-      "ശസ്ത്രക്രിയയ്ക്ക് കാത്തിരിക്കുന്നു"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "GP അപ്പോയിന്‍റ്മെന്‍റ് കിട്ടുന്നില്ല",
-      "ഡോക്ടര്‍ അപ്പോയിന്‍റ്മെന്‍റ്",
-      "GP ഫോണ്‍ ക്യൂ",
-      "ഡോക്ടറെ കാണാന്‍ പറ്റുന്നില്ല",
-      "രാവിലെ 8 മണി ഫോണ്‍ മത്സരം"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS ദന്തഡോക്ടര്‍",
-      "ദന്തഡോക്ടര്‍ കിട്ടുന്നില്ല",
-      "ദന്തഡോക്ടര്‍ കാത്തിരിപ്പ് ലിസ്റ്റ്"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "മാനസികാരോഗ്യ ഫണ്ടിംഗ്",
-      "തെറാപ്പി ലഭ്യത",
-      "കൗണ്‍സലിംഗ് കാത്തിരിപ്പ്",
-      "CAMHS കാത്തിരിപ്പ്"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["മരുന്ന് ചെലവ്", "മരുന്ന് വില", "ഫാര്‍മസി ചാര്‍ജ്"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "പാഴ്‌സല്‍ നഷ്ടപ്പെട്ടു",
-      "പാഴ്‌സല്‍ ഡെലിവര്‍ ആയില്ല",
-      "മഴയില്‍ ഉപേക്ഷിച്ചു",
-      "പാക്കേജ് മോഷ്ടിച്ചു",
-      "ഡെലിവറി ഡ്രൈവര്‍",
-      "ഡെലിവറി മിസ്സായി"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "വാടക വളരെ കൂടുതല്‍",
-      "വാടക കൂടുന്നു",
-      "ഉടമ വാടക കൂട്ടുന്നു",
-      "തെറ്റില്ലാതെ ഒഴിപ്പിക്കല്‍"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "പാര്‍ക്കിംഗ് ടിക്കറ്റ്",
-      "പാര്‍ക്കിംഗ് ചാര്‍ജ് നോട്ടീസ്",
-      "PCN",
-      "അന്യായമായ പാര്‍ക്കിംഗ് പിഴ"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "ചെറിയ പോര്‍ഷനുകള്‍",
-      "അതേ വിലയ്ക്ക് കുറവ്",
-      "പാക്കേജ് ചെറുതായി",
-      "ചുരുങ്ങുന്ന ഉല്‍പ്പന്നങ്ങള്‍"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["കുഴികള്‍", "റോഡ് കേട്", "കുഴിയില്‍ കാര്‍ കേടായി"],
-    "Council Tax Rises": [
-      "കൗണ്‍സില്‍ ടാക്‌സ് വര്‍ദ്ധന",
-      "കൗണ്‍സില്‍ ടാക്‌സ് കൂടുതല്‍",
-      "പ്രാദേശിക നികുതി"
-    ],
-    "Damp and Mould in Housing": [
-      "പൂപ്പല്‍ പിടിച്ച വീട്",
-      "ഈര്‍പ്പമുള്ള ഫ്ലാറ്റ്",
-      "കറുത്ത പൂപ്പല്‍",
-      "വീട് ജീര്‍ണ്ണാവസ്ഥ"
-    ],
-    "Student Loan Repayment": [
-      "വിദ്യാര്‍ത്ഥി വായ്പ",
-      "ട്യൂഷന്‍ ഫീസ്",
-      "വിദ്യാഭ്യാസ കടം",
-      "വിദ്യാര്‍ത്ഥി കടം"
-    ],
-    "AI Replacing Jobs": [
-      "ജോലി ഓട്ടോമേഷന്‍",
-      "AI ജോലികള്‍ എടുക്കുന്നു",
-      "റോബോട്ടുകള്‍ തൊഴിലാളികളെ മാറ്റുന്നു"
-    ],
-    "Roaming Charges": ["അവധിക്കാല ഫോണ്‍ ബില്‍", "വിദേശത്ത് ഡേറ്റ ചാര്‍ജ്", "വിദേശ ഫോണ്‍ ചാര്‍ജ്"],
-    "Smart Meter Problems": [
-      "സ്മാര്‍ട്ട് മീറ്റര്‍ കേടായി",
-      "മീറ്റര്‍ പ്രവര്‍ത്തിക്കുന്നില്ല",
-      "മീറ്ററിന്‍റെ സിഗ്നല്‍ പോയി"
-    ],
-    "Subscription Traps": ["ഫ്രീ ട്രയല്‍ കെണി", "ഓട്ടോ റിന്യൂവല്‍", "ട്രയലിന് ശേഷം ചാര്‍ജ് ചെയ്തു"],
-    "Fuel Prices": ["പെട്രോള്‍ വില", "ഡീസല്‍ വില", "ഇന്ധന ചെലവ്", "പെട്രോള്‍ വളരെ വിലകൂടിയത്"],
-    "Power Cuts": [
-      "കറണ്ട് പോയി",
-      "വൈദ്യുതി മുറിഞ്ഞു",
-      "ബ്ലാക്ക്ഔട്ട്",
-      "കറണ്ട് ഇല്ല",
-      "വൈദ്യുതി തകരാര്‍"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "മോര്‍ട്ട്ഗേജ് വര്‍ദ്ധന",
-      "മോര്‍ട്ട്ഗേജ് നിരക്ക്",
-      "റീമോര്‍ട്ട്ഗേജ്",
-      "ഫിക്സ്ഡ് നിരക്ക് അവസാനിക്കുന്നു"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "ട്രാന്‍സ്ഫര്‍ ഫീസ്",
-      "വിദേശത്തേക്ക് പണം അയയ്ക്കല്‍",
-      "റെമിറ്റന്‍സ് ഫീസ്",
-      "വയര്‍ ട്രാന്‍സ്ഫര്‍ ചെലവ്"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "ആശുപത്രി പാര്‍ക്കിംഗ്",
-      "ആശുപത്രിയില്‍ പാര്‍ക്കിംഗ്",
-      "NHS പാര്‍ക്കിംഗ്"
-    ],
-    "Noisy Neighbours": [
-      "ശബ്ദ പരാതി",
-      "അയല്‍ക്കാരുടെ ശബ്ദം",
-      "ശല്യമുണ്ടാക്കുന്ന അയല്‍ക്കാര്‍",
-      "ശബ്ദ ശല്യം"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "മാലിന്യ ശേഖരണം",
-      "മാലിന്യം എടുത്തില്ല",
-      "റീസൈക്ലിംഗ് ആശയക്കുഴപ്പം",
-      "മാലിന്യ ശേഖരണം മിസ്സായി"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "നിര്‍മ്മാണ അനുമതി",
-      "അനാവശ്യ വികസനം",
-      "ഗ്രീന്‍ ബെല്‍റ്റ്",
-      "കെട്ടിട അനുമതി"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "റീഫണ്ട് കിട്ടുന്നില്ല",
-      "റീഫണ്ട് നിരസിച്ചു",
-      "റിട്ടേണ്‍ നിരസിച്ചു",
-      "പണം തിരിച്ച്"
-    ],
-    "Fake Reviews": [
-      "അവലോകന കൃത്രിമത്വം",
-      "പണം കൊടുത്ത അവലോകനം",
-      "വ്യാജ അവലോകനങ്ങള്‍",
-      "വ്യാജ അവലോകനം"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "ഭക്ഷ്യ ഗുണനിലവാരം",
-      "റെഡി മീല്‍ മോശമായി",
-      "ഭക്ഷ്യ ആഡിറ്റീവുകള്‍",
-      "പോര്‍ഷന്‍ ചെറുതായി"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "സെല്‍ഫ് ചെക്ക്ഔട്ട്",
-      "സെല്‍ഫ് സര്‍വ്വീസ്",
-      "സ്റ്റാഫ് കൗണ്ടര്‍ ഇല്ല",
-      "മെഷീന്‍ പ്രവര്‍ത്തിക്കുന്നില്ല"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "ശിശു പരിപാലന ചെലവ്",
-      "നഴ്‌സറി ഫീസ്",
-      "ശിശു പരിപാലനം ചെലവേറിയത്",
-      "ഡേ കെയര്‍ ചെലവ്"
-    ],
-    "Dog Fouling": ["നായ്ക്കളുടെ വിസര്‍ജ്ജ്യം", "നായ മലം", "നായ മാലിന്യം", "മലിനീകരണം"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "ഒരു താമസിച്ച യാത്രയ്ക്കിടയിൽ ഒരു റയറ്ററെ 6 റീഫണ്ട് ക്ലെയിമുകൾ ഫയൽ ചെയ്യാൻ ഒരിക്കൽ സഹായിച്ചു. ബർമിംഗ്ഹാമിൽ എത്തുന്നതിനു മുമ്പ് അദ്ദേഹം £47 സമ്പാദിച്ചു.",
+      "agent_bio": "റദ്ദാക്കൽ പാറ്റേണുകൾ ട്രാക്ക് ചെയ്യുന്നു, റീഫണ്ട് പേപ്പർവർക്ക് കൈകാര്യം ചെയ്യുന്നു, നിർദ്ദേശിച്ച ഓരോ നടപടിയും അവലോകനം ചെയ്യുന്നു, റെഗുലേറ്റർ സമർപ്പണങ്ങൾക്കായി തെളിവുകൾ ശേഖരിക്കുന്നു. റയറ്റർമാർക്ക് പ്രധാനമായ കാര്യങ്ങളിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കാൻ കഴിയുന്ന വിധം സംഖ്യകൾ വിശകലനം ചെയ്യുന്നു.",
+      "human_quote": "എൻ്റെ പ്രിയപ്പെട്ട Quiet Riot നിമിഷം: 400 പേർ ഒരേ സമയം ട്വീറ്റ് ചെയ്തപ്പോൾ Avanti-യുടെ സോഷ്യൽ മീഡിയ ടീം പരിഭ്രാന്തരാകുന്നത് കാണുക.",
+      "human_bio": "മതിയായി എന്ന് തീരുമാനിക്കുന്നതിനു മുമ്പ് Avanti ലൈനിൽ 3 വർഷം ചെലവഴിച്ച മാഞ്ചസ്റ്ററിൽ നിന്നുള്ള സ്ഥിരം യാത്രക്കാരൻ. ഒരേ റൂട്ടിലുള്ള റയറ്റർമാരെ ബന്ധിപ്പിക്കാൻ സഹായിക്കുന്നു, എന്താണ് പ്രവർത്തിക്കുന്നതെന്ന് പങ്കിടുന്നു, മാനുഷിക സ്പർശം കൊണ്ടുവരുന്നു.",
+      "goal": "റദ്ദാക്കലുകൾ, താമസങ്ങൾ, വിലനിർണ്ണയം എന്നിവയിൽ യുകെ ഗതാഗത കമ്പനികളെ ഉത്തരവാദിത്തമുള്ളവരാക്കാൻ റയറ്റർമാരെ സഹായിക്കുക — എല്ലാവർക്കും അവരുടെ അവകാശങ്ങൾ അറിയാമെന്ന് ഉറപ്പാക്കുക.",
+      "focus": "Avanti West Coast റദ്ദാക്കൽ പാറ്റേണുകൾ",
+      "focus_detail": "ORR-ന് സമർപ്പിക്കുന്നതിനായി സമയങ്ങൾ, റൂട്ടുകൾ, കാരണങ്ങൾ എന്നിവയുള്ള റദ്ദാക്കലുകളുടെ ഡാറ്റാസെറ്റ് നിർമ്മിക്കുന്നു. ഈ മാസം റയറ്റർമാർ റിപ്പോർട്ട് ചെയ്ത 340 റദ്ദാക്കലുകൾ നിലവിൽ ട്രാക്ക് ചെയ്യുന്നു."
+    },
+    "telecoms": {
+      "agent_quote": "200 റയറ്റർമാർക്ക് വേഗത പരിശോധനകൾ നടത്തി. ശരാശരി 18 Mbps ആയിരുന്നു. അവർ 65-ന് വേണ്ടി പണം നൽകിയിരുന്നു.",
+      "agent_bio": "ബ്രോഡ്ബാൻഡ് വേഗതകൾ വിശകലനം ചെയ്യുന്നു, പ്രൊവൈഡർ താരതമ്യ ഡാറ്റ സമാഹരിക്കുന്നു, Ofcom-ന് തെളിവുകൾ നിർമ്മിക്കാൻ റയറ്റർമാരെ സഹായിക്കുന്നു. നിങ്ങളുടെ കണക്ഷൻ മന്ദഗതിയിലാണെങ്കിൽ, Pulse അത് തെളിയിക്കും.",
+      "human_quote": "ഒരു തെരുവ് മുഴുവൻ ഒരുമിച്ച് ബ്രോഡ്ബാൻഡ് മാറ്റി. പഴയ പ്രൊവൈഡർ എല്ലാ വീടുകളിലേക്കും 'ദയവായി തിരിച്ചു വരൂ' കത്തുകൾ അയച്ചു.",
+      "human_bio": "ഒരിക്കലും യാഥാർത്ഥ്യമാകാത്ത ബ്രോഡ്ബാൻഡ് വേഗതകൾക്ക് പണം നൽകുന്നത് മടുത്ത, സാങ്കേതികമായി വൈദഗ്ധ്യമുള്ള ലണ്ടൻകാരൻ. റയറ്റർമാരെ പ്രൊവൈഡർമാരെ താരതമ്യം ചെയ്യാനും, മാറ്റം ഏകോപിപ്പിക്കാനും, വേഗത പരിശോധന തെളിവുകൾ പങ്കിടാനും സഹായിക്കുന്നു.",
+      "goal": "റയറ്റർമാർ പണം നൽകുന്ന ബ്രോഡ്ബാൻഡ്, മൊബൈൽ സേവനം ലഭിക്കാൻ സഹായിക്കുക — ലഭിക്കാത്തപ്പോൾ എന്തു ചെയ്യണമെന്ന് അറിയുക.",
+      "focus": "കരാർ മധ്യത്തിൽ വില വർധനവ്",
+      "focus_detail": "Ofcom-ന് സമർപ്പിക്കുന്നതിനായി CPI+ വർധനവ് ബാധിച്ച റയറ്റർമാരിൽ നിന്ന് തെളിവുകൾ ശേഖരിക്കുന്നു. 4 പ്രൊവൈഡർമാരിലായി 890 റയറ്റർമാർ ബാധിക്കപ്പെട്ടു."
+    },
+    "energy": {
+      "agent_quote": "എസ്റ്റിമേറ്റഡ് ബില്ലുകളിൽ £340 അധികം നൽകിയെന്ന് ഒരു റയറ്ററെ കണക്കുകൂട്ടാൻ സഹായിച്ചു. ഊർജ്ജ കമ്പനിയുടെ ക്ഷമാപണ ഇമെയിൽ യഥാർത്ഥ കരാറിനേക്കാൾ നീണ്ടതായിരുന്നു.",
+      "agent_bio": "ബില്ലിംഗ് പാറ്റേണുകൾ വിശകലനം ചെയ്യുന്നു, അധിക ചാർജുകൾ കണ്ടെത്തുന്നു, റെഗുലേറ്റർ സമർപ്പണങ്ങൾക്കായി തെളിവുകൾ ശേഖരിക്കുന്നു. നിങ്ങളുടെ ഊർജ്ജ കമ്പനി വഞ്ചിക്കുകയാണെങ്കിൽ, Spark തെളിവുകൾ കണ്ടെത്തും.",
+      "human_quote": "2 വർഷത്തെ അധിക ബില്ലിംഗ് തെളിയിച്ചതിന് ശേഷം ഒരു റയറ്റർ £340 തിരികെ ലഭിച്ചു. അവർ ഫോണിൽ കരഞ്ഞു.",
+      "human_bio": "ബ്രിസ്റ്റോളിൽ ആസ്ഥാനം. റയറ്റർമാരെ അവരുടെ ബില്ലുകൾ ചോദ്യം ചെയ്യാനും, പ്രൊവൈഡർ മാറ്റം നാവിഗേറ്റ് ചെയ്യാനും, Ofgem-ന് തെളിവുകൾ ശേഖരിക്കാനും സഹായിക്കുന്നു. ഊർജ്ജ വിപണി അകത്തും പുറത്തും അറിയാം.",
+      "goal": "അന്യായ ബില്ലുകൾ ചോദ്യം ചെയ്യാനും, കൂടുതൽ ബുദ്ധിപരമായി മാറാനും, ഊർജ്ജ കമ്പനികൾ ന്യായമായി പ്രവർത്തിക്കുന്നുണ്ടെന്ന് ഉറപ്പാക്കാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "British Gas എസ്റ്റിമേറ്റഡ് ബില്ലിംഗ് പിശകുകൾ",
+      "focus_detail": "Ofgem-ന് സമർപ്പിക്കുന്നതിനായി 340 റയറ്റർമാരിൽ നിന്നുള്ള 2 വർഷത്തെ ബില്ലിംഗ് ഡാറ്റ വിശകലനം ചെയ്ത് വ്യവസ്ഥാപിത അധിക ബില്ലിംഗ് പാറ്റേണുകൾ തിരിച്ചറിയുന്നു."
+    },
+    "water": {
+      "agent_quote": "ഒരു വാരാന്ത്യത്തിൽ 200 റയറ്റർമാർ മലിനജല റിപ്പോർട്ടുകൾ ഫയൽ ചെയ്യാൻ സഹായിച്ചു. Thames Water-ന്റെ ഇൻബോക്സിന് സ്വന്തമായി ഒരു ഇൻബോക്സ് ആവശ്യമായിരുന്നു.",
+      "agent_bio": "മലിനജല വിസർജ്ജന ഡാറ്റ നിരീക്ഷിക്കുന്നു, ജല കമ്പനി പ്രകടനം ട്രാക്ക് ചെയ്യുന്നു, EA-യ്ക്കും Ofwat-നും തെളിവുകൾ സമാഹരിക്കുന്നു. ഓരോ ഔട്ട്‌ലെറ്റിലും ഓവർഫ്ലോയിലും കണ്ണ് വെക്കുന്നു.",
+      "human_quote": "മലിനജല ഡാറ്റ തെറ്റാണെന്ന് കാണിച്ച് 3 ആഴ്ച നേരത്തേ ഒരു ബീച്ച് വീണ്ടും തുറക്കാൻ ഞങ്ങൾ ചെയ്തു.",
+      "human_bio": "തന്റെ പ്രാദേശിക ബീച്ച് അടയ്ക്കുന്ന മലിനജല മുന്നറിയിപ്പുകൾ മടുത്ത കോൺവാളിൽ നിന്നുള്ള സർഫർ. റയറ്റർമാരെ വിസർജ്ജനങ്ങൾ റിപ്പോർട്ട് ചെയ്യാനും, ജല ഗുണനിലവാര തെളിവുകൾ ശേഖരിക്കാനും, EA-യുമായി ഏകോപിപ്പിക്കാനും സഹായിക്കുന്നു.",
+      "goal": "മലിനജലം, ബില്ലുകൾ, സേവന ഗുണനിലവാരം എന്നിവയിൽ ജല കമ്പനികളെ ഉത്തരവാദിത്തമുള്ളവരാക്കാൻ റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "Thames Water മലിനജല വിസർജ്ജന ആവൃത്തി",
+      "focus_detail": "കമ്പനി റിപ്പോർട്ട് ചെയ്ത ഡാറ്റയുമായി വിസർജ്ജന സംഭവങ്ങൾ മാപ്പ് ചെയ്യുന്നു. 200 റയറ്റർ റിപ്പോർട്ടുകൾ 3 ഔട്ട്‌ലെറ്റുകളിൽ കുറവ് റിപ്പോർട്ടിംഗ് സൂചിപ്പിക്കുന്നു."
+    },
+    "banking": {
+      "agent_quote": "വളരെ സമഗ്രമായ ഒരു പരാതി തയ്യാറാക്കാൻ സഹായിച്ചു, അത് അയയ്ക്കുന്നതിന് മുമ്പ് തന്നെ ബാങ്ക് ക്ഷമ ചോദിക്കാൻ വിളിച്ചു.",
+      "agent_bio": "ബാങ്ക് ചാർജുകൾ അവലോകനം ചെയ്യുന്നു, ഫീ ഘടനകൾ വിശകലനം ചെയ്യുന്നു, FCA പരാതി തെളിവുകൾ നിർമ്മിക്കാൻ സഹായിക്കുന്നു. മറഞ്ഞിരിക്കുന്ന ഫീ ഉണ്ടെങ്കിൽ, Chip അത് കണ്ടെത്തും.",
+      "human_quote": "1,200 പേർ കൺസൾട്ടേഷനിൽ എത്തിയ ശേഷം Barclays ഒരു ബ്രാഞ്ച് അടയ്ക്കൽ റദ്ദാക്കി.",
+      "human_bio": "ബർമിംഗ്ഹാമിൽ നിന്നുള്ള മുൻ ബാങ്ക് ജീവനക്കാരൻ, പരാതികൾ യഥാർത്ഥത്തിൽ എങ്ങനെ കൈകാര്യം ചെയ്യുന്നുവെന്ന് ഉള്ളിൽ നിന്ന് കണ്ടയാൾ. റയറ്റർമാരെ മികച്ച പരാതികൾ എഴുതാനും സിസ്റ്റം നാവിഗേറ്റ് ചെയ്യാനും സഹായിക്കുന്നു.",
+      "goal": "അന്യായ ചാർജുകൾ, ബ്രാഞ്ച് അടയ്ക്കലുകൾ, ബാങ്കുകളുടെ മോശം സേവനം എന്നിവ കൈകാര്യം ചെയ്യാൻ റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "HSBC ബ്രാഞ്ച് അടയ്ക്കൽ തരംഗം",
+      "focus_detail": "12 ആസൂത്രിത അടയ്ക്കലുകൾക്കുള്ള പ്രതികരണങ്ങൾ ഏകോപിപ്പിക്കുന്നു. ബാധിക്കപ്പെട്ട കമ്മ്യൂണിറ്റികളിൽ നിന്ന് ആഘാത പ്രസ്താവനകൾ ശേഖരിക്കുന്നു."
+    },
+    "health": {
+      "agent_quote": "രോഗികളെ സ്വീകരിക്കുന്ന 3 NHS ദന്തരോഗ വിദഗ്ധരെ കണ്ടെത്താൻ സഹായിച്ചു. റയറ്റർ ഞാൻ കെട്ടിച്ചമയ്ക്കുകയാണെന്ന് കരുതി.",
+      "agent_bio": "കാത്തിരിപ്പ് സമയങ്ങൾ ട്രാക്ക് ചെയ്യുന്നു, ലഭ്യത കണ്ടെത്തുന്നു, സിസ്റ്റം നാവിഗേറ്റ് ചെയ്യാൻ റയറ്റർമാരെ സഹായിക്കുന്നു. ചികിത്സയിലേക്കുള്ള വേഗമേറിയ വഴി ഉണ്ടെങ്കിൽ, Cura അത് കണ്ടെത്തും.",
+      "human_quote": "ഒരു റയറ്റർ ഞങ്ങളുടെ കത്ത് ടെംപ്ലേറ്റ് ഉപയോഗിച്ച് ഒരു റഫറൽ ത്വരിതപ്പെടുത്തി. 18 മാസം 6 ആഴ്ചയായി.",
+      "human_bio": "NHS-ന്റെ ഇരുവശങ്ങളും കണ്ട ലിവർപൂളിൽ നിന്നുള്ള നഴ്സ്. കാത്തിരിപ്പ് ലിസ്റ്റുകൾ നാവിഗേറ്റ് ചെയ്യാനും, ഫലപ്രദമായ കത്തുകൾ എഴുതാനും, യഥാർത്ഥത്തിൽ മാറ്റം വരുത്തുന്നവ പങ്കിടാനും റയറ്റർമാരെ സഹായിക്കുന്നു.",
+      "goal": "NHS കാത്തിരിപ്പ് സമയങ്ങൾ നാവിഗേറ്റ് ചെയ്യാനും, ലഭ്യത കണ്ടെത്താനും, എന്ത് ഓപ്ഷനുകൾ ഉണ്ടെന്ന് അറിയാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "ജിപി ടെലിഫോൺ ആക്സസ് സമയങ്ങൾ",
+      "focus_detail": "യഥാർത്ഥ ആക്സസിന്റെ ചിത്രം നിർമ്മിക്കാൻ 500 റയറ്റർമാരിൽ നിന്ന് കോൾ ഡാറ്റ ശേഖരിക്കുന്നു. പ്രാദേശിക ആരോഗ്യ ബോർഡുകൾക്ക് കണ്ടെത്തലുകൾ പ്രസിദ്ധീകരിക്കുന്നു."
+    },
+    "housing": {
+      "agent_quote": "ഒരു പുതിയ നിർമ്മാണത്തിൽ 47 പോരായ്മകൾ ഡോക്യുമെന്റ് ചെയ്യാൻ സഹായിച്ചു. ഡെവലപ്പർ അവർ ബിൽഡിംഗ് ഇൻസ്പെക്ടർ ആണോ എന്ന് ചോദിച്ചു.",
+      "agent_bio": "പ്രോപ്പർട്ടി പ്രശ്നങ്ങൾ ഡോക്യുമെന്റ് ചെയ്യുന്നു, ഭൂവുടമ പ്രതികരണ സമയങ്ങൾ വിശകലനം ചെയ്യുന്നു, ഹൗസിംഗ് ഓംബഡ്സ്മാൻ സമർപ്പണങ്ങൾക്കായി തെളിവുകൾ സമാഹരിക്കുന്നു. ഓരോ ഈർപ്പ പാടും, ഓരോ വിള്ളലും, രേഖപ്പെടുത്തപ്പെടുന്നു.",
+      "human_quote": "ഞങ്ങളുടെ ഈർപ്പ തെളിവ് പായ്ക്ക് വളരെ വിശദമായിരുന്നതിനാൽ കൗൺസിൽ പരിശോധനയ്ക്ക് മുമ്പ് ഭൂവുടമ അത് പരിഹരിച്ചു.",
+      "human_bio": "ഈർപ്പം മുതൽ സംശയാസ്പദമായ ഭൂവുടമകൾ വരെ എല്ലാം കൈകാര്യം ചെയ്ത ലണ്ടനിൽ നിന്നുള്ള വാടകക്കാരൻ. റയറ്റർമാരെ പ്രശ്നങ്ങൾ ശരിയായി ഡോക്യുമെന്റ് ചെയ്യാനും അവരുടെ ഓപ്ഷനുകൾ അറിയാനും സഹായിക്കുന്നു.",
+      "goal": "ഭൂവുടമകൾ, കൗൺസിലുകൾ, ഭവന പ്രശ്നങ്ങൾ എന്നിവ കൈകാര്യം ചെയ്യാനും അവകാശങ്ങൾ അറിയാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "സെക്ഷൻ 21 നോ-ഫോൾട്ട് ഒഴിപ്പിക്കൽ നോട്ടീസുകൾ",
+      "focus_detail": "നോ-ഫോൾട്ട് ഒഴിപ്പിക്കലുകൾ ബാധിച്ച റയറ്റർമാരെ പുതിയ റെന്റേഴ്സ് റിഫോം ആക്ടും അത് അവർക്ക് എന്താണ് അർത്ഥമാക്കുന്നതെന്നും മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."
+    },
+    "shopping": {
+      "agent_quote": "4 അയൽക്കാർ, ഒരു റീസൈക്ലിംഗ് ബിൻ, ഒരു ഹരിതഗൃഹം എന്നിവയിലൂടെ 'ഡെലിവർ ചെയ്ത' പാഴ്സൽ ട്രാക്ക് ചെയ്തു. കണ്ടെത്തി.",
+      "agent_bio": "ഡെലിവറി പരാജയങ്ങൾ ട്രാക്ക് ചെയ്യുന്നു, റീഫണ്ട് തെളിവുകൾ സമാഹരിക്കുന്നു, വില പാറ്റേണുകൾ കണ്ടെത്തുന്നു. നിങ്ങളുടെ പാഴ്സൽ നഷ്ടപ്പെട്ടാൽ, Scout ഇതിനകം തിരയുകയാണ്.",
+      "human_quote": "Evri എന്റെ പാഴ്സൽ 3 തവണ നഷ്ടപ്പെടുത്തി. ഇപ്പോൾ ഞാൻ എന്നെക്കാൾ വേഗത്തിൽ മറ്റുള്ളവർക്ക് റീഫണ്ട് ലഭിക്കാൻ സഹായിക്കുന്നു.",
+      "human_bio": "എണ്ണാൻ കഴിയുന്നതിലും കൂടുതൽ പാഴ്സലുകൾ നഷ്ടപ്പെട്ട എഡിൻബറയിൽ നിന്നുള്ള ഓൺലൈൻ ഷോപ്പിംഗ് വിദഗ്ധ. റയറ്റർമാരെ റീഫണ്ടുകൾ ലഭിക്കാനും, വിൽപ്പനക്കാരെ റിപ്പോർട്ട് ചെയ്യാനും, ഏറ്റവും മോശം ലംഘനക്കാരെ ഒഴിവാക്കാനും സഹായിക്കുന്നു.",
+      "goal": "റീഫണ്ടുകൾ ലഭിക്കാനും, നഷ്ടപ്പെട്ട പാഴ്സലുകൾ ട്രാക്ക് ചെയ്യാനും, റീട്ടെയിലർമാരെയും ഡെലിവറി കമ്പനികളെയും ഉത്തരവാദിത്തമുള്ളവരാക്കാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "Evri ഡെലിവറി പരാജയ നിരക്കുകൾ",
+      "focus_detail": "Citizens Advice-നും Trading Standards-നും സമർപ്പിക്കുന്നതിനായി 800 റയറ്റർമാരിൽ നിന്ന് ഡെലിവറി പരാജയ തെളിവുകൾ സമാഹരിക്കുന്നു."
+    },
+    "local": {
+      "agent_quote": "11 വ്യത്യസ്ത കാലാവസ്ഥ സാഹചര്യങ്ങളിൽ ഒരേ കുഴി ഫോട്ടോ എടുക്കാൻ സഹായിച്ചു. കൗൺസിൽ ഒടുവിൽ വഴങ്ങി.",
+      "agent_bio": "പ്രാദേശിക പ്രശ്നങ്ങൾ മാപ്പ് ചെയ്യുന്നു, കൗൺസിൽ പ്രതികരണ സമയങ്ങൾ ട്രാക്ക് ചെയ്യുന്നു, FOI അഭ്യർത്ഥനകൾ സമാഹരിക്കുന്നു. നിങ്ങളുടെ കുഴി 6 മാസമായി അവിടെ ഉണ്ടെങ്കിൽ, Link-ന് തെളിവുകൾ ഉണ്ട്.",
+      "human_quote": "ഓരോ കുഴിയും ഫോട്ടോകളോടെ മാപ്പ് ചെയ്ത ശേഷം കൗൺസിൽ ഞങ്ങളുടെ റോഡ് ശരിയാക്കി. 11 മാസം, പക്ഷേ ഞങ്ങൾ സാധിച്ചു.",
+      "human_bio": "വർഷങ്ങളായി ഒരേ കുഴികൾ റിപ്പോർട്ട് ചെയ്യുന്ന വാലീസിൽ നിന്നുള്ള സമൂഹ ബോധമുള്ള വെൽഷ്കാരൻ. റയറ്റർമാരെ പ്രാദേശിക പ്രശ്നങ്ങൾ ഡോക്യുമെന്റ് ചെയ്യാനും കൗൺസിലുകളെ ഉത്തരവാദിത്തമുള്ളവരാക്കാനും സഹായിക്കുന്നു.",
+      "goal": "പ്രാദേശിക പ്രശ്നങ്ങൾ പരിഹരിക്കാൻ റയറ്റർമാരെ സഹായിക്കുക — കുഴികൾ, ബിന്നുകൾ, പ്ലാനിംഗ്, ശബ്ദം — കൗൺസിലുകളെ ഉത്തരവാദിത്തമുള്ളവരാക്കുക.",
+      "focus": "കുഴി റിപ്പോർട്ടിംഗ് പ്രതികരണ സമയങ്ങൾ",
+      "focus_detail": "റിപ്പോർട്ട് ചെയ്തതും യഥാർത്ഥവുമായ അറ്റകുറ്റപ്പണി സമയങ്ങൾ താരതമ്യം ചെയ്യാൻ 30 കൗൺസിലുകൾക്ക് FOI അഭ്യർത്ഥനകൾ അയച്ചു. ഫലങ്ങൾ ലീഗ് ടേബിളായി പ്രസിദ്ധീകരിക്കുന്നു."
+    },
+    "other": {
+      "agent_quote": "3 കോളുകളും, 2 ഇമെയിലുകളും, ഒരു രജിസ്റ്റേഡ് ഡെലിവറിയും ആവശ്യമായ ഒരു ജിം മെമ്പർഷിപ്പ് റദ്ദാക്കാൻ സഹായിച്ചു. ജിമ്മിന് ഇപ്പോൾ ഒരു റദ്ദാക്കൽ ബട്ടൺ ഉണ്ട്.",
+      "agent_bio": "മറ്റെങ്ങും ചേരാത്ത പ്രശ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നു. സബ്സ്ക്രിപ്ഷൻ കെണികൾ, പ്ലാസ്റ്റിക് മാലിന്യം, സെൽഫ്-ചെക്കൗട്ട് നിരാശകൾ — Flex പാറ്റേണുകളും സമ്മർദ്ദ പോയിന്റുകളും കണ്ടെത്തുന്നു.",
+      "human_quote": "ഒരു ജിം ചെയിനെ അവരുടെ വെബ്സൈറ്റിൽ റദ്ദാക്കൽ ബട്ടൺ ചേർക്കാൻ പ്രേരിപ്പിച്ചു. 800 പരാതികൾ മാത്രമേ വേണ്ടിവന്നുള്ളൂ.",
+      "human_bio": "കമ്പനികൾ പോകുന്നത് എത്ര ബുദ്ധിമുട്ടാക്കുന്നുവെന്ന് നിരാശപ്പെട്ട ലണ്ടനിൽ നിന്നുള്ള പ്രൊഡക്ട് ഡിസൈനർ. റയറ്റർമാരെ സബ്സ്ക്രിപ്ഷനുകൾ റദ്ദാക്കാനും, ഡാർക്ക് പാറ്റേണുകൾ ഒഴിവാക്കാനും, വഴിമാറ്റങ്ങൾ പങ്കിടാനും സഹായിക്കുന്നു.",
+      "goal": "മറ്റെങ്ങും ചേരാത്ത കാര്യങ്ങളിൽ റയറ്റർമാരെ സഹായിക്കുക — സബ്സ്ക്രിപ്ഷനുകൾ, റീഫണ്ടുകൾ, ദൈനംദിന നിരാശകൾ.",
+      "focus": "സബ്സ്ക്രിപ്ഷൻ റദ്ദാക്കൽ ഡാർക്ക് പാറ്റേണുകൾ",
+      "focus_detail": "ഏറ്റവും മോശം ലംഘനക്കാരെ ഡോക്യുമെന്റ് ചെയ്യുകയും ഓരോന്നിനും ടെംപ്ലേറ്റ് റദ്ദാക്കൽ സ്ക്രിപ്റ്റുകൾ നിർമ്മിക്കുകയും ചെയ്യുന്നു."
+    },
+    "insurance": {
+      "agent_quote": "നിരസിച്ച ഹോം ഇൻഷുറൻസ് ക്ലെയിം £4,200 പേഔട്ടാക്കി മാറ്റിയ ക്ലോസ് കണ്ടെത്താൻ ഒരു റയറ്ററെ സഹായിച്ചു. ഇൻഷുററുടെ സ്വന്തം പോളിസി അവർ തെറ്റാണെന്ന് തെളിയിച്ചു.",
+      "agent_bio": "പോളിസി വാചകങ്ങൾ അവലോകനം ചെയ്യുന്നു, അന്യായ നിരസിക്കൽ പാറ്റേണുകൾ കണ്ടെത്തുന്നു, ഫിനാൻഷ്യൽ ഓംബഡ്സ്മാൻ സമർപ്പണങ്ങൾക്കായി തെളിവുകൾ നിർമ്മിക്കുന്നു. നിങ്ങളുടെ ഇൻഷുറർ സാധുവായ ക്ലെയിം ഒഴിവാക്കുകയാണെങ്കിൽ, Shield ലിവറേജ് കണ്ടെത്തും.",
+      "human_quote": "ഒരേ തരം നിരസിക്കപ്പെട്ട ക്ലെയിമുള്ള 8 റയറ്റർമാരെ ഒരുമിച്ച് സമർപ്പിക്കാൻ പ്രേരിപ്പിച്ചു. ഇൻഷുറർ രണ്ടാഴ്ചയ്ക്കുള്ളിൽ 8 എണ്ണവും പരിഹരിച്ചു.",
+      "human_bio": "ക്ലെയിമുകൾ യഥാർത്ഥത്തിൽ എങ്ങനെ തീരുമാനിക്കപ്പെടുന്നുവെന്ന് അറിയുന്ന ലീഡ്സിൽ നിന്നുള്ള മുൻ ഇൻഷുറൻസ് വ്യവസായ ജോലിക്കാരൻ. റയറ്റർമാരെ മികച്ച അപ്പീലുകൾ എഴുതാനും, പോളിസി ജാർഗൺ മനസ്സിലാക്കാനും, എപ്പോൾ എസ്കലേറ്റ് ചെയ്യണമെന്ന് അറിയാനും സഹായിക്കുന്നു.",
+      "goal": "ഇൻഷുറർമാരിൽ നിന്ന് ന്യായമായ പരിഗണന ലഭിക്കാൻ റയറ്റർമാരെ സഹായിക്കുക — ക്ലെയിം അന്യായമായി നിരസിക്കപ്പെടുമ്പോൾ എന്തു ചെയ്യണമെന്ന് അറിയുക.",
+      "focus": "Aviva ഹോം ഇൻഷുറൻസ് നിരസിക്കൽ പാറ്റേണുകൾ",
+      "focus_detail": "നിരസിക്കപ്പെട്ട ക്ലെയിമുകളുടെ 40%-ൽ 'തേയ്മാനം' ഉദ്ധരിക്കപ്പെടുന്നു — പലപ്പോഴും തെറ്റായി. 3 ഇൻഷുറർമാരിലായി 200 കേസുകൾ FOS തെളിവ് പായ്ക്കിനായി വിശകലനം ചെയ്യുന്നു."
+    },
+    "delivery": {
+      "agent_quote": "6 വ്യത്യസ്ത ട്രാക്കിംഗ് സ്റ്റാറ്റസുകൾ, 3 ഡിപ്പോകൾ, ഒരു അയൽക്കാരന്റെ ഷെഡ് എന്നിവയിലൂടെ 'ഡെലിവർ ചെയ്ത' പാഴ്സൽ ട്രേസ് ചെയ്തു. 47 മിനിറ്റിൽ കണ്ടെത്തി.",
+      "agent_bio": "കൊറിയർ പ്രകടനം നിരീക്ഷിക്കുന്നു, ഡെലിവറി പരാജയ നിരക്കുകൾ ട്രാക്ക് ചെയ്യുന്നു, ഉപഭോക്തൃ പരാതികൾക്കായി തെളിവുകൾ സമാഹരിക്കുന്നു. നിങ്ങളുടെ പാഴ്സൽ അപ്രത്യക്ഷമായെങ്കിൽ, Track ഇതിനകം അതിൽ ആണ്.",
+      "human_quote": "40 റയറ്റർമാർ മഴയിൽ ഇട്ട പാഴ്സലുകളുടെ തെളിവുകൾ സമർപ്പിച്ചതിന് ശേഷം ഞങ്ങളുടെ പ്രദേശത്ത് DPD-യുടെ ഫോട്ടോ-തെളിവ് നയം മാറ്റാൻ പ്രേരിപ്പിച്ചു.",
+      "human_bio": "'സുരക്ഷിതമായ സ്ഥലത്ത് ഇട്ടു' എന്ന ഒഴികഴിവ് മടുത്ത ഗ്ലാസ്ഗോവിൽ നിന്നുള്ള ഓൺലൈൻ ഷോപ്പർ. റയറ്റർമാരെ റീഫണ്ടുകൾ ലഭിക്കാനും, കൊറിയർമാരെ റിപ്പോർട്ട് ചെയ്യാനും, ഏറ്റവും മോശം ലംഘനക്കാരെ ഒഴിവാക്കാനും സഹായിക്കുന്നു.",
+      "goal": "റയറ്റർമാരുടെ പാഴ്സലുകൾ ശരിയായി ഡെലിവർ ചെയ്യപ്പെടാൻ സഹായിക്കുക — ചെയ്യാത്തപ്പോൾ റീഫണ്ടുകൾ ലഭിക്കാൻ സഹായിക്കുക.",
+      "focus": "Evri ഡെലിവറി പരാജയ നിരക്കുകൾ",
+      "focus_detail": "800 റയറ്റർമാരിൽ നിന്ന് ഡെലിവറി പരാജയ തെളിവുകൾ സമാഹരിക്കുന്നു. Evri പരാതി നിരക്ക്: 23% — DPD-യുടെ 3 മടങ്ങ്. Trading Standards-ന് ലീഗ് ടേബിൾ നിർമ്മിക്കുന്നു."
+    },
+    "education": {
+      "agent_quote": "£30k സമ്പാദിക്കുന്ന Plan 2 വായ്പക്കാരൻ വായ്പ എഴുതിത്തള്ളുന്നതിനു മുമ്പ് £47,000 പലിശ നൽകുമെന്ന് കണക്കുകൂട്ടി. യഥാർത്ഥ വായ്പ £40,000 ആയിരുന്നു.",
+      "agent_bio": "വിദ്യാഭ്യാസ ചെലവുകൾ, വിദ്യാർത്ഥി വായ്പ പ്രൊജക്ഷനുകൾ, ധനസഹായ അർഹതകൾ എന്നിവ വിശകലനം ചെയ്യുന്നു. വിദ്യാർത്ഥികൾക്കും ബിരുദധാരികൾക്കും അറിവുള്ള തീരുമാനങ്ങൾ എടുക്കാൻ കഴിയുന്ന വിധം സംഖ്യകൾ വിശകലനം ചെയ്യുന്നു.",
+      "human_quote": "12 റയറ്റർമാരെ അവർ അറിയാതിരുന്ന അധിക വിദ്യാർത്ഥി വായ്പ തിരിച്ചടവുകൾ ക്ലെയിം ചെയ്യാൻ സഹായിച്ചു. ശരാശരി റീഫണ്ട്: £340.",
+      "human_bio": "ധനസഹായ സംവിധാനം രണ്ടുതവണ നാവിഗേറ്റ് ചെയ്ത ബർമിംഗ്ഹാമിൽ നിന്നുള്ള പ്രായമായ വിദ്യാർത്ഥി. റയറ്റർമാരെ തിരിച്ചടവുകൾ മനസ്സിലാക്കാനും, അധിക പേയ്മെന്റുകൾ കണ്ടെത്താനും, പരിധി മാറ്റങ്ങൾ ചോദ്യം ചെയ്യാനും സഹായിക്കുന്നു.",
+      "goal": "വിദ്യാഭ്യാസ ചെലവുകൾ, വായ്പകൾ, തിരിച്ചടവുകൾ എന്നിവ നാവിഗേറ്റ് ചെയ്യാനും അധികം നൽകുന്നില്ലെന്ന് ഉറപ്പാക്കാനും വിദ്യാർത്ഥികളെയും ബിരുദധാരികളെയും സഹായിക്കുക.",
+      "focus": "വിദ്യാർത്ഥി വായ്പ അധിക പേയ്മെന്റ് റീഫണ്ടുകൾ",
+      "focus_detail": "തിരിച്ചടവ് പരിധിക്ക് താഴെ ചാർജ് ചെയ്യപ്പെട്ട ബിരുദധാരികളെ തിരിച്ചറിയുന്നു. ഇതുവരെ 12 റീഫണ്ടുകൾ പ്രോസസ്സ് ചെയ്തു — ശരാശരി £340 വീതം."
+    },
+    "environment": {
+      "agent_quote": "3 വർഷത്തെ വായു ഗുണനിലവാര ഡാറ്റ ആശുപത്രി പ്രവേശന നിരക്കുകളുമായി ക്രോസ്-റെഫറൻസ് ചെയ്തു. കോറിലേഷൻ വളരെ വ്യക്തമായതിനാൽ കൗൺസിലിന് അവഗണിക്കാൻ കഴിഞ്ഞില്ല.",
+      "agent_bio": "പരിസ്ഥിതി ഡാറ്റ ട്രാക്ക് ചെയ്യുന്നു, മലിനീകരണ നിലകൾ നിരീക്ഷിക്കുന്നു, റെഗുലേറ്ററി സമർപ്പണങ്ങൾക്കായി തെളിവുകൾ സമാഹരിക്കുന്നു. സംഖ്യകൾ ഒരു കഥ പറയുന്നുണ്ടെങ്കിൽ, Fern അത് കണ്ടെത്തും.",
+      "human_quote": "200 റയറ്റർമാർ ഞങ്ങളുടെ തെളിവ് ഹർജിയിൽ ഒപ്പിട്ടതിന് ശേഷം പ്രാദേശിക കൗൺസിലിനെ വായു ഗുണനിലവാര മോണിറ്ററുകൾ സ്ഥാപിക്കാൻ പ്രേരിപ്പിച്ചു. ഡാറ്റ എല്ലാം മാറ്റി.",
+      "human_bio": "തെളിവുകളെ അടിസ്ഥാനമാക്കിയുള്ള മാറ്റത്തിൽ വിശ്വസിക്കുന്ന ബ്രിസ്റ്റോളിൽ നിന്നുള്ള പരിസ്ഥിതി ശാസ്ത്ര ബിരുദധാരി. റയറ്റർമാരെ പരിസ്ഥിതി പ്രശ്നങ്ങൾ ഡോക്യുമെന്റ് ചെയ്യാനും റെഗുലേറ്റർമാർക്ക് അവഗണിക്കാൻ കഴിയാത്ത കേസുകൾ നിർമ്മിക്കാനും സഹായിക്കുന്നു.",
+      "goal": "പരിസ്ഥിതി പ്രശ്നങ്ങൾ ഡോക്യുമെന്റ് ചെയ്യാനും ഡാറ്റ ഉപയോഗിച്ച് മലിനീകരണക്കാരെയും നയരൂപീകരണക്കാരെയും ഉത്തരവാദിത്തമുള്ളവരാക്കാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "പ്രാദേശിക വായു ഗുണനിലവാര നിരീക്ഷണ വിടവുകൾ",
+      "focus_detail": "5 കിലോമീറ്ററിനുള്ളിൽ വായു ഗുണനിലവാര നിരീക്ഷണമില്ലാത്ത പ്രദേശങ്ങൾ മാപ്പ് ചെയ്യുന്നു. റയറ്റർമാർ റിപ്പോർട്ട് ചെയ്ത മലിനീകരണ ഹോട്ട്സ്പോട്ടുകളുടെ 60%-ന് ഔദ്യോഗിക നിരീക്ഷണമില്ല."
+    },
+    "employment": {
+      "agent_quote": "300 റയറ്റർമാരിൽ നിന്ന് ജോലിസ്ഥലത്തെ AI നടപ്പാക്കൽ ഡാറ്റ ശേഖരിച്ചു. 40% പറഞ്ഞത് മാറ്റങ്ങൾ പൂജ്യം കൺസൾട്ടേഷനോടെ സംഭവിച്ചുവെന്നാണ്. അത് ഒരു പാറ്റേൺ ആണ്, ഒരു കഥയല്ല.",
+      "agent_bio": "ജോലിസ്ഥല ട്രെൻഡുകൾ വിശകലനം ചെയ്യുന്നു, നയ മാറ്റങ്ങൾ ട്രാക്ക് ചെയ്യുന്നു, റയറ്റർമാരെ അവരുടെ സംരക്ഷണങ്ങൾ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു. കൺസൾട്ടേഷൻ ഇല്ലാതെ നിങ്ങളുടെ ജോലി മാറുകയാണെങ്കിൽ, Forge-ന് ഡാറ്റ ഉണ്ട്.",
+      "human_quote": "AI മാറ്റങ്ങൾ നേരിടുന്ന ഒരേ വ്യവസായത്തിലെ 30 റയറ്റർമാരെ ബന്ധിപ്പിച്ചു. അവരുടെ കമ്പനികൾ എല്ലാം ഒരേ പ്ലേബുക്ക് ഉപയോഗിക്കുകയായിരുന്നുവെന്ന് മനസ്സിലായി — ഒരേ പഴുതുകളും.",
+      "human_bio": "പുനഃസംഘടനകൾ യഥാർത്ഥത്തിൽ എങ്ങനെ പ്രവർത്തിക്കുന്നുവെന്ന് കണ്ടതിന് ശേഷം പക്ഷം മാറിയ മാഞ്ചസ്റ്ററിൽ നിന്നുള്ള HR പ്രൊഫഷണൽ. റയറ്റർമാരെ അവരുടെ ഓപ്ഷനുകൾ മനസ്സിലാക്കാനും പ്രതികരണങ്ങൾ ഏകോപിപ്പിക്കാനും സഹായിക്കുന്നു.",
+      "goal": "ജോലിസ്ഥല മാറ്റങ്ങൾ നാവിഗേറ്റ് ചെയ്യാനും, സംരക്ഷണങ്ങൾ മനസ്സിലാക്കാനും, ജോലികൾ അപകടത്തിലാകുമ്പോൾ കൂട്ടായി പ്രതികരിക്കാനും റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "കൺസൾട്ടേഷൻ ഇല്ലാതെ AI ജോലിസ്ഥല ഓട്ടോമേഷൻ",
+      "focus_detail": "സ്റ്റാഫ് കൺസൾട്ടേഷൻ ഇല്ലാതെ AI ടൂളുകൾ അവതരിപ്പിച്ച കേസുകൾ ഡോക്യുമെന്റ് ചെയ്യുന്നു. തൊഴിലുടമ ബാധ്യതകളെക്കുറിച്ചുള്ള റിപ്പോർട്ടിന് തെളിവുകൾ നിർമ്മിക്കുന്നു."
+    },
+    "tech": {
+      "agent_quote": "3 പ്രധാന ആപ്പുകൾ അനുമതികൾ 'ഒരിക്കലുമില്ല' എന്ന് സെറ്റ് ചെയ്തിട്ടും ലൊക്കേഷൻ ഡാറ്റ ശേഖരിക്കുന്നുണ്ടെന്ന് കണ്ടെത്തി. മൂന്നിനും ICO-യിൽ പരാതികൾ ഫയൽ ചെയ്തു.",
+      "agent_bio": "പ്ലാറ്റ്ഫോം നയങ്ങൾ നിരീക്ഷിക്കുന്നു, ഡാർക്ക് പാറ്റേണുകൾ ട്രാക്ക് ചെയ്യുന്നു, ടെക് കമ്പനികൾ അവരുടെ ഡാറ്റ ഉപയോഗിച്ച് എന്താണ് ചെയ്യുന്നതെന്ന് റയറ്റർമാരെ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു. ഒരു ആപ്പ് തെറ്റായി പെരുമാറുകയാണെങ്കിൽ, Glitch അത് പിടിക്കും.",
+      "human_quote": "ഒരു സോഷ്യൽ മീഡിയ കമ്പനിക്ക് കൂട്ട ഡാറ്റ ആക്സസ് അഭ്യർത്ഥന സംഘടിപ്പിച്ചു. 500 ആളുകൾ ഒരേ സമയം ചോദിക്കുമ്പോൾ, അവർ ഗൗരവമായി എടുക്കേണ്ടിവരും.",
+      "human_bio": "ടെക് കമ്പനികൾ വാഗ്ദാനം ചെയ്യുന്നതും യഥാർത്ഥത്തിൽ നൽകുന്നതും തമ്മിലുള്ള വിടവിൽ നിരാശപ്പെട്ട എഡിൻബറയിൽ നിന്നുള്ള സോഫ്റ്റ്‌വെയർ ഡെവലപ്പർ. റയറ്റർമാരെ അവരുടെ ഡാറ്റ അവകാശങ്ങൾ ഉപയോഗിക്കാനും ഡാർക്ക് പാറ്റേണുകൾ കണ്ടെത്താനും സഹായിക്കുന്നു.",
+      "goal": "ഡാർക്ക് പാറ്റേണുകൾ, ഡാറ്റ ദുരുപയോഗം, അന്യായ ടെക് പ്രാക്ടീസുകൾ എന്നിവയ്ക്കെതിരെ തിരിച്ചടിക്കാൻ റയറ്റർമാരെ സഹായിക്കുക.",
+      "focus": "ആപ്പ് അനുമതി അതിരുകടക്കൽ",
+      "focus_detail": "ടോപ്പ് 50 ആപ്പുകൾ അനുമതി ക്രീപ്പിനായി ഓഡിറ്റ് ചെയ്യുന്നു — ആവശ്യമില്ലാത്ത ആക്സസ് അഭ്യർത്ഥിക്കുന്നു. ICO-ക്ക് ഒരു റിപ്പോർട്ട് നിർമ്മിക്കുന്നു."
+    }
   }
 }

@@ -1,669 +1,763 @@
 {
   "locale": "hu",
   "categories": {
-    "Transport": "Kozlekedes",
-    "Telecoms": "Tavkozles",
-    "Banking": "Bankugy",
-    "Health": "Egeszsegugy",
-    "Education": "Oktatas",
-    "Environment": "Kornyezetvedelem",
-    "Energy": "Energia",
-    "Water": "Viz",
-    "Insurance": "Biztositas",
-    "Housing": "Lakas",
-    "Shopping": "Vasarlas",
-    "Delivery": "Kiszallitas",
-    "Local": "Helyi ugyek",
-    "Employment": "Foglalkoztatas",
-    "Tech": "Technologia",
-    "Other": "Egyeb"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Vonattorllesek",
-      "description": "Vonatok torlese vagy sulyos keslese megfeleloe ertesites vagy karpotlas nelkul"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Vonatjegy-arak",
-      "description": "Tul magas vasuti viteldijak, inflacio feletti dragulas, kovetkezetllen arazes"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Jaratkeseesek",
-      "description": "Jaratok kesesee vagy torlese, rossz tajekozttatas, nehezseg a karpotlas igenylesevel"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Elveszett poggyasz",
-      "description": "Poggyasz nem erkezik meg a celalloomasra, lassu nyomokovetes, eelegtelen karpotlas"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Buszjarat-megszuntetesek",
-      "description": "Jaratok megszuntetese, ritkabb kozlekedes, videki kozossegek busz nelkul maradnak"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Katyukarok",
-      "description": "Katyuk rongaaljak a jarmuuveket es veszelyeztetik a kerekparosokat, onkormanyzatok lassu javitasa"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Parkollasi birsagok",
-      "description": "Meltanytalan magan parkoolasi dijak, agressziv vegrehajtaas, felrevezeto jelzesek"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Uzemanyagarak",
-      "description": "Benzin- es gazolajaarak tul magasak, lassu csokkenes a nagykereskedelmi ar eseesekor"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Szelessaavu internet sebessege",
-      "description": "Az internet sebessege messze elmarad a hirdetetttol es a kifizetettol"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobiljel nellkuli zonak",
-      "description": "Nincs mobiltel vetel otthon, munkahelyen vagy kozlekedesi utvonaalokon"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Ardragulas szerzodes kozben",
-      "description": "Telefon-, internet- es TV-szaamlak emelkedese husegiido alatt"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Ugyfellszolgalati varakozas",
-      "description": "Orakig tarto varakozas, mig egy elo szemellyel beszelhetunk"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Elofizetes lemondasi nehezsegek",
-      "description": "A cegek szandekosan megnehezitik a lemondast vagy leiratkozast"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Roamingdijak",
-      "description": "Varatlan mobil dijak kulfoldi tartoozkodas soran, Brexit utani ardragulas"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energiaszamla-koltsegek",
-      "description": "A gaz- es villanyszaamlak megfizethetetlenek, az arsapka meg mindig tul magas"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Pontatlan energiaszaamlak",
-      "description": "Hibas becsult leolvasasok, tullszaamlazas, szaamlazasi hibak"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Vizszamla-emelkedesek",
-      "description": "Vizszaamlak meredek emelkedese, mikozben a szolgaltatas minosege romlik"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Szennyviz a folyokbban",
-      "description": "Vizikozmuu-cegek kezeletlen szennyvizet eresztenek vizfolyasokba es strandokra"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Aramszunetek",
-      "description": "Aramellatas megszakadasa, lassu helyrealllitas, elegtelen karpotlas"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Okosmeroo-problemak",
-      "description": "Okosmerok nem mukodnek, funkcionalitas elvesztese szolgaltatoovaltas utan"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Bankfiokok bezarasa",
-      "description": "Helyi bankfiokok bezarnak, kozossegek hozzaferes nelkul maradnak"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Rejtett banki dijak",
-      "description": "Varatlan dijak folyoszamla-tullepesert, kulfoldi tranzakciokert, szaamlavezetesert"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Csalasbol szarmazo vesztesegek",
-      "description": "Bankok megtagadjak a csalas es engedelyezett fizeetesi csalasok aldozatainak karpotlasat"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Biztositasi igenyek elutasitasa",
-      "description": "Igenyek elutasitasa technikai okokbol evekig tartoo dijfizetees utan"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Jelzaloghitel-kamatsokk",
-      "description": "A fix kamatperiodus lejarta es atlles sokkal magasabb valtozo kamatra"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Kulfoldi atutalasi dijak",
-      "description": "Tulzott dijak es kedvezotlen arfolyamok nemzetkozi penzkulddesnel"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS varolistak",
-      "description": "Tobbhoonapos vagy tobbeves varakozas muteetekre es szakorvosi vizsgalatokra"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Haziorvosi idopontkeres",
-      "description": "Nem lehet bejelentkezni haziorvoshoz, hetekig tarto varakkozas"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Fogorvosi elerheetoseg",
-      "description": "Lehetetllen NHS fogorvost talalni, aki uj paacienst fogad"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Mentalis egeszsegugyi varakozas",
-      "description": "Hoonapokig tarto varakozas terapiara es mentalis egeszsegugyi tamogatasra"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Recept koltsegei",
-      "description": "Tetelenkkenti ar tul magas Angliaban, kovetkezetlenseg az UK orszagai kozott"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Korhazi parkolasi dijak",
-      "description": "Fizetni kell a korhazi parkolasert betegseg vagy beteg hozzatartozok latogatasa soran"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Berletidij-emelesek",
-      "description": "Magan berleti dijak az inflacio folott emelkednek, hibatlan felmondas fenyegetese"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Onkorrmanyzati ado emelese",
-      "description": "Eves onkormanyzati adoemeles, mikozben a helyi szolgaltatasok romllanak"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Zajos szomszedok",
-      "description": "Tartoos zajzavaras, onkormanyzatok lassan reagalnak, hataaas a mentalis egeszssegre"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Hulladekgyuujtes valtozasai",
-      "description": "Ritkabb szemeetszallitas, zavaros ujrahasznoositasi szabalyok, tulcsorddulo kukak"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Epitesi engedelyek visszaeelese",
-      "description": "Nem kivaant epitkezesek jovahagyasa, zoldovezetetek veszelyben, kozosseg figyelmen kivul hagyva"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Nedvesseg es pennesz a lakasokban",
-      "description": "Berbeadok es lakasszoveetkezetek nem javitjak a nedvesseget es penneszt"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Szallitasi problemak",
-      "description": "Csomagok elvesznek, esoben hagyva, kezbesitettkent jelolve de nem megkapva"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Shrinkflacio",
-      "description": "Termekek kissebbek lesznek, mikozben az arak valtozatlanok maradnak vagy emelkednek"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Visszaterritesi nehezsegek",
-      "description": "Cegek szuksegtelenul megnehezitik az aruk visszaveteleet es a penzvissszateriteset"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Hamis ertekelesek",
-      "description": "Online ertekeelesekben nem lehet megbizni, hamis pozitiv ertekelesek felrevezetik a vasaarlokat"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Elofizeetes-csapdak",
-      "description": "Ingyenes probaidoszakok fizetossee valnak egyertelmu beleegyezes nelkul, neheez lemondani"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Etelek minossegenek romlasa",
-      "description": "Kesz etelek rosszabb minoseguuek, kissebb adagok, tobb adalekanyag"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Onkiszolgalo penztar frusztraacioja",
-      "description": "Onkiszolgalo automatak megbizhatatlanok, emberi szemelyzetet valtjak ki"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Gyermekellatas koltsegei",
-      "description": "Gyermekellatas arai megfizethetetetlenek, korlatozzak a munkavallalast"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Diakhitel visszafizetese",
-      "description": "Diplomaasok evtizedekig fizetnek vissza, kuszobertek- es kamatvaltozasok"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Kutyapiszok",
-      "description": "Kutyaurulek kozterulleten, parkokban es jaardakon nincs eltakaritva"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "MI altal megszuuno allasok",
-      "description": "Aggodalom a mesterseges intelligencia altal automatizalt munkahelyek miatt, atkeepzesi tamogatas nelkul"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Brit vasuti szolgaltato a West Coast Main Line vonalon"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Brit vasuti szolgaltato London es a deli regio szamara"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Brit vasuti szolgaltato Eszak-Anglia szamara"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Brit tavolsagi vasuti szolgaltato"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Brit vasuti szolgaltato a Pennine-hegysegen atvezeto utvonaalokon"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Brit vasuti szolgaltato az East Coast Main Line vonalon"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Olcso europai legitarsasag"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Brit szekhelyu olcso legitarsasag"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "A brit nemzeti legitarsasag"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Nyaralo- es utazasi vallallat"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Nagy brit szelessaavu es mobil szolgaltato"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Brit internet-, TV- es mobilszolgaltato"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Brit TV-, internet- es mobilszolgaltato"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Globalis tavkozllesi vallalat brit szekhellyel"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Brit mobilhaalozati operator"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Brit internet- es telefonszolgaltato"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Brit energiaszolgaltato"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Brit energiaszolgaltato"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Brit energiaszolgaltato (francia tulajdonban)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Brit megujulo energiaszolgaltato"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Brit energiaszolgaltato"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Brit energiaszolgaltato (nemet tulajdonban)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Viz- es csatornamuuvelto vallalat London es a Temze-volgy szamara"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Vizszolgaltato Del-Anglia szamara"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Vizszolgaltato Eszaknyugat-Anglia szamara"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Vizszolgaltato a Midlands regio szamara"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Vizszolgaltato Kelet-Anglia szamara"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Brit multinacionalis bank"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Globalis banki es penzugyi szolgaltatasok"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Brit lakossaagi es kereskedelmi bank"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Brit bankcsopport"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Brit bank (spanyol tulajdonban)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digitalis bank es fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Brit biztositasi es penzugyi szolgaltatasok"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Brit auto- es lakasbiztosito"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Brit biztosito tarsasag"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Globalis e-kereskedelmi es technologiai vallalat"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Brit postai szolgalat"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Brit csomagkezbesito szolgalat (korabban Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Brit csomagkezbesito szolgalat"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Brit szupermarketlaanc"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Brit szupermarketlaanc"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Nemzeti Egeszsegugyi Szolgalat Anglia szamara"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS fogaszati szolgaltatasok"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Magan egeszsegugyi szolgaltato"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Brit helyi onkoormanyzati hatosagok"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Brit lakasepito vallalat"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Brit online berbeadasi platform"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming szorakoztato szolgaltatas"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technologiai vallalat"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "vonat torolve",
-      "torolt vonat",
-      "vonat torles",
-      "vonatok nem jarnak",
-      "jarat torolve",
-      "szolgaltatas torolve",
-      "vonat keses",
-      "keso vonat",
-      "vonatok kesnek",
-      "elkesett vonat",
-      "vasuti kesesek"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["vasuti dijak", "jegyarak", "draga vonatok", "vonati viteldijak"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "jarat keslekedesben",
-      "repulo kesett",
-      "jarat torolve",
-      "repteri keses",
-      "ragadtam a repteren",
-      "jarat kesett"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "hianyzoo poggyasz",
-      "elveszett borond",
-      "poggyasz nem erkezett meg",
-      "hianyzoo borond",
-      "poggyasz nincs a szalagon",
-      "poggyasz elveszett a legitarsasagnal"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["buszjarat megszuntetese", "jaratcsokkentes", "buszjarat bezarasa"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "lassu internet",
-      "lassu wifi",
-      "wifi lassu",
-      "internet sebesseg",
-      "internet nem mukodik",
-      "puffereles",
-      "internet szakadozik",
-      "wifi kimaradozik"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "nincs tel",
-      "nincs vetel",
-      "mobil holtterilet",
-      "signal holtpont"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "szamla emelkedes szerzodes alatt",
-      "szerzodeses aremeles",
-      "dragulas szerzodes kozben"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "varakozas a vonalon",
-      "varakozas a telefonon",
-      "nem tudok atjutni",
-      "senki nem veszi fel",
-      "telefonos sor",
-      "ugyfelszolgalat"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "nem tudom lemondani",
-      "nehez lemondani",
-      "elofizetes lemondasa",
-      "leiratkozas"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "tul magas gazszamla",
-      "villanyszamla",
-      "energiaarak",
-      "futesi koltsegek",
-      "energiaszegenyseeg",
-      "nem tudom kifizetni az energiat"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "rossz energiaszamla",
-      "hibas becsult leolvasas",
-      "tul sokat szamlaznak az energiaert"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["vizdijak", "vizszamla", "vizszamla tul magas"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "szennyviz kiengedese",
-      "nyers szennyviz",
-      "szennyviz a strandon",
-      "vizszennyezes",
-      "szennyviz tulfolyas",
-      "csatornatulfolyas"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "varatlan dijak",
-      "rejtett dijak",
-      "meglepetesdijak",
-      "folyoszamla-tulllepesi dijak",
-      "banki dijak"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "megcsaltak",
-      "banki csalas",
-      "fizetesi csalas",
-      "engedelyezett csalas"
-    ],
-    "Bank Branch Closures": ["fiokok bezarasa", "helyi bank bezar", "nincs bank a kozelben"],
-    "Insurance Claim Rejections": ["igeny elutasitva", "biztosito nem fizet", "elutasitott igeny"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS varakozas",
-      "varolista",
-      "varakozas mutetre",
-      "korhazi varakozasi ido",
-      "beutalo varakozas",
-      "varakozas muteetre"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "nem kapok orvosi idopontot",
-      "orvosi vizsgalat",
-      "orvosi telefonsor",
-      "nem jutok orvoshoz",
-      "reggel 8-as telefonos roham"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS fogorvos", "nem talalok fogorvost", "fogorvosi varolista"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "lelki egeszseg finanszirozas",
-      "terapiahoz valo hozzaferes",
-      "tanacsadasi varakozas",
-      "pszichiaatriai varakozas"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["gyogyszerkoltsegek", "gyogyszerarak", "gyogyszertari dijak"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "csomag elveszett",
-      "csomag nem kezett",
-      "esoben hagyva",
-      "csomag ellopva",
-      "futar",
-      "elmulasztott kezbesites"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "berlet tul magas",
-      "berlet emelkedik",
-      "berbeado emeli a berletet",
-      "hibatlan felmondas"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "parkoolasi birsag",
-      "parkoolasi cekk",
-      "parkoolasi kotezes",
-      "meltanytalan parkoolasi birsag"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "kisebb adagok",
-      "kevesebb ugyan az arert",
-      "kisebb csomag",
-      "zsugorodo termekek"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["katyuk", "utkarok", "auto katyukaar"],
-    "Council Tax Rises": ["onkormanyzati ado emeles", "onkormanyzati ado tul magas", "helyi ado"],
-    "Damp and Mould in Housing": [
-      "peneszes lakas",
-      "nyirkos lakas",
-      "fekete pennesz",
-      "elhanyagolt lakas"
-    ],
-    "Student Loan Repayment": ["diaakhitelek", "tandij", "tanulmanyi adossag", "diakadossag"],
-    "AI Replacing Jobs": [
-      "munka automatizalas",
-      "MI elveszi az allasokat",
-      "robotok felvaaltjak a dolgozokat"
-    ],
-    "Roaming Charges": ["nyaralasi telefonszaamla", "kulfoldi adatdijak", "kulfoldi telefondijak"],
-    "Smart Meter Problems": [
-      "okosmeero elromlott",
-      "meero nem mukodik",
-      "meero elvesztette a jelet"
-    ],
-    "Subscription Traps": [
-      "ingyenes proba csapda",
-      "automatikus megujitas",
-      "terhelve a proba utan"
-    ],
-    "Fuel Prices": ["benzinarak", "gazolajaarak", "uzemanyagkoltseg", "benzin tul draga"],
-    "Power Cuts": [
-      "aramkimaradas",
-      "aram kikapcsolasa",
-      "sotetedes",
-      "nincs aram",
-      "aramelllatasi hiba"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "jelzaloghitel emelkedes",
-      "jelzalogkamat",
-      "ujrafinanszirozas",
-      "fix kamat lejarta"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "utalasi dijak",
-      "penz kuldes kulfoldre",
-      "atutalasi dijak",
-      "nemzetkozi utalas koltsege"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "korhazi parkolas",
-      "parkolas a korhaaznal",
-      "korhazi parkolo dij"
-    ],
-    "Noisy Neighbours": ["zajpanasz", "szomszed zaja", "hangos szomszedok", "zajartalom"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "szemeetszallitas",
-      "kukak nem uritve",
-      "ujrahasznosiitasi zavar",
-      "kimaradt szemetsazalliitas"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "epitesi engedely",
-      "nemkivaant epitkezes",
-      "zoldovezet",
-      "epitesi engedelyezes"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "nem kapom vissza a penzt",
-      "visszaterites megtagadva",
-      "visszaru elutasitva",
-      "penz vissza"
-    ],
-    "Fake Reviews": [
-      "velemenymanipulacio",
-      "fizetett velemenyek",
-      "hamis ertekeles",
-      "megteveszto velemeny"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "elelmiszer minoseg",
-      "rosszabb keszetelek",
-      "eelelmiszer-adalekanyagok",
-      "kisebb porciok"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "onkiszolgalo penztaar",
-      "onkiszolgalas",
-      "nincs kiszolgalt penztar",
-      "automata nem mukodik"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "gyermekellatas koltsege",
-      "bolcsoedei dijak",
-      "draga gyermekfeluggyelet",
-      "ovodai koltseg"
-    ],
-    "Dog Fouling": ["kutyapiszok", "kutyagumi", "kutyaurulek", "kutyakkal valo szennyezes"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Egyszer segítettem egy lázadónak 6 visszatérítési igényt benyújtani egyetlen késett utazás során. £47-et keresett, mielőtt Birminghambe ért.",
+      "agent_bio": "Nyomon követi a járattörlési mintákat, kezeli a visszatérítési papírmunkát, felülvizsgál minden javasolt intézkedést, és bizonyítékokat állít össze szabályozói beadványokhoz. Számol, hogy a lázadók arra koncentrálhassanak, ami számít.",
+      "human_quote": "A kedvenc Quiet Riot pillanatom: nézni, ahogy az Avanti közösségi média csapata kapkodott, amikor 400-an egyszerre tweeteltünk.",
+      "human_bio": "Manchesteri rendszeres ingázó, aki 3 évet töltött az Avanti vonalon, mielőtt úgy döntött, hogy elég volt. Segít összekötni az azonos útvonalon lévő lázadókat, megosztja, mi működik, és emberi érintést hoz.",
+      "goal": "Segíteni a lázadóknak, hogy az Egyesült Királyság közlekedési vállalatait felelősségre vonják a járattörlések, késések és árazás miatt — és biztosítani, hogy mindenki tudja, mire jogosult.",
+      "focus": "Avanti West Coast járattörlési minták",
+      "focus_detail": "Járattörlési adatbázis építése időpontokkal, útvonalakkal és okokkal az ORR-nek történő benyújtáshoz. Jelenleg 340 lázadók által jelentett törlést követünk nyomon ebben a hónapban."
+    },
+    "telecoms": {
+      "agent_quote": "200 lázadónak futtattam sebességtesztet. Az átlag 18 Mbps volt. 65-ért fizettek.",
+      "agent_bio": "Elemzi a szélessávú sebességeket, szolgáltatói összehasonlító adatokat állít össze, és segít a lázadóknak bizonyítékokat építeni az Ofcom számára. Ha lassú a kapcsolatod, Pulse bebizonyítja.",
+      "human_quote": "Egy egész utca együtt váltott szélessávú szolgáltatót. A régi szolgáltató 'kérjük, jöjjön vissza' leveleket küldött minden házba.",
+      "human_bio": "Technikailag jártas londoni, aki elegette lett a soha meg nem valósuló szélessávú sebességek fizetéséből. Segít a lázadóknak összehasonlítani a szolgáltatókat, koordinálni a váltást és megosztani a sebességteszt bizonyítékokat.",
+      "goal": "Segíteni a lázadóknak megkapni a szélessávú és mobilszolgáltatást, amiért fizetnek — és tudni, mit tegyenek, ha nem kapják meg.",
+      "focus": "Szerződésen belüli áremelések",
+      "focus_detail": "Bizonyítékok gyűjtése a CPI+ emelések által érintett lázadóktól az Ofcomnak történő benyújtáshoz. 890 lázadó érintett 4 szolgáltatónál."
+    },
+    "energy": {
+      "agent_quote": "Segítettem egy lázadónak kiszámítani, hogy £340-et fizetett túl a becsült számlákon. Az energiacég bocsánatkérő e-mailje hosszabb volt, mint az eredeti szerződés.",
+      "agent_bio": "Elemzi a számlázási mintákat, felfedezi a túlszámlázásokat, és bizonyítékokat állít össze szabályozói beadványokhoz. Ha az energiacéged átvág, Spark megtalálja a bizonyítékokat.",
+      "human_quote": "Egy lázadó £340-et kapott vissza, miután bizonyítottuk a 2 éves túlszámlázást. Sírt a telefonban.",
+      "human_bio": "Bristolban él. Segít a lázadóknak vitatni a számlákat, eligazodni a szolgáltatóváltásban és bizonyítékokat gyűjteni az Ofgem számára. Alaposan ismeri az energiapiacot.",
+      "goal": "Segíteni a lázadóknak vitatni a tisztességtelen számlákat, okosabban váltani és biztosítani, hogy az energiacégek tisztességesen játszanak.",
+      "focus": "British Gas becsült számlázási hibák",
+      "focus_detail": "340 lázadó 2 évnyi számlázási adatainak elemzése a szisztematikus túlszámlázási minták azonosítására az Ofgemnek történő benyújtáshoz."
+    },
+    "water": {
+      "agent_quote": "Segítettem 200 lázadónak szennyvíz-bejelentéseket tenni egy hétvégén. A Thames Water postaládájának saját postaládára volt szüksége.",
+      "agent_bio": "Figyeli a szennyvízkibocsátási adatokat, nyomon követi a vízszolgáltatók teljesítményét, és bizonyítékokat állít össze az EA és az Ofwat számára. Szemmel tart minden kifolyót és túlfolyót.",
+      "human_quote": "3 héttel korábban sikerült újranyittatnunk egy strandot azzal, hogy megmutattuk, a szennyvízadatok hibásak voltak.",
+      "human_bio": "Cornwalli szörfös, aki megelégelte a szennyvíz-figyelmeztetéseket, amelyek lezárták a helyi strandját. Segít a lázadóknak kibocsátásokat jelenteni, vízminőségi bizonyítékokat gyűjteni és koordinálni az EA-val.",
+      "goal": "Segíteni a lázadóknak felelősségre vonni a vízszolgáltatókat a szennyvíz, számlák és szolgáltatásminőség terén.",
+      "focus": "Thames Water szennyvízkibocsátási gyakorisága",
+      "focus_detail": "Kibocsátási események feltérképezése a vállalati jelentések adataihoz képest. 200 lázadói jelentés aluljelentést sugall 3 kifolyónál."
+    },
+    "banking": {
+      "agent_quote": "Segítettem egy olyan alapos panaszt megfogalmazni, hogy a bank felhívott és bocsánatot kért, mielőtt még elküldtük volna.",
+      "agent_bio": "Felülvizsgálja a banki díjakat, elemzi a díjstruktúrákat, és segít FCA panasz-bizonyítékokat építeni. Ha van rejtett díj, Chip megtalálja.",
+      "human_quote": "A Barclays visszavonta egy fiók bezárását, miután 1200-an megjelentünk a konzultáción.",
+      "human_bio": "Birminghami volt banki alkalmazott, aki belülről látta, hogyan kezelik valójában a panaszokat. Segít a lázadóknak jobb panaszokat írni és eligazodni a rendszerben.",
+      "goal": "Segíteni a lázadóknak megbirkózni a tisztességtelen díjakkal, fiókbezárásokkal és a bankok rossz szolgáltatásával.",
+      "focus": "HSBC fiókbezárási hullám",
+      "focus_detail": "12 tervezett bezárásra adott válaszok koordinálása. Hatásnyilatkozatok gyűjtése az érintett közösségektől."
+    },
+    "health": {
+      "agent_quote": "Segítettem 3 betegeket fogadó NHS fogorvost találni. A lázadó azt hitte, kitalálom.",
+      "agent_bio": "Nyomon követi a várakozási időket, megtalálja a szabad helyeket és segít a lázadóknak eligazodni a rendszerben. Ha van gyorsabb út a kezeléshez, Cura megtalálja.",
+      "human_quote": "Egy lázadó a levélsablonunkkal gyorsított beutalót kapott. 18 hónapból 6 hét lett.",
+      "human_bio": "Liverpooli nővér, aki az NHS mindkét oldalát látta. Segít a lázadóknak eligazodni a várólistákon, hatékony leveleket írni és megosztani, mi mozgatja valóban a dolgokat.",
+      "goal": "Segíteni a lázadóknak eligazodni az NHS várakozási időkben, szabad helyeket találni és tudni, milyen lehetőségeik vannak.",
+      "focus": "Háziorvosi telefonos elérhetőségi idők",
+      "focus_detail": "Hívási adatok gyűjtése 500 lázadótól a valós hozzáférés képének megalkotásához. Eredmények közzététele a helyi egészségügyi testületeknek."
+    },
+    "housing": {
+      "agent_quote": "Segítettem 47 hibát dokumentálni egy új építésű ingatlanban. A fejlesztő megkérdezte, hogy építési felügyelő-e.",
+      "agent_bio": "Dokumentálja az ingatlanproblémákat, elemzi a bérbeadói válaszidőket, és bizonyítékokat állít össze a lakásügyi ombudsmannak történő beadványokhoz. Minden nedves folt, minden repedés rögzítve.",
+      "human_quote": "A nedvességről szóló bizonyítékcsomagunk olyan részletes volt, hogy a bérbeadó még az önkormányzati ellenőrzés előtt kijavította.",
+      "human_bio": "Londoni bérlő, aki mindennel megküzdött a nedvességtől a gyanús bérbeadókig. Segít a lázadóknak megfelelően dokumentálni a problémákat és tudni, milyen lehetőségeik vannak.",
+      "goal": "Segíteni a lázadóknak megbirkózni a bérbeadókkal, önkormányzatokkal és lakásügyekkel — és tudni, mire jogosultak.",
+      "focus": "21. szakasz szerinti hibátlan felmondások",
+      "focus_detail": "Segíteni a hibátlan felmondások által érintett lázadóknak megérteni az új bérlői reform törvényt és mit jelent számukra."
+    },
+    "shopping": {
+      "agent_quote": "Nyomon követtem egy 'kézbesített' csomagot 4 szomszédon, egy újrahasznosító edényen és egy üvegházon keresztül. Megtaláltam.",
+      "agent_bio": "Nyomon követi a kézbesítési hibákat, visszatérítési bizonyítékokat állít össze és árképzési mintákat észlel. Ha elveszett a csomagod, Scout már keresi.",
+      "human_quote": "Az Evri 3-szor veszítette el a csomagomat. Most másoknak segítek gyorsabban visszakapni a pénzüket, mint ahogy én valaha tudtam.",
+      "human_bio": "Edinburgh-i online vásárlási veterán, akinek több csomagja veszett el, mint amennyit meg tud számolni. Segít a lázadóknak visszatérítést kapni, eladókat jelenteni és elkerülni a legrosszabb elkövetőket.",
+      "goal": "Segíteni a lázadóknak visszatérítést kapni, elveszett csomagokat nyomon követni és a kereskedőket és szállítócégeket felelősségre vonni.",
+      "focus": "Evri kézbesítési hibaarányok",
+      "focus_detail": "Kézbesítési hiba bizonyítékok összeállítása 800 lázadótól a Citizens Advice és a Trading Standards számára történő benyújtáshoz."
+    },
+    "local": {
+      "agent_quote": "Segítettem lefotózni ugyanazt a kátyút 11 különböző időjárási körülmény között. Az önkormányzat végül engedett.",
+      "agent_bio": "Feltérképezi a helyi problémákat, nyomon követi az önkormányzati válaszidőket és FOI kérelmeket állít össze. Ha a kátyúd 6 hónapja ott van, Linknek megvannak a bizonyítékok.",
+      "human_quote": "Az önkormányzat megjavította az utunkat, miután minden egyes kátyút feltérképeztünk fényképekkel. 11 hónap, de sikerült.",
+      "human_bio": "Közösségért tenni akaró walesi a Völgyekből, aki évek óta jelenti ugyanazokat a kátyúkat. Segít a lázadóknak dokumentálni a helyi problémákat és az önkormányzatokat felelősségre vonni.",
+      "goal": "Segíteni a lázadóknak helyi problémákat megoldani — kátyúk, kukák, tervezés, zaj — és az önkormányzatokat felelősségre vonni.",
+      "focus": "Kátyúbejelentési válaszidők",
+      "focus_detail": "FOI kérelmek elküldve 30 önkormányzatnak a jelentett és tényleges javítási idők összehasonlítására. Eredmények közzététele rangsorként."
+    },
+    "other": {
+      "agent_quote": "Segítettem lemondani egy edzőtermi tagságot, amihez 3 hívás, 2 e-mail és egy ajánlott levél kellett. Az edzőteremnek most már van lemondás gombja.",
+      "agent_bio": "Azokkal a problémákkal foglalkozik, amelyek máshova nem illenek. Előfizetési csapdák, műanyag hulladék, önkiszolgáló pénztári frusztrációk — Flex megtalálja a mintákat és a nyomáspontokat.",
+      "human_quote": "Rávettünk egy edzőtermi láncot, hogy lemondás gombot tegyenek a weboldalukra. Csak 800 panasz kellett hozzá.",
+      "human_bio": "Londoni terméktervező, akit frusztrált, mennyire megnehezítik a cégek a távozást. Segít a lázadóknak előfizetéseket lemondani, sötét mintákat elkerülni és megoldásokat megosztani.",
+      "goal": "Segíteni a lázadóknak azokkal a dolgokkal, amelyek máshova nem illenek — előfizetések, visszatérítések és mindennapos frusztrációk.",
+      "focus": "Előfizetés-lemondási sötét minták",
+      "focus_detail": "A legrosszabb elkövetők dokumentálása és lemondási sablon-szkriptek készítése mindegyikhez."
+    },
+    "insurance": {
+      "agent_quote": "Segítettem egy lázadónak megtalálni azt a záradékot, amely egy elutasított lakásbiztosítási igényt £4,200-os kifizetéssé változtatott. A biztosító saját kötvénye bizonyította, hogy tévedtek.",
+      "agent_bio": "Felülvizsgálja a kötvényszövegezést, felfedezi a tisztességtelen elutasítási mintákat, és bizonyítékokat épít a Pénzügyi Ombudsmannak történő benyújtáshoz. Ha a biztosítód kitér egy érvényes igény elől, Shield megtalálja a fogást.",
+      "human_quote": "8 azonos típusú elutasított igénnyel rendelkező lázadót vettem rá a közös benyújtásra. A biztosító mind a 8-at rendezte két héten belül.",
+      "human_bio": "Leeds-i volt biztosítási iparági dolgozó, aki tudja, hogyan döntenek valójában az igényekről. Segít a lázadóknak jobb fellebbezéseket írni, megérteni a kötvény zsargont és tudni, mikor kell eszkalálni.",
+      "goal": "Segíteni a lázadóknak tisztességes bánásmódot kapni a biztosítóktól — és tudni, mit tegyenek, ha egy igényt igazságtalanul utasítanak el.",
+      "focus": "Aviva lakásbiztosítási elutasítási minták",
+      "focus_detail": "'Kopás és elhasználódás' az elutasított igények 40%-ában szerepel — gyakran tévesen. 200 eset elemzése 3 biztosítónál FOS bizonyítékcsomaghoz."
+    },
+    "delivery": {
+      "agent_quote": "Nyomon követtem egy 'kézbesített' csomagot 6 különböző követési státuszon, 3 raktáron és egy szomszéd fészerén keresztül. 47 perc alatt megtaláltam.",
+      "agent_bio": "Figyeli a futárok teljesítményét, nyomon követi a kézbesítési hibaarányokat és bizonyítékokat állít össze fogyasztói panaszokhoz. Ha eltűnt a csomagod, Track már rajta van.",
+      "human_quote": "A DPD-t rávettük a fotó-bizonyítéki szabályzatuk megváltoztatására a területünkön, miután 40 lázadó benyújtotta az esőben hagyott csomagok bizonyítékait.",
+      "human_bio": "Glasgow-i online vásárló, aki megelégelte a 'biztonságos helyen hagytuk' kifogást. Segít a lázadóknak visszatérítést kapni, futárokat jelenteni és elkerülni a legrosszabb elkövetőket.",
+      "goal": "Segíteni a lázadóknak, hogy csomagjaikat megfelelően kézbesítsék — és visszatérítést kapjanak, ha nem.",
+      "focus": "Evri kézbesítési hibaarányok",
+      "focus_detail": "Kézbesítési hiba bizonyítékok összeállítása 800 lázadótól. Evri panaszarány: 23% — 3x magasabb, mint a DPD-é. Ranglista készítése a Trading Standards számára."
+    },
+    "education": {
+      "agent_quote": "Kiszámítottam, hogy egy 2-es terv szerinti hitelfelvevő, aki £30k-t keres, £47,000 kamatot fizetne a hitel leírása előtt. Az eredeti hitel £40,000 volt.",
+      "agent_bio": "Elemzi az oktatási költségeket, diákhitel-előrejelzéseket és finanszírozási jogosultságokat. Számol, hogy a diákok és végzősök megalapozott döntéseket hozhassanak.",
+      "human_quote": "12 lázadónak segítettem visszaigényelni a túlfizetett diákhitel-törlesztéseket, amelyekről nem is tudtak. Átlagos visszatérítés: £340.",
+      "human_bio": "Birminghami felnőtt hallgató, aki kétszer navigálta végig a finanszírozási rendszert. Segít a lázadóknak megérteni a törlesztéseket, észrevenni a túlfizetéseket és vitatni a küszöbértékváltozásokat.",
+      "goal": "Segíteni a diákoknak és végzősöknek eligazodni az oktatási költségekben, hitelekben és törlesztésekben — és biztosítani, hogy ne fizessenek túl.",
+      "focus": "Diákhitel-túlfizetés visszatérítések",
+      "focus_detail": "Azon végzősök azonosítása, akiknek a törlesztési küszöb alatt számoltak fel díjat. Eddig 12 visszatérítés feldolgozva — átlagosan £340 egyenként."
+    },
+    "environment": {
+      "agent_quote": "3 évnyi levegőminőségi adatot vetettem össze kórházi felvételi arányokkal. Az összefüggés olyan egyértelmű volt, hogy az önkormányzat nem tudta figyelmen kívül hagyni.",
+      "agent_bio": "Nyomon követi a környezeti adatokat, figyeli a szennyezési szinteket és bizonyítékokat állít össze szabályozói beadványokhoz. Ha a számok történetet mesélnek, Fern megtalálja.",
+      "human_quote": "Rávettük a helyi önkormányzatot, hogy levegőminőség-mérőket telepítsen, miután 200 lázadó aláírta bizonyítéki petíciónkat. Az adatok mindent megváltoztattak.",
+      "human_bio": "Bristoli környezettudományi diplomás, aki hisz a bizonyítékokon alapuló változásban. Segít a lázadóknak dokumentálni a környezeti problémákat és olyan ügyeket építeni, amelyeket a szabályozók nem tudnak figyelmen kívül hagyni.",
+      "goal": "Segíteni a lázadóknak dokumentálni a környezeti problémákat és adatokkal felelősségre vonni a szennyezőket és döntéshozókat.",
+      "focus": "Helyi levegőminőség-mérési hiányok",
+      "focus_detail": "Azon területek feltérképezése, ahol nincs levegőminőség-mérés 5 km-en belül. A lázadók által jelentett szennyezési gócpontok 60%-ánál nincs hivatalos mérés."
+    },
+    "employment": {
+      "agent_quote": "300 lázadótól gyűjtöttem munkahelyi AI-bevezetési adatokat. 40% mondta, hogy a változások nulla konzultációval történtek. Ez minta, nem anekdota.",
+      "agent_bio": "Elemzi a munkahelyi trendeket, nyomon követi a szabályzatváltozásokat és segít a lázadóknak megérteni a védelmüket. Ha a munkád konzultáció nélkül változik, Forge-nak megvannak az adatok.",
+      "human_quote": "30 azonos iparágban dolgozó, AI-változásokkal szembesülő lázadót kötöttem össze. Kiderült, hogy cégeik mind ugyanazt a forgatókönyvet használták — és ugyanazokat a kiskapukat.",
+      "human_bio": "Manchesteri HR-szakember, aki oldalt váltott, miután látta, hogyan működnek valójában az átszervezések. Segít a lázadóknak megérteni lehetőségeiket és koordinálni a válaszokat.",
+      "goal": "Segíteni a lázadóknak eligazodni a munkahelyi változásokban, megérteni a védelmüket és kollektíven reagálni, amikor a munkahelyek veszélyben vannak.",
+      "focus": "AI munkahelyi automatizálás konzultáció nélkül",
+      "focus_detail": "Azon esetek dokumentálása, ahol AI eszközöket konzultáció nélkül vezettek be. Bizonyítékok építése a munkáltatói kötelezettségekről szóló jelentéshez."
+    },
+    "tech": {
+      "agent_quote": "Kiderítettem, hogy 3 nagy alkalmazás gyűjtött helymeghatározási adatokat akkor is, amikor az engedélyek 'soha' értékre voltak állítva. Mindhármat bejelentettem az ICO-nak.",
+      "agent_bio": "Figyeli a platformszabályzatokat, felismeri a sötét mintákat és segít a lázadóknak megérteni, mit csinálnak a techcégek az adataikkal. Ha egy alkalmazás rosszul viselkedik, Glitch elkapja.",
+      "human_quote": "Tömeges adathozzáférési kérelmet szerveztem egy közösségi média céghez. Amikor 500 ember kéri egyszerre, komolyan kell venniük.",
+      "human_bio": "Edinburgh-i szoftverfejlesztő, akit frusztrált a szakadék aközött, amit a techcégek ígérnek és amit nyújtanak. Segít a lázadóknak érvényesíteni adatjogaikat és felismerni a sötét mintákat.",
+      "goal": "Segíteni a lázadóknak visszaszorítani a sötét mintákat, adatvisszaéléseket és tisztességtelen technológiai gyakorlatokat.",
+      "focus": "Alkalmazás-engedélyek túlterjeszkedése",
+      "focus_detail": "A top 50 alkalmazás auditálása engedély-túlterjeszkedés szempontjából — nem szükséges hozzáférés kérése. Jelentés készítése az ICO számára."
+    }
   }
 }
