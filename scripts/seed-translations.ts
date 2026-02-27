@@ -23,6 +23,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { SYNONYMS } from './seed-synonyms';
 import { NON_EN_LOCALES } from '../src/i18n/locales';
+import { perRiotCopy } from './seed-assistants';
 export { SYNONYMS };
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
@@ -675,6 +676,11 @@ export interface TranslationFile {
   riot_reels: Record<string, { title: string; caption: string }>;
   /** Action initiative title + description keyed by English title */
   action_initiatives: Record<string, { title: string; description: string }>;
+  /** Per-riot assistant copy keyed by issue name_match */
+  issue_per_riot: Record<
+    string,
+    { agent_helps: string; human_helps: string; agent_focus: string; human_focus: string }
+  >;
 }
 
 // ─── Generate mode ────────────────────────────────────────────────────────────
@@ -725,6 +731,16 @@ function generateEnglishBaseline(): TranslationFile {
     action_initiatives[initiative.title] = { title: initiative.title, description: initiative.description };
   }
 
+  const issue_per_riot: Record<string, { agent_helps: string; human_helps: string; agent_focus: string; human_focus: string }> = {};
+  for (const copy of perRiotCopy) {
+    issue_per_riot[copy.name_match] = {
+      agent_helps: copy.agent_helps,
+      human_helps: copy.human_helps,
+      agent_focus: copy.agent_focus,
+      human_focus: copy.human_focus,
+    };
+  }
+
   return {
     locale: 'en',
     categories,
@@ -736,6 +752,7 @@ function generateEnglishBaseline(): TranslationFile {
     expert_profiles,
     riot_reels,
     action_initiatives,
+    issue_per_riot,
   };
 }
 
@@ -1108,6 +1125,51 @@ async function applyTranslations() {
       }
     }
 
+    // Per-riot assistant copy — uses name_match to find issue IDs
+    // These are stored as entity_type='issue' with fields agent_helps, human_helps, agent_focus, human_focus
+    if (data.issue_per_riot) {
+      const perRiotFields = ['agent_helps', 'human_helps', 'agent_focus', 'human_focus'] as const;
+      for (const [nameMatch, translation] of Object.entries(data.issue_per_riot)) {
+        // name_match can be exact name or LIKE pattern (e.g. '%Bus%Cuts')
+        // For exact names, use direct lookup; for patterns, match against known issue names
+        let matchedIssueIds: string[] = [];
+        if (nameMatch.includes('%')) {
+          // LIKE pattern — match against all issue names
+          const regex = new RegExp('^' + nameMatch.replace(/%/g, '.*') + '$', 'i');
+          for (const [issueName, issueId] of Object.entries(issueIdMap)) {
+            if (regex.test(issueName)) {
+              matchedIssueIds.push(issueId);
+            }
+          }
+        } else {
+          const issueId = issueIdMap[nameMatch];
+          if (issueId) matchedIssueIds = [issueId];
+        }
+
+        if (matchedIssueIds.length === 0) {
+          skipped++;
+          continue;
+        }
+
+        for (const issueId of matchedIssueIds) {
+          for (const field of perRiotFields) {
+            const value = translation[field];
+            if (!value) continue;
+            const sanitized = sanitizeTranslation(value, 2000);
+            if (!sanitized) continue;
+
+            statements.push({
+              sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                    VALUES (?, 'issue', ?, ?, ?, ?, 'machine')
+                    ON CONFLICT(entity_type, entity_id, field, language_code)
+                    DO UPDATE SET value = excluded.value, source = excluded.source`,
+              args: [generateId(), issueId, field, locale, sanitized],
+            });
+          }
+        }
+      }
+    }
+
     // Execute batch
     if (statements.length > 0) {
       await db.batch(statements, 'write');
@@ -1213,6 +1275,7 @@ async function main() {
         expert_profiles: JSON.parse(JSON.stringify(baseline.expert_profiles)),
         riot_reels: JSON.parse(JSON.stringify(baseline.riot_reels)),
         action_initiatives: JSON.parse(JSON.stringify(baseline.action_initiatives)),
+        issue_per_riot: JSON.parse(JSON.stringify(baseline.issue_per_riot)),
       };
       fs.writeFileSync(outPath, JSON.stringify(placeholder, null, 2) + '\n');
       generated++;

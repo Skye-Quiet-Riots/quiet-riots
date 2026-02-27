@@ -1260,7 +1260,7 @@ interface PerRiotCopy {
   human_focus: string;
 }
 
-const perRiotCopy: PerRiotCopy[] = [
+export const perRiotCopy: PerRiotCopy[] = [
   // ── TRANSPORT ──
   {
     name_match: 'Train Cancellations',
@@ -2008,7 +2008,11 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error('Seed assistants failed:', err);
-  process.exit(1);
-});
+// Only run main when executed directly (not when imported)
+const isMainScript = process.argv[1]?.endsWith('seed-assistants.ts');
+if (isMainScript) {
+  main().catch((err) => {
+    console.error('Seed assistants failed:', err);
+    process.exit(1);
+  });
+}
