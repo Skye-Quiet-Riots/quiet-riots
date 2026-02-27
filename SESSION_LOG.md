@@ -6,12 +6,12 @@
 
 ## Latest Session
 
-**Session 58** (2026-02-27) — Fix Untranslated Assistant UI + Zero Tolerance i18n Rules
-→ [`session-logs/2026-02-session-58.md`](session-logs/2026-02-session-58.md)
+**Session 59** (2026-02-27) — i18n Architecture (All 4 Phases) + Auto-Merge Policy
+→ [`session-logs/2026-02-session-59.md`](session-logs/2026-02-session-59.md)
 
 ## Current Priorities
 
-- **Verify non-English locales on production** — check Spanish/Arabic shows translated assistant banners
+- **Run translation pipeline for new sections** — `npm run translate -- --section actions --section expert_profiles --section riot_reels --section action_initiatives` then `seed-translations.ts --apply`
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 
@@ -19,6 +19,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 59  | 2026-02-27    | i18n Architecture (All 4 Phases) + Auto-Merge Policy  | [`session-59`](session-logs/2026-02-session-59.md)                                                             |
 | 58  | 2026-02-27    | Fix Untranslated Assistant UI + Zero Tolerance i18n   | [`session-58`](session-logs/2026-02-session-58.md)                                                             |
 | 57  | 2026-02-27    | Fix Entity Name Translations + Bot Label Translation  | [`session-57`](session-logs/2026-02-session-57.md)                                                             |
 | 56  | 2026-02-27    | Romanised Locales + Architecture Refactor + Security  | [`session-56`](session-logs/2026-02-session-56.md)                                                             |
