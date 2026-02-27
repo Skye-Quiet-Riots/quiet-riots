@@ -22,6 +22,7 @@ import {
   translateExpertProfiles,
   translateRiotReels,
   translateActionInitiatives,
+  translateCountryBreakdown,
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
@@ -116,7 +117,8 @@ export default async function IssueDetailPage({ params }: Props) {
   const rawExperts = await getExpertProfiles(issue.id);
   const experts = await translateExpertProfiles(rawExperts, locale);
   const feedPosts = await getFeedPosts(issue.id);
-  const countries = await getCountryBreakdown(issue.id);
+  const rawCountries = await getCountryBreakdown(issue.id);
+  const countries = translateCountryBreakdown(rawCountries, locale);
   const rawSynonyms = await getSynonymsForIssue(issue.id);
   const synonyms = await translateSynonyms(rawSynonyms, locale);
   const rawReels = await getReelsForIssue(issue.id);

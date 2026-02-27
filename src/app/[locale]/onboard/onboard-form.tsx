@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 import { CATEGORIES, CATEGORY_EMOJIS } from '@/types';
 import type { Category } from '@/types';
@@ -61,6 +61,7 @@ type Step = 'interests' | 'language' | 'country';
 export function OnboardForm() {
   const { status } = useSession();
   const t = useTranslations('Onboarding');
+  const locale = useLocale();
   const router = useRouter();
   const [step, setStep] = useState<Step>('interests');
   const [selectedInterests, setSelectedInterests] = useState<Category[]>([]);
@@ -87,7 +88,7 @@ export function OnboardForm() {
   useEffect(() => {
     async function loadCountries() {
       try {
-        const res = await fetch('/api/countries');
+        const res = await fetch(`/api/countries?locale=${locale}`);
         if (res.ok) {
           const data = await res.json();
           if (data.ok) setCountries(data.data);

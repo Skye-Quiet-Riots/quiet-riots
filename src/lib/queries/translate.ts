@@ -1,5 +1,5 @@
 import { getEntityTranslations, getTranslatedEntities } from './translations';
-import type { Action, CategoryAssistant, ExpertProfile, IssuePivotRow, RiotReel, Synonym } from '@/types';
+import type { Action, CategoryAssistant, CountryBreakdown, ExpertProfile, IssuePivotRow, RiotReel, Synonym } from '@/types';
 
 /**
  * Overlay DB translations onto entity objects (issues, organisations).
@@ -296,4 +296,58 @@ export async function translateCategoryAssistants<
 
     return { ...assistant, ...overlay };
   });
+}
+
+/**
+ * Translate a country code to a localised display name using Intl.DisplayNames.
+ * Zero DB rows needed — uses the built-in Node.js API.
+ *
+ * For romanised (-Latn) locales, falls back to English since Intl.DisplayNames
+ * returns native script characters for those locales.
+ */
+export function translateCountryName(code: string, locale: string): string {
+  if (locale === 'en') return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+
+  // Romanised locales get native script from Intl.DisplayNames — fall back to English
+  const effectiveLocale = locale.endsWith('-Latn') ? 'en' : locale;
+
+  try {
+    const dn = new Intl.DisplayNames([effectiveLocale], { type: 'region' });
+    return dn.of(code) ?? code;
+  } catch {
+    // Fallback to English if locale not supported
+    return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+  }
+}
+
+/**
+ * Translate an array of country objects (code + name) to localised names.
+ * Uses Intl.DisplayNames — no DB query needed.
+ */
+export function translateCountryNames<T extends { code: string; name: string }>(
+  countries: T[],
+  locale: string,
+): T[] {
+  if (locale === 'en' || countries.length === 0) return countries;
+
+  return countries.map((country) => ({
+    ...country,
+    name: translateCountryName(country.code, locale),
+  }));
+}
+
+/**
+ * Translate country names in CountryBreakdown objects (used on issue detail pages).
+ * Uses Intl.DisplayNames — no DB query needed.
+ */
+export function translateCountryBreakdown(
+  countries: CountryBreakdown[],
+  locale: string,
+): CountryBreakdown[] {
+  if (locale === 'en' || countries.length === 0) return countries;
+
+  return countries.map((country) => ({
+    ...country,
+    country_name: translateCountryName(country.country_code, locale),
+  }));
 }

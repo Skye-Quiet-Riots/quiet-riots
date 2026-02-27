@@ -8,6 +8,9 @@ import {
   translateRiotReels,
   translateIssuePivotRows,
   translateOrgPivotRows,
+  translateCountryName,
+  translateCountryNames,
+  translateCountryBreakdown,
 } from './translate';
 
 // Mock the translations query module
@@ -388,5 +391,96 @@ describe('translateOrgPivotRows', () => {
     const result = await translateOrgPivotRows(rows, 'de');
     expect(result[0].rioter_count).toBe(1000);
     expect(result[1].rioter_count).toBe(500);
+  });
+});
+
+// ─── Country translation tests (no DB mock needed — uses Intl.DisplayNames) ─
+
+describe('translateCountryName', () => {
+  it('returns English name for en locale', () => {
+    const result = translateCountryName('GB', 'en');
+    expect(result).toBe('United Kingdom');
+  });
+
+  it('returns translated name for non-English locale', () => {
+    const result = translateCountryName('GB', 'de');
+    expect(result).toBe('Vereinigtes Königreich');
+  });
+
+  it('returns translated name for French', () => {
+    const result = translateCountryName('US', 'fr');
+    expect(result).toBe('États-Unis');
+  });
+
+  it('falls back to English for romanised locales', () => {
+    // -Latn locales should get English since Intl.DisplayNames returns native script
+    const result = translateCountryName('IN', 'bn-Latn');
+    expect(result).toBe('India');
+  });
+
+  it('returns the code if Intl.DisplayNames returns undefined', () => {
+    // Invalid codes should fall back gracefully
+    const result = translateCountryName('XX', 'en');
+    // Intl.DisplayNames.of() returns undefined for unknown codes
+    expect(typeof result).toBe('string');
+  });
+});
+
+describe('translateCountryNames', () => {
+  it('short-circuits for en locale', () => {
+    const countries = [{ code: 'GB', name: 'United Kingdom' }];
+    const result = translateCountryNames(countries, 'en');
+    expect(result).toBe(countries); // Same reference — no translation
+  });
+
+  it('short-circuits for empty array', () => {
+    const result = translateCountryNames([], 'de');
+    expect(result).toEqual([]);
+  });
+
+  it('translates country names for non-English locale', () => {
+    const countries = [
+      { code: 'GB', name: 'United Kingdom' },
+      { code: 'FR', name: 'France' },
+    ];
+    const result = translateCountryNames(countries, 'es');
+    expect(result[0].name).toBe('Reino Unido');
+    expect(result[1].name).toBe('Francia');
+  });
+
+  it('preserves other properties', () => {
+    const countries = [{ code: 'DE', name: 'Germany', extra: 42 }];
+    const result = translateCountryNames(countries, 'fr');
+    expect(result[0].code).toBe('DE');
+    expect((result[0] as { extra: number }).extra).toBe(42);
+  });
+});
+
+describe('translateCountryBreakdown', () => {
+  it('short-circuits for en locale', () => {
+    const countries = [
+      { id: '1', issue_id: 'i1', country_code: 'GB', country_name: 'United Kingdom', rioter_count: 100 },
+    ];
+    const result = translateCountryBreakdown(countries, 'en');
+    expect(result).toBe(countries);
+  });
+
+  it('translates country_name field', () => {
+    const countries = [
+      { id: '1', issue_id: 'i1', country_code: 'JP', country_name: 'Japan', rioter_count: 50 },
+    ];
+    const result = translateCountryBreakdown(countries, 'de');
+    expect(result[0].country_name).toBe('Japan'); // Japan is the same in German
+    expect(result[0].rioter_count).toBe(50);
+  });
+
+  it('translates multiple countries', () => {
+    const countries = [
+      { id: '1', issue_id: 'i1', country_code: 'US', country_name: 'United States', rioter_count: 200 },
+      { id: '2', issue_id: 'i1', country_code: 'DE', country_name: 'Germany', rioter_count: 100 },
+    ];
+    const result = translateCountryBreakdown(countries, 'fr');
+    expect(result[0].country_name).toBe('États-Unis');
+    expect(result[1].country_name).toBe('Allemagne');
   });
 });
