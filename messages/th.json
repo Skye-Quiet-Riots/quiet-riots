@@ -96,15 +96,15 @@
     "active": "กำลังดำเนินการ",
     "target": "เป้าหมาย",
     "raised": "ผูกพันแล้ว",
-    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
+    "backers": "{count, plural, one {ผู้เข้าร่วม} other {ผู้เข้าร่วม}}",
     "platformFee": "ค่าบริการ",
     "topUpFirst": "เติมเงินในกระเป๋าก่อนเพื่อเริ่มต้น",
     "createAccountPrompt": "สร้างบัญชีและเติมเงินเพื่อจ้างบริการนี้",
     "goToWallet": "ไปที่กระเป๋าเงิน",
     "createAccount": "สร้างบัญชี",
-    "completedMessage": "โครงการนี้{status}แล้ว ขอบคุณผู้สนับสนุนทั้ง {count} คน!",
+    "completedMessage": "โครงการนี้{status}แล้ว ขอบคุณผู้เข้าร่วมทั้ง {count} คน!",
     "recipient": "ผู้ให้บริการ",
-    "wantToSupport": "ต้องการสนับสนุนโครงการนี้ไหม?"
+    "wantToSupport": "ต้องการจ้างบริการนี้ไหม?"
   },
   "Assistants": {
     "title": "ผู้ช่วย",
@@ -322,7 +322,7 @@
     "aiPick": "AI เลือก",
     "funded": "บรรลุเป้าหมายแล้ว",
     "disbursed": "เสร็จสมบูรณ์",
-    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
+    "backers": "{count, plural, one {ผู้เข้าร่วม} other {ผู้เข้าร่วม}}",
     "aiAndHuman": "AI Agent & ผู้จัดการที่เป็นคน",
     "riots": "{count, plural, one {Quiet Riot} other {Quiet Riots}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ โครงการปฏิบัติการ",
     "funded": "บรรลุเป้าหมายแล้ว",
     "disbursed": "เสร็จสมบูรณ์",
-    "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}"
+    "backers": "{count, plural, one {ผู้เข้าร่วม} other {ผู้เข้าร่วม}}"
   },
   "WalletBalance": {
     "title": "ยอดเงินของคุณ",
@@ -448,12 +448,12 @@
     "success": "ชำระ {amount} ให้ {actionInitiative} แล้ว!",
     "remainingBalance": "ยอดเงินคงเหลือ: {balance}",
     "topUpPrompt": "เติมเงินในกระเป๋า",
-    "toKeepSupporting": "เพื่อสนับสนุนโครงการปฏิบัติการต่อไป",
+    "toKeepSupporting": "เพื่อจ้างบริการต่อไป",
     "walletEmpty": "กระเป๋าเงินของคุณว่างเปล่า",
     "topUp": "เติมเงิน",
     "minPayment": "ชำระขั้นต่ำ 10p",
-    "supportProject": "สนับสนุนโครงการนี้",
-    "toSupport": "เพื่อสนับสนุนโครงการ"
+    "supportProject": "จ้างบริการนี้",
+    "toSupport": "เพื่อจ้างบริการ"
   },
   "Claim": {
     "success": "ขอบคุณ! เราบันทึกความสนใจของคุณในบทบาท {name} แล้ว เราจะติดต่อกลับ",

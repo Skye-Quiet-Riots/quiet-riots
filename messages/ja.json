@@ -96,15 +96,15 @@
     "active": "進行中",
     "target": "目標",
     "raised": "確約済み",
-    "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
+    "backers": "{count, plural, one {人の参加者} other {人の参加者}}",
     "platformFee": "サービス手数料",
     "topUpFirst": "まずウォレットにチャージして始めましょう。",
     "createAccountPrompt": "アカウントを作成してウォレットにチャージし、このサービスを委託しましょう。",
     "goToWallet": "ウォレットへ",
     "createAccount": "アカウント作成",
-    "completedMessage": "このプロジェクトは{status}されました。{count} 人の支援者の皆さん、ありがとうございます！",
+    "completedMessage": "このサービスは{status}されました。{count} 人の参加者の皆さん、ありがとうございます！",
     "recipient": "サービス提供者",
-    "wantToSupport": "このプロジェクトを支援しませんか？"
+    "wantToSupport": "このサービスを委託しませんか？"
   },
   "Assistants": {
     "title": "アシスタント",
@@ -322,7 +322,7 @@
     "aiPick": "AI おすすめ",
     "funded": "目標達成",
     "disbursed": "完了",
-    "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
+    "backers": "{count, plural, one {人の参加者} other {人の参加者}}",
     "aiAndHuman": "AI エージェント＆人間のオーガナイザー",
     "riots": "{count, plural, one {件の Quiet Riot} other {件の Quiet Riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ アクションプロジェクト",
     "funded": "目標達成",
     "disbursed": "完了",
-    "backers": "{count, plural, one {人の支援者} other {人の支援者}}"
+    "backers": "{count, plural, one {人の参加者} other {人の参加者}}"
   },
   "WalletBalance": {
     "title": "あなたの残高",
@@ -448,12 +448,12 @@
     "success": "{actionInitiative} に {amount} を支払いました！",
     "remainingBalance": "残りの残高：{balance}",
     "topUpPrompt": "ウォレットにチャージ",
-    "toKeepSupporting": "してアクションプロジェクトの支援を続けましょう。",
+    "toKeepSupporting": "してサービスの委託を続けましょう。",
     "walletEmpty": "ウォレットが空です。",
     "topUp": "チャージ",
     "minPayment": "最低支払額は 10p です",
-    "supportProject": "このプロジェクトを支援する",
-    "toSupport": "してプロジェクトを支援しましょう。"
+    "supportProject": "このサービスを委託する",
+    "toSupport": "してサービスを委託しましょう。"
   },
   "Claim": {
     "success": "ありがとうございます！{name} の役割への関心を承りました。追ってご連絡いたします。",

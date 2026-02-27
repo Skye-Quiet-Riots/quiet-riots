@@ -96,15 +96,15 @@
     "active": "Aktiboa",
     "target": "helburua",
     "raised": "konprometitua",
-    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}",
+    "backers": "{count, plural, one {parte-hartzaile} other {parte-hartzaile}}",
     "platformFee": "zerbitzu-kuota",
     "topUpFirst": "Birkargatu zure zorroa lehenik hasteko.",
     "createAccountPrompt": "Sortu kontu bat eta kargatu zure zorroa zerbitzu hau kontratatzeko.",
     "goToWallet": "Joan zorrora",
     "createAccount": "Sortu kontua",
-    "completedMessage": "Proiektu hau {status} izan da. Eskerrik asko {count} laguntzaile guztiei!",
+    "completedMessage": "Proiektu hau {status} izan da. Eskerrik asko {count} parte-hartzaile!",
     "recipient": "Zerbitzu-hornitzailea",
-    "wantToSupport": "Proiektu hau lagundu nahi duzu?"
+    "wantToSupport": "Zerbitzu hau agindu nahi duzu?"
   },
   "Assistants": {
     "title": "Laguntzaileak",
@@ -322,7 +322,7 @@
     "aiPick": "AI Hautapena",
     "funded": "Helburua Lortua",
     "disbursed": "Osatua",
-    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}",
+    "backers": "{count, plural, one {parte-hartzaile} other {parte-hartzaile}}",
     "aiAndHuman": "AI Agentea eta Giza Antolatzailea",
     "riots": "{count, plural, one {riot} other {riot}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Ekintza-proiektuak",
     "funded": "Helburua Lortua",
     "disbursed": "Osatua",
-    "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}"
+    "backers": "{count, plural, one {parte-hartzaile} other {parte-hartzaile}}"
   },
   "WalletBalance": {
     "title": "Zure Saldoa",
@@ -448,12 +448,12 @@
     "success": "{amount} ordaindu da {actionInitiative}(r)a!",
     "remainingBalance": "Zure gainerako saldoa: {balance}",
     "topUpPrompt": "Birkargatu zure zorroa",
-    "toKeepSupporting": "ekintza-proiektuak laguntzen jarraitzeko.",
+    "toKeepSupporting": "zerbitzuak agintzen jarraitzeko.",
     "walletEmpty": "Zure zorroa hutsik dago.",
     "topUp": "Birkargatu",
     "minPayment": "Gutxieneko ordainketa 10p da",
-    "supportProject": "Lagundu Proiektu Hau",
-    "toSupport": "proiektuak laguntzeko."
+    "supportProject": "Zerbitzu hau agindu",
+    "toSupport": "zerbitzuak agintzeko."
   },
   "Claim": {
     "success": "Eskerrik asko! {name} rolaren zure interesa jaso dugu. Harremanetan jarriko gara.",

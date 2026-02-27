@@ -96,14 +96,14 @@
     "active": "Active",
     "target": "target",
     "raised": "committed",
-    "backers": "{count, plural, one {supporter} other {supporters}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "platformFee": "service fee",
-    "wantToSupport": "Want to support this project?",
+    "wantToSupport": "Want to commission this service?",
     "topUpFirst": "Top up your wallet first to get started.",
     "createAccountPrompt": "Create an account and load your wallet to commission this service.",
     "goToWallet": "Go to wallet",
     "createAccount": "Create account",
-    "completedMessage": "This project has been {status}. Thank you to all {count} supporters!",
+    "completedMessage": "This project has been {status}. Thank you to all {count} participants!",
     "recipient": "Service Provider"
   },
   "Assistants": {
@@ -322,7 +322,7 @@
     "aiPick": "AI Pick",
     "funded": "Goal Reached",
     "disbursed": "Completed",
-    "backers": "{count, plural, one {supporter} other {supporters}}",
+    "backers": "{count, plural, one {participant} other {participants}}",
     "aiAndHuman": "AI Agent & Human Organiser",
     "riots": "{count, plural, one {riot} other {riots}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Action Projects",
     "funded": "Goal Reached",
     "disbursed": "Completed",
-    "backers": "{count, plural, one {supporter} other {supporters}}"
+    "backers": "{count, plural, one {participant} other {participants}}"
   },
   "WalletBalance": {
     "title": "Your Balance",
@@ -441,7 +441,7 @@
   "Pay": {
     "insufficientFunds": "Insufficient funds. Top up your wallet first.",
     "minPayment": "Minimum payment is 10p",
-    "supportProject": "Support This Project",
+    "supportProject": "Commission This Service",
     "yourBalance": "Your balance: ",
     "networkError": "Network error. Please try again.",
     "invalidAmount": "Enter a valid amount",
@@ -450,10 +450,10 @@
     "success": "Paid {amount} towards {actionInitiative}!",
     "remainingBalance": "Your remaining balance: {balance}",
     "topUpPrompt": "Top up your wallet",
-    "toKeepSupporting": "to keep supporting action projects.",
+    "toKeepSupporting": "to keep commissioning services.",
     "walletEmpty": "Your wallet is empty.",
     "topUp": "Top up",
-    "toSupport": "to support projects."
+    "toSupport": "to commission services."
   },
   "Claim": {
     "success": "Thanks! We've noted your interest in the {name} role. We'll be in touch.",

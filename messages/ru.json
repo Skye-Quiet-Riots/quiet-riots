@@ -96,15 +96,15 @@
     "active": "Активная",
     "target": "цель",
     "raised": "подтверждено",
-    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}",
+    "backers": "{count, plural, one {участник} other {участников}}",
     "platformFee": "сервисный сбор",
     "topUpFirst": "Сначала пополни кошелёк, чтобы начать.",
     "createAccountPrompt": "Создай аккаунт и пополни кошелёк, чтобы заказать эту услугу.",
     "goToWallet": "Перейти в кошелёк",
     "createAccount": "Создать аккаунт",
-    "completedMessage": "Этот проект {status}. Спасибо всем {count} участникам!",
+    "completedMessage": "Этот проект {status}. Спасибо всем {count} участников!",
     "recipient": "Поставщик услуг",
-    "wantToSupport": "Хочешь поддержать этот проект?"
+    "wantToSupport": "Хотите заказать эту услугу?"
   },
   "Assistants": {
     "title": "Помощники",
@@ -322,7 +322,7 @@
     "aiPick": "Выбор ИИ",
     "funded": "Цель достигнута",
     "disbursed": "Завершено",
-    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}",
+    "backers": "{count, plural, one {участник} other {участников}}",
     "aiAndHuman": "ИИ-агент и человек-организатор",
     "riots": "{count, plural, one {riot} few {riots} many {riots} other {riots}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Проекты действий",
     "funded": "Цель достигнута",
     "disbursed": "Завершено",
-    "backers": "{count, plural, one {участник} few {участника} many {участников} other {участников}}"
+    "backers": "{count, plural, one {участник} other {участников}}"
   },
   "WalletBalance": {
     "title": "Твой баланс",
@@ -448,12 +448,12 @@
     "success": "Оплачено {amount} за {actionInitiative}!",
     "remainingBalance": "Остаток на балансе: {balance}",
     "topUpPrompt": "Пополни кошелёк",
-    "toKeepSupporting": "чтобы продолжить поддерживать проекты действий.",
+    "toKeepSupporting": "чтобы продолжать заказывать услуги.",
     "walletEmpty": "Твой кошелёк пуст.",
     "topUp": "Пополнить",
     "minPayment": "Минимальный платёж — 10p",
-    "supportProject": "Поддержать этот проект",
-    "toSupport": "чтобы поддержать проекты."
+    "supportProject": "Заказать эту услугу",
+    "toSupport": "чтобы заказывать услуги."
   },
   "Claim": {
     "success": "Спасибо! Мы зафиксировали твой интерес к роли {name}. Мы свяжемся с тобой.",

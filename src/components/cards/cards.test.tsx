@@ -363,7 +363,7 @@ describe('ActionInitiativeCard', () => {
     expect(screen.getByText('Avanti Legal Review')).toBeDefined();
   });
 
-  it('shows progress and supporter count', async () => {
+  it('shows progress and participant count', async () => {
     const el = await ActionInitiativeCard({ actionInitiative: makeActionInitiative() });
     render(el);
     expect(screen.getByText(/£310.*£1,000/)).toBeDefined();

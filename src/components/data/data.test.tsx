@@ -327,7 +327,7 @@ describe('ActionInitiativeProgress', () => {
     expect(screen.getByText(/31%/)).toBeDefined();
     // ICU plural not parsed by mock — check count and raw plural string separately
     expect(screen.getByText(/42/)).toBeDefined();
-    expect(screen.getByText(/supporter/)).toBeDefined();
+    expect(screen.getByText(/participant/)).toBeDefined();
   });
 
   it('shows goal_reached badge', async () => {
@@ -338,13 +338,13 @@ describe('ActionInitiativeProgress', () => {
     expect(screen.getByText('Goal Reached')).toBeDefined();
   });
 
-  it('shows backer text for single supporter', async () => {
+  it('shows backer text for single participant', async () => {
     const el = await ActionInitiativeProgress({
       actionInitiatives: [makeActionInitiative({ supporter_count: 1 })],
     });
     render(el);
     // The mock doesn't parse ICU plurals, so the rendered text includes the raw ICU string
-    expect(screen.getByText(/1.*supporter/)).toBeDefined();
+    expect(screen.getByText(/1.*participant/)).toBeDefined();
   });
 
   it('formats pence amounts correctly', async () => {

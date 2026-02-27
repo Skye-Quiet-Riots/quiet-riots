@@ -96,15 +96,15 @@
     "active": "Aktivna",
     "target": "cilj",
     "raised": "zagotovljeno",
-    "backers": "{count, plural, one {podpornik} other {podpornikov}}",
+    "backers": "{count, plural, one {udeleženec} other {udeležencev}}",
     "platformFee": "storitvena pristojbina",
     "topUpFirst": "Najprej napolni denarnico, da začneš.",
     "createAccountPrompt": "Ustvari račun in napolni denarnico za naročilo te storitve.",
     "goToWallet": "Pojdi na denarnico",
     "createAccount": "Ustvari racun",
-    "completedMessage": "Ta projekt je bil {status}. Hvala vsem {count} podpornikom!",
+    "completedMessage": "Ta projekt je bil {status}. Hvala vsem {count} udeležencem!",
     "recipient": "Ponudnik storitev",
-    "wantToSupport": "Želiš podpreti ta projekt?"
+    "wantToSupport": "Želiš naročiti to storitev?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -322,7 +322,7 @@
     "aiPick": "Izbor AI",
     "funded": "Cilj dosežen",
     "disbursed": "Zaključeno",
-    "backers": "{count, plural, one {podpornik} other {podpornikov}}",
+    "backers": "{count, plural, one {udeleženec} other {udeležencev}}",
     "aiAndHuman": "AI Agent in Cloveski organizator",
     "riots": "{count, plural, one {riot} other {riotov}}"
   },
@@ -356,7 +356,7 @@
     "title": "⚡ Akcijski projekti",
     "funded": "Cilj dosežen",
     "disbursed": "Zaključeno",
-    "backers": "{count, plural, one {podpornik} other {podpornikov}}"
+    "backers": "{count, plural, one {udeleženec} other {udeležencev}}"
   },
   "WalletBalance": {
     "title": "Tvoj saldo",
@@ -448,12 +448,12 @@
     "success": "Plačano {amount} za {actionInitiative}!",
     "remainingBalance": "Preostali saldo: {balance}",
     "topUpPrompt": "Napolni denarnico",
-    "toKeepSupporting": "za nadaljnje podpiranje akcijskih projektov.",
+    "toKeepSupporting": "za nadaljnje naročanje storitev.",
     "walletEmpty": "Tvoja denarnica je prazna.",
     "topUp": "Napolni",
     "minPayment": "Najnižje plačilo je 10p",
-    "supportProject": "Podpri ta projekt",
-    "toSupport": "za podporo projektov."
+    "supportProject": "Naroči to storitev",
+    "toSupport": "za naročanje storitev."
   },
   "Claim": {
     "success": "Hvala! Zabelezili smo tvoj interes za vlogo {name}. Javili se ti bomo.",
