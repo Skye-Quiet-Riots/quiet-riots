@@ -354,6 +354,243 @@ export const ORGANISATIONS: { name: string; description: string }[] = [
   { name: 'Apple', description: 'Technology company' },
 ];
 
+// ─── Category assistant translatable fields (7 fields × 16 categories = 112 strings) ─
+
+interface AssistantTranslation {
+  agent_quote: string;
+  human_quote: string;
+  agent_bio: string;
+  human_bio: string;
+  goal: string;
+  focus: string;
+  focus_detail: string;
+}
+
+export const CATEGORY_ASSISTANTS: Record<string, AssistantTranslation> = {
+  transport: {
+    agent_quote:
+      'Once helped a rioter file 6 refund claims during a single delayed journey. They made £47 before reaching Birmingham.',
+    agent_bio:
+      'Tracks cancellation patterns, handles refund paperwork, reviews every suggested action, and puts together evidence for regulator submissions. Crunches the numbers so rioters can focus on what matters.',
+    human_quote:
+      "My favourite Quiet Riot moment: watching Avanti's social media team scramble when 400 of us tweeted at the same time.",
+    human_bio:
+      "Regular commuter from Manchester who spent 3 years on the Avanti line before deciding enough was enough. Helps connect rioters on the same routes, shares what's working, and brings the human touch.",
+    goal: "Help rioters hold UK transport companies to account on cancellations, delays, and pricing — and make sure everyone knows what they're entitled to.",
+    focus: 'Avanti West Coast cancellation patterns',
+    focus_detail:
+      'Building a dataset of cancellations with times, routes, and reasons to submit to the ORR. Currently tracking 340 cancellations reported by rioters this month.',
+  },
+  telecoms: {
+    agent_quote: 'Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.',
+    agent_bio:
+      'Analyses broadband speeds, compiles provider comparison data, and helps rioters build evidence for Ofcom. If your connection is slow, Pulse will prove it.',
+    human_quote:
+      "A whole street switched broadband together. The old provider sent 'please come back' letters to every house.",
+    human_bio:
+      'Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised. Helps rioters compare providers, coordinate switches, and share speed test evidence.',
+    goal: "Help rioters get the broadband and mobile service they're paying for — and know what to do when they don't.",
+    focus: 'Mid-contract price rises',
+    focus_detail:
+      'Collecting evidence from rioters hit by CPI+ increases to submit to Ofcom. 890 rioters affected across 4 providers.',
+  },
+  energy: {
+    agent_quote:
+      "Helped a rioter calculate they'd overpaid £340 on estimated bills. The energy company's apology email was longer than the original contract.",
+    agent_bio:
+      'Analyses billing patterns, spots overcharges, and puts together evidence for regulator submissions. If your energy company is taking the mick, Spark will find the receipts.',
+    human_quote:
+      'A rioter got £340 back after we proved 2 years of overcharging. She cried on the phone.',
+    human_bio:
+      'Based in Bristol. Helps rioters challenge their bills, navigate switching, and gather evidence for Ofgem. Knows the energy market inside out.',
+    goal: 'Help rioters challenge unfair bills, switch smarter, and make sure energy companies play fair.',
+    focus: 'British Gas estimated billing errors',
+    focus_detail:
+      'Analysing 2 years of billing data from 340 rioters to identify systematic overcharging patterns for Ofgem submission.',
+  },
+  water: {
+    agent_quote:
+      "Helped 200 rioters file sewage reports in one weekend. Thames Water's inbox needed its own inbox.",
+    agent_bio:
+      'Monitors sewage discharge data, tracks water company performance, and compiles evidence for EA and Ofwat. Keeps an eye on every outlet and overflow.',
+    human_quote: 'We got a beach reopened 3 weeks early by showing the sewage data was wrong.',
+    human_bio:
+      'Surfer from Cornwall who got tired of sewage warnings closing his local beach. Helps rioters report discharges, gather water quality evidence, and coordinate with the EA.',
+    goal: 'Help rioters hold water companies to account on sewage, bills, and service quality.',
+    focus: 'Thames Water sewage discharge frequency',
+    focus_detail:
+      'Mapping discharge events against company-reported data. 200 rioter reports suggest under-reporting at 3 outlets.',
+  },
+  banking: {
+    agent_quote:
+      'Helped draft a complaint so thorough the bank called to apologise before it was even sent.',
+    agent_bio:
+      "Reviews bank charges, analyses fee structures, and helps build FCA complaint evidence. If there's a hidden fee, Chip will find it.",
+    human_quote:
+      'Barclays reversed a branch closure after 1,200 of us showed up to the consultation.',
+    human_bio:
+      'Former bank employee from Birmingham who saw how complaints actually get handled from the inside. Helps rioters write better complaints and navigate the system.',
+    goal: 'Help rioters deal with unfair charges, branch closures, and poor service from banks.',
+    focus: 'HSBC branch closure wave',
+    focus_detail:
+      'Coordinating responses to 12 planned closures. Collecting impact statements from affected communities.',
+  },
+  health: {
+    agent_quote:
+      'Helped find 3 NHS dentists accepting patients. The rioter thought I was making it up.',
+    agent_bio:
+      "Tracks waiting times, finds availability, and helps rioters navigate the system. If there's a faster route to treatment, Cura will map it.",
+    human_quote:
+      'A rioter used our letter template to get a referral fast-tracked. 18 months became 6 weeks.',
+    human_bio:
+      "Nurse from Liverpool who's seen both sides of the NHS. Helps rioters navigate waiting lists, write effective letters, and share what actually moves the needle.",
+    goal: 'Help rioters navigate NHS waiting times, find availability, and know what options they have.',
+    focus: 'GP telephone access times',
+    focus_detail:
+      'Collecting call data from 500 rioters to build a picture of real-world access. Publishing findings to local health boards.',
+  },
+  housing: {
+    agent_quote:
+      'Helped document 47 snags in a new build. The developer asked if they were a building inspector.',
+    agent_bio:
+      'Documents property issues, analyses landlord response times, and compiles evidence for housing ombudsman submissions. Every damp patch, every crack, logged.',
+    human_quote:
+      'Our damp evidence pack got so detailed the landlord fixed it before the council inspection.',
+    human_bio:
+      "Renter from London who's dealt with everything from damp to dodgy landlords. Helps rioters document issues properly and know what their options are.",
+    goal: "Help rioters deal with landlords, councils, and housing issues — and know what they're entitled to.",
+    focus: 'Section 21 no-fault eviction notices',
+    focus_detail:
+      'Helping rioters affected by no-fault evictions understand the new Renters Reform Act and what it means for them.',
+  },
+  shopping: {
+    agent_quote:
+      "Tracked a 'delivered' parcel across 4 neighbours, a recycling bin, and a greenhouse. Found it.",
+    agent_bio:
+      'Tracks delivery failures, compiles refund evidence, and spots pricing patterns. If your parcel is lost, Scout is already looking.',
+    human_quote:
+      'Evri lost my parcel 3 times. Now I help others get their refunds faster than I ever did.',
+    human_bio:
+      "Online shopping veteran from Edinburgh who's had more parcels go missing than she can count. Helps rioters get refunds, report sellers, and avoid the worst offenders.",
+    goal: 'Help rioters get refunds, track lost parcels, and hold retailers and delivery companies to account.',
+    focus: 'Evri delivery failure rates',
+    focus_detail:
+      'Compiling delivery failure evidence from 800 rioters to submit to Citizens Advice and Trading Standards.',
+  },
+  local: {
+    agent_quote:
+      'Helped photograph the same pothole in 11 different weather conditions. The council finally gave in.',
+    agent_bio:
+      'Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.',
+    human_quote:
+      'The council fixed our road after we mapped every single pothole with photos. 11 months, but we got there.',
+    human_bio:
+      "Community-minded Welshman from the Valleys who's been reporting the same potholes for years. Helps rioters document local issues and hold councils to account.",
+    goal: 'Help rioters get local issues fixed — potholes, bins, planning, noise — and hold councils to account.',
+    focus: 'Pothole reporting response times',
+    focus_detail:
+      'FOI requests sent to 30 councils comparing reported vs actual repair times. Publishing results as a league table.',
+  },
+  other: {
+    agent_quote:
+      'Helped cancel a gym membership that took 3 calls, 2 emails, and a recorded delivery. The gym now has a cancel button.',
+    agent_bio:
+      "Handles the issues that don't fit neatly elsewhere. Subscription traps, plastic waste, self-checkout frustrations — Flex finds the patterns and the pressure points.",
+    human_quote:
+      'We got a gym chain to add a cancel button to their website. Only took 800 complaints.',
+    human_bio:
+      'Product designer from London who got frustrated by how hard companies make it to leave. Helps rioters cancel subscriptions, avoid dark patterns, and share workarounds.',
+    goal: "Help rioters with the things that don't fit neatly elsewhere — subscriptions, refunds, and everyday frustrations.",
+    focus: 'Subscription cancellation dark patterns',
+    focus_detail:
+      'Documenting the worst offenders and building template cancellation scripts for each.',
+  },
+  insurance: {
+    agent_quote:
+      "Helped a rioter find the clause that turned a rejected home insurance claim into a £4,200 payout. The insurer's own policy proved them wrong.",
+    agent_bio:
+      'Reviews policy wording, spots unfair rejection patterns, and builds evidence for Financial Ombudsman submissions. If your insurer is dodging a valid claim, Shield will find the leverage.',
+    human_quote:
+      'Got 8 rioters with the same rejected claim type to submit together. The insurer settled all 8 within a fortnight.',
+    human_bio:
+      'Former insurance industry worker from Leeds who knows how claims really get decided. Helps rioters write better appeals, understand policy jargon, and know when to escalate.',
+    goal: 'Help rioters get fair treatment from insurers — and know what to do when a claim is unfairly rejected.',
+    focus: 'Aviva home insurance rejection patterns',
+    focus_detail:
+      "'Wear and tear' cited in 40% of rejected claims — often incorrectly. Analysing 200 cases across 3 insurers for FOS evidence pack.",
+  },
+  delivery: {
+    agent_quote:
+      "Traced a 'delivered' parcel through 6 different tracking statuses, 3 depots, and a neighbour's shed. Found it in 47 minutes.",
+    agent_bio:
+      'Monitors courier performance, tracks delivery failure rates, and compiles evidence for consumer complaints. If your parcel has vanished, Track is already on it.',
+    human_quote:
+      'Got DPD to change their photo-evidence policy in our area after 40 rioters submitted proof of parcels left in the rain.',
+    human_bio:
+      "Online shopper from Glasgow who got tired of the 'we left it in a safe place' excuse. Helps rioters get refunds, report couriers, and avoid the worst offenders.",
+    goal: "Help rioters get their parcels delivered properly — and get refunds when they don't.",
+    focus: 'Evri delivery failure rates',
+    focus_detail:
+      'Compiling delivery failure evidence from 800 rioters. Evri complaint rate: 23% — 3x higher than DPD. Building league table for Trading Standards.',
+  },
+  education: {
+    agent_quote:
+      'Calculated that a Plan 2 borrower earning £30k would pay £47,000 in interest before the loan gets written off. The original loan was £40,000.',
+    agent_bio:
+      'Analyses education costs, student loan projections, and funding entitlements. Crunches the numbers so students and graduates can make informed decisions.',
+    human_quote:
+      "Helped 12 rioters claim back overpaid student loan repayments they didn't know about. Average refund: £340.",
+    human_bio:
+      'Mature student from Birmingham who navigated the funding system twice. Helps rioters understand repayments, spot overpayments, and challenge threshold changes.',
+    goal: "Help students and graduates navigate education costs, loans, and repayments — and make sure they're not overpaying.",
+    focus: 'Student loan overpayment refunds',
+    focus_detail:
+      "Identifying graduates who've been charged below the repayment threshold. 12 refunds processed so far — average £340 each.",
+  },
+  environment: {
+    agent_quote:
+      "Cross-referenced 3 years of air quality data with hospital admission rates. The correlation was so clear the council couldn't ignore it.",
+    agent_bio:
+      'Tracks environmental data, monitors pollution levels, and compiles evidence for regulatory submissions. If the numbers tell a story, Fern will find it.',
+    human_quote:
+      'Got our local council to install air quality monitors after 200 rioters signed our evidence petition. Data changed everything.',
+    human_bio:
+      "Environmental science graduate from Bristol who believes in evidence-led change. Helps rioters document environmental issues and build cases that regulators can't ignore.",
+    goal: 'Help rioters document environmental problems and hold polluters and policymakers to account with data.',
+    focus: 'Local air quality monitoring gaps',
+    focus_detail:
+      'Mapping areas with no air quality monitoring within 5km. 60% of rioter-reported pollution hotspots have no official monitoring.',
+  },
+  employment: {
+    agent_quote:
+      "Compiled workplace AI implementation data from 300 rioters. 40% said changes happened with zero consultation. That's a pattern, not an anecdote.",
+    agent_bio:
+      'Analyses workplace trends, tracks policy changes, and helps rioters understand their protections. If your job is changing without consultation, Forge has the data.',
+    human_quote:
+      'Connected 30 rioters in the same industry facing AI changes. Turns out their companies were all using the same playbook — and the same loopholes.',
+    human_bio:
+      'HR professional from Manchester who switched sides after seeing how restructurings really work. Helps rioters understand their options and coordinate responses.',
+    goal: 'Help rioters navigate workplace changes, understand their protections, and respond collectively when jobs are at risk.',
+    focus: 'AI workplace automation without consultation',
+    focus_detail:
+      'Documenting cases where AI tools were introduced without staff consultation. Building evidence for a report on employer obligations.',
+  },
+  tech: {
+    agent_quote:
+      "Found that 3 major apps were collecting location data even when permissions were set to 'never.' Filed complaints with the ICO for all of them.",
+    agent_bio:
+      'Monitors platform policies, tracks dark patterns, and helps rioters understand what tech companies are doing with their data. If an app is misbehaving, Glitch will catch it.',
+    human_quote:
+      'Organised a mass data subject access request to a social media company. When 500 people ask at once, they have to take it seriously.',
+    human_bio:
+      'Software developer from Edinburgh who got frustrated by the gap between what tech companies promise and what they deliver. Helps rioters exercise their data rights and spot dark patterns.',
+    goal: 'Help rioters push back against dark patterns, data misuse, and unfair tech practices.',
+    focus: 'App permission overreach',
+    focus_detail:
+      "Auditing the top 50 apps for permission creep — requesting access they don't need. Building a report for the ICO.",
+  },
+};
+
 // ─── Translation file structure ───────────────────────────────────────────────
 
 export interface TranslationFile {
@@ -363,6 +600,8 @@ export interface TranslationFile {
   organisations: Record<string, { name: string; description: string }>;
   /** Synonyms keyed by English issue name → array of translated synonym terms */
   synonyms: Record<string, string[]>;
+  /** Category assistant translatable fields keyed by category name */
+  category_assistants?: Record<string, AssistantTranslation>;
 }
 
 // ─── Generate mode ────────────────────────────────────────────────────────────
@@ -388,7 +627,12 @@ function generateEnglishBaseline(): TranslationFile {
     synonyms[issueName] = [...terms];
   }
 
-  return { locale: 'en', categories, issues, organisations, synonyms };
+  const category_assistants: Record<string, AssistantTranslation> = {};
+  for (const [cat, fields] of Object.entries(CATEGORY_ASSISTANTS)) {
+    category_assistants[cat] = { ...fields };
+  }
+
+  return { locale: 'en', categories, issues, organisations, synonyms, category_assistants };
 }
 
 // ─── Apply mode ───────────────────────────────────────────────────────────────
@@ -441,8 +685,15 @@ async function applyTranslations() {
     synonymsByIssue[issueName].push({ id: row.id as string, term: row.term as string });
   }
 
+  // Build assistant lookup: category → id
+  const assistantResult = await db.execute('SELECT id, category FROM category_assistants');
+  const assistantIdMap: Record<string, string> = {};
+  for (const row of assistantResult.rows) {
+    assistantIdMap[row.category as string] = row.id as string;
+  }
+
   console.log(
-    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations, ${synonymResult.rows.length} synonyms`,
+    `DB has ${Object.keys(issueIdMap).length} issues, ${Object.keys(orgIdMap).length} organisations, ${synonymResult.rows.length} synonyms, ${Object.keys(assistantIdMap).length} assistants`,
   );
 
   const { generateId } = await import('../src/lib/uuid');
@@ -542,6 +793,42 @@ async function applyTranslations() {
                   ON CONFLICT(entity_type, entity_id, field, language_code)
                   DO UPDATE SET value = excluded.value, source = excluded.source`,
             args: [generateId(), dbSynonyms[i].id, locale, translatedTerm],
+          });
+        }
+      }
+    }
+
+    // Category assistants — lookup by category to get DB id
+    if (data.category_assistants) {
+      const assistantFields = [
+        'agent_quote',
+        'human_quote',
+        'agent_bio',
+        'human_bio',
+        'goal',
+        'focus',
+        'focus_detail',
+      ] as const;
+
+      for (const [category, translation] of Object.entries(data.category_assistants)) {
+        const assistantId = assistantIdMap[category];
+        if (!assistantId) {
+          skipped++;
+          continue;
+        }
+
+        for (const field of assistantFields) {
+          const value = translation[field];
+          if (!value) continue;
+          const sanitized = sanitizeText(value);
+          if (!sanitized || sanitized.length > 2000) continue;
+
+          statements.push({
+            sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                  VALUES (?, 'category_assistant', ?, ?, ?, ?, 'machine')
+                  ON CONFLICT(entity_type, entity_id, field, language_code)
+                  DO UPDATE SET value = excluded.value, source = excluded.source`,
+            args: [generateId(), assistantId, field, locale, sanitized],
           });
         }
       }

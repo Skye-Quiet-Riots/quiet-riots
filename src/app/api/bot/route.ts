@@ -61,6 +61,7 @@ import {
   translateIssuePivotRows,
   translateOrgPivotRows,
   translateSynonyms,
+  translateCategoryAssistant,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
 import {
@@ -252,9 +253,11 @@ const actionSchemas = {
   }),
   get_category_assistants: z.object({
     category: z.string().min(1, 'Category required').max(50),
+    language_code: langField,
   }),
   get_assistant_detail: z.object({
     category: z.string().min(1, 'Category required').max(50),
+    language_code: langField,
   }),
   check_user_met_assistants: phoneParam,
   record_assistant_introduction: z.object({
@@ -1149,17 +1152,27 @@ export async function POST(request: NextRequest) {
       // ─── Category Assistants ────────────────────────────────
       case 'get_category_assistants': {
         const category = (p.category as string).toLowerCase();
-        const assistant = await getAssistantByCategory(category);
-        if (!assistant) return err('Assistant pair not found', 404);
+        const locale = (p.language_code as string) || 'en';
+        const rawAssistant = await getAssistantByCategory(category);
+        if (!rawAssistant) return err('Assistant pair not found', 404);
+        const assistant = await translateCategoryAssistant(rawAssistant, locale);
         return ok({ assistant });
       }
 
       case 'get_assistant_detail': {
         const category = (p.category as string).toLowerCase();
         trackedAssistantCategory = category;
+        const locale = (p.language_code as string) || 'en';
         const detail = await getAssistantDetail(category);
         if (!detail) return err('Assistant pair not found', 404);
-        return ok({ assistant: detail });
+        const translatedDetail = await translateCategoryAssistant(detail, locale);
+        // Translate embedded issue names in the riots array
+        const translatedRiots = await translateEntities(
+          detail.riots as ((typeof detail.riots)[number] & { description?: string | null })[],
+          'issue',
+          locale,
+        );
+        return ok({ assistant: { ...translatedDetail, riots: translatedRiots } });
       }
 
       case 'check_user_met_assistants': {
