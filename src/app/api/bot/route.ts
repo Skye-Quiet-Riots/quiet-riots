@@ -133,12 +133,13 @@ const queryParam = z.object({ query: z.string().min(1).max(500) });
 
 const actionSchemas = {
   identify: phoneParam,
-  search_issues: queryParam.extend({ language_code: langField }),
+  search_issues: queryParam.extend({ language_code: langField, phone: phoneField.optional() }),
   get_trending: z.object({
     limit: z.number().int().positive().optional(),
     language_code: langField,
+    phone: phoneField.optional(),
   }),
-  get_issue: issueIdParam.extend({ language_code: langField }),
+  get_issue: issueIdParam.extend({ language_code: langField, phone: phoneField.optional() }),
   get_actions: issueIdParam.extend({
     type: z.string().max(50).optional(),
     time: z.string().max(50).optional(),
@@ -155,8 +156,16 @@ const actionSchemas = {
       .max(5000)
       .transform((s) => sanitizeText(s)),
   }),
-  get_org_pivot: z.object({ org_id: idField, language_code: langField }),
-  get_orgs: z.object({ category: z.string().max(50).optional(), language_code: langField }),
+  get_org_pivot: z.object({
+    org_id: idField,
+    language_code: langField,
+    phone: phoneField.optional(),
+  }),
+  get_orgs: z.object({
+    category: z.string().max(50).optional(),
+    language_code: langField,
+    phone: phoneField.optional(),
+  }),
   add_synonym: z.object({
     issue_id: idField,
     term: z
@@ -239,6 +248,7 @@ const actionSchemas = {
     issue_id: idField.optional(),
     status: z.enum(['active', 'goal_reached', 'delivered', 'cancelled']).optional(),
     language_code: langField,
+    phone: phoneField.optional(),
   }),
   get_category_assistants: z.object({
     category: z.string().min(1, 'Category required').max(50),
@@ -756,13 +766,41 @@ export async function POST(request: NextRequest) {
     return user;
   }
 
+  // Helper: resolve locale — explicit language_code > stored user preference > 'en'
+  async function resolveLocale(p: Record<string, unknown>): Promise<string> {
+    if (p.language_code) return p.language_code as string;
+    if (p.phone) {
+      const user = await getUserByPhone(p.phone as string);
+      if (user?.language_code) {
+        log.info(
+          { phone: p.phone, locale: user.language_code },
+          'Locale resolved from stored user preference',
+        );
+        return user.language_code;
+      }
+    }
+    return 'en';
+  }
+
   try {
     switch (action) {
       // ─── User Identity ───────────────────────────────────
       case 'identify': {
         const phone = p.phone as string;
         let user = await getUserByPhone(phone);
-        if (user) trackedUserId = user.id;
+        if (user) {
+          trackedUserId = user.id;
+          // Auto-update language preference if caller passes a different one
+          if (p.language_code && p.language_code !== user.language_code) {
+            const prevLang = user.language_code;
+            const updated = await updateUser(user.id, { language_code: p.language_code as string });
+            if (updated) user = updated;
+            log.info(
+              { userId: user.id, from: prevLang, to: p.language_code },
+              'Language auto-updated on identify',
+            );
+          }
+        }
         if (!user) {
           const digits = phone.replace(/\D/g, '');
           const email = `wa-${digits}@whatsapp.quietriots.com`;
@@ -790,14 +828,14 @@ export async function POST(request: NextRequest) {
 
       // ─── Issue Discovery ─────────────────────────────────
       case 'search_issues': {
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         let issues = await getAllIssues(undefined, p.query as string, undefined, locale);
         issues = await translateEntities(issues, 'issue', locale);
         return ok({ issues });
       }
 
       case 'get_trending': {
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         const limit = (p.limit as number) || 6;
         let issues = await getTrendingIssues(limit);
         issues = await translateEntities(issues, 'issue', locale);
@@ -806,7 +844,7 @@ export async function POST(request: NextRequest) {
 
       case 'get_issue': {
         const issueId = p.issue_id as string;
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         const rawIssue = await getIssueById(issueId);
         if (!rawIssue) return err('Issue not found', 404);
 
@@ -906,7 +944,7 @@ export async function POST(request: NextRequest) {
       // ─── Organisation Pivot ──────────────────────────────
       case 'get_org_pivot': {
         const orgId = p.org_id as string;
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         const rawOrg = await getOrganisationById(orgId);
         if (!rawOrg) return err('Organisation not found', 404);
 
@@ -923,7 +961,7 @@ export async function POST(request: NextRequest) {
 
       case 'get_orgs': {
         const category = p.category as string | undefined;
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         let orgs = await getAllOrganisations(category as never);
         orgs = await translateEntities(orgs, 'organisation', locale);
         return ok({ orgs });
@@ -1102,7 +1140,7 @@ export async function POST(request: NextRequest) {
       case 'get_action_initiatives': {
         const issueId = p.issue_id as string | undefined;
         const status = p.status as import('@/types').ActionInitiativeStatus | undefined;
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         let actionInitiatives = await getActionInitiatives(issueId, status);
         actionInitiatives = await translateActionInitiatives(actionInitiatives, locale);
         return ok({ action_initiatives: actionInitiatives });
