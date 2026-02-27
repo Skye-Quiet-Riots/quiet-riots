@@ -115,7 +115,7 @@ export function PayForm({
   }
 
   return (
-    <AuthGate action="support this action project">
+    <AuthGate action="commission this service">
       <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900">
         <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
           {t('supportProject')}
