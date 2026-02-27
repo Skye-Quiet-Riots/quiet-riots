@@ -653,7 +653,7 @@ async function applyTranslations() {
   );
 
   const { generateId } = await import('../src/lib/uuid');
-  const { sanitizeText } = await import('../src/lib/sanitize');
+  const { sanitizeTranslation } = await import('../src/lib/sanitize');
 
   let inserted = 0;
   let skipped = 0;
@@ -671,12 +671,14 @@ async function applyTranslations() {
 
     // Categories (use category name as entity_id since categories aren't a separate table)
     for (const [englishName, translatedName] of Object.entries(data.categories)) {
+      const sanitized = sanitizeTranslation(translatedName, 255);
+      if (!sanitized) continue;
       statements.push({
         sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
               VALUES (?, 'category', ?, 'name', ?, ?, 'machine')
               ON CONFLICT(entity_type, entity_id, field, language_code)
               DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), englishName, locale, translatedName],
+        args: [generateId(), englishName, locale, sanitized],
       });
     }
 
@@ -688,20 +690,26 @@ async function applyTranslations() {
         continue;
       }
 
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'issue', ?, 'name', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), issueId, locale, translation.name],
-      });
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'issue', ?, 'description', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), issueId, locale, translation.description],
-      });
+      const sanitizedName = sanitizeTranslation(translation.name, 255);
+      const sanitizedDesc = sanitizeTranslation(translation.description, 2000);
+      if (sanitizedName) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'issue', ?, 'name', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), issueId, locale, sanitizedName],
+        });
+      }
+      if (sanitizedDesc) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'issue', ?, 'description', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), issueId, locale, sanitizedDesc],
+        });
+      }
     }
 
     // Organisations
@@ -712,20 +720,26 @@ async function applyTranslations() {
         continue;
       }
 
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'organisation', ?, 'name', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), orgId, locale, translation.name],
-      });
-      statements.push({
-        sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
-              VALUES (?, 'organisation', ?, 'description', ?, ?, 'machine')
-              ON CONFLICT(entity_type, entity_id, field, language_code)
-              DO UPDATE SET value = excluded.value, source = excluded.source`,
-        args: [generateId(), orgId, locale, translation.description],
-      });
+      const sanitizedOrgName = sanitizeTranslation(translation.name, 255);
+      const sanitizedOrgDesc = sanitizeTranslation(translation.description, 2000);
+      if (sanitizedOrgName) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'organisation', ?, 'name', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), orgId, locale, sanitizedOrgName],
+        });
+      }
+      if (sanitizedOrgDesc) {
+        statements.push({
+          sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
+                VALUES (?, 'organisation', ?, 'description', ?, ?, 'machine')
+                ON CONFLICT(entity_type, entity_id, field, language_code)
+                DO UPDATE SET value = excluded.value, source = excluded.source`,
+          args: [generateId(), orgId, locale, sanitizedOrgDesc],
+        });
+      }
     }
 
     // Synonyms — match translated terms to English synonym rows by array index
@@ -740,8 +754,8 @@ async function applyTranslations() {
         // Match by array index — translated term[i] corresponds to English synonym[i]
         const count = Math.min(translatedTerms.length, dbSynonyms.length);
         for (let i = 0; i < count; i++) {
-          const translatedTerm = sanitizeText(translatedTerms[i]);
-          if (!translatedTerm || translatedTerm.length > 255) continue;
+          const translatedTerm = sanitizeTranslation(translatedTerms[i], 255);
+          if (!translatedTerm) continue;
 
           statements.push({
             sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)
@@ -776,8 +790,8 @@ async function applyTranslations() {
         for (const field of assistantFields) {
           const value = translation[field];
           if (!value) continue;
-          const sanitized = sanitizeText(value);
-          if (!sanitized || sanitized.length > 2000) continue;
+          const sanitized = sanitizeTranslation(value, 2000);
+          if (!sanitized) continue;
 
           statements.push({
             sql: `INSERT INTO translations (id, entity_type, entity_id, field, language_code, value, source)

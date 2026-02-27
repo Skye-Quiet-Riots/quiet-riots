@@ -1,11 +1,11 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing, rtlLocales } from '@/i18n/routing';
-import type { Locale } from '@/i18n/routing';
+import { routing } from '@/i18n/routing';
 import { NavBar } from '@/components/layout/nav-bar';
 import { Footer } from '@/components/layout/footer';
 import { CookieConsent } from '@/components/interactive/cookie-consent';
+import { HtmlLangSync } from '@/components/layout/html-lang-sync';
 
 type Props = {
   children: React.ReactNode;
@@ -24,16 +24,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
 
-  const dir = rtlLocales.has(locale as Locale) ? 'rtl' : 'ltr';
-
   return (
-    <div dir={dir}>
-      <NextIntlClientProvider>
-        <NavBar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <CookieConsent />
-      </NextIntlClientProvider>
-    </div>
+    <NextIntlClientProvider>
+      <HtmlLangSync />
+      <NavBar />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+      <CookieConsent />
+    </NextIntlClientProvider>
   );
 }
