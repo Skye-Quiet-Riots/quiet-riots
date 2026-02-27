@@ -6,12 +6,10 @@ import { hasRole } from '@/lib/queries/roles';
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
-import { SUPPORTED_LOCALES } from '@/lib/ai';
+import { nonEnLocaleSchema } from '@/i18n/locales';
 
 const regenerateSchema = z.object({
-  locales: z.array(
-    z.enum(SUPPORTED_LOCALES as unknown as [string, ...string[]]),
-  ).min(1, 'At least one locale required'),
+  locales: z.array(nonEnLocaleSchema).min(1, 'At least one locale required'),
 });
 
 /** POST /api/suggestions/[id]/translations/regenerate — regenerate for specific locales */

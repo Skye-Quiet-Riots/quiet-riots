@@ -1,57 +1,12 @@
 import { defineRouting } from 'next-intl/routing';
+import { ALL_LOCALES, RTL_LOCALES } from './locales';
+
+export type { Locale } from './locales';
 
 export const routing = defineRouting({
-  locales: [
-    'en',
-    'es',
-    'fr',
-    'de',
-    'pt',
-    'pt-BR',
-    'it',
-    'nl',
-    'sv',
-    'da',
-    'no',
-    'fi',
-    'pl',
-    'cs',
-    'sk',
-    'hu',
-    'ro',
-    'bg',
-    'hr',
-    'sl',
-    'uk',
-    'ru',
-    'tr',
-    'ar',
-    'he',
-    'fa',
-    'hi',
-    'bn',
-    'ta',
-    'te',
-    'ml',
-    'th',
-    'vi',
-    'id',
-    'ms',
-    'zh-CN',
-    'zh-TW',
-    'ja',
-    'ko',
-    'tl',
-    'sw',
-    'el',
-    'ca',
-    'eu',
-    'gl',
-  ],
+  locales: ALL_LOCALES,
   defaultLocale: 'en',
 });
 
-export type Locale = (typeof routing.locales)[number];
-
-/** RTL locales — Arabic, Hebrew, Farsi */
-export const rtlLocales = new Set<Locale>(['ar', 'he', 'fa']);
+/** RTL locales — Arabic, Hebrew, Farsi. Re-exported from locales.ts. */
+export const rtlLocales = RTL_LOCALES;

@@ -5,13 +5,19 @@ import { saveUserInterests, getUserInterests } from '@/lib/queries/interests';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { CATEGORIES } from '@/types';
+import { isValidLocale } from '@/i18n/locales';
 
 const onboardingSchema = z.object({
   interests: z
     .array(z.enum(CATEGORIES as unknown as [string, ...string[]]))
     .min(1, 'Select at least one interest')
     .max(16),
-  language_code: z.string().min(2).max(10).optional(),
+  language_code: z
+    .string()
+    .min(2)
+    .max(10)
+    .optional()
+    .transform((v) => (v && isValidLocale(v) ? v : undefined)),
   country_code: z.string().length(2).optional(),
 });
 

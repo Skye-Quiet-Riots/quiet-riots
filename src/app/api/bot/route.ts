@@ -108,6 +108,7 @@ import { sanitizeText } from '@/lib/sanitize';
 import { translateToEnglish } from '@/lib/ai';
 import { getDb } from '@/lib/db';
 import { generateId } from '@/lib/uuid';
+import { isValidLocale } from '@/i18n/locales';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
 const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
@@ -771,7 +772,10 @@ export async function POST(request: NextRequest) {
 
   // Helper: resolve locale — explicit language_code > stored user preference > 'en'
   async function resolveLocale(p: Record<string, unknown>): Promise<string> {
-    if (p.language_code) return p.language_code as string;
+    if (p.language_code && typeof p.language_code === 'string') {
+      if (isValidLocale(p.language_code)) return p.language_code;
+      log.warn({ language_code: p.language_code }, 'Invalid language_code, falling back');
+    }
     if (p.phone) {
       const user = await getUserByPhone(p.phone as string);
       if (user?.language_code) {
@@ -790,16 +794,21 @@ export async function POST(request: NextRequest) {
       // ─── User Identity ───────────────────────────────────
       case 'identify': {
         const phone = p.phone as string;
+        // Validate language_code — strip invalid codes silently
+        const validLangCode =
+          typeof p.language_code === 'string' && isValidLocale(p.language_code)
+            ? p.language_code
+            : undefined;
         let user = await getUserByPhone(phone);
         if (user) {
           trackedUserId = user.id;
-          // Auto-update language preference if caller passes a different one
-          if (p.language_code && p.language_code !== user.language_code) {
+          // Auto-update language preference if caller passes a valid different one
+          if (validLangCode && validLangCode !== user.language_code) {
             const prevLang = user.language_code;
-            const updated = await updateUser(user.id, { language_code: p.language_code as string });
+            const updated = await updateUser(user.id, { language_code: validLangCode });
             if (updated) user = updated;
             log.info(
-              { userId: user.id, from: prevLang, to: p.language_code },
+              { userId: user.id, from: prevLang, to: validLangCode },
               'Language auto-updated on identify',
             );
           }
@@ -808,8 +817,7 @@ export async function POST(request: NextRequest) {
           const digits = phone.replace(/\D/g, '');
           const email = `wa-${digits}@whatsapp.quietriots.com`;
           const name = (p.name as string) || 'WhatsApp User';
-          const languageCode = (p.language_code as string) || undefined;
-          user = await createUser({ name, email, phone, language_code: languageCode });
+          user = await createUser({ name, email, phone, language_code: validLangCode });
           trackedUserId = user.id;
         }
         const locale = user.language_code || 'en';
@@ -1036,11 +1044,17 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        // Strip invalid language_code silently
+        const validLang =
+          typeof p.language_code === 'string' && isValidLocale(p.language_code)
+            ? p.language_code
+            : undefined;
+
         const updated = await updateUser(user.id, {
           name: p.name as string | undefined,
           time_available: p.time_available as string | undefined,
           skills: p.skills as string | undefined,
-          language_code: p.language_code as string | undefined,
+          language_code: validLang,
           country_code: p.country_code as string | undefined,
         });
         return ok({ user: updated });
@@ -1152,7 +1166,7 @@ export async function POST(request: NextRequest) {
       // ─── Category Assistants ────────────────────────────────
       case 'get_category_assistants': {
         const category = (p.category as string).toLowerCase();
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         const rawAssistant = await getAssistantByCategory(category);
         if (!rawAssistant) return err('Assistant pair not found', 404);
         const assistant = await translateCategoryAssistant(rawAssistant, locale);
@@ -1162,7 +1176,7 @@ export async function POST(request: NextRequest) {
       case 'get_assistant_detail': {
         const category = (p.category as string).toLowerCase();
         trackedAssistantCategory = category;
-        const locale = (p.language_code as string) || 'en';
+        const locale = await resolveLocale(p);
         const detail = await getAssistantDetail(category);
         if (!detail) return err('Assistant pair not found', 404);
         const translatedDetail = await translateCategoryAssistant(detail, locale);
@@ -1270,11 +1284,13 @@ export async function POST(request: NextRequest) {
       // ─── Language / Country ─────────────────────────────
       case 'set_language': {
         const phone = p.phone as string;
+        const langCode = p.language_code as string;
+        if (!isValidLocale(langCode)) {
+          return err('Unsupported language code', 400);
+        }
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
-        const updated = await updateUser(user.id, {
-          language_code: p.language_code as string,
-        });
+        const updated = await updateUser(user.id, { language_code: langCode });
         return ok({ user: updated, language_code: updated?.language_code });
       }
 

@@ -35,6 +35,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { NON_EN_LOCALES, LOCALE_NAMES } from '../src/i18n/locales';
 
 // Load .env.local if it exists (tsx doesn't auto-load it)
 const envLocalPath = path.resolve(__dirname, '../.env.local');
@@ -55,52 +56,8 @@ if (fs.existsSync(envLocalPath)) {
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
 
-const ALL_LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt',
-  'pt-BR',
-  'it',
-  'nl',
-  'sv',
-  'da',
-  'no',
-  'fi',
-  'pl',
-  'cs',
-  'sk',
-  'hu',
-  'ro',
-  'bg',
-  'hr',
-  'sl',
-  'uk',
-  'ru',
-  'tr',
-  'ar',
-  'he',
-  'fa',
-  'hi',
-  'bn',
-  'ta',
-  'te',
-  'ml',
-  'th',
-  'vi',
-  'id',
-  'ms',
-  'zh-CN',
-  'zh-TW',
-  'ja',
-  'ko',
-  'tl',
-  'sw',
-  'el',
-  'ca',
-  'eu',
-  'gl',
-];
+// All non-English locales from the single source of truth
+const ALL_LOCALES: string[] = [...NON_EN_LOCALES];
 
 const VALID_SECTIONS = [
   'categories',
@@ -111,54 +68,6 @@ const VALID_SECTIONS = [
 ] as const;
 
 type Section = (typeof VALID_SECTIONS)[number];
-
-// Locale display names for better prompts
-const LOCALE_NAMES: Record<string, string> = {
-  ar: 'Arabic',
-  bg: 'Bulgarian',
-  bn: 'Bengali',
-  ca: 'Catalan',
-  cs: 'Czech',
-  da: 'Danish',
-  de: 'German',
-  el: 'Greek',
-  es: 'Spanish',
-  eu: 'Basque',
-  fa: 'Persian/Farsi',
-  fi: 'Finnish',
-  fr: 'French',
-  gl: 'Galician',
-  he: 'Hebrew',
-  hi: 'Hindi',
-  hr: 'Croatian',
-  hu: 'Hungarian',
-  id: 'Indonesian',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  ml: 'Malayalam',
-  ms: 'Malay',
-  nl: 'Dutch',
-  no: 'Norwegian',
-  pl: 'Polish',
-  pt: 'Portuguese (Portugal)',
-  'pt-BR': 'Portuguese (Brazil)',
-  ro: 'Romanian',
-  ru: 'Russian',
-  sk: 'Slovak',
-  sl: 'Slovenian',
-  sv: 'Swedish',
-  sw: 'Swahili',
-  ta: 'Tamil',
-  te: 'Telugu',
-  th: 'Thai',
-  tl: 'Filipino/Tagalog',
-  tr: 'Turkish',
-  uk: 'Ukrainian',
-  vi: 'Vietnamese',
-  'zh-CN': 'Simplified Chinese',
-  'zh-TW': 'Traditional Chinese',
-};
 
 // ─── CLI parsing ────────────────────────────────────────────────────────────
 

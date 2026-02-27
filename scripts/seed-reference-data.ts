@@ -12,58 +12,7 @@
 import { getDb } from '../src/lib/db';
 import { printDbBanner, requireRemoteDb } from './db-safety';
 import { generateId } from '../src/lib/uuid';
-
-// ─── Languages ──────────────────────────────────────────────────────────────
-// 46 languages matching what major social platforms (Instagram/Facebook/X) support
-// Each: [code, English name, native name, direction]
-const LANGUAGES: [string, string, string, 'ltr' | 'rtl'][] = [
-  ['en', 'English', 'English', 'ltr'],
-  ['es', 'Spanish', 'Español', 'ltr'],
-  ['fr', 'French', 'Français', 'ltr'],
-  ['de', 'German', 'Deutsch', 'ltr'],
-  ['pt', 'Portuguese', 'Português', 'ltr'],
-  ['pt-BR', 'Portuguese (Brazil)', 'Português (Brasil)', 'ltr'],
-  ['it', 'Italian', 'Italiano', 'ltr'],
-  ['nl', 'Dutch', 'Nederlands', 'ltr'],
-  ['sv', 'Swedish', 'Svenska', 'ltr'],
-  ['da', 'Danish', 'Dansk', 'ltr'],
-  ['no', 'Norwegian', 'Norsk', 'ltr'],
-  ['fi', 'Finnish', 'Suomi', 'ltr'],
-  ['pl', 'Polish', 'Polski', 'ltr'],
-  ['cs', 'Czech', 'Čeština', 'ltr'],
-  ['sk', 'Slovak', 'Slovenčina', 'ltr'],
-  ['hu', 'Hungarian', 'Magyar', 'ltr'],
-  ['ro', 'Romanian', 'Română', 'ltr'],
-  ['bg', 'Bulgarian', 'Български', 'ltr'],
-  ['hr', 'Croatian', 'Hrvatski', 'ltr'],
-  ['sl', 'Slovenian', 'Slovenščina', 'ltr'],
-  ['uk', 'Ukrainian', 'Українська', 'ltr'],
-  ['ru', 'Russian', 'Русский', 'ltr'],
-  ['tr', 'Turkish', 'Türkçe', 'ltr'],
-  ['ar', 'Arabic', 'العربية', 'rtl'],
-  ['he', 'Hebrew', 'עברית', 'rtl'],
-  ['fa', 'Persian', 'فارسی', 'rtl'],
-  ['hi', 'Hindi', 'हिन्दी', 'ltr'],
-  ['bn', 'Bengali', 'বাংলা', 'ltr'],
-  ['ta', 'Tamil', 'தமிழ்', 'ltr'],
-  ['te', 'Telugu', 'తెలుగు', 'ltr'],
-  ['ml', 'Malayalam', 'മലയാളം', 'ltr'],
-  ['th', 'Thai', 'ไทย', 'ltr'],
-  ['vi', 'Vietnamese', 'Tiếng Việt', 'ltr'],
-  ['id', 'Indonesian', 'Bahasa Indonesia', 'ltr'],
-  ['ms', 'Malay', 'Bahasa Melayu', 'ltr'],
-  ['zh-CN', 'Chinese (Simplified)', '简体中文', 'ltr'],
-  ['zh-TW', 'Chinese (Traditional)', '繁體中文', 'ltr'],
-  ['ja', 'Japanese', '日本語', 'ltr'],
-  ['ko', 'Korean', '한국어', 'ltr'],
-  ['tl', 'Filipino', 'Filipino', 'ltr'],
-  ['sw', 'Swahili', 'Kiswahili', 'ltr'],
-  ['el', 'Greek', 'Ελληνικά', 'ltr'],
-  ['ca', 'Catalan', 'Català', 'ltr'],
-  ['eu', 'Basque', 'Euskara', 'ltr'],
-  ['gl', 'Galician', 'Galego', 'ltr'],
-  ['sr', 'Serbian', 'Српски', 'ltr'],
-];
+import { LANGUAGES } from '../src/i18n/locales';
 
 // ─── Countries ──────────────────────────────────────────────────────────────
 // All 249 ISO 3166-1 countries

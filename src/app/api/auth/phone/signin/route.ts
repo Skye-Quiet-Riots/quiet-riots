@@ -6,6 +6,7 @@ import { getUserByPhone, createUser } from '@/lib/queries/users';
 import { getDb } from '@/lib/db';
 import { setSession } from '@/lib/session';
 import { sendEmail } from '@/lib/email';
+import { isValidLocale } from '@/i18n/locales';
 
 const signinSchema = z.object({
   phone: z
@@ -15,7 +16,11 @@ const signinSchema = z.object({
   code: z.string().length(6, 'Code must be 6 digits'),
   name: z.string().optional(), // For new user creation
   email: z.string().email().optional(), // For new user creation
-  language_code: z.string().max(10).optional(),
+  language_code: z
+    .string()
+    .max(10)
+    .optional()
+    .transform((v) => (v && isValidLocale(v) ? v : undefined)),
   country_code: z.string().max(3).optional(),
 });
 

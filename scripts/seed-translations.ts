@@ -22,57 +22,13 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { SYNONYMS } from './seed-synonyms';
+import { NON_EN_LOCALES } from '../src/i18n/locales';
 export { SYNONYMS };
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
 
-// All non-English locales from src/i18n/routing.ts
-const ALL_LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt',
-  'pt-BR',
-  'it',
-  'nl',
-  'sv',
-  'da',
-  'no',
-  'fi',
-  'pl',
-  'cs',
-  'sk',
-  'hu',
-  'ro',
-  'bg',
-  'hr',
-  'sl',
-  'uk',
-  'ru',
-  'tr',
-  'ar',
-  'he',
-  'fa',
-  'hi',
-  'bn',
-  'ta',
-  'te',
-  'ml',
-  'th',
-  'vi',
-  'id',
-  'ms',
-  'zh-CN',
-  'zh-TW',
-  'ja',
-  'ko',
-  'tl',
-  'sw',
-  'el',
-  'ca',
-  'eu',
-  'gl',
-];
+// All non-English locales from the single source of truth
+const ALL_LOCALES: string[] = [...NON_EN_LOCALES];
 
 // ─── Source content to translate ──────────────────────────────────────────────
 
