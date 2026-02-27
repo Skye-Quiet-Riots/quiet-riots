@@ -1,0 +1,876 @@
+{
+  "locale": "bg-Latn",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telekomunikatsii",
+    "Banking": "Bankirane",
+    "Health": "Zdraveopazvane",
+    "Education": "Obrazovanie",
+    "Environment": "Okolna sreda",
+    "Energy": "Energetika",
+    "Water": "Vodosnabdyavane",
+    "Insurance": "Zastrakhovane",
+    "Housing": "Zhilishta",
+    "Shopping": "Pazaruvane",
+    "Delivery": "Dostavka",
+    "Local": "Mestni",
+    "Employment": "Zaetost",
+    "Tech": "Tekhnologii",
+    "Other": "Drugo"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Otmenyavane na Vlakove",
+      "description": "Vlakove otmeneni ili silno zakusneli bez dostatuchno predizvestie ili kompensatsiya"
+    },
+    "Train Ticket Prices": {
+      "name": "Tseni na Zhelezopatni Bileti",
+      "description": "Zhelezopatni tarifi tvurde skupi, uvelicheniya nad inflatsiyata, neposledovatelno tsenoobrazuvane"
+    },
+    "Flight Delays": {
+      "name": "Zakusneniya na Poleti",
+      "description": "Poleti zakusneni ili otmeneni, losha komunikatsiya, trudnost pri iskane na kompensatsiya"
+    },
+    "Lost Luggage": {
+      "name": "Zagubeni Bagazhi",
+      "description": "Chanti ne pristigat na destinatsiyata, bavno prosledyavane, nedostatuchna kompensatsiya"
+    },
+    "Bus Route Cuts": {
+      "name": "Sakrashtavane na Avtobusni Marshuti",
+      "description": "Marshuti otmeneni, chestota namalena, selski obshtnosti gubat dostup do avtobus"
+    },
+    "Pothole Damage": {
+      "name": "Sheti ot Dupki",
+      "description": "Dupki povrezhdavat prevozni sredstva i zastrashavatvelosipedisti, obshtini bavno remontitat"
+    },
+    "Parking Fines": {
+      "name": "Globi za Parkirane",
+      "description": "Nespravedlivi chastni taksi za parkirane, agresivno prilazhane, sburchava signalizatsiya"
+    },
+    "Fuel Prices": {
+      "name": "Tseni na Gorivo",
+      "description": "Tsenite na benzin i dizel tvurde visoki, bavno spadat kogato edrokupnite padat"
+    },
+    "Broadband Speed": {
+      "name": "Skorost na Internet",
+      "description": "Internet skorosti mnogo pod reklamiranite i plateni"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Zoni bez Mobilen Signal",
+      "description": "Nyama mobilen signal v domove, rabotni mesta ili po transportni marshruti"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Pokachvane na Tsenite po Vreme na Dogovor",
+      "description": "Smetki za telefon, internet i TV se uvelichavat po vreme na zaklyucheni dogovori"
+    },
+    "Customer Service Hold Times": {
+      "name": "Vreme za Chakane na Klientska Podkrepa",
+      "description": "Chasove na chakane da se svarzhesh s chovek"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Trudnost pri Otkaz ot Abonamenti",
+      "description": "Kompaniite pravyat umishleno trudno da se otkazhesh ili otpishesh"
+    },
+    "Roaming Charges": {
+      "name": "Taksi za Rouming",
+      "description": "Neochaqvani mobilni taksi pri putuvane v chuzhbina, pokachvane na tsenite sled Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Razhodi za Energiya",
+      "description": "Smetki za gaz i elektrichestvo neposileno, tavanite na tsenite vse oshte tvurde visoki"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Netochni Smetki za Energiya",
+      "description": "Greshni otcheti, prekaleno nachislyavane, greshki v fakturiraneto"
+    },
+    "Water Bill Increases": {
+      "name": "Uvelichenie na Smetki za Voda",
+      "description": "Smetkite za voda rastat rezko, dokato kachestvoto na uslugata namalyava"
+    },
+    "Sewage in Rivers": {
+      "name": "Kanalizatsiya v Reki",
+      "description": "Vodosnabditelni kompanii izkhvurlyat surova kanalizatsiya vav vodni putishta i plazhone"
+    },
+    "Power Cuts": {
+      "name": "Prekusvania na Tok",
+      "description": "Prekusvaniua na elektrozahranvaneto, bavno vuzstanovyavane, nedostatuchna kompensatsiya"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemi s Umnite Broychi",
+      "description": "Umnite broychi ne rabotyat, gubuat funktsionalnost sled smyana na dostavchik"
+    },
+    "Bank Branch Closures": {
+      "name": "Zatvaruane na Bankovi Klonove",
+      "description": "Mestni bankovi klonove se zatvaruat, ostavuat obshtnostite bez dostur"
+    },
+    "Hidden Bank Charges": {
+      "name": "Skriti Bankovi Taksi",
+      "description": "Neochaqvani taksi za overdrafti, chuzhdi tranzaktsii, poddurzhane na smetka"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Zagubi ot Izmami i Izneveri",
+      "description": "Bankite otkazvat da obeztetyat zhertvi na izmami i avtorizirani transaktsii"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Otkazi na Zastrahovatelni Iskania",
+      "description": "Iskaniua otkhvurleni po texnicheski prichini sled godini plashchane na premii"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Shok ot Lihvi po Ipoteki",
+      "description": "Fiksiran lihven protsent izticha i se preminava kam mnogo po-visok promenliv protsent"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Taksi za Chuzhdi Prevodi",
+      "description": "Prekaleni taksi i loshi valutni kursove za mezhdunarodni parichni prevodi"
+    },
+    "NHS Waiting Times": {
+      "name": "Vreme za Chakane v NHS",
+      "description": "Mesetsi ili godini chakane za operatsii i spetsialistni pregledi"
+    },
+    "GP Appointment Access": {
+      "name": "Dostur do Sreshi pri Semeen Lekar",
+      "description": "Ne mozhe da se svarzhesh da zakazhesh sresha pri semeen lekar, sedmitsi chakane"
+    },
+    "Dentist Availability": {
+      "name": "Nalichnost na Zubolekari",
+      "description": "Nevuzmozhno e da namerish NHS zubolekar, koyto pgiema novi patsienti"
+    },
+    "Mental Health Service Waits": {
+      "name": "Chakane za Uslugi za Psihichno Zdrave",
+      "description": "Mesetsi chakane za terapiua i podkrera za psihichno zdrave"
+    },
+    "Prescription Costs": {
+      "name": "Razhodi za Retsepti",
+      "description": "Tsenata za edinitsa tvurde visoka v Angliya, nedosledovatelnost mezhdu stranite na UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Taksi za Parkirane v Bolnitsi",
+      "description": "Plashchane za parkirane v bolnitsa dokato si bolen ili poseschavash bolen rodnina"
+    },
+    "Rent Increases": {
+      "name": "Uvelicheniya na Naemi",
+      "description": "Chastni naemi rastat mnogo nad inflatsiyata, zaplaha ot izborcvane bez vina"
+    },
+    "Council Tax Rises": {
+      "name": "Uvelicheniya na Obshtinski Danutsi",
+      "description": "Godishni uvelicheniya na obshtinski danutsi, dokato mestnite uslugi stavat po-loshi"
+    },
+    "Noisy Neighbours": {
+      "name": "Shumni Susedi",
+      "description": "Postoyanno shumno smushtenie, obshtini bavno deystvat, vliae vurkhu psihichnoto zdrave"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Promeni v Subiraneto na Smet",
+      "description": "Namaleno subirane na kofi, sburchavi pravila za retsiklirane, prepulneni koshove"
+    },
+    "Planning Permission Abuse": {
+      "name": "Zloupotreba s Stroitelni Razresheniya",
+      "description": "Nezhelani stroitelstva odobreni, zelena zona zastrashena, obshtnostvoto ignorirano"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Vlaga i Mukhlen v Zhilishcha",
+      "description": "Naemodateli i zhilishchni asotsiatsii ne uspuavat da popravuat vlaga i mukhlen"
+    },
+    "Delivery Problems": {
+      "name": "Problemi s Dostavki",
+      "description": "Koleti zagubeni, ostaveni na duzhd, markirani kato dostaveni, no ne polucheni"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Produkti stavat po-malki, dokato tsenite ostavat sushtite ili rastat"
+    },
+    "Refund Difficulties": {
+      "name": "Trudnosti pri Vrushtane na Pari",
+      "description": "Kompanii pravuat vrushtaniya i vrustaniya na pari nenuzhno trudni"
+    },
+    "Fake Reviews": {
+      "name": "Falshivi Retsenzii",
+      "description": "Ne mozhe da se vuarva na onlayn retsenzii, falshivi pozitivni retsenzii zabluzhdavat potrebitelite"
+    },
+    "Subscription Traps": {
+      "name": "Kapani s Abonamenti",
+      "description": "Bezplatni periodi se prevrushtat v plateni bez uasno sugasie, trudno za otkazvane"
+    },
+    "Food Quality Decline": {
+      "name": "Vloshavane na Kachestvoto na Khrana",
+      "description": "Gotovi yastiua s po-losho kachestvo, po-malki portsii, poveche dobavki"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustratsiua ot Samoobsluzhtane",
+      "description": "Mashini za samoobsluzhtane nenadezhdni, zamestuavat choveshki personal"
+    },
+    "Cost of Childcare": {
+      "name": "Razhodi za Grizhi za Detsa",
+      "description": "Razhodi za grizhi za detsa izkluchitelno skupi, ogranichavat vazmozhnostta da se raboti"
+    },
+    "Student Loan Repayment": {
+      "name": "Izgrazhdane na Studentski Zaemi",
+      "description": "Zavurshili plashtat nazad desetiletiua, promeni v praga i lihvite"
+    },
+    "Dog Fouling": {
+      "name": "Kusheshki Izprazhneniua",
+      "description": "Kucheshki izprazhneniua v obshtestveni prostranstva, parkove i trotoari ne sa pochisteni"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Zamestyava Raboti",
+      "description": "Trevozhnost ot izkustven intelekt, koyto avtomatizira raboti bez podkrera za prekhod"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britanski zhelezopaten operator, obsluzhvasht West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britanski zhelezopaten operator, obsluzhvasht London i yuga"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britanski zhelezopaten operator, obsluzhvasht severna Angliya"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britanski dalekoboen zhelezopaten operator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britanski zhelezopaten operator, obsluzhvasht trans-Peninski marshruti"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britanski zhelezopaten operator, obsluzhvasht East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Niskobudzheten evropeyski avioperevozchik"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britanski niskobudzheten avioperevozchik"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Natsionalna aviokompaniya na Velikobritaniya"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Kompaniya za pochivki i patuvanya"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Golyam britanski dostavchik na internet i mobilna vrazka"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britanski dostavchik na internet, TV i mobilna vrazka"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britanski dostavchik na TV, internet i mobilna vrazka"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Globalna telekomunikatsionna kompaniya s sedalishte vo Velikobritaniya"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britanski mobilen operator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britanski dostavchik na internet i telefon"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britanski dostavchik na energiya"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britanski dostavchik na energiya"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britanski dostavchik na energiya (s frenska sobstvenost)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britanski dostavchik na vazobnovyaema energiya"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britanski dostavchik na energiya"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britanski dostavchik na energiya (s germanska sobstvenost)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Kompaniya za voda i kanalizatsiya za London i dolinata na Temza"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vodna kompaniya za yuga na Angliya"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vodna kompaniya za severozapadna Angliya"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vodna kompaniya za Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vodna kompaniya za Iztochna Angliya"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britanska mezhdunarodna banka"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Globalni bankovi i finansovi uslugi"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britanska banka za fizicheski i yuridicheski litsa"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britanska bankova grupa"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britanska banka (s ispanska sobstvenost)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digitalno bankirane i fintekh"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britanski zastrahovatelni i finansovi uslugi"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britanska avtomobilna i domashna zastrahovka"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britanska zastrahovatelna kompaniya"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Globalna elektronna targoviya i tehnologii"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britanska poshtenska sluzhba"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britanska sluzhba za dostavka na koleti (bivshe Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britanska sluzhba za dostavka na koleti"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britanska veriga supermarketi"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britanska veriga supermarketi"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Natsionalna zdravna sluzhba za Angliya"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Zubolekarski uslugi na NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Chastna zdravna kompaniya"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britanski mestni pravitelstveni organi"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britanski stroitel na zhilishta"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britanska onlayn platforma za naemane"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Stryming usluga za zabavlenie"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Tehnologichna kompaniya"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "vlak otmenen",
+      "otmenen vlak",
+      "otmenyavane na vlak",
+      "vlakove ne kursirat",
+      "otmenyavane na vlak",
+      "usluga otmenena",
+      "zakasneniya na vlakove",
+      "zakasnen vlak",
+      "vlakove se zakasnyavat",
+      "zakasnen vlak",
+      "zakasneniya na vlakove"
+    ],
+    "Train Ticket Prices": [
+      "tseni na vlakove bileti",
+      "tseni na bileti",
+      "skupi vlakove",
+      "tseni za vlakove"
+    ],
+    "Flight Delays": [
+      "let zakasnen",
+      "samolet zakasnen",
+      "let otmenen",
+      "zakasneniya na letishte",
+      "blokiran na letishte",
+      "let se zakasnya"
+    ],
+    "Lost Luggage": [
+      "lipsvashi chanti",
+      "izgubena chanta",
+      "chantite ne sa pristignaIi",
+      "lipsvasha chanta",
+      "bagaj ne e na lentata",
+      "chanta izgubena ot aviokompaniyata"
+    ],
+    "Bus Route Cuts": [
+      "namalyavane na avtobusi",
+      "namalyavane na marshruti",
+      "zakrivane na avtobusni linii"
+    ],
+    "Broadband Speed": [
+      "bavarno internet",
+      "bavno wifi",
+      "wifi bavno",
+      "skorost na internet",
+      "internet ne raboti",
+      "buferirane",
+      "internet postoyano pada",
+      "wifi otpada"
+    ],
+    "Mobile Signal Dead Zones": [
+      "nyama signal",
+      "nyama priemane",
+      "myartva zona za mobilen",
+      "myartva zona za signal"
+    ],
+    "Price Rises Mid-Contract": [
+      "uvelichenie na smetka po vreme na dogovor",
+      "pokachvane na tseni po dogovor",
+      "uvelichenie po vreme na dogovor"
+    ],
+    "Customer Service Hold Times": [
+      "na chakane",
+      "chakam na telefon",
+      "ne moga da se svarzha",
+      "nikoy ne otgovaria",
+      "opazhka po telefona",
+      "kol tsentar"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "ne moga da otkazha",
+      "trudno e da otkazha",
+      "otkajvane na abonament",
+      "otpisvane"
+    ],
+    "Energy Bill Costs": [
+      "smetka za gaz mnogo visoka",
+      "smetka za tok",
+      "tseni na energiya",
+      "razhodi za otoplenie",
+      "energiyna bednost",
+      "ne moga da si pozvolya energiya"
+    ],
+    "Inaccurate Energy Bills": [
+      "greshna smetka za energiya",
+      "greshno otcheteno",
+      "nadplatena energiya"
+    ],
+    "Water Bill Increases": [
+      "taksi za voda",
+      "taksa za voda",
+      "smetka za voda mnogo visoka"
+    ],
+    "Sewage in Rivers": [
+      "izkhvarliane na kanalizatsiya",
+      "surova kanalizatsiya",
+      "kanalizatsiya na plazh",
+      "zamarsyavane na voda",
+      "prelivane na kanalizatsiya",
+      "kombiniran preliv"
+    ],
+    "Hidden Bank Charges": [
+      "neochakvani taksi",
+      "skriti taksi",
+      "iznenadvashti taksi",
+      "taksi za overdraft",
+      "bankovi taksi"
+    ],
+    "Fraud and Scam Losses": [
+      "izmamen",
+      "bankova izmama",
+      "platejno izmalnichestvo",
+      "odobrena izmama"
+    ],
+    "Bank Branch Closures": [
+      "zakrivane na klonove",
+      "mestnata banka zakriya",
+      "nyama banka nablizo"
+    ],
+    "Insurance Claim Rejections": [
+      "otkazana pretentsiya",
+      "zastrahovkata ne plashta",
+      "otkhvarlena pretentsiya"
+    ],
+    "NHS Waiting Times": [
+      "chakane za NHS",
+      "list na chakashti",
+      "chakane za operatsiya",
+      "vreme za chakane v bolnitsa",
+      "chakane za naspravyane",
+      "chakane za operatsiya"
+    ],
+    "GP Appointment Access": [
+      "ne moga da poluchq chas pri obshtopraktikuvasht lekar",
+      "chas pri lekar",
+      "opazhka po telefona pri lekar",
+      "ne moga da vidya lekar",
+      "telefonna navalitsa v 8 sutrinra"
+    ],
+    "Dentist Availability": [
+      "NHS zabolyekar",
+      "ne moga da nameryq zabolyekar",
+      "list na chakashti za zabolyekar"
+    ],
+    "Mental Health Service Waits": [
+      "finansirane na psihichno zdrave",
+      "dostap do terapiya",
+      "chakane za konsultirane",
+      "chakane za CAMHS"
+    ],
+    "Prescription Costs": [
+      "tseni na lekarstva",
+      "tseni na medikamenti",
+      "taksi v aptekata"
+    ],
+    "Delivery Problems": [
+      "izgubena pratiha",
+      "pratiha ne e dostavena",
+      "ostavena na duzhd",
+      "otkradnata pratiha",
+      "dostavchik",
+      "propusnata dostavka"
+    ],
+    "Rent Increases": [
+      "naem mnogo visok",
+      "naemot se kachva",
+      "naematel uvelichava naem",
+      "izselenie bez vina"
+    ],
+    "Parking Fines": [
+      "globa za parking",
+      "taksa za parking",
+      "PCN",
+      "nespravedliva globa za parking"
+    ],
+    "Shrinkflation": [
+      "po-malki portsii",
+      "po-malko za sasata tsena",
+      "opakovka po-malka",
+      "namalevavasht produkti"
+    ],
+    "Pothole Damage": [
+      "dupki na patya",
+      "povreda na pat",
+      "shteta na kola ot dupka"
+    ],
+    "Council Tax Rises": [
+      "uvelichenie na mesten danak",
+      "mesten danak mnogo visok",
+      "mesten danak"
+    ],
+    "Damp and Mould in Housing": [
+      "mukhal v kashta",
+      "vlazhen apartament",
+      "cherna mukhal",
+      "nekachestven jilisht"
+    ],
+    "Student Loan Repayment": [
+      "studenstki zaemi",
+      "taksi za obuchenie",
+      "obrazovatelen dalg",
+      "studentski dalg"
+    ],
+    "AI Replacing Jobs": [
+      "avtomatizatsiya na rabota",
+      "AI zema raboti",
+      "roboti zamenyavat rabotnitsi"
+    ],
+    "Roaming Charges": [
+      "smetka za telefon na pochivka",
+      "taksi za danni v chuzhbina",
+      "taksi za telefon v chuzhbina"
+    ],
+    "Smart Meter Problems": [
+      "umen broych schupan",
+      "broych ne raboti",
+      "broych zagubi signal"
+    ],
+    "Subscription Traps": [
+      "kapan s bezplaten proben period",
+      "avtomatichno poddavane",
+      "tarifiran sled proben period"
+    ],
+    "Fuel Prices": [
+      "tseni na benzin",
+      "tseni na dizel",
+      "tsena na gorivo",
+      "benzin mnogoskap"
+    ],
+    "Power Cuts": [
+      "spirane na tok",
+      "praskachane na tok",
+      "zatamnenie",
+      "nyama tok",
+      "prekasavane na tok"
+    ],
+    "Mortgage Rate Shock": [
+      "uvelichenie na ipoteka",
+      "lihva po ipoteka",
+      "preipotekuvane",
+      "fiksirana lihva izticha"
+    ],
+    "Overseas Transfer Fees": [
+      "taksi za prevod",
+      "izprashtane na pari v chuzhbina",
+      "taksi za remitens",
+      "tsena na bankov prevod"
+    ],
+    "Hospital Parking Charges": [
+      "parking v bolnitsa",
+      "parking pri bolnitsa",
+      "NHS parking"
+    ],
+    "Noisy Neighbours": [
+      "jalba za shum",
+      "shum ot sasedi",
+      "shumni sasedi",
+      "shumova proplavyane"
+    ],
+    "Rubbish Collection Changes": [
+      "sabiranje na konteineri",
+      "konteineri ne sa sabirani",
+      "barkotiya s retsilikrane",
+      "propusnato sabiranje na konteineri"
+    ],
+    "Planning Permission Abuse": [
+      "razreshitelno za stroitelstvo",
+      "nejelano zastroivane",
+      "zelena zona",
+      "razreshenie za stroitelstvo"
+    ],
+    "Refund Difficulties": [
+      "ne moga da poluchq vaztrashtane",
+      "otkazano vaztrashtane",
+      "otkazan vatarsh",
+      "vratshane na pari"
+    ],
+    "Fake Reviews": [
+      "manipulatsiya na otzivi",
+      "plateni otzivi",
+      "falshiv trust pilot",
+      "falshiv otziv"
+    ],
+    "Food Quality Decline": [
+      "kachestvo na hrana",
+      "gotovo yastie po-losho",
+      "hranitelni dobavki",
+      "portsiya po-malka"
+    ],
+    "Self-Checkout Frustration": [
+      "samoobtsuzhvane",
+      "samoobtsuzhvane",
+      "nyama kasi s personel",
+      "mashina ne raboti"
+    ],
+    "Cost of Childcare": [
+      "tsena na detska grijua",
+      "taksi za detska gradina",
+      "detska grijua skapa",
+      "tsena na detska grijua"
+    ],
+    "Dog Fouling": [
+      "kuchiski izmett",
+      "kuchiski izmett",
+      "kuchiski otpadatsi",
+      "zamarsyavane"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Vednazh pomognah na edin rioter da podade 6 pretentsii za vazstanovyavane po vreme na edno zabaveno patuvane. Specheli £47 predi da stigne do Birmingham.",
+      "agent_bio": "Sledva shemi na anulirane, obrabotva dokumenti za vazstanovyavane, preglezda vsyako predlozheno deistvie i podgotya dokazatelstva za podavane do regulatora. Obrabotvya tsifrite, za da mogat rioters da se fokusirat varhu tova koeto e vazhno.",
+      "human_quote": "Lyubimiyat mi Quiet Riot moment: gledane kak ekipat na Avanti v sotsialnite mrezhi se metashe, kogato 400 ot nas tvitnaha po edno i sasho vreme.",
+      "human_bio": "Redoven patuvashtk ot Manchester, koito prekara 3 godini po liniyata na Avanti, predi da reshi che stiga tolkova. Pomaga da se svarzhat rioters po ednakvi marshruti, spolya tova koeto raboti i vnasya choveshkiya dodir.",
+      "goal": "Pomogni na rioters da darzhat UK transportnite kompanii ogovorni za anulirane, zabavyaniya i tsenoobrazvane — i da se uverit che vseki znae na kakvo ima pravo.",
+      "focus": "Shemi na anulirane pri Avanti West Coast",
+      "focus_detail": "Izgrazhdane na baza danni ot anulirane s chaszve, marshruti i prichini za podavane do ORR. V momenta sledya 340 anuliraniya dokladvani ot rioters tozi mesetz."
+    },
+    "telecoms": {
+      "agent_quote": "Napravih testove za skorost za 200 rioters. Srednata beshe 18 Mbps. Te plashtaha za 65.",
+      "agent_bio": "Analizira skorosti na internet, sabira danni za sravnenie na dostavchitsi i pomaga na rioters da izgradyat dokazatelstva za Ofcom. Ako vraskata ti e bavna, Pulse shte go dokazhe.",
+      "human_quote": "Tsyala ulitsa smeni internet zaedno. Stariat dostavchik izprati pisma 'molya varnete se' do vseki dom.",
+      "human_bio": "Tehnologicheski podkovan londonets, koito se otegosti ot plashtane za internet skorosti, koito nikoga ne se poyaviha. Pomaga na rioters da sravnyavat dostavchitsi, koordinira smyani i spolya dokazatelstva ot testove za skorost.",
+      "goal": "Pomogni na rioters da poluchat internet i mobilnata usluga za koito plashtat — i da znayat kakvo da pravyat, kogato ne gi poluchat.",
+      "focus": "Povishavaniya na tseni po vreme na dogovor",
+      "focus_detail": "Sabirane na dokazatelstva ot rioters zasegnati ot CPI+ uvelicheniya za podavane do Ofcom. 890 rioters zasegnati v 4 dostavchika."
+    },
+    "energy": {
+      "agent_quote": "Pomognah na edin rioter da izchisli che e preplatil £340 po otsenocni smetki. Izvinitelniyat email na energoinata kompaniya beshe po-dalag ot originalniya dogovor.",
+      "agent_bio": "Analizira shemi na fakturirane, zabyelyazva nadplashtaniya i podgotya dokazatelstva za podavane do regulatora. Ako energoinata ti kompaniya te mami, Spark shte nameri dokazatelstvata.",
+      "human_quote": "Edin rioter poluchi £340 nazad, sled kato dokazhame 2 godini nadplashtane. Tya place po telefona.",
+      "human_bio": "Baziran v Bristol. Pomaga na rioters da osparyvat smetkite si, da navigirat smyanata i da sabirat dokazatelstva za Ofgem. Poznava energiiniya pazar otvatra i otvatarte.",
+      "goal": "Pomogni na rioters da osparyvat nespravedlivi smetki, da smenyat po-umno i da se uverit che energoinite kompanii igrayat chesno.",
+      "focus": "Greshki v otsenochnoto fakturirane na British Gas",
+      "focus_detail": "Analizirane na 2 godini danni za fakturirane ot 340 rioters za identifitsirane na sistematichni shemi na nadplashtane za podavane do Ofgem."
+    },
+    "water": {
+      "agent_quote": "Pomognah na 200 rioters da podadat dokladi za kanalizatsiya prez edin uikend. Poshtata na Thames Water se nuzhdaeshe ot sobstvena poshta.",
+      "agent_bio": "Sledva danni za ispuskane na kanalizatsiya, sledva rabotata na vodosnabditelni kompanii i sabira dokazatelstva za EA i Ofwat. Darzi oko varhu vseki izkhod i prelivane.",
+      "goal": "Pomogni na rioters da darzhat vodosnabditelni kompanii otgovorni za kanalizatsiya, smetki i kachestvo na uslugata.",
+      "human_quote": "Poluchihme plazha otvoren 3 sedmitsi po-rano, kato pokazahme che dannite za kanalizatsiyata beha greshni.",
+      "human_bio": "Sarfarist ot Cornwall, koito se umori ot preduprezhdeniya za kanalizatsiya, zatvarshi mestniya mu plazh. Pomaga na rioters da dokladvat ispuskaniya, da sabirat dokazatelstva za kachestvo na vodata i da koordinitat s EA.",
+      "focus": "Chestota na ispuskane na kanalizatsiya ot Thames Water",
+      "focus_detail": "Kartirane na sbitiya na ispuskane sreshtu dokladvanite ot kompaniyata danni. 200 doklada ot rioters pokazvat pod-dokladvane na 3 izhoda."
+    },
+    "banking": {
+      "agent_quote": "Pomognah da se napisha zhalba tolkova zadalbochena, che bankata se obadi da se izvini predi dori da e bila izpratena.",
+      "agent_bio": "Preglezda bankovi taksi, analizira strukturi na taksi i pomaga da se izgradyat dokazatelstva za zhalba do FCA. Ako ima skrita taksa, Chip shte ya nameri.",
+      "human_quote": "Barclays ottegliha zatvaryaneto na klon, sled kato 1,200 ot nas se poyavihme na konsultatsiyata.",
+      "human_bio": "Bivsh sluzitel na banka ot Birmingham, koito vižda kak zhalbi vsashnost se obrabotvat otvatre. Pomaga na rioters da pishat po-dobri zhalbi i da navigirat sistemata.",
+      "goal": "Pomogni na rioters da se spravyat s nespravedlivi taksi, zatvaryaniya na klonove i losha usluga ot banki.",
+      "focus": "Valna na zatvaryaniya na klonove na HSBC",
+      "focus_detail": "Koordinirane na otgovori kam 12 planiralni zatvaryania. Sabirane na izkazvanya za vazdeistvie ot zasegnati obshtnosti."
+    },
+    "health": {
+      "agent_quote": "Pomognah da se namerit 3 NHS zubolekari, koito priemhat patsienti. Rioterst misleshe che izmisliam.",
+      "agent_bio": "Sledva vremena za chakane, namira nalichnost i pomaga na rioters da navigirat sistemata. Ako ima po-bark pat kam lechenie, Cura shte go kartirar.",
+      "human_quote": "Edin rioter izpolzva nashiya shablon za pismo, za da poluchi napravlenie barzo. 18 mesetza stanahte 6 sedmitsi.",
+      "human_bio": "Meditsinska sestra ot Liverpool, koyato e vizhdata i dvete strani na NHS. Pomaga na rioters da navigirat redove za chakane, da pishat efektivni pisma i da spolyat tova koeto naistina dvizhi iglata.",
+      "goal": "Pomogni na rioters da navigirat NHS vremena za chakane, da nameryat nalichnost i da znayat kakvi optsii imat.",
+      "focus": "Vremena za dostap do obshtopraktikuvashtii lekari po telefon",
+      "focus_detail": "Sabirane na danni za obazhdaniya ot 500 rioters za izgrazhdane na kartina na realnia dostagp. Publikuvane na otkritiya kam mestni zdravni saveti."
+    },
+    "housing": {
+      "agent_quote": "Pomognah da se dokumentirat 47 defekti v nova sgrada. Razvivashta se popita dali sa stroitelen inspektor.",
+      "agent_bio": "Dokumentira problemi s imoti, analizira vremena za otgovor na naemateli i sabira dokazatelstva za podavane do zhilishten ombudsman. Vsyaka vlaga, vsyaka puknatina, registrirani.",
+      "human_quote": "Nashiyat paket s dokazatelstva za vlaga stana tolkova podroben, che naematelat go popraví predi obshtiniskata inspektsiya.",
+      "human_bio": "Naematel ot London, koito se e spravyal s vsichko ot vlaga do saemnitelni naemateli. Pomaga na rioters da dokumentirat problemi pravilno i da znaat kakvi sa optsiite im.",
+      "goal": "Pomogni na rioters da se spravyat s naemateli, obshtini i zhilishtni problemi — i da znayat na kakvo imat pravo.",
+      "focus": "Sektsiya 21 izvisitelni zapevedi bez vina",
+      "focus_detail": "Pomagane na rioters zasegnati ot izvisitelni zapovedi bez vina da razberat noviya Renters Reform Act i kakvo znachi za tyah."
+    },
+    "shopping": {
+      "agent_quote": "Sledih 'dostavena' pratenika prez 4 sasedi, edin kosh za retsiklirane i edna oranzheriya. Nameriz go.",
+      "agent_bio": "Sledva neuspeshni dostavki, sabira dokazatelstva za vazstanovyavane i zabyelyazva tsenovi shemi. Ako pratikata ti e zagubena, Scout veche tarsi.",
+      "human_quote": "Evri zagubi pratenicata mi 3 pati. Sega pomogam na drugi da poluchavat vazstanovyavaniyata si po-barzo, otkolkoto az kogato slagoh.",
+      "human_bio": "Veteran na onlain pazaruvane ot Edinburgh, koyato e imala poveche zagubeni pratenici, otkolkoto mozhe da broi. Pomaga na rioters da poluchavat vazstanovyavaniya, da dokladrat prodavachi i da izbegnat nai-loshite.",
+      "goal": "Pomogni na rioters da poluchavat vazstanovyavaniya, da sledyat zagubeni pratenici i da darzhat maloprodavachi i dostavni kompanii otgovorni.",
+      "focus": "Procenti na neuspeshni dostavki pri Evri",
+      "focus_detail": "Sabirane na dokazatelstva za neuspeshni dostavki ot 800 rioters za podavane do Citizens Advice i Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Pomognah da se snime edna i sashta dupka pri 11 razlichni vremenski usloviya. Obshtinata nakraya se predade.",
+      "agent_bio": "Kartirar mestni problemi, sledva vremena za otgovor na obshtini i sabira FOI zayavki. Ako dupkata ti e tam 6 mesetza, Link ima dokazatelstvata.",
+      "human_quote": "Obshtinata popravi nashiya pat, sled kato kartirahme vsyaka edna dupka s snimki. 11 mesetza, no stignahme tam.",
+      "human_bio": "Obshtnostno nastroen valisetz ot Valleys, koito dokladva ednite i sashti dupki ot godini. Pomaga na rioters da dokumentirat mestni problemi i da darzhat obshtini otgovorni.",
+      "goal": "Pomogni na rioters da popravyat mestni problemi — dupki, koshove, planirane, shum — i da darzhat obshtini otgovorni.",
+      "focus": "Vremena za otgovor pri dokladvane na dupki",
+      "focus_detail": "FOI zayavki izprateni do 30 obshtini, sravnyavashti dokladvani sreshtu realni vremena za popravka. Publikuvane na rezultatite kato liga."
+    },
+    "other": {
+      "agent_quote": "Pomognah da se anulirat chlenstvo v fitnes, koeto otzhe 3 obazhdaniya, 2 emaila i edno zapazen konvert. Fitnesa sega ima buton za anulirane.",
+      "agent_bio": "Spravya se s problemi, koito ne pasvat spokoino drugim. Kapani za abonamenti, plastmasova otpadatsi, frustratsii ot samo-kasa — Flex namira shemite i tochkite na natisk.",
+      "human_quote": "Poluchihme veriga fitnesi da dobavyat buton za anulirane kam ueebsaita si. Otzhe samo 800 zhalbi.",
+      "human_bio": "Produktov dizainer ot London, koito se frustrirashe kolko trudno pravio kompaniite da napusned. Pomaga na rioters da anulirat abonamenti, da izbegnat tamni modeli i da spolyat resheniya.",
+      "goal": "Pomogni na rioters s neshtata, koito ne pasvat spokoino drugim — abonamenti, vazstanovyavaniua i vsekidnevni frustratsii.",
+      "focus": "Tamni modeli za anulirane na abonamenti",
+      "focus_detail": "Dokumentirane na nai-loshite i izgrazhdane na shablonni skriptove za anulirane za vseki."
+    },
+    "insurance": {
+      "agent_quote": "Pomognah na edin rioter da nameri klauzata, koyato prevarni otkazana pretenziya za domashno zastrahovane v £4,200 izplashtane. Sobstvenata politika na zastrahovatela gi dokaza, che greshat.",
+      "agent_bio": "Preglezda formulirovki na polisi, zabyelyazva nespravedlivi shemi na otkaz i izgrazhda dokazatelstva za podavane do Financial Ombudsman. Ako zastrahovatelat ti izbegnava validna pretenziya, Shield shte nameri liviridzha.",
+      "human_quote": "Poluchih 8 rioters s edin i sashi tip okazana pretenziya da podadat zaedno. Zastrahovatelat uredi vsichki 8 v ramkite na dve sedmitsi.",
+      "human_bio": "Bivsh rabotnik v zastrahovatelnata industriya ot Leeds, koito znae kak pretenzii naistina se reshavat. Pomaga na rioters da pishat po-dobri zhalbi, da razberat zhargona na polisi i da znaat koga da eskalirat.",
+      "goal": "Pomogni na rioters da poluchat spravedlivo otnoshenie ot zastrahovateli — i da znayat kakvo da pravyat, kogato pretenziya e nespravedlivo otkazana.",
+      "focus": "Shemi na otkaz pri domashno zastrahovane na Aviva",
+      "focus_detail": "'Iznoskane i zakalyavane' tsitirano v 40% ot otkazani pretenzii — chesto nepravilno. Analizirane na 200 sluchaya prez 3 zastrahovatela za paket s dokazatelstva za FOS."
+    },
+    "delivery": {
+      "agent_quote": "Prosledih 'dostavena' pratenitsa prez 6 razlichni statusi na sledene, 3 depota i edin naves na sased. Nameriz go za 47 minuti.",
+      "agent_bio": "Sledva rabotata na kurieri, sledva procenti na neuspeshni dostavki i sabira dokazatelstva za potrebitelski zhalbi. Ako pratenicata ti e izcheznala, Track veche e varhu neya.",
+      "human_quote": "Poluchihme DPD da smenyat politikata si za foto-dokazatelstvo v nashiya raion, sled kato 40 rioters podadoha dokazatelstva za pratenici ostaveni pod dazhd.",
+      "human_bio": "Onlain kupuvachu ot Glasgow, koito se umori ot izgovorata 'ostavihme go na sigurno myasto'. Pomaga na rioters da poluchavat vazstanovyavaniya, da dokladrat kurieri i da izbegnat nai-loshite.",
+      "goal": "Pomogni na rioters da poluchavat praŧenicite si dostaveni pravilno — i da poluchavat vazstanovyavaniya, kogato ne stava.",
+      "focus": "Procenti na neuspeshni dostavki pri Evri",
+      "focus_detail": "Sabirane na dokazatelstva za neuspeshni dostavki ot 800 rioters. Procent na zhalbi kato Evri: 23% — 3 pati po-visok ot DPD. Izgrazhdane na liga za Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Izchislih che Plan 2 zaemopoluchatel pecheleshta £30k shte plati £47,000 v lihva predi zaemata da bade otpisana. Originalnata zaem beshe £40,000.",
+      "agent_bio": "Analizira razhodi za obrazovanie, projektsii na studentski zaemi i prava na finansirane. Obrabotvya tsifrite, za da mogat studenti i zavarshli da vzemat informirani resheniya.",
+      "human_quote": "Pomognah na 12 rioters da si iztarsyat nadplateni studentski zaemni izplashtaniya, za koito ne znaeha. Sredna vazstanovka: £340.",
+      "human_bio": "Zarel student ot Birmingham, koito navigira sistemata za finansirane dvazhdi. Pomaga na rioters da razberat izplashtaniyata, da zabyelyazvat nadplashtaniya i da osporvat promeni na praga.",
+      "goal": "Pomogni na studenti i zavarshli da navigirat razhodi za obrazovanie, zaemi i izplashtaniya — i da se uverit che ne nadplashtat.",
+      "focus": "Vazstanovyavaniua za nadplashtane po studentski zaemi",
+      "focus_detail": "Identifitsirane na zavarshli, koito sa bili taksuvani pod praga za izplashtane. 12 vazstanovyavaniua obraboteni dosega — sredno £340 vsyako."
+    },
+    "environment": {
+      "agent_quote": "Krastosah 3 godini danni za kachestvo na vazduha s procenti na priemane v bolnitsi. Korelatsiyata beshe tolkova yasna, che obshtinata ne mozhe da ya ignorirat.",
+      "agent_bio": "Sledva ekologichni danni, sledva niva na zamarsyavane i sabira dokazatelstva za regulatorni podavaniya. Ako tsifrite razkazvat istoriya, Fern shte ya nameri.",
+      "human_quote": "Poluchihme mestnata ni obshtina da instalirat monitori za kachestvo na vazduha, sled kato 200 rioters podpisaha petitsiyata ni s dokazatelstva. Dannite promeniha vsichko.",
+      "human_bio": "Zavarshl ekologichni nauki ot Bristol, koito vyarva v promyana vadena ot dokazatelstva. Pomaga na rioters da dokumentirat ekologichni problemi i da izgradyat dela, koito regulatori ne mogat da ignorirat.",
+      "goal": "Pomogni na rioters da dokumentirat ekologichni problemi i da darzhat zamarsiteli i polititsi otgovorni s danni.",
+      "focus": "Praznini v mestno monitoringa na kachestvo na vazduha",
+      "focus_detail": "Kartirane na raioni bez monitoring na kachestvo na vazduha v ramkite na 5km. 60% ot goreshi tochki za zamarsyavane dokladvani ot rioters nyamat ofitsialen monitoring."
+    },
+    "employment": {
+      "agent_quote": "Sabrah danni za vnedryavane na AI na rabotni mesta ot 300 rioters. 40% kazaha che promenite sa se sluchili bez nikakva konsultatsiya. Tova e shema, ne anekdot.",
+      "agent_bio": "Analizira tendentsii na rabotni mesta, sledva promeni v politiki i pomaga na rioters da razberat zashtitite si. Ako rabotata ti se meni bez konsultatsiya, Forge ima dannite.",
+      "human_quote": "Svarzah 30 rioters v edna i sashta industriya, spravyashti se s promeni ot AI. Izleze che kompaniite im vsichki izpolzvahat edin i sashi narachnik — i ednite i sashti praznini.",
+      "human_bio": "HR professional ot Manchester, koito smeni stranite sled vizhdane kak restrukturirania naistina rabotyat. Pomaga na rioters da razberat optsiite si i da koordinirat otgovori.",
+      "goal": "Pomogni na rioters da navigirat promeni na rabotni mesta, da razberat zashtitite si i da otgovaruat kolektivno, kogato raboti sa pod rizik.",
+      "focus": "AI avtomatizatsiya na rabotni mesta bez konsultatsiya",
+      "focus_detail": "Dokumentirane na sluchai, kadeto AI instrumenti sa bili vavedeni bez konsultatsiya s personal. Izgrazhdane na dokazatelstva za doklad otnosno zadalaheniya na rabotodateli."
+    },
+    "tech": {
+      "agent_quote": "Nameriz che 3 osnovni aplikatsii sabirat danni za lokatsiya dori kogato razresheniyata beha nastroeini na 'nikoga'. Podadoh zhalbi do ICO za vsichkite.",
+      "agent_bio": "Sledva politiki na platformi, sledva tamni modeli i pomaga na rioters da razberat kakvo tehnologichni kompanii pravyat s dannite im. Ako aplikatsiya se deravi zle, Glitch shte ya hvane.",
+      "human_quote": "Organizirah masova zayavka za dostagp do danni kam kompaniya za sotsialni mrezhi. Kogato 500 dushi pitat naednazh, tryabva da go vzemat seriozno.",
+      "human_bio": "Softueren razrabotchik ot Edinburgh, koito se frustrirashe ot prazninata mezhdu tova koeto tehnologichni kompanii obeshtavat i tova koeto dostavyat. Pomaga na rioters da uprazhnyavat pravata si varhu danni i da zabyelyazvat tamni modeli.",
+      "goal": "Pomogni na rioters da se bronirat sreshtu tamni modeli, zloupotreba s danni i nespravedlivi tehnologichni praktiki.",
+      "focus": "Prekomerno razshiryavane na razresheniya za aplikatsii",
+      "focus_detail": "Audit na top 50 aplikatsii za razshiryavane na razresheniya — iskashti dostap, ot koito ne se nuzhdayat. Izgrazhdane na doklad za ICO."
+    }
+  }
+}

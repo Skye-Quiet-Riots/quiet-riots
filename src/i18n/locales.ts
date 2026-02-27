@@ -56,6 +56,18 @@ export const ALL_LOCALES = [
   'ca',
   'eu',
   'gl',
+  // Romanised variants (Latin-script)
+  'hi-Latn',
+  'ar-Latn',
+  'bn-Latn',
+  'fa-Latn',
+  'ru-Latn',
+  'el-Latn',
+  'ta-Latn',
+  'te-Latn',
+  'ml-Latn',
+  'uk-Latn',
+  'bg-Latn',
 ] as const;
 
 /**
@@ -109,6 +121,18 @@ export const NON_EN_LOCALES = [
   'ca',
   'eu',
   'gl',
+  // Romanised variants (Latin-script)
+  'hi-Latn',
+  'ar-Latn',
+  'bn-Latn',
+  'fa-Latn',
+  'ru-Latn',
+  'el-Latn',
+  'ta-Latn',
+  'te-Latn',
+  'ml-Latn',
+  'uk-Latn',
+  'bg-Latn',
 ] as const;
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -184,6 +208,17 @@ export const LOCALE_NAMES: Record<string, string> = {
   vi: 'Vietnamese',
   'zh-CN': 'Simplified Chinese',
   'zh-TW': 'Traditional Chinese',
+  'hi-Latn': 'Hinglish (Latin-script Hindi)',
+  'ar-Latn': 'Arabizi (Latin-script Arabic)',
+  'bn-Latn': 'Banglish (Latin-script Bengali)',
+  'fa-Latn': 'Finglish (Latin-script Persian)',
+  'ru-Latn': 'Translit (Latin-script Russian)',
+  'el-Latn': 'Greeklish (Latin-script Greek)',
+  'ta-Latn': 'Tanglish (Latin-script Tamil)',
+  'te-Latn': 'Tenglish (Latin-script Telugu)',
+  'ml-Latn': 'Manglish (Latin-script Malayalam)',
+  'uk-Latn': 'Translit (Latin-script Ukrainian)',
+  'bg-Latn': 'Shlyokavitsa (Latin-script Bulgarian)',
 };
 
 /** Native language names for UI display (language selector dropdown). */
@@ -233,6 +268,18 @@ export const NATIVE_LOCALE_NAMES: Record<string, string> = {
   ca: 'Català',
   eu: 'Euskara',
   gl: 'Galego',
+  // Romanised variants — display in Latin script
+  'hi-Latn': 'Hinglish',
+  'ar-Latn': 'Arabizi',
+  'bn-Latn': 'Banglish',
+  'fa-Latn': 'Finglish',
+  'ru-Latn': 'Translit (RU)',
+  'el-Latn': 'Greeklish',
+  'ta-Latn': 'Tanglish',
+  'te-Latn': 'Tenglish',
+  'ml-Latn': 'Manglish',
+  'uk-Latn': 'Translit (UA)',
+  'bg-Latn': 'Shlyokavitsa',
 };
 
 // ─── DB Seeding ─────────────────────────────────────────────────────────────
@@ -284,4 +331,16 @@ export const LANGUAGES: [string, string, string, 'ltr' | 'rtl'][] = [
   ['ca', 'Catalan', 'Català', 'ltr'],
   ['eu', 'Basque', 'Euskara', 'ltr'],
   ['gl', 'Galician', 'Galego', 'ltr'],
+  // Romanised variants (Latin-script) — all LTR
+  ['hi-Latn', 'Hinglish', 'Hinglish', 'ltr'],
+  ['ar-Latn', 'Arabizi', 'Arabizi', 'ltr'],
+  ['bn-Latn', 'Banglish', 'Banglish', 'ltr'],
+  ['fa-Latn', 'Finglish', 'Finglish', 'ltr'],
+  ['ru-Latn', 'Translit Russian', 'Translit', 'ltr'],
+  ['el-Latn', 'Greeklish', 'Greeklish', 'ltr'],
+  ['ta-Latn', 'Tanglish', 'Tanglish', 'ltr'],
+  ['te-Latn', 'Tenglish', 'Tenglish', 'ltr'],
+  ['ml-Latn', 'Manglish', 'Manglish', 'ltr'],
+  ['uk-Latn', 'Translit Ukrainian', 'Translit', 'ltr'],
+  ['bg-Latn', 'Shlyokavitsa', 'Shlyokavitsa', 'ltr'],
 ];

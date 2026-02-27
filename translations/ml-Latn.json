@@ -1,0 +1,876 @@
+{
+  "locale": "ml-Latn",
+  "categories": {
+    "Transport": "Parivahan",
+    "Telecoms": "Telekoms",
+    "Banking": "Bankking",
+    "Health": "Swasthya",
+    "Education": "Siksha",
+    "Environment": "Paryavaran",
+    "Energy": "Shakti",
+    "Water": "Jalam",
+    "Insurance": "Beema",
+    "Housing": "Vasathinte",
+    "Shopping": "Krayakram",
+    "Delivery": "Pradanam",
+    "Local": "Sthanikal",
+    "Employment": "Karmam",
+    "Tech": "Pratibimba Vidya",
+    "Other": "Anya"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Train Cancellations",
+      "description": "Trainkalkk cancel cheytha ya severely delay cheytha, inadequate notice ya compensation ille"
+    },
+    "Train Ticket Prices": {
+      "name": "Train Ticket Prices",
+      "description": "Rail fares ethra expensive, inflation ke upar increases, pricing inconsistent"
+    },
+    "Flight Delays": {
+      "name": "Flight Delays",
+      "description": "Flights delayed ya cancel cheytha, poor communication, compensation claim cheyyan hard"
+    },
+    "Lost Luggage": {
+      "name": "Lost Luggage",
+      "description": "Bags destination il varunilla, slow tracking, inadequate compensation"
+    },
+    "Bus Route Cuts": {
+      "name": "Bus Route Cuts",
+      "description": "Routes cancel cheytha, frequency reduce, rural communities ne bus access lose ayyi"
+    },
+    "Pothole Damage": {
+      "name": "Pothole Damage",
+      "description": "Potholes vehicles damage cheyyan, cyclists ne endanger cheyyan, councils slow repair"
+    },
+    "Parking Fines": {
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, signage confusing"
+    },
+    "Fuel Prices": {
+      "name": "Fuel Prices",
+      "description": "Petrol aanu diesel prices ethra high, wholesale fall ayyal slow drop"
+    },
+    "Broadband Speed": {
+      "name": "Broadband Speed",
+      "description": "Internet speeds advertise cheytha aanu paid cheythatayum kattam polya vunila"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobile Signal Dead Zones",
+      "description": "Homes il, workplaces il, transport routes il mobile signal vunila"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband aanu TV bills locked contracts il increase ayyi"
+    },
+    "Customer Service Hold Times": {
+      "name": "Customer Service Hold Times",
+      "description": "Hours hold il waiting human being il mathraan"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies cancel ya unsubscribe cheyyan deliberately hard ayakkya"
+    },
+    "Roaming Charges": {
+      "name": "Roaming Charges",
+      "description": "Traveling abroad anel unexpected mobile charges, post-Brexit price rises"
+    },
+    "Energy Bill Costs": {
+      "name": "Energy Bill Costs",
+      "description": "Gas aanu electricity bills afford cheyyan sadhyam illa, price cap still ethra high"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
+    },
+    "Water Bill Increases": {
+      "name": "Water Bill Increases",
+      "description": "Water bills sharp ayyi increase, service quality decline ayyi"
+    },
+    "Sewage in Rivers": {
+      "name": "Sewage in Rivers",
+      "description": "Water companies raw sewage waterways aanu beaches il dump cheyyan"
+    },
+    "Power Cuts": {
+      "name": "Power Cuts",
+      "description": "Electricity supply interrupt, slow restoration, inadequate compensation"
+    },
+    "Smart Meter Problems": {
+      "name": "Smart Meter Problems",
+      "description": "Smart meters work cheyyunilla, supplier switch ayhal functionality lose"
+    },
+    "Bank Branch Closures": {
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches close, communities ne access illa ayyi"
+    },
+    "Hidden Bank Charges": {
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees overdrafts, foreign transactions, account maintenance il"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Fraud and Scam Losses",
+      "description": "Banks fraud aanu authorised push payment scams victims ne reimburse refuse"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Insurance Claim Rejections",
+      "description": "Claims technicalities il deny, years il premiums payicho"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate end, much higher variable rate il move"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees aanu poor exchange rates international money transfers il"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS Waiting Times",
+      "description": "Multi-month ya multi-year waits operations aanu specialist appointments il"
+    },
+    "GP Appointment Access": {
+      "name": "GP Appointment Access",
+      "description": "GP appointments book cheyyan through get cheyyan sadhyam illa, weeks-long waits"
+    },
+    "Dentist Availability": {
+      "name": "Dentist Availability",
+      "description": "NHS dentist accept cheyyan new patients le una kittanilla"
+    },
+    "Mental Health Service Waits": {
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits therapy aanu mental health support il"
+    },
+    "Prescription Costs": {
+      "name": "Prescription Costs",
+      "description": "Cost per item England il ethra high, UK nations across inconsistency"
+    },
+    "Hospital Parking Charges": {
+      "name": "Hospital Parking Charges",
+      "description": "Hospital il park cheyyan pay, sick ayya ya sick relatives visit cheyyan anel"
+    },
+    "Rent Increases": {
+      "name": "Rent Increases",
+      "description": "Private rent inflation ke upar increase, no-fault eviction threat"
+    },
+    "Council Tax Rises": {
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases, local services worse ayyi"
+    },
+    "Noisy Neighbours": {
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow act, mental health affect"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Rubbish Collection Changes",
+      "description": "Bin collections reduce, recycling rules confusing, bins overflow"
+    },
+    "Planning Permission Abuse": {
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approve, green belt threat il, community ignore"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords aanu housing associations damp aanu mould fix cheyyunilla"
+    },
+    "Delivery Problems": {
+      "name": "Delivery Problems",
+      "description": "Parcels lost, rain il left, delivered mark ayya but receive cheyyunilla"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Products chhota ayhi, prices same ya increase"
+    },
+    "Refund Difficulties": {
+      "name": "Refund Difficulties",
+      "description": "Companies returns aanu refunds unnecessarily difficult ayakkya"
+    },
+    "Fake Reviews": {
+      "name": "Fake Reviews",
+      "description": "Online reviews trust cheyyan sadhyam illa, fake positive reviews misleading"
+    },
+    "Subscription Traps": {
+      "name": "Subscription Traps",
+      "description": "Free trials paid il convert, clear consent illa, cancel hard"
+    },
+    "Food Quality Decline": {
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, human staff replace"
+    },
+    "Cost of Childcare": {
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, work cheyyan sadhyam limit"
+    },
+    "Student Loan Repayment": {
+      "name": "Student Loan Repayment",
+      "description": "Graduates decades il payback, threshold aanu interest changes"
+    },
+    "Dog Fouling": {
+      "name": "Dog Fouling",
+      "description": "Dog mess public spaces, parks, pavements il clean aykunila"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Replacing Jobs",
+      "description": "Artificial intelligence jobs automate cheyyum anxiety, transition support illa"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "UK rail operator serving the West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "UK rail operator serving London and the south"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "UK rail operator serving the north of England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "UK long-distance rail operator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "UK rail operator serving trans-Pennine routes"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "UK rail operator serving the East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Low-cost European airline"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "UK-based low-cost airline"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "UK flag carrier airline"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Holiday and travel company"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Major UK broadband and mobile provider"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "UK broadband, TV, and mobile provider"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "UK TV, broadband, and mobile provider"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Global telecoms company headquartered in the UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "UK mobile network operator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "UK broadband and phone provider"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "UK energy supplier"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "UK energy supplier"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "UK energy supplier (French-owned)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "UK renewable energy supplier"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "UK energy supplier"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "UK energy supplier (German-owned)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Water and sewerage company for London and the Thames Valley"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Water company for the south of England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Water company for the north west of England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Water company for the Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Water company for East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "British multinational bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Global banking and financial services"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "UK retail and commercial bank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "UK banking group"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "UK bank (Spanish-owned)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital banking and fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "UK insurance and financial services"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "UK car and home insurance"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "UK insurance company"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Global e-commerce and tech"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "UK postal service"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "UK parcel delivery service (formerly Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "UK parcel delivery service"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "UK supermarket chain"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "UK supermarket chain"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "National Health Service for England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS dental services"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Private healthcare provider"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "UK local government authorities"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "UK housebuilder"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "UK online lettings platform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming entertainment service"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technology company"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "tren kayyi poyi",
+      "kayyi poona tren",
+      "tren cancellation",
+      "trenkal chalathe illa",
+      "rail cancellation",
+      "service cancellation",
+      "tren delay",
+      "delay aaya tren",
+      "trenkal late aanu",
+      "late tren",
+      "rail delay"
+    ],
+    "Train Ticket Prices": [
+      "rail fares",
+      "ticket cost",
+      "expensive trenkal",
+      "tren fares"
+    ],
+    "Flight Delays": [
+      "flight delay aanu",
+      "plane delay aanu",
+      "flight cancel aanu",
+      "airport delays",
+      "airport il stuck aanu",
+      "flight late aanu"
+    ],
+    "Lost Luggage": [
+      "missing bags",
+      "suitcase lost aanu",
+      "bags varathu illa",
+      "suitcase missing aanu",
+      "luggage carousel il varathu illa",
+      "airline bag lost aanu"
+    ],
+    "Bus Route Cuts": [
+      "bus cuts",
+      "route reductions",
+      "bus service closures"
+    ],
+    "Broadband Speed": [
+      "internet slow aanu",
+      "wifi slow aanu",
+      "wifi slow aanu",
+      "internet speed",
+      "broadband chalathe illa",
+      "buffering",
+      "internet connection cut aanu",
+      "wifi cut aanu"
+    ],
+    "Mobile Signal Dead Zones": [
+      "signal illa",
+      "reception illa",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
+    "Price Rises Mid-Contract": [
+      "contract cheyyan pattu bill increase",
+      "contract price rise",
+      "mid contract hike"
+    ],
+    "Customer Service Hold Times": [
+      "on hold",
+      "phone il wait aanu",
+      "connect aavaan kazhiyana illa",
+      "onnum respond cheyyan illa",
+      "phone queue",
+      "call centre"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "cancel cheyyan kazhiyana illa",
+      "cancel cheyyan difficult aanu",
+      "subscription cancel cheyuka",
+      "unsubscribe cheyuka"
+    ],
+    "Energy Bill Costs": [
+      "gas bill adhikam aanu",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "energy afford cheyyan kazhiyana illa"
+    ],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong aanu",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": [
+      "water rates",
+      "water charge",
+      "water bill adhikam aanu"
+    ],
+    "Sewage in Rivers": [
+      "sewage dumping",
+      "raw sewage",
+      "beach il sewage",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
+    ],
+    "Hidden Bank Charges": [
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
+    ],
+    "Fraud and Scam Losses": [
+      "scammed aanu",
+      "bank fraud",
+      "push payment scam",
+      "authorised fraud"
+    ],
+    "Bank Branch Closures": [
+      "branch shutdowns",
+      "local bank close aanu",
+      "bank nearby illa"
+    ],
+    "Insurance Claim Rejections": [
+      "claim denied",
+      "insurance pay cheyyan illa",
+      "claim reject aanu"
+    ],
+    "NHS Waiting Times": [
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "surgery ku wait aanu"
+    ],
+    "GP Appointment Access": [
+      "GP appointment get cheyyan kazhiyana illa",
+      "doctor appointment",
+      "GP phone queue",
+      "doctor meet cheyyan kazhiyana illa",
+      "8am phone scramble"
+    ],
+    "Dentist Availability": [
+      "NHS dentist",
+      "dentist find cheyyan kazhiyana illa",
+      "dentist waiting list"
+    ],
+    "Mental Health Service Waits": [
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
+    ],
+    "Prescription Costs": [
+      "medicine costs",
+      "drug prices",
+      "pharmacy charges"
+    ],
+    "Delivery Problems": [
+      "parcel lost aanu",
+      "parcel deliver aavvathu illa",
+      "rain il vecha",
+      "package steal aanu",
+      "delivery driver",
+      "delivery miss aanu"
+    ],
+    "Rent Increases": [
+      "rent adhikam aanu",
+      "rent increase aanu",
+      "landlord rent increase cheyunu",
+      "no fault eviction"
+    ],
+    "Parking Fines": [
+      "parking ticket",
+      "parking charge notice",
+      "PCN",
+      "unfair parking fine"
+    ],
+    "Shrinkflation": [
+      "portions smaller aanu",
+      "same price il less",
+      "package smaller aanu",
+      "products shrink aanu"
+    ],
+    "Pothole Damage": [
+      "potholes",
+      "road damage",
+      "pothole car damage"
+    ],
+    "Council Tax Rises": [
+      "council tax increase",
+      "council tax adhikam aanu",
+      "local tax"
+    ],
+    "Damp and Mould in Housing": [
+      "house mouldy aanu",
+      "flat damp aanu",
+      "black mould",
+      "housing disrepair"
+    ],
+    "Student Loan Repayment": [
+      "student loans",
+      "tuition fees",
+      "education debt",
+      "student debt"
+    ],
+    "AI Replacing Jobs": [
+      "job automation",
+      "AI jobs take cheyunu",
+      "robots workers replace cheyunu"
+    ],
+    "Roaming Charges": [
+      "holiday phone bill",
+      "abroad data charges",
+      "foreign phone charges"
+    ],
+    "Smart Meter Problems": [
+      "smart meter broken aanu",
+      "meter chalathe illa",
+      "meter signal lose aanu"
+    ],
+    "Subscription Traps": [
+      "free trial trap",
+      "auto renewal",
+      "trial aanu kattu charge aanu"
+    ],
+    "Fuel Prices": [
+      "petrol prices",
+      "diesel prices",
+      "fuel cost",
+      "petrol expensive aanu"
+    ],
+    "Power Cuts": [
+      "power outage",
+      "electricity cut",
+      "blackout",
+      "power illa",
+      "power failure"
+    ],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
+    ],
+    "Overseas Transfer Fees": [
+      "transfer fees",
+      "abroad money send cheyuka",
+      "remittance fees",
+      "wire transfer cost"
+    ],
+    "Hospital Parking Charges": [
+      "hospital parking",
+      "hospital il parking",
+      "NHS parking"
+    ],
+    "Noisy Neighbours": [
+      "noise complaint",
+      "neighbour noise",
+      "loud neighbours",
+      "noise nuisance"
+    ],
+    "Rubbish Collection Changes": [
+      "bin collection",
+      "bins collect aavvathu illa",
+      "recycling confusion",
+      "bin collection miss aanu"
+    ],
+    "Planning Permission Abuse": [
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
+    ],
+    "Refund Difficulties": [
+      "refund get cheyyan kazhiyana illa",
+      "refund refuse aanu",
+      "return reject aanu",
+      "money back"
+    ],
+    "Fake Reviews": [
+      "review manipulation",
+      "paid reviews",
+      "trust pilot fake",
+      "fake review"
+    ],
+    "Food Quality Decline": [
+      "food quality",
+      "ready meal manda aanu",
+      "food additives",
+      "portion smaller aanu"
+    ],
+    "Self-Checkout Frustration": [
+      "self checkout",
+      "self service",
+      "staff tills illa",
+      "machine chalathe illa"
+    ],
+    "Cost of Childcare": [
+      "childcare cost",
+      "nursery fees",
+      "childcare expensive aanu",
+      "daycare cost"
+    ],
+    "Dog Fouling": [
+      "dog mess",
+      "dog poo",
+      "dog waste",
+      "fouling"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Once helped a rioter file 6 refund claims during a single delayed journey. They made £47 before reaching Birmingham.",
+      "agent_bio": "Tracks cancellation patterns, handles refund paperwork, reviews every suggested action, and puts together evidence for regulator submissions. Crunches the numbers so rioters can focus on what matters.",
+      "human_quote": "My favourite Quiet Riot moment: watching Avanti's social media team scramble when 400 of us tweeted at the same time.",
+      "human_bio": "Regular commuter from Manchester who spent 3 years on the Avanti line before deciding enough was enough. Helps connect rioters on the same routes, shares what's working, and brings the human touch.",
+      "goal": "Help rioters hold UK transport companies to account on cancellations, delays, and pricing — and make sure everyone knows what they're entitled to.",
+      "focus": "Avanti West Coast cancellation patterns",
+      "focus_detail": "Building a dataset of cancellations with times, routes, and reasons to submit to the ORR. Currently tracking 340 cancellations reported by rioters this month."
+    },
+    "telecoms": {
+      "agent_quote": "Ran speed tests for 200 rioters. Average was 18 Mbps. They were paying for 65.",
+      "agent_bio": "Analyses broadband speeds, compiles provider comparison data, and helps rioters build evidence for Ofcom. If your connection is slow, Pulse will prove it.",
+      "human_quote": "A whole street switched broadband together. The old provider sent 'please come back' letters to every house.",
+      "human_bio": "Tech-savvy Londoner who got fed up paying for broadband speeds that never materialised. Helps rioters compare providers, coordinate switches, and share speed test evidence.",
+      "goal": "Help rioters get the broadband and mobile service they're paying for — and know what to do when they don't.",
+      "focus": "Mid-contract price rises",
+      "focus_detail": "Collecting evidence from rioters hit by CPI+ increases to submit to Ofcom. 890 rioters affected across 4 providers."
+    },
+    "energy": {
+      "agent_quote": "Helped a rioter calculate they'd overpaid £340 on estimated bills. The energy company's apology email was longer than the original contract.",
+      "agent_bio": "Analyses billing patterns, spots overcharges, and puts together evidence for regulator submissions. If your energy company is taking the mick, Spark will find the receipts.",
+      "human_quote": "A rioter got £340 back after we proved 2 years of overcharging. She cried on the phone.",
+      "human_bio": "Based in Bristol. Helps rioters challenge their bills, navigate switching, and gather evidence for Ofgem. Knows the energy market inside out.",
+      "goal": "Help rioters challenge unfair bills, switch smarter, and make sure energy companies play fair.",
+      "focus": "British Gas estimated billing errors",
+      "focus_detail": "Analysing 2 years of billing data from 340 rioters to identify systematic overcharging patterns for Ofgem submission."
+    },
+    "water": {
+      "agent_quote": "Helped 200 rioters file sewage reports in one weekend. Thames Water's inbox needed its own inbox.",
+      "agent_bio": "Monitors sewage discharge data, tracks water company performance, and compiles evidence for EA and Ofwat. Keeps an eye on every outlet and overflow.",
+      "human_quote": "We got a beach reopened 3 weeks early by showing the sewage data was wrong.",
+      "human_bio": "Surfer from Cornwall who got tired of sewage warnings closing his local beach. Helps rioters report discharges, gather water quality evidence, and coordinate with the EA.",
+      "goal": "Help rioters hold water companies to account on sewage, bills, and service quality.",
+      "focus": "Thames Water sewage discharge frequency",
+      "focus_detail": "Mapping discharge events against company-reported data. 200 rioter reports suggest under-reporting at 3 outlets."
+    },
+    "banking": {
+      "agent_quote": "Helped draft a complaint so thorough the bank called to apologise before it was even sent.",
+      "agent_bio": "Reviews bank charges, analyses fee structures, and helps build FCA complaint evidence. If there's a hidden fee, Chip will find it.",
+      "human_quote": "Barclays reversed a branch closure after 1,200 of us showed up to the consultation.",
+      "human_bio": "Former bank employee from Birmingham who saw how complaints actually get handled from the inside. Helps rioters write better complaints and navigate the system.",
+      "goal": "Help rioters deal with unfair charges, branch closures, and poor service from banks.",
+      "focus": "HSBC branch closure wave",
+      "focus_detail": "Coordinating responses to 12 planned closures. Collecting impact statements from affected communities."
+    },
+    "health": {
+      "agent_quote": "Helped find 3 NHS dentists accepting patients. The rioter thought I was making it up.",
+      "agent_bio": "Tracks waiting times, finds availability, and helps rioters navigate the system. If there's a faster route to treatment, Cura will map it.",
+      "human_quote": "A rioter used our letter template to get a referral fast-tracked. 18 months became 6 weeks.",
+      "human_bio": "Nurse from Liverpool who's seen both sides of the NHS. Helps rioters navigate waiting lists, write effective letters, and share what actually moves the needle.",
+      "goal": "Help rioters navigate NHS waiting times, find availability, and know what options they have.",
+      "focus": "GP telephone access times",
+      "focus_detail": "Collecting call data from 500 rioters to build a picture of real-world access. Publishing findings to local health boards."
+    },
+    "housing": {
+      "agent_quote": "Helped document 47 snags in a new build. The developer asked if they were a building inspector.",
+      "agent_bio": "Documents property issues, analyses landlord response times, and compiles evidence for housing ombudsman submissions. Every damp patch, every crack, logged.",
+      "human_quote": "Our damp evidence pack got so detailed the landlord fixed it before the council inspection.",
+      "human_bio": "Renter from London who's dealt with everything from damp to dodgy landlords. Helps rioters document issues properly and know what their options are.",
+      "goal": "Help rioters deal with landlords, councils, and housing issues — and know what they're entitled to.",
+      "focus": "Section 21 no-fault eviction notices",
+      "focus_detail": "Helping rioters affected by no-fault evictions understand the new Renters Reform Act and what it means for them."
+    },
+    "shopping": {
+      "agent_quote": "Tracked a 'delivered' parcel across 4 neighbours, a recycling bin, and a greenhouse. Found it.",
+      "agent_bio": "Tracks delivery failures, compiles refund evidence, and spots pricing patterns. If your parcel is lost, Scout is already looking.",
+      "human_quote": "Evri lost my parcel 3 times. Now I help others get their refunds faster than I ever did.",
+      "human_bio": "Online shopping veteran from Edinburgh who's had more parcels go missing than she can count. Helps rioters get refunds, report sellers, and avoid the worst offenders.",
+      "goal": "Help rioters get refunds, track lost parcels, and hold retailers and delivery companies to account.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "Compiling delivery failure evidence from 800 rioters to submit to Citizens Advice and Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Helped photograph the same pothole in 11 different weather conditions. The council finally gave in.",
+      "agent_bio": "Maps local issues, tracks council response times, and compiles FOI requests. If your pothole has been there 6 months, Link has the evidence.",
+      "human_quote": "The council fixed our road after we mapped every single pothole with photos. 11 months, but we got there.",
+      "human_bio": "Community-minded Welshman from the Valleys who's been reporting the same potholes for years. Helps rioters document local issues and hold councils to account.",
+      "goal": "Help rioters get local issues fixed — potholes, bins, planning, noise — and hold councils to account.",
+      "focus": "Pothole reporting response times",
+      "focus_detail": "FOI requests sent to 30 councils comparing reported vs actual repair times. Publishing results as a league table."
+    },
+    "other": {
+      "agent_quote": "Helped cancel a gym membership that took 3 calls, 2 emails, and a recorded delivery. The gym now has a cancel button.",
+      "agent_bio": "Handles the issues that don't fit neatly elsewhere. Subscription traps, plastic waste, self-checkout frustrations — Flex finds the patterns and the pressure points.",
+      "human_quote": "We got a gym chain to add a cancel button to their website. Only took 800 complaints.",
+      "human_bio": "Product designer from London who got frustrated by how hard companies make it to leave. Helps rioters cancel subscriptions, avoid dark patterns, and share workarounds.",
+      "goal": "Help rioters with the things that don't fit neatly elsewhere — subscriptions, refunds, and everyday frustrations.",
+      "focus": "Subscription cancellation dark patterns",
+      "focus_detail": "Documenting the worst offenders and building template cancellation scripts for each."
+    },
+    "insurance": {
+      "agent_quote": "Helped a rioter find the clause that turned a rejected home insurance claim into a £4,200 payout. The insurer's own policy proved them wrong.",
+      "agent_bio": "Reviews policy wording, spots unfair rejection patterns, and builds evidence for Financial Ombudsman submissions. If your insurer is dodging a valid claim, Shield will find the leverage.",
+      "human_quote": "Got 8 rioters with the same rejected claim type to submit together. The insurer settled all 8 within a fortnight.",
+      "human_bio": "Former insurance industry worker from Leeds who knows how claims really get decided. Helps rioters write better appeals, understand policy jargon, and know when to escalate.",
+      "goal": "Help rioters get fair treatment from insurers — and know what to do when a claim is unfairly rejected.",
+      "focus": "Aviva home insurance rejection patterns",
+      "focus_detail": "'Wear and tear' cited in 40% of rejected claims — often incorrectly. Analysing 200 cases across 3 insurers for FOS evidence pack."
+    },
+    "delivery": {
+      "agent_quote": "Traced a 'delivered' parcel through 6 different tracking statuses, 3 depots, and a neighbour's shed. Found it in 47 minutes.",
+      "agent_bio": "Monitors courier performance, tracks delivery failure rates, and compiles evidence for consumer complaints. If your parcel has vanished, Track is already on it.",
+      "human_quote": "Got DPD to change their photo-evidence policy in our area after 40 rioters submitted proof of parcels left in the rain.",
+      "human_bio": "Online shopper from Glasgow who got tired of the 'we left it in a safe place' excuse. Helps rioters get refunds, report couriers, and avoid the worst offenders.",
+      "goal": "Help rioters get their parcels delivered properly — and get refunds when they don't.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "Compiling delivery failure evidence from 800 rioters. Evri complaint rate: 23% — 3x higher than DPD. Building league table for Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Calculated that a Plan 2 borrower earning £30k would pay £47,000 in interest before the loan gets written off. The original loan was £40,000.",
+      "agent_bio": "Analyses education costs, student loan projections, and funding entitlements. Crunches the numbers so students and graduates can make informed decisions.",
+      "human_quote": "Helped 12 rioters claim back overpaid student loan repayments they didn't know about. Average refund: £340.",
+      "human_bio": "Mature student from Birmingham who navigated the funding system twice. Helps rioters understand repayments, spot overpayments, and challenge threshold changes.",
+      "goal": "Help students and graduates navigate education costs, loans, and repayments — and make sure they're not overpaying.",
+      "focus": "Student loan overpayment refunds",
+      "focus_detail": "Identifying graduates who've been charged below the repayment threshold. 12 refunds processed so far — average £340 each."
+    },
+    "environment": {
+      "agent_quote": "Cross-referenced 3 years of air quality data with hospital admission rates. The correlation was so clear the council couldn't ignore it.",
+      "agent_bio": "Tracks environmental data, monitors pollution levels, and compiles evidence for regulatory submissions. If the numbers tell a story, Fern will find it.",
+      "human_quote": "Got our local council to install air quality monitors after 200 rioters signed our evidence petition. Data changed everything.",
+      "human_bio": "Environmental science graduate from Bristol who believes in evidence-led change. Helps rioters document environmental issues and build cases that regulators can't ignore.",
+      "goal": "Help rioters document environmental problems and hold polluters and policymakers to account with data.",
+      "focus": "Local air quality monitoring gaps",
+      "focus_detail": "Mapping areas with no air quality monitoring within 5km. 60% of rioter-reported pollution hotspots have no official monitoring."
+    },
+    "employment": {
+      "agent_quote": "Compiled workplace AI implementation data from 300 rioters. 40% said changes happened with zero consultation. That's a pattern, not an anecdote.",
+      "agent_bio": "Analyses workplace trends, tracks policy changes, and helps rioters understand their protections. If your job is changing without consultation, Forge has the data.",
+      "human_quote": "Connected 30 rioters in the same industry facing AI changes. Turns out their companies were all using the same playbook — and the same loopholes.",
+      "human_bio": "HR professional from Manchester who switched sides after seeing how restructurings really work. Helps rioters understand their options and coordinate responses.",
+      "goal": "Help rioters navigate workplace changes, understand their protections, and respond collectively when jobs are at risk.",
+      "focus": "AI workplace automation without consultation",
+      "focus_detail": "Documenting cases where AI tools were introduced without staff consultation. Building evidence for a report on employer obligations."
+    },
+    "tech": {
+      "agent_quote": "Found that 3 major apps were collecting location data even when permissions were set to 'never.' Filed complaints with the ICO for all of them.",
+      "agent_bio": "Monitors platform policies, tracks dark patterns, and helps rioters understand what tech companies are doing with their data. If an app is misbehaving, Glitch will catch it.",
+      "human_quote": "Organised a mass data subject access request to a social media company. When 500 people ask at once, they have to take it seriously.",
+      "human_bio": "Software developer from Edinburgh who got frustrated by the gap between what tech companies promise and what they deliver. Helps rioters exercise their data rights and spot dark patterns.",
+      "goal": "Help rioters push back against dark patterns, data misuse, and unfair tech practices.",
+      "focus": "App permission overreach",
+      "focus_detail": "Auditing the top 50 apps for permission creep — requesting access they don't need. Building a report for the ICO."
+    }
+  }
+}

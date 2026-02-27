@@ -22,8 +22,8 @@ describe('routing', () => {
     }
   });
 
-  it('includes 45 locales', () => {
-    expect(routing.locales.length).toBe(45);
+  it('includes 56 locales', () => {
+    expect(routing.locales.length).toBe(56);
   });
 
   it('has no duplicate locales', () => {
@@ -101,11 +101,36 @@ describe('isValidLocale', () => {
     expect(isValidLocale('pt-BR')).toBe(true);
   });
 
+  it('accepts romanised locale codes', () => {
+    expect(isValidLocale('bn-Latn')).toBe(true);
+    expect(isValidLocale('hi-Latn')).toBe(true);
+    expect(isValidLocale('ar-Latn')).toBe(true);
+  });
+
   it('rejects invalid locale codes', () => {
     expect(isValidLocale('xyz')).toBe(false);
     expect(isValidLocale('')).toBe(false);
     expect(isValidLocale('../../etc')).toBe(false);
     expect(isValidLocale('EN')).toBe(false); // case sensitive
     expect(isValidLocale('english')).toBe(false);
+  });
+});
+
+describe('romanised locales', () => {
+  const ROMANISED_CODES = [
+    'hi-Latn', 'ar-Latn', 'bn-Latn', 'fa-Latn', 'ru-Latn', 'el-Latn',
+    'ta-Latn', 'te-Latn', 'ml-Latn', 'uk-Latn', 'bg-Latn',
+  ];
+
+  it('all 11 romanised codes are in ALL_LOCALES', () => {
+    for (const code of ROMANISED_CODES) {
+      expect(ALL_LOCALES).toContain(code);
+    }
+  });
+
+  it('no romanised codes are in RTL_LOCALES', () => {
+    for (const code of ROMANISED_CODES) {
+      expect(rtlLocales.has(code as never)).toBe(false);
+    }
   });
 });

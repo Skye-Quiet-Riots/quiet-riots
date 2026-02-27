@@ -194,9 +194,9 @@ describe('generateEntityTranslations', () => {
 });
 
 describe('SUPPORTED_LOCALES', () => {
-  it('contains exactly 44 locales', async () => {
+  it('contains exactly 55 locales', async () => {
     const { SUPPORTED_LOCALES } = await import('./ai');
-    expect(SUPPORTED_LOCALES.length).toBe(44);
+    expect(SUPPORTED_LOCALES.length).toBe(55);
   });
 
   it('does not include English', async () => {

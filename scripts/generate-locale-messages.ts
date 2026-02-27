@@ -222,6 +222,13 @@ async function main() {
       continue;
     }
 
+    // -Latn codes are not standard Google Translate codes — skip when using Google API
+    if (useApi && locale.endsWith('-Latn')) {
+      console.log(`⏭️  ${locale} — skipped (romanised locales not supported by Google Translate)`);
+      skipped++;
+      continue;
+    }
+
     try {
       const translated = await translateMessages(enMessages, locale, useApi);
       fs.writeFileSync(outPath, JSON.stringify(translated, null, 2) + '\n');

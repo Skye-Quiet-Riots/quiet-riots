@@ -1,0 +1,876 @@
+{
+  "locale": "el-Latn",
+  "categories": {
+    "Transport": "Metafores",
+    "Telecoms": "Tilepikinonies",
+    "Banking": "Trapezikes Ypiresies",
+    "Health": "Ygeia",
+    "Education": "Ekpaidefsi",
+    "Environment": "Perivallon",
+    "Energy": "Energeia",
+    "Water": "Nero",
+    "Insurance": "Asfaliseis",
+    "Housing": "Katoikia",
+    "Shopping": "Psonia",
+    "Delivery": "Paradosi",
+    "Local": "Topiko",
+    "Employment": "Apascholisi",
+    "Tech": "Technologia",
+    "Other": "Allo"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Akyrosi Trenon",
+      "description": "Trena akyromena i me megali kathysterisi choris arketi proeidopoiisi i apozimiosi"
+    },
+    "Train Ticket Prices": {
+      "name": "Times Isitiron Trenou",
+      "description": "Ta isitiria trenou ine poly akriva, ayxiseis pano apo ton plithorismo, anakoles times"
+    },
+    "Flight Delays": {
+      "name": "Kathystirisis Ptiseon",
+      "description": "Ptiseis me kathysterisi i akyrosi, kakis epikoinonia, dyskolies sti zetixi apozimiosis"
+    },
+    "Lost Luggage": {
+      "name": "Chamenes Aposkeves",
+      "description": "Tsantes pou den ftanoun ston proorismo, argos entopismos, aneparkes apozimiosi"
+    },
+    "Bus Route Cuts": {
+      "name": "Kopes Grammon Leoforion",
+      "description": "Grammes akyromenes, meiomeni syxnotita, agrotikes koinotites xanoun prosvasi se leoforeia"
+    },
+    "Pothole Damage": {
+      "name": "Zimies apo Lakkouves",
+      "description": "Lakkouves pou zimionoun oxymata ke kindynevoun podilates, dimoi argi na episkevazoun"
+    },
+    "Parking Fines": {
+      "name": "Prostima Parkirismatos",
+      "description": "Adikes idiotikes xreoseis parkirismatos, epithitiki efarmogi, syxytikes pinakides"
+    },
+    "Fuel Prices": {
+      "name": "Times Kafsimou",
+      "description": "Times venzinis ke petrelaiou poly ypsiles, arges na pesoun otan peftoun oi xondrikes"
+    },
+    "Broadband Speed": {
+      "name": "Taxytita Broadband",
+      "description": "Taxytites internet poly katoteres apo aftes pou diafimizonte ke plirononte"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Nekres Zones Kinitis Telefonia",
+      "description": "Kanena sima kinitis se spitia, grafia, i se diadromes metaforas"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Ayxiseis Timon Mesa se Symvasi",
+      "description": "Logariasmi tilefonu, internet ke TV ayxanonte mesa se kleidomena symvolia"
+    },
+    "Customer Service Hold Times": {
+      "name": "Chroni Anamonis Exypiretiris",
+      "description": "Ores anamoni ya na milisis me anthropo"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Dyskolies Akirosis Syndromis",
+      "description": "Eteries pou to kanoun epithides dyskolo na akirosis i na apegrafi"
+    },
+    "Roaming Charges": {
+      "name": "Xreosis Roaming",
+      "description": "Anaperamenes xreosis kinitis otan taxidevi sto exoteriko, ayxiseis timon meta to Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Kostos Logariasmon Energias",
+      "description": "Logariasmi fotiou ke ilektrikou mi-ikonomikoi, to orofos timis akoma poly ypsilo"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Akrivis Logariasmi Energias",
+      "description": "Lathos ypologismenes metrisis, yperxreosi, lathi logariasmon"
+    },
+    "Water Bill Increases": {
+      "name": "Ayxiseis Logariasmou Nerou",
+      "description": "Logariasmi nerou ayxanonte ypervola eno i piotita ypiresias fyti"
+    },
+    "Sewage in Rivers": {
+      "name": "Lymata se Potamia",
+      "description": "Eteries nerou petane akatharta lymata se neroxeimarrous ke paralies"
+    },
+    "Power Cuts": {
+      "name": "Diakopes Revmatos",
+      "description": "Diakopes iletrikis paroxi, argi apokatastasi, aneparkes apozimiosi"
+    },
+    "Smart Meter Problems": {
+      "name": "Provlimata Smart Meter",
+      "description": "Smart meters den doulevoun, xanoun leitourgia meta apo allagi paroxou"
+    },
+    "Bank Branch Closures": {
+      "name": "Kleisimo Katagimaton Trapezis",
+      "description": "Topika katagemata trapezas kleinoun, afinonde koinotites choris prosvasi"
+    },
+    "Hidden Bank Charges": {
+      "name": "Kryfes Xreosis Trapezas",
+      "description": "Anaperamenes xreosis ya yperanalosi, xenes synallages, syntiritisi logariasmon"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Apoles apo Apates ke Scams",
+      "description": "Trapezes arnounde na apozimisoune thymata apatis ke exousiastimenes pliromis"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Aposeis Apozimiosis Asfalias",
+      "description": "Apaitiseis aporifrthoun me texnikotites meta apo chronia pliromis asfalistiron"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Sok Epitokion Stefanikou",
+      "description": "Pagi epitokio ligi ke metavasi se poly ypsloteri kymaninomeni epitokio"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Xreosis Metaforon Exoterikou",
+      "description": "Ypervoles xreosis ke kakoi synallagmatiki isotimi ya diethnies metafores xrymaton"
+    },
+    "NHS Waiting Times": {
+      "name": "Chroni Anamonis NHS",
+      "description": "Anamones pollon minon i chronon ya egxirisis ke rantevou eidikon"
+    },
+    "GP Appointment Access": {
+      "name": "Prosvasi se Rantevou GP",
+      "description": "Den boris na paris tilefono ya na klisis rantevou GP, anamones evdamadon"
+    },
+    "Dentist Availability": {
+      "name": "Diathesimotita Odontiatrou",
+      "description": "Adynato na vris odontiatro NHS pou dechete neous astheneis"
+    },
+    "Mental Health Service Waits": {
+      "name": "Anamones Ypiresion Psichikis Ygeias",
+      "description": "Anamones minon ya therapia ke ypostirixi psichikis ygeias"
+    },
+    "Prescription Costs": {
+      "name": "Kostos Syntagografon",
+      "description": "Kostos ana antikeimeno poly ypsilo stin Anglia, anakolutia se ethni toy UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Xreosis Parkirismatos Nosokomion",
+      "description": "Pliromis ya parking sto nosokomeio otan ise arostos i episkeptese arostous sygeneis"
+    },
+    "Rent Increases": {
+      "name": "Ayxiseis Eniikiou",
+      "description": "Idiotiko enikio ayxani poly pano apo plithorismos, apili aposesis choris aiti"
+    },
+    "Council Tax Rises": {
+      "name": "Ayxiseis Council Tax",
+      "description": "Etisies ayxiseis council tax eno oi topikes ypiresias chiroterevoune"
+    },
+    "Noisy Neighbours": {
+      "name": "Thoryvodi Gitones",
+      "description": "Synechis thorivos, dimoi argi na drastiriopothoune, epitosi stin psichiki ygeia"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Alages Syllogis Skoupidion",
+      "description": "Meiomenes sylloges ton kados, sychytikoi kanones anakyklosis, kadoi pou xeilyzoune"
+    },
+    "Planning Permission Abuse": {
+      "name": "Kataxrisi Adeias Polodomiasis",
+      "description": "Anithites anaptyxeis egkrinonte, prasini zoni se kindyno, koinotita agnoite"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Ygrasia ke Mychitas se Katoikies",
+      "description": "Enikiastes ke eteries katoikias apotychanoune na diorthosoun ygrassia ke mychita"
+    },
+    "Delivery Problems": {
+      "name": "Provlimata Paradosis",
+      "description": "Paketa chamena, afimena sti vroxi, simiosmena os paradothenda alla den elave"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Proionta jinounde mikrotera eno oi times menoun idies i ayxanounte"
+    },
+    "Refund Difficulties": {
+      "name": "Dyskolies Epistrofis Xrimaton",
+      "description": "Eteries pou kanoun tis epistrofes ke ta returns anoxylogista dyskola"
+    },
+    "Fake Reviews": {
+      "name": "Pseftes Axiolojisis",
+      "description": "Den boris na empistefis tis online axiolojisis, pseftes thetikes axiolojisis pou planou katanalotes"
+    },
+    "Subscription Traps": {
+      "name": "Pagides Syndromis",
+      "description": "Dorian diagonismoi metavainounde se pliromin choris safis synkatatesi, dyskola na akirosi"
+    },
+    "Food Quality Decline": {
+      "name": "Ptosi Poiotitas Trofis",
+      "description": "Etoima fajita xirotheris poiotitas, mikroteri meridi, perissoteres prothitikes oussies"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Apelypissi apo Self-Checkout",
+      "description": "Michanimata aftoexypretisis apisteftoi, antikatathistaoun anthropinous ypalilous"
+    },
+    "Cost of Childcare": {
+      "name": "Kostos Pedikis Merimnas",
+      "description": "Kostos pedikis merimnas aparadekta akrivo, periorizi dynatotita ergasias"
+    },
+    "Student Loan Repayment": {
+      "name": "Xreolysio Foitikon Daneion",
+      "description": "Ptychiouchi plirone piso ya dekaetries, alages se katofli ke tokous"
+    },
+    "Dog Fouling": {
+      "name": "Akatharsies Skyliou",
+      "description": "Skylisia vouliagmena se dimosies chorouss, parka ke pezodrommia den katharizonde"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Antikahistai Doullies",
+      "description": "Agonia ya tin texniti niximosini pou aftoampoppii doullies choris ypostirixi metavassis"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Britanikos foreos sidirodromikon grammon pou exipiretei ti West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Britanikos foreos sidirodromikon grammon pou exipiretei to Londino kai to noto"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Britanikos foreos sidirodromikon grammon pou exipiretei to vorio tis Anglias"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Britanikos foreos makrinon sidirodromikon grammon"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Britanikos foreos sidirodromikon grammon pou exipiretei diadromes trans-Pennine"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Britanikos foreos sidirodromikon grammon pou exipiretei ti East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Evropaiki aeroporia chamiliou kostous"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Britaniki aeroporia chamiliou kostous"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Britaniki ethniki aeroporia"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Etairia diakopon kai taxidion"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Megali britaniki parochi internet kai kinitis"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Britaniki parochi internet, tileorasis kai kinitis"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Britaniki parochi tileorasis, internet kai kinitis"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Pagkosmia etairia tilepikinonion me edra sto Inoméno Vasilio"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Britanikos foreos diktioou kinitis"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Britaniki parochi internet kai tilefonikou diktioou"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Britanikos parocheas energeias"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Britanikos parocheas energeias"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Britanikos parocheas energeias (galliki idioktisia)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Britanikos parocheas ananeosimis energeias"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Britanikos parocheas energeias"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Britanikos parocheas energeias (germaniki idioktisia)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Etairia nerou kai apocheteusis gia to Londino kai tin koilada tou Thames"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Etairia nerou gia to noto tis Anglias"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Etairia nerou gia to voiodytiko tmima tis Anglias"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Etairia nerou gia ta Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Etairia nerou gia tin Anatoliki Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Britaniki diethnís trapeza"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Pagkosmies trapezikes kai chrematooikonomikes ypiresies"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Britaniki trapeza lianikon kai emporikon"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Britanikos trapezikos omilos"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Britaniki trapeza (ispaniki idioktisia)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Psifiakes trapezikes kai fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Britanikes asfalistikes kai chrematooikonomikes ypiresies"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Britaniki asfalisi aftokinitou kai katoikias"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Britaniki asfalistiki etairia"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Pagkosmio ilektroniko emporio kai technologia"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Britaniki tachidromiki ypiresia"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Britaniki ypiresia paradosis demadon (palia Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Britaniki ypiresia paradosis demadon"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Britaniki alysida supermarket"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Britaniki alysida supermarket"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Ethniki Ypiresia Ygeias gia tin Anglia"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Odontitatrikes ypiresies tou NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Idiotikos parocheas ygeias"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Britanikes topikes kyvemitikes arches"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Britanikos katoikodomos"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Britaniki platforma ilektronikis enikiasis"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Ypiresia streaming psychagogias"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Etairia technologias"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "treno akirothike",
+      "akiromeno treno",
+      "akirosi trenou",
+      "trena den trexoun",
+      "akirosi sidirodromikou",
+      "ypiresia akirothike",
+      "kathisteriseis trenon",
+      "treno me kathisterisi",
+      "trena argoun",
+      "treno arga",
+      "kathisteriseis sidirodromikou"
+    ],
+    "Train Ticket Prices": [
+      "eisitirion sidirodromikou",
+      "kostos isitirio",
+      "akrivo treno",
+      "timis trenon"
+    ],
+    "Flight Delays": [
+      "ptisi kathisterimeni",
+      "aeroplano kathisterimeno",
+      "ptisi akirothike",
+      "kathisteriseis aerodromio",
+      "kolimenos sto aerodromio",
+      "ptisi arga"
+    ],
+    "Lost Luggage": [
+      "aposkriai haximeni",
+      "hasmeni valitsa",
+      "aposkriai den eftasan",
+      "hasmeni valitsa",
+      "aposkriai den ine sto carousel",
+      "tsanda hasmeni apo aerogrami"
+    ],
+    "Bus Route Cuts": [
+      "kopsi leoforion",
+      "mioseis diadromou",
+      "kleisimo ypiresias leoforion"
+    ],
+    "Broadband Speed": [
+      "argo internet",
+      "argo wifi",
+      "wifi argo",
+      "taxitita internet",
+      "broadband den leitourgei",
+      "buffering",
+      "internet synexeia pefti",
+      "wifi pefti"
+    ],
+    "Mobile Signal Dead Zones": [
+      "den exi sima",
+      "den exi lipsi",
+      "nekri zoni kiniton",
+      "zoni xoris sima"
+    ],
+    "Price Rises Mid-Contract": [
+      "afxisi logariasmou mesa sti symvasi",
+      "afxisi timis symvasis",
+      "afxisi mesa sti symvasi"
+    ],
+    "Customer Service Hold Times": [
+      "se anamoní",
+      "perimenonta sto tilefono",
+      "den boro na syndeho",
+      "kanenas den apanta",
+      "oura tilefonou",
+      "call centre"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "den boro na akiroso",
+      "diskolo na akirosis",
+      "akirosi syndromi",
+      "apegrafi"
+    ],
+    "Energy Bill Costs": [
+      "logarismos gaz poly ipslos",
+      "logarismos ilektrismou",
+      "times energias",
+      "kostos thermánsis",
+      "ftoxia kafsimon",
+      "den boro na pliroso tin energia"
+    ],
+    "Inaccurate Energy Bills": [
+      "lathos logarismos energias",
+      "lathos ypologismos metrisi",
+      "yperxreosi energia"
+    ],
+    "Water Bill Increases": [
+      "taxeis nerou",
+      "xreosi nerou",
+      "logarismos nerou poly ipsilos"
+    ],
+    "Sewage in Rivers": [
+      "rimi limatón",
+      "oma limata",
+      "limata stin paralia",
+      "molynsi nerou",
+      "yperxilisi limatón",
+      "sympleromatiki yperxilisi apoxetefsis"
+    ],
+    "Hidden Bank Charges": [
+      "anapantexta telis",
+      "krifa telis",
+      "ekpliktika xreoseis",
+      "telis yperanaliseos",
+      "telis trapezas"
+    ],
+    "Fraud and Scam Losses": [
+      "me exapatan",
+      "apati trapezas",
+      "apati pliromes",
+      "aftorisiméni apati"
+    ],
+    "Bank Branch Closures": [
+      "kleisimata katastimaton",
+      "topiki trapeza klinei",
+      "den exi trapeza konta"
+    ],
+    "Insurance Claim Rejections": [
+      "aporifte apetisi",
+      "asfalia den plironi",
+      "aporriméni apetisi"
+    ],
+    "NHS Waiting Times": [
+      "anamoní NHS",
+      "listas anamonís",
+      "anamoní egxirisis",
+      "xronos anamonís nosokomiou",
+      "anamoní parampompis",
+      "anamoní gia egxirisi"
+    ],
+    "GP Appointment Access": [
+      "den boro na vro rantevou giatrou",
+      "rantevou giatrou",
+      "oura tilefonou GP",
+      "den boro na do giatro",
+      "troxi tilefonou 8am"
+    ],
+    "Dentist Availability": [
+      "odontiatros NHS",
+      "den boro na vro odontiatro",
+      "listas anamonís odontiatrou"
+    ],
+    "Mental Health Service Waits": [
+      "xrimatodotisi psixikis igeias",
+      "prosvassi se therapia",
+      "anamoní symvoulis",
+      "anamoní CAMHS"
+    ],
+    "Prescription Costs": [
+      "kostos farmákon",
+      "times farmákon",
+      "xreoseis farmakiou"
+    ],
+    "Delivery Problems": [
+      "paketo xameno",
+      "paketo den paradothike",
+      "ximeno sti vroxi",
+      "paketo klaméno",
+      "odigos paradosis",
+      "xameni paradosi"
+    ],
+    "Rent Increases": [
+      "enikio poly ipsilo",
+      "enikio afxanete",
+      "idioktitis afxani enikio",
+      "exikosi xoris aitia"
+    ],
+    "Parking Fines": [
+      "klisi parking",
+      "eidopoiisi xreosis parking",
+      "PCN",
+      "adiki klisi parking"
+    ],
+    "Shrinkflation": [
+      "mikroteres meridas",
+      "ligotero gia idia timi",
+      "paketo mikrotero",
+      "mikrenonda proionta"
+    ],
+    "Pothole Damage": [
+      "tripes sto dromo",
+      "zimia dromou",
+      "zimia aftokinitou apo tripa"
+    ],
+    "Council Tax Rises": [
+      "afxisi forou dimou",
+      "foros dimou poly ipsilos",
+      "topikos foros"
+    ],
+    "Damp and Mould in Housing": [
+      "spiti me mixiki",
+      "vygrasia sto diamerisma",
+      "mavri mixiki",
+      "kakosyntirisi katoikias"
+    ],
+    "Student Loan Repayment": [
+      "dania spoudaston",
+      "didaktra",
+      "xreos ekpedeftis",
+      "xreos foititi"
+    ],
+    "AI Replacing Jobs": [
+      "aftomatopiisi douleias",
+      "AI perni douleies",
+      "robot antikathistoun ergazomenous"
+    ],
+    "Roaming Charges": [
+      "logarismos tilefonou ston diaskedasi",
+      "xreoseis dedomenon exoterikoy",
+      "xreoseis tilefonou exoterikoy"
+    ],
+    "Smart Meter Problems": [
+      "smart meter xameno",
+      "metrisis den doulevei",
+      "metrisis exase sima"
+    ],
+    "Subscription Traps": [
+      "pagida dorean dokimis",
+      "aftomati ananeosi",
+      "xreosi meta ti dokimi"
+    ],
+    "Fuel Prices": [
+      "times venzinis",
+      "times diesel",
+      "kostos kafsimou",
+      "venzini poly akrivi"
+    ],
+    "Power Cuts": [
+      "diakopi revmatos",
+      "diakopi ilektrismou",
+      "blackout",
+      "xoris revma",
+      "apotixia revmatos"
+    ],
+    "Mortgage Rate Shock": [
+      "afxisi stegastikou daneiou",
+      "epitokio stegastikou daneiou",
+      "anahreo daneiou",
+      "ligi pagias timis"
+    ],
+    "Overseas Transfer Fees": [
+      "telis metaforon",
+      "apostoli xrimaton exoteriko",
+      "telis apostolis xrimaton",
+      "kostos trapezikis metaforas"
+    ],
+    "Hospital Parking Charges": [
+      "parking nosokomiou",
+      "parking sto nosokomio",
+      "parking NHS"
+    ],
+    "Noisy Neighbours": [
+      "paragogi thorivou",
+      "thorivos geitona",
+      "thorivodi geitones",
+      "oxlisi apo thorivos"
+    ],
+    "Rubbish Collection Changes": [
+      "syllogi skoupidon",
+      "kados den mazeftikan",
+      "syxisi anakiklosis",
+      "xameni syllogi skoupidon"
+    ],
+    "Planning Permission Abuse": [
+      "adeia domisis",
+      "anepithymiti ananaptiksi",
+      "prasini zoni",
+      "adeia ktismatos"
+    ],
+    "Refund Difficulties": [
+      "den boro na paro epistrofi xrimaton",
+      "epistrofi arnithike",
+      "epistrofi aporrifthike",
+      "piso ta lefta"
+    ],
+    "Fake Reviews": [
+      "xiriagosi kritikon",
+      "pliromena kritikes",
+      "trust pilot pseftikes",
+      "pseftiki kritiki"
+    ],
+    "Food Quality Decline": [
+      "piotita fagitou",
+      "etimo faghito xeirotero",
+      "prothetes trofis",
+      "merida mikrotero"
+    ],
+    "Self-Checkout Frustration": [
+      "self checkout",
+      "aftexipireisi",
+      "xoris tamia",
+      "mixani den doulevei"
+    ],
+    "Cost of Childcare": [
+      "kostos frontidas pedion",
+      "telis paidikoy stathmou",
+      "frontida pedion akrivi",
+      "kostos paidikoy stathmou"
+    ],
+    "Dog Fouling": [
+      "akatharsia skilou",
+      "kaka skilou",
+      "apovlita skilou",
+      "akatharsia"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Mia voithisa enan rioter na katathesi 6 aitiseis epistrofis chrímaton se mia monachi kathisterimeni diadromí. Ekanan £47 prin ftasoun sto Birmingham.",
+      "agent_bio": "Parakoloutheí ta patterns akyróseon, cheirízetai ta éggrafa epistrofis chrímaton, elegchei káthe proteinómeni energeia, kai ftiáchni stoicheia gia ypovolés ston kanoristikó foréa. Katergázetai tous arithmoús gia na mporoún oi rioters na epikentrothoún s' afto pou símainei.",
+      "human_quote": "I agapiméni mou stigmí ston Quiet Riot: na vlépo tin omáda social media tis Avanti na trechei ótan 400 apo mas kanáme tweet tin ídia stigmí.",
+      "human_bio": "Taktikós navettér apo to Manchester pou pérasan 3 chrónia stin grammí tis Avanti prin apofasísei óti ftánei pia. Voitháei na syndethoún oi rioters stis ídies diadromés, moirázetai ti douleúei, kai férni tin anthrópiní epafí.",
+      "goal": "Na voithíso tous rioters na kratísoun ypeúthynes tis etaireíes metaforón tou UK gia akyróseís, kathistériseis kai times — kai na sigourefthoún óti óloi xéroun ti tous analogei.",
+      "focus": "Patterns akyróseon tis Avanti West Coast",
+      "focus_detail": "Chtizoume mia vási dedomenón me akyróseís pou perilamvánei óres, diadromés kai aitíes gia ypovolí ston ORR. Tóra parakoloutheí 340 akyróseís pou anaferthikan apo rioters afton ton mína."
+    },
+    "telecoms": {
+      "agent_quote": "Ekana tests tachítitas gia 200 rioters. O mésos óros ítan 18 Mbps. Plíronan gia 65.",
+      "agent_bio": "Analyei tis tachítites broadband, syntiássei dedoména sýgkrisis parochón, kai voitháei tous rioters na chtisoún stoicheia gia ton Ofcom. An i sýndexí sou eínai argí, o Pulse tha to apodíxei.",
+      "human_quote": "Enas ólos drómos állaxe broadband mazí. O palios párochos ésteile 'parakaló ýrthe píso' grámata se káthe spíti.",
+      "human_bio": "Tech-savvy Londrézos pou varethíke na pliróni gia tachítites broadband pou den ypírchane poté. Voitháei tous rioters na sygrínoun parochous, na syntonísoun allages, kai na moirazoúntai stoicheia apo speed tests.",
+      "goal": "Na voithíso tous rioters na paíroun tin ypiresia broadband kai kinití pou plirónoun — kai na xéroun ti na kánoun ótan den tin paíroun.",
+      "focus": "Auxíseis timón mésa sti sýmvasi",
+      "focus_detail": "Syllégoume stoicheia apo rioters pou chtyípithikan apo auxíseís CPI+ gia ypovolí ston Ofcom. 890 rioters epireázontai se 4 parochous."
+    },
+    "energy": {
+      "agent_quote": "Voíthisa enan rioter na ypologísei óti íche yperplirósei £340 se ektimómena logariasmous. To email sygnómis tis etaireías enérgias ítanpio makrý apo tin archikí sýmvasi.",
+      "agent_bio": "Analyei patterns timológisis, entopízei ypercheóseis, kai ftiáchni stoicheia gia ypovolés ston kanoristikó foréa. An i etaireía enérgias sou kanei koróida, o Spark tha vrei tis apodíxeis.",
+      "human_quote": "Mia rioter épare píso £340 aftoú apodíxame 2 chrónia ypercheósis. Eklapse sto tiléfono.",
+      "human_bio": "Edrévetai sto Bristol. Voitháei tous rioters na amfisvitísoun tous logariasmous tous, na kanonikopiísoun tin allagí, kai na sylléxoun stoicheia gia ton Ofgem. Xérei tin agorá enérgias apó mésa.",
+      "goal": "Na voithíso tous rioters na amfisvitísoun ádikous logariasmous, na allázoun pio éxypna, kai na sigourefthoún óti oi etaireíes enérgias pézoun díkaia.",
+      "focus": "Láthe ektimómenis timológisis tis British Gas",
+      "focus_detail": "Analyoume 2 chrónia dedomenón timológisis apo 340 rioters gia na entopísoume systematika patterns ypercheósis gia ypovolí ston Ofgem."
+    },
+    "water": {
+      "agent_quote": "Voíthisa 200 rioters na katathésoun anafores gia lýmata se éna Savvatokýriako. To inbox tis Thames Water chreíazotan dikó tou inbox.",
+      "agent_bio": "Parakoloutheí dedoména aporrípseón lymáton, parakoloutheí tin epídosi etairión ýdatos, kai syntássei stoicheia gia EA kai Ofwat. Kratáei máti se káthe exódo kai yperéchilousi.",
+      "human_quote": "Kanáme mia paralía na anoíxei 3 evdomádes prótera deíchnontas óti ta dedoména lymáton ítan láthos.",
+      "human_bio": "Surfer apo tin Kornoválli pou varethíke me tis proeidopiíseis lymáton na kleínoun tin topikí tou paralía. Voitháei tous rioters na anafféroun aporrípseís, na syllégoún stoicheia poiótitas nerou, kai na syntonízontai me ton EA.",
+      "goal": "Na voithíso tous rioters na kratísoun ypeúthynes tis etaireíes ýdatos gia lýmata, logariasmous kai poiótita ypireseías.",
+      "focus": "Synchnotita aporrípseon lymáton tis Thames Water",
+      "focus_detail": "Chartografoúme gegonóta aporrípseón énanti dedomenón pou anafére i etaireía. 200 anafores rioters ypodeikníoun ypo-anafóra se 3 exódous."
+    },
+    "banking": {
+      "agent_quote": "Voíthisa na schriasteí mia paraponó tóso diexodikí pou i trápeza tilefonise gia na zitisei sygnómi prin kaí steílei.",
+      "agent_bio": "Elegchei trapezikés chrióseís, analyei domés telón, kai voitháei na chtísei stoicheia paraponón ston FCA. An ypárchei kryvómenotílos, o Chip tha to vrei.",
+      "human_quote": "I Barclays antéstrepse mia kleísimo ypokatastíma aftoú 1,200 apo mas emfanisthíkame stin diavoulefsi.",
+      "human_bio": "Próin ypállilos trápezas apo to Birmingham pou eíde pos pragmatika cheirízontai ta parápona apo to esoteriko. Voitháei tous rioters na grápsoún kalítera parápona kai na kanonikopoisoun to sýstima.",
+      "goal": "Na voithíso tous rioters na antimetopisoun ádikes chrioseís, kleísimata ypokataストímaton, kai kakí ypiresia apo tis trapezes.",
+      "focus": "Kýma kleísimatos ypokatastiimaton tis HSBC",
+      "focus_detail": "Syntonizoume apantíseis se 12 schediasména kleísimata. Syllégoume dilóseis epídrasís apo tis epireasménes koinótites."
+    },
+    "health": {
+      "agent_quote": "Voíthisa na vroúme 3 NHS odontiatrous pou déchotan asthenís. O rioter nómize óti to eftiáchna.",
+      "agent_bio": "Parakoloutheí chrónioys anamonis, vrískei diathesimótita, kai voitháei tous rioters na kanonikopoiísoun to sýstima. An ypárchei pio grígori diadromí stin therapeia, i Cura tha tin chartográfisei.",
+      "human_quote": "Enas rioter chrisimopoíise to prótypo grámma mas gia na grígori éna parapompí. 18 mínes éginan 6 evdomádes.",
+      "human_bio": "Nosiléftria apo to Liverpool pou eíde kai tis dyo plevres tou NHS. Voitháei tous rioters na kanonikopoiísoun lístes anamonis, na grápsoun apotelesmatika grámata, kai na moírasoúntai ti pragmatika kinei ti velóna.",
+      "goal": "Na voithíso tous rioters na kanonikopoiísoun chrónous anamonis ston NHS, na vroún diathesimótita, kai na xéroun ti epilogés échoun.",
+      "focus": "Chróni pró￾basis tiléfono se giatroys",
+      "focus_detail": "Syllégoume dedoména klíseon apo 500 rioters gia na chtísoume mia eikóna tis pragmatikís prósvasis. Dimosiévoume ta evrimata se topikes epitropes ygeías."
+    },
+    "housing": {
+      "agent_quote": "Voíthisa na tekmirióso 47 provlímata se mia néa kataskevi. O kataskevastís rotíse an ítan eléstis ktirión.",
+      "agent_bio": "Tekmirióni provlímata akiniton, analyei chrónioys apántisis enikiastón, kai syntássei stoicheia gia ypovolés ston housing ombudsman. Káthe ichrasiá pigí, káthe rismatián, katagramména.",
+      "human_quote": "To pakéto mas stoicheíon gia ígrasía égine tóso analytiko pou o enikiastís to diórthose prin tin eléxi tou dímou.",
+      "human_bio": "Enikiastís apo to Londíno pou échei antimetopísei ta pánta apo ígrasía méchri ntómbíous enikiastés. Voitháei tous rioters na tekmiriósoún ta provlímata sostá kai na xéroun ti epilogés échoun.",
+      "goal": "Na voithíso tous rioters na antimetopísoún enikiastés, dímoys, kai provlímata stégisis — kai na xéroun ti tous analogei.",
+      "focus": "Eidopoiíseis exódou Section 21 chorís aitía",
+      "focus_detail": "Voitháme rioters pou epireázontai apo exódous chorís aitía na katalávoun to néo Renters Reform Act kai ti símainei gi' aftoús."
+    },
+    "shopping": {
+      "agent_quote": "Parakoloythisa éna 'paradosméno' déma se 4 gítones, énan kádo anakýklosis, kai éna thermorío. To vrika.",
+      "agent_bio": "Parakoloutheí apotychíes parádosis, syntássei stoicheia epistrofís chrímaton, kai entopízei patterns timologisis. An to déma sou échase, o Scout ídi psáchni.",
+      "human_quote": "I Evri échase to déma mou 3 forés. Tóra voitháo állous na pairnoun tis epistrofés tous pio grígora ap' óti égina poté egó.",
+      "human_bio": "Veteran online shopping apo to Edinburgh pou echei chásei perisótera démata ap' ósa mporei na metrísei. Voitháei tous rioters na pairnoun epistrofés, na anaferoun polités, kai na apofévoun tous cheiroterous.",
+      "goal": "Na voithíso tous rioters na pairnoun epistrofés, na parakolouthoún chaména démata, kai na kratísoun ypeúthynes tous lianopoltés kai tis etaireíes parádosis.",
+      "focus": "Posostá apotychías parádosis tis Evri",
+      "focus_detail": "Syntássoume stoicheia apotychías parádosis apo 800 rioters gia ypovolí sta Citizens Advice kai Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Voíthisa na fotografíso tin ídia trípa ston drómo se 11 diaforetikés kairikés synthíkes. O dímos telika parédothike.",
+      "agent_bio": "Chartografei topika provlímata, parakoloutheí chrónioys apántison dímou, kai syntássei aitimata FOI. An i trípa sou ston drómo eínai ekei 6 mínes, o Link echei ta stoicheia.",
+      "human_quote": "O dímos diórthose ton drómo mas aftoú chartografisame káthe mía trípa me fotografíes. 11 mínes, allá to kataferame.",
+      "human_bio": "Koinotikos Oualós apo ta Valleys pou anaferei tis ídies trípes edó kai chrónia. Voitháei tous rioters na tekmiriósoún topika provlímata kai na kratísoun ypeúthynes tous dimous.",
+      "goal": "Na voithíso tous rioters na diorthósoún topika provlímata — trípes, skoupidotenekedes, poleodómíses, thórivo — kai na kratísoun ypeúthynes tous dímous.",
+      "focus": "Chróni apántisis anaforas trípas ston drómo",
+      "focus_detail": "Aitimata FOI staléka se 30 dímous na sygkrinoume anaférómenos énanti pragmatikón chrónon episkevís. Dimosiévoume ta apotelesmata san pínaka katátaxis."
+    },
+    "other": {
+      "agent_quote": "Voíthisa na akyróso mia syndromí gymnastiríou pou peíre 3 tiléfonemata, 2 email, kai mia sytstiméni parádosi. To gymnastírio tóra echei koumpí akýrosis.",
+      "agent_bio": "Cheirízetai ta provlímata pou den tairiázoún évkola alloy. Pagides syndromón, plastika aporrimmata, apogitévseis se self-checkout — o Flex vriskei ta patterns kai ta símata píesis.",
+      "human_quote": "Kaname mia alyséda gymnastirion na prosthesei koumpí akýrosis ston istótopo tous. Píre móno 800 parápona.",
+      "human_bio": "Product designer apo to Londíno pou apogitévtike apo to póso dyskolo kánoún oi etaireíes na fýgeis. Voitháei tous rioters na akyrosoún syndromes, na apofévoun dark patterns, kai na moirázontai lýseis.",
+      "goal": "Na voithíso tous rioters me ta prágmata pou den tairiázoún évkola alloy — syndromes, epistrofes, kai kathimerines apogitévseis.",
+      "focus": "Dark patterns akýrosis syndromón",
+      "focus_detail": "Tekmiriónoume tous cheiróterous kai chtizoume prótypa scripts akýrosis gia ton kathena."
+    },
+    "insurance": {
+      "agent_quote": "Voíthisa enan rioter na vrei tin rythmisi pou ekane mia aporifthéisa aitisi asfálisis spitioy na ginei plironí £4,200. I idia politikí tis asfalistikis tous apodixe láthos.",
+      "agent_bio": "Elegchei diatýposeis politikón, entopizei ádika patterns aporriptis, kai chtizei stoicheia gia ypovoles ston Financial Ombudsman. An i asfalistiki sou apofévgei mia egyri aitisi, o Shield tha vrei to méso píesis.",
+      "human_quote": "Kana 8 rioters me ton idio týpo aporifthéisas aitisis na ypováloun mazi. I asfalistiki diakanonise ólous tous 8 mésa se déka meres.",
+      "human_bio": "Próin ergazómenos ston klado asfálisis apo to Leeds pou xerei pós pragmatiká apofasizontai oi aítimseis. Voitháei tous rioters na grápsoun kalitera eféseis, na katalavoun tin argkó politikón, kai na xeroun póte na anikserosoún.",
+      "goal": "Na voithíso tous rioters na pairnoun díkaii metacheirisi apo asfalistikes — kai na xeroun ti na kanoun ótan mia aitisi aporriptetai ádika.",
+      "focus": "Patterns aporrriptis asfálisis spitioy tis Aviva",
+      "focus_detail": "'Fthora kai katánalosi' anaferetai sto 40% ton aporiftheíson apitison — sychná láthos. Analyoume 200 ypotheseis se 3 asfalistikes gia paketo stoicheion ston FOS."
+    },
+    "delivery": {
+      "agent_quote": "Ichnilatisa éna 'paradosméno' déma mesa apo 6 diaforetikes katastaseis parakoloythisis, 3 apothíkes, kai to ypostego enós gítona. To vrika se 47 lepta.",
+      "agent_bio": "Parakoloutheí epidosi courier, parakolouthei pososta apotychías parádosis, kai syntássei stoicheia gia parápona katanalotón. An to déma sou echei exafanistéi, o Track idi to psachni.",
+      "human_quote": "Kana tin DPD na allaxei tin politikí fotografikón stoicheion stin periochí mas afoy 40 rioters ypevalan apodeixi dematon pou afthikan sti vrochí.",
+      "human_bio": "Online shopper apo ti Glaskóvi pou varethike to 'to afisame se asfales méros' dikaiologia. Voitháei tous rioters na pairnoun epistrofes, na anaferoun couriers, kai na apofévoun tous cheiróterous.",
+      "goal": "Na voithíso tous rioters na pairnoun ta démata tous paradosmena sosta — kai na pairnoun epistrofes ótan den ginontai.",
+      "focus": "Pososta apotychías parádosis tis Evri",
+      "focus_detail": "Syntássoume stoicheia apotychías parádosis apo 800 rioters. Pososto paraponón Evri: 23% — 3 fores ypslotero apo DPD. Chtizoume pínaka katátaxis gia Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Ypologisa óti énas daneioliptis Plan 2 pou kerdizei £30k tha plirosei £47,000 se tokous prin to daneio diagraféí. To archiko daneio ítan £40,000.",
+      "agent_bio": "Analyei kosti ekpaidefsis, prothlepseis foititikón daneion, kai dikaiómata chrimatodótisis. Katergazetai tous arithmoús gia na mporoyn oi foitites kai oi apofoitoi na paroun texmirioménes apofaseis.",
+      "human_quote": "Voithisa 12 rioters na zitisoún píso yperplirones exofliménon foititikón daneion pou den íxeran. Mesi epistrofi: £340.",
+      "human_bio": "Éfiros foititís apo to Birmingham pou kanonikopoiise to sýstima chrimatodótisis dyo fores. Voitháei tous rioters na katalavoun exoflímata, na entopisoún yperplirones, kai na amfisvitisoún allages oríon.",
+      "goal": "Na voithíso tous foitités kai apofóitous na kanonikopoiisoún kosti ekpaidefsis, daneia kai exoflímata — kai na sigourefthoyn óti den yperplironoun.",
+      "focus": "Epistrofes yperplironón foititikón daneion",
+      "focus_detail": "Entopizoume apofóitous pou échoun chreothei káto apo to ório exoflímatos. 12 epistrofes katergásthikan mechri tóra — mésa £340 i kathemía."
+    },
+    "environment": {
+      "agent_quote": "Syndevéresa 3 chrónia dedomenón poiotitas aéra me pososta eisagogón se nosokomeia. I syschetisi ítan tóso safís pou o dímos den boroyse na tin agnoisei.",
+      "agent_bio": "Parakoloutheí perivallontika dedoména, parakolouthei epípeda mólynsis, kai syntássei stoicheia gia kanoristikés ypovoles. An oi arithmoí léne mia istoría, i Fern tha tin vreí.",
+      "human_quote": "Káname ton topikó mas dímo na egkatastisei monitors poiótitas aéra aftoy 200 rioters ypegrápsan tin aitisi mas stoicheion. Ta dedoména allaxan ta pánta.",
+      "human_bio": "Ptychioychos perivallontikón epistimón apo to Bristol pou pistévei se allagí vasisméni se stoicheia. Voitháei tous rioters na tekmiriosoún perivallontika provlimata kai na chtisoún ypothéseis pou oi kanoristikés foréis den mporoyn na agnoisoún.",
+      "goal": "Na voithíso tous rioters na tekmiriosoún perivallontika provlímata kai na kratisoún ypeúthynous tous molyntés kai toys politikoys me dedoména.",
+      "focus": "Kena parakoloythisis topikís poiótitas aéra",
+      "focus_detail": "Chartografoyme periochés chorís parakoloythisi poiótitas aéra se aktina 5km. To 60% ton rioter-anaferómenon imation mólynsis den echoun episimi parakoloythisi."
+    },
+    "employment": {
+      "agent_quote": "Syntaxa dedoména efarmogís AI ston ergaziako chóro apo 300 rioters. To 40% eípe óti oi allages eginan chorís kamía diavoulefísi. Afto eínai pattern, óchi anekdoto.",
+      "agent_bio": "Analyei taseis ergaziakoy chórou, parakoloutheí allagés politikís, kai voitháei tous rioters na katalavoun tis prostasíes tous. An i douleia sou allázei chorís diavoulefísi, o Forge echei ta dedoména.",
+      "human_quote": "Syndevedesa 30 rioters ston ídio klado pou antimetopizoun allages AI. Apodeichthike óti oi etaireíes tous chrisimopoioysan óli to ídio schedio — kai ta idia kena.",
+      "human_bio": "Epaggelmatias HR apo to Manchester pou allaxe plevres aftoy eíde pós pragmatiká leitoyrgoyn oi anasychrotíseis. Voitháei tous rioters na katalavoun tis epilogés tous kai na syntonisoún apantíseis.",
+      "goal": "Na voithíso tous rioters na kanonikopoiisoún allagés ston ergaziakó chóro, na katalavoun tis prostasíes tous, kai na apantisoún syllogika ótan oi douleies tous diakindynévoyn.",
+      "focus": "Avtomatopoiisi ergaziakoy chórou me AI chorís diavoulefísi",
+      "focus_detail": "Tekmiriónoume ypotheseis ópoy ergaléía AI eisichthisan chorís diavoulefísi prosopikoy. Chtizoume stoicheia gia mia ekthesi gia tis ypochreoseis ergodotón."
+    },
+    "tech": {
+      "agent_quote": "Vrika óti 3 kyríes efarmoghes synelegan dedoména topothesías akóma kai ótan oi adeies ítan rythmisménes se 'poté'. Katathesa parápona ston ICO gia óles.",
+      "agent_bio": "Parakoloutheí politikés platfórmon, parakoloutheí dark patterns, kai voitháei tous rioters na katalavoun ti kanoún oi etaireíes technologías me ta dedoména tous. An mia efarmogí sympheretai aschima, o Glitch tha tin piasei.",
+      "human_quote": "Organósa mia mazikí aitisi prosvasis se dedoména ypokémenon se mia etaireía social media. Ótan 500 atoma rotoyn taytochrona, prépei na to paroun sovara.",
+      "human_bio": "Kataskevastís logismikoy apo to Edinburgh pou apogoitéftike apo to keno metakhý aftoy ypóschontai oi etaireíes technologías kai aftoy paradidoyn. Voitháei tous rioters na askisoún ta dikaiómata dedomenón tous kai na entopisoún dark patterns.",
+      "goal": "Na voithíso tous rioters na antistathoyn se dark patterns, katáchrisi dedomenón, kai ádikes praktikés technologias.",
+      "focus": "Yperivásia adeión efarmogón",
+      "focus_detail": "Eleghchoyme tis koryfaies 50 efarmogés gia ypervasiká dikaiómata adeión — zitoyn prosvasi pou den chreiázontai. Chtizoume ekthesi gia ton ICO."
+    }
+  }
+}
