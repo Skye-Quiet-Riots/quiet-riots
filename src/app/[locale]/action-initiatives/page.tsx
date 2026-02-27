@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getActionInitiativesWithIssues } from '@/lib/queries/action-initiatives';
+import { translateActionInitiatives } from '@/lib/queries/translate';
 import { getTranslatedEntities } from '@/lib/queries/translations';
 import { PageHeader } from '@/components/layout/page-header';
 import { ActionInitiativeCard } from '@/components/cards/action-initiative-card';
@@ -22,14 +23,14 @@ export default async function ActionInitiativesPage({ params, searchParams }: Pr
 
   const rawActionInitiatives = await getActionInitiativesWithIssues(status);
 
-  // Translate issue names shown alongside action initiatives
-  let actionInitiatives = rawActionInitiatives;
-  if (locale !== 'en' && rawActionInitiatives.length > 0) {
-    const issueIds = [...new Set(rawActionInitiatives.map((ai) => ai.issue_id))];
+  // Translate action initiative titles/descriptions and issue names
+  let actionInitiatives = await translateActionInitiatives(rawActionInitiatives, locale);
+  if (locale !== 'en' && actionInitiatives.length > 0) {
+    const issueIds = [...new Set(actionInitiatives.map((ai) => ai.issue_id))];
     const issueTranslations = await getTranslatedEntities('issue', issueIds, locale);
-    actionInitiatives = rawActionInitiatives.map((ai) => {
-      const t = issueTranslations[ai.issue_id];
-      return t?.name ? { ...ai, issue_name: t.name } : ai;
+    actionInitiatives = actionInitiatives.map((ai) => {
+      const tr = issueTranslations[ai.issue_id];
+      return tr?.name ? { ...ai, issue_name: tr.name } : ai;
     });
   }
 
