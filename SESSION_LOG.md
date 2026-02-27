@@ -6,13 +6,12 @@
 
 ## Latest Session
 
-**Session 57** (2026-02-27) — Fix Entity Name Translations + Bot Label Translation
-→ [`session-logs/2026-02-session-57.md`](session-logs/2026-02-session-57.md)
+**Session 58** (2026-02-27) — Fix Untranslated Assistant UI + Zero Tolerance i18n Rules
+→ [`session-logs/2026-02-session-58.md`](session-logs/2026-02-session-58.md)
 
 ## Current Priorities
 
-- **Test with Banglish user** — verify translated issue names + labels in WhatsApp
-- **Merge PR #137** — romanised locales feature, CI passing, needs user review
+- **Verify non-English locales on production** — check Spanish/Arabic shows translated assistant banners
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 
@@ -20,6 +19,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 58  | 2026-02-27    | Fix Untranslated Assistant UI + Zero Tolerance i18n   | [`session-58`](session-logs/2026-02-session-58.md)                                                             |
 | 57  | 2026-02-27    | Fix Entity Name Translations + Bot Label Translation  | [`session-57`](session-logs/2026-02-session-57.md)                                                             |
 | 56  | 2026-02-27    | Romanised Locales + Architecture Refactor + Security  | [`session-56`](session-logs/2026-02-session-56.md)                                                             |
 | 55  | 2026-02-27    | Category Assistant i18n + API Translation Pipeline    | [`session-55`](session-logs/2026-02-session-55.md)                                                             |
