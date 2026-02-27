@@ -2,672 +2,762 @@
   "locale": "nl",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telecom",
-    "Banking": "Bankieren",
-    "Health": "Gezondheid",
-    "Education": "Onderwijs",
-    "Environment": "Milieu",
-    "Energy": "Energie",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
     "Water": "Water",
-    "Insurance": "Verzekeringen",
-    "Housing": "Huisvesting",
-    "Shopping": "Winkelen",
-    "Delivery": "Bezorging",
-    "Local": "Lokaal",
-    "Employment": "Werkgelegenheid",
-    "Tech": "Technologie",
-    "Other": "Overig"
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Treinuitval",
-      "description": "Treinen geannuleerd of ernstig vertraagd met onvoldoende kennisgeving of compensatie"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Treinkaartprijzen",
-      "description": "Treinkaartjes te duur, stijgingen boven de inflatie, inconsistente prijzen"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Vluchtvertragingen",
-      "description": "Vluchten vertraagd of geannuleerd, slechte communicatie, moeilijk om compensatie te claimen"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Verloren bagage",
-      "description": "Koffers komen niet aan op de bestemming, trage tracking, ontoereikende compensatie"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Buslijnen geschrapt",
-      "description": "Routes geannuleerd, frequentie verminderd, plattelandsgemeenschappen verliezen bustoegang"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Schade door kuilen in de weg",
-      "description": "Kuilen die voertuigen beschadigen en fietsers in gevaar brengen, gemeenten traag met reparatie"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Parkeerboetes",
-      "description": "Oneerlijke particuliere parkeerkosten, agressieve handhaving, verwarrende bewegwijzering"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Brandstofprijzen",
-      "description": "Benzine- en dieselprijzen te hoog, dalen traag wanneer de groothandelsprijs zakt"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Breedbandsnelheid",
-      "description": "Internetsnelheden ver onder wat geadverteerd en betaald wordt"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Dode zones voor mobiel signaal",
-      "description": "Geen mobiel signaal in woningen, op werkplekken of langs vervoersroutes"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Prijsverhogingen tijdens het contract",
-      "description": "Telefoon-, breedband- en tv-rekeningen stijgen tijdens vastgelegde contracten"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Wachttijden klantenservice",
-      "description": "Uren in de wacht om een medewerker te spreken"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Moeilijk abonnementen opzeggen",
-      "description": "Bedrijven die het opzettelijk moeilijk maken om op te zeggen of uit te schrijven"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Roamingkosten",
-      "description": "Onverwachte mobiele kosten bij reizen naar het buitenland, prijsstijgingen na Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energierekeningen",
-      "description": "Gas- en elektriciteitsrekeningen onbetaalbaar, het prijsplafond is nog steeds te hoog"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Onjuiste energierekeningen",
-      "description": "Geschatte meterstanden verkeerd, te veel in rekening gebracht, factureringsfouten"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Stijging waterrekeningen",
-      "description": "Waterrekeningen stijgen sterk terwijl de servicekwaliteit daalt"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Rioolwater in rivieren",
-      "description": "Waterbedrijven die ongezuiverd rioolwater lozen in waterwegen en op stranden"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Stroomuitval",
-      "description": "Onderbrekingen van de elektriciteitsvoorziening, traag herstel, ontoereikende compensatie"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Problemen met slimme meters",
-      "description": "Slimme meters werken niet, functionaliteit verloren na wisselen van leverancier"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Sluiting van bankfilialen",
-      "description": "Lokale bankfilialen sluiten, waardoor gemeenschappen zonder toegang achterblijven"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Verborgen bankkosten",
-      "description": "Onverwachte kosten voor rood staan, buitenlandse transacties, rekeningbeheer"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Verliezen door fraude en oplichting",
-      "description": "Banken weigeren slachtoffers van fraude en geautoriseerde betaalfraude te vergoeden"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Afwijzing van verzekeringsclaims",
-      "description": "Claims afgewezen op technische gronden na jaren van premiebetaling"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Hypotheekrenteschok",
-      "description": "Vaste rente afgelopen en overgang naar veel hogere variabele rente"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Kosten voor buitenlandse overboekingen",
-      "description": "Buitensporige kosten en slechte wisselkoersen voor internationale overboekingen"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Wachttijden in de gezondheidszorg",
-      "description": "Maanden- of jarenlange wachttijden voor operaties en specialistische afspraken"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Toegang tot huisartsafspraken",
-      "description": "Niet door kunnen komen om een huisartsafspraak te maken, wekenlange wachttijden"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Beschikbaarheid van tandartsen",
-      "description": "Onmogelijk om een tandarts te vinden die nieuwe patienten aanneemt"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Wachttijden geestelijke gezondheidszorg",
-      "description": "Maandenlange wachttijden voor therapie en psychische ondersteuning"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Kosten van receptgeneesmiddelen",
-      "description": "Kosten per item te hoog in Engeland, inconsistentie tussen de landen van het VK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Parkeerkosten bij het ziekenhuis",
-      "description": "Betalen om te parkeren bij het ziekenhuis terwijl je ziek bent of zieke familieleden bezoekt"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Huurverhogingen",
-      "description": "Particuliere huur stijgt ver boven de inflatie, dreiging van huisuitzetting zonder reden"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Stijging gemeentebelasting",
-      "description": "Jaarlijkse stijgingen van de gemeentebelasting terwijl lokale diensten verslechteren"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Overlast van buren",
-      "description": "Aanhoudende geluidsoverlast, gemeenten traag om op te treden, invloed op de mentale gezondheid"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Wijzigingen in afvalinzameling",
-      "description": "Minder afvalinzameling, verwarrende recyclingregels, overvolle containers"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Misbruik van bouwvergunningen",
-      "description": "Ongewenste bouwprojecten goedgekeurd, groene zone bedreigd, gemeenschap genegeerd"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Vocht en schimmel in woningen",
-      "description": "Verhuurders en woningcorporaties die vocht en schimmel niet verhelpen"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Bezorgproblemen",
-      "description": "Pakketten zoekgeraakt, in de regen achtergelaten, als bezorgd gemarkeerd maar niet ontvangen"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Krimpflatie",
-      "description": "Producten worden kleiner terwijl de prijzen gelijk blijven of stijgen"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Moeilijkheden met terugbetaling",
-      "description": "Bedrijven die retourzendingen en terugbetalingen onnodig moeilijk maken"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Neprecensies",
-      "description": "Online recensies niet te vertrouwen, valse positieve recensies misleiden consumenten"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Abonnementsvallen",
-      "description": "Gratis proefperiodes die zonder duidelijke toestemming overgaan in betaald, moeilijk op te zeggen"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Afname van voedselkwaliteit",
-      "description": "Kant-en-klaarmaaltijden van slechtere kwaliteit, kleinere porties, meer additieven"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Frustratie met zelfscankassa's",
-      "description": "Zelfscankassa's onbetrouwbaar, vervangen menselijk personeel"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Kosten van kinderopvang",
-      "description": "Kinderopvangkosten onbetaalbaar hoog, beperken de mogelijkheid om te werken"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Terugbetaling studieschuld",
-      "description": "Afgestudeerden betalen tientallen jaren terug, wijzigingen in drempels en rente"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Hondenpoep",
-      "description": "Hondenuitwerpselen in openbare ruimten, parken en op stoepen die niet worden opgeruimd"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI vervangt banen",
-      "description": "Ongerustheid over kunstmatige intelligentie die banen automatiseert zonder ondersteuning bij de transitie"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Britse treinoperator op de West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Britse treinoperator voor Londen en het zuiden"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Britse treinoperator voor het noorden van Engeland"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Britse langeafstandstreinoperator"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Britse treinoperator op trans-Pennine routes"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Britse treinoperator op de East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Europese lagekostenluchtvaartmaatschappij"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Britse lagekostenluchtvaartmaatschappij"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Nationale luchtvaartmaatschappij van het Verenigd Koninkrijk"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Reis- en vakantiebedrijf"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Grote Britse breedband- en mobiele provider"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Britse breedband-, tv- en mobiele provider"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Britse tv-, breedband- en mobiele provider"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Wereldwijd telecombedrijf met hoofdkantoor in het VK"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Britse mobiele netwerkoperator"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Britse breedband- en telefonieprovider"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Britse energieleverancier"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Britse energieleverancier"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Britse energieleverancier (Frans eigendom)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Britse leverancier van hernieuwbare energie"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Britse energieleverancier"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Britse energieleverancier (Duits eigendom)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Water- en rioleringsbedrijf voor Londen en de Theemsvalei"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Waterbedrijf voor het zuiden van Engeland"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Waterbedrijf voor het noordwesten van Engeland"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Waterbedrijf voor de Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Waterbedrijf voor East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britse multinationale bank"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Wereldwijde bank- en financiele diensten"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Britse particuliere en zakelijke bank"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Britse bankengroep"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Britse bank (Spaans eigendom)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digitale bank en fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Britse verzekeringen en financiele diensten"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Britse auto- en woningverzekering"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Brits verzekeringsbedrijf"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Wereldwijd e-commerce- en technologiebedrijf"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Britse postdienst"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Britse pakketbezorgdienst (voorheen Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Britse pakketbezorgdienst"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Britse supermarktketen"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Britse supermarktketen"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Nationale gezondheidsdienst voor Engeland"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Tandheelkundige diensten van de nationale gezondheidsdienst"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Particuliere zorgverlener"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Britse lokale overheden"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Britse woningbouwer"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Brits online verhuurplatform"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streaming entertainmentdienst"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technologiebedrijf"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "trein geannuleerd",
-      "treinuitval",
-      "trein geschrapt",
-      "treinen rijden niet",
-      "annulering trein",
-      "dienst geannuleerd",
-      "treinvertragingen",
-      "trein vertraagd",
-      "treinen te laat",
-      "trein te laat",
-      "vertragingen spoor"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["treinkaartprijzen", "ticketkosten", "dure treinen", "treintarieven"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "vlucht vertraagd",
-      "vliegtuig vertraagd",
-      "vlucht geannuleerd",
-      "vertragingen op luchthaven",
-      "vast op luchthaven",
-      "vlucht te laat"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "koffers kwijt",
-      "koffer verloren",
-      "bagage niet aangekomen",
-      "koffer zoek",
-      "bagage niet op de band",
-      "koffer kwijt door luchtvaartmaatschappij"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["buslijnen geschrapt", "vermindering van lijnen", "opheffing buslijnen"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "traag internet",
-      "langzaam wifi",
-      "wifi traag",
-      "internetsnelheid",
-      "breedband werkt niet",
-      "bufferen",
-      "internet valt weg",
-      "wifi valt steeds uit"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "geen signaal",
-      "geen ontvangst",
-      "mobiel dood punt",
-      "signaal dode zone"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "prijsverhoging tijdens contract",
-      "contractprijs omhoog",
-      "verhoging halverwege contract"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "in de wacht",
-      "wachten aan de telefoon",
-      "kom niet door",
-      "niemand neemt op",
-      "wachtrij telefoon",
-      "klantenservice"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "kan niet opzeggen",
-      "moeilijk opzeggen",
-      "abonnement opzeggen",
-      "uitschrijven"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "gasrekening te hoog",
-      "elektriciteitsrekening",
-      "energieprijzen",
-      "stookkosten",
-      "energiearmoede",
-      "kan energie niet betalen"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "verkeerde energierekening",
-      "geschatte meterstand fout",
-      "te veel betaald energie"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["watertarief", "waterkosten", "waterrekening te hoog"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "rioollozing",
-      "ongezuiverd rioolwater",
-      "rioolwater op strand",
-      "watervervuiling",
-      "riooloverstort",
-      "overstort riolering"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "onverwachte kosten",
-      "verborgen kosten",
-      "verrassingskosten",
-      "roodstandkosten",
-      "bankkosten"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "opgelicht",
-      "bankfraude",
-      "overboekingsfraude",
-      "geautoriseerde fraude"
-    ],
-    "Bank Branch Closures": ["sluiting filialen", "lokale bank sluit", "geen bank in de buurt"],
-    "Insurance Claim Rejections": [
-      "claim afgewezen",
-      "verzekering betaalt niet",
-      "afgewezen claim"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS wachttijd",
-      "wachtlijst",
-      "wachten op operatie",
-      "wachttijd ziekenhuis",
-      "wachttijd verwijzing",
-      "wachten op ingreep"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "geen afspraak bij huisarts",
-      "doktersafspraak",
-      "telefoonwachtrij huisarts",
-      "kan geen arts zien",
-      "bellen om 8 uur 's ochtends"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS tandarts", "geen tandarts te vinden", "wachtlijst tandarts"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "financiering geestelijke gezondheid",
-      "toegang tot therapie",
-      "wachttijd therapie",
-      "CAMHS wachttijd"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["medicijnkosten", "geneesmiddelenprijzen", "apotheekkosten"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "pakket kwijt",
-      "pakket niet bezorgd",
-      "in de regen achtergelaten",
-      "pakket gestolen",
-      "bezorger",
-      "gemiste bezorging"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "huur te hoog",
-      "huur gaat omhoog",
-      "verhuurder verhoogt huur",
-      "huisuitzetting zonder reden"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["parkeerbon", "parkeerboete bericht", "PCN", "oneerlijke parkeerboete"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "kleinere porties",
-      "minder voor dezelfde prijs",
-      "verpakking kleiner",
-      "krimpende producten"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["kuilen in de weg", "wegschade", "kuil autoschade"],
-    "Council Tax Rises": [
-      "stijging gemeentebelasting",
-      "gemeentebelasting te hoog",
-      "lokale belasting"
-    ],
-    "Damp and Mould in Housing": [
-      "schimmel in huis",
-      "vochtig appartement",
-      "zwarte schimmel",
-      "woninggebreken"
-    ],
-    "Student Loan Repayment": ["studielening", "collegegeld", "studieschuld", "studenten schuld"],
-    "AI Replacing Jobs": [
-      "automatisering van banen",
-      "AI neemt banen over",
-      "robots vervangen werknemers"
-    ],
-    "Roaming Charges": [
-      "telefoonrekening op vakantie",
-      "datakosten in het buitenland",
-      "telefoonkosten in het buitenland"
-    ],
-    "Smart Meter Problems": ["slimme meter kapot", "meter werkt niet", "meter geen signaal"],
-    "Subscription Traps": [
-      "gratis proefperiode valkuil",
-      "automatische verlenging",
-      "kosten na proefperiode"
-    ],
-    "Fuel Prices": ["benzineprijzen", "dieselprijzen", "brandstofkosten", "benzine te duur"],
-    "Power Cuts": [
-      "stroomstoring",
-      "stroomuitval",
-      "blackout",
-      "geen stroom",
-      "stroomonderbreking"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "hypotheek stijging",
-      "hypotheekrente",
-      "oversluiten",
-      "vaste rente afgelopen"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "overboekingskosten",
-      "geld naar buitenland sturen",
-      "transferkosten",
-      "kosten overboeking"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["parkeren bij ziekenhuis", "ziekenhuisparkeren", "NHS parkeren"],
-    "Noisy Neighbours": [
-      "geluidsklacht",
-      "herrie van buren",
-      "luidruchtige buren",
-      "geluidsoverlast"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "vuilnisophaal",
-      "vuilnis niet opgehaald",
-      "recyclingverwarring",
-      "gemiste vuilnisophaal"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "bouwvergunning",
-      "ongewenste bouw",
-      "groene zone",
-      "bouwtoestemming"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "kan geen geld terugkrijgen",
-      "terugbetaling geweigerd",
-      "retour geweigerd",
-      "geld terug"
-    ],
-    "Fake Reviews": [
-      "manipulatie van recensies",
-      "betaalde recensies",
-      "Trustpilot nep",
-      "neprecensie"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "voedselkwaliteit",
-      "kant-en-klaarmaaltijd slechter",
-      "voedseltoevstoffen",
-      "portie kleiner"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "zelfscankassa",
-      "zelfbediening",
-      "geen bemande kassa",
-      "automaat werkt niet"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "kinderopvangkosten",
-      "creche kosten",
-      "kinderopvang duur",
-      "dagopvang kosten"
-    ],
-    "Dog Fouling": ["hondenpoep", "hondendrol", "hondenuitwerpselen", "vervuiling door honden"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Hielp een keer een rioter om 6 terugbetalingsclaims in te dienen tijdens één vertraagde reis. Ze verdienden £47 voordat ze Birmingham bereikten.",
+      "agent_bio": "Volgt annuleringspatronen, regelt de papierwinkel voor terugbetalingen, beoordeelt elke voorgestelde actie en stelt bewijsmateriaal samen voor indiening bij toezichthouders. Verwerkt de cijfers zodat rioters zich kunnen concentreren op wat belangrijk is.",
+      "human_quote": "Mijn favoriete Quiet Riot moment: zien hoe het socialemediateam van Avanti in paniek raakte toen 400 van ons tegelijkertijd tweetten.",
+      "human_bio": "Vaste forens uit Manchester die 3 jaar op de Avanti-lijn zat voordat ze besloot dat het genoeg was. Helpt rioters op dezelfde routes met elkaar in contact te brengen, deelt wat werkt en brengt de menselijke touch.",
+      "goal": "Rioters helpen Britse vervoersbedrijven ter verantwoording te roepen over annuleringen, vertragingen en prijzen — en ervoor zorgen dat iedereen weet waar ze recht op hebben.",
+      "focus": "Annuleringspatronen van Avanti West Coast",
+      "focus_detail": "Bouwt een dataset op van annuleringen met tijden, routes en redenen om in te dienen bij de ORR. Volgt momenteel 340 door rioters gemelde annuleringen deze maand."
+    },
+    "telecoms": {
+      "agent_quote": "Snelheidstesten uitgevoerd voor 200 rioters. Het gemiddelde was 18 Mbps. Ze betaalden voor 65.",
+      "agent_bio": "Analyseert breedbandsnelheden, stelt vergelijkingsgegevens van providers samen en helpt rioters bewijs op te bouwen voor Ofcom. Als je verbinding langzaam is, bewijst Pulse het.",
+      "human_quote": "Een hele straat stapte samen over naar een andere provider. De oude provider stuurde 'kom alsjeblieft terug'-brieven naar elk huis.",
+      "human_bio": "Technisch onderlegde Londenaar die het beu was te betalen voor breedbandsnelheden die nooit werden gehaald. Helpt rioters providers te vergelijken, overstappen te coördineren en snelheidstestbewijs te delen.",
+      "goal": "Rioters helpen de breedband- en mobiele service te krijgen waarvoor ze betalen — en weten wat ze moeten doen als dat niet gebeurt.",
+      "focus": "Prijsverhogingen tijdens contractperiode",
+      "focus_detail": "Verzamelt bewijs van rioters die getroffen zijn door CPI+ verhogingen om in te dienen bij Ofcom. 890 rioters getroffen bij 4 providers."
+    },
+    "energy": {
+      "agent_quote": "Hielp een rioter te berekenen dat ze £340 te veel hadden betaald op geschatte rekeningen. De verontschuldigingsmail van het energiebedrijf was langer dan het oorspronkelijke contract.",
+      "agent_bio": "Analyseert factureringspatronen, ontdekt te hoge kosten en stelt bewijsmateriaal samen voor indiening bij toezichthouders. Als je energiebedrijf je voor de gek houdt, vindt Spark de bonnetjes.",
+      "human_quote": "Een rioter kreeg £340 terug nadat we 2 jaar te hoge kosten hadden bewezen. Ze huilde aan de telefoon.",
+      "human_bio": "Gevestigd in Bristol. Helpt rioters hun rekeningen aan te vechten, slimmer over te stappen en bewijs te verzamelen voor Ofgem. Kent de energiemarkt door en door.",
+      "goal": "Rioters helpen oneerlijke rekeningen aan te vechten, slimmer over te stappen en ervoor zorgen dat energiebedrijven eerlijk spelen.",
+      "focus": "Fouten in geschatte facturering van British Gas",
+      "focus_detail": "Analyseert 2 jaar factureringsgegevens van 340 rioters om systematische patronen van te hoge kosten te identificeren voor indiening bij Ofgem."
+    },
+    "water": {
+      "agent_quote": "Hielp 200 rioters in één weekend rioolmeldingen in te dienen. De inbox van Thames Water had een eigen inbox nodig.",
+      "agent_bio": "Monitort rioolwaterlozingsgegevens, volgt de prestaties van waterbedrijven en stelt bewijsmateriaal samen voor EA en Ofwat. Houdt elke uitlaat en overloop in de gaten.",
+      "human_quote": "We kregen een strand 3 weken eerder heropend door aan te tonen dat de rioolgegevens onjuist waren.",
+      "human_bio": "Surfer uit Cornwall die het zat was dat afvalwaterwaarschuwingen zijn plaatselijke strand sloten. Helpt rioters lozingen te melden, waterkwaliteitsbewijs te verzamelen en te coördineren met de EA.",
+      "goal": "Rioters helpen waterbedrijven ter verantwoording te roepen over rioolwater, rekeningen en servicekwaliteit.",
+      "focus": "Frequentie van rioolwaterlozingen door Thames Water",
+      "focus_detail": "Brengt lozingsgebeurtenissen in kaart in vergelijking met door het bedrijf gerapporteerde gegevens. 200 rioter-meldingen suggereren onderrapportage bij 3 uitlaten."
+    },
+    "banking": {
+      "agent_quote": "Hielp een klacht op te stellen die zo grondig was dat de bank belde om zich te verontschuldigen voordat deze zelfs was verzonden.",
+      "agent_bio": "Beoordeelt bankkosten, analyseert kostenstructuren en helpt bewijsmateriaal voor FCA-klachten op te bouwen. Als er een verborgen tarief is, vindt Chip het.",
+      "human_quote": "Barclays draaide een filiaalssluiting terug nadat 1.200 van ons opdaagden bij de raadpleging.",
+      "human_bio": "Voormalig bankmedewerker uit Birmingham die van binnenuit zag hoe klachten werkelijk worden behandeld. Helpt rioters betere klachten te schrijven en het systeem te navigeren.",
+      "goal": "Rioters helpen omgaan met oneerlijke kosten, filiaalssluitingen en slechte service van banken.",
+      "focus": "Golf van HSBC-filiaalssluitingen",
+      "focus_detail": "Coördineert reacties op 12 geplande sluitingen. Verzamelt impactverklaringen van getroffen gemeenschappen."
+    },
+    "health": {
+      "agent_quote": "Hielp 3 NHS-tandartsen te vinden die patiënten accepteerden. De rioter dacht dat ik het verzon.",
+      "agent_bio": "Volgt wachttijden, vindt beschikbaarheid en helpt rioters het systeem te navigeren. Als er een snellere route naar behandeling is, brengt Cura die in kaart.",
+      "human_quote": "Een rioter gebruikte onze briefsjabloon om een doorverwijzing versneld te krijgen. 18 maanden werd 6 weken.",
+      "human_bio": "Verpleegkundige uit Liverpool die beide kanten van de NHS heeft gezien. Helpt rioters wachtlijsten te navigeren, effectieve brieven te schrijven en te delen wat echt verschil maakt.",
+      "goal": "Rioters helpen bij het navigeren van NHS-wachttijden, het vinden van beschikbaarheid en het kennen van hun opties.",
+      "focus": "Telefonische bereikbaarheidstijden van huisartsen",
+      "focus_detail": "Verzamelt belgegevens van 500 rioters om een beeld te vormen van de werkelijke toegankelijkheid. Publiceert bevindingen naar lokale gezondheidsraden."
+    },
+    "housing": {
+      "agent_quote": "Hielp 47 gebreken te documenteren in een nieuwbouwwoning. De ontwikkelaar vroeg of ze een bouwinspecteur waren.",
+      "agent_bio": "Documenteert vastgoedproblemen, analyseert reactietijden van verhuurders en stelt bewijsmateriaal samen voor indiening bij de woningombudsman. Elke vochtplek, elke scheur, geregistreerd.",
+      "human_quote": "Ons bewijspakket over vocht was zo gedetailleerd dat de verhuurder het repareerde vóór de gemeentelijke inspectie.",
+      "human_bio": "Huurder uit Londen die alles heeft meegemaakt, van vocht tot louche verhuurders. Helpt rioters problemen goed te documenteren en te weten wat hun opties zijn.",
+      "goal": "Rioters helpen omgaan met verhuurders, gemeenten en huisvestingsproblemen — en weten waar ze recht op hebben.",
+      "focus": "Section 21 huisuitzettingen zonder reden",
+      "focus_detail": "Helpt rioters die getroffen zijn door huisuitzettingen zonder reden de nieuwe Renters Reform Act te begrijpen en wat het voor hen betekent."
+    },
+    "shopping": {
+      "agent_quote": "Een 'afgeleverd' pakket gevolgd via 4 buren, een afvalbak en een kas. Gevonden.",
+      "agent_bio": "Volgt bezorgfouten, stelt terugbetalingsbewijs samen en ontdekt prijspatronen. Als je pakket kwijt is, is Scout al aan het zoeken.",
+      "human_quote": "Evri verloor mijn pakket 3 keer. Nu help ik anderen hun terugbetalingen sneller te krijgen dan ik ooit deed.",
+      "human_bio": "Ervaren online shopper uit Edinburgh die meer pakketten is kwijtgeraakt dan ze kan tellen. Helpt rioters terugbetalingen te krijgen, verkopers te melden en de slechtste te vermijden.",
+      "goal": "Rioters helpen terugbetalingen te krijgen, verloren pakketten te traceren en winkeliers en bezorgbedrijven ter verantwoording te roepen.",
+      "focus": "Bezorgfaalpercentages van Evri",
+      "focus_detail": "Stelt bewijs van bezorgfouten samen van 800 rioters om in te dienen bij Citizens Advice en Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Hielp hetzelfde gat in de weg te fotograferen bij 11 verschillende weersomstandigheden. De gemeente gaf eindelijk toe.",
+      "agent_bio": "Brengt lokale problemen in kaart, volgt reactietijden van de gemeente en stelt FOI-verzoeken samen. Als dat gat in de weg er al 6 maanden zit, heeft Link het bewijs.",
+      "human_quote": "De gemeente repareerde onze weg nadat we elk gat in de weg met foto's in kaart hadden gebracht. 11 maanden, maar we kwamen er.",
+      "human_bio": "Gemeenschapsgerichte Welshman uit de Valleys die al jaren dezelfde gaten in de weg meldt. Helpt rioters lokale problemen te documenteren en gemeenten ter verantwoording te roepen.",
+      "goal": "Rioters helpen lokale problemen op te lossen — gaten in de weg, afvalbakken, bestemmingsplannen, overlast — en gemeenten ter verantwoording te roepen.",
+      "focus": "Reactietijden op meldingen van gaten in de weg",
+      "focus_detail": "FOI-verzoeken verstuurd naar 30 gemeenten om gerapporteerde versus werkelijke reparatietijden te vergelijken. Publiceert resultaten als een ranglijst."
+    },
+    "other": {
+      "agent_quote": "Hielp een sportschoolabonnement op te zeggen waarvoor 3 telefoontjes, 2 e-mails en een aangetekende brief nodig waren. De sportschool heeft nu een opzegknop.",
+      "agent_bio": "Behandelt de problemen die nergens anders netjes passen. Abonnementsvallen, plasticafval, frustraties met zelfscankassa's — Flex vindt de patronen en de drukpunten.",
+      "human_quote": "We kregen een sportketen zover om een opzegknop aan hun website toe te voegen. Kostte slechts 800 klachten.",
+      "human_bio": "Productontwerper uit Londen die gefrustreerd raakte door hoe moeilijk bedrijven het maken om op te zeggen. Helpt rioters abonnementen op te zeggen, dark patterns te vermijden en oplossingen te delen.",
+      "goal": "Rioters helpen met dingen die nergens anders netjes passen — abonnementen, terugbetalingen en alledaagse frustraties.",
+      "focus": "Dark patterns bij het opzeggen van abonnementen",
+      "focus_detail": "Documenteert de ergste overtreders en bouwt sjabloonopzegscripts voor elk."
+    },
+    "insurance": {
+      "agent_quote": "Hielp een rioter de clausule te vinden die een afgewezen woonverzekeringsclaim veranderde in een uitbetaling van £4,200. Het eigen beleid van de verzekeraar bewees dat ze ongelijk hadden.",
+      "agent_bio": "Beoordeelt polisbewoordingen, ontdekt oneerlijke afwijzingspatronen en bouwt bewijsmateriaal op voor indiening bij de Financial Ombudsman. Als je verzekeraar een geldige claim ontwijkt, vindt Shield het drukmiddel.",
+      "human_quote": "Kreeg 8 rioters met hetzelfde type afgewezen claim zover om gezamenlijk in te dienen. De verzekeraar schikte alle 8 binnen twee weken.",
+      "human_bio": "Voormalig medewerker in de verzekeringssector uit Leeds die weet hoe claims werkelijk worden beoordeeld. Helpt rioters betere beroepsschriften te schrijven, polisjargon te begrijpen en te weten wanneer ze moeten escaleren.",
+      "goal": "Rioters helpen een eerlijke behandeling te krijgen van verzekeraars — en weten wat ze moeten doen als een claim onterecht wordt afgewezen.",
+      "focus": "Afwijzingspatronen bij Aviva woonverzekeringen",
+      "focus_detail": "'Slijtage' wordt aangehaald bij 40% van afgewezen claims — vaak ten onrechte. Analyseert 200 gevallen bij 3 verzekeraars voor FOS-bewijspakket."
+    },
+    "delivery": {
+      "agent_quote": "Een 'afgeleverd' pakket getraceerd via 6 verschillende trackingstatussen, 3 depots en de schuur van een buurman. Gevonden in 47 minuten.",
+      "agent_bio": "Monitort koeriersprestaties, volgt bezorgfaalpercentages en stelt bewijsmateriaal samen voor consumentenklachten. Als je pakket verdwenen is, is Track er al mee bezig.",
+      "human_quote": "Kreeg DPD zover hun foto-bewijsbeleid in onze regio te wijzigen nadat 40 rioters bewijs indienden van pakketten die in de regen waren achtergelaten.",
+      "human_bio": "Online shopper uit Glasgow die het 'we hebben het op een veilige plek achtergelaten'-excuus zat was. Helpt rioters terugbetalingen te krijgen, koeriers te melden en de slechtste te vermijden.",
+      "goal": "Rioters helpen hun pakketten goed bezorgd te krijgen — en terugbetalingen als dat niet gebeurt.",
+      "focus": "Bezorgfaalpercentages van Evri",
+      "focus_detail": "Stelt bewijs van bezorgfouten samen van 800 rioters. Evri klachtpercentage: 23% — 3x hoger dan DPD. Bouwt een ranglijst voor Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Berekende dat een lener met Plan 2 die £30k verdient, £47,000 aan rente zou betalen voordat de lening wordt kwijtgescholden. De oorspronkelijke lening was £40,000.",
+      "agent_bio": "Analyseert onderwijskosten, studieleningprojecties en financieringsrechten. Verwerkt de cijfers zodat studenten en afgestudeerden weloverwogen beslissingen kunnen nemen.",
+      "human_quote": "Hielp 12 rioters te veel betaalde studielening-aflossingen terug te claimen waarvan ze niet wisten. Gemiddelde terugbetaling: £340.",
+      "human_bio": "Volwassen student uit Birmingham die het financieringssysteem twee keer heeft doorlopen. Helpt rioters aflossingen te begrijpen, te veel betaalde bedragen te ontdekken en drempelwijzigingen aan te vechten.",
+      "goal": "Studenten en afgestudeerden helpen bij het navigeren van onderwijskosten, leningen en aflossingen — en ervoor zorgen dat ze niet te veel betalen.",
+      "focus": "Terugbetalingen van te veel betaalde studieleningen",
+      "focus_detail": "Identificeert afgestudeerden die kosten in rekening zijn gebracht onder de aflossingsdrempel. Tot nu toe 12 terugbetalingen verwerkt — gemiddeld £340 elk."
+    },
+    "environment": {
+      "agent_quote": "Kruisverwijzde 3 jaar luchtkwaliteitsgegevens met ziekenhuisopnamecijfers. De correlatie was zo duidelijk dat de gemeente het niet kon negeren.",
+      "agent_bio": "Volgt milieu-gegevens, monitort vervuilingsniveaus en stelt bewijsmateriaal samen voor indiening bij toezichthouders. Als de cijfers een verhaal vertellen, vindt Fern het.",
+      "human_quote": "Kregen onze lokale gemeente zover om luchtkwaliteitsmonitors te installeren nadat 200 rioters onze bewijspetitie ondertekenden. Data veranderde alles.",
+      "human_bio": "Afgestudeerde milieuwetenschap uit Bristol die gelooft in op bewijs gebaseerde verandering. Helpt rioters milieuproblemen te documenteren en zaken op te bouwen die toezichthouders niet kunnen negeren.",
+      "goal": "Rioters helpen milieuproblemen te documenteren en vervuilers en beleidsmakers met data ter verantwoording te roepen.",
+      "focus": "Lacunes in lokale luchtkwaliteitsmonitoring",
+      "focus_detail": "Brengt gebieden in kaart zonder luchtkwaliteitsmonitoring binnen 5 km. 60% van door rioters gemelde vervuilingshotspots heeft geen officiële monitoring."
+    },
+    "employment": {
+      "agent_quote": "Stelde gegevens samen over AI-implementatie op de werkplek van 300 rioters. 40% zei dat veranderingen plaatsvonden zonder enig overleg. Dat is een patroon, geen anekdote.",
+      "agent_bio": "Analyseert werkplektrends, volgt beleidswijzigingen en helpt rioters hun bescherming te begrijpen. Als je baan verandert zonder overleg, heeft Forge de gegevens.",
+      "human_quote": "Verbond 30 rioters in dezelfde sector die te maken kregen met AI-veranderingen. Het bleek dat hun bedrijven allemaal hetzelfde draaiboek gebruikten — en dezelfde mazen.",
+      "human_bio": "HR-professional uit Manchester die van kant wisselde nadat ze zag hoe reorganisaties werkelijk verlopen. Helpt rioters hun opties te begrijpen en gezamenlijk te reageren.",
+      "goal": "Rioters helpen bij het navigeren van werkplekveranderingen, het begrijpen van hun bescherming en collectief reageren wanneer banen op het spel staan.",
+      "focus": "AI-werkplekautomatisering zonder overleg",
+      "focus_detail": "Documenteert gevallen waarin AI-tools werden geïntroduceerd zonder personeelsoverleg. Bouwt bewijs op voor een rapport over werkgeversverplichtingen."
+    },
+    "tech": {
+      "agent_quote": "Ontdekte dat 3 grote apps locatiegegevens verzamelden, zelfs wanneer machtigingen op 'nooit' stonden. Diende klachten in bij de ICO voor alle drie.",
+      "agent_bio": "Monitort platformbeleid, volgt dark patterns en helpt rioters te begrijpen wat techbedrijven met hun gegevens doen. Als een app zich misdraagt, betrapt Glitch het.",
+      "human_quote": "Organiseerde een massa-inzageverzoek bij een socialmediabedrijf. Als 500 mensen tegelijk vragen, moeten ze het serieus nemen.",
+      "human_bio": "Softwareontwikkelaar uit Edinburgh die gefrustreerd raakte door de kloof tussen wat techbedrijven beloven en wat ze leveren. Helpt rioters hun datarechten uit te oefenen en dark patterns te herkennen.",
+      "goal": "Rioters helpen terug te duwen tegen dark patterns, datamisbruik en oneerlijke techpraktijken.",
+      "focus": "Overmatige app-machtigingen",
+      "focus_detail": "Auditeert de top 50 apps op machtigingskruip — toegang vragen die ze niet nodig hebben. Bouwt een rapport voor de ICO."
+    }
   }
 }

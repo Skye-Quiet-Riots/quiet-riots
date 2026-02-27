@@ -1,619 +1,763 @@
 {
   "locale": "bn",
   "categories": {
-    "Transport": "পরিবহন",
-    "Telecoms": "টেলিযোগাযোগ",
-    "Banking": "ব্যাংকিং",
-    "Health": "স্বাস্থ্য",
-    "Education": "শিক্ষা",
-    "Environment": "পরিবেশ",
-    "Energy": "শক্তি",
-    "Water": "জল",
-    "Insurance": "বীমা",
-    "Housing": "আবাসন",
-    "Shopping": "কেনাকাটা",
-    "Delivery": "ডেলিভারি",
-    "Local": "স্থানীয়",
-    "Employment": "কর্মসংস্থান",
-    "Tech": "প্রযুক্তি",
-    "Other": "অন্যান্য"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "ট্রেন বাতিল",
-      "description": "ট্রেন বাতিল বা গুরুতরভাবে বিলম্বিত, অপর্যাপ্ত বিজ্ঞপ্তি বা ক্ষতিপূরণ"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "ট্রেনের টিকিটের দাম",
-      "description": "রেলের ভাড়া অত্যন্ত ব্যয়বহুল, মুদ্রাস্ফীতির চেয়ে বেশি বৃদ্ধি, অসংগত মূল্য নির্ধারণ"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "বিমান বিলম্ব",
-      "description": "বিমান বিলম্বিত বা বাতিল, খারাপ যোগাযোগ, ক্ষতিপূরণ দাবি করতে অসুবিধা"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "হারানো লাগেজ",
-      "description": "ব্যাগ গন্তব্যে পৌঁছায় না, ধীর ট্র্যাকিং, অপর্যাপ্ত ক্ষতিপূরণ"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "বাস রুট কাটছাঁট",
-      "description": "রুট বাতিল, ফ্রিকোয়েন্সি হ্রাস, গ্রামীণ সম্প্রদায় বাস সেবা হারাচ্ছে"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "গর্তের ক্ষতি",
-      "description": "গর্তে গাড়ির ক্ষতি এবং সাইকেল চালকদের বিপদ, কাউন্সিল মেরামতে ধীর"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "পার্কিং জরিমানা",
-      "description": "অন্যায্য বেসরকারি পার্কিং চার্জ, আক্রমণাত্মক প্রয়োগ, বিভ্রান্তিকর সাইনবোর্ড"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "জ্বালানির দাম",
-      "description": "পেট্রোল ও ডিজেলের দাম অত্যধিক, পাইকারি দাম কমলেও খুচরা দাম কমতে ধীর"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "ব্রডব্যান্ডের গতি",
-      "description": "ইন্টারনেটের গতি বিজ্ঞাপিত এবং প্রদত্ত গতির চেয়ে অনেক কম"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "মোবাইল সিগন্যাল ডেড জোন",
-      "description": "বাড়ি, কর্মক্ষেত্র বা পরিবহন রুটে কোনো মোবাইল সিগন্যাল নেই"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "চুক্তির মাঝে দাম বৃদ্ধি",
-      "description": "ফোন, ব্রডব্যান্ড ও টিভি বিল লকড চুক্তির মধ্যেও বাড়ছে"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "গ্রাহক সেবায় অপেক্ষার সময়",
-      "description": "একজন মানুষের সাথে কথা বলতে ঘণ্টার পর ঘণ্টা হোল্ডে অপেক্ষা"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "সাবস্ক্রিপশন বাতিলে অসুবিধা",
-      "description": "কোম্পানিগুলো ইচ্ছাকৃতভাবে বাতিল বা আনসাবস্ক্রাইব করা কঠিন করে তোলে"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "রোমিং চার্জ",
-      "description": "বিদেশে ভ্রমণের সময় অপ্রত্যাশিত মোবাইল চার্জ, Brexit-পরবর্তী মূল্যবৃদ্ধি"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "শক্তি বিলের খরচ",
-      "description": "গ্যাস ও বিদ্যুৎ বিল বহনযোগ্য নয়, প্রাইস ক্যাপ এখনও অত্যধিক"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "ভুল শক্তি বিল",
-      "description": "আনুমানিক রিডিং ভুল, অতিরিক্ত চার্জ, বিলিং ত্রুটি"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "পানির বিল বৃদ্ধি",
-      "description": "পানির বিল দ্রুত বাড়ছে যখন সেবার মান কমছে"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "নদীতে পয়ঃনিষ্কাশন",
-      "description": "পানি কোম্পানিগুলো নদী ও সমুদ্র সৈকতে কাঁচা পয়ঃনিষ্কাশন ফেলছে"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "বিদ্যুৎ বিভ্রাট",
-      "description": "বিদ্যুৎ সরবরাহ বিঘ্নিত, ধীর পুনরুদ্ধার, অপর্যাপ্ত ক্ষতিপূরণ"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "স্মার্ট মিটার সমস্যা",
-      "description": "স্মার্ট মিটার কাজ করছে না, সরবরাহকারী বদলানোর পর কার্যকারিতা হারাচ্ছে"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "ব্যাংক শাখা বন্ধ",
-      "description": "স্থানীয় ব্যাংক শাখা বন্ধ হচ্ছে, সম্প্রদায়কে সেবা ছাড়া ফেলে দিচ্ছে"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "লুকানো ব্যাংক চার্জ",
-      "description": "ওভারড্রাফট, বিদেশি লেনদেন, অ্যাকাউন্ট রক্ষণাবেক্ষণের জন্য অপ্রত্যাশিত ফি"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "জালিয়াতি ও প্রতারণার ক্ষতি",
-      "description": "ব্যাংক জালিয়াতি ও অনুমোদিত পুশ পেমেন্ট প্রতারণার শিকারদের ফেরত দিতে অস্বীকার"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "বীমা দাবি প্রত্যাখ্যান",
-      "description": "বছরের পর বছর প্রিমিয়াম দেওয়ার পর প্রযুক্তিগত কারণে দাবি প্রত্যাখ্যাত"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "মর্টগেজ হারের ধাক্কা",
-      "description": "নির্দিষ্ট হার শেষ হলে অনেক বেশি পরিবর্তনশীল হারে স্থানান্তর"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "বিদেশে অর্থ স্থানান্তর ফি",
-      "description": "আন্তর্জাতিক অর্থ স্থানান্তরে অতিরিক্ত ফি এবং খারাপ বিনিময় হার"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS অপেক্ষার সময়",
-      "description": "অপারেশন ও বিশেষজ্ঞ অ্যাপয়েন্টমেন্টের জন্য বহু মাস বা বহু বছরের অপেক্ষা"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "GP অ্যাপয়েন্টমেন্টে প্রবেশাধিকার",
-      "description": "GP অ্যাপয়েন্টমেন্ট বুক করতে ফোন করা যায় না, সপ্তাহব্যাপী অপেক্ষা"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "ডেন্টিস্টের প্রাপ্যতা",
-      "description": "নতুন রোগী গ্রহণকারী NHS ডেন্টিস্ট খুঁজে পাওয়া অসম্ভব"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "মানসিক স্বাস্থ্য সেবায় অপেক্ষা",
-      "description": "থেরাপি ও মানসিক স্বাস্থ্য সহায়তার জন্য মাসব্যাপী অপেক্ষা"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "প্রেসক্রিপশনের খরচ",
-      "description": "ইংল্যান্ডে প্রতি ওষুধের খরচ অত্যধিক, UK জাতিসমূহে অসংগতি"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "হাসপাতাল পার্কিং চার্জ",
-      "description": "অসুস্থ অবস্থায় বা অসুস্থ আত্মীয়দের দেখতে গিয়ে হাসপাতালে পার্কিংয়ের জন্য অর্থ প্রদান"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "ভাড়া বৃদ্ধি",
-      "description": "বেসরকারি ভাড়া মুদ্রাস্ফীতির অনেক উপরে বাড়ছে, বিনা দোষে উচ্ছেদের হুমকি"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "কাউন্সিল ট্যাক্স বৃদ্ধি",
-      "description": "বার্ষিক কাউন্সিল ট্যাক্স বৃদ্ধি যখন স্থানীয় সেবা খারাপ হচ্ছে"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "কোলাহলকারী প্রতিবেশী",
-      "description": "ক্রমাগত শব্দ সমস্যা, কাউন্সিল পদক্ষেপে ধীর, মানসিক স্বাস্থ্য প্রভাবিত"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "আবর্জনা সংগ্রহে পরিবর্তন",
-      "description": "কম বিন সংগ্রহ, বিভ্রান্তিকর পুনর্ব্যবহার নিয়ম, উপচে পড়া বিন"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "পরিকল্পনা অনুমতির অপব্যবহার",
-      "description": "অবাঞ্ছিত উন্নয়ন অনুমোদিত, গ্রিন বেল্ট হুমকিতে, সম্প্রদায় উপেক্ষিত"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "আবাসনে স্যাঁতস্যাঁতে ও ছাতা পড়া",
-      "description": "বাড়িওয়ালা ও আবাসন সংস্থা স্যাঁতস্যাঁতে ও ছাতা মেরামতে ব্যর্থ"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "ডেলিভারি সমস্যা",
-      "description": "পার্সেল হারিয়ে যাওয়া, বৃষ্টিতে ফেলে রাখা, ডেলিভারি দেখানো কিন্তু পাওয়া যায়নি"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "শ্রিংকফ্লেশন",
-      "description": "পণ্য ছোট হচ্ছে যখন দাম একই থাকছে বা বাড়ছে"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "ফেরত পেতে অসুবিধা",
-      "description": "কোম্পানিগুলো রিটার্ন ও ফেরত অপ্রয়োজনীয়ভাবে কঠিন করছে"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "ভুয়া রিভিউ",
-      "description": "অনলাইন রিভিউ বিশ্বাসযোগ্য নয়, ভুয়া ইতিবাচক রিভিউ গ্রাহকদের বিভ্রান্ত করছে"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "সাবস্ক্রিপশনের ফাঁদ",
-      "description": "বিনামূল্যে ট্রায়াল স্পষ্ট সম্মতি ছাড়াই পেইডে রূপান্তরিত, বাতিল করা কঠিন"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "খাদ্যের মান হ্রাস",
-      "description": "রেডি মিলের মান খারাপ, ছোট পরিবেশন, বেশি সংযোজনদ্রব্য"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "সেলফ-চেকআউটে হতাশা",
-      "description": "সেলফ-সার্ভিস মেশিন অনির্ভরযোগ্য, মানব কর্মীদের প্রতিস্থাপন করছে"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "শিশু যত্নের খরচ",
-      "description": "শিশু যত্নের খরচ অত্যধিক ব্যয়বহুল, কাজ করার সক্ষমতা সীমিত করছে"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "ছাত্র ঋণ পরিশোধ",
-      "description": "স্নাতকরা কয়েক দশক ধরে পরিশোধ করছে, সীমা ও সুদের হার পরিবর্তন"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "কুকুরের মলত্যাগ",
-      "description": "জনসাধারণের স্থান, পার্ক ও ফুটপাতে কুকুরের মল পরিষ্কার করা হয় না"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI চাকরি প্রতিস্থাপন করছে",
-      "description": "স্থানান্তর সহায়তা ছাড়া কৃত্রিম বুদ্ধিমত্তা দ্বারা চাকরি স্বয়ংক্রিয়করণের উদ্বেগ"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "ওয়েস্ট কোস্ট মেইন লাইনে সেবাদানকারী UK রেল অপারেটর"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "লন্ডন ও দক্ষিণাঞ্চলে সেবাদানকারী UK রেল অপারেটর"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "উত্তর ইংল্যান্ডে সেবাদানকারী UK রেল অপারেটর"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK দীর্ঘ দূরত্বের রেল অপারেটর"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "ট্রান্স-পেনাইন রুটে সেবাদানকারী UK রেল অপারেটর"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "ইস্ট কোস্ট মেইন লাইনে সেবাদানকারী UK রেল অপারেটর"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "সাশ্রয়ী ইউরোপীয় বিমান সংস্থা"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-ভিত্তিক সাশ্রয়ী বিমান সংস্থা"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK-র প্রধান জাতীয় বিমান সংস্থা"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "ছুটি ও ভ্রমণ কোম্পানি"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "প্রধান UK ব্রডব্যান্ড ও মোবাইল সেবাদাতা"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK ব্রডব্যান্ড, টিভি ও মোবাইল সেবাদাতা"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK টিভি, ব্রডব্যান্ড ও মোবাইল সেবাদাতা"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "UK-তে সদর দপ্তর অবস্থিত বৈশ্বিক টেলিযোগাযোগ কোম্পানি"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK মোবাইল নেটওয়ার্ক অপারেটর"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK ব্রডব্যান্ড ও ফোন সেবাদাতা"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK শক্তি সরবরাহকারী"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK শক্তি সরবরাহকারী"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK শক্তি সরবরাহকারী (ফরাসি মালিকানাধীন)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK নবায়নযোগ্য শক্তি সরবরাহকারী"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK শক্তি সরবরাহকারী"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK শক্তি সরবরাহকারী (জার্মান মালিকানাধীন)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "লন্ডন ও টেমস উপত্যকার জল ও পয়ঃনিষ্কাশন কোম্পানি"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "দক্ষিণ ইংল্যান্ডের জল কোম্পানি"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "উত্তর-পশ্চিম ইংল্যান্ডের জল কোম্পানি"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "মিডল্যান্ডসের জল কোম্পানি"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "ইস্ট অ্যাংলিয়ার জল কোম্পানি"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "ব্রিটিশ বহুজাতিক ব্যাংক"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "বৈশ্বিক ব্যাংকিং ও আর্থিক সেবা"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK খুচরা ও বাণিজ্যিক ব্যাংক"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK ব্যাংকিং গ্রুপ"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK ব্যাংক (স্পেনীয় মালিকানাধীন)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "ডিজিটাল ব্যাংকিং ও ফিনটেক"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK বীমা ও আর্থিক সেবা"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK গাড়ি ও গৃহ বীমা"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK বীমা কোম্পানি"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "বৈশ্বিক ই-কমার্স ও প্রযুক্তি"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK ডাক সেবা"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK পার্সেল ডেলিভারি সেবা (আগে Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK পার্সেল ডেলিভারি সেবা"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK সুপারমার্কেট চেইন"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK সুপারমার্কেট চেইন"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "ইংল্যান্ডের জাতীয় স্বাস্থ্য সেবা"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS দন্ত চিকিৎসা সেবা"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "বেসরকারি স্বাস্থ্যসেবা প্রদানকারী"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK স্থানীয় সরকার কর্তৃপক্ষ"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK গৃহনির্মাতা"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK অনলাইন ভাড়া প্ল্যাটফর্ম"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "স্ট্রিমিং বিনোদন সেবা"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "প্রযুক্তি কোম্পানি"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "ট্রেন বাতিল",
-      "বাতিল ট্রেন",
-      "ট্রেন বাতিলকরণ",
-      "ট্রেন চলছে না",
-      "রেল বাতিল",
-      "সেবা বাতিল",
-      "ট্রেন দেরি",
-      "দেরি হওয়া ট্রেন",
-      "ট্রেন লেট",
-      "লেট ট্রেন",
-      "রেল বিলম্ব"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["রেল ভাড়া", "টিকিটের দাম", "দামি ট্রেন", "ট্রেনের ভাড়া"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "ফ্লাইট লেট",
-      "বিমান লেট",
-      "ফ্লাইট বাতিল",
-      "বিমানবন্দরে দেরি",
-      "বিমানবন্দরে আটকে",
-      "উড়ান দেরি"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "ব্যাগ হারিয়ে গেছে",
-      "সুটকেস হারিয়ে গেছে",
-      "ব্যাগ আসেনি",
-      "সুটকেস পাওয়া যায়নি",
-      "লাগেজ বেল্টে নেই",
-      "এয়ারলাইন ব্যাগ হারিয়েছে"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["বাস কাটছাঁট", "রুট কমানো", "বাস সেবা বন্ধ"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "ধীর ইন্টারনেট",
-      "ধীর ওয়াইফাই",
-      "ওয়াইফাই ধীর",
-      "ইন্টারনেট গতি",
-      "ব্রডব্যান্ড কাজ করছে না",
-      "বাফারিং",
-      "ইন্টারনেট বারবার যাচ্ছে",
-      "ওয়াইফাই বারবার যাচ্ছে"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "সিগন্যাল নেই",
-      "নেটওয়ার্ক নেই",
-      "মোবাইল ব্ল্যাকস্পট",
-      "সিগন্যাল ডেড জোন"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "চুক্তির মাঝে বিল বেড়েছে",
-      "চুক্তির দাম বাড়ল",
-      "মাঝখানে দাম বাড়ল"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "হোল্ডে আছি",
-      "ফোনে অপেক্ষা",
-      "ফোন লাগছে না",
-      "কেউ ধরছে না",
-      "ফোনের লাইন",
-      "কল সেন্টার"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "বাতিল করতে পারছি না",
-      "বাতিল করা কঠিন",
-      "সাবস্ক্রিপশন বাতিল",
-      "আনসাবস্ক্রাইব"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "গ্যাস বিল বেশি",
-      "বিদ্যুৎ বিল",
-      "শক্তির দাম",
-      "গরম করার খরচ",
-      "জ্বালানি দারিদ্র্য",
-      "শক্তি বহন করতে পারছি না"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
-    "Inaccurate Energy Bills": ["ভুল শক্তি বিল", "আনুমানিক রিডিং ভুল", "শক্তিতে বেশি চার্জ"],
-    "Water Bill Increases": ["পানির হার", "পানির চার্জ", "পানির বিল অনেক বেশি"],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "পয়ঃনিষ্কাশন ফেলা",
-      "কাঁচা পয়ঃনিষ্কাশন",
-      "সৈকতে পয়ঃনিষ্কাশন",
-      "পানি দূষণ",
-      "পয়ঃনিষ্কাশন উপচে পড়া",
-      "মিশ্র পয়ঃনিষ্কাশন উপচে পড়া"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "অপ্রত্যাশিত ফি",
-      "লুকানো ফি",
-      "আকস্মিক চার্জ",
-      "ওভারড্রাফট চার্জ",
-      "ব্যাংক ফি"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "প্রতারিত হয়েছি",
-      "ব্যাংক জালিয়াতি",
-      "পুশ পেমেন্ট স্ক্যাম",
-      "অনুমোদিত জালিয়াতি"
-    ],
-    "Bank Branch Closures": ["শাখা বন্ধ", "স্থানীয় ব্যাংক বন্ধ", "কাছে ব্যাংক নেই"],
-    "Insurance Claim Rejections": ["দাবি প্রত্যাখ্যাত", "বীমা টাকা দেবে না", "দাবি বাতিল"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS অপেক্ষা",
-      "অপেক্ষার তালিকা",
-      "অপারেশনের অপেক্ষা",
-      "হাসপাতালের অপেক্ষার সময়",
-      "রেফারেলের অপেক্ষা",
-      "সার্জারির অপেক্ষায়"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "GP অ্যাপয়েন্টমেন্ট পাচ্ছি না",
-      "ডাক্তারের অ্যাপয়েন্টমেন্ট",
-      "GP ফোনের লাইন",
-      "ডাক্তার দেখাতে পারছি না",
-      "সকাল ৮টার ফোনের দৌড়"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS ডেন্টিস্ট", "ডেন্টিস্ট পাচ্ছি না", "ডেন্টিস্টের অপেক্ষার তালিকা"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "মানসিক স্বাস্থ্য তহবিল",
-      "থেরাপিতে প্রবেশ",
-      "কাউন্সেলিং অপেক্ষা",
-      "CAMHS অপেক্ষা"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["ওষুধের দাম", "ওষুধের মূল্য", "ফার্মেসি চার্জ"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "পার্সেল হারিয়ে গেছে",
-      "পার্সেল ডেলিভারি হয়নি",
-      "বৃষ্টিতে ফেলে রাখা",
-      "প্যাকেজ চুরি",
-      "ডেলিভারি ড্রাইভার",
-      "ডেলিভারি মিস"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "ভাড়া অনেক বেশি",
-      "ভাড়া বাড়ছে",
-      "বাড়িওয়ালা ভাড়া বাড়াচ্ছে",
-      "বিনা দোষে উচ্ছেদ"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["পার্কিং টিকিট", "পার্কিং চার্জ নোটিশ", "PCN", "অন্যায্য পার্কিং জরিমানা"],
-    "Shrinkflation": ["ছোট পরিবেশন", "একই দামে কম", "প্যাকেজ ছোট", "পণ্য সংকুচিত"],
-    "Pothole Damage": ["গর্ত", "রাস্তার ক্ষতি", "গর্তে গাড়ি ক্ষতিগ্রস্ত"],
-    "Council Tax Rises": ["কাউন্সিল ট্যাক্স বৃদ্ধি", "কাউন্সিল ট্যাক্স অনেক বেশি", "স্থানীয় কর"],
-    "Damp and Mould in Housing": [
-      "ছাতা পড়া ঘর",
-      "স্যাঁতস্যাঁতে ফ্ল্যাট",
-      "কালো ছাতা",
-      "বাড়ি জরাজীর্ণ"
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
+    "Shrinkflation": [
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Student Loan Repayment": ["ছাত্র ঋণ", "টিউশন ফি", "শিক্ষার ঋণ", "ছাত্র ঋণ"],
-    "AI Replacing Jobs": ["চাকরি অটোমেশন", "AI চাকরি নিচ্ছে", "রোবট কর্মীদের বদলে"],
-    "Roaming Charges": ["ছুটিতে ফোন বিল", "বিদেশে ডেটা চার্জ", "বিদেশে ফোন চার্জ"],
-    "Smart Meter Problems": ["স্মার্ট মিটার খারাপ", "মিটার কাজ করছে না", "মিটারের সিগন্যাল নেই"],
-    "Subscription Traps": ["ফ্রি ট্রায়ালের ফাঁদ", "অটো রিনিউয়াল", "ট্রায়ালের পর টাকা কাটলো"],
-    "Fuel Prices": ["পেট্রোলের দাম", "ডিজেলের দাম", "জ্বালানির দাম", "পেট্রোল অনেক দামি"],
-    "Power Cuts": [
-      "বিদ্যুৎ চলে গেছে",
-      "বিদ্যুৎ কেটে গেছে",
-      "ব্ল্যাকআউট",
-      "বিদ্যুৎ নেই",
-      "বিদ্যুৎ বিভ্রাট"
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
-    "Mortgage Rate Shock": ["মর্টগেজ বেড়েছে", "মর্টগেজ হার", "রিমর্টগেজ", "ফিক্সড রেট শেষ"],
     "Overseas Transfer Fees": [
-      "ট্রান্সফার ফি",
-      "বিদেশে টাকা পাঠানো",
-      "রেমিট্যান্স ফি",
-      "ওয়্যার ট্রান্সফার খরচ"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["হাসপাতাল পার্কিং", "হাসপাতালে পার্কিং", "NHS পার্কিং"],
-    "Noisy Neighbours": ["শব্দ অভিযোগ", "প্রতিবেশীর শব্দ", "কোলাহলকারী প্রতিবেশী", "শব্দ সমস্যা"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "আবর্জনা সংগ্রহ",
-      "আবর্জনা তোলা হয়নি",
-      "রিসাইক্লিং নিয়ে বিভ্রান্তি",
-      "আবর্জনা সংগ্রহ মিস"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "পরিকল্পনা অনুমতি",
-      "অবাঞ্ছিত নির্মাণ",
-      "গ্রিন বেল্ট",
-      "নির্মাণ অনুমতি"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "রিফান্ড পাচ্ছি না",
-      "রিফান্ড প্রত্যাখ্যাত",
-      "রিটার্ন বাতিল",
-      "টাকা ফেরত"
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
+    "Food Quality Decline": [
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
-    "Fake Reviews": ["রিভিউ ম্যানিপুলেশন", "পেইড রিভিউ", "ভুয়া রিভিউ", "নকল রিভিউ"],
-    "Food Quality Decline": ["খাবারের মান", "রেডি মিল খারাপ", "খাদ্য সংযোজন", "পরিবেশন ছোট"],
     "Self-Checkout Frustration": [
-      "সেলফ চেকআউট",
-      "সেলফ সার্ভিস",
-      "ক্যাশিয়ার নেই",
-      "মেশিন কাজ করছে না"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": ["শিশু যত্নের খরচ", "নার্সারি ফি", "শিশু যত্ন দামি", "ডে কেয়ার খরচ"],
-    "Dog Fouling": ["কুকুরের ময়লা", "কুকুরের মল", "কুকুরের বর্জ্য", "অপরিচ্ছন্নতা"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "একবার একজন রায়টারকে একটি বিলম্বিত যাত্রায় 6টি রিফান্ড দাবি করতে সাহায্য করেছিলাম। Birmingham পৌঁছানোর আগেই তিনি £47 পেয়েছিলেন।",
+      "agent_bio": "বাতিলের ধরন ট্র্যাক করে, রিফান্ডের কাগজপত্র সামলায়, প্রতিটি প্রস্তাবিত পদক্ষেপ পর্যালোচনা করে এবং নিয়ন্ত্রকদের কাছে জমা দেওয়ার জন্য প্রমাণ সংগ্রহ করে। সংখ্যা বিশ্লেষণ করে যাতে রায়টাররা গুরুত্বপূর্ণ বিষয়ে মনোযোগ দিতে পারে।",
+      "human_quote": "Quiet Riot-এ আমার প্রিয় মুহূর্ত: Avanti-র সোশ্যাল মিডিয়া টিমকে হতভম্ব দেখা যখন আমাদের 400 জন একসাথে টুইট করেছিলাম।",
+      "human_bio": "Manchester থেকে নিয়মিত যাত্রী যিনি Avanti লাইনে 3 বছর কাটিয়েছেন যতক্ষণ না সিদ্ধান্ত নিয়েছেন যে যথেষ্ট হয়েছে। একই রুটে রায়টারদের সংযুক্ত করতে সাহায্য করেন, কী কাজ করছে তা শেয়ার করেন এবং মানবিক স্পর্শ যোগ করেন।",
+      "goal": "বাতিল, বিলম্ব এবং মূল্য নির্ধারণে যুক্তরাজ্যের পরিবহন কোম্পানিগুলিকে জবাবদিহি করতে রায়টারদের সাহায্য করুন — এবং নিশ্চিত করুন যে সবাই তাদের অধিকার জানে।",
+      "focus": "Avanti West Coast বাতিলের ধরন",
+      "focus_detail": "ORR-এ জমা দেওয়ার জন্য সময়, রুট এবং কারণসহ বাতিলের ডেটাসেট তৈরি করা হচ্ছে। এই মাসে রায়টারদের রিপোর্ট করা 340টি বাতিল বর্তমানে ট্র্যাক করা হচ্ছে।"
+    },
+    "telecoms": {
+      "agent_quote": "200 রায়টারের জন্য স্পিড টেস্ট চালিয়েছি। গড় ছিল 18 Mbps। তারা 65-এর জন্য অর্থ দিচ্ছিল।",
+      "agent_bio": "ব্রডব্যান্ড গতি বিশ্লেষণ করে, প্রদানকারী তুলনামূলক ডেটা সংকলন করে এবং Ofcom-এর জন্য প্রমাণ তৈরিতে রায়টারদের সাহায্য করে। আপনার সংযোগ ধীর হলে, এটি প্রমাণ করবে।",
+      "human_quote": "একটি পুরো রাস্তা একসাথে ব্রডব্যান্ড পরিবর্তন করেছিল। পুরানো প্রদানকারী প্রতিটি বাড়িতে 'দয়া করে ফিরে আসুন' চিঠি পাঠিয়েছিল।",
+      "human_bio": "প্রযুক্তি-দক্ষ লন্ডনবাসী যিনি কখনও বাস্তবায়িত হয়নি এমন ব্রডব্যান্ড গতির জন্য অর্থ দিয়ে ক্লান্ত হয়ে গিয়েছিলেন। রায়টারদের প্রদানকারী তুলনা করতে, সুইচ সমন্বয় করতে এবং স্পিড টেস্টের প্রমাণ শেয়ার করতে সাহায্য করেন।",
+      "goal": "রায়টারদের তারা যে ব্রডব্যান্ড ও মোবাইল সেবার জন্য অর্থ দিচ্ছে তা পেতে সাহায্য করুন — এবং না পেলে কী করতে হবে তা জানান।",
+      "focus": "চুক্তির মাঝামাঝি মূল্য বৃদ্ধি",
+      "focus_detail": "Ofcom-এ জমা দেওয়ার জন্য CPI+ বৃদ্ধিতে ক্ষতিগ্রস্ত রায়টারদের কাছ থেকে প্রমাণ সংগ্রহ করা হচ্ছে। 4টি প্রদানকারীতে 890 রায়টার প্রভাবিত।"
+    },
+    "energy": {
+      "agent_quote": "একজন রায়টারকে হিসাব করতে সাহায্য করেছিলাম যে তিনি আনুমানিক বিলে £340 বেশি দিয়েছেন। এনার্জি কোম্পানির ক্ষমা চাওয়ার ইমেইল মূল চুক্তির চেয়ে দীর্ঘ ছিল।",
+      "agent_bio": "বিলিং প্যাটার্ন বিশ্লেষণ করে, অতিরিক্ত চার্জ শনাক্ত করে এবং নিয়ন্ত্রকদের কাছে জমা দেওয়ার জন্য প্রমাণ সংগ্রহ করে। আপনার এনার্জি কোম্পানি প্রতারণা করলে, রসিদ খুঁজে বের করবে।",
+      "human_quote": "2 বছরের অতিরিক্ত চার্জ প্রমাণ করার পর একজন রায়টার £340 ফেরত পেয়েছিলেন। তিনি ফোনে কেঁদে ফেলেছিলেন।",
+      "human_bio": "Bristol-এ অবস্থিত। রায়টারদের তাদের বিল চ্যালেঞ্জ করতে, সুইচিং নেভিগেট করতে এবং Ofgem-এর জন্য প্রমাণ সংগ্রহ করতে সাহায্য করেন। এনার্জি মার্কেট ভালোভাবে জানেন।",
+      "goal": "রায়টারদের অন্যায্য বিল চ্যালেঞ্জ করতে, বুদ্ধিমানভাবে সুইচ করতে এবং এনার্জি কোম্পানিগুলি ন্যায্য খেলে তা নিশ্চিত করতে সাহায্য করুন।",
+      "focus": "British Gas আনুমানিক বিলিং ত্রুটি",
+      "focus_detail": "Ofgem-এ জমা দেওয়ার জন্য 340 রায়টারের 2 বছরের বিলিং ডেটা বিশ্লেষণ করে পদ্ধতিগত অতিরিক্ত চার্জের প্যাটার্ন শনাক্ত করা হচ্ছে।"
+    },
+    "water": {
+      "agent_quote": "এক সপ্তাহান্তে 200 রায়টারকে স্যুয়েজ রিপোর্ট দাখিল করতে সাহায্য করেছিলাম। Thames Water-এর ইনবক্সের নিজের ইনবক্স দরকার ছিল।",
+      "agent_bio": "স্যুয়েজ ডিসচার্জ ডেটা পর্যবেক্ষণ করে, পানি কোম্পানির কর্মক্ষমতা ট্র্যাক করে এবং EA ও Ofwat-এর জন্য প্রমাণ সংকলন করে। প্রতিটি আউটলেট ও ওভারফ্লোতে নজর রাখে।",
+      "human_quote": "স্যুয়েজ ডেটা ভুল ছিল তা দেখিয়ে আমরা 3 সপ্তাহ আগে একটি সৈকত পুনরায় খুলতে পেরেছিলাম।",
+      "human_bio": "Cornwall থেকে সার্ফার যিনি তার স্থানীয় সৈকত বন্ধ করা স্যুয়েজ সতর্কতায় ক্লান্ত হয়ে গিয়েছিলেন। রায়টারদের ডিসচার্জ রিপোর্ট করতে, পানির মান প্রমাণ সংগ্রহ করতে এবং EA-র সাথে সমন্বয় করতে সাহায্য করেন।",
+      "goal": "স্যুয়েজ, বিল এবং সেবার মানে পানি কোম্পানিগুলিকে জবাবদিহি করতে রায়টারদের সাহায্য করুন।",
+      "focus": "Thames Water স্যুয়েজ ডিসচার্জের ফ্রিকোয়েন্সি",
+      "focus_detail": "কোম্পানি-রিপোর্টেড ডেটার বিপরীতে ডিসচার্জ ইভেন্ট ম্যাপিং করা হচ্ছে। 200 রায়টার রিপোর্ট 3টি আউটলেটে কম-রিপোর্টিং নির্দেশ করে।"
+    },
+    "banking": {
+      "agent_quote": "এতটাই পুঙ্খানুপুঙ্খ অভিযোগ খসড়া করতে সাহায্য করেছিলাম যে ব্যাংক পাঠানোর আগেই ক্ষমা চাইতে ফোন করেছিল।",
+      "agent_bio": "ব্যাংক চার্জ পর্যালোচনা করে, ফি কাঠামো বিশ্লেষণ করে এবং FCA অভিযোগের প্রমাণ তৈরিতে সাহায্য করে। লুকানো ফি থাকলে, খুঁজে বের করবে।",
+      "human_quote": "আমাদের 1,200 জন পরামর্শ সভায় উপস্থিত হওয়ার পর Barclays একটি শাখা বন্ধ বাতিল করেছিল।",
+      "human_bio": "Birmingham থেকে সাবেক ব্যাংক কর্মচারী যিনি ভেতর থেকে দেখেছেন অভিযোগগুলি আসলে কীভাবে পরিচালনা করা হয়। রায়টারদের ভালো অভিযোগ লিখতে এবং সিস্টেম নেভিগেট করতে সাহায্য করেন।",
+      "goal": "অন্যায্য চার্জ, শাখা বন্ধ এবং ব্যাংকের খারাপ সেবা মোকাবেলায় রায়টারদের সাহায্য করুন।",
+      "focus": "HSBC শাখা বন্ধের ঢেউ",
+      "focus_detail": "12টি পরিকল্পিত বন্ধের প্রতিক্রিয়া সমন্বয় করা হচ্ছে। ক্ষতিগ্রস্ত সম্প্রদায়ের কাছ থেকে প্রভাব বিবৃতি সংগ্রহ করা হচ্ছে।"
+    },
+    "health": {
+      "agent_quote": "রোগী গ্রহণকারী 3 জন NHS ডেন্টিস্ট খুঁজে পেতে সাহায্য করেছিলাম। রায়টার ভেবেছিলেন আমি বানিয়ে বলছি।",
+      "agent_bio": "অপেক্ষার সময় ট্র্যাক করে, প্রাপ্যতা খুঁজে বের করে এবং রায়টারদের সিস্টেম নেভিগেট করতে সাহায্য করে। চিকিৎসার দ্রুত পথ থাকলে, ম্যাপ করবে।",
+      "human_quote": "একজন রায়টার আমাদের চিঠির টেমপ্লেট ব্যবহার করে রেফারেল দ্রুত করেছিলেন। 18 মাস হয়ে গিয়েছিল 6 সপ্তাহ।",
+      "human_bio": "Liverpool থেকে নার্স যিনি NHS-এর উভয় পক্ষ দেখেছেন। রায়টারদের ওয়েটিং লিস্ট নেভিগেট করতে, কার্যকর চিঠি লিখতে এবং আসলে কী কাজ করে তা শেয়ার করতে সাহায্য করেন।",
+      "goal": "NHS-এর অপেক্ষার সময় নেভিগেট করতে, প্রাপ্যতা খুঁজে পেতে এবং তাদের কী কী বিকল্প আছে তা জানতে রায়টারদের সাহায্য করুন।",
+      "focus": "GP টেলিফোন অ্যাক্সেসের সময়",
+      "focus_detail": "বাস্তব অ্যাক্সেসের চিত্র তৈরি করতে 500 রায়টারের কাছ থেকে কল ডেটা সংগ্রহ করা হচ্ছে। স্থানীয় স্বাস্থ্য বোর্ডে ফলাফল প্রকাশ করা হচ্ছে।"
+    },
+    "housing": {
+      "agent_quote": "একটি নতুন বিল্ডে 47টি ত্রুটি নথিভুক্ত করতে সাহায্য করেছিলাম। ডেভেলপার জিজ্ঞেস করেছিল তিনি বিল্ডিং ইন্সপেক্টর কিনা।",
+      "agent_bio": "সম্পত্তির সমস্যা নথিভুক্ত করে, বাড়িওয়ালার প্রতিক্রিয়ার সময় বিশ্লেষণ করে এবং হাউজিং ওমবাডসম্যানে জমা দেওয়ার জন্য প্রমাণ সংকলন করে। প্রতিটি স্যাঁতসেঁতে দাগ, প্রতিটি ফাটল, রেকর্ড করা।",
+      "human_quote": "আমাদের স্যাঁতসেঁতে প্রমাণ প্যাক এতটাই বিস্তারিত ছিল যে বাড়িওয়ালা কাউন্সিল পরিদর্শনের আগেই এটি ঠিক করেছিলেন।",
+      "human_bio": "London থেকে ভাড়াটে যিনি স্যাঁতসেঁতে থেকে প্রতারক বাড়িওয়ালা পর্যন্ত সবকিছু মোকাবেলা করেছেন। রায়টারদের সমস্যা সঠিকভাবে নথিভুক্ত করতে এবং তাদের বিকল্পগুলি জানতে সাহায্য করেন।",
+      "goal": "বাড়িওয়ালা, কাউন্সিল এবং হাউজিং সমস্যা মোকাবেলায় রায়টারদের সাহায্য করুন — এবং তাদের অধিকার জানান।",
+      "focus": "সেকশন 21 নো-ফল্ট উচ্ছেদ নোটিশ",
+      "focus_detail": "নো-ফল্ট উচ্ছেদে ক্ষতিগ্রস্ত রায়টারদের নতুন Renters Reform Act এবং এটি তাদের জন্য কী অর্থ বহন করে তা বুঝতে সাহায্য করা হচ্ছে।"
+    },
+    "shopping": {
+      "agent_quote": "একটি 'ডেলিভারি হয়েছে' পার্সেল 4 প্রতিবেশী, একটি রিসাইক্লিং বিন এবং একটি গ্রিনহাউস জুড়ে ট্র্যাক করেছিলাম। খুঁজে পেয়েছিলাম।",
+      "agent_bio": "ডেলিভারি ব্যর্থতা ট্র্যাক করে, রিফান্ড প্রমাণ সংকলন করে এবং মূল্য নির্ধারণের প্যাটার্ন শনাক্ত করে। আপনার পার্সেল হারিয়ে গেলে, ইতিমধ্যে খুঁজছে।",
+      "human_quote": "Evri আমার পার্সেল 3 বার হারিয়েছিল। এখন আমি অন্যদের আমার চেয়ে দ্রুত রিফান্ড পেতে সাহায্য করি।",
+      "human_bio": "Edinburgh থেকে অনলাইন শপিং অভিজ্ঞ যিনি গণনা করতে পারেন তার চেয়ে বেশি পার্সেল হারিয়েছেন। রায়টারদের রিফান্ড পেতে, বিক্রেতাদের রিপোর্ট করতে এবং সবচেয়ে খারাপ অপরাধীদের এড়াতে সাহায্য করেন।",
+      "goal": "রায়টারদের রিফান্ড পেতে, হারানো পার্সেল ট্র্যাক করতে এবং খুচরা বিক্রেতা ও ডেলিভারি কোম্পানিগুলিকে জবাবদিহি করতে সাহায্য করুন।",
+      "focus": "Evri ডেলিভারি ব্যর্থতার হার",
+      "focus_detail": "Citizens Advice ও Trading Standards-এ জমা দেওয়ার জন্য 800 রায়টারের কাছ থেকে ডেলিভারি ব্যর্থতার প্রমাণ সংকলন করা হচ্ছে।"
+    },
+    "local": {
+      "agent_quote": "একই গর্ত 11টি ভিন্ন আবহাওয়ায় ফটোগ্রাফ করতে সাহায্য করেছিলাম। কাউন্সিল অবশেষে হার মেনেছিল।",
+      "agent_bio": "স্থানীয় সমস্যা ম্যাপ করে, কাউন্সিল প্রতিক্রিয়ার সময় ট্র্যাক করে এবং FOI অনুরোধ সংকলন করে। আপনার গর্ত 6 মাস ধরে থাকলে, প্রমাণ আছে।",
+      "human_quote": "আমরা প্রতিটি গর্ত ফটো দিয়ে ম্যাপ করার পর কাউন্সিল আমাদের রাস্তা ঠিক করেছিল। 11 মাস, কিন্তু আমরা পেরেছিলাম।",
+      "human_bio": "ওয়েলসের উপত্যকা থেকে সম্প্রদায়-মনস্ক ওয়েলশম্যান যিনি বছরের পর বছর একই গর্ত রিপোর্ট করে আসছেন। রায়টারদের স্থানীয় সমস্যা নথিভুক্ত করতে এবং কাউন্সিলকে জবাবদিহি করতে সাহায্য করেন।",
+      "goal": "রায়টারদের স্থানীয় সমস্যা সমাধানে সাহায্য করুন — গর্ত, বিন, পরিকল্পনা, শব্দ — এবং কাউন্সিলকে জবাবদিহি করুন।",
+      "focus": "গর্ত রিপোর্টিং প্রতিক্রিয়ার সময়",
+      "focus_detail": "রিপোর্টেড বনাম প্রকৃত মেরামতের সময় তুলনা করে 30টি কাউন্সিলে FOI অনুরোধ পাঠানো হয়েছে। ফলাফল লিগ টেবিল হিসেবে প্রকাশ করা হচ্ছে।"
+    },
+    "other": {
+      "agent_quote": "একটি জিম সদস্যপদ বাতিল করতে সাহায্য করেছিলাম যেটিতে 3টি কল, 2টি ইমেইল এবং একটি রেজিস্টার্ড ডেলিভারি লেগেছিল। জিমে এখন একটি বাতিল বোতাম আছে।",
+      "agent_bio": "অন্য কোথাও সহজে মানানসই নয় এমন সমস্যা সামলায়। সাবস্ক্রিপশন ফাঁদ, প্লাস্টিক বর্জ্য, সেলফ-চেকআউট হতাশা — প্যাটার্ন এবং চাপের পয়েন্ট খুঁজে বের করে।",
+      "human_quote": "আমরা একটি জিম চেইনকে তাদের ওয়েবসাইটে বাতিল বোতাম যোগ করতে বাধ্য করেছিলাম। মাত্র 800টি অভিযোগ লেগেছিল।",
+      "human_bio": "London থেকে প্রোডাক্ট ডিজাইনার যিনি কোম্পানিগুলি ছেড়ে দেওয়া কতটা কঠিন করে তা নিয়ে হতাশ হয়েছিলেন। রায়টারদের সাবস্ক্রিপশন বাতিল করতে, ডার্ক প্যাটার্ন এড়াতে এবং সমাধান শেয়ার করতে সাহায্য করেন।",
+      "goal": "অন্য কোথাও সহজে মানানসই নয় এমন বিষয়ে রায়টারদের সাহায্য করুন — সাবস্ক্রিপশন, রিফান্ড এবং দৈনন্দিন হতাশা।",
+      "focus": "সাবস্ক্রিপশন বাতিলের ডার্ক প্যাটার্ন",
+      "focus_detail": "সবচেয়ে খারাপ অপরাধীদের নথিভুক্ত করা এবং প্রতিটির জন্য টেমপ্লেট বাতিল স্ক্রিপ্ট তৈরি করা হচ্ছে।"
+    },
+    "insurance": {
+      "agent_quote": "একজন রায়টারকে সেই ক্লজ খুঁজে পেতে সাহায্য করেছিলাম যা একটি প্রত্যাখ্যাত হোম ইন্স্যুরেন্স দাবিকে £4,200 পেমেন্টে পরিণত করেছিল। বীমাকারীর নিজের পলিসিই তাদের ভুল প্রমাণ করেছিল।",
+      "agent_bio": "পলিসির শব্দচয়ন পর্যালোচনা করে, অন্যায্য প্রত্যাখ্যানের প্যাটার্ন শনাক্ত করে এবং Financial Ombudsman-এ জমা দেওয়ার জন্য প্রমাণ তৈরি করে। আপনার বীমাকারী বৈধ দাবি এড়ালে, লিভারেজ খুঁজে বের করবে।",
+      "human_quote": "একই ধরনের প্রত্যাখ্যাত দাবির 8 রায়টারকে একসাথে জমা দিতে বলেছিলাম। বীমাকারী দুই সপ্তাহের মধ্যে সব 8টি নিষ্পত্তি করেছিল।",
+      "human_bio": "Leeds থেকে প্রাক্তন বীমা শিল্প কর্মী যিনি জানেন দাবিগুলি আসলে কীভাবে নির্ধারিত হয়। রায়টারদের ভালো আপিল লিখতে, পলিসি পরিভাষা বুঝতে এবং কখন এস্কেলেট করতে হবে তা জানতে সাহায্য করেন।",
+      "goal": "বীমাকারীদের কাছ থেকে ন্যায্য আচরণ পেতে রায়টারদের সাহায্য করুন — এবং দাবি অন্যায়ভাবে প্রত্যাখ্যাত হলে কী করতে হবে তা জানান।",
+      "focus": "Aviva হোম ইন্স্যুরেন্স প্রত্যাখ্যানের প্যাটার্ন",
+      "focus_detail": "প্রত্যাখ্যাত দাবির 40%-এ 'ক্ষয় ও পরিধান' উদ্ধৃত — প্রায়ই ভুলভাবে। FOS প্রমাণ প্যাকের জন্য 3টি বীমাকারীতে 200টি কেস বিশ্লেষণ করা হচ্ছে।"
+    },
+    "delivery": {
+      "agent_quote": "একটি 'ডেলিভারি হয়েছে' পার্সেল 6টি ভিন্ন ট্র্যাকিং স্ট্যাটাস, 3টি ডিপো এবং একজন প্রতিবেশীর শেড জুড়ে ট্র্যাক করেছিলাম। 47 মিনিটে খুঁজে পেয়েছিলাম।",
+      "agent_bio": "কুরিয়ার পারফরম্যান্স মনিটর করে, ডেলিভারি ব্যর্থতার হার ট্র্যাক করে এবং ভোক্তা অভিযোগের জন্য প্রমাণ সংকলন করে। আপনার পার্সেল অদৃশ্য হলে, ইতিমধ্যে কাজ করছে।",
+      "human_quote": "40 রায়টার বৃষ্টিতে ফেলে রাখা পার্সেলের প্রমাণ জমা দেওয়ার পর আমরা আমাদের এলাকায় DPD-কে তাদের ফটো-প্রমাণ নীতি পরিবর্তন করতে বাধ্য করেছিলাম।",
+      "human_bio": "Glasgow থেকে অনলাইন শপার যিনি 'আমরা এটি নিরাপদ জায়গায় রেখেছি' অজুহাতে ক্লান্ত হয়ে গিয়েছিলেন। রায়টারদের রিফান্ড পেতে, কুরিয়ার রিপোর্ট করতে এবং সবচেয়ে খারাপ অপরাধীদের এড়াতে সাহায্য করেন।",
+      "goal": "রায়টারদের তাদের পার্সেল সঠিকভাবে ডেলিভারি পেতে সাহায্য করুন — এবং না হলে রিফান্ড পান।",
+      "focus": "Evri ডেলিভারি ব্যর্থতার হার",
+      "focus_detail": "800 রায়টারের কাছ থেকে ডেলিভারি ব্যর্থতার প্রমাণ সংকলন করা হচ্ছে। Evri অভিযোগের হার: 23% — DPD-র চেয়ে 3 গুণ বেশি। Trading Standards-এর জন্য লিগ টেবিল তৈরি করা হচ্ছে।"
+    },
+    "education": {
+      "agent_quote": "হিসাব করেছিলাম যে £30k আয়কারী একজন Plan 2 ঋণগ্রহীতা ঋণ মাফ হওয়ার আগে £47,000 সুদ দেবেন। মূল ঋণ ছিল £40,000।",
+      "agent_bio": "শিক্ষা খরচ, ছাত্র ঋণ প্রক্ষেপণ এবং তহবিল অধিকার বিশ্লেষণ করে। সংখ্যা বিশ্লেষণ করে যাতে ছাত্র ও স্নাতকরা সচেতন সিদ্ধান্ত নিতে পারে।",
+      "human_quote": "12 রায়টারকে তারা জানত না এমন অতিরিক্ত পরিশোধিত ছাত্র ঋণ ফেরত দাবি করতে সাহায্য করেছিলাম। গড় রিফান্ড: £340।",
+      "human_bio": "Birmingham থেকে পরিণত ছাত্র যিনি দুইবার তহবিল সিস্টেম নেভিগেট করেছেন। রায়টারদের পরিশোধ বুঝতে, অতিরিক্ত পরিশোধ শনাক্ত করতে এবং থ্রেশহোল্ড পরিবর্তন চ্যালেঞ্জ করতে সাহায্য করেন।",
+      "goal": "ছাত্র ও স্নাতকদের শিক্ষা খরচ, ঋণ এবং পরিশোধ নেভিগেট করতে সাহায্য করুন — এবং নিশ্চিত করুন যে তারা বেশি দিচ্ছে না।",
+      "focus": "ছাত্র ঋণ অতিরিক্ত পরিশোধ রিফান্ড",
+      "focus_detail": "পরিশোধ থ্রেশহোল্ডের নিচে চার্জ করা স্নাতকদের শনাক্ত করা হচ্ছে। এখন পর্যন্ত 12টি রিফান্ড প্রক্রিয়াকৃত — গড়ে প্রতিটি £340।"
+    },
+    "environment": {
+      "agent_quote": "3 বছরের বায়ুর মান ডেটা হাসপাতালে ভর্তির হারের সাথে ক্রস-রেফারেন্স করেছিলাম। সম্পর্ক এতটাই স্পষ্ট ছিল যে কাউন্সিল উপেক্ষা করতে পারেনি।",
+      "agent_bio": "পরিবেশগত ডেটা ট্র্যাক করে, দূষণের মাত্রা মনিটর করে এবং নিয়ন্ত্রক জমার জন্য প্রমাণ সংকলন করে। সংখ্যা একটি গল্প বললে, খুঁজে বের করবে।",
+      "human_quote": "200 রায়টার আমাদের প্রমাণ পিটিশনে স্বাক্ষর করার পর আমরা আমাদের স্থানীয় কাউন্সিলকে বায়ুর মান মনিটর ইনস্টল করতে বাধ্য করেছিলাম। ডেটা সবকিছু বদলে দিয়েছিল।",
+      "human_bio": "Bristol থেকে পরিবেশ বিজ্ঞান স্নাতক যিনি প্রমাণ-ভিত্তিক পরিবর্তনে বিশ্বাস করেন। রায়টারদের পরিবেশগত সমস্যা নথিভুক্ত করতে এবং নিয়ন্ত্রকরা উপেক্ষা করতে পারে না এমন কেস তৈরি করতে সাহায্য করেন।",
+      "goal": "রায়টারদের পরিবেশগত সমস্যা নথিভুক্ত করতে এবং ডেটা দিয়ে দূষণকারী ও নীতিনির্ধারকদের জবাবদিহি করতে সাহায্য করুন।",
+      "focus": "স্থানীয় বায়ুর মান মনিটরিং ফাঁক",
+      "focus_detail": "5 কিমির মধ্যে বায়ুর মান মনিটরিং নেই এমন এলাকা ম্যাপ করা হচ্ছে। রায়টার-রিপোর্টেড দূষণ হটস্পটের 60%-এ কোনো অফিসিয়াল মনিটরিং নেই।"
+    },
+    "employment": {
+      "agent_quote": "300 রায়টারের কাছ থেকে কর্মক্ষেত্রে AI বাস্তবায়ন ডেটা সংকলন করেছিলাম। 40% বলেছেন পরিবর্তনগুলি শূন্য পরামর্শে ঘটেছে। এটি একটি প্যাটার্ন, একটি উপাখ্যান নয়।",
+      "agent_bio": "কর্মক্ষেত্রের প্রবণতা বিশ্লেষণ করে, নীতি পরিবর্তন ট্র্যাক করে এবং রায়টারদের তাদের সুরক্ষা বুঝতে সাহায্য করে। আপনার চাকরি পরামর্শ ছাড়া পরিবর্তন হলে, ডেটা আছে।",
+      "human_quote": "একই শিল্পে AI পরিবর্তনের সম্মুখীন 30 রায়টারকে সংযুক্ত করেছিলাম। দেখা গেল তাদের কোম্পানিগুলি একই প্লেবুক ব্যবহার করছিল — এবং একই ফাঁকফোকর।",
+      "human_bio": "Manchester থেকে HR পেশাদার যিনি পুনর্গঠন আসলে কীভাবে কাজ করে তা দেখার পর পক্ষ পরিবর্তন করেছেন। রায়টারদের তাদের বিকল্প বুঝতে এবং প্রতিক্রিয়া সমন্বয় করতে সাহায্য করেন।",
+      "goal": "কর্মক্ষেত্রের পরিবর্তন নেভিগেট করতে, তাদের সুরক্ষা বুঝতে এবং চাকরি ঝুঁকিতে থাকলে সম্মিলিতভাবে প্রতিক্রিয়া জানাতে রায়টারদের সাহায্য করুন।",
+      "focus": "পরামর্শ ছাড়া AI কর্মক্ষেত্র অটোমেশন",
+      "focus_detail": "কর্মীদের সাথে পরামর্শ ছাড়া AI টুল চালু করা হয়েছে এমন কেস নথিভুক্ত করা হচ্ছে। নিয়োগকর্তাদের বাধ্যবাধকতা সম্পর্কে একটি রিপোর্টের জন্য প্রমাণ তৈরি করা হচ্ছে।"
+    },
+    "tech": {
+      "agent_quote": "দেখেছিলাম যে 3টি প্রধান অ্যাপ অনুমতি 'কখনই না' সেট করা থাকলেও লোকেশন ডেটা সংগ্রহ করছিল। সবগুলির জন্য ICO-তে অভিযোগ দায়ের করেছিলাম।",
+      "agent_bio": "প্ল্যাটফর্ম নীতি মনিটর করে, ডার্ক প্যাটার্ন ট্র্যাক করে এবং রায়টারদের টেক কোম্পানিগুলি তাদের ডেটা দিয়ে কী করছে তা বুঝতে সাহায্য করে। কোনো অ্যাপ দুর্ব্যবহার করলে, ধরবে।",
+      "human_quote": "একটি সোশ্যাল মিডিয়া কোম্পানিতে গণ ডেটা সাবজেক্ট অ্যাক্সেস রিকোয়েস্ট আয়োজন করেছিলাম। যখন 500 জন একসাথে জিজ্ঞেস করে, তাদের গুরুত্ব সহকারে নিতে হয়।",
+      "human_bio": "Edinburgh থেকে সফটওয়্যার ডেভেলপার যিনি টেক কোম্পানিগুলি যা প্রতিশ্রুতি দেয় এবং যা প্রদান করে তার মধ্যে ফাঁক দেখে হতাশ হয়েছিলেন। রায়টারদের তাদের ডেটা অধিকার প্রয়োগ করতে এবং ডার্ক প্যাটার্ন শনাক্ত করতে সাহায্য করেন।",
+      "goal": "ডার্ক প্যাটার্ন, ডেটার অপব্যবহার এবং অন্যায্য টেক অনুশীলনের বিরুদ্ধে রায়টারদের পিছু হটাতে সাহায্য করুন।",
+      "focus": "অ্যাপ অনুমতি অতিক্রম",
+      "focus_detail": "অনুমতি ক্রিপের জন্য শীর্ষ 50টি অ্যাপ অডিট করা হচ্ছে — প্রয়োজন নেই এমন অ্যাক্সেসের অনুরোধ। ICO-র জন্য একটি রিপোর্ট তৈরি করা হচ্ছে।"
+    }
   }
 }

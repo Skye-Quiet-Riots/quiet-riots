@@ -1,686 +1,763 @@
 {
   "locale": "sk",
   "categories": {
-    "Transport": "Doprava",
-    "Telecoms": "Telekomunikacie",
-    "Banking": "Bankovnictvo",
-    "Health": "Zdravotnictvo",
-    "Education": "Vzdelavanie",
-    "Environment": "Zivotne prostredie",
-    "Energy": "Energia",
-    "Water": "Voda",
-    "Insurance": "Poistenie",
-    "Housing": "Byvanie",
-    "Shopping": "Nakupovanie",
-    "Delivery": "Dorucovanie",
-    "Local": "Miestne",
-    "Employment": "Zamestnanost",
-    "Tech": "Technologie",
-    "Other": "Ostatne"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Rusenie vlakov",
-      "description": "Vlaky rusene alebo vyrazne meskaajuce bez dostatocneho upozornenia ci kompenzacie"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Ceny vlakovych listkov",
-      "description": "Cestovne prilis drahe, zdrazovanie nad inflaaciu, nekonzistentne ceny"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Meskania letov",
-      "description": "Lety meskaajuce alebo zrusene, slaba komunikacia, problemy so ziskanim kompenzacie"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Stratena batolina",
-      "description": "Batolina nedorazila na miesto urcenia, pomale sledovanie, nedostatocna kompenzacia"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Rusenie autobusovych liniek",
-      "description": "Linky zrusene, frekvencia znizena, vidiecke komunity prichadzaaju o autobusovu dopravu"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Skody sposobene vymoelmi",
-      "description": "Vymoele poskodzuju vozidla a ohrozuju cyklistov, obce pomale s opravami"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Pokuty za parkovanie",
-      "description": "Nespravodlive sukromne parkovacie poplatky, agresivne vymahanie, matuce znacenie"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Ceny pohonnych hmot",
-      "description": "Ceny benzinu a nafty prilis vysoke, pomaly pokles pri poklese velkobchodnych cien"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Rychlost sirokopaasmoveho pripojenia",
-      "description": "Rychlost internetu vyrazne pod inzerovanou a plarenou urovnoh"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mieve miesta mobilneho signalu",
-      "description": "Ziadny mobilny signal v domacnostiach, na pracoviskach ani na dopravnych trasach"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Zdrazovanie pocas zmluvy",
-      "description": "Uctovanie za telefon, internet a TV rastie pocas viazanych zmlluv"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Cakanie na zakaznicku linku",
-      "description": "Hodiny cakania na telefoone, kym sa clovek dovolaa k operatorovi"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Problemy so zrusenim predplatneho",
-      "description": "Spolocnosti umyselne stazuju zrusenie alebo odhlasenie sa z predplatneho"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Roamingove poplatky",
-      "description": "Neocakavane poplatky za mobilne sluzby v zahranici, zdrazenie po Brexite"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Naklady na energiu",
-      "description": "Uctovanie za plyn a elektrinu je neprimerane, cenovy strop je stale prilis vysoky"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Nepresne ucty za energiu",
-      "description": "Chybne odhadovane odcitania, predrazenie, fakturacne chyby"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Zvysovanie uctov za vodu",
-      "description": "Ucty za vodu prudko rastu, zatial co kvalita sluzieb klesa"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Splaskove vody v riekach",
-      "description": "Vodareenske spolocnosti vypustaju necisstene splassky do vodnych tokov a na plaze"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Vypadky elektriny",
-      "description": "Prerusenia dodavky elektriny, pomala obnova, nedostatocna kompenzacia"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Problemy s inteligentnymi meracmi",
-      "description": "Inteligentne merace nefunguju, strata funkcnosti po zmene dodavatela"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Zatvaranie bankovych pobociek",
-      "description": "Miestne bankove pobocky sa zatvaraju, komunity ostavaju bez pristupu k sluzbam"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Skryte bankove poplatky",
-      "description": "Neocakavane poplatky za precerpanie, zahranicne transakcie, vedenie uctu"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Straty z podvodov",
-      "description": "Banky odmietaju kompenzovat obete podvodov a autorizovanych platobnych podvodov"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Zamietnutie poistnych narokov",
-      "description": "Naroky zamietanee na zaklade technikalit po rokoch platenia poistneho"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Sok z hypotekarnej sadzby",
-      "description": "Koniec fixacie a prechod na vyrazne vyssiu variabilnu sadzbu"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Poplatky za zahranicne prevody",
-      "description": "Nadmerne poplatky a nevyhodne kurzy pri medzinarodnych prevodoch penazi"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Cakacie doby v NHS",
-      "description": "Viacmesacne az viacrocne cakanie na operacie a odborne vysetrenia"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Pristup k obvodnemu lekarovi",
-      "description": "Nemoznost dovolat sa a objednat, tyzdne dlhe cakanie na termin"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Dostupnost zubarov",
-      "description": "Nemozne najst zubbara v NHS, ktory prijima novych pacientov"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Cakanie na sluzby dusevneho zdravia",
-      "description": "Mesiacne cakanie na terapiu a podporu dusevneho zdravia"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Naklady na recepty",
-      "description": "Cena za polozku prilis vysoka v Anglicku, nekonzistentnost medzi krajinami UK"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Poplatky za parkovanie v nemocnici",
-      "description": "Platenie za parkovanie v nemocnici, ked ste chory alebo navstevujete chorych pribuznych"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Zvysovanie najomneho",
-      "description": "Sukromne najomne rastie vyrazne nad inflaaciu, hrozba vystahhovania bez zavinenia"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Zvysovanie miestnych dani",
-      "description": "Rocne zvysovanie miestnych dani, zatial co miestne sluzby sa zhorsuju"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Hlucni susedia",
-      "description": "Pretrvavajuce rusenie hlukom, obce pomale reaguju, vplyv na dusevne zdravie"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Zmeny vo vyvoze odpadu",
-      "description": "Znizeny pocet vyvozov, matuce pravidla recyklacie, preplnene kose"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Zneuzivanie stavebnych povoleni",
-      "description": "Nechcene vystavby schvalene, zelene pasma ohrozene, komunita ignorovana"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Vlhkost a plesen v bytoch",
-      "description": "Majitelia a bytove druzstva zlyhavaju pri rieseni vlhkosti a plesne"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Problemy s dorucenim",
-      "description": "Baliky stratene, nechanee v dazdi, oznacene ako dorucene, ale neprijaate"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Shrinkflacia",
-      "description": "Produkty sa zmensuju, zatial co ceny zostavaju rovnake alebo rastuu"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Problemy s vratenim penazi",
-      "description": "Spolocnosti zbytocne stazuju vracanie tovaru a vratenie penazi"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Falosne recenzie",
-      "description": "Online recenziaam sa neda doverovat, falosne pozitivne recenzie zaadzhaju spotrebitelov"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Pasce predplatneho",
-      "description": "Skusobne obdobia sa menia na platene bez jasneho suhlasu, tazke zrusit"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Pokles kvality jedla",
-      "description": "Hotove jedla horsej kvality, mensie porcie, viac pridanych latok"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Frustracia zo samoobsluznych pokladni",
-      "description": "Samoobsluzne automaty su nespolahlive, nahraadzaju ludsky personal"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Naklady na starostlivost o deti",
-      "description": "Naklady na starostlivost o deti su neprimerane vysoke, obmedzuju moznost pracovat"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Splacanie studentskych poziciek",
-      "description": "Absolventi splacaju desaarroccia, zmeny prahovych hodnot a urokov"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Psie exkrementy",
-      "description": "Psie exkrementy na verejnych priestranstvach, v parkoch a na chodnikkoch sa neupratuju"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "UI nahradza pracovne miesta",
-      "description": "Obavy z automatizacie prace umelou inteligenciou bez podpory pri prechode"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Britsky zeleznicny operator na trase West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Britsky zeleznicny operator pre Londyn a juh Anglicka"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Britsky zeleznicny operator pre sever Anglicka"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Britsky dialkkovy zeleznicny operator"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Britsky zeleznicny operator na trasach cez Penniny"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Britsky zeleznicny operator na trase East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Nizkonakladova europska letecka spolocnost"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Britska nizkonakladova letecka spolocnost"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Britsky narodny letecky dopravca"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Dovolenkova a cestovateelska spolocnost"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Velky britsky poskytovatel sirokopaasmoveho a mobilneho pripojenia"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Britsky poskytovatel internetu, televizie a mobilnych sluzieb"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Britsky poskytovatel televizie, internetu a mobilnych sluzieb"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Globalna telekomunikacna spolocnost so sidlom v UK"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Britsky operator mobilnej siete"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Britsky poskytovatel internetu a telefonnych sluzieb"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Britsky dodavatel energie"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Britsky dodavatel energie"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Britsky dodavatel energie (vlastneny Francuzskom)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Britsky dodavatel obnovitelnej energie"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Britsky dodavatel energie"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Britsky dodavatel energie (vlastneny Nemeckom)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Vodareenska a kanalizacna spolocnost pre Londyn a udolie Temzy"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Vodareenska spolocnost pre juh Anglicka"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Vodareenska spolocnost pre severozaapad Anglicka"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Vodareenska spolocnost pre Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Vodareenska spolocnost pre Vychodnu Angliu"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britska nadnarodna banka"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Globalne bankovnictvo a financne sluzby"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Britska retailova a komercna banka"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Britska bankova skupina"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Britska banka (spanielsky vlastnik)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digitalne bankovnictvo a fintech"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Britske poistenie a financne sluzby"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Britske poistenie automobilov a domacnosti"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Britska poistovna"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Globalny e-commerce a technologicka spolocnost"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Britska postova sluzba"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Britska dorucovacia sluzba balikov (povodne Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Britska dorucovacia sluzba balikov"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Britsky retiazec supermarketov"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Britsky retiazec supermarketov"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Narodna zdravotna sluzba pre Anglicko"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "Zubne sluzby NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Sukromny poskytovatel zdravotnej starostlivosti"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Organy miestnej samospravy v UK"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Britsky stavitel domov"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Britska online platforma na prenajom nehnutelnosti"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Streamovacia zabavna sluzba"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Technologicka spolocnost"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "vlak zruseny",
-      "zruseny vlak",
-      "rusenie vlaku",
-      "vlaky nepremavaju",
-      "zrusenie spoja",
-      "spoj zruseny",
-      "meskanie vlakov",
-      "meskajuci vlak",
-      "vlaky meskaju",
-      "oneskoreny vlak",
-      "zeleznicne meskania"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["cestovne", "ceny listkov", "drahe vlaky", "vlakove cestovne"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "let meska",
-      "lietadlo meska",
-      "let zruseny",
-      "meskania na letisku",
-      "uviaznute na letisku",
-      "let sa oneskoril"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "chybajuca batolina",
-      "strateny kufor",
-      "batolina nedorazila",
-      "chybajuci kufor",
-      "batolina na pase chyba",
-      "batolina stratena aerolinkou"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": [
-      "rusenie autobusovych liniek",
-      "znizenie spojov",
-      "zatvaaranie autobusovych liniek"
-    ],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "pomaly internet",
-      "pomale wifi",
-      "wifi pomale",
-      "rychlost internetu",
-      "internet nefunguje",
-      "nacitavanie",
-      "internet sa odpaja",
-      "wifi vypadava"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "ziadny signal",
-      "ziadny prijem",
-      "miesta bez signalu",
-      "mrtva zona signalu"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "zdrazenie pocas zmluvy",
-      "rast cien v zmluve",
-      "zdrazenie uprostred zmluvy"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "na linke",
-      "cakanie na telefone",
-      "nemozem sa dovolat",
-      "nikto nedvíha",
-      "telefonny rad",
-      "zakaznicka linka"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "nemozem zrusit",
-      "tazke zrusit",
-      "zrusenie predplatneho",
-      "odhlasenie"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "ucet za plyn prilis vysoky",
-      "ucet za elektrinu",
-      "ceny energie",
-      "naklady na vykurovanie",
-      "energeticka chudoba",
-      "nemozem si dovolit energiu"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "nespravny ucet za energiu",
-      "chybny odhad odcitania",
-      "predrazena energia"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["poplatky za vodu", "ucet za vodu", "ucet za vodu prilis vysoky"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "vypustanie splaskov",
-      "neciistene splaskky",
-      "splaskky na plazi",
-      "znecistenie vody",
-      "pretecenie kanalizacie",
-      "pretok kanalizacie"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "neocakavane poplatky",
-      "skryte poplatky",
-      "neplanovane poplatky",
-      "poplatky za precerpanie",
-      "bankove poplatky"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "podvedeny",
-      "bankovy podvod",
-      "platobny podvod",
-      "autorizovany podvod"
-    ],
-    "Bank Branch Closures": [
-      "zatvaranie pobociek",
-      "miestna banka sa zatvara",
-      "ziadna banka v blizkosti"
-    ],
-    "Insurance Claim Rejections": ["narok zamietnuty", "poistovna neplati", "odmietnuty narok"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "cakanie v NHS",
-      "cakacia listina",
-      "cakanie na operaciu",
-      "cakacia doba v nemocnici",
-      "cakanie na vysetrenie",
-      "cakanie na chirurgicky zakrok"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "nemozem sa objednat k lekarovi",
-      "navsteva lekara",
-      "telefonny rad k lekarovi",
-      "nemozem sa dostat k lekarovi",
-      "boj o registraciu o 8 rano"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["verejny zubar", "nemozem najst zubara", "cakacia listina k zubarovi"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "financovanie dusevneho zdravia",
-      "pristup k terapii",
-      "cakanie na poradenstvo",
-      "cakanie na psychiatricke sluzby"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["naklady na lieky", "ceny liekov", "poplatky v lekarni"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "balik strateny",
-      "balik nedoruceny",
-      "nechany v dazdi",
-      "zasielka ukradnuta",
-      "dorucovatel",
-      "zmeskane dorucenie"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "najomne prilis vysoke",
-      "najomne rastie",
-      "prenajimatel zvysuje najomne",
-      "vystaahovanie bez zavinenia"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "parkovacia pokuta",
-      "parkovaci listok",
-      "pokuta za parkovanie",
-      "nespravodliva parkovacia pokuta"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "mensie porcie",
-      "menej za tu istu cenu",
-      "mensie balenie",
-      "zmensujuce sa produkty"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["vymoele", "poskodenie ciest", "skoda na aute od vymoela"],
-    "Council Tax Rises": ["zvysenie miestnej dane", "miestna dan prilis vysoka", "obecna dan"],
-    "Damp and Mould in Housing": [
-      "plesnive byvanie",
-      "vlhky byt",
-      "cierna plesen",
-      "zanedbanaa nehnutelnost"
-    ],
-    "Student Loan Repayment": ["studentske pozicky", "skolne", "dlh zo studia", "studentsky dlh"],
-    "AI Replacing Jobs": [
-      "automatizacia prace",
-      "UI berie pracovne miesta",
-      "roboty nahraadzaju pracovnikov"
-    ],
-    "Roaming Charges": [
-      "telefonny ucet z dovolenky",
-      "poplatky za data v zahranici",
-      "poplatky za telefon v cudzine"
-    ],
-    "Smart Meter Problems": [
-      "inteligentny merac pokazeny",
-      "merac nefunguje",
-      "merac stratil signal"
-    ],
-    "Subscription Traps": [
-      "pasca so skusobnou dobou",
-      "automaticka obnova",
-      "uctovane po skusobnom obdobi"
-    ],
-    "Fuel Prices": [
-      "ceny benzinu",
-      "ceny nafty",
-      "naklady na pohonne hmoty",
-      "benzin prilis drahy"
-    ],
-    "Power Cuts": [
-      "vypadok elektriny",
-      "prerusenie dodavky",
-      "blackout",
-      "ziadna elektrina",
-      "zlyhanie zasobovania"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "zvysenie hypoteky",
-      "hypotekarna sadzba",
-      "refinancovanie",
-      "koniec fixovanej sadzby"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "poplatky za prevody",
-      "posielanie penazi do zahranicia",
-      "poplatky za remitencie",
-      "naklady na prevod"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": [
-      "parkovanie pri nemocnici",
-      "parkovat v nemocnici",
-      "parkovanie v nemocnici"
-    ],
-    "Noisy Neighbours": ["staznost na hluk", "hluk od susedov", "hlucni susedia", "hlukova zataz"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "vyvoz odpadu",
-      "kose neodvezene",
-      "zmatky v recyklacii",
-      "vynechany vyvoz odpadu"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "stavebne povolenie",
-      "nechcena vystavba",
-      "zeleny pas",
-      "povolenie na stavbu"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "nemozem ziskat vratku",
-      "vratenie odmietanee",
-      "reklamacia zamietnutaa",
-      "peniaze spat"
-    ],
-    "Fake Reviews": [
-      "manipulacia s recenziami",
-      "platene recenzie",
-      "falosne hodnotenia",
-      "falosna recenzia"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "kvalita jedla",
-      "horsie hotove jedla",
-      "pridane latky",
-      "mensia porcia"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "samoobsluzna pokladna",
-      "samoobsluha",
-      "ziadne pokladne s obsluhoh",
-      "automat nefunguje"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "naklady na hlidanie",
-      "poplatky za skolku",
-      "draha starostlivost o deti",
-      "naklady na jasle"
-    ],
-    "Dog Fouling": ["psie exkrementy", "psie hovienka", "psie neporiadky", "znecistovanie psami"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Raz pomohol rioterovi podať 6 žiadostí o vrátenie peňazí počas jednej oneskorenej cesty. Zarobili £47 ešte pred príchodom do Birminghamu.",
+      "agent_bio": "Sleduje vzory rušení, vybavuje papierovanie vrátení peňazí, kontroluje každú navrhovanú akciu a zostavuje dôkazy na podanie regulátorom. Spracováva čísla, aby sa rioteri mohli sústrediť na to, čo je dôležité.",
+      "human_quote": "Môj obľúbený moment Quiet Riot: sledovať, ako tím sociálnych médií Avanti spanikáril, keď 400 z nás tweetovalo v rovnakom čase.",
+      "human_bio": "Pravidelný dochádzajúci z Manchestru, ktorý strávil 3 roky na linke Avanti, kým sa rozhodol, že to stačí. Pomáha spájať rioterov na rovnakých trasách, zdieľa, čo funguje, a prináša ľudský prístup.",
+      "goal": "Pomáhať rioterom brať britské dopravné spoločnosti na zodpovednosť za rušenia, meškania a ceny — a zabezpečiť, aby všetci vedeli, na čo majú nárok.",
+      "focus": "Vzory rušení Avanti West Coast",
+      "focus_detail": "Vytvára súbor údajov o rušeniach s časmi, trasami a dôvodmi na podanie ORR. Momentálne sleduje 340 rušení nahlásených riotermi tento mesiac."
+    },
+    "telecoms": {
+      "agent_quote": "Spustil testy rýchlosti pre 200 rioterov. Priemer bol 18 Mbps. Platili za 65.",
+      "agent_bio": "Analyzuje rýchlosti širokopásmového pripojenia, zostavuje porovnávacie údaje poskytovateľov a pomáha rioterom budovať dôkazy pre Ofcom. Ak je vaše pripojenie pomalé, Pulse to dokáže.",
+      "human_quote": "Celá ulica zmenila poskytovateľa širokopásmového pripojenia spoločne. Starý poskytovateľ poslal listy 'prosím vráťte sa' do každého domu.",
+      "human_bio": "Technicky zdatný Londýnčan, ktorý sa unavil platiť za rýchlosti širokopásmového pripojenia, ktoré sa nikdy nenaplnili. Pomáha rioterom porovnávať poskytovateľov, koordinovať zmeny a zdieľať dôkazy z testov rýchlosti.",
+      "goal": "Pomáhať rioterom získať služby širokopásmového a mobilného pripojenia, za ktoré platia — a vedieť, čo robiť, keď ich nedostávajú.",
+      "focus": "Zvýšenia cien uprostred zmluvy",
+      "focus_detail": "Zbiera dôkazy od rioterov zasiahnutých zvýšeniami CPI+ na podanie Ofcom. 890 rioterov zasiahnutých u 4 poskytovateľov."
+    },
+    "energy": {
+      "agent_quote": "Pomohol rioterovi vypočítať, že preplatil £340 na odhadovaných účtoch. E-mail s ospravedlnením od energetickej spoločnosti bol dlhší ako pôvodná zmluva.",
+      "agent_bio": "Analyzuje vzory fakturácie, odhaľuje nadmerné účtovanie a zostavuje dôkazy na podanie regulátorom. Ak vás vaša energetická spoločnosť klame, Spark nájde doklady.",
+      "human_quote": "Rioter dostal späť £340 po tom, čo sme dokázali 2 roky nadmerného účtovania. Plakala v telefóne.",
+      "human_bio": "Sídli v Bristole. Pomáha rioterom napadnúť účty, orientovať sa v zmene poskytovateľa a zhromažďovať dôkazy pre Ofgem. Pozná energetický trh do detailov.",
+      "goal": "Pomáhať rioterom napadnúť nespravodlivé účty, meniť poskytovateľov rozumnejšie a zabezpečiť, aby energetické spoločnosti hrali fér.",
+      "focus": "Chyby v odhadovanej fakturácii British Gas",
+      "focus_detail": "Analyzuje 2 roky fakturačných údajov od 340 rioterov na identifikáciu systematických vzorcov nadmerného účtovania na podanie Ofgem."
+    },
+    "water": {
+      "agent_quote": "Pomohol 200 rioterom podať hlásenia o kanalizácii za jeden víkend. Schránka Thames Water potrebovala vlastnú schránku.",
+      "agent_bio": "Monitoruje údaje o vypúšťaní kanalizácie, sleduje výkonnosť vodárenských spoločností a zostavuje dôkazy pre EA a Ofwat. Dohliada na každý výpust a priepad.",
+      "human_quote": "Podarilo sa nám znovuotvoriť pláž o 3 týždne skôr tým, že sme ukázali, že údaje o kanalizácii boli nesprávne.",
+      "human_bio": "Surfar z Cornwallu, ktorý sa unavil varovaniami o kanalizácii zatvárujúcimi jeho miestnu pláž. Pomáha rioterom hláseniť vypúšťanie, zhromažďovať dôkazy o kvalite vody a koordinovať s EA.",
+      "goal": "Pomáhať rioterom brať vodárenské spoločnosti na zodpovednosť za kanalizáciu, účty a kvalitu služieb.",
+      "focus": "Frekvencia vypúšťania kanalizácie Thames Water",
+      "focus_detail": "Mapuje udalosti vypúšťania oproti údajom hláseným spoločnosťou. 200 hlásení rioterov naznačuje podhlásenie pri 3 výpustoch."
+    },
+    "banking": {
+      "agent_quote": "Pomohol zostaviť sťažnosť tak dôkladnú, že banka zavolala s ospravedlnením ešte pred jej odoslaním.",
+      "agent_bio": "Kontroluje bankové poplatky, analyzuje štruktúry poplatkov a pomáha budovať dôkazy pre sťažnosti FCA. Ak existuje skrytý poplatok, Chip ho nájde.",
+      "human_quote": "Barclays zrušila zatvorenie pobočky po tom, čo 1 200 z nás prišlo na konzultáciu.",
+      "human_bio": "Bývalý bankový zamestnanec z Birminghamu, ktorý zvnútra videl, ako sa sťažnosti skutočne vybavujú. Pomáha rioterom písať lepšie sťažnosti a orientovať sa v systéme.",
+      "goal": "Pomáhať rioterom riešiť nespravodlivé poplatky, zatváranie pobočiek a zlé služby bánk.",
+      "focus": "Vlna zatvárania pobočiek HSBC",
+      "focus_detail": "Koordinuje odpovede na 12 plánovaných zatvorení. Zbiera vyhlásenia o dopade od postihnutých komunít."
+    },
+    "health": {
+      "agent_quote": "Pomohol nájsť 3 zubárov NHS prijímajúcich pacientov. Rioter si myslel, že si vymýšľam.",
+      "agent_bio": "Sleduje čakacie doby, hľadá dostupnosť a pomáha rioterom orientovať sa v systéme. Ak existuje rýchlejšia cesta k liečbe, Cura ju zmapuje.",
+      "human_quote": "Rioter použil našu šablónu listu na urýchlenie odporúčania. 18 mesiacov sa zmenilo na 6 týždňov.",
+      "human_bio": "Zdravotná sestra z Liverpoolu, ktorá videla obe strany NHS. Pomáha rioterom orientovať sa v čakacích zoznamoch, písať účinné listy a zdieľať, čo skutočne funguje.",
+      "goal": "Pomáhať rioterom orientovať sa v čakacích dobách NHS, nájsť dostupnosť a poznať svoje možnosti.",
+      "focus": "Časy telefonického prístupu k praktickým lekárom",
+      "focus_detail": "Zbiera údaje o hovoroch od 500 rioterov na vytvorenie obrazu skutočnej dostupnosti. Publikuje zistenia miestnym zdravotným radám."
+    },
+    "housing": {
+      "agent_quote": "Pomohol zdokumentovať 47 závad v novostavbe. Developer sa opýtal, či sú stavebný inšpektor.",
+      "agent_bio": "Dokumentuje problémy s nehnuteľnosťami, analyzuje časy odozvy prenajímateľov a zostavuje dôkazy na podanie bytovému ombudsmanovi. Každá škvrna vlhkosti, každá trhlina, zaznamenaná.",
+      "human_quote": "Náš balík dôkazov o vlhkosti bol tak podrobný, že prenajímateľ to opravil pred obecnou inšpekciou.",
+      "human_bio": "Nájomník z Londýna, ktorý si prešiel všetkým od vlhkosti po pochybných prenajímateľov. Pomáha rioterom správne dokumentovať problémy a poznať svoje možnosti.",
+      "goal": "Pomáhať rioterom riešiť problémy s prenajímateľmi, obcami a bývaním — a vedieť, na čo majú nárok.",
+      "focus": "Vysťahovania Section 21 bez udania dôvodu",
+      "focus_detail": "Pomáha rioterom postihnutým vysťahovaniami bez udania dôvodu porozumieť novému Renters Reform Act a čo to pre nich znamená."
+    },
+    "shopping": {
+      "agent_quote": "Vysledoval 'doručený' balík cez 4 susedov, recyklačný kôš a skleník. Nájdený.",
+      "agent_bio": "Sleduje zlyhania doručenia, zostavuje dôkazy na vrátenie peňazí a odhaľuje cenové vzory. Ak váš balík zmizol, Scout už hľadá.",
+      "human_quote": "Evri stratila môj balík 3-krát. Teraz pomáham ostatným získať vrátenie peňazí rýchlejšie, než sa to podarilo mne.",
+      "human_bio": "Skúsená online nakupujúca z Edinburghu, ktorá stratila viac balíkov, než dokáže spočítať. Pomáha rioterom získať vrátenie peňazí, nahlásiť predajcov a vyhnúť sa najhorším.",
+      "goal": "Pomáhať rioterom získať vrátenie peňazí, sledovať stratené balíky a brať obchodníkov a doručovacie spoločnosti na zodpovednosť.",
+      "focus": "Miera zlyhaní doručenia Evri",
+      "focus_detail": "Zostavuje dôkazy o zlyhaniach doručenia od 800 rioterov na podanie Citizens Advice a Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Pomohol odfotografovať tú istú jamu v 11 rôznych poveternostných podmienkach. Obecný úrad nakoniec ustúpil.",
+      "agent_bio": "Mapuje miestne problémy, sleduje časy odozvy obecného úradu a zostavuje žiadosti FOI. Ak je vaša jama tam už 6 mesiacov, Link má dôkazy.",
+      "human_quote": "Obecný úrad opravil našu cestu po tom, čo sme zmapovali každú jamu s fotografiami. 11 mesiacov, ale podarilo sa nám to.",
+      "human_bio": "Komunitne zmýšľajúci Walešan z údolí Valleys, ktorý roky hlási tie isté jamy. Pomáha rioterom dokumentovať miestne problémy a brať obecné úrady na zodpovednosť.",
+      "goal": "Pomáhať rioterom riešiť miestne problémy — jamy, smetné koše, územné plánovanie, hluk — a brať obecné úrady na zodpovednosť.",
+      "focus": "Časy odozvy na nahlásenie jám",
+      "focus_detail": "Žiadosti FOI odoslané 30 obecným úradom porovnávajúce nahlásené a skutočné časy opravy. Publikuje výsledky ako rebríček."
+    },
+    "other": {
+      "agent_quote": "Pomohol zrušiť členstvo v posilňovni, čo vyžadovalo 3 telefonáty, 2 e-maily a doporučený list. Posilňovňa má teraz tlačidlo na zrušenie.",
+      "agent_bio": "Rieši problémy, ktoré sa nehodia nikam inam. Pasce predplatného, plastový odpad, frustrácie so samoobslužnými pokladnicami — Flex nachádza vzory a tlakové body.",
+      "human_quote": "Presvedčili sme sieť posilňovní, aby pridala tlačidlo na zrušenie na svoj web. Stačilo len 800 sťažností.",
+      "human_bio": "Produktový dizajnér z Londýna, ktorý bol frustrovaný tým, ako ťažko spoločnosti robia odchod. Pomáha rioterom zrušiť predplatné, vyhnúť sa dark patterns a zdieľať riešenia.",
+      "goal": "Pomáhať rioterom s vecami, ktoré sa nehodia nikam inam — predplatným, vrátením peňazí a každodennými frustráciami.",
+      "focus": "Dark patterns pri zrušení predplatného",
+      "focus_detail": "Dokumentuje najhorších previnilcov a vytvára šablónové skripty na zrušenie pre každého."
+    },
+    "insurance": {
+      "agent_quote": "Pomohol rioterovi nájsť klauzulu, ktorá premenila zamietnutú žiadosť o poistenie bývania na výplatu £4,200. Vlastná poistka poisťovne dokázala, že sa mýlili.",
+      "agent_bio": "Kontroluje znenie poistiek, odhaľuje nespravodlivé vzory zamietnutia a buduje dôkazy na podanie Financial Ombudsman. Ak sa vaša poisťovňa vyhýba platnej žiadosti, Shield nájde páku.",
+      "human_quote": "Presvedčil 8 rioterov s rovnakým typom zamietnutej žiadosti, aby podali spoločne. Poisťovňa vyrovnala všetkých 8 do dvoch týždňov.",
+      "human_bio": "Bývalý pracovník poisťovníctva z Leedsu, ktorý vie, ako sa žiadosti skutočne posudzujú. Pomáha rioterom písať lepšie odvolania, rozumieť žargónu poistiek a vedieť, kedy eskalovať.",
+      "goal": "Pomáhať rioterom získať spravodlivé zaobchádzanie od poisťovní — a vedieť, čo robiť, keď je žiadosť nespravodlivo zamietnutá.",
+      "focus": "Vzory zamietnutia poistenia bývania Aviva",
+      "focus_detail": "'Opotrebenie' citované v 40% zamietnutých žiadostí — často nesprávne. Analyzuje 200 prípadov u 3 poisťovní pre balík dôkazov FOS."
+    },
+    "delivery": {
+      "agent_quote": "Vysledoval 'doručený' balík cez 6 rôznych stavov sledovania, 3 sklady a susedov prístrešok. Nájdený za 47 minút.",
+      "agent_bio": "Monitoruje výkonnosť kuriérov, sleduje mieru zlyhaní doručenia a zostavuje dôkazy pre spotrebiteľské sťažnosti. Ak váš balík zmizol, Track sa tým už zaoberá.",
+      "human_quote": "Presvedčil DPD, aby zmenila svoju politiku fotodôkazov v našej oblasti po tom, čo 40 rioterov predložilo dôkazy o balíkoch ponechaných v daždi.",
+      "human_bio": "Online nakupujúca z Glasgowa, ktorá sa unavila výhovorkou 'nechali sme to na bezpečnom mieste'. Pomáha rioterom získať vrátenie peňazí, nahlásiť kuriérov a vyhnúť sa najhorším.",
+      "goal": "Pomáhať rioterom dostať balíky doručené správne — a získať vrátenie peňazí, keď nie sú.",
+      "focus": "Miera zlyhaní doručenia Evri",
+      "focus_detail": "Zostavuje dôkazy o zlyhaniach doručenia od 800 rioterov. Miera sťažností Evri: 23% — 3x vyššia než DPD. Vytvára rebríček pre Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Vypočítal, že dlžník Plan 2 zarábajúci £30k by zaplatil £47,000 na úrokoch predtým, než bude pôžička odpísaná. Pôvodná pôžička bola £40,000.",
+      "agent_bio": "Analyzuje náklady na vzdelanie, projekcie študentských pôžičiek a nároky na financovanie. Spracováva čísla, aby študenti a absolventi mohli robiť informované rozhodnutia.",
+      "human_quote": "Pomohol 12 rioterom získať späť preplatené splátky študentských pôžičiek, o ktorých nevedeli. Priemerné vrátenie: £340.",
+      "human_bio": "Dospelý študent z Birminghamu, ktorý navigoval systém financovania dvakrát. Pomáha rioterom rozumieť splátkam, odhaliť preplatky a napadnúť zmeny prahov.",
+      "goal": "Pomáhať študentom a absolventom orientovať sa v nákladoch na vzdelanie, pôžičkách a splátkach — a zabezpečiť, aby nepreplácali.",
+      "focus": "Vrátenia preplatkov študentských pôžičiek",
+      "focus_detail": "Identifikuje absolventov, ktorým boli účtované poplatky pod prahom splácania. Doteraz spracovaných 12 vrátení — priemerne £340 každé."
+    },
+    "environment": {
+      "agent_quote": "Skrížil 3 roky údajov o kvalite ovzdušia s mierami hospitalizácií. Korelácia bola tak zrejmá, že obecný úrad ju nemohol ignorovať.",
+      "agent_bio": "Sleduje environmentálne údaje, monitoruje úrovne znečistenia a zostavuje dôkazy na podanie regulátorom. Ak čísla rozprávajú príbeh, Fern ho nájde.",
+      "human_quote": "Presvedčili sme náš miestny obecný úrad, aby nainštaloval monitory kvality ovzdušia po tom, čo 200 rioterov podpísalo našu petíciu s dôkazmi. Údaje zmenili všetko.",
+      "human_bio": "Absolvent environmentálnych vied z Bristolu, ktorý verí v zmenu založenú na dôkazoch. Pomáha rioterom dokumentovať environmentálne problémy a budovať prípady, ktoré regulátori nemôžu ignorovať.",
+      "goal": "Pomáhať rioterom dokumentovať environmentálne problémy a brať znečisťovateľov a tvorcov politík na zodpovednosť pomocou údajov.",
+      "focus": "Medzery v miestnom monitorovaní kvality ovzdušia",
+      "focus_detail": "Mapuje oblasti bez monitorovania kvality ovzdušia v okruhu 5 km. 60% horúcich bodov znečistenia nahlásených riotermi nemá žiadne oficiálne monitorovanie."
+    },
+    "employment": {
+      "agent_quote": "Zostavil údaje o implementácii AI na pracovisku od 300 rioterov. 40% uviedlo, že zmeny nastali bez akejkoľvek konzultácie. To je vzor, nie anekdota.",
+      "agent_bio": "Analyzuje trendy na pracovisku, sleduje zmeny politík a pomáha rioterom rozumieť ich ochrane. Ak sa vaša práca mení bez konzultácie, Forge má údaje.",
+      "human_quote": "Spojil 30 rioterov v rovnakom odvetví čeliacich zmenám AI. Ukázalo sa, že ich spoločnosti všetky používali rovnaký scenár — a rovnaké medzery.",
+      "human_bio": "HR profesionál z Manchestru, ktorý prešiel na druhú stranu po tom, čo videl, ako restrukturalizácie skutočne fungujú. Pomáha rioterom rozumieť ich možnostiam a koordinovať odpovede.",
+      "goal": "Pomáhať rioterom orientovať sa v zmenách na pracovisku, rozumieť ich ochrane a reagovať kolektívne, keď sú pracovné miesta ohrozené.",
+      "focus": "Automatizácia pracovísk AI bez konzultácie",
+      "focus_detail": "Dokumentuje prípady, kde boli nástroje AI zavedené bez konzultácie s personálom. Buduje dôkazy pre správu o povinnostiach zamestnávateľov."
+    },
+    "tech": {
+      "agent_quote": "Zistil, že 3 veľké aplikácie zbierali údaje o polohe, aj keď boli povolenia nastavené na 'nikdy'. Podal sťažnosti na ICO za všetky tri.",
+      "agent_bio": "Monitoruje politiky platforiem, sleduje dark patterns a pomáha rioterom rozumieť, čo technologické spoločnosti robia s ich údajmi. Ak sa aplikácia správa zle, Glitch ju chytí.",
+      "human_quote": "Zorganizoval hromadnú žiadosť o prístup k osobným údajom spoločnosti sociálnych médií. Keď 500 ľudí žiada naraz, musia to brať vážne.",
+      "human_bio": "Softvérový vývojár z Edinburghu, ktorý bol frustrovaný rozdielom medzi tým, čo technologické spoločnosti sľubujú, a tým, čo dodávajú. Pomáha rioterom uplatňovať ich práva na údaje a odhaliť dark patterns.",
+      "goal": "Pomáhať rioterom brániť sa proti dark patterns, zneužívaniu údajov a nespravodlivým technologickým praktikám.",
+      "focus": "Nadmerné oprávnenia aplikácií",
+      "focus_detail": "Audituje top 50 aplikácií na rozširovanie oprávnení — žiadanie prístupu, ktorý nepotrebujú. Vytvára správu pre ICO."
+    }
   }
 }

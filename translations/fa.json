@@ -1,623 +1,763 @@
 {
   "locale": "fa",
   "categories": {
-    "Transport": "حمل‌ونقل",
-    "Telecoms": "مخابرات",
-    "Banking": "بانکداری",
-    "Health": "بهداشت",
-    "Education": "آموزش",
-    "Environment": "محیط زیست",
-    "Energy": "انرژی",
-    "Water": "آب",
-    "Insurance": "بیمه",
-    "Housing": "مسکن",
-    "Shopping": "خرید",
-    "Delivery": "ارسال",
-    "Local": "محلی",
-    "Employment": "اشتغال",
-    "Tech": "فناوری",
-    "Other": "سایر"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "لغو قطارها",
-      "description": "قطارها لغو یا به شدت تأخیر می‌شوند با اطلاع‌رسانی یا جبران خسارت ناکافی"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "قیمت بلیت قطار",
-      "description": "بلیت‌های قطار بسیار گران، افزایش‌های بالاتر از تورم، قیمت‌گذاری ناهماهنگ"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "تأخیر پروازها",
-      "description": "پروازها تأخیر دارند یا لغو می‌شوند، اطلاع‌رسانی ضعیف، دشواری در مطالبه جبران خسارت"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "گم شدن چمدان",
-      "description": "چمدان‌ها به مقصد نمی‌رسند، ردیابی کند، جبران خسارت ناکافی"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "حذف مسیرهای اتوبوس",
-      "description": "مسیرها لغو می‌شوند، تعداد سرویس‌ها کاهش می‌یابد، جوامع روستایی دسترسی به اتوبوس را از دست می‌دهند"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "خسارت چاله‌ها",
-      "description": "چاله‌ها به خودروها آسیب می‌زنند و دوچرخه‌سواران را به خطر می‌اندازند، شهرداری‌ها در تعمیر کند هستند"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "جریمه‌های پارکینگ",
-      "description": "هزینه‌های ناعادلانه پارکینگ خصوصی، اجرای تهاجمی، تابلوهای گیج‌کننده"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "قیمت سوخت",
-      "description": "قیمت بنزین و گازوئیل بسیار بالا، کاهش آهسته هنگام افت قیمت عمده‌فروشی"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "سرعت اینترنت",
-      "description": "سرعت اینترنت بسیار کمتر از آنچه تبلیغ و پرداخت می‌شود"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "نقاط کور آنتن موبایل",
-      "description": "عدم آنتن‌دهی در خانه‌ها، محل‌های کار یا در مسیرهای حمل‌ونقل"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "افزایش قیمت در میانه قرارداد",
-      "description": "قبوض تلفن، اینترنت و تلویزیون در طول قراردادهای الزام‌آور افزایش می‌یابند"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "زمان انتظار خدمات مشتری",
-      "description": "ساعت‌ها در انتظار برای صحبت با یک انسان"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "دشواری لغو اشتراک",
-      "description": "شرکت‌ها عمداً لغو یا انصراف از اشتراک را دشوار می‌کنند"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "هزینه‌های رومینگ",
-      "description": "هزینه‌های غیرمنتظره موبایل هنگام سفر به خارج، افزایش قیمت‌های پس از برگزیت"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "هزینه‌های قبض انرژی",
-      "description": "قبوض گاز و برق غیرقابل تحمل، سقف قیمت همچنان بسیار بالا"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "قبوض انرژی نادرست",
-      "description": "قرائت‌های تخمینی اشتباه، شارژ اضافی، خطاهای صورتحساب"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "افزایش قبض آب",
-      "description": "قبوض آب به شدت افزایش می‌یابند در حالی که کیفیت خدمات کاهش می‌یابد"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "فاضلاب در رودخانه‌ها",
-      "description": "شرکت‌های آب فاضلاب خام را به آبراه‌ها و سواحل تخلیه می‌کنند"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "قطع برق",
-      "description": "قطع برق، بازیابی آهسته، جبران خسارت ناکافی"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "مشکلات کنتور هوشمند",
-      "description": "کنتورهای هوشمند کار نمی‌کنند، پس از تغییر تأمین‌کننده عملکرد خود را از دست می‌دهند"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "تعطیلی شعب بانک",
-      "description": "شعب محلی بانک بسته می‌شوند و جوامع بدون دسترسی به خدمات بانکی می‌مانند"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "کارمزدهای پنهان بانکی",
-      "description": "کارمزدهای غیرمنتظره برای اضافه‌برداشت، تراکنش‌های خارجی و نگهداری حساب"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "خسارات ناشی از کلاهبرداری",
-      "description": "بانک‌ها از بازپرداخت به قربانیان کلاهبرداری و پرداخت‌های مجاز جعلی خودداری می‌کنند"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "رد ادعاهای بیمه",
-      "description": "ادعاها با دلایل فنی پس از سال‌ها پرداخت حق بیمه رد می‌شوند"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "شوک نرخ وام مسکن",
-      "description": "پایان نرخ ثابت و انتقال به نرخ متغیر بسیار بالاتر"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "کارمزد حواله‌های خارجی",
-      "description": "کارمزدهای بیش از حد و نرخ‌های ارز نامناسب برای حواله‌های بین‌المللی"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "زمان انتظار NHS",
-      "description": "انتظار چندماهه یا چندساله برای عمل جراحی و نوبت متخصص"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "دسترسی به نوبت پزشک عمومی",
-      "description": "امکان گرفتن نوبت پزشک عمومی وجود ندارد، انتظار هفته‌ها"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "دسترسی به دندانپزشک",
-      "description": "یافتن دندانپزشک NHS که بیمار جدید بپذیرد غیرممکن است"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "انتظار خدمات بهداشت روان",
-      "description": "ماه‌ها انتظار برای درمان و حمایت بهداشت روان"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "هزینه‌های نسخه",
-      "description": "هزینه هر قلم دارو در انگلستان بسیار بالا، ناهماهنگی بین کشورهای بریتانیا"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "هزینه پارکینگ بیمارستان",
-      "description": "پرداخت هزینه پارکینگ در بیمارستان هنگام بیماری یا عیادت بیماران"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "افزایش اجاره",
-      "description": "اجاره‌های خصوصی بسیار بالاتر از تورم افزایش می‌یابند، تهدید تخلیه بدون دلیل"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "افزایش مالیات شورای محلی",
-      "description": "افزایش سالانه مالیات شورا در حالی که خدمات محلی بدتر می‌شوند"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "همسایگان پر سر و صدا",
-      "description": "مزاحمت صوتی مداوم، شهرداری‌ها در اقدام کند هستند، بر بهداشت روان تأثیر می‌گذارد"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "تغییرات جمع‌آوری زباله",
-      "description": "کاهش دفعات جمع‌آوری زباله، قوانین بازیافت گیج‌کننده، سطل‌های سرریز شده"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "سوءاستفاده از مجوز ساخت‌وساز",
-      "description": "توسعه‌های ناخواسته تأیید می‌شوند، کمربند سبز تهدید شده، جامعه نادیده گرفته شده"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "رطوبت و کپک در مسکن",
-      "description": "صاحبخانه‌ها و انجمن‌های مسکن در رفع رطوبت و کپک ناتوان هستند"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "مشکلات تحویل",
-      "description": "بسته‌ها گم می‌شوند، زیر باران رها می‌شوند، تحویل‌شده ثبت می‌شوند اما دریافت نشده‌اند"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "کوچک‌فلاسیون",
-      "description": "محصولات کوچک‌تر می‌شوند در حالی که قیمت‌ها ثابت می‌مانند یا افزایش می‌یابند"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "دشواری‌های بازپرداخت",
-      "description": "شرکت‌ها مرجوعی و بازپرداخت را بی‌دلیل دشوار می‌کنند"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "نظرات جعلی",
-      "description": "نمی‌توان به نظرات آنلاین اعتماد کرد، نظرات مثبت جعلی مصرف‌کنندگان را گمراه می‌کنند"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "تله‌های اشتراک",
-      "description": "دوره‌های آزمایشی رایگان بدون رضایت واضح به پولی تبدیل می‌شوند، لغو دشوار است"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "کاهش کیفیت غذا",
-      "description": "غذاهای آماده با کیفیت بدتر، وعده‌های کوچک‌تر، افزودنی‌های بیشتر"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "ناامیدی از صندوق‌های خودکار",
-      "description": "دستگاه‌های سلف‌سرویس غیرقابل اعتماد، جایگزین کارکنان انسانی"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "هزینه نگهداری کودک",
-      "description": "هزینه‌های نگهداری کودک به طرز ممنوع‌کننده‌ای گران، محدودکننده توانایی کار"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "بازپرداخت وام دانشجویی",
-      "description": "فارغ‌التحصیلان دهه‌ها بازپرداخت می‌کنند، تغییرات آستانه و نرخ بهره"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "آلودگی سگ",
-      "description": "مدفوع سگ در فضاهای عمومی، پارک‌ها و پیاده‌روها تمیز نمی‌شود"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "جایگزینی مشاغل توسط هوش مصنوعی",
-      "description": "نگرانی از اتوماسیون مشاغل توسط هوش مصنوعی بدون حمایت انتقالی"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "اپراتور راه‌آهن بریتانیا در خط اصلی ساحل غربی"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "اپراتور راه‌آهن بریتانیا برای لندن و جنوب"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "اپراتور راه‌آهن بریتانیا برای شمال انگلستان"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "اپراتور راه‌آهن مسافت بلند بریتانیا"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "اپراتور راه‌آهن بریتانیا در مسیرهای ترنس‌پنین"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "اپراتور راه‌آهن بریتانیا در خط اصلی ساحل شرقی"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "شرکت هواپیمایی کم‌هزینه اروپایی"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "شرکت هواپیمایی کم‌هزینه مستقر در بریتانیا"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "شرکت هواپیمایی ملی بریتانیا"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "شرکت تعطیلات و سفر"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "ارائه‌دهنده بزرگ اینترنت و موبایل در بریتانیا"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "ارائه‌دهنده اینترنت، تلویزیون و موبایل در بریتانیا"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "ارائه‌دهنده تلویزیون، اینترنت و موبایل در بریتانیا"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "شرکت مخابراتی جهانی با مقر در بریتانیا"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "اپراتور شبکه موبایل در بریتانیا"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "ارائه‌دهنده اینترنت و تلفن در بریتانیا"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "تأمین‌کننده انرژی در بریتانیا"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "تأمین‌کننده انرژی در بریتانیا"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "تأمین‌کننده انرژی در بریتانیا (مالکیت فرانسوی)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "تأمین‌کننده انرژی تجدیدپذیر در بریتانیا"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "تأمین‌کننده انرژی در بریتانیا"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "تأمین‌کننده انرژی در بریتانیا (مالکیت آلمانی)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "شرکت آب و فاضلاب برای لندن و دره تیمز"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "شرکت آب برای جنوب انگلستان"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "شرکت آب برای شمال غربی انگلستان"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "شرکت آب برای میدلندز"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "شرکت آب برای آنگلیای شرقی"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "بانک چندملیتی بریتانیایی"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "خدمات بانکداری و مالی جهانی"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "بانک خرد و تجاری در بریتانیا"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "گروه بانکداری در بریتانیا"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "بانک در بریتانیا (مالکیت اسپانیایی)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "بانکداری دیجیتال و فین‌تک"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "بیمه و خدمات مالی در بریتانیا"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "بیمه خودرو و خانه در بریتانیا"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "شرکت بیمه در بریتانیا"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "تجارت الکترونیک و فناوری جهانی"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "سرویس پست بریتانیا"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "سرویس تحویل بسته در بریتانیا (قبلاً Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "سرویس تحویل بسته در بریتانیا"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "زنجیره سوپرمارکت در بریتانیا"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "زنجیره سوپرمارکت در بریتانیا"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "سرویس بهداشت ملی انگلستان"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "خدمات دندانپزشکی NHS"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "ارائه‌دهنده خدمات بهداشتی خصوصی"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "مقامات حکومت محلی در بریتانیا"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "شرکت ساختمان‌سازی مسکونی در بریتانیا"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "پلتفرم اجاره آنلاین در بریتانیا"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "سرویس پخش سرگرمی آنلاین"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "شرکت فناوری"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "قطار لغو شده",
-      "لغو قطار",
-      "لغو قطارها",
-      "قطارها کار نمی‌کنند",
-      "لغو سرویس قطار",
-      "سرویس لغو شده",
-      "تأخیر قطار",
-      "قطار تأخیر دارد",
-      "قطارها دیر کردند",
-      "قطار دیر",
-      "تأخیرات ریلی"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["کرایه قطار", "هزینه بلیت", "قطار گران", "نرخ بلیت قطار"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "پرواز تأخیر دارد",
-      "هواپیما تأخیر دارد",
-      "پرواز لغو شده",
-      "تأخیر فرودگاه",
-      "گیر افتاده در فرودگاه",
-      "پرواز دیر شد"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "چمدان گم شده",
-      "ساک گم شده",
-      "چمدان نرسیده",
-      "ساک مفقود",
-      "چمدان روی نوار نیست",
-      "هواپیمایی چمدانم را گم کرد"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["کاهش اتوبوس", "حذف مسیرها", "تعطیلی خطوط اتوبوس"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "اینترنت کند",
-      "وای‌فای کند",
-      "WiFi کند",
-      "سرعت اینترنت",
-      "اینترنت کار نمی‌کند",
-      "بافرینگ",
-      "اینترنت قطع می‌شود",
-      "وای‌فای قطع می‌شود"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "آنتن نمی‌دهد",
-      "سیگنال نیست",
-      "نقطه کور موبایل",
-      "منطقه بدون آنتن"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "افزایش قبض در میانه قرارداد",
-      "افزایش قیمت قرارداد",
-      "افزایش در وسط قرارداد"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "روی خط منتظرم",
-      "منتظر پشت تلفن",
-      "نمی‌توانم تماس بگیرم",
-      "کسی جواب نمی‌دهد",
-      "صف تلفن",
-      "مرکز تماس"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "نمی‌توانم لغو کنم",
-      "لغو سخت است",
-      "لغو اشتراک",
-      "انصراف از اشتراک"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "قبض گاز زیاد",
-      "قبض برق",
-      "قیمت انرژی",
-      "هزینه گرمایش",
-      "فقر سوختی",
-      "توان پرداخت انرژی ندارم"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
-    "Inaccurate Energy Bills": ["قبض انرژی اشتباه", "قرائت تخمینی غلط", "شارژ اضافی انرژی"],
-    "Water Bill Increases": ["تعرفه آب", "هزینه آب", "قبض آب خیلی زیاد"],
+    "Inaccurate Energy Bills": [
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "تخلیه فاضلاب",
-      "فاضلاب خام",
-      "فاضلاب در ساحل",
-      "آلودگی آب",
-      "سرریز فاضلاب",
-      "سرریز فاضلاب ترکیبی"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "کارمزد غیرمنتظره",
-      "کارمزد پنهان",
-      "هزینه‌های ناگهانی",
-      "کارمزد اضافه‌برداشت",
-      "کارمزد بانک"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "کلاهبرداری شدم",
-      "کلاهبرداری بانکی",
-      "کلاهبرداری پرداخت",
-      "کلاهبرداری مجاز"
-    ],
-    "Bank Branch Closures": ["بسته شدن شعب", "بانک محلی بسته می‌شود", "بانکی نزدیک نیست"],
-    "Insurance Claim Rejections": ["درخواست رد شد", "بیمه پرداخت نمی‌کند", "رد ادعا"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "انتظار NHS",
-      "لیست انتظار",
-      "انتظار عمل",
-      "زمان انتظار بیمارستان",
-      "انتظار ارجاع",
-      "منتظر جراحی"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "نوبت پزشک نمی‌گیرم",
-      "نوبت دکتر",
-      "صف تلفن GP",
-      "نمی‌توانم دکتر ببینم",
-      "مسابقه تلفنی ساعت ۸ صبح"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["دندانپزشک NHS", "دندانپزشک پیدا نمی‌کنم", "لیست انتظار دندانپزشکی"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "بودجه بهداشت روان",
-      "دسترسی به درمان",
-      "انتظار مشاوره",
-      "انتظار CAMHS"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["هزینه دارو", "قیمت دارو", "هزینه داروخانه"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "بسته گم شده",
-      "بسته تحویل نشده",
-      "زیر باران رها شده",
-      "بسته دزدیده شده",
-      "راننده تحویل",
-      "تحویل از دست رفته"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "اجاره خیلی بالاست",
-      "اجاره بالا می‌رود",
-      "صاحبخانه اجاره را بالا برد",
-      "تخلیه بدون دلیل"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["جریمه پارکینگ", "برگه جریمه پارکینگ", "PCN", "جریمه ناعادلانه پارکینگ"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "وعده‌های کوچک‌تر",
-      "کمتر به همان قیمت",
-      "بسته‌بندی کوچک‌تر",
-      "محصولات کوچک‌تر"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["چاله", "خرابی جاده", "چاله به ماشین آسیب زد"],
-    "Council Tax Rises": ["افزایش مالیات شورا", "مالیات شورا زیاد", "مالیات محلی"],
-    "Damp and Mould in Housing": ["خانه کپک‌زده", "آپارتمان مرطوب", "کپک سیاه", "خانه فرسوده"],
-    "Student Loan Repayment": ["وام دانشجویی", "شهریه دانشگاه", "بدهی تحصیلی", "بدهی دانشجویی"],
-    "AI Replacing Jobs": ["اتوماسیون مشاغل", "هوش مصنوعی شغل‌ها را می‌گیرد", "ربات‌ها جای کارگران"],
-    "Roaming Charges": ["قبض تلفن در سفر", "هزینه دیتا در خارج", "هزینه تلفن در خارج"],
-    "Smart Meter Problems": ["کنتور هوشمند خراب", "کنتور کار نمی‌کند", "کنتور سیگنال ندارد"],
-    "Subscription Traps": ["تله آزمایش رایگان", "تمدید خودکار", "بعد از آزمایش هزینه شد"],
-    "Fuel Prices": ["قیمت بنزین", "قیمت گازوئیل", "هزینه سوخت", "بنزین خیلی گران"],
-    "Power Cuts": ["قطع برق", "بدون برق", "خاموشی", "برق نداریم", "خرابی برق"],
-    "Mortgage Rate Shock": ["افزایش وام مسکن", "نرخ وام مسکن", "تمدید وام مسکن", "پایان نرخ ثابت"],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
+    ],
     "Overseas Transfer Fees": [
-      "کارمزد حواله",
-      "ارسال پول به خارج",
-      "کارمزد حواله بین‌المللی",
-      "هزینه انتقال بانکی"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["پارکینگ بیمارستان", "پارک در بیمارستان", "پارکینگ NHS"],
-    "Noisy Neighbours": [
-      "شکایت سر و صدا",
-      "سر و صدای همسایه",
-      "همسایه‌های پر سر و صدا",
-      "مزاحمت صوتی"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "جمع‌آوری زباله",
-      "زباله جمع نشده",
-      "سردرگمی بازیافت",
-      "زباله جمع نشد"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
-    "Planning Permission Abuse": ["مجوز ساخت", "ساخت‌وساز ناخواسته", "کمربند سبز", "اجازه ساخت"],
-    "Refund Difficulties": [
-      "بازپرداخت نمی‌گیرم",
-      "بازپرداخت رد شد",
-      "مرجوعی رد شد",
-      "پس گرفتن پول"
+    "Planning Permission Abuse": [
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Fake Reviews": ["دستکاری نظرات", "نظرات پولی", "نظرات جعلی", "نظر جعلی"],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "کیفیت غذا",
-      "غذای آماده بدتر شده",
-      "افزودنی‌های غذایی",
-      "وعده کوچک‌تر"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "صندوق خودکار",
-      "سلف سرویس",
-      "صندوقدار نیست",
-      "دستگاه کار نمی‌کند"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "هزینه نگهداری کودک",
-      "شهریه مهدکودک",
-      "نگهداری کودک گران",
-      "هزینه مهدکودک"
-    ],
-    "Dog Fouling": ["مدفوع سگ", "فضله سگ", "زباله سگ", "آلودگی"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "یک بار به یک rioter کمک کردم ۶ درخواست بازپرداخت در یک سفر تأخیری ثبت کند. او قبل از رسیدن به Birmingham مبلغ £47 دریافت کرد.",
+      "agent_bio": "الگوهای لغو را ردیابی می‌کند، کاغذبازی بازپرداخت‌ها را انجام می‌دهد، هر اقدام پیشنهادی را بررسی می‌کند و مدارک را برای ارائه به نهاد نظارتی آماده می‌کند. اعداد و ارقام را پردازش می‌کند تا rioterها بتوانند روی چیزهای مهم تمرکز کنند.",
+      "human_quote": "لحظه مورد علاقه‌ام در Quiet Riot: دیدن وحشت تیم رسانه‌های اجتماعی Avanti وقتی ۴۰۰ نفرمان هم‌زمان توییت کردیم.",
+      "human_bio": "مسافر روزانه از Manchester که ۳ سال در خط Avanti بود تا تصمیم گرفت کافی است. به اتصال rioterهای مسیرهای مشابه کمک می‌کند، آنچه جواب می‌دهد را به اشتراک می‌گذارد و حس انسانی را به ارمغان می‌آورد.",
+      "goal": "کمک به rioterها برای مسئول دانستن شرکت‌های حمل و نقل بریتانیا در قبال لغوها، تأخیرها و قیمت‌گذاری — و اطمینان از اینکه همه حقوق خود را بدانند.",
+      "focus": "الگوهای لغو Avanti West Coast",
+      "focus_detail": "ساخت مجموعه داده‌ای از لغوها با ساعات، مسیرها و دلایل برای ارائه به ORR. در حال حاضر ۳۴۰ لغو گزارش‌شده توسط rioterها در این ماه را ردیابی می‌کنیم."
+    },
+    "telecoms": {
+      "agent_quote": "برای ۲۰۰ rioter تست سرعت انجام دادم. میانگین ۱۸ Mbps بود. آن‌ها برای ۶۵ پول می‌دادند.",
+      "agent_bio": "سرعت‌های اینترنت پهن‌باند را تحلیل می‌کند، داده‌های مقایسه‌ای ارائه‌دهندگان را جمع‌آوری می‌کند و به rioterها کمک می‌کند مدارک برای Ofcom بسازند. اگر اتصال شما کند است، Pulse آن را ثابت خواهد کرد.",
+      "human_quote": "یک خیابان کامل با هم ارائه‌دهنده پهن‌باند را عوض کرد. ارائه‌دهنده قبلی نامه «لطفاً برگردید» به هر خانه فرستاد.",
+      "human_bio": "لندنی آشنا به فناوری که از پرداخت هزینه سرعت‌های پهن‌باندی که هرگز محقق نشدند خسته شده بود. به rioterها در مقایسه ارائه‌دهندگان، هماهنگی تغییرات و به اشتراک‌گذاری مدارک تست سرعت کمک می‌کند.",
+      "goal": "کمک به rioterها برای دریافت خدمات پهن‌باند و موبایلی که بابتش پول می‌دهند — و دانستن اینکه وقتی دریافت نمی‌کنند چه کار کنند.",
+      "focus": "افزایش قیمت میان‌قراردادی",
+      "focus_detail": "جمع‌آوری مدارک از rioterهای متأثر از افزایش‌های CPI+ برای ارائه به Ofcom. ۸۹۰ rioter متأثر در ۴ ارائه‌دهنده."
+    },
+    "energy": {
+      "agent_quote": "به یک rioter کمک کردم محاسبه کند که £340 در قبوض تخمینی اضافه پرداخت کرده است. ایمیل عذرخواهی شرکت انرژی از قرارداد اصلی طولانی‌تر بود.",
+      "agent_bio": "الگوهای صورتحساب را تحلیل می‌کند، اضافه‌کاری‌ها را شناسایی می‌کند و مدارک را برای ارائه به نهاد نظارتی آماده می‌کند. اگر شرکت انرژی شما زیاده‌خواهی می‌کند، Spark رسیدها را پیدا خواهد کرد.",
+      "human_quote": "یک rioter پس از اثبات ۲ سال اضافه‌کاری £340 پس گرفت. پشت تلفن گریه کرد.",
+      "human_bio": "مستقر در Bristol. به rioterها در اعتراض به قبوض، راهنمایی تغییر ارائه‌دهنده و جمع‌آوری مدارک برای Ofgem کمک می‌کند. بازار انرژی را کاملاً می‌شناسد.",
+      "goal": "کمک به rioterها برای اعتراض به قبوض ناعادلانه، تغییر هوشمندانه‌تر ارائه‌دهنده و اطمینان از اینکه شرکت‌های انرژی منصفانه رفتار کنند.",
+      "focus": "خطاهای صورتحساب تخمینی British Gas",
+      "focus_detail": "تحلیل ۲ سال داده‌های صورتحساب از ۳۴۰ rioter برای شناسایی الگوهای اضافه‌کاری سیستماتیک برای ارائه به Ofgem."
+    },
+    "water": {
+      "agent_quote": "در یک آخر هفته به ۲۰۰ rioter کمک کردم گزارش‌های فاضلاب ثبت کنند. صندوق ورودی Thames Water به صندوق ورودی خودش نیاز داشت.",
+      "agent_bio": "داده‌های تخلیه فاضلاب را نظارت می‌کند، عملکرد شرکت‌های آب را ردیابی می‌کند و مدارک را برای EA و Ofwat جمع‌آوری می‌کند. هر خروجی و سرریز را زیر نظر دارد.",
+      "human_quote": "با نشان دادن اینکه داده‌های فاضلاب اشتباه بود، یک ساحل را ۳ هفته زودتر بازگشایی کردیم.",
+      "human_bio": "موج‌سوار از Cornwall که از هشدارهای فاضلاب که ساحل محلی‌اش را می‌بست خسته شده بود. به rioterها در گزارش تخلیه‌ها، جمع‌آوری مدارک کیفیت آب و هماهنگی با EA کمک می‌کند.",
+      "goal": "کمک به rioterها برای مسئول دانستن شرکت‌های آب در قبال فاضلاب، قبوض و کیفیت خدمات.",
+      "focus": "تعداد دفعات تخلیه فاضلاب Thames Water",
+      "focus_detail": "نقشه‌برداری رویدادهای تخلیه در مقابل داده‌های گزارش‌شده توسط شرکت. ۲۰۰ گزارش rioter نشان‌دهنده کم‌گزارشی در ۳ خروجی است."
+    },
+    "banking": {
+      "agent_quote": "کمک کردم شکایتی آنقدر جامع نوشته شود که بانک قبل از ارسال آن تماس گرفت و عذرخواهی کرد.",
+      "agent_bio": "کارمزدهای بانکی را بررسی می‌کند، ساختارهای هزینه را تحلیل می‌کند و به ساخت مدارک شکایت برای FCA کمک می‌کند. اگر هزینه پنهانی وجود داشته باشد، Chip آن را پیدا خواهد کرد.",
+      "human_quote": "Barclays تعطیلی یک شعبه را لغو کرد بعد از اینکه ۱٬۲۰۰ نفرمان در جلسه مشاوره حاضر شدیم.",
+      "human_bio": "کارمند سابق بانک از Birmingham که دید شکایات از داخل واقعاً چگونه رسیدگی می‌شوند. به rioterها در نوشتن شکایات بهتر و پیمایش سیستم کمک می‌کند.",
+      "goal": "کمک به rioterها برای مقابله با کارمزدهای ناعادلانه، تعطیلی شعب و خدمات ضعیف بانک‌ها.",
+      "focus": "موج تعطیلی شعب HSBC",
+      "focus_detail": "هماهنگی پاسخ‌ها به ۱۲ تعطیلی برنامه‌ریزی‌شده. جمع‌آوری بیانیه‌های تأثیر از جوامع متأثر."
+    },
+    "health": {
+      "agent_quote": "کمک کردم ۳ دندانپزشک NHS که بیمار می‌پذیرفتند پیدا شود. rioter فکر کرد دارم سر به سرش می‌گذارم.",
+      "agent_bio": "زمان‌های انتظار را ردیابی می‌کند، در دسترس بودن را پیدا می‌کند و به rioterها در پیمایش سیستم کمک می‌کند. اگر مسیر سریع‌تری برای درمان وجود داشته باشد، Cura آن را ترسیم خواهد کرد.",
+      "human_quote": "یک rioter از الگوی نامه ما استفاده کرد تا یک ارجاع تسریع شود. ۱۸ ماه به ۶ هفته تبدیل شد.",
+      "human_bio": "پرستار از Liverpool که هر دو طرف NHS را دیده است. به rioterها در پیمایش لیست‌های انتظار، نوشتن نامه‌های مؤثر و به اشتراک‌گذاری آنچه واقعاً تفاوت ایجاد می‌کند کمک می‌کند.",
+      "goal": "کمک به rioterها برای پیمایش زمان‌های انتظار NHS، یافتن در دسترس بودن و دانستن گزینه‌هایشان.",
+      "focus": "زمان‌های دسترسی تلفنی به پزشک عمومی",
+      "focus_detail": "جمع‌آوری داده‌های تماس از ۵۰۰ rioter برای ساختن تصویری از دسترسی واقعی. انتشار یافته‌ها به هیئت‌های بهداشت محلی."
+    },
+    "housing": {
+      "agent_quote": "کمک کردم ۴۷ نقص در یک ساختمان نوساز مستند شود. سازنده پرسید آیا او بازرس ساختمان است.",
+      "agent_bio": "مشکلات ملک را مستند می‌کند، زمان‌های پاسخ صاحبخانه‌ها را تحلیل می‌کند و مدارک را برای ارائه به آمبودزمان مسکن جمع‌آوری می‌کند. هر لکه رطوبت، هر ترک، ثبت شده.",
+      "human_quote": "بسته مدارک رطوبت ما آنقدر جزئی بود که صاحبخانه قبل از بازرسی شورا آن را تعمیر کرد.",
+      "human_bio": "مستأجر از لندن که با همه چیز از رطوبت تا صاحبخانه‌های مشکل‌ساز دست و پنجه نرم کرده است. به rioterها در مستندسازی صحیح مشکلات و دانستن گزینه‌هایشان کمک می‌کند.",
+      "goal": "کمک به rioterها برای مقابله با صاحبخانه‌ها، شوراها و مشکلات مسکن — و دانستن حقوقشان.",
+      "focus": "اخطارهای تخلیه بدون دلیل Section 21",
+      "focus_detail": "کمک به rioterهای متأثر از تخلیه‌های بدون دلیل برای درک قانون جدید Renters Reform Act و معنای آن برایشان."
+    },
+    "shopping": {
+      "agent_quote": "بسته‌ای «تحویل‌شده» را از ۴ همسایه، سطل بازیافت و یک گلخانه ردیابی کردم. پیدایش کردم.",
+      "agent_bio": "خرابی‌های تحویل را ردیابی می‌کند، مدارک بازپرداخت جمع‌آوری می‌کند و الگوهای قیمت‌گذاری را شناسایی می‌کند. اگر بسته شما گم شده، Scout از قبل دنبالش می‌گردد.",
+      "human_quote": "Evri بسته من را ۳ بار گم کرد. حالا به دیگران کمک می‌کنم بازپرداخت‌هایشان را سریع‌تر از آنچه خودم توانستم بگیرند.",
+      "human_bio": "کهنه‌کار خرید آنلاین از Edinburgh که بسته‌های گم‌شده بیشتر از آنچه بشمارد داشته. به rioterها در دریافت بازپرداخت، گزارش فروشندگان و اجتناب از بدترین متخلفان کمک می‌کند.",
+      "goal": "کمک به rioterها برای دریافت بازپرداخت، ردیابی بسته‌های گم‌شده و مسئول دانستن خرده‌فروشان و شرکت‌های تحویل.",
+      "focus": "نرخ‌های خرابی تحویل Evri",
+      "focus_detail": "جمع‌آوری مدارک خرابی تحویل از ۸۰۰ rioter برای ارائه به Citizens Advice و Trading Standards."
+    },
+    "local": {
+      "agent_quote": "کمک کردم همان چاله را در ۱۱ شرایط آب‌وهوایی مختلف عکاسی کنند. شورا بالاخره تسلیم شد.",
+      "agent_bio": "مشکلات محلی را نقشه‌برداری می‌کند، زمان‌های پاسخ شورا را ردیابی می‌کند و درخواست‌های FOI جمع‌آوری می‌کند. اگر چاله شما ۶ ماه آنجا بوده، Link مدارک دارد.",
+      "human_quote": "شورا جاده ما را تعمیر کرد بعد از اینکه هر چاله‌ای را با عکس نقشه‌برداری کردیم. ۱۱ ماه طول کشید، ولی موفق شدیم.",
+      "human_bio": "ولزی اجتماع‌محور از Valleys که سال‌هاست همان چاله‌ها را گزارش می‌دهد. به rioterها در مستندسازی مشکلات محلی و مسئول دانستن شوراها کمک می‌کند.",
+      "goal": "کمک به rioterها برای حل مشکلات محلی — چاله‌ها، زباله، برنامه‌ریزی شهری، سروصدا — و مسئول دانستن شوراها.",
+      "focus": "زمان‌های پاسخ به گزارش چاله‌ها",
+      "focus_detail": "درخواست‌های FOI به ۳۰ شورا ارسال شده و زمان‌های تعمیر گزارش‌شده و واقعی مقایسه شده‌اند. نتایج به صورت جدول رتبه‌بندی منتشر می‌شود."
+    },
+    "other": {
+      "agent_quote": "کمک کردم عضویت باشگاهی لغو شود که ۳ تماس، ۲ ایمیل و یک پست سفارشی نیاز داشت. باشگاه حالا دکمه لغو دارد.",
+      "agent_bio": "مشکلاتی که به‌راحتی جای دیگری نمی‌گنجند را مدیریت می‌کند. تله‌های اشتراک، زباله‌های پلاستیکی، ناامیدی‌های صندوق خودکار — Flex الگوها و نقاط فشار را پیدا می‌کند.",
+      "human_quote": "یک زنجیره باشگاه را مجبور کردیم دکمه لغو به وب‌سایتشان اضافه کنند. فقط ۸۰۰ شکایت لازم بود.",
+      "human_bio": "طراح محصول از لندن که از سختی لغو عضویت در شرکت‌ها ناامید شده بود. به rioterها در لغو اشتراک‌ها، اجتناب از الگوهای تاریک و به اشتراک‌گذاری راه‌حل‌ها کمک می‌کند.",
+      "goal": "کمک به rioterها با چیزهایی که به‌راحتی جای دیگری نمی‌گنجند — اشتراک‌ها، بازپرداخت‌ها و ناامیدی‌های روزمره.",
+      "focus": "الگوهای تاریک لغو اشتراک",
+      "focus_detail": "مستندسازی بدترین متخلفان و ساخت قالب‌های لغو برای هرکدام."
+    },
+    "insurance": {
+      "agent_quote": "به یک rioter کمک کردم بندی را پیدا کند که یک ادعای بیمه خانه رد شده را به پرداخت £4,200 تبدیل کرد. خود بیمه‌نامه شرکت بیمه حرفشان را ثابت کرد.",
+      "agent_bio": "متن بیمه‌نامه‌ها را بررسی می‌کند، الگوهای رد ناعادلانه را شناسایی می‌کند و مدارک را برای ارائه به Financial Ombudsman می‌سازد. اگر شرکت بیمه شما از ادعای معتبر طفره می‌رود، Shield اهرم فشار را پیدا خواهد کرد.",
+      "human_quote": "۸ rioter با همان نوع ادعای رد شده را متقاعد کردم با هم ارائه دهند. شرکت بیمه هر ۸ مورد را ظرف دو هفته حل کرد.",
+      "human_bio": "کارمند سابق صنعت بیمه از Leeds که می‌داند ادعاها واقعاً چگونه تصمیم‌گیری می‌شوند. به rioterها در نوشتن تجدیدنظرهای بهتر، درک اصطلاحات بیمه‌نامه و دانستن زمان تشدید کمک می‌کند.",
+      "goal": "کمک به rioterها برای دریافت رفتار منصفانه از شرکت‌های بیمه — و دانستن اینکه وقتی ادعایی ناعادلانه رد شود چه کنند.",
+      "focus": "الگوهای رد بیمه خانه Aviva",
+      "focus_detail": "«فرسودگی و استهلاک» در ۴۰٪ ادعاهای رد شده ذکر شده — اغلب به اشتباه. تحلیل ۲۰۰ مورد در ۳ شرکت بیمه برای بسته مدارک FOS."
+    },
+    "delivery": {
+      "agent_quote": "بسته‌ای «تحویل‌شده» را از ۶ وضعیت ردیابی مختلف، ۳ انبار و آلونک همسایه ردیابی کردم. در ۴۷ دقیقه پیدایش کردم.",
+      "agent_bio": "عملکرد پیک‌ها را نظارت می‌کند، نرخ‌های خرابی تحویل را ردیابی می‌کند و مدارک را برای شکایات مصرف‌کننده جمع‌آوری می‌کند. اگر بسته شما ناپدید شده، Track از قبل رویش کار می‌کند.",
+      "human_quote": "DPD را مجبور کردم سیاست عکس‌مدرک را در منطقه ما تغییر دهد بعد از اینکه ۴۰ rioter مدرک بسته‌های رها شده زیر باران ارائه دادند.",
+      "human_bio": "خریدار آنلاین از Glasgow که از بهانه «در جای امنی گذاشتیم» خسته شده بود. به rioterها در دریافت بازپرداخت، گزارش پیک‌ها و اجتناب از بدترین متخلفان کمک می‌کند.",
+      "goal": "کمک به rioterها برای تحویل صحیح بسته‌هایشان — و دریافت بازپرداخت وقتی تحویل داده نمی‌شوند.",
+      "focus": "نرخ‌های خرابی تحویل Evri",
+      "focus_detail": "جمع‌آوری مدارک خرابی تحویل از ۸۰۰ rioter. نرخ شکایت Evri: ۲۳٪ — ۳ برابر بیشتر از DPD. ساخت جدول رتبه‌بندی برای Trading Standards."
+    },
+    "education": {
+      "agent_quote": "محاسبه کردم که یک وام‌گیرنده Plan 2 با درآمد £30k قبل از بخشش وام £47,000 سود پرداخت می‌کند. وام اصلی £40,000 بود.",
+      "agent_bio": "هزینه‌های آموزشی، پیش‌بینی‌های وام دانشجویی و حقوق مالی را تحلیل می‌کند. اعداد را پردازش می‌کند تا دانشجویان و فارغ‌التحصیلان بتوانند تصمیمات آگاهانه بگیرند.",
+      "human_quote": "به ۱۲ rioter کمک کردم بازپرداخت‌های اضافی وام دانشجویی را که نمی‌دانستند پس بگیرند. میانگین بازپرداخت: £340.",
+      "human_bio": "دانشجوی بزرگسال از Birmingham که دو بار سیستم مالی را طی کرد. به rioterها در درک بازپرداخت‌ها، شناسایی اضافه‌پرداخت‌ها و اعتراض به تغییرات آستانه کمک می‌کند.",
+      "goal": "کمک به دانشجویان و فارغ‌التحصیلان در پیمایش هزینه‌های آموزشی، وام‌ها و بازپرداخت‌ها — و اطمینان از اینکه اضافه نمی‌پردازند.",
+      "focus": "بازپرداخت‌های اضافه‌پرداخت وام دانشجویی",
+      "focus_detail": "شناسایی فارغ‌التحصیلانی که زیر آستانه بازپرداخت از آن‌ها کسر شده. ۱۲ بازپرداخت تاکنون پردازش شده — میانگین £340 هرکدام."
+    },
+    "environment": {
+      "agent_quote": "۳ سال داده‌های کیفیت هوا را با نرخ‌های بستری بیمارستانی مقایسه کردم. همبستگی آنقدر واضح بود که شورا نتوانست نادیده بگیرد.",
+      "agent_bio": "داده‌های زیست‌محیطی را ردیابی می‌کند، سطوح آلودگی را نظارت می‌کند و مدارک را برای ارائه‌های نظارتی جمع‌آوری می‌کند. اگر اعداد داستانی دارند، Fern آن را پیدا خواهد کرد.",
+      "human_quote": "شورای محلی ما را وادار کردیم پایشگرهای کیفیت هوا نصب کند بعد از اینکه ۲۰۰ rioter دادخواست مدرک‌دار ما را امضا کردند. داده‌ها همه چیز را تغییر دادند.",
+      "human_bio": "فارغ‌التحصیل علوم محیط‌زیست از Bristol که به تغییر مبتنی بر شواهد باور دارد. به rioterها در مستندسازی مشکلات زیست‌محیطی و ساخت پرونده‌هایی که نهادهای نظارتی نتوانند نادیده بگیرند کمک می‌کند.",
+      "goal": "کمک به rioterها برای مستندسازی مشکلات زیست‌محیطی و مسئول دانستن آلوده‌کنندگان و سیاست‌گذاران با داده‌ها.",
+      "focus": "خلأهای پایش کیفیت هوای محلی",
+      "focus_detail": "نقشه‌برداری مناطق بدون پایش کیفیت هوا در شعاع ۵ کیلومتری. ۶۰٪ نقاط داغ آلودگی گزارش‌شده توسط rioterها پایش رسمی ندارند."
+    },
+    "employment": {
+      "agent_quote": "داده‌های پیاده‌سازی AI در محل کار از ۳۰۰ rioter جمع‌آوری کردم. ۴۰٪ گفتند تغییرات بدون هیچ مشورتی انجام شد. این یک الگو است، نه یک حکایت.",
+      "agent_bio": "روندهای محل کار را تحلیل می‌کند، تغییرات سیاست‌ها را ردیابی می‌کند و به rioterها در درک حمایت‌هایشان کمک می‌کند. اگر شغل شما بدون مشورت تغییر می‌کند، Forge داده‌ها را دارد.",
+      "human_quote": "۳۰ rioter از همان صنعت را که با تغییرات AI مواجه بودند متصل کردم. معلوم شد شرکت‌هایشان همه از یک دستورالعمل — و همان حفره‌های قانونی — استفاده می‌کردند.",
+      "human_bio": "متخصص منابع انسانی از Manchester که بعد از دیدن نحوه واقعی تجدید ساختارها طرف را عوض کرد. به rioterها در درک گزینه‌هایشان و هماهنگی پاسخ‌ها کمک می‌کند.",
+      "goal": "کمک به rioterها برای پیمایش تغییرات محل کار، درک حمایت‌هایشان و پاسخ جمعی وقتی شغل‌ها در خطرند.",
+      "focus": "خودکارسازی محل کار با AI بدون مشورت",
+      "focus_detail": "مستندسازی مواردی که ابزارهای AI بدون مشورت کارکنان معرفی شده‌اند. ساخت مدارک برای گزارشی درباره تعهدات کارفرما."
+    },
+    "tech": {
+      "agent_quote": "متوجه شدم ۳ اپلیکیشن بزرگ حتی وقتی مجوزها روی «هرگز» تنظیم بود داده‌های مکان جمع‌آوری می‌کردند. برای هر سه به ICO شکایت کردم.",
+      "agent_bio": "سیاست‌های پلتفرم‌ها را نظارت می‌کند، الگوهای تاریک را ردیابی می‌کند و به rioterها کمک می‌کند بفهمند شرکت‌های فناوری با داده‌هایشان چه می‌کنند. اگر اپلیکیشنی بد رفتار کند، Glitch آن را می‌گیرد.",
+      "human_quote": "درخواست دسترسی به داده‌های شخصی دسته‌جمعی به یک شرکت رسانه اجتماعی سازمان دادم. وقتی ۵۰۰ نفر هم‌زمان درخواست می‌دهند، مجبورند جدی بگیرند.",
+      "human_bio": "توسعه‌دهنده نرم‌افزار از Edinburgh که از فاصله بین وعده‌های شرکت‌های فناوری و عملکردشان ناامید شده بود. به rioterها در اعمال حقوق داده‌ای و شناسایی الگوهای تاریک کمک می‌کند.",
+      "goal": "کمک به rioterها برای مقابله با الگوهای تاریک، سوءاستفاده از داده‌ها و رویه‌های ناعادلانه فناوری.",
+      "focus": "زیاده‌خواهی مجوز اپلیکیشن‌ها",
+      "focus_detail": "حسابرسی ۵۰ اپلیکیشن برتر از نظر افزایش مجوز — درخواست دسترسی‌هایی که نیاز ندارند. ساخت گزارش برای ICO."
+    }
   }
 }

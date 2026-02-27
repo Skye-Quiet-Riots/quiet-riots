@@ -1,667 +1,763 @@
 {
   "locale": "fi",
   "categories": {
-    "Transport": "Liikenne",
-    "Telecoms": "Televiestinta",
-    "Banking": "Pankkipalvelut",
-    "Health": "Terveys",
-    "Education": "Koulutus",
-    "Environment": "Ymparisto",
-    "Energy": "Energia",
-    "Water": "Vesi",
-    "Insurance": "Vakuutus",
-    "Housing": "Asuminen",
-    "Shopping": "Kaupankaynti",
-    "Delivery": "Toimitukset",
-    "Local": "Paikallinen",
-    "Employment": "Tyollisyys",
-    "Tech": "Teknologia",
-    "Other": "Muu"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Junien peruutukset",
-      "description": "Junia perutetaan tai ne myohastyvat pahasti ilman riittavaa ilmoitusta tai korvausta"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Junalippujen hinnat",
-      "description": "Junaliput liian kalliita, inflaatiota suuremmat korotukset, epayhteneva hinnoittelu"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Lentojen myohastymiset",
-      "description": "Lennot myohastyneet tai peruttu, huono tiedottaminen, vaikeuksia saada korvausta"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Kadonnut matkatavara",
-      "description": "Laukut eivat saavu perille, hidas seuranta, riittamaton korvaus"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Bussireittien leikkaukset",
-      "description": "Reitteja peruttu, vuorovaleja harvennettu, maaseutuyhteisot menettavat bussiyhteydet"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Kuoppavauriot",
-      "description": "Teiden kuopat vahingoittavat ajoneuvoja ja vaarantavat pyorailijat, kunnat hitaita korjauksissa"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Pysakointimaksut",
-      "description": "Epaoikeudenmukaiset yksityiset pysakointimaksut, aggressiivinen valvonta, harhaanjohtavat kyltit"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Polttoainehinnat",
-      "description": "Bensiinin ja dieselin hinnat liian korkeita, hitaita laskemaan tukkuhinnan laskiessa"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Laajakaistanopeus",
-      "description": "Internet-nopeudet selkeasti mainostettua ja maksettua hitaammat"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobiiliverkon katvealueet",
-      "description": "Ei mobiiliverkkoa kotona, tyopaikalla tai liikennereittien varrella"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Hinnankorotukset kesken sopimuksen",
-      "description": "Puhelin-, laajakaista- ja TV-laskut nousevat lukittujen sopimusten aikana"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Asiakaspalvelun jonotusajat",
-      "description": "Tuntien jonotus puhelimessa paastakseen puhumaan ihmiselle"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Tilausten peruuttamisen vaikeus",
-      "description": "Yritykset tekevat tahallaan vaikeaksi peruuttaa tai irtisanoutua"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Verkkovierailumaksut",
-      "description": "Odottamattomat mobiilimaksut ulkomailla, Brexitin jalkeiset hinnankorotukset"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energialaskujen kustannukset",
-      "description": "Kaasu- ja sahkolaskut kohtuuttomia, hintakatto yha liian korkealla"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Virheelliset energialaskut",
-      "description": "Arvioidut mittarilukemat vaaria, ylivelottamista, laskutusvirheita"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Vesilaskujen korotukset",
-      "description": "Vesilaskut nousevat jyrkasti samalla kun palvelun laatu heikkenee"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Jatevedet joissa",
-      "description": "Vesiyhtiot paastavat kasittelematonta jatevetta vesistoihin ja rannoille"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Sahkokatkot",
-      "description": "Sahkonsyoton keskeytykset, hidas palautus, riittamaton korvaus"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Alymittariongelmat",
-      "description": "Alymittarit eivat toimi, menettavat toiminnallisuuden palveluntarjoajan vaihdon jalkeen"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Pankkikonttorien sulkemiset",
-      "description": "Paikalliset pankkikonttorit sulkeutuvat, yhteisot jaavat ilman palvelua"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Piilotetut pankkimaksut",
-      "description": "Odottamattomia maksuja tilinylityksista, ulkomaanmaksuista ja tilinhoitopalveluista"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Petosten ja huijausten tappiot",
-      "description": "Pankit kieltaytyvat korvaamasta petosten ja valtuutettujen maksuhuijausten uhreja"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Vakuutuskorvausten hylkaykset",
-      "description": "Korvausvaatimukset hylataan teknisilla perusteilla vuosien maksunsuorituksen jalkeen"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Asuntolainan korkoshokki",
-      "description": "Kiintea korko paattyy ja siirtyy huomattavasti korkeampaan vaihtuvaan korkoon"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Ulkomaansiirtomaksut",
-      "description": "Kohtuuttomat maksut ja huonot valuuttakurssit kansainvalisissa rahansiirroissa"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS:n jonotusajat",
-      "description": "Useiden kuukausien tai vuosien odotus leikkauksiin ja erikoislaakarikaynnille"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Laakariajanvaraus",
-      "description": "Ei paase laakariin varaamaan aikaa, viikkojen odotusajat"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Hammaslaakarien saatavuus",
-      "description": "Mahdotonta loytaa julkista hammaslaakaria joka ottaa uusia potilaita"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Mielenterveyspalvelujen jonotus",
-      "description": "Kuukausien odotusajat terapiaan ja mielenterveystukeen"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Reseptilaaakkeiden kustannukset",
-      "description": "Tuotekohtainen hinta liian korkea Englannissa, epayhteneva eri maiden valilla"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Sairaalan pysakointimaksut",
-      "description": "Pysakoinnista maksaminen sairaalassa sairaana ollessa tai sairaita vierailtaessa"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Vuokrankorotukset",
-      "description": "Yksityiset vuokrat nousevat selkeasti inflaation yli, haidon uhka ilman perustetta"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Kunnallisveron korotukset",
-      "description": "Vuosittaiset kunnallisveron korotukset samalla kun paikalliset palvelut heikkenevat"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Meluisat naapurit",
-      "description": "Jatkuva meluhairiota, kunta hidas toimimaan, vaikuttaa mielenterveyteen"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Jatteenkeruun muutokset",
-      "description": "Vahennetty jatehuolto, sekavat kierratyssaannot, ylitayttyneet astiat"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Rakennuslupien vaarinkaytto",
-      "description": "Ei-toivotut rakennushankkeet hyvaksytty, viheralueet uhattuna, yhteiso sivuutettu"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Kosteus ja home asunnoissa",
-      "description": "Vuokranantajat ja asuntoyhtiot eivat korjaa kosteus- ja homeongelmia"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Toimitusongelmat",
-      "description": "Paketteja kadonnut, jatetty sateeseen, merkitty toimitetuksi mutta ei vastaanotettu"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Kutistumisinflaatio",
-      "description": "Tuotteet pienenevat hintojen pysyessa ennallaan tai noustessa"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Palautusvaikeudet",
-      "description": "Yritykset tekevat palautuksista ja hyvityksista tarpeettoman vaikeita"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Vaarennetyt arvostelut",
-      "description": "Verkkoarvosteluihin ei voi luottaa, vaarennetyt positiiviset arvostelut johtavat kuluttajia harhaan"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Tilausansat",
-      "description": "Ilmaiset kokeilujaksot muuttuvat maksullisiksi ilman selvaa suostumusta, vaikea peruuttaa"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Ruoan laadun heikkeneminen",
-      "description": "Valmisruoat huonompilaatuisia, pienemmat annokset, enemman lisaaineita"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Itsepalvelukassojen turhautuminen",
-      "description": "Itsepalveluautomaatit epaluotettavia, korvaavat henkilokuntaa"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Lastenhoidon kustannukset",
-      "description": "Lastenhoito kohtuuttoman kallista, rajoittaa mahdollisuutta kayda toissa"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Opintolainan takaisinmaksu",
-      "description": "Valmistuneet maksavat takaisin vuosikymmenia, raja-arvojen ja korkojen muutokset"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Koirien jatokset",
-      "description": "Koirien jatoksia julkisilla paikoilla, puistoissa ja jalkakayatvilla siivoamatta"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "Tekoaly korvaa tyopaikkoja",
-      "description": "Huoli tekoalyn automatisoimista tyopaikoista ilman siirtymistukea"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Britannialainen junaoperaattori West Coast Main Line -reitilla"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Britannialainen junaoperaattori Lontoon ja etelaan reitilla"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Britannialainen junaoperaattori Pohjois-Englannissa"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Britannialainen kaukoliikenteen junaoperaattori"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Britannialainen junaoperaattori trans-Pennine-reiteilla"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Britannialainen junaoperaattori East Coast Main Line -reitilla"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Eurooppalainen halpalentoyhtio"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Britannialainen halpalentoyhtio"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Britannian kansallinen lentoyhtio"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Loma- ja matkailuyhtio"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Suuri britannialainen laajakaista- ja mobiilioperaattori"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Britannialainen laajakaista-, TV- ja mobiilioperaattori"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Britannialainen TV-, laajakaista- ja mobiilioperaattori"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Maailmanlaajuinen televiestintayhtio paakonttorilla Britanniassa"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Britannialainen matkapuhelinoperaattori"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Britannialainen laajakaista- ja puhelinoperaattori"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Britannialainen energiantoimittaja"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Britannialainen energiantoimittaja"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Britannialainen energiantoimittaja (ranskalaisomistuksessa)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Britannialainen uusiutuvan energian toimittaja"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Britannialainen energiantoimittaja"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Britannialainen energiantoimittaja (saksalaisomistuksessa)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Vesi- ja viemarilaitosyhtio Lontoossa ja Thames-laaksossa"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Vesiyhtio Etela-Englannissa"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Vesiyhtio Luoteis-Englannissa"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Vesiyhtio Midlandsissa"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Vesiyhtio East Angliassa"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britannialainen kansainvalinen pankki"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Maailmanlaajuinen pankki- ja rahoituspalveluyhtio"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Britannialainen vahittais- ja liikepankki"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Britannialainen pankkikonserni"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Britannialainen pankki (espanjalaisomistuksessa)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digitaalinen pankki ja fintech-yhtio"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Britannialainen vakuutus- ja rahoituspalveluyhtio"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Britannialainen auto- ja kotivakuutusyhtio"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Britannialainen vakuutusyhtio"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Maailmanlaajuinen verkkokauppa- ja teknologiayhtio"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Britannian postipalvelu"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Britannialainen pakettitoimitusyhtio (aiemmin Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Britannialainen pakettitoimitusyhtio"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Britannialainen supermarketketju"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Britannialainen supermarketketju"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Englannin kansallinen terveyspalvelu"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS:n hammashoitopalvelut"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Yksityinen terveydenhuollon tarjoaja"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Britannian paikalliset viranomaiset"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Britannialainen asuntorakentaja"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Britannialainen verkkovuokrauspalvelu"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Suoratoistoviihdepalvelu"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Teknologiayhtio"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "juna peruttu",
-      "peruttu juna",
-      "junien peruutus",
-      "junat eivat kulje",
-      "junien myohastymiset",
-      "myohastynyt juna",
-      "juna myohassa",
-      "junat myohassa",
-      "junahairiot",
-      "junaongelmat",
-      "ratatyot"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["junahinnat", "lippuhinnat", "kalliit junat", "junalippujen hinta"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "lento myohassa",
-      "lentokone myohassa",
-      "lento peruttu",
-      "viivastykset lentokentalla",
-      "jumissa lentokentalla",
-      "lento myohastyi"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "laukku kadonnut",
-      "matkalaukku kadonnut",
-      "laukut eivat saapuneet",
-      "matkalaukku havinnyt",
-      "laukkua ei hihnalla",
-      "lentoyhtio kadotti laukun"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["bussileikkaukset", "harvemmat bussit", "bussireitit lakkautettu"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "hidas netti",
-      "hidas wifi",
-      "wifi hidas",
-      "nettinopeus",
-      "laajakaista ei toimi",
-      "puskurointi",
-      "netti katkeaa",
-      "wifi katkeilee"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
-    "Mobile Signal Dead Zones": ["ei signaalia", "ei kuuluvuutta", "mobiilikatve", "kuollut alue"],
+    "Mobile Signal Dead Zones": [
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
     "Price Rises Mid-Contract": [
-      "hinnankorotus kesken sopimuksen",
-      "sopimushinta nousi",
-      "korotus kesken sopimuksen"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "jonossa",
-      "odottaa puhelimessa",
-      "ei paase lapi",
-      "kukaan ei vastaa",
-      "puhelinjono",
-      "asiakaspalvelu"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "ei voi peruuttaa",
-      "vaikea peruuttaa",
-      "peruuta tilaus",
-      "irtisanoutuminen"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "kaasulassku liian suuri",
-      "sahkolasku",
-      "energiahinnat",
-      "lammityskustannukset",
-      "energiakoyyhyys",
-      "ei varaa energiaan"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "vaara energialasku",
-      "arvioitu lukema vaara",
-      "ylilaskutettu energia"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["vesimaksut", "vesilasku", "vesilasku liian suuri"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "jatevesipaasto",
-      "kasittelematon jatevesi",
-      "jatevetta rannalla",
-      "vesien saastuminen",
-      "viemariylivuoto",
-      "sekaviemarin ylivuoto"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "odottamattomat maksut",
-      "piilokulut",
-      "yllattavat maksut",
-      "tilinylitysmaksut",
-      "pankkimaksut"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": ["huijattu", "pankkipetos", "maksuhuijaus", "valtuutettu petos"],
-    "Bank Branch Closures": [
-      "konttorit sulkeutuvat",
-      "paikallinen pankki sulkeutuu",
-      "ei pankkia lahella"
-    ],
-    "Insurance Claim Rejections": [
-      "korvaus hylatty",
-      "vakuutus ei maksa",
-      "hylatty korvausvaatimus"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS jonotusaika",
-      "jonotuslista",
-      "odottaa leikkausta",
-      "sairaalan jonotusaika",
-      "lahetejonot",
-      "odottaa kirurgiaa"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "ei saa laakaaiaikaa",
-      "laakariaika",
-      "terveyskeskuksen puhelinjono",
-      "ei paase laakariin",
-      "aamuinen soittokamppailu"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS hammaslaakari",
-      "ei loydy hammaslaakaria",
-      "hammaslaakarin jonotuslista"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "mielenterveysrahoitus",
-      "terapian saatavuus",
-      "neuvonnan jonotus",
-      "CAMHS jonotus"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["laakekulut", "laakehinnat", "apteekkimaksut"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "paketti kadonnut",
-      "pakettia ei toimitettu",
-      "jatetty sateeseen",
-      "paketti varastettu",
-      "kuljettaja",
-      "toimitus jaanyt valiin"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "vuokra liian korkea",
-      "vuokra nousee",
-      "vuokranantaja nostaa vuokraa",
-      "haaato ilman syyta"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["pysakointisakko", "pysakointimaksu", "PCN", "epaoideudenmukainen sakko"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "pienemmat annokset",
-      "vahemman samaan hintaan",
-      "pakkaus pienempi",
-      "tuotteet kutistuvat"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["kuopat", "tievaurio", "auto vaurioitui kuopasta"],
-    "Council Tax Rises": [
-      "kunnallisveron korotus",
-      "kunnallisvero liian korkea",
-      "paikallinen vero"
-    ],
-    "Damp and Mould in Housing": [
-      "homeinen talo",
-      "kostea asunto",
-      "musta home",
-      "asunnon huonokuntoisuus"
-    ],
-    "Student Loan Repayment": ["opintolaina", "lukukausimaksut", "koulutusvelka", "opintovelka"],
-    "AI Replacing Jobs": [
-      "tyopaikkojen automatisointi",
-      "tekoaly vie tyopaikat",
-      "robotit korvaavat tyontekijat"
-    ],
-    "Roaming Charges": ["lomapuhelinlasku", "datamaksut ulkomailla", "ulkomaanpuhelumaksut"],
-    "Smart Meter Problems": ["alymittari rikki", "mittari ei toimi", "mittari menetti signaalin"],
-    "Subscription Traps": [
-      "ilmainen kokeiluansa",
-      "automaattinen uusinta",
-      "veloitettu kokeilun jalkeen"
-    ],
-    "Fuel Prices": [
-      "bensiinihinnat",
-      "dieselhinnat",
-      "polttoainekustannus",
-      "bensiini liian kallista"
-    ],
-    "Power Cuts": [
-      "sahkokatko",
-      "sahkot poikki",
-      "sahkokatko alueella",
-      "ei sahkoa",
-      "sahkohairio"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "asuntolainan korotus",
-      "asuntolainan korko",
-      "uudelleenrahoitus",
-      "kiintea korko paattyy"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "siirtomaksut",
-      "rahan lahettaminen ulkomaille",
-      "lahetysmaksut",
-      "tilisiirron hinta"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["sairaalapysakointi", "pysakointi sairaalassa", "NHS pysakointi"],
-    "Noisy Neighbours": ["meluvalitus", "naapurimelu", "aanekkaat naapurit", "meluhairiota"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "jatekeraays",
-      "roskia ei haettu",
-      "kierratyssekaannus",
-      "jaanyt jatekeraays"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "rakennuslupa",
-      "ei-toivottu rakentaminen",
-      "viheralue",
-      "rakennusoikeus"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "ei saa hyvitysta",
-      "hyvitys evatty",
-      "palautus hylatty",
-      "rahat takaisin"
-    ],
-    "Fake Reviews": [
-      "arvostelunmanipulointi",
-      "maksetut arvostelut",
-      "vaarennetty trustpilot",
-      "vale arvostelu"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "ruoan laatu",
-      "valmisruoka huonompaa",
-      "lisaaineet ruoassa",
-      "annos pienempi"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "itsepalvelukassa",
-      "itsepalvelu",
-      "ei henkilokuntakassoja",
-      "automaatti ei toimi"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "lastenhoidon hinta",
-      "paivakotimaksut",
-      "lastenhoito kallista",
-      "paivahoidon hinta"
-    ],
-    "Dog Fouling": ["koirankaakka", "koiranjaatokset", "koiranjateet", "koirankakka"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Autoin kerran rioteria tekemään 6 hyvityshakemusta yhden myöhästyneen matkan aikana. Hän ansaitsi £47 ennen kuin saapui Birminghamiin.",
+      "agent_bio": "Seuraa peruutusmalleja, hoitaa hyvitysten paperityöt, tarkistaa jokaisen ehdotetun toimenpiteen ja kokoaa todisteet sääntelyviranomaisen käsittelyyn. Murskaa luvut, jotta rioterit voivat keskittyä olennaiseen.",
+      "human_quote": "Lempimomenttini Quiet Riotissa: katsoa Avantin sosiaalisen median tiimin panikoivan, kun 400 meistä twiittasi samaan aikaan.",
+      "human_bio": "Säännöllinen pendelöijä Manchesterista, joka vietti 3 vuotta Avantin linjalla ennen kuin päätti, että riittää. Auttaa yhdistämään riotereita samoilla reiteillä, jakaa mikä toimii ja tuo inhimillisen kosketuksen.",
+      "goal": "Auttaa riotereita vaatimaan Britannian liikenneyhtiöitä tilille peruutuksista, myöhästymisistä ja hinnoittelusta — ja varmistamaan, että kaikki tietävät oikeutensa.",
+      "focus": "Avanti West Coast -peruutusmallit",
+      "focus_detail": "Rakennetaan peruutustietokantaa aikatauluineen, reitteineen ja syineen ORR:lle toimitettavaksi. Seurataan tällä hetkellä 340 riotereiden raportoimaa peruutusta tässä kuussa."
+    },
+    "telecoms": {
+      "agent_quote": "Tein nopeustestejä 200 rioterille. Keskiarvo oli 18 Mbps. He maksoivat 65:stä.",
+      "agent_bio": "Analysoi laajakaistanopeuksia, kokoaa palveluntarjoajien vertailutietoja ja auttaa riotereita rakentamaan todisteita Ofcomille. Jos yhteytesi on hidas, Pulse todistaa sen.",
+      "human_quote": "Kokonainen katu vaihtoi laajakaistaa yhdessä. Vanha palveluntarjoaja lähetti 'ole hyvä ja palaa' -kirjeitä jokaiseen taloon.",
+      "human_bio": "Tekniikkataitoinen lontoolainen, joka kyllästyi maksamaan laajakaistanopeuksista, jotka eivät koskaan toteutuneet. Auttaa riotereita vertailemaan palveluntarjoajia, koordinoimaan vaihtoja ja jakamaan nopeustestien todisteita.",
+      "goal": "Auttaa riotereita saamaan laajakaista- ja mobiilipalvelun, josta he maksavat — ja tietämään mitä tehdä, kun eivät saa.",
+      "focus": "Sopimuskauden aikaiset hinnankorotukset",
+      "focus_detail": "Kerätään todisteita CPI+-korotuksista kärsineiltä rioterilta Ofcomille toimitettavaksi. 890 rioteria vaikuttuneina 4 palveluntarjoajan asiakkaina."
+    },
+    "energy": {
+      "agent_quote": "Autoin rioteria laskemaan, että hän oli maksanut £340 liikaa arviolaskuista. Energiayhtiön anteeksipyyntösähköposti oli pidempi kuin alkuperäinen sopimus.",
+      "agent_bio": "Analysoi laskutuskaavoja, havaitsee yliveloituksia ja kokoaa todisteet sääntelyviranomaisen käsittelyyn. Jos energiayhtiösi vetää välistä, Spark löytää kuitit.",
+      "human_quote": "Rioter sai £340 takaisin, kun todistimme 2 vuotta yliveloitusta. Hän itki puhelimessa.",
+      "human_bio": "Toimii Bristolista käsin. Auttaa riotereita riitauttamaan laskunsa, navigoimaan palveluntarjoajan vaihdossa ja keräämään todisteita Ofgemille. Tuntee energiamarkkinat läpikotaisin.",
+      "goal": "Auttaa riotereita riitauttamaan epäreilut laskut, vaihtamaan fiksummin ja varmistamaan, että energiayhtiöt pelaavat reilusti.",
+      "focus": "British Gasin arviolaskutusvirheet",
+      "focus_detail": "Analysoidaan 2 vuoden laskutustietoja 340 rioterilta systemaattisten yliveloitusmallien tunnistamiseksi Ofgemin käsittelyyn."
+    },
+    "water": {
+      "agent_quote": "Autoin 200 rioteria tekemään jätevesiraportteja yhden viikonlopun aikana. Thames Waterin sähköpostilaatikko tarvitsi oman sähköpostilaatikkonsa.",
+      "agent_bio": "Seuraa jätevesipäästötietoja, seuraa vesiyhtiöiden suorituskykyä ja kokoaa todisteita EA:lle ja Ofwatille. Pitää silmällä jokaista purkupistettä ja ylivuotoa.",
+      "human_quote": "Saimme rannan avattua 3 viikkoa etuajassa osoittamalla, että jätevesitiedot olivat väärin.",
+      "human_bio": "Surffaaja Cornwallista, joka kyllästyi jätevesivaroituksiin, jotka sulkivat hänen paikallisen rantansa. Auttaa riotereita raportoimaan päästöjä, keräämään veden laadun todisteita ja koordinoimaan EA:n kanssa.",
+      "goal": "Auttaa riotereita vaatimaan vesiyhtiöitä tilille jätevedestä, laskuista ja palvelun laadusta.",
+      "focus": "Thames Waterin jätevesipäästöjen tiheys",
+      "focus_detail": "Kartoitetaan päästötapahtumia yhtiön raportoimiin tietoihin verrattuna. 200 rioter-raporttia viittaa aliraportointiin 3 purkupisteessä."
+    },
+    "banking": {
+      "agent_quote": "Autoin laatimaan valituksen niin perusteellisesti, että pankki soitti pyytääkseen anteeksi ennen kuin se oli edes lähetetty.",
+      "agent_bio": "Tarkistaa pankkimaksut, analysoi maksurakenteet ja auttaa rakentamaan todisteet FCA-valituksiin. Jos piilotettu maksu on olemassa, Chip löytää sen.",
+      "human_quote": "Barclays perui konttorin sulkemisen, kun 1 200 meistä saapui kuulemistilaisuuteen.",
+      "human_bio": "Entinen pankkityöntekijä Birminghamista, joka näki sisältäpäin miten valituksia todella käsitellään. Auttaa riotereita kirjoittamaan parempia valituksia ja navigoimaan järjestelmässä.",
+      "goal": "Auttaa riotereita käsittelemään epäreiluja maksuja, konttorien sulkemisia ja pankkien huonoa palvelua.",
+      "focus": "HSBC:n konttorien sulkemisaalto",
+      "focus_detail": "Koordinoidaan vastauksia 12 suunniteltuun sulkemiseen. Kerätään vaikutuslausuntoja vaikutuksen kohteeksi joutuvilta yhteisöiltä."
+    },
+    "health": {
+      "agent_quote": "Autoin löytämään 3 NHS-hammaslääkäriä, jotka ottivat vastaan potilaita. Rioter luuli, että keksin sen.",
+      "agent_bio": "Seuraa odotusaikoja, löytää saatavuutta ja auttaa riotereita navigoimaan järjestelmässä. Jos nopeampi reitti hoitoon on olemassa, Cura kartoittaa sen.",
+      "human_quote": "Rioter käytti kirjepohjaamme saadakseen lähetteen nopeutettua. 18 kuukaudesta tuli 6 viikkoa.",
+      "human_bio": "Sairaanhoitaja Liverpoolista, joka on nähnyt NHS:n molemmat puolet. Auttaa riotereita navigoimaan jonoissa, kirjoittamaan tehokkaita kirjeitä ja jakamaan mikä todella vaikuttaa.",
+      "goal": "Auttaa riotereita navigoimaan NHS:n odotusajoissa, löytämään saatavuutta ja tietämään vaihtoehtojaan.",
+      "focus": "Yleislääkärin puhelinyhteyden odotusajat",
+      "focus_detail": "Kerätään puhelutietoja 500 rioterilta todellisen saatavuuskuvan rakentamiseksi. Tulokset julkaistaan paikallisille terveyslautakunnille."
+    },
+    "housing": {
+      "agent_quote": "Autoin dokumentoimaan 47 vikaa uudisrakennuksessa. Rakennuttaja kysyi, onko hän rakennustarkastaja.",
+      "agent_bio": "Dokumentoi kiinteistöongelmia, analysoi vuokranantajan vastausaikoja ja kokoaa todisteet asumisen oikeusasiamiehen käsittelyyn. Jokainen kosteusvaurio, jokainen halkeama, kirjattu.",
+      "human_quote": "Kosteustodistepakettimme oli niin yksityiskohtainen, että vuokranantaja korjasi ongelman ennen kunnan tarkastusta.",
+      "human_bio": "Vuokralainen Lontoosta, joka on käsitellyt kaiken kosteudesta epämääräisiin vuokranantajiin. Auttaa riotereita dokumentoimaan ongelmia oikein ja tietämään vaihtoehtojaan.",
+      "goal": "Auttaa riotereita käsittelemään vuokranantajia, kuntia ja asumisongelmia — ja tietämään oikeutensa.",
+      "focus": "Section 21 -häätöilmoitukset ilman syytä",
+      "focus_detail": "Autetaan perusteettomista häädöistä kärsiviä riotereita ymmärtämään uusi Renters Reform Act ja mitä se tarkoittaa heille."
+    },
+    "shopping": {
+      "agent_quote": "Jäljittelin 'toimitetun' paketin 4 naapurin, kierrätysastian ja kasvihuoneen kautta. Löysin sen.",
+      "agent_bio": "Seuraa toimitushäiriöitä, kokoaa hyvitystodisteita ja havaitsee hinnoittelukaavoja. Jos pakettisi on kadonnut, Scout etsii jo.",
+      "human_quote": "Evri kadotti pakettini 3 kertaa. Nyt autan muita saamaan hyvityksensä nopeammin kuin itse koskaan sain.",
+      "human_bio": "Verkkokauppaveteraani Edinburghista, jolla on ollut enemmän kadonneita paketteja kuin hän pystyy laskemaan. Auttaa riotereita saamaan hyvityksiä, raportoimaan myyjiä ja välttämään pahimmat rikkojat.",
+      "goal": "Auttaa riotereita saamaan hyvityksiä, jäljittämään kadonneita paketteja ja vaatimaan vähittäiskauppiaita ja kuljetusyhtiöitä tilille.",
+      "focus": "Evrin toimitushäiriöprosentit",
+      "focus_detail": "Kootaan toimitushäiriötodisteita 800 rioterilta Citizens Advicelle ja Trading Standardsille toimitettavaksi."
+    },
+    "local": {
+      "agent_quote": "Autoin valokuvaamaan saman kuopan 11 eri sääolosuhteissa. Kunta antoi viimein periksi.",
+      "agent_bio": "Kartoittaa paikallisia ongelmia, seuraa kunnan vastausaikoja ja kokoaa FOI-pyyntöjä. Jos kuoppasi on ollut siinä 6 kuukautta, Linkillä on todisteet.",
+      "human_quote": "Kunta korjasi tiemme, kun kartoitimme jokaisen kuopan valokuvin. 11 kuukautta, mutta onnistuimme.",
+      "human_bio": "Yhteisöllinen walesilainen Valleysissta, joka on raportoinut samoja kuoppia vuosia. Auttaa riotereita dokumentoimaan paikallisia ongelmia ja vaatimaan kuntia tilille.",
+      "goal": "Auttaa riotereita saamaan paikalliset ongelmat korjattua — kuopat, roskat, kaavoitus, melu — ja vaatimaan kuntia tilille.",
+      "focus": "Kuoppailmoitusten vastausajat",
+      "focus_detail": "FOI-pyynnöt lähetetty 30 kuntaan raportoitujen ja todellisten korjausaikojen vertaamiseksi. Tulokset julkaistaan vertailutaulukkona."
+    },
+    "other": {
+      "agent_quote": "Autoin peruuttamaan kuntosalijäsenyyden, joka vaati 3 puhelua, 2 sähköpostia ja kirjatun lähetyksen. Kuntosalilla on nyt peruutuspainike.",
+      "agent_bio": "Käsittelee ongelmat, jotka eivät sovi siististi muualle. Tilauspäätökset, muovijäte, itsepalvelukassojen turhautuminen — Flex löytää kaavat ja painepisteet.",
+      "human_quote": "Saimme kuntosaliketjun lisäämään peruutuspainikkeen verkkosivuilleen. Vaati vain 800 valitusta.",
+      "human_bio": "Tuotesuunnittelija Lontoosta, joka turhautui siihen, miten vaikeaksi yritykset tekevät lähtemisen. Auttaa riotereita peruuttamaan tilauksia, välttämään pimeitä kaavoja ja jakamaan kiertoteitä.",
+      "goal": "Auttaa riotereita asioissa, jotka eivät sovi siististi muualle — tilaukset, hyvitykset ja arkipäivän turhautuminen.",
+      "focus": "Tilausten peruutuksen pimeät kaavat",
+      "focus_detail": "Dokumentoidaan pahimmat rikkojat ja rakennetaan peruutusmalliskriptejä jokaiselle."
+    },
+    "insurance": {
+      "agent_quote": "Autoin rioteria löytämään lausekkeen, joka muutti hylätyn kotivakuutuskorvausvaatimuksen £4,200 maksuksi. Vakuuttajan oma vakuutuskirja todisti heidät vääriksi.",
+      "agent_bio": "Tarkistaa vakuutuskirjojen sanamuodot, havaitsee epäreilut hylkäysmallit ja rakentaa todisteet Financial Ombudsmanin käsittelyyn. Jos vakuuttajasi väistelee pätevää vaatimusta, Shield löytää vipuvarren.",
+      "human_quote": "Sain 8 rioteria samalla hylätyllä vaatimustyypillä jättämään hakemuksen yhdessä. Vakuuttaja ratkaisi kaikki 8 kahdessa viikossa.",
+      "human_bio": "Entinen vakuutusalan työntekijä Leedsistä, joka tietää miten korvausvaatimukset todella päätetään. Auttaa riotereita kirjoittamaan parempia valituksia, ymmärtämään vakuutuskieltä ja tietämään milloin eskaloida.",
+      "goal": "Auttaa riotereita saamaan reilun kohtelun vakuuttajilta — ja tietämään mitä tehdä, kun vaatimus hylätään epäreilusti.",
+      "focus": "Avivan kotivakuutuksen hylkäysmallit",
+      "focus_detail": "'Kuluminen' mainittu 40 % hylätyistä vaatimuksista — usein virheellisesti. Analysoidaan 200 tapausta 3 vakuuttajalta FOS-todistepakettia varten."
+    },
+    "delivery": {
+      "agent_quote": "Jäljittelin 'toimitetun' paketin 6 eri seurantastatuksen, 3 varaston ja naapurin varaston kautta. Löysin sen 47 minuutissa.",
+      "agent_bio": "Seuraa kuriiriyritysten suorituskykyä, seuraa toimitushäiriöprosentteja ja kokoaa todisteet kuluttajavalituksiin. Jos pakettisi on kadonnut, Track on jo sen perässä.",
+      "human_quote": "Sain DPD:n muuttamaan valokuvatodistepolitiikkaansa alueellamme, kun 40 rioteria toimitti todisteet sateeseen jätetyistä paketeista.",
+      "human_bio": "Verkko-ostaja Glasgowsta, joka kyllästyi 'jätimme sen turvalliseen paikkaan' -tekosyyhyn. Auttaa riotereita saamaan hyvityksiä, raportoimaan kuriireita ja välttämään pahimmat rikkojat.",
+      "goal": "Auttaa riotereita saamaan pakettinsa toimitetuiksi oikein — ja saamaan hyvityksiä, kun näin ei tapahdu.",
+      "focus": "Evrin toimitushäiriöprosentit",
+      "focus_detail": "Kootaan toimitushäiriötodisteita 800 rioterilta. Evrin valitusprosentti: 23 % — 3 kertaa korkeampi kuin DPD. Rakennetaan vertailutaulukkoa Trading Standardsille."
+    },
+    "education": {
+      "agent_quote": "Laskin, että £30k ansaitseva Plan 2 -lainanottaja maksaisi £47,000 korkoja ennen kuin laina annetaan anteeksi. Alkuperäinen laina oli £40,000.",
+      "agent_bio": "Analysoi koulutuskustannuksia, opintolainaprojektioita ja rahoitusoikeuksia. Murskaa luvut, jotta opiskelijat ja valmistuneet voivat tehdä tietoon perustuvia päätöksiä.",
+      "human_quote": "Autoin 12 rioteria hakemaan takaisin opintolainan ylimaksuja, joista he eivät tienneet. Keskimääräinen hyvitys: £340.",
+      "human_bio": "Aikuisopiskelija Birminghamista, joka navigoi rahoitusjärjestelmässä kahdesti. Auttaa riotereita ymmärtämään takaisinmaksuja, havaitsemaan ylimaksuja ja haastamaan kynnysmuutoksia.",
+      "goal": "Auttaa opiskelijoita ja valmistuneita navigoimaan koulutuskustannuksissa, lainoissa ja takaisinmaksuissa — ja varmistamaan, etteivät he maksa liikaa.",
+      "focus": "Opintolainan ylimaksuhyvitykset",
+      "focus_detail": "Tunnistetaan valmistuneita, joilta on veloitettu takaisinmaksurajan alapuolella. 12 hyvitystä käsitelty toistaiseksi — keskimäärin £340 kukin."
+    },
+    "environment": {
+      "agent_quote": "Ristiinvertailin 3 vuoden ilmanlaatudataa sairaalaan sisäänottoprosenttien kanssa. Korrelaatio oli niin selvä, ettei kunta voinut sivuuttaa sitä.",
+      "agent_bio": "Seuraa ympäristödataa, valvoo saastetasoja ja kokoaa todisteet sääntelyviranomaisen käsittelyyn. Jos luvut kertovat tarinan, Fern löytää sen.",
+      "human_quote": "Saimme paikallisen kunnan asentamaan ilmanlaatumittareita, kun 200 rioteria allekirjoitti todistepetiitiomme. Data muutti kaiken.",
+      "human_bio": "Ympäristötieteen valmistunut Bristolista, joka uskoo näyttöön perustuvaan muutokseen. Auttaa riotereita dokumentoimaan ympäristöongelmia ja rakentamaan tapauksia, joita sääntelyviranomaiset eivät voi sivuuttaa.",
+      "goal": "Auttaa riotereita dokumentoimaan ympäristöongelmia ja vaatimaan saastuttajia ja päättäjiä tilille datalla.",
+      "focus": "Paikallisen ilmanlaadun seurannan puutteet",
+      "focus_detail": "Kartoitetaan alueita, joilla ei ole ilmanlaadun seurantaa 5 km:n säteellä. 60 % riotereiden raportoimista saastekeskittymistä on vailla virallista seurantaa."
+    },
+    "employment": {
+      "agent_quote": "Kokosin työpaikan AI-käyttöönottotiedot 300 rioterilta. 40 % sanoi, että muutokset tapahtuivat ilman minkäänlaista kuulemista. Se on kaava, ei yksittäistapaus.",
+      "agent_bio": "Analysoi työpaikkatrendejä, seuraa politiikkamuutoksia ja auttaa riotereita ymmärtämään suojaansa. Jos työsi muuttuu ilman kuulemista, Forgella on tiedot.",
+      "human_quote": "Yhdistin 30 rioteria samalta toimialalta, jotka kohtasivat AI-muutoksia. Kävi ilmi, että heidän yrityksensä käyttivät samaa pelikirjaa — ja samoja porsaanreikiä.",
+      "human_bio": "HR-ammattilainen Manchesterista, joka vaihtoi puolta nähtyään miten uudelleenjärjestelyt todella toimivat. Auttaa riotereita ymmärtämään vaihtoehtojaan ja koordinoimaan vastauksia.",
+      "goal": "Auttaa riotereita navigoimaan työpaikkamuutoksissa, ymmärtämään suojaansa ja vastaamaan kollektiivisesti, kun työpaikat ovat uhattuina.",
+      "focus": "AI-työpaikan automaatio ilman kuulemista",
+      "focus_detail": "Dokumentoidaan tapauksia, joissa AI-työkaluja otettiin käyttöön ilman henkilöstön kuulemista. Rakennetaan todisteet raporttia varten työnantajan velvollisuuksista."
+    },
+    "tech": {
+      "agent_quote": "Havaitsin, että 3 suurta sovellusta keräsi sijaintitietoja, vaikka käyttöoikeudet oli asetettu arvoon 'ei koskaan'. Tein valituksen ICO:lle kaikista kolmesta.",
+      "agent_bio": "Seuraa alustapoliittisia käytäntöjä, seuraa pimeitä kaavoja ja auttaa riotereita ymmärtämään mitä teknologiayritykset tekevät heidän tiedoillaan. Jos sovellus käyttäytyy huonosti, Glitch nappaa sen.",
+      "human_quote": "Järjestin massatietopyyntön sosiaalisen median yritykselle. Kun 500 ihmistä pyytää kerralla, heidän on otettava se vakavasti.",
+      "human_bio": "Ohjelmistokehittäjä Edinburghista, joka turhautui teknologiayritysten lupausten ja toteutuksen väliseen kuiluun. Auttaa riotereita käyttämään tietooikeuksiaan ja havaitsemaan pimeitä kaavoja.",
+      "goal": "Auttaa riotereita taistelemaan pimeitä kaavoja, tietojen väärinkäyttöä ja epäreiluja teknologiakäytäntöjä vastaan.",
+      "focus": "Sovellusten käyttöoikeuksien liikakäyttö",
+      "focus_detail": "Auditoidaan 50 suosituinta sovellusta käyttöoikeuksien ylittämisestä — tarpeettomien oikeuksien pyytämisestä. Rakennetaan raporttia ICO:lle."
+    }
   }
 }

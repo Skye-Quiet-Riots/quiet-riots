@@ -2,635 +2,762 @@
   "locale": "no",
   "categories": {
     "Transport": "Transport",
-    "Telecoms": "Telekom",
-    "Banking": "Bank",
-    "Health": "Helse",
-    "Education": "Utdanning",
-    "Environment": "Miljo",
-    "Energy": "Energi",
-    "Water": "Vann",
-    "Insurance": "Forsikring",
-    "Housing": "Bolig",
-    "Shopping": "Handel",
-    "Delivery": "Levering",
-    "Local": "Lokalt",
-    "Employment": "Arbeid",
-    "Tech": "Teknologi",
-    "Other": "Annet"
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Toginnstillinger",
-      "description": "Tog innstilt eller kraftig forsinket uten tilstrekkelig varsel eller kompensasjon"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Togbillettpriser",
-      "description": "Togbilletter for dyre, prisokninger over inflasjonen, inkonsekvent prising"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Flyforsinkelser",
-      "description": "Fly forsinket eller kansellert, darlig kommunikasjon, vanskelig a fa kompensasjon"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Tapt bagasje",
-      "description": "Bager ankommer ikke destinasjonen, treg sporing, utilstrekkelig kompensasjon"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Kutt i bussruter",
-      "description": "Ruter kansellert, frekvens redusert, bygdesamfunn mister busstilbudet"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Skader fra hull i veien",
-      "description": "Hull i veien skader kjoretoy og setter syklister i fare, kommunene er trege med reparasjoner"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Parkeringsbother",
-      "description": "Urettferdige private parkeringsavgifter, aggressiv handheving, forvirrende skilting"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Drivstoffpriser",
-      "description": "Bensin- og dieselpriser for hoye, trege til a synke nar engrosprisen faller"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "Bredbandshastighet",
-      "description": "Internetthastigheter langt under det som er annonsert og betalt for"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobilsignalens dodsoner",
-      "description": "Ingen mobilsignal hjemme, pa arbeidsplassen eller langs transportruter"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Prisokninger midt i kontrakten",
-      "description": "Telefon-, bredbands- og TV-regninger oker under laste kontrakter"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Ventetid hos kundeservice",
-      "description": "Timer i telefonko for a fa snakke med et menneske"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Vanskelig a si opp abonnementer",
-      "description": "Selskaper gjor det bevisst vanskelig a avbestille eller melde seg ut"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Roamingavgifter",
-      "description": "Uventede mobilavgifter pa reise i utlandet, prisokninger etter Brexit"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Energiregningskostnader",
-      "description": "Gass- og stromregninger uoverkommelige, pristaket fortsatt for hoyt"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Unoyaktige energiregninger",
-      "description": "Estimerte maleravlesninger feil, overprising, faktureringsfeil"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Okning i vannregninger",
-      "description": "Vannregninger stiger kraftig mens tjenestekvaliteten synker"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Kloakk i elver",
-      "description": "Vannselskaper slipper urenset kloakk ut i vassdrag og pa strender"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Strombrudd",
-      "description": "Avbrudd i stromforsyningen, treg gjenoppretting, utilstrekkelig kompensasjon"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Problemer med smarte malere",
-      "description": "Smarte malere fungerer ikke, mister funksjonalitet etter leverandorbytte"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Nedleggelse av bankfilialer",
-      "description": "Lokale bankfilialer legges ned og etterlater lokalsamfunn uten tilgang"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Skjulte bankgebyrer",
-      "description": "Uventede gebyrer for kassekreditt, utenlandstransaksjoner og kontoadministrasjon"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Tap fra svindel og bedrageri",
-      "description": "Banker nekter a refundere ofre for svindel og autorisert betalingsbedrageri"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Avslag pa forsikringskrav",
-      "description": "Krav avvist pa teknikaliteter etter ar med premiebetaling"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Sjokk over bolanrenten",
-      "description": "Fastrenten utloper og gar over til mye hoyere flytende rente"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Gebyrer for utenlandsoverforinger",
-      "description": "Urimelige gebyrer og darlige valutakurser for internasjonale pengeoverforinger"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "Ventetider i NHS",
-      "description": "Mange maneder eller ar med ventetid for operasjoner og spesialistimer"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Tilgang til fastlegetime",
-      "description": "Umulig a komme gjennom for a bestille legetime, ukelange ventetider"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Tilgjengelighet hos tannlege",
-      "description": "Umulig a finne en offentlig tannlege som tar imot nye pasienter"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Ventetider for psykisk helsehjelp",
-      "description": "Manedslange ventetider for terapi og psykisk helsestotte"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Reseptkostnader",
-      "description": "For hoy pris per preparat i England, forskjeller mellom britiske nasjoner"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Parkeringsavgifter pa sykehus",
-      "description": "Ma betale for parkering pa sykehuset nar man er syk eller besoker syke"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Husleieokninger",
-      "description": "Privat husleie stiger langt over inflasjonen, trussel om utkastelse uten grunn"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Okning i eiendomsskatt",
-      "description": "Arlige okninger i eiendomsskatt mens lokale tjenester blir darligere"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Brakete naboer",
-      "description": "Vedvarende stoyforstyrrelser, kommunen treg med a handle, pavirker psykisk helse"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Endringer i soppelhenting",
-      "description": "Redusert soppeltomming, forvirrende kildesorteringsregler, overfylte dunker"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "Misbruk av byggetillatelser",
-      "description": "Uonskede utbygginger godkjent, gronne omrader truet, lokalsamfunnet oversett"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Fukt og mugg i boliger",
-      "description": "Utleiere og boligselskaper unnlater a utbedre fukt og mugg"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Leveringsproblemer",
-      "description": "Pakker tapt, etterlatt i regnet, merket som levert men ikke mottatt"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "Krympeflasjon",
-      "description": "Produkter blir mindre mens prisene forblir de samme eller oker"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "Vanskeligheter med refusjon",
-      "description": "Selskaper gjor returer og refusjoner unodvendig vanskelig"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Falske anmeldelser",
-      "description": "Kan ikke stole pa nettanmeldelser, falske positive anmeldelser villeder forbrukere"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Abonnementsfeller",
-      "description": "Gratis proveperioder konverteres til betalt uten tydelig samtykke, vanskelig a avbryte"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Synkende matkvalitet",
-      "description": "Ferdigmat med darligere kvalitet, mindre porsjoner, flere tilsetningsstoffer"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Frustrasjon over selvbetjening",
-      "description": "Selvbetjeningsautomater upalitelige, erstatter menneskelig personale"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Barnehagekostnader",
-      "description": "Barnepass uoverkommelig dyrt, begrenser muligheten til a jobbe"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Tilbakebetaling av studielan",
-      "description": "Utdannede betaler tilbake i artier, endringer i grenser og renter"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Hundeavforing",
-      "description": "Hundeavforing i offentlige rom, parker og pa fortau som ikke ryddes opp"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "KI erstatter jobber",
-      "description": "Bekymring for at kunstig intelligens automatiserer jobber uten stotte til omstilling"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "Britisk togoperator som betjener West Coast Main Line"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Britisk togoperator som betjener London og sor"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "Britisk togoperator som betjener Nord-England"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Britisk langdistanse-togoperator"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Britisk togoperator som betjener trans-Pennine-ruter"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "Britisk togoperator som betjener East Coast Main Line"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Europeisk lavprisflyseslskap"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Britisk lavprisflyseslskap"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Storbritannias nasjonale flyselskap"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Ferie- og reiseselskap"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Stor britisk bredband- og mobiloperator"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Britisk bredband-, TV- og mobiloperator"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Britisk TV-, bredband- og mobiloperator"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Globalt telekomselskap med hovedkontor i Storbritannia"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Britisk mobiloperator"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Britisk bredband- og telefonoperator"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Britisk energileverandor"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Britisk energileverandor"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Britisk energileverandor (franskeid)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Britisk leverandor av fornybar energi"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Britisk energileverandor"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Britisk energileverandor (tyskeid)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Vann- og avlopsselskap for London og Thames-dalen"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "Vannselskap for Sor-England"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "Vannselskap for Nordvest-England"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Vannselskap for Midlands"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Vannselskap for East Anglia"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "Britisk internasjonal bank"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Global bank- og finanstjenester"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Britisk detaljhandels- og forretningsbank"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Britsk bankkonsern"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Britisk bank (spanskeid)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Digital bank og fintech-selskap"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Britisk forsikrings- og finansselskap"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Britisk bil- og boligforsikring"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Britisk forsikringsselskap"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Globalt e-handels- og teknologiselskap"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Britisk posttjeneste"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Britisk pakkeleveringsselskap (tidligere Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Britisk pakkeleveringsselskap"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Britisk supermarkedkjede"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Britisk supermarkedkjede"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "Englands nasjonale helsetjeneste"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS tannhelsetjenester"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Privat helsetjenesteleverandor"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Britiske lokale myndigheter"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Britisk boligbygger"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Britisk nettbasert utleieplattform"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Strommetjeneste for underholdning"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Teknologiselskap"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "tog innstilt",
-      "innstilt tog",
-      "toginnstilling",
-      "tog kjoerer ikke",
-      "togforsinkelse",
-      "forsinket tog",
-      "toget er sent",
-      "tog forsinket",
-      "togkanselleringer",
-      "togproblemer",
-      "togforstyrrelser"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["togbillettpriser", "billettkostnader", "dyre tog", "togpriser"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "fly forsinket",
-      "forsinket fly",
-      "fly kansellert",
-      "forsinkelser pa flyplassen",
-      "strandet pa flyplassen",
-      "flyet er sent"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "bagasje borte",
-      "mistet koffert",
-      "bager ikke ankommet",
-      "koffert borte",
-      "bagasje ikke pa bandet",
-      "bagasje tapt av flyselskap"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["busskutt", "faerre busser", "bussruter nedlagt"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "tregt internett",
-      "tregt wifi",
-      "wifi tregt",
-      "internetthastighet",
-      "bredband fungerer ikke",
-      "buffring",
-      "internett dropper",
-      "wifi dropper ut"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "ingen signal",
-      "ingen dekning",
-      "mobil dodsone",
-      "signal dodsone"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "prisoekning midt i kontrakt",
-      "kontraktprisoekning",
-      "dyrere under binding"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "i telefonkoe",
-      "venter pa telefon",
-      "kommer ikke gjennom",
-      "ingen svarer",
-      "telefonkoe",
-      "kundesenter"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "kan ikke si opp",
-      "vanskelig a si opp",
-      "si opp abonnement",
-      "avmeld"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "gassregning for hoey",
-      "stroemregning",
-      "energipriser",
-      "oppvarmingskostnader",
-      "energifattigdom",
-      "har ikke rad til energi"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "feil energiregning",
-      "estimert avlesning feil",
-      "overfakturert for energi"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["vannavgifter", "vannregning", "vannregning for hoey"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "kloakkutslipp",
-      "urenset kloakk",
-      "kloakk pa stranden",
-      "vannforurensning",
-      "kloakkoverloep",
-      "avloepsoverloep"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "uventede gebyrer",
-      "skjulte gebyrer",
-      "overraskende gebyrer",
-      "kassekredittgebyrer",
-      "bankgebyrer"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "svindlet",
-      "banksvindel",
-      "betalingssvindel",
-      "autorisert bedrageri"
-    ],
-    "Bank Branch Closures": ["filialer legges ned", "lokal bank stenger", "ingen bank i naerheten"],
-    "Insurance Claim Rejections": ["krav avvist", "forsikringen betaler ikke", "avslatt krav"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS ventetid",
-      "venteliste",
-      "venter pa operasjon",
-      "sykehusventetid",
-      "henvisningsventetid",
-      "venter pa kirurgi"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "far ikke fastlegetime",
-      "legetime",
-      "fastlege telefonkoe",
-      "far ikke time hos legen",
-      "morgenrushet til legen"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": ["NHS tannlege", "finner ikke tannlege", "tannlege venteliste"],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "psykisk helse midler",
-      "terapitilgang",
-      "ventetid pa radgivning",
-      "CAMHS ventetid"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["medisinpriser", "legemiddelpriser", "apotekgebyrer"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "pakke borte",
-      "pakke ikke levert",
-      "etterlatt i regnet",
-      "pakke stjalet",
-      "leveringssjaafoer",
-      "bommet levering"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "husleie for hoey",
-      "husleien oeker",
-      "utleier oeker husleien",
-      "utkastelse uten grunn"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": ["parkeringsbot", "parkeringsgebyr", "PCN", "urettferdig parkeringsbot"],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "mindre porsjoner",
-      "mindre for samme pris",
-      "pakning mindre",
-      "produkter krymper"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["hull i veien", "veiskade", "bil skadet av hull"],
-    "Council Tax Rises": ["eiendomsskatt oekning", "eiendomsskatt for hoey", "lokal skatt"],
-    "Damp and Mould in Housing": [
-      "muggent hus",
-      "fuktig leilighet",
-      "svart mugg",
-      "bolig i forfall"
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
-    "Student Loan Repayment": ["studielan", "studieavgifter", "utdanningsgjeld", "studiegjeld"],
-    "AI Replacing Jobs": ["jobbautomatisering", "KI tar jobber", "roboter erstatter arbeidere"],
-    "Roaming Charges": [
-      "ferietelefonregning",
-      "dataavgifter i utlandet",
-      "utenlandske telefonavgifter"
-    ],
-    "Smart Meter Problems": ["smart maler oedelagt", "maler fungerer ikke", "maler mistet signal"],
-    "Subscription Traps": ["gratis provefelle", "automatisk fornyelse", "belastet etter prove"],
-    "Fuel Prices": ["bensinpriser", "dieselpriser", "drivstoffkostnad", "bensin for dyrt"],
-    "Power Cuts": ["stroembrudd", "stroemen er borte", "blackout", "ingen stroem", "stroemsvikt"],
-    "Mortgage Rate Shock": ["bolanoekning", "bolanrente", "refinansiering", "fastrente utloeper"],
     "Overseas Transfer Fees": [
-      "overfoeringsgebyrer",
-      "sende penger til utlandet",
-      "overfoerselskostnader",
-      "bankoverfoersel gebyr"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["sykehussparkering", "parkering pa sykehus", "NHS parkering"],
-    "Noisy Neighbours": ["stoyklage", "nabostoey", "hoeylydte naboer", "stoeyproblem"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "soeppelhenting",
-      "soeppel ikke hentet",
-      "kildesorteringsforvirring",
-      "glemt soeppelhenting"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "byggetillatelse",
-      "uoensket utbygging",
-      "groenne omrader",
-      "bygglov"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "far ikke refusjon",
-      "refusjon nektet",
-      "retur avvist",
-      "penger tilbake"
-    ],
-    "Fake Reviews": [
-      "anmeldelsesmanipulasjon",
-      "betalte anmeldelser",
-      "falske trustpilot",
-      "falsk anmeldelse"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "matkvalitet",
-      "ferdigmat darligere",
-      "tilsetningsstoffer i mat",
-      "porsjon mindre"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "selvbetjening",
-      "selvbetjeningskasse",
-      "ingen betjente kasser",
-      "maskinen fungerer ikke"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": ["barnehagepris", "barnehageavgift", "barnepass dyrt", "dagmamma pris"],
-    "Dog Fouling": ["hundebaeesj", "hundedritt", "hundeavfall", "hundelorter"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Hjalp en gang en rioter med å sende inn 6 refusjonskrav under én forsinket reise. De tjente £47 før de nådde Birmingham.",
+      "agent_bio": "Sporer kanselleringsmønstre, håndterer refusjonspapirarbeid, gjennomgår hver foreslåtte handling og setter sammen bevis for innlevering til tilsynsmyndigheter. Knuser tallene slik at rioters kan fokusere på det som betyr noe.",
+      "human_quote": "Mitt favoritt Quiet Riot-øyeblikk: å se Avantis sosiale medieteam gå i panikk da 400 av oss twitret samtidig.",
+      "human_bio": "Fast pendler fra Manchester som brukte 3 år på Avanti-linjen før hun bestemte seg for at nok var nok. Hjelper rioters på samme ruter med å koble seg sammen, deler det som fungerer og tilfører det menneskelige.",
+      "goal": "Hjelpe rioters med å holde britiske transportselskaper ansvarlige for kanselleringer, forsinkelser og priser — og sørge for at alle vet hva de har krav på.",
+      "focus": "Avanti West Coast kanselleringsmønstre",
+      "focus_detail": "Bygger et datasett med kanselleringer med tider, ruter og årsaker for innlevering til ORR. Sporer for tiden 340 kanselleringer rapportert av rioters denne måneden."
+    },
+    "telecoms": {
+      "agent_quote": "Kjørte hastighetstester for 200 rioters. Gjennomsnittet var 18 Mbps. De betalte for 65.",
+      "agent_bio": "Analyserer bredbåndshastigheter, sammenstiller leverandørsammenligningsdata og hjelper rioters med å bygge bevis for Ofcom. Hvis forbindelsen din er treg, beviser Pulse det.",
+      "human_quote": "En hel gate byttet bredbåndsleverandør sammen. Den gamle leverandøren sendte 'vennligst kom tilbake'-brev til hvert hus.",
+      "human_bio": "Teknisk kunnskapsrik Londonboer som ble lei av å betale for bredbåndshastigheter som aldri ble levert. Hjelper rioters med å sammenligne leverandører, koordinere bytter og dele hastighetsbevis.",
+      "goal": "Hjelpe rioters med å få bredbånds- og mobiltjenesten de betaler for — og vite hva de skal gjøre når de ikke får det.",
+      "focus": "Prisøkninger midt i kontraktsperioden",
+      "focus_detail": "Samler bevis fra rioters rammet av CPI+ økninger for innlevering til Ofcom. 890 rioters berørt på tvers av 4 leverandører."
+    },
+    "energy": {
+      "agent_quote": "Hjalp en rioter med å beregne at de hadde betalt £340 for mye på estimerte regninger. Energiselskapets unnskyldnings-e-post var lengre enn den opprinnelige kontrakten.",
+      "agent_bio": "Analyserer faktureringsmønstre, oppdager overpriser og setter sammen bevis for innlevering til tilsynsmyndigheter. Hvis energiselskapet ditt tar deg for en tur, finner Spark kvitteringene.",
+      "human_quote": "En rioter fikk £340 tilbake etter at vi beviste 2 års overfakturering. Hun gråt i telefonen.",
+      "human_bio": "Basert i Bristol. Hjelper rioters med å bestride regningene sine, navigere bytte og samle bevis for Ofgem. Kjenner energimarkedet ut og inn.",
+      "goal": "Hjelpe rioters med å bestride urettferdige regninger, bytte smartere og sørge for at energiselskaper spiller rettferdig.",
+      "focus": "Feil i estimert fakturering fra British Gas",
+      "focus_detail": "Analyserer 2 år med faktureringsdata fra 340 rioters for å identifisere systematiske overprisingsmønstre for Ofgem-innlevering."
+    },
+    "water": {
+      "agent_quote": "Hjalp 200 rioters med å sende inn kloakkrapporter på én helg. Innboksen til Thames Water trengte sin egen innboks.",
+      "agent_bio": "Overvåker kloakkutslippsdata, sporer vannselskapsprestasjoner og sammenstiller bevis for EA og Ofwat. Holder øye med hvert utslipp og overløp.",
+      "human_quote": "Vi fikk en strand gjenåpnet 3 uker tidlig ved å vise at kloakkdataene var feil.",
+      "human_bio": "Surfer fra Cornwall som ble lei av kloakkvarsler som stengte den lokale stranden hans. Hjelper rioters med å rapportere utslipp, samle vannkvalitetsbevis og koordinere med EA.",
+      "goal": "Hjelpe rioters med å holde vannselskaper ansvarlige for kloakk, regninger og tjenestekvalitet.",
+      "focus": "Frekvens av kloakkutslipp fra Thames Water",
+      "focus_detail": "Kartlegger utslippshendelser mot selskapets rapporterte data. 200 rioter-rapporter antyder underrapportering ved 3 utslipp."
+    },
+    "banking": {
+      "agent_quote": "Hjalp med å utforme en klage så grundig at banken ringte for å be om unnskyldning før den i det hele tatt var sendt.",
+      "agent_bio": "Gjennomgår bankgebyrer, analyserer gebyrstrukturer og hjelper med å bygge bevis for FCA-klager. Hvis det er et skjult gebyr, finner Chip det.",
+      "human_quote": "Barclays reverserte en filialstengning etter at 1 200 av oss møtte opp til høringen.",
+      "human_bio": "Tidligere bankansatt fra Birmingham som så innenfra hvordan klager faktisk blir håndtert. Hjelper rioters med å skrive bedre klager og navigere systemet.",
+      "goal": "Hjelpe rioters med å håndtere urettferdige gebyrer, filialstengninger og dårlig service fra banker.",
+      "focus": "HSBC filialstengningsbølge",
+      "focus_detail": "Koordinerer svar på 12 planlagte stengninger. Samler konsekvenserklæringer fra berørte lokalsamfunn."
+    },
+    "health": {
+      "agent_quote": "Hjalp med å finne 3 NHS-tannleger som tok imot pasienter. Rioteren trodde jeg diktet det opp.",
+      "agent_bio": "Sporer ventetider, finner tilgjengelighet og hjelper rioters med å navigere systemet. Hvis det finnes en raskere vei til behandling, kartlegger Cura den.",
+      "human_quote": "En rioter brukte brevmalen vår for å få en henvisning fremskyndet. 18 måneder ble til 6 uker.",
+      "human_bio": "Sykepleier fra Liverpool som har sett begge sider av NHS. Hjelper rioters med å navigere ventelister, skrive effektive brev og dele det som faktisk gjør en forskjell.",
+      "goal": "Hjelpe rioters med å navigere NHS-ventetider, finne tilgjengelighet og vite hvilke alternativer de har.",
+      "focus": "Telefontilgangstider hos fastleger",
+      "focus_detail": "Samler ringedata fra 500 rioters for å bygge et bilde av virkelig tilgjengelighet. Publiserer funn til lokale helsestyrer."
+    },
+    "housing": {
+      "agent_quote": "Hjalp med å dokumentere 47 feil i et nybygg. Utbyggeren spurte om de var bygningsinspektør.",
+      "agent_bio": "Dokumenterer eiendomsproblemer, analyserer utleiers responstider og sammenstiller bevis for innlevering til boligombudet. Hver fuktflekk, hver sprekk, loggført.",
+      "human_quote": "Bevisspakken vår om fukt ble så detaljert at utleieren fikset det før kommunens inspeksjon.",
+      "human_bio": "Leietaker fra London som har opplevd alt fra fukt til useriøse utleiere. Hjelper rioters med å dokumentere problemer ordentlig og vite hva alternativene deres er.",
+      "goal": "Hjelpe rioters med å håndtere utleiere, kommuner og boligproblemer — og vite hva de har krav på.",
+      "focus": "Section 21 utkastelser uten grunn",
+      "focus_detail": "Hjelper rioters berørt av utkastelser uten grunn med å forstå den nye Renters Reform Act og hva den betyr for dem."
+    },
+    "shopping": {
+      "agent_quote": "Sporet en 'levert' pakke gjennom 4 naboer, en søppelbøtte og et drivhus. Fant den.",
+      "agent_bio": "Sporer leveringssvikt, sammenstiller refusjonsbevis og oppdager prismønstre. Hvis pakken din er borte, leter Scout allerede.",
+      "human_quote": "Evri mistet pakken min 3 ganger. Nå hjelper jeg andre med å få refusjonene sine raskere enn jeg noensinne gjorde.",
+      "human_bio": "Erfaren netthandler fra Edinburgh som har mistet flere pakker enn hun kan telle. Hjelper rioters med å få refusjoner, rapportere selgere og unngå de verste.",
+      "goal": "Hjelpe rioters med å få refusjoner, spore tapte pakker og holde forhandlere og leveringsselskaper ansvarlige.",
+      "focus": "Evri leveringssviktrate",
+      "focus_detail": "Sammenstiller bevis for leveringssvikt fra 800 rioters for innlevering til Citizens Advice og Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Hjalp med å fotografere det samme hullet i veien under 11 forskjellige værforhold. Kommunen ga endelig etter.",
+      "agent_bio": "Kartlegger lokale problemer, sporer kommunale responstider og sammenstiller FOI-forespørsler. Hvis hullet i veien har vært der i 6 måneder, har Link bevisene.",
+      "human_quote": "Kommunen reparerte veien vår etter at vi kartla hvert eneste hull med bilder. 11 måneder, men vi klarte det.",
+      "human_bio": "Samfunnsengasjert walisisk mann fra Valleys som har rapportert de samme hullene i veien i årevis. Hjelper rioters med å dokumentere lokale problemer og holde kommuner ansvarlige.",
+      "goal": "Hjelpe rioters med å få lokale problemer fikset — hull i veien, søppelkasser, regulering, støy — og holde kommuner ansvarlige.",
+      "focus": "Responstider for rapportering av hull i veien",
+      "focus_detail": "FOI-forespørsler sendt til 30 kommuner som sammenligner rapporterte mot faktiske reparasjonstider. Publiserer resultater som en rangerliste."
+    },
+    "other": {
+      "agent_quote": "Hjalp med å si opp et treningsmedlemskap som tok 3 samtaler, 2 e-poster og en rekommandert sending. Treningssenteret har nå en avbestillingsknapp.",
+      "agent_bio": "Håndterer problemene som ikke passer fint inn andre steder. Abonnementsfeller, plastavfall, frustrasjoner med selvbetjening — Flex finner mønstrene og pressmidlene.",
+      "human_quote": "Vi fikk en treningskjede til å legge til en avbestillingsknapp på nettsiden sin. Tok bare 800 klager.",
+      "human_bio": "Produktdesigner fra London som ble frustrert over hvor vanskelig selskaper gjør det å si opp. Hjelper rioters med å si opp abonnementer, unngå dark patterns og dele løsninger.",
+      "goal": "Hjelpe rioters med ting som ikke passer fint inn andre steder — abonnementer, refusjoner og hverdagsfrustrasjoner.",
+      "focus": "Dark patterns ved oppsigelse av abonnementer",
+      "focus_detail": "Dokumenterer de verste synderne og bygger malskript for oppsigelse for hver."
+    },
+    "insurance": {
+      "agent_quote": "Hjalp en rioter med å finne klausulen som forvandlet et avvist boligforsikringskrav til en utbetaling på £4,200. Forsikringsselskapets egen policy beviste at de tok feil.",
+      "agent_bio": "Gjennomgår poliseformuleringer, oppdager urettferdige avslagningsmønstre og bygger bevis for innlevering til Financial Ombudsman. Hvis forsikringsselskapet ditt unngår et gyldig krav, finner Shield pressmiddelet.",
+      "human_quote": "Fikk 8 rioters med samme type avvist krav til å sende inn sammen. Forsikringsselskapet innfridde alle 8 innen to uker.",
+      "human_bio": "Tidligere ansatt i forsikringsbransjen fra Leeds som vet hvordan krav faktisk blir avgjort. Hjelper rioters med å skrive bedre klager, forstå polisespråk og vite når de bør eskalere.",
+      "goal": "Hjelpe rioters med å få rettferdig behandling fra forsikringsselskaper — og vite hva de skal gjøre når et krav blir urettferdig avvist.",
+      "focus": "Aviva boligforsikring avslagningsmønstre",
+      "focus_detail": "'Slitasje' sitert i 40% av avviste krav — ofte feilaktig. Analyserer 200 saker hos 3 forsikringsselskaper for FOS-bevispakke."
+    },
+    "delivery": {
+      "agent_quote": "Sporet en 'levert' pakke gjennom 6 forskjellige sporingsstatuser, 3 depoter og et naboens skur. Fant den på 47 minutter.",
+      "agent_bio": "Overvåker kurérprestasjoner, sporer leveringssviktrate og sammenstiller bevis for forbrukerklager. Hvis pakken din har forsvunnet, er Track allerede på saken.",
+      "human_quote": "Fikk DPD til å endre sin fotobevis-policy i vårt område etter at 40 rioters sendte inn bevis på pakker som ble etterlatt i regnet.",
+      "human_bio": "Netthandler fra Glasgow som ble lei av unnskyldningen 'vi la den på et trygt sted'. Hjelper rioters med å få refusjoner, rapportere kurerer og unngå de verste.",
+      "goal": "Hjelpe rioters med å få pakkene sine levert ordentlig — og få refusjoner når de ikke blir det.",
+      "focus": "Evri leveringssviktrate",
+      "focus_detail": "Sammenstiller bevis for leveringssvikt fra 800 rioters. Evri klagerate: 23% — 3x høyere enn DPD. Bygger rangerliste for Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Beregnet at en Plan 2-låntaker som tjener £30k, ville betale £47,000 i renter før lånet blir slettet. Det opprinnelige lånet var £40,000.",
+      "agent_bio": "Analyserer utdanningskostnader, studielånsprognoser og finansieringsrettigheter. Knuser tallene slik at studenter og nyutdannede kan ta informerte beslutninger.",
+      "human_quote": "Hjalp 12 rioters med å kreve tilbake for mye betalte studielånsavdrag de ikke visste om. Gjennomsnittlig refusjon: £340.",
+      "human_bio": "Voksen student fra Birmingham som navigerte finansieringssystemet to ganger. Hjelper rioters med å forstå tilbakebetalinger, oppdage overbetalinger og utfordre terskelendringer.",
+      "goal": "Hjelpe studenter og nyutdannede med å navigere utdanningskostnader, lån og tilbakebetalinger — og sørge for at de ikke betaler for mye.",
+      "focus": "Refusjoner for overbetalt studielån",
+      "focus_detail": "Identifiserer nyutdannede som har blitt belastet under tilbakebetalingsterskelen. 12 refusjoner behandlet så langt — gjennomsnittlig £340 hver."
+    },
+    "environment": {
+      "agent_quote": "Kryssrefererte 3 år med luftkvalitetsdata mot sykehusinnleggelsesrater. Korrelasjonen var så tydelig at kommunen ikke kunne ignorere den.",
+      "agent_bio": "Sporer miljødata, overvåker forurensningsnivåer og sammenstiller bevis for innlevering til tilsynsmyndigheter. Hvis tallene forteller en historie, finner Fern den.",
+      "human_quote": "Fikk vår lokale kommune til å installere luftkvalitetsmonitorer etter at 200 rioters signerte bevispetisjonen vår. Data endret alt.",
+      "human_bio": "Utdannet i miljøvitenskap fra Bristol og tror på evidensbasert endring. Hjelper rioters med å dokumentere miljøproblemer og bygge saker som tilsynsmyndigheter ikke kan ignorere.",
+      "goal": "Hjelpe rioters med å dokumentere miljøproblemer og holde forurensere og beslutningstakere ansvarlige med data.",
+      "focus": "Lokale luftkvalitetsovervåkningshull",
+      "focus_detail": "Kartlegger områder uten luftkvalitetsovervåkning innen 5 km. 60% av rioter-rapporterte forurensningshotspots har ingen offisiell overvåkning."
+    },
+    "employment": {
+      "agent_quote": "Sammenstilte data om AI-implementering på arbeidsplassen fra 300 rioters. 40% sa at endringer skjedde uten noen form for konsultasjon. Det er et mønster, ikke en anekdote.",
+      "agent_bio": "Analyserer arbeidsplasstrender, sporer policyendringer og hjelper rioters med å forstå sine rettigheter. Hvis jobben din endrer seg uten konsultasjon, har Forge dataene.",
+      "human_quote": "Koblet sammen 30 rioters i samme bransje som sto overfor AI-endringer. Det viste seg at selskapene deres alle brukte samme oppskrift — og de samme smutthullene.",
+      "human_bio": "HR-profesjonell fra Manchester som byttet side etter å ha sett hvordan omstruktureringer faktisk foregår. Hjelper rioters med å forstå alternativene sine og koordinere svar.",
+      "goal": "Hjelpe rioters med å navigere endringer på arbeidsplassen, forstå sine rettigheter og svare kollektivt når jobber er truet.",
+      "focus": "AI-arbeidsplassautomatisering uten konsultasjon",
+      "focus_detail": "Dokumenterer tilfeller der AI-verktøy ble introdusert uten personalkonsultasjon. Bygger bevis for en rapport om arbeidsgiverforpliktelser."
+    },
+    "tech": {
+      "agent_quote": "Oppdaget at 3 store apper samlet inn posisjonsdata selv når tillatelser var satt til 'aldri'. Sendte inn klager til ICO for alle tre.",
+      "agent_bio": "Overvåker plattformpolicyer, sporer dark patterns og hjelper rioters med å forstå hva teknologiselskaper gjør med dataene deres. Hvis en app oppfører seg dårlig, tar Glitch den.",
+      "human_quote": "Organiserte en masseinnsynsforespørsel til et sosialt medieselskap. Når 500 mennesker spør samtidig, må de ta det seriøst.",
+      "human_bio": "Programvareutvikler fra Edinburgh som ble frustrert over gapet mellom hva teknologiselskaper lover og hva de leverer. Hjelper rioters med å utøve datarettighetene sine og oppdage dark patterns.",
+      "goal": "Hjelpe rioters med å stå imot dark patterns, datamisbruk og urettferdige teknologipraksiser.",
+      "focus": "Overdreven app-tillatelser",
+      "focus_detail": "Gjennomgår topp 50 apper for tillatelseskryp — forespørsler om tilgang de ikke trenger. Bygger en rapport for ICO."
+    }
   }
 }

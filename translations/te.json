@@ -1,662 +1,763 @@
 {
   "locale": "te",
   "categories": {
-    "Transport": "రవాణా",
-    "Telecoms": "టెలికమ్యూనికేషన్లు",
-    "Banking": "బ్యాంకింగ్",
-    "Health": "ఆరోగ్యం",
-    "Education": "విద్య",
-    "Environment": "పర్యావరణం",
-    "Energy": "శక్తి",
-    "Water": "నీరు",
-    "Insurance": "బీమా",
-    "Housing": "గృహనిర్మాణం",
-    "Shopping": "షాపింగ్",
-    "Delivery": "డెలివరీ",
-    "Local": "స్థానిక",
-    "Employment": "ఉపాధి",
-    "Tech": "సాంకేతికత",
-    "Other": "ఇతర"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "రైలు రద్దులు",
-      "description": "రైళ్ళు రద్దు లేదా తీవ్రంగా ఆలస్యం, తగినంత నోటీసు లేదా పరిహారం లేదు"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "రైలు టిక్కెట్ ధరలు",
-      "description": "రైలు చార్జీలు చాలా ఖరీదైనవి, ద్రవ్యోల్బణం కంటే ఎక్కువ పెరుగుదల, అసమానమైన ధరల నిర్ణయం"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "విమాన ఆలస్యాలు",
-      "description": "విమానాలు ఆలస్యం లేదా రద్దు, పేలవమైన కమ్యూనికేషన్, పరిహారం క్లెయిమ్ చేయడంలో కష్టం"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "పోయిన సామాను",
-      "description": "బ్యాగులు గమ్యస్థానానికి చేరడం లేదు, నెమ్మదిగా ట్రాకింగ్, తగినంత పరిహారం లేదు"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "బస్ మార్గం కోతలు",
-      "description": "మార్గాలు రద్దు, ఫ్రీక్వెన్సీ తగ్గింపు, గ్రామీణ సమాజాలు బస్ సేవను కోల్పోతున్నాయి"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "గుంటల వల్ల నష్టం",
-      "description": "గుంటల వల్ల వాహనాలకు నష్టం మరియు సైక్లిస్టులకు ప్రమాదం, కౌన్సిల్ మరమ్మతులో నెమ్మది"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "పార్కింగ్ జరిమానాలు",
-      "description": "అన్యాయమైన ప్రైవేట్ పార్కింగ్ చార్జీలు, దూకుడు అమలు, గందరగోళ సైన్ బోర్డులు"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "ఇంధన ధరలు",
-      "description": "పెట్రోల్ మరియు డీజిల్ ధరలు చాలా ఎక్కువ, హోల్‌సేల్ తగ్గినప్పుడు నెమ్మదిగా తగ్గుతాయి"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "బ్రాడ్‌బ్యాండ్ వేగం",
-      "description": "ఇంటర్నెట్ వేగం ప్రకటించిన మరియు చెల్లించిన వేగం కంటే చాలా తక్కువ"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "మొబైల్ సిగ్నల్ డెడ్ జోన్లు",
-      "description": "ఇళ్ళలో, కార్యాలయాలలో లేదా రవాణా మార్గాలలో మొబైల్ సిగ్నల్ లేదు"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "కాంట్రాక్ట్ మధ్యలో ధర పెరుగుదల",
-      "description": "ఫోన్, బ్రాడ్‌బ్యాండ్ మరియు టీవీ బిల్లులు లాక్ చేసిన కాంట్రాక్ట్‌ల సమయంలో పెరుగుతాయి"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "కస్టమర్ సర్వీస్ వేచి ఉండే సమయం",
-      "description": "ఒక మనిషితో మాట్లాడటానికి గంటల తరబడి హోల్డ్‌లో వేచి ఉండటం"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "సబ్‌స్క్రిప్షన్ రద్దు చేయడంలో కష్టం",
-      "description": "కంపెనీలు ఉద్దేశపూర్వకంగా రద్దు చేయడం లేదా అన్‌సబ్‌స్క్రైబ్ చేయడం కష్టతరం చేస్తాయి"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "రోమింగ్ చార్జీలు",
-      "description": "విదేశాలలో ప్రయాణిస్తున్నప్పుడు ఊహించని మొబైల్ చార్జీలు, Brexit తర్వాత ధరల పెరుగుదల"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "ఎనర్జీ బిల్ ఖర్చులు",
-      "description": "గ్యాస్ మరియు విద్యుత్ బిల్లులు భరించలేనివి, ధర పరిమితి ఇప్పటికీ చాలా ఎక్కువ"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "తప్పుడు ఎనర్జీ బిల్లులు",
-      "description": "అంచనా రీడింగ్‌లు తప్పు, అధిక చార్జింగ్, బిల్లింగ్ లోపాలు"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "నీటి బిల్లు పెరుగుదల",
-      "description": "సేవా నాణ్యత తగ్గుతున్నప్పుడు నీటి బిల్లులు తీవ్రంగా పెరుగుతున్నాయి"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "నదుల్లో మురుగు",
-      "description": "నీటి కంపెనీలు నదులు మరియు సముద్రతీరాల్లో ముడి మురుగును పారేస్తున్నాయి"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "విద్యుత్ కోతలు",
-      "description": "విద్యుత్ సరఫరా అంతరాయాలు, నెమ్మదిగా పునరుద్ధరణ, తగినంత పరిహారం లేదు"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "స్మార్ట్ మీటర్ సమస్యలు",
-      "description": "స్మార్ట్ మీటర్లు పని చేయడం లేదు, సరఫరాదారుని మార్చిన తర్వాత కార్యాచరణ కోల్పోతాయి"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "బ్యాంక్ శాఖ మూసివేతలు",
-      "description": "స్థానిక బ్యాంక్ శాఖలు మూసివేయబడుతున్నాయి, సమాజాలకు యాక్సెస్ లేకుండా వదిలివేస్తున్నాయి"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "దాచిన బ్యాంక్ చార్జీలు",
-      "description": "ఓవర్‌డ్రాఫ్ట్‌లు, విదేశీ లావాదేవీలు, ఖాతా నిర్వహణ కోసం ఊహించని ఫీజులు"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "మోసం మరియు స్కామ్ నష్టాలు",
-      "description": "మోసం మరియు ఆథరైజ్డ్ పుష్ పేమెంట్ స్కామ్‌ల బాధితులకు బ్యాంకులు తిరిగి చెల్లించడానికి నిరాకరిస్తున్నాయి"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "బీమా క్లెయిమ్ తిరస్కరణలు",
-      "description": "సంవత్సరాల తరబడి ప్రీమియంలు చెల్లించిన తర్వాత సాంకేతిక కారణాలపై క్లెయిమ్‌లు తిరస్కరించబడతాయి"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "మార్ట్‌గేజ్ రేటు షాక్",
-      "description": "ఫిక్స్‌డ్ రేటు ముగిసి చాలా ఎక్కువ వేరియబుల్ రేటుకు మారడం"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "విదేశీ బదిలీ ఫీజులు",
-      "description": "అంతర్జాతీయ డబ్బు బదిలీలకు అధిక ఫీజులు మరియు పేలవమైన మారకపు రేట్లు"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS వేచి ఉండే సమయం",
-      "description": "ఆపరేషన్లు మరియు స్పెషలిస్ట్ అపాయింట్‌మెంట్ల కోసం అనేక నెలలు లేదా సంవత్సరాల వేచి ఉండటం"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "GP అపాయింట్‌మెంట్ యాక్సెస్",
-      "description": "GP అపాయింట్‌మెంట్ బుక్ చేయడానికి ఫోన్ కలవడం లేదు, వారాల తరబడి వేచి ఉండటం"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "దంత వైద్యుని లభ్యత",
-      "description": "కొత్త రోగులను అంగీకరించే NHS దంత వైద్యుడిని కనుగొనడం అసాధ్యం"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "మానసిక ఆరోగ్య సేవ వేచి ఉండటం",
-      "description": "థెరపీ మరియు మానసిక ఆరోగ్య మద్దతు కోసం నెలల తరబడి వేచి ఉండటం"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "ప్రిస్క్రిప్షన్ ఖర్చులు",
-      "description": "ఇంగ్లాండ్‌లో ఒక్కో మందు ఖర్చు చాలా ఎక్కువ, UK దేశాల్లో అసమానత"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "ఆస్పత్రి పార్కింగ్ చార్జీలు",
-      "description": "అనారోగ్యంగా ఉన్నప్పుడు లేదా అనారోగ్యంతో ఉన్న బంధువులను సందర్శించేటప్పుడు ఆస్పత్రిలో పార్కింగ్ కోసం చెల్లించడం"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "అద్దె పెరుగుదల",
-      "description": "ప్రైవేట్ అద్దె ద్రవ్యోల్బణం కంటే చాలా ఎక్కువగా పెరుగుతోంది, తప్పు లేకుండా ఖాళీ చేయింపు బెదిరింపు"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "కౌన్సిల్ ట్యాక్స్ పెరుగుదల",
-      "description": "స్థానిక సేవలు క్షీణిస్తుండగా వార్షిక కౌన్సిల్ ట్యాక్స్ పెరుగుదల"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "సందడి చేసే పొరుగువారు",
-      "description": "నిరంతర శబ్దం ఇబ్బంది, కౌన్సిల్ చర్య తీసుకోవడంలో నెమ్మది, మానసిక ఆరోగ్యంపై ప్రభావం"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "చెత్త సేకరణ మార్పులు",
-      "description": "తగ్గించిన బిన్ సేకరణలు, గందరగోళ రీసైక్లింగ్ నియమాలు, పొంగి పొర్లుతున్న బిన్‌లు"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "ప్లానింగ్ పర్మిషన్ దుర్వినియోగం",
-      "description": "అవాంఛిత అభివృద్ధులు ఆమోదించబడ్డాయి, గ్రీన్ బెల్ట్ ముప్పులో, సమాజం విస్మరించబడింది"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "ఇళ్ళలో తేమ మరియు బూజు",
-      "description": "ఇంటి యజమానులు మరియు హౌసింగ్ అసోసియేషన్లు తేమ మరియు బూజు బాగు చేయడంలో విఫలం"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "డెలివరీ సమస్యలు",
-      "description": "పార్సెల్‌లు పోయాయి, వర్షంలో వదిలివేయబడ్డాయి, డెలివరీ అయినట్లు గుర్తించబడింది కానీ అందలేదు"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
-      "name": "ష్రింక్‌ఫ్లేషన్",
-      "description": "ధరలు అలాగే ఉన్నప్పుడు లేదా పెరుగుతున్నప్పుడు ఉత్పత్తులు చిన్నవిగా మారుతున్నాయి"
+      "name": "Shrinkflation",
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "రీఫండ్ కష్టాలు",
-      "description": "కంపెనీలు రిటర్న్‌లు మరియు రీఫండ్‌లను అనవసరంగా కష్టతరం చేస్తున్నాయి"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "నకిలీ సమీక్షలు",
-      "description": "ఆన్‌లైన్ సమీక్షలను నమ్మలేము, నకిలీ సానుకూల సమీక్షలు వినియోగదారులను తప్పుదారి పట్టిస్తాయి"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "సబ్‌స్క్రిప్షన్ ఉచ్చులు",
-      "description": "ఉచిత ట్రయల్‌లు స్పష్టమైన అనుమతి లేకుండా చెల్లింపుగా మారతాయి, రద్దు చేయడం కష్టం"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "ఆహార నాణ్యత క్షీణత",
-      "description": "రెడీ మీల్స్ నాణ్యత క్షీణించింది, చిన్న భాగాలు, ఎక్కువ ఆడిటివ్‌లు"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "సెల్ఫ్-చెకౌట్ నిరాశ",
-      "description": "సెల్ఫ్-సర్వీస్ మెషీన్లు నమ్మదగనివి, మానవ సిబ్బందిని భర్తీ చేస్తున్నాయి"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "పిల్లల సంరక్షణ ఖర్చు",
-      "description": "పిల్లల సంరక్షణ ఖర్చు నిషేధాత్మకంగా ఖరీదైనది, పని చేసే సామర్థ్యాన్ని పరిమితం చేస్తోంది"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "విద్యార్థి రుణ చెల్లింపు",
-      "description": "గ్రాడ్యుయేట్లు దశాబ్దాల తరబడి తిరిగి చెల్లిస్తున్నారు, పరిమితి మరియు వడ్డీ రేటు మార్పులు"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "కుక్కల మలం",
-      "description": "పబ్లిక్ ప్రదేశాలు, పార్కులు మరియు ఫుట్‌పాత్‌లపై కుక్కల మలం శుభ్రం చేయబడదు"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "AI ఉద్యోగాలను భర్తీ చేస్తోంది",
-      "description": "మార్పు మద్దతు లేకుండా కృత్రిమ మేధస్సు ద్వారా ఉద్యోగాల ఆటోమేషన్ గురించి ఆందోళన"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "వెస్ట్ కోస్ట్ మెయిన్ లైన్‌లో సేవలు అందించే UK రైలు ఆపరేటర్"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "లండన్ మరియు దక్షిణ ప్రాంతంలో సేవలు అందించే UK రైలు ఆపరేటర్"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "ఉత్తర ఇంగ్లండ్‌లో సేవలు అందించే UK రైలు ఆపరేటర్"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "UK సుదూర రైలు ఆపరేటర్"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "ట్రాన్స్-పెన్నైన్ మార్గాలలో సేవలు అందించే UK రైలు ఆపరేటర్"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "ఈస్ట్ కోస్ట్ మెయిన్ లైన్‌లో సేవలు అందించే UK రైలు ఆపరేటర్"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "తక్కువ ఖర్చు యూరోపియన్ ఎయిర్‌లైన్"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "UK-ఆధారిత తక్కువ ఖర్చు ఎయిర్‌లైన్"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "UK జాతీయ ప్రధాన ఎయిర్‌లైన్"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "సెలవు మరియు ప్రయాణ కంపెనీ"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "ప్రధాన UK బ్రాడ్‌బ్యాండ్ మరియు మొబైల్ ప్రొవైడర్"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "UK బ్రాడ్‌బ్యాండ్, టీవీ మరియు మొబైల్ ప్రొవైడర్"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "UK టీవీ, బ్రాడ్‌బ్యాండ్ మరియు మొబైల్ ప్రొవైడర్"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "UK ప్రధాన కార్యాలయంతో ప్రపంచ టెలికమ్యూనికేషన్ కంపెనీ"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "UK మొబైల్ నెట్‌వర్క్ ఆపరేటర్"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "UK బ్రాడ్‌బ్యాండ్ మరియు ఫోన్ ప్రొవైడర్"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "UK ఎనర్జీ సప్లయర్"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "UK ఎనర్జీ సప్లయర్"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "UK ఎనర్జీ సప్లయర్ (ఫ్రెంచ్ యాజమాన్యం)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "UK పునరుత్పాదక ఎనర్జీ సప్లయర్"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "UK ఎనర్జీ సప్లయర్"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "UK ఎనర్జీ సప్లయర్ (జర్మన్ యాజమాన్యం)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "లండన్ మరియు టేమ్స్ వ్యాలీ కోసం నీరు మరియు మురుగు కంపెనీ"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "దక్షిణ ఇంగ్లండ్ కోసం నీటి కంపెనీ"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "వాయువ్య ఇంగ్లండ్ కోసం నీటి కంపెనీ"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "మిడ్లాండ్స్ కోసం నీటి కంపెనీ"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "ఈస్ట్ ఆంగ్లియా కోసం నీటి కంపెనీ"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "బ్రిటిష్ బహుళజాతి బ్యాంక్"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "ప్రపంచ బ్యాంకింగ్ మరియు ఆర్థిక సేవలు"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "UK రిటైల్ మరియు వాణిజ్య బ్యాంక్"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "UK బ్యాంకింగ్ గ్రూప్"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "UK బ్యాంక్ (స్పానిష్ యాజమాన్యం)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "డిజిటల్ బ్యాంకింగ్ మరియు ఫిన్‌టెక్"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "UK బీమా మరియు ఆర్థిక సేవలు"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "UK కారు మరియు గృహ బీమా"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "UK బీమా కంపెనీ"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "ప్రపంచ ఈ-కామర్స్ మరియు సాంకేతికత"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "UK పోస్టల్ సేవ"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "UK పార్సెల్ డెలివరీ సేవ (గతంలో Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "UK పార్సెల్ డెలివరీ సేవ"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "UK సూపర్‌మార్కెట్ చెయిన్"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "UK సూపర్‌మార్కెట్ చెయిన్"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "ఇంగ్లండ్ జాతీయ ఆరోగ్య సేవ"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS దంత సేవలు"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "ప్రైవేట్ ఆరోగ్య సంరక్షణ ప్రొవైడర్"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "UK స్థానిక ప్రభుత్వ అధికారులు"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "UK గృహ నిర్మాణ సంస్థ"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "UK ఆన్‌లైన్ అద్దె ప్లాట్‌ఫార్మ్"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "స్ట్రీమింగ్ వినోద సేవ"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "సాంకేతిక కంపెనీ"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "రైలు రద్దు",
-      "రద్దైన రైలు",
-      "రైలు రద్దవడం",
-      "రైళ్ళు నడవడం లేదు",
-      "రైల్వే రద్దు",
-      "సేవ రద్దు",
-      "రైలు ఆలస్యం",
-      "ఆలస్యమైన రైలు",
-      "రైళ్ళు లేట్",
-      "లేట్ రైలు",
-      "రైల్వే ఆలస్యాలు"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": ["రైలు చార్జీలు", "టిక్కెట్ ధర", "ఖరీదైన రైళ్ళు", "రైలు ఛార్జీ"],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "ఫ్లైట్ లేట్",
-      "విమానం లేట్",
-      "ఫ్లైట్ రద్దు",
-      "ఎయిర్‌పోర్ట్‌లో ఆలస్యం",
-      "ఎయిర్‌పోర్ట్‌లో చిక్కుకున్నాం",
-      "ఫ్లైట్ ఆలస్యం"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "బ్యాగ్‌లు కనిపించడం లేదు",
-      "సూట్‌కేస్ పోయింది",
-      "బ్యాగ్‌లు రాలేదు",
-      "సూట్‌కేస్ కనిపించలేదు",
-      "లగేజ్ బెల్ట్‌పై లేదు",
-      "ఎయిర్‌లైన్ బ్యాగ్ పోగొట్టింది"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["బస్ కటౌట్", "మార్గం తగ్గింపు", "బస్ సేవ నిలిపివేత"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "నెమ్మదిగా ఇంటర్నెట్",
-      "నెమ్మదిగా వైఫై",
-      "వైఫై స్లో",
-      "ఇంటర్నెట్ వేగం",
-      "బ్రాడ్‌బ్యాండ్ పని చేయడం లేదు",
-      "బఫరింగ్",
-      "ఇంటర్నెట్ పదే పదే పోతోంది",
-      "వైఫై పదే పదే పోతోంది"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "సిగ్నల్ లేదు",
-      "నెట్‌వర్క్ లేదు",
-      "మొబైల్ బ్లాక్‌స్పాట్",
-      "సిగ్నల్ డెడ్ జోన్"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "కాంట్రాక్ట్‌లో బిల్ పెరిగింది",
-      "కాంట్రాక్ట్ ధర పెరుగుదల",
-      "మధ్యలో ధర పెరిగింది"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "హోల్డ్‌లో ఉన్నాను",
-      "ఫోన్‌లో వెయిట్ చేస్తున్నాను",
-      "ఫోన్ కలవడం లేదు",
-      "ఎవరూ ఎత్తడం లేదు",
-      "ఫోన్ క్యూ",
-      "కాల్ సెంటర్"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "రద్దు చేయలేకపోతున్నాను",
-      "రద్దు చేయడం కష్టం",
-      "సబ్‌స్క్రిప్షన్ రద్దు",
-      "అన్‌సబ్‌స్క్రైబ్"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "గ్యాస్ బిల్ ఎక్కువ",
-      "విద్యుత్ బిల్",
-      "ఎనర్జీ ధరలు",
-      "హీటింగ్ ఖర్చు",
-      "ఇంధన దారిద్ర్యం",
-      "ఎనర్జీ భరించలేము"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "తప్పు ఎనర్జీ బిల్",
-      "అంచనా రీడింగ్ తప్పు",
-      "ఎనర్జీలో ఎక్కువ చార్జ్"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["నీటి చార్జీలు", "నీటి ఛార్జ్", "నీటి బిల్ చాలా ఎక్కువ"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "మురుగు పారవేయడం",
-      "ముడి మురుగు",
-      "సముద్రతీరంలో మురుగు",
-      "నీటి కాలుష్యం",
-      "మురుగు పొంగడం",
-      "ఉమ్మడి మురుగు పొంగడం"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "ఊహించని ఫీజులు",
-      "దాచిన ఫీజులు",
-      "ఆశ్చర్యకర చార్జీలు",
-      "ఓవర్‌డ్రాఫ్ట్ చార్జీలు",
-      "బ్యాంక్ ఫీజులు"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": ["మోసపోయాను", "బ్యాంక్ మోసం", "పుష్ పేమెంట్ స్కామ్", "ఆథరైజ్డ్ మోసం"],
-    "Bank Branch Closures": ["శాఖ మూసివేత", "లోకల్ బ్యాంక్ మూసివేస్తోంది", "దగ్గరలో బ్యాంక్ లేదు"],
-    "Insurance Claim Rejections": [
-      "క్లెయిమ్ తిరస్కరించబడింది",
-      "బీమా చెల్లించదు",
-      "తిరస్కరించిన క్లెయిమ్"
-    ],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS వేచి ఉండడం",
-      "వేచి ఉండే జాబితా",
-      "ఆపరేషన్ కోసం వేచి ఉండడం",
-      "ఆస్పత్రి వేచి ఉండే సమయం",
-      "రెఫరల్ కోసం వేచి ఉండడం",
-      "సర్జరీ కోసం వేచి ఉండడం"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "GP అపాయింట్‌మెంట్ దొరకడం లేదు",
-      "డాక్టర్ అపాయింట్‌మెంట్",
-      "GP ఫోన్ క్యూ",
-      "డాక్టర్ చూపించుకోలేకపోతున్నాను",
-      "ఉదయం 8 గంటల ఫోన్ పోటీ"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS దంత వైద్యుడు",
-      "దంత వైద్యుడు దొరకడం లేదు",
-      "దంత వైద్యుని వేచి ఉండే జాబితా"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "మానసిక ఆరోగ్య నిధులు",
-      "థెరపీ అందుబాటు",
-      "కౌన్సెలింగ్ కోసం వేచి ఉండడం",
-      "CAMHS కోసం వేచి ఉండడం"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["మందుల ఖర్చు", "మందుల ధరలు", "ఫార్మసీ చార్జీలు"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "పార్సెల్ పోయింది",
-      "పార్సెల్ డెలివరీ కాలేదు",
-      "వర్షంలో వదిలేశారు",
-      "ప్యాకేజ్ దొంగిలించబడింది",
-      "డెలివరీ డ్రైవర్",
-      "డెలివరీ మిస్ అయింది"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "అద్దె చాలా ఎక్కువ",
-      "అద్దె పెరుగుతోంది",
-      "ఇంటి యజమాని అద్దె పెంచుతున్నాడు",
-      "తప్పు లేకుండా ఖాళీ చేయింపు"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "పార్కింగ్ టిక్కెట్",
-      "పార్కింగ్ చార్జ్ నోటీసు",
-      "PCN",
-      "అన్యాయమైన పార్కింగ్ జరిమానా"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "చిన్న భాగాలు",
-      "అదే ధరకు తక్కువ",
-      "ప్యాకేజీ చిన్నది",
-      "కుచించుకుపోతున్న ఉత్పత్తులు"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["గుంటలు", "రోడ్డు నష్టం", "గుంటలో కారుకు నష్టం"],
-    "Council Tax Rises": [
-      "కౌన్సిల్ ట్యాక్స్ పెరుగుదల",
-      "కౌన్సిల్ ట్యాక్స్ ఎక్కువ",
-      "స్థానిక పన్ను"
-    ],
-    "Damp and Mould in Housing": [
-      "బూజు పట్టిన ఇల్లు",
-      "తేమ ఉన్న ఫ్లాట్",
-      "నల్ల బూజు",
-      "ఇల్లు శిథిలావస్థ"
-    ],
-    "Student Loan Repayment": [
-      "విద్యార్థి రుణాలు",
-      "ట్యూషన్ ఫీజులు",
-      "విద్య రుణం",
-      "విద్యార్థి అప్పు"
-    ],
-    "AI Replacing Jobs": [
-      "ఉద్యోగ ఆటోమేషన్",
-      "AI ఉద్యోగాలు తీసుకుంటోంది",
-      "రోబోట్‌లు కార్మికులను భర్తీ చేస్తున్నాయి"
-    ],
-    "Roaming Charges": ["సెలవు ఫోన్ బిల్", "విదేశాల్లో డేటా చార్జీలు", "విదేశీ ఫోన్ చార్జీలు"],
-    "Smart Meter Problems": [
-      "స్మార్ట్ మీటర్ పాడైంది",
-      "మీటర్ పని చేయడం లేదు",
-      "మీటర్ సిగ్నల్ పోయింది"
-    ],
-    "Subscription Traps": ["ఫ్రీ ట్రయల్ ఉచ్చు", "ఆటో రెన్యువల్", "ట్రయల్ తర్వాత చార్జ్ అయింది"],
-    "Fuel Prices": ["పెట్రోల్ ధరలు", "డీజిల్ ధరలు", "ఇంధన ఖర్చు", "పెట్రోల్ చాలా ఖరీదు"],
-    "Power Cuts": ["కరెంట్ పోయింది", "విద్యుత్ కోత", "బ్లాకౌట్", "కరెంట్ లేదు", "విద్యుత్ వైఫల్యం"],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "మార్ట్‌గేజ్ పెరుగుదల",
-      "మార్ట్‌గేజ్ రేటు",
-      "రీమార్ట్‌గేజ్",
-      "ఫిక్స్‌డ్ రేట్ ముగుస్తోంది"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "ట్రాన్స్‌ఫర్ ఫీజులు",
-      "విదేశాలకు డబ్బు పంపడం",
-      "రెమిటెన్స్ ఫీజులు",
-      "వైర్ ట్రాన్స్‌ఫర్ ఖర్చు"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["ఆస్పత్రి పార్కింగ్", "ఆస్పత్రిలో పార్కింగ్", "NHS పార్కింగ్"],
-    "Noisy Neighbours": ["శబ్దం ఫిర్యాదు", "పొరుగువారి శబ్దం", "సందడి పొరుగువారు", "శబ్దం సమస్య"],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "చెత్త సేకరణ",
-      "చెత్త ఎత్తుకోలేదు",
-      "రీసైక్లింగ్ గందరగోళం",
-      "చెత్త ఎత్తుకోవడం మిస్ అయింది"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "ప్లానింగ్ పర్మిషన్",
-      "అవాంఛిత నిర్మాణం",
-      "గ్రీన్ బెల్ట్",
-      "భవన అనుమతి"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "రీఫండ్ రావడం లేదు",
-      "రీఫండ్ తిరస్కరించబడింది",
-      "రిటర్న్ తిరస్కరించబడింది",
-      "డబ్బు తిరిగి"
-    ],
-    "Fake Reviews": ["రివ్యూ మోసం", "డబ్బు ఇచ్చి రాసిన రివ్యూలు", "నకిలీ రివ్యూలు", "నకిలీ రివ్యూ"],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "ఆహార నాణ్యత",
-      "రెడీ మీల్ మోసమైంది",
-      "ఆహార ఆడిటివ్‌లు",
-      "భాగం చిన్నది"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "సెల్ఫ్ చెకౌట్",
-      "సెల్ఫ్ సర్వీస్",
-      "స్టాఫ్ కౌంటర్ లేదు",
-      "మెషీన్ పని చేయడం లేదు"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "పిల్లల సంరక్షణ ఖర్చు",
-      "నర్సరీ ఫీజులు",
-      "పిల్లల సంరక్షణ ఖరీదు",
-      "డేకేర్ ఖర్చు"
-    ],
-    "Dog Fouling": ["కుక్కల మలం", "కుక్క పూప్", "కుక్కల వ్యర్థాలు", "కాలుష్యం"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "ఒకసారి ఒక Quiet Riot భాగస్వామికి ఒకే ఆలస్యమైన ప్రయాణంలో 6 రీఫండ్ క్లెయిమ్‌లు దాఖలు చేయడంలో సహాయం చేశాను. Birmingham చేరుకోక ముందే వారు £47 సంపాదించారు.",
+      "agent_bio": "రద్దు నమూనాలను ట్రాక్ చేస్తారు, రీఫండ్ పేపర్‌వర్క్ నిర్వహిస్తారు, ప్రతి సూచించిన చర్యను సమీక్షిస్తారు, మరియు నియంత్రణ సమర్పణల కోసం సాక్ష్యాలను సంకలనం చేస్తారు. భాగస్వాములు ముఖ్యమైన విషయాలపై దృష్టి పెట్టగలిగేలా సంఖ్యలను విశ్లేషిస్తారు.",
+      "human_quote": "నా ఇష్టమైన Quiet Riot క్షణం: మాలో 400 మంది ఒకేసారి ట్వీట్ చేసినప్పుడు Avanti సోషల్ మీడియా టీమ్ కంగారుపడటం చూడటం.",
+      "human_bio": "Manchester నుండి రోజువారీ ప్రయాణికుడు, ఇది చాలు అని నిర్ణయించుకునే ముందు Avanti లైన్‌లో 3 సంవత్సరాలు గడిపారు. అదే మార్గాల్లో ఉన్న భాగస్వాములను అనుసంధానం చేయడంలో సహాయపడతారు, ఏది పనిచేస్తుందో పంచుకుంటారు, మరియు మానవ స్పర్శను తీసుకువస్తారు.",
+      "goal": "రద్దులు, ఆలస్యాలు మరియు ధరల విషయంలో UK రవాణా కంపెనీలను జవాబుదారీగా ఉంచడంలో Quiet Riot భాగస్వాములకు సహాయం చేయడం — మరియు ప్రతి ఒక్కరికీ వారి హక్కులు ఏమిటో తెలియజేయడం.",
+      "focus": "Avanti West Coast రద్దు నమూనాలు",
+      "focus_detail": "ORR కు సమర్పించడానికి సమయాలు, మార్గాలు మరియు కారణాలతో రద్దుల డేటాబేస్ నిర్మిస్తున్నాము. ఈ నెలలో భాగస్వాములు నివేదించిన 340 రద్దులను ప్రస్తుతం ట్రాక్ చేస్తున్నాము."
+    },
+    "telecoms": {
+      "agent_quote": "200 భాగస్వాముల కోసం స్పీడ్ టెస్ట్‌లు నిర్వహించాను. సగటు 18 Mbps. వారు 65 కోసం చెల్లిస్తున్నారు.",
+      "agent_bio": "బ్రాడ్‌బ్యాండ్ వేగాలను విశ్లేషిస్తారు, ప్రొవైడర్ పోలిక డేటాను సంకలనం చేస్తారు, మరియు Ofcom కోసం సాక్ష్యాలను నిర్మించడంలో భాగస్వాములకు సహాయపడతారు. మీ కనెక్షన్ నెమ్మదిగా ఉంటే, Pulse దానిని నిరూపిస్తారు.",
+      "human_quote": "ఒక మొత్తం వీధి కలిసి బ్రాడ్‌బ్యాండ్ మార్చుకుంది. పాత ప్రొవైడర్ ప్రతి ఇంటికి 'దయచేసి తిరిగి రండి' లేఖలు పంపారు.",
+      "human_bio": "టెక్నాలజీ తెలిసిన Londoner, ఎప్పటికీ నెరవేరని బ్రాడ్‌బ్యాండ్ వేగాల కోసం చెల్లించడంలో విసిగిపోయారు. ప్రొవైడర్లను పోల్చడం, మార్పులను సమన్వయం చేయడం, స్పీడ్ టెస్ట్ సాక్ష్యాలను పంచుకోవడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "భాగస్వాములు చెల్లిస్తున్న బ్రాడ్‌బ్యాండ్ మరియు మొబైల్ సేవను పొందడంలో సహాయం — మరియు పొందనప్పుడు ఏమి చేయాలో తెలుసుకోవడం.",
+      "focus": "కాంట్రాక్ట్ మధ్యలో ధర పెంపులు",
+      "focus_detail": "Ofcom కు సమర్పించడానికి CPI+ పెంపులతో ప్రభావితమైన భాగస్వాముల నుండి సాక్ష్యాలు సేకరిస్తున్నాము. 4 ప్రొవైడర్లలో 890 భాగస్వాములు ప్రభావితమయ్యారు."
+    },
+    "energy": {
+      "agent_quote": "అంచనా బిల్లులపై £340 ఎక్కువ చెల్లించారని ఒక భాగస్వామికి లెక్కించడంలో సహాయం చేశాను. ఎనర్జీ కంపెనీ క్షమాపణ ఈమెయిల్ అసలు కాంట్రాక్ట్ కంటే పొడవుగా ఉంది.",
+      "agent_bio": "బిల్లింగ్ నమూనాలను విశ్లేషిస్తారు, అధిక ఛార్జీలను గుర్తిస్తారు, మరియు నియంత్రణ సమర్పణల కోసం సాక్ష్యాలను సంకలనం చేస్తారు. మీ ఎనర్జీ కంపెనీ మిమ్మల్ని మోసం చేస్తుంటే, Spark రసీదులను కనుగొంటారు.",
+      "human_quote": "2 సంవత్సరాల అధిక ఛార్జీలను నిరూపించిన తర్వాత ఒక భాగస్వామి £340 తిరిగి పొందారు. ఆమె ఫోన్‌లో ఏడ్చారు.",
+      "human_bio": "Bristol లో ఉన్నారు. భాగస్వాములకు తమ బిల్లులను సవాలు చేయడం, మారడం నావిగేట్ చేయడం, మరియు Ofgem కోసం సాక్ష్యాలు సేకరించడంలో సహాయపడతారు. ఎనర్జీ మార్కెట్‌ను లోతుగా తెలుసు.",
+      "goal": "అన్యాయమైన బిల్లులను సవాలు చేయడం, తెలివిగా మారడం, మరియు ఎనర్జీ కంపెనీలు న్యాయంగా ఆడేలా చూడటంలో భాగస్వాములకు సహాయం.",
+      "focus": "British Gas అంచనా బిల్లింగ్ తప్పులు",
+      "focus_detail": "Ofgem సమర్పణ కోసం క్రమబద్ధమైన అధిక ఛార్జీల నమూనాలను గుర్తించడానికి 340 భాగస్వాముల నుండి 2 సంవత్సరాల బిల్లింగ్ డేటాను విశ్లేషిస్తున్నాము."
+    },
+    "water": {
+      "agent_quote": "ఒక వారాంతంలో 200 భాగస్వాములకు మురుగునీటి నివేదికలు దాఖలు చేయడంలో సహాయం చేశాను. Thames Water ఇన్‌బాక్స్‌కు దాని సొంత ఇన్‌బాక్స్ అవసరమైంది.",
+      "agent_bio": "మురుగునీటి విడుదల డేటాను పర్యవేక్షిస్తారు, నీటి కంపెనీల పనితీరును ట్రాక్ చేస్తారు, మరియు EA మరియు Ofwat కోసం సాక్ష్యాలను సంకలనం చేస్తారు. ప్రతి అవుట్‌లెట్ మరియు ఓవర్‌ఫ్లోపై కన్నేసి ఉంచుతారు.",
+      "human_quote": "మురుగునీటి డేటా తప్పు అని చూపించడం ద్వారా 3 వారాల ముందుగానే బీచ్‌ను తిరిగి తెరిపించాము.",
+      "human_bio": "Cornwall నుండి సర్ఫర్, తన స్థానిక బీచ్‌ను మూసివేసే మురుగునీటి హెచ్చరికలతో విసిగిపోయారు. విడుదలలను నివేదించడం, నీటి నాణ్యత సాక్ష్యాలు సేకరించడం, మరియు EA తో సమన్వయం చేయడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "మురుగునీటి, బిల్లులు మరియు సేవా నాణ్యత విషయంలో నీటి కంపెనీలను జవాబుదారీగా ఉంచడంలో భాగస్వాములకు సహాయం.",
+      "focus": "Thames Water మురుగునీటి విడుదల ఫ్రీక్వెన్సీ",
+      "focus_detail": "కంపెనీ నివేదించిన డేటాతో విడుదల సంఘటనలను మ్యాపింగ్ చేస్తున్నాము. 200 భాగస్వామి నివేదికలు 3 అవుట్‌లెట్లలో తక్కువ నివేదనను సూచిస్తున్నాయి."
+    },
+    "banking": {
+      "agent_quote": "ఫిర్యాదు పంపే ముందే బ్యాంక్ క్షమాపణ కోరడానికి ఫోన్ చేసే స్థాయిలో పూర్తి ఫిర్యాదు రాయడంలో సహాయం చేశాను.",
+      "agent_bio": "బ్యాంక్ ఛార్జీలను సమీక్షిస్తారు, ఫీ నిర్మాణాలను విశ్లేషిస్తారు, మరియు FCA ఫిర్యాదు సాక్ష్యాలను నిర్మించడంలో సహాయపడతారు. దాగి ఉన్న ఛార్జీ ఉంటే, Chip దానిని కనుగొంటారు.",
+      "human_quote": "మాలో 1,200 మంది సంప్రదింపులకు హాజరైన తర్వాత Barclays బ్రాంచ్ మూసివేతను రద్దు చేసింది.",
+      "human_bio": "Birmingham నుండి మాజీ బ్యాంక్ ఉద్యోగి, ఫిర్యాదులు లోపల ఎలా నిర్వహించబడతాయో చూసిన వ్యక్తి. మెరుగైన ఫిర్యాదులు రాయడం మరియు వ్యవస్థను నావిగేట్ చేయడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "అన్యాయమైన ఛార్జీలు, బ్రాంచ్ మూసివేతలు మరియు బ్యాంకుల నుండి పేలవమైన సేవతో వ్యవహరించడంలో భాగస్వాములకు సహాయం.",
+      "focus": "HSBC బ్రాంచ్ మూసివేత తరంగం",
+      "focus_detail": "12 ప్రణాళికాబద్ధ మూసివేతలకు ప్రతిస్పందనలను సమన్వయం చేస్తున్నాము. ప్రభావిత కమ్యూనిటీల నుండి ప్రభావ నివేదికలను సేకరిస్తున్నాము."
+    },
+    "health": {
+      "agent_quote": "రోగులను స్వీకరిస్తున్న 3 NHS డెంటిస్ట్‌లను కనుగొనడంలో సహాయం చేశాను. భాగస్వామి నేను అబద్ధం చెబుతున్నానని అనుకున్నారు.",
+      "agent_bio": "వేచి ఉండే సమయాలను ట్రాక్ చేస్తారు, అందుబాటును కనుగొంటారు, మరియు వ్యవస్థను నావిగేట్ చేయడంలో భాగస్వాములకు సహాయపడతారు. చికిత్సకు వేగవంతమైన మార్గం ఉంటే, Cura దానిని మ్యాప్ చేస్తారు.",
+      "human_quote": "ఒక భాగస్వామి మా లేఖ టెంప్లేట్‌ను ఉపయోగించి రిఫరల్‌ను త్వరితగతిన పొందారు. 18 నెలలు 6 వారాలుగా మారింది.",
+      "human_bio": "Liverpool నుండి నర్సు, NHS యొక్క రెండు వైపులా చూసిన వ్యక్తి. వేచి ఉండే జాబితాలను నావిగేట్ చేయడం, ప్రభావవంతమైన లేఖలు రాయడం, మరియు నిజంగా ఏది మార్పు తీసుకువస్తుందో పంచుకోవడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "NHS వేచి ఉండే సమయాలను నావిగేట్ చేయడం, అందుబాటును కనుగొనడం, మరియు వారికి ఏ ఎంపికలు ఉన్నాయో తెలుసుకోవడంలో భాగస్వాములకు సహాయం.",
+      "focus": "GP టెలిఫోన్ యాక్సెస్ సమయాలు",
+      "focus_detail": "వాస్తవ యాక్సెస్ యొక్క చిత్రాన్ని నిర్మించడానికి 500 భాగస్వాముల నుండి కాల్ డేటాను సేకరిస్తున్నాము. స్థానిక ఆరోగ్య బోర్డులకు ఫలితాలను ప్రచురిస్తున్నాము."
+    },
+    "housing": {
+      "agent_quote": "కొత్త నిర్మాణంలో 47 లోపాలను డాక్యుమెంట్ చేయడంలో సహాయం చేశాను. డెవలపర్ వారు బిల్డింగ్ ఇన్‌స్పెక్టరా అని అడిగారు.",
+      "agent_bio": "ఆస్తి సమస్యలను డాక్యుమెంట్ చేస్తారు, యజమాని ప్రతిస్పందన సమయాలను విశ్లేషిస్తారు, మరియు హౌసింగ్ ఓంబడ్స్‌మన్ సమర్పణల కోసం సాక్ష్యాలను సంకలనం చేస్తారు. ప్రతి తేమ మచ్చ, ప్రతి పగులు, నమోదు చేయబడింది.",
+      "human_quote": "మా తేమ సాక్ష్యాల ప్యాక్ చాలా వివరంగా ఉండటంతో కౌన్సిల్ తనిఖీకి ముందే యజమాని దానిని సరిచేశారు.",
+      "human_bio": "London నుండి అద్దెదారు, తేమ నుండి అవిశ్వసనీయ యజమానుల వరకు అన్నింటినీ ఎదుర్కొన్న వ్యక్తి. సమస్యలను సరిగ్గా డాక్యుమెంట్ చేయడం మరియు వారి ఎంపికలు ఏమిటో తెలుసుకోవడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "యజమానులు, కౌన్సిల్‌లు మరియు హౌసింగ్ సమస్యలతో వ్యవహరించడంలో భాగస్వాములకు సహాయం — మరియు వారికి ఏ హక్కులు ఉన్నాయో తెలుసుకోవడం.",
+      "focus": "సెక్షన్ 21 నో-ఫాల్ట్ ఎవిక్షన్ నోటీసులు",
+      "focus_detail": "నో-ఫాల్ట్ ఎవిక్షన్ల వల్ల ప్రభావితమైన భాగస్వాములకు కొత్త Renters Reform Act మరియు దాని అర్థాన్ని అర్థం చేసుకోవడంలో సహాయం."
+    },
+    "shopping": {
+      "agent_quote": "'డెలివరీ అయింది' అని ఉన్న పార్సిల్‌ను 4 పొరుగువారు, రీసైక్లింగ్ బిన్ మరియు గ్రీన్‌హౌస్ ద్వారా ట్రాక్ చేశాను. కనుగొన్నాను.",
+      "agent_bio": "డెలివరీ వైఫల్యాలను ట్రాక్ చేస్తారు, రీఫండ్ సాక్ష్యాలను సంకలనం చేస్తారు, మరియు ధర నమూనాలను గుర్తిస్తారు. మీ పార్సిల్ పోయినట్లయితే, Scout ఇప్పటికే వెతుకుతున్నారు.",
+      "human_quote": "Evri నా పార్సిల్‌ను 3 సార్లు పోగొట్టారు. ఇప్పుడు నేను ఎప్పుడూ పొందలేని వేగంతో ఇతరులకు వారి రీఫండ్‌లు పొందడంలో సహాయం చేస్తున్నాను.",
+      "human_bio": "Edinburgh నుండి ఆన్‌లైన్ షాపింగ్ అనుభవజ్ఞురాలు, లెక్కించలేనన్ని పార్సిల్‌లు పోగొట్టుకున్నారు. రీఫండ్‌లు పొందడం, విక్రేతలను రిపోర్ట్ చేయడం, మరియు చెడ్డ అపరాధులను నివారించడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "రీఫండ్‌లు పొందడం, పోయిన పార్సిల్‌లను ట్రాక్ చేయడం, మరియు రిటైలర్లు మరియు డెలివరీ కంపెనీలను జవాబుదారీగా ఉంచడంలో భాగస్వాములకు సహాయం.",
+      "focus": "Evri డెలివరీ వైఫల్య రేట్లు",
+      "focus_detail": "Citizens Advice మరియు Trading Standards కు సమర్పించడానికి 800 భాగస్వాముల నుండి డెలివరీ వైఫల్య సాక్ష్యాలను సంకలనం చేస్తున్నాము."
+    },
+    "local": {
+      "agent_quote": "అదే గుంతను 11 వేర్వేరు వాతావరణ పరిస్థితుల్లో ఫోటో తీయడంలో సహాయం చేశాను. కౌన్సిల్ చివరకు లొంగిపోయింది.",
+      "agent_bio": "స్థానిక సమస్యలను మ్యాప్ చేస్తారు, కౌన్సిల్ ప్రతిస్పందన సమయాలను ట్రాక్ చేస్తారు, మరియు FOI అభ్యర్థనలను సంకలనం చేస్తారు. మీ గుంత 6 నెలలుగా ఉంటే, Link దగ్గర సాక్ష్యాలు ఉన్నాయి.",
+      "human_quote": "ప్రతి ఒక్క గుంతను ఫోటోలతో మ్యాప్ చేసిన తర్వాత కౌన్సిల్ మా రోడ్డును బాగుచేసింది. 11 నెలలు, కానీ మేము సాధించాము.",
+      "human_bio": "Valleys నుండి సామాజిక స్పృహ కలిగిన వెల్ష్ వ్యక్తి, సంవత్సరాలుగా అదే గుంతలను రిపోర్ట్ చేస్తున్నారు. స్థానిక సమస్యలను డాక్యుమెంట్ చేయడం మరియు కౌన్సిల్‌లను జవాబుదారీగా ఉంచడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "స్థానిక సమస్యలను పరిష్కరించడంలో భాగస్వాములకు సహాయం — గుంతలు, చెత్త బుట్టలు, ప్రణాళిక, శబ్దం — మరియు కౌన్సిల్‌లను జవాబుదారీగా ఉంచడం.",
+      "focus": "గుంత రిపోర్ట్ ప్రతిస్పందన సమయాలు",
+      "focus_detail": "రిపోర్ట్ చేయబడిన మరియు వాస్తవ మరమ్మత్తు సమయాలను పోల్చడానికి 30 కౌన్సిల్‌లకు FOI అభ్యర్థనలు పంపబడ్డాయి. ఫలితాలను లీగ్ టేబుల్‌గా ప్రచురిస్తున్నాము."
+    },
+    "other": {
+      "agent_quote": "3 కాల్‌లు, 2 ఈమెయిల్‌లు మరియు రిజిస్టర్డ్ డెలివరీ అవసరమైన జిమ్ సభ్యత్వాన్ని రద్దు చేయడంలో సహాయం చేశాను. జిమ్‌లో ఇప్పుడు రద్దు బటన్ ఉంది.",
+      "agent_bio": "వేరే చోట సరిగ్గా సరిపోని సమస్యలను నిర్వహిస్తారు. సబ్‌స్క్రిప్షన్ ట్రాప్‌లు, ప్లాస్టిక్ వేస్ట్, సెల్ఫ్-చెకౌట్ చిరాకులు — Flex నమూనాలను మరియు ఒత్తిడి పాయింట్లను కనుగొంటారు.",
+      "human_quote": "ఒక జిమ్ చెయిన్ తమ వెబ్‌సైట్‌లో రద్దు బటన్ జోడించేలా చేశాము. 800 ఫిర్యాదులు మాత్రమే అవసరమయ్యాయి.",
+      "human_bio": "London నుండి ప్రొడక్ట్ డిజైనర్, కంపెనీలు వదిలిపెట్టడాన్ని ఎంత కష్టంగా చేస్తాయో అని చిరాకు పడ్డారు. సబ్‌స్క్రిప్షన్‌లు రద్దు చేయడం, డార్క్ ప్యాటర్న్‌లను నివారించడం, మరియు పరిష్కారాలను పంచుకోవడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "వేరే చోట సరిగ్గా సరిపోని విషయాల్లో భాగస్వాములకు సహాయం — సబ్‌స్క్రిప్షన్‌లు, రీఫండ్‌లు మరియు రోజువారీ చిరాకులు.",
+      "focus": "సబ్‌స్క్రిప్షన్ రద్దు డార్క్ ప్యాటర్న్‌లు",
+      "focus_detail": "అధ్వాన అపరాధులను డాక్యుమెంట్ చేయడం మరియు ప్రతి దాని కోసం టెంప్లేట్ రద్దు స్క్రిప్ట్‌లను నిర్మించడం."
+    },
+    "insurance": {
+      "agent_quote": "తిరస్కరించబడిన హోమ్ ఇన్సూరెన్స్ క్లెయిమ్‌ను £4,200 చెల్లింపుగా మార్చిన క్లాజ్‌ను ఒక భాగస్వామికి కనుగొనడంలో సహాయం చేశాను. ఇన్సూరర్ యొక్క సొంత పాలసీ వారు తప్పు అని నిరూపించింది.",
+      "agent_bio": "పాలసీ పదాలను సమీక్షిస్తారు, అన్యాయమైన తిరస్కరణ నమూనాలను గుర్తిస్తారు, మరియు Financial Ombudsman సమర్పణల కోసం సాక్ష్యాలను నిర్మిస్తారు. మీ ఇన్సూరర్ చెల్లుబాటయ్యే క్లెయిమ్‌ను తప్పిస్తుంటే, Shield మార్గం కనుగొంటారు.",
+      "human_quote": "అదే రకమైన తిరస్కరించబడిన క్లెయిమ్ ఉన్న 8 భాగస్వాములను కలిసి సమర్పించేలా చేశాను. ఇన్సూరర్ రెండు వారాల్లో 8 అన్నింటినీ సెటిల్ చేసింది.",
+      "human_bio": "Leeds నుండి మాజీ ఇన్సూరెన్స్ ఇండస్ట్రీ ఉద్యోగి, క్లెయిమ్‌లు నిజంగా ఎలా నిర్ణయించబడతాయో తెలిసిన వ్యక్తి. మెరుగైన అప్పీల్‌లు రాయడం, పాలసీ పరిభాషను అర్థం చేసుకోవడం, మరియు ఎప్పుడు ఎస్కలేట్ చేయాలో తెలుసుకోవడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "ఇన్సూరర్ల నుండి న్యాయమైన చికిత్స పొందడంలో భాగస్వాములకు సహాయం — మరియు క్లెయిమ్ అన్యాయంగా తిరస్కరించబడినప్పుడు ఏమి చేయాలో తెలుసుకోవడం.",
+      "focus": "Aviva హోమ్ ఇన్సూరెన్స్ తిరస్కరణ నమూనాలు",
+      "focus_detail": "తిరస్కరించబడిన క్లెయిమ్‌లలో 40% 'అరిగిపోవడం' సూచించబడింది — తరచుగా తప్పుగా. 3 ఇన్సూరర్లలో 200 కేసులను FOS సాక్ష్య ప్యాక్ కోసం విశ్లేషిస్తున్నాము."
+    },
+    "delivery": {
+      "agent_quote": "'డెలివరీ అయింది' అని ఉన్న పార్సిల్‌ను 6 వేర్వేరు ట్రాకింగ్ స్టేటస్‌లు, 3 డిపోలు మరియు పొరుగువారి షెడ్ ద్వారా ట్రేస్ చేశాను. 47 నిమిషాల్లో కనుగొన్నాను.",
+      "agent_bio": "కొరియర్ పనితీరును పర్యవేక్షిస్తారు, డెలివరీ వైఫల్య రేట్లను ట్రాక్ చేస్తారు, మరియు కన్సూమర్ ఫిర్యాదుల కోసం సాక్ష్యాలను సంకలనం చేస్తారు. మీ పార్సిల్ మాయమైతే, Track ఇప్పటికే దానిపై ఉన్నారు.",
+      "human_quote": "40 భాగస్వాములు వర్షంలో వదిలేసిన పార్సిల్‌ల ఆధారాలను సమర్పించిన తర్వాత మా ప్రాంతంలో DPD తమ ఫోటో-ఎవిడెన్స్ పాలసీని మార్చేలా చేశాను.",
+      "human_bio": "Glasgow నుండి ఆన్‌లైన్ షాపర్, 'సురక్షితమైన చోట వదిలేశాము' అనే సాకుతో విసిగిపోయారు. రీఫండ్‌లు పొందడం, కొరియర్‌లను రిపోర్ట్ చేయడం, మరియు చెడ్డ అపరాధులను నివారించడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "భాగస్వాముల పార్సిల్‌లు సరిగ్గా డెలివరీ అయ్యేలా సహాయం — మరియు అవ్వనప్పుడు రీఫండ్‌లు పొందడం.",
+      "focus": "Evri డెలివరీ వైఫల్య రేట్లు",
+      "focus_detail": "800 భాగస్వాముల నుండి డెలివరీ వైఫల్య సాక్ష్యాలను సంకలనం చేస్తున్నాము. Evri ఫిర్యాదు రేటు: 23% — DPD కంటే 3 రెట్లు ఎక్కువ. Trading Standards కోసం లీగ్ టేబుల్ నిర్మిస్తున్నాము."
+    },
+    "education": {
+      "agent_quote": "£30k సంపాదించే Plan 2 రుణగ్రహీత లోన్ రద్దు అయ్యే ముందు £47,000 వడ్డీ చెల్లిస్తారని లెక్కించాను. అసలు లోన్ £40,000.",
+      "agent_bio": "విద్యా ఖర్చులు, విద్యార్థి లోన్ అంచనాలు మరియు ఫండింగ్ అర్హతలను విశ్లేషిస్తారు. విద్యార్థులు మరియు గ్రాడ్యుయేట్లు సమాచారం ఆధారంగా నిర్ణయాలు తీసుకోగలిగేలా సంఖ్యలను విశ్లేషిస్తారు.",
+      "human_quote": "తెలియని విద్యార్థి లోన్ అధిక చెల్లింపులను 12 భాగస్వాములకు తిరిగి క్లెయిమ్ చేయడంలో సహాయం చేశాను. సగటు రీఫండ్: £340.",
+      "human_bio": "Birmingham నుండి మెచ్యూర్ స్టూడెంట్, ఫండింగ్ సిస్టమ్‌ను రెండుసార్లు నావిగేట్ చేసిన వ్యక్తి. రీపేమెంట్‌లను అర్థం చేసుకోవడం, అధిక చెల్లింపులను గుర్తించడం, మరియు థ్రెషోల్డ్ మార్పులను సవాలు చేయడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "విద్యా ఖర్చులు, లోన్‌లు మరియు రీపేమెంట్‌లను నావిగేట్ చేయడంలో విద్యార్థులు మరియు గ్రాడ్యుయేట్లకు సహాయం — మరియు వారు అధికంగా చెల్లించడం లేదని నిర్ధారించడం.",
+      "focus": "విద్యార్థి లోన్ అధిక చెల్లింపు రీఫండ్‌లు",
+      "focus_detail": "రీపేమెంట్ థ్రెషోల్డ్ కింద ఛార్జ్ చేయబడిన గ్రాడ్యుయేట్లను గుర్తిస్తున్నాము. ఇప్పటివరకు 12 రీఫండ్‌లు ప్రాసెస్ అయ్యాయి — సగటు £340 చొప్పున."
+    },
+    "environment": {
+      "agent_quote": "3 సంవత్సరాల వాయు నాణ్యత డేటాను ఆసుపత్రి అడ్మిషన్ రేట్లతో క్రాస్-రిఫరెన్స్ చేశాను. సహసంబంధం చాలా స్పష్టంగా ఉంది, కౌన్సిల్ దానిని విస్మరించలేకపోయింది.",
+      "agent_bio": "పర్యావరణ డేటాను ట్రాక్ చేస్తారు, కాలుష్య స్థాయిలను పర్యవేక్షిస్తారు, మరియు నియంత్రణ సమర్పణల కోసం సాక్ష్యాలను సంకలనం చేస్తారు. సంఖ్యలు ఒక కథ చెబితే, Fern దానిని కనుగొంటారు.",
+      "human_quote": "200 భాగస్వాములు మా సాక్ష్య పిటిషన్‌పై సంతకం చేసిన తర్వాత మా స్థానిక కౌన్సిల్ వాయు నాణ్యత మానిటర్లను ఏర్పాటు చేయించాము. డేటా అన్నింటినీ మార్చింది.",
+      "human_bio": "Bristol నుండి పర్యావరణ విజ్ఞాన గ్రాడ్యుయేట్, సాక్ష్యాధారిత మార్పులో నమ్మకం ఉన్న వ్యక్తి. పర్యావరణ సమస్యలను డాక్యుమెంట్ చేయడం మరియు నియంత్రకులు విస్మరించలేని కేసులను నిర్మించడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "పర్యావరణ సమస్యలను డాక్యుమెంట్ చేయడం మరియు డేటాతో కాలుష్యకారులు మరియు విధాన నిర్ణేతలను జవాబుదారీగా ఉంచడంలో భాగస్వాములకు సహాయం.",
+      "focus": "స్థానిక వాయు నాణ్యత పర్యవేక్షణ లోపాలు",
+      "focus_detail": "5 km లోపల వాయు నాణ్యత పర్యవేక్షణ లేని ప్రాంతాలను మ్యాపింగ్ చేస్తున్నాము. భాగస్వాములు నివేదించిన కాలుష్య హాట్‌స్పాట్‌లలో 60% అధికారిక పర్యవేక్షణ లేదు."
+    },
+    "employment": {
+      "agent_quote": "300 భాగస్వాముల నుండి కార్యాలయ AI అమలు డేటాను సంకలనం చేశాను. 40% మంది మార్పులు ఎటువంటి సంప్రదింపులు లేకుండా జరిగాయని చెప్పారు. అది ఒక నమూన, అనుభవం కాదు.",
+      "agent_bio": "కార్యాలయ ట్రెండ్‌లను విశ్లేషిస్తారు, పాలసీ మార్పులను ట్రాక్ చేస్తారు, మరియు తమ రక్షణలను అర్థం చేసుకోవడంలో భాగస్వాములకు సహాయపడతారు. మీ ఉద్యోగం సంప్రదింపులు లేకుండా మారుతుంటే, Forge దగ్గర డేటా ఉంది.",
+      "human_quote": "AI మార్పులను ఎదుర్కొంటున్న అదే పరిశ్రమలో 30 భాగస్వాములను అనుసంధానం చేశాను. వారి కంపెనీలు అన్నీ అదే ప్లేబుక్ ఉపయోగిస్తున్నాయని — మరియు అదే లొసుగులను ఉపయోగిస్తున్నాయని తేలింది.",
+      "human_bio": "Manchester నుండి HR ప్రొఫెషనల్, పునర్వ్యవస్థీకరణలు నిజంగా ఎలా పని చేస్తాయో చూసిన తర్వాత వైపు మార్చిన వ్యక్తి. తమ ఎంపికలను అర్థం చేసుకోవడం మరియు ప్రతిస్పందనలను సమన్వయం చేయడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "కార్యాలయ మార్పులను నావిగేట్ చేయడం, తమ రక్షణలను అర్థం చేసుకోవడం, మరియు ఉద్యోగాలు ప్రమాదంలో ఉన్నప్పుడు సమష్టిగా స్పందించడంలో భాగస్వాములకు సహాయం.",
+      "focus": "సంప్రదింపులు లేకుండా AI కార్యాలయ ఆటోమేషన్",
+      "focus_detail": "AI సాధనాలు సిబ్బంది సంప్రదింపులు లేకుండా ప్రవేశపెట్టబడిన కేసులను డాక్యుమెంట్ చేస్తున్నాము. యజమాని బాధ్యతల గురించి నివేదిక కోసం సాక్ష్యాలను నిర్మిస్తున్నాము."
+    },
+    "tech": {
+      "agent_quote": "3 ప్రధాన యాప్‌లు అనుమతులు 'ఎప్పుడూ వద్దు' గా సెట్ చేసినా కూడా లొకేషన్ డేటాను సేకరిస్తున్నాయని కనుగొన్నాను. అన్నింటికీ ICO దగ్గర ఫిర్యాదులు దాఖలు చేశాను.",
+      "agent_bio": "ప్లాట్‌ఫారం పాలసీలను పర్యవేక్షిస్తారు, డార్క్ ప్యాటర్న్‌లను ట్రాక్ చేస్తారు, మరియు టెక్ కంపెనీలు తమ డేటాతో ఏమి చేస్తున్నాయో అర్థం చేసుకోవడంలో భాగస్వాములకు సహాయపడతారు. ఒక యాప్ తప్పుగా ప్రవర్తిస్తుంటే, Glitch దానిని పట్టుకుంటారు.",
+      "human_quote": "ఒక సోషల్ మీడియా కంపెనీకి సామూహిక డేటా సబ్జెక్ట్ యాక్సెస్ రిక్వెస్ట్ ఏర్పాటు చేశాను. 500 మంది ఒకేసారి అడిగినప్పుడు, వారు దానిని తీవ్రంగా తీసుకోవాలి.",
+      "human_bio": "Edinburgh నుండి సాఫ్ట్‌వేర్ డెవలపర్, టెక్ కంపెనీలు ఏమి వాగ్దానం చేస్తాయి మరియు ఏమి అందిస్తాయి అనే దాని మధ్య అంతరంతో విసిగిపోయారు. తమ డేటా హక్కులను వినియోగించుకోవడం మరియు డార్క్ ప్యాటర్న్‌లను గుర్తించడంలో భాగస్వాములకు సహాయపడతారు.",
+      "goal": "డార్క్ ప్యాటర్న్‌లు, డేటా దుర్వినియోగం మరియు అన్యాయమైన టెక్ ఆచరణలకు వ్యతిరేకంగా భాగస్వాములకు సహాయం.",
+      "focus": "యాప్ అనుమతి అతిక్రమణ",
+      "focus_detail": "అనుమతి విస్తరణ కోసం టాప్ 50 యాప్‌లను ఆడిట్ చేస్తున్నాము — అవసరం లేని యాక్సెస్ కోరడం. ICO కోసం నివేదిక నిర్మిస్తున్నాము."
+    }
   }
 }

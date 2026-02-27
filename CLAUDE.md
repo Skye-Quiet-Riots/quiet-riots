@@ -31,6 +31,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | `npm run dev`             | Local dev server                            |
 | `npm run lint`            | ESLint                                      |
 | `npm run format`          | Prettier — format all files                 |
+| `npm run translate`       | API-based translation (see i18n protocol)   |
 | `npm run format:check`    | Prettier — check formatting (CI)            |
 
 ## Development Rules
@@ -89,7 +90,7 @@ Every user-facing text must be translated into all 44 non-English locales. A fea
 1. **User-facing?** → Add to `scripts/seed-translations.ts` (both `TranslationFile` interface, `generateEnglishBaseline()`, and `applyTranslations()`)
 2. **Searchable?** → Update `buildTranslatedLikeClause()` in `src/lib/queries/issues.ts` (or equivalent query) to also search the `translations` table for non-English locales
 3. **Displayed?** → Use `translateEntities()` / `translateEntity()` from `src/lib/queries/translate.ts` to overlay translations before rendering
-4. **Generate translations** for all 44 locales using Claude sub-agents (same pattern as session 26) before merging
+4. **Generate translations** using the API pipeline: `npm run translate -- --section <name>` (see DB Entity Translation Protocol below)
 5. **Apply translations** to staging + production as part of the post-merge checklist (`seed-translations.ts --apply`)
 
 ### Rules
@@ -99,6 +100,34 @@ Every user-facing text must be translated into all 44 non-English locales. A fea
 - **Translation files** live in `translations/*.json` — one per locale, keyed by English source text
 - **Translation table** stores `(entity_type, entity_id, field, language_code, value)` with UNIQUE constraint on `(entity_type, entity_id, field, language_code)`
 - **Sanitise** all translated values with `sanitizeText()` before DB insertion
+
+### DB Entity Translation Protocol (MANDATORY — use `npm run translate`)
+
+When a feature adds or modifies translatable DB entities (issues, organisations, synonyms, category_assistants, categories), use the API-based translation pipeline. **NEVER use sub-agents for DB entity translations** — they are slow (~20 min), hit context limits, and fail silently.
+
+```bash
+# 1. Update the English baseline (adds new entities to en.json)
+npx tsx scripts/seed-translations.ts --generate
+
+# 2. Translate the section that changed (all 44 locales, ~1-2 minutes)
+npm run translate -- --section category_assistants
+
+# 3. Verify all files are valid JSON
+for f in translations/*.json; do node -e "require('./$f')" 2>&1 || echo "BROKEN: $f"; done
+
+# 4. Apply to DB (staging, then production)
+npx tsx scripts/seed-translations.ts --apply
+```
+
+**Options:**
+
+- `--section <name>` — translate one section (can repeat: `--section issues --section synonyms`)
+- `--all` — retranslate everything
+- `--locales es,fr,de` — only specific locales (useful for retrying failures)
+- `--dry-run` — preview without calling the API
+- `--model claude-sonnet-4-20250514` — use a different model (default: `claude-haiku-4-20250414`)
+
+**Requires** `ANTHROPIC_API_KEY` in environment or `.env.local`.
 
 ### UI Translation Protocol (MANDATORY — follow this exact pattern)
 
@@ -129,70 +158,7 @@ keep technical terms (IPO, Pre-Seed) as-is, keep currency amounts ($10m, 10p) as
 
 **Step 3: Apply translations with a Node.js script**
 
-Write a one-off Node.js script (inline or in a Bash command) that reads each locale file, applies the translations, and writes it back. Pattern:
-
-```js
-const fs = require('fs');
-const locales = [
-  'ar',
-  'bg',
-  'bn',
-  'ca',
-  'cs',
-  'da',
-  'de',
-  'el',
-  'es',
-  'eu',
-  'fa',
-  'fi',
-  'fr',
-  'gl',
-  'he',
-  'hi',
-  'hr',
-  'hu',
-  'id',
-  'it',
-  'ja',
-  'ko',
-  'ml',
-  'ms',
-  'nl',
-  'no',
-  'pl',
-  'pt',
-  'pt-BR',
-  'ro',
-  'ru',
-  'sk',
-  'sl',
-  'sv',
-  'sw',
-  'ta',
-  'te',
-  'th',
-  'tl',
-  'tr',
-  'uk',
-  'vi',
-  'zh-CN',
-  'zh-TW',
-];
-const translations = {
-  /* from Step 2 */
-};
-for (const locale of locales) {
-  const path = `./messages/${locale}.json`;
-  const data = JSON.parse(fs.readFileSync(path, 'utf8'));
-  // Apply translations to the appropriate namespace/key
-  for (const [key, value] of Object.entries(translations[locale])) {
-    const [ns, k] = key.split('.');
-    if (data[ns]) data[ns][k] = value;
-  }
-  fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n', 'utf8');
-}
-```
+Write a one-off Node.js script (inline or in a Bash command) that reads each locale file, applies the translations, and writes it back.
 
 **For simple value changes** (like renaming "supporter" → "participant"), skip the agent entirely — build the translations object directly with known mappings and run the script.
 
@@ -207,12 +173,12 @@ npm test -- --grep "i18n"
 npx prettier --write messages/*.json
 ```
 
-**Why script-first is mandatory:**
+**Why script/API-first is mandatory:**
 
 - Sub-agents hit "Prompt is too long" on locale files (>25K tokens each)
-- Sub-agents are unpredictable — some batches finish, others fail silently
-- A Node.js script handles all 44 locales in <1 second, deterministically
-- Session 53 proved the script approach works; sessions 52-54 proved agents fail repeatedly
+- Sub-agents are unpredictable — some batches finish, others fail silently or take 20+ minutes
+- `npm run translate` handles all 44 locales in ~1-2 minutes via parallel API calls
+- A Node.js script handles all 44 UI locale files in <1 second, deterministically
 
 ## Dual-Surface Protocol (IMPORTANT — follow for every feature)
 

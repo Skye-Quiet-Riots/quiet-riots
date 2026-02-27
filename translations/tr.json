@@ -1,679 +1,763 @@
 {
   "locale": "tr",
   "categories": {
-    "Transport": "Ulaşım",
-    "Telecoms": "Telekomünikasyon",
-    "Banking": "Bankacılık",
-    "Health": "Sağlık",
-    "Education": "Eğitim",
-    "Environment": "Çevre",
-    "Energy": "Enerji",
-    "Water": "Su",
-    "Insurance": "Sigorta",
-    "Housing": "Konut",
-    "Shopping": "Alışveriş",
-    "Delivery": "Kargo",
-    "Local": "Yerel",
-    "Employment": "İstihdam",
-    "Tech": "Teknoloji",
-    "Other": "Diğer"
+    "Transport": "Transport",
+    "Telecoms": "Telecoms",
+    "Banking": "Banking",
+    "Health": "Health",
+    "Education": "Education",
+    "Environment": "Environment",
+    "Energy": "Energy",
+    "Water": "Water",
+    "Insurance": "Insurance",
+    "Housing": "Housing",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Local",
+    "Employment": "Employment",
+    "Tech": "Tech",
+    "Other": "Other"
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Tren İptalleri",
-      "description": "Trenler yetersiz bildirim veya tazminat ile iptal ediliyor ya da ciddi şekilde gecikiyor"
+      "name": "Train Cancellations",
+      "description": "Trains cancelled or severely delayed with inadequate notice or compensation"
     },
     "Train Ticket Prices": {
-      "name": "Tren Bileti Fiyatları",
-      "description": "Tren ücretleri çok pahalı, enflasyonun üzerinde zamlar, tutarsız fiyatlandırma"
+      "name": "Train Ticket Prices",
+      "description": "Rail fares too expensive, above-inflation increases, inconsistent pricing"
     },
     "Flight Delays": {
-      "name": "Uçuş Gecikmeleri",
-      "description": "Uçuşlar gecikiyor veya iptal ediliyor, yetersiz iletişim, tazminat almakta zorluk"
+      "name": "Flight Delays",
+      "description": "Flights delayed or cancelled, poor communication, difficulty claiming compensation"
     },
     "Lost Luggage": {
-      "name": "Kayıp Bagaj",
-      "description": "Valizler varış noktasına ulaşmıyor, yavaş takip, yetersiz tazminat"
+      "name": "Lost Luggage",
+      "description": "Bags not arriving at destination, slow tracking, inadequate compensation"
     },
     "Bus Route Cuts": {
-      "name": "Otobüs Hattı Kesintileri",
-      "description": "Hatlar iptal ediliyor, sefer sıklığı azaltılıyor, kırsal topluluklar otobüs erişimini kaybediyor"
+      "name": "Bus Route Cuts",
+      "description": "Routes cancelled, frequency reduced, rural communities losing bus access"
     },
     "Pothole Damage": {
-      "name": "Çukur Hasarı",
-      "description": "Çukurlar araçlara zarar veriyor ve bisikletçileri tehlikeye atıyor, belediyeler onarımda yavaş"
+      "name": "Pothole Damage",
+      "description": "Potholes damaging vehicles and endangering cyclists, councils slow to repair"
     },
     "Parking Fines": {
-      "name": "Park Cezaları",
-      "description": "Haksız özel otopark ücretleri, agresif uygulama, kafa karıştırıcı tabelalar"
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
     },
     "Fuel Prices": {
-      "name": "Yakıt Fiyatları",
-      "description": "Benzin ve motorin fiyatları çok yüksek, toptan fiyat düşünce geç yansıyor"
+      "name": "Fuel Prices",
+      "description": "Petrol and diesel prices too high, slow to drop when wholesale falls"
     },
     "Broadband Speed": {
-      "name": "İnternet Hızı",
-      "description": "İnternet hızları reklamı yapılan ve ödenen değerin çok altında"
+      "name": "Broadband Speed",
+      "description": "Internet speeds far below what is advertised and paid for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobil Sinyal Kör Noktaları",
-      "description": "Evlerde, işyerlerinde veya ulaşım güzergahlarında mobil sinyal yok"
+      "name": "Mobile Signal Dead Zones",
+      "description": "No mobile signal in homes, workplaces, or along transport routes"
     },
     "Price Rises Mid-Contract": {
-      "name": "Sözleşme Ortasında Fiyat Artışları",
-      "description": "Telefon, internet ve TV faturaları bağlayıcı sözleşmeler sırasında artıyor"
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband and TV bills increasing during locked contracts"
     },
     "Customer Service Hold Times": {
-      "name": "Müşteri Hizmetleri Bekleme Süreleri",
-      "description": "Bir insanla konuşmak için saatlerce hatta bekleme"
+      "name": "Customer Service Hold Times",
+      "description": "Hours on hold waiting to speak to a human being"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "Abonelik İptal Zorluğu",
-      "description": "Şirketler iptal etmeyi veya abonelikten çıkmayı kasıtlı olarak zorlaştırıyor"
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies making it deliberately hard to cancel or unsubscribe"
     },
     "Roaming Charges": {
-      "name": "Dolaşım Ücretleri",
-      "description": "Yurt dışında seyahat ederken beklenmeyen mobil ücretler, Brexit sonrası fiyat artışları"
+      "name": "Roaming Charges",
+      "description": "Unexpected mobile charges when travelling abroad, post-Brexit price rises"
     },
     "Energy Bill Costs": {
-      "name": "Enerji Fatura Maliyetleri",
-      "description": "Doğalgaz ve elektrik faturaları karşılanamaz düzeyde, fiyat tavanı hâlâ çok yüksek"
+      "name": "Energy Bill Costs",
+      "description": "Gas and electricity bills unaffordable, price cap still too high"
     },
     "Inaccurate Energy Bills": {
-      "name": "Hatalı Enerji Faturaları",
-      "description": "Tahmini okumalar yanlış, fazla faturalandırma, fatura hataları"
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings wrong, overcharging, billing errors"
     },
     "Water Bill Increases": {
-      "name": "Su Faturası Artışları",
-      "description": "Su faturaları hizmet kalitesi düşerken hızla artıyor"
+      "name": "Water Bill Increases",
+      "description": "Water bills rising sharply while service quality declines"
     },
     "Sewage in Rivers": {
-      "name": "Nehirlerde Kanalizasyon",
-      "description": "Su şirketleri arıtılmamış kanalizasyonu akarsu ve sahillere boşaltıyor"
+      "name": "Sewage in Rivers",
+      "description": "Water companies dumping raw sewage into waterways and beaches"
     },
     "Power Cuts": {
-      "name": "Elektrik Kesintileri",
-      "description": "Elektrik tedarik kesintileri, yavaş restorasyon, yetersiz tazminat"
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
     },
     "Smart Meter Problems": {
-      "name": "Akıllı Sayaç Sorunları",
-      "description": "Akıllı sayaçlar çalışmıyor, tedarikçi değiştirince işlevsellik kaybediliyor"
+      "name": "Smart Meter Problems",
+      "description": "Smart meters not working, losing functionality after switching supplier"
     },
     "Bank Branch Closures": {
-      "name": "Banka Şubesi Kapanışları",
-      "description": "Yerel banka şubeleri kapanıyor, topluluklar erişimsiz kalıyor"
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches closing, leaving communities without access"
     },
     "Hidden Bank Charges": {
-      "name": "Gizli Banka Ücretleri",
-      "description": "Kredili mevduat, yurt dışı işlemler ve hesap bakımı için beklenmeyen ücretler"
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees for overdrafts, foreign transactions, account maintenance"
     },
     "Fraud and Scam Losses": {
-      "name": "Dolandırıcılık ve Sahtekarlık Kayıpları",
-      "description": "Bankalar dolandırıcılık ve yetkili ödeme dolandırıcılığı mağdurlarına geri ödeme yapmayı reddediyor"
+      "name": "Fraud and Scam Losses",
+      "description": "Banks refusing to reimburse victims of fraud and authorised push payment scams"
     },
     "Insurance Claim Rejections": {
-      "name": "Sigorta Talebi Retleri",
-      "description": "Yıllarca prim ödedikten sonra teknik gerekçelerle talepler reddediliyor"
+      "name": "Insurance Claim Rejections",
+      "description": "Claims denied on technicalities after years of paying premiums"
     },
     "Mortgage Rate Shock": {
-      "name": "Mortgage Faiz Şoku",
-      "description": "Sabit faiz süresi bitiyor ve çok daha yüksek değişken faize geçiliyor"
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate ending and moving to much higher variable rate"
     },
     "Overseas Transfer Fees": {
-      "name": "Yurt Dışı Havale Ücretleri",
-      "description": "Uluslararası para transferlerinde aşırı ücretler ve kötü döviz kurları"
+      "name": "Overseas Transfer Fees",
+      "description": "Excessive fees and poor exchange rates for international money transfers"
     },
     "NHS Waiting Times": {
-      "name": "NHS Bekleme Süreleri",
-      "description": "Ameliyatlar ve uzman randevuları için aylarca veya yıllarca bekleme"
+      "name": "NHS Waiting Times",
+      "description": "Multi-month or multi-year waits for operations and specialist appointments"
     },
     "GP Appointment Access": {
-      "name": "Aile Hekimi Randevu Erişimi",
-      "description": "Aile hekimi randevusu almak için ulaşılamıyor, haftalarca bekleme"
+      "name": "GP Appointment Access",
+      "description": "Cannot get through to book GP appointments, weeks-long waits"
     },
     "Dentist Availability": {
-      "name": "Diş Hekimi Erişilebilirliği",
-      "description": "Yeni hasta kabul eden NHS diş hekimi bulmak imkansız"
+      "name": "Dentist Availability",
+      "description": "Impossible to find an NHS dentist accepting new patients"
     },
     "Mental Health Service Waits": {
-      "name": "Ruh Sağlığı Hizmeti Bekleme Süreleri",
-      "description": "Terapi ve ruh sağlığı desteği için aylarca bekleme"
+      "name": "Mental Health Service Waits",
+      "description": "Months-long waits for therapy and mental health support"
     },
     "Prescription Costs": {
-      "name": "Reçete Maliyetleri",
-      "description": "İngiltere'de ilaç başına maliyet çok yüksek, Birleşik Krallık ülkeleri arasında tutarsızlık"
+      "name": "Prescription Costs",
+      "description": "Cost per item too high in England, inconsistency across UK nations"
     },
     "Hospital Parking Charges": {
-      "name": "Hastane Otopark Ücretleri",
-      "description": "Hastayken veya hasta yakınlarını ziyaret ederken hastane otoparkı için ödeme yapma"
+      "name": "Hospital Parking Charges",
+      "description": "Paying to park at hospital while sick or visiting sick relatives"
     },
     "Rent Increases": {
-      "name": "Kira Artışları",
-      "description": "Özel kiralar enflasyonun çok üzerinde artıyor, haksız tahliye tehdidi"
+      "name": "Rent Increases",
+      "description": "Private rent rising far above inflation, no-fault eviction threat"
     },
     "Council Tax Rises": {
-      "name": "Belediye Vergisi Artışları",
-      "description": "Yerel hizmetler kötüleşirken yıllık belediye vergisi zamları"
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increases while local services get worse"
     },
     "Noisy Neighbours": {
-      "name": "Gürültücü Komşular",
-      "description": "Sürekli gürültü rahatsızlığı, belediyeler harekete geçmekte yavaş, ruh sağlığını etkiliyor"
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow to act, affecting mental health"
     },
     "Rubbish Collection Changes": {
-      "name": "Çöp Toplama Değişiklikleri",
-      "description": "Azaltılan çöp toplama, kafa karıştırıcı geri dönüşüm kuralları, taşan çöp kutuları"
+      "name": "Rubbish Collection Changes",
+      "description": "Reduced bin collections, confusing recycling rules, overflowing bins"
     },
     "Planning Permission Abuse": {
-      "name": "İmar İzni Suistimali",
-      "description": "İstenmeyen yapılaşmalar onaylanıyor, yeşil alan tehdit altında, topluluk göz ardı ediliyor"
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approved, green belt under threat, community ignored"
     },
     "Damp and Mould in Housing": {
-      "name": "Konutlarda Nem ve Küf",
-      "description": "Ev sahipleri ve konut birlikleri nem ve küfü gidermekte başarısız"
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords and housing associations failing to fix damp and mould"
     },
     "Delivery Problems": {
-      "name": "Teslimat Sorunları",
-      "description": "Paketler kayboluyor, yağmurda bırakılıyor, teslim edildi olarak işaretleniyor ama alınmıyor"
+      "name": "Delivery Problems",
+      "description": "Parcels lost, left in rain, marked delivered but not received"
     },
     "Shrinkflation": {
       "name": "Shrinkflation",
-      "description": "Ürünler küçülüyor, fiyatlar aynı kalıyor veya artıyor"
+      "description": "Products getting smaller while prices stay the same or increase"
     },
     "Refund Difficulties": {
-      "name": "İade Zorlukları",
-      "description": "Şirketler iade ve geri ödemeyi gereksiz yere zorlaştırıyor"
+      "name": "Refund Difficulties",
+      "description": "Companies making returns and refunds unnecessarily difficult"
     },
     "Fake Reviews": {
-      "name": "Sahte Yorumlar",
-      "description": "Çevrimiçi yorumlara güvenilemiyor, sahte olumlu yorumlar tüketicileri yanıltıyor"
+      "name": "Fake Reviews",
+      "description": "Cannot trust online reviews, fake positive reviews misleading consumers"
     },
     "Subscription Traps": {
-      "name": "Abonelik Tuzakları",
-      "description": "Ücretsiz denemeler açık onay olmadan ücretliye dönüşüyor, iptal etmek zor"
+      "name": "Subscription Traps",
+      "description": "Free trials converting to paid without clear consent, hard to cancel"
     },
     "Food Quality Decline": {
-      "name": "Gıda Kalitesinde Düşüş",
-      "description": "Hazır yemeklerde düşük kalite, küçülen porsiyonlar, daha fazla katkı maddesi"
+      "name": "Food Quality Decline",
+      "description": "Ready meals worse quality, smaller portions, more additives"
     },
     "Self-Checkout Frustration": {
-      "name": "Self-Servis Kasa Hayal Kırıklığı",
-      "description": "Self-servis makineler güvenilmez, insan personelin yerini alıyor"
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, replacing human staff"
     },
     "Cost of Childcare": {
-      "name": "Çocuk Bakımı Maliyeti",
-      "description": "Çocuk bakımı maliyetleri aşırı pahalı, çalışma kapasitesini sınırlıyor"
+      "name": "Cost of Childcare",
+      "description": "Childcare costs prohibitively expensive, limiting ability to work"
     },
     "Student Loan Repayment": {
-      "name": "Öğrenim Kredisi Geri Ödemesi",
-      "description": "Mezunlar onlarca yıl geri ödeme yapıyor, eşik ve faiz değişiklikleri"
+      "name": "Student Loan Repayment",
+      "description": "Graduates paying back for decades, threshold and interest changes"
     },
     "Dog Fouling": {
-      "name": "Köpek Pisliği",
-      "description": "Kamusal alanlarda, parklarda ve kaldırımlarda temizlenmeyen köpek pisliği"
+      "name": "Dog Fouling",
+      "description": "Dog mess in public spaces, parks, and pavements not cleaned up"
     },
     "AI Replacing Jobs": {
-      "name": "Yapay Zekanın İşleri Ele Geçirmesi",
-      "description": "Yapay zekanın geçiş desteği olmadan işleri otomatikleştirmesi konusunda endişe"
+      "name": "AI Replacing Jobs",
+      "description": "Anxiety about artificial intelligence automating jobs without transition support"
     }
   },
   "organisations": {
     "Avanti West Coast": {
       "name": "Avanti West Coast",
-      "description": "West Coast Ana Hattı'nda hizmet veren Birleşik Krallık demiryolu operatörü"
+      "description": "UK rail operator serving the West Coast Main Line"
     },
     "Southern / Thameslink": {
       "name": "Southern / Thameslink",
-      "description": "Londra ve güneye hizmet veren Birleşik Krallık demiryolu operatörü"
+      "description": "UK rail operator serving London and the south"
     },
     "Northern Trains": {
       "name": "Northern Trains",
-      "description": "İngiltere kuzeyine hizmet veren Birleşik Krallık demiryolu operatörü"
+      "description": "UK rail operator serving the north of England"
     },
     "CrossCountry": {
       "name": "CrossCountry",
-      "description": "Birleşik Krallık uzun mesafe demiryolu operatörü"
+      "description": "UK long-distance rail operator"
     },
     "TransPennine Express": {
       "name": "TransPennine Express",
-      "description": "Trans-Pennine güzergahlarında hizmet veren Birleşik Krallık demiryolu operatörü"
+      "description": "UK rail operator serving trans-Pennine routes"
     },
     "LNER": {
       "name": "LNER",
-      "description": "East Coast Ana Hattı'nda hizmet veren Birleşik Krallık demiryolu operatörü"
+      "description": "UK rail operator serving the East Coast Main Line"
     },
     "Ryanair": {
       "name": "Ryanair",
-      "description": "Düşük maliyetli Avrupa havayolu"
+      "description": "Low-cost European airline"
     },
     "EasyJet": {
       "name": "EasyJet",
-      "description": "Birleşik Krallık merkezli düşük maliyetli havayolu"
+      "description": "UK-based low-cost airline"
     },
     "British Airways": {
       "name": "British Airways",
-      "description": "Birleşik Krallık ulusal havayolu"
+      "description": "UK flag carrier airline"
     },
     "TUI": {
       "name": "TUI",
-      "description": "Tatil ve seyahat şirketi"
+      "description": "Holiday and travel company"
     },
     "BT / EE": {
       "name": "BT / EE",
-      "description": "Büyük Birleşik Krallık geniş bant ve mobil sağlayıcısı"
+      "description": "Major UK broadband and mobile provider"
     },
     "Virgin Media O2": {
       "name": "Virgin Media O2",
-      "description": "Birleşik Krallık geniş bant, TV ve mobil sağlayıcısı"
+      "description": "UK broadband, TV, and mobile provider"
     },
     "Sky": {
       "name": "Sky",
-      "description": "Birleşik Krallık TV, geniş bant ve mobil sağlayıcısı"
+      "description": "UK TV, broadband, and mobile provider"
     },
     "Vodafone": {
       "name": "Vodafone",
-      "description": "Birleşik Krallık merkezli küresel telekomünikasyon şirketi"
+      "description": "Global telecoms company headquartered in the UK"
     },
     "Three": {
       "name": "Three",
-      "description": "Birleşik Krallık mobil ağ operatörü"
+      "description": "UK mobile network operator"
     },
     "TalkTalk": {
       "name": "TalkTalk",
-      "description": "Birleşik Krallık geniş bant ve telefon sağlayıcısı"
+      "description": "UK broadband and phone provider"
     },
     "British Gas": {
       "name": "British Gas",
-      "description": "Birleşik Krallık enerji tedarikçisi"
+      "description": "UK energy supplier"
     },
     "OVO Energy": {
       "name": "OVO Energy",
-      "description": "Birleşik Krallık enerji tedarikçisi"
+      "description": "UK energy supplier"
     },
     "EDF": {
       "name": "EDF",
-      "description": "Birleşik Krallık enerji tedarikçisi (Fransız sermayeli)"
+      "description": "UK energy supplier (French-owned)"
     },
     "Octopus Energy": {
       "name": "Octopus Energy",
-      "description": "Birleşik Krallık yenilenebilir enerji tedarikçisi"
+      "description": "UK renewable energy supplier"
     },
     "Scottish Power": {
       "name": "Scottish Power",
-      "description": "Birleşik Krallık enerji tedarikçisi"
+      "description": "UK energy supplier"
     },
     "E.ON": {
       "name": "E.ON",
-      "description": "Birleşik Krallık enerji tedarikçisi (Alman sermayeli)"
+      "description": "UK energy supplier (German-owned)"
     },
     "Thames Water": {
       "name": "Thames Water",
-      "description": "Londra ve Thames Vadisi su ve kanalizasyon şirketi"
+      "description": "Water and sewerage company for London and the Thames Valley"
     },
     "Southern Water": {
       "name": "Southern Water",
-      "description": "İngiltere güneyinin su şirketi"
+      "description": "Water company for the south of England"
     },
     "United Utilities": {
       "name": "United Utilities",
-      "description": "İngiltere kuzeybatısının su şirketi"
+      "description": "Water company for the north west of England"
     },
     "Severn Trent": {
       "name": "Severn Trent",
-      "description": "Midlands bölgesinin su şirketi"
+      "description": "Water company for the Midlands"
     },
     "Anglian Water": {
       "name": "Anglian Water",
-      "description": "Doğu Anglia bölgesinin su şirketi"
+      "description": "Water company for East Anglia"
     },
     "Barclays": {
       "name": "Barclays",
-      "description": "İngiliz çok uluslu bankası"
+      "description": "British multinational bank"
     },
     "HSBC": {
       "name": "HSBC",
-      "description": "Küresel bankacılık ve finansal hizmetler"
+      "description": "Global banking and financial services"
     },
     "NatWest": {
       "name": "NatWest",
-      "description": "Birleşik Krallık perakende ve ticari bankası"
+      "description": "UK retail and commercial bank"
     },
     "Lloyds / Halifax": {
       "name": "Lloyds / Halifax",
-      "description": "Birleşik Krallık bankacılık grubu"
+      "description": "UK banking group"
     },
     "Santander": {
       "name": "Santander",
-      "description": "Birleşik Krallık bankası (İspanyol sermayeli)"
+      "description": "UK bank (Spanish-owned)"
     },
     "Revolut": {
       "name": "Revolut",
-      "description": "Dijital bankacılık ve fintek"
+      "description": "Digital banking and fintech"
     },
     "Aviva": {
       "name": "Aviva",
-      "description": "Birleşik Krallık sigorta ve finansal hizmetler"
+      "description": "UK insurance and financial services"
     },
     "Admiral": {
       "name": "Admiral",
-      "description": "Birleşik Krallık araç ve konut sigortası"
+      "description": "UK car and home insurance"
     },
     "Direct Line": {
       "name": "Direct Line",
-      "description": "Birleşik Krallık sigorta şirketi"
+      "description": "UK insurance company"
     },
     "Amazon": {
       "name": "Amazon",
-      "description": "Küresel e-ticaret ve teknoloji"
+      "description": "Global e-commerce and tech"
     },
     "Royal Mail": {
       "name": "Royal Mail",
-      "description": "Birleşik Krallık posta hizmeti"
+      "description": "UK postal service"
     },
     "Evri": {
       "name": "Evri",
-      "description": "Birleşik Krallık kargo teslimat hizmeti (eski adıyla Hermes)"
+      "description": "UK parcel delivery service (formerly Hermes)"
     },
     "DPD": {
       "name": "DPD",
-      "description": "Birleşik Krallık kargo teslimat hizmeti"
+      "description": "UK parcel delivery service"
     },
     "Tesco": {
       "name": "Tesco",
-      "description": "Birleşik Krallık süpermarket zinciri"
+      "description": "UK supermarket chain"
     },
     "Sainsburys": {
       "name": "Sainsburys",
-      "description": "Birleşik Krallık süpermarket zinciri"
+      "description": "UK supermarket chain"
     },
     "NHS England": {
       "name": "NHS England",
-      "description": "İngiltere Ulusal Sağlık Hizmeti"
+      "description": "National Health Service for England"
     },
     "NHS Dentistry": {
       "name": "NHS Dentistry",
-      "description": "NHS diş hekimliği hizmetleri"
+      "description": "NHS dental services"
     },
     "BUPA": {
       "name": "BUPA",
-      "description": "Özel sağlık hizmeti sağlayıcısı"
+      "description": "Private healthcare provider"
     },
     "Local Councils": {
       "name": "Local Councils",
-      "description": "Birleşik Krallık yerel yönetim birimleri"
+      "description": "UK local government authorities"
     },
     "Persimmon Homes": {
       "name": "Persimmon Homes",
-      "description": "Birleşik Krallık konut inşaatçısı"
+      "description": "UK housebuilder"
     },
     "OpenRent": {
       "name": "OpenRent",
-      "description": "Birleşik Krallık çevrimiçi kiralama platformu"
+      "description": "UK online lettings platform"
     },
     "Netflix": {
       "name": "Netflix",
-      "description": "Çevrimiçi yayın eğlence hizmeti"
+      "description": "Streaming entertainment service"
     },
     "Apple": {
       "name": "Apple",
-      "description": "Teknoloji şirketi"
+      "description": "Technology company"
     }
   },
   "synonyms": {
     "Train Cancellations": [
-      "tren iptal edildi",
-      "iptal edilen tren",
-      "tren iptali",
-      "trenler çalışmıyor",
-      "ray iptali",
-      "sefer iptal edildi",
-      "tren gecikmesi",
-      "geciken tren",
-      "trenler geç kalıyor",
-      "geç kalan tren",
-      "demiryolu gecikmeleri"
+      "train cancelled",
+      "cancelled train",
+      "train cancellation",
+      "trains not running",
+      "rail cancellation",
+      "service cancelled",
+      "train delays",
+      "delayed train",
+      "trains late",
+      "late train",
+      "rail delays"
     ],
-    "Train Ticket Prices": [
-      "demiryolu ücretleri",
-      "bilet maliyetleri",
-      "pahalı trenler",
-      "tren ücretleri"
-    ],
+    "Train Ticket Prices": ["rail fares", "ticket costs", "expensive trains", "train fares"],
     "Flight Delays": [
-      "uçuş gecikti",
-      "uçak gecikti",
-      "uçuş iptal edildi",
-      "havalimanı gecikmeleri",
-      "havalimanında kaldım",
-      "uçuş geç kaldı"
+      "flight delayed",
+      "plane delayed",
+      "flight cancelled",
+      "airport delays",
+      "stuck at airport",
+      "flight late"
     ],
     "Lost Luggage": [
-      "kayıp çantalar",
-      "kayıp valiz",
-      "valizler gelmedi",
-      "kayıp bavul",
-      "bagaj bantta yok",
-      "havayolu çantamı kaybetti"
+      "missing bags",
+      "lost suitcase",
+      "bags not arrived",
+      "missing suitcase",
+      "luggage not on carousel",
+      "bag lost by airline"
     ],
-    "Bus Route Cuts": ["otobüs kesintileri", "hat kesintileri", "otobüs hattı kapanması"],
+    "Bus Route Cuts": ["bus cuts", "route reductions", "bus service closures"],
     "Broadband Speed": [
-      "yavaş internet",
-      "yavaş wifi",
-      "wifi yavaş",
-      "internet hızı",
-      "internet çalışmıyor",
-      "ara belleğe alma",
-      "internet sürekli kopuyor",
-      "wifi kesiliyor"
+      "slow internet",
+      "slow wifi",
+      "wifi slow",
+      "internet speed",
+      "broadband not working",
+      "buffering",
+      "internet keeps dropping",
+      "wifi dropping out"
     ],
     "Mobile Signal Dead Zones": [
-      "sinyal yok",
-      "çekim yok",
-      "mobil kör nokta",
-      "sinyal ölü bölgesi"
+      "no signal",
+      "no reception",
+      "mobile blackspot",
+      "signal dead zone"
     ],
     "Price Rises Mid-Contract": [
-      "sözleşme ortasında fatura artışı",
-      "sözleşme fiyat artışı",
-      "sözleşme ortasında zam"
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
     ],
     "Customer Service Hold Times": [
-      "hatta bekleme",
-      "telefonda bekleme",
-      "ulaşamıyorum",
-      "kimse cevap vermiyor",
-      "telefon kuyruğu",
-      "çağrı merkezi"
+      "on hold",
+      "waiting on phone",
+      "cant get through",
+      "no one answering",
+      "phone queue",
+      "call centre"
     ],
     "Difficulty Cancelling Subscriptions": [
-      "iptal edemiyorum",
-      "iptal etmek zor",
-      "abonelik iptali",
-      "abonelikten çıkma"
+      "cant cancel",
+      "hard to cancel",
+      "cancel subscription",
+      "unsubscribe"
     ],
     "Energy Bill Costs": [
-      "gaz faturası çok yüksek",
-      "elektrik faturası",
-      "enerji fiyatları",
-      "ısınma maliyetleri",
-      "enerji yoksulluğu",
-      "enerji ödeyemiyorum"
+      "gas bill too high",
+      "electricity bill",
+      "energy prices",
+      "heating costs",
+      "fuel poverty",
+      "cant afford energy"
     ],
     "Inaccurate Energy Bills": [
-      "yanlış enerji faturası",
-      "tahmini okuma yanlış",
-      "enerji fazla faturalandırma"
+      "wrong energy bill",
+      "estimated reading wrong",
+      "overcharged energy"
     ],
-    "Water Bill Increases": ["su tarifeleri", "su ücreti", "su faturası çok yüksek"],
+    "Water Bill Increases": ["water rates", "water charge", "water bill too high"],
     "Sewage in Rivers": [
-      "kanalizasyon boşaltımı",
-      "arıtılmamış kanalizasyon",
-      "sahilde kanalizasyon",
-      "su kirliliği",
-      "kanalizasyon taşması",
-      "birleşik kanalizasyon taşması"
+      "sewage dumping",
+      "raw sewage",
+      "sewage on beach",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
     ],
     "Hidden Bank Charges": [
-      "beklenmeyen ücretler",
-      "gizli ücretler",
-      "sürpriz masraflar",
-      "kredili mevduat ücretleri",
-      "banka masrafları"
+      "unexpected fees",
+      "hidden fees",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
     ],
-    "Fraud and Scam Losses": [
-      "dolandırıldım",
-      "banka dolandırıcılığı",
-      "ödeme dolandırıcılığı",
-      "yetkili dolandırıcılık"
-    ],
-    "Bank Branch Closures": ["şube kapanışları", "yerel banka kapanıyor", "yakında banka yok"],
-    "Insurance Claim Rejections": ["talep reddedildi", "sigorta ödemiyor", "reddedilen talep"],
+    "Fraud and Scam Losses": ["scammed", "bank fraud", "push payment scam", "authorised fraud"],
+    "Bank Branch Closures": ["branch shutdowns", "local bank closing", "no bank nearby"],
+    "Insurance Claim Rejections": ["claim denied", "insurance wont pay", "rejected claim"],
     "NHS Waiting Times": [
-      "NHS bekleme",
-      "bekleme listesi",
-      "ameliyat bekleme",
-      "hastane bekleme süresi",
-      "sevk bekleme",
-      "ameliyat için bekleme"
+      "NHS wait",
+      "waiting list",
+      "operation wait",
+      "hospital waiting time",
+      "referral wait",
+      "waiting for surgery"
     ],
     "GP Appointment Access": [
-      "aile hekimi randevusu alamıyorum",
-      "doktor randevusu",
-      "aile hekimi telefon kuyruğu",
-      "doktora gidemiyor",
-      "sabah 8 telefon yarışı"
+      "cant get GP appointment",
+      "doctor appointment",
+      "GP phone queue",
+      "cant see a doctor",
+      "8am phone scramble"
     ],
-    "Dentist Availability": [
-      "NHS diş hekimi",
-      "diş hekimi bulamıyorum",
-      "diş hekimi bekleme listesi"
-    ],
+    "Dentist Availability": ["NHS dentist", "cant find dentist", "dentist waiting list"],
     "Mental Health Service Waits": [
-      "ruh sağlığı finansmanı",
-      "terapi erişimi",
-      "danışmanlık bekleme",
-      "çocuk ruh sağlığı bekleme"
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
     ],
-    "Prescription Costs": ["ilaç maliyetleri", "ilaç fiyatları", "eczane ücretleri"],
+    "Prescription Costs": ["medicine costs", "drug prices", "pharmacy charges"],
     "Delivery Problems": [
-      "paket kayboldu",
-      "paket teslim edilmedi",
-      "yağmurda bırakıldı",
-      "paket çalındı",
-      "kurye",
-      "kaçırılan teslimat"
+      "parcel lost",
+      "parcel not delivered",
+      "left in rain",
+      "package stolen",
+      "delivery driver",
+      "missed delivery"
     ],
     "Rent Increases": [
-      "kira çok yüksek",
-      "kira artıyor",
-      "ev sahibi kirayı artırıyor",
-      "haksız tahliye"
+      "rent too high",
+      "rent going up",
+      "landlord increasing rent",
+      "no fault eviction"
     ],
-    "Parking Fines": [
-      "park cezası",
-      "park ihlal bildirimi",
-      "otopark cezası",
-      "haksız park cezası"
-    ],
+    "Parking Fines": ["parking ticket", "parking charge notice", "PCN", "unfair parking fine"],
     "Shrinkflation": [
-      "küçülen porsiyonlar",
-      "aynı fiyata daha az",
-      "paket küçüldü",
-      "küçülen ürünler"
+      "smaller portions",
+      "less for same price",
+      "package smaller",
+      "shrinking products"
     ],
-    "Pothole Damage": ["çukurlar", "yol hasarı", "çukurdan araç hasarı"],
-    "Council Tax Rises": ["belediye vergisi artışı", "belediye vergisi çok yüksek", "yerel vergi"],
-    "Damp and Mould in Housing": ["küflü ev", "nemli daire", "siyah küf", "konut bakımsızlığı"],
-    "Student Loan Repayment": [
-      "öğrenim kredileri",
-      "okul harçları",
-      "eğitim borcu",
-      "öğrenci borcu"
-    ],
-    "AI Replacing Jobs": [
-      "iş otomasyonu",
-      "yapay zeka iş alıyor",
-      "robotlar işçilerin yerini alıyor"
-    ],
-    "Roaming Charges": [
-      "tatilde telefon faturası",
-      "yurt dışı veri ücretleri",
-      "yabancı telefon ücretleri"
-    ],
-    "Smart Meter Problems": ["akıllı sayaç bozuk", "sayaç çalışmıyor", "sayaç sinyal kaybetti"],
-    "Subscription Traps": [
-      "ücretsiz deneme tuzağı",
-      "otomatik yenileme",
-      "denemeden sonra ücretlendirme"
-    ],
-    "Fuel Prices": ["benzin fiyatları", "motorin fiyatları", "yakıt maliyeti", "benzin çok pahalı"],
-    "Power Cuts": [
-      "elektrik kesintisi",
-      "elektrik kesilmesi",
-      "karartma",
-      "elektrik yok",
-      "elektrik arızası"
-    ],
+    "Pothole Damage": ["potholes", "road damage", "pothole car damage"],
+    "Council Tax Rises": ["council tax increase", "council tax too high", "local tax"],
+    "Damp and Mould in Housing": ["mouldy house", "damp flat", "black mould", "housing disrepair"],
+    "Student Loan Repayment": ["student loans", "tuition fees", "education debt", "student debt"],
+    "AI Replacing Jobs": ["job automation", "AI taking jobs", "robots replacing workers"],
+    "Roaming Charges": ["holiday phone bill", "abroad data charges", "foreign phone charges"],
+    "Smart Meter Problems": ["smart meter broken", "meter not working", "meter lost signal"],
+    "Subscription Traps": ["free trial trap", "auto renewal", "charged after trial"],
+    "Fuel Prices": ["petrol prices", "diesel prices", "fuel cost", "petrol too expensive"],
+    "Power Cuts": ["power outage", "electricity cut", "blackout", "no power", "power failure"],
     "Mortgage Rate Shock": [
-      "mortgage artışı",
-      "mortgage faizi",
-      "yeniden mortgage",
-      "sabit faiz süresi bitiyor"
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
     ],
     "Overseas Transfer Fees": [
-      "transfer ücretleri",
-      "yurt dışına para gönderme",
-      "havale ücretleri",
-      "banka havalesi maliyeti"
+      "transfer fees",
+      "sending money abroad",
+      "remittance fees",
+      "wire transfer cost"
     ],
-    "Hospital Parking Charges": ["hastane otoparkı", "hastanede park etme", "NHS otoparkı"],
-    "Noisy Neighbours": [
-      "gürültü şikayeti",
-      "komşu gürültüsü",
-      "gürültücü komşular",
-      "gürültü rahatsızlığı"
-    ],
+    "Hospital Parking Charges": ["hospital parking", "parking at hospital", "NHS parking"],
+    "Noisy Neighbours": ["noise complaint", "neighbour noise", "loud neighbours", "noise nuisance"],
     "Rubbish Collection Changes": [
-      "çöp toplama",
-      "çöp toplanmadı",
-      "geri dönüşüm karmaşası",
-      "kaçırılan çöp toplama"
+      "bin collection",
+      "bins not collected",
+      "recycling confusion",
+      "missed bin collection"
     ],
     "Planning Permission Abuse": [
-      "imar izni",
-      "istenmeyen yapılaşma",
-      "yeşil kuşak",
-      "inşaat izni"
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
     ],
-    "Refund Difficulties": [
-      "iade alamıyorum",
-      "iade reddedildi",
-      "iade kabul edilmedi",
-      "paramı geri istiyorum"
-    ],
-    "Fake Reviews": [
-      "yorum manipülasyonu",
-      "paralı yorumlar",
-      "sahte güvenilir site yorumu",
-      "sahte yorum"
-    ],
+    "Refund Difficulties": ["cant get refund", "refund refused", "return rejected", "money back"],
+    "Fake Reviews": ["review manipulation", "paid reviews", "trust pilot fake", "fake review"],
     "Food Quality Decline": [
-      "gıda kalitesi",
-      "hazır yemek kötüleşti",
-      "gıda katkı maddeleri",
-      "porsiyon küçüldü"
+      "food quality",
+      "ready meal worse",
+      "food additives",
+      "portion smaller"
     ],
     "Self-Checkout Frustration": [
-      "self servis kasa",
-      "otomatik kasa",
-      "personelli kasa yok",
-      "makine çalışmıyor"
+      "self checkout",
+      "self service",
+      "no staff tills",
+      "machine not working"
     ],
-    "Cost of Childcare": [
-      "çocuk bakımı maliyeti",
-      "kreş ücretleri",
-      "çocuk bakımı pahalı",
-      "yuva maliyeti"
-    ],
-    "Dog Fouling": ["köpek pisliği", "köpek kakası", "köpek atığı", "kirletme"]
+    "Cost of Childcare": ["childcare cost", "nursery fees", "childcare expensive", "daycare cost"],
+    "Dog Fouling": ["dog mess", "dog poo", "dog waste", "fouling"]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Bir keresinde bir Quiet Riot katılımcısına tek bir gecikmeli yolculukta 6 iade talebi dosyalamada yardım ettim. Birmingham'a varmadan £47 kazandılar.",
+      "agent_bio": "İptal kalıplarını takip eder, iade evraklarını işler, önerilen her eylemi inceler ve düzenleyici başvurular için kanıt derler. Katılımcılar önemli şeylere odaklanabilsin diye rakamları analiz eder.",
+      "human_quote": "En sevdiğim Quiet Riot anım: 400'ümüz aynı anda tweet atınca Avanti'nin sosyal medya ekibinin paniğe kapılmasını izlemek.",
+      "human_bio": "Manchester'dan yeterince olduğuna karar vermeden önce Avanti hattında 3 yıl geçirmiş düzenli yolcu. Aynı güzergahlardaki katılımcıları birbirine bağlamaya yardım eder, işe yarayanı paylaşır ve insan dokunuşunu getirir.",
+      "goal": "Quiet Riot katılımcılarının İngiltere ulaşım şirketlerini iptaller, gecikmeler ve fiyatlandırma konusunda hesap vermesini sağlamalarına yardım etmek — ve herkesin haklarını bilmesini sağlamak.",
+      "focus": "Avanti West Coast iptal kalıpları",
+      "focus_detail": "ORR'ye sunmak üzere zamanlar, güzergahlar ve nedenlerle bir iptal veritabanı oluşturuyoruz. Şu anda katılımcıların bu ay bildirdiği 340 iptali takip ediyoruz."
+    },
+    "telecoms": {
+      "agent_quote": "200 katılımcı için hız testi yaptım. Ortalama 18 Mbps idi. 65 için ödeme yapıyorlardı.",
+      "agent_bio": "Geniş bant hızlarını analiz eder, sağlayıcı karşılaştırma verilerini derler ve katılımcıların Ofcom için kanıt oluşturmasına yardım eder. Bağlantınız yavaşsa, Pulse kanıtlayacak.",
+      "human_quote": "Bütün bir sokak birlikte geniş bant değiştirdi. Eski sağlayıcı her eve 'lütfen geri dönün' mektupları gönderdi.",
+      "human_bio": "Hiç gerçekleşmeyen geniş bant hızları için para ödemekten bıkan teknoloji meraklısı Londralı. Katılımcılara sağlayıcıları karşılaştırmada, geçişleri koordine etmede ve hız testi kanıtlarını paylaşmada yardım eder.",
+      "goal": "Katılımcıların ödedikleri geniş bant ve mobil hizmeti almalarına yardım etmek — ve alamadıklarında ne yapacaklarını bilmek.",
+      "focus": "Sözleşme ortası fiyat artışları",
+      "focus_detail": "Ofcom'a sunmak üzere CPI+ artışlarından etkilenen katılımcılardan kanıt topluyoruz. 4 sağlayıcıda 890 katılımcı etkilendi."
+    },
+    "energy": {
+      "agent_quote": "Bir katılımcıya tahmini faturalarda £340 fazla ödediğini hesaplamasında yardım ettim. Enerji şirketinin özür e-postası orijinal sözleşmeden daha uzundu.",
+      "agent_bio": "Faturalama kalıplarını analiz eder, fazla tahsilatları tespit eder ve düzenleyici başvurular için kanıt derler. Enerji şirketiniz sizi kandırıyorsa, Spark makbuzları bulacak.",
+      "human_quote": "Bir katılımcı 2 yıllık fazla tahsilatı kanıtladıktan sonra £340'ı geri aldı. Telefonda ağladı.",
+      "human_bio": "Bristol merkezli. Katılımcılara faturalarını sorgulamada, geçiş yapmada ve Ofgem için kanıt toplamada yardım eder. Enerji piyasasını içinden ve dışından bilir.",
+      "goal": "Katılımcıların haksız faturaları sorgulamasına, daha akıllı geçiş yapmasına ve enerji şirketlerinin adil oynamasını sağlamasına yardım etmek.",
+      "focus": "British Gas tahmini faturalama hataları",
+      "focus_detail": "Ofgem başvurusu için sistematik fazla tahsilat kalıplarını belirlemek amacıyla 340 katılımcıdan 2 yıllık faturalama verilerini analiz ediyoruz."
+    },
+    "water": {
+      "agent_quote": "Bir hafta sonunda 200 katılımcıya kanalizasyon raporu dosyalamada yardım ettim. Thames Water'ın gelen kutusunun kendi gelen kutusuna ihtiyacı vardı.",
+      "agent_bio": "Kanalizasyon deşarj verilerini izler, su şirketlerinin performansını takip eder ve EA ve Ofwat için kanıt derler. Her çıkış ve taşmayı takip eder.",
+      "human_quote": "Kanalizasyon verilerinin yanlış olduğunu göstererek bir plajı 3 hafta erken yeniden açtırdık.",
+      "human_bio": "Cornwall'dan sörfçü, yerel plajını kapatan kanalizasyon uyarılarından bıkmış. Katılımcılara deşarjları bildirmede, su kalitesi kanıtları toplamada ve EA ile koordine olmada yardım eder.",
+      "goal": "Katılımcıların su şirketlerini kanalizasyon, faturalar ve hizmet kalitesi konusunda hesap vermesini sağlamasına yardım etmek.",
+      "focus": "Thames Water kanalizasyon deşarj sıklığı",
+      "focus_detail": "Deşarj olaylarını şirketin bildirdiği verilere karşı haritalıyoruz. 200 katılımcı raporu 3 çıkışta eksik bildirim olduğunu gösteriyor."
+    },
+    "banking": {
+      "agent_quote": "Öyle kapsamlı bir şikayet hazırlamaya yardım ettim ki banka daha gönderilmeden özür dilemek için aradı.",
+      "agent_bio": "Banka ücretlerini inceler, ücret yapılarını analiz eder ve FCA şikayet kanıtı oluşturmaya yardım eder. Gizli bir ücret varsa, Chip bulacak.",
+      "human_quote": "1.200'ümüz danışmaya gelince Barclays şube kapatmayı geri aldı.",
+      "human_bio": "Birmingham'dan şikayetlerin gerçekte nasıl ele alındığını içeriden gören eski banka çalışanı. Katılımcılara daha iyi şikayetler yazmada ve sistemi yönlendirmede yardım eder.",
+      "goal": "Katılımcıların haksız ücretler, şube kapanışları ve bankalardan kötü hizmetle başa çıkmasına yardım etmek.",
+      "focus": "HSBC şube kapanış dalgası",
+      "focus_detail": "Planlanan 12 kapanışa yanıtları koordine ediyoruz. Etkilenen topluluklardan etki beyanları topluyoruz."
+    },
+    "health": {
+      "agent_quote": "Hasta kabul eden 3 NHS diş hekimi bulmaya yardım ettim. Katılımcı uydurduğumu sandı.",
+      "agent_bio": "Bekleme sürelerini takip eder, müsaitlik bulur ve katılımcıların sistemi yönlendirmesine yardım eder. Tedaviye daha hızlı bir yol varsa, Cura haritasını çıkaracak.",
+      "human_quote": "Bir katılımcı mektup şablonumuzu kullanarak bir sevki hızlandırdı. 18 ay 6 haftaya düştü.",
+      "human_bio": "Liverpool'dan hemşire, NHS'nin her iki tarafını da görmüş. Katılımcılara bekleme listelerini yönlendirmede, etkili mektuplar yazmada ve gerçekten fark yaratanı paylaşmada yardım eder.",
+      "goal": "Katılımcıların NHS bekleme sürelerini yönlendirmesine, müsaitlik bulmasına ve hangi seçeneklere sahip olduklarını bilmesine yardım etmek.",
+      "focus": "Aile hekimi telefon erişim süreleri",
+      "focus_detail": "Gerçek dünyadaki erişimin resmini oluşturmak için 500 katılımcıdan arama verisi topluyoruz. Bulguları yerel sağlık kurullarına yayınlıyoruz."
+    },
+    "housing": {
+      "agent_quote": "Yeni bir binada 47 kusuru belgelemede yardım ettim. Geliştirici yapı müfettişi mi olduklarını sordu.",
+      "agent_bio": "Mülk sorunlarını belgeler, ev sahibi yanıt sürelerini analiz eder ve konut ombudsmanı başvuruları için kanıt derler. Her nem lekesi, her çatlak, kayıt altında.",
+      "human_quote": "Nem kanıt paketimiz o kadar detaylıydı ki ev sahibi belediye denetiminden önce düzeltti.",
+      "human_bio": "Londra'dan kiracı, nemden şüpheli ev sahiplerine kadar her şeyle uğraşmış. Katılımcılara sorunları doğru şekilde belgelemede ve seçeneklerini bilmede yardım eder.",
+      "goal": "Katılımcıların ev sahipleri, belediyeler ve konut sorunlarıyla başa çıkmasına yardım etmek — ve haklarını bilmek.",
+      "focus": "Madde 21 kusursuz tahliye bildirimleri",
+      "focus_detail": "Kusursuz tahliyeden etkilenen katılımcıların yeni Kiracı Reform Yasası'nı ve bunun kendileri için ne anlama geldiğini anlamalarına yardım ediyoruz."
+    },
+    "shopping": {
+      "agent_quote": "'Teslim edildi' yazılan bir paketi 4 komşu, bir geri dönüşüm kutusu ve bir sera boyunca takip ettim. Buldum.",
+      "agent_bio": "Teslimat başarısızlıklarını takip eder, iade kanıtı derler ve fiyat kalıplarını tespit eder. Paketiniz kayıpsa, Scout zaten arıyor.",
+      "human_quote": "Evri paketimi 3 kez kaybetti. Şimdi başkalarının iadelerini benim hiç alamadığım kadar hızlı almasına yardım ediyorum.",
+      "human_bio": "Edinburgh'dan sayamayacağından çok paketi kaybolan online alışveriş gazisi. Katılımcılara iade almada, satıcıları bildirmede ve en kötü suçluları önlemede yardım eder.",
+      "goal": "Katılımcıların iade almasına, kayıp paketleri takip etmesine ve perakendeciler ile teslimat şirketlerini hesap vermesini sağlamasına yardım etmek.",
+      "focus": "Evri teslimat başarısızlık oranları",
+      "focus_detail": "Citizens Advice ve Trading Standards'a sunmak üzere 800 katılımcıdan teslimat başarısızlık kanıtı derliyoruz."
+    },
+    "local": {
+      "agent_quote": "Aynı çukuru 11 farklı hava koşulunda fotoğraflamaya yardım ettim. Belediye sonunda pes etti.",
+      "agent_bio": "Yerel sorunları haritalar, belediye yanıt sürelerini takip eder ve FOI talepleri derler. Çukurunuz 6 aydır oradaysa, Link'te kanıtlar var.",
+      "human_quote": "Her bir çukuru fotoğraflarla haritaladıktan sonra belediye yolumuzu onardı. 11 ay, ama başardık.",
+      "human_bio": "Vadilerden toplum bilincine sahip Gallerli, yıllardır aynı çukurları bildiriyor. Katılımcılara yerel sorunları belgelemede ve belediyeleri hesap vermesini sağlamada yardım eder.",
+      "goal": "Katılımcıların yerel sorunları çözmesine yardım etmek — çukurlar, çöp kutuları, planlama, gürültü — ve belediyeleri hesap vermesini sağlamak.",
+      "focus": "Çukur bildirimi yanıt süreleri",
+      "focus_detail": "Bildirilen ve gerçek onarım sürelerini karşılaştırmak için 30 belediyeye FOI talepleri gönderildi. Sonuçları lig tablosu olarak yayınlıyoruz."
+    },
+    "other": {
+      "agent_quote": "3 arama, 2 e-posta ve bir taahhütlü posta gerektiren bir spor salonu üyeliğini iptal etmeye yardım ettim. Spor salonunda artık bir iptal düğmesi var.",
+      "agent_bio": "Başka bir yere tam oturmayan sorunları ele alır. Abonelik tuzakları, plastik atık, self-checkout hayal kırıklıkları — Flex kalıpları ve baskı noktalarını bulur.",
+      "human_quote": "Bir spor salonu zincirine web sitelerine iptal düğmesi ekletirdik. Sadece 800 şikayet yetti.",
+      "human_bio": "Şirketlerin ayrılmayı ne kadar zorlaştırdığından bıkan Londra'dan ürün tasarımcısı. Katılımcılara abonelikleri iptal etmede, karanlık kalıplardan kaçınmada ve çözümler paylaşmada yardım eder.",
+      "goal": "Katılımcılara başka bir yere tam oturmayan şeylerle yardım etmek — abonelikler, iadeler ve günlük hayal kırıklıkları.",
+      "focus": "Abonelik iptali karanlık kalıpları",
+      "focus_detail": "En kötü suçluları belgelemek ve her biri için şablon iptal senaryoları oluşturmak."
+    },
+    "insurance": {
+      "agent_quote": "Bir katılımcının reddedilen ev sigortası talebini £4,200'lük bir ödemeye çeviren maddeyi bulmasına yardım ettim. Sigortacının kendi poliçesi onların haksız olduğunu kanıtladı.",
+      "agent_bio": "Poliçe ifadelerini inceler, haksız ret kalıplarını tespit eder ve Financial Ombudsman başvuruları için kanıt oluşturur. Sigortacınız geçerli bir talebi savuşturuyorsa, Shield kaldıracı bulacak.",
+      "human_quote": "Aynı türde reddedilen talebi olan 8 katılımcıyı birlikte başvurmaya ikna ettim. Sigortacı 8'ini de iki hafta içinde çözdü.",
+      "human_bio": "Leeds'ten taleplerin gerçekte nasıl karara bağlandığını bilen eski sigorta sektörü çalışanı. Katılımcılara daha iyi itirazlar yazmada, poliçe jargonunu anlamada ve ne zaman yükseltme yapılacağını bilmede yardım eder.",
+      "goal": "Katılımcıların sigortacılardan adil muamele görmesine yardım etmek — ve bir talep haksız yere reddedildiğinde ne yapılacağını bilmek.",
+      "focus": "Aviva ev sigortası ret kalıpları",
+      "focus_detail": "Reddedilen taleplerin %40'ında 'aşınma ve yıpranma' belirtilmiş — genellikle yanlış. FOS kanıt paketi için 3 sigortacıda 200 vakayı analiz ediyoruz."
+    },
+    "delivery": {
+      "agent_quote": "'Teslim edildi' yazılan bir paketi 6 farklı takip durumu, 3 depo ve komşunun kulübesi boyunca takip ettim. 47 dakikada buldum.",
+      "agent_bio": "Kurye performansını izler, teslimat başarısızlık oranlarını takip eder ve tüketici şikayetleri için kanıt derler. Paketiniz kaybolmuşsa, Track zaten üzerinde.",
+      "human_quote": "40 katılımcı yağmurda bırakılan paketlerin kanıtlarını sunduktan sonra DPD'nin bölgemizdeki fotoğraf kanıtı politikasını değiştirttim.",
+      "human_bio": "Glasgow'dan 'güvenli bir yere bıraktık' mazeretinden bıkan online alışverişçi. Katılımcılara iade almada, kuryeleri bildirmede ve en kötü suçluları önlemede yardım eder.",
+      "goal": "Katılımcıların paketlerinin düzgün teslim edilmesine yardım etmek — ve edilmediğinde iade almak.",
+      "focus": "Evri teslimat başarısızlık oranları",
+      "focus_detail": "800 katılımcıdan teslimat başarısızlık kanıtı derliyoruz. Evri şikayet oranı: %23 — DPD'nin 3 katı. Trading Standards için lig tablosu oluşturuyoruz."
+    },
+    "education": {
+      "agent_quote": "£30k kazanan bir Plan 2 borçlusunun kredi silinmeden önce £47,000 faiz ödeyeceğini hesapladım. Orijinal kredi £40,000 idi.",
+      "agent_bio": "Eğitim maliyetlerini, öğrenci kredisi projeksiyonlarını ve finansman haklarını analiz eder. Öğrenciler ve mezunların bilinçli kararlar alabilmesi için rakamları analiz eder.",
+      "human_quote": "12 katılımcının bilmedikleri fazla ödenmiş öğrenci kredisi geri ödemelerini talep etmesine yardım ettim. Ortalama iade: £340.",
+      "human_bio": "Birmingham'dan finansman sistemini iki kez yönlendirmiş olgun öğrenci. Katılımcılara geri ödemeleri anlamada, fazla ödemeleri tespit etmede ve eşik değişikliklerini sorgulamada yardım eder.",
+      "goal": "Öğrencilerin ve mezunların eğitim maliyetlerini, kredileri ve geri ödemeleri yönlendirmesine yardım etmek — ve fazla ödemediklerinden emin olmak.",
+      "focus": "Öğrenci kredisi fazla ödeme iadeleri",
+      "focus_detail": "Geri ödeme eşiğinin altında ücret alınan mezunları belirliyoruz. Şimdiye kadar 12 iade işlendi — ortalama £340."
+    },
+    "environment": {
+      "agent_quote": "3 yıllık hava kalitesi verilerini hastane yatış oranlarıyla çapraz referans yaptım. Korelasyon o kadar netti ki belediye görmezden gelemedi.",
+      "agent_bio": "Çevresel verileri takip eder, kirlilik seviyelerini izler ve düzenleyici başvurular için kanıt derler. Rakamlar bir hikaye anlatıyorsa, Fern bulacak.",
+      "human_quote": "200 katılımcı kanıt dilekçemizi imzaladıktan sonra yerel belediyeye hava kalitesi monitörleri taktırdık. Veriler her şeyi değiştirdi.",
+      "human_bio": "Bristol'dan kanıta dayalı değişime inanan çevre bilimi mezunu. Katılımcılara çevre sorunlarını belgelemede ve düzenleyicilerin görmezden gelemeyeceği davalar oluşturmada yardım eder.",
+      "goal": "Katılımcıların çevre sorunlarını belgelemesine ve verilerle kirleticileri ve politika yapıcıları hesap vermesini sağlamasına yardım etmek.",
+      "focus": "Yerel hava kalitesi izleme boşlukları",
+      "focus_detail": "5 km içinde hava kalitesi izlemesi olmayan alanları haritalıyoruz. Katılımcıların bildirdiği kirlilik noktalarının %60'ında resmi izleme yok."
+    },
+    "employment": {
+      "agent_quote": "300 katılımcıdan işyeri AI uygulama verileri derledim. %40'ı değişikliklerin hiçbir danışma olmadan gerçekleştiğini söyledi. Bu bir kalıp, bir anekdot değil.",
+      "agent_bio": "İşyeri trendlerini analiz eder, politika değişikliklerini takip eder ve katılımcıların korunma haklarını anlamalarına yardım eder. İşiniz danışma olmadan değişiyorsa, Forge'da veriler var.",
+      "human_quote": "AI değişiklikleriyle karşı karşıya olan aynı sektördeki 30 katılımcıyı birbirine bağladım. Şirketlerinin hepsinin aynı oyun planını — ve aynı boşlukları kullandığı ortaya çıktı.",
+      "human_bio": "Manchester'dan yeniden yapılandırmaların gerçekte nasıl işlediğini gördükten sonra taraf değiştiren İK uzmanı. Katılımcılara seçeneklerini anlamada ve yanıtları koordine etmede yardım eder.",
+      "goal": "Katılımcıların işyeri değişikliklerini yönlendirmesine, korunma haklarını anlamasına ve işler risk altındayken toplu olarak yanıt vermesine yardım etmek.",
+      "focus": "Danışma olmadan AI işyeri otomasyonu",
+      "focus_detail": "AI araçlarının personel danışması olmadan tanıtıldığı vakaları belgeliyoruz. İşveren yükümlülükleri hakkında bir rapor için kanıt oluşturuyoruz."
+    },
+    "tech": {
+      "agent_quote": "3 büyük uygulamanın izinler 'asla' olarak ayarlanmışken bile konum verisi topladığını tespit ettim. Hepsi için ICO'ya şikayet dosyaladım.",
+      "agent_bio": "Platform politikalarını izler, karanlık kalıpları takip eder ve katılımcıların teknoloji şirketlerinin verileriyle ne yaptığını anlamasına yardım eder. Bir uygulama uygunsuz davranıyorsa, Glitch yakalayacak.",
+      "human_quote": "Bir sosyal medya şirketine toplu veri erişim talebi organize ettim. 500 kişi aynı anda sorduğunda, ciddiye almak zorundalar.",
+      "human_bio": "Edinburgh'dan teknoloji şirketlerinin söz verdikleri ile sundukları arasındaki farktan bıkan yazılım geliştirici. Katılımcılara veri haklarını kullanmada ve karanlık kalıpları tespit etmede yardım eder.",
+      "goal": "Katılımcıların karanlık kalıplara, veri kötüye kullanımına ve haksız teknoloji uygulamalarına karşı durmasına yardım etmek.",
+      "focus": "Uygulama izin aşımı",
+      "focus_detail": "En popüler 50 uygulamayı izin genişlemesi için denetliyoruz — ihtiyaç duymadıkları erişim talep etme. ICO için bir rapor oluşturuyoruz."
+    }
   }
 }
