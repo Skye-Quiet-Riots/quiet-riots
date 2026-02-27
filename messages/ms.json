@@ -98,13 +98,13 @@
     "raised": "dikomitkan",
     "backers": "{count, plural, one {penyokong} other {penyokong}}",
     "platformFee": "yuran perkhidmatan",
-    "wantToContribute": "Mahu menyokong projek ini?",
     "topUpFirst": "Isi dompet anda dahulu untuk bermula.",
     "createAccountPrompt": "Buat akaun dan isi dompet anda untuk menugaskan perkhidmatan ini.",
     "goToWallet": "Ke dompet",
     "createAccount": "Buat akaun",
     "completedMessage": "Projek ini telah {status}. Terima kasih kepada semua {count} penyokong!",
-    "recipient": "Penyedia Perkhidmatan"
+    "recipient": "Penyedia Perkhidmatan",
+    "wantToSupport": "Mahu menyokong projek ini?"
   },
   "Assistants": {
     "title": "Pembantu",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Kuasakan Tindakan Kolektif",
     "createPromptDesc": "Buat akaun percuma untuk mengisi dompet anda dan menugaskan perkhidmatan untuk projek tindakan.",
     "createAccount": "Buat akaun",
-    "activeCampaigns": "Projek Aktif",
-    "viewAll": "Lihat semua"
+    "viewAll": "Lihat semua",
+    "activeProjects": "Projek Aktif"
   },
   "Profile": {
     "title": "Profil Anda",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Baki Anda",
     "loaded": "diisi",
-    "contributed": "dibelanjakan",
-    "campaigns": "{count, plural, one {projek} other {projek}}"
+    "spent": "dibelanjakan",
+    "projects": "{count, plural, one {projek} other {projek}}"
   },
   "Transactions": {
     "title": "Transaksi Terkini",
     "topUp": "Isi semula",
-    "contribution": "Bayaran projek",
     "refund": "Bayaran balik",
     "justNow": "baru sahaja",
     "minutesAgo": "{count} minit lalu",
     "hoursAgo": "{count} jam lalu",
     "daysAgo": "{count} hari lalu",
-    "empty": "Belum ada transaksi. Isi dompet anda untuk bermula!"
+    "empty": "Belum ada transaksi. Isi dompet anda untuk bermula!",
+    "payment": "Bayaran projek"
   },
   "Activity": {
     "noActivity": "Belum ada aktiviti.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Dana tidak mencukupi. Isi dompet anda dahulu.",
-    "minContribution": "Bayaran minimum ialah 10p",
-    "contribute": "Sokong Projek Ini",
     "yourBalance": "Baki anda: ",
     "networkError": "Ralat rangkaian. Sila cuba lagi.",
     "invalidAmount": "Masukkan jumlah yang sah",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "untuk terus menyokong projek tindakan.",
     "walletEmpty": "Dompet anda kosong.",
     "topUp": "Isi semula",
-    "toContribute": "untuk menyokong projek."
+    "minPayment": "Bayaran minimum ialah 10p",
+    "supportProject": "Sokong Projek Ini",
+    "toSupport": "untuk menyokong projek."
   },
   "Claim": {
     "success": "Terima kasih! Kami telah mencatat minat anda terhadap peranan {name}. Kami akan menghubungi anda.",

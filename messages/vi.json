@@ -98,13 +98,13 @@
     "raised": "đã cam kết",
     "backers": "{count, plural, one {người ủng hộ} other {người ủng hộ}}",
     "platformFee": "phí dịch vụ",
-    "wantToContribute": "Bạn muốn ủng hộ dự án này?",
     "topUpFirst": "Nạp tiền vào ví trước để bắt đầu.",
     "createAccountPrompt": "Tạo tài khoản và nạp tiền vào ví để đặt dịch vụ này.",
     "goToWallet": "Đi đến ví",
     "createAccount": "Tạo tài khoản",
     "completedMessage": "Dự án này đã {status}. Cảm ơn tất cả {count} người ủng hộ!",
-    "recipient": "Nhà cung cấp dịch vụ"
+    "recipient": "Nhà cung cấp dịch vụ",
+    "wantToSupport": "Bạn muốn ủng hộ dự án này?"
   },
   "Assistants": {
     "title": "Trợ lý",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Thúc đẩy hành động tập thể",
     "createPromptDesc": "Tạo tài khoản miễn phí để nạp tiền vào ví và đặt dịch vụ cho các dự án hành động.",
     "createAccount": "Tạo tài khoản",
-    "activeCampaigns": "Dự án đang hoạt động",
-    "viewAll": "Xem tất cả"
+    "viewAll": "Xem tất cả",
+    "activeProjects": "Dự án đang hoạt động"
   },
   "Profile": {
     "title": "Hồ sơ của bạn",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Số dư của bạn",
     "loaded": "đã nạp",
-    "contributed": "đã chi",
-    "campaigns": "{count, plural, one {dự án} other {dự án}}"
+    "spent": "đã chi",
+    "projects": "{count, plural, one {dự án} other {dự án}}"
   },
   "Transactions": {
     "title": "Giao dịch gần đây",
     "topUp": "Nạp tiền",
-    "contribution": "Thanh toán dự án",
     "refund": "Hoàn tiền",
     "justNow": "vừa xong",
     "minutesAgo": "{count} phút trước",
     "hoursAgo": "{count} giờ trước",
     "daysAgo": "{count} ngày trước",
-    "empty": "Chưa có giao dịch nào. Nạp tiền vào ví để bắt đầu!"
+    "empty": "Chưa có giao dịch nào. Nạp tiền vào ví để bắt đầu!",
+    "payment": "Thanh toán dự án"
   },
   "Activity": {
     "noActivity": "Chưa có hoạt động nào.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Không đủ tiền. Nạp thêm vào ví trước.",
-    "minContribution": "Thanh toán tối thiểu là 10p",
-    "contribute": "Ủng hộ dự án này",
     "yourBalance": "Số dư của bạn: ",
     "networkError": "Lỗi mạng. Vui lòng thử lại.",
     "invalidAmount": "Nhập số tiền hợp lệ",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "để tiếp tục ủng hộ các dự án hành động.",
     "walletEmpty": "Ví của bạn đã hết tiền.",
     "topUp": "Nạp tiền",
-    "toContribute": "để ủng hộ dự án."
+    "minPayment": "Thanh toán tối thiểu là 10p",
+    "supportProject": "Ủng hộ dự án này",
+    "toSupport": "để ủng hộ dự án."
   },
   "Claim": {
     "success": "Cảm ơn! Chúng tôi đã ghi nhận sự quan tâm của bạn với vai trò {name}. Chúng tôi sẽ liên hệ.",

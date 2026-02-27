@@ -98,13 +98,13 @@
     "raised": "comprometido",
     "backers": "{count, plural, one {colaborador} other {colaboradores}}",
     "platformFee": "tarifa de servizo",
-    "wantToContribute": "Queres apoiar este proxecto?",
     "topUpFirst": "Recarga a túa carteira primeiro para comezar.",
     "createAccountPrompt": "Crea unha conta e carga a túa carteira para contratar este servizo.",
     "goToWallet": "Ir á carteira",
     "createAccount": "Crear conta",
     "completedMessage": "Este proxecto foi {status}. Grazas a todos os {count} colaboradores!",
-    "recipient": "Provedor de servizos"
+    "recipient": "Provedor de servizos",
+    "wantToSupport": "Queres apoiar este proxecto?"
   },
   "Assistants": {
     "title": "Asistentes",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Impulsa a acción colectiva",
     "createPromptDesc": "Crea unha conta gratuíta para cargar a túa carteira e contratar servizos para proxectos de acción.",
     "createAccount": "Crear conta",
-    "activeCampaigns": "Proxectos activos",
-    "viewAll": "Ver todas"
+    "viewAll": "Ver todas",
+    "activeProjects": "Proxectos activos"
   },
   "Profile": {
     "title": "O teu perfil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "O teu saldo",
     "loaded": "cargado",
-    "contributed": "gastado",
-    "campaigns": "{count, plural, one {proxecto} other {proxectos}}"
+    "spent": "gastado",
+    "projects": "{count, plural, one {proxecto} other {proxectos}}"
   },
   "Transactions": {
     "title": "Transaccións recentes",
     "topUp": "Recarga",
-    "contribution": "Pago de proxecto",
     "refund": "Reembolso",
     "justNow": "agora mesmo",
     "minutesAgo": "hai {count}m",
     "hoursAgo": "hai {count}h",
     "daysAgo": "hai {count}d",
-    "empty": "Aínda non hai transaccións. Recarga a túa carteira para comezar!"
+    "empty": "Aínda non hai transaccións. Recarga a túa carteira para comezar!",
+    "payment": "Pago de proxecto"
   },
   "Activity": {
     "noActivity": "Aínda non hai actividade.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Fondos insuficientes. Recarga a túa carteira primeiro.",
-    "minContribution": "O pago mínimo é de 10p",
-    "contribute": "Apoiar este proxecto",
     "yourBalance": "O teu saldo: ",
     "networkError": "Erro de rede. Por favor, téntao de novo.",
     "invalidAmount": "Introduce unha cantidade válida",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "para seguir apoiando proxectos de acción.",
     "walletEmpty": "A túa carteira está baleira.",
     "topUp": "Recargar",
-    "toContribute": "para apoiar proxectos."
+    "minPayment": "O pago mínimo é de 10p",
+    "supportProject": "Apoiar este proxecto",
+    "toSupport": "para apoiar proxectos."
   },
   "Claim": {
     "success": "Grazas! Tomamos nota do teu interese no rol de {name}. Porémonos en contacto contigo.",

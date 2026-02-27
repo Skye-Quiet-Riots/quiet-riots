@@ -98,13 +98,13 @@
     "raised": "forpligtet",
     "backers": "{count, plural, one {støtte} other {støtter}}",
     "platformFee": "servicegebyr",
-    "wantToContribute": "Vil du støtte dette projekt?",
     "topUpFirst": "Fyld op på din tegnebog først for at komme i gang.",
     "createAccountPrompt": "Opret en konto og lad din tegnebog op for at bestille denne tjeneste.",
     "goToWallet": "Gå til tegnebog",
     "createAccount": "Opret konto",
     "completedMessage": "Dette projekt er blevet {status}. Tak til alle {count} støtter!",
-    "recipient": "Tjenesteudbyder"
+    "recipient": "Tjenesteudbyder",
+    "wantToSupport": "Vil du støtte dette projekt?"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Driv kollektiv handling",
     "createPromptDesc": "Opret en gratis konto for at fylde din tegnebog op og bestille tjenester til handlingsprojekter.",
     "createAccount": "Opret konto",
-    "activeCampaigns": "Aktive projekter",
-    "viewAll": "Vis alle"
+    "viewAll": "Vis alle",
+    "activeProjects": "Aktive projekter"
   },
   "Profile": {
     "title": "Din profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Din saldo",
     "loaded": "indlæst",
-    "contributed": "brugt",
-    "campaigns": "{count, plural, one {projekt} other {projekter}}"
+    "spent": "brugt",
+    "projects": "{count, plural, one {projekt} other {projekter}}"
   },
   "Transactions": {
     "title": "Seneste transaktioner",
     "topUp": "Opfyldning",
-    "contribution": "Projektbetaling",
     "refund": "Refusion",
     "justNow": "lige nu",
     "minutesAgo": "{count}m siden",
     "hoursAgo": "{count}t siden",
     "daysAgo": "{count}d siden",
-    "empty": "Ingen transaktioner endnu. Fyld op på din tegnebog for at komme i gang!"
+    "empty": "Ingen transaktioner endnu. Fyld op på din tegnebog for at komme i gang!",
+    "payment": "Projektbetaling"
   },
   "Activity": {
     "noActivity": "Ingen aktivitet endnu.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Utilstrækkelig saldo. Fyld op på din tegnebog først.",
-    "minContribution": "Minimumsbetaling er 10p",
-    "contribute": "Støt dette projekt",
     "yourBalance": "Din saldo: ",
     "networkError": "Netværksfejl. Prøv venligst igen.",
     "invalidAmount": "Indtast et gyldigt beløb",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "for at fortsætte med at støtte handlingsprojekter.",
     "walletEmpty": "Din tegnebog er tom.",
     "topUp": "Fyld op",
-    "toContribute": "for at støtte projekter."
+    "minPayment": "Minimumsbetaling er 10p",
+    "supportProject": "Støt dette projekt",
+    "toSupport": "for at støtte projekter."
   },
   "Claim": {
     "success": "Tak! Vi har noteret din interesse for rollen som {name}. Vi vender tilbage.",

@@ -98,13 +98,13 @@
     "raised": "ผูกพันแล้ว",
     "backers": "{count, plural, one {ผู้สนับสนุน} other {ผู้สนับสนุน}}",
     "platformFee": "ค่าบริการ",
-    "wantToContribute": "ต้องการสนับสนุนโครงการนี้ไหม?",
     "topUpFirst": "เติมเงินในกระเป๋าก่อนเพื่อเริ่มต้น",
     "createAccountPrompt": "สร้างบัญชีและเติมเงินเพื่อจ้างบริการนี้",
     "goToWallet": "ไปที่กระเป๋าเงิน",
     "createAccount": "สร้างบัญชี",
     "completedMessage": "โครงการนี้{status}แล้ว ขอบคุณผู้สนับสนุนทั้ง {count} คน!",
-    "recipient": "ผู้ให้บริการ"
+    "recipient": "ผู้ให้บริการ",
+    "wantToSupport": "ต้องการสนับสนุนโครงการนี้ไหม?"
   },
   "Assistants": {
     "title": "ผู้ช่วย",
@@ -129,8 +129,8 @@
     "createPromptTitle": "ขับเคลื่อนการดำเนินการร่วม",
     "createPromptDesc": "สร้างบัญชีฟรีเพื่อเติมเงินและจ้างบริการสำหรับโครงการปฏิบัติการ",
     "createAccount": "สร้างบัญชี",
-    "activeCampaigns": "โครงการที่กำลังดำเนินการ",
-    "viewAll": "ดูทั้งหมด"
+    "viewAll": "ดูทั้งหมด",
+    "activeProjects": "โครงการที่กำลังดำเนินการ"
   },
   "Profile": {
     "title": "โปรไฟล์ของคุณ",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "ยอดเงินของคุณ",
     "loaded": "เติมแล้ว",
-    "contributed": "ใช้ไปแล้ว",
-    "campaigns": "{count, plural, one {โครงการ} other {โครงการ}}"
+    "spent": "ใช้ไปแล้ว",
+    "projects": "{count, plural, one {โครงการ} other {โครงการ}}"
   },
   "Transactions": {
     "title": "รายการล่าสุด",
     "topUp": "เติมเงิน",
-    "contribution": "ชำระเงินโครงการ",
     "refund": "คืนเงิน",
     "justNow": "เมื่อกี้",
     "minutesAgo": "{count} นาทีที่แล้ว",
     "hoursAgo": "{count} ชม.ที่แล้ว",
     "daysAgo": "{count} วันที่แล้ว",
-    "empty": "ยังไม่มีรายการ เติมเงินในกระเป๋าเพื่อเริ่มต้น!"
+    "empty": "ยังไม่มีรายการ เติมเงินในกระเป๋าเพื่อเริ่มต้น!",
+    "payment": "ชำระเงินโครงการ"
   },
   "Activity": {
     "noActivity": "ยังไม่มีกิจกรรม",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "เงินไม่พอ เติมเงินในกระเป๋าก่อน",
-    "minContribution": "ชำระขั้นต่ำ 10p",
-    "contribute": "สนับสนุนโครงการนี้",
     "yourBalance": "ยอดเงินของคุณ: ",
     "networkError": "เครือข่ายผิดพลาด กรุณาลองอีกครั้ง",
     "invalidAmount": "กรอกจำนวนเงินที่ถูกต้อง",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "เพื่อสนับสนุนโครงการปฏิบัติการต่อไป",
     "walletEmpty": "กระเป๋าเงินของคุณว่างเปล่า",
     "topUp": "เติมเงิน",
-    "toContribute": "เพื่อสนับสนุนโครงการ"
+    "minPayment": "ชำระขั้นต่ำ 10p",
+    "supportProject": "สนับสนุนโครงการนี้",
+    "toSupport": "เพื่อสนับสนุนโครงการ"
   },
   "Claim": {
     "success": "ขอบคุณ! เราบันทึกความสนใจของคุณในบทบาท {name} แล้ว เราจะติดต่อกลับ",

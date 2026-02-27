@@ -98,13 +98,13 @@
     "raised": "zugesagt",
     "backers": "{count, plural, one {Unterstützer} other {Unterstützer}}",
     "platformFee": "Servicegebühr",
-    "wantToContribute": "Möchtest du dieses Projekt unterstützen?",
     "topUpFirst": "Lade zuerst dein Wallet auf, um loszulegen.",
     "createAccountPrompt": "Erstelle ein Konto und lade dein Wallet auf, um diese Dienstleistung zu beauftragen.",
     "goToWallet": "Zum Wallet",
     "createAccount": "Konto erstellen",
     "completedMessage": "Dieses Projekt wurde {status}. Danke an alle {count} Unterstützer!",
-    "recipient": "Dienstleister"
+    "recipient": "Dienstleister",
+    "wantToSupport": "Möchtest du dieses Projekt unterstützen?"
   },
   "Assistants": {
     "title": "Assistenten",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Kollektives Handeln antreiben",
     "createPromptDesc": "Erstelle ein kostenloses Konto, um dein Wallet aufzuladen und Dienstleistungen für Aktionsprojekte zu beauftragen.",
     "createAccount": "Konto erstellen",
-    "activeCampaigns": "Aktive Projekte",
-    "viewAll": "Alle anzeigen"
+    "viewAll": "Alle anzeigen",
+    "activeProjects": "Aktive Projekte"
   },
   "Profile": {
     "title": "Dein Profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Dein Guthaben",
     "loaded": "aufgeladen",
-    "contributed": "ausgegeben",
-    "campaigns": "{count, plural, one {Projekt} other {Projekte}}"
+    "spent": "ausgegeben",
+    "projects": "{count, plural, one {Projekt} other {Projekte}}"
   },
   "Transactions": {
     "title": "Letzte Transaktionen",
     "topUp": "Aufladung",
-    "contribution": "Projektzahlung",
     "refund": "Rückerstattung",
     "justNow": "gerade eben",
     "minutesAgo": "vor {count} Min.",
     "hoursAgo": "vor {count} Std.",
     "daysAgo": "vor {count} T.",
-    "empty": "Noch keine Transaktionen. Lade dein Wallet auf, um loszulegen!"
+    "empty": "Noch keine Transaktionen. Lade dein Wallet auf, um loszulegen!",
+    "payment": "Projektzahlung"
   },
   "Activity": {
     "noActivity": "Noch keine Aktivität.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nicht genug Guthaben. Lade zuerst dein Wallet auf.",
-    "minContribution": "Die Mindestzahlung beträgt 10p",
-    "contribute": "Dieses Projekt unterstützen",
     "yourBalance": "Dein Guthaben: ",
     "networkError": "Netzwerkfehler. Bitte versuche es erneut.",
     "invalidAmount": "Gib einen gültigen Betrag ein",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "um weiterhin Aktionsprojekte zu unterstützen.",
     "walletEmpty": "Dein Wallet ist leer.",
     "topUp": "Aufladen",
-    "toContribute": "um Projekte zu unterstützen."
+    "minPayment": "Die Mindestzahlung beträgt 10p",
+    "supportProject": "Dieses Projekt unterstützen",
+    "toSupport": "um Projekte zu unterstützen."
   },
   "Claim": {
     "success": "Danke! Wir haben dein Interesse an der Rolle {name} vermerkt. Wir melden uns bei dir.",

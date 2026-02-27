@@ -98,13 +98,13 @@
     "raised": "konprometitua",
     "backers": "{count, plural, one {laguntzaile} other {laguntzaile}}",
     "platformFee": "zerbitzu-kuota",
-    "wantToContribute": "Proiektu hau lagundu nahi duzu?",
     "topUpFirst": "Birkargatu zure zorroa lehenik hasteko.",
     "createAccountPrompt": "Sortu kontu bat eta kargatu zure zorroa zerbitzu hau kontratatzeko.",
     "goToWallet": "Joan zorrora",
     "createAccount": "Sortu kontua",
     "completedMessage": "Proiektu hau {status} izan da. Eskerrik asko {count} laguntzaile guztiei!",
-    "recipient": "Zerbitzu-hornitzailea"
+    "recipient": "Zerbitzu-hornitzailea",
+    "wantToSupport": "Proiektu hau lagundu nahi duzu?"
   },
   "Assistants": {
     "title": "Laguntzaileak",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Bultzatu Ekintza Kolektiboa",
     "createPromptDesc": "Sortu doako kontu bat zure zorroa kargatzeko eta ekintza-proiektuetarako zerbitzuak kontratatzeko.",
     "createAccount": "Sortu kontua",
-    "activeCampaigns": "Proiektu Aktiboak",
-    "viewAll": "Ikusi guztiak"
+    "viewAll": "Ikusi guztiak",
+    "activeProjects": "Proiektu Aktiboak"
   },
   "Profile": {
     "title": "Zure Profila",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Zure Saldoa",
     "loaded": "kargatuta",
-    "contributed": "gastatua",
-    "campaigns": "{count, plural, one {proiektu} other {proiektu}}"
+    "spent": "gastatua",
+    "projects": "{count, plural, one {proiektu} other {proiektu}}"
   },
   "Transactions": {
     "title": "Azken Transakzioak",
     "topUp": "Birkarga",
-    "contribution": "Proiektu-ordainketa",
     "refund": "Itzulketa",
     "justNow": "oraintxe",
     "minutesAgo": "duela {count}min",
     "hoursAgo": "duela {count}o",
     "daysAgo": "duela {count}e",
-    "empty": "Oraindik ez dago transakziorik. Birkargatu zorroa hasteko!"
+    "empty": "Oraindik ez dago transakziorik. Birkargatu zorroa hasteko!",
+    "payment": "Proiektu-ordainketa"
   },
   "Activity": {
     "noActivity": "Oraindik ez dago jarduerarik.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Funts nahikorik ez. Birkargatu zure zorroa lehenik.",
-    "minContribution": "Gutxieneko ordainketa 10p da",
-    "contribute": "Lagundu Proiektu Hau",
     "yourBalance": "Zure saldoa: ",
     "networkError": "Sare-errorea. Mesedez, saiatu berriro.",
     "invalidAmount": "Sartu zenbateko baliogarri bat",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "ekintza-proiektuak laguntzen jarraitzeko.",
     "walletEmpty": "Zure zorroa hutsik dago.",
     "topUp": "Birkargatu",
-    "toContribute": "proiektuak laguntzeko."
+    "minPayment": "Gutxieneko ordainketa 10p da",
+    "supportProject": "Lagundu Proiektu Hau",
+    "toSupport": "proiektuak laguntzeko."
   },
   "Claim": {
     "success": "Eskerrik asko! {name} rolaren zure interesa jaso dugu. Harremanetan jarriko gara.",

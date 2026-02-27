@@ -98,13 +98,13 @@
     "raised": "utfäst",
     "backers": "{count, plural, one {supporter} other {supporters}}",
     "platformFee": "serviceavgift",
-    "wantToContribute": "Vill du stödja detta projekt?",
     "topUpFirst": "Fyll på din plånbok först för att komma igång.",
     "createAccountPrompt": "Skapa ett konto och ladda din plånbok för att beställa denna tjänst.",
     "goToWallet": "Gå till plånbok",
     "createAccount": "Skapa konto",
     "completedMessage": "Detta projekt har {status}. Tack till alla {count} supporters!",
-    "recipient": "Tjänsteleverantör"
+    "recipient": "Tjänsteleverantör",
+    "wantToSupport": "Vill du stödja detta projekt?"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Driv kollektiv handling",
     "createPromptDesc": "Skapa ett gratis konto för att ladda din plånbok och beställa tjänster för handlingsprojekt.",
     "createAccount": "Skapa konto",
-    "activeCampaigns": "Aktiva projekt",
-    "viewAll": "Visa alla"
+    "viewAll": "Visa alla",
+    "activeProjects": "Aktiva projekt"
   },
   "Profile": {
     "title": "Din profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Ditt saldo",
     "loaded": "laddat",
-    "contributed": "spenderat",
-    "campaigns": "{count, plural, one {projekt} other {projekt}}"
+    "spent": "spenderat",
+    "projects": "{count, plural, one {projekt} other {projekt}}"
   },
   "Transactions": {
     "title": "Senaste transaktioner",
     "topUp": "Påfyllning",
-    "contribution": "Projektbetalning",
     "refund": "Återbetalning",
     "justNow": "just nu",
     "minutesAgo": "{count}m sedan",
     "hoursAgo": "{count}t sedan",
     "daysAgo": "{count}d sedan",
-    "empty": "Inga transaktioner ännu. Fyll på din plånbok för att komma igång!"
+    "empty": "Inga transaktioner ännu. Fyll på din plånbok för att komma igång!",
+    "payment": "Projektbetalning"
   },
   "Activity": {
     "noActivity": "Ingen aktivitet ännu.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Otillräckligt saldo. Fyll på din plånbok först.",
-    "minContribution": "Minsta betalning är 10p",
-    "contribute": "Stöd detta projekt",
     "yourBalance": "Ditt saldo: ",
     "networkError": "Nätverksfel. Försök igen.",
     "invalidAmount": "Ange ett giltigt belopp",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "för att fortsätta stödja handlingsprojekt.",
     "walletEmpty": "Din plånbok är tom.",
     "topUp": "Fyll på",
-    "toContribute": "för att stödja projekt."
+    "minPayment": "Minsta betalning är 10p",
+    "supportProject": "Stöd detta projekt",
+    "toSupport": "för att stödja projekt."
   },
   "Claim": {
     "success": "Tack! Vi har noterat ditt intresse för rollen som {name}. Vi hör av oss.",

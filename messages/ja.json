@@ -98,13 +98,13 @@
     "raised": "確約済み",
     "backers": "{count, plural, one {人の支援者} other {人の支援者}}",
     "platformFee": "サービス手数料",
-    "wantToContribute": "このプロジェクトを支援しませんか？",
     "topUpFirst": "まずウォレットにチャージして始めましょう。",
     "createAccountPrompt": "アカウントを作成してウォレットにチャージし、このサービスを委託しましょう。",
     "goToWallet": "ウォレットへ",
     "createAccount": "アカウント作成",
     "completedMessage": "このプロジェクトは{status}されました。{count} 人の支援者の皆さん、ありがとうございます！",
-    "recipient": "サービス提供者"
+    "recipient": "サービス提供者",
+    "wantToSupport": "このプロジェクトを支援しませんか？"
   },
   "Assistants": {
     "title": "アシスタント",
@@ -129,8 +129,8 @@
     "createPromptTitle": "集団行動を推進しよう",
     "createPromptDesc": "無料アカウントを作成してウォレットにチャージし、アクションプロジェクトのサービスを委託しましょう。",
     "createAccount": "アカウント作成",
-    "activeCampaigns": "進行中のプロジェクト",
-    "viewAll": "すべて見る"
+    "viewAll": "すべて見る",
+    "activeProjects": "進行中のプロジェクト"
   },
   "Profile": {
     "title": "あなたのプロフィール",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "あなたの残高",
     "loaded": "チャージ済み",
-    "contributed": "使用済み",
-    "campaigns": "{count, plural, one {件のプロジェクト} other {件のプロジェクト}}"
+    "spent": "使用済み",
+    "projects": "{count, plural, one {件のプロジェクト} other {件のプロジェクト}}"
   },
   "Transactions": {
     "title": "最近の取引",
     "topUp": "チャージ",
-    "contribution": "プロジェクト支払い",
     "refund": "返金",
     "justNow": "たった今",
     "minutesAgo": "{count}分前",
     "hoursAgo": "{count}時間前",
     "daysAgo": "{count}日前",
-    "empty": "まだ取引がありません。ウォレットにチャージして始めましょう！"
+    "empty": "まだ取引がありません。ウォレットにチャージして始めましょう！",
+    "payment": "プロジェクト支払い"
   },
   "Activity": {
     "noActivity": "まだ活動がありません。",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "残高不足です。まずウォレットにチャージしてください。",
-    "minContribution": "最低支払額は 10p です",
-    "contribute": "このプロジェクトを支援する",
     "yourBalance": "あなたの残高：",
     "networkError": "ネットワークエラーです。もう一度お試しください。",
     "invalidAmount": "有効な金額を入力してください",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "してアクションプロジェクトの支援を続けましょう。",
     "walletEmpty": "ウォレットが空です。",
     "topUp": "チャージ",
-    "toContribute": "してプロジェクトを支援しましょう。"
+    "minPayment": "最低支払額は 10p です",
+    "supportProject": "このプロジェクトを支援する",
+    "toSupport": "してプロジェクトを支援しましょう。"
   },
   "Claim": {
     "success": "ありがとうございます！{name} の役割への関心を承りました。追ってご連絡いたします。",

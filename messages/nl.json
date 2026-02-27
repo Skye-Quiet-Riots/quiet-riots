@@ -98,13 +98,13 @@
     "raised": "toegezegd",
     "backers": "{count, plural, one {supporter} other {supporters}}",
     "platformFee": "servicekosten",
-    "wantToContribute": "Wil je dit project steunen?",
     "topUpFirst": "Laad eerst je portemonnee op om aan de slag te gaan.",
     "createAccountPrompt": "Maak een account aan en laad je portemonnee om deze dienst in te schakelen.",
     "goToWallet": "Ga naar portemonnee",
     "createAccount": "Account aanmaken",
     "completedMessage": "Dit project is {status}. Bedankt aan alle {count} supporters!",
-    "recipient": "Dienstverlener"
+    "recipient": "Dienstverlener",
+    "wantToSupport": "Wil je dit project steunen?"
   },
   "Assistants": {
     "title": "Assistenten",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Versterk collectieve actie",
     "createPromptDesc": "Maak een gratis account aan om je portemonnee op te laden en diensten in te schakelen voor actieprojecten.",
     "createAccount": "Account aanmaken",
-    "activeCampaigns": "Actieve projecten",
-    "viewAll": "Bekijk alles"
+    "viewAll": "Bekijk alles",
+    "activeProjects": "Actieve projecten"
   },
   "Profile": {
     "title": "Jouw profiel",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Jouw saldo",
     "loaded": "geladen",
-    "contributed": "besteed",
-    "campaigns": "{count, plural, one {project} other {projecten}}"
+    "spent": "besteed",
+    "projects": "{count, plural, one {project} other {projecten}}"
   },
   "Transactions": {
     "title": "Recente transacties",
     "topUp": "Opwaardering",
-    "contribution": "Projectbetaling",
     "refund": "Terugbetaling",
     "justNow": "zojuist",
     "minutesAgo": "{count}m geleden",
     "hoursAgo": "{count}u geleden",
     "daysAgo": "{count}d geleden",
-    "empty": "Nog geen transacties. Laad je portemonnee op om te beginnen!"
+    "empty": "Nog geen transacties. Laad je portemonnee op om te beginnen!",
+    "payment": "Projectbetaling"
   },
   "Activity": {
     "noActivity": "Nog geen activiteit.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Onvoldoende saldo. Laad eerst je portemonnee op.",
-    "minContribution": "Minimale betaling is 10p",
-    "contribute": "Steun dit project",
     "yourBalance": "Jouw saldo: ",
     "networkError": "Netwerkfout. Probeer het opnieuw.",
     "invalidAmount": "Voer een geldig bedrag in",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "om actieprojecten te blijven steunen.",
     "walletEmpty": "Je portemonnee is leeg.",
     "topUp": "Opwaarderen",
-    "toContribute": "om projecten te steunen."
+    "minPayment": "Minimale betaling is 10p",
+    "supportProject": "Steun dit project",
+    "toSupport": "om projecten te steunen."
   },
   "Claim": {
     "success": "Bedankt! We hebben je interesse in de rol van {name} genoteerd. We nemen contact met je op.",

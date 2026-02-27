@@ -98,13 +98,13 @@
     "raised": "elkoteleződve",
     "backers": "{count, plural, one {tamogato} other {tamogato}}",
     "platformFee": "szolgaltatasi dij",
-    "wantToContribute": "Szeretned tamogatni ezt a projektet?",
     "topUpFirst": "Eloszor toltsd fel a penztarcadat a kezdeshez.",
     "createAccountPrompt": "Hozz letre egy fiokot es toltsd fel a penztarcadat a szolgaltatas megrendelessehez.",
     "goToWallet": "Ugrasa penztarcara",
     "createAccount": "Fiok letrehozasa",
     "completedMessage": "Ez a projekt {status}. Koszonet az osszes {count} tamogatonak!",
-    "recipient": "Szolgaltato"
+    "recipient": "Szolgaltato",
+    "wantToSupport": "Szeretned tamogatni ezt a projektet?"
   },
   "Assistants": {
     "title": "Asszisztensek",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Mozditsd elo a kozos cselekvest",
     "createPromptDesc": "Hozz letre egy ingyenes fiokot, toltsd fel a penztarcadat es rendelj szolgaltatasokat akcioprojektekhez.",
     "createAccount": "Fiok letrehozasa",
-    "activeCampaigns": "Aktiv projektek",
-    "viewAll": "Osszes megtekintese"
+    "viewAll": "Osszes megtekintese",
+    "activeProjects": "Aktiv projektek"
   },
   "Profile": {
     "title": "Profilod",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Egyenleged",
     "loaded": "feltoltve",
-    "contributed": "elkoltve",
-    "campaigns": "{count, plural, one {projekt} other {projekt}}"
+    "spent": "elkoltve",
+    "projects": "{count, plural, one {projekt} other {projekt}}"
   },
   "Transactions": {
     "title": "Legutobbi tranzakciok",
     "topUp": "Feltoltes",
-    "contribution": "Projekt fizetes",
     "refund": "Visszaterites",
     "justNow": "eppen most",
     "minutesAgo": "{count} perce",
     "hoursAgo": "{count} oraja",
     "daysAgo": "{count} napja",
-    "empty": "Meg nincsenek tranzakciok. Toltsd fel a penztarcadat az indulashoz!"
+    "empty": "Meg nincsenek tranzakciok. Toltsd fel a penztarcadat az indulashoz!",
+    "payment": "Projekt fizetes"
   },
   "Activity": {
     "noActivity": "Meg nincs tevekenyseg.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nem eleg fedezet. Eloszor toltsd fel a penztarcadat.",
-    "minContribution": "A minimalis fizetes 10p",
-    "contribute": "Tamogasd ezt a projektet",
     "yourBalance": "Egyenleged: ",
     "networkError": "Halozati hiba. Probald ujra.",
     "invalidAmount": "Adj meg ervenyes osszeget",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "az akcioprojektek tovabi tamogatasahoz.",
     "walletEmpty": "A penztarcad ures.",
     "topUp": "Feltoltes",
-    "toContribute": "a projektek tamogatasahoz."
+    "minPayment": "A minimalis fizetes 10p",
+    "supportProject": "Tamogasd ezt a projektet",
+    "toSupport": "a projektek tamogatasahoz."
   },
   "Claim": {
     "success": "Koszonjuk! Feljegyeztuk az erdeklodesedet a {name} szerepkor irant. Felkeresunk.",

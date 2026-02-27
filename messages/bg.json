@@ -98,13 +98,13 @@
     "raised": "ангажирано",
     "backers": "{count, plural, one {поддръжник} other {поддръжници}}",
     "platformFee": "такса за обслужване",
-    "wantToContribute": "Искаш ли да подкрепиш този проект?",
     "topUpFirst": "Първо зареди портфейла си, за да започнеш.",
     "createAccountPrompt": "Създай акаунт и зареди портфейла си, за да възложиш тази услуга.",
     "goToWallet": "Kym portfeila",
     "createAccount": "Sazdavane na akount",
     "completedMessage": "Този проект беше {status}. Благодарим на всички {count} поддръжници!",
-    "recipient": "Доставчик на услуги"
+    "recipient": "Доставчик на услуги",
+    "wantToSupport": "Искаш ли да подкрепиш този проект?"
   },
   "Assistants": {
     "title": "Asistenti",
@@ -129,8 +129,8 @@
     "createPromptTitle": "Задвижи колективното действие",
     "createPromptDesc": "Създай безплатен акаунт, за да заредиш портфейла си и да възлагаш услуги за проекти за действие.",
     "createAccount": "Sazdavane na akount",
-    "activeCampaigns": "Активни проекти",
-    "viewAll": "Vizh vsichki"
+    "viewAll": "Vizh vsichki",
+    "activeProjects": "Активни проекти"
   },
   "Profile": {
     "title": "Tvoiyat profil",
@@ -361,19 +361,19 @@
   "WalletBalance": {
     "title": "Tvoeto saldo",
     "loaded": "zaredeno",
-    "contributed": "изразходвано",
-    "campaigns": "{count, plural, one {проект} other {проекта}}"
+    "spent": "изразходвано",
+    "projects": "{count, plural, one {проект} other {проекта}}"
   },
   "Transactions": {
     "title": "Skoreshni transaktsii",
     "topUp": "Zarezhidane",
-    "contribution": "Плащане за проект",
     "refund": "Vazbrazhdane",
     "justNow": "tokhu-shto",
     "minutesAgo": "predi {count} min",
     "hoursAgo": "predi {count} ch.",
     "daysAgo": "predi {count} d.",
-    "empty": "Vse oshte nyama transaktsii. Zaredi portfeila si, za da zapochnesh!"
+    "empty": "Vse oshte nyama transaktsii. Zaredi portfeila si, za da zapochnesh!",
+    "payment": "Плащане за проект"
   },
   "Activity": {
     "noActivity": "Vse oshte nyama aktivnost.",
@@ -440,8 +440,6 @@
   },
   "Pay": {
     "insufficientFunds": "Nedostatachni sredstva. Pyrvo zaredi portfeila si.",
-    "minContribution": "Минималното плащане е 10p",
-    "contribute": "Подкрепи този проект",
     "yourBalance": "Tvoeto saldo: ",
     "networkError": "Mrezhova greshka. Molya, probvai otnovo.",
     "invalidAmount": "Vavedi validna suma",
@@ -453,7 +451,9 @@
     "toKeepSupporting": "за да продължиш да подкрепяш проекти за действие.",
     "walletEmpty": "Portfeilat ti e prazen.",
     "topUp": "Zaredi",
-    "toContribute": "за да подкрепяш проекти."
+    "minPayment": "Минималното плащане е 10p",
+    "supportProject": "Подкрепи този проект",
+    "toSupport": "за да подкрепяш проекти."
   },
   "Claim": {
     "success": "Blagodarim! Otbelyazakhme interesa ti kam rolyata na {name}. Shte se svarzhem s teb.",
