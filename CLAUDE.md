@@ -100,14 +100,14 @@ Every user-facing text must be translated into all 44 non-English locales. A fea
 - **Translation table** stores `(entity_type, entity_id, field, language_code, value)` with UNIQUE constraint on `(entity_type, entity_id, field, language_code)`
 - **Sanitise** all translated values with `sanitizeText()` before DB insertion
 
-### UI Translation Protocol (for `messages/*.json` — follow this exact pattern)
+### UI Translation Protocol (MANDATORY — follow this exact pattern)
 
-When a feature adds new keys to `messages/en.json` (new namespaces or new keys in existing namespaces), the same keys must be added to all 44 non-English locale files. Follow this standard process:
+When a feature adds or changes keys in `messages/en.json`, the same changes must be applied to all 44 non-English locale files. **ALWAYS use the script-first approach below.** Never use sub-agents for translations — they are slow, hit context limits on large locale files, and fail silently.
 
 **Step 1: Identify what needs translating**
 
 ```bash
-# List all new keys (compare en.json namespaces/keys against any non-English file)
+# List new/changed keys (compare en.json against any non-English file)
 node -e "const en = require('./messages/en.json'); const fr = require('./messages/fr.json');
   for (const [ns, keys] of Object.entries(en)) {
     if (!fr[ns]) console.log('NEW namespace: ' + ns + ' (' + Object.keys(keys).length + ' keys)');
@@ -116,52 +116,103 @@ node -e "const en = require('./messages/en.json'); const fr = require('./message
   }"
 ```
 
-**Step 2: Launch parallel sub-agents (6 batches of ~7-8 locales)**
+**Step 2: Generate translations with a single Task agent**
 
-Split the 44 locales into 6 groups and launch one Task agent per group, all in parallel:
+Launch ONE Task agent (not 6 — one is enough) that produces a JSON object mapping each locale to its translations. The agent returns ONLY the translation data, not file edits:
 
-- Batch 1: `ar, bg, bn, ca, cs, da, de, el`
-- Batch 2: `es, eu, fa, fi, fr, gl, he, hi`
-- Batch 3: `hr, hu, id, it, ja, ko, ml, ms`
-- Batch 4: `nl, no, pl, pt, pt-BR, ro, ru, sk`
-- Batch 5: `sl, sv, sw, ta, te, th, tl, tr`
-- Batch 6: `uk, vi, zh-CN, zh-TW`
-
-Each agent prompt must include:
-
-1. The exact English source keys to translate
-2. Instructions to read each locale file, then Edit to add translated content
-3. Rules: keep `{variable}` placeholders as-is, keep brand names (`Quiet Riots`, `Quiet Rioters`) as-is, keep technical terms (`IPO`, `Pre-Seed`) as-is, keep currency amounts (`$10m`, `10p`) as-is
-4. Instruction to do ONE locale at a time (avoids output token limits)
-
-**Step 3: Monitor and verify**
-
-```bash
-# Poll for completion (run every ~2 minutes)
-for locale in ar bg bn ca cs da de el es eu fa fi fr gl he hi hr hu id it ja ko ml ms nl no pl pt pt-BR ro ru sk sl sv sw ta te th tl tr uk vi zh-CN zh-TW; do
-  has=$(node -e "const f = require('./messages/${locale}.json'); console.log('NEW_NAMESPACE' in f ? 'DONE' : 'WIP')" 2>/dev/null)
-  echo "${locale}: ${has}"
-done
+```
+Prompt: "Translate these keys into all 44 locales. Return a JSON object:
+{ 'ar': { 'Namespace.key': 'translated value', ... }, 'bg': { ... }, ... }
+Rules: keep {variable} placeholders as-is, keep brand names (Quiet Riots) as-is,
+keep technical terms (IPO, Pre-Seed) as-is, keep currency amounts ($10m, 10p) as-is."
 ```
 
-Replace `NEW_NAMESPACE` with the name of a new namespace being added.
+**Step 3: Apply translations with a Node.js script**
 
-**Step 4: Validate JSON and test**
+Write a one-off Node.js script (inline or in a Bash command) that reads each locale file, applies the translations, and writes it back. Pattern:
+
+```js
+const fs = require('fs');
+const locales = [
+  'ar',
+  'bg',
+  'bn',
+  'ca',
+  'cs',
+  'da',
+  'de',
+  'el',
+  'es',
+  'eu',
+  'fa',
+  'fi',
+  'fr',
+  'gl',
+  'he',
+  'hi',
+  'hr',
+  'hu',
+  'id',
+  'it',
+  'ja',
+  'ko',
+  'ml',
+  'ms',
+  'nl',
+  'no',
+  'pl',
+  'pt',
+  'pt-BR',
+  'ro',
+  'ru',
+  'sk',
+  'sl',
+  'sv',
+  'sw',
+  'ta',
+  'te',
+  'th',
+  'tl',
+  'tr',
+  'uk',
+  'vi',
+  'zh-CN',
+  'zh-TW',
+];
+const translations = {
+  /* from Step 2 */
+};
+for (const locale of locales) {
+  const path = `./messages/${locale}.json`;
+  const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+  // Apply translations to the appropriate namespace/key
+  for (const [key, value] of Object.entries(translations[locale])) {
+    const [ns, k] = key.split('.');
+    if (data[ns]) data[ns][k] = value;
+  }
+  fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+```
+
+**For simple value changes** (like renaming "supporter" → "participant"), skip the agent entirely — build the translations object directly with known mappings and run the script.
+
+**Step 4: Validate and test**
 
 ```bash
-# Verify all 44 files are valid JSON
+# Verify all 45 files are valid JSON
 for f in messages/*.json; do node -e "require('./$f')" 2>&1 || echo "BROKEN: $f"; done
 # Run i18n sync tests
 npm test -- --grep "i18n"
+# Format
+npx prettier --write messages/*.json
 ```
 
-**Timing:** ~10-15 minutes for 44 locales (223 keys). Larger keysets may take longer. If an agent batch fails or times out, re-launch just the missing locales in smaller groups (2-4 locales per agent).
+**Why script-first is mandatory:**
 
-**Common pitfalls:**
-
-- Agents hitting 32K output token limit → split into smaller batches (4 locales max per agent)
-- Edit tool failing on non-unique strings → read the file first to find exact insertion point
-- JSON syntax errors after insertion → always verify with `node -e "require('./messages/X.json')"`
+- Sub-agents hit "Prompt is too long" on locale files (>25K tokens each)
+- Sub-agents are unpredictable — some batches finish, others fail silently
+- A Node.js script handles all 44 locales in <1 second, deterministically
+- Session 53 proved the script approach works; sessions 52-54 proved agents fail repeatedly
 
 ## Dual-Surface Protocol (IMPORTANT — follow for every feature)
 
