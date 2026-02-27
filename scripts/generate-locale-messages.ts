@@ -23,57 +23,13 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { NON_EN_LOCALES } from '../src/i18n/locales';
 
 const MESSAGES_DIR = path.resolve(__dirname, '../messages');
 const EN_PATH = path.join(MESSAGES_DIR, 'en.json');
 
-// All supported locales from src/i18n/routing.ts (minus 'en')
-const ALL_LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt',
-  'pt-BR',
-  'it',
-  'nl',
-  'sv',
-  'da',
-  'no',
-  'fi',
-  'pl',
-  'cs',
-  'sk',
-  'hu',
-  'ro',
-  'bg',
-  'hr',
-  'sl',
-  'uk',
-  'ru',
-  'tr',
-  'ar',
-  'he',
-  'fa',
-  'hi',
-  'bn',
-  'ta',
-  'te',
-  'ml',
-  'th',
-  'vi',
-  'id',
-  'ms',
-  'zh-CN',
-  'zh-TW',
-  'ja',
-  'ko',
-  'tl',
-  'sw',
-  'el',
-  'ca',
-  'eu',
-  'gl',
-];
+// All non-English locales from the single source of truth
+const ALL_LOCALES: string[] = [...NON_EN_LOCALES];
 
 // Google Translate API v2 language codes differ for some locales
 const GOOGLE_LANG_MAP: Record<string, string> = {
@@ -262,6 +218,13 @@ async function main() {
     const outPath = path.join(MESSAGES_DIR, `${locale}.json`);
 
     if (skipExisting && fs.existsSync(outPath)) {
+      skipped++;
+      continue;
+    }
+
+    // -Latn codes are not standard Google Translate codes — skip when using Google API
+    if (useApi && locale.endsWith('-Latn')) {
+      console.log(`⏭️  ${locale} — skipped (romanised locales not supported by Google Translate)`);
       skipped++;
       continue;
     }

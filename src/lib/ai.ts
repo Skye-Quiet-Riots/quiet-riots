@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { NON_EN_LOCALES } from '@/i18n/locales';
 
 let client: Anthropic | null = null;
 
@@ -17,17 +18,10 @@ function stripHtml(text: string): string {
 }
 
 /**
- * The 44 non-English locales supported by Quiet Riots.
- * Used for translation generation.
+ * The non-English locales supported by Quiet Riots.
+ * Re-exported from the single source of truth at src/i18n/locales.ts.
  */
-export const SUPPORTED_LOCALES = [
-  'ar', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el',
-  'es', 'eu', 'fa', 'fi', 'fr', 'gl', 'he', 'hi',
-  'hr', 'hu', 'id', 'it', 'ja', 'ko', 'ml', 'ms',
-  'nl', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sk',
-  'sl', 'sv', 'sw', 'ta', 'te', 'th', 'tl', 'tr',
-  'uk', 'vi', 'zh-CN', 'zh-TW',
-] as const;
+export const SUPPORTED_LOCALES = NON_EN_LOCALES;
 
 /**
  * Translate text to English using Claude Haiku.

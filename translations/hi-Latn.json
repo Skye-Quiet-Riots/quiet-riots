@@ -1,0 +1,876 @@
+{
+  "locale": "hi-Latn",
+  "categories": {
+    "Transport": "Parivahan",
+    "Telecoms": "Telecom",
+    "Banking": "Banking",
+    "Health": "Swasthya",
+    "Education": "Shiksha",
+    "Environment": "Paryavaran",
+    "Energy": "Urja",
+    "Water": "Jal",
+    "Insurance": "Bima",
+    "Housing": "Awas",
+    "Shopping": "Shopping",
+    "Delivery": "Delivery",
+    "Local": "Sthaniya",
+    "Employment": "Rozgar",
+    "Tech": "Tech",
+    "Other": "Anya"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Train Cancellations",
+      "description": "Trains cancel ya severely delay ho gaye hain inadequate notice ya compensation ke saath"
+    },
+    "Train Ticket Prices": {
+      "name": "Train Ticket Prices",
+      "description": "Rail fares bahut expensive hain, above-inflation increases, inconsistent pricing"
+    },
+    "Flight Delays": {
+      "name": "Flight Delays",
+      "description": "Flights delayed ya cancel ho gaye, poor communication, compensation claim karna mushkil"
+    },
+    "Lost Luggage": {
+      "name": "Lost Luggage",
+      "description": "Bags destination par nahi pahunche, slow tracking, inadequate compensation"
+    },
+    "Bus Route Cuts": {
+      "name": "Bus Route Cuts",
+      "description": "Routes cancel ho gaye, frequency kam ho gaya, rural communities bus access kho gaye"
+    },
+    "Pothole Damage": {
+      "name": "Pothole Damage",
+      "description": "Potholes vehicles ko damage kar rahe hain aur cyclists ke liye dangerous hain, councils slow repair karte hain"
+    },
+    "Parking Fines": {
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, confusing signage"
+    },
+    "Fuel Prices": {
+      "name": "Fuel Prices",
+      "description": "Petrol aur diesel ke prices bahut zyada hain, wholesale gire par prices jaldi nahi garte"
+    },
+    "Broadband Speed": {
+      "name": "Broadband Speed",
+      "description": "Internet speeds advertise jo zyada hain aur pay jo kar rahe ho ussse bahut kam hain"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobile Signal Dead Zones",
+      "description": "Homes, workplaces, ya transport routes mein mobile signal nahi aata"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband aur TV bills locked contracts ke beech mein increase ho rahe hain"
+    },
+    "Customer Service Hold Times": {
+      "name": "Customer Service Hold Times",
+      "description": "Ghanton tak hold par rehna padta hai human being se baat karne ke liye"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies cancel ya unsubscribe karna deliberately mushkil banate hain"
+    },
+    "Roaming Charges": {
+      "name": "Roaming Charges",
+      "description": "Abroad travel karte waqt unexpected mobile charges, post-Brexit price increases"
+    },
+    "Energy Bill Costs": {
+      "name": "Energy Bill Costs",
+      "description": "Gas aur electricity bills unaffordable hain, price cap abhi bhi bahut zyada hai"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings galat hain, overcharging ho rahi hai, billing errors"
+    },
+    "Water Bill Increases": {
+      "name": "Water Bill Increases",
+      "description": "Water bills sharply badhte ja rahe hain jab service quality gir rahi hai"
+    },
+    "Sewage in Rivers": {
+      "name": "Sewage in Rivers",
+      "description": "Water companies waterways aur beaches mein raw sewage dump kar rahe hain"
+    },
+    "Power Cuts": {
+      "name": "Power Cuts",
+      "description": "Electricity supply interruptions, slow restoration, inadequate compensation"
+    },
+    "Smart Meter Problems": {
+      "name": "Smart Meter Problems",
+      "description": "Smart meters kaam nahi kar rahe, supplier switch karne ke baad functionality kho jati hai"
+    },
+    "Bank Branch Closures": {
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches band ho rahe hain, communities ke paas access nahi bacha"
+    },
+    "Hidden Bank Charges": {
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees overdrafts, foreign transactions, account maintenance ke liye"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Fraud and Scam Losses",
+      "description": "Banks fraud aur authorised push payment scams ke victims ko reimburse nahi kar rahe"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Insurance Claim Rejections",
+      "description": "Claims technicalities par deny ho rahe hain years tak premiums pay karne ke baad"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate khatam ho jayegi aur bahut zyada variable rate par ja jayegi"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Overseas Transfer Fees",
+      "description": "International money transfers mein excessive fees aur poor exchange rates"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS Waiting Times",
+      "description": "Operations aur specialist appointments ke liye multi-month ya multi-year wait karna padta hai"
+    },
+    "GP Appointment Access": {
+      "name": "GP Appointment Access",
+      "description": "GP appointments book karna impossible hota hai, weeks-long waits"
+    },
+    "Dentist Availability": {
+      "name": "Dentist Availability",
+      "description": "NHS dentist jo naye patients accept kar rahe ho unhe dhundna impossible hai"
+    },
+    "Mental Health Service Waits": {
+      "name": "Mental Health Service Waits",
+      "description": "Therapy aur mental health support ke liye months-long waits"
+    },
+    "Prescription Costs": {
+      "name": "Prescription Costs",
+      "description": "England mein cost per item bahut zyada hai, UK nations mein inconsistency"
+    },
+    "Hospital Parking Charges": {
+      "name": "Hospital Parking Charges",
+      "description": "Hospital mein parking ke liye paisa dena padta hai jabki aap bimar hain ya relatives se milne ja rahe ho"
+    },
+    "Rent Increases": {
+      "name": "Rent Increases",
+      "description": "Private rent inflation se bahut zyada badh raha hai, no-fault eviction ka threat"
+    },
+    "Council Tax Rises": {
+      "name": "Council Tax Rises",
+      "description": "Annual council tax badh raha hai jab local services gir rahe hain"
+    },
+    "Noisy Neighbours": {
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow act karte hain, mental health affect ho rahi hai"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Rubbish Collection Changes",
+      "description": "Bin collections kam ho gaye, recycling rules confusing hain, bins overflowing hain"
+    },
+    "Planning Permission Abuse": {
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approve ho rahe hain, green belt threat mein hai, community ignore ho raha hai"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords aur housing associations damp aur mould fix nahi kar rahe"
+    },
+    "Delivery Problems": {
+      "name": "Delivery Problems",
+      "description": "Parcels lost ho rahe hain, rain mein chor diye ja rahe hain, delivered mark kiye gaye lekin receive nahi huye"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Products chhote ho rahe hain jab prices same reh rahe hain ya increase ho rahe hain"
+    },
+    "Refund Difficulties": {
+      "name": "Refund Difficulties",
+      "description": "Companies returns aur refunds unnecessarily mushkil bana rahe hain"
+    },
+    "Fake Reviews": {
+      "name": "Fake Reviews",
+      "description": "Online reviews par trust nahi kar sakte, fake positive reviews consumers ko mislead kar rahe hain"
+    },
+    "Subscription Traps": {
+      "name": "Subscription Traps",
+      "description": "Free trials paid mein convert ho rahe hain clear consent ke bina, cancel karna mushkil"
+    },
+    "Food Quality Decline": {
+      "name": "Food Quality Decline",
+      "description": "Ready meals quality gir rahe hain, portions chhote ho gaye, zyada additives"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable hain, human staff ki jagah le rahe hain"
+    },
+    "Cost of Childcare": {
+      "name": "Cost of Childcare",
+      "description": "Childcare costs bahut zyada hain, work karne ki ability limit ho rahi hai"
+    },
+    "Student Loan Repayment": {
+      "name": "Student Loan Repayment",
+      "description": "Graduates decades tak repay kar rahe hain, threshold aur interest mein changes"
+    },
+    "Dog Fouling": {
+      "name": "Dog Fouling",
+      "description": "Public spaces, parks, aur pavements mein dog mess nahi saaf ho raha"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Replacing Jobs",
+      "description": "AI artificial intelligence jobs automate karne ke baare mein anxiety, transition support nahi hai"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "UK rail operator jo West Coast Main Line ko serve karta hai"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "UK rail operator jo London aur south ko serve karta hai"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "UK rail operator jo England ke north ko serve karta hai"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "UK long-distance rail operator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "UK rail operator jo trans-Pennine routes ko serve karta hai"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "UK rail operator jo East Coast Main Line ko serve karta hai"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Low-cost European airline"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "UK-based low-cost airline"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "UK flag carrier airline"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Holiday aur travel company"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Major UK broadband aur mobile provider"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "UK broadband, TV, aur mobile provider"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "UK TV, broadband, aur mobile provider"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Global telecoms company jo UK mein headquartered hai"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "UK mobile network operator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "UK broadband aur phone provider"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "UK energy supplier"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "UK energy supplier"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "UK energy supplier (French-owned)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "UK renewable energy supplier"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "UK energy supplier"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "UK energy supplier (German-owned)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Water and sewerage company for London and the Thames Valley"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Water company jo England ke south ko serve karta hai"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Water company jo England ke north west ko serve karta hai"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Water company jo Midlands ko serve karta hai"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Water company jo East Anglia ko serve karta hai"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "British multinational bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Global banking aur financial services"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "UK retail aur commercial bank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "UK banking group"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "UK bank (Spanish-owned)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital banking aur fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "UK insurance aur financial services"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "UK car aur home insurance"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "UK insurance company"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Global e-commerce aur tech"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "UK postal service"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "UK parcel delivery service (formerly Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "UK parcel delivery service"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "UK supermarket chain"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "UK supermarket chain"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "National Health Service for England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS dental services"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Private healthcare provider"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "UK local government authorities"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "UK housebuilder"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "UK online lettings platform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming entertainment service"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technology company"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "train cancel ho gaya",
+      "cancelled train",
+      "train cancellation",
+      "trains nahi chal rahe",
+      "rail cancellation",
+      "service cancel ho gyi",
+      "train delays",
+      "delayed train",
+      "trains late ho gye",
+      "late train",
+      "rail delays"
+    ],
+    "Train Ticket Prices": [
+      "rail fares",
+      "ticket ke charges",
+      "expensive trains",
+      "train fares"
+    ],
+    "Flight Delays": [
+      "flight delayed",
+      "plane delayed",
+      "flight cancel ho gyi",
+      "airport delays",
+      "airport par phansa hua",
+      "flight late"
+    ],
+    "Lost Luggage": [
+      "bags missing hain",
+      "suitcase khoy gya",
+      "bags nahi aaye",
+      "suitcase missing hai",
+      "luggage carousel par nahi aya",
+      "airline ne bag khoy diya"
+    ],
+    "Bus Route Cuts": [
+      "bus cuts",
+      "route reductions",
+      "bus service band ho gyi"
+    ],
+    "Broadband Speed": [
+      "internet slow hai",
+      "wifi slow hai",
+      "wifi slow",
+      "internet ki speed",
+      "broadband kaam nahi kar raha",
+      "buffering ho raha hai",
+      "internet baar baar gir jaata hai",
+      "wifi disconnect ho jaata hai"
+    ],
+    "Mobile Signal Dead Zones": [
+      "signal nahi hai",
+      "reception nahi hai",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
+    "Price Rises Mid-Contract": [
+      "bill badh gya contract ke beech mein",
+      "contract ka price badh gya",
+      "mid contract mein price hike"
+    ],
+    "Customer Service Hold Times": [
+      "hold par ho",
+      "phone par wait kar rahe ho",
+      "through nahi ho pa rahe",
+      "koi answer nahi kar raha",
+      "phone ka queue",
+      "call centre"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "cancel nahi kar pa rahe",
+      "cancel karna mushkil hai",
+      "subscription cancel karo",
+      "unsubscribe karo"
+    ],
+    "Energy Bill Costs": [
+      "gas bill bahut zyada hai",
+      "electricity bill",
+      "energy ke rates",
+      "heating ke charges",
+      "fuel poverty",
+      "energy afford nahi kar pa rahe"
+    ],
+    "Inaccurate Energy Bills": [
+      "energy bill galat hai",
+      "estimated reading galat hai",
+      "energy ka overcharge"
+    ],
+    "Water Bill Increases": [
+      "water rates",
+      "water charge",
+      "water bill bahut zyada hai"
+    ],
+    "Sewage in Rivers": [
+      "sewage dump ho raha hai",
+      "raw sewage",
+      "beach par sewage",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
+    ],
+    "Hidden Bank Charges": [
+      "unexpected fees aaye",
+      "hidden fees hain",
+      "surprise charges",
+      "overdraft charges",
+      "bank fees"
+    ],
+    "Fraud and Scam Losses": [
+      "scam ho gye",
+      "bank fraud",
+      "push payment scam",
+      "authorised fraud"
+    ],
+    "Bank Branch Closures": [
+      "branch band ho rahe hain",
+      "local bank band ho raha hai",
+      "paas mein bank nahi hai"
+    ],
+    "Insurance Claim Rejections": [
+      "claim reject ho gya",
+      "insurance payment nahi dega",
+      "claim reject ho gya"
+    ],
+    "NHS Waiting Times": [
+      "NHS par wait",
+      "waiting list mein ho",
+      "operation ke liye wait",
+      "hospital mein waiting time",
+      "referral ka wait",
+      "surgery ka wait"
+    ],
+    "GP Appointment Access": [
+      "GP appointment nahi mil pa rahe",
+      "doctor ki appointment",
+      "GP ke phone par queue",
+      "doctor se mil nahi pa rahe",
+      "8am par phone scramble"
+    ],
+    "Dentist Availability": [
+      "NHS dentist",
+      "dentist nahi mil pa raha",
+      "dentist ke liye waiting list"
+    ],
+    "Mental Health Service Waits": [
+      "mental health ke liye funding",
+      "therapy tak pohanchna",
+      "counselling ke liye wait",
+      "CAMHS ka wait"
+    ],
+    "Prescription Costs": [
+      "medicine ke charges",
+      "drug ke rates",
+      "pharmacy charges"
+    ],
+    "Delivery Problems": [
+      "parcel khoy gya",
+      "parcel deliver nahi hua",
+      "rain mein chhod diya",
+      "package chori ho gya",
+      "delivery driver",
+      "delivery miss ho gyi"
+    ],
+    "Rent Increases": [
+      "rent bahut zyada hai",
+      "rent badh rahe ho",
+      "landlord rent badha rahe hain",
+      "no fault eviction"
+    ],
+    "Parking Fines": [
+      "parking ticket",
+      "parking charge notice",
+      "PCN",
+      "unfair parking fine"
+    ],
+    "Shrinkflation": [
+      "portions chote ho gye",
+      "same price mein kam product",
+      "package chota ho gya",
+      "products shrink ho rahe hain"
+    ],
+    "Pothole Damage": [
+      "potholes",
+      "road damage",
+      "pothole se car damage"
+    ],
+    "Council Tax Rises": [
+      "council tax badh gya",
+      "council tax bahut zyada hai",
+      "local tax"
+    ],
+    "Damp and Mould in Housing": [
+      "ghar mein mould hai",
+      "flat damp hai",
+      "black mould",
+      "housing mein repair nahi hai"
+    ],
+    "Student Loan Repayment": [
+      "student loans",
+      "tuition fees",
+      "education ka debt",
+      "student debt"
+    ],
+    "AI Replacing Jobs": [
+      "job automation",
+      "AI jobs le rahe hain",
+      "robots workers ki jagah le rahe hain"
+    ],
+    "Roaming Charges": [
+      "holiday par phone bill",
+      "abroad data charges",
+      "foreign phone charges"
+    ],
+    "Smart Meter Problems": [
+      "smart meter kharab hai",
+      "meter kaam nahi kar raha",
+      "meter signal khoy diya"
+    ],
+    "Subscription Traps": [
+      "free trial trap",
+      "auto renewal",
+      "trial ke baad charge ho gya"
+    ],
+    "Fuel Prices": [
+      "petrol ke rates",
+      "diesel ke rates",
+      "fuel ka cost",
+      "petrol bahut mehenga hai"
+    ],
+    "Power Cuts": [
+      "power outage",
+      "electricity cut",
+      "blackout",
+      "power nahi hai",
+      "power failure"
+    ],
+    "Mortgage Rate Shock": [
+      "mortgage badh gya",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate khatam ho raha hai"
+    ],
+    "Overseas Transfer Fees": [
+      "transfer fees",
+      "abroad paise bhejne ke charges",
+      "remittance fees",
+      "wire transfer cost"
+    ],
+    "Hospital Parking Charges": [
+      "hospital parking",
+      "hospital mein parking",
+      "NHS parking"
+    ],
+    "Noisy Neighbours": [
+      "noise complaint",
+      "padosi ka noise",
+      "padosi loud hain",
+      "noise nuisance"
+    ],
+    "Rubbish Collection Changes": [
+      "bin collection",
+      "bins collect nahi ho rahe",
+      "recycling mein confusion",
+      "bin collection miss ho gya"
+    ],
+    "Planning Permission Abuse": [
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
+    ],
+    "Refund Difficulties": [
+      "refund nahi mil pa rahe",
+      "refund refuse ho gya",
+      "return reject ho gya",
+      "paise wapas do"
+    ],
+    "Fake Reviews": [
+      "review manipulation",
+      "paid reviews",
+      "trust pilot fake",
+      "fake review"
+    ],
+    "Food Quality Decline": [
+      "food ki quality",
+      "ready meal bura ho gya",
+      "food additives",
+      "portion chota ho gya"
+    ],
+    "Self-Checkout Frustration": [
+      "self checkout",
+      "self service",
+      "staff tills nahi hain",
+      "machine kaam nahi kar raha"
+    ],
+    "Cost of Childcare": [
+      "childcare ka cost",
+      "nursery fees",
+      "childcare mehenga hai",
+      "daycare cost"
+    ],
+    "Dog Fouling": [
+      "dog ka mess",
+      "dog ka poo",
+      "dog ka waste",
+      "fouling"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Ek baar ek rioter ko single delayed journey mein 6 refund claims file karne mein madad ki. Unhone Birmingham tak pohanchne se pehle £47 bana liye.",
+      "agent_bio": "Cancellation patterns track karta hai, refund paperwork handle karta hai, har suggested action ko review karta hai, aur regulator submissions ke liye evidence jodta hai. Numbers crunch karta hai taaki rioters apne important cheezein dekh sakein.",
+      "human_quote": "Mera favourite Quiet Riot moment: Avanti ke social media team ko dekhna jab 400 logon ne same time par tweet kiya.",
+      "human_bio": "Manchester se regular commuter jo 3 saal Avanti line par tha phir bass kar diya. Same routes par rioters ko connect karna, share karna ki kya kaam kar raha hai, aur human touch lana.",
+      "goal": "Rioters ko UK transport companies ko cancellations, delays, aur pricing ke liye accountable banana aur sabko pata chalna ki unhein kya entitlement hai.",
+      "focus": "Avanti West Coast cancellation patterns",
+      "focus_detail": "Cancellations ka dataset bana rahe hain times, routes, aur reasons ke saath ORR ko submit karne ke liye. Abhi 340 cancellations track kar rahe hain rioters ne is month report kiye hain."
+    },
+    "telecoms": {
+      "agent_quote": "200 rioters ke liye speed tests run kiye. Average tha 18 Mbps. Wo 65 ke liye pay kar rahe the.",
+      "agent_bio": "Broadband speeds ko analyze karta hai, provider comparison data compile karta hai, aur rioters ko Ofcom ke liye evidence banana mein madad karta hai. Agar connection slow hai toh Pulse prove karega.",
+      "human_quote": "Ek puri street ne together broadband switch kiya. Purana provider ne har ghar ko 'please come back' letters bheje.",
+      "human_bio": "Tech-savvy Londoner jo broadband speeds ke liye pay karta tha jo kabhi materialize nahi hua. Rioters ko providers compare karna, switches coordinate karna, aur speed test evidence share karna mein madad karta hai.",
+      "goal": "Rioters ko broadband aur mobile service dena jo wo pay kar rahe hain aur pata chalna ki kya karna jab nahi mile.",
+      "focus": "Mid-contract price rises",
+      "focus_detail": "CPI+ increases se hit hue rioters se evidence collect kar rahe hain Ofcom ko submit karne ke liye. 890 rioters affected hain 4 providers se."
+    },
+    "energy": {
+      "agent_quote": "Ek rioter ko calculate karne mein madad ki ke unhone estimated bills par £340 zyada pay kiya. Energy company ka apology email original contract se bhi lamba tha.",
+      "agent_bio": "Billing patterns ko analyze karta hai, overcharges spot karta hai, aur regulator submissions ke liye evidence jodta hai. Agar energy company galti kar raha hai toh Spark receipts find karega.",
+      "human_quote": "Ek rioter ko £340 back mila jab humne 2 saal ki overcharging prove ki. Wo phone par ro gayi.",
+      "human_bio": "Bristol se, rioters ko apne bills challenge karna, switching navigate karna, aur Ofgem ke liye evidence gather karna mein madad karta hai. Energy market ko andar bahar se jaanta hai.",
+      "goal": "Rioters ko unfair bills challenge karna, smarter switch karna, aur energy companies ko fair play ensure karna mein madad karna.",
+      "focus": "British Gas estimated billing errors",
+      "focus_detail": "340 rioters ke 2 saal ka billing data analyze kar rahe hain Ofgem submission ke liye systematic overcharging patterns identify karne ke liye."
+    },
+    "water": {
+      "agent_quote": "200 rioters ko ek weekend mein sewage reports file karne mein madad ki. Thames Water ke inbox ko apna inbox chahiye tha.",
+      "agent_bio": "Sewage discharge data monitor karta hai, water company performance track karta hai, aur EA aur Ofwat ke liye evidence compile karta hai. Har outlet aur overflow par nazar rakhta hai.",
+      "human_quote": "Humne sewage data galat tha ye dikha kar ek beach 3 hafton jaldi reopen karwa liya.",
+      "human_bio": "Cornwall se surfer jo apne local beach par sewage warnings se thak gaya. Rioters ko discharges report karna, water quality evidence gather karna, aur EA ke saath coordinate karna mein madad karta hai.",
+      "goal": "Rioters ko water companies ko sewage, bills, aur service quality ke liye accountable banana.",
+      "focus": "Thames Water sewage discharge frequency",
+      "focus_detail": "Discharge events ko company-reported data se map kar rahe hain. 200 rioter reports suggest ke 3 outlets par under-reporting ho raha hai."
+    },
+    "banking": {
+      "agent_quote": "Ek complaint draft karne mein madad ki jo itni thorough thi ke bank ne phone kar ke apology de di send hone se pehle.",
+      "agent_bio": "Bank charges review karta hai, fee structures analyze karta hai, aur FCA complaint evidence banana mein madad karta hai. Agar hidden fee hai toh Chip find karega.",
+      "human_quote": "Barclays ne branch closure reverse kiya jab 1,200 logon ne consultation mein show up kiye.",
+      "human_bio": "Birmingham se ex-bank employee jo andar se dekha hai complaints kaise handle hoti hain. Rioters ko better complaints likhhne aur system navigate karne mein madad karta hai.",
+      "goal": "Rioters ko unfair charges, branch closures, aur banks se poor service deal karne mein madad karna.",
+      "focus": "HSBC branch closure wave",
+      "focus_detail": "12 planned closures ke responses coordinate kar rahe hain. Affected communities se impact statements collect kar rahe hain."
+    },
+    "health": {
+      "agent_quote": "3 NHS dentists find karne mein madad ki jo patients accept kar rahe the. Rioter ko laga main jhooth bol raha hoon.",
+      "agent_bio": "Waiting times track karta hai, availability find karta hai, aur rioters ko system navigate karne mein madad karta hai. Agar faster route treatment tak hai toh Cura map karega.",
+      "human_quote": "Ek rioter ne hamara letter template use kar ke referral fast-track karwa liya. 18 months 6 weeks ho gaya.",
+      "human_bio": "Liverpool se nurse jo NHS ke dono sides dekha hai. Rioters ko waiting lists navigate karna, effective letters likhhne, aur pata chalna ki kya actually move karta hai.",
+      "goal": "Rioters ko NHS waiting times navigate karna, availability find karna, aur pata chalna ke unke paas kaunse options hain.",
+      "focus": "GP telephone access times",
+      "focus_detail": "500 rioters se call data collect kar rahe hain real-world access ka picture banana ke liye. Findings local health boards ko publish karenge."
+    },
+    "housing": {
+      "agent_quote": "Ek new build mein 47 snags document karne mein madad ki. Developer ne pooche ki ye building inspector hain kya.",
+      "agent_bio": "Property issues document karta hai, landlord response times analyze karta hai, aur housing ombudsman submissions ke liye evidence compile karta hai. Har damp patch, har crack, logged.",
+      "human_quote": "Hamara damp evidence pack itna detailed tha ke landlord ne council inspection se pehle fix kar diya.",
+      "human_bio": "London se renter jo damp se dodgy landlords tak sab kuch deal kiya hai. Rioters ko issues properly document karna aur pata chalna ke unhein kya entitlement hai.",
+      "goal": "Rioters ko landlords, councils, aur housing issues deal karna mein madad aur pata chalna ke unhein kya entitlement hai.",
+      "focus": "Section 21 no-fault eviction notices",
+      "focus_detail": "No-fault evictions se affected rioters ko new Renters Reform Act samjhne aur uska matlab kya hai."
+    },
+    "shopping": {
+      "agent_quote": "Ek 'delivered' parcel ko 4 neighbours, ek recycling bin, aur ek greenhouse ke through track kiya. Find kar liya.",
+      "agent_bio": "Delivery failures track karta hai, refund evidence compile karta hai, aur pricing patterns spot karta hai. Agar parcel lost ho toh Scout already dekh raha hai.",
+      "human_quote": "Evri ne mera parcel 3 baar lose kiya. Ab main doosron ko refunds faster dilwane mein madad karta hoon.",
+      "human_bio": "Edinburgh se online shopping veteran jo kitne hi parcels lose dekh chuki hai. Rioters ko refunds dila na, sellers report karna, aur worst offenders avoid karna mein madad karta hai.",
+      "goal": "Rioters ko refunds dila na, lost parcels track karna, aur retailers aur delivery companies ko accountable banana.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "800 rioters se delivery failure evidence compile kar rahe hain Citizens Advice aur Trading Standards ko submit karne ke liye."
+    },
+    "local": {
+      "agent_quote": "Ek pothole ki 11 different weather conditions mein photograph karne mein madad ki. Council finally ban gaya.",
+      "agent_bio": "Local issues map karta hai, council response times track karta hai, aur FOI requests compile karta hai. Agar pothole 6 mahine se hai toh Link ke paas evidence hai.",
+      "human_quote": "Council ne road fix kiya jab humne har pothole ko photo ke saath map kiya. 11 mahine, par humne kar diya.",
+      "human_bio": "Valleys se community-minded Welshman jo saale hi potholes report kar raha hai. Rioters ko local issues document karna aur councils ko accountable banana mein madad karta hai.",
+      "goal": "Rioters ko local issues fix karwa na - potholes, bins, planning, noise - aur councils ko accountable banana.",
+      "focus": "Pothole reporting response times",
+      "focus_detail": "30 councils ko FOI requests bheje hain reported vs actual repair times compare karne ke liye. Results league table ke taur par publish karenge."
+    },
+    "other": {
+      "agent_quote": "Ek gym membership cancel karne mein madad ki jo 3 calls, 2 emails, aur ek recorded delivery lagi. Ab gym ke paas cancel button hai.",
+      "agent_bio": "Issues handle karta hai jo neatly fit nahi hote. Subscription traps, plastic waste, self-checkout frustrations - Flex patterns aur pressure points find karta hai.",
+      "human_quote": "Humne ek gym chain ko website mein cancel button add karawe. Bas 800 complaints lage.",
+      "human_bio": "London se product designer jo frustrate tha ke companies leave karna kitna hard banate hain. Rioters ko subscriptions cancel karna, dark patterns avoid karna, aur workarounds share karna mein madad karta hai.",
+      "goal": "Rioters ko jo cheezein fit nahi hoti - subscriptions, refunds, everyday frustrations - mein madad karna.",
+      "focus": "Subscription cancellation dark patterns",
+      "focus_detail": "Worst offenders document kar rahe hain aur har ek ke liye template cancellation scripts build kar rahe hain."
+    },
+    "insurance": {
+      "agent_quote": "Ek rioter ko clause find karne mein madad ki jo rejected home insurance claim ko £4,200 payout mein badal gaya. Insurer ka apna policy prove kar diya unhein galat.",
+      "agent_bio": "Policy wording review karta hai, unfair rejection patterns spot karta hai, aur Financial Ombudsman submissions ke liye evidence build karta hai. Agar insurer valid claim dodge kar raha hai toh Shield leverage find karega.",
+      "human_quote": "8 rioters ko same rejected claim type ke saath together submit karawe. Insurer ne 8 sab ko 2 hafton mein settle kar diya.",
+      "human_bio": "Leeds se ex-insurance industry worker jo jaanta hai claims kaise actually decide hoti hain. Rioters ko better appeals likhhne, policy jargon samjhne, aur pata chalna ke kab escalate karna hai.",
+      "goal": "Rioters ko insurers se fair treatment dilwa na aur pata chalna ke claim unfairly reject ho toh kya karna.",
+      "focus": "Aviva home insurance rejection patterns",
+      "focus_detail": "'Wear and tear' 40% rejected claims mein cite hota hai - aksar galat. 3 insurers par 200 cases analyze kar rahe hain FOS evidence pack ke liye."
+    },
+    "delivery": {
+      "agent_quote": "Ek 'delivered' parcel ko 6 different tracking statuses, 3 depots, aur ek neighbour ke shed ke through trace kiya. 47 minutes mein find kar liya.",
+      "agent_bio": "Courier performance monitor karta hai, delivery failure rates track karta hai, aur consumer complaints ke liye evidence compile karta hai. Agar parcel vanish ho toh Track already on hai.",
+      "human_quote": "DPD ko apne area mein photo-evidence policy change karawe jab 40 rioters ne proof submit kiye ke parcels rain mein chhod diye.",
+      "human_bio": "Glasgow se online shopper jo 'we left it in a safe place' excuse se thak gaya. Rioters ko refunds dilwa na, couriers report karna, aur worst offenders avoid karna mein madad karta hai.",
+      "goal": "Rioters ko parcels properly delivered kara na aur refunds dila na jab nahi deliver ho.",
+      "focus": "Evri delivery failure rates",
+      "focus_detail": "800 rioters se delivery failure evidence compile kar rahe hain. Evri complaint rate: 23% - DPD se 3x zyada. Trading Standards ke liye league table ban rahe hain."
+    },
+    "education": {
+      "agent_quote": "Calculate kiya ki Plan 2 borrower jo £30k earn karta hai wo £47,000 interest pay karega original loan write off hone se pehle. Original loan tha £40,000.",
+      "agent_bio": "Education costs analyze karta hai, student loan projections karta hai, aur funding entitlements dekh ta hai. Numbers crunch karta hai taaki students aur graduates informed decisions le sakein.",
+      "human_quote": "12 rioters ko overpaid student loan repayments claim karne mein madad ki jo unhein pata nahi tha. Average refund tha £340.",
+      "human_bio": "Birmingham se mature student jo funding system se do baar guzra. Rioters ko repayments samjhne, overpayments spot karna, aur threshold changes challenge karne mein madad karta hai.",
+      "goal": "Students aur graduates ko education costs, loans, aur repayments navigate karna mein madad aur pata chalna ke wo overpay nahi kar rahe.",
+      "focus": "Student loan overpayment refunds",
+      "focus_detail": "Graduates identify kar rahe hain jo repayment threshold se neeche charge ho rahe the. 12 refunds process ho chuke hain - average £340 har ek."
+    },
+    "environment": {
+      "agent_quote": "3 saal ka air quality data hospital admission rates ke saath cross-reference kiya. Correlation itna clear tha ke council ignore nahi kar saka.",
+      "agent_bio": "Environmental data track karta hai, pollution levels monitor karta hai, aur regulatory submissions ke liye evidence compile karta hai. Agar numbers story bolte hain toh Fern find karega.",
+      "human_quote": "Hamari local council ne air quality monitors install karawe jab 200 rioters ne humara evidence petition sign kiya. Data sab kuch badal gaya.",
+      "human_bio": "Bristol se environmental science graduate jo evidence-led change mein believe karta hai. Rioters ko environmental issues document karna aur regulators ko cases build karne mein madad karta hai jo ignore nahi kar sakein.",
+      "goal": "Rioters ko environmental problems document karna aur polluters aur policymakers ko data se accountable banana.",
+      "focus": "Local air quality monitoring gaps",
+      "focus_detail": "5km mein koi air quality monitoring nahi wale areas map kar rahe hain. 60% rioter-reported pollution hotspots ke paas official monitoring nahi hai."
+    },
+    "employment": {
+      "agent_quote": "300 rioters se workplace AI implementation data compile kiya. 40% ne kaha changes zero consultation ke saath huye. Ye pattern hai, anecdote nahi.",
+      "agent_bio": "Workplace trends analyze karta hai, policy changes track karta hai, aur rioters ko apne protections samjhne mein madad karta hai. Agar job consultation ke bina badal rahi hai toh Forge ke paas data hai.",
+      "human_quote": "30 rioters ko same industry mein AI changes face kar rahe hone se connect karawe. Nikla ke sabke companies same playbook use kar rahe the - aur same loopholes.",
+      "human_bio": "Manchester se HR professional jo restructurings kaise truly work hote hain dekh kar side switch kiya. Rioters ko options samjhne aur collectively respond karne mein madad karta hai.",
+      "goal": "Rioters ko workplace changes navigate karna, apne protections samjhna, aur jab jobs risk mein ho toh collectively respond karna mein madad karna.",
+      "focus": "AI workplace automation without consultation",
+      "focus_detail": "Cases document kar rahe hain jahan AI tools staff consultation ke bina introduce hue. Employer obligations par report ke liye evidence build kar rahe hain."
+    },
+    "tech": {
+      "agent_quote": "Dekha ki 3 major apps location data collect kar rahe the jab permissions 'never' par the. Sab ke liye ICO ko complaints file kiye.",
+      "agent_bio": "Platform policies monitor karta hai, dark patterns track karta hai, aur rioters ko samjhne mein madad karta hai ke tech companies unke data se kya kar rahe hain. Agar app misbehave kar raha hai toh Glitch catch karega.",
+      "human_quote": "Ek social media company ko mass data subject access request organize kiya. Jab 500 logon ek saath pooche toh unhein seriously lena padta hai.",
+      "human_bio": "Edinburgh se software developer jo frustrated tha tech companies promise aur deliver karte hain ke beech gap se. Rioters ko apne data rights exercise karna aur dark patterns spot karna mein madad karta hai.",
+      "goal": "Rioters ko dark patterns, data misuse, aur unfair tech practices ke against push back karna mein madad karna.",
+      "focus": "App permission overreach",
+      "focus_detail": "Top 50 apps audit kar rahe hain permission creep ke liye - access request kar rahe hain jo unhein nahi chahiye. ICO ke liye report build kar rahe hain."
+    }
+  }
+}

@@ -2,7 +2,7 @@
  * API-based translation pipeline for Quiet Riots.
  *
  * Translates entity sections in translation JSON files using the Anthropic API.
- * Sends all 44 locale requests in parallel for speed (~1-2 minutes total).
+ * Sends all locale requests in parallel for speed (~1-2 minutes total).
  *
  * Usage:
  *   # Translate a specific section (e.g. after adding new entity data):
@@ -17,7 +17,7 @@
  *   # Dry run (show what would be translated without writing):
  *   npx tsx scripts/translate.ts --section category_assistants --dry-run
  *
- *   # Use a specific model (default: claude-haiku-4-20250414):
+ *   # Use a specific model (default: claude-haiku-4-5-20251001):
  *   npx tsx scripts/translate.ts --section issues --model claude-sonnet-4-20250514
  *
  * Environment:
@@ -35,6 +35,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { NON_EN_LOCALES, LOCALE_NAMES } from '../src/i18n/locales';
 
 // Load .env.local if it exists (tsx doesn't auto-load it)
 const envLocalPath = path.resolve(__dirname, '../.env.local');
@@ -55,52 +56,8 @@ if (fs.existsSync(envLocalPath)) {
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations');
 
-const ALL_LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt',
-  'pt-BR',
-  'it',
-  'nl',
-  'sv',
-  'da',
-  'no',
-  'fi',
-  'pl',
-  'cs',
-  'sk',
-  'hu',
-  'ro',
-  'bg',
-  'hr',
-  'sl',
-  'uk',
-  'ru',
-  'tr',
-  'ar',
-  'he',
-  'fa',
-  'hi',
-  'bn',
-  'ta',
-  'te',
-  'ml',
-  'th',
-  'vi',
-  'id',
-  'ms',
-  'zh-CN',
-  'zh-TW',
-  'ja',
-  'ko',
-  'tl',
-  'sw',
-  'el',
-  'ca',
-  'eu',
-  'gl',
-];
+// All non-English locales from the single source of truth
+const ALL_LOCALES: string[] = [...NON_EN_LOCALES];
 
 const VALID_SECTIONS = [
   'categories',
@@ -111,54 +68,6 @@ const VALID_SECTIONS = [
 ] as const;
 
 type Section = (typeof VALID_SECTIONS)[number];
-
-// Locale display names for better prompts
-const LOCALE_NAMES: Record<string, string> = {
-  ar: 'Arabic',
-  bg: 'Bulgarian',
-  bn: 'Bengali',
-  ca: 'Catalan',
-  cs: 'Czech',
-  da: 'Danish',
-  de: 'German',
-  el: 'Greek',
-  es: 'Spanish',
-  eu: 'Basque',
-  fa: 'Persian/Farsi',
-  fi: 'Finnish',
-  fr: 'French',
-  gl: 'Galician',
-  he: 'Hebrew',
-  hi: 'Hindi',
-  hr: 'Croatian',
-  hu: 'Hungarian',
-  id: 'Indonesian',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  ml: 'Malayalam',
-  ms: 'Malay',
-  nl: 'Dutch',
-  no: 'Norwegian',
-  pl: 'Polish',
-  pt: 'Portuguese (Portugal)',
-  'pt-BR': 'Portuguese (Brazil)',
-  ro: 'Romanian',
-  ru: 'Russian',
-  sk: 'Slovak',
-  sl: 'Slovenian',
-  sv: 'Swedish',
-  sw: 'Swahili',
-  ta: 'Tamil',
-  te: 'Telugu',
-  th: 'Thai',
-  tl: 'Filipino/Tagalog',
-  tr: 'Turkish',
-  uk: 'Ukrainian',
-  vi: 'Vietnamese',
-  'zh-CN': 'Simplified Chinese',
-  'zh-TW': 'Traditional Chinese',
-};
 
 // ─── CLI parsing ────────────────────────────────────────────────────────────
 
@@ -174,7 +83,7 @@ function parseArgs(): CliArgs {
   let sections: Section[] = [];
   let locales = ALL_LOCALES;
   let dryRun = false;
-  let model = 'claude-haiku-4-20250414';
+  let model = 'claude-haiku-4-5-20251001';
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
@@ -210,9 +119,9 @@ function parseArgs(): CliArgs {
 Options:
   --section <name>    Translate a specific section (can be repeated)
   --all               Translate all sections
-  --locales <list>    Comma-separated locale codes (default: all 44)
+  --locales <list>    Comma-separated locale codes (default: all 55)
   --dry-run           Show what would be translated without writing
-  --model <name>      Anthropic model to use (default: claude-haiku-4-20250414)
+  --model <name>      Anthropic model to use (default: claude-haiku-4-5-20251001)
   --help              Show this help
 
 Sections: ${VALID_SECTIONS.join(', ')}
@@ -241,7 +150,7 @@ Examples:
 
 function buildPrompt(section: string, englishJson: string, locale: string): string {
   const localeName = LOCALE_NAMES[locale] || locale;
-  return `Translate the following JSON values from English to ${localeName} (locale code: ${locale}).
+  let prompt = `Translate the following JSON values from English to ${localeName} (locale code: ${locale}).
 
 RULES — follow these exactly:
 1. Translate ONLY the string values. Keep ALL JSON keys exactly as they are in English.
@@ -252,10 +161,27 @@ RULES — follow these exactly:
 6. Keep numbers, percentages, and abbreviations as-is: 200, 400, 18 Mbps, CPI+, FOI, FOS, AI, IPO
 7. Keep {variable} placeholders exactly as-is (e.g. {count}, {name})
 8. Return ONLY the translated JSON object — no markdown, no explanation, no code fences.
-9. The output must be valid JSON that can be parsed with JSON.parse().
+9. The output must be valid JSON that can be parsed with JSON.parse().`;
+
+  // Romanised locale: enforce Latin script only
+  if (locale.endsWith('-Latn')) {
+    prompt += `
+
+CRITICAL — LATIN SCRIPT ONLY:
+- Do NOT use any native script characters (no Bengali, Devanagari, Arabic, Cyrillic, Greek, Tamil, Telugu, Malayalam)
+- Use Latin alphabet ONLY — this is a romanised variant for people who type in Latin script
+- Follow real-world conventions, not academic transliteration
+- For Arabizi: use numeral conventions (3=ع, 7=ح, 5=خ, 2=ء, 8=ق, 9=ص)
+- For Hinglish: mix Hindi and English words naturally as speakers do
+- For Finglish: use established Persian romanisation conventions`;
+  }
+
+  prompt += `
 
 JSON to translate:
 ${englishJson}`;
+
+  return prompt;
 }
 
 async function translateSection(

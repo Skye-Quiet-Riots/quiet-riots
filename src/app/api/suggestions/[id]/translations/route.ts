@@ -4,7 +4,7 @@ import { getAllEntityTranslations, getLanguageNames } from '@/lib/queries/transl
 import { hasRole } from '@/lib/queries/roles';
 import { getSession } from '@/lib/session';
 import { apiOk, apiError } from '@/lib/api-response';
-import { SUPPORTED_LOCALES } from '@/lib/ai';
+import { NON_EN_LOCALES } from '@/i18n/locales';
 
 /** GET /api/suggestions/[id]/translations — fetch all translations for review */
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -27,7 +27,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
   // Get language names for all locales that have translations
   const localeCodes = Object.keys(translations);
-  const languageNames = await getLanguageNames(localeCodes.length > 0 ? localeCodes : [...SUPPORTED_LOCALES]);
+  const languageNames = await getLanguageNames(localeCodes.length > 0 ? localeCodes : [...NON_EN_LOCALES]);
 
   return apiOk({ translations, languageNames, entityType, entityId });
 }

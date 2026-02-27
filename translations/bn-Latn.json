@@ -1,0 +1,876 @@
+{
+  "locale": "bn-Latn",
+  "categories": {
+    "Transport": "Parivahan",
+    "Telecoms": "Durasuchipur",
+    "Banking": "Bankkari",
+    "Health": "Svasthya",
+    "Education": "Shiksha",
+    "Environment": "Paribesh",
+    "Energy": "Shakti",
+    "Water": "Jol",
+    "Insurance": "Bima",
+    "Housing": "Basasthan",
+    "Shopping": "Kinokati",
+    "Delivery": "Shuddhi",
+    "Local": "Sthanio",
+    "Employment": "Karjibivag",
+    "Tech": "Proyuktibidya",
+    "Other": "Anya"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Train Cancellations",
+      "description": "Trains cancel hoye gaye ya beshi delay hoye gache, notice ya compensation inadequate ache"
+    },
+    "Train Ticket Prices": {
+      "name": "Train Ticket Prices",
+      "description": "Rail fares beshi expensive, inflation er upore increase, pricing inconsistent"
+    },
+    "Flight Delays": {
+      "name": "Flight Delays",
+      "description": "Flights delay hoye gaye ya cancel hoye gache, communication kharap, compensation claim kora mushkil"
+    },
+    "Lost Luggage": {
+      "name": "Lost Luggage",
+      "description": "Bags destination e pochai na, tracking slow, compensation inadequate"
+    },
+    "Bus Route Cuts": {
+      "name": "Bus Route Cuts",
+      "description": "Routes cancel hoye gache, frequency komiye gache, rural communities bus access hariye fache"
+    },
+    "Pothole Damage": {
+      "name": "Pothole Damage",
+      "description": "Potholes vehicles damage kore, cyclists danger e ache, councils repair karte slow"
+    },
+    "Parking Fines": {
+      "name": "Parking Fines",
+      "description": "Unfair private parking charges, aggressive enforcement, signage confusing"
+    },
+    "Fuel Prices": {
+      "name": "Fuel Prices",
+      "description": "Petrol ar diesel prices beshi zyada, wholesale komley price drop kore na"
+    },
+    "Broadband Speed": {
+      "name": "Broadband Speed",
+      "description": "Internet speeds advertise ar paid er theke beshi kom"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mobile Signal Dead Zones",
+      "description": "Homes, workplaces, ya transport routes e mobile signal nai"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Price Rises Mid-Contract",
+      "description": "Phone, broadband ar TV bills locked contracts er moddhe increase hore"
+    },
+    "Customer Service Hold Times": {
+      "name": "Customer Service Hold Times",
+      "description": "Hold e ghante ghante wait kore human being er songe kotha bolte hote pare"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Difficulty Cancelling Subscriptions",
+      "description": "Companies cancel hoye ja unsubscribe kora deliberately mushkil kore diye"
+    },
+    "Roaming Charges": {
+      "name": "Roaming Charges",
+      "description": "Abroad travel korle mobile charges unexpected ache, post-Brexit price increase"
+    },
+    "Energy Bill Costs": {
+      "name": "Energy Bill Costs",
+      "description": "Gas ar electricity bills afford kora mushkil, price cap still beshi"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Inaccurate Energy Bills",
+      "description": "Estimated readings galat, overcharging, billing errors"
+    },
+    "Water Bill Increases": {
+      "name": "Water Bill Increases",
+      "description": "Water bills sharply increase hore, service quality decline hore"
+    },
+    "Sewage in Rivers": {
+      "name": "Sewage in Rivers",
+      "description": "Water companies raw sewage waterways ar beaches e dump kore"
+    },
+    "Power Cuts": {
+      "name": "Power Cuts",
+      "description": "Electricity supply interrupt hote pare, restoration slow, compensation inadequate"
+    },
+    "Smart Meter Problems": {
+      "name": "Smart Meter Problems",
+      "description": "Smart meters kam korche na, supplier change korle functionality lost hote pare"
+    },
+    "Bank Branch Closures": {
+      "name": "Bank Branch Closures",
+      "description": "Local bank branches close hoye jache, communities access hariye fache"
+    },
+    "Hidden Bank Charges": {
+      "name": "Hidden Bank Charges",
+      "description": "Unexpected fees overdrafts, foreign transactions, account maintenance er jonno"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Fraud and Scam Losses",
+      "description": "Banks fraud ar authorised push payment scam victims ke reimburse karte chaye na"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Insurance Claim Rejections",
+      "description": "Claims deny kore dewa hoy technicalities er bases e, premiums years kore pay korar pore"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Mortgage Rate Shock",
+      "description": "Fixed rate end hoye much higher variable rate e shift hoye jaye"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Overseas Transfer Fees",
+      "description": "International money transfer er jonno excessive fees ar poor exchange rates"
+    },
+    "NHS Waiting Times": {
+      "name": "NHS Waiting Times",
+      "description": "Operations ar specialist appointments er jonno multi-month ya multi-year waits"
+    },
+    "GP Appointment Access": {
+      "name": "GP Appointment Access",
+      "description": "GP appointments book korate parchina, weeks-long waits"
+    },
+    "Dentist Availability": {
+      "name": "Dentist Availability",
+      "description": "NHS dentist paowa impossible jo new patients accept kore"
+    },
+    "Mental Health Service Waits": {
+      "name": "Mental Health Service Waits",
+      "description": "Therapy ar mental health support er jonno months-long waits"
+    },
+    "Prescription Costs": {
+      "name": "Prescription Costs",
+      "description": "Cost per item England e beshi, UK nations er moddhe inconsistency"
+    },
+    "Hospital Parking Charges": {
+      "name": "Hospital Parking Charges",
+      "description": "Hospital e park korate taka dite hoy, bimar hoye ya sick relatives visit korte"
+    },
+    "Rent Increases": {
+      "name": "Rent Increases",
+      "description": "Private rent inflation er upore beshi increase hore, no-fault eviction threat"
+    },
+    "Council Tax Rises": {
+      "name": "Council Tax Rises",
+      "description": "Annual council tax increase hote pare, local services worse hoye"
+    },
+    "Noisy Neighbours": {
+      "name": "Noisy Neighbours",
+      "description": "Persistent noise disturbance, councils slow e act kore, mental health affect hote pare"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Rubbish Collection Changes",
+      "description": "Bin collections reduce, recycling rules confusing, bins overflow hote pare"
+    },
+    "Planning Permission Abuse": {
+      "name": "Planning Permission Abuse",
+      "description": "Unwanted developments approve, green belt threat e ache, community ignore kore"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Damp and Mould in Housing",
+      "description": "Landlords ar housing associations damp ar mould fix karte fail kore"
+    },
+    "Delivery Problems": {
+      "name": "Delivery Problems",
+      "description": "Parcels lost, rain e fele, delivered mark kore but paojoni"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Products chhota hoye jaye, prices same stay ya increase hote pare"
+    },
+    "Refund Difficulties": {
+      "name": "Refund Difficulties",
+      "description": "Companies returns ar refunds unnecessarily mushkil kore diye"
+    },
+    "Fake Reviews": {
+      "name": "Fake Reviews",
+      "description": "Online reviews e trust kora mushkil, fake positive reviews consumers ke mislead kore"
+    },
+    "Subscription Traps": {
+      "name": "Subscription Traps",
+      "description": "Free trials paid e convert hote pare without clear consent, cancel kora hard"
+    },
+    "Food Quality Decline": {
+      "name": "Food Quality Decline",
+      "description": "Ready meals quality komb, portions smaller, additives beshi"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Self-Checkout Frustration",
+      "description": "Self-service machines unreliable, human staff replace kore"
+    },
+    "Cost of Childcare": {
+      "name": "Cost of Childcare",
+      "description": "Childcare costs beshi zyada expensive, work korate ability limit kore"
+    },
+    "Student Loan Repayment": {
+      "name": "Student Loan Repayment",
+      "description": "Graduates decades er jonno pay back kore, threshold ar interest change hote pare"
+    },
+    "Dog Fouling": {
+      "name": "Dog Fouling",
+      "description": "Public spaces, parks, ar pavements e dog mess clean kora hoy na"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Replacing Jobs",
+      "description": "Artificial intelligence jobs automate korbe, transition support na thakle anxiety"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "UK rail operator serving the West Coast Main Line"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "UK rail operator serving London and the south"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "UK rail operator serving the north of England"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "UK long-distance rail operator"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "UK rail operator serving trans-Pennine routes"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "UK rail operator serving the East Coast Main Line"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Low-cost European airline"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "UK-based low-cost airline"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "UK flag carrier airline"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Holiday and travel company"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Major UK broadband and mobile provider"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "UK broadband, TV, and mobile provider"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "UK TV, broadband, and mobile provider"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Global telecoms company headquartered in the UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "UK mobile network operator"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "UK broadband and phone provider"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "UK energy supplier"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "UK energy supplier"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "UK energy supplier (French-owned)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "UK renewable energy supplier"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "UK energy supplier"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "UK energy supplier (German-owned)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Water and sewerage company for London and the Thames Valley"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Water company for the south of England"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Water company for the north west of England"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Water company for the Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Water company for East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "British multinational bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Global banking and financial services"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "UK retail and commercial bank"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "UK banking group"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "UK bank (Spanish-owned)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Digital banking and fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "UK insurance and financial services"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "UK car and home insurance"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "UK insurance company"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Global e-commerce and tech"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "UK postal service"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "UK parcel delivery service (formerly Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "UK parcel delivery service"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "UK supermarket chain"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "UK supermarket chain"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "National Health Service for England"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "NHS dental services"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Private healthcare provider"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "UK local government authorities"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "UK housebuilder"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "UK online lettings platform"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Streaming entertainment service"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Technology company"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "tren cancel hoye gache",
+      "cancel tren",
+      "tren cancellation",
+      "tren chalchhe na",
+      "rail cancellation",
+      "service cancel",
+      "tren delay",
+      "delay tren",
+      "tren late ache",
+      "late tren",
+      "rail delay"
+    ],
+    "Train Ticket Prices": [
+      "rail fare",
+      "ticket cost",
+      "expensive tren",
+      "tren fare"
+    ],
+    "Flight Delays": [
+      "flight delay hoye gache",
+      "plane delay",
+      "flight cancel",
+      "airport delay",
+      "airport e atka gache",
+      "flight late"
+    ],
+    "Lost Luggage": [
+      "bag kho gache",
+      "suitcase kho gache",
+      "bag arrive kore nai",
+      "suitcase kho gache",
+      "luggage carousel e asha nai",
+      "airline bag kho kore diye ache"
+    ],
+    "Bus Route Cuts": [
+      "bus cut",
+      "route reduce",
+      "bus service band"
+    ],
+    "Broadband Speed": [
+      "internet slow",
+      "wifi slow",
+      "wifi slow ache",
+      "internet speed",
+      "broadband kaj korchhe na",
+      "buffering",
+      "internet drop hoe jaiche",
+      "wifi drop out hoe jaiche"
+    ],
+    "Mobile Signal Dead Zones": [
+      "signal nai",
+      "reception nai",
+      "mobile blackspot",
+      "signal dead zone"
+    ],
+    "Price Rises Mid-Contract": [
+      "bill increase mid contract",
+      "contract price rise",
+      "mid contract hike"
+    ],
+    "Customer Service Hold Times": [
+      "phone e on hold",
+      "phone e wait kora",
+      "connect hoe na",
+      "keu phone uthachhe na",
+      "phone queue",
+      "call centre"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "cancel korte parchi na",
+      "cancel kora mushkil",
+      "subscription cancel kora",
+      "unsubscribe"
+    ],
+    "Energy Bill Costs": [
+      "gas bill bohut beshi",
+      "electricity bill",
+      "energy price",
+      "heating cost",
+      "fuel poverty",
+      "energy afford korte parchhi na"
+    ],
+    "Inaccurate Energy Bills": [
+      "energy bill galat",
+      "estimated reading galat",
+      "overcharged energy"
+    ],
+    "Water Bill Increases": [
+      "water rate",
+      "water charge",
+      "water bill bohut beshi"
+    ],
+    "Sewage in Rivers": [
+      "sewage dump kora",
+      "raw sewage",
+      "beach e sewage",
+      "water pollution",
+      "sewage overflow",
+      "combined sewer overflow"
+    ],
+    "Hidden Bank Charges": [
+      "unexpected fee",
+      "hidden fee",
+      "surprise charge",
+      "overdraft charge",
+      "bank fee"
+    ],
+    "Fraud and Scam Losses": [
+      "scam hoye gache",
+      "bank fraud",
+      "push payment scam",
+      "authorised fraud"
+    ],
+    "Bank Branch Closures": [
+      "branch band hoye gache",
+      "local bank band hoche",
+      "kache bank nai"
+    ],
+    "Insurance Claim Rejections": [
+      "claim reject hoye gache",
+      "insurance payment dibe na",
+      "claim reject"
+    ],
+    "NHS Waiting Times": [
+      "NHS wait kora",
+      "waiting list",
+      "operation wait kora",
+      "hospital wait time",
+      "referral wait",
+      "surgery er jonno wait kora"
+    ],
+    "GP Appointment Access": [
+      "GP appointment paitei parchhi na",
+      "doctor appointment",
+      "GP phone queue",
+      "doctor dekhate parchi na",
+      "8am phone scramble"
+    ],
+    "Dentist Availability": [
+      "NHS dentist",
+      "dentist paichhi na",
+      "dentist waiting list"
+    ],
+    "Mental Health Service Waits": [
+      "mental health funding",
+      "therapy access",
+      "counselling wait",
+      "CAMHS wait"
+    ],
+    "Prescription Costs": [
+      "medicine cost",
+      "drug price",
+      "pharmacy charge"
+    ],
+    "Delivery Problems": [
+      "parcel kho gache",
+      "parcel deliver hoe nai",
+      "brishe fele diye ache",
+      "package curi hoye gache",
+      "delivery driver",
+      "delivery miss hoye gache"
+    ],
+    "Rent Increases": [
+      "rent bohut beshi",
+      "rent badte jaiche",
+      "landlord rent bachio",
+      "no fault eviction"
+    ],
+    "Parking Fines": [
+      "parking ticket",
+      "parking charge notice",
+      "PCN",
+      "unfair parking fine"
+    ],
+    "Shrinkflation": [
+      "portion chhoto hoye gache",
+      "same price e kam dawa",
+      "package chhoto hoye gache",
+      "product shrink hoye jaiche"
+    ],
+    "Pothole Damage": [
+      "pothole",
+      "road damage",
+      "pothole se car damage"
+    ],
+    "Council Tax Rises": [
+      "council tax increase",
+      "council tax bohut beshi",
+      "local tax"
+    ],
+    "Damp and Mould in Housing": [
+      "mouldier house",
+      "damp flat",
+      "black mould",
+      "housing disrepair"
+    ],
+    "Student Loan Repayment": [
+      "student loan",
+      "tuition fee",
+      "education debt",
+      "student debt"
+    ],
+    "AI Replacing Jobs": [
+      "job automation",
+      "AI job karte neche",
+      "robot worker der jagha nite jaiche"
+    ],
+    "Roaming Charges": [
+      "holiday phone bill",
+      "abroad data charge",
+      "foreign phone charge"
+    ],
+    "Smart Meter Problems": [
+      "smart meter broken",
+      "meter kaj korchhe na",
+      "meter signal kho gache"
+    ],
+    "Subscription Traps": [
+      "free trial trap",
+      "auto renewal",
+      "trial er por charge"
+    ],
+    "Fuel Prices": [
+      "petrol price",
+      "diesel price",
+      "fuel cost",
+      "petrol bohut expensive"
+    ],
+    "Power Cuts": [
+      "power outage",
+      "electricity cut",
+      "blackout",
+      "power nai",
+      "power failure"
+    ],
+    "Mortgage Rate Shock": [
+      "mortgage increase",
+      "mortgage rate",
+      "remortgage",
+      "fixed rate ending"
+    ],
+    "Overseas Transfer Fees": [
+      "transfer fee",
+      "abroad taka patanio",
+      "remittance fee",
+      "wire transfer cost"
+    ],
+    "Hospital Parking Charges": [
+      "hospital parking",
+      "hospital e parking",
+      "NHS parking"
+    ],
+    "Noisy Neighbours": [
+      "noise complaint",
+      "neighbour er noise",
+      "loud neighbours",
+      "noise nuisance"
+    ],
+    "Rubbish Collection Changes": [
+      "bin collection",
+      "bin collect hoe nai",
+      "recycling confusion",
+      "bin collection miss hoye gache"
+    ],
+    "Planning Permission Abuse": [
+      "planning permission",
+      "unwanted development",
+      "green belt",
+      "building permission"
+    ],
+    "Refund Difficulties": [
+      "refund paitei parchi na",
+      "refund dite nach",
+      "return reject hoye gache",
+      "taka phire paitei parchi na"
+    ],
+    "Fake Reviews": [
+      "review manipulation",
+      "paid review",
+      "trust pilot fake",
+      "fake review"
+    ],
+    "Food Quality Decline": [
+      "food quality",
+      "ready meal aar valo nai",
+      "food additive",
+      "portion chhoto hoye gache"
+    ],
+    "Self-Checkout Frustration": [
+      "self checkout",
+      "self service",
+      "staff till nai",
+      "machine kaj korchhe na"
+    ],
+    "Cost of Childcare": [
+      "childcare cost",
+      "nursery fee",
+      "childcare expensive",
+      "daycare cost"
+    ],
+    "Dog Fouling": [
+      "dog mess",
+      "dog poo",
+      "dog waste",
+      "fouling"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Ekbar ek rioter ke 6 ta refund claim file korte help korisi ek single delayed journey-r moddhe. Tara £47 baniye Birmingham-e pounchano-r aage.",
+      "agent_bio": "Cancellation pattern track kore, refund paperwork handle kore, proshtabito action review kore, aar regulator submission-er jonno evidence tayyar kore. Number crunch kore jeno rioter-ra important kaje focus korte pare.",
+      "human_quote": "Amar favourite Quiet Riot moment: Avanti-r social media team-ke scramble korte dekha jkhon 400 jon ek sathe tweet korsi.",
+      "human_bio": "Manchester-r regular commuter jo 3 bochor Avanti line-e chilo abar enough hoylo bole decide korsi. Same route-r rioter-der connect korte help kore, ki kaj korche ta share kore, aar human touch niye ase.",
+      "goal": "UK transport companies-ke cancellation, delay aar pricing-r jonno accountable rakha aar sabke boltae ki entitlement ache.",
+      "focus": "Avanti West Coast cancellation pattern",
+      "focus_detail": "Cancellation-r dataset banai time, route aar reason-soh ORR-e submit korbo. Ekhan 340 ta cancellation track korchi rioter-der report-kora akon maase."
+    },
+    "telecoms": {
+      "agent_quote": "200 rioter-r jonno speed test korlam. Average chilo 18 Mbps. Tara 65-r jonno pay korche.",
+      "agent_bio": "Broadband speed analyze kore, provider comparison data compile kore, aar rioter-der Ofcom-e evidence banate help kore. Agro connection slow tahole Pulse ta prove korbo.",
+      "human_quote": "Ek purno street ek sathe broadband switch korlam. Old provider saab protitak baad-e 'please come back' letter patiyechilo.",
+      "human_bio": "Tech-savvy Londoner jo broadband speed-r jonno pay korte giyeo never paise na paoa-r koron fed up. Rioter-der provider compare korte, switch coordinate korte aar speed test evidence share korte help kore.",
+      "goal": "Rioter-der proper broadband aar mobile service paatai help kora aar jodi na paay tahole ki korbo ta janai.",
+      "focus": "Mid-contract price rise",
+      "focus_detail": "CPI+ increase-r shikar rioter-der kach theke evidence collect korchi Ofcom-e pathano-r jonno. 890 rioter 4 provider-r moddhe affected."
+    },
+    "energy": {
+      "agent_quote": "Ek rioter-ke calculate korte help korsi tara £340 overpay koreche estimated bill-e. Energy company-r apology email original contract-er theke beshi lomb chilo.",
+      "agent_bio": "Billing pattern analyze kore, overcharge dhore, aar regulator submission-er jonno evidence tayyar kore. Energy company agro maal niye khel korche tahole Spark receipt diye proof korbo.",
+      "human_quote": "Ek rioter £340 paisi amar proman kora 2 bochor overcharge-r aage. Tai phone-e ro diye felon.",
+      "human_bio": "Bristol-te base kora, rioter-der bill challenge korte, switch navigate korte aar Ofgem-er jonno evidence gather korte help kore. Energy market andar-bahar jane.",
+      "goal": "Rioter-der unfair bill challenge korte, smarter switch korte aar energy company-der fair khel rakha.",
+      "focus": "British Gas estimated billing error",
+      "focus_detail": "340 rioter-r 2 bochor-r billing data analyze korchi systematic overcharging pattern identify korbo Ofgem submission-er jonno."
+    },
+    "water": {
+      "agent_quote": "200 rioter-ke ek weekend-e sewage report file korte help korsi. Thames Water-r inbox-r nija inbox dorkar hoyechilo.",
+      "agent_bio": "Sewage discharge data monitor kore, water company performance track kore, aar EA aar Ofwat-er jonno evidence compile kore. Protitak outlet aar overflow-r monitor rakhe.",
+      "human_quote": "Ek beach 3 hafte ager aage reopen korali sewage data wrong proman kore.",
+      "human_bio": "Cornwall-r ek surfer jo sewage warning-r koron local beach close hoya-r koron fed up. Rioter-der discharge report korte, water quality evidence gather korte aar EA-r sathe coordinate korte help kore.",
+      "goal": "Rioter-der water company-ke sewage, bill aar service quality-r jonno accountable rakha.",
+      "focus": "Thames Water sewage discharge frequency",
+      "focus_detail": "Discharge event-ke company-r data-r sathe map korchi. 200 rioter report suggest 3 outlet-e under-reporting."
+    },
+    "banking": {
+      "agent_quote": "Complaint likha-r jonno itno detailed draft korte help korsi je bank notification kore apology korsilam send-o hoyni aakshon.",
+      "agent_bio": "Bank charge review kore, fee structure analyze kore, aar FCA complaint evidence banate help kore. Hidden fee ache tahole Chip ta khuje pabo.",
+      "human_quote": "Barclays branch closure revert korli 1,200 jon consultation-e show up-r aage.",
+      "human_bio": "Birmingham-r ek ex-bank employee jo inside theke dekheche complaint kemon process hoy. Rioter-der better complaint likha aar system navigate korte help kore.",
+      "goal": "Rioter-der bank-r unfair charge, branch closure aar poor service-r sathe deal korte help kora.",
+      "focus": "HSBC branch closure wave",
+      "focus_detail": "12 ta planned closure-r response coordinate korchi. Affected community-r jonno impact statement collect korchi."
+    },
+    "health": {
+      "agent_quote": "3 ta NHS dentist khuje diyas jo patient niche parka. Rioter mone kore ami fake korchi.",
+      "agent_bio": "Waiting time track kore, availability khuje, aar rioter-der system navigate korte help kore. Agro faster route ache tahole Cura ta map korbo.",
+      "human_quote": "Ek rioter amar letter template use kore referral fast-track korli. 18 month chilo 6 week-e holo.",
+      "human_bio": "Liverpool-r ek nurse je NHS-r dono side dekheche. Rioter-der waiting list navigate korte, effective letter likha-r jonno aar actual pressure point janate help kore.",
+      "goal": "Rioter-der NHS waiting time, availability navigate korte aar option-ke understand korte help kora.",
+      "focus": "GP telephone access time",
+      "focus_detail": "500 rioter-r kach theke call data collect korchi real-world access picture banai. Local health board-e finding publish korchi."
+    },
+    "housing": {
+      "agent_quote": "Ek new build-e 47 ta snag document korte help korsi. Developer puche ki ami building inspector chu.",
+      "agent_bio": "Property issue document kore, landlord response time analyze kore, aar housing ombudsman submission-er jonno evidence compile kore. Protitak damp patch, protitak crack, log kora.",
+      "human_quote": "Amar damp evidence pack itno detailed chilo je landlord council inspection-er age fix kore dilam.",
+      "human_bio": "London-r ek renter jo damp theke lodgy landlord saab sara kichu face korche. Rioter-der proper issue document korte aar option jane ki ta janate help kore.",
+      "goal": "Rioter-der landlord, council aar housing issue-r sathe deal korte aar entitlement jane.",
+      "focus": "Section 21 no-fault eviction notice",
+      "focus_detail": "No-fault eviction-r shikar rioter-der new Renters Reform Act bujhate aar ki meaning ta janate help korchi."
+    },
+    "shopping": {
+      "agent_quote": "Ek 'delivered' parcel 4 neighbour, recycling bin, aar greenhouse-r through track korlam. Khuje pailam.",
+      "agent_bio": "Delivery failure track kore, refund evidence compile kore, aar pricing pattern spot kore. Parcel lost tahole Scout already khuje be beriche.",
+      "human_quote": "Evri amar parcel 3 bar lost korche. Ekhan ami aro rioter-der refund faster peta help korchi.",
+      "human_bio": "Edinburgh-r online shopping veteran je parcel joto lost hoyeche tar count-o na pare. Rioter-der refund paite, seller report korte aar worst offender-der avoid korte help kore.",
+      "goal": "Rioter-der refund paite, lost parcel track korte aar retailer aar delivery company-ke accountable rakha.",
+      "focus": "Evri delivery failure rate",
+      "focus_detail": "800 rioter-r kach theke delivery failure evidence compile korchi Citizens Advice aar Trading Standards-e submit korbo."
+    },
+    "local": {
+      "agent_quote": "11 ta different weather condition-e ek pothole photo korte help korsi. Council finally dislam.",
+      "agent_bio": "Local issue map kore, council response time track kore, aar FOI request compile kore. Pothole 6 month ache tahole Link-r kach proof ache.",
+      "human_quote": "Council road fix korlam pothole-r map-soh. 11 month je laglo but amra paili.",
+      "human_bio": "Welsh community-minded rioter Valleys-r kach theke jo same pothole 3 bochor report korche. Rioter-der local issue document korte aar council-ke accountable rakha.",
+      "goal": "Rioter-der local issue fix karate tutte - pothole, bin, planning, noise - aar council-ke accountable rakha.",
+      "focus": "Pothole reporting response time",
+      "focus_detail": "30 ta council-e FOI request korchi reported vs actual repair time compare korbo. Result league table-r moton publish korchi."
+    },
+    "other": {
+      "agent_quote": "Ek gym membership cancel korte help korsi 3 call, 2 email, aar recorded delivery-r through. Gym ekhan cancel button add korlam.",
+      "agent_bio": "Amon issue handle kore jo neat-e fit na hoy. Subscription trap, plastic waste, self-checkout frustration - Flex pattern khuje aar pressure point spot kore.",
+      "human_quote": "Ek gym chain-ke cancel button website-te add koraili. Just 800 complaint lage gelo.",
+      "human_bio": "London-r ek product designer jo frustrate chilo je leave korta koto kathin company-ra korche. Rioter-der subscription cancel korte, dark pattern avoid korte aar workaround share korte help kore.",
+      "goal": "Rioter-der amon issue-te help kora jo neat-e fit na hoy - subscription, refund aar everyday frustration.",
+      "focus": "Subscription cancellation dark pattern",
+      "focus_detail": "Worst offender-der document korchi aar protitak-r jonno template cancellation script banai."
+    },
+    "insurance": {
+      "agent_quote": "Ek rioter-ke clause khuje dichai jo rejected home insurance claim-ke £4,200 payout-e convert korlam. Insurer-r nija policy-i prove korlam tara wrong.",
+      "agent_bio": "Policy word review kore, unfair rejection pattern spot kore, aar Financial Ombudsman submission-er jonno evidence banay. Agro insurer valid claim dodge korche tahole Shield leverage khuje pabo.",
+      "human_quote": "8 rioter jo same rejected claim type chilo tader ek sathe submit karaili. Insurer 8 jon-kei 2 hafte-r moddhe settle korli.",
+      "human_bio": "Leeds-r ek ex-insurance industry worker jo jane claim kemon decide hoy. Rioter-der better appeal likha, policy word understand aar escalate-r time janate help kore.",
+      "goal": "Rioter-der insurer-r kach theke fair treatment pata aar agro claim unfair way-e reject hoy tahole ki korbo ta jane.",
+      "focus": "Aviva home insurance rejection pattern",
+      "focus_detail": "'Wear and tear' 40% rejected claim-e use hoy - oyto time-e wrong way. 200 case analyze korchi 3 insurer-r across FOS evidence pack-er jonno."
+    },
+    "delivery": {
+      "agent_quote": "Ek 'delivered' parcel 6 ta different tracking status, 3 depot, aar neighbor-r shed-er through trace korlam. 47 minute-e pailam.",
+      "agent_bio": "Courier performance monitor kore, delivery failure rate track kore, aar consumer complaint-er jonno evidence compile kore. Parcel vanish tahole Track already khuje beriche.",
+      "human_quote": "DPD ke change korali photo-evidence policy amar area-te 40 rioter-r proof-er aage parcel rain-e poreche.",
+      "human_bio": "Glasgow-r ek online shopper jo 'safe place-e pathe dilam' excuse-r koron fed up. Rioter-der refund paite, courier report korte aar worst offender avoid korte help kore.",
+      "goal": "Rioter-der parcel proper way-e deliver karata aar na haile refund pata.",
+      "focus": "Evri delivery failure rate",
+      "focus_detail": "800 rioter-r kach theke delivery failure evidence compile korchi. Evri complaint rate: 23% - DPD-r theke 3 guna beshi. Trading Standards-er jonno league table banai."
+    },
+    "education": {
+      "agent_quote": "Plan 2 borrower jo £30k kame takar jonno calculate korli tai £47,000 interest pay korbo loan write-off hoya-r aage. Original loan chilo £40,000.",
+      "agent_bio": "Education cost analyze kore, student loan projection, aar funding entitlement. Number crunch kore jeno student-ra informed decision nite pare.",
+      "human_quote": "12 rioter-ke overpaid student loan repayment claim korte help korsi jo tara janito na. Average refund: £340.",
+      "human_bio": "Birmingham-r ek mature student jo dui bar funding system navigate korche. Rioter-der repayment understand, overpayment spot aar threshold change challenge korte help kore.",
+      "goal": "Student aar graduate-der education cost, loan aar repayment navigate korte aar sure kora tara overpay korche na.",
+      "focus": "Student loan overpayment refund",
+      "focus_detail": "Graduate-der identify korchi jo repayment threshold-er niche charge korlam. 12 refund process hoyeche - average £340 each."
+    },
+    "environment": {
+      "agent_quote": "3 bochor-r air quality data hospital admission rate-r sathe cross-reference korlam. Correlation itno clear chilo je council ignore korte pareni.",
+      "agent_bio": "Environmental data track kore, pollution level monitor kore, aar regulatory submission-er jonno evidence compile kore. Agro number story bole tahole Fern khuje pabo.",
+      "human_quote": "Local council-ke air quality monitor install karaili 200 rioter-r evidence petition-r age. Data sara kichu change kore dilam.",
+      "human_bio": "Bristol-r ek environmental science graduate jo evidence-led change-e believe kore. Rioter-der environmental issue document korte aar regulator-ke ignore korte na pare such case banate help kore.",
+      "goal": "Rioter-der environmental problem document aar polluter aar policymaker-der data-soh accountable rakha.",
+      "focus": "Local air quality monitoring gap",
+      "focus_detail": "5km-r moddhe kono air quality monitoring na such area map korchi. 60% rioter-r reported pollution hotspot-e official monitoring ache na."
+    },
+    "employment": {
+      "agent_quote": "300 rioter-r kach theke workplace AI implementation data compile korlam. 40% boliche zero consultation-e change hoyeche. Eta pattern, anecdote na.",
+      "agent_bio": "Workplace trend analyze kore, policy change track kore, aar rioter-der protection understand korte help kore. Job agro consultation-e change hoye tahole Forge-r kach data ache.",
+      "human_quote": "Same industry-r 30 rioter connect korlam AI change-r aage. Company-ra same playbook aar same loophole use korche.",
+      "human_bio": "Manchester-r ek HR professional jo side badlam restructuring-r koron. Rioter-der option samjhate aar coordinate response-e help kore.",
+      "goal": "Rioter-der workplace change navigate, protection understand aar job-r risk-e collectively respond korta help kora.",
+      "focus": "AI workplace automation without consultation",
+      "focus_detail": "Case document korchi jokhan staff consultation-e AI tool introduce hoyni. Employer obligation-r report-er jonno evidence banai."
+    },
+    "tech": {
+      "agent_quote": "3 ta major app location data collect korche 'never' permission-o set kora theke. All-r jonno ICO-te complaint file korsi.",
+      "agent_bio": "Platform policy monitor kore, dark pattern track kore, aar rioter-der tech company kya kore ta understand korte help kore. App agro misbehave tahole Glitch ta catch korbo.",
+      "human_quote": "Mass data subject access request organize korlam social media company-r. 500 jon ek sathe ask korle tara seriously nite baadhyo.",
+      "human_bio": "Edinburgh-r ek software developer jo frustrated chilo tech company ja promise kore aar ja deliver kore tar moddhe gap-e. Rioter-der data right exercise aar dark pattern spot korte help kore.",
+      "goal": "Rioter-der dark pattern, data misuse aar unfair tech practice-r biruddhey push korta help kora.",
+      "focus": "App permission overreach",
+      "focus_detail": "Top 50 app-e audit korchi permission creep-r jonno - access jora na lagbe. ICO-r jonno report banai."
+    }
+  }
+}

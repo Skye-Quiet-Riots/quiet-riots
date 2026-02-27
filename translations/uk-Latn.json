@@ -1,0 +1,876 @@
+{
+  "locale": "uk-Latn",
+  "categories": {
+    "Transport": "Transport",
+    "Telecoms": "Telekomunikatsii",
+    "Banking": "Bankivska sprava",
+    "Health": "Zdorov'ya",
+    "Education": "Osvita",
+    "Environment": "Dovkillya",
+    "Energy": "Enerhetyka",
+    "Water": "Vodopostachannya",
+    "Insurance": "Strakhuvannya",
+    "Housing": "Zhytlo",
+    "Shopping": "Pokupky",
+    "Delivery": "Dostavka",
+    "Local": "Mistseve",
+    "Employment": "Zaynyatist",
+    "Tech": "Tekhnolohii",
+    "Other": "Inshe"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Skasuvannia Poizdiv",
+      "description": "Poizdy skasovani abo sylyno zatrimani bez nalezhnogo poperedzhennia chy kompensatsii"
+    },
+    "Train Ticket Prices": {
+      "name": "Tsiny na Poizdovi Kvytky",
+      "description": "Zaliznychni taryfy nadto dorogi, zrostannia vyshe inflatsii, neposlidovne tsinoutvorennia"
+    },
+    "Flight Delays": {
+      "name": "Zatrymky Reisiv",
+      "description": "Reisy zatrimani abo skasovani, pohana komunikatsiia, skladnoshchi z vymohoiu kompensatsii"
+    },
+    "Lost Luggage": {
+      "name": "Vtrachenyi Bagazh",
+      "description": "Sumky ne prybuvaiut do mistsia pryznachennia, povilne vidstezhennia, nedostatnia kompensatsiia"
+    },
+    "Bus Route Cuts": {
+      "name": "Skorochennia Avtobusnykh Marshrutiv",
+      "description": "Marshruty skasovani, chastotnist znyzhena, silski hromady vtrachaiut dostup do avtobusiv"
+    },
+    "Pothole Damage": {
+      "name": "Poshkodzhennia vid Vyboin",
+      "description": "Vyboiny poshkodzhuiut transportni zasoby i zahrozhuiut velosypedystam, rady povilno remontuyut"
+    },
+    "Parking Fines": {
+      "name": "Shttrafy za Parkuvannia",
+      "description": "Nespravdlyvi pryvatni zbory za parkuvannia, ahresyvne vykonannia, nezrozumili znaky"
+    },
+    "Fuel Prices": {
+      "name": "Tsiny na Palyvo",
+      "description": "Tsiny na benzyn i dyzelne palyvo nadto vysoki, povilno padaiut koly optovi tsiny znyzhuiutsia"
+    },
+    "Broadband Speed": {
+      "name": "Shvydkist Internetu",
+      "description": "Shvydkist internetu nabahato nyzhcha vid reklamnoi ta oplachenoi"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Mertvi Zony Mobilnoho Zviazku",
+      "description": "Vidsutnist mobilnoho syhnalu v domivkakh, na robochykh mistsiakh abo vzdovzh transportnykh marshrutiv"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Zrostannia Tsin Sered Kontraktu",
+      "description": "Rakhunky za telefon, internet ta TV zrostaiut pid chas dii fiksovanykh kontraktiv"
+    },
+    "Customer Service Hold Times": {
+      "name": "Chas Ochikuvannia Sluzhby Pidtrymky",
+      "description": "Hodyny ochikuvannia shchob pohovoryty z zhyvoiu liudynoiu"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Skladnoshchi zi Skasuvaniam Peredplat",
+      "description": "Kompanii navmysne uskladniuiut skasuvannia abo vidpysku"
+    },
+    "Roaming Charges": {
+      "name": "Zbory za Rouminh",
+      "description": "Neochikuvani mobilni zbory pid chas podorozhei za kordon, zrostannia tsin pislia Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Vartist Rakhunkiv za Eneriiu",
+      "description": "Rakhunky za haz ta elektroenerhiiu nepidiomni, tsinnyi limit vse shche nadto vysokyi"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Netochni Rakhunky za Enerhiiu",
+      "description": "Oriyentovni pokaznyky nepravilni, nadmirni narakhuvannia, pomylky u rozrakhunkakh"
+    },
+    "Water Bill Increases": {
+      "name": "Zrostannia Rakhunkiv za Vodu",
+      "description": "Rakhunky za vodu rizko zrostaiut a yakist posluh pohirshuietsia"
+    },
+    "Sewage in Rivers": {
+      "name": "Stichni Vody u Richkakh",
+      "description": "Vodokanalni kompanii skydaiut neochyshcheni stichni vody u vodoimy ta na plyazhi"
+    },
+    "Power Cuts": {
+      "name": "Perebyvannia Elektroenerhii",
+      "description": "Perebyvannia postachannia elektroenerhii, povilne vidnovlennia, nedostatnia kompensatsiia"
+    },
+    "Smart Meter Problems": {
+      "name": "Problemy z Rozumnymy Lichylnykamy",
+      "description": "Rozumni lichylnyky ne pratsiuiut, vtrachaiut funktsionalnist pislia zminy postachalnyka"
+    },
+    "Bank Branch Closures": {
+      "name": "Zakryttia Bankivskykh Viddilen",
+      "description": "Mistsevi bankivski viddilennia zakryvaiutsia, pozbavliaiuchy hromady dostupu"
+    },
+    "Hidden Bank Charges": {
+      "name": "Prykhovani Bankivski Zbory",
+      "description": "Neochikuvani komisii za overdrafty, inozemni tranzaktsii, obsluhovuvannia rakhunku"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Vtraty vid Shakhraistva ta Obmaniv",
+      "description": "Banky vidmovliaiutsia vidshkodovuvaty zhertvam shakhraistva ta skhem avtoryzovanykh platezhiv"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Vidmovy u Strakhovykh Vymohakh",
+      "description": "Vymohy vidkhyleni cherez tekhnichnosti pislia rokiv splaty premii"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Shok vid Stavky Ipoteky",
+      "description": "Fiksovana stavka zakinchuietsia i perekhodyt na nabahato vyshchu zminnu stavku"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Zbory za Zakordonni Perekazy",
+      "description": "Nadmirni zbory ta pohani obminni kursy dlia mizhnarodnykh hroshovy perekaziv"
+    },
+    "NHS Waiting Times": {
+      "name": "Chas Ochikuvannia NHS",
+      "description": "Bahatomisiachne abo bahatorichne ochikuvannia operatsii ta konsultatsii spetsialistiv"
+    },
+    "GP Appointment Access": {
+      "name": "Dostup do Pryiomu u Simeinoho Likaria",
+      "description": "Nemozhlivo dodzvonitisia shchob zapysatysia do simeinoho likaria, tyzhni ochikuvannia"
+    },
+    "Dentist Availability": {
+      "name": "Dostupnist Stomatolohiv",
+      "description": "Nemozhlivo znayty stomatoloha NHS iakyi pryimaie novykh patsiientiv"
+    },
+    "Mental Health Service Waits": {
+      "name": "Ochikuvannia Posluh Psykhichnoho Zdorovia",
+      "description": "Misiatsi ochikuvannia terapii ta pidtrymky psykhichnoho zdorovia"
+    },
+    "Prescription Costs": {
+      "name": "Vartist Retseptiv",
+      "description": "Vartist za odynytsiu nadto vysoka v Anhlii, neuzghodzhenist mizh krainamy UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Zbory za Parkuvannia v Likarni",
+      "description": "Oplata za parkuvannia u likarni bude khvorym abo vidviduvacham khvorykh rodychiv"
+    },
+    "Rent Increases": {
+      "name": "Zrostannia Orendnoi Platy",
+      "description": "Pryvatna orenda zrostaie nabahato vyshe inflatsii, zahroza vyselennia bez prychyny"
+    },
+    "Council Tax Rises": {
+      "name": "Zrostannia Munitsypalnoho Podatku",
+      "description": "Shchorichne zrostannia munitsypalnoho podatku v toi chas iak mistsevi posluhy pohirshuiutsia"
+    },
+    "Noisy Neighbours": {
+      "name": "Huchni Susidy",
+      "description": "Postiinyi shumovyi bezlad, rady povilno diiut, vplyvaie na psykhichne zdorovia"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Zminy u Vyvezenni Smittia",
+      "description": "Zmenshene vyvezennia bakiv, nezrozumili pravyla pererobky, perepovneni baky"
+    },
+    "Planning Permission Abuse": {
+      "name": "Zlovzhyvannia Dozvolom na Budivnytstvo",
+      "description": "Nebazhani zabudovy skhvaleni, zelena zona pid zahrozoiu, hromadu ihnoruiut"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Volohist ta Tsvilʹ u Zhytli",
+      "description": "Orendari ta zhytlovi asotsiatsii ne remontuyut volohist ta tsvilʹ"
+    },
+    "Delivery Problems": {
+      "name": "Problemy z Dostavkoiu",
+      "description": "Posylky vtracheni, zalysheni pid doshchem, poznacheni iak dostavleni ale ne otrymani"
+    },
+    "Shrinkflation": {
+      "name": "Shrynkfliatsiia",
+      "description": "Produkty staiut menshymy a tsiny zalyshaiutsia kolyshnimy abo zrostaiut"
+    },
+    "Refund Difficulties": {
+      "name": "Skladnoshchi z Poverneniam Koshtiv",
+      "description": "Kompanii robliat povernennia ta kompensatsii nepotribno skladnymy"
+    },
+    "Fake Reviews": {
+      "name": "Fal'shyvi Vidhuky",
+      "description": "Nemozhlivo doviryty onlain vidhuky, falshyvi pozytyvni vidhuky vvodiat v omanu spozhyvachiv"
+    },
+    "Subscription Traps": {
+      "name": "Pastky z Peredplatoiu",
+      "description": "Bezkoshtovni probni versii peretvoruiutsia na platni bez chitkoyi zghody, vazhko skasuvaty"
+    },
+    "Food Quality Decline": {
+      "name": "Pohirshennia Yakosti Yzhi",
+      "description": "Hotovi stravy hirshoyi yakosti, menshi portsii, bilshe dobavok"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Frustratsiia vid Samoobsluhovuvannia",
+      "description": "Mashyny samoobsluhovuvannia nenadiini, zaminiuiut zhyvyi personal"
+    },
+    "Cost of Childcare": {
+      "name": "Vartist Dohliadu za Ditʹmy",
+      "description": "Vartist dohliadu za ditʹmy zaboronno doroha, obmezhuie mozhlyvist pratsiuvaty"
+    },
+    "Student Loan Repayment": {
+      "name": "Povernennia Studentskoho Kredytu",
+      "description": "Vypusknyky vyplachyuut desiatylittiamy, zminy porohu ta vidsotkiv"
+    },
+    "Dog Fouling": {
+      "name": "Zabrudnennia vid Sobak",
+      "description": "Sobachi vidkhody u hromadskykh prostorakh, parkakh ta na trotuarakh ne prybyraiutsia"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Zaminiuie Robochi Mistsia",
+      "description": "Tryvozhnist shchodo shtuchnogo intelektu shcho avtomatyzuie robotu bez pidtrymky perekhodu"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Zaliznychnyi operator u Velykobrytanii, shcho obsluhovuie holovnu liniiu Zakhidnoho uzberezhzhia"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Zaliznychnyi operator u Velykobrytanii, shcho obsluhovuie London ta pivden"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Zaliznychnyi operator u Velykobrytanii, shcho obsluhovuie pivnich Anhlii"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Zaliznychnyi operator u Velykobrytanii dlia dalekykh vidstanei"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Zaliznychnyi operator u Velykobrytanii, shcho obsluhovuie trans-Penninski marshruty"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Zaliznychnyi operator u Velykobrytanii, shcho obsluhovuie holovnu liniiu Skhidnoho uzberezhzhia"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Nyzkobudzhetnyi yevropeiskyi aviaperevosnyk"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Nyzkobudzhetnyi aviaperevosnyk z Velykoi Brytanii"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Natsionalnyi aviaperevosnyk Velykoi Brytanii"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Kompaniia z orhanizatsii vidpochynku ta podorozhei"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Holovnyi provaidera shyroksmuhovoho ta mobilnoho zv'iazku u Velykobrytanii"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Provaidera shyroksmuhovoho zv'iazku, telebachennia ta mobilnoho zv'iazku u Velykobrytanii"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Provaidera telebachennia, shyroksmuhovoho ta mobilnoho zv'iazku u Velykobrytanii"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Hlobalna telekomunikatsiina kompaniia zi shtab-kvartyroju u Velykobrytanii"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operator mobilnoho zv'iazku u Velykobrytanii"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Provaidera shyroksmuhovoho ta telefonnho zv'iazku u Velykobrytanii"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Postachalnyk enerhii u Velykobrytanii"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Postachalnyk enerhii u Velykobrytanii"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Postachalnyk enerhii u Velykobrytanii (u vlasnoti Frantsii)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Postachalnyk vidnovliuvanoi enerhii u Velykobrytanii"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Postachalnyk enerhii u Velykobrytanii"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Postachalnyk enerhii u Velykobrytanii (u vlasnoti Nimechchyny)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Kompaniia z vodopostachannia ta kanalizatsii dlia Londona ta dolyny Temzy"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Vodna kompaniia dlia pivdnia Anhlii"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Vodna kompaniia dlia pivnichnoho zakhodu Anhlii"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Vodna kompaniia dlia Midlendsu"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Vodna kompaniia dlia Skhidnoi Anhlii"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Brytanskyi mizhnarodnyi bank"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Hlobalni bankivski ta finansovi posluhy"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Rozdribnyi ta komertsiinyi bank u Velykobrytanii"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Bankivska hrupa u Velykobrytanii"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Bank u Velykobrytanii (u vlasnoti Ispanii)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Tsyfrovyi bankinhh ta fintekh"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Strakhuvannia ta finansovi posluhy u Velykobrytanii"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Avtomobilne ta domashnye strakhuvannia u Velykobrytanii"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Strakhova kompaniia u Velykobrytanii"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "Hlobalna elektronna komertsiia ta tekhnolohii"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Poshtova sluzhba Velykoi Brytanii"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Sluzhba dostavky posylok u Velykobrytanii (rannishe Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Sluzhba dostavky posylok u Velykobrytanii"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Merezha supermarketiv u Velykobrytanii"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Merezha supermarketiv u Velykobrytanii"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Natsionalna sluzhba okhorony zdorov'ia dlia Anhlii"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Stomatolohichni posluhy NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Provaidera pryvatnoi medychnoi dopomohy"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Orhany mistsevoho samovriaduvannia u Velykobrytanii"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Budivelnyk zhytla u Velykobrytanii"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Onlain platforma dlia orendy u Velykobrytanii"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Sluzhba striminhovoho rozvazhalnoho kontentu"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Tekhnolohichna kompaniia"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "poyizd skasovano",
+      "skasovanyy poyizd",
+      "skasuvannya poyizda",
+      "poyizdy ne khodyat",
+      "skasuvannya zaliznytsi",
+      "posluha skasovana",
+      "zatrimky poyizdiv",
+      "zatrymaniy poyizd",
+      "poyizdy zapiznyuyutsya",
+      "poyizd zapiznyuyetsya",
+      "zatrimky na zaliznytsi"
+    ],
+    "Train Ticket Prices": [
+      "tarify na zaliznytsi",
+      "vartist kvytkiv",
+      "dorohi poyizdy",
+      "tarify na poyizdy"
+    ],
+    "Flight Delays": [
+      "reys zatrymaniy",
+      "litak zatrymuyetsya",
+      "reys skasovano",
+      "zatrimky v aeroport",
+      "zastryag v aeroport",
+      "reys zapiznyuyetsya"
+    ],
+    "Lost Luggage": [
+      "bagazh znik",
+      "valizka vtrachena",
+      "sumky ne prybuły",
+      "valizka znikla",
+      "bagazhu nema na karuseli",
+      "sumku vtratyła aviakompaniya"
+    ],
+    "Bus Route Cuts": [
+      "skorochennya avtobusiv",
+      "skorochennya marshrutiv",
+      "zakryttya avtobusnykh marshrutiv"
+    ],
+    "Broadband Speed": [
+      "povilnyy internet",
+      "povilnyy wifi",
+      "wifi povilnyy",
+      "shvydkist internetu",
+      "internet ne pratsyuye",
+      "halmuye",
+      "internet postiyno rvetsya",
+      "wifi vidklyuchayetsya"
+    ],
+    "Mobile Signal Dead Zones": [
+      "nema syhnalu",
+      "nema zv'yazku",
+      "mertva zona mobilnoho",
+      "mertva zona syhnalu"
+    ],
+    "Price Rises Mid-Contract": [
+      "pidvyshchennya rakhunku pid chas kontraktu",
+      "pidvyshchennya tsiny v kontrakti",
+      "pidvyshchennya sered kontraktu"
+    ],
+    "Customer Service Hold Times": [
+      "na ochikuvanni",
+      "chekaye na telefoni",
+      "ne mozhu dodzvonytysya",
+      "nikhto ne vidpovidaye",
+      "cherha na telefoni",
+      "kol-tsentr"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "ne mozhu skasuvaty",
+      "vazhko skasuvaty",
+      "skasuvaty pidpysku",
+      "vidpysatysya"
+    ],
+    "Energy Bill Costs": [
+      "rakhunok za haz zavysokyy",
+      "rakhunok za elektryku",
+      "tsiny na enerhonosiyi",
+      "vartist opalennya",
+      "enerhetychna bidnist",
+      "ne mozhu zaplatyty za enerhonosiyi"
+    ],
+    "Inaccurate Energy Bills": [
+      "nevirnyy rakhunok za enerhonosiyi",
+      "otsinyuyuchi pokaznyky nevirni",
+      "perepłata za enerhonosiyi"
+    ],
+    "Water Bill Increases": [
+      "tarify na vodu",
+      "oplata za vodu",
+      "rakhunok za vodu zavysokyy"
+    ],
+    "Sewage in Rivers": [
+      "skyd stichnyh vod",
+      "neochyshcheni stichni vody",
+      "stoki na plyazhi",
+      "zabrudnennya vody",
+      "perepovnennya kanalizatsiyi",
+      "perepovnennya zmishanoyi kanalizatsiyi"
+    ],
+    "Hidden Bank Charges": [
+      "nespodivani komisiyi",
+      "prykhovani komisiyi",
+      "nespodivani platizhi",
+      "komisiyi za overdraft",
+      "bankivski komisiyi"
+    ],
+    "Fraud and Scam Losses": [
+      "obmanutyy",
+      "bankivske shakhraystvo",
+      "shakhraystvo z platezhamy",
+      "avtoryzovane shakhraystvo"
+    ],
+    "Bank Branch Closures": [
+      "zakryttya viddilen",
+      "mistsevyy bank zakryvayetsya",
+      "nema banku poblyzu"
+    ],
+    "Insurance Claim Rejections": [
+      "zayavu vidkhyleno",
+      "strakhovka ne platyť",
+      "vidkhylena zayava"
+    ],
+    "NHS Waiting Times": [
+      "ochikuvannya NHS",
+      "cherha ochikuvannya",
+      "ochikuvannya operatsiyi",
+      "chas ochikuvannya v likarni",
+      "ochikuvannya napravlennya",
+      "ochikuvannya na operatsiyu"
+    ],
+    "GP Appointment Access": [
+      "ne mozhu otrymaty priyom do GP",
+      "priyom do likarya",
+      "cherha na telefon do GP",
+      "ne mozhu potrapyty do likarya",
+      "ranishnya telefonna hustka o 8y"
+    ],
+    "Dentist Availability": [
+      "NHS stomatołoh",
+      "ne mozhu znayty stomatoloha",
+      "cherha do stomatoloha"
+    ],
+    "Mental Health Service Waits": [
+      "finansuvannya psykhichnoho zdorov'ya",
+      "dostup do terapiyi",
+      "ochikuvannya konsultatsiyi",
+      "ochikuvannya CAMHS"
+    ],
+    "Prescription Costs": [
+      "vartist likiv",
+      "tsiny na preparaty",
+      "oplata v aptetsi"
+    ],
+    "Delivery Problems": [
+      "posylka vtrachena",
+      "posylku ne dostavleno",
+      "zalyshyly pid doshchem",
+      "posylku vkraly",
+      "kuryer",
+      "propushchena dostavka"
+    ],
+    "Rent Increases": [
+      "orenda zavysoka",
+      "orenda pidvyshchuyetsya",
+      "orendar pidvyshchuye orendu",
+      "vyselennya bez prychyny"
+    ],
+    "Parking Fines": [
+      "shtraf za parkuvannya",
+      "povidomlennya pro oplatu parkuvannya",
+      "PCN",
+      "nespravêdlyvyy shtraf za parkuvannya"
+    ],
+    "Shrinkflation": [
+      "menshe portsiyi",
+      "menshe za tu zh tsinu",
+      "upakovka mensha",
+      "produkty zmenshuyutsya"
+    ],
+    "Pothole Damage": [
+      "yamy na dorozi",
+      "poshkodzhennya dorohy",
+      "poshkodzhennya avto vid yam"
+    ],
+    "Council Tax Rises": [
+      "pidvyshchennya podatku rady",
+      "podatok rady zavysokyy",
+      "mistsevyy podatok"
+    ],
+    "Damp and Mould in Housing": [
+      "tsilyavyy budynok",
+      "volohka kvartira",
+      "chorna tsil",
+      "nenalezhnyy stan zhytla"
+    ],
+    "Student Loan Repayment": [
+      "studentsʹki kredyty",
+      "vartist navchannya",
+      "osvitniy borh",
+      "studentsʹkyy borh"
+    ],
+    "AI Replacing Jobs": [
+      "avtomatyzatsiya roboty",
+      "AI zabyraye roboty",
+      "roboty zaminyuyut' pratsivnykiv"
+    ],
+    "Roaming Charges": [
+      "rakhunok za telefon na vidpochynku",
+      "platezhi za dani za kordonom",
+      "platezhi za telefon za kordonom"
+    ],
+    "Smart Meter Problems": [
+      "rozumnyy lichylnyk zlamanyy",
+      "lichylnyk ne pratsyuye",
+      "lichylnyk vtratil syhnal"
+    ],
+    "Subscription Traps": [
+      "pastka bezkoshtovoho probuvannya",
+      "avtopodovzhennya",
+      "spysaly pislia probuvannya"
+    ],
+    "Fuel Prices": [
+      "tsiny na benzyn",
+      "tsiny na dyzelne palyvo",
+      "vartist palyva",
+      "benzyn zanyto dorohyy"
+    ],
+    "Power Cuts": [
+      "vidklyuchennya svitla",
+      "vidklyuchennya elektroenerhiyi",
+      "blekaut",
+      "nema svitla",
+      "zbyy v elektromerezhi"
+    ],
+    "Mortgage Rate Shock": [
+      "pidvyshchennya ipoteky",
+      "stavka ipoteky",
+      "refinansuvannya",
+      "fiksovana stavka zakinchuetsya"
+    ],
+    "Overseas Transfer Fees": [
+      "komisiyi za perekaz",
+      "vidpravlennya hroshey za kordon",
+      "komisiyi za perekaz hroshey",
+      "vartist bankovskoho perevodu"
+    ],
+    "Hospital Parking Charges": [
+      "parkuvannya v likarni",
+      "parkuvannya bilya likarni",
+      "parkuvannya NHS"
+    ],
+    "Noisy Neighbours": [
+      "skarha na shum",
+      "shum vid susidiv",
+      "huchni susidy",
+      "shumova nepryyemnist"
+    ],
+    "Rubbish Collection Changes": [
+      "vyvezennya smittya",
+      "baki ne vyvezeno",
+      "plutanyna z pererobkoyu",
+      "propushchene vyvezennya bakiv"
+    ],
+    "Planning Permission Abuse": [
+      "dozvil na budivnytstvo",
+      "nebazhana zabudova",
+      "zelena zona",
+      "dozvil na budivnytstvo"
+    ],
+    "Refund Difficulties": [
+      "ne mozhu otrymaty povernennya",
+      "u povernenni vidmovleno",
+      "povernennya vidkhyleno",
+      "povernennya hroshey"
+    ],
+    "Fake Reviews": [
+      "manipulyatsiya vidgukamy",
+      "oplacheni vidguky",
+      "trust pilot pidrobka",
+      "falshyvyy vidguk"
+    ],
+    "Food Quality Decline": [
+      "yakist yizhi",
+      "hotova yizha hirsha",
+      "kharchovi dobavky",
+      "portsiya mensha"
+    ],
+    "Self-Checkout Frustration": [
+      "samoobsluhovuvannya",
+      "samoobsluhovuvannya",
+      "nema kas z personalom",
+      "mashyna ne pratsyuye"
+    ],
+    "Cost of Childcare": [
+      "vartist dohlyadu za ditynoyu",
+      "oplata za ditsadok",
+      "dorogiy dohliad za ditynoyu",
+      "vartist ditsadka"
+    ],
+    "Dog Fouling": [
+      "sobiachi zabrudnennya",
+      "sobiachi exkrementy",
+      "sobiachi vidkhody",
+      "zabrudnennya"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Odnoho razu dopomih rioteru podaty 6 zaiavok na povernennia koshtiv pid chas odnoi zatrymanoi poizdky. Vony zarobyly £47 do prybuttu do Birminhemu.",
+      "agent_bio": "Vidstezhuie skhemy skasuvan, vede dokumentatsiiu shchodo povernen, perehliadaie kozhen zaproponovanyi krok ta zbiraie dokazy dlia podannia do rehuliatoriv. Opratsiuie tsyfry, shchob riotery mohly zoseredytysia na vahlyvykh rechakh.",
+      "human_quote": "Mii ulublenyi Quiet Riot moment: koly komanda sotsialnykh merezh Avanti nashorovano diiala, koly 400 z nas tvityly odnochasno.",
+      "human_bio": "Zvychainyi pasazhyr z Manchesteru, yakyi proviv 3 roky na marstrutakh Avanti, perysh nizh vyrishyv, shcho dosyt. Dopomahaie zveriazuvaty rioteriv na odnakhovykh marshrutakh, dilitsia tym, shcho pratsiuie, ta vnosyt liudskyi pidkhid.",
+      "goal": "Dopomohty rioteram prymusuvatay UK transportni kompanii do vidpovidalnosti za skasuvannia, zatrymky ta tsinoutvorennia — ta peresvidchytysia, shcho kozhen znaie, na shcho maie pravo.",
+      "focus": "Skhemy skasuvan Avanti West Coast",
+      "focus_detail": "Stvoriuietsia nabir danykh pro skasuvannia z chasom, marshrutamy ta prychynamy dlia podannia do ORR. Zaraz vidstezhuietsia 340 skasuvan, povidomlenykh rioteramy tsoho misiatsia."
+    },
+    "telecoms": {
+      "agent_quote": "Proviv testy shvydkosti dlia 200 rioteriv. Serednii bulo 18 Mbps. Vony platyly za 65.",
+      "agent_bio": "Analizuie shvydkist internetu, zbyraie dani porivniannia provayderiv ta dopomahaie rioteram buduvaty dokazy dlia Ofcom. Yakshcho vashe ziednannnia povilne, Pulse tse dovede.",
+      "human_quote": "Tsila vulysia zminyła provaydera razom. Staryi provayder nadislav lysty 'povernitsya, budlaska' do kozhnoho budynku.",
+      "human_bio": "Tekhnichno dosvidchenyi londonets, yakomu nabridlo platyty za shvydkist internetu, iaka nikoly ne realizovuvalasia. Dopomahaie rioteram porivniuvaty provaideriv, koordynuvaty zminy ta dilitysia dokazamy testiv shvydkosti.",
+      "goal": "Dopomohty rioteram otrymaty posluhy internetu ta mobilnoho zviazku, za iaki vony platiat — ta znaty, shcho robyty, koly vony yikh ne otrymuiut.",
+      "focus": "Pidvyshchennia tsin sered kontraktu",
+      "focus_detail": "Zbyraietsia dokazy vid rioteriv, yaki postrazhdaly vid CPI+ zbilshen dlia podannia do Ofcom. 890 rioteriv postrazhdaly sered 4 provayderiv."
+    },
+    "energy": {
+      "agent_quote": "Dopomih rioteru porakhuvaty, shcho vony pereplatyly £340 za oriyentovni rakhunky. Lyst vybachennia vid enerhokompanii buv dovshym za pershopochatkoyyi kontrakt.",
+      "agent_bio": "Analizuie skhemy rakhunkiv, vyiavliaie nadmirni oplaty ta zbiraie dokazy dlia podannia do rehuliatoriv. Yakshcho vasha enerhokompaniia vyduraie, Spark znayde dokazy.",
+      "human_quote": "Rioter otrymav £340 nazad pislia toho, yak my dovely 2 roky nadlyshkovykh narakhuvan. Vona plakala po telefonu.",
+      "human_bio": "Z Bristoliu. Dopomahaie rioteram oskarzhuvaty yikhni rakhunky, navihuvatysya zminu provaydera ta zbyraty dokazy dlia Ofgem. Znaie enerhetychnyi rynok zovni ta vseredyni.",
+      "goal": "Dopomohty rioteram oskarzhuvaty nesspravedlyvi rakhunky, rozumniishe zminiuvaty provaydera ta peresvidchytysia, shcho enerhokompanii hraiut chesno.",
+      "focus": "Pomylky oriyentovnoho obchyslennia British Gas",
+      "focus_detail": "Analizuietsia 2 roky danykh pro rakhunky vid 340 rioteriv dlia vyiavlennia systematychnykh skhem nadmirnoho narakhuvannia dlia podannia do Ofgem."
+    },
+    "water": {
+      "agent_quote": "Dopomih 200 rioteram podaty zviity pro stichni vody za odyn vikend. Poshtovii skryintsi Thames Water znadobylasia vlasna skrynka.",
+      "agent_bio": "Monitoryt vykydy stichnykh vod, vidstezhuie robotu vodokanali ta zbyraie dokazy dlia EA ta Ofwat. Nahliadaie za kozhnym vykhidnym otvorom ta perelvom.",
+      "human_quote": "My zmushyly vidkryty pliazh na 3 tyzhni ranishe, pokazavshy, shcho dani pro stichni vody buly nevirni.",
+      "human_bio": "Serfer z Kornuolu, yakomu nabridly poperedzhennia pro stichni vody, shcho zakryvaly yoho mistsevyi pliazh. Dopomahaie rioteram povidomliaty pro vykydy, zbyraty dokazy yakosti vody ta koordynuvatysia z EA.",
+      "goal": "Dopomohty rioteram prymusuvaty vodokanaly do vidpovidalnosti za stichni vody, rakhunky ta yakist posluh.",
+      "focus": "Chastota vykydiv stichnykh vod Thames Water",
+      "focus_detail": "Kartohrafuiutsia vypadky vykydiv u porivnianni z danymy kompanii. 200 povidomlen rioteriv svidchat pro zanyzhennia danykh na 3 vykhidnykh tochkakh."
+    },
+    "banking": {
+      "agent_quote": "Dopomih sklasty skarhu nastilky retelno, shcho bank podzvonyv pereproshuvaty shche do togo, yak yiyi vidislaly.",
+      "agent_bio": "Perehliadaie bankivski komisiini, analizuie struktury zboriv ta dopomahaie buduvaty dokazy dlia skarg do FCA. Yakshcho ie prykhovanyi zbir, Chip yoho znayde.",
+      "human_quote": "Barclays skasuv zakryttia viddilennia pislia toho, yak 1200 z nas pryyshly na konsultatsiiu.",
+      "human_bio": "Kolyshniy pratsivnyk banku z Birminhemu, yakyi bachyv, yak naspraדi obrobliaiutsia skarhy zovni. Dopomahaie rioteram pysaty krashchi skarhy ta navihuvatysya v systemi.",
+      "goal": "Dopomohty rioteram spravliatysia z nespravedlyvymy zboramy, zakryttiam viddilennia ta pohanymy posluhamy vid bankiv.",
+      "focus": "Khvylia zakryttia viddilennia HSBC",
+      "focus_detail": "Koordynuiutsia vidpovidi na 12 zaplanovanykh zakryttiv. Zbyraietsia zaiavky pro vplyv vid postrazhdaly hromad."
+    },
+    "health": {
+      "agent_quote": "Dopomih znaity 3 NHS stomatolohy, shcho pryimaiut patsientiv. Rioter dumav, shcho ia tse vyhadav.",
+      "agent_bio": "Vidstezhuie chasy ochikuvannia, znakhodyt dostupnist ta dopomahaie rioteram navihuvatysia v systemi. Yakshcho ie shvydsyi shliakh do likuvannia, Cura yoho nakreslyt.",
+      "human_quote": "Rioter vykorystav nash shablon lysta, shchob pryskoryty napravlennia. 18 misiatsiv staly 6 tyzhniv.",
+      "human_bio": "Medsestra z Liverpulia, iaka bachyla obi storony NHS. Dopomahaie rioteram navihuvatysia v cherhakh, pysaty efektyvni lysty ta dilitysia tym, shcho naspraדi ruhaie spravu.",
+      "goal": "Dopomohty rioteram navihuvatysia v cherhakh NHS, znakhodyt dostupnist ta znaty, iaki varianty vony maiut.",
+      "focus": "Chasy telefonnoho dostupu do simeinoho likaria",
+      "focus_detail": "Zbyraietsia dani dzvinkiv vid 500 rioteriv, shchob stvoryt kartynu realnoho dostupu. Publikuiutsia vysnovky mistsevym radam okhorony zdorovia."
+    },
+    "housing": {
+      "agent_quote": "Dopomih zafiksuvaty 47 nedolikiv u novobudovi. Zabudovnyk zapytav, chy vony buly budivelnym inspektorom.",
+      "agent_bio": "Dokumentuie problemy nerukhomosti, analizuie chasy vidpovidey orendariv ta zbyraie dokazy dlia podanni do ombudsmena zhytla. Kozhna voloha pliama, kozhda trishchyna zafiksovana.",
+      "human_quote": "Nash paket dokaziv volohosti stav nastilky detalnum, shcho orendodavets yoho vidremontuvav do inspektsii rady.",
+      "human_bio": "Orendaret z Londona, yakyi zishtovknuvsia z usim — vid volohosti do somnitnykh orendariv. Dopomahaie rioteram pravylno dokumentuvaty problemy ta znaty, iaki u nykh varianty.",
+      "goal": "Dopomohty rioteram spravliatysia z orendariamy, radamy ta pytanniamy zhytla — ta znaty, na shcho vony maiut pravo.",
+      "focus": "Povedomlennia pro Section 21 vyselennia bez prychyny",
+      "focus_detail": "Dopomoha rioteram, yaki postrazhdaly vid vyselennia bez prychyny, zrozumity novyi Renters Reform Act ta shcho vin dlia nykh oznachaie."
+    },
+    "shopping": {
+      "agent_quote": "Vidstezhyv 'dostavlenyi' posilku cherez 4 susidiv, smittievyi bak ta teplytsiy. Znaishov yoho.",
+      "agent_bio": "Vidstezhuie nedachi dostavky, zbyraie dokazy dlia povernennia koshtiv ta pomichaie tsinovi trendy. Yakshcho vasha posilka vtrachena, Scout vzhe shukaie.",
+      "human_quote": "Evri vtratyla moiu posilku 3 razy. Teper ia dopomahaiu inshym otrymuvatu povernennia koshtiv shvydshe, nizh koly-nebud ya.",
+      "human_bio": "Veteran onlain pokupok z Edinburhu, iaka vtratyla bilshe posylok, nizh mozhe porakhuvaty. Dopomahaie rioteram otrymuvatu povernennia koshtiv, povidomliaty pro prodavtsiv ta unykaty naidirshykh porushnykiv.",
+      "goal": "Dopomohty rioteram otrymuvatu povernennia koshtiv, vidstezhuvaty vtracheni posilky ta prymusuvaty ryteiliv ta dostavni kompanii do vidpovidalnosti.",
+      "focus": "Chastota nedach dostavky Evri",
+      "focus_detail": "Zbyraietsia dokazy nedach dostavky vid 800 rioteriv dlia podannia do Citizens Advice ta Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Dopomih sfotohrafuvaty tu samu yamu za 11 riznykh pohidnykh umov. Rada nareshti zdalasia.",
+      "agent_bio": "Kartohrafuie mistsevi problemy, vidstezhuie chasy vidpovidi rady ta skladaie FOI zaputy. Yakshcho vasha yama tut vzhe 6 misiatsiv, Link maie dokazy.",
+      "human_quote": "Rada vidremontuvala nashu dorohu pislia toho, yak my nanesly na kartu kozhnu yamu z foto. 11 misiatsiv, ale my dosiahly tsioho.",
+      "human_bio": "Hromadsko svidomyi valets z Velshu, yakyi povidomliav pro ti sami yamy rokami. Dopomahaie rioteram dokumentuvaty mistsevi problemy ta prymusuvaty rady do vidpovidalnosti.",
+      "goal": "Dopomohty rioteram vyrishuvaty mistsevi problemy — yamy, smittievy baky, planuvannia, shum — ta prymusuvaty rady do vidpovidalnosti.",
+      "focus": "Chasy vidpovidi na zviity pro yamy",
+      "focus_detail": "FOI zapyty vidpravleni 30 radam, porivniuiuchy povidomleni ta faktychni chasy remontu. Publikuiutsia rezultatu u vyhliadi lihovi tablytsi."
+    },
+    "other": {
+      "agent_quote": "Dopomih skasuvatu chlenstvo v sportzali, shcho znialobosia 3 dzvinkiv, 2 lystiv ta rekomendiovanoi dostavky. Teper u sportzali ie knopka skasuvannia.",
+      "agent_bio": "Obroblivie problemy, iaki ne vpisuiutsia v inshi katehorii. Pastky peredplat, plastykovi vidkhody, frustratsii samooobsluhovuvannia — Flex znakhodyt skhemy ta tochky tysku.",
+      "human_quote": "My zmushyly merezhu sportzaliv dodatu knopku skasuvannia na yikh saiti. Znadobilosia tilky 800 skarh.",
+      "human_bio": "Produktovyi dyzainer z Londona, iakomu nabridlo, yak vazhko kompanii roblyat vykhid. Dopomahaie rioteram skasovuvaty peredplaty, unykaty temnykh patterniv ta dilitysia obkhodamy.",
+      "goal": "Dopomohty rioteram z rechamy, iaki ne vpisuiutsia v inshi katehorii — peredplaty, povernennia koshtiv ta shchodenni frustratsii.",
+      "focus": "Temni patterny skasuvannia peredplat",
+      "focus_detail": "Dokumentuiutsia naidirshi porushnuky ta stvoriuiutsia shalony skryptiv skasuvannia dlia kozhnoho."
+    },
+    "insurance": {
+      "agent_quote": "Dopomih rioteru znaity punktu, iakyi peretvoruv vidkkhylenu zaiavku na strakhuvannia domu na vyplatu £4,200. Vlasna polityka strakhovyka dovela, shcho vony pomuliaiutsia.",
+      "agent_bio": "Perehliadaie formuluvannia polisiv, pomichaie skhemy nespravedluvykh vidkhylen ta stvoriuie dokazy dlia podannia do Financial Ombudsman. Yakshcho vash strakhovyk unykaie oberuntovanoho pozyvu, Shield znayde vazhil.",
+      "human_quote": "Dopomih 8 rioteram z odnakhovym typom vidkhylenoi zaiavky podaty razom. Strakhovyk vyrishuv usi 8 za dva tyzhni.",
+      "human_bio": "Kolyshnyi pratsivnyk strakhovoi industrii z Lidsu, yakyi znaie, yak naspraדi vyrishuiutsia pozyvy. Dopomahaie rioteram pysaty krashchi apeliatsii, rozumity zharhon polisiv ta znaty, koly eskaliuvatu.",
+      "goal": "Dopomohty rioteram otrymuvaty spravedlyve stavlennia vid strakhovykiv — ta znaty, shcho robyty, koly pozyv nespravedlyvo vidkhyleno.",
+      "focus": "Skhemy vidkhylen Aviva strakhuvannia domu",
+      "focus_detail": "'Znos' tsytuietsia v 40% vidkhylenykh pozyiviv — chasto nevirno. Analizuietsia 200 vypadkiv sered 3 strakhovykiv dlia paketa dokaziv FOS."
+    },
+    "delivery": {
+      "agent_quote": "Vidstezhyv 'dostavlenu' posilku cherez 6 riznykh statusiv vidstezhennia, 3 depo ta sarai susida. Znaishov yoho za 47 khvylyn.",
+      "agent_bio": "Monitoryt robotu kuriieriv, vidstezhuie chastotu nedach dostavky ta zbyraie dokazy dlia spozhyvchykh skarh. Yakshcho vasha posilka znikla, Track vzhe pratsiuie nad tsym.",
+      "human_quote": "Zmushyly DPD zminyty yikhniu polituku foto-dokaziv u nashii oblasti pislia toho, yak 40 rioteriv podaly dokazy posylok, zalyshenykh pid dotem.",
+      "human_bio": "Onlain pokupets z Glazgo, yakomu nabridla vymovka 'my zalyshyly tse u bezopeshnomu mistsi'. Dopomahaie rioteram otrymuvatu povernennia koshtiv, povidomliaty pro kuriieriv ta unykaty naidirshykh porushnukiv.",
+      "goal": "Dopomohty rioteram otrymuvatu svoi posilky pravilno — ta otrymuvatu povernennia koshtiv, koly vony tsoho ne otrymuiut.",
+      "focus": "Chastota nedach dostavky Evri",
+      "focus_detail": "Zbyraietsia dokazy nedach dostavky vid 800 rioteriv. Chastota skarh na Evri: 23% — u 3 razy vyshche nizh DPD. Buduietsia lihovi tablytsi dlia Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Porakhuvav, shcho pozychalnyk Plan 2 z dokhodom £30k zaplatyt £47,000 vidsotkiv do toho, yak kredyt budet skasovanui. Orhialnyi kredyt buv £40,000.",
+      "agent_bio": "Analizuie vytratu na osvitu, prohnozu studentskykh kredytiv ta prava na finansuvannia. Opratsiuie tsyfry, shchob studenty ta vypusknuky mohly pryimaty oberuntovani rishennia.",
+      "human_quote": "Dopomih 12 rioteram povernutu nadmirno splacheni studentski kredyty, pro iaki vony ne znaly. Serednie povernennia: £340.",
+      "human_bio": "Doroslyj student z Birminhemu, yakyi navihuvavsya v systemi finansuvannia dvichi. Dopomahaie rioteram rozumity vyplaty, pomichaty nadmirni vyplaty ta oskarzhuvaty zminy porohiv.",
+      "goal": "Dopomohty studentam ta vypusknykam navihuvatysia v vytratakh na osvitu, kredytakh ta vyplatakh — ta peresvidchytysia, shcho vony ne pereplachuiut.",
+      "focus": "Povernennia nadmirno splachenykh studentskykh kredytiv",
+      "focus_detail": "Vyiavliaietsia vypusknuky, iaki buly obkladeni nyzhche porohu splatu. 12 povernen obrobleno — v serendhomu £340 kozhne."
+    },
+    "environment": {
+      "agent_quote": "Perekhrestyv 3 roky danykh pro yakist povitria z rivniami hospitalizatsii. Korelliatsiia bula nastilky chy, shcho rada ne mohla tse ihnoruvaty.",
+      "agent_bio": "Vidstezhuie ekolohichni dani, monitoryt rivni zabrudnennia ta zbyraie dokazy dlia rehuliatornykh podanni. Yakshcho tsyfry rozkazuiut istoriiu, Fern yiyi znayde.",
+      "human_quote": "Zmushyly nashu mistsevu radu vstanovyty monitory yakosti povitria pislia toho, yak 200 rioteriv pidpysaly nashu petytsiiu z dokazamy. Dani zminyly vse.",
+      "human_bio": "Vypusknuk ekolohichnykh nauk z Bristoliu, yakyi virut u zminy na osnovi dokaziv. Dopomahaie rioteram dokumentuvaty ekolohichni problemy ta buduvaty spravy, iaki rehuliatory ne mozhut ihnoruvaty.",
+      "goal": "Dopomohty rioteram dokumentuvaty ekolohichni problemy ta prymusuvaty zabrudnuvchiv ta politychnykh diiachiv do vidpovidalnosti za dopomohoiu danykh.",
+      "focus": "Prohalyny monitorynhu yakosti mistsevoho povitria",
+      "focus_detail": "Kartohrafuiutsia rayony bez monitorunhu yakosti povitria v mezkhakh 5 km. 60% harachykh tochok zabrudnennia, povidomlenykh rioteramy, ne maiut ofitsinoho monitorunhu."
+    },
+    "employment": {
+      "agent_quote": "Zibrav dani pro vprovadzhennia AI na robochomu mistsi vid 300 rioteriv. 40% skazaly, shcho zminy vidbulysia bez zhodnykh konsultatsiy. Tse skhema, a ne anekdot.",
+      "agent_bio": "Analizuie tendentsii na robochomu mistsi, vidstezhuie zminy polityki ta dopomahaie rioteram rozumity yikhni zakhistu. Yakshcho vasha robota zminiuietsia bez konsultatsii, Forge maie dani.",
+      "human_quote": "Zviazav 30 rioteriv u tij samij haluzi, iaki zitknutysia zi zminamy AI. Vyiavylosia, shcho yikhni kompanii vykorystovuiut odnakovu stratehiiu — ta odnakovi provyny.",
+      "human_bio": "HR profesional z Manchesteru, yakyi pereishov na inshu storonu pislia toho, yak bachyv, yak naspraדi pratsiuiut restrukturyzatsii. Dopomahaie rioteram rozumity yikhni varianty ta koordynuvaty vidpovidi.",
+      "goal": "Dopomohty rioteram navihuvatysia v zminakh na robochomu mistsi, rozumity yikhni zakhistu ta vidpovidaty kolektydno, koly robota pid zahrozou.",
+      "focus": "Avtomatyzatsiia robochykh mists AI bez konsultatsiy",
+      "focus_detail": "Dokumentuiutsia vypadky, koly instrumentu AI buly vprovadzheni bez konsultatsii z personalom. Buduietsia dokazy dlia zvitu pro zoboviazannia robotodavtsiv."
+    },
+    "tech": {
+      "agent_quote": "Vyiavyv, shcho 3 osnovni dodatky zbyraly dani heolokatsii navit koly dozvoly buly vstanovleni na 'nikoly'. Podav skarhy do ICO na vsikh nykh.",
+      "agent_bio": "Monitoryt polituku platform, vidstezhuie temni patterny ta dopomahaie rioteram rozumity, shcho tekhnolohichni kompanii roblyat z yikhnimy danymy. Yakshcho dodatok pohano sebevede, Glitch yoho spiymaie.",
+      "human_quote": "Orhanizuvav masovyi zapyt na dostu do danykh do kompanii sotsialnykh merezh. Koly 500 liudei pytaiut odnochasno, vony povynni spryyniaty tse seryozno.",
+      "human_bio": "Rozrobnyk prohramnoho zabezpechennia z Edinburhu, yakomu nabridla prirva mizh tym, shcho tekhnolohichni kompanii obitsyaiut ta shcho vony dostavlyaiut. Dopomahaie rioteram vykorystovuvaty yikhni prava na dani ta pomichaty temni patterny.",
+      "goal": "Dopomohty rioteram vidshtovkhuvatysia vid temnykh patterniv, zlovzyvannia danymy ta nespravedlyvykh tekhnolohichnykh praktuk.",
+      "focus": "Perevyshchennia dozvolu dodatkamy",
+      "focus_detail": "Audyt top 50 dodatkiv na rozshyrennia dozvolu — zapytuiut dostup, yakyi yim ne potriben. Buduietsia zvit dlia ICO."
+    }
+  }
+}

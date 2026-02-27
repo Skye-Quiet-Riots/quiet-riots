@@ -2374,3 +2374,88 @@ describe('Bot API: Message delivery', () => {
     expect(body2.data.delivered).toBe(false);
   });
 });
+
+// ─── Locale Validation Security Tests ─────────────────────────────────────
+
+describe('Bot API: locale validation (security)', () => {
+  it('identify with invalid language_code strips it (user gets en)', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900099',
+      name: 'Invalid Lang User',
+      language_code: 'xyz',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('en');
+  });
+
+  it('identify with path traversal language_code strips it', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900098',
+      name: 'Traversal User',
+      language_code: '../../etc',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('en');
+  });
+
+  it('identify with valid language_code accepts it', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900097',
+      name: 'Valid Lang User',
+      language_code: 'fr',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('fr');
+  });
+
+  it('set_language with unsupported code returns error', async () => {
+    const { status, body } = await callBot('set_language', {
+      phone: '+447700900001',
+      language_code: 'xyz',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Unsupported language code');
+  });
+
+  it('set_language with valid code accepts it', async () => {
+    const { status, body } = await callBot('set_language', {
+      phone: '+447700900001',
+      language_code: 'de',
+    });
+    expect(status).toBe(200);
+    expect(body.data.user.language_code).toBe('de');
+  });
+
+  it('update_user with invalid language_code strips it (preserves existing)', async () => {
+    // First set a known language
+    await callBot('set_language', { phone: '+447700900001', language_code: 'es' });
+
+    // Use a code within Zod max(10) but not a valid locale
+    const { status, body } = await callBot('update_user', {
+      phone: '+447700900001',
+      language_code: 'zz',
+    });
+    expect(status).toBe(200);
+    // language_code should not have been changed (invalid was stripped → undefined → no update)
+    expect(body.data.user.language_code).toBe('es');
+  });
+
+  it('search_issues with invalid language_code falls back to en', async () => {
+    const { status, body } = await callBot('search_issues', {
+      query: 'Rail',
+      language_code: 'zz',
+    });
+    expect(status).toBe(200);
+    // Should return results without error (falls back to English)
+    expect(body.data.issues.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('get_category_assistants with invalid language_code falls back via resolveLocale', async () => {
+    const { status, body } = await callBot('get_category_assistants', {
+      category: 'transport',
+      language_code: 'zz-bad',
+    });
+    expect(status).toBe(200);
+    expect(body.data.assistant).toBeDefined();
+  });
+});

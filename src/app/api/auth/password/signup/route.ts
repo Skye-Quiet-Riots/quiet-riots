@@ -7,6 +7,7 @@ import { hashPassword, validatePassword, isPasswordBreached } from '@/lib/passwo
 import { setSession } from '@/lib/session';
 import { sendEmail } from '@/lib/email';
 import { sanitizeText } from '@/lib/sanitize';
+import { isValidLocale } from '@/i18n/locales';
 
 const signupSchema = z.object({
   name: z
@@ -16,7 +17,11 @@ const signupSchema = z.object({
     .transform((s) => sanitizeText(s)),
   email: z.string().email('Valid email required').max(255),
   password: z.string().min(1, 'Password is required').max(128),
-  language_code: z.string().max(10).optional(),
+  language_code: z
+    .string()
+    .max(10)
+    .optional()
+    .transform((v) => (v && isValidLocale(v) ? v : undefined)),
   country_code: z.string().max(3).optional(),
 });
 

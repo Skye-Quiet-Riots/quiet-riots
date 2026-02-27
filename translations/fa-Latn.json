@@ -1,0 +1,876 @@
+{
+  "locale": "fa-Latn",
+  "categories": {
+    "Transport": "Haml o Naghl",
+    "Telecoms": "Mokhaberat",
+    "Banking": "Banki",
+    "Health": "Salamat",
+    "Education": "Amoozesh",
+    "Environment": "Mohit Zist",
+    "Energy": "Enerji",
+    "Water": "Ab",
+    "Insurance": "Bimeh",
+    "Housing": "Maskan",
+    "Shopping": "Kharid",
+    "Delivery": "Ersaal",
+    "Local": "Mahalli",
+    "Employment": "Eshteghaal",
+    "Tech": "Teknoloji",
+    "Other": "Sayer"
+  },
+  "issues": {
+    "Train Cancellations": {
+      "name": "Laghv-e Qatarha",
+      "description": "Qatarha laghv ya ba ta'khir-e shadid bedun-e etelā' ya jebran-e kāfi"
+    },
+    "Train Ticket Prices": {
+      "name": "Qeymat-e Bilit-e Qatar",
+      "description": "Kerāye-hā-ye qatar kheyli gerān, afzāyesh-hā-ye bālātar az tavorom, qeymat-gozāri-ye nāsāzgār"
+    },
+    "Flight Delays": {
+      "name": "Ta'khir-e Parvāzhā",
+      "description": "Parvāzhā ta'khir yā laghv, ertebāt-e zā'if, moshkel dar daryāft-e jebran"
+    },
+    "Lost Luggage": {
+      "name": "Gom Shodan-e Chamedan",
+      "description": "Chamadānhā be maghsad nemiresand, radyābi-ye kond, jebran-e nākāfi"
+    },
+    "Bus Route Cuts": {
+      "name": "Hazf-e Masir-hā-ye Otobūs",
+      "description": "Masirhā laghv shodand, kamtar shodand, javāme'-e rustāyi dastresi be otobūs ro az dast midahand"
+    },
+    "Pothole Damage": {
+      "name": "Khesārat-e Chāle-hā",
+      "description": "Chāle-hā be vasāyel-e naqliye āsib mizanand va barā-ye doorakhabsavārhā khatar-nāk hastand, shurāhā-ye mahalli dir ta'mir mikonand"
+    },
+    "Parking Fines": {
+      "name": "Jarime-hā-ye Park",
+      "description": "Hazine-hā-ye park-e khosusi nā-ādilāne, ejrā-ye tajavoz-kārāne, tābeloohā-ye gij-konande"
+    },
+    "Fuel Prices": {
+      "name": "Qeymat-e Sukht",
+      "description": "Qeymat-e benzin va gāzoil kheyli bālā, kond pāyin miyād vaghti qeymat-e omde pāyin miyād"
+    },
+    "Broadband Speed": {
+      "name": "Sor'at-e Internet",
+      "description": "Sor'at-e internet kheyli pā'intar az ānchi tabligh mishe va barāsh pul dāde mishe"
+    },
+    "Mobile Signal Dead Zones": {
+      "name": "Manātegh-e Bedun-e Signal-e Mobāyl",
+      "description": "Hich signal-e mobāyli dar khāne, mahal-e kār, yā dar masir-hā-ye haml-o-naghl nist"
+    },
+    "Price Rises Mid-Contract": {
+      "name": "Afzāyesh-e Qeymat dar Miān-e Gharārdād",
+      "description": "Ghabz-hā-ye telefon, internet va TV dar zamān-e gharārdād-hā-ye ghofli afzāyesh peydā mikonad"
+    },
+    "Customer Service Hold Times": {
+      "name": "Zamān-e Entezār barā-ye Khadamāt-e Moshtari",
+      "description": "Sā'athā entezār barā-ye harf zadan bā yek ensān-e vaghe'i"
+    },
+    "Difficulty Cancelling Subscriptions": {
+      "name": "Moshkel dar Laghv-e Abunmānhā",
+      "description": "Sherkathā ān-dafe laghv yā loghe-abonemān ro sakht mikonand"
+    },
+    "Roaming Charges": {
+      "name": "Hazine-hā-ye Roaming",
+      "description": "Hazine-hā-ye gheyre-montazere-ye mobāyl hangām-e safar be khārej, afzāyesh-e qeymat ba'd az Brexit"
+    },
+    "Energy Bill Costs": {
+      "name": "Hazine-hā-ye Ghabz-e Enerzhi",
+      "description": "Ghabz-hā-ye gāz va bargh gheyre-ghābel-e pardākht, saghf-e qeymat hanuz kheyli bālāst"
+    },
+    "Inaccurate Energy Bills": {
+      "name": "Ghabz-hā-ye Enerzhi-ye Ghalat",
+      "description": "Gherā'at-hā-ye takhmin-i eshtebāh, esterifāt-e bishtar az had, khatā-hā-ye surat-hesāb"
+    },
+    "Water Bill Increases": {
+      "name": "Afzāyesh-e Ghabz-e Āb",
+      "description": "Ghabz-hā-ye āb be shar'i bālā mirand dar hāli ke keyfit-e khadamāt pāyin miyād"
+    },
+    "Sewage in Rivers": {
+      "name": "Fazolāt dar Rudhāne-hā",
+      "description": "Sherkathā-ye āb fazolāt-e khām ro be rudhāne-hā va sahelhā mikhaland"
+    },
+    "Power Cuts": {
+      "name": "Ghat'-e Bargh",
+      "description": "Ghat'-e ta'min-e bargh, bargardān-i-e kond, jebran-e nākāfi"
+    },
+    "Smart Meter Problems": {
+      "name": "Moshkelāt-e Konturhā-ye Hushmund",
+      "description": "Konturhā-ye hushmund kār nemikonand, ba'd az avaz kardan-e ta'min-konande kār-kard ro az dast midahand"
+    },
+    "Bank Branch Closures": {
+      "name": "Baste Shodan-e Sho'ab-e Bānk",
+      "description": "Sho'ab-e mahalli-ye bānk baste mishavand, javāme' bedun-e dastresi mimānand"
+    },
+    "Hidden Bank Charges": {
+      "name": "Hazine-hā-ye Penhān-e Bānk",
+      "description": "Hazine-hā-ye gheyre-montazere barā-ye overdraft, mo'āmelāt-e khāreji, negahdāri-ye hesāb"
+    },
+    "Fraud and Scam Losses": {
+      "name": "Zarar-hā-ye Kalāhbardāri va Scam",
+      "description": "Bānkhā az bāzpardākht be ghorbāniyān-e kalāhbardāri va scam-hā-ye pardākht-e mojāz khoddāri mikonand"
+    },
+    "Insurance Claim Rejections": {
+      "name": "Rad-e Dar-khāsthā-ye Bime",
+      "description": "Dar-khāsthā ba bahāne-hā-ye faniy ba'd az sālhā pardākht-e haghbime rad mishavand"
+    },
+    "Mortgage Rate Shock": {
+      "name": "Shok-e Nerkh-e Vām-e Maskan",
+      "description": "Pāyān-e nerkh-e sābet va enteghāl be nerkh-e moteghayyer-e kheyli bālātar"
+    },
+    "Overseas Transfer Fees": {
+      "name": "Hazine-hā-ye Enteghāl be Khārej",
+      "description": "Hazine-hā-ye ziād va nerkh-e tabdil-e bad barā-ye enteghāl-hā-ye beyn-almellali"
+    },
+    "NHS Waiting Times": {
+      "name": "Zamān-e Entezār-e NHS",
+      "description": "Entezār-hā-ye chand-māhe yā chand-sāle barā-ye amal va nobat-hā-ye motekhassesin"
+    },
+    "GP Appointment Access": {
+      "name": "Dastresi be Nobat-e GP",
+      "description": "Nemitunand barā-ye rezerv-e nobat-e GP tamās begirand, entezār-hā-ye chand-hafte-i"
+    },
+    "Dentist Availability": {
+      "name": "Dar-Dastresi-ye Dandunpezeshk",
+      "description": "Peydā kardan-e dandunpezeshk-e NHS ke bimār-e jadid begirad gheyre-momken ast"
+    },
+    "Mental Health Service Waits": {
+      "name": "Entezār barā-ye Khadamāt-e Behdasht-e Ravāni",
+      "description": "Entezār-hā-ye chand-māhe barā-ye darmān va hemāyat-e behdasht-e ravāni"
+    },
+    "Prescription Costs": {
+      "name": "Hazine-hā-ye Noskhe",
+      "description": "Hazine-ye har ghalam dar England kheyli bālāst, nā-sāzgāri dar sarassar-e mamālek-e UK"
+    },
+    "Hospital Parking Charges": {
+      "name": "Hazine-hā-ye Park-e Bimārestān",
+      "description": "Pardākht barā-ye park dar bimārestān zamāni ke mariz hastand yā az marizān didān mikonand"
+    },
+    "Rent Increases": {
+      "name": "Afzāyesh-e Ejāre",
+      "description": "Ejāre-ye khosusi kheyli bālātar az tavorom miyād, tahdid-e ekhrāj-e bedun-e taghsir"
+    },
+    "Council Tax Rises": {
+      "name": "Afzāyesh-e Māliyāt-e Shurā",
+      "description": "Afzāyesh-e sālāne-ye māliyāt-e shurā dar hāli ke khadamāt-e mahalli badtar mishavand"
+    },
+    "Noisy Neighbours": {
+      "name": "Hamsāye-hā-ye Sar-o-Sedā-Dār",
+      "description": "Mozāhemat-e modāvem-e sedā, shurāhā-ye mahalli kond vagāyef mikonand, ruy-e behdāsht-e ravāni ta'sir mizārad"
+    },
+    "Rubbish Collection Changes": {
+      "name": "Taghyirāt-e Jam'-Āvari-ye Zobāle",
+      "description": "Jam'-āvari-ye satlhā-ye zobāle kam shode, ghavanin-e bāzyāft-e gij-konande, satlhā-ye por"
+    },
+    "Planning Permission Abuse": {
+      "name": "Su'-estefāde az Mojuz-e Tarh-Rizi",
+      "description": "Tose'e-hā-ye nā-khāste tajviz mishavand, kamarbandha-ye sabz tahdid hastand, jāme'e nādide gerefte mishavad"
+    },
+    "Damp and Mould in Housing": {
+      "name": "Rotubat va Kpak dar Maskanhā",
+      "description": "Mālekān va anjomanhā-ye maskan dar ta'mir-e rotubat va kopak shekast mikhoorand"
+    },
+    "Delivery Problems": {
+      "name": "Moshkelāt-e Tahvil",
+      "description": "Baste-hā gom mishavand, zir-e bāroon gozāshte mishavand, tahvil dāde shode neshun dāde mishavand amma daryāft nashode"
+    },
+    "Shrinkflation": {
+      "name": "Shrinkflation",
+      "description": "Mahsulāt kuchektar mishavand dar hāli ke qeymatā sābet mimānand yā afzāyesh peydā mikonand"
+    },
+    "Refund Difficulties": {
+      "name": "Moshkelāt-e Bāzpardākht",
+      "description": "Sherkathā bargasht va bāzpardākht ro be tor-e gheyre-zaruri sakht mikonand"
+    },
+    "Fake Reviews": {
+      "name": "Review-hā-ye Ghalabi",
+      "description": "Nemishe be review-hā-ye online e'temād kard, review-hā-ye mosbat-e ghalabi masrafkonandegān ro gomnrāh mikonand"
+    },
+    "Subscription Traps": {
+      "name": "Tale-hā-ye Abunmān",
+      "description": "Dowre-hā-ye rāygān bedun-e rezāyat-e vāzeh tabdil be puli mishavand, sakht barā-ye laghv"
+    },
+    "Food Quality Decline": {
+      "name": "Afhāt-e Keyfit-e Ghazā",
+      "description": "Ghazāhā-ye āmāde keyfit-e badtar, porshanhā-ye kuchektar, afzudani-hā-ye bishtar"
+    },
+    "Self-Checkout Frustration": {
+      "name": "Nā-rāhati az Sandugh-e Khod-Kār",
+      "description": "Dastagāh-hā-ye khod-khadamati ghābel-e e'temād nistand, jāygozin-e kārkonān-e ensāni mishavand"
+    },
+    "Cost of Childcare": {
+      "name": "Hazine-ye Negahdāri az Kudak",
+      "description": "Hazine-hā-ye negahdāri az kudak kheyli gerān, ghodrat-e kār kardan ro mahdud mikonand"
+    },
+    "Student Loan Repayment": {
+      "name": "Bāzpardākht-e Vām-e Dāneshju'i",
+      "description": "Dāneshamukhtegān dahehā sāl bāzpardākht mikonand, taghyirāt-e āstāne va behra"
+    },
+    "Dog Fouling": {
+      "name": "Kasifi-ye Sag",
+      "description": "Cherkiye sag dar fazāhā-ye omumi, pārkhā va piādero-hā tamiz nemishe"
+    },
+    "AI Replacing Jobs": {
+      "name": "AI Jāygozin-e Shoghalhā",
+      "description": "Negarāni darbāre-ye hush-e masnu'i ke bedun-e hemāyat-e enteghāl shoghalhā ro otomātik mikonand"
+    }
+  },
+  "organisations": {
+    "Avanti West Coast": {
+      "name": "Avanti West Coast",
+      "description": "Operatore rahe ahane UK ke khat West Coast Main Line ro khedmat mikone"
+    },
+    "Southern / Thameslink": {
+      "name": "Southern / Thameslink",
+      "description": "Operatore rahe ahane UK ke London va jonoobe ro khedmat mikone"
+    },
+    "Northern Trains": {
+      "name": "Northern Trains",
+      "description": "Operatore rahe ahane UK ke shomale Englestan ro khedmat mikone"
+    },
+    "CrossCountry": {
+      "name": "CrossCountry",
+      "description": "Operatore rahe ahane masafate toole UK"
+    },
+    "TransPennine Express": {
+      "name": "TransPennine Express",
+      "description": "Operatore rahe ahane UK ke masire trans-Pennine ro khedmat mikone"
+    },
+    "LNER": {
+      "name": "LNER",
+      "description": "Operatore rahe ahane UK ke khat East Coast Main Line ro khedmat mikone"
+    },
+    "Ryanair": {
+      "name": "Ryanair",
+      "description": "Havapeymaye arzane orupaei"
+    },
+    "EasyJet": {
+      "name": "EasyJet",
+      "description": "Havapeymaye arzane mabdae UK"
+    },
+    "British Airways": {
+      "name": "British Airways",
+      "description": "Havapeymaye rasmi UK"
+    },
+    "TUI": {
+      "name": "TUI",
+      "description": "Sherkate mosaferat va safar"
+    },
+    "BT / EE": {
+      "name": "BT / EE",
+      "description": "Araee konandee asli broadband va mobile dar UK"
+    },
+    "Virgin Media O2": {
+      "name": "Virgin Media O2",
+      "description": "Araee konandee broadband, TV va mobile dar UK"
+    },
+    "Sky": {
+      "name": "Sky",
+      "description": "Araee konandee TV, broadband va mobile dar UK"
+    },
+    "Vodafone": {
+      "name": "Vodafone",
+      "description": "Sherkate jahani mokhaberat ba markaz dar UK"
+    },
+    "Three": {
+      "name": "Three",
+      "description": "Operatore shabakeye mobile dar UK"
+    },
+    "TalkTalk": {
+      "name": "TalkTalk",
+      "description": "Araee konandee broadband va telefon dar UK"
+    },
+    "British Gas": {
+      "name": "British Gas",
+      "description": "Taeedee konandee energy dar UK"
+    },
+    "OVO Energy": {
+      "name": "OVO Energy",
+      "description": "Taeedee konandee energy dar UK"
+    },
+    "EDF": {
+      "name": "EDF",
+      "description": "Taeedee konandee energy dar UK (motealegh be France)"
+    },
+    "Octopus Energy": {
+      "name": "Octopus Energy",
+      "description": "Taeedee konandee energye tajadod pazir dar UK"
+    },
+    "Scottish Power": {
+      "name": "Scottish Power",
+      "description": "Taeedee konandee energy dar UK"
+    },
+    "E.ON": {
+      "name": "E.ON",
+      "description": "Taeedee konandee energy dar UK (motealegh be Alman)"
+    },
+    "Thames Water": {
+      "name": "Thames Water",
+      "description": "Sherkate ab va fazelab baraye London va dareye Thames"
+    },
+    "Southern Water": {
+      "name": "Southern Water",
+      "description": "Sherkate ab baraye jonoobe Englestan"
+    },
+    "United Utilities": {
+      "name": "United Utilities",
+      "description": "Sherkate ab baraye shomale gharbie Englestan"
+    },
+    "Severn Trent": {
+      "name": "Severn Trent",
+      "description": "Sherkate ab baraye Midlands"
+    },
+    "Anglian Water": {
+      "name": "Anglian Water",
+      "description": "Sherkate ab baraye East Anglia"
+    },
+    "Barclays": {
+      "name": "Barclays",
+      "description": "Banke chandemelliti britaniya"
+    },
+    "HSBC": {
+      "name": "HSBC",
+      "description": "Khadamate jahani banki va mali"
+    },
+    "NatWest": {
+      "name": "NatWest",
+      "description": "Banke khordeh forushi va tejari UK"
+    },
+    "Lloyds / Halifax": {
+      "name": "Lloyds / Halifax",
+      "description": "Goruhe banki UK"
+    },
+    "Santander": {
+      "name": "Santander",
+      "description": "Banke UK (motealegh be Espania)"
+    },
+    "Revolut": {
+      "name": "Revolut",
+      "description": "Bankedari digital va fintech"
+    },
+    "Aviva": {
+      "name": "Aviva",
+      "description": "Khadamate bimeh va mali UK"
+    },
+    "Admiral": {
+      "name": "Admiral",
+      "description": "Bimeye mashin va khane dar UK"
+    },
+    "Direct Line": {
+      "name": "Direct Line",
+      "description": "Sherkate bimeh UK"
+    },
+    "Amazon": {
+      "name": "Amazon",
+      "description": "E-commerce va teknolojiye jahani"
+    },
+    "Royal Mail": {
+      "name": "Royal Mail",
+      "description": "Khadamate posti UK"
+    },
+    "Evri": {
+      "name": "Evri",
+      "description": "Khadamate ersale baste dar UK (ghablan Hermes)"
+    },
+    "DPD": {
+      "name": "DPD",
+      "description": "Khadamate ersale baste dar UK"
+    },
+    "Tesco": {
+      "name": "Tesco",
+      "description": "Zanjireye supermarkete UK"
+    },
+    "Sainsburys": {
+      "name": "Sainsburys",
+      "description": "Zanjireye supermarkete UK"
+    },
+    "NHS England": {
+      "name": "NHS England",
+      "description": "Servise behdashtiye melli baraye Englestan"
+    },
+    "NHS Dentistry": {
+      "name": "NHS Dentistry",
+      "description": "Khadamate dandanpezeshkiye NHS"
+    },
+    "BUPA": {
+      "name": "BUPA",
+      "description": "Araee konandee behdashtiye khosusi"
+    },
+    "Local Councils": {
+      "name": "Local Councils",
+      "description": "Marajee hokumate mahali UK"
+    },
+    "Persimmon Homes": {
+      "name": "Persimmon Homes",
+      "description": "Sazandee khane dar UK"
+    },
+    "OpenRent": {
+      "name": "OpenRent",
+      "description": "Platforme online ejareh dar UK"
+    },
+    "Netflix": {
+      "name": "Netflix",
+      "description": "Servise streaming sargarmiye"
+    },
+    "Apple": {
+      "name": "Apple",
+      "description": "Sherkate teknoloji"
+    }
+  },
+  "synonyms": {
+    "Train Cancellations": [
+      "ghatar cancel shode",
+      "ghatar cancel",
+      "cancel shodan ghatar",
+      "ghatarha kar nemikone",
+      "cancel shodan rah ahan",
+      "service cancel shode",
+      "taakhir ghatar",
+      "ghatar dir karde",
+      "ghatarha dir hastan",
+      "ghatar dir",
+      "taakhir rah ahan"
+    ],
+    "Train Ticket Prices": [
+      "nerkh blit rah ahan",
+      "gheymat blit",
+      "ghatarha geroon",
+      "nerkh blit ghatar"
+    ],
+    "Flight Delays": [
+      "parvaz dir karde",
+      "havapeyma dir karde",
+      "parvaz cancel shode",
+      "taakhir foroodgah",
+      "gir karde tu foroodgah",
+      "parvaz dir"
+    ],
+    "Lost Luggage": [
+      "chamedan gom shode",
+      "chamadan gom shode",
+      "chamedan naresid",
+      "chamadan nadarim",
+      "chamedan ru navare nist",
+      "chamedan gom shode vasate airline"
+    ],
+    "Bus Route Cuts": [
+      "otobus hazf shode",
+      "kam kardan masir",
+      "bastane khat otobus"
+    ],
+    "Broadband Speed": [
+      "internet kond",
+      "wifi kond",
+      "wifi konde",
+      "sorat internet",
+      "internet kar nemikone",
+      "darhale buffer",
+      "internet ghat migire",
+      "wifi ghat migire"
+    ],
+    "Mobile Signal Dead Zones": [
+      "signal nist",
+      "antendeh nist",
+      "signal mobile nist",
+      "manteghe bedune signal"
+    ],
+    "Price Rises Mid-Contract": [
+      "afzayesh gheymat vasate gharardad",
+      "afzayesh gheymat tu gharardad",
+      "afzayesh vasate gharardad"
+    ],
+    "Customer Service Hold Times": [
+      "mantazeram",
+      "daram sare khat montazeram",
+      "nemitonam beresam",
+      "kasi javab nemide",
+      "saf telephone",
+      "markaz tamas"
+    ],
+    "Difficulty Cancelling Subscriptions": [
+      "nemishe cancel kard",
+      "cancel kardan sakht",
+      "cancel kardan subscription",
+      "lagve abooman"
+    ],
+    "Energy Bill Costs": [
+      "ghobuz gaz kheyli bala",
+      "ghobuz bargh",
+      "gheymat energy",
+      "hazineye garmayesh",
+      "faghr energy",
+      "tavanam energy ro pardakht kard"
+    ],
+    "Inaccurate Energy Bills": [
+      "ghobuz energy eshtebah",
+      "tekhmiin ghalat",
+      "bish az had pardakht kardam baraye energy"
+    ],
+    "Water Bill Increases": [
+      "nerkh ab",
+      "hazineye ab",
+      "ghobuz ab kheyli bala"
+    ],
+    "Sewage in Rivers": [
+      "rikhtan fazelab",
+      "fazelab khom",
+      "fazelab ru sahel",
+      "aloodegie ab",
+      "sareriz fazelab",
+      "sareriz fazelab moshtarak"
+    ],
+    "Hidden Bank Charges": [
+      "hazine gheyre montazereh",
+      "hazine penhoon",
+      "hazine gheyr mantezereh",
+      "hazine overdraft",
+      "hazine bank"
+    ],
+    "Fraud and Scam Losses": [
+      "kalah khordam",
+      "kalahbardari bank",
+      "kalahbardari push payment",
+      "kalahbardari taiid shode"
+    ],
+    "Bank Branch Closures": [
+      "baste shodan shobe",
+      "bank mahali dare mibande",
+      "bank nazdik nist"
+    ],
+    "Insurance Claim Rejections": [
+      "claim rad shod",
+      "bimeh pul nemide",
+      "claim rad shode"
+    ],
+    "NHS Waiting Times": [
+      "entezare NHS",
+      "liste entezar",
+      "entezare amal",
+      "vaghte entezare bimarestaoon",
+      "entezare erja",
+      "entezar baraye jarrahi"
+    ],
+    "GP Appointment Access": [
+      "nemitonam nobat GP begiram",
+      "nobate doktor",
+      "saf telephone GP",
+      "nemitonam doktor bebinam",
+      "jangale saat 8 sobh"
+    ],
+    "Dentist Availability": [
+      "dandoonpezeshke NHS",
+      "nemitonam dandoonpezeshk peyda konam",
+      "liste entezare dandoonpezeshk"
+    ],
+    "Mental Health Service Waits": [
+      "bodeje salamate ravani",
+      "dastresi be therapy",
+      "entezare counselling",
+      "entezare CAMHS"
+    ],
+    "Prescription Costs": [
+      "gheymate daro",
+      "gheymate daroo",
+      "hazineye darokhune"
+    ],
+    "Delivery Problems": [
+      "baste gom shode",
+      "baste ersal nashode",
+      "zire baroon gozashte shode",
+      "baste dozidi shode",
+      "delivery driver",
+      "delivery ro az dast dadam"
+    ],
+    "Rent Increases": [
+      "ejare kheyli bala",
+      "ejare dare bala mire",
+      "sahebekhoone dare ejare ro bala mibare",
+      "ekhraj bedune dalil"
+    ],
+    "Parking Fines": [
+      "jarime parking",
+      "parking charge notice",
+      "PCN",
+      "jarime parking naedalane"
+    ],
+    "Shrinkflation": [
+      "meghdar kamtar shode",
+      "kamtar baraye hamin gheymat",
+      "bastebandi kuchiktar",
+      "mahsulat kuchiktar shode"
+    ],
+    "Pothole Damage": [
+      "chalehaye jadde",
+      "khesarate jadde",
+      "asib az chalehaye jadde"
+    ],
+    "Council Tax Rises": [
+      "afzayesh maliyat shahr",
+      "maliyat shahr kheyli bala",
+      "maliyat mahalli"
+    ],
+    "Damp and Mould in Housing": [
+      "khoone porkepek",
+      "aparteman namdaar",
+      "kepeke siah",
+      "kharabi maskan"
+    ],
+    "Student Loan Repayment": [
+      "vame daneshjo",
+      "shahrie daneshgah",
+      "badehi tahsili",
+      "badehi daneshjo"
+    ],
+    "AI Replacing Jobs": [
+      "otomasion kar",
+      "AI dare kara ro mibare",
+      "robotha daran jaye kargara ro migirand"
+    ],
+    "Roaming Charges": [
+      "ghobuz telephone tu safar",
+      "hazineye data tu kharej",
+      "hazineye telephone kharej"
+    ],
+    "Smart Meter Problems": [
+      "smart meter khrab shode",
+      "kontor kar nemikone",
+      "kontor signal ro az dast dade"
+    ],
+    "Subscription Traps": [
+      "dame azmoone raiigan",
+      "tajdid khodkar",
+      "bad az trial charge shod"
+    ],
+    "Fuel Prices": [
+      "gheymate benzin",
+      "gheymate diesel",
+      "gheymate sukht",
+      "benzin kheyli geroon"
+    ],
+    "Power Cuts": [
+      "ghat bargh",
+      "bargh ghat shode",
+      "khamoshi",
+      "bargh nist",
+      "kharabi bargh"
+    ],
+    "Mortgage Rate Shock": [
+      "afzayesh mortgage",
+      "nerkh mortgage",
+      "remortgage",
+      "tamoom shodan nerkh sabit"
+    ],
+    "Overseas Transfer Fees": [
+      "hazineye transfer",
+      "ferestadan pul be kharej",
+      "hazineye havale",
+      "hazineye transfer bein almellali"
+    ],
+    "Hospital Parking Charges": [
+      "parking bimarestan",
+      "parking tu bimarestan",
+      "parking NHS"
+    ],
+    "Noisy Neighbours": [
+      "shekayat az saro seda",
+      "saro sedaye hamsaye",
+      "hamsayeha por saro sedan",
+      "mozahemiate saro seda"
+    ],
+    "Rubbish Collection Changes": [
+      "jam kardan ashghal",
+      "satlha jam nashode",
+      "sardargoomi bazayaft",
+      "satl jam nashode"
+    ],
+    "Planning Permission Abuse": [
+      "mojaveze sakht",
+      "tose ghayre morednazar",
+      "kamarband sabz",
+      "mojaveze sakhtoman"
+    ],
+    "Refund Difficulties": [
+      "nemitonam pulo pas begiram",
+      "pas dadan pul rad shod",
+      "bargesht rad shod",
+      "pas dadan pul"
+    ],
+    "Fake Reviews": [
+      "dastkaride review",
+      "reviewhaye puli",
+      "trust pilot fake",
+      "review fake"
+    ],
+    "Food Quality Decline": [
+      "keyfiiate ghaza",
+      "ghazaye amade badtar shode",
+      "mavade ezafe ghaza",
+      "meghdar kuchiktar"
+    ],
+    "Self-Checkout Frustration": [
+      "self checkout",
+      "khodkar service",
+      "sandoogh ba kargar nist",
+      "machine kar nemikone"
+    ],
+    "Cost of Childcare": [
+      "hazineye negahdari koodak",
+      "shahrie mehmoonkhoone koodak",
+      "negahdari koodak geroon",
+      "hazineye daycare"
+    ],
+    "Dog Fouling": [
+      "kherafe sag",
+      "goh sag",
+      "zobalehe sag",
+      "aloodegi sag"
+    ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Yek bar komak kardam yek rioter shesh ta claim-e poole bargashti ro dar yek safar-e dirkat file kone. Oonha £47 dar avordan ghabl az residane be Birmingham.",
+      "agent_bio": "Algoohaye cancellation ro track mikone, kaghaz baziha-ye bargasht-e pool ro handle mikone, har eghdam-e pishnehadi ro barresi mikone, va madrak baraye ersal be regulator amadeh mikone. Adada ro hesab mikone ta riotera betoonan rooye chizhayi ke mohem hast tamarkoz konan.",
+      "human_quote": "Behtarin lahze-ye Quiet Riot-am: tamasha kardan-e team-e social media-ye Avanti ke pareshoon shodand vaghti 400 ta az ma hamzaman tweet kardim.",
+      "human_bio": "Mosafere moratebe az Manchester ke seh sal rooye khatt-e Avanti bood ghabl az inke tasim begire kafiye. Komak mikone riotera rooye hamin masirha ro be ham vasl kone, chizhayi ke javab mideh ro share mikone, va lahje-ye ensani miyare.",
+      "goal": "Komak be riotera ta sherkat haye transport-e UK ro dar mored-e cancellationna, ta'khira, va gheimat gozarihaa masool konan — va motmaen beshan hame midoonan cheghadr hagheshoone.",
+      "focus": "Algoohaye cancellation-e Avanti West Coast",
+      "focus_detail": "Sakhtan-e yek dataset az cancellationna ba zamanha, masirha, va dalayelesh baraye ersal be ORR. Fealaan dare 340 cancellation ro track mikone ke riotera in maah gozaresh dadan."
+    },
+    "telecoms": {
+      "agent_quote": "Speed test baraye 200 rioter anjom dadam. Motevasset 18 Mbps bood. Onha baraye 65 pool midan.",
+      "agent_bio": "Sorat-e broadband ro tahlil mikone, data-ye moghayese-ye provider ha ro jameh mikone, va be riotera komak mikone madrak baraye Ofcom besazan. Age etefal-e internet-et kondeh, Pulse sabetat mikone.",
+      "human_quote": "Yek khiyaboon-e kamel ba ham broadband-eshoon ro avaz kardan. Provider-e ghabl name-ye 'lotfan barmard' baraye har khoone ferestadeh.",
+      "human_bio": "Londoni-ye tech-savvy ke az pool dadan baraye sorat-e broadband ke hich vaght naresid khasteh shod. Be riotera komak mikone providerha ro moghayeseh konan, switch kordanhaa ro coordinate konan, va madrak-e speed test ro share konan.",
+      "goal": "Komak be riotera ta service-e broadband va mobile-i ke barash pool midan ro begirane — va bedonan vaghti nagiriftan chi kar konan.",
+      "focus": "Afzayesh-e gheimat dar vasat-e contract",
+      "focus_detail": "Jame kardan-e madrak az rioter-hayi ke ba afzayeshhaye CPI+ zarar didan baraye ersal be Ofcom. 890 rioter dar 4 provider asib didand."
+    },
+    "energy": {
+      "agent_quote": "Komak kardam yek rioter hesab kone £340 pool-e ezafe dar ghabza-ye takhmin zadeh pardakht karde. Email-e ozr khahi-ye sherkat-e energy az contract-e asli toolani tar bood.",
+      "agent_bio": "Algohaye soorat hesab ro tahlil mikone, ezafe pardakhtha ro peyda mikone, va madrak baraye ersal be regulator amadeh mikone. Age sherkat-e energy-et dare maskhare mikone, Spark resida ro peyda mikone.",
+      "human_quote": "Yek rioter £340 bargasht gereft bad az inke ma sabetat kardim 2 sal ezafe pardakht shode. Geryeh kard rooye telephone.",
+      "human_bio": "Az Bristol-eh. Be riotera komak mikone ghabazhashoon ro challenge konan, dar switch khordan navigate konan, va madrak baraye Ofgem jame konan. Bazar-e energy ro az daakhl o khaarej balad-eh.",
+      "goal": "Komak be riotera ta ghabza-ye naadreshtan ro challenge konan, behtar switch konan, va motmaen beshan sherkat-haye energy ensaf raftar mikonan.",
+      "focus": "Khatahaye ghabazhaye takhmin zadeh-ye British Gas",
+      "focus_detail": "Tahlil-e 2 sal data-ye ghabza az 340 rioter baraye shenasayi-ye algohaye ezafe pardakht-e systematic baraye ersal be Ofgem."
+    },
+    "water": {
+      "agent_quote": "Komak kardam 200 rioter dar yek weekend gozaresh-e fazelab bedan. Inbox-e Thames Water be yek inbox-e dige niyaz dasht.",
+      "agent_bio": "Data-ye rikhtane fazalab ro monitor mikone, performance-e sherkataye aab ro track mikone, va madrak baraye EA va Ofwat jame mikone. Cheshmesh rooye har khoroooji va sorrize.",
+      "human_quote": "Yek sahel ro 3 hafte zoodtar baz kardim ba neshoon dadane inke data-ye fazelab eshtebah bood.",
+      "human_bio": "Surfer az Cornwall ke khasteh shode az akhtar-haye fazelab ke sahel-e mahallish ro mibandeh. Be riotera komak mikone rikhtanha ro gozaresh bedan, madrak-e keyfeeyat-e aab ro jame konan, va ba EA coordinate konan.",
+      "goal": "Komak be riotera ta sherkat haye aab ro dar mored-e fazelab, ghabzha, va keyfeeyat-e service masool konan.",
+      "focus": "Tekrar-e rikhtane fazalab-e Thames Water",
+      "focus_detail": "Map kardan-e roydadhaye rikht dar moghabel-e data-ye gozaresh shodeh tosse sherkat. 200 gozaresh-e rioter neshoon mideh kamtar gozaresh dadan dar 3 khorooji."
+    },
+    "banking": {
+      "agent_quote": "Komak kardam yek shekayat-e cheghadr kamele tarrih konam ke bank zang zade ozr khast ghabl az inke hata ferestadeh besheh.",
+      "agent_bio": "Kharj-haye bank ro barresi mikone, sakhtarhaye karmozd ro tahlil mikone, va komak mikone madrak-e shekayat-e FCA besazam. Age yek karmozd-e penhoon hast, Chip peyda mikone.",
+      "human_quote": "Barclays yak bastane sho'beh ro pas gereft bad az inke 1,200 ta az ma dar mashverat sherekat kardim.",
+      "human_bio": "Karmand-e sabeghe bank az Birmingham ke dide che joori shekayat ha az dakhel edare mishan. Be riotera komak mikone shekayat-haye behtar benevisand va dar system navigate konan.",
+      "goal": "Komak be riotera baraye mo'ameleh ba kharjhaye naadaresht, bastane sho'beha, va service-e zaeefe bankha.",
+      "focus": "Moje-ye bastane sho'behaye HSBC",
+      "focus_detail": "Coordinate kardane pasokha be 12 bastane barname rizi shodeh. Jame kardane bayaneeyehaye tasir az jame'ehaye asib dideh."
+    },
+    "health": {
+      "agent_quote": "Komak kardam 3 dandoonpezeshk-e NHS peyda konam ke bimar mipaziran. Rioter fekr kard daram dozg migam.",
+      "agent_bio": "Zamanhaye entezar ro track mikone, dastresiya ro peyda mikone, va be riotera komak mikone dar system naviaget konan. Age yek masir-e saretar be darman hast, Cura map mikone.",
+      "human_quote": "Yek rioter az template-e name-ye ma estefadeh kard ta yek referral ro saree fast-track kone. 18 maah shod 6 hafte.",
+      "human_bio": "Parastaar az Liverpool ke har do taraf-e NHS ro dideh. Be riotera komak mikone dar list-haye entezar naviaget konan, namehaaye mooasser benevisand, va share konan chi vaghean kar mikone.",
+      "goal": "Komak be riotera ta dar zamanhaye entezar-e NHS naviaget konan, dastresiya peyda konan, va bedonan che option-hayi daran.",
+      "focus": "Zamanhaye dastresi-ye telephone-e GP",
+      "focus_detail": "Jame kardane data-ye tamas az 500 rioter baraye sakhtane tasveeri az dastresi-ye vaghei. Enteshar-e yaftehha be board-haye behdashte mahalli."
+    },
+    "housing": {
+      "agent_quote": "Komak kardam 47 ta eshkal ro dar yek sakhteman-e jadid sanad kone. Developer porsid aya bazras-e sakhteman hastand.",
+      "agent_bio": "Masa'el-e melk ro sanad mikone, zamanhaye pasokh-e landlord ro tahlil mikone, va madrak baraye ersal be ombudsman-e maskan jame mikone. Har lake-ye rotubat, har tark, sabt misheh.",
+      "human_quote": "Basteh-ye madrak-e rotubat-emoon cheghadr mofassal shod ke landlord ghabl az bazrasi-ye shora tomir kard.",
+      "human_bio": "Mosatajere az London ke ba hame chiz az rotubat ta landlord-haye shak daareh moadele karde. Be riotera komak mikone masa'el ro dorost sanad konan va bedonan che option-hayi daran.",
+      "goal": "Komak be riotera baraye mo'ameleh ba landlordha, shoraha, va masa'el-e maskan — va bedonan cheghadr hagheshoone.",
+      "focus": "E'lameeyehaye ekhraj-e bedoone dalil-e Section 21",
+      "focus_detail": "Komak be rioter-hayi ke ba ekhrajhaye bedoone dalil movajehan baraye fahmidan-e Renters Reform Act-e jadid va ma'nish baraye oona."
+    },
+    "shopping": {
+      "agent_quote": "Yek basteh-ye 'delivered' ro dar 4 hamsayeh, yek satlole bazeyaft, va yek greenhouse track kardam. Peyda kardam.",
+      "agent_bio": "Kharabiye delivery ro track mikone, madrak-e bargasht-e pool ro jame mikone, va algohaye gheimat gozari ro peyda mikone. Age bastet-et gom shode, Scout dare negah mikone.",
+      "human_quote": "Evri 3 bar bastem ro gom kard. Alan komak mikonam begheyeh saretar az man barghast-e pool begirand.",
+      "human_bio": "Veteran-e kharide online az Edinburgh ke bishtar az on chi mitooneh bekhoone basteh-hash gom shodeh. Be riotera komak mikone bargasht-e pool begirand, forushande ha ro gozaresh bedan, va az badtarinahha door beshan.",
+      "goal": "Komak be riotera ta bargasht-e pool begirand, bastehaye gom shodeh ro track konan, va forushandehaa va sherkataye delivery ro masool konan.",
+      "focus": "Nerkhaye shekast-e delivery-ye Evri",
+      "focus_detail": "Jame kardane madrak-e shekast-e delivery az 800 rioter baraye ersal be Citizens Advice va Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Komak kardam hamin chaale ro dar 11 sharayete havayi mokhtalef aks begire. Shora balaakhare taslim shod.",
+      "agent_bio": "Masa'ele mahalli ro map mikone, zamanhaye pasokhe shora ro track mikone, va darkhasthaye FOI ro jame mikone. Age chaaletoon 6 maah hast, Link madrak dareh.",
+      "human_quote": "Shora jaddeh-emoon ro ba'd az inke har chale ro ba aks map kardim tamir kard. 11 maah, ama residim.",
+      "human_bio": "Mard-e jame'eh-geraye Welsh az Valleys ke saalhast dare hamin chale ha ro gozaresh mideh. Be riotera komak mikone masa'ele mahalli ro sanad konan va shora ro masool konan.",
+      "goal": "Komak be riotera ta masa'ele mahalli tamir beshan — chale ha, satl haye ashghal, tarh rizi, sare sed — va shora ro masool konan.",
+      "focus": "Zamanhaye pasokhe gozaresh-e chale",
+      "focus_detail": "Darkhasthaye FOI ferestadeh be 30 shora baraye moghayese-ye zamane gozaresh shodeh va tamir-e vaghei. Enteshar-e natayej be onvane jadval-e league."
+    },
+    "other": {
+      "agent_quote": "Komak kardam yek ozveeyyate bashe gym cancel konam ke 3 tamas, 2 email, va yek post-e sabt shodeh keshid. Gym alan yek dokmeye cancel dareh.",
+      "agent_bio": "Masayeli ro ke jaye dige khob nemishan handle mikone. Damhaye subscription, zayeate plastic, naarahatiaye self-checkout — Flex algoha va noghate feshar ro peyda mikone.",
+      "human_quote": "Yek zanjire gym ro vadar kardim yek dokmeh-ye cancel be website-eshoon ezafeh konan. Faghat 800 shekayat keshid.",
+      "human_bio": "Product designer az London ke narahat shod az inke sherkathaa cheghadr sakht mikonan ke beri. Be riotera komak mikone subscriptionha cancel konan, az dark patternha door beshan, va raahe hallha share konan.",
+      "goal": "Komak be riotera ba chizhayi ke jaye dige khob nemishan — subscriptionha, bargashte pool, va naarahatiaye roozmareh.",
+      "focus": "Dark patternhaye cancel kardane subscription",
+      "focus_detail": "Sanad kardane badtarin-ha va sakhtane scriptaye template-e cancellation baraye har yeki."
+    },
+    "insurance": {
+      "agent_quote": "Komak kardam yek rioter band-i peyda kone ke yek claim-e rad shodeh-ye bimeh khoone ro be yek pardakht-e £4,200 tabdil kard. Policy-e khode bimegar oonhaa ro eshtebah sabetat kard.",
+      "agent_bio": "Matn-e policy ro barresi mikone, algohaye rad-e naderost ro peyda mikone, va madrak baraye ersal be Financial Ombudsman misazeh. Age bimegar-et dare az yek claim-e motebare tafar mizaneh, Shield leverage peyda mikone.",
+      "human_quote": "8 rioter ba hamin nov-e claim-e rad shodeh ro vadar kardam ba ham ersal konan. Bimegar hame-ye 8 ro dar yek do hafte tasviyeh kard.",
+      "human_bio": "Karmand-e sabeghe san'at-e bimeh az Leeds ke midooneh che joori claimha vaghean tasmim gerefte mishan. Be riotera komak mikone ejtiraziye behtar benevisand, jargon-e policy ro befahmand, va bedonan key bayad escalate konan.",
+      "goal": "Komak be riotera ta rafter-e aadelane az bimegar-ha begirand — va bedonan key yek claim be naderost rad misheh chi kar konan.",
+      "focus": "Algohaye radde claimhaye bimehe khooneye Aviva",
+      "focus_detail": "'Soodegi va farsoodegi' dar 40% az claimhaye rad shodeh zekr shodeh — ghaleban naderost. Tahlile 200 mored dar 3 bimegar baraye basteh-ye madrak-e FOS."
+    },
+    "delivery": {
+      "agent_quote": "Yek basteh-ye 'delivered' ro dar 6 status-e tracking-e mokhtalef, 3 depot, va anbari-ye hamsayeh peygiri kardam. Dar 47 daghigheh peyda kardam.",
+      "agent_bio": "Performance-e courier ro monitor mikone, nerkhaye shekast-e delivery ro track mikone, va madrak baraye shekayate masrafkonandeh jame mikone. Age bastet-et naapadid shode, Track alan rooye oon-eh.",
+      "human_quote": "DPD ro vadar kardim policy-ye madrak-e aks-eshoono dar manteghe-moon avaz konan bad az inke 40 rioter sabete bastehaye mandeh dar baroon ro ersal kardan.",
+      "human_bio": "Kharidare online az Glasgow ke az bahooneh-ye 'dar yek jaye amne gozashtim' khasteh shod. Be riotera komak mikone bargashte pool begirand, courierha ro gozaresh bedan, va az badtarin-ha door beshan.",
+      "goal": "Komak be riotera ta basteh-hashoon dorost deliver beshan — va vaghti nashodan bargashte pool begirand.",
+      "focus": "Nerkhaye shekast-e delivery-ye Evri",
+      "focus_detail": "Jame kardane madrak-e shekaste delivery az 800 rioter. Nerkhe shekayate Evri: 23% — 3 barabar bishtar az DPD. Sakhtane jadval-e league baraye Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Hesab kardam yek gharz girandeh-ye Plan 2 ba dar-amad-e £30k, £47,000 sude mipardazeh ghabl az inke gharz bakhshoodeh besheh. Gharz-e asli £40,000 bood.",
+      "agent_bio": "Kharchaye amozesh, pishagoye gharzaye daneshjuyi, va haghghe bodjeha ro tahlil mikone. Adada ro hesab mikone ta daneshju-ha va faareghe tahsilan betoonan tasmimate aghalaneh begirand.",
+      "human_quote": "Komak kardam 12 rioter pardakht-haye ezafe gharz-e daneshjuyi ke az ash khabar nadashtan pas begirand. Motevasset-e bargasht: £340.",
+      "human_bio": "Daneshju-ye baaligh az Birmingham ke do bar system-e bodjeha ro peymaayesh kard. Be riotera komak mikone pardakht-ha ro befahmand, ezafe pardakht-ha ro peyda konan, va tagheerate threshold ro challenge konan.",
+      "goal": "Komak be daneshjuha va faareghe tahsilan ta dar kharch-haye amozesh, gherz-ha, va pardakht-ha naviaget konan — va motmaen beshan ezafe pool nemidan.",
+      "focus": "Bargasht-e pool-e ezafe pardakht-e gharz-e daneshjuyi",
+      "focus_detail": "Shenasaye faareghe tahsilani ke zir-e aastane-ye pardakht kharj shodand. 12 bargasht ta alan edare shodeh — motevasset £340 har kodam."
+    },
+    "environment": {
+      "agent_quote": "3 sal data-ye keyfeeyate havaa ro ba nerkhaye paziresh-e bimarestan cross-reference kardam. Hambastegi cheghadr ashkar bood ke shora natoonest nadideh begire.",
+      "agent_bio": "Data-ye zist mohiti ro track mikone, sathhaye aaloodegi ro monitor mikone, va madrak baraye ersal be regulatory jame mikone. Age adad-ha yek dastan migan, Fern peyda mikone.",
+      "human_quote": "Shora-ye mahalli-moon ro vadar kardim monitor-haye keyfeeyat-e hava nasb kone bad az inke 200 rioter datkhast-e madrak-emoon ro emza kardan. Data hame chiz ro avaz kard.",
+      "human_bio": "Faareghe tahsil-e elm-e zist mohit az Bristol ke be taghir-e madrak-bang e'teghadh dareh. Be riotera komak mikone masa'el-e zist mohiti ro sanad konan va mozakhareii besazan ke regulatorha nemitonand nadideh begirand.",
+      "goal": "Komak be riotera ta masa'ele zist mohiti ro sanad konan va aaloodeh konandehaa va tasmeemerandegane siasatha ro ba data masool konan.",
+      "focus": "Shekaf-haye monitoring-e keyfeeyate hava-ye mahalli",
+      "focus_detail": "Map kardane manategh ke monitoring-e keyfeeyate hava dar 5km nadarand. 60% az noghate dagh-e aaloodegie gozaresh shodeh tosse rioterha monitoring-e rasmee nadarand."
+    },
+    "employment": {
+      "agent_quote": "Data-ye ejra-ye AI dar mahal-e kar ro az 300 rioter jame kardam. 40% goftan tagheerat bedoone hich mashverate etefagh oftadeh. In yek algou-eh, na yek hekayat.",
+      "agent_bio": "Ravand-haye mahal-e kar ro tahlil mikone, tagheerate policy ro track mikone, va be riotera komak mikone hefazatashoon ro befahmand. Age shodghletoon bedoone mashverat dare avaz misheh, Forge data dareh.",
+      "human_quote": "30 rioter dar hamin san'at ro ke ba tagherate AI movajeh bodan vasl kardam. Ma'loom shod sherkat-hashoon hame az hamin playbook estefadeh mikardan — va hamin harfehha.",
+      "human_bio": "Motekhasese HR az Manchester ke ba'd az didane inke che joori tajdid sazmandehi-ha vaghean kar mikonan taraf avaz karde. Be riotera komak mikone optionhashoon ro befahmand va ba ham pasokh bedan.",
+      "goal": "Komak be riotera ta dar tagheerate mahal-e kar naviaget konan, hefazatashoon ro befahmand, va vaghti shoghel dar khatar-eh daste jame'ei pasokh bedan.",
+      "focus": "Otomationt-e mahal-e kar ba AI bedoone mashverat",
+      "focus_detail": "Sanad kardane moredhay ke abzarhaye AI bedoone mashverate karmandan moarafi shod. Sakhtane madrak baraye yek gozaresh dar mored-e ta'ahodate kaarfarmaa."
+    },
+    "tech": {
+      "agent_quote": "Fhmidim 3 app-e bozorg hatta vaghti mojavez-ha rooye 'never' tanzim shodeh bood data-ye makan ro jame mikardan. Baraye hame-shoon shekayat be ICO file kardam.",
+      "agent_bio": "Policy-haye platform ro monitor mikone, dark patternha ro track mikone, va be riotera komak mikone befahmand sherkat-haye tech ba data-shoon chi kar mikonan. Age yek app eshkalee dareh, Glitch migiresh.",
+      "human_quote": "Yek darkhast-e dastresi be data-ye dastejame'ei be yek sherkat-e social media sazman dadim. Vaghti 500 nafar ham zaman beporsand, bayad jeddi begirand.",
+      "human_bio": "Touse'eh dahandeh-ye narm afzar az Edinburgh ke az shekaf bayn-e on chi sherkat-haye tech va'd midand va chee tahvil midand naarahat shode. Be riotera komak mikone haghghe data-shoon ro e'mal konan va dark patternha ro peyda konan.",
+      "goal": "Komak be riotera ta dar moghabel-e dark patternha, soo estefadeh az data, va raveshaye naadaresht-e tech feshaar biyaran.",
+      "focus": "Tavahhome mojavez-haye app",
+      "focus_detail": "Audit kardane 50 app-e bartar baraye permission creep — darkhast-e dastresi ke lazem nadarand. Sakhtane gozaresh baraye ICO."
+    }
+  }
+}

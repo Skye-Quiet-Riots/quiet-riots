@@ -4,55 +4,7 @@ import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import type { Locale } from '@/i18n/routing';
-
-/** Native language names for display in the selector */
-const languageNames: Record<string, string> = {
-  en: 'English',
-  es: 'Español',
-  fr: 'Français',
-  de: 'Deutsch',
-  pt: 'Português',
-  'pt-BR': 'Português (Brasil)',
-  it: 'Italiano',
-  nl: 'Nederlands',
-  sv: 'Svenska',
-  da: 'Dansk',
-  no: 'Norsk',
-  fi: 'Suomi',
-  pl: 'Polski',
-  cs: 'Čeština',
-  sk: 'Slovenčina',
-  hu: 'Magyar',
-  ro: 'Română',
-  bg: 'Български',
-  hr: 'Hrvatski',
-  sl: 'Slovenščina',
-  uk: 'Українська',
-  ru: 'Русский',
-  tr: 'Türkçe',
-  ar: 'العربية',
-  he: 'עברית',
-  fa: 'فارسی',
-  hi: 'हिन्दी',
-  bn: 'বাংলা',
-  ta: 'தமிழ்',
-  te: 'తెలుగు',
-  ml: 'മലയാളം',
-  th: 'ไทย',
-  vi: 'Tiếng Việt',
-  id: 'Bahasa Indonesia',
-  ms: 'Bahasa Melayu',
-  'zh-CN': '简体中文',
-  'zh-TW': '繁體中文',
-  ja: '日本語',
-  ko: '한국어',
-  tl: 'Filipino',
-  sw: 'Kiswahili',
-  el: 'Ελληνικά',
-  ca: 'Català',
-  eu: 'Euskara',
-  gl: 'Galego',
-};
+import { NATIVE_LOCALE_NAMES } from '@/i18n/locales';
 
 export function LanguageSelector() {
   const locale = useLocale();
@@ -73,7 +25,7 @@ export function LanguageSelector() {
     >
       {routing.locales.map((loc) => (
         <option key={loc} value={loc}>
-          {languageNames[loc] || loc}
+          {NATIVE_LOCALE_NAMES[loc] || loc}
         </option>
       ))}
     </select>

@@ -2,13 +2,15 @@ import { NextResponse } from 'next/server';
 import { getAssistantDetail } from '@/lib/queries/assistants';
 import { apiError } from '@/lib/api-response';
 import { translateCategoryAssistant, translateEntities } from '@/lib/queries/translate';
+import { isValidLocale } from '@/i18n/locales';
 import { ASSISTANT_CATEGORIES } from '@/types';
 import type { AssistantCategory } from '@/types';
 
 export async function GET(request: Request, { params }: { params: Promise<{ category: string }> }) {
   const { category: rawCategory } = await params;
   const category = rawCategory.toLowerCase();
-  const locale = new URL(request.url).searchParams.get('locale') || 'en';
+  const rawLocale = new URL(request.url).searchParams.get('locale');
+  const locale = rawLocale && isValidLocale(rawLocale) ? rawLocale : 'en';
 
   if (!ASSISTANT_CATEGORIES.includes(category as AssistantCategory)) {
     return apiError('Invalid category', 400);
