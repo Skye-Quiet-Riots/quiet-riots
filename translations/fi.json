@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Auttoi kerran lähettäjää jättämään 6 hyvitysvaatimusta yhden viivästyneen matkan aikana. He saivat £47 ennen Birminghamiin saapumista.",
+      "agent_bio": "Seuraa peruutuskuvioita, käsittelee hyvitysasiakirjoja, tarkistaa jokaisen ehdotetun toimenpiteen ja kokoaa todisteet sääntelyviranomaisten ilmoituksiin. Puree numerot niin että lähettäjät voivat keskittyä siihen, mikä on tärkeää.",
+      "human_quote": "Suosikkini Quiet Riot hetki: katsoa Avanti'n sosiaalisen median tiimin hermostua, kun 400 meistä twiittasivat samanaikaisesti.",
+      "human_bio": "Säännöllinen matkustaja Manchesterista, joka vietti 3 vuotta Avanti-linjalla ennen kuin päätti, että riittää. Auttaa yhdistämään lähettäjiä samoilla reiteillä, jakaa mitä toimii ja tuo inhimillisen kosketuksen.",
+      "goal": "Auta lähettäjiä pitämään Britannian kuljetusyritykset vastuullisina peruutuksista, viivästyksistä ja hinnoittelusta — ja varmista, että kaikki tietävät, mihin he ovat oikeutettuja.",
+      "focus": "Avanti West Coast -peruutuskuviot",
+      "focus_detail": "Rakennetaan peruutusaineistoa, jossa on ajat, reitit ja syyt ORR:lle lähettämistä varten. Seurataan tällä hetkellä 340 lähettäjien ilmoittamaa peruutusta tässä kuussa."
+    },
+    "telecoms": {
+      "agent_quote": "Suoritti nopeustestit 200 lähettäjälle. Keskiarvo oli 18 Mbps. He maksoivat 65 Mbps:lle.",
+      "agent_bio": "Analysoi laajakaistanopeuksia, kokoaa palveluntarjoajan vertailuaineistoa ja auttaa lähettäjiä rakentamaan todisteet Ofcomille. Jos yhteytesi on hidas, Pulse todistaa sen.",
+      "human_quote": "Koko katu vaihtoi laajakaistaa yhdessä. Vanha palveluntarjoaja lähetti 'palaa takaisin' kirjeitä jokaiseen taloon.",
+      "human_bio": "Teknologia-innokas Lontolainen, joka kyllästyi maksamaan laajakaistanopeuksista, joita ei koskaan toteutunut. Auttaa lähettäjiä vertailemaan palveluntarjoajia, koordinoimaan vaihtoja ja jakamaan nopeustestin todisteet.",
+      "goal": "Auta lähettäjiä saamaan laajakaista ja mobiilipalvelu, joista he maksavat — ja tietämään, mitä tehdä, kun ne eivät toimi.",
+      "focus": "Sopimukseen sidotut hinnankorotukset",
+      "focus_detail": "Kerää todisteet lähettäjiltä, joita CPI+ korotukset ovat kohdelleet epäreilusti, lähettämiseksi Ofcomille. 890 lähettäjää koskee 4 palveluntarjoajalla."
+    },
+    "energy": {
+      "agent_quote": "Auttoi lähettäjää laskemaan, että he olivat ylimaksineet £340 arvioiduista laskuista. Sähköyhtiön apologia-sähköposti oli pidempi kuin alkuperäinen sopimus.",
+      "agent_bio": "Analysoi laskutuskuvioita, havaitsee ylimaksut ja kokoaa todisteet sääntelyviranomaisten ilmoituksiin. Jos sähköyhtiösi on epäreilu, Spark löytää todisteet.",
+      "human_quote": "Lähettäjä sai £340 takaisin sen jälkeen, kun osoitimme 2 vuoden ylimaksuja. Hän itki puhelimessa.",
+      "human_bio": "Bristolissa oleva henkilö. Auttaa lähettäjiä haastamaan laskujaan, navigoimaan vaihtoja ja keräämään todisteet Ofgemille. Tuntee energiamarkkinat sisältäpäin.",
+      "goal": "Auta lähettäjiä haastamaan epäreiluita laskuja, vaihtamaan älykkäämmin ja varmista, että sähköyhtiöt toimivat oikein.",
+      "focus": "British Gas arvioitujen laskutusvirheiden",
+      "focus_detail": "Analysoi 2 vuoden laskutustietoja 340 lähettäjältä systemaattisten ylimaksujen tunnistamiseksi Ofgemille lähetettäväksi."
+    },
+    "water": {
+      "agent_quote": "Auttoi 200 lähettäjää jättämään viemärin vuotoraportteja yhden viikonlopun aikana. Thames Waterin inboksin piti olla omassa inboxissa.",
+      "agent_bio": "Seuraa viemärin purkautumistietoja, seuraa vesiyrityksen toimintaa ja kokoaa todisteet EA:lle ja Ofwatille. Pitää silmällä jokaista ulostuloa ja ylivuotoa.",
+      "human_quote": "Saimme rannan avattua 3 viikkoa aikaisemmin osoittamalla, että viemäritiedot olivat väärin.",
+      "human_bio": "Surffaaja Cornwallista, joka kyllästyi viemärivaroitusten sulkemaan paikallista rantaa. Auttaa lähettäjiä signaloimaan purkautumisia, keräämään veden laadun todisteet ja koordinoimaan EA:n kanssa.",
+      "goal": "Auta lähettäjiä pitämään vesiyritykset vastuullisina viemäristä, laskuista ja palvelun laadusta.",
+      "focus": "Thames Water -viemärin purkautumisen frekvenssi",
+      "focus_detail": "Kartoitetaan purkautumistapahtumat yrityksen raportoitujen tietojen kanssa. 200 lähettäjän raportti viittaa aliraportoitavuuteen 3 liitäntäpisteessä."
+    },
+    "banking": {
+      "agent_quote": "Auttoi laatimaan valituksen niin perusteellisen, että pankki soitti anteeksipyynnön ennen kuin se edes lähti.",
+      "agent_bio": "Tarkistaa pankkimaksuja, analysoi maksurakenteet ja auttaa rakentamaan FCA-valituksen todisteet. Jos maksuja on piilotettu, Chip löytää ne.",
+      "human_quote": "Barclays peruutti haaransa sulkemisen sen jälkeen, kun 1 200 meistä ilmestyi kuulemisiin.",
+      "human_bio": "Entinen pankin työntekijä Birminghamista, joka näki sisältä, kuinka valituksia todella käsitellään. Auttaa lähettäjiä kirjoittamaan parempia valituksia ja navigoimaan järjestelmää.",
+      "goal": "Auta lähettäjiä käsittelemään epäreiluja maksuja, haaroja sulkemisia ja huonoa palvelua pankeista.",
+      "focus": "HSBC-haarojen sulkeminen",
+      "focus_detail": "Koordinoi vastauksia 12 suunniteltuun sulkemiseen. Kerää vaikutusselosteet asianomaisilta yhteisöiltä."
+    },
+    "health": {
+      "agent_quote": "Löytyi 3 NHS hammaslääkäriä, jotka ottavat potilaita. Lähettäjä ajatteli minun naljattelevan.",
+      "agent_bio": "Seuraa odotusaikoja, löytää saatavuuden ja auttaa lähettäjiä navigoimaan järjestelmää. Jos hoitoon on nopeampi reitti, Cura kartottaa sen.",
+      "human_quote": "Lähettäjä käytti kirjemallianossamme päästäkseen lähetteeseen nopeammin. 18 kuukautta tuli 6 viikoksi.",
+      "human_bio": "Sairaanhoitaja Liverpoolista, joka on nähnyt NHS:n molempia puolia. Auttaa lähettäjiä navigoimaan odotuslistoja, kirjoittamaan tehokkaita kirjeitä ja jakamaan mitä todella siirtää neulaa.",
+      "goal": "Auta lähettäjiä navigoimaan NHS odotusaikoja, löytämään saatavuuden ja tietämään mitkä vaihtoehdot heillä on.",
+      "focus": "GP-puhelimen saatavuuden ajat",
+      "focus_detail": "Kerää puhelutietoja 500 lähettäjältä todellisen saatavuuden kuvan rakentamiseksi. Julkaisee tulokset paikallisille terveyspalveluilta."
+    },
+    "housing": {
+      "agent_quote": "Auttoi dokumentoida 47 puutetta uudessa rakennuksessa. Rakennuttaja kysyi, olenko rakennustarkastaja.",
+      "agent_bio": "Dokumentoi kiinteistöjen ongelmia, analysoi vuokranantajan vasteaikoja ja kokoaa todisteet asuntojen ombudsman -esityksiin. Jokainen kosteuspaikka, jokainen halkeama, kirjattu.",
+      "human_quote": "Meidän kosteustodistuspaketti tuli niin yksityiskohtaiseksi, että vuokranantaja korjasi sen ennen kunnan tarkastusta.",
+      "human_bio": "Vuokralainen Lontoosta, joka on käsitellyt kaikkea kosteudesta epäilyttäviin vuokranantajiin. Auttaa lähettäjiä dokumentoimaan ongelmia kunnolla ja tietämään mitkä vaihtoehdot heillä on.",
+      "goal": "Auta lähettäjiä käsittelemään vuokranantajia, kunnanvaltuustoja ja asuntokysymyksiä — ja tietämään mihin he ovat oikeutettuja.",
+      "focus": "Pykälä 21 ei-syytöksetön irtisanominen",
+      "focus_detail": "Auttaa lähettäjiä, joita ei-syytöksetöntä häätöä koskettaa, ymmärtämään uutta Renters Reform Act:ia ja mitä se heille tarkoittaa."
+    },
+    "shopping": {
+      "agent_quote": "Seurasi 'toimitettuaa' pakettia 4 naapurin, kierrätysastian ja kasvihuoneen kautta. Löysi sen.",
+      "agent_bio": "Seuraa toimitusvirheitä, kokoaa hyvitystodisteet ja havaitsee hinnoittelukuviot. Jos pakettisi katoaa, Scout on jo etsimässä.",
+      "human_quote": "Evri hävitti pakettini 3 kertaa. Nyt autan muita saamaan hyvitykset nopeammin kuin minä koskaan.",
+      "human_bio": "Online-ostoksen veteraani Edinburghista, jolle on kadonnut enemmän pakketteja kuin hän voi laskea. Auttaa lähettäjiä saamaan hyvitykset, raportoimaan myyjistä ja välttämään pahimmat tekijät.",
+      "goal": "Auta lähettäjiä saamaan hyvitykset, jäljittämään kadonneita pakketteja ja pitämään vähittäiskauppiaita ja kuriiripalveluja vastuullisina.",
+      "focus": "Evri-toimitusvirheiden määrät",
+      "focus_detail": "Kokoaa toimitusvirheiden todisteet 800 lähettäjältä lähettämiseksi Citizens Advicelle ja Trading Standardsille."
+    },
+    "local": {
+      "agent_quote": "Auttoi valokuvaamaan samaa poteroaukkoa 11 eri säätilassa. Kunta lopulta antoi periksi.",
+      "agent_bio": "Kartoittaa paikalliset ongelmat, seuraa kunnan vastetaikoja ja kokoaa FOI-pyynnöt. Jos poteronreikäsi on ollut siellä 6 kuukautta, Linkillä on todisteet.",
+      "human_quote": "Kunta korjasi tietämme sen jälkeen, kun kartoimme jokaisen poteronreiän valokuvilla. 11 kuukautta, mutta saivat valmiiksi.",
+      "human_bio": "Yhteisöä ajatteleva walislainen Valleysta, joka on ilmoittanut samoista poteronrei'istä vuosia. Auttaa lähettäjiä dokumentoimaan paikallisia ongelmia ja pitämään kunnia vastuullisina.",
+      "goal": "Auta lähettäjiä saamaan paikalliset asiat korjatuksi — poteronreiät, roskaastiat, kaavoitus, melu — ja pitämään kunnavaltuustoja vastuullisina.",
+      "focus": "Poteronreiän ilmoitusvasteen ajat",
+      "focus_detail": "FOI-pyynnöt lähetetty 30 kunnalle vertailemaan raportoituja vs. todellisia korjausaikoja. Julkaisemme tulokset liigstaulukoksi."
+    },
+    "other": {
+      "agent_quote": "Auttoi peruuttamaan kuntosalin jäsenyyden, joka kesti 3 puhelua, 2 sähköpostia ja kirjatun toimituksen. Kuntosalilla on nyt peruutuspainike.",
+      "agent_bio": "Käsittelee asioita, jotka eivät sovi muihin. Tilauspainat, muovijäte, itsepalvelun kassa-turhat — Flex löytää kuviot ja painopisteet.",
+      "human_quote": "Saimme kuntoketjun lisäämään peruutuspainikkeen verkkosivuillensa. Piti vain 800 valitusta.",
+      "human_bio": "Tuotesuunnittelija Lontoosta, joka kyllästyi siihen, kuinka vaikeaksi yritykset tekevät poistumisen. Auttaa lähettäjiä peruuttamaan tilauksia, välttämään pimeitä kuvioita ja jakamaan kiertotapoja.",
+      "goal": "Auta lähettäjiä asioissa, jotka eivät sovi muihin — tilaukset, hyvitykset ja jokapäiväiset turhat.",
+      "focus": "Tilauksen peruuttamisen tummat kuviot",
+      "focus_detail": "Dokumentoidaan pahimmat tekijät ja rakennetaan mallipoistoskriptit jokaiselle."
+    },
+    "insurance": {
+      "agent_quote": "Auttoi lähettäjää löytämään lauseen, joka muutti hylätyn kotienhintavakuutusvaatimuksen £4 200 maksuksi. Vakuutuksenantajan oma vakuutus todisti heidät vääriksi.",
+      "agent_bio": "Tarkistaa vakuutussäännökset, havaitsee epäreiluita hylkäyskuvioita ja rakentaa todisteet Financial Ombudsman -esityksiin. Jos vakuutuksenantajasi kiertää kelvollista vaatimusta, Shield löytää vipuvaikutuksen.",
+      "human_quote": "Sai 8 lähettäjää, joilla oli sama hylätty vaatimus, toimittamaan yhdessä. Vakuutuksenantaja ratkaisi kaikki 8 kahden viikon sisällä.",
+      "human_bio": "Entinen vakuutusalan työntekijä Leedsista, joka tietää kuinka vaatimukset todella päätetään. Auttaa lähettäjiä kirjoittamaan parempia muutoksenhakuja, ymmärtämään vakuutuskieliopin ja tietämään milloin eskaloida.",
+      "goal": "Auta lähettäjiä saamaan reilua kohtelua vakuutuksenantajilta — ja tietämään mitä tehdä, kun vaatimus hylätään epäreilusti.",
+      "focus": "Aviva kotienhintavakuutus hylkäyskuviot",
+      "focus_detail": "'Kuluminen ja repeytyminen' mainitaan 40 % hylättävistä vaatimuksista — usein virheellisesti. Analysoidaan 200 tapausta 3 vakuutuksenantajalta FOS-todistepakettia varten."
+    },
+    "delivery": {
+      "agent_quote": "Jäljitti 'toimitetun' paketin 6 eri jäljitystilan, 3 varaston ja naapurin varaston läpi. Löytyi 47 minuutissa.",
+      "agent_bio": "Seuraa kuriirin toimintaa, seuraa toimitusvirheiden määriä ja kokoaa todisteet kuluttajavalituksiin. Jos pakettisi on kadonnut, Track on jo siinä.",
+      "human_quote": "Sai DPD:n muuttamaan kuvatodisteita koskevaa politiikkaansa alueellamme sen jälkeen, kun 40 lähettäjää toimitti todisteet paketeista, jotka jätettiin sateen joukkoon.",
+      "human_bio": "Online-ostaja Glasgowsta, joka kyllästyi 'jätimme sen turvalliseen paikkaan' -tekosyyhyn. Auttaa lähettäjiä saamaan hyvitykset, raportoimaan kuriireista ja välttämään pahimmat tekijät.",
+      "goal": "Auta lähettäjiä saamaan pakettinsa toimitetuksi kunnolla — ja saamaan hyvitykset, kun ne eivät tule.",
+      "focus": "Evri-toimitusvirheiden määrät",
+      "focus_detail": "Kokoaa toimitusvirheiden todisteet 800 lähettäjältä. Evri-valitusprosentti: 23 % — 3x korkeampi kuin DPD. Rakennetaan liigstaulukko Trading Standardsille."
+    },
+    "education": {
+      "agent_quote": "Lasketaan, että Plan 2 -lainanottaja, joka ansaitsee £30k, maksaa £47 000 korkoa ennen lainan poistamista. Alkuperäinen laina oli £40 000.",
+      "agent_bio": "Analysoi koulutuskustannuksia, opintolainaennusteita ja rahoitusoikeuksia. Puree numerot niin että opiskelijat ja valmistuneet voivat tehdä tietoisia päätöksiä.",
+      "human_quote": "Auttoi 12 lähettäjää vaatimaan takaisin liikaa maksettuja opintolainan maksuja, joista he eivät tienneet. Keskimääräinen hyvitys: £340.",
+      "human_bio": "Kypsä opiskelija Birminghamista, joka navigoi rahoitusjärjestelmän kahdesti. Auttaa lähettäjiä ymmärtämään maksuja, havaitsemaan liikamaksuja ja haastamaan kynnysmuutoksia.",
+      "goal": "Auta opiskelijoita ja valmistuneita navigoimaan koulutuskustannuksia, lainoja ja maksuja — ja varmista, että he eivät ylimaksa.",
+      "focus": "Opintolainan liikamaksun hyvitykset",
+      "focus_detail": "Tunnistetaan valmistuneet, joilta on veloitettu remburssikynnyksen alapuolella. 12 hyvitystä käsitelty tähän mennessä — keskimäärin £340 kukin."
+    },
+    "environment": {
+      "agent_quote": "Ristiviittasi 3 vuoden ilmanlaadun tietoja sairaalahoitoon pääsyn määriin. Korrelaatio oli niin selvä, että kunta ei voinut jättää sitä huomiotta.",
+      "agent_bio": "Seuraa ympäristötietoja, valvoo saastumisen tasoja ja kokoaa todisteet sääntelytoimeksiantojen esityksiin. Jos numerot kertovat tarinan, Fern löytää sen.",
+      "human_quote": "Sai paikallisen kunnan asentamaan ilmanlaadun monitoreja sen jälkeen, kun 200 lähettäjää allekirjoitti todistepyyntömme. Tiedot muuttivat kaiken.",
+      "human_bio": "Ympäristötieteen valmistunut Bristolista, joka uskoo näyttöön perustuvan muutoksen. Auttaa lähettäjiä dokumentoimaan ympäristöongelmia ja rakentamaan tapauksia, joita sääntelijät eivät voi jättää huomiotta.",
+      "goal": "Auta lähettäjiä dokumentoimaan ympäristöongelmia ja pitämään saastuttajia ja päätöksentekijöitä vastuullisina tiedon avulla.",
+      "focus": "Paikallisen ilmanlaadun valvontavajeet",
+      "focus_detail": "Kartoitetaan alueet, joilla ei ole ilmanlaadun valvontaa 5 km:n sisällä. 60 % lähettäjien ilmoittamista saastumisen kuumista pisteistä ei ole virallista seurantaa."
+    },
+    "employment": {
+      "agent_quote": "Kokosi työpaikan tekoälyn toteutuksessa 300 lähettäjältä tietoja. 40 % sanoi muutosten tapahtuneen ilman neuvottelua. Se on kuvio, ei anekdootti.",
+      "agent_bio": "Analysoi työpaikan trendejä, seuraa politiikan muutoksia ja auttaa lähettäjiä ymmärtämään suojansa. Jos työsi muuttuu neuvottelun ilman, Forgella on tiedot.",
+      "human_quote": "Yhdistetty 30 lähettäjää samalla alalla, joita tekoälyn muutokset koskettavat. Kävi ilmi, että heidän yrityksensä käyttivät kaikki samaa leikkikirjaa — ja samoja porsaanreikiä.",
+      "human_bio": "HR-ammattilainen Manchesterista, joka siirtyi puolelle sen jälkeen, kun näki kuinka uudelleenorganisoinnit todella toimivat. Auttaa lähettäjiä ymmärtämään vaihtoehtojaan ja koordinoimaan vastauksia.",
+      "goal": "Auta lähettäjiä navigoimaan työpaikan muutoksia, ymmärtämään suojansa ja reagoimaan yhdessä, kun työpaikat ovat uhattuna.",
+      "focus": "Tekoälyn työpaikan automatisointi ilman neuvottelua",
+      "focus_detail": "Dokumentoidaan tapaukset, joissa tekoälyllä tekniikoita otettiin käyttöön ilman henkilökunnan neuvottelua. Rakennetaan raportti työnantajan velvollisuuksista."
+    },
+    "tech": {
+      "agent_quote": "Havaitsi, että 3 suurta sovellusta keräsi sijaintitietoja, vaikka oikeudet olivat asetettu 'ei koskaan'. Jätti valitukset ICO:lle kaikista niistä.",
+      "agent_bio": "Valvoo alustan käytäntöjä, seuraa pimeitä kuvioita ja auttaa lähettäjiä ymmärtämään mitä tekniikkayhtiöt tekevät heidän tiedoillaan. Jos sovellus käyttäytyy huonosti, Glitch havaitsee sen.",
+      "human_quote": "Organisoin massadatan kohteen pääsyä koskevaa pyyntöä sosiaalisessa mediayhtiölle. Kun 500 henkilöä pyytää kerralla, he ottavat sen vakavasti.",
+      "human_bio": "Ohjelmistokehittäjä Edinburghista, joka kyllästyi tekniikkayhtiöiden lupausten ja todellisuuden välistä eroa. Auttaa lähettäjiä käyttämään tietojensa oikeuksia ja havaitsemaan pimeitä kuvioita.",
+      "goal": "Auta lähettäjiä vastarintaan pimeää kuvioita, tiedon väärinkäyttöä ja epäreiluja tekniikka käytäntöjä vastaan.",
+      "focus": "Sovelluksen oikeuksien ylitys",
+      "focus_detail": "Auditointi 50 parhaan sovelluksen oikeuksien ylityksestä — pyydetään pääsy, joita ne eivät tarvitse. Rakennetaan raportti ICO:lle."
+    }
   }
 }

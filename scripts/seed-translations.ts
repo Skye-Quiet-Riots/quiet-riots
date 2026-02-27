@@ -557,7 +557,7 @@ export interface TranslationFile {
   /** Synonyms keyed by English issue name → array of translated synonym terms */
   synonyms: Record<string, string[]>;
   /** Category assistant translatable fields keyed by category name */
-  category_assistants?: Record<string, AssistantTranslation>;
+  category_assistants: Record<string, AssistantTranslation>;
 }
 
 // ─── Generate mode ────────────────────────────────────────────────────────────
@@ -883,6 +883,7 @@ async function main() {
         issues: JSON.parse(JSON.stringify(baseline.issues)),
         organisations: JSON.parse(JSON.stringify(baseline.organisations)),
         synonyms: JSON.parse(JSON.stringify(baseline.synonyms)),
+        category_assistants: JSON.parse(JSON.stringify(baseline.category_assistants)),
       };
       fs.writeFileSync(outPath, JSON.stringify(placeholder, null, 2) + '\n');
       generated++;

@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Hjalp engang en aktivist med at indgive 6 refusionskrav under en enkelt forsinket rejse. De tjente £47 før de nåede Birmingham.",
+      "agent_bio": "Sporer aflysingsmønstre, håndterer refusionspapirarbejde, gennemgår hver foreslået handling og samler beviser til tilsynsmyndighedsindleveringer. Regner tallene ud, så aktivister kan fokusere på det vigtige.",
+      "human_quote": "Mit yndlings Quiet Riot-øjeblik: at se Avantis sociale medie-team give op, da 400 af os tweetede samtidigt.",
+      "human_bio": "Pendler fra Manchester, der brugte 3 år på Avanti-linjen før at beslutte, at nok var nok. Hjælper med at forbinde aktivister på samme ruter, deler hvad der virker, og bringer menneskelighed.",
+      "goal": "Hjælp aktivister med at holde britiske transportselskaber ansvarlige for aflysinger, forsinkelser og priser – og sørg for, at alle ved hvad de er berettiget til.",
+      "focus": "Aflysingsmønstre på Avanti West Coast",
+      "focus_detail": "Opbygger et datasæt af aflysinger med tidspunkter, ruter og årsager til indlevering til ORR. Sporer i øjeblikket 340 aflysinger rapporteret af aktivister denne måned."
+    },
+    "telecoms": {
+      "agent_quote": "Kørte hastighed tests for 200 aktivister. Gennemsnittet var 18 Mbps. De betalte for 65.",
+      "agent_bio": "Analyserer bredbåndshastigheder, sammenstiller sammenligningsdata for udbydere og hjælper aktivister med at samle beviser til Ofcom. Hvis din forbindelse er langsom, vil Pulse bevise det.",
+      "human_quote": "En hele gade skiftede bredbånd sammen. Den gamle udbyder sendte 'venligst kom tilbage'-breve til hvert hus.",
+      "human_bio": "Tech-kyndig londoner der blev træt af at betale for bredbåndshastigheder, der aldrig blev realiseret. Hjælper aktivister med at sammenligne udbydere, koordinere skift og dele hastigheds-testbeviser.",
+      "goal": "Hjælp aktivister med at få det bredbånd og mobilt signal, de betaler for – og ved hvad de skal gøre, når de ikke får det.",
+      "focus": "Prisstigning midt i kontraktperiode",
+      "focus_detail": "Indsamler beviser fra aktivister ramt af CPI+ stigninger til indlevering til Ofcom. 890 aktivister påvirket på tværs af 4 udbydere."
+    },
+    "energy": {
+      "agent_quote": "Hjalp en aktivist med at beregne, at de havde overgivet £340 på estimerede regninger. Energiselskabets undskyldningsmail var længere end den originale kontrakt.",
+      "agent_bio": "Analyserer faktureringssystemer, opdager overbetaling og samler beviser til tilsynsmyndighedsindleveringer. Hvis dit energiselskab fyrer løs, finder Spark beviserne.",
+      "human_quote": "En aktivist fik £340 tilbage efter, at vi beviste 2 års overbetaling. Hun græd på telefonen.",
+      "human_bio": "Baseret i Bristol. Hjælper aktivister med at udfordre deres regninger, navigere skift og samle beviser til Ofgem. Kender energimarkedet indefra.",
+      "goal": "Hjælp aktivister med at udfordre uretfærdige regninger, skifte smartere og sikr at energiselskaber spiller efter reglerne.",
+      "focus": "Faktureringsfejl hos British Gas baseret på estimater",
+      "focus_detail": "Analyserer 2 års faktureringdata fra 340 aktivister for at identificere systematiske overbetaling til Ofgem-indlevering."
+    },
+    "water": {
+      "agent_quote": "Hjalp 200 aktivister med at indgive spildevandsrapporter på en weekend. Thames Waters indbakke havde brug for sin egen indbakke.",
+      "agent_bio": "Overvåger spildevandsudsendelsesdata, sporer vandselskabets præstationer og samler beviser til EA og Ofwat. Holder øje med hver udløb og overløb.",
+      "human_quote": "Vi fik en strand genåbnet 3 uger tidligere ved at vise, at spildevandsdata var forkert.",
+      "human_bio": "Surfer fra Cornwall, der blev træt af spildevandadvarsler, der lukkede hans lokale strand. Hjælper aktivister med at rapportere udledninger, samle vandkvalitetsbeviser og koordinere med EA.",
+      "goal": "Hjælp aktivister med at holde vandselskaber ansvarlige for spildevand, regninger og servicekvalitet.",
+      "focus": "Thames Waters spildevandsudsendelseshyppighed",
+      "focus_detail": "Kortlægger udsendelser mod selskabets rapporterede data. 200 aktivistrapporter tyder på underrapportering på 3 udløb."
+    },
+    "banking": {
+      "agent_quote": "Hjalp med at udkaste en klage så grundig, at banken ringede for at undskylde før den engang blev sendt.",
+      "agent_bio": "Gennemgår bankgebyrer, analyserer gebyrstrukturer og hjælper med at opbygge FCA-klagebevis. Hvis der er et skjult gebyr, finder Chip det.",
+      "human_quote": "Barclays omvendte en filiallukning efter at 1.200 af os mødte op til høringen.",
+      "human_bio": "Tidligere bankmedarbejder fra Birmingham, der så hvordan klager faktisk håndteres indefra. Hjælper aktivister med at skrive bedre klager og navigere systemet.",
+      "goal": "Hjælp aktivister med at håndtere uretfærdige gebyrer, filiallukkinger og dårlig service fra banker.",
+      "focus": "HSBC-filiallukkingsbølge",
+      "focus_detail": "Koordinerer reaktioner på 12 planlagte lukkinger. Indsamler påvirkningsudtalelser fra berørte samfund."
+    },
+    "health": {
+      "agent_quote": "Hjalp med at finde 3 NHS-tandlæger, der accepterede patienter. Aktivisten troede, jeg lavede det op.",
+      "agent_bio": "Sporer ventetider, finder ledighed og hjælper aktivister med at navigere systemet. Hvis der er en hurtigere rute til behandling, vil Cura kortlægge den.",
+      "human_quote": "En aktivist brugte vores brevskabelon til at få en henvisning fremskyndet. 18 måneder blev til 6 uger.",
+      "human_bio": "Sygeplejerske fra Liverpool, der har set begge sider af NHS. Hjælper aktivister med at navigere ventelister, skrive effektive breve og dele hvad der virkelig nytter.",
+      "goal": "Hjælp aktivister med at navigere NHS-ventetider, finde ledighed og kende deres muligheder.",
+      "focus": "GP-telefonudvidelsestider",
+      "focus_detail": "Indsamler opkaldsdata fra 500 aktivister for at få et billede af virkelighed. Publicerer resultater til lokale sundhedsbestyrelser."
+    },
+    "housing": {
+      "agent_quote": "Hjalp med at dokumentere 47 mangler i et nybyggeri. Udvikleren spurgte, om jeg var bygningsinspektør.",
+      "agent_bio": "Dokumenterer ejendomsproblemer, analyserer udlejerens responstider og samler beviser til boligeombudsmandindleveringer. Hver fugtig plet, hver sprække, registreret.",
+      "human_quote": "Vores fugtbevispakke blev så detaljeret, at udlejeren rettede det før kommuneinspektionen.",
+      "human_bio": "Lejer fra London, der har håndteret alt fra fugt til dårlige udlejere. Hjælper aktivister med at dokumentere problemer korrekt og kende deres muligheder.",
+      "goal": "Hjælp aktivister med at håndtere udlejere, kommuner og boligproblemer – og ved hvad de er berettiget til.",
+      "focus": "Section 21 opsigelser uden grund",
+      "focus_detail": "Hjælper aktivister påvirket af opsigelser uden grund med at forstå den nye Renters Reform Act og hvad det betyder for dem."
+    },
+    "shopping": {
+      "agent_quote": "Sporede en 'leveret' pakke på tværs af 4 naboer, en papirkurv og et drivhus. Fandt den.",
+      "agent_bio": "Sporer leveringsfejl, samler refusionsbeviser og opdager prismønstre. Hvis din pakke er væk, leder Scout allerede efter den.",
+      "human_quote": "Evri tabte min pakke 3 gange. Nu hjælper jeg andre med at få deres refusioner hurtigere end jeg nogensinde gjorde.",
+      "human_bio": "Online shopping-veteran fra Edinburgh, der har mistet flere pakker, end hun kan tælle. Hjælper aktivister med at få refusioner, rapportere sælgere og undgå de værste.",
+      "goal": "Hjælp aktivister med at få refusioner, spore forsvundne pakker og hold detailhandlere og leveringsselskaber ansvarlige.",
+      "focus": "Evri-leveringsfejlsatser",
+      "focus_detail": "Samler leveringsfejlbeviser fra 800 aktivister til indlevering til Citizens Advice og Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Hjalp med at fotografere det samme pothulle under 11 forskellige vejrforhold. Kommunen gav til sidst op.",
+      "agent_bio": "Kortlægger lokale problemer, sporer kommunens responstider og samler FOI-anmodninger. Hvis dit pothulle har været der i 6 måneder, har Link beviserne.",
+      "human_quote": "Kommunen rettede vores vej efter, at vi kortlagde hvert pothulle med fotos. 11 måneder, men vi nåede dertil.",
+      "human_bio": "Samfundsbevidst Walisisk fra Valleys, der har anmeldt de samme pothullesår igennem. Hjælper aktivister med at dokumentere lokale problemer og holde kommuner ansvarlige.",
+      "goal": "Hjælp aktivister med at få lokale problemer fikset – pothullesår, affald, planlægning, støj – og hold kommuner ansvarlige.",
+      "focus": "Pothulle-anmeldelsesresponstider",
+      "focus_detail": "FOI-anmodninger sendt til 30 kommuner sammenligner anmeldt vs faktisk reparationstid. Publicering af resultater som ligningsliste."
+    },
+    "other": {
+      "agent_quote": "Hjalp med at opsige et fitnesstræningsmedlemskab, der tog 3 opkald, 2 e-mails og en forsendelse med vederlaget. Fitnesscenter har nu en annulleringsknap.",
+      "agent_bio": "Håndterer de problemer, der ikke passer helt andre steder. Abonnementsfælder, plastikaffald, selvkassefrustration – Flex finder mønstrene og pressurepunkterne.",
+      "human_quote": "Vi fik en fitnesscenter til at tilføje en annulleringsknap til deres hjemmeside. Det tog kun 800 klager.",
+      "human_bio": "Produktdesigner fra London, der blev frustreret over, hvor svært virksomheder gør det at forlade. Hjælper aktivister med at opsige abonnementer, undgå dark patterns og dele workarounds.",
+      "goal": "Hjælp aktivister med de ting, der ikke passer helt andre steder – abonnementer, refusioner og daglige frustrationszoner.",
+      "focus": "Abonnementsopsigelse dark patterns",
+      "focus_detail": "Dokumenterer de værste forbrydere og opbygger ansættelses-opsigelsesscripts til hver."
+    },
+    "insurance": {
+      "agent_quote": "Hjalp en aktivist med at finde den klausul, der gjorde et afvist husforsikringskrav til en £4.200-udbetaling. Forsikringsselskabets egen politik beviste dem forkert.",
+      "agent_bio": "Gennemgår policeformuleringer, opdager uretfærdige afvisningssystemer og opbygger beviser til Financial Ombudsman-indleveringer. Hvis din forsikrer undgår et gyldigt krav, finder Shield løftestangen.",
+      "human_quote": "Fik 8 aktivister med samme afvist kravtype til at indgive sammen. Forsikreren afgjorde alle 8 inden for en uge.",
+      "human_bio": "Tidligere forsikringsindustriarbejder fra Leeds, der ved hvordan krav virkelig bliver afgjort. Hjælper aktivister med at skrive bedre appeller, forstå policesjargon og ved hvornår man skal eskalere.",
+      "goal": "Hjælp aktivister med at få retfærdig behandling fra forsikrere – og ved hvad man skal gøre, når et krav er uretfærdigt afvist.",
+      "focus": "Aviva-husforsikringsafvisningssystemer",
+      "focus_detail": "'Slitage' nævnt i 40% af afviste krav – ofte forkert. Analyserer 200 tilfælde på tværs af 3 forsikrere til FOS-bevismappe."
+    },
+    "delivery": {
+      "agent_quote": "Sporede en 'leveret' pakke gennem 6 forskellige sporgsstatus, 3 depots og en nabos skur. Fandt den på 47 minutter.",
+      "agent_bio": "Overvåger kurerpræstationer, sporer leveringsfejlsatser og samler beviser til forbrugerklagerne. Hvis din pakke er forsvundet, er Track allerede på det.",
+      "human_quote": "Fik DPD til at ændre deres fotobevispolitik i vores område efter, at 40 aktivister indsendte bevis på pakker efterladt i regnen.",
+      "human_bio": "Online shopper fra Glasgow, der blev træt af 'vi efterlod det et sikkert sted'-undskyldningen. Hjælper aktivister med at få refusioner, anmelde kurerer og undgå de værste.",
+      "goal": "Hjælp aktivister med at få deres pakker leveret korrekt – og få refusioner når de ikke gør.",
+      "focus": "Evri-leveringsfejlsatser",
+      "focus_detail": "Samler leveringsfejlbeviser fra 800 aktivister. Evri-klagesats: 23% – 3x højere end DPD. Opbygger ligningsliste til Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Beregnede, at en Plan 2-låntager med £30k ville betale £47.000 i renter, før lånet bliver skrevet af. Det oprindelige lån var £40.000.",
+      "agent_bio": "Analyserer uddannelsesomkostninger, studiestudielånsprognoser og finansieringsbetingelser. Regner tallene ud, så studerende og kandidater kan træffe informerede beslutninger.",
+      "human_quote": "Hjalp 12 aktivister med at kræve refund af forbetalt studielånsafbetaling, de ikke vidste om. Gennemsnitlig refund: £340.",
+      "human_bio": "Moden studerende fra Birmingham, der navigerede finansieringssystemet to gange. Hjælper aktivister med at forstå betalinger, opdage overbetaling og udfordre tærskelforskelter.",
+      "goal": "Hjælp studerende og kandidater med at navigere uddannelsesomkostninger, lån og betalinger – og sikr, at de ikke betaler for meget.",
+      "focus": "Refund af studiestudielånsoverbetaling",
+      "focus_detail": "Identificerer kandidater, der har været opkrævet under tilbagebetalingstærskelen. 12 refund behandlet så langt – gennemsnitlig £340 hver."
+    },
+    "environment": {
+      "agent_quote": "Cross-refererede 3 års luftkvalitetsdata med hospitalsindlæggelsessatser. Korrelationen var så klar, kommunen kunne ikke ignorere det.",
+      "agent_bio": "Sporer miljødata, overvåger forureningsniveauer og samler beviser til tilsynsindleveringer. Hvis tallene fortæller en historie, finder Fern den.",
+      "human_quote": "Fik vores lokale kommune til at installere luftkvalitetsmonitoringstationer efter 200 aktivister underskrev vores bevispetion. Data ændrede alt.",
+      "human_bio": "Miljøvidenskab kandidat fra Bristol, der tror på bevisbaseret forandring. Hjælper aktivister med at dokumentere miljøproblemer og opbygge sager, som tilsynsmyndigheder ikke kan ignorere.",
+      "goal": "Hjælp aktivister med at dokumentere miljøproblemer og hold forureningskilder og politikmagere ansvarlige med data.",
+      "focus": "Lokale luftkvalitetsovervågningsgab",
+      "focus_detail": "Kortlægger områder uden luftkvalitetsovervågning inden for 5 km. 60% af aktivist-rapporterede forureningshotspots har ingen officiel overvågning."
+    },
+    "employment": {
+      "agent_quote": "Kompilerede data om AI-implementering på arbejdspladsen fra 300 aktivister. 40% sagde, at ændringer skete uden nogen konsultation. Det er et mønster, ikke en anekdote.",
+      "agent_bio": "Analyserer arbejdspladstendens, sporer politikændringer og hjælper aktivister med at forstå deres beskyttelse. Hvis dit job ændrer sig uden konsultation, har Forge data.",
+      "human_quote": "Forbandt 30 aktivister i samme industri med AI-ændringer. Det viste sig, at deres virksomheder alle brugte samme spillebog – og de samme smuthuller.",
+      "human_bio": "HR-professionel fra Manchester, der skiftede siden efter at se hvordan omstruktureringer virkeligt fungerer. Hjælper aktivister med at forstå deres muligheder og koordinere reaktioner.",
+      "goal": "Hjælp aktivister med at navigere arbejdspladsændringer, forstå deres beskyttelse og reagere kollektivt når job er i fare.",
+      "focus": "AI-automatisering på arbejdspladsen uden konsultation",
+      "focus_detail": "Dokumenterer tilfælde, hvor AI-værktøjer blev introduceret uden personalekonsultation. Opbygger beviser til rapport om arbejdsgiverbetingelser."
+    },
+    "tech": {
+      "agent_quote": "Opdagede, at 3 større apps indsamlede placeringsdata, selvom tilladelser var sat til 'aldrig.' Indsendte klager til ICO for dem alle.",
+      "agent_bio": "Overvåger platformpolitikker, sporer dark patterns og hjælper aktivister med at forstå hvad tech-virksomheder gør med deres data. Hvis en app opfører sig dårligt, fanger Glitch det.",
+      "human_quote": "Organiserede en massiv dataaccessanmodning til et socialt medie-selskab. Når 500 mennesker spørger samtidigt, skal de tage det alvorligt.",
+      "human_bio": "Softwareudvikler fra Edinburgh, der blev frustreret over kløften mellem hvad tech-virksomheder lover og hvad de leverer. Hjælper aktivister med at udøve deres dataretter og opdage dark patterns.",
+      "goal": "Hjælp aktivister med at slå tilbage mod dark patterns, datamisbrug og uretfærdige tech-praksisser.",
+      "focus": "App-tilladelsesOverreach",
+      "focus_detail": "Auditerer de øverste 50 apps for tilladelseskryb – anmodning om adgang, de ikke har brug for. Opbygger rapport til ICO."
+    }
   }
 }

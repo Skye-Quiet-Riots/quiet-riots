@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Una vez ayudó a un rioter a presentar 6 reclamaciones de reembolso durante un único viaje retrasado. Ganaron £47 antes de llegar a Birmingham.",
+      "agent_bio": "Rastrea patrones de cancelación, maneja trámites de reembolso, revisa cada acción sugerida y reúne pruebas para presentaciones regulatorias. Analiza los números para que los rioters se enfoquen en lo que importa.",
+      "human_quote": "Mi momento favorito de Quiet Riot: ver al equipo de redes sociales de Avanti entrar en pánico cuando 400 de nosotros tuiteamos al mismo tiempo.",
+      "human_bio": "Viajero regular desde Manchester que pasó 3 años en la línea Avanti antes de decidir que ya era suficiente. Ayuda a conectar rioters en las mismas rutas, comparte lo que funciona y aporta el toque humano.",
+      "goal": "Ayudar a los rioters a responsabilizar a las empresas de transporte del Reino Unido por cancelaciones, retrasos y precios, y asegurar que todos sepan a qué tienen derecho.",
+      "focus": "Patrones de cancelación de Avanti West Coast",
+      "focus_detail": "Construyendo una base de datos de cancelaciones con horas, rutas y razones para presentar a la ORR. Actualmente rastreando 340 cancelaciones reportadas por rioters este mes."
+    },
+    "telecoms": {
+      "agent_quote": "Realizó pruebas de velocidad para 200 rioters. El promedio fue de 18 Mbps. Estaban pagando por 65.",
+      "agent_bio": "Analiza velocidades de banda ancha, compila datos de comparación de proveedores y ayuda a los rioters a construir pruebas para Ofcom. Si tu conexión es lenta, Pulse lo probará.",
+      "human_quote": "Toda una calle cambió de proveedor de banda ancha juntos. El proveedor anterior envió cartas de 'por favor vuelve' a cada casa.",
+      "human_bio": "Londinense experto en tecnología que se cansó de pagar por velocidades de banda ancha que nunca se materializaban. Ayuda a los rioters a comparar proveedores, coordinar cambios y compartir pruebas de velocidad.",
+      "goal": "Ayudar a los rioters a obtener la banda ancha y servicio móvil por los que están pagando, y saber qué hacer cuando no lo consiguen.",
+      "focus": "Aumentos de precios a mitad de contrato",
+      "focus_detail": "Recopilando pruebas de rioters afectados por aumentos CPI+ para presentar a Ofcom. 890 rioters afectados en 4 proveedores."
+    },
+    "energy": {
+      "agent_quote": "Ayudó a un rioter a calcular que había pagado en exceso £340 en facturas estimadas. El correo de disculpa de la compañía de energía fue más largo que el contrato original.",
+      "agent_bio": "Analiza patrones de facturación, identifica sobrecargos y reúne pruebas para presentaciones regulatorias. Si tu compañía de energía está abusando, Spark encontrará las pruebas.",
+      "human_quote": "Un rioter recuperó £340 después de que probamos 2 años de sobrecarga. Lloró por teléfono.",
+      "human_bio": "Basado en Bristol. Ayuda a los rioters a cuestionar sus facturas, navegar cambios y recopilar pruebas para Ofgem. Conoce el mercado energético de adentro hacia afuera.",
+      "goal": "Ayudar a los rioters a cuestionar facturas injustas, cambiar de forma más inteligente y asegurar que las compañías de energía actúen con justicia.",
+      "focus": "Errores de facturación estimada de British Gas",
+      "focus_detail": "Analizando 2 años de datos de facturación de 340 rioters para identificar patrones de sobrecarga sistemática para presentación a Ofgem."
+    },
+    "water": {
+      "agent_quote": "Ayudó a 200 rioters a presentar reportes de aguas residuales en un fin de semana. La bandeja de entrada de Thames Water necesitaba su propia bandeja de entrada.",
+      "agent_bio": "Monitorea datos de descarga de aguas residuales, rastrea el desempeño de las compañías de agua y compila pruebas para EA y Ofwat. Vigila cada salida y desbordamiento.",
+      "human_quote": "Reabrimos una playa 3 semanas antes al mostrar que los datos de aguas residuales eran incorrectos.",
+      "human_bio": "Surfista de Cornualles que se cansó de las advertencias de aguas residuales cerrando su playa local. Ayuda a los rioters a reportar descargas, recopilar pruebas de calidad del agua y coordinarse con la EA.",
+      "goal": "Ayudar a los rioters a responsabilizar a las compañías de agua por aguas residuales, facturas y calidad del servicio.",
+      "focus": "Frecuencia de descarga de aguas residuales de Thames Water",
+      "focus_detail": "Mapeando eventos de descarga contra datos reportados por la compañía. 200 reportes de rioters sugieren subregistro en 3 salidas."
+    },
+    "banking": {
+      "agent_quote": "Ayudó a redactar una queja tan exhaustiva que el banco llamó para disculparse antes de que fuera enviada.",
+      "agent_bio": "Revisa cargos bancarios, analiza estructuras de tarifas y ayuda a construir pruebas de quejas de la FCA. Si hay una tarifa oculta, Chip la encontrará.",
+      "human_quote": "Barclays revirtió un cierre de sucursal después de que 1.200 de nosotros nos presentamos en la consulta.",
+      "human_bio": "Exempleado bancario de Birmingham que vio cómo se manejan realmente las quejas desde adentro. Ayuda a los rioters a escribir mejores quejas y navegar el sistema.",
+      "goal": "Ayudar a los rioters a lidiar con cargos injustos, cierres de sucursales y mal servicio de los bancos.",
+      "focus": "Ola de cierre de sucursales de HSBC",
+      "focus_detail": "Coordinando respuestas a 12 cierres planeados. Recopilando declaraciones de impacto de comunidades afectadas."
+    },
+    "health": {
+      "agent_quote": "Ayudó a encontrar 3 dentistas del NHS que aceptaban pacientes. El rioter pensó que me lo estaba inventando.",
+      "agent_bio": "Rastrea tiempos de espera, encuentra disponibilidad y ayuda a los rioters a navegar el sistema. Si hay una ruta más rápida hacia el tratamiento, Cura la mapeará.",
+      "human_quote": "Un rioter usó nuestra plantilla de carta para acelerar una derivación. 18 meses se convirtieron en 6 semanas.",
+      "human_bio": "Enfermera de Liverpool que ha visto ambos lados del NHS. Ayuda a los rioters a navegar listas de espera, escribir cartas efectivas y compartir lo que realmente funciona.",
+      "goal": "Ayudar a los rioters a navegar tiempos de espera del NHS, encontrar disponibilidad y saber qué opciones tienen.",
+      "focus": "Tiempos de acceso telefónico del médico general",
+      "focus_detail": "Recopilando datos de llamadas de 500 rioters para construir una imagen del acceso en el mundo real. Publicando resultados a juntas de salud locales."
+    },
+    "housing": {
+      "agent_quote": "Ayudó a documentar 47 defectos en una vivienda nueva. El desarrollador preguntó si era inspector de construcción.",
+      "agent_bio": "Documenta problemas de propiedad, analiza tiempos de respuesta del propietario y compila pruebas para presentaciones al defensor de los derechos del inquilino. Cada mancha de humedad, cada grieta, registrada.",
+      "human_quote": "Nuestro paquete de pruebas de humedad fue tan detallado que el propietario lo arregló antes de la inspección del consejo.",
+      "human_bio": "Inquilino de Londres que ha lidiado con todo, desde humedad hasta propietarios dudosos. Ayuda a los rioters a documentar problemas adecuadamente y saber cuáles son sus opciones.",
+      "goal": "Ayudar a los rioters a lidiar con propietarios, consejos y problemas de vivienda, y saber a qué tienen derecho.",
+      "focus": "Avisos de desalojo sin causa de la Sección 21",
+      "focus_detail": "Ayudando a rioters afectados por desalojos sin causa a entender la nueva Ley de Reforma de Inquilinos y qué significa para ellos."
+    },
+    "shopping": {
+      "agent_quote": "Rastreó un paquete 'entregado' a través de 4 vecinos, un contenedor de reciclaje y un invernadero. Lo encontró.",
+      "agent_bio": "Rastrea fallas de entrega, compila pruebas de reembolso e identifica patrones de precios. Si tu paquete se pierde, Scout ya está buscando.",
+      "human_quote": "Evri perdió mi paquete 3 veces. Ahora ayudo a otros a obtener sus reembolsos más rápido de lo que yo lo hice.",
+      "human_bio": "Veterana de compras en línea de Edimburgo que ha tenido más paquetes perdidos de lo que puede contar. Ayuda a los rioters a obtener reembolsos, reportar vendedores y evitar a los peores infractores.",
+      "goal": "Ayudar a los rioters a obtener reembolsos, rastrear paquetes perdidos y responsabilizar a minoristas y compañías de entrega.",
+      "focus": "Tasas de fallas de entrega de Evri",
+      "focus_detail": "Compilando pruebas de fallas de entrega de 800 rioters para presentar a Citizens Advice y Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Ayudó a fotografiar el mismo bache en 11 condiciones climáticas diferentes. El consejo finalmente se rindió.",
+      "agent_bio": "Mapea problemas locales, rastrea tiempos de respuesta del consejo y compila solicitudes de FOI. Si tu bache ha estado allí 6 meses, Link tiene las pruebas.",
+      "human_quote": "El consejo reparó nuestra carretera después de que mapeamos cada bache con fotos. 11 meses, pero lo logramos.",
+      "human_bio": "Galés consciente de la comunidad del Valle que ha estado reportando los mismos baches durante años. Ayuda a los rioters a documentar problemas locales y responsabilizar a los consejos.",
+      "goal": "Ayudar a los rioters a arreglar problemas locales: baches, basura, planificación, ruido, y responsabilizar a los consejos.",
+      "focus": "Tiempos de respuesta de reportes de baches",
+      "focus_detail": "Solicitudes de FOI enviadas a 30 consejos comparando tiempos de reparación reportados vs reales. Publicando resultados como una tabla de clasificación."
+    },
+    "other": {
+      "agent_quote": "Ayudó a cancelar una membresía de gimnasio que tomó 3 llamadas, 2 correos electrónicos y entrega certificada. El gimnasio ahora tiene un botón de cancelar.",
+      "agent_bio": "Maneja problemas que no encajan perfectamente en otros lugares. Trampas de suscripción, residuos plásticos, frustraciones de autopago: Flex encuentra los patrones y los puntos de presión.",
+      "human_quote": "Hicimos que una cadena de gimnasios añadiera un botón de cancelación a su sitio web. Solo tomó 800 quejas.",
+      "human_bio": "Diseñador de productos de Londres que se frustró por lo difícil que las compañías hacen irse. Ayuda a los rioters a cancelar suscripciones, evitar patrones oscuros y compartir soluciones alternativas.",
+      "goal": "Ayudar a los rioters con cosas que no encajan perfectamente en otros lugares: suscripciones, reembolsos y frustraciones cotidianas.",
+      "focus": "Patrones oscuros de cancelación de suscripciones",
+      "focus_detail": "Documentando a los peores infractores y construyendo scripts de cancelación de plantillas para cada uno."
+    },
+    "insurance": {
+      "agent_quote": "Ayudó a un rioter a encontrar la cláusula que convirtió una reclamación de seguro de hogar rechazada en un pago de £4.200. La propia póliza del asegurador los probó equivocados.",
+      "agent_bio": "Revisa redacción de pólizas, identifica patrones de rechazo injustos y construye pruebas para presentaciones del Defensor Financiero. Si tu asegurador está eludiendo una reclamación válida, Shield encontrará la solución.",
+      "human_quote": "Conseguí que 8 rioters con el mismo tipo de reclamación rechazada presentaran juntos. El asegurador resolvió los 8 en dos semanas.",
+      "human_bio": "Exempleado de la industria de seguros de Leeds que sabe cómo realmente se deciden las reclamaciones. Ayuda a los rioters a escribir mejores apelaciones, entender jerga de pólizas y saber cuándo escalar.",
+      "goal": "Ayudar a los rioters a obtener trato justo de los aseguradores y saber qué hacer cuando una reclamación es injustamente rechazada.",
+      "focus": "Patrones de rechazo de seguros de hogar de Aviva",
+      "focus_detail": "'Desgaste' citado en el 40% de reclamaciones rechazadas, a menudo incorrectamente. Analizando 200 casos en 3 aseguradores para paquete de pruebas de FOS."
+    },
+    "delivery": {
+      "agent_quote": "Rastreó un paquete 'entregado' a través de 6 estados de seguimiento diferentes, 3 depósitos y un cobertizo de vecino. Lo encontró en 47 minutos.",
+      "agent_bio": "Monitorea el desempeño del correo, rastrea tasas de falla de entrega y compila pruebas para quejas de consumidor. Si tu paquete ha desaparecido, Track ya está en ello.",
+      "human_quote": "Hicimos que DPD cambiara su política de prueba fotográfica en nuestro área después de que 40 rioters presentaran pruebas de paquetes dejados bajo la lluvia.",
+      "human_bio": "Comprador en línea de Glasgow que se cansó de la excusa 'lo dejamos en un lugar seguro'. Ayuda a los rioters a obtener reembolsos, reportar mensajeros y evitar a los peores infractores.",
+      "goal": "Ayudar a los rioters a recibir sus paquetes correctamente y obtener reembolsos cuando no lo hacen.",
+      "focus": "Tasas de fallas de entrega de Evri",
+      "focus_detail": "Compilando pruebas de fallas de entrega de 800 rioters. Tasa de quejas de Evri: 23%, 3 veces superior a DPD. Construyendo tabla de clasificación para Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Calculó que un prestatario del Plan 2 que gana £30k pagará £47.000 en intereses antes de que el préstamo sea cancelado. El préstamo original era de £40.000.",
+      "agent_bio": "Analiza costos de educación, proyecciones de préstamos estudiantiles y derechos de financiamiento. Analiza los números para que los estudiantes y graduados puedan tomar decisiones informadas.",
+      "human_quote": "Ayudé a 12 rioters a reclamar reembolsos de préstamos estudiantiles pagados en exceso que no sabían que existían. Reembolso promedio: £340.",
+      "human_bio": "Estudiante de mayor edad de Birmingham que navegó el sistema de financiamiento dos veces. Ayuda a los rioters a entender reembolsos, identificar pagos en exceso y cuestionar cambios de umbral.",
+      "goal": "Ayudar a estudiantes y graduados a navegar costos de educación, préstamos y reembolsos, y asegurar que no están pagando en exceso.",
+      "focus": "Reembolsos de pago en exceso de préstamos estudiantiles",
+      "focus_detail": "Identificando graduados a los que se ha cobrado por debajo del umbral de reembolso. 12 reembolsos procesados hasta ahora, promedio de £340 cada uno."
+    },
+    "environment": {
+      "agent_quote": "Correlacionó 3 años de datos de calidad del aire con tasas de admisión hospitalaria. La correlación fue tan clara que el consejo no pudo ignorarla.",
+      "agent_bio": "Rastrea datos ambientales, monitorea niveles de contaminación y compila pruebas para presentaciones regulatorias. Si los números cuentan una historia, Fern la encontrará.",
+      "human_quote": "Hicimos que nuestro consejo local instalara monitores de calidad del aire después de que 200 rioters firmaran nuestra petición de pruebas. Los datos lo cambiaron todo.",
+      "human_bio": "Graduada en ciencias ambientales de Bristol que cree en el cambio basado en pruebas. Ayuda a los rioters a documentar problemas ambientales y construir casos que los reguladores no puedan ignorar.",
+      "goal": "Ayudar a los rioters a documentar problemas ambientales y responsabilizar a contaminantes y responsables de políticas con datos.",
+      "focus": "Brechas locales en el monitoreo de la calidad del aire",
+      "focus_detail": "Mapeando áreas sin monitoreo de calidad del aire dentro de 5km. El 60% de puntos críticos de contaminación reportados por rioters no tienen monitoreo oficial."
+    },
+    "employment": {
+      "agent_quote": "Compiló datos de implementación de IA en el lugar de trabajo de 300 rioters. El 40% dijo que los cambios ocurrieron sin consulta alguna. Eso es un patrón, no una anécdota.",
+      "agent_bio": "Analiza tendencias laborales, rastrea cambios de políticas y ayuda a los rioters a entender sus protecciones. Si tu trabajo está cambiando sin consulta, Forge tiene los datos.",
+      "human_quote": "Conecté a 30 rioters en la misma industria enfrentando cambios de IA. Resulta que sus compañías estaban usando el mismo manual, y las mismas lagunas.",
+      "human_bio": "Profesional de RRHH de Manchester que cambió de lado después de ver cómo realmente funcionan las reestructuraciones. Ayuda a los rioters a entender sus opciones y coordinar respuestas.",
+      "goal": "Ayudar a los rioters a navegar cambios laborales, entender sus protecciones y responder colectivamente cuando los empleos están en riesgo.",
+      "focus": "Automatización de IA en el lugar de trabajo sin consulta",
+      "focus_detail": "Documentando casos donde herramientas de IA fueron introducidas sin consulta del personal. Construyendo pruebas para un informe sobre obligaciones del empleador."
+    },
+    "tech": {
+      "agent_quote": "Descubrió que 3 aplicaciones principales estaban recopilando datos de ubicación incluso cuando los permisos estaban configurados como 'nunca'. Presentó quejas con la ICO para todas.",
+      "agent_bio": "Monitorea políticas de plataformas, rastrea patrones oscuros y ayuda a los rioters a entender qué están haciendo las compañías tecnológicas con sus datos. Si una aplicación se comporta mal, Glitch la atrapará.",
+      "human_quote": "Organicé una solicitud masiva de acceso a datos a una compañía de redes sociales. Cuando 500 personas lo piden a la vez, tienen que tomarlo en serio.",
+      "human_bio": "Desarrolladora de software de Edimburgo que se frustró por la brecha entre lo que prometen las compañías de tecnología y lo que entregan. Ayuda a los rioters a ejercer sus derechos de datos e identificar patrones oscuros.",
+      "goal": "Ayudar a los rioters a resistir patrones oscuros, mal uso de datos y prácticas tecnológicas injustas.",
+      "focus": "Exceso de permisos de aplicaciones",
+      "focus_detail": "Auditando las 50 principales aplicaciones por expansión de permisos: solicitando acceso que no necesitan. Construyendo un informe para la ICO."
+    }
   }
 }

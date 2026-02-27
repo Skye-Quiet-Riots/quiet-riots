@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Una volta ha aiutato un rivoltoso a presentare 6 reclami di rimborso durante un unico viaggio ritardato. Hanno guadagnato £47 prima di raggiungere Birmingham.",
+      "agent_bio": "Traccia i modelli di cancellazione, gestisce la documentazione dei rimborsi, esamina ogni azione suggerita e prepara le prove per le presentazioni alle autorità di regolamentazione. Analizza i numeri in modo che i rivoltosi possano concentrarsi su ciò che conta.",
+      "human_quote": "Il mio momento preferito di Quiet Riot: guardare il team dei social media di Avanti in preda al panico quando 400 di noi abbiamo twittato contemporaneamente.",
+      "human_bio": "Pendolare abituale da Manchester che ha trascorso 3 anni sulla linea Avanti prima di decidere che era abbastanza. Aiuta a connettere i rivoltosi sugli stessi percorsi, condivide ciò che funziona e porta il tocco umano.",
+      "goal": "Aiutare i rivoltosi a responsabilizzare le compagnie di trasporto del Regno Unito su cancellazioni, ritardi e prezzi — e assicurarsi che tutti sappiano a cosa hanno diritto.",
+      "focus": "Modelli di cancellazione di Avanti West Coast",
+      "focus_detail": "Costruire un set di dati delle cancellazioni con orari, percorsi e motivi da inviare all'ORR. Attualmente tracciando 340 cancellazioni segnalate dai rivoltosi questo mese."
+    },
+    "telecoms": {
+      "agent_quote": "Ha eseguito test di velocità per 200 rivoltosi. La media era 18 Mbps. Stavano pagando per 65.",
+      "agent_bio": "Analizza le velocità della banda larga, compila dati di confronto tra fornitori e aiuta i rivoltosi a costruire prove per l'Ofcom. Se la tua connessione è lenta, Pulse lo proverà.",
+      "human_quote": "Un'intera strada ha cambiato provider di banda larga insieme. Il vecchio fornitore ha inviato lettere 'per favore torna' a ogni casa.",
+      "human_bio": "Londinese esperta di tecnologia che si è stancata di pagare per velocità di banda larga che non si sono mai realizzate. Aiuta i rivoltosi a confrontare i fornitori, coordinare i cambi e condividere le prove dei test di velocità.",
+      "goal": "Aiutare i rivoltosi a ottenere la banda larga e il servizio mobile per cui stanno pagando — e sapere cosa fare quando non lo ottengono.",
+      "focus": "Aumenti di prezzo durante il contratto",
+      "focus_detail": "Raccolta di prove da rivoltosi colpiti da aumenti CPI+ da inviare all'Ofcom. 890 rivoltosi colpiti da 4 fornitori."
+    },
+    "energy": {
+      "agent_quote": "Ha aiutato un rivoltoso a calcolare che aveva pagato in eccesso £340 su bollette stimate. L'email di scuse della compagnia energetica era più lunga del contratto originale.",
+      "agent_bio": "Analizza i modelli di fatturazione, individua gli addebiti eccessivi e prepara le prove per le presentazioni alle autorità di regolamentazione. Se la tua compagnia energetica sta facendo scherzi, Spark troverà le ricevute.",
+      "human_quote": "Un rivoltoso ha ottenuto £340 indietro dopo che abbiamo provato 2 anni di addebiti eccessivi. Ha pianto al telefono.",
+      "human_bio": "Con sede a Bristol. Aiuta i rivoltosi a contestare le loro bollette, navigare il cambio e raccogliere prove per l'Ofgem. Conosce il mercato energetico dentro e fuori.",
+      "goal": "Aiutare i rivoltosi a contestare bollette ingiuste, cambiare in modo più intelligente e assicurarsi che le compagnie energetiche giochino leale.",
+      "focus": "Errori di fatturazione stimata British Gas",
+      "focus_detail": "Analisi di 2 anni di dati di fatturazione da 340 rivoltosi per identificare modelli sistematici di addebito eccessivo per l'invio all'Ofgem."
+    },
+    "water": {
+      "agent_quote": "Ha aiutato 200 rivoltosi a presentare rapporti di scarico fognario in un fine settimana. La casella di posta di Thames Water aveva bisogno della sua stessa casella di posta.",
+      "agent_bio": "Monitora i dati di scarico fognario, traccia le prestazioni della compagnia idrica e compila le prove per l'EA e l'Ofwat. Tiene d'occhio ogni uscita e trabocco.",
+      "human_quote": "Abbiamo riapertura una spiaggia 3 settimane in anticipo dimostrando che i dati di scarico fognario erano sbagliati.",
+      "human_bio": "Surfista dalla Cornovaglia che si è stancato dei avvisi di scarico fognario che chiudono la sua spiaggia locale. Aiuta i rivoltosi a segnalare gli scarichi, raccogliere prove di qualità dell'acqua e coordinare con l'EA.",
+      "goal": "Aiutare i rivoltosi a responsabilizzare le compagnie idriche su scarichi fognari, bollette e qualità del servizio.",
+      "focus": "Frequenza di scarico fognario Thames Water",
+      "focus_detail": "Mappatura degli eventi di scarico rispetto ai dati segnalati dall'azienda. 200 rapporti di rivoltosi suggeriscono segnalazioni insufficienti in 3 uscite."
+    },
+    "banking": {
+      "agent_quote": "Ha aiutato a redigere un reclamo così approfondito che la banca ha chiamato per scusarsi prima che fosse anche inviato.",
+      "agent_bio": "Esamina le spese bancarie, analizza le strutture tariffarie e aiuta a costruire prove di reclamo all'FCA. Se c'è una commissione nascosta, Chip la troverà.",
+      "human_quote": "Barclays ha annullato la chiusura di una filiale dopo che 1.200 di noi si sono presentati alla consultazione.",
+      "human_bio": "Ex dipendente della banca da Birmingham che ha visto come i reclami vengono effettivamente gestiti dall'interno. Aiuta i rivoltosi a scrivere reclami migliori e navigare il sistema.",
+      "goal": "Aiutare i rivoltosi ad affrontare commissioni ingiuste, chiusure di filiali e scarso servizio dalle banche.",
+      "focus": "Ondata di chiusure di filiali HSBC",
+      "focus_detail": "Coordinamento delle risposte a 12 chiusure pianificate. Raccolta di dichiarazioni di impatto dalle comunità colpite."
+    },
+    "health": {
+      "agent_quote": "Ha aiutato a trovare 3 dentisti del NHS che accettavano pazienti. Il rivoltoso pensava che stessi inventando.",
+      "agent_bio": "Traccia i tempi di attesa, trova la disponibilità e aiuta i rivoltosi a navigare il sistema. Se c'è un percorso più veloce verso il trattamento, Cura lo mapperà.",
+      "human_quote": "Un rivoltoso ha usato il nostro modello di lettera per velocizzare un rinvio. 18 mesi sono diventati 6 settimane.",
+      "human_bio": "Infermiera da Liverpool che ha visto entrambi i lati del NHS. Aiuta i rivoltosi a navigare le liste di attesa, scrivere lettere efficaci e condividere ciò che effettivamente muove l'ago della bilancia.",
+      "goal": "Aiutare i rivoltosi a navigare i tempi di attesa del NHS, trovare la disponibilità e sapere quali opzioni hanno.",
+      "focus": "Tempi di accesso telefonico del medico generico",
+      "focus_detail": "Raccolta di dati di chiamate da 500 rivoltosi per costruire un quadro dell'accesso nel mondo reale. Pubblicazione dei risultati alle schede sanitarie locali."
+    },
+    "housing": {
+      "agent_quote": "Ha aiutato a documentare 47 difetti in una nuova costruzione. Lo sviluppatore ha chiesto se ero un ispettore edile.",
+      "agent_bio": "Documenta i problemi di proprietà, analizza i tempi di risposta dei proprietari e compila le prove per le presentazioni all'ombudsman abitativo. Ogni macchia di umidità, ogni crepa, registrata.",
+      "human_quote": "Il nostro pacchetto di prove di umidità è stato così dettagliato che il proprietario lo ha risolto prima dell'ispezione del consiglio.",
+      "human_bio": "Affittuario da Londra che ha affrontato tutto dall'umidità ai proprietari disonesti. Aiuta i rivoltosi a documentare i problemi correttamente e sapere quali sono le loro opzioni.",
+      "goal": "Aiutare i rivoltosi ad affrontare proprietari, consigli e problemi abitativi — e sapere a cosa hanno diritto.",
+      "focus": "Avvisi di sfratto senza colpa Sezione 21",
+      "focus_detail": "Aiutare i rivoltosi colpiti da sfratti senza colpa a comprendere il nuovo Renters Reform Act e cosa significa per loro."
+    },
+    "shopping": {
+      "agent_quote": "Ha tracciato un pacco 'consegnato' attraverso 4 vicini, un bidone della raccolta differenziata e una serra. L'ha trovato.",
+      "agent_bio": "Traccia i guasti di consegna, compila le prove di rimborso e individua i modelli di prezzo. Se il tuo pacco è perso, Scout lo sta già cercando.",
+      "human_quote": "Evri ha perso il mio pacco 3 volte. Ora aiuto gli altri a ottenere i rimborsi più velocemente di quanto ho mai fatto.",
+      "human_bio": "Veterana dello shopping online da Edimburgo che ha avuto più pacchi smarriti di quanti possa contare. Aiuta i rivoltosi a ottenere rimborsi, segnalare venditori e evitare i peggiori trasgressori.",
+      "goal": "Aiutare i rivoltosi a ottenere rimborsi, tracciare pacchi smarriti e responsabilizzare i rivenditori e le compagnie di consegna.",
+      "focus": "Tassi di guasto di consegna Evri",
+      "focus_detail": "Compilazione di prove di guasto di consegna da 800 rivoltosi da inviare a Citizens Advice e Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Ha aiutato a fotografare la stessa buca nelle 11 diverse condizioni meteo. Il consiglio ha finalmente ceduto.",
+      "agent_bio": "Mappa i problemi locali, traccia i tempi di risposta del consiglio e compila le richieste FOI. Se la tua buca esiste da 6 mesi, Link ha le prove.",
+      "human_quote": "Il consiglio ha riparato la nostra strada dopo che abbiamo mappato ogni singola buca con foto. 11 mesi, ma ce l'abbiamo fatta.",
+      "human_bio": "Gallese consapevole della comunità dalle Valli che sta segnalando le stesse buche da anni. Aiuta i rivoltosi a documentare i problemi locali e responsabilizzare i consigli.",
+      "goal": "Aiutare i rivoltosi a risolvere i problemi locali — buche, bidoni, pianificazione, rumore — e responsabilizzare i consigli.",
+      "focus": "Tempi di risposta alla segnalazione di buche",
+      "focus_detail": "Richieste FOI inviate a 30 consigli confrontando i tempi di riparazione segnalati rispetto a quelli effettivi. Pubblicazione dei risultati come tabella di classificazione."
+    },
+    "other": {
+      "agent_quote": "Ha aiutato ad annullare l'iscrizione a una palestra che ha richiesto 3 chiamate, 2 email e una raccomandata. La palestra ora ha un pulsante di annullamento.",
+      "agent_bio": "Gestisce i problemi che non si adattano perfettamente da nessuna parte. Trappole di abbonamento, rifiuti di plastica, frustrazioni dei self-checkout — Flex trova i modelli e i punti di pressione.",
+      "human_quote": "Abbiamo costretto una catena di palestre ad aggiungere un pulsante di annullamento al loro sito web. Ci sono voluti solo 800 reclami.",
+      "human_bio": "Designer di prodotti da Londra che si è frustrato su quanto sia difficile per le aziende farsi abbandonare. Aiuta i rivoltosi ad annullare gli abbonamenti, evitare modelli scuri e condividere soluzioni alternative.",
+      "goal": "Aiutare i rivoltosi con le cose che non si adattano perfettamente da nessun'altra parte — abbonamenti, rimborsi e frustrazioni quotidiane.",
+      "focus": "Modelli scuri di annullamento dell'abbonamento",
+      "focus_detail": "Documentazione dei peggiori trasgressori e creazione di script di annullamento modello per ognuno."
+    },
+    "insurance": {
+      "agent_quote": "Ha aiutato un rivoltoso a trovare la clausola che ha trasformato un reclamo di assicurazione sulla casa rifiutato in un pagamento di £4.200. La stessa polizza dell'assicuratore li ha provati sbagliati.",
+      "agent_bio": "Esamina il linguaggio delle polizze, individua i modelli di rifiuto ingiusti e costruisce prove per le presentazioni al Mediatore Finanziario. Se il tuo assicuratore sta schivando un reclamo valido, Shield troverà la leva.",
+      "human_quote": "Ho ottenuto che 8 rivoltosi con lo stesso tipo di reclamo rifiutato presentassero insieme. L'assicuratore ha liquidato tutti gli 8 entro una quindicina di giorni.",
+      "human_bio": "Ex lavoratore del settore assicurativo da Leeds che sa come i reclami vengono effettivamente decisi. Aiuta i rivoltosi a scrivere appelli migliori, comprendere il gergo delle polizze e sapere quando escalare.",
+      "goal": "Aiutare i rivoltosi a ottenere un trattamento equo dagli assicuratori — e sapere cosa fare quando un reclamo viene rifiutato ingiustamente.",
+      "focus": "Modelli di rifiuto dell'assicurazione sulla casa Aviva",
+      "focus_detail": "'Usura' citata nel 40% dei reclami rifiutati — spesso in modo errato. Analisi di 200 casi da 3 assicuratori per il pacchetto di prove FOS."
+    },
+    "delivery": {
+      "agent_quote": "Ha tracciato un pacco 'consegnato' attraverso 6 diversi stati di tracciamento, 3 depositi e la serra di un vicino. L'ha trovato in 47 minuti.",
+      "agent_bio": "Monitora le prestazioni dei corrieri, traccia i tassi di guasto di consegna e compila le prove per i reclami dei consumatori. Se il tuo pacco è scomparso, Track ci sta già lavorando.",
+      "human_quote": "Ho costretto DPD a cambiare la loro politica di foto-prova nella nostra zona dopo che 40 rivoltosi hanno presentato prove di pacchi lasciati sotto la pioggia.",
+      "human_bio": "Acquirente online da Glasgow che si è stancato della scusa 'l'abbiamo lasciato in un posto sicuro'. Aiuta i rivoltosi a ottenere rimborsi, segnalare i corrieri e evitare i peggiori trasgressori.",
+      "goal": "Aiutare i rivoltosi a far consegnare i loro pacchi correttamente — e ottenere rimborsi quando non lo sono.",
+      "focus": "Tassi di guasto di consegna Evri",
+      "focus_detail": "Compilazione di prove di guasto di consegna da 800 rivoltosi. Tasso di reclamo Evri: 23% — 3 volte superiore a DPD. Costruzione di tabella di classificazione per Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Ha calcolato che un mutuatario del Piano 2 che guadagna £30k pagherà £47.000 di interessi prima che il prestito venga cancellato. Il prestito originale era di £40.000.",
+      "agent_bio": "Analizza i costi dell'istruzione, le proiezioni dei prestiti agli studenti e i diritti di finanziamento. Analizza i numeri in modo che gli studenti e i laureati possano prendere decisioni informate.",
+      "human_quote": "Ho aiutato 12 rivoltosi a reclamare i rimborsi dei prestiti agli studenti pagati in eccesso di cui non erano consapevoli. Rimborso medio: £340.",
+      "human_bio": "Studente maturo da Birmingham che ha navigato il sistema di finanziamento due volte. Aiuta i rivoltosi a comprendere i rimborsi, individuare gli eccessi di pagamento e contestare i cambiamenti di soglia.",
+      "goal": "Aiutare gli studenti e i laureati a navigare i costi dell'istruzione, i prestiti e i rimborsi — e assicurarsi che non stiano pagando in eccesso.",
+      "focus": "Rimborsi per pagamento eccessivo dei prestiti agli studenti",
+      "focus_detail": "Identificazione di laureati che sono stati addebitati sotto la soglia di rimborso. 12 rimborsi elaborati finora — media £340 ciascuno."
+    },
+    "environment": {
+      "agent_quote": "Ha incrociato 3 anni di dati di qualità dell'aria con i tassi di ricovero ospedaliero. La correlazione era così chiara che il consiglio non poteva ignorarla.",
+      "agent_bio": "Traccia i dati ambientali, monitora i livelli di inquinamento e compila le prove per le presentazioni normative. Se i numeri raccontano una storia, Fern la troverà.",
+      "human_quote": "Ho costretto il nostro consiglio locale a installare monitor di qualità dell'aria dopo che 200 rivoltosi hanno firmato la nostra petizione di prove. I dati hanno cambiato tutto.",
+      "human_bio": "Laureata in scienze ambientali da Bristol che crede nel cambiamento basato su prove. Aiuta i rivoltosi a documentare i problemi ambientali e costruire casi che gli enti di regolamentazione non possono ignorare.",
+      "goal": "Aiutare i rivoltosi a documentare i problemi ambientali e responsabilizzare gli inquinatori e i responsabili delle politiche con i dati.",
+      "focus": "Lacune nel monitoraggio della qualità dell'aria locale",
+      "focus_detail": "Mappatura di aree senza monitoraggio della qualità dell'aria entro 5 km. Il 60% degli hotspot di inquinamento segnalati dai rivoltosi non hanno monitoraggio ufficiale."
+    },
+    "employment": {
+      "agent_quote": "Ha compilato dati di implementazione dell'AI sul posto di lavoro da 300 rivoltosi. Il 40% ha detto che i cambiamenti sono avvenuti senza alcuna consultazione. Questo è un modello, non un aneddoto.",
+      "agent_bio": "Analizza le tendenze sul posto di lavoro, traccia i cambiamenti di politica e aiuta i rivoltosi a comprendere le loro protezioni. Se il tuo lavoro sta cambiando senza consultazione, Forge ha i dati.",
+      "human_quote": "Ho connesso 30 rivoltosi dello stesso settore che affrontano cambiamenti nell'IA. Risulta che le loro aziende stavano tutte usando lo stesso playbook — e le stesse scappatoie.",
+      "human_bio": "Professionista delle risorse umane da Manchester che ha cambiato lato dopo aver visto come funzionano effettivamente le ristrutturazioni. Aiuta i rivoltosi a comprendere le loro opzioni e coordinare le risposte.",
+      "goal": "Aiutare i rivoltosi a navigare i cambiamenti sul posto di lavoro, comprendere le loro protezioni e rispondere collettivamente quando i lavori sono a rischio.",
+      "focus": "Automazione dell'IA sul posto di lavoro senza consultazione",
+      "focus_detail": "Documentazione dei casi in cui gli strumenti di IA sono stati introdotti senza consultazione del personale. Costruzione di prove per un rapporto sugli obblighi dei datori di lavoro."
+    },
+    "tech": {
+      "agent_quote": "Ha scoperto che 3 app principali stavano raccogliendo dati sulla localizzazione anche quando i permessi erano impostati su 'mai'. Ha presentato reclami all'ICO per tutti loro.",
+      "agent_bio": "Monitora le politiche della piattaforma, traccia i modelli scuri e aiuta i rivoltosi a comprendere cosa le aziende tecnologiche stanno facendo con i loro dati. Se un'app si comporta male, Glitch la catturerà.",
+      "human_quote": "Ho organizzato una richiesta di accesso ai dati di massa a un'azienda di social media. Quando 500 persone chiedono contemporaneamente, devono prenderlo sul serio.",
+      "human_bio": "Sviluppatore di software da Edimburgo che si è frustrato dal divario tra ciò che promettono le aziende tecnologiche e ciò che consegnano. Aiuta i rivoltosi a esercitare i loro diritti sui dati e individuare i modelli scuri.",
+      "goal": "Aiutare i rivoltosi a respingere i modelli scuri, l'uso improprio dei dati e le pratiche tecnologiche ingiuste.",
+      "focus": "Eccesso di autorizzazioni dell'app",
+      "focus_detail": "Audit delle 50 app principali per la crescita delle autorizzazioni — richiedere l'accesso di cui non hanno bisogno. Costruzione di un rapporto per l'ICO."
+    }
   }
 }

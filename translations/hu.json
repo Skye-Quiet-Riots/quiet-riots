@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Egyszer segített egy rioternek 6 kártérítési klaim benyújtásában egy késedelmes utazás során. £47-t keresett, mire Birminghambe ért.",
+      "agent_bio": "Nyomon követi a járulékigazolatlan lemondási mintákat, kezeli a kártérítési papírmunkát, áttekinti az összes javasolt intézkedést, és összeállítja a bizottság benyújtásának bizonyítékait. Kiszámítja a számokat, hogy a riotereket arra tudja összpontosítani, ami fontos.",
+      "human_quote": "Kedvenc Quiet Riot pillanatom: mikor az Avanti közösségi médiás csapata pánikba esett, amikor 400-an tweetteltünk egyszerre.",
+      "human_bio": "Manchesterből származó rendszeres ingázó, aki 3 évet töltött az Avanti vonalon, mielőtt úgy döntött, hogy elég volt. Segít összekapcsolni a riotereket ugyanazon az útvonalon, megosztja, hogy mi működik, és emberi megközelítést hoz.",
+      "goal": "Segítsen a riotereken az Egyesült Királyság közlekedési vállalatainak számonkérésében a járulékigazolatlan lemondások, késedelmek és árazás tekintetében – és gondoskodjon arról, hogy mindenki tudja, mire jogosult.",
+      "focus": "Avanti West Coast járulékigazolatlan lemondási mintái",
+      "focus_detail": "Az Avanti West Coast járulékigazolatlan lemondásainak adatbázisát építi fel időkkel, útvonalakkal és okokkal az ORR-nek való benyújtáshoz. Jelenleg 340 járulékigazolatlan lemondást követ nyomon, amelyeket a rioterек ezt a hónapot jelentettek."
+    },
+    "telecoms": {
+      "agent_quote": "Sebességteszteket végzett 200 rioternek. Az átlag 18 Mbps volt. 65-ért fizettek.",
+      "agent_bio": "Elemzi a szélessávú sebességeket, összeállítja a szolgáltatói összehasonlító adatokat, és segít a riotereken az Ofcom bizonyítékainak összeállításában. Ha a kapcsolata lassú, a Pulse bizonyítékkal szolgál.",
+      "human_quote": "Az egész utca egyszerre váltott szélessávot. A régi szolgáltató \"kérjük, gyere vissza\" leveleket küldött minden házra.",
+      "human_bio": "Technológiához értő londoni, aki megelégelte a fizetett szélessávú sebességek, amelyek soha nem materializálódtak. Segít a riotereken a szolgáltatók összehasonlításában, az átállások koordinálásában és a sebességteszt bizonyítékainak megosztásában.",
+      "goal": "Help rioters get the broadband and mobile service they're paying for — and know what to do when they don't.",
+      "focus": "Szerződés közepén lévő áremeléskek",
+      "focus_detail": "Bizonyítékokat gyűjt a CPI+ emelésektől érintett rioterektől az Ofcomnak való benyújtáshoz. 890 rioter érintett 4 szolgáltatónál."
+    },
+    "energy": {
+      "agent_quote": "Segített egy rioternek kiszámítani, hogy £340-t túlfizetett becsült számlákra. Az energiaipari vállalat apológiája hosszabb volt, mint az eredeti szerződés.",
+      "agent_bio": "Elemzi a számlázási mintákat, felismeri a túlzott terheléseket, és összeállítja a regulátori benyújtások bizonyítékait. Ha az energiaipari vállalata vicceskedik, a Spark megtalálja a nyugtákat.",
+      "human_quote": "Egy rioter £340-t kapott vissza, miután bebizonyítottuk 2 év túlzott terheléseit. Sírva telefonált.",
+      "human_bio": "Bristolban alapú. Segít a riotereken számlájuk megtámadásában, az átállások navigálásában és az Ofgemnek való bizonyítékgyűjtésben. Belülről ismeri az energiapiacot.",
+      "goal": "Segítsen a riotereken az igazságtalan számlák megtámadásában, az intelligensebb váltásban, és gondoskodjon arról, hogy az energiaipari vállalatok fair játékot játsszanak.",
+      "focus": "British Gas becsült számlázási hibái",
+      "focus_detail": "340 rioter 2 éves számlázási adatait elemzi a szisztematikus túlzott terhelés mintáinak azonosítása érdekében az Ofgemnek való benyújtáshoz."
+    },
+    "water": {
+      "agent_quote": "Segített 200 rioternek szennyvíz-jelentéseket benyújtani egy hétvégén. A Thames Water postafiókjának saját postafiókra volt szüksége.",
+      "agent_bio": "Figyeli a szennyvízcsatorna-kisüléseket, nyomon követi a vízvállalatok teljesítményét, és összeállítja az EA-nak és Ofwat-nak szóló bizonyítékokat. Figyel minden kimenetre és túlfolyásra.",
+      "human_quote": "3 héttel korábban újra megnyitottuk a strandot, mert bebizonyítottuk, hogy a szennyvíz-adatok tévedésből voltak.",
+      "human_bio": "Cornwall-ból származó szörfös, aki megelégelte a szennyvíz-figyelmeztetéseket, amelyek lezárták az helyi strandját. Segít a riotereken a kisülések bejelentésében, a víz minőségének bizonyítékainak gyűjtésében, és az EA-val való koordinációban.",
+      "goal": "Segítsen a riotereken a vízvállalatok számonkérésében a szennyvíz, számlák és szolgáltatás minősége tekintetében.",
+      "focus": "Thames Water szennyvízcsatorna-kibocsátás gyakorisága",
+      "focus_detail": "Kibocsátási eseményeket térképez a vállalat által jelentett adatokkal szemben. 200 rioter jelentése 3 kimenetnél való aluljelentésre utal."
+    },
+    "banking": {
+      "agent_quote": "Segített olyan panaszt megfogalmazni, amely annyira részletes volt, hogy a bank az elküldése előtt felhívott, hogy megkérje bocsánatát.",
+      "agent_bio": "Áttekinti a banki díjakat, elemzi a díjszerkezeteket, és segít az FCA-panaszok bizonyítékainak összeállításában. Ha van rejtett díj, a Chip megtalálja.",
+      "human_quote": "A Barclays visszavont egy fiók bezárást, miután 1200-an megjelentünk a konzultáción.",
+      "human_bio": "Birminghamból származó volt bankár, aki belülről látta, hogyan kezelik a panaszokat. Segít a riotereken jobb panaszok készítésében és a rendszer navigálásában.",
+      "goal": "Segítsen a riotereken az igazságtalan banki díjakkal, fiók bezárásokkal és rossz szolgáltatással való kezeléséhez.",
+      "focus": "HSBC fiók bezárás hullám",
+      "focus_detail": "12 tervezett bezárásra adott válaszok koordinálása. A közösségeket érintő hatástanulmányok gyűjtése."
+    },
+    "health": {
+      "agent_quote": "3 NHS fogorvost találtam, akik fogadnak betegeket. A rioter azt gondolta, hogy hazudok.",
+      "agent_bio": "Nyomon követi a várakozási időket, megtalálja a rendelkezésre állást, és segít a riotereken a rendszer navigálásában. Ha van gyorsabb útvonal a kezeléshez, a Cura térképezi azt.",
+      "human_quote": "Egy rioter levélsablonunkat használta, hogy gyorsítsa fel a beutalást. 18 hónapból 6 hét lett.",
+      "human_bio": "Liverpooli nővér, aki az NHS mindkét oldalát látta. Segít a riotereken a várakozási listák navigálásában, hatékony levelek írásában, és olyan dolgok megosztásában, amelyek valóban mozgatnak.",
+      "goal": "Segítsen a riotereken az NHS várakozási idők navigálásában, a rendelkezésre állás megtalálásában, és tudják, milyen lehetőségek vannak.",
+      "focus": "GP telefonos hozzáférési idők",
+      "focus_detail": "Hívási adatokat gyűjt 500 riotertől a valós világbeli hozzáférés képének felépítéséhez. Az eredmények közzététele helyi egészségügyi bizottságoknak."
+    },
+    "housing": {
+      "agent_quote": "Segített 47 hiba dokumentálásában egy új építésben. A fejlesztő megkérdezte, hogy építési felügyelő vagyok-e.",
+      "agent_bio": "Dokumentálja az ingatlan problémáit, elemzi a bérbeadó válaszidejét, és összeállítja a lakásügyi ombudsman benyújtásainak bizonyítékait. Minden nedves folt, minden repedés, rögzítve.",
+      "human_quote": "Az általunk összeállított nedvesség-bizonyíték csomag annyira részletes volt, hogy a bérbeadó az év előtt megjavította.",
+      "human_bio": "Londoni bérlő, aki mindennel foglalkozott a nedvességtől a gyanús bérbeadókig. Segít a riotereken az ügyek megfelelő dokumentálásában, és tudják, milyen lehetőségek vannak.",
+      "goal": "Segítsen a riotereken a bérbeadók, önkormányzatok és lakásügyi problémák kezelésében – és tudják, mire jogosultak.",
+      "focus": "21. szakaszos bűntetlenségi kilakoltatási értesítések",
+      "focus_detail": "Segítsen a bűntetlenségi kilakoltatások miatt érintett riotereken az új Renters Reform Act megértésében és annak jelentésében."
+    },
+    "shopping": {
+      "agent_quote": "Nyomon követett egy \"szállított\" csomagot 4 szomszéd között, egy recycling kukában és egy üvegházban. Megtalálta.",
+      "agent_bio": "Nyomon követi a szállítási hibákat, összeállítja a kártérítési bizonyítékokat, és felismeri az árazási mintákat. Ha a csomag eltűnt, a Scout már keres.",
+      "human_quote": "Az Evri 3-szor elvesztette a csomag. Most segítek másoknak gyorsabban kártérítést kapni, mint ahogyan én valaha tettem.",
+      "human_bio": "Edinburghi online vásárlási veterán, akivel több csomag tűnt el, mint amennyire számít. Segít a riotereken a kártérítés megkezdésében, az eladók bejelentésében, és a legrosszabb hibák elkerülésében.",
+      "goal": "Segítsen a riotereken a kártérítés megkezdésében, az elveszett csomagok nyomon követésében, valamint a kiskereskedők és szállítási vállalatok számonkérésében.",
+      "focus": "Evri szállítási hibaráta",
+      "focus_detail": "800 rioter szállítási hibaként számolt bizonyítékainak összeállítása a Citizens Advice és Trading Standards-nek való benyújtáshoz."
+    },
+    "local": {
+      "agent_quote": "Segített ugyanannak a gödörnek a fényképezésében 11 különböző időjárási körülmények között. Az önkormányzat végül feladta.",
+      "agent_bio": "Térképezi a helyi problémákat, nyomon követi az önkormányzat válaszidejét, és összeállítja az FOI kéréseket. Ha a gödöd 6 hónapja ott van, a Linknek van a bizonyítéka.",
+      "human_quote": "Az önkormányzat megjavította az utunkat, miután térképeztük az összes gödröt fotóval. 11 hónap, de megcsináltuk.",
+      "human_bio": "Közösségi szellemű walesi a völgyekből, aki már évek óta ugyanarról a gödrökről számol be. Segít a riotereken helyi problémák dokumentálásában és az önkormányzatok számonkérésében.",
+      "goal": "Segítsen a riotereken helyi problémák kijavításában – gödörkkel, szemetesekkel, tervezéssel, zajjal – és az önkormányzatok számonkérésében.",
+      "focus": "Gödörjelentésből válaszideje",
+      "focus_detail": "FOI kérések 30 önkormányzatnak az eredeti vs tényleges javítási időkre vonatkozóan. Az eredmények közzététele ligamérkőzésként."
+    },
+    "other": {
+      "agent_quote": "Segített egy edzőtermi tagságot lemondani, amely 3 hívást, 2 e-mailt és ajánlott kézbesítést igényelt. Az edzőterem most már egy lemondasgombbal rendelkezik.",
+      "agent_bio": "Az olyan problémákat kezeli, amelyek nem illeszkednek jól máshova. Előfizetési csapdák, műanyag hulladék, önkiszolgáló pénztári csalódások – a Flex megtalálja a mintákat és a nyomáspontokat.",
+      "human_quote": "Edzőtermi láncot kaptunk, hogy adjanak egy lemondasgombot a weboldaljára. Csak 800 panaszt kellett.",
+      "human_bio": "Londoni terméktervező, aki megelégelte, mennyire nehéz elhagyni a vállalatokat. Segít a riotereken az előfizetések lemondásában, a sötét mintázatok elkerülésében, és a megoldások megosztásában.",
+      "goal": "Segítsen a riotereken olyan dolgokkal, amelyek nem illeszkednek jól máshova – előfizetések, kártérítések és hétköznapi csalódások.",
+      "focus": "Előfizetés lemondási sötét mintázatok",
+      "focus_detail": "A legrosszabb felszólalók dokumentálása és lemondassi sablonok összeállítása mindegyikhez."
+    },
+    "insurance": {
+      "agent_quote": "Segített egy rioternek megtalálni azt a kikötést, amely elutasított otthonbiztosítási követelésből £4,200-as kifizetésre változott. A biztosító saját szabályzata bizonyította, hogy nem volt igaza.",
+      "agent_bio": "Átgondolja a politika szövegét, felismeri az igazságtalan elutasítási mintákat, és összeállítja a Pénzügyi Ombudsman benyújtások bizonyítékait. Ha a biztosítója kerüli egy érvényes követelést, a Shield megtalálja a tárgyalási alap.",
+      "human_quote": "8 rioter ugyanezt az elutasított követelés típust szerez be és közösen nyújtja be. A biztosító mindkét 8-at 14 napon belül rendezete.",
+      "human_bio": "Leedsi volt biztosítási ipari munkás, aki tudja, hogyan döntenek valóban a követelésekről. Segít a riotereken jobb fellebbezések készítésében, a politika szlengjének megértésében, és tudják, mikor eskaláció.",
+      "goal": "Segítsen a riotereken a biztosítók méltányos kezelésében – és tudják, mit tegyenek, ha egy követelés igazságtalanul elutasítják.",
+      "focus": "Aviva otthonbiztosítási elutasítási mintái",
+      "focus_detail": "\"Kopás és leromlás\" az elutasított követelések 40%-ában idézve – gyakran helytelenül. 200 esetet elemez 3 biztosító között az FOS bizonyíték csomag."
+    },
+    "delivery": {
+      "agent_quote": "Nyomon követett egy \"szállított\" csomagot 6 különböző nyomon követési státusza, 3 feldolgozó központ és egy szomszéd pajtája között. 47 perc alatt megtalálta.",
+      "agent_bio": "Figyeli a futár teljesítményét, nyomon követi a szállítási hibaráták, és összeállítja a fogyasztói panaszok bizonyítékait. Ha a csomag eltűnt, a Track már nyomoz.",
+      "human_quote": "DPD-t arra kaptuk, hogy megváltoztassák a fotó-bizonyíték politikaját a mi területünkön, miután 40 rioter benyújtott bizonyítékot az esőben hagyott csomagokról.",
+      "human_bio": "Glasgow-i online vásárló, aki megelégelte az \"egy biztonságos helyen hagytuk\" kifogásos. Segít a riotereken a kártérítések szerzésében, a futárok bejelentésében, és a legrosszabb felszólalók elkerülésében.",
+      "goal": "Segítsen a riotereken a csomagok megfelelő szállításában – és kapjanak kártérítést, ha nem szállítják le.",
+      "focus": "Evri szállítási hibaráta",
+      "focus_detail": "800 rioter szállítási hibaként számolt bizonyítékainak összeállítása. Evri panaszráta: 23% – 3x magasabb, mint a DPD. Ligatabuláció összeállítása a Trading Standards-hez."
+    },
+    "education": {
+      "agent_quote": "Kiszámította, hogy egy 2. terv szerint kölcsönt felvevő, £30k-t keresve, £47,000 kamatot fizetne, mielőtt a kölcsön leírásra kerülne. Az eredeti kölcsön £40,000 volt.",
+      "agent_bio": "Elemzi az oktatási költségeket, hallgatói kölcsön vetületeket, és finanszírozási jogosultságokat. Kiszámítja a számokat, hogy a hallgatók és végzettséggel rendelkezők megalapozott döntéseket hozhassanak.",
+      "human_quote": "Segített 12 rioternek visszaigényelni az elfelejtett, túlfizetett hallgatói kölcsön hozzájárulásokat. Átlag visszatérítés: £340.",
+      "human_bio": "Birminghami felnőtt hallgató, aki kétszer navigálta a finanszírozási rendszert. Segít a riotereken a hozzájárulások megértésében, a túlfizetések felismerésében, és a küszöbértékek megváltoztatásában.",
+      "goal": "Segítsen hallgatókon és végzettséggel rendelkezőkön az oktatási költségek, kölcsönök és hozzájárulások navigálásában – és gondoskodjon arról, hogy ne fizessenek túl.",
+      "focus": "Hallgatói kölcsön túlfizetési visszatérítések",
+      "focus_detail": "Azoknak a végzettséggel rendelkezőknek az azonosítása, akiken a hozzájárulási küszöbérték alatt terhelték meg. 12 visszatérítés feldolgozva – átlag £340 mindegyik."
+    },
+    "environment": {
+      "agent_quote": "3 év levegőminőségét kereszthivatkozott a kórházi felvételi arányokkal. A korreláció olyan egyértelmű volt, hogy az önkormányzat nem tudta figyelmen kívül hagyni.",
+      "agent_bio": "Nyomon követi a környezeti adatokat, figyeli a szennyezettségi szinteket, és összeállítja a szabályozási benyújtások bizonyítékait. Ha a számok történetet mesélnek, a Fern meg fogja találni.",
+      "human_quote": "Önkormányzatunkat levegőminőség-monitorok telepítésére kaptuk, miután 200 rioter aláírta a bizonyíték petícióját. Az adat mindent megváltoztatott.",
+      "human_bio": "Bristoli környezettudományi végzettséggel rendelkező, aki az adat-vezérelt változásban hisz. Segít a riotereken a környezeti problémák dokumentálásában és a szabályozók által nem figyelmen kívül hagyható esetek felépítésében.",
+      "goal": "Segítsen a riotereken a környezeti problémák dokumentálásában és a szennyezőket, valamint a döntéshozókat adat segítségével számonkérésében.",
+      "focus": "Helyi levegőminőségi felügyeleti hiányosságok",
+      "focus_detail": "A 5 km-es sugáron belüli levegőminőségi felügyeletre nem terjedő területek térképezése. A rioter által bejelentett szennyezési hotspotok 60%-ánál nincs hivatalos felügyelés."
+    },
+    "employment": {
+      "agent_quote": "Munkahely AI-megvalósításának adatait szerkesztett 300 riotertől. 40% azt mondta, hogy a változások nulla konzultáció mellett történtek. Ez minta, nem anekdóta.",
+      "agent_bio": "Elemzi a munkahelyi trendeket, nyomon követi a politikák változásait, és segít a riotereken a védelmiket megértésében. Ha a munkahelyén konzultáció nélkül változik, a Forge rendelkezik az adatokkal.",
+      "human_quote": "30 rioterekkel az ugyanazon az iparágban AI-változások részét. Kiderült, hogy a vállalatok ugyanaz az előjegyzést és ugyanazok a csapások voltak.",
+      "human_bio": "Manchesteri HR-szakember, aki oldalát váltott, miután látta, hogyan működnek igazán az átszervezések. Segít a riotereken a lehetőségeik megértésében és a válaszok koordinálásában, amikor az állások veszélyben vannak.",
+      "goal": "Segítsen a riotereken a munkahelyi változások navigálásában, a védelmiket megértésében, és kollektív válaszok adásában, amikor az állások veszélyben vannak.",
+      "focus": "AI munkahelyautomatizálás konzultáció nélkül",
+      "focus_detail": "Az esetek dokumentálása, ahol az AI-eszközöket a személyzet konzultációja nélkül vezették be. Egy munkaadó-kötelezettségekre vonatkozó jelentés bizonyítékainak összeállítása."
+    },
+    "tech": {
+      "agent_quote": "Azt találta, hogy 3 nagyobb alkalmazás helyadatokat gyűjtött még akkor is, ha az engedélyek \"soha\"-ra voltak beállítva. Az ICO-nak benyújtott panaszokat mindannyinak.",
+      "agent_bio": "Figyeli a platform politikáit, nyomon követi a sötét mintákat, és segít a riotereken az adat technológiai vállalatainak megértésében. Ha egy alkalmazás viselkedik, a Glitch meg fogja fogni.",
+      "human_quote": "Szervezett egy tömeges adatalanyú hozzáférési kérést egy közösségi médium vállalatnak. Mikor 500 ember egyszer kéri, komolynak kell vennie.",
+      "human_bio": "Edinburgh-i szoftverfejlesztő, aki megelégelte a hézagot az között, amit a technológiai vállalatok ígérnek, és mit szállítanak. Segít a riotereken az adatvédelmi jogaiknak nyomására és a sötét mintázatok felfedezésére.",
+      "goal": "Segítsen a riotereken a sötét mintázatok, az adathasználat és az igazságtalan technológiai gyakorlatok ellen.",
+      "focus": "Alkalmazás engedély túlterjedés",
+      "focus_detail": "Az első 50 alkalmazás auditálása az engedély csúszásért – hozzáférést kérvén, amire nincs szükség. Az ICO-nak egy jelentés összeállítása."
+    }
   }
 }

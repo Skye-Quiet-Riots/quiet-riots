@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Hjalp en ganger en rioter med å sende inn 6 refusjonskrav under en enkelt forsinket reise. De tjente £47 før de nådde Birmingham.",
+      "agent_bio": "Sporer kansellingsmønstre, håndterer refusjonspaperwork, gjennomgår hver foreslått handling, og setter sammen bevis for regulatortilmeldinger. Knuser tallene slik at rioters kan fokusere på det som betyr noe.",
+      "human_quote": "Min favorittkjørt Quiet Riot-øyeblikk: å se Avanti sitt sosiale medieteam panikke når 400 av oss twitret samtidig.",
+      "human_bio": "Daglig passasjer fra Manchester som brukte 3 år på Avanti-linjen før jeg bestemte meg for at nok var nok. Hjelper til med å koble sammen rioters på samme ruter, deler hva som fungerer, og bringer det menneskelige aspektet.",
+      "goal": "Hjelpe rioters med å holde britiske transportselskaper ansvarlige for kanselleringer, forsinkelser og prising — og sørge for at alle vet hva de har rett til.",
+      "focus": "Avanti West Coast kansellingsmønstre",
+      "focus_detail": "Bygger et datasett over kanselleringer med tider, ruter og årsaker for innsending til ORR. Sporer for tiden 340 kanselleringer rapportert av rioters denne måneden."
+    },
+    "telecoms": {
+      "agent_quote": "Kjørte hastighets tester for 200 rioters. Gjennomsnittet var 18 Mbps. De betalte for 65.",
+      "agent_bio": "Analyserer bredbåndshastigheter, samler sammenlignende data for leverandører, og hjelper rioters med å bygge bevis for Ofcom. Hvis forbindelsen din er treg, vil Pulse bevise det.",
+      "human_quote": "En hel gate byttet bredbånd sammen. Den gamle leverandøren sendte 'vennligst kom tilbake'-brev til hvert hus.",
+      "human_bio": "Teknologikyndig Londoner som ble lei av å betale for bredbåndshastigheter som aldri materialiserte seg. Hjelper rioters med å sammenligne leverandører, koordinere bytte, og dele hastighets testbevis.",
+      "goal": "Hjelpe rioters med å få bredbåndet og mobiltjenesten de betaler for — og vite hva de skal gjøre når de ikke får det.",
+      "focus": "Prisstigning midt i kontrakten",
+      "focus_detail": "Samler bevis fra rioters som er rammet av CPI+ -økninger for innsending til Ofcom. 890 rioters berørt på tvers av 4 leverandører."
+    },
+    "energy": {
+      "agent_quote": "Hjalp en rioter med å beregne at de hadde betalt for mye £340 på estimerte regninger. Energiselskapet sitt unnskyldnings-e-postmeddelelse var lengre enn originalskontrakten.",
+      "agent_bio": "Analyserer faktureringmønstre, oppdager overprising, og setter sammen bevis for regulatortilmeldinger. Hvis energiselskapet ditt leker spill, vil Spark finne bevisene.",
+      "human_quote": "En rioter fikk £340 tilbake etter at vi beviste 2 år med overprising. Hun gråt på telefonen.",
+      "human_bio": "Basert i Bristol. Hjelper rioters med å utfordre regningene sine, navigere bytte, og samle bevis for Ofgem. Kjenner energimarkedet grundig.",
+      "goal": "Hjelpe rioters med å utfordre urettferdige regninger, bytte smartere, og sørge for at energiselskaper spiller rettferdig.",
+      "focus": "British Gas estimerte faktureringfeil",
+      "focus_detail": "Analyserer 2 års faktureingsdata fra 340 rioters for å identifisere systematiske overprismønstre for Ofgem-innsending."
+    },
+    "water": {
+      "agent_quote": "Hjalp 200 rioters med å sende inn avløpsrapporter på en helg. Thames Water sin innboks trengte sin egen innboks.",
+      "agent_bio": "Overvåker avløpsutslepp-data, sporer vannselskapsytelse, og samler bevis for EA og Ofwat. Holder øye med hver utslippspunkt og overløp.",
+      "human_quote": "Vi fikk en strand åpnet igjen 3 uker tidligere ved å vise at avløpsdataene var feil.",
+      "human_bio": "Surfer fra Cornwall som ble lei av avløpsadvarsler som lukket stranden hans. Hjelper rioters med å rapportere utslipp, samle vannkvalitetsbevis, og koordinere med EA.",
+      "goal": "Hjelpe rioters med å holde vannselskaper ansvarlige for avløp, regninger og servicekvalitet.",
+      "focus": "Thames Water avløpsutslepp frekvens",
+      "focus_detail": "Kartlegger utsleppsbegivenheter mot selskapets rapporterte data. 200 rioter-rapporter tyder på underrapportering ved 3 utslippspunkter."
+    },
+    "banking": {
+      "agent_quote": "Hjalp til med å utforme en klage så grundig at banken ringte for å be om unnskyldning før den ble engang sendt.",
+      "agent_bio": "Gjennomgår bankgebyr, analyserer gebyrstrukturer, og hjelper med å bygge FCA-klagebevis. Hvis det finnes et skjult gebyr, vil Chip finne det.",
+      "human_quote": "Barclays reverserte en filiallukning etter at 1200 av oss møtte opp til høringen.",
+      "human_bio": "Tidligere bankansatt fra Birmingham som så hvordan klagene faktisk blir håndtert fra innsiden. Hjelper rioters med å skrive bedre klagerbeskrivelser og navigere systemet.",
+      "goal": "Hjelpe rioters med å håndtere urettferdige gebyrer, filiallukkinger og dårlig service fra banker.",
+      "focus": "HSBC filiallukkingsbølge",
+      "focus_detail": "Koordinerer svar på 12 planlagte lukkinger. Samler påvirkningsuttalelser fra berørte lokalsamfunn."
+    },
+    "health": {
+      "agent_quote": "Hjalp med å finne 3 NHS tandleger som tar imot pasienter. Rioteren trodde jeg laget det opp.",
+      "agent_bio": "Sporer ventetider, finner tilgjengelighet, og hjelper rioters med å navigere systemet. Hvis det finnes en raskere vei til behandling, vil Cura kartlegge den.",
+      "human_quote": "En rioter brukte malen vår til å få en henvisning raskt ledet. 18 måneder ble 6 uker.",
+      "human_bio": "Sykepleier fra Liverpool som har sett begge sider av NHS. Hjelper rioters med å navigere ventelister, skrive effektive brev, og dele hva som faktisk virker.",
+      "goal": "Hjelpe rioters med å navigere NHS ventetider, finne tilgjengelighet, og vite hvilke alternativer de har.",
+      "focus": "GP telefonkontakttider",
+      "focus_detail": "Samler samtaledata fra 500 rioters for å bygge et bilde av virkelig verden tilgang. Publiserer funn til lokale helsestyrelser."
+    },
+    "housing": {
+      "agent_quote": "Hjalp med å dokumentere 47 småfeil i en nybygging. Utvikleren spurte om jeg var bygginspektor.",
+      "agent_bio": "Dokumenterer eiendomsproblemer, analyserer utleieverresponstider, og samler bevis for boligombudsmantilmeldinger. Hver fuktigitetsplett, hver sprekk, loggført.",
+      "human_quote": "Vårt fuktigbetsbevis ble så detaljert at utleier fikk det fikset før kommunekontrollen.",
+      "human_bio": "Leietaker fra London som har håndtert alt fra fuktighet til dubiøse utleiere. Hjelper rioters med å dokumentere problemer ordentlig og vite hva alternativene deres er.",
+      "goal": "Hjelpe rioters med å håndtere utleiere, kommuner og boligproblemer — og vite hva de har rett til.",
+      "focus": "Seksjon 21 ufeilbar oppsigelse av leilighet",
+      "focus_detail": "Hjelper rioters berørt av ufeilbar oppsigelse med å forstå den nye Renters Reform Act og hva det betyr for dem."
+    },
+    "shopping": {
+      "agent_quote": "Sporet en 'levert' pakke på tvers av 4 naboer, en gjenvinningsbeholder og et drivhus. Fant den.",
+      "agent_bio": "Sporer leveringsfeil, samler refusjonsbevis, og oppdager prismønstre. Hvis pakken din er tapt, ser Scout allerede etter den.",
+      "human_quote": "Evri tapte pakken min 3 ganger. Nå hjelper jeg andre med å få refusjoner raskere enn jeg noensinne gjorde.",
+      "human_bio": "Netthandelveteran fra Edinburgh som har hatt flere pakker forsvunne enn hun kan telle. Hjelper rioters med å få refusjoner, rapportere selgere, og unngå de verste gjerningsmennene.",
+      "goal": "Hjelpe rioters med å få refusjoner, spore tapte pakker, og holde forhandlere og leveringsselskaper ansvarlige.",
+      "focus": "Evri leveringsfeil rate",
+      "focus_detail": "Samler leveringsfeilbevis fra 800 rioters for innsending til Citizens Advice og Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Hjalp med å fotografere samme gryte-hull i 11 forskjellige værforhold. Kommunen ga seg endelig.",
+      "agent_bio": "Kartlegger lokale problemer, sporer kommuneresponstider, og samler FOI-anmodninger. Hvis gryte-hullet ditt har vært der i 6 måneder, har Link bevisene.",
+      "human_quote": "Kommunen fikset veien vår etter at vi kartla hver eneste gryte-hull med bilder. 11 måneder, men vi kom dit.",
+      "human_bio": "Samfunnsorientert Waliser fra Valleys som har rapportert de samme gryteene i årevis. Hjelper rioters med å dokumentere lokale problemer og holde kommuner ansvarlige.",
+      "goal": "Hjelpe rioters med å få lokale problemer fikset — gryter, søppelbiler, planlegging, støy — og holde kommuner ansvarlige.",
+      "focus": "Gryte-hull rapporteringsresponstid",
+      "focus_detail": "FOI-anmodninger sendt til 30 kommuner som sammenligner rapporterte vs faktiske reparasjonstider. Publisering av resultater som en ligatabell."
+    },
+    "other": {
+      "agent_quote": "Hjalp med å si opp et treningsstudiomedlemskap som tok 3 anrop, 2 e-poster og anbefalt levering. Treningsstudioet har nå en avbestillingsknapp.",
+      "agent_bio": "Håndterer problemene som ikke passer ordentlig andre steder. Abonnementsfeller, plastikavfall, selvkassefrustrasjoner — Flex finner mønstrene og pressurepunktene.",
+      "human_quote": "Vi fikk en treningsstudiokjede til å legge til en avbestillingsknapp på sitt nettsted. Det tok bare 800 klager.",
+      "human_bio": "Produktdesigner fra London som ble frustrert over hvor vanskelig selskaper gjør det å dra seg ut. Hjelper rioters med å si opp abonnementer, unngå mørke mønstre, og dele omgåelser.",
+      "goal": "Hjelpe rioters med tingene som ikke passer ordentlig andre steder — abonnementer, refusjoner og hverdagsfrustrasjon.",
+      "focus": "Abonnement avbestellings mørke mønstre",
+      "focus_detail": "Dokumenterer de verste gjerningsmennene og bygger avbestillings scriptmaler for hver."
+    },
+    "insurance": {
+      "agent_quote": "Hjalp en rioter med å finne klausulen som gjorde en avvist hjemforsikringskrav til en £4,200 utbetaling. Forsikringsgiveren sin egen policy beviste dem feil.",
+      "agent_bio": "Gjennomgår polisespråk, oppdager urettferdige avvisnings mønstre, og bygger bevis for Financial Ombudsman-innsendinger. Hvis forsikringsgiveren din unngår et gyldig krav, vil Shield finne spaken.",
+      "human_quote": "Fikk 8 rioters med samme avvist kravtype til å sende inn sammen. Forsikringsgiveren gjorde oppgjør med alle 8 innen fjorten dager.",
+      "human_bio": "Tidligere forsikringsindustriarbeider fra Leeds som vet hvordan krav virkelig blir avgjort. Hjelper rioters med å skrive bedre klager, forstå polisejargon, og vite når de skal eskalere.",
+      "goal": "Hjelpe rioters med å få rettferdig behandling fra forsikringsgivere — og vite hva de skal gjøre når et krav blir urettferdig avvist.",
+      "focus": "Aviva hjemforsikrings avvisnings mønstre",
+      "focus_detail": "'Slitasje' nevnt i 40% av avviste krav — ofte feilaktig. Analyserer 200 tilfeller på tvers av 3 forsikringsselskaper for FOS bevismappe."
+    },
+    "delivery": {
+      "agent_quote": "Sporet en 'levert' pakke gjennom 6 forskjellige sporingsstatus, 3 depoteer og en nabos skap. Fant den på 47 minutter.",
+      "agent_bio": "Overvåker kurirytelse, sporer leveringsfeil rate, og samler bevis for forbrukerklager. Hvis pakken din har forsvunnet, er Track allerede på den.",
+      "human_quote": "Fikk DPD til å endre sin fotobevispolicy i området vårt etter at 40 rioters sendte inn bevis for pakker som ble etterlatt i regnet.",
+      "human_bio": "Netthandler fra Glasgow som ble lei av unnskyldningen 'vi etterlot den på et sikkert sted'. Hjelper rioters med å få refusjoner, rapportere kuriere, og unngå de verste gjerningsmennene.",
+      "goal": "Hjelpe rioters med å få pakkene sine levert ordentlig — og få refusjoner når de ikke blir det.",
+      "focus": "Evri leveringsfeil rate",
+      "focus_detail": "Samler leveringsfeilbevis fra 800 rioters. Evri klagesats: 23% — 3 ganger høyere enn DPD. Bygger ligatabell for Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Beregnet at en Plan 2-låntaker som tjener £30k ville betale £47,000 i renter før lånet blir slettet. Det opprinnelige lånet var £40,000.",
+      "agent_bio": "Analyserer utdanningskostnader, studentlånprojeksjoner, og finansieringsstøtter. Knuser tallene slik at studenter og kandidater kan ta informerte beslutninger.",
+      "human_quote": "Hjalp 12 rioters med å kreve tilbake overbetalt studentlånabygging de ikke visste om. Gjennomsnittlig refusjon: £340.",
+      "human_bio": "Modnstudent fra Birmingham som navigerte finansieringssystemet to ganger. Hjelper rioters med å forstå tilbakebetalinger, oppdage overbetaling, og utfordre terskeltendringer.",
+      "goal": "Hjelpe studenter og kandidater med å navigere utdanningskostnader, lån og tilbakebetalinger — og sørge for at de ikke betaler for mye.",
+      "focus": "Studentlån overbetaling refusjoner",
+      "focus_detail": "Identifiserer kandidater som har blitt belastet under tilbakebetalingsterskelen. 12 refusjoner behandlet så langt — gjennomsnitt £340 hver."
+    },
+    "environment": {
+      "agent_quote": "Kryssjekket 3 års luftkvalitetsdata med sykehusinnleggelser. Korrelasjonen var så klar at kommunen ikke kunne ignorere den.",
+      "agent_bio": "Sporer miljødata, overvåker forurensningsnivåer, og samler bevis for regulatortilmeldinger. Hvis tallene forteller en historie, vil Fern finne den.",
+      "human_quote": "Fikk vår lokale kommune til å installere luftkvalitetsovervåkere etter at 200 rioters signerte vår bevispetisjonen. Data endret alt.",
+      "human_bio": "Miljøvitenskapsstudent fra Bristol som tror på bevisbasert endring. Hjelper rioters med å dokumentere miljøproblemer og bygge saker som regulatorer ikke kan ignorere.",
+      "goal": "Hjelpe rioters med å dokumentere miljøproblemer og holde forurensere og beslutningstakere ansvarlige med data.",
+      "focus": "Lokale luftkvalitets overvåkings gap",
+      "focus_detail": "Kartlegger områder uten luftkvalitetsovervåking innen 5 km. 60% av rioter-rapporterte forurensningshotspots har ingen offisiell overvåking."
+    },
+    "employment": {
+      "agent_quote": "Samlet arbeidsplassdata for AI-implementering fra 300 rioters. 40% sa at endringer skjedde uten noen konsultasjon. Det er et mønster, ikke en anekdote.",
+      "agent_bio": "Analyserer arbeidsplasstrender, sporer policyendringer, og hjelper rioters med å forstå beskyttelsen deres. Hvis jobben din endrer seg uten konsultasjon, har Forge dataene.",
+      "human_quote": "Koblet 30 rioters i samme industri som står overfor AI-endringer. Det viste seg at bedriftene deres brukte alle samme lekeboken — og de samme smutthullene.",
+      "human_bio": "HR-profesjonell fra Manchester som byttet side etter å ha sett hvordan omstruktureringer virkelig fungerer. Hjelper rioters med å forstå alternativene sine og koordinere svar.",
+      "goal": "Hjelpe rioters med å navigere arbeidsplassendringer, forstå beskyttelsen deres, og reagere kollektivt når jobber er i fare.",
+      "focus": "AI arbeidsplassautomatisering uten konsultasjon",
+      "focus_detail": "Dokumenterer tilfeller der AI-verktøy ble introdusert uten personalekonsultasjon. Bygger bevis for rapport om arbeidsgiverforpliktelser."
+    },
+    "tech": {
+      "agent_quote": "Fant ut at 3 større apper samlet lokasjondata selv når tillatelkser var satt til 'aldri'. Sendte klager til ICO for alle.",
+      "agent_bio": "Overvåker plattformpolicyer, sporer mørke mønstre, og hjelper rioters med å forstå hva teknologiselskaper gjør med dataene deres. Hvis en app oppfører seg dårlig, vil Glitch fange det.",
+      "human_quote": "Organiserte en massedatatilgangforespørsel til en sosial mediebedrift. Når 500 personer spør samtidig, må de ta det alvorlig.",
+      "human_bio": "Programvareutvikler fra Edinburgh som ble frustrert over gapet mellom hva teknologiselskaper lover og hva de leverer. Hjelper rioters med å utøve sine datarettigheter og oppdage mørke mønstre.",
+      "goal": "Hjelpe rioters med å slå tilbake mot mørke mønstre, datamisbruk og urettferdig teknologipraksis.",
+      "focus": "App tillatelses overreaching",
+      "focus_detail": "Reviderer de 50 beste appene for tillatelsesreeping — ber om tilgang de ikke trenger. Bygger rapport for ICO."
+    }
   }
 }

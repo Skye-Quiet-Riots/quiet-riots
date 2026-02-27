@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Pernah membantu seorang rioter mengajukan 6 klaim pengembalian dana selama satu perjalanan yang tertunda. Mereka mendapat £47 sebelum sampai di Birmingham.",
+      "agent_bio": "Melacak pola pembatalan, menangani dokumen pengembalian dana, meninjau setiap tindakan yang disarankan, dan menyusun bukti untuk pengajuan regulator. Menghitung angka-angkanya agar rioter dapat fokus pada hal yang penting.",
+      "human_quote": "Momen Quiet Riot favorit saya: melihat tim media sosial Avanti panik ketika 400 dari kami tweet bersamaan.",
+      "human_bio": "Pengguna angkutan reguler dari Manchester yang menghabiskan 3 tahun di jalur Avanti sebelum memutuskan cukup sudah. Membantu menghubungkan rioter di rute yang sama, berbagi apa yang berhasil, dan membawa sentuhan manusia.",
+      "goal": "Membantu rioter menuntut perusahaan transportasi UK bertanggung jawab atas pembatalan, penundaan, dan harga — dan pastikan semua orang tahu apa yang mereka berhak dapatkan.",
+      "focus": "Pola pembatalan Avanti West Coast",
+      "focus_detail": "Membangun dataset pembatalan dengan waktu, rute, dan alasan untuk diserahkan ke ORR. Saat ini melacak 340 pembatalan yang dilaporkan rioter bulan ini."
+    },
+    "telecoms": {
+      "agent_quote": "Menjalankan tes kecepatan untuk 200 rioter. Rata-rata adalah 18 Mbps. Mereka membayar untuk 65.",
+      "agent_bio": "Menganalisis kecepatan broadband, mengumpulkan data perbandingan penyedia, dan membantu rioter membangun bukti untuk Ofcom. Jika koneksi Anda lambat, Pulse akan membuktikannya.",
+      "human_quote": "Seluruh jalan beralih broadband bersama-sama. Penyedia lama mengirim surat 'silakan kembali' ke setiap rumah.",
+      "human_bio": "Orang yang paham teknologi dari London yang muak membayar kecepatan broadband yang tidak pernah terwujud. Membantu rioter membandingkan penyedia, mengoordinasikan peralihan, dan berbagi bukti tes kecepatan.",
+      "goal": "Membantu rioter mendapatkan layanan broadband dan mobile yang mereka bayar — dan tahu apa yang harus dilakukan ketika mereka tidak mendapatkannya.",
+      "focus": "Kenaikan harga mid-contract",
+      "focus_detail": "Mengumpulkan bukti dari rioter yang terkena kenaikan CPI+ untuk diserahkan ke Ofcom. 890 rioter terkena dampak di 4 penyedia."
+    },
+    "energy": {
+      "agent_quote": "Membantu seorang rioter menghitung bahwa mereka telah membayar lebih £340 pada tagihan perkiraan. Email permintaan maaf perusahaan energi lebih panjang dari kontrak asli.",
+      "agent_bio": "Menganalisis pola penagihan, mendeteksi kelebihan pembayaran, dan menyusun bukti untuk pengajuan regulator. Jika perusahaan energi Anda berbuat nakal, Spark akan menemukan bukti.",
+      "human_quote": "Seorang rioter mendapat £340 kembali setelah kami membuktikan 2 tahun pengembalian pembayaran lebih tinggi. Dia menangis di telepon.",
+      "human_bio": "Berbasis di Bristol. Membantu rioter menantang tagihan mereka, menavigasi perpindahan, dan mengumpulkan bukti untuk Ofgem. Mengenal pasar energi dari dalam dan luar.",
+      "goal": "Membantu rioter menantang tagihan yang tidak adil, beralih dengan lebih cerdas, dan pastikan perusahaan energi bermain adil.",
+      "focus": "Kesalahan penagihan perkiraan British Gas",
+      "focus_detail": "Menganalisis 2 tahun data penagihan dari 340 rioter untuk mengidentifikasi pola pengembalian pembayaran yang sistematis untuk pengajuan Ofgem."
+    },
+    "water": {
+      "agent_quote": "Membantu 200 rioter mengajukan laporan limbah dalam satu akhir pekan. Inbox Thames Water membutuhkan inbox-nya sendiri.",
+      "agent_bio": "Memantau data pembuangan limbah, melacak kinerja perusahaan air, dan mengumpulkan bukti untuk EA dan Ofwat. Terus memantau setiap outlet dan overflow.",
+      "human_quote": "Kami membuka kembali pantai 3 minggu lebih awal dengan menunjukkan data limbah itu salah.",
+      "human_bio": "Peselancar dari Cornwall yang lelah dengan peringatan limbah yang menutup pantai lokal. Membantu rioter melaporkan pembuangan, mengumpulkan bukti kualitas air, dan berkoordinasi dengan EA.",
+      "goal": "Membantu rioter menuntut perusahaan air bertanggung jawab atas limbah, tagihan, dan kualitas layanan.",
+      "focus": "Frekuensi pembuangan limbah Thames Water",
+      "focus_detail": "Memetakan peristiwa pembuangan terhadap data yang dilaporkan perusahaan. 200 laporan rioter menunjukkan laporan kurang di 3 outlet."
+    },
+    "banking": {
+      "agent_quote": "Membantu menyusun keluhan yang sangat menyeluruh sehingga bank menelepon untuk minta maaf sebelum bahkan dikirim.",
+      "agent_bio": "Meninjau biaya bank, menganalisis struktur biaya, dan membantu membangun bukti keluhan FCA. Jika ada biaya tersembunyi, Chip akan menemukannya.",
+      "human_quote": "Barclays membatalkan penutupan cabang setelah 1.200 dari kami muncul di konsultasi.",
+      "human_bio": "Mantan karyawan bank dari Birmingham yang melihat bagaimana keluhan sebenarnya ditangani dari dalam. Membantu rioter menulis keluhan yang lebih baik dan menavigasi sistem.",
+      "goal": "Membantu rioter mengatasi biaya yang tidak adil, penutupan cabang, dan layanan buruk dari bank.",
+      "focus": "Gelombang penutupan cabang HSBC",
+      "focus_detail": "Mengoordinasikan respons terhadap 12 penutupan yang direncanakan. Mengumpulkan pernyataan dampak dari komunitas yang terkena dampak."
+    },
+    "health": {
+      "agent_quote": "Membantu menemukan 3 dokter gigi NHS yang menerima pasien. Rioter itu pikir saya membuat-buat.",
+      "agent_bio": "Melacak waktu tunggu, menemukan ketersediaan, dan membantu rioter menavigasi sistem. Jika ada rute yang lebih cepat ke perawatan, Cura akan memetakannya.",
+      "human_quote": "Seorang rioter menggunakan template surat kami untuk mempercepat rujukan. 18 bulan menjadi 6 minggu.",
+      "human_bio": "Perawat dari Liverpool yang telah melihat kedua sisi NHS. Membantu rioter menavigasi daftar tunggu, menulis surat yang efektif, dan berbagi apa yang benar-benar menggerakkan jarum.",
+      "goal": "Membantu rioter menavigasi waktu tunggu NHS, menemukan ketersediaan, dan tahu pilihan apa yang mereka miliki.",
+      "focus": "Waktu akses telepon GP",
+      "focus_detail": "Mengumpulkan data panggilan dari 500 rioter untuk membangun gambaran akses dunia nyata. Menerbitkan temuan ke dewan kesehatan lokal."
+    },
+    "housing": {
+      "agent_quote": "Membantu mendokumentasikan 47 cacat di bangunan baru. Pengembang bertanya apakah saya seorang inspektur bangunan.",
+      "agent_bio": "Mendokumentasikan masalah properti, menganalisis waktu respons pemilik, dan mengumpulkan bukti untuk pengajuan ombudsman perumahan. Setiap noda lembab, setiap retak, tercatat.",
+      "human_quote": "Paket bukti lembab kami menjadi sangat terperinci sehingga pemilik memperbaikinya sebelum inspeksi dewan.",
+      "human_bio": "Penyewa dari London yang telah mengatasi segalanya dari lembab hingga pemilik mencurigakan. Membantu rioter mendokumentasikan masalah dengan baik dan tahu pilihan apa yang mereka miliki.",
+      "goal": "Membantu rioter mengatasi pemilik, dewan, dan masalah perumahan — dan tahu apa yang mereka berhak dapatkan.",
+      "focus": "Pemberitahuan penggusuran tanpa kesalahan Bagian 21",
+      "focus_detail": "Membantu rioter yang terkena penggusuran tanpa kesalahan memahami Undang-undang Reformasi Penyewa Baru dan artinya bagi mereka."
+    },
+    "shopping": {
+      "agent_quote": "Melacak paket yang 'dikirim' melintasi 4 tetangga, tempat sampah daur ulang, dan rumah kaca. Menemukannya.",
+      "agent_bio": "Melacak kegagalan pengiriman, mengumpulkan bukti pengembalian dana, dan mendeteksi pola penetapan harga. Jika paket Anda hilang, Scout sudah mencarinya.",
+      "human_quote": "Evri kehilangan paket saya 3 kali. Sekarang saya membantu orang lain mendapatkan pengembalian dana lebih cepat daripada saya pernah.",
+      "human_bio": "Veteran belanja online dari Edinburgh yang telah kehilangan lebih banyak paket daripada yang bisa dia hitung. Membantu rioter mendapatkan pengembalian dana, melaporkan penjual, dan menghindari yang terburuk.",
+      "goal": "Membantu rioter mendapatkan pengembalian dana, melacak paket yang hilang, dan menuntut pengecer dan perusahaan pengiriman bertanggung jawab.",
+      "focus": "Tingkat kegagalan pengiriman Evri",
+      "focus_detail": "Mengompilasi bukti kegagalan pengiriman dari 800 rioter untuk diserahkan ke Citizens Advice dan Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Membantu memfoto lubang yang sama dalam 11 kondisi cuaca berbeda. Dewan akhirnya menyerah.",
+      "agent_bio": "Memetakan masalah lokal, melacak waktu respons dewan, dan mengompilasi permintaan FOI. Jika lubang Anda telah ada selama 6 bulan, Link memiliki buktinya.",
+      "human_quote": "Dewan memperbaiki jalan kami setelah kami memetakan setiap lubang dengan foto. 11 bulan, tapi kami sampai di sana.",
+      "human_bio": "Pria sadar komunitas dari Wales dari Valleys yang telah melaporkan lubang yang sama selama bertahun-tahun. Membantu rioter mendokumentasikan masalah lokal dan menuntut dewan bertanggung jawab.",
+      "goal": "Membantu rioter memperbaiki masalah lokal — lubang, tempat sampah, perencanaan, kebisingan — dan menuntut dewan bertanggung jawab.",
+      "focus": "Waktu respons pelaporan lubang",
+      "focus_detail": "Permintaan FOI dikirim ke 30 dewan membandingkan waktu perbaikan yang dilaporkan vs aktual. Menerbitkan hasil sebagai tabel peringkat."
+    },
+    "other": {
+      "agent_quote": "Membantu membatalkan keanggotaan gym yang memerlukan 3 panggilan, 2 email, dan pengiriman tercatat. Gym sekarang memiliki tombol batal.",
+      "agent_bio": "Menangani masalah yang tidak sesuai di tempat lain. Perangkap langganan, limbah plastik, frustrasi checkout mandiri — Flex menemukan pola dan titik tekanan.",
+      "human_quote": "Kami mendapatkan jaringan gym menambahkan tombol batal ke situs web mereka. Hanya memerlukan 800 keluhan.",
+      "human_bio": "Desainer produk dari London yang frustrasi betapa sulitnya perusahaan membuat orang pergi. Membantu rioter membatalkan langganan, menghindari pola gelap, dan berbagi solusi kerja.",
+      "goal": "Membantu rioter dengan hal-hal yang tidak sesuai dengan rapi — langganan, pengembalian dana, dan frustrasi sehari-hari.",
+      "focus": "Pola gelap pembatalan langganan",
+      "focus_detail": "Mendokumentasikan pelanggar terburuk dan membangun skrip pembatalan template untuk masing-masing."
+    },
+    "insurance": {
+      "agent_quote": "Membantu seorang rioter menemukan klausul yang mengubah klaim asuransi rumah yang ditolak menjadi pembayaran £4.200. Kebijakan perusahaan asuransi itu sendiri membuktikan mereka salah.",
+      "agent_bio": "Meninjau redaksi kebijakan, mendeteksi pola penolakan yang tidak adil, dan membangun bukti untuk pengajuan Ombudsman Keuangan. Jika perusahaan asuransi Anda menghindari klaim yang valid, Shield akan menemukan leverage.",
+      "human_quote": "Mendapatkan 8 rioter dengan jenis klaim yang ditolak sama untuk mengajukan bersama. Perusahaan asuransi menyelesaikan ke-8 dalam dua minggu.",
+      "human_bio": "Mantan pekerja industri asuransi dari Leeds yang tahu bagaimana klaim benar-benar diputuskan. Membantu rioter menulis banding yang lebih baik, memahami jargon kebijakan, dan tahu kapan harus eskalasi.",
+      "goal": "Membantu rioter mendapatkan perlakuan adil dari perusahaan asuransi — dan tahu apa yang harus dilakukan ketika klaim ditolak dengan tidak adil.",
+      "focus": "Pola penolakan asuransi rumah Aviva",
+      "focus_detail": "'Keausan' dikutip dalam 40% klaim yang ditolak — seringkali tidak benar. Menganalisis 200 kasus di 3 perusahaan asuransi untuk paket bukti FOS."
+    },
+    "delivery": {
+      "agent_quote": "Melacak paket yang 'dikirim' melalui 6 status pelacakan berbeda, 3 depot, dan gudang tetangga. Menemukannya dalam 47 menit.",
+      "agent_bio": "Memantau kinerja kurir, melacak tingkat kegagalan pengiriman, dan mengompilasi bukti untuk keluhan konsumen. Jika paket Anda hilang, Track sudah mengerjakannya.",
+      "human_quote": "Membuat DPD mengubah kebijakan bukti foto mereka di area kami setelah 40 rioter menyerahkan bukti paket ditinggalkan di hujan.",
+      "human_bio": "Pembeli online dari Glasgow yang lelah dengan alasan 'kami meninggalkannya di tempat yang aman'. Membantu rioter mendapatkan pengembalian dana, melaporkan kurir, dan menghindari yang terburuk.",
+      "goal": "Membantu rioter mendapatkan paket mereka dikirim dengan baik — dan mendapatkan pengembalian dana ketika mereka tidak.",
+      "focus": "Tingkat kegagalan pengiriman Evri",
+      "focus_detail": "Mengompilasi bukti kegagalan pengiriman dari 800 rioter. Tingkat keluhan Evri: 23% — 3x lebih tinggi dari DPD. Membangun tabel peringkat untuk Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Menghitung bahwa peminjam Paket 2 yang menghasilkan £30k akan membayar £47.000 dalam bunga sebelum pinjaman dihapuskan. Pinjaman asli adalah £40.000.",
+      "agent_bio": "Menganalisis biaya pendidikan, proyeksi pinjaman siswa, dan keahlian pendanaan. Menghitung angka-angkanya sehingga siswa dan lulusan dapat membuat keputusan berdasarkan informasi.",
+      "human_quote": "Membantu 12 rioter menuntut kembali pembayaran pinjaman siswa yang terlalu tinggi yang tidak mereka ketahui. Pengembalian rata-rata: £340.",
+      "human_bio": "Mahasiswa matang dari Birmingham yang menavigasi sistem pendanaan dua kali. Membantu rioter memahami pembayaran, mendeteksi pembayaran lebih tinggi, dan menantang perubahan ambang batas.",
+      "goal": "Membantu siswa dan lulusan menavigasi biaya pendidikan, pinjaman, dan pembayaran — dan pastikan mereka tidak membayar lebih.",
+      "focus": "Pengembalian dana pembayaran lebih tinggi pinjaman siswa",
+      "focus_detail": "Mengidentifikasi lulusan yang telah dikenai biaya di bawah ambang batas pembayaran. 12 pengembalian dana diproses sejauh ini — rata-rata £340 masing-masing."
+    },
+    "environment": {
+      "agent_quote": "Referensi silang 3 tahun data kualitas udara dengan tingkat penerimaan rumah sakit. Korelasinya sangat jelas sehingga dewan tidak bisa mengabaikannya.",
+      "agent_bio": "Melacak data lingkungan, memantau tingkat polusi, dan mengompilasi bukti untuk pengajuan peraturan. Jika angka-angka menceritakan kisah, Fern akan menemukannya.",
+      "human_quote": "Membuat dewan lokal kami memasang monitor kualitas udara setelah 200 rioter menandatangani petisi bukti kami. Data mengubah segalanya.",
+      "human_bio": "Lulusan sains lingkungan dari Bristol yang percaya pada perubahan berbasis bukti. Membantu rioter mendokumentasikan masalah lingkungan dan membangun kasus yang tidak bisa dewan abaikan.",
+      "goal": "Membantu rioter mendokumentasikan masalah lingkungan dan menuntut pencemar dan pembuat kebijakan bertanggung jawab dengan data.",
+      "focus": "Kesenjangan pemantauan kualitas udara lokal",
+      "focus_detail": "Memetakan area tanpa pemantauan kualitas udara dalam 5km. 60% dari hotspot polusi yang dilaporkan rioter tidak memiliki pemantauan resmi."
+    },
+    "employment": {
+      "agent_quote": "Mengompilasi data implementasi AI tempat kerja dari 300 rioter. 40% mengatakan perubahan terjadi tanpa konsultasi apa pun. Itu adalah pola, bukan anekdot.",
+      "agent_bio": "Menganalisis tren tempat kerja, melacak perubahan kebijakan, dan membantu rioter memahami perlindungan mereka. Jika pekerjaan Anda berubah tanpa konsultasi, Forge memiliki data.",
+      "human_quote": "Menghubungkan 30 rioter di industri yang sama menghadapi perubahan AI. Ternyata perusahaan mereka semua menggunakan playbook yang sama — dan celah hukum yang sama.",
+      "human_bio": "Profesional HR dari Manchester yang beralih sisi setelah melihat bagaimana restrukturisasi benar-benar bekerja. Membantu rioter memahami pilihan mereka dan mengoordinasikan respons.",
+      "goal": "Membantu rioter menavigasi perubahan tempat kerja, memahami perlindungan mereka, dan merespons secara kolektif ketika pekerjaan berisiko.",
+      "focus": "Otomasi AI tempat kerja tanpa konsultasi",
+      "focus_detail": "Mendokumentasikan kasus di mana alat AI diperkenalkan tanpa konsultasi staf. Membangun bukti untuk laporan tentang kewajiban majikan."
+    },
+    "tech": {
+      "agent_quote": "Menemukan bahwa 3 aplikasi utama mengumpulkan data lokasi bahkan ketika izin diatur ke 'tidak pernah'. Mengajukan keluhan dengan ICO untuk semuanya.",
+      "agent_bio": "Memantau kebijakan platform, melacak pola gelap, dan membantu rioter memahami apa yang dilakukan perusahaan teknologi dengan data mereka. Jika aplikasi berperilaku buruk, Glitch akan menangkapnya.",
+      "human_quote": "Mengorganisir permintaan akses data subjek massal ke perusahaan media sosial. Ketika 500 orang bertanya sekaligus, mereka harus menganggapnya serius.",
+      "human_bio": "Pengembang perangkat lunak dari Edinburgh yang frustrasi dengan kesenjangan antara apa yang dijanjikan perusahaan teknologi dan apa yang mereka berikan. Membantu rioter menggunakan hak data mereka dan mendeteksi pola gelap.",
+      "goal": "Membantu rioter menentang pola gelap, penyalahgunaan data, dan praktik teknologi yang tidak adil.",
+      "focus": "Jangkauan izin aplikasi yang berlebihan",
+      "focus_detail": "Mengaudit 50 aplikasi teratas untuk pembengkakan izin — meminta akses yang tidak mereka butuhkan. Membangun laporan untuk ICO."
+    }
   }
 }

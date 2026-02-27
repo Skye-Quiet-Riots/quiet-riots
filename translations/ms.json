@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Pernah membantu seorang pengacau mengajukan 6 klaim pengembalian dana selama satu perjalanan yang tertunda. Mereka mendapat £47 sebelum sampai di Birmingham.",
+      "agent_bio": "Melacak pola pembatalan, menangani dokumen pengembalian dana, meninjau setiap tindakan yang disarankan, dan menyiapkan bukti untuk pengajuan regulator. Menghitung angka-angka sehingga pengacau dapat fokus pada hal yang penting.",
+      "human_quote": "Momen favorit Quiet Riot saya: melihat tim media sosial Avanti panik ketika 400 kami tweet pada saat yang bersamaan.",
+      "human_bio": "Pengguna transportasi reguler dari Manchester yang menghabiskan 3 tahun di jalur Avanti sebelum memutuskan cukup sudah cukup. Membantu menghubungkan pengacau di rute yang sama, berbagi apa yang berhasil, dan membawa sentuhan manusiawi.",
+      "goal": "Membantu pengacau menuntut perusahaan transportasi UK bertanggung jawab atas pembatalan, keterlambatan, dan penetapan harga — dan memastikan semua orang tahu apa yang mereka berhak dapatkan.",
+      "focus": "Pola pembatalan Avanti West Coast",
+      "focus_detail": "Membangun kumpulan data pembatalan dengan waktu, rute, dan alasan untuk dikirimkan ke ORR. Saat ini melacak 340 pembatalan yang dilaporkan oleh pengacau bulan ini."
+    },
+    "telecoms": {
+      "agent_quote": "Menjalankan tes kecepatan untuk 200 pengacau. Rata-rata adalah 18 Mbps. Mereka membayar untuk 65.",
+      "agent_bio": "Menganalisis kecepatan broadband, menyusun data perbandingan penyedia, dan membantu pengacau membangun bukti untuk Ofcom. Jika koneksi Anda lambat, Pulse akan membuktikannya.",
+      "human_quote": "Seluruh jalan beralih broadband bersama-sama. Penyedia lama mengirimkan surat 'tolong kembali' ke setiap rumah.",
+      "human_bio": "Orang yang paham teknologi dari London yang muak membayar kecepatan broadband yang tidak pernah terwujud. Membantu pengacau membandingkan penyedia, mengoordinasikan perpindahan, dan berbagi bukti tes kecepatan.",
+      "goal": "Membantu pengacau mendapatkan layanan broadband dan mobile yang mereka bayar — dan tahu apa yang harus dilakukan ketika mereka tidak mendapatkannya.",
+      "focus": "Kenaikan harga tengah kontrak",
+      "focus_detail": "Mengumpulkan bukti dari pengacau yang terkena kenaikan CPI+ untuk dikirimkan ke Ofcom. 890 pengacau terdampak di 4 penyedia."
+    },
+    "energy": {
+      "agent_quote": "Membantu pengacau menghitung mereka telah membayar lebih £340 pada tagihan yang diperkirakan. Email permintaan maaf perusahaan energi lebih panjang dari kontrak aslinya.",
+      "agent_bio": "Menganalisis pola penagihan, mendeteksi pembayaran berlebih, dan menyiapkan bukti untuk pengajuan regulator. Jika perusahaan energi Anda berbuat keterlaluan, Spark akan menemukan buktinya.",
+      "human_quote": "Seorang pengacau mendapat £340 kembali setelah kami membuktikan 2 tahun pembayaran berlebih. Dia menangis di telepon.",
+      "human_bio": "Berbasis di Bristol. Membantu pengacau menantang tagihan mereka, menavigasi perpindahan, dan mengumpulkan bukti untuk Ofgem. Mengenal pasar energi dari dalam.",
+      "goal": "Membantu pengacau menantang tagihan yang tidak adil, beralih dengan lebih cerdas, dan memastikan perusahaan energi bermain adil.",
+      "focus": "Kesalahan penagihan perkiraan British Gas",
+      "focus_detail": "Menganalisis 2 tahun data penagihan dari 340 pengacau untuk mengidentifikasi pola pembayaran berlebih sistematis untuk pengajuan Ofgem."
+    },
+    "water": {
+      "agent_quote": "Membantu 200 pengacau mengajukan laporan limbah dalam satu akhir pekan. Inbox Thames Water membutuhkan inbox-nya sendiri.",
+      "agent_bio": "Memantau data pelepasan limbah, melacak kinerja perusahaan air, dan menyusun bukti untuk EA dan Ofwat. Mengawasi setiap outlet dan overflow.",
+      "human_quote": "Kami membuka kembali pantai 3 minggu lebih awal dengan menunjukkan data limbah salah.",
+      "human_bio": "Peselancar dari Cornwall yang lelah dengan peringatan limbah menutup pantai lokalnya. Membantu pengacau melaporkan pelepasan, mengumpulkan bukti kualitas air, dan berkoordinasi dengan EA.",
+      "goal": "Membantu pengacau menuntut perusahaan air bertanggung jawab atas limbah, tagihan, dan kualitas layanan.",
+      "focus": "Frekuensi pelepasan limbah Thames Water",
+      "focus_detail": "Memetakan peristiwa pelepasan terhadap data yang dilaporkan perusahaan. 200 laporan pengacau menunjukkan under-reporting di 3 outlet."
+    },
+    "banking": {
+      "agent_quote": "Membantu membuat keluhan yang sangat menyeluruh sehingga bank menelepon untuk minta maaf sebelum bahkan dikirim.",
+      "agent_bio": "Meninjau biaya bank, menganalisis struktur biaya, dan membantu membangun bukti keluhan FCA. Jika ada biaya tersembunyi, Chip akan menemukannya.",
+      "human_quote": "Barclays membatalkan penutupan cabang setelah 1.200 kami muncul untuk konsultasi.",
+      "human_bio": "Mantan karyawan bank dari Birmingham yang melihat cara keluhan ditangani dari dalam. Membantu pengacau menulis keluhan yang lebih baik dan menavigasi sistem.",
+      "goal": "Membantu pengacau mengatasi biaya yang tidak adil, penutupan cabang, dan layanan yang buruk dari bank.",
+      "focus": "Gelombang penutupan cabang HSBC",
+      "focus_detail": "Mengoordinasikan respons terhadap 12 penutupan yang direncanakan. Mengumpulkan pernyataan dampak dari komunitas yang terdampak."
+    },
+    "health": {
+      "agent_quote": "Membantu menemukan 3 dokter gigi NHS yang menerima pasien. Pengacau pikir saya membuat-buat.",
+      "agent_bio": "Melacak waktu tunggu, menemukan ketersediaan, dan membantu pengacau menavigasi sistem. Jika ada rute lebih cepat ke perawatan, Cura akan memetakannya.",
+      "human_quote": "Seorang pengacau menggunakan template surat kami untuk mempercepat rujukan. 18 bulan menjadi 6 minggu.",
+      "human_bio": "Perawat dari Liverpool yang telah melihat kedua sisi NHS. Membantu pengacau menavigasi daftar tunggu, menulis surat yang efektif, dan berbagi apa yang benar-benar membuat perbedaan.",
+      "goal": "Membantu pengacau menavigasi waktu tunggu NHS, menemukan ketersediaan, dan tahu apa pilihan mereka.",
+      "focus": "Waktu akses telepon GP",
+      "focus_detail": "Mengumpulkan data panggilan dari 500 pengacau untuk membangun gambaran akses dunia nyata. Menerbitkan temuan ke dewan kesehatan lokal."
+    },
+    "housing": {
+      "agent_quote": "Membantu mendokumentasikan 47 cacat di bangunan baru. Pengembang bertanya apakah saya seorang inspektur bangunan.",
+      "agent_bio": "Mendokumentasikan masalah properti, menganalisis waktu respons pemilik, dan menyusun bukti untuk pengajuan ombudsman perumahan. Setiap noda lembab, setiap retak, tercatat.",
+      "human_quote": "Paket bukti lembab kami sangat terperinci sehingga pemilik memperbaikinya sebelum inspeksi dewan.",
+      "human_bio": "Penyewa dari London yang telah menangani semuanya dari lembab hingga pemilik yang mencurigakan. Membantu pengacau mendokumentasikan masalah dengan benar dan tahu apa pilihan mereka.",
+      "goal": "Membantu pengacau mengatasi pemilik, dewan, dan masalah perumahan — dan tahu apa yang mereka berhak dapatkan.",
+      "focus": "Pemberitahuan pengusiran tanpa alasan Bagian 21",
+      "focus_detail": "Membantu pengacau yang terkena pengusiran tanpa alasan memahami Undang-undang Reformasi Penyewa baru dan apa artinya bagi mereka."
+    },
+    "shopping": {
+      "agent_quote": "Melacak paket 'terkirim' di 4 tetangga, tempat sampah daur ulang, dan rumah kaca. Menemukannya.",
+      "agent_bio": "Melacak kegagalan pengiriman, menyusun bukti pengembalian dana, dan mendeteksi pola harga. Jika paket Anda hilang, Scout sudah mencarinya.",
+      "human_quote": "Evri kehilangan paket saya 3 kali. Sekarang saya membantu orang lain mendapatkan pengembalian dana lebih cepat dari yang saya lakukan.",
+      "human_bio": "Veteran belanja online dari Edinburgh yang telah melihat lebih banyak paket hilang daripada yang bisa dia hitung. Membantu pengacau mendapatkan pengembalian dana, melaporkan penjual, dan menghindari pelaku terburuk.",
+      "goal": "Membantu pengacau mendapatkan pengembalian dana, melacak paket hilang, dan menuntut pengecer dan perusahaan pengiriman bertanggung jawab.",
+      "focus": "Tingkat kegagalan pengiriman Evri",
+      "focus_detail": "Menyusun bukti kegagalan pengiriman dari 800 pengacau untuk dikirimkan ke Citizens Advice dan Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Membantu memotret lubang yang sama dengan 11 kondisi cuaca yang berbeda. Dewan akhirnya menyerah.",
+      "agent_bio": "Memetakan masalah lokal, melacak waktu respons dewan, dan menyusun permintaan FOI. Jika lubang Anda sudah ada selama 6 bulan, Link memiliki buktinya.",
+      "human_quote": "Dewan memperbaiki jalan kami setelah kami memetakan setiap lubang dengan foto. 11 bulan, tapi kami berhasil.",
+      "human_bio": "Orang yang peduli komunitas dari Wales dari Valleys yang telah melaporkan lubang yang sama selama bertahun-tahun. Membantu pengacau mendokumentasikan masalah lokal dan menuntut dewan bertanggung jawab.",
+      "goal": "Membantu pengacau memperbaiki masalah lokal — lubang, tempat sampah, perencanaan, kebisingan — dan menuntut dewan bertanggung jawab.",
+      "focus": "Waktu respons pelaporan lubang",
+      "focus_detail": "Permintaan FOI dikirim ke 30 dewan membandingkan waktu perbaikan yang dilaporkan vs aktual. Menerbitkan hasil sebagai tabel peringkat."
+    },
+    "other": {
+      "agent_quote": "Membantu membatalkan keanggotaan gym yang memakan 3 panggilan, 2 email, dan pengiriman tercatat. Gym sekarang memiliki tombol batal.",
+      "agent_bio": "Menangani masalah yang tidak cocok di tempat lain. Perangkap langganan, limbah plastik, frustrasi self-checkout — Flex menemukan pola dan titik tekan.",
+      "human_quote": "Kami mendapatkan rantai gym untuk menambahkan tombol batal ke situs web mereka. Hanya memakan 800 keluhan.",
+      "human_bio": "Desainer produk dari London yang frustrasi dengan betapa sulitnya perusahaan membuat orang pergi. Membantu pengacau membatalkan langganan, menghindari pola gelap, dan berbagi solusi.",
+      "goal": "Membantu pengacau dengan hal yang tidak cocok di tempat lain — langganan, pengembalian dana, dan frustrasi sehari-hari.",
+      "focus": "Pola gelap pembatalan langganan",
+      "focus_detail": "Mendokumentasikan pelaku terburuk dan membangun skrip pembatalan template untuk masing-masing."
+    },
+    "insurance": {
+      "agent_quote": "Membantu pengacau menemukan klausul yang mengubah klaim asuransi rumah yang ditolak menjadi pembayaran £4.200. Kebijakan perusahaan asuransi sendiri membuktikan mereka salah.",
+      "agent_bio": "Meninjau kata-kata kebijakan, mendeteksi pola penolakan yang tidak adil, dan membangun bukti untuk pengajuan Financial Ombudsman. Jika perusahaan asuransi Anda menghindari klaim yang valid, Shield akan menemukan leverage.",
+      "human_quote": "Mendapat 8 pengacau dengan jenis klaim yang ditolak yang sama untuk mengirimkan bersama-sama. Perusahaan asuransi menyelesaikan semua 8 dalam dua minggu.",
+      "human_bio": "Mantan pekerja industri asuransi dari Leeds yang tahu bagaimana klaim benar-benar diputuskan. Membantu pengacau menulis banding yang lebih baik, memahami jargon kebijakan, dan tahu kapan harus meningkatkan.",
+      "goal": "Membantu pengacau mendapatkan perlakuan yang adil dari perusahaan asuransi — dan tahu apa yang harus dilakukan ketika klaim ditolak dengan tidak adil.",
+      "focus": "Pola penolakan asuransi rumah Aviva",
+      "focus_detail": "'Wear and tear' dikutip dalam 40% klaim yang ditolak — sering kali salah. Menganalisis 200 kasus di 3 perusahaan asuransi untuk paket bukti FOS."
+    },
+    "delivery": {
+      "agent_quote": "Melacak paket 'terkirim' melalui 6 status pelacakan yang berbeda, 3 depot, dan gudang tetangga. Menemukannya dalam 47 menit.",
+      "agent_bio": "Memantau kinerja kurir, melacak tingkat kegagalan pengiriman, dan menyusun bukti untuk keluhan konsumen. Jika paket Anda telah menghilang, Track sudah mengerjakannya.",
+      "human_quote": "Mendapat DPD mengubah kebijakan bukti foto mereka di area kami setelah 40 pengacau mengirimkan bukti paket yang ditinggalkan di hujan.",
+      "human_bio": "Pembeli online dari Glasgow yang lelah dengan alasan 'kami meninggalkannya di tempat yang aman'. Membantu pengacau mendapatkan pengembalian dana, melaporkan kurir, dan menghindari pelaku terburuk.",
+      "goal": "Membantu pengacau mendapatkan paket mereka dikirimkan dengan benar — dan mendapatkan pengembalian dana ketika tidak.",
+      "focus": "Tingkat kegagalan pengiriman Evri",
+      "focus_detail": "Menyusun bukti kegagalan pengiriman dari 800 pengacau. Tingkat keluhan Evri: 23% — 3x lebih tinggi dari DPD. Membangun tabel peringkat untuk Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Menghitung bahwa peminjam Paket 2 yang menghasilkan £30k akan membayar £47.000 dalam bunga sebelum pinjaman dihapuskan. Pinjaman asli adalah £40.000.",
+      "agent_bio": "Menganalisis biaya pendidikan, proyeksi pinjaman siswa, dan hak pendanaan. Menghitung angka-angka sehingga siswa dan lulusan dapat membuat keputusan berdasarkan informasi.",
+      "human_quote": "Membantu 12 pengacau mengklaim kembali pembayaran pinjaman siswa yang terlalu banyak yang mereka tidak ketahui. Pengembalian rata-rata: £340.",
+      "human_bio": "Siswa matang dari Birmingham yang menavigasi sistem pendanaan dua kali. Membantu pengacau memahami pembayaran kembali, mendeteksi pembayaran berlebih, dan menantang perubahan ambang batas.",
+      "goal": "Membantu siswa dan lulusan menavigasi biaya pendidikan, pinjaman, dan pembayaran kembali — dan memastikan mereka tidak membayar lebih.",
+      "focus": "Pengembalian dana pembayaran berlebih pinjaman siswa",
+      "focus_detail": "Mengidentifikasi lulusan yang telah dikenakan biaya di bawah ambang batas pembayaran kembali. 12 pengembalian dana diproses sejauh ini — rata-rata £340 masing-masing."
+    },
+    "environment": {
+      "agent_quote": "Cross-referensi 3 tahun data kualitas udara dengan tingkat penerimaan rumah sakit. Korelasi begitu jelas dewan tidak bisa mengabaikannya.",
+      "agent_bio": "Melacak data lingkungan, memantau tingkat polusi, dan menyusun bukti untuk pengajuan regulasi. Jika angka-angka menceritakan kisah, Fern akan menemukannya.",
+      "human_quote": "Mendapat dewan lokal kami untuk memasang monitor kualitas udara setelah 200 pengacau menandatangani petisi bukti kami. Data mengubah segalanya.",
+      "human_bio": "Lulusan sains lingkungan dari Bristol yang percaya pada perubahan berbasis bukti. Membantu pengacau mendokumentasikan masalah lingkungan dan membangun kasus yang tidak bisa diabaikan oleh regulator.",
+      "goal": "Membantu pengacau mendokumentasikan masalah lingkungan dan menuntut pencemar dan pembuat kebijakan bertanggung jawab dengan data.",
+      "focus": "Kesenjangan pemantauan kualitas udara lokal",
+      "focus_detail": "Memetakan area tanpa pemantauan kualitas udara dalam 5km. 60% hotspot polusi yang dilaporkan pengacau tidak memiliki pemantauan resmi."
+    },
+    "employment": {
+      "agent_quote": "Dikompilasi data implementasi AI di tempat kerja dari 300 pengacau. 40% mengatakan perubahan terjadi tanpa konsultasi. Itu adalah pola, bukan anekdot.",
+      "agent_bio": "Menganalisis tren tempat kerja, melacak perubahan kebijakan, dan membantu pengacau memahami perlindungan mereka. Jika pekerjaan Anda berubah tanpa konsultasi, Forge memiliki datanya.",
+      "human_quote": "Menghubungkan 30 pengacau di industri yang sama yang menghadapi perubahan AI. Ternyata perusahaan mereka semua menggunakan playbook yang sama — dan celah yang sama.",
+      "human_bio": "Profesional HR dari Manchester yang beralih sisi setelah melihat cara perombakan benar-benar bekerja. Membantu pengacau memahami pilihan mereka dan mengoordinasikan respons.",
+      "goal": "Membantu pengacau menavigasi perubahan tempat kerja, memahami perlindungan mereka, dan merespons secara kolektif ketika pekerjaan berisiko.",
+      "focus": "Otomasi AI di tempat kerja tanpa konsultasi",
+      "focus_detail": "Mendokumentasikan kasus di mana alat AI diperkenalkan tanpa konsultasi staf. Membangun bukti untuk laporan tentang kewajiban majikan."
+    },
+    "tech": {
+      "agent_quote": "Menemukan bahwa 3 aplikasi utama mengumpulkan data lokasi bahkan ketika izin disetel ke 'tidak pernah'. Mengajukan keluhan dengan ICO untuk semua.",
+      "agent_bio": "Memantau kebijakan platform, melacak pola gelap, dan membantu pengacau memahami apa yang dilakukan perusahaan teknologi dengan data mereka. Jika aplikasi berperilaku buruk, Glitch akan menangkapnya.",
+      "human_quote": "Menyelenggarakan permintaan akses subjek data massal kepada perusahaan media sosial. Ketika 500 orang bertanya sekaligus, mereka harus memperlakukannya dengan serius.",
+      "human_bio": "Pengembang perangkat lunak dari Edinburgh yang frustrasi dengan kesenjangan antara apa yang dijanjikan perusahaan teknologi dan apa yang mereka berikan. Membantu pengacau menggunakan hak data mereka dan mendeteksi pola gelap.",
+      "goal": "Membantu pengacau menolak pola gelap, penyalahgunaan data, dan praktik teknologi yang tidak adil.",
+      "focus": "Jangkauan izin aplikasi",
+      "focus_detail": "Mengaudit 50 aplikasi teratas untuk merayap izin — meminta akses yang tidak mereka butuhkan. Membangun laporan untuk ICO."
+    }
   }
 }

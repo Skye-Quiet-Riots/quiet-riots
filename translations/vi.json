@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Từng giúp một người biểu tình nộp 6 đơn yêu cầu hoàn tiền trong một chuyến đi bị trễ. Họ kiếm được £47 trước khi đến Birmingham.",
+      "agent_bio": "Theo dõi các mô hình hủy chuyến, xử lý giấy tờ hoàn tiền, xem xét từng hành động được đề xuất, và biên soạn bằng chứng cho các đơn gửi cơ quan quản lý. Tính toán những con số để những người biểu tình có thể tập trung vào những gì quan trọng.",
+      "human_quote": "Khoảnh khắc yêu thích của tôi với Quiet Riot: xem đội truyền thông xã hội của Avanti hoảng sợ khi 400 người trong chúng tôi tweet cùng một lúc.",
+      "human_bio": "Hành khách thường xuyên từ Manchester người đã dành 3 năm trên tuyến Avanti trước khi quyết định dừng lại. Giúp kết nối những người biểu tình trên cùng các tuyến đường, chia sẻ những gì đang hiệu quả, và mang lại sự chạm tay của con người.",
+      "goal": "Giúp những người biểu tình yêu cầu các công ty vận tải Anh chịu trách nhiệm về hủy chuyến, trễ giờ và giá cả — và đảm bảo mọi người biết quyền của họ.",
+      "focus": "Mô hình hủy chuyến Avanti West Coast",
+      "focus_detail": "Xây dựng một bộ dữ liệu về các hủy chuyến với thời gian, tuyến đường và lý do để gửi cho ORR. Hiện đang theo dõi 340 hủy chuyến được báo cáo bởi những người biểu tình tháng này."
+    },
+    "telecoms": {
+      "agent_quote": "Chạy kiểm tra tốc độ cho 200 người biểu tình. Trung bình là 18 Mbps. Họ đang thanh toán cho 65.",
+      "agent_bio": "Phân tích tốc độ broadband, biên soạn dữ liệu so sánh nhà cung cấp, và giúp những người biểu tình xây dựng bằng chứng cho Ofcom. Nếu kết nối của bạn chậm, Pulse sẽ chứng minh điều đó.",
+      "human_quote": "Cả một con đường chuyển broadband cùng nhau. Nhà cung cấp cũ đã gửi các lá thư 'xin hãy quay lại' đến mỗi ngôi nhà.",
+      "human_bio": "Người yêu công nghệ từ London người đã mệt mỏi khi thanh toán cho tốc độ broadband không bao giờ hiện thực hóa. Giúp những người biểu tình so sánh các nhà cung cấp, phối hợp các chuyển đổi, và chia sẻ bằng chứng kiểm tra tốc độ.",
+      "goal": "Giúp những người biểu tình nhận được dịch vụ broadband và di động mà họ đang thanh toán — và biết phải làm gì khi họ không nhận được.",
+      "focus": "Tăng giá trong hợp đồng",
+      "focus_detail": "Thu thập bằng chứng từ những người biểu tình bị ảnh hưởng bởi tăng CPI+ để gửi cho Ofcom. 890 người biểu tình bị ảnh hưởng trên 4 nhà cung cấp."
+    },
+    "energy": {
+      "agent_quote": "Giúp một người biểu tình tính toán rằng họ đã trả quá £340 trên hóa đơn ước tính. Email xin lỗi của công ty năng lượng dài hơn hợp đồng ban đầu.",
+      "agent_bio": "Phân tích các mô hình thanh toán, phát hiện tính quá mức, và biên soạn bằng chứng cho các đơn gửi cơ quan quản lý. Nếu công ty năng lượng của bạn đang vô tâm, Spark sẽ tìm ra biên lai.",
+      "human_quote": "Một người biểu tình được hoàn lại £340 sau khi chúng tôi chứng minh 2 năm tính quá mức. Cô ấy khóc trong điện thoại.",
+      "human_bio": "Người ở Bristol. Giúp những người biểu tình thách thức hóa đơn của họ, điều hướng chuyển đổi, và thu thập bằng chứng cho Ofgem. Biết thị trường năng lượng bên trong ra bên ngoài.",
+      "goal": "Giúp những người biểu tình thách thức hóa đơn không công bằng, chuyển đổi thông minh, và đảm bảo các công ty năng lượng hoạt động công bằng.",
+      "focus": "Lỗi thanh toán ước tính của British Gas",
+      "focus_detail": "Phân tích 2 năm dữ liệu thanh toán từ 340 người biểu tình để xác định các mô hình tính quá mức hệ thống cho việc gửi Ofgem."
+    },
+    "water": {
+      "agent_quote": "Giúp 200 người biểu tình nộp báo cáo xử lý nước thải trong một cuối tuần. Hộp thư của Thames Water cần hộp thư riêng.",
+      "agent_bio": "Giám sát dữ liệu xả nước thải, theo dõi hiệu suất công ty nước, và biên soạn bằng chứng cho EA và Ofwat. Theo dõi mọi cửa xả và tràn.",
+      "human_quote": "Chúng tôi mở lại một bãi biển 3 tuần sớm hơn bằng cách chỉ ra dữ liệu xả nước thải là sai.",
+      "human_bio": "Người lướt sóng từ Cornwall người đã mệt mỏi với các cảnh báo nước thải đóng bãi biển địa phương. Giúp những người biểu tình báo cáo xả nước thải, thu thập bằng chứng chất lượng nước, và phối hợp với EA.",
+      "goal": "Giúp những người biểu tình yêu cầu các công ty nước chịu trách nhiệm về nước thải, hóa đơn và chất lượng dịch vụ.",
+      "focus": "Tần suất xả nước thải Thames Water",
+      "focus_detail": "Lập bản đồ các sự kiện xả nước so với dữ liệu do công ty báo cáo. 200 báo cáo từ những người biểu tình cho thấy báo cáo không đầy đủ ở 3 cửa xả."
+    },
+    "banking": {
+      "agent_quote": "Giúp soạn thảo một khiếu nại sâu sắc đến nỗi ngân hàng gọi để xin lỗi trước khi nó thậm chí được gửi.",
+      "agent_bio": "Xem xét các khoản phí ngân hàng, phân tích cấu trúc phí, và giúp xây dựng bằng chứng khiếu nại FCA. Nếu có một khoản phí ẩn, Chip sẽ tìm thấy nó.",
+      "human_quote": "Barclays đã đảo ngược việc đóng cửa chi nhánh sau khi 1.200 người trong chúng tôi xuất hiện tại cuộc tham vấn.",
+      "human_bio": "Cựu nhân viên ngân hàng từ Birmingham người thấy cách các khiếu nại thực sự được xử lý từ bên trong. Giúp những người biểu tình viết các khiếu nại tốt hơn và điều hướng hệ thống.",
+      "goal": "Giúp những người biểu tình đối phó với các khoản phí không công bằng, đóng cửa chi nhánh và dịch vụ kém từ các ngân hàng.",
+      "focus": "Sóng đóng cửa chi nhánh HSBC",
+      "focus_detail": "Phối hợp các phản hồi với 12 cuộc đóng cửa được lên kế hoạch. Thu thập các tuyên bố tác động từ các cộng đồng bị ảnh hưởng."
+    },
+    "health": {
+      "agent_quote": "Giúp tìm 3 nha sĩ NHS chấp nhận bệnh nhân. Người biểu tình nghĩ tôi đang bịa đặt.",
+      "agent_bio": "Theo dõi thời gian chờ đợi, tìm khả năng sẵn có, và giúp những người biểu tình điều hướng hệ thống. Nếu có một con đường nhanh hơn đến điều trị, Cura sẽ lập bản đồ nó.",
+      "human_quote": "Một người biểu tình đã sử dụng mẫu thư của chúng tôi để làm nhanh một chuyên khoa. 18 tháng trở thành 6 tuần.",
+      "human_bio": "Y tá từ Liverpool người đã thấy cả hai mặt của NHS. Giúp những người biểu tình điều hướng danh sách chờ, viết các lá thư hiệu quả, và chia sẻ những gì thực sự di chuyển kim đồng hồ.",
+      "goal": "Giúp những người biểu tình điều hướng thời gian chờ đợi NHS, tìm khả năng sẵn có, và biết những lựa chọn của họ.",
+      "focus": "Thời gian truy cập điện thoại của GP",
+      "focus_detail": "Thu thập dữ liệu cuộc gọi từ 500 người biểu tình để xây dựng bức tranh về quyền truy cập thế giới thực. Công bố kết quả cho các ban y tế địa phương."
+    },
+    "housing": {
+      "agent_quote": "Giúp ghi lại 47 khuyết tật trong một ngôi nhà mới. Nhà phát triển hỏi liệu họ có phải là một thanh tra xây dựng không.",
+      "agent_bio": "Ghi lại các vấn đề về tài sản, phân tích thời gian phản ứng của chủ nhà trọ, và biên soạn bằng chứng cho các đơn gửi ủy viên nhà ở. Mỗi vết ẩm mốc, mỗi vết nứt, đều được ghi lại.",
+      "human_quote": "Gói bằng chứng ẩm mốc của chúng tôi được chi tiết đến nỗi chủ nhà trọ đã sửa chữa nó trước cuộc kiểm tra của hội đồng.",
+      "human_bio": "Người thuê nhà từ London người đã giải quyết mọi thứ từ ẩm mốc đến chủ nhà trọ không đáng tin cậy. Giúp những người biểu tình ghi lại các vấn đề đúng cách và biết những lựa chọn của họ.",
+      "goal": "Giúp những người biểu tình đối phó với chủ nhà trọ, hội đồng và các vấn đề nhà ở — và biết quyền của họ.",
+      "focus": "Thông báo trục xuất không lỗi Mục 21",
+      "focus_detail": "Giúp những người biểu tình bị ảnh hưởng bởi việc trục xuất không lỗi hiểu Đạo luật cải cách người thuê nhà mới và ý nghĩa của nó."
+    },
+    "shopping": {
+      "agent_quote": "Theo dõi một gói 'được giao' trên 4 hàng xóm, một thùng tái chế, và một nhà kính. Tìm thấy nó.",
+      "agent_bio": "Theo dõi các lỗi giao hàng, biên soạn bằng chứng hoàn tiền, và phát hiện các mô hình định giá. Nếu gói của bạn bị mất, Scout đã tìm kiếm nó.",
+      "human_quote": "Evri làm mất gói của tôi 3 lần. Bây giờ tôi giúp những người khác nhận hoàn tiền nhanh hơn tôi bao giờ làm được.",
+      "human_bio": "Cựu chiến binh mua sắm trực tuyến từ Edinburgh người đã mất nhiều gói hơn cô ấy có thể đếm. Giúp những người biểu tình nhận hoàn tiền, báo cáo người bán, và tránh những kẻ xấu nhất.",
+      "goal": "Giúp những người biểu tình nhận hoàn tiền, theo dõi các gói bị mất, và yêu cầu các nhà bán lẻ và công ty giao hàng chịu trách nhiệm.",
+      "focus": "Tỷ lệ lỗi giao hàng Evri",
+      "focus_detail": "Biên soạn bằng chứng lỗi giao hàng từ 800 người biểu tình để gửi cho Citizens Advice và Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Giúp chụp ảnh cùng một hố ga trong 11 điều kiện thời tiết khác nhau. Cuối cùng hội đồng cũng cho phép.",
+      "agent_bio": "Lập bản đồ các vấn đề địa phương, theo dõi thời gian phản ứng của hội đồng, và biên soạn các yêu cầu FOI. Nếu hố ga của bạn đã ở đó 6 tháng, Link có bằng chứng.",
+      "human_quote": "Hội đồng sửa chữa con đường của chúng tôi sau khi chúng tôi lập bản đồ mỗi cái hố ga với ảnh. 11 tháng, nhưng chúng tôi đã đến đó.",
+      "human_bio": "Người Xứ Wales hướng tới cộng đồng từ Valleys người đã báo cáo cùng các hố ga trong nhiều năm. Giúp những người biểu tình ghi lại các vấn đề địa phương và yêu cầu hội đồng chịu trách nhiệm.",
+      "goal": "Giúp những người biểu tình sửa chữa các vấn đề địa phương — hố ga, thùng rác, quy hoạch, tiếng ồn — và yêu cầu hội đồng chịu trách nhiệm.",
+      "focus": "Thời gian phản ứng báo cáo hố ga",
+      "focus_detail": "Các yêu cầu FOI được gửi đến 30 hội đồng so sánh thời gian báo cáo so với sửa chữa thực tế. Công bố kết quả dưới dạng bảng xếp hạng."
+    },
+    "other": {
+      "agent_quote": "Giúp hủy bỏ thành viên phòng tập thể dục mất 3 cuộc gọi, 2 email và một giao hàng đã ghi. Phòng tập thể dục bây giờ có một nút hủy.",
+      "agent_bio": "Xử lý các vấn đề không vừa khít ở nơi khác. Bẫy đăng ký, rác thải nhựa, những cơn giận chọn tự phục vụ — Flex tìm các mô hình và các điểm áp lực.",
+      "human_quote": "Chúng tôi đã khiến một chuỗi phòng tập thể dục thêm một nút hủy vào trang web của họ. Chỉ mất 800 phàn nàn.",
+      "human_bio": "Nhà thiết kế sản phẩm từ London người đã bực bội bởi công ty khiến nó trở nên khó khăn để rời đi. Giúp những người biểu tình hủy bỏ các đơn đăng ký, tránh các mô hình tối, và chia sẻ các giải pháp thay thế.",
+      "goal": "Giúp những người biểu tình với những thứ không vừa khít ở nơi khác — đơn đăng ký, hoàn tiền và những cơn giận hàng ngày.",
+      "focus": "Mô hình tối hủy bỏ đơn đăng ký",
+      "focus_detail": "Ghi lại những kẻ xấu nhất và xây dựng các kịch bản hủy bỏ mẫu cho mỗi cái."
+    },
+    "insurance": {
+      "agent_quote": "Giúp một người biểu tình tìm thấy điều khoản biến một yêu cầu bảo hiểm nhà ở bị từ chối thành khoản thanh toán £4.200. Chính sách của công ty bảo hiểm đã chứng minh họ sai.",
+      "agent_bio": "Xem xét từ ngữ chính sách, phát hiện các mô hình từ chối không công bằng, và xây dựng bằng chứng cho các đơn gửi Ủy viên Tài chính. Nếu công ty bảo hiểm của bạn đang tránh né một yêu cầu hợp lệ, Shield sẽ tìm thấy đòn bẩy.",
+      "human_quote": "Nhận được 8 người biểu tình với cùng loại yêu cầu bị từ chối để gửi cùng nhau. Công ty bảo hiểm đã giải quyết tất cả 8 trong vòng hai tuần.",
+      "human_bio": "Cựu nhân viên ngành bảo hiểm từ Leeds người biết cách các yêu cầu thực sự được quyết định. Giúp những người biểu tình viết các lá kháng cáo tốt hơn, hiểu từ ngữ chính sách, và biết khi nào cần leo thang.",
+      "goal": "Giúp những người biểu tình nhận được sự đối xử công bằng từ các công ty bảo hiểm — và biết phải làm gì khi một yêu cầu bị từ chối một cách bất công.",
+      "focus": "Mô hình từ chối bảo hiểm nhà ở Aviva",
+      "focus_detail": "Hiệu suất 'mài mòn' được trích dẫn trong 40% yêu cầu bị từ chối — thường là không chính xác. Phân tích 200 trường hợp trên 3 công ty bảo hiểm cho gói bằng chứng FOS."
+    },
+    "delivery": {
+      "agent_quote": "Truy tìm một gói 'được giao' thông qua 6 trạng thái theo dõi khác nhau, 3 kho, và một nhà kính của hàng xóm. Tìm thấy nó trong 47 phút.",
+      "agent_bio": "Giám sát hiệu suất người gửi, theo dõi tỷ lệ lỗi giao hàng, và biên soạn bằng chứng cho khiếu nại của người tiêu dùng. Nếu gói của bạn biến mất, Track đã tìm kiếm nó.",
+      "human_quote": "Đã khiến DPD thay đổi chính sách chứng minh ảnh của họ ở khu vực của chúng tôi sau khi 40 người biểu tình gửi bằng chứng gói bị bỏ lại dưới mưa.",
+      "human_bio": "Người mua sắm trực tuyến từ Glasgow người đã mệt mỏi với cái cớ 'chúng tôi để nó ở một nơi an toàn'. Giúp những người biểu tình nhận hoàn tiền, báo cáo công ty gửi hàng, và tránh những kẻ xấu nhất.",
+      "goal": "Giúp những người biểu tình nhận gói của họ được giao đúng cách — và nhận hoàn tiền khi họ không nhận được.",
+      "focus": "Tỷ lệ lỗi giao hàng Evri",
+      "focus_detail": "Biên soạn bằng chứng lỗi giao hàng từ 800 người biểu tình. Tỷ lệ khiếu nại Evri: 23% — cao gấp 3 lần DPD. Xây dựng bảng xếp hạng cho Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Tính toán rằng người đi vay Kế hoạch 2 kiếm £30k sẽ thanh toán £47.000 tiền lãi trước khi khoản vay được xóa sạch. Khoản vay ban đầu là £40.000.",
+      "agent_bio": "Phân tích chi phí giáo dục, dự báo khoản vay sinh viên, và tài trợ có quyền. Tính toán những con số để sinh viên và cử nhân có thể đưa ra quyết định sáng suốt.",
+      "human_quote": "Giúp 12 người biểu tình yêu cầu hoàn lại khoản thanh toán khoản vay sinh viên quá mức mà họ không biết. Hoàn tiền trung bình: £340.",
+      "human_bio": "Sinh viên trưởng thành từ Birmingham người điều hướng hệ thống tài trợ hai lần. Giúp những người biểu tình hiểu thanh toán, phát hiện thanh toán quá mức, và thách thức những thay đổi ngưỡng.",
+      "goal": "Giúp sinh viên và cử nhân điều hướng chi phí giáo dục, khoản vay và khoản thanh toán — và đảm bảo họ không thanh toán quá mức.",
+      "focus": "Hoàn tiền thanh toán quá mức khoản vay sinh viên",
+      "focus_detail": "Xác định những cử nhân đã bị tính phí dưới ngưỡng thanh toán. 12 hoàn tiền đã xử lý cho đến nay — trung bình £340 mỗi cái."
+    },
+    "environment": {
+      "agent_quote": "Tham chiếu chéo 3 năm dữ liệu chất lượng không khí với tỷ lệ nhập viện. Mối tương quan quá rõ ràng để hội đồng không thể bỏ qua.",
+      "agent_bio": "Theo dõi dữ liệu môi trường, giám sát mức độ ô nhiễm, và biên soạn bằng chứng cho các đơn gửi quy định. Nếu những con số kể một câu chuyện, Fern sẽ tìm thấy nó.",
+      "human_quote": "Đã khiến hội đồng địa phương của chúng tôi lắp đặt các thiết bị giám sát chất lượng không khí sau khi 200 người biểu tình ký vào đơn kiến nghị bằng chứng của chúng tôi. Dữ liệu đã thay đổi mọi thứ.",
+      "human_bio": "Sinh viên tốt nghiệp khoa học môi trường từ Bristol người tin vào sự thay đổi dựa trên bằng chứng. Giúp những người biểu tình ghi lại các vấn đề môi trường và xây dựng các trường hợp mà cơ quan quản lý không thể bỏ qua.",
+      "goal": "Giúp những người biểu tình ghi lại các vấn đề môi trường và yêu cầu những người gây ô nhiễm và nhà hoạch định chính sách chịu trách nhiệm bằng dữ liệu.",
+      "focus": "Khoảng cách giám sát chất lượng không khí địa phương",
+      "focus_detail": "Lập bản đồ các khu vực không có giám sát chất lượng không khí trong vòng 5km. 60% các điểm nóng ô nhiễm được báo cáo bởi những người biểu tình không có giám sát chính thức."
+    },
+    "employment": {
+      "agent_quote": "Biên soạn dữ liệu triển khai AI tại nơi làm việc từ 300 người biểu tình. 40% cho biết những thay đổi xảy ra mà không tham vấn. Đó là một mô hình, không phải một câu chuyện.",
+      "agent_bio": "Phân tích xu hướng tại nơi làm việc, theo dõi những thay đổi chính sách, và giúp những người biểu tình hiểu các bảo vệ của họ. Nếu công việc của bạn đang thay đổi mà không tham vấn, Forge có dữ liệu.",
+      "human_quote": "Kết nối 30 người biểu tình trong cùng một ngành đối mặt với những thay đổi AI. Hóa ra các công ty của họ đều sử dụng cùng một cuốn sách hướng dẫn — và cùng một khoảng trống pháp lý.",
+      "human_bio": "Chuyên gia HR từ Manchester người đã chuyển sang một bên khác sau khi thấy cách tái cấu trúc thực sự hoạt động. Giúp những người biểu tình hiểu các lựa chọn của họ và phối hợp các phản hồi.",
+      "goal": "Giúp những người biểu tình điều hướng những thay đổi tại nơi làm việc, hiểu các bảo vệ của họ, và phản ứng tập thể khi công việc có nguy hiểm.",
+      "focus": "Tự động hóa AI tại nơi làm việc mà không tham vấn",
+      "focus_detail": "Ghi lại các trường hợp trong đó các công cụ AI được giới thiệu mà không tham vấn nhân viên. Xây dựng bằng chứng cho một báo cáo về nghĩa vụ của nhà tuyển dụng."
+    },
+    "tech": {
+      "agent_quote": "Phát hiện rằng 3 ứng dụng chính đang thu thập dữ liệu vị trí ngay cả khi quyền được đặt thành 'không bao giờ'. Đã nộp khiếu nại với ICO cho tất cả.",
+      "agent_bio": "Giám sát chính sách nền tảng, theo dõi các mô hình tối, và giúp những người biểu tình hiểu những gì các công ty công nghệ đang làm với dữ liệu của họ. Nếu một ứng dụng hoạt động sai, Glitch sẽ bắt nó.",
+      "human_quote": "Tổ chức một yêu cầu truy cập dữ liệu hàng loạt đối với một công ty truyền thông xã hội. Khi 500 người hỏi cùng lúc, họ phải coi trọng nó.",
+      "human_bio": "Nhà phát triển phần mềm từ Edinburgh người bực bội bởi khoảng cách giữa những gì các công ty công nghệ hứa và những gì họ giao. Giúp những người biểu tình thực hiện quyền dữ liệu của họ và phát hiện các mô hình tối.",
+      "goal": "Giúp những người biểu tình chống lại các mô hình tối, sử dụng dữ liệu sai và các thực tiễn công nghệ không công bằng.",
+      "focus": "Quá tải quyền ứng dụng",
+      "focus_detail": "Kiểm tra 50 ứng dụng hàng đầu để tìm sự loại bỏ quyền — yêu cầu quyền truy cập mà họ không cần. Xây dựng một báo cáo cho ICO."
+    }
   }
 }

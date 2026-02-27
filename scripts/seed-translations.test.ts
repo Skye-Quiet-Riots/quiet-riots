@@ -4,6 +4,7 @@ import * as path from 'path';
 import { routing } from '../src/i18n/routing';
 import {
   CATEGORIES,
+  CATEGORY_ASSISTANTS,
   ISSUES,
   ORGANISATIONS,
   SYNONYMS,
@@ -199,6 +200,104 @@ describe('translations/ files', () => {
           term.length,
           `${locale} synonyms["${issue}"] term "${term.slice(0, 30)}..." exceeds 255 chars`,
         ).toBeLessThanOrEqual(255);
+      }
+    }
+  });
+
+  // ─── Category assistant translation tests ───
+
+  const assistantCategoryKeys = Object.keys(CATEGORY_ASSISTANTS).sort();
+  const assistantFields = [
+    'agent_quote',
+    'human_quote',
+    'agent_bio',
+    'human_bio',
+    'goal',
+    'focus',
+    'focus_detail',
+  ] as const;
+
+  it('en.json has category_assistants with correct structure', () => {
+    const filePath = path.join(TRANSLATIONS_DIR, 'en.json');
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.category_assistants).toBeDefined();
+    const keys = Object.keys(data.category_assistants).sort();
+    expect(keys).toEqual(assistantCategoryKeys);
+
+    for (const [cat, fields] of Object.entries(data.category_assistants)) {
+      for (const field of assistantFields) {
+        expect(fields, `en category_assistants["${cat}"] missing "${field}"`).toHaveProperty(field);
+        expect(
+          (fields[field] as string).length,
+          `en category_assistants["${cat}"].${field} is empty`,
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it.each(nonEnLocales)('%s.json has category_assistants key', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.category_assistants, `${locale} missing category_assistants section`).toBeDefined();
+  });
+
+  it.each(nonEnLocales)('%s.json has all 16 category assistant keys', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    const keys = Object.keys(data.category_assistants).sort();
+    expect(keys).toEqual(assistantCategoryKeys);
+  });
+
+  it.each(nonEnLocales)('%s.json category assistants have all 7 fields non-empty', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const [cat, fields] of Object.entries(data.category_assistants)) {
+      for (const field of assistantFields) {
+        expect(fields, `${locale} category_assistants["${cat}"] missing "${field}"`).toHaveProperty(
+          field,
+        );
+        expect(
+          (fields[field] as string).length,
+          `${locale} category_assistants["${cat}"].${field} is empty`,
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it.each(nonEnLocales)(
+    '%s.json category assistant fields do not contain HTML or script',
+    (locale) => {
+      const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+      const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+      for (const [cat, fields] of Object.entries(data.category_assistants)) {
+        for (const field of assistantFields) {
+          const value = fields[field] as string;
+          expect(
+            value,
+            `${locale} category_assistants["${cat}"].${field} contains HTML`,
+          ).not.toMatch(/<[^>]+>/);
+          expect(
+            value,
+            `${locale} category_assistants["${cat}"].${field} contains script`,
+          ).not.toMatch(/javascript:|on\w+\s*=/i);
+        }
+      }
+    },
+  );
+
+  it.each(nonEnLocales)('%s.json category assistant fields are under 500 chars', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const [cat, fields] of Object.entries(data.category_assistants)) {
+      for (const field of assistantFields) {
+        const value = fields[field] as string;
+        expect(
+          value.length,
+          `${locale} category_assistants["${cat}"].${field} exceeds 500 chars`,
+        ).toBeLessThanOrEqual(500);
       }
     }
   });

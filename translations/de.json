@@ -726,5 +726,151 @@
       "dog waste",
       "fouling"
     ]
+  },
+  "category_assistants": {
+    "transport": {
+      "agent_quote": "Hat einmal einem Rioter geholfen, 6 Erstattungsansprüche während einer einzigen verspäteten Fahrt einzureichen. Sie verdiente £47, bevor sie Birmingham erreichte.",
+      "agent_bio": "Verfolgt Ausfallmuster, bearbeitet Erstattungspapiere, überprüft jeden vorgeschlagenen Maßnahme und stellt Beweise für Regulierungseinreichungen zusammen. Rechnet die Zahlen aus, damit sich Rioter auf das konzentrieren können, was wichtig ist.",
+      "human_quote": "Mein Lieblings-Quiet Riot-Moment: zuzuschauen, wie Avantis Social-Media-Team in Panik verfiel, als 400 von uns gleichzeitig tweeteten.",
+      "human_bio": "Pendler aus Manchester, der 3 Jahre auf der Avanti-Linie verbrachte, bevor er genug hatte. Hilft Riotern auf denselben Strecken, Kontakt zu knüpfen, teilt funktionierende Lösungen und bringt die menschliche Note.",
+      "goal": "Hilf Riotern, UK-Verkehrsunternehmen für Ausfälle, Verspätungen und Preisgestaltung zur Rechenschaft zu ziehen – und stelle sicher, dass jeder weiß, worauf er Anspruch hat.",
+      "focus": "Avanti West Coast Ausfallmuster",
+      "focus_detail": "Aufbau eines Datensatzes von Ausfällen mit Zeiten, Strecken und Gründen für die Einreichung bei der ORR. Derzeit werden 340 von Riotern diesen Monat gemeldete Ausfälle verfolgt."
+    },
+    "telecoms": {
+      "agent_quote": "Hat Geschwindigkeitstests für 200 Rioter durchgeführt. Durchschnitt war 18 Mbps. Sie zahlten für 65.",
+      "agent_bio": "Analysiert Breitbandgeschwindigkeiten, stellt Anbietervergleichsdaten zusammen und hilft Riotern, Beweise für Ofcom zu sammeln. Wenn deine Verbindung langsam ist, beweist Pulse es.",
+      "human_quote": "Eine ganze Straße wechselte gemeinsam den Breitbandanbieter. Der alte Anbieter schickte \"Bitte komm zurück\"-Briefe an jedes Haus.",
+      "human_bio": "Technik-versierter Londoner, der die Nase voll hatte, für Breitbandgeschwindigkeiten zu zahlen, die sich nie materialisiert haben. Hilft Riotern, Anbieter zu vergleichen, Wechsel zu koordinieren und Geschwindigkeitstestbeweise zu teilen.",
+      "goal": "Hilf Riotern, das Breitband und den Mobilfunkdienst zu bekommen, für den sie zahlen – und zu wissen, was sie tun sollten, wenn sie das nicht bekommen.",
+      "focus": "Preiserhöhungen während des Vertrags",
+      "focus_detail": "Sammlung von Beweisen von Riotern, die von CPI+-Erhöhungen betroffen sind, für Ofcom. 890 Rioter betroffen bei 4 Anbietern."
+    },
+    "energy": {
+      "agent_quote": "Hat einem Rioter geholfen zu berechnen, dass er £340 bei geschätzten Rechnungen zu viel bezahlt hatte. Die Entschuldigung des Energieunternehmens per E-Mail war länger als der ursprüngliche Vertrag.",
+      "agent_bio": "Analysiert Abrechnungsmuster, erkennt Übergebühren und stellt Beweise für Regulierungseinreichungen zusammen. Wenn dein Energieunternehmen Unsinn treibt, findet Spark die Belege.",
+      "human_quote": "Ein Rioter bekam £340 zurück, nachdem wir 2 Jahre Übergebühren bewiesen hatten. Sie weinte am Telefon.",
+      "human_bio": "Basierend in Bristol. Hilft Riotern, ihre Rechnungen anzufechten, Wechsel zu navigieren und Beweise für Ofgem zu sammeln. Kennt den Energiemarkt in- und auswendig.",
+      "goal": "Hilf Riotern, unfaire Rechnungen anzufechten, intelligenter zu wechseln und sicherzustellen, dass Energieunternehmen fair spielen.",
+      "focus": "British Gas geschätzte Abrechnungsfehler",
+      "focus_detail": "Analyse von 2 Jahren Abrechnungsdaten von 340 Riotern zur Identifizierung systematischer Übergebührenmuster für Ofgem-Einreichung."
+    },
+    "water": {
+      "agent_quote": "Hat 200 Rioter geholfen, an einem Wochenende Abwasserberichte einzureichen. Thames Waters Posteingang brauchte seinen eigenen Posteingang.",
+      "agent_bio": "Überwacht Abwasserableitungsdaten, verfolgt die Leistung von Wasserbetrieben und stellt Beweise für EA und Ofwat zusammen. Behält den Überblick über jeden Auslass und Überlauf.",
+      "human_quote": "Wir ließen einen Strand 3 Wochen früher wieder öffnen, indem wir zeigten, dass die Abwasserdaten falsch waren.",
+      "human_bio": "Surfer aus Cornwall, der es leid war, dass Abwasserwarnungen seinen örtlichen Strand sperrten. Hilft Riotern, Ableitungen zu melden, Wasserqualitätsbeweise zu sammeln und mit der EA zu koordinieren.",
+      "goal": "Hilf Riotern, Wasserbetriebe für Abwasser, Rechnungen und Servicequalität zur Rechenschaft zu ziehen.",
+      "focus": "Thames Water Abwasserableitungshäufigkeit",
+      "focus_detail": "Zuordnung von Ableitungsereignissen zu von Unternehmen gemeldeten Daten. 200 Rioter-Berichte deuten auf Untererfassung bei 3 Auslässen hin."
+    },
+    "banking": {
+      "agent_quote": "Hat geholfen, eine Beschwerde zu formulieren, die so gründlich war, dass die Bank anrief, um sich zu entschuldigen, bevor sie überhaupt versendet wurde.",
+      "agent_bio": "Überprüft Bankgebühren, analysiert Gebührenstrukturen und hilft beim Aufbau von FCA-Beschwerdebeweisen. Wenn es eine versteckte Gebühr gibt, findet Chip sie.",
+      "human_quote": "Barclays stoppte eine Filialschließung, nachdem 1.200 von uns zur Konsultation erschienen.",
+      "human_bio": "Ehemaliger Bankmitarbeiter aus Birmingham, der von innen heraus sah, wie Beschwerden wirklich bearbeitet werden. Hilft Riotern, bessere Beschwerden zu schreiben und das System zu navigieren.",
+      "goal": "Hilf Riotern, mit unfairen Gebühren, Filialschließungen und schlechtem Service von Banken umzugehen.",
+      "focus": "HSBC Filialschließungswelle",
+      "focus_detail": "Koordinierung von Reaktionen auf 12 geplante Schließungen. Sammlung von Aussagen zur Auswirkung betroffener Gemeinden."
+    },
+    "health": {
+      "agent_quote": "Hat 3 NHS-Zahnärzte gefunden, die Patienten akzeptieren. Der Rioter dachte, ich erfinde es.",
+      "agent_bio": "Verfolgt Wartezeiten, findet Verfügbarkeit und hilft Riotern, das System zu navigieren. Wenn es eine schnellere Route zur Behandlung gibt, kartiert Cura sie.",
+      "human_quote": "Ein Rioter nutzte unsere Briefvorlage, um eine Überweisung zu beschleunigen. 18 Monate wurden zu 6 Wochen.",
+      "human_bio": "Krankenschwester aus Liverpool, die beide Seiten des NHS gesehen hat. Hilft Riotern, Warteschlangen zu navigieren, effektive Briefe zu schreiben und zu lernen, was wirklich hilft.",
+      "goal": "Hilf Riotern, NHS-Wartezeiten zu navigieren, Verfügbarkeit zu finden und ihre Optionen zu kennen.",
+      "focus": "GP-Telefonerreichbarkeitszeiten",
+      "focus_detail": "Sammlung von Anrufdaten von 500 Riotern, um eine reale Situation zu schaffen. Veröffentlichung der Ergebnisse für lokale Gesundheitsämter."
+    },
+    "housing": {
+      "agent_quote": "Hat 47 Mängel in einem Neubau dokumentiert. Der Entwickler fragte, ob ich ein Bauinspekteur sei.",
+      "agent_bio": "Dokumentiert Immobilienmängel, analysiert Vermieterlösungszeiten und stellt Beweise für Ombudsstelle für Wohnungswesen zusammen. Jeder feuchte Fleck, jeder Riss, wird protokolliert.",
+      "human_quote": "Unser Feuchte-Beweispaket war so detailliert, dass der Vermieter es vor der Ratskontrolle behob.",
+      "human_bio": "Mieter aus London, der mit allem von Feuchtigkeit bis zu zweifelhaften Vermietern umging. Hilft Riotern, Probleme ordnungsgemäß zu dokumentieren und ihre Optionen zu kennen.",
+      "goal": "Hilf Riotern, mit Vermietern, Räten und Wohnungsproblemen umzugehen – und zu wissen, worauf sie Anspruch haben.",
+      "focus": "Section 21 Kündigungen ohne Grund",
+      "focus_detail": "Hilfe für von fehlerhaften Kündigungen betroffene Rioter, das neue Renters Reform Act zu verstehen und was es für sie bedeutet."
+    },
+    "shopping": {
+      "agent_quote": "Verfolgte ein \"zugestelltes\" Paket über 4 Nachbarn, eine Recyclingtonnen und ein Gewächshaus hinweg. Fand es.",
+      "agent_bio": "Verfolgt Zustellungsausfälle, stellt Erstattungsbeweise zusammen und erkennt Preismuster. Wenn dein Paket verloren ist, sucht Scout bereits danach.",
+      "human_quote": "Evri verlor mein Paket 3 Mal. Jetzt helfe ich anderen, ihre Rückerstattungen schneller zu bekommen als ich es je tat.",
+      "human_bio": "Online-Shopping-Veteran aus Edinburgh, der mehr Pakete verloren hat, als sie zählen kann. Hilft Riotern, Rückerstattungen zu bekommen, Verkäufer zu melden und die schlimmsten zu vermeiden.",
+      "goal": "Hilf Riotern, Rückerstattungen zu bekommen, verlorene Pakete zu verfolgen und Einzelhändler sowie Kurierdienste zur Rechenschaft zu ziehen.",
+      "focus": "Evri Zustellungsausfallquoten",
+      "focus_detail": "Zusammenstellung von Zustellungsausfallbeweisen von 800 Riotern für Citizens Advice und Trading Standards."
+    },
+    "local": {
+      "agent_quote": "Hat geholfen, das gleiche Schlagloch unter 11 verschiedenen Wetterbedingungen zu fotografieren. Der Rat gab schließlich nach.",
+      "agent_bio": "Kartiert lokale Probleme, verfolgt Reaktionszeiten des Rats und stellt FOI-Anfragen zusammen. Wenn dein Schlagloch 6 Monate dort war, hat Link die Beweise.",
+      "human_quote": "Der Rat reparierte unsere Straße, nachdem wir jedes einzelne Schlagloch mit Fotos kartiert hatten. 11 Monate, aber wir schafften es.",
+      "human_bio": "Gemeinschaftsorientierter Waliser aus den Valleys, der seit Jahren die gleichen Schlaglöcher meldet. Hilft Riotern, lokale Probleme zu dokumentieren und Räte zur Rechenschaft zu ziehen.",
+      "goal": "Hilf Riotern, lokale Probleme behoben zu bekommen – Schlaglöcher, Müll, Planung, Lärm – und Räte zur Rechenschaft zu ziehen.",
+      "focus": "Schlaglochwerkstatt-Reaktionszeiten",
+      "focus_detail": "FOI-Anfragen an 30 Räte zur Vergleich gemeldeter vs. tatsächlicher Reparaturzeiten. Veröffentlichung von Ergebnissen als Liga-Tabelle."
+    },
+    "other": {
+      "agent_quote": "Hat geholfen, eine Fitnessstudio-Mitgliedschaft zu kündigen, die 3 Anrufe, 2 E-Mails und beglaubigten Versand brauchte. Das Fitnessstudio hat jetzt einen Kündigungsbutton.",
+      "agent_bio": "Behandelt Probleme, die sonst nirgendwo hinpassen. Abonnementfallen, Kunststoffabfälle, Self-Checkout-Frustration – Flex findet die Muster und Druckpunkte.",
+      "human_quote": "Wir brachten eine Fitnessstudio-Kette dazu, einen Kündigungsbutton zu ihrer Website hinzuzufügen. Es brauchte nur 800 Beschwerden.",
+      "human_bio": "Produktdesigner aus London, der frustriert war, wie schwer Unternehmen es machen, zu gehen. Hilft Riotern, Abos zu kündigen, Dark Patterns zu vermeiden und Workarounds zu teilen.",
+      "goal": "Hilf Riotern mit Dingen, die sonst nirgendwo hinpassen – Abos, Rückerstattungen und alltägliche Frustrationen.",
+      "focus": "Dark Patterns bei Abonnementkündigung",
+      "focus_detail": "Dokumentation der schlimmsten Fälle und Erstellung von Vorlagen-Kündigungsskripten für jede Plattform."
+    },
+    "insurance": {
+      "agent_quote": "Hat einem Rioter geholfen, die Klausel zu finden, die einen abgelehnten Hausratversicherungsanspruch in eine £4.200-Auszahlung umwandelte. Die eigene Police des Versicherers bewies ihn Unrecht.",
+      "agent_bio": "Überprüft Policenformulierungen, erkennt unfaire Ablehnungsmuster und stellt Beweise für Financial Ombudsman-Einreichungen zusammen. Wenn dein Versicherer einen gültigen Anspruch vermeidet, findet Shield die Hebel.",
+      "human_quote": "Bekam 8 Rioter mit der gleichen abgelehnten Anspruchsart zur gemeinsamen Einreichung. Der Versicherer setzte sich mit allen 8 innerhalb von zwei Wochen hin.",
+      "human_bio": "Ehemaliger Versicherungsbranchenmitarbeiter aus Leeds, der weiß, wie Ansprüche wirklich entschieden werden. Hilft Riotern, bessere Einsprüche zu schreiben, Policy-Jargon zu verstehen und zu wissen, wann man eskaliert.",
+      "goal": "Hilf Riotern, faire Behandlung von Versicherer zu bekommen – und zu wissen, was zu tun ist, wenn ein Anspruch unfair abgelehnt wird.",
+      "focus": "Aviva Hausratversicherungs-Ablehnungsmuster",
+      "focus_detail": "\"Verschleiß\" in 40% abgelehnter Ansprüche genannt – oft zu Unrecht. Analyse von 200 Fällen bei 3 Versicherern für FOS-Beweispaket."
+    },
+    "delivery": {
+      "agent_quote": "Verfolgtem ein \"zugestelltes\" Paket durch 6 verschiedene Tracking-Status, 3 Depots und einen Nachbarschuppen. Fand es in 47 Minuten.",
+      "agent_bio": "Überwacht Kurierleistung, verfolgt Zustellungsausfallquoten und stellt Beweise für Verbraucherbeschwerden zusammen. Wenn dein Paket verschwunden ist, ist Track bereits darauf.",
+      "human_quote": "Brachte DPD dazu, ihre Fotobeweis-Politik in unserer Region zu ändern, nachdem 40 Rioter Beweise für Pakete im Regen eingereicht hatten.",
+      "human_bio": "Online-Käufer aus Glasgow, der die \"Wir haben es an einem sicheren Ort abgelegt\"-Entschuldigung leid war. Hilft Riotern, Rückerstattungen zu bekommen, Kuriere zu melden und die schlimmsten zu vermeiden.",
+      "goal": "Hilf Riotern, ihre Pakete ordnungsgemäß zugestellt zu bekommen – und Rückerstattungen zu bekommen, wenn das nicht passiert.",
+      "focus": "Evri Zustellungsausfallquoten",
+      "focus_detail": "Zusammenstellung von Zustellungsausfallbeweisen von 800 Riotern. Evri-Beschwerdequote: 23% – 3x höher als DPD. Aufbau einer Liga-Tabelle für Trading Standards."
+    },
+    "education": {
+      "agent_quote": "Berechnete, dass ein Plan-2-Kreditnehmer mit £30k verdient £47.000 Zinsen zahlen würde, bevor das Darlehen gelöscht wird. Das ursprüngliche Darlehen betrug £40.000.",
+      "agent_bio": "Analysiert Ausbildungskosten, Studentendarlehen-Projektionen und Finanzierungsansprüche. Rechnet die Zahlen aus, damit Studenten und Absolventen fundierte Entscheidungen treffen können.",
+      "human_quote": "Halfen 12 Riotern, zu viel gezahlte Studentendarlehensrückzahlungen zurückzufordern, von denen sie nichts wussten. Durchschnittliche Rückerstattung: £340.",
+      "human_bio": "Reife Studentin aus Birmingham, die das Finanzierungssystem zweimal navigierte. Hilft Riotern, Rückzahlungen zu verstehen, Überzahlungen zu erkennen und Schwellenwertänderungen anzufechten.",
+      "goal": "Hilf Studenten und Absolventen, Ausbildungskosten, Darlehen und Rückzahlungen zu navigieren – und stelle sicher, dass sie nicht zu viel zahlen.",
+      "focus": "Studentendarlehen-Überzahlungsrückerstattungen",
+      "focus_detail": "Identifizierung von Absolventen, denen unter der Rückzahlungsschwelle berechnet wurde. 12 Rückerstattungen verarbeitet – durchschnittlich £340 pro Stück."
+    },
+    "environment": {
+      "agent_quote": "Kreuzverwies 3 Jahre Luftqualitätsdaten mit Krankenhausaufnahmequoten. Die Korrelation war so klar, dass der Rat sie nicht ignorieren konnte.",
+      "agent_bio": "Verfolgt Umweltdaten, überwacht Verschmutzungsstufen und stellt Beweise für regulatorische Einreichungen zusammen. Wenn die Zahlen eine Geschichte erzählen, findet Fern sie.",
+      "human_quote": "Brachte unseren lokalen Rat dazu, Luftqualitätsmonitore zu installieren, nachdem 200 Rioter unserer Beweispetition unterzeichnet hatten. Daten änderten alles.",
+      "human_bio": "Absolventin der Umweltwissenschaften aus Bristol, die an evidenzgestützte Veränderung glaubt. Hilft Riotern, Umweltprobleme zu dokumentieren und Fälle zu entwickeln, die Regulatoren nicht ignorieren können.",
+      "goal": "Hilf Riotern, Umweltprobleme zu dokumentieren und Verschmutzer sowie Politiker mit Daten zur Rechenschaft zu ziehen.",
+      "focus": "Lücken in der lokalen Luftqualitätsüberwachung",
+      "focus_detail": "Kartierung von Gebieten ohne Luftqualitätsüberwachung innerhalb von 5 km. 60% der von Riotern gemeldeten Verschmutzungs-Hotspots haben keine offizielle Überwachung."
+    },
+    "employment": {
+      "agent_quote": "Stellte Daten zur Umsetzung von KI am Arbeitsplatz von 300 Riotern zusammen. 40% sagten, Änderungen erfolgten ohne Konsultation. Das ist ein Muster, keine Anekdote.",
+      "agent_bio": "Analysiert Arbeitsplatztrends, verfolgt Richtlinienänderungen und hilft Riotern, ihre Schutzmaßnahmen zu verstehen. Wenn sich dein Job ohne Konsultation ändert, hat Forge die Daten.",
+      "human_quote": "Verband 30 Rioter in der gleichen Branche, die mit KI-Änderungen konfrontiert waren. Es stellt sich heraus, dass ihre Unternehmen alle das gleiche Playbook verwendeten – und die gleichen Lücken.",
+      "human_bio": "HR-Fachmann aus Manchester, der die Seite wechselte, nachdem er sah, wie Umstrukturierungen wirklich ablaufen. Hilft Riotern, ihre Optionen zu verstehen und koordiniert Reaktionen.",
+      "goal": "Hilf Riotern, Arbeitsplatzveränderungen zu navigieren, ihre Schutzmaßnahmen zu verstehen und gemeinsam zu reagieren, wenn Jobs gefährdet sind.",
+      "focus": "KI-Arbeitsplatzautomation ohne Konsultation",
+      "focus_detail": "Dokumentation von Fällen, in denen KI-Tools ohne Personalstabkonsultation eingeführt wurden. Aufbau von Beweisen für einen Bericht über Arbeitgeberverpflichtungen."
+    },
+    "tech": {
+      "agent_quote": "Fand heraus, dass 3 große Apps Standortdaten sammelten, selbst wenn Berechtigungen auf \"nie\" eingestellt waren. Reichte Beschwerden bei der ICO für alle drei ein.",
+      "agent_bio": "Überwacht Plattformpolicen, verfolgt Dark Patterns und hilft Riotern zu verstehen, was Tech-Unternehmen mit ihren Daten tun. Wenn eine App falsch läuft, erkennt Glitch es.",
+      "human_quote": "Organisierte eine Massenanfrage für Datenzugriff bei einem sozialen Medienunternehmen. Wenn 500 Menschen gleichzeitig fragen, müssen sie es ernst nehmen.",
+      "human_bio": "Softwareentwickler aus Edinburgh, der frustriert war über die Lücke zwischen dem, was Tech-Unternehmen versprechen und was sie liefern. Hilft Riotern, ihre Datenrechte auszuüben und Dark Patterns zu erkennen.",
+      "goal": "Hilf Riotern, sich gegen Dark Patterns, Datenmissbrauch und unfaire Tech-Praktiken zu wehren.",
+      "focus": "Übergriff von App-Berechtigungen",
+      "focus_detail": "Überprüfung der Top-50-Apps auf Berechtigungsüberschreitung – Anforderungen für Zugriff, den sie nicht brauchen. Erstellung eines Berichts für die ICO."
+    }
   }
 }
