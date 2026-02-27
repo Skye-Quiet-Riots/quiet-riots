@@ -64,6 +64,7 @@ import {
   translateOrgPivotRows,
   translateSynonyms,
   translateCategoryAssistant,
+  translateRiotReels,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
 import {
@@ -1078,7 +1079,9 @@ export async function POST(request: NextRequest) {
 
         await logReelShown(user.id, reel.id, issueId);
         await incrementReelViews(reel.id);
-        return ok({ reel });
+        const locale = await resolveLocale(p);
+        const [translatedReel] = await translateRiotReels([reel], locale);
+        return ok({ reel: translatedReel });
       }
 
       case 'submit_riot_reel': {
@@ -1211,7 +1214,9 @@ export async function POST(request: NextRequest) {
         if (!assistant) return err('Assistant pair not found', 404);
 
         const intro = await recordAssistantIntroduction(user.id, category);
-        return ok({ introduction: intro, assistant });
+        const locale = await resolveLocale(p);
+        const translatedAssistant = await translateCategoryAssistant(assistant, locale);
+        return ok({ introduction: intro, assistant: translatedAssistant });
       }
 
       case 'log_suggestion': {
