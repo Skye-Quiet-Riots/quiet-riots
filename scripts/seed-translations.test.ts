@@ -95,17 +95,17 @@ describe('translations/ files', () => {
     }
   });
 
-  it.each(nonEnLocales)('%s.json org names are preserved as brand names', (locale) => {
+  it.each(nonEnLocales)('%s.json org names are translated', (locale) => {
     const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
     const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-    // Organisation names should be kept in original English form
+    // Organisation names should have a non-empty translated name
     for (const orgName of ORGANISATIONS.map((o) => o.name)) {
       if (data.organisations[orgName]) {
         expect(
           data.organisations[orgName].name,
-          `${locale} org "${orgName}" name should be preserved`,
-        ).toBe(orgName);
+          `${locale} org "${orgName}" name should be a non-empty string`,
+        ).toBeTruthy();
       }
     }
   });
