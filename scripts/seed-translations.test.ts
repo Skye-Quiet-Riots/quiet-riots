@@ -3,10 +3,14 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { routing } from '../src/i18n/routing';
 import {
+  ACTIONS,
+  ACTION_INITIATIVES,
   CATEGORIES,
   CATEGORY_ASSISTANTS,
+  EXPERT_PROFILES,
   ISSUES,
   ORGANISATIONS,
+  RIOT_REELS,
   SYNONYMS,
   type TranslationFile,
 } from './seed-translations';
@@ -299,6 +303,187 @@ describe('translations/ files', () => {
           `${locale} category_assistants["${cat}"].${field} exceeds 500 chars`,
         ).toBeLessThanOrEqual(500);
       }
+    }
+  });
+
+  // ─── Action translation tests ───
+
+  const actionKeys = ACTIONS.map((a) => a.title).sort();
+
+  it.each(nonEnLocales)('%s.json has all action keys with title+description', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.actions, `${locale} missing actions section`).toBeDefined();
+    const keys = Object.keys(data.actions).sort();
+    expect(keys).toEqual(actionKeys);
+
+    for (const [key, value] of Object.entries(data.actions)) {
+      expect(value, `${locale} actions["${key}"] missing title`).toHaveProperty('title');
+      expect(value, `${locale} actions["${key}"] missing description`).toHaveProperty('description');
+      expect(
+        (value.title as string).length,
+        `${locale} actions["${key}"] has empty title`,
+      ).toBeGreaterThan(0);
+      expect(
+        (value.description as string).length,
+        `${locale} actions["${key}"] has empty description`,
+      ).toBeGreaterThan(0);
+    }
+  });
+
+  // ─── Expert profile translation tests ───
+
+  const expertKeys = EXPERT_PROFILES.map((e) => e.name).sort();
+  const expertFields = ['role', 'speciality', 'achievement'] as const;
+
+  it.each(nonEnLocales)('%s.json has all expert profile keys with required fields', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.expert_profiles, `${locale} missing expert_profiles section`).toBeDefined();
+    const keys = Object.keys(data.expert_profiles).sort();
+    expect(keys).toEqual(expertKeys);
+
+    for (const [key, value] of Object.entries(data.expert_profiles)) {
+      for (const field of expertFields) {
+        expect(
+          value,
+          `${locale} expert_profiles["${key}"] missing "${field}"`,
+        ).toHaveProperty(field);
+        expect(
+          (value[field] as string).length,
+          `${locale} expert_profiles["${key}"].${field} is empty`,
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  // ─── Riot reel translation tests ───
+
+  const reelKeys = RIOT_REELS.map((r) => r.video_id).sort();
+
+  it.each(nonEnLocales)('%s.json has all riot reel keys with title+caption', (locale) => {
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    expect(data.riot_reels, `${locale} missing riot_reels section`).toBeDefined();
+    const keys = Object.keys(data.riot_reels).sort();
+    expect(keys).toEqual(reelKeys);
+
+    for (const [key, value] of Object.entries(data.riot_reels)) {
+      expect(value, `${locale} riot_reels["${key}"] missing title`).toHaveProperty('title');
+      expect(value, `${locale} riot_reels["${key}"] missing caption`).toHaveProperty('caption');
+      expect(
+        (value.title as string).length,
+        `${locale} riot_reels["${key}"] has empty title`,
+      ).toBeGreaterThan(0);
+      expect(
+        (value.caption as string).length,
+        `${locale} riot_reels["${key}"] has empty caption`,
+      ).toBeGreaterThan(0);
+    }
+  });
+
+  // ─── Action initiative translation tests ───
+
+  const initiativeKeys = ACTION_INITIATIVES.map((ai) => ai.title).sort();
+
+  it.each(nonEnLocales)(
+    '%s.json has all action initiative keys with title+description',
+    (locale) => {
+      const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+      const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      expect(
+        data.action_initiatives,
+        `${locale} missing action_initiatives section`,
+      ).toBeDefined();
+      const keys = Object.keys(data.action_initiatives).sort();
+      expect(keys).toEqual(initiativeKeys);
+
+      for (const [key, value] of Object.entries(data.action_initiatives)) {
+        expect(
+          value,
+          `${locale} action_initiatives["${key}"] missing title`,
+        ).toHaveProperty('title');
+        expect(
+          value,
+          `${locale} action_initiatives["${key}"] missing description`,
+        ).toHaveProperty('description');
+        expect(
+          (value.title as string).length,
+          `${locale} action_initiatives["${key}"] has empty title`,
+        ).toBeGreaterThan(0);
+        expect(
+          (value.description as string).length,
+          `${locale} action_initiatives["${key}"] has empty description`,
+        ).toBeGreaterThan(0);
+      }
+    },
+  );
+
+  // ─── Issue per-riot copy translation tests ───
+  // These keys must be ENGLISH issue names (or LIKE patterns like '%Bus%Cuts').
+  // If the AI translates the keys, seed-translations --apply silently skips them.
+
+  it.each(nonEnLocales)(
+    '%s.json has issue_per_riot keys matching English baseline',
+    (locale) => {
+      const enPath = path.join(TRANSLATIONS_DIR, 'en.json');
+      const enData: TranslationFile = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+      const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+      const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      expect(data.issue_per_riot, `${locale} missing issue_per_riot section`).toBeDefined();
+
+      const enKeys = Object.keys(enData.issue_per_riot).sort();
+      const localeKeys = Object.keys(data.issue_per_riot).sort();
+      expect(localeKeys, `${locale} issue_per_riot key mismatch`).toEqual(enKeys);
+    },
+  );
+
+  const perRiotFields = ['agent_helps', 'human_helps', 'agent_focus', 'human_focus'] as const;
+
+  it.each(nonEnLocales)(
+    '%s.json issue_per_riot entries have all 4 fields non-empty',
+    (locale) => {
+      const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+      const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      if (!data.issue_per_riot) return;
+
+      for (const [key, value] of Object.entries(data.issue_per_riot)) {
+        for (const field of perRiotFields) {
+          expect(
+            value,
+            `${locale} issue_per_riot["${key}"] missing "${field}"`,
+          ).toHaveProperty(field);
+          expect(
+            (value[field] as string).length,
+            `${locale} issue_per_riot["${key}"].${field} is empty`,
+          ).toBeGreaterThan(0);
+        }
+      }
+    },
+  );
+
+  // ─── Catch-all: all keyed sections match English baseline keys ───
+  // This test auto-covers any future section added to TranslationFile.
+
+  it.each(nonEnLocales)('%s.json has matching keys in all sections', (locale) => {
+    const enPath = path.join(TRANSLATIONS_DIR, 'en.json');
+    const enData: TranslationFile = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<string, unknown>;
+
+    // Check all sections that have object keys (skip 'locale' string and 'synonyms' arrays)
+    for (const [section, enSection] of Object.entries(enData)) {
+      if (section === 'locale') continue;
+      if (section === 'synonyms') continue; // synonyms use arrays, tested separately
+      if (typeof enSection !== 'object' || enSection === null) continue;
+
+      const localeSection = data[section] as Record<string, unknown> | undefined;
+      expect(localeSection, `${locale} missing section "${section}"`).toBeDefined();
+      if (!localeSection) continue;
+
+      const enKeys = Object.keys(enSection as Record<string, unknown>).sort();
+      const localeKeys = Object.keys(localeSection).sort();
+      expect(localeKeys, `${locale}/${section} key mismatch`).toEqual(enKeys);
     }
   });
 

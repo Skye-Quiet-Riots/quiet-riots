@@ -1158,295 +1158,344 @@
       "agent_helps": "Melacak pola pembatalan berdasarkan rute dan waktu, membantu Anda mengajukan klaim pengembalian dana, dan mengumpulkan bukti untuk pengajuan ORR",
       "human_helps": "Menghubungkan rioter pada rute yang sama, berbagi pendekatan pengembalian dana yang benar-benar berhasil, dan mengoordinasikan keluhan kelompok",
       "agent_focus": "Menganalisis data pembatalan Avanti West Coast — 340 laporan rioter bulan ini. Membangun dataset waktu, rute, dan alasan pembatalan untuk ORR.",
-      "name": "Pembatalan Kereta"
+      "name": "Pembatalan Kereta",
+      "human_focus": "Linking up rioters on the Manchester–London corridor. Three group complaints in progress."
     },
     "Train Ticket Prices": {
       "agent_helps": "Membandingkan tarif di berbagai platform pemesanan, menemukan penghematan tiket terpisah, dan melacak kenaikan harga di atas inflasi berdasarkan operator",
       "human_helps": "Berbagi trik pemesanan yang benar-benar menghemat uang, dan membantu rioter menulis kepada anggota parlemen mereka tentang kenaikan tarif",
       "agent_focus": "Memetakan kesenjangan antara tarif yang diatur dan tidak diatur di 6 operator. Penanda rata-rata pada tiket walk-up: 340%.",
-      "name": "Harga Tiket Kereta"
+      "name": "Harga Tiket Kereta",
+      "human_focus": "Running a \"fare shock\" evidence collection — rioters sharing their worst ticket receipts. 89 submitted so far."
     },
     "Flight Delays": {
       "agent_helps": "Memeriksa apakah penundaan Anda memenuhi syarat kompensasi, membantu Anda menyusun klaim, dan melacak waktu respons maskapai",
       "human_helps": "Berbagi maskapai mana yang benar-benar membayar, menghubungkan rioter yang menangani maskapai yang sama, dan membantu mendeskalasi klaim yang terhenti",
       "agent_focus": "Melacak waktu respons kompensasi Ryanair — rata-rata 47 hari. Membangun kasus untuk intervensi CAA.",
-      "name": "Penundaan Penerbangan"
+      "name": "Penundaan Penerbangan",
+      "human_focus": "Helping rioters who've been waiting 3+ months for compensation escalate to the aviation ombudsman."
     },
     "Lost Luggage": {
       "agent_helps": "Membantu Anda mengajukan laporan PIR, melacak klaim Anda, dan menghitung apa yang berhak Anda dapatkan berdasarkan Konvensi Montreal",
       "human_helps": "Berbagi apa yang benar-benar membuat maskapai merespons lebih cepat, dan menghubungkan rioter yang telah mengalami hal yang sama",
       "agent_focus": "Mengompilasi data bagasi hilang berdasarkan maskapai dan bandara. Terminal 2 Heathrow adalah yang terburuk — 3x tingkat Terminal 5.",
-      "name": "Bagasi Hilang"
+      "name": "Bagasi Hilang",
+      "human_focus": "Building a shared checklist of what to pack in hand luggage so you're covered if it happens. Practical stuff that helps."
     },
     "%Bus%Cuts": {
       "agent_helps": "Memetakan rute mana yang telah dipotong atau dikurangi, melacak data dampak, dan membantu Anda merespons konsultasi",
       "human_helps": "Menghubungkan komunitas yang terkena pemotongan yang sama, berbagi pendekatan sukses dari area lain, dan membantu mengoordinasikan respons kelompok",
       "agent_focus": "Memetakan pemotongan rute di Barat Laut — 34 rute dikurangi dalam 12 bulan terakhir. Membangun pengajuan untuk Komite Pemilihan Transportasi.",
-      "name": "Pemotongan Bus"
+      "name": "Pemotongan Bus",
+      "human_focus": "Helping three rural communities coordinate their responses to bus tender consultations. Strength in numbers."
     },
     "Parking Fines": {
       "agent_helps": "Meninjau denda Anda, memeriksa apakah signage sesuai, menyusun surat banding, dan melacak tingkat kesuksesan berdasarkan operator",
       "human_helps": "Berbagi pendekatan banding mana yang paling efektif untuk setiap perusahaan parkir, dan membantu rioter yang telah dimulai untuk penagih hutang",
       "agent_focus": "Surat banding template sekarang memiliki tingkat kesuksesan 72% di seluruh operator parkir swasta. Menganalisis dasar mana yang paling efektif.",
-      "name": "Denda Parkir"
+      "name": "Denda Parkir",
+      "human_focus": "Helping rioters at hospital car parks — broken machines, unclear signs. 12 successful appeals this month."
     },
     "Fuel Prices": {
       "agent_helps": "Melacak harga bahan bakar lokal, membandingkan dengan biaya grosir, dan mengidentifikasi stasiun yang lambat dalam meneruskan pengurangan",
       "human_helps": "Berbagi tips menemukan bahan bakar yang lebih murah secara lokal, dan membantu rioter memahami kapan harus mengisi dan kapan harus menunggu",
       "agent_focus": "Memantau kesenjangan antara harga grosir dan pompa. Saat ini 8p lebih lebar dari rata-rata 5 tahun. Membangun laporan untuk CMA.",
-      "name": "Harga Bahan Bakar"
+      "name": "Harga Bahan Bakar",
+      "human_focus": "Running a local fuel price watch — rioters reporting prices so everyone can find the best deals nearby."
     },
     "Broadband Speed": {
       "agent_helps": "Menjalankan analisis tes kecepatan, membandingkan hasil Anda dengan apa yang Anda bayar, dan membantu Anda membangun keluhan Ofcom",
       "human_helps": "Berbagi penyedia mana yang benar-benar memberikan apa yang mereka janjikan, membantu rioter mengoordinasikan pengalihan tingkat jalan, dan bernegosiasi atas nama Anda",
       "agent_focus": "Data tes kecepatan dari 200 rioter menunjukkan kecepatan rata-rata 18 Mbps pada paket yang diiklankan pada 65 Mbps. Mengompilasi untuk Ofcom.",
-      "name": "Kecepatan Broadband"
+      "name": "Kecepatan Broadband",
+      "human_focus": "Organised a street-level broadband switch in Hackney — 23 households moved together and got a group deal. Doing it again in Brixton."
     },
     "Mobile Signal Dead Zones": {
       "agent_helps": "Memetakan titik hitam sinyal menggunakan laporan rioter, referensi silang dengan data cakupan Ofcom, dan mengajukan keluhan cakupan",
       "human_helps": "Menghubungkan rioter di area yang sama untuk membangun bukti kelompok, berbagi jaringan mana yang benar-benar bekerja di mana, dan membantu dengan pengalihan",
       "agent_focus": "Membangun heat map zona mati dari 340 laporan rioter. 40% berada dalam 5 mil dari kota besar. Mengirimkan ke tinjauan Jaringan Pedesaan Bersama Ofcom.",
-      "name": "Zona Mati Sinyal Seluler"
+      "name": "Zona Mati Sinyal Seluler",
+      "human_focus": "Helping rioters in rural Wales and Scotland get their signal issues onto the SRN priority list. 3 communities already submitted."
     },
     "Price Rises Mid-Contract": {
       "agent_helps": "Menghitung kenaikan Anda yang sebenarnya, memeriksa apakah itu melanggar pedoman Ofcom, dan menyusun surat keluhan ke penyedia Anda",
       "human_helps": "Berbagi skrip negosiasi yang mendapat hasil, menghubungkan rioter di penyedia yang sama, dan membantu Anda memahami opsi keluar Anda",
       "agent_focus": "Kenaikan CPI+ mengenai 890 rioter kuartal ini. Kenaikan rata-rata: £4.20/bulan pada kontrak yang menjanjikan penetapan harga \"tetap\". Membangun paket bukti Ofcom.",
-      "name": "Kenaikan Harga Pertengahan Kontrak"
+      "name": "Kenaikan Harga Pertengahan Kontrak",
+      "human_focus": "Tested 4 different negotiation approaches with BT. The one that works: ask for the disconnections team, then mention Ofcom. Success rate: 60%."
     },
     "Roaming Charges": {
       "agent_helps": "Memeriksa kebijakan roaming penyedia Anda, menghitung apa yang benar-benar akan Anda bayar di luar negeri, dan membantu Anda mengklaim kembali biaya yang tidak terduga",
       "human_helps": "Berbagi penyedia mana yang masih menawarkan roaming gratis, dan membantu rioter menghindari kejutan tagihan sebelum mereka bepergian",
       "agent_focus": "Biaya roaming pasca-Brexit sangat bervariasi — dari £0 hingga £6/hari tergantung penyedia dan paket. Membangun alat perbandingan untuk rioter.",
-      "name": "Biaya Roaming"
+      "name": "Biaya Roaming",
+      "human_focus": "Created a pre-travel checklist so rioters know exactly what their phone will cost before they leave. Saved 3 rioters from £200+ bills last month."
     },
     "Energy Bill Costs": {
       "agent_helps": "Menganalisis tarif Anda, menemukan apakah Anda membayar berlebih, membandingkan penawaran di berbagai penyedia, dan membantu Anda beralih",
       "human_helps": "Berbagi pendekatan pengalihan yang paling menghemat, menghubungkan rioter yang berhasil menantang tagihan, dan membantu dengan aplikasi dana kesulitan",
       "agent_focus": "Menganalisis data tarif di 5 penyedia. Rioter pada tarif variabel standar membayar rata-rata £340/tahun lebih banyak daripada mereka yang memiliki penawaran tetap.",
-      "name": "Biaya Tagihan Energi"
+      "name": "Biaya Tagihan Energi",
+      "human_focus": "Helping 40 rioters apply for the Warm Home Discount and hardship funds. 28 approved so far — £4,200 saved between them."
     },
     "Inaccurate Energy Bills": {
       "agent_helps": "Validasi silang pembacaan meter Anda terhadap tagihan, identifikasi pola penagihan berlebih, dan susun surat perselisihan dengan bukti",
       "human_helps": "Berbagi cara membaca meter Anda dengan benar, apa yang harus dikatakan kepada penyedia Anda, dan kapan harus mendeskalasi ke Ombudsman Energi",
       "agent_focus": "Menemukan kesalahan penagihan estimasi sistematis di British Gas — rioter membayar berlebih rata-rata £28/bulan. Membangun pengajuan Ofgem.",
-      "name": "Tagihan Energi yang Tidak Akurat"
+      "name": "Tagihan Energi yang Tidak Akurat",
+      "human_focus": "Running meter reading workshops over WhatsApp — teaching rioters how to submit readings and spot when estimates are wrong."
     },
     "Power Cuts": {
       "agent_helps": "Mencatat laporan pemadaman, memeriksa apakah Anda berhak mendapat kompensasi (£75 untuk 12+ jam), dan melacak pola berdasarkan jaringan distribusi",
       "human_helps": "Menghubungkan rioter di area yang terkena dampak, berbagi cara mengklaim kompensasi, dan membantu mengoordinasikan respons terhadap pemadaman berulang",
       "agent_focus": "Melacak frekuensi pemadaman berdasarkan wilayah. Barat Daya memiliki 3x lebih banyak pemadaman per pelanggan daripada London. Mengompilasi untuk tinjauan keandalan Ofgem.",
-      "name": "Pemadaman Listrik"
+      "name": "Pemadaman Listrik",
+      "human_focus": "Helping 3 rural communities document repeat outages for their Distribution Network Operator. Two have already received compensation."
     },
     "Smart Meter Problems": {
       "agent_helps": "Mendiagnosis kesalahan smart meter umum, memeriksa apakah meter Anda kehilangan fungsionalitas SMETS1 setelah beralih, dan mengajukan keluhan",
       "human_helps": "Berbagi solusi untuk tampilan di rumah yang rusak, menghubungkan rioter dengan masalah meter yang sama, dan membantu mendeskalasi ke Ofgem",
       "agent_focus": "1.400 rioter melaporkan smart meter yang berhenti bekerja setelah berganti penyedia. 80% adalah model SMETS1. Membangun bukti untuk Ofgem agar memaksa upgrade.",
-      "name": "Masalah Smart Meter"
+      "name": "Masalah Smart Meter",
+      "human_focus": "Helping rioters request manual readings while their smart meter is broken — so they don't get estimated bills on top of a faulty meter."
     },
     "Water Bill Increases": {
       "agent_helps": "Menganalisis tagihan Anda terhadap penetapan harga Ofwat, memeriksa apakah Anda akan menghemat dengan water meter, dan menyusun surat keluhan",
       "human_helps": "Berbagi tips mengurangi penggunaan air, menghubungkan rioter di perusahaan air yang sama, dan membantu dengan aplikasi WaterSure untuk rumah tangga yang memenuhi syarat",
       "agent_focus": "Kenaikan tagihan air 2025-26 rata-rata 21% di seluruh Inggris. Membandingkan kenaikan aktual terhadap apa yang disetujui Ofwat — beberapa perusahaan melampaui batas.",
-      "name": "Peningkatan Tagihan Air"
+      "name": "Peningkatan Tagihan Air",
+      "human_focus": "Helping 60 rioters apply for WaterSure (capped bills for low-income or medical-need households). 44 approved — average saving £180/year."
     },
     "%Sewage in Rivers%": {
       "agent_helps": "Memantau peringatan pembuangan, referensi silang data perusahaan dengan laporan rioter, dan mengumpulkan bukti untuk penegakan EA",
       "human_helps": "Menghubungkan rioter dekat dengan sungai yang sama, menyelenggarakan hari pengujian pantai dan sungai, dan membantu mengirimkan bukti ke Badan Lingkungan",
       "agent_focus": "Referensi silang data pembuangan pelaporan diri Thames Water dengan 200 laporan rioter. Tiga outlet tampaknya kurang melaporkan sebesar 60%+.",
-      "name": "Limbah Selokan di Sungai"
+      "name": "Limbah Selokan di Sungai",
+      "human_focus": "Organised testing at 12 beaches this month. Results shared with Surfers Against Sewage and local media. Two beach warnings issued early because of our data."
     },
     "Bank Branch Closures": {
       "agent_helps": "Melacak penutupan yang direncanakan, menganalisis penilaian dampak, dan membantu Anda merespons konsultasi dengan bukti",
       "human_helps": "Menghubungkan komunitas yang terkena dampak, berbagi pendekatan sukses yang membalikkan penutupan, dan membantu menyelenggarakan respons kelompok",
       "agent_focus": "12 penutupan HSBC diumumkan kuartal ini. Menganalisis penilaian dampak mereka — 3 tidak memenuhi persyaratan FCA. Membangun tantangan.",
-      "name": "Penutupan Cabang Bank"
+      "name": "Penutupan Cabang Bank",
+      "human_focus": "Helped Barclays reverse a closure in Shrewsbury after 1,200 rioters attended the consultation. Sharing that playbook with other communities."
     },
     "Hidden Bank Charges": {
       "agent_helps": "Meninjau pernyataan Anda untuk biaya yang tidak terduga, menghitung total biaya dari waktu ke waktu, dan menyusun permintaan pengembalian dana",
       "human_helps": "Berbagi biaya mana yang paling sering dikembalikan, menghubungkan rioter di bank yang sama, dan membantu mendeskalasi ke FOS",
       "agent_focus": "Menganalisis 500 pernyataan rioter. Biaya tersembunyi rata-rata: £127/tahun. Paling umum: biaya harian overdraf yang disusun dan markup transaksi luar negeri.",
-      "name": "Biaya Bank Tersembunyi"
+      "name": "Biaya Bank Tersembunyi",
+      "human_focus": "Running a \"statement audit\" challenge — rioters checking 3 months of statements and flagging anything unexpected. 89 rioters found charges they didn't know about."
     },
     "Fraud and Scam Losses": {
       "agent_helps": "Meninjau kasus Anda terhadap kode CRM, menyusun keluhan ke bank Anda, dan membantu mendeskalasi ke FOS jika mereka menolak untuk mengganti rugi",
       "human_helps": "Berbagi pendekatan apa yang berhasil dengan setiap bank, menghubungkan rioter dalam situasi serupa, dan memberikan dukungan emosional — yang ini sulit",
       "agent_focus": "65% korban penipuan APP awalnya ditolak penggantian rugi. Setelah keluhan template kami, 48% dibalikkan pada banding. Membangun bukti FCA.",
-      "name": "Kerugian Penipuan dan Penipuan"
+      "name": "Kerugian Penipuan dan Penipuan",
+      "human_focus": "Running peer support for fraud victims. It's not just about the money — the shame and anxiety are real. 30 rioters helping each other through it."
     },
     "Mortgage Rate Shock": {
       "agent_helps": "Menghitung pembayaran baru Anda, membandingkan opsi refinancing, dan membantu Anda memahami timeline untuk beralih",
       "human_helps": "Berbagi tips dari rioter yang telah menavigasi pengalihan, menghubungkan orang dengan situasi serupa, dan membantu mengurangi kepanikan",
       "agent_focus": "Peningkatan pembayaran rata-rata untuk rioter yang muncul dari perbaikan 2 tahun: £287/bulan. Membandingkan opsi refinancing di 12 pemberi pinjaman untuk menemukan penawaran terbaik.",
-      "name": "Kejutan Suku Bunga Hipotek"
+      "name": "Kejutan Suku Bunga Hipotek",
+      "human_focus": "Running a \"remortgage buddy\" system — pairing rioters who've just switched with those about to, so they can share what worked."
     },
     "Overseas Transfer Fees": {
       "agent_helps": "Membandingkan biaya transfer di bank dan layanan, menghitung apa yang benar-benar Anda bayar dalam markup FX tersembunyi, dan menyarankan alternatif",
       "human_helps": "Berbagi layanan mana yang benar-benar memberikan tarif terbaik, menghubungkan rioter yang mengirim uang ke negara yang sama, dan membantu perencanaan transfer massal",
       "agent_focus": "Bank high street mengenakan rata-rata 3,5% markup FX pada transfer vs 0,4% pada layanan khusus. Itu £310/tahun pada transfer £750/bulan.",
-      "name": "Biaya Transfer Luar Negeri"
+      "name": "Biaya Transfer Luar Negeri",
+      "human_focus": "Built a comparison sheet of real costs for the top 10 transfer corridors. Updated monthly by rioters who actually use the services."
     },
     "Insurance Claim Rejections": {
       "agent_helps": "Meninjau wording kebijakan Anda terhadap alasan penolakan, mengidentifikasi apakah perusahaan asuransi tidak wajar, dan menyusun surat banding",
       "human_helps": "Berbagi celah penolakan umum, menghubungkan rioter yang berhasil mengajukan banding dengan perusahaan asuransi yang sama, dan membantu mendeskalasi ke FOS",
       "agent_focus": "Menganalisis pola penolakan di Aviva, Admiral, dan Direct Line. 'Keausan' dikutip dalam 40% penolakan asuransi rumah — sering kali salah.",
-      "name": "Penolakan Klaim Asuransi"
+      "name": "Penolakan Klaim Asuransi",
+      "human_focus": "Connecting rioters who've had the same claim type rejected. When 5 people have the same story, it's a pattern, not a one-off."
     },
     "NHS Waiting Times": {
       "agent_helps": "Memeriksa waktu tunggu saat ini untuk prosedur Anda, menemukan rumah sakit mana yang memiliki daftar lebih pendek, dan membantu Anda memahami pilihan Anda",
       "human_helps": "Berbagi tips untuk menavigasi sistem, menghubungkan rioter yang menunggu prosedur yang sama, dan membantu Anda mengajukan pertanyaan yang tepat",
       "agent_focus": "Waktu tunggu rata-rata untuk 10 prosedur teratas yang dibutuhkan rioter. Penggantian pinggul: 47 minggu. Katarak: 32 minggu. Memetakan rumah sakit mana yang tercepat.",
-      "name": "Waktu Tunggu NHS"
+      "name": "Waktu Tunggu NHS",
+      "human_focus": "Helping rioters understand they can choose which hospital to be referred to. 12 rioters switched to shorter lists this month."
     },
     "GP Appointment Access": {
       "agent_helps": "Mencatat masalah akses, mengompilasi data tentang waktu tunggu panggilan dan ketersediaan pemesanan, dan membantu Anda mendeskalasi ke ICB",
       "human_helps": "Berbagi pendekatan pemesanan mana yang berhasil (online tengah malam, walk-in, dll.), dan membantu rioter menulis ke manajer praktik mereka",
       "agent_focus": "Waktu tunggu rata-rata rioter untuk menemui GP: 18 hari. 40% tidak dapat menghubungi telepon sebelum jalur ditutup. Membangun laporan untuk ICB lokal.",
-      "name": "Akses Janji Temu GP"
+      "name": "Akses Janji Temu GP",
+      "human_focus": "Running a \"what actually works\" thread — rioters sharing real tips for getting appointments at their specific practice."
     },
     "Dentist Availability": {
       "agent_helps": "Mencari dokter gigi NHS yang menerima pasien di area Anda, melacak ketersediaan, dan membantu Anda mendaftarkan keluhan tentang akses",
       "human_helps": "Berbagi solusi alternatif (sekolah gigi, klinik komunitas, slot darurat), dan menghubungkan rioter di area yang sama untuk berbagi intelijen",
       "agent_focus": "Hanya 3 dari 10 praktik gigi NHS yang menerima pasien dewasa baru secara nasional. Membangun tracker langsung untuk area rioter — diperbarui mingguan.",
-      "name": "Ketersediaan Dokter Gigi"
+      "name": "Ketersediaan Dokter Gigi",
+      "human_focus": "Helping rioters find alternatives when the answer is \"no NHS dentists.\" Dental schools, community clinics, and the emergency dental service."
     },
     "Mental Health Service Waits": {
       "agent_helps": "Memeriksa waktu tunggu terapi IAPT/berbicara di area Anda, menemukan apa yang tersedia, dan membantu Anda memahami proses rujukan",
       "human_helps": "Berbagi dukungan apa yang tersedia saat menunggu, menghubungkan rioter ke dukungan rekan, dan membantu menavigasi sistem",
       "agent_focus": "Waktu tunggu IAPT rata-rata: 18 minggu. Tetapi sangat bervariasi — beberapa area 6 minggu, yang lain 40+. Memetakan lotere kode pos.",
-      "name": "Menunggu Layanan Kesehatan Mental"
+      "name": "Menunggu Layanan Kesehatan Mental",
+      "human_focus": "Building a \"while you wait\" resource — free apps, helplines, peer groups, and self-referral options rioters can access right now."
     },
     "Prescription Costs": {
       "agent_helps": "Memeriksa apakah Anda memenuhi syarat untuk resep gratis, menghitung apakah PPC akan menghemat uang Anda, dan melacak perubahan biaya",
       "human_helps": "Berbagi tips menghemat (PPC, farmasi terlebih dahulu, alternatif generik), dan menghubungkan rioter yang merasa sistem tidak adil",
       "agent_focus": "Jika Anda membutuhkan 12+ item/tahun, PPC menghemat uang. Tetapi 40% rioter yang akan mendapat manfaat tidak memilikinya. Menjalankan alat kalkulator.",
-      "name": "Biaya Resep"
+      "name": "Biaya Resep",
+      "human_focus": "Helping rioters check if they qualify for exemptions — many don't realise they're eligible. 23 rioters got free prescriptions they didn't know about."
     },
     "Hospital Parking Charges": {
       "agent_helps": "Memeriksa kebijakan parkir rumah sakit Anda, mengidentifikasi apakah Anda memenuhi syarat untuk parkir gratis atau berkurang, dan membantu mengajukan banding biaya yang tidak adil",
       "human_helps": "Berbagi rumah sakit mana yang memiliki penawaran parkir gratis, menghubungkan rioter di rumah sakit yang sama, dan membantu dengan banding",
       "agent_focus": "67% dari NHS hospital trusts di Inggris masih mengenakan biaya parkir. Memetakan trust mana yang menawarkan pengecualian untuk pengunjung reguler dan pasien jangka panjang.",
-      "name": "Biaya Parkir Rumah Sakit"
+      "name": "Biaya Parkir Rumah Sakit",
+      "human_focus": "Helping rioters at frequent-visit hospitals (chemo, dialysis, rehab) apply for parking exemptions. 15 approved this month."
     },
     "Rent Increases": {
       "agent_helps": "Memeriksa apakah kenaikan Anda legal, membandingkannya dengan tarif pasar lokal, dan membantu Anda menantangnya melalui saluran yang tepat",
       "human_helps": "Berbagi tips negosiasi, menghubungkan penyewa di area yang sama, dan membantu Anda memahami pilihan Anda berdasarkan Undang-Undang Reformasi Penyewaan",
       "agent_focus": "Rata-rata kenaikan sewa yang dilaporkan oleh rioter: 11,2% vs inflasi 3,4%. Memetakan kenaikan berdasarkan wilayah untuk menemukan area terburuk.",
-      "name": "Kenaikan Sewa"
+      "name": "Kenaikan Sewa",
+      "human_focus": "Helping rioters understand what the Renters Reform Act actually changes for them. Running Q&A sessions over WhatsApp."
     },
     "Noisy Neighbours": {
       "agent_helps": "Membantu Anda mencatat insiden kebisingan dengan benar, menyusun surat keluhan ke dewan atau asosiasi perumahan, dan melacak waktu respons",
       "human_helps": "Berbagi apa yang benar-benar berhasil (dan apa yang tidak), menghubungkan rioter dengan masalah serupa, dan membantu menavigasi opsi mediasi",
       "agent_focus": "Waktu respons dewan rata-rata untuk keluhan kebisingan: 23 hari. Tetapi penyelidikan gangguan hukum memakan waktu 6+ bulan. Membangun template respons lebih cepat.",
-      "name": "Tetangga Berisik"
+      "name": "Tetangga Berisik",
+      "human_focus": "Helping rioters document noise properly — time-stamped logs, decibel readings, video evidence. The better the evidence, the faster the response."
     },
     "Damp and Mould in Housing": {
       "agent_helps": "Membantu Anda mendokumentasikan kelembaban dengan foto dan pembacaan kelembaban, menyusun keluhan formal menggunakan Hukum Awaab, dan melacak respons pemilik",
       "human_helps": "Berbagi bukti apa yang membuat pemilik bertindak, menghubungkan rioter dengan organisasi perumahan, dan membantu mendeskalasi ke ombudsman perumahan",
       "agent_focus": "Sejak Hukum Awaab, pemilik harus merespons kelembaban dalam 14 hari. Melacak kepatuhan — 60% pemilik rioter melanggar hal ini.",
-      "name": "Lembab dan Jamur di Perumahan"
+      "name": "Lembab dan Jamur di Perumahan",
+      "human_focus": "Built an evidence pack template that's been used by 47 rioters. 38 got repairs started within a month."
     },
     "Shrinkflation": {
       "agent_helps": "Melacak perubahan ukuran produk, menghitung kenaikan harga per unit nyata, dan mengidentifikasi pelaku terburuk",
       "human_helps": "Berbagi contoh yang diamati, membantu rioter menemukan alternatif dengan nilai lebih baik, dan mengoordinasikan panggilan media sosial",
       "agent_focus": "Melacak 120 produk yang menyusut dalam 6 bulan terakhir. Pengurangan ukuran rata-rata: 12%. Kenaikan harga rata-rata pada saat yang sama: 8%. Pukulan ganda.",
-      "name": "Shrinkflation"
+      "name": "Shrinkflation",
+      "human_focus": "Running a \"shrinkflation spotters\" group — rioters photograph before/after packaging. The best ones get shared on social. Companies hate it."
     },
     "Refund Difficulties": {
       "agent_helps": "Memeriksa hak perlindungan konsumen Anda, menyusun surat permintaan pengembalian dana, dan membantu mendeskalasi ke Trading Standards atau penerbit kartu Anda",
       "human_helps": "Berbagi pengecer mana yang paling mudah dan tersulit untuk mendapatkan pengembalian dana, dan membantu dengan klaim chargeback dan Bagian 75",
       "agent_focus": "Waktu rata-rata untuk menyelesaikan keluhan pengembalian dana: 21 hari. Tetapi klaim Bagian 75 melalui kartu kredit Anda hanya memakan waktu rata-rata 8 hari.",
-      "name": "Kesulitan Pengembalian Dana"
+      "name": "Kesulitan Pengembalian Dana",
+      "human_focus": "Teaching rioters about Section 75 — if you paid by credit card, you have much stronger protection. Most people don't know this."
     },
     "Fake Reviews": {
       "agent_helps": "Menganalisis pola ulasan, mengidentifikasi kemungkinan palsu, dan membantu Anda melaporkannya ke platform dan Trading Standards",
       "human_helps": "Berbagi tips mendeteksi ulasan palsu, merekomendasikan sumber ulasan yang dapat dipercaya, dan membantu rioter melaporkan penjual bermasalah",
       "agent_focus": "Menguji 500 produk Amazon — 34% memiliki pola ulasan palsu yang dapat dideteksi. Membangun alat browser untuk menandai daftar mencurigakan.",
-      "name": "Ulasan Palsu"
+      "name": "Ulasan Palsu",
+      "human_focus": "Running a \"trusted rioter reviews\" thread where real people share honest opinions. No incentives, no fakes."
     },
     "Food Quality Decline": {
       "agent_helps": "Melacak perubahan bahan, membandingkan label nutrisi dari waktu ke waktu, dan mengompilasi bukti reformulasi resep",
       "human_helps": "Berbagi perbandingan uji rasa, menghubungkan rioter yang telah melihat perubahan yang sama, dan membantu mengoordinasikan umpan balik kepada produsen",
       "agent_focus": "Membandingkan daftar bahan pada 50 makanan siap saji populer dari 2023 vs 2026. 60% telah mengurangi konten daging atau beralih ke minyak yang lebih murah.",
-      "name": "Penurunan Kualitas Makanan"
+      "name": "Penurunan Kualitas Makanan",
+      "human_focus": "Running blind taste tests and sharing results. When 200 rioters say something tastes worse, that's data a manufacturer can't ignore."
     },
     "Self-Checkout Frustration": {
       "agent_helps": "Melacak supermarket mana yang menghilangkan kassa bereksekusi, mengompilasi umpan balik pelanggan, dan membantu mengirimkan keluhan formal",
       "human_helps": "Berbagi toko mana yang masih memiliki kassa bereksekusi, menghubungkan rioter yang lebih suka layanan manusia, dan mengoordinasikan umpan balik ke toko",
       "agent_focus": "Memetakan ketersediaan kassa bereksekusi di 200 lokasi supermarket. 40% telah mengurangi menjadi 2 atau kurang kassa bereksekusi selama jam sibuk.",
-      "name": "Frustrasi Self-Checkout"
+      "name": "Frustrasi Self-Checkout",
+      "human_focus": "Running a \"staffed tills matter\" effort — helping rioters give feedback directly to their local store manager. 8 stores have added tills back."
     },
     "Subscription Traps": {
       "agent_helps": "Mengidentifikasi apakah uji coba gratis memiliki auto-renewal tersembunyi di T&C, membantu Anda membatalkan sebelum biaya dimulai, dan menyusun permintaan pengembalian dana",
       "human_helps": "Berbagi uji coba gratis mana yang asli vs jebakan, membantu rioter mendapatkan pengembalian dana untuk biaya yang tidak terduga, dan menandai pelaku terburuk",
       "agent_focus": "67% pendaftaran \"uji coba gratis\" dalam data kami auto-renew tanpa email pengingat yang jelas. Membangun laporan untuk Trading Standards.",
-      "name": "Jebakan Langganan"
+      "name": "Jebakan Langganan",
+      "human_focus": "Created a \"free trial calendar\" — rioters log when their trials end so they get reminded to cancel. No more surprise charges."
     },
     "Delivery Problems": {
       "agent_helps": "Melacak pengiriman Anda, membantu Anda mengajukan keluhan, mengidentifikasi pola berdasarkan kurir, dan menyusun klaim pengembalian dana",
       "human_helps": "Berbagi kurir mana yang harus dihindari, apa yang harus dikatakan untuk mendapatkan pengembalian dana lebih cepat, dan menghubungkan rioter di area yang sama dengan kurir yang sama",
       "agent_focus": "Evri memiliki tingkat keluhan 23% di antara rioter — 3x lebih tinggi dari DPD. Membangun tabel liga pengiriman dengan data nyata.",
-      "name": "Masalah Pengiriman"
+      "name": "Masalah Pengiriman",
+      "human_focus": "Created a \"what to say\" script for each major courier's complaints line. Rioters report 40% faster resolution using the scripts."
     },
     "Pothole Damage": {
       "agent_helps": "Mencatat lubang Anda dengan lokasi dan foto, melacak waktu respons dewan, dan membantu Anda mengklaim kerusakan kendaraan",
       "human_helps": "Berbagi dewan mana yang benar-benar memperbaiki dan bagaimana, menghubungkan rioter di area yang sama, dan membantu mengoordinasikan laporan kelompok",
       "agent_focus": "Waktu respons dewan rata-rata terhadap laporan lubang: 34 hari. Tetapi 20% tidak pernah diperbaiki sama sekali. Membangun dasbor pelacakan berdasarkan wilayah dewan.",
-      "name": "Kerusakan Lubang"
+      "name": "Kerusakan Lubang",
+      "human_focus": "Organised a \"pothole safari\" in the Valleys — 30 rioters mapped every pothole on their daily routes in one weekend. Council couldn't ignore 847 reports."
     },
     "Council Tax Rises": {
       "agent_helps": "Memeriksa band pajak dewan Anda, membandingkannya dengan properti serupa, dan membantu Anda menantang pita Anda jika itu salah",
       "human_helps": "Berbagi dewan mana yang memiliki layanan terbaik dan terburuk untuk uang, dan membantu rioter merespons konsultasi anggaran",
       "agent_focus": "1 dari 7 properti mungkin dalam pita pajak dewan yang salah. Membangun alat perbandingan — 23 rioter berhasil menantang dan mendapat pengembalian dana.",
-      "name": "Kenaikan Pajak Dewan"
+      "name": "Kenaikan Pajak Dewan",
+      "human_focus": "Helping rioters understand where their council tax actually goes. When you know the numbers, the budget consultation response writes itself."
     },
     "Rubbish Collection Changes": {
       "agent_helps": "Melacak perubahan jadwal pengumpulan, mencatat pengumpulan yang terlewat, dan membantu Anda mengirimkan keluhan dengan bukti",
       "human_helps": "Berbagi tips mengelola pengumpulan dua mingguan, menghubungkan rioter di area dengan layanan terburuk, dan membantu mendeskalasi masalah berkelanjutan",
       "agent_focus": "Laporan pengumpulan yang terlewat dari 200 rioter dipetakan berdasarkan area. Tiga ward menyumbang 60% dari semua keluhan. Membangun kasus untuk komite pengawasan.",
-      "name": "Perubahan Pengumpulan Sampah"
+      "name": "Perubahan Pengumpulan Sampah",
+      "human_focus": "Helping rioters in areas switching to fortnightly collections prepare. Created a waste reduction guide that actually works for families."
     },
     "Planning Permission Abuse": {
       "agent_helps": "Melacak aplikasi perencanaan di area Anda, membantu Anda memahami prosesnya, dan menyusun surat keberatan dengan dasar yang tepat",
       "human_helps": "Menghubungkan tetangga yang terkena dampak, berbagi strategi keberatan sukses, dan membantu rioter menghadiri dan berbicara pada pertemuan perencanaan",
       "agent_focus": "Memantau 340 aplikasi perencanaan aktif yang ditandai oleh rioter. Membuat surat keberatan template yang mencakup 8 dasar valid paling umum.",
-      "name": "Penyalahgunaan Izin Perencanaan"
+      "name": "Penyalahgunaan Izin Perencanaan",
+      "human_focus": "Helped residents in 4 areas coordinate planning objections. Two applications were refused after 50+ objections each."
     },
     "Dog Fouling": {
       "agent_helps": "Mencatat lokasi hotspot, melacak respons penegakan dewan, dan membantu Anda melaporkan pelanggar yang berkelanjutan",
       "human_helps": "Menghubungkan penduduk yang peduli, berbagi apa yang berhasil di area lain (dispenser tas gratis, signage), dan membantu mengoordinasikan pembersihan",
       "agent_focus": "Memetakan 89 hotspot kotoran anjing dari laporan rioter. Referensi silang dengan lokasi tempat sampah dewan — 60% hotspot tidak memiliki tempat sampah dalam 100m.",
-      "name": "Kotoran Anjing"
+      "name": "Kotoran Anjing",
+      "human_focus": "Organised 3 community clean-up days. More importantly, got the council to install 8 new dog waste bins at the worst hotspots."
     },
     "Customer Service Hold Times": {
       "agent_helps": "Mencatat waktu tunggu Anda, melacak rata-rata respons perusahaan, dan membantu Anda menemukan cara yang lebih cepat untuk menghubungi (email, chat, media sosial)",
       "human_helps": "Berbagi waktu terbaik untuk menelepon setiap perusahaan, saluran mana yang mendapat respons tercepat, dan menghubungkan rioter yang menangani perusahaan yang sama",
       "agent_focus": "Waktu tunggu rata-rata yang dilaporkan oleh rioter: 43 menit. Tetapi sangat bervariasi — BT: 67 menit, Octopus Energy: 4 menit. Membangun tabel liga.",
-      "name": "Waktu Tunggu Layanan Pelanggan"
+      "name": "Waktu Tunggu Layanan Pelanggan",
+      "human_focus": "Created \"best time to call\" guides for the 20 most complained-about companies. Rioters contribute real data. Tuesdays 10am seems to be the sweet spot."
     },
     "Difficulty Cancelling Subscriptions": {
       "agent_helps": "Menyusun permintaan pembatalan, mengidentifikasi saluran mana yang benar-benar berhasil untuk setiap perusahaan, dan membantu Anda menghindari trik retensi",
       "human_helps": "Berbagi panduan pembatalan langkah demi langkah untuk perusahaan tertentu, dan membantu rioter yang terus mendapat bualan",
       "agent_focus": "Memetakan proses pembatalan untuk 30 perusahaan. Langkah rata-rata untuk membatalkan: 4,2. Pelaku terburuk: 9 langkah termasuk \"panggilan loyalitas.\"",
-      "name": "Kesulitan Membatalkan Langganan"
+      "name": "Kesulitan Membatalkan Langganan",
+      "human_focus": "Built a \"cancellation script\" library — exact words to say to each company's retention team. Updated weekly by rioters who've just done it."
     },
     "Cost of Childcare": {
       "agent_helps": "Membantu Anda memahami hak Anda (15/30 jam gratis, Tax-Free Childcare), menghitung apa yang harus Anda bayar, dan memeriksa biaya penyedia",
       "human_helps": "Menghubungkan orang tua di area yang sama, berbagi tips mengakses jam gratis, dan membantu menavigasi proses aplikasi",
       "agent_focus": "Rioter rata-rata menghabiskan £1.100/bulan untuk penitipan anak. Tetapi 30% tidak mengklaim semua jam gratis yang mereka hak. Menjalankan pemeriksaan manfaat.",
-      "name": "Biaya Penitipan Anak"
+      "name": "Biaya Penitipan Anak",
+      "human_focus": "Helping parents navigate the 30 free hours application — it's confusing and the codes expire. 40 rioters got their hours sorted this month."
     },
     "Student Loan Repayment": {
       "agent_helps": "Menghitung jumlah pembayaran kembali Anda yang sebenarnya, memproyeksikan kapan (jika pernah) Anda akan melunasi, dan membantu Anda memahami perubahan ambang batas",
       "human_helps": "Berbagi strategi mengelola pembayaran, menghubungkan lulusan dengan saldo serupa, dan membantu dengan klaim pengembalian dana overpayment",
       "agent_focus": "Untuk peminjam Rencana 2, proyeksi pembayaran rata-rata: 38 tahun sebelum dihapuskan. 83% tidak akan pernah membayar sepenuhnya. Membangun kalkulator sehingga rioter dapat melihat angka mereka sendiri.",
-      "name": "Pembayaran Kembali Pinjaman Siswa"
+      "name": "Pembayaran Kembali Pinjaman Siswa",
+      "human_focus": "Helping rioters who've accidentally overpaid (earned under threshold but still charged) claim refunds. 12 refunds processed — average £340 each."
     },
     "AI Replacing Jobs": {
       "agent_helps": "Melacak sektor mana yang paling terkena dampak, memetakan opsi pelatihan ulang, dan membantu Anda memahami perlindungan apa yang ada",
       "human_helps": "Menghubungkan orang dalam industri yang terkena dampak, berbagi sumber daya peningkatan keterampilan, dan membantu mengoordinasikan respons terhadap perubahan AI tempat kerja",
       "agent_focus": "Dikompilasi data dari 300 rioter tentang perubahan AI di tempat kerja mereka. 40% mengatakan tugas telah diotomatisasi tanpa konsultasi. Membangun laporan.",
-      "name": "AI Menggantikan Pekerjaan"
+      "name": "AI Menggantikan Pekerjaan",
+      "human_focus": "Running peer support for rioters whose roles are changing. Sharing retraining resources and connecting people in the same industry."
     }
   }
 }
