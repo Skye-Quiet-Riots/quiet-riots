@@ -19,12 +19,46 @@ Quiet Riots needs a major visual upgrade, new features, and new page types. This
 
 | Colour | Hex | RGB | Usage |
 |--------|-----|-----|-------|
-| **Logo Blue** | `#188BFF` | (24, 139, 255) | Primary brand accent — links, buttons, active states |
+| **Logo Blue** | `#188BFF` | (24, 139, 255) | Primary brand accent — links, buttons, logotype, active states |
 | **Logo Red** | `#FB0202` | (251, 2, 2) | Secondary accent — notifications, alerts, logo dot |
+| **Pivot Teal** | `#0d9479` | (13, 148, 121) | Feature colour — pivot/Pareto tables (replaces purple) |
 
 These are NOT standard Tailwind colours. We'll define custom CSS properties and use Tailwind's arbitrary value syntax or extend the theme.
 
 **Use the actual logo file** — `public/logo-192.png` — in the nav bar. Do NOT recreate or approximate it.
+
+**Logotype:** "Quiet Riots" text in nav bar uses `#188BFF` (Logo Blue), `text-xl font-extrabold tracking-tight`.
+
+---
+
+## Nav Bar Design
+
+### Desktop Nav (always visible):
+- Logo (`logo-192.png`) + **"Quiet Riots" in blue** (xl, extrabold)
+- **Issues** | **Organisations** (only 2 links — Assistants moved to profile dropdown)
+- **Search input** — always expanded (`w-56`), not collapsible
+- **Language selector** — `<LanguageSelector />` dropdown (shows global reach)
+- **Wallet balance** — e.g. `£10.00` — clickable, links to `/wallet`. Currency formatted per user's country using `formatCurrency()` from `src/lib/format.ts`
+- **Inbox** icon with red badge count
+- **Profile avatar** — dropdown contains: Profile, Wallet (with balance), Assistants, Sign out
+
+### Mobile Nav:
+- Logo + logotype (blue)
+- Language (compact: "EN"), wallet balance, inbox badge, hamburger menu
+- **Search input always visible below** the nav row (full width)
+- Hamburger menu contains: Issues, Organisations, Assistants, Profile, Wallet, Sign out
+
+### Wallet Balance Display
+- Uses `formatCurrency(balance_pence, currencyCode, locale)` from `src/lib/format.ts`
+- Currency determined by user's `country_code` → `countries.currency_code` lookup
+- Examples: 🇬🇧 £10.00 | 🇺🇸 $10.00 | 🇫🇷 10,00 € | 🇯🇵 ¥1,000 | 🇮🇳 ₹850.00 | 🇧🇷 R$ 55,00
+- Handles zero-decimal currencies (JPY, KRW, VND) and three-decimal currencies (BHD, KWD, OMR)
+
+### Pivot/Pareto Table Colour
+- **Replace purple with teal** across all pivot/Pareto components
+- Purple felt dated and clashed with blue brand; teal complements blue without competing
+- Teal shades: border `teal-200`, bg `teal-50/30`, heading text `teal-700`, progress bars `teal-500/teal-100`
+- Files: `src/components/interactive/pivot-toggle.tsx`, `src/components/data/pivot-table.tsx`
 
 ---
 
@@ -101,7 +135,7 @@ Each feed item shows: **who** did **what** about **which issue** at **which org*
 Sources:
 1. **Evidence** — "James Smith gathered evidence about Cancelled Flights at American Airlines" + photos/videos/text
 2. **Feed posts** — "Sarah Jones posted in Cancelled Flights community" + content
-3. **Reel submissions** — "Tom Lee shared a riot reel about Mobile Data Charges"
+3. **Reel submissions** — "Anna Kjovik added a Riot Reel about Train Cancellations at Southern Rail in the 🇬🇧 United Kingdom" + YouTube video preview embed (thumbnail, play button, duration badge, "🎬 Riot Reel" tag)
 4. **Joins** — "12 people joined Cancelled Flights this week" (aggregated)
 
 ### Database
@@ -227,6 +261,13 @@ Search input in nav bar. Desktop: expandable. Mobile: overlay. Searches issues +
 - Community Health: clickable → Community section
 - Countries "View all" → Community section
 - Evidence feed at bottom of issue overview → "View more" → Evidence section
+- **Logotype in blue** (`#188BFF`), larger (`text-xl font-extrabold`)
+- **Assistants removed from nav** — moved to profile dropdown (Profile, Wallet, Assistants, Sign out)
+- **Wallet balance in nav** — clickable → wallet page, formatted per user's country currency
+- **Language selector in nav** — `<LanguageSelector />` (shows global reach)
+- **Search always expanded** on desktop, always visible at top on mobile
+- **Purple → Teal** for pivot/Pareto tables (`#0d9479` — fresh, complements blue without competing)
+- **Riot Reels in activity feed** — YouTube video preview with play button, duration badge, "🎬 Riot Reel" tag
 
 ---
 
