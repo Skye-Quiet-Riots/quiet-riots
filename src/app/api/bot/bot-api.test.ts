@@ -1731,7 +1731,7 @@ describe('Bot API: respond_more_info', () => {
       response: 'BT Broadband — speeds are terrible in my area',
     });
     expect(status).toBe(200);
-    expect(body.data.message).toContain('sent to the Setup Guide');
+    expect(body.data.message).toContain('Setup Guide');
   });
 
   it('rejects response from non-owner', async () => {

@@ -70,6 +70,7 @@ const VALID_SECTIONS = [
   'expert_profiles',
   'riot_reels',
   'action_initiatives',
+  'issue_per_riot',
 ] as const;
 
 type Section = (typeof VALID_SECTIONS)[number];

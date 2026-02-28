@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
+  translateAny,
   translateEntities,
   translateEntity,
   translateActions,
@@ -23,6 +24,93 @@ const mockGetTranslatedEntities = vi.mocked(getTranslatedEntities);
 
 beforeEach(() => {
   vi.clearAllMocks();
+});
+
+// ─── translateAny (generic overlay) ─────────────────────────────────────────
+
+describe('translateAny', () => {
+  it('short-circuits for English locale', async () => {
+    const items = [{ id: '1', name: 'Test' }];
+    const result = await translateAny(items, 'test', 'en');
+    expect(result).toBe(items);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('short-circuits for empty array', async () => {
+    const result = await translateAny([], 'test', 'de');
+    expect(result).toEqual([]);
+    expect(mockGetTranslatedEntities).not.toHaveBeenCalled();
+  });
+
+  it('overlays all string fields that have translations', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      i1: { name: 'Translated Name', description: 'Translated Desc', agent_helps: 'Translated Help' },
+    });
+
+    const entities = [{ id: 'i1', name: 'Name', description: 'Desc', agent_helps: 'Help' }];
+    const result = await translateAny(entities, 'issue', 'de');
+    expect(result[0].name).toBe('Translated Name');
+    expect(result[0].description).toBe('Translated Desc');
+    expect(result[0].agent_helps).toBe('Translated Help');
+  });
+
+  it('overlays null fields with translations', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      i1: { agent_focus: 'Translated Focus' },
+    });
+
+    const entities = [{ id: 'i1', name: 'Name', agent_focus: null as string | null }];
+    const result = await translateAny(entities, 'issue', 'es');
+    expect(result[0].agent_focus).toBe('Translated Focus');
+  });
+
+  it('does NOT overlay non-string fields (type safety)', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      i1: { rioter_count: 'should not be applied' },
+    });
+
+    const entities = [{ id: 'i1', name: 'Test', rioter_count: 500 }];
+    const result = await translateAny(entities, 'issue', 'de');
+    expect(result[0].rioter_count).toBe(500); // unchanged — number field
+  });
+
+  it('does NOT inject fields that do not exist on the entity', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      i1: { sneaky_field: 'injected value' },
+    });
+
+    const entities = [{ id: 'i1', name: 'Test' }];
+    const result = await translateAny(entities, 'issue', 'de');
+    expect(result[0]).toEqual({ id: 'i1', name: 'Test' }); // no sneaky_field
+    expect((result[0] as Record<string, unknown>).sneaky_field).toBeUndefined();
+  });
+
+  it('does not overwrite with empty translation strings', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({
+      i1: { name: '', description: '' },
+    });
+
+    const entities = [{ id: 'i1', name: 'Original', description: 'Original Desc' }];
+    const result = await translateAny(entities, 'issue', 'de');
+    expect(result[0].name).toBe('Original');
+    expect(result[0].description).toBe('Original Desc');
+  });
+
+  it('falls back to original when no translations exist', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({});
+
+    const entities = [{ id: 'i1', name: 'Original' }];
+    const result = await translateAny(entities, 'issue', 'fr');
+    expect(result).toEqual(entities);
+  });
+
+  it('returns same object reference when no overlay is applied', async () => {
+    mockGetTranslatedEntities.mockResolvedValue({});
+
+    const entity = { id: 'i1', name: 'Test' };
+    const result = await translateAny([entity], 'issue', 'fr');
+    expect(result[0]).toBe(entity); // same reference — no spread
+  });
 });
 
 describe('translateEntities', () => {

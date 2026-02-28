@@ -64,6 +64,7 @@ import {
   translateOrgPivotRows,
   translateSynonyms,
   translateCategoryAssistant,
+  translateRiotReels,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
 import {
@@ -111,6 +112,7 @@ import { translateToEnglish } from '@/lib/ai';
 import { getDb } from '@/lib/db';
 import { generateId } from '@/lib/uuid';
 import { isValidLocale } from '@/i18n/locales';
+import { getBotMessage } from './bot-messages';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
 const BOT_API_KEY = process.env.BOT_API_KEY || DEV_FALLBACK_KEY;
@@ -1072,13 +1074,15 @@ export async function POST(request: NextRequest) {
         if (!user) return err('User not found — call identify first', 404);
 
         const reel = await getUnseenReelForUser(issueId, user.id);
+        const locale = await resolveLocale(p);
         if (!reel) {
-          return ok({ reel: null, message: 'No more unseen reels for this issue' });
+          return ok({ reel: null, message: await getBotMessage(locale, 'noMoreReels') });
         }
 
         await logReelShown(user.id, reel.id, issueId);
         await incrementReelViews(reel.id);
-        return ok({ reel });
+        const [translatedReel] = await translateRiotReels([reel], locale);
+        return ok({ reel: translatedReel });
       }
 
       case 'submit_riot_reel': {
@@ -1211,7 +1215,9 @@ export async function POST(request: NextRequest) {
         if (!assistant) return err('Assistant pair not found', 404);
 
         const intro = await recordAssistantIntroduction(user.id, category);
-        return ok({ introduction: intro, assistant });
+        const locale = await resolveLocale(p);
+        const translatedAssistant = await translateCategoryAssistant(assistant, locale);
+        return ok({ introduction: intro, assistant: translatedAssistant });
       }
 
       case 'log_suggestion': {
@@ -1282,7 +1288,8 @@ export async function POST(request: NextRequest) {
           mediaType: 'live_stream',
           live: true,
         });
-        return ok({ evidence, message: 'You are live! Be passionate but respectful.' });
+        const locale = await resolveLocale(p);
+        return ok({ evidence, message: await getBotMessage(locale, 'youAreLive') });
       }
 
       // ─── Language / Country ─────────────────────────────
@@ -1457,7 +1464,11 @@ export async function POST(request: NextRequest) {
           ).catch(() => {});
         }
 
-        return ok({ suggestion, message: 'Your response has been sent to the Setup Guide.' });
+        const locale = await resolveLocale(p);
+        return ok({
+          suggestion,
+          message: await getBotMessage(locale, 'responseSentToGuide'),
+        });
       }
 
       case 'review_suggestion': {
@@ -1610,7 +1621,13 @@ export async function POST(request: NextRequest) {
           suggestionId,
         ).catch(() => {});
 
-        return ok({ suggestion: result, message: `${suggestion.suggested_name} is now live!` });
+        const locale = await resolveLocale(p);
+        return ok({
+          suggestion: result,
+          message: await getBotMessage(locale, 'suggestionLive', {
+            name: suggestion.suggested_name,
+          }),
+        });
       }
 
       // ─── Inbox / Messages ────────────────────────────────
@@ -1728,10 +1745,11 @@ export async function POST(request: NextRequest) {
            <p>— Quiet Riots</p>`,
         );
 
+        const locale = await resolveLocale(p);
         return ok({
           sent: true,
           email: newEmail,
-          message: `Verification email sent to ${newEmail}. Ask the user to check their inbox and click the link.`,
+          message: await getBotMessage(locale, 'verificationEmailSent', { email: newEmail }),
         });
       }
 
@@ -1741,14 +1759,15 @@ export async function POST(request: NextRequest) {
         if (!user) return err('User not found — call identify first', 404);
         trackedUserId = user.id;
 
+        const locale = await resolveLocale(p);
         const isWaEmail = (user.email || '').startsWith('wa-');
         return ok({
           email: user.email,
           is_placeholder: isWaEmail,
           verified: !isWaEmail,
           message: isWaEmail
-            ? 'User has a WhatsApp placeholder email. Use link_email to set a real email.'
-            : `User email is ${user.email}.`,
+            ? await getBotMessage(locale, 'verifyEmailPlaceholder')
+            : await getBotMessage(locale, 'verifyEmailStatus', { email: user.email ?? '' }),
         });
       }
 
@@ -1770,6 +1789,25 @@ export async function POST(request: NextRequest) {
           }
         }
 
+        const locale = await resolveLocale(p);
+        let shareMessage: string;
+        if (application?.status === 'issued') {
+          shareMessage = await getBotMessage(locale, 'shareIssued', {
+            certificate: application.certificate_number ?? '',
+          });
+        } else if (application?.status === 'not_eligible' || !application) {
+          shareMessage = await getBotMessage(locale, 'shareNeedMore', {
+            riots: Math.max(0, 3 - eligibility.riotsJoined),
+            actions: Math.max(0, 10 - eligibility.actionsTaken),
+          });
+        } else if (application?.status === 'available') {
+          shareMessage = await getBotMessage(locale, 'shareEligible');
+        } else {
+          shareMessage = await getBotMessage(locale, 'shareApplicationStatus', {
+            status: application.status.replace(/_/g, ' '),
+          });
+        }
+
         return ok({
           status: application?.status ?? 'not_eligible',
           certificate_number: application?.certificate_number ?? null,
@@ -1784,14 +1822,7 @@ export async function POST(request: NextRequest) {
           },
           wallet_balance_pence: wallet?.balance_pence ?? 0,
           payment_required_pence: 10,
-          message:
-            application?.status === 'issued'
-              ? `Your share has been issued! Certificate: ${application.certificate_number}`
-              : application?.status === 'not_eligible' || !application
-                ? `You need ${Math.max(0, 3 - eligibility.riotsJoined)} more Quiet Riots and ${Math.max(0, 10 - eligibility.actionsTaken)} more actions to qualify.`
-                : application?.status === 'available'
-                  ? 'You are eligible for your Quiet Riots share! Visit your profile or say "apply for share" to proceed.'
-                  : `Your share application is ${application.status.replace(/_/g, ' ')}.`,
+          message: shareMessage,
         });
       }
 
@@ -1801,6 +1832,10 @@ export async function POST(request: NextRequest) {
         if (!user) return err('User not found — call identify first', 404);
 
         const eligibility = await checkShareEligibility(user.id);
+        const locale = await resolveLocale(p);
+        const verificationNote = !eligibility.isVerified
+          ? await getBotMessage(locale, 'shareVerificationNeeded')
+          : '';
         return ok({
           eligible: eligibility.eligible,
           riots_joined: eligibility.riotsJoined,
@@ -1809,8 +1844,12 @@ export async function POST(request: NextRequest) {
           actions_required: 10,
           is_verified: eligibility.isVerified,
           message: eligibility.eligible
-            ? 'You qualify for your Quiet Riots share!'
-            : `Progress: ${eligibility.riotsJoined}/3 Quiet Riots joined, ${eligibility.actionsTaken}/10 actions taken${!eligibility.isVerified ? ', verification needed' : ''}.`,
+            ? await getBotMessage(locale, 'shareQualified')
+            : await getBotMessage(locale, 'shareProgress', {
+                riotsJoined: eligibility.riotsJoined,
+                actionsTaken: eligibility.actionsTaken,
+                verificationNote,
+              }),
         });
       }
 
@@ -1827,26 +1866,31 @@ export async function POST(request: NextRequest) {
             app = await getOrCreateShareApplication(user.id);
           }
         }
+        const locale = await resolveLocale(p);
         if (app.status !== 'available') {
-          return err(
+          const msg =
             app.status === 'not_eligible'
-              ? 'You are not yet eligible for a share. Join more Quiet Riots and take more actions.'
-              : `Cannot apply — your current status is ${app.status.replace(/_/g, ' ')}.`,
-          );
+              ? await getBotMessage(locale, 'shareNotEligible')
+              : await getBotMessage(locale, 'shareCannotApplyStatus', {
+                  status: app.status.replace(/_/g, ' '),
+                });
+          return err(msg);
         }
 
         // Check wallet balance
         const wallet = await getOrCreateWallet(user.id);
         if (wallet.balance_pence < 10) {
           return err(
-            `Insufficient wallet balance. You need at least 10p (you have ${wallet.balance_pence}p). Top up your wallet first.`,
+            await getBotMessage(locale, 'shareInsufficientBalance', {
+              balance: wallet.balance_pence,
+            }),
           );
         }
 
         // Proceed with share — atomic 10p debit + status change
         const result = await proceedWithShare(user.id, wallet.id);
         if (!result) {
-          return err('Payment failed — please try again.');
+          return err(await getBotMessage(locale, 'sharePaymentFailed'));
         }
 
         // Notify share guides about new application
@@ -1854,8 +1898,7 @@ export async function POST(request: NextRequest) {
 
         return ok({
           status: 'under_review',
-          message:
-            '10p has been deducted from your wallet. Your share application is now under review. A Share Guide will review it shortly.',
+          message: await getBotMessage(locale, 'shareApplied'),
         });
       }
 
@@ -1864,17 +1907,15 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        const locale = await resolveLocale(p);
         const declined = await declineShare(user.id);
         if (!declined) {
-          return err(
-            'Cannot decline — either you have no eligible share offer or your application is already in progress.',
-          );
+          return err(await getBotMessage(locale, 'shareCannotDecline'));
         }
 
         return ok({
           status: 'declined',
-          message:
-            'You have permanently declined the share offer. No payment was taken. This decision cannot be reversed.',
+          message: await getBotMessage(locale, 'shareDeclined'),
         });
       }
 
@@ -1883,15 +1924,15 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        const locale = await resolveLocale(p);
         const withdrawn = await withdrawShare(user.id);
         if (!withdrawn) {
-          return err('Cannot withdraw — your application may not be in a withdrawable state.');
+          return err(await getBotMessage(locale, 'shareCannotWithdraw'));
         }
 
         return ok({
           status: 'withdrawn',
-          message:
-            'Your share application has been withdrawn and your 10p has been refunded to your wallet.',
+          message: await getBotMessage(locale, 'shareWithdrawn'),
         });
       }
 
@@ -1900,16 +1941,19 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        const locale = await resolveLocale(p);
         const wallet = await getOrCreateWallet(user.id);
         if (wallet.balance_pence < 10) {
           return err(
-            `Insufficient wallet balance. You need at least 10p (you have ${wallet.balance_pence}p). Top up your wallet first.`,
+            await getBotMessage(locale, 'shareInsufficientBalance', {
+              balance: wallet.balance_pence,
+            }),
           );
         }
 
         const reapplied = await reapplyForShare(user.id, wallet.id);
         if (!reapplied) {
-          return err('Cannot reapply — your application may not be in a rejected state.');
+          return err(await getBotMessage(locale, 'shareCannotReapply'));
         }
 
         // Notify share guides
@@ -1917,8 +1961,7 @@ export async function POST(request: NextRequest) {
 
         return ok({
           status: 'under_review',
-          message:
-            '10p has been deducted from your wallet. Your share re-application is now under review.',
+          message: await getBotMessage(locale, 'shareReapplied'),
         });
       }
 
@@ -1927,9 +1970,10 @@ export async function POST(request: NextRequest) {
         const user = await resolveUser(phone);
         if (!user) return err('User not found — call identify first', 404);
 
+        const locale = await resolveLocale(p);
         const app = await getShareApplication(user.id);
         if (!app) {
-          return err("You don't have a share application yet.");
+          return err(await getBotMessage(locale, 'shareNoApplication'));
         }
 
         // Create message visible to share guide
@@ -1941,8 +1985,7 @@ export async function POST(request: NextRequest) {
         );
 
         return ok({
-          message:
-            'Your question has been sent to the Share Guide team. You will receive a reply in your inbox.',
+          message: await getBotMessage(locale, 'shareQuestionSent'),
         });
       }
 

@@ -1,14 +1,21 @@
-import { getEntityTranslations, getTranslatedEntities } from './translations';
-import type { Action, CategoryAssistant, CountryBreakdown, ExpertProfile, IssuePivotRow, RiotReel, Synonym } from '@/types';
+import { getTranslatedEntities } from './translations';
+import type { CountryBreakdown, IssuePivotRow } from '@/types';
 
 /**
- * Overlay DB translations onto entity objects (issues, organisations).
- * Falls back to original English values if no translation exists.
- * Short-circuits for 'en' locale (no DB query).
+ * Generic translation overlay: applies ALL translated fields from the DB
+ * onto entity objects. Any string/null field with a non-empty translation
+ * gets overlaid. Non-string fields, fields without translations, and fields
+ * that don't exist on the entity are left untouched.
+ *
+ * This is the core translation function — all entity-specific translate
+ * functions delegate to it. Adding a new translatable field to any entity
+ * requires ZERO code changes here — just add translations to the DB.
  */
-export async function translateEntities<
-  T extends { id: string; name: string; description?: string | null },
->(entities: T[], entityType: string, locale: string): Promise<T[]> {
+export async function translateAny<T extends { id: string }>(
+  entities: T[],
+  entityType: string,
+  locale: string,
+): Promise<T[]> {
   if (locale === 'en' || entities.length === 0) return entities;
 
   const translations = await getTranslatedEntities(
@@ -20,19 +27,36 @@ export async function translateEntities<
   return entities.map((entity) => {
     const t = translations[entity.id];
     if (!t) return entity;
-    return {
-      ...entity,
-      name: t.name || entity.name,
-      ...(entity.description !== undefined && { description: t.description || entity.description }),
-    };
+
+    const overlay: Record<string, string> = {};
+    for (const [field, value] of Object.entries(t)) {
+      if (!value) continue; // skip empty translations
+      if (!(field in entity)) continue; // skip fields not on the entity
+      const current = (entity as Record<string, unknown>)[field];
+      if (typeof current !== 'string' && current !== null) continue; // only overlay string/null
+      overlay[field] = value;
+    }
+
+    return Object.keys(overlay).length > 0 ? { ...entity, ...overlay } : entity;
   });
+}
+
+/**
+ * Overlay DB translations onto entity objects (issues, organisations, etc.).
+ * Falls back to original English values if no translation exists.
+ * Short-circuits for 'en' locale (no DB query).
+ */
+export async function translateEntities<
+  T extends { id: string; name: string; description?: string | null },
+>(entities: T[], entityType: string, locale: string): Promise<T[]> {
+  return translateAny(entities, entityType, locale);
 }
 
 /** Translate a single entity. Falls back to original values. */
 export async function translateEntity<
   T extends { id: string; name: string; description?: string | null },
 >(entity: T, entityType: string, locale: string): Promise<T> {
-  const [result] = await translateEntities([entity], entityType, locale);
+  const [result] = await translateAny([entity], entityType, locale);
   return result;
 }
 
@@ -42,30 +66,12 @@ export async function translateEntity<
 export async function translateActionInitiatives<
   T extends { id: string; title: string; description?: string | null },
 >(actionInitiatives: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || actionInitiatives.length === 0) return actionInitiatives;
-
-  const translations = await getTranslatedEntities(
-    'action_initiative',
-    actionInitiatives.map((ai) => ai.id),
-    locale,
-  );
-
-  return actionInitiatives.map((actionInitiative) => {
-    const t = translations[actionInitiative.id];
-    if (!t) return actionInitiative;
-    return {
-      ...actionInitiative,
-      title: t.title || actionInitiative.title,
-      ...(actionInitiative.description !== undefined && {
-        description: t.description || actionInitiative.description,
-      }),
-    };
-  });
+  return translateAny(actionInitiatives, 'action_initiative', locale);
 }
 
 /**
  * Translate organisation names in issue pivot rows.
- * Looks up translations for `organisation_id` entities.
+ * Custom: maps organisation translations onto rows with organisation_id.
  */
 export async function translateIssuePivotRows(
   rows: IssuePivotRow[],
@@ -88,7 +94,7 @@ export async function translateIssuePivotRows(
 
 /**
  * Translate issue names in org pivot rows or any rows with issue_id + issue_name.
- * Looks up translations for `issue_id` entities.
+ * Custom: maps issue translations onto rows with issue_id.
  */
 export async function translateOrgPivotRows<T extends { issue_id: string; issue_name: string }>(
   rows: T[],
@@ -110,192 +116,71 @@ export async function translateOrgPivotRows<T extends { issue_id: string; issue_
 }
 
 /**
- * Translate synonym terms for display. Overlays translated terms onto synonym objects.
- * Falls back to original English terms if no translation exists.
+ * Translate synonym terms for display.
  */
-export async function translateSynonyms(synonyms: Synonym[], locale: string): Promise<Synonym[]> {
-  if (locale === 'en' || synonyms.length === 0) return synonyms;
-
-  const translations = await getTranslatedEntities(
-    'synonym',
-    synonyms.map((s) => s.id),
-    locale,
-  );
-
-  return synonyms.map((synonym) => {
-    const t = translations[synonym.id];
-    if (!t || !t.term) return synonym;
-    return { ...synonym, term: t.term };
-  });
+export async function translateSynonyms<T extends { id: string; term: string }>(
+  synonyms: T[],
+  locale: string,
+): Promise<T[]> {
+  return translateAny(synonyms, 'synonym', locale);
 }
 
 /**
  * Translate action objects (which use `title` instead of `name`).
- * Overlays `title` and `description`. Follows translateActionInitiatives() pattern.
  */
 export async function translateActions<
   T extends { id: string; title: string; description?: string | null },
 >(actions: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || actions.length === 0) return actions;
-
-  const translations = await getTranslatedEntities(
-    'action',
-    actions.map((a) => a.id),
-    locale,
-  );
-
-  return actions.map((action) => {
-    const t = translations[action.id];
-    if (!t) return action;
-    return {
-      ...action,
-      title: t.title || action.title,
-      ...(action.description !== undefined && {
-        description: t.description || action.description,
-      }),
-    };
-  });
+  return translateAny(actions, 'action', locale);
 }
 
 /**
  * Translate expert profile objects.
- * Overlays `role`, `speciality`, `achievement`.
- * Does NOT translate `name` (proper nouns like "Dr. Sarah Chen").
+ * Does NOT translate `name` (proper nouns like "Dr. Sarah Chen") — the name
+ * field is a string but has no translation rows in the DB, so translateAny
+ * correctly leaves it unchanged.
  */
 export async function translateExpertProfiles<
   T extends { id: string; role: string; speciality: string; achievement: string },
 >(profiles: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || profiles.length === 0) return profiles;
-
-  const translations = await getTranslatedEntities(
-    'expert_profile',
-    profiles.map((p) => p.id),
-    locale,
-  );
-
-  return profiles.map((profile) => {
-    const t = translations[profile.id];
-    if (!t) return profile;
-    return {
-      ...profile,
-      role: t.role || profile.role,
-      speciality: t.speciality || profile.speciality,
-      achievement: t.achievement || profile.achievement,
-    };
-  });
+  return translateAny(profiles, 'expert_profile', locale);
 }
 
 /**
  * Translate riot reel objects.
- * Overlays `title` and `caption`.
  * Only curated/seeded reel titles get translations; community-submitted reels
- * keep their YouTube titles (the function harmlessly returns the original when
+ * keep their YouTube titles (translateAny harmlessly returns the original when
  * no translation exists).
  */
 export async function translateRiotReels<
   T extends { id: string; title: string; caption: string },
 >(reels: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || reels.length === 0) return reels;
-
-  const translations = await getTranslatedEntities(
-    'riot_reel',
-    reels.map((r) => r.id),
-    locale,
-  );
-
-  return reels.map((reel) => {
-    const t = translations[reel.id];
-    if (!t) return reel;
-    return {
-      ...reel,
-      title: t.title || reel.title,
-      caption: t.caption || reel.caption,
-    };
-  });
+  return translateAny(reels, 'riot_reel', locale);
 }
-
-/** Fields on category assistants that should be translated. */
-const ASSISTANT_TRANSLATABLE_FIELDS = [
-  'agent_quote',
-  'human_quote',
-  'agent_bio',
-  'human_bio',
-  'goal',
-  'focus',
-  'focus_detail',
-] as const;
 
 /**
  * Translate a single category assistant object.
- * Overlays translated values for quotes, bios, goal, focus, and focus_detail.
- * Does NOT translate proper names (agent_name, human_name), icons, or internal fields.
+ * Overlays all translated text fields (quotes, bios, goal, focus, focus_detail).
+ * Does NOT translate proper names (agent_name, human_name) — no translation
+ * rows exist for those fields.
  */
-export async function translateCategoryAssistant<
-  T extends Pick<
-    CategoryAssistant,
-    | 'id'
-    | 'agent_quote'
-    | 'human_quote'
-    | 'agent_bio'
-    | 'human_bio'
-    | 'goal'
-    | 'focus'
-    | 'focus_detail'
-  >,
->(assistant: T, locale: string): Promise<T> {
-  if (locale === 'en') return assistant;
-
-  const translations = await getEntityTranslations('category_assistant', assistant.id, locale);
-  if (Object.keys(translations).length === 0) return assistant;
-
-  const overlay: Record<string, string> = {};
-  for (const field of ASSISTANT_TRANSLATABLE_FIELDS) {
-    if (translations[field]) {
-      overlay[field] = translations[field];
-    }
-  }
-
-  return { ...assistant, ...overlay };
+export async function translateCategoryAssistant<T extends { id: string }>(
+  assistant: T,
+  locale: string,
+): Promise<T> {
+  const [result] = await translateAny([assistant], 'category_assistant', locale);
+  return result;
 }
 
 /**
  * Translate multiple category assistant objects (for the list endpoint).
  * Uses batch query to avoid N+1.
  */
-export async function translateCategoryAssistants<
-  T extends Pick<
-    CategoryAssistant,
-    | 'id'
-    | 'agent_quote'
-    | 'human_quote'
-    | 'agent_bio'
-    | 'human_bio'
-    | 'goal'
-    | 'focus'
-    | 'focus_detail'
-  >,
->(assistants: T[], locale: string): Promise<T[]> {
-  if (locale === 'en' || assistants.length === 0) return assistants;
-
-  const translations = await getTranslatedEntities(
-    'category_assistant',
-    assistants.map((a) => a.id),
-    locale,
-  );
-
-  return assistants.map((assistant) => {
-    const t = translations[assistant.id];
-    if (!t) return assistant;
-
-    const overlay: Record<string, string> = {};
-    for (const field of ASSISTANT_TRANSLATABLE_FIELDS) {
-      if (t[field]) {
-        overlay[field] = t[field];
-      }
-    }
-
-    return { ...assistant, ...overlay };
-  });
+export async function translateCategoryAssistants<T extends { id: string }>(
+  assistants: T[],
+  locale: string,
+): Promise<T[]> {
+  return translateAny(assistants, 'category_assistant', locale);
 }
 
 /**
