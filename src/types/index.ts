@@ -36,6 +36,8 @@ export interface Issue {
   status: IssueStatus;
   first_rioter_id: string | null;
   approved_at: string | null;
+  hero_image_url: string | null;
+  hero_thumb_url: string | null;
 }
 
 export type OrganisationStatus = 'pending_review' | 'active' | 'rejected';
@@ -54,6 +56,8 @@ export interface Organisation {
   status: OrganisationStatus;
   first_rioter_id: string | null;
   approved_at: string | null;
+  hero_image_url: string | null;
+  hero_thumb_url: string | null;
 }
 
 export interface IssueOrganisation {

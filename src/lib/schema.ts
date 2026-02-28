@@ -24,7 +24,9 @@ export async function createTables() {
       primary_country TEXT CHECK(length(primary_country) <= 3),
       status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('pending_review','active','rejected')),
       first_rioter_id TEXT,
-      approved_at TEXT
+      approved_at TEXT,
+      hero_image_url TEXT DEFAULT NULL,
+      hero_thumb_url TEXT DEFAULT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_issues_status ON issues(status);
 
@@ -41,7 +43,9 @@ export async function createTables() {
       website TEXT,
       status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('pending_review','active','rejected')),
       first_rioter_id TEXT,
-      approved_at TEXT
+      approved_at TEXT,
+      hero_image_url TEXT DEFAULT NULL,
+      hero_thumb_url TEXT DEFAULT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_orgs_status ON organisations(status);
 
