@@ -155,42 +155,74 @@ npx tsx scripts/seed-translations.ts --apply
 
 When a feature adds or changes keys in `messages/en.json`, the same changes must be applied to all 55 non-English locale files. **ALWAYS use the script-first approach below.** Never use sub-agents for translations — they are slow, hit context limits on large locale files, and fail silently.
 
-**Step 1: Identify what needs translating**
+**Helper script:** `scripts/apply-ui-translations.js` — validates locale codes, applies translations, and verifies JSON integrity.
+
+**Step 1: Get the exact locale list and identify what needs translating**
 
 ```bash
+# Get the canonical locale list (derives from actual message files)
+node scripts/apply-ui-translations.js --list-locales
+
 # List new/changed keys (compare en.json against any non-English file)
-node -e "const en = require('./messages/en.json'); const fr = require('./messages/fr.json');
-  for (const [ns, keys] of Object.entries(en)) {
-    if (!fr[ns]) console.log('NEW namespace: ' + ns + ' (' + Object.keys(keys).length + ' keys)');
-    else { const missing = Object.keys(keys).filter(k => !(k in fr[ns]));
-      if (missing.length) console.log('NEW keys in ' + ns + ': ' + missing.join(', ')); }
-  }"
+node << 'SCRIPT'
+const en = require('./messages/en.json');
+const fr = require('./messages/fr.json');
+for (const [ns, keys] of Object.entries(en)) {
+  if (!fr[ns]) console.log('NEW namespace: ' + ns + ' (' + Object.keys(keys).length + ' keys)');
+  else { const missing = Object.keys(keys).filter(k => !(k in fr[ns]));
+    if (missing.length) console.log('NEW keys in ' + ns + ': ' + missing.join(', ')); }
+}
+SCRIPT
 ```
 
 **Step 2: Generate translations with a single Task agent**
 
-Launch ONE Task agent (not 6 — one is enough) that produces a JSON object mapping each locale to its translations. The agent returns ONLY the translation data, not file edits:
+Launch ONE Task agent (not 6 — one is enough) that produces a JSON object mapping each locale to its translations. The agent returns ONLY the translation data, not file edits.
+
+**CRITICAL:** Always include the exact locale list from Step 1 in the prompt. Never let the agent guess locale codes — common mistakes include `zh` (should be `zh-CN`), `zh-Hant` (should be `zh-TW`), `fil` (should be `tl`), and inventing locales like `et`, `gu`, `kn` that don't exist in this project.
 
 ```
-Prompt: "Translate these keys into all 55 locales. Return a JSON object:
-{ 'ar': { 'Namespace.key': 'translated value', ... }, 'bg': { ... }, ... }
+Prompt: "Translate these keys into ALL 55 locales listed below. Return ONLY a JSON object.
+**Target locales (55):** [paste output from --list-locales]
+
 Rules: keep {variable} placeholders as-is, keep brand names (Quiet Riots) as-is,
-keep technical terms (IPO, Pre-Seed) as-is, keep currency amounts ($10m, 10p) as-is."
+keep technical terms (IPO, Pre-Seed) as-is, keep currency amounts ($10m, 10p) as-is.
+For -Latn locales: write in LATIN SCRIPT (romanised), not native script.
+
+Format: { 'es': { 'key': 'translated value', ... }, 'fr': { ... }, ... }"
 ```
 
-**Step 3: Apply translations with a Node.js script**
+**Step 3: Apply translations with the helper script**
 
-Write a one-off Node.js script (inline or in a Bash command) that reads each locale file, applies the translations, and writes it back.
+Save the agent's JSON output to a file, then validate and apply:
+
+```bash
+# Save the agent output to a temp file (the agent returns raw JSON)
+# Then validate before applying:
+node scripts/apply-ui-translations.js --check /tmp/translations.json
+
+# Apply (reads each locale file, merges new keys, writes back):
+node scripts/apply-ui-translations.js /tmp/translations.json
+
+# Format
+npx prettier --write messages/*.json
+```
+
+The script will:
+- **Reject** unexpected locale codes (e.g. `zh` instead of `zh-CN`)
+- **Warn** about missing locales (exist in messages/ but not in translation output)
+- **Skip** locales that don't have corresponding message files
+- **Validate** all JSON files after writing
 
 **For simple value changes** (like renaming "supporter" → "participant"), skip the agent entirely — build the translations object directly with known mappings and run the script.
 
 **Step 4: Validate and test**
 
 ```bash
-# Verify all 45 files are valid JSON
+# Verify all locale files are valid JSON
 for f in messages/*.json; do node -e "require('./$f')" 2>&1 || echo "BROKEN: $f"; done
-# Run i18n sync tests
-npm test -- --grep "i18n"
+# Run tests
+npm test
 # Format
 npx prettier --write messages/*.json
 ```
@@ -201,6 +233,7 @@ npx prettier --write messages/*.json
 - Sub-agents are unpredictable — some batches finish, others fail silently or take 20+ minutes
 - `npm run translate` handles all 55 locales in ~1-2 minutes via parallel API calls
 - A Node.js script handles all 55 UI locale files in <1 second, deterministically
+- The `apply-ui-translations.js` script catches locale code mismatches that would silently lose translations
 
 ## Dual-Surface Protocol (IMPORTANT — follow for every feature)
 
