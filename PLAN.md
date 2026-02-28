@@ -1,165 +1,99 @@
-# Plan: Auto-translate issues on approval
+# Plan: Localise suggestion review WhatsApp notifications
 
 ## Context
 
-New Quiet Riots created via the bot/web start as `pending_review`. A Setup Guide approves them, but translations must be triggered manually via a separate endpoint. If nobody does, non-English users see raw English text. Two production issues ("Mobile Data Charges", "Fly Tipping") currently show English on the Spanish page.
+When a user submits a Quiet Riot suggestion in their language (e.g. Banglish), the approval/rejection/merge/more_info WhatsApp notifications are sent in hardcoded English. The user should receive these in the language they submitted in (`suggestion.language_code`).
 
-**Fix:** Auto-trigger translation generation when a suggestion is approved, using `after()` for non-blocking guaranteed execution.
+**Scope:** WhatsApp messages only. Inbox subject/body stays English (separate concern).
 
-## Existing infrastructure
+## Design notes
 
-All runtime translation code already exists and is production-tested:
-- `generateAndStoreTranslations()` — `src/lib/queries/generate-translations.ts`
-- `markTranslationsReady()` — `src/lib/queries/suggestions.ts`
-- `generateEntityTranslations()` — `src/lib/ai.ts` (calls Haiku, ~3-5s for 55 locales)
-- `ANTHROPIC_API_KEY` — already used at runtime by `translateToEnglish()` in bot flows
-- `after()` — exported from `next/server` (verified in Next.js 16.1.6)
+- `getBotMessage(locale, key, params)` is async (loads from `messages/{locale}.json`)
+- Web review route uses `sendNotification({ whatsAppSummary })` — clean separation, just await the message first
+- Bot route uses `notifyUser(userId, type, subject, body)` which constructs `whatsappMessage` from `subject: body`. Need to add an optional `whatsappOverride` parameter to `notifyUser` so we can pass the localised message directly.
+- Freeform guide text (rejection_detail, more_info notes) stays English — we localise the chrome around it
+- `getBotMessage` lives in `src/app/api/bot/bot-messages.ts` — import path from web routes is fine for now
 
-## Phase 1: Extract translation trigger function + wire into approval
+## Steps
 
-### Step 1a: Create `triggerAutoTranslation()` helper
+### 1. Add BotMessages keys to `messages/en.json`
 
-**File:** `src/lib/queries/generate-translations.ts`
-
-Add a focused function that encapsulates the approve→translate→mark-ready flow:
-
-```typescript
-export async function triggerAutoTranslation(
-  suggestionId: string,
-  entityType: 'issue' | 'organisation',
-  entityId: string,
-  fields: Record<string, string>,
-): Promise<{ success: boolean; localeCount: number }> {
-  const result = await generateAndStoreTranslations(entityType, entityId, fields);
-  if (result.success) {
-    await markTranslationsReady(suggestionId);
-  }
-  return result;
-}
+```
+suggestionApproved: "Good news — your Quiet Riot \"{name}\" has been approved! We'll let you know when it goes live."
+suggestionRejected: "Your suggestion \"{name}\" didn't get the 👍 because {reason}."
+suggestionRejectedWithLink: "Your suggestion \"{name}\" didn't get the 👍 because {reason}. Learn more: https://www.quietriots.com/info/rejection-reasons"
+suggestionMerged: "Your suggestion \"{name}\" is similar to an existing Quiet Riot. We've added you — check it out: {link}"
+suggestionMoreInfo: "The Setup Guide has a question about \"{name}\": {notes}"
+suggestionGoLive: "Your Quiet Riot \"{name}\" is now live! Share it with friends who care about this issue."
+rejectionCloseToExisting: "too similar to an existing Quiet Riot"
+rejectionAboutPeople: "it targets people rather than issues"
+rejectionIllegalSubject: "it involves illegal activity"
 ```
 
-**Why extract:** Testable in isolation without mocking `after()`. Keeps the bot route handler thin. Same function could be reused if a web approval path is added later.
+Note: `rejectionOther` is omitted — the guide's own words are used directly.
 
-### Step 1b: Call from approve handler via `after()`
+### 2. Add `whatsappOverride` to `notifyUser` in bot route
 
-**File:** `src/app/api/bot/route.ts` — `review_suggestion` → `approve` case (~line 1490)
+Add optional param to `notifyUser` so the bot route can pass a pre-built localised WhatsApp message instead of deriving it from English subject+body.
 
-```typescript
-import { after } from 'next/server';
-
-case 'approve': {
-  const result = await approveSuggestion(...);
-
-  // Auto-generate translations after response (guaranteed by Vercel)
-  const entityType = suggestion.suggested_type === 'issue' ? 'issue' : 'organisation';
-  const entityId = suggestion.issue_id || suggestion.organisation_id;
-  if (entityId) {
-    const fields: Record<string, string> = { name: suggestion.suggested_name };
-    if (suggestion.description) fields.description = suggestion.description;
-    after(() =>
-      triggerAutoTranslation(suggestionId, entityType, entityId, fields).catch(() => {})
-    );
-  }
-
-  // Existing notification + return (unchanged)
-  notifyUser(...).catch(() => {});
-  return ok({ suggestion: result, decision: 'approved' });
-}
+```ts
+async function notifyUser(
+  userId, type, subject, body, entityType?, entityId?, senderName?,
+  whatsappOverride?: string,  // NEW — localised WhatsApp message
+)
 ```
 
-**Design decisions:**
-- **`after()` not `await`:** Approval returns instantly. `after()` is guaranteed by Vercel (unlike bare fire-and-forget). Guide doesn't wait 5s.
-- **`after()` not fire-and-forget:** Vercel can kill the function after response. `after()` extends the function lifetime. This is the Next.js-blessed pattern.
-- **`.catch(() => {})` inside `after`:** Prevents unhandled rejection if the Anthropic API fails. Suggestion stays `approved`; guide can retry via existing manual endpoint.
-- **No response shape change:** Bot API contract unchanged.
-- **Safety net:** `goLiveSuggestion()` requires `translations_ready` status — issue can't go live without translations, even if auto-generation fails silently.
+In the function body: `whatsappMessage: user?.phone ? (whatsappOverride || \`${subject}: ${body.slice(0, 500)}\`) : undefined`
 
-### Step 1c: Update approval notification
+### 3. Localise notifications in web review route
 
-**File:** `src/app/api/bot/route.ts` — approve notification (~line 1503)
+`src/app/api/suggestions/[id]/review/route.ts`:
 
-Change "under review for translations" to "Translations are being generated automatically."
+For each decision, build localised whatsAppSummary before calling sendNotification:
 
-## Phase 2: Fix existing untranslated issues
+```ts
+// approve
+const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionApproved', { name: suggestion.suggested_name });
 
-Add "Mobile Data Charges" and "Fly Tipping" to ISSUES array in `scripts/seed-translations.ts`, then run the proven CLI pipeline:
+// reject
+const localReason = reason === 'other' ? (detail || 'see details') : await getBotMessage(suggestion.language_code, rejectionKeyMap[reason]);
+const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionRejectedWithLink', { name: suggestion.suggested_name, reason: localReason });
 
-```bash
-npx tsx scripts/seed-translations.ts --generate
-npm run translate -- --section issues
-# Apply to staging + production via --apply
+// merge
+const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMerged', { name: suggestion.suggested_name, link: `https://www.quietriots.com${mergeTargetPath}` });
+
+// more_info
+const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMoreInfo', { name: suggestion.suggested_name, notes });
 ```
 
-**File:** `scripts/seed-translations.ts` — add 2 issues to ISSUES array
+### 4. Localise notifications in bot route
 
-## Phase 3: Tests
+`src/app/api/bot/route.ts` — same pattern in `review_suggestion` handler. Use `getBotMessage(suggestion.language_code, ...)` and pass as `whatsappOverride` to `notifyUser`.
 
-### Critical: `after()` throws outside request scope
+### 5. Localise go-live notifications
 
-`after()` throws **synchronously** when called outside a Next.js request context (verified by running it in Node). In Vitest, `POST(request)` is called directly — no Next.js server manages the request lifecycle. Without a mock, `after()` will throw in every approve test, breaking them.
+Both `src/app/api/suggestions/[id]/go-live/route.ts` and bot `go_live_suggestion` handler — localise the First Rioter notification.
 
-**Required:** Mock `after` in bot-api.test.ts as a no-op:
+### 6. Translate to all 55 locales
 
-```typescript
-vi.mock('next/server', async () => {
-  const actual = await vi.importActual<typeof import('next/server')>('next/server');
-  return { ...actual, after: vi.fn() };
-});
-```
+Use the UI Translation Protocol: single Task agent for translations, then apply via script.
 
-This preserves `NextRequest`/`NextResponse` (used by all 100+ existing tests) and replaces only `after` with a no-op. Safe and minimal.
+### 7. Tests
 
-### Unit test: `triggerAutoTranslation()`
-
-**File:** `src/lib/queries/generate-translations.test.ts`
-
-Test directly (no `after()` involved):
-1. When `generateAndStoreTranslations` succeeds → calls `markTranslationsReady` with suggestion ID
-2. When `generateAndStoreTranslations` returns `{ success: false }` → does NOT call `markTranslationsReady`
-
-Mock `generateAndStoreTranslations` (already mocked) + add mock for `markTranslationsReady`.
-
-### Integration test: bot approve triggers translation
-
-**File:** `src/app/api/bot/bot-api.test.ts`
-
-With `after` mocked as `vi.fn()`, verify:
-1. Existing approve test still passes (approval works, response is correct)
-2. `after` was called (translation was scheduled)
-
-## Phase 4: Verify ANTHROPIC_API_KEY on Vercel
-
-Check `npx vercel env ls` from main repo root. Add to production + preview if missing.
+- Test that approve/reject/merge/more_info pass localised whatsAppSummary
+- Test the `whatsappOverride` parameter on `notifyUser`
 
 ## Files to modify
 
-| File | Change |
-|------|--------|
-| `src/lib/queries/generate-translations.ts` | Add `triggerAutoTranslation()` |
-| `src/app/api/bot/route.ts` | Import `after` + `triggerAutoTranslation`, call in approve case, update notification text |
-| `src/lib/queries/generate-translations.test.ts` | Test `triggerAutoTranslation` |
-| `scripts/seed-translations.ts` | Add 2 missing issues to ISSUES array |
-| `translations/en.json` + `translations/*.json` | Regenerated by CLI pipeline |
-
-## Not changing
-
-- `src/app/api/suggestions/[id]/generate-translations/route.ts` — stays as manual retry/regenerate path
-- Bot API response shape — unchanged
-- `src/lib/ai.ts` — no changes needed
-
-## Known limitations (pre-existing, not introduced by this change)
-
-- `generateEntityTranslations()` uses max_tokens=16384. Very long descriptions (~2000 chars) across 55 locales could exceed this limit, causing truncated/malformed JSON. In practice, descriptions are short. The manual regenerate endpoint can do specific locales as a workaround.
+- `messages/en.json` — add BotMessages keys
+- `messages/*.json` (55 files) — translate new keys
+- `src/app/api/bot/route.ts` — add whatsappOverride to notifyUser, use getBotMessage for review_suggestion + go_live_suggestion notifications
+- `src/app/api/suggestions/[id]/review/route.ts` — use getBotMessage for whatsAppSummary
+- `src/app/api/suggestions/[id]/go-live/route.ts` — use getBotMessage for whatsAppSummary
+- `src/app/api/bot/bot-api.test.ts` — test localised notifications
 
 ## Verification
 
-1. `npm test` — all pass including new tests
-2. `npm run build` — clean
-3. After deploy: Spanish issues page shows translated names for all issues
-4. Future: approve a suggestion → it auto-advances to `translations_ready` within seconds
-
-## Deployment
-
-- Verify/add `ANTHROPIC_API_KEY` on Vercel production + preview
-- Run CLI pipeline for 2 missing issues (`--generate` → `translate` → `--apply`) on staging + production
-- No DB migrations
+1. `npm test` — all tests pass
+2. `npm run build` — builds cleanly
+3. After deploy: approve a suggestion from a non-English user, verify WhatsApp message is in their language

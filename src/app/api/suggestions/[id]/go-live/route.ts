@@ -6,6 +6,7 @@ import { getUserById } from '@/lib/queries/users';
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
+import { getBotMessage } from '@/app/api/bot/bot-messages';
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const userId = await getSession();
@@ -40,7 +41,11 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         ? `/organisations/${suggestion.organisation_id}`
         : '';
 
-  // 1. Notify First Rioter
+  // 1. Notify First Rioter (in their language)
+  const locale = suggestion.language_code || 'en';
+  const goLiveWhatsApp = await getBotMessage(locale, 'suggestionGoLive', {
+    name: suggestion.suggested_name,
+  });
   sendNotification({
     recipientId: suggestion.suggested_by,
     type: 'suggestion_live',
@@ -48,7 +53,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     body: `Your Quiet Riot "${suggestion.suggested_name}" has had the 👍! It's now live and translated into multiple languages. Share it with friends who care about this issue.`,
     entityType: 'issue_suggestion',
     entityId: id,
-    whatsAppSummary: `Great news — your Quiet Riot "${suggestion.suggested_name}" has had the 👍! It's now live. Share it with friends who care about this issue: https://www.quietriots.com${entityPath}`,
+    whatsAppSummary: goLiveWhatsApp,
   }).catch(() => {});
 
   // 2. Notify the Setup Guide who triggered go-live

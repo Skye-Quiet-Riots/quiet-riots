@@ -599,6 +599,7 @@ async function notifyUser(
   entityType?: import('@/types').MessageEntityType,
   entityId?: string,
   senderName?: string,
+  whatsappOverride?: string,
 ): Promise<void> {
   try {
     const user = await getUserById(userId);
@@ -611,7 +612,9 @@ async function notifyUser(
       body,
       entityType,
       entityId,
-      whatsappMessage: user?.phone ? `${subject}: ${body.slice(0, 500)}` : undefined,
+      whatsappMessage: user?.phone
+        ? whatsappOverride || `${subject}: ${body.slice(0, 500)}`
+        : undefined,
       whatsappExpiresAt: user?.phone ? whatsappExpiresAt() : undefined,
     });
 
@@ -1513,7 +1516,11 @@ export async function POST(request: NextRequest) {
               );
             }
 
-            // Notify First Rioter
+            // Notify First Rioter (in their language)
+            const approveLocale = suggestion.language_code || 'en';
+            const approveWhatsApp = await getBotMessage(approveLocale, 'suggestionApproved', {
+              name: suggestion.suggested_name,
+            });
             notifyUser(
               suggestion.suggested_by,
               'suggestion_approved',
@@ -1522,6 +1529,7 @@ export async function POST(request: NextRequest) {
               'issue_suggestion',
               suggestionId,
               user.name ?? 'Setup Guide',
+              approveWhatsApp,
             ).catch(() => {});
             return ok({ suggestion: result, decision: 'approved' });
           }
@@ -1539,21 +1547,30 @@ export async function POST(request: NextRequest) {
               p.rejection_detail as string | undefined,
               closeMatchIdsArr,
             );
-            // Notify First Rioter
-            const reasonTexts: Record<RejectionReason, string> = {
-              close_to_existing: 'It is too similar to an existing Quiet Riot.',
-              about_people: 'Quiet Riots are about issues, not specific people.',
-              illegal_subject: 'The subject matter is not appropriate.',
-              other: (p.rejection_detail as string) || 'The suggestion was not approved.',
+            // Notify First Rioter (in their language)
+            const rejectLocale = suggestion.language_code || 'en';
+            const rejectionKeyMap: Record<string, string> = {
+              close_to_existing: 'rejectionCloseToExisting',
+              about_people: 'rejectionAboutPeople',
+              illegal_subject: 'rejectionIllegalSubject',
             };
+            const localReason =
+              reason === 'other'
+                ? (p.rejection_detail as string) || 'The suggestion was not approved.'
+                : await getBotMessage(rejectLocale, rejectionKeyMap[reason]);
+            const rejectWhatsApp = await getBotMessage(rejectLocale, 'suggestionRejected', {
+              name: suggestion.suggested_name,
+              reason: localReason,
+            });
             notifyUser(
               suggestion.suggested_by,
               'suggestion_rejected',
               `Update on ${suggestion.suggested_name}`,
-              `Your suggestion "${suggestion.suggested_name}" wasn't approved. ${reasonTexts[reason]}`,
+              `Your suggestion "${suggestion.suggested_name}" wasn't approved. ${localReason}`,
               'issue_suggestion',
               suggestionId,
               user.name ?? 'Setup Guide',
+              rejectWhatsApp,
             ).catch(() => {});
             return ok({ suggestion: result, decision: 'rejected' });
           }
@@ -1567,7 +1584,17 @@ export async function POST(request: NextRequest) {
             if (mergeIssueId) {
               await joinIssue(suggestion.suggested_by, mergeIssueId);
             }
-            // Notify First Rioter
+            // Notify First Rioter (in their language)
+            const mergeLocale = suggestion.language_code || 'en';
+            const mergeTargetPath = mergeIssueId
+              ? `/issues/${mergeIssueId}`
+              : mergeOrgId
+                ? `/organisations/${mergeOrgId}`
+                : '';
+            const mergeWhatsApp = await getBotMessage(mergeLocale, 'suggestionMerged', {
+              name: suggestion.suggested_name,
+              link: `https://www.quietriots.com${mergeTargetPath}`,
+            });
             notifyUser(
               suggestion.suggested_by,
               'suggestion_merged',
@@ -1576,6 +1603,7 @@ export async function POST(request: NextRequest) {
               'issue_suggestion',
               suggestionId,
               user.name ?? 'Setup Guide',
+              mergeWhatsApp,
             ).catch(() => {});
             return ok({ suggestion: result, decision: 'merged' });
           }
@@ -1583,7 +1611,12 @@ export async function POST(request: NextRequest) {
             const notes = p.reviewer_notes as string | undefined;
             if (!notes) return err('reviewer_notes required when requesting more info');
             const result = await requestSuggestionMoreInfo(suggestionId, user.id, notes);
-            // Notify First Rioter
+            // Notify First Rioter (in their language)
+            const infoLocale = suggestion.language_code || 'en';
+            const infoWhatsApp = await getBotMessage(infoLocale, 'suggestionMoreInfo', {
+              name: suggestion.suggested_name,
+              notes,
+            });
             notifyUser(
               suggestion.suggested_by,
               'suggestion_more_info',
@@ -1592,6 +1625,7 @@ export async function POST(request: NextRequest) {
               'issue_suggestion',
               suggestionId,
               user.name ?? 'Setup Guide',
+              infoWhatsApp,
             ).catch(() => {});
             return ok({ suggestion: result, decision: 'more_info' });
           }
@@ -1618,7 +1652,11 @@ export async function POST(request: NextRequest) {
 
         const result = await goLiveSuggestion(suggestionId);
 
-        // Notify First Rioter about go-live
+        // Notify First Rioter about go-live (in their language)
+        const goLiveLocale = suggestion.language_code || 'en';
+        const goLiveWhatsApp = await getBotMessage(goLiveLocale, 'suggestionGoLive', {
+          name: suggestion.suggested_name,
+        });
         notifyUser(
           suggestion.suggested_by,
           'suggestion_live',
@@ -1627,6 +1665,7 @@ export async function POST(request: NextRequest) {
           'issue_suggestion',
           suggestionId,
           user.name ?? 'Setup Guide',
+          goLiveWhatsApp,
         ).catch(() => {});
 
         // Notify guide
