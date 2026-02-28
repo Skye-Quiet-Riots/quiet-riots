@@ -20,200 +20,208 @@
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Junat peruttu",
-      "description": "Junat peruttu tai merkittävästi myöhässä ilman riittävää varoitusta tai korvausta"
+      "name": "Junanperuutukset",
+      "description": "Junat peruttu tai vakavasti myöhässä riittämättömällä varoitusajalla tai korvauksella"
     },
     "Train Ticket Prices": {
-      "name": "Junakaarten hinnat",
-      "description": "Rautatieliput liian kalliit, inflaatiota ylittävät korotukset, epäjohdonmukainen hinnoittelu"
+      "name": "Junaisten hinnat",
+      "description": "Rautatiemaksut liian kalliita, inflaatiota korkeammat korotukset, epäjohdonmukainen hinnoittelu"
     },
     "Flight Delays": {
-      "name": "Lentojen viivästymiset",
-      "description": "Lennot viivästyneet tai peruttu, huono tiedotus, vaikeudet korvauksen hakemisessa"
+      "name": "Lentojen viiveet",
+      "description": "Lennot myöhässä tai peruttu, huono viestintä, vaikeus korvausvaatimuksissa"
     },
     "Lost Luggage": {
       "name": "Kadonnut matkalaukku",
-      "description": "Laukut eivät saavu määräpaikkaan, hidas seuranta, riittämätön korvaus"
+      "description": "Laukut eivät saavu määränpäähän, hidas seuranta, riittämätön korvaus"
     },
     "Bus Route Cuts": {
-      "name": "Bussilinjojen leikkaukset",
-      "description": "Linjat peruttu, vuorotiheys vähennetty, maaseutuyhdyskunnat menettävät bussikuljetukset"
+      "name": "Bussireittien leikkaukset",
+      "description": "Reitit peruttu, tiheys vähennetty, maaseutuyhteisöt menettävät bussiyhteydet"
     },
     "Pothole Damage": {
-      "name": "Kuoppatuhojen vahinko",
+      "name": "Kuopista aiheutunut vahinko",
       "description": "Kuopat vahingoittavat ajoneuvoja ja vaarantavat pyöräilijöitä, kunnat hitaita korjauksissa"
     },
     "Parking Fines": {
-      "name": "Pysäköintisäädöt",
-      "description": "Epäreilut yksityiset pysäköintimaksut, aggressiivinen pakkokeinot, hämmentävät merkinnät"
+      "name": "Pysäköintisakkot",
+      "description": "Epäoikeudenmukainen yksityinen pysäköintimaksu, aggressiivinen valvonta, hämmentävät kyltit"
     },
     "Fuel Prices": {
-      "name": "Polttoaineiden hinnat",
-      "description": "Bensiinin ja dieselin hinnat liian korkeat, hitaat laskut tukkuhintojen pudottuessa"
+      "name": "Polttoaineen hinnat",
+      "description": "Bensiini ja diesel liian kalliita, hidas reaktio tukkuhinnan laskuun"
     },
     "Broadband Speed": {
       "name": "Laajakaistan nopeus",
-      "description": "Internet-nopeudet paljon alle mainostetun ja maksetun"
+      "description": "Internetin nopeus paljon alle mainostetun ja maksetun"
     },
     "Mobile Signal Dead Zones": {
       "name": "Matkapuhelinsignaalin kuolleet alueet",
-      "description": "Ei matkapuhelinsignaalia kodeissa, työpaikoissa tai kulkureitillä"
+      "description": "Ei matkapuhelinsignaalia kodeissa, työpaikoilla tai kulkureitillä"
     },
     "Price Rises Mid-Contract": {
-      "name": "Hinnankorotukset sopimuksen keskellä",
-      "description": "Puhelin-, laajakaista- ja TV-laskut nousevat lukittujen sopimusten aikana"
+      "name": "Hinnankorotukset sopimuksen aikana",
+      "description": "Puhelin-, laajakaista- ja televisiolaskut nousevat lukittujen sopimusten aikana"
     },
     "Customer Service Hold Times": {
       "name": "Asiakaspalvelun odotusajat",
-      "description": "Tunteja puhelimessa odotettaessa puhumista ihmisen kanssa"
+      "description": "Tunteja puhelimessa odottaen ihmisen kanssa puhumista"
     },
     "Difficulty Cancelling Subscriptions": {
       "name": "Vaikeus peruuttaa tilauksia",
-      "description": "Yritykset tekevät tarkoituksellisesti vaikeaksi peruuttaa tai poistua tilauksesta"
+      "description": "Yritykset tekevät peruuttamisen tai poistamisen tarkoituksella vaikeaksi"
     },
     "Roaming Charges": {
       "name": "Roaming-maksut",
-      "description": "Odottamattomat matkapuhelinmaksut ulkomailla matkustettaessa, Brexitin jälkeiset hinnankorotukset"
+      "description": "Odottamattomat matkapuhelinmaksut matkaapäin, Brexit-hinnankorotukset"
     },
     "Energy Bill Costs": {
-      "name": "Energialaskujen kulut",
+      "name": "Energialaskujen kustannukset",
       "description": "Kaasu- ja sähkölaskut kohtuuttomia, hintakatto silti liian korkea"
     },
     "Inaccurate Energy Bills": {
       "name": "Epätarkat energialaskut",
-      "description": "Arvioidut mittaukset virheellisiä, ylilataaminen, laskutusvirheet"
+      "description": "Arvioidut lukemistot väärät, ylilataaminen, laskutusvirheet"
     },
     "Water Bill Increases": {
-      "name": "Vesilaskujen korotukset",
-      "description": "Vesilaskut nousevat jyrkästi palvelun laadun heikentymisen myötä"
+      "name": "Vesilaskun korotukset",
+      "description": "Vesilaskut nousevat jyrkästi palvelun laadun heikkentyessä"
     },
     "Sewage in Rivers": {
-      "name": "Jätevedet joissa",
-      "description": "Vesiosuuskunnat puhkaisevat raakaa jätevettä vesistöihin ja rannoille"
+      "name": "Jätevedenpurkaus joissa",
+      "description": "Vesiyhtiöt dumpaavat raakaviemäriä vesistöihin ja rannoille"
     },
     "Power Cuts": {
-      "name": "Sähkökatkeaisuudet",
-      "description": "Sähkönsyötön keskeytykset, hidas palautuminen, riittämätön korvaus"
+      "name": "Sähkökatkon",
+      "description": "Sähkönsyötön katkokset, hidas palautuminen, riittämätön korvaus"
     },
     "Smart Meter Problems": {
-      "name": "Älykkäiden mittareiden ongelmat",
-      "description": "Älymittarit eivät toimi, toiminnallisuus häviää palveluntarjoajan vaihdossa"
+      "name": "Älylaskurin ongelmat",
+      "description": "Älylaskurit eivät toimi, toiminnallisuus katoaa supplier-vaihdossa"
     },
     "Bank Branch Closures": {
-      "name": "Pankin konttoreiden sulkemiset",
-      "description": "Paikalliset pankin konttorit sulkeutuvat, yhteisöillä ei pääsyä"
+      "name": "Pankkien konttoreiden sulkeminen",
+      "description": "Paikalliset pankin konttorit sulkeutuvat, jättäen yhteisöt ilman pääsyä"
     },
     "Hidden Bank Charges": {
       "name": "Piilotetut pankkimaksut",
-      "description": "Odottamattomat maksut tilinylityksistä, ulkomaisista siirroista, tilin ylläpidosta"
+      "description": "Odottamattomat maksut tilinylityksistä, ulkomaansiirroista, tilin ylläpidosta"
     },
     "Fraud and Scam Losses": {
-      "name": "Petokset ja huijaukset",
-      "description": "Pankit kieltäytyvät korvaamasta petoksen ja valtuutettujen maksusiirtojen uhreja"
+      "name": "Petos ja huijauskauden tappiot",
+      "description": "Pankit kieltäytyvät korvaamasta petoksen ja hyväksytyn maksukehote-huijauksen uhreja"
     },
     "Insurance Claim Rejections": {
-      "name": "Vakuutuskorvaussyytymiset",
-      "description": "Korvaukset evätään tekniikalla vuosien vakuutusmaksujen jälkeen"
+      "name": "Vakuutuskorvausvaatimuksien hylkääminen",
+      "description": "Korvausvaatimukset hylätään tekniikalla vuosien vakuutusmaksun maksamisen jälkeen"
     },
     "Mortgage Rate Shock": {
-      "name": "Asuntolainakorkoshokki",
-      "description": "Kiinteä korko päättyy ja siirtyy paljon korkeampaan vaihtuva korko"
+      "name": "Asuntolainan koron sokki",
+      "description": "Kiinteä korko päättyy ja siirtyy paljon korkeammalle vaihtuvalle korolle"
     },
     "Overseas Transfer Fees": {
-      "name": "Ulkomaille siirron maksut",
-      "description": "Liiallisesti maksuja ja huonot vaihtokurssit kansainvälisille rahansiirroille"
+      "name": "Ulkomaan siirron maksut",
+      "description": "Liian suuret maksut ja huono valuuttakurssi kansainvälisille rahansiirrolla"
     },
     "NHS Waiting Times": {
       "name": "NHS:n odotusajat",
-      "description": "Useiden kuukausien tai useiden vuosien odotusajat leikkauksille ja erikoisasiantuntijan vastaanotoille"
+      "description": "Usean kuukauden tai usean vuoden odotusajat toimenpiteille ja erikoispoliklinikan ajanvarauksille"
     },
     "GP Appointment Access": {
-      "name": "Lääkärin vastaanotolle pääsy",
-      "description": "Ei voi varata lääkärin ajanvarausta, useiden viikkojen odotusajat"
+      "name": "Yleislääkärin ajanvarauksen saavutettavuus",
+      "description": "Ei pysty soittamaan yleislääkärin ajanvaraukseen, viikkojen mittaiset odotusajat"
     },
     "Dentist Availability": {
       "name": "Hammaslääkärin saatavuus",
-      "description": "Mahdotonta löytää NHS-hammaslääkäriä, joka ottaa uusia potilaita"
+      "description": "Mahdotonta löytää NHS hammaslääkäriä, joka ottaa uusia potilaita"
     },
     "Mental Health Service Waits": {
-      "name": "Mielenterveyspalvelujen odotusajat",
-      "description": "Kuukausien odotusajat terapialle ja mielenterveystuelle"
+      "name": "Mielenterveyden palvelujen odotusajat",
+      "description": "Kuukausien mittaiset odotusajat terapiaan ja mielenterveyden tukeen"
     },
     "Prescription Costs": {
-      "name": "Reseptilääkkeiden kulut",
-      "description": "Hinta per erä liian korkea Englannissa, epäjohdonmukaisuus Britannian maiden välillä"
+      "name": "Reseptin kustannukset",
+      "description": "Kustannus per erä liian korkea Englannissa, epäjohdonmukaisuus Yhdistyneen kuningaskunnan maiden välillä"
     },
     "Hospital Parking Charges": {
       "name": "Sairaalan pysäköintimaksut",
-      "description": "Maksun maksaminen sairaalan pysäköinnistä ollessaan sairaana tai vierailemassa sairailla sukulaisilla"
+      "description": "Maksetaan sairaalan pysäköinnistä sairaaksi ollessaan tai vieraistaessa sairaita sukulaisia"
     },
     "Rent Increases": {
       "name": "Vuokran korotukset",
-      "description": "Yksityinen vuokra nousee paljon inflaatiota enemmän, ei-vika häätöuhka"
+      "description": "Yksityinen vuokra nousee inflaatiota paljon enemmän, loukkaavan irtisanomisuhan uhka"
     },
     "Council Tax Rises": {
-      "name": "Kuntaveron korotukset",
-      "description": "Kunnavero nousee vuosittain kun paikalliset palvelut huononevat"
+      "name": "Kunnasveron korotukset",
+      "description": "Vuosittaiset kunnasveron korotukset kun paikalliset palvelut huononevat"
     },
     "Noisy Neighbours": {
-      "name": "Meluavat naapurit",
-      "description": "Pysyvä meluhaitta, kunnat hitaita toimimaan, vaikuttaa mielenterveyteen"
+      "name": "Meluisät naapurit",
+      "description": "Jatkuva melusaaste, kunnat hitaita puuttumaan, vaikutus mielenterveyteen"
     },
     "Rubbish Collection Changes": {
-      "name": "Jätteenkeräyksen muutokset",
-      "description": "Vähennetyt roskaastian tyhjennykset, hämmentävät kierrätyssäännöt, täynnä olevat astiat"
+      "name": "Roskien keräysmuutokset",
+      "description": "Vähennetyt roskakorin keräysajat, hämmentävät kierrätyssäännöt, ylivuotavat roskakorit"
     },
     "Planning Permission Abuse": {
-      "name": "Rakennuslupakäytön väärinkäyttö",
-      "description": "Ei-toivotut kehityshankkeet hyväksytyt, vihreä vyöhyke uhattuna, yhteisö jätetty huomioimatta"
+      "name": "Kaavoituslupa väärinkäyttö",
+      "description": "Ei-toivotut kehityshankkeet hyväksytty, vihreä vyöhyke uhattuna, yhteisö ohitettu"
     },
     "Damp and Mould in Housing": {
-      "name": "Kosteus ja homeet asunnoissa",
-      "description": "Vuokranantajat ja asuntoyhtiöt epäonnistuvat kosteus- ja homeongelmien korjaamisessa"
+      "name": "Kosteus ja home asunnoissa",
+      "description": "Vuokranantajat ja asuntoyhdistykset eivät korjaa kosteutta ja hometta"
     },
     "Delivery Problems": {
-      "name": "Toimitus ongelmat",
-      "description": "Paketit katoavat, jätetään sateeseen, merkitty toimitetuksi mutta ei vastaanotettu"
+      "name": "Toimitusongelmat",
+      "description": "Paketit kadoneet, jätetty sateeseen, merkitty toimitetuksi mutta ei vastaanotettu"
     },
     "Shrinkflation": {
-      "name": "Tuotteiden pienentäminen",
-      "description": "Tuotteet pienentyvät kun hinnat pysyvät samana tai nousevat"
+      "name": "Shrinkflation",
+      "description": "Tuotteet pienenevät kun hinnat pysyvät ennallaan tai nousevat"
     },
     "Refund Difficulties": {
-      "name": "Palautuksen vaikeudet",
-      "description": "Yritykset tekevät palautukset ja hyvitykset tarpeettoman vaikeiksi"
+      "name": "Vaikeus saada hyvitystä",
+      "description": "Yritykset tekevät palautuksista ja hyvityksistä tarpeettoman vaikeaksi"
     },
     "Fake Reviews": {
       "name": "Väärät arvostelut",
-      "description": "Ei voi luottaa verkkoja arvioihin, väärät positiiviset arvostelut johtavat kuluttajia harhaan"
+      "description": "Ei voi luottaa verkkoarvioihin, väärät positiiviset arvostelut johtavat kuluttajia harhaan"
     },
     "Subscription Traps": {
-      "name": "Tilaus sudenkuopat",
-      "description": "Ilmaiset kokeilujaksot muuntuvat maksullisiksi ilman selkeää suostumusta, vaikea peruuttaa"
+      "name": "Tilausloukut",
+      "description": "Ilmaiset kokeilut muuttuvat maksullisiksi ilman selkeää suostumusta, vaikea peruuttaa"
     },
     "Food Quality Decline": {
       "name": "Ruoan laadun heikkeneminen",
-      "description": "Valmisruoan laatu huonompi, pienemmät annokset, enemmän lisäaineita"
+      "description": "Valmisateriat huonommassa kunnossa, pienemmät annokset, enemmän lisäaineita"
     },
     "Self-Checkout Frustration": {
-      "name": "Itsepalvelukassan turhautuminen",
-      "description": "Itsepalvelukoneet epäluotettavat, korvaavat ihmisen henkilökunnan"
+      "name": "Itsepalvelukassa turhautuminen",
+      "description": "Itsepalvelukassat epäluotettavia, korvataan ihmisiä"
     },
     "Cost of Childcare": {
       "name": "Lastenhoitokustannukset",
-      "description": "Lastenhoidon kustannukset kohtuuttoman kalliit, rajoittavat työskentelyn mahdollisuutta"
+      "description": "Lastenhoitokulut kohtuuttoman korkeat, rajoittavat työssäkäymiskykyä"
     },
     "Student Loan Repayment": {
       "name": "Opintolainan takaisinmaksu",
-      "description": "Valmistujat maksavat takaisin vuosikymmeniksi, kynnys- ja korkomuutokset"
+      "description": "Valmistuneet maksavat takaisin vuosikymmeniä, kynnyksen ja koron muutokset"
     },
     "Dog Fouling": {
-      "name": "Koirien jätökset",
-      "description": "Koiran jätteet julkisissa tiloissa, puistoissa ja jalkakäytävillä ei puhdisteta"
+      "name": "Koirankalaksi",
+      "description": "Koirien ulosteet julkisissa tiloissa, puistoissa ja jalkakäytävillä joita ei siivota"
     },
     "AI Replacing Jobs": {
-      "name": "Tekoäly korvaa työt",
-      "description": "Huoli siitä, että tekoäly automatisoi työt ilman siirtymätukea"
+      "name": "Tekoäly korvaa työpaikkoja",
+      "description": "Huoli siitä, että tekoäly automatisoi työpaikkoja ilman siirtymätukea"
+    },
+    "Mobile Data Charges": {
+      "name": "Matkapuhelinverkon datamaksut",
+      "description": "Odottamattomat tai liialliset maksut matkapuhelinverkon datakäytöstä kuukausikorvauksen ylityessä"
+    },
+    "Fly Tipping": {
+      "name": "Laiton jätetteenkaataminen",
+      "description": "Jätteen laiton kaataminen julkisiin tiloihin, yhteisöjen vahingoittaminen ja miljoonien siivouskulut kunnailla"
     }
   },
   "organisations": {
@@ -432,7 +440,12 @@
       "myöhässä oleva juna",
       "rautatieliikenteen viivästykset"
     ],
-    "Train Ticket Prices": ["rautatieliput", "lippujen hinnat", "kalliit junat", "junan liput"],
+    "Train Ticket Prices": [
+      "rautatieliput",
+      "lippujen hinnat",
+      "kalliit junat",
+      "junan liput"
+    ],
     "Flight Delays": [
       "lennon viivästys",
       "lentokoneen viivästys",
@@ -502,7 +515,11 @@
       "arvioitu lukema väärä",
       "ylivelvoitettu energia"
     ],
-    "Water Bill Increases": ["vedenhinnat", "vedenperutusmaksu", "vedenlasku liian korkea"],
+    "Water Bill Increases": [
+      "vedenhinnat",
+      "vedenperutusmaksu",
+      "vedenlasku liian korkea"
+    ],
     "Sewage in Rivers": [
       "jäteveden johtaminen",
       "raakaviemäri",
@@ -518,7 +535,12 @@
       "tilinylityksen maksut",
       "pankkikulut"
     ],
-    "Fraud and Scam Losses": ["petetty", "pankkipetos", "push-maksupetos", "valtuutettu petos"],
+    "Fraud and Scam Losses": [
+      "petetty",
+      "pankkipetos",
+      "push-maksupetos",
+      "valtuutettu petos"
+    ],
     "Bank Branch Closures": [
       "konttorin sulkemiset",
       "paikallisen pankin sulkeminen",
@@ -555,7 +577,11 @@
       "neuvonnan odotusaika",
       "CAMHS-palvelun odotusaika"
     ],
-    "Prescription Costs": ["lääkkeiden hinnat", "lääkkeiden hinnat", "apteekin kulut"],
+    "Prescription Costs": [
+      "lääkkeiden hinnat",
+      "lääkkeiden hinnat",
+      "apteekin kulut"
+    ],
     "Delivery Problems": [
       "paketti kadonnut",
       "pakettia ei toimitettu",
@@ -582,7 +608,11 @@
       "pakkaus pienempi",
       "tuotteet kutistuvat"
     ],
-    "Pothole Damage": ["kuopat", "tienvauriot", "kuopan aiheuttama auton vaurio"],
+    "Pothole Damage": [
+      "kuopat",
+      "tienvauriot",
+      "kuopan aiheuttama auton vaurio"
+    ],
     "Council Tax Rises": [
       "kunnallisveron nousu",
       "kunnallisveroa liian korkea",
@@ -594,13 +624,22 @@
       "musta home",
       "asuntojen puutteellinen kunto"
     ],
-    "Student Loan Repayment": ["opintolainat", "lukukausimaksut", "opintovelan", "opintovelan"],
+    "Student Loan Repayment": [
+      "opintolainat",
+      "lukukausimaksut",
+      "opintovelan",
+      "opintovelan"
+    ],
     "AI Replacing Jobs": [
       "työpaikkojen automatisointi",
       "tekoäly vie työpaikkoja",
       "robotit korvaavat työntekijöitä"
     ],
-    "Roaming Charges": ["loman puhelinlasku", "ulkomaan datakulut", "ulkomaan puhelinkulut"],
+    "Roaming Charges": [
+      "loman puhelinlasku",
+      "ulkomaan datakulut",
+      "ulkomaan puhelinkulut"
+    ],
     "Smart Meter Problems": [
       "älykkään mittarin rikkoutuminen",
       "mittari ei toimi",
@@ -617,7 +656,13 @@
       "polttoaineen hinta",
       "bensiini liian kallis"
     ],
-    "Power Cuts": ["sähkökatko", "sähkökatkos", "pimennys", "ei virtaa", "virran katkos"],
+    "Power Cuts": [
+      "sähkökatko",
+      "sähkökatkos",
+      "pimennys",
+      "ei virtaa",
+      "virran katkos"
+    ],
     "Mortgage Rate Shock": [
       "asuntolainan nousu",
       "asuntolainan korko",
@@ -635,7 +680,12 @@
       "pysäköinti sairaalassa",
       "NHS-pysäköinti"
     ],
-    "Noisy Neighbours": ["melun valitus", "naapurin melu", "äänekkyät naapurit", "melusaaste"],
+    "Noisy Neighbours": [
+      "melun valitus",
+      "naapurin melu",
+      "äänekkyät naapurit",
+      "melusaaste"
+    ],
     "Rubbish Collection Changes": [
       "roskaastioiden nousu",
       "roskaastioita ei noudettu",
@@ -678,7 +728,12 @@
       "päivähoito kallis",
       "päivähoitokustannukset"
     ],
-    "Dog Fouling": ["koiran jäte", "koiran ulosteet", "koiran jäte", "jäte"]
+    "Dog Fouling": [
+      "koiran jäte",
+      "koiran ulosteet",
+      "koiran jäte",
+      "jäte"
+    ]
   },
   "category_assistants": {
     "transport": {

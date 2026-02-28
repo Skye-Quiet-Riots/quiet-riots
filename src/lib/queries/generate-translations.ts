@@ -1,5 +1,6 @@
 import { generateEntityTranslations } from '@/lib/ai';
 import { upsertTranslation } from './translations';
+import { markTranslationsReady } from './suggestions';
 import { sanitizeText } from '@/lib/sanitize';
 
 /**
@@ -33,4 +34,26 @@ export async function generateAndStoreTranslations(
   }
 
   return { success: true, localeCount };
+}
+
+/**
+ * Generate translations for a newly-approved suggestion's entity and
+ * advance the suggestion to 'translations_ready' on success.
+ *
+ * Designed to be called from `after()` in the approve handler — runs
+ * after the response is sent so the guide doesn't wait for the API call.
+ * If it fails, the suggestion stays 'approved' and the guide can retry
+ * via POST /api/suggestions/[id]/generate-translations.
+ */
+export async function triggerAutoTranslation(
+  suggestionId: string,
+  entityType: 'issue' | 'organisation',
+  entityId: string,
+  fields: Record<string, string>,
+): Promise<{ success: boolean; localeCount: number }> {
+  const result = await generateAndStoreTranslations(entityType, entityId, fields);
+  if (result.success) {
+    await markTranslationsReady(suggestionId);
+  }
+  return result;
 }

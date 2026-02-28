@@ -53,7 +53,7 @@ export const CATEGORIES = [
   'Other',
 ] as const;
 
-/** Issue names and descriptions from seed.ts (50 issues) */
+/** Issue names and descriptions — 51 issues (49 from seed.ts + 2 added via Setup Guide) */
 export const ISSUES: { name: string; description: string }[] = [
   {
     name: 'Train Cancellations',
@@ -251,6 +251,16 @@ export const ISSUES: { name: string; description: string }[] = [
   {
     name: 'AI Replacing Jobs',
     description: 'Anxiety about artificial intelligence automating jobs without transition support',
+  },
+  {
+    name: 'Mobile Data Charges',
+    description:
+      'Unexpected or excessive charges for mobile data usage beyond monthly allowances',
+  },
+  {
+    name: 'Fly Tipping',
+    description:
+      'Illegal dumping of waste in public spaces, damaging communities and costing councils millions to clean up',
   },
 ];
 
