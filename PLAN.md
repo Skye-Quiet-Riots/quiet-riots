@@ -660,3 +660,75 @@ All user-facing strings through `messages/*.json`:
 | `src/lib/seed-chicken-pricing.ts` | Seed pricing for all countries |
 | `src/lib/seed.ts` | Add example deployments |
 | `scripts/seed-chicken-pricing.ts` | Pricing seed script |
+
+---
+
+## Deploy a Chicken — Senior Reviews & Mitigations
+
+### Senior Engineer Review — Key Findings
+
+1. **Merge order+pay into one atomic call (HIGH):** Two-step create→pay leaves orphaned `pending_payment` rows. **Fix:** Single `POST /api/chicken/order` that atomically validates, debits wallet, creates order in `paid` status via `db.batch()`. Remove `pending_payment` status.
+
+2. **Add timeout/SLA enforcement (CRITICAL):** No mechanism to prevent orders sitting indefinitely with money locked. **Fix:** Add `expires_at` column (set to `NOW + max_lead_days`). Polling script (matching OTP/message delivery pattern) auto-cancels expired orders with full refund. Add `delivery_deadline_at` set on acceptance.
+
+3. **Fulfiller verification (HIGH):** No verification mechanism — anyone could accept orders and see delivery PII. **Fix:** Add `verified_at`/`verified_by` columns. Only verified fulfillers can accept. Require delivery photo proof before `deliver` transition. Add `POST /api/chicken/order/{id}/rate` for user ratings.
+
+4. **Content moderation on notes (HIGH):** Legal liability for physically delivering threatening/hateful messages. **Fix:** AI moderation check at order creation. Add `moderation_status` (approved/rejected/flagged_for_review). Hold flagged orders in `pending_review` until human approves.
+
+5. **Race condition on fulfiller acceptance (MEDIUM):** Two fulfillers accepting simultaneously. **Fix:** Atomic `UPDATE ... WHERE status = 'paid' RETURNING id` — check `rowsAffected === 1`, return 409 if 0.
+
+6. **Missing fulfiller bot actions (MEDIUM):** Plan is demand-side only. **Fix:** Add `get_available_chicken_orders`, `accept_chicken_order`, `complete_chicken_delivery` bot actions + web fulfiller dashboard.
+
+7. **Dispute resolution (MEDIUM):** Binary delivered/failed insufficient. **Fix:** Add `disputed` status reachable from `delivered`, `dispute_reason` column, `POST /api/chicken/order/{id}/dispute` endpoint. Manual admin resolution.
+
+8. **Delivery address is PII (HIGH):** Plaintext address storage. **Fix:** Application-level encryption, only decrypt for accepted fulfiller. Redact in API responses. Auto-null after delivery.
+
+### Senior Database Engineer Review — Key Findings
+
+1. **Remove DEFAULT 'GBP' on currency_code (MEDIUM):** Silent corruption for non-UK deployments. **Fix:** Make column required with no default.
+
+2. **Add FK references on country codes (MEDIUM):** Freeform 2-char TEXT allows invalid codes. **Fix:** `REFERENCES countries(code)` on all country_code columns.
+
+3. **price_pence naming convention (HIGH):** Misleading for non-GBP currencies (JPY has no minor units). **Fix:** Keep as `price_pence` for codebase consistency (existing convention), document clearly.
+
+4. **JSON validation on photo URLs (MEDIUM):** No CHECK prevents invalid JSON. **Fix:** Add `CHECK(json_valid(delivery_photo_urls))`.
+
+5. **No updated_at trigger (MEDIUM):** SQLite has no `ON UPDATE CURRENT_TIMESTAMP`. **Fix:** Application-level, matching existing codebase pattern.
+
+6. **Add fulfiller_id FK (MEDIUM):** `accepted_by` references users, not fulfillers. **Fix:** Add `fulfiller_id TEXT REFERENCES chicken_fulfillers(id)` for direct FK.
+
+7. **Add cancellation columns (LOW):** Missing `cancelled_at`, `cancellation_reason`. **Fix:** Add to schema.
+
+8. **Cross-column CHECK on ratings (LOW):** `rating_sum > 0, rating_count = 0` is possible. **Fix:** Add `CHECK(rating_count > 0 OR rating_sum = 0)`.
+
+### Senior Designer Review — Key Findings
+
+1. **Trust gap at payment (CRITICAL):** $50 for a stranger in a chicken costume needs massive trust scaffolding. **Fix:** Add "How it works" accordion, delivery guarantee with refund policy visible above Pay button, delivery count ("47 chickens deployed"), testimonials, local courier photo.
+
+2. **Price shock without anchoring (CRITICAL):** Free actions alongside $50 creates sticker shock. **Fix:** Visually separate Deploy a Chicken from free actions (own section, different card style). Frame price as package. Consider group-funding split.
+
+3. **Order flow cold start (HIGH):** Video-first flow adds friction. **Fix:** Lead with emotional hook + note textarea. Video as optional "See a real delivery" thumbnail. Single scrollable page, not multi-step.
+
+4. **Passive post-purchase (HIGH):** Static tracking page is emotionally flat. **Fix:** Celebratory confirmation with share card. Countdown timer. WhatsApp push at each status change. Delivery reveal as centrepiece moment. Prompt user reaction to feed.
+
+5. **WhatsApp ordering friction (HIGH):** Form-filling via numbered choices is poor fit. **Fix:** Use WhatsApp for discovery + handoff via deep link to web order page. Bot handles reveal after delivery.
+
+6. **Geographic availability (HIGH):** Users in uncovered cities hit dead end after writing note. **Fix:** Show availability upfront on action card. "Not yet available" with waitlist. Organisation HQ location is the delivery target, not user location.
+
+7. **Social proof (MEDIUM):** No "Chicken Hall of Fame" for past deliveries. **Fix:** Past deployment cards showing org, photo, views. "Chicken Deployer" profile badge. Organisation-level counter. Shareable cards for social media.
+
+8. **Don't add to global footer nav (LOW):** Paid feature shouldn't have equal weight with core actions. **Fix:** Keep in issue detail page Actions section only. Promotional banner on home for launch.
+
+### Consolidated Action Items (Incorporated Into Plan)
+
+All HIGH/CRITICAL items from all three reviews are incorporated:
+- Single atomic order+pay call (no `pending_payment` status)
+- Timeout/SLA with `expires_at` + `delivery_deadline_at`
+- Content moderation with `moderation_status`
+- Fulfiller verification with `verified_at`
+- Fulfiller bot actions and dashboard
+- Trust scaffolding in UI (How it works, guarantee, social proof)
+- Visual separation from free actions
+- Note-first order flow (not video-first)
+- Geographic availability checking upfront
+- Dispute resolution flow
