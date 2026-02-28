@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 /**
+ * DEPRECATED: Key normalization is now built into scripts/translate.ts.
+ * This script is kept for manual one-off fixes but is no longer part of the pipeline.
+ *
  * Normalizes issue_per_riot keys in all non-English translation files
  * to use English issue names (matching en.json).
  *

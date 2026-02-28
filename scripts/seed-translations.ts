@@ -895,8 +895,28 @@ async function applyTranslations() {
   const { generateId } = await import('../src/lib/uuid');
   const { sanitizeTranslation } = await import('../src/lib/sanitize');
 
+  // Parse CLI flags for apply mode
+  const applyArgs = process.argv.slice(2);
+  const isStrict = applyArgs.includes('--strict');
+  const isVerbose = applyArgs.includes('--verbose');
+
+  // Track skips with full detail
+  interface SkipEntry {
+    locale: string;
+    section: string;
+    key: string;
+    reason: string;
+  }
+  const skipLog: SkipEntry[] = [];
+
+  function trackSkip(locale: string, section: string, key: string, reason: string) {
+    skipLog.push({ locale, section, key, reason });
+    if (isVerbose) {
+      console.log(`  ⚠️  SKIP ${locale}/${section}: "${key}" — ${reason}`);
+    }
+  }
+
   let inserted = 0;
-  let skipped = 0;
 
   for (const file of files) {
     const locale = file.replace('.json', '');
@@ -926,7 +946,7 @@ async function applyTranslations() {
     for (const [englishName, translation] of Object.entries(data.issues)) {
       const issueId = issueIdMap[englishName];
       if (!issueId) {
-        skipped++;
+        trackSkip(locale, 'issues', englishName, 'no matching issue in DB');
         continue;
       }
 
@@ -956,7 +976,7 @@ async function applyTranslations() {
     for (const [englishName, translation] of Object.entries(data.organisations)) {
       const orgId = orgIdMap[englishName];
       if (!orgId) {
-        skipped++;
+        trackSkip(locale, 'organisations', englishName, 'no matching organisation in DB');
         continue;
       }
 
@@ -987,7 +1007,7 @@ async function applyTranslations() {
       for (const [issueName, translatedTerms] of Object.entries(data.synonyms)) {
         const dbSynonyms = synonymsByIssue[issueName];
         if (!dbSynonyms) {
-          skipped++;
+          trackSkip(locale, 'synonyms', issueName, 'no synonyms found for issue in DB');
           continue;
         }
 
@@ -1023,7 +1043,7 @@ async function applyTranslations() {
       for (const [category, translation] of Object.entries(data.category_assistants)) {
         const assistantId = assistantIdMap[category];
         if (!assistantId) {
-          skipped++;
+          trackSkip(locale, 'category_assistants', category, 'no matching assistant in DB');
           continue;
         }
 
@@ -1049,7 +1069,7 @@ async function applyTranslations() {
       for (const [englishTitle, translation] of Object.entries(data.actions)) {
         const actionId = actionIdMap[englishTitle];
         if (!actionId) {
-          skipped++;
+          trackSkip(locale, 'actions', englishTitle, 'no matching action in DB');
           continue;
         }
 
@@ -1082,7 +1102,7 @@ async function applyTranslations() {
       for (const [expertName, translation] of Object.entries(data.expert_profiles)) {
         const expertId = expertIdMap[expertName];
         if (!expertId) {
-          skipped++;
+          trackSkip(locale, 'expert_profiles', expertName, 'no matching expert in DB');
           continue;
         }
 
@@ -1108,7 +1128,7 @@ async function applyTranslations() {
       for (const [videoId, translation] of Object.entries(data.riot_reels)) {
         const reelId = reelIdMap[videoId];
         if (!reelId) {
-          skipped++;
+          trackSkip(locale, 'riot_reels', videoId, 'no matching reel in DB');
           continue;
         }
 
@@ -1140,7 +1160,7 @@ async function applyTranslations() {
       for (const [englishTitle, translation] of Object.entries(data.action_initiatives)) {
         const aiId = aiIdMap[englishTitle];
         if (!aiId) {
-          skipped++;
+          trackSkip(locale, 'action_initiatives', englishTitle, 'no matching initiative in DB');
           continue;
         }
 
@@ -1206,7 +1226,7 @@ async function applyTranslations() {
         }
 
         if (matchedIssueIds.length === 0) {
-          skipped++;
+          trackSkip(locale, 'issue_per_riot', nameMatch, 'no matching issue in DB');
           continue;
         }
 
@@ -1237,13 +1257,114 @@ async function applyTranslations() {
     }
   }
 
+  // ─── Summary report ───
+  const totalSkipped = skipLog.length;
   console.log(
-    `\nDone: ${inserted} translations inserted/updated, ${skipped} skipped (not found in DB)`,
+    `\nDone: ${inserted} translations inserted/updated, ${totalSkipped} skipped`,
   );
+
+  if (totalSkipped > 0) {
+    // Group skips by section
+    const skipsBySection: Record<string, SkipEntry[]> = {};
+    for (const entry of skipLog) {
+      if (!skipsBySection[entry.section]) skipsBySection[entry.section] = [];
+      skipsBySection[entry.section].push(entry);
+    }
+
+    console.log('\n── Skip Summary ──');
+    for (const [section, entries] of Object.entries(skipsBySection)) {
+      const uniqueKeys = Array.from(new Set(entries.map((e) => e.key)));
+      const uniqueLocales = Array.from(new Set(entries.map((e) => e.locale)));
+      console.log(
+        `  ${section}: ${entries.length} skipped across ${uniqueLocales.length} locales`,
+      );
+      for (const key of uniqueKeys.slice(0, 5)) {
+        const reason = entries.find((e) => e.key === key)!.reason;
+        console.log(`    "${key}" — ${reason}`);
+      }
+      if (uniqueKeys.length > 5) {
+        console.log(`    ... and ${uniqueKeys.length - 5} more`);
+      }
+    }
+  }
+
+  if (isStrict && totalSkipped > 0) {
+    console.error(
+      `\n❌ --strict mode: ${totalSkipped} entries were skipped. Fix translation files and retry.`,
+    );
+    process.exit(1);
+  }
 
   if (env.isProduction || env.isStaging) {
     console.log('\n💡 Remember to redeploy Vercel to pick up the new data:');
     console.log('   cd /Users/skye/Projects/quiet-riots && npx vercel --prod');
+  }
+
+  // Run coverage verification after apply
+  await verifyTranslationCoverage(db, isStrict);
+}
+
+// ─── Post-apply coverage verification ────────────────────────────────────────
+
+async function verifyTranslationCoverage(
+  db: { execute: (sql: string) => Promise<{ rows: Record<string, unknown>[] }> },
+  strict: boolean = false,
+) {
+  console.log('\n── Translation Coverage Report ──');
+
+  const result = await db.execute(
+    'SELECT entity_type, language_code, COUNT(*) as cnt FROM translations GROUP BY entity_type, language_code ORDER BY entity_type, language_code',
+  );
+
+  // Group by entity_type
+  const coverage: Record<string, Record<string, number>> = {};
+  for (const row of result.rows) {
+    const entityType = String(row.entity_type);
+    const langCode = String(row.language_code);
+    const count = Number(row.cnt);
+    if (!coverage[entityType]) coverage[entityType] = {};
+    coverage[entityType][langCode] = count;
+  }
+
+  const entityTypes = Object.keys(coverage).sort();
+  if (entityTypes.length === 0) {
+    console.log('  No translations found in DB.');
+    return;
+  }
+
+  // Print summary table
+  console.log(
+    `  ${'Entity Type'.padEnd(22)} ${'Locales'.padStart(7)} ${'Min'.padStart(5)} ${'Max'.padStart(5)} ${'Avg'.padStart(7)}`,
+  );
+  console.log(`  ${'─'.repeat(22)} ${'─'.repeat(7)} ${'─'.repeat(5)} ${'─'.repeat(5)} ${'─'.repeat(7)}`);
+
+  let hasGaps = false;
+
+  for (const entityType of entityTypes) {
+    const localeCounts = Object.values(coverage[entityType]);
+    const localeCount = localeCounts.length;
+    const min = Math.min(...localeCounts);
+    const max = Math.max(...localeCounts);
+    const avg = (localeCounts.reduce((a, b) => a + b, 0) / localeCount).toFixed(1);
+
+    const flag = min < max ? ' ⚠️' : '';
+    if (min < max) hasGaps = true;
+
+    console.log(
+      `  ${entityType.padEnd(22)} ${String(localeCount).padStart(7)} ${String(min).padStart(5)} ${String(max).padStart(5)} ${avg.padStart(7)}${flag}`,
+    );
+  }
+
+  if (hasGaps) {
+    console.log('\n  ⚠️  Some entity types have uneven coverage across locales.');
+    console.log('     Run with --verbose to investigate, or check skip summary above.');
+  } else {
+    console.log('\n  ✅ All entity types have consistent coverage across locales.');
+  }
+
+  if (strict && hasGaps) {
+    console.error('\n❌ --strict mode: translation coverage gaps detected.');
+    process.exit(1);
   }
 }
 
@@ -1253,6 +1374,7 @@ async function main() {
   const args = process.argv.slice(2);
   const isGenerate = args.includes('--generate');
   const isApply = args.includes('--apply');
+  const isVerify = args.includes('--verify');
   const skipExisting = args.includes('--skip-existing');
 
   // Parse --locales flag
@@ -1262,13 +1384,22 @@ async function main() {
       ? args[localesIdx + 1].split(',').filter((l) => ALL_LOCALES.includes(l))
       : ALL_LOCALES;
 
-  if (!isGenerate && !isApply) {
+  if (!isGenerate && !isApply && !isVerify) {
     console.log('Usage:');
     console.log(
       '  npx tsx scripts/seed-translations.ts --generate           Generate translation files',
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --apply             Apply translations to DB',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --apply --strict    Fail if any entries are skipped',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --apply --verbose   Print each skip as it happens',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --verify            Check DB translation coverage',
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --generate --locales es,fr,de   Specific locales',
@@ -1353,6 +1484,17 @@ async function main() {
 
   if (isApply) {
     await applyTranslations();
+  }
+
+  if (isVerify && !isApply) {
+    // Standalone verification (--apply already runs verification at the end)
+    const { requireRemoteDb, printDbBanner } = await import('./db-safety');
+    requireRemoteDb();
+    printDbBanner();
+    const { getDb } = await import('../src/lib/db');
+    const db = getDb();
+    const strict = args.includes('--strict');
+    await verifyTranslationCoverage(db, strict);
   }
 }
 

@@ -3,6 +3,7 @@ import {
   extractPlaceholders,
   collectStringValues,
   validateTranslation,
+  normalizeTranslatedKeys,
   BRAND_NAMES,
   MAX_LENGTHS,
 } from './translate-validation';
@@ -234,5 +235,119 @@ describe('validateTranslation', () => {
       'es',
     );
     expect(errors.length).toBeGreaterThan(1);
+  });
+});
+
+describe('normalizeTranslatedKeys', () => {
+  it('keeps keys matching English baseline as-is', () => {
+    const en = { 'Train Cancellations': { agent_helps: 'help' } };
+    const translated = { 'Train Cancellations': { agent_helps: 'ayuda' } };
+    const { normalized, fixes } = normalizeTranslatedKeys('issue_per_riot', en, translated, {});
+    expect(normalized).toEqual({ 'Train Cancellations': { agent_helps: 'ayuda' } });
+    expect(fixes).toEqual([]);
+  });
+
+  it('remaps translated issue_per_riot key via reverse lookup', () => {
+    const en = { 'Flight Delays': { agent_helps: 'help' } };
+    const translated = { 'Retrasos en Vuelos': { agent_helps: 'ayuda con vuelos' } };
+    const localeData = {
+      issues: { 'Flight Delays': { name: 'Retrasos en Vuelos', description: 'desc' } },
+    };
+    const { normalized, fixes } = normalizeTranslatedKeys(
+      'issue_per_riot',
+      en,
+      translated,
+      localeData,
+    );
+    expect(normalized['Flight Delays']).toEqual({ agent_helps: 'ayuda con vuelos' });
+    expect(normalized['Retrasos en Vuelos']).toBeUndefined();
+    expect(fixes).toHaveLength(1);
+    expect(fixes[0]).toContain('Remapped');
+  });
+
+  it('warns about unknown key in issue_per_riot with no reverse match', () => {
+    const en = { 'Train Cancellations': { agent_helps: 'help' } };
+    const translated = { 'Something Random': { agent_helps: 'random' } };
+    const { normalized, fixes } = normalizeTranslatedKeys(
+      'issue_per_riot',
+      en,
+      translated,
+      { issues: {} },
+    );
+    // Keeps the unknown key
+    expect(normalized['Something Random']).toEqual({ agent_helps: 'random' });
+    // Also fills the missing English key
+    expect(normalized['Train Cancellations']).toEqual({ agent_helps: 'help' });
+    expect(fixes).toHaveLength(2);
+    expect(fixes[0]).toContain('Unknown key');
+    expect(fixes[1]).toContain('Missing key');
+  });
+
+  it('fills missing English keys with baseline values', () => {
+    const en = {
+      'Train Cancellations': { agent_helps: 'train help' },
+      'Flight Delays': { agent_helps: 'flight help' },
+    };
+    const translated = { 'Train Cancellations': { agent_helps: 'ayuda trenes' } };
+    const { normalized, fixes } = normalizeTranslatedKeys('issue_per_riot', en, translated, {});
+    expect(normalized['Flight Delays']).toEqual({ agent_helps: 'flight help' });
+    expect(fixes).toHaveLength(1);
+    expect(fixes[0]).toContain('Missing key "Flight Delays"');
+  });
+
+  it('keeps LIKE pattern keys as-is (literal strings)', () => {
+    const en = {
+      '%Bus%Cuts': { agent_helps: 'bus help' },
+      '%Sewage in Rivers%': { agent_helps: 'sewage help' },
+    };
+    const translated = {
+      '%Bus%Cuts': { agent_helps: 'ayuda autobús' },
+      '%Sewage in Rivers%': { agent_helps: 'ayuda aguas residuales' },
+    };
+    const { normalized, fixes } = normalizeTranslatedKeys('issue_per_riot', en, translated, {});
+    expect(normalized['%Bus%Cuts']).toEqual({ agent_helps: 'ayuda autobús' });
+    expect(normalized['%Sewage in Rivers%']).toEqual({ agent_helps: 'ayuda aguas residuales' });
+    expect(fixes).toEqual([]);
+  });
+
+  it('warns but does not auto-fix non-issue_per_riot section with wrong key', () => {
+    const en = { 'expert-1': { role: 'Expert' } };
+    const translated = { 'experto-1': { role: 'Experto' } };
+    const { normalized, fixes } = normalizeTranslatedKeys('expert_profiles', en, translated, {});
+    // Keeps the wrong key as-is
+    expect(normalized['experto-1']).toEqual({ role: 'Experto' });
+    // Also fills the missing English key
+    expect(normalized['expert-1']).toEqual({ role: 'Expert' });
+    expect(fixes).toHaveLength(2);
+    expect(fixes[0]).toContain('Unknown key "experto-1" in expert_profiles');
+    expect(fixes[1]).toContain('Missing key "expert-1"');
+  });
+
+  it('handles mixed correct and incorrect keys', () => {
+    const en = {
+      'Train Cancellations': { agent_helps: 'train help' },
+      'Flight Delays': { agent_helps: 'flight help' },
+      'Energy Bills': { agent_helps: 'energy help' },
+    };
+    const translated = {
+      'Train Cancellations': { agent_helps: 'ayuda trenes' },
+      'Retrasos en Vuelos': { agent_helps: 'ayuda vuelos' },
+      'Energy Bills': { agent_helps: 'ayuda energía' },
+    };
+    const localeData = {
+      issues: { 'Flight Delays': { name: 'Retrasos en Vuelos', description: 'desc' } },
+    };
+    const { normalized, fixes } = normalizeTranslatedKeys(
+      'issue_per_riot',
+      en,
+      translated,
+      localeData,
+    );
+    expect(Object.keys(normalized).sort()).toEqual(
+      ['Energy Bills', 'Flight Delays', 'Train Cancellations'].sort(),
+    );
+    expect(normalized['Flight Delays']).toEqual({ agent_helps: 'ayuda vuelos' });
+    expect(fixes).toHaveLength(1);
+    expect(fixes[0]).toContain('Remapped');
   });
 });

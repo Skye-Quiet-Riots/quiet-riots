@@ -36,7 +36,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
 import { NON_EN_LOCALES, LOCALE_NAMES } from '../src/i18n/locales';
-import { validateTranslation } from './translate-validation';
+import { validateTranslation, normalizeTranslatedKeys } from './translate-validation';
 
 // Load .env.local if it exists (tsx doesn't auto-load it)
 const envLocalPath = path.resolve(__dirname, '../.env.local');
@@ -331,8 +331,20 @@ async function main() {
           console.log(`   ⚠️  ${locale}: ${errors.length} validation warning(s)`);
         }
 
+        // Normalize keys (remap translated keys back to English)
+        const { normalized, fixes } = normalizeTranslatedKeys(
+          section,
+          englishSection as Record<string, unknown>,
+          translated,
+          localeData as Record<string, unknown>,
+        );
+        if (fixes.length > 0) {
+          console.log(`   🔧 ${locale}/${section}: ${fixes.length} key fix(es)`);
+          for (const fix of fixes) console.log(`      ${fix}`);
+        }
+
         // Merge into locale file
-        localeData[section] = translated;
+        localeData[section] = normalized;
 
         // Write back
         const json = JSON.stringify(localeData, null, 2) + '\n';
