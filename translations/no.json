@@ -20,28 +20,28 @@
   },
   "issues": {
     "Train Cancellations": {
-      "name": "Togkansellinger",
-      "description": "Tog avlyst eller alvorlig forsinket med utilstrekkelig varsel eller kompensasjon"
+      "name": "Togforsinkelser",
+      "description": "Tog kansellert eller alvorlig forsinket med utilstrekkelig varsel eller kompensasjon"
     },
     "Train Ticket Prices": {
-      "name": "Togbillettpris",
-      "description": "Togtakster for dyre, økning over inflasjonen, inkonsistent prising"
+      "name": "Togbillettpriser",
+      "description": "Jernbanebilletter for dyre, prisøkninger over inflasjonen, inkonsistent prising"
     },
     "Flight Delays": {
       "name": "Flyforsinkelser",
-      "description": "Fly forsinket eller avlyst, dårlig kommunikasjon, vanskeligheter med å kreve kompensasjon"
+      "description": "Flyvninger forsinket eller kansellert, dårlig kommunikasjon, vanskeligheter med å kreve kompensasjon"
     },
     "Lost Luggage": {
-      "name": "Tapt bagasje",
-      "description": "Bager kommer ikke til destinasjonen, treg sporing, utilstrekkelig kompensasjon"
+      "name": "Mistet bagasje",
+      "description": "Kofferter ankommer ikke til bestemmelsessted, treg sporing, utilstrekkelig kompensasjon"
     },
     "Bus Route Cuts": {
-      "name": "Busslinjekutt",
-      "description": "Ruter avlyst, redusert hyppighet, rurale områder mister bussadgang"
+      "name": "Kutt i bussruter",
+      "description": "Ruter kansellert, redusert frekvens, landlige samfunn mister bussadgang"
     },
     "Pothole Damage": {
-      "name": "Skadel fra potthål",
-      "description": "Potthål som skader kjøretøy og utgjør fare for syklister, kommuner er sene med å reparere"
+      "name": "Skader fra potthull",
+      "description": "Potthull som skader kjøretøy og utgjør fare for syklister, kommuner er trege med reparasjoner"
     },
     "Parking Fines": {
       "name": "Parkeringsbøter",
@@ -49,23 +49,23 @@
     },
     "Fuel Prices": {
       "name": "Drivstoffpriser",
-      "description": "Bensin- og dieselpriser for høye, trege til å falle når engrosprisene faller"
+      "description": "Bensin- og dieselpriser for høye, treg nedgang når grossistprisen faller"
     },
     "Broadband Speed": {
       "name": "Bredbåndshastighet",
-      "description": "Internetthastighetene er langt lavere enn det som er annonsert og betalt for"
+      "description": "Internethastigheter langt under det som er annonsert og betalt for"
     },
     "Mobile Signal Dead Zones": {
-      "name": "Mobilsignaldødssoner",
-      "description": "Ingen mobilsignal i hjem, arbeidsplasser eller langs transportruter"
+      "name": "Mobilsignaldekkingshull",
+      "description": "Ingen mobilsignal hjemme, på arbeidsplasser eller langs transportruter"
     },
     "Price Rises Mid-Contract": {
-      "name": "Prisøkninger i løpet av kontrakten",
-      "description": "Telefon-, bredbånds- og TV-regninger som øker under låste kontrakter"
+      "name": "Prisstigninger midt i kontrakten",
+      "description": "Telefon-, bredbånds- og TV-regninger øker under låste kontrakter"
     },
     "Customer Service Hold Times": {
-      "name": "Ventetider for kundeservice",
-      "description": "Timer i kø i påvente av å snakke med et menneske"
+      "name": "Kundeservicevente",
+      "description": "Timer i ventemeny for å snakke med en menneske"
     },
     "Difficulty Cancelling Subscriptions": {
       "name": "Vanskeligheter med å si opp abonnement",
@@ -73,147 +73,155 @@
     },
     "Roaming Charges": {
       "name": "Roaminggebyrer",
-      "description": "Uventede mobilgebyrer ved reiser i utlandet, prisøkninger etter Brexit"
+      "description": "Uventede mobilgebyrer ved reising utenlands, prisøkninger etter Brexit"
     },
     "Energy Bill Costs": {
-      "name": "Energiregningskostnader",
+      "name": "Energiregning",
       "description": "Gass- og elektrisitetsregninger uoverkommelige, pristak fremdeles for høyt"
     },
     "Inaccurate Energy Bills": {
       "name": "Unøyaktige energiregninger",
-      "description": "Estimerte målinger feil, overprising, faktureringsfeil"
+      "description": "Estimerte avlesninger feil, overprising, faktureringsfeil"
     },
     "Water Bill Increases": {
-      "name": "Vannregningsøkninger",
-      "description": "Vannregninger stiger kraftig mens servicekvaliteten avtar"
+      "name": "Økning i vannregninger",
+      "description": "Vannregninger stiger raskt mens servicekvaliteten avtar"
     },
     "Sewage in Rivers": {
       "name": "Avløpsvann i elver",
-      "description": "Vannselskaper dumper urenset kloakk i vannveier og strender"
+      "description": "Vannselskaper som dumpet råavløpsvann i vannveier og på strender"
     },
     "Power Cuts": {
-      "name": "Straumbrudd",
-      "description": "Straumforsyningsavbrudd, treg gjenoppretting, utilstrekkelig kompensasjon"
+      "name": "Strømbrudd",
+      "description": "Strømforsyningsavbrudd, treg gjenoppretting, utilstrekkelig kompensasjon"
     },
     "Smart Meter Problems": {
-      "name": "Problemer med smarte målere",
-      "description": "Smarte målere som ikke fungerer, mister funksjonalitet etter leverandørbytte"
+      "name": "Problemer med smartmåler",
+      "description": "Smartmålere som ikke fungerer, mister funksjonalitet etter leverandørbytte"
     },
     "Bank Branch Closures": {
-      "name": "Banker filialavslutninger",
-      "description": "Lokale bankfilialer stenges, og lokalsamfunnene mister tilgang"
+      "name": "Bankkontorlukkinger",
+      "description": "Lokale bankkontor stenges, og samfunn mister tilgang"
     },
     "Hidden Bank Charges": {
-      "name": "Skjulte bankgebyr",
-      "description": "Uventede gebyrer for overtrekk, utenlandske transaksjoner, kontounterholdelse"
+      "name": "Skjulte bankgebyrer",
+      "description": "Uventede gebyrer for kassekreditt, utenlandske transaksjoner, kontounterhøld"
     },
     "Fraud and Scam Losses": {
-      "name": "Tap fra bedreri og svindel",
-      "description": "Banker som nekter å refundere ofre for bedreri og autoriserte push-betalingssvindler"
+      "name": "Svindel- og svindeloffer",
+      "description": "Banker nekter å refundere ofre for svindel og autoriserte push-betalingssvindel"
     },
     "Insurance Claim Rejections": {
-      "name": "Avslag på forsikringskrav",
-      "description": "Krav avslått på teknikaliteter etter år med premiebetalinger"
+      "name": "Avvisning av forsikringskrav",
+      "description": "Krav avvist på teknikaliteter etter år med premiebetalinger"
     },
     "Mortgage Rate Shock": {
-      "name": "Sjokk fra boliglånsrenter",
-      "description": "Fastrente utløper og flyttes til mye høyere variabel rente"
+      "name": "Boliglånssjokk",
+      "description": "Rentebinding utløper og går over til mye høyere flytende rente"
     },
     "Overseas Transfer Fees": {
-      "name": "Gebyrer for oversjøisk overføring",
-      "description": "Overdrevne gebyrer og dårlige valutakurser for internasjonale pengeoverføringer"
+      "name": "Gebyrer for internasjonal pengeoverføring",
+      "description": "Overdrevne gebyrer og dårlig valutakurs for internasjonale pengeoverføringer"
     },
     "NHS Waiting Times": {
       "name": "NHS ventetider",
-      "description": "Flere måneders eller flere års ventetid på operasjoner og fagspesialistmøter"
+      "description": "Måneder eller år lange ventelister for operasjoner og spesialistsamtaler"
     },
     "GP Appointment Access": {
-      "name": "Tilgang til legetime",
-      "description": "Kan ikke komme gjennom for å bestille legetime, ukers lange ventetider"
+      "name": "Tilgang til legekontor",
+      "description": "Kan ikke komme gjennom for å bestille legesamtale, uker lange ventelister"
     },
     "Dentist Availability": {
-      "name": "Tannlegeres tilgjengelighet",
-      "description": "Umulig å finne en NHS-tannlege som aksepterer nye pasienter"
+      "name": "Tandlegetilgjengelighet",
+      "description": "Umulig å finne en NHS-tannlege som tar nye pasienter"
     },
     "Mental Health Service Waits": {
-      "name": "Ventetider for psykisk helsehjelp",
-      "description": "Måneders lange ventetider på terapi og psykisk helsestøtte"
+      "name": "Ventetider for psykisk helse",
+      "description": "Måneder lange ventelister for terapi og psykisk helsestøtte"
     },
     "Prescription Costs": {
-      "name": "Reseptkostnader",
-      "description": "Kostnader per artikkel for høy i England, uoverensstemmelse på tvers av UK-nasjoner"
+      "name": "Reseptutgifter",
+      "description": "Kostnad per item for høy i England, uenighet på tvers av UK-nasjoner"
     },
     "Hospital Parking Charges": {
       "name": "Sykehusparkeringsgebyrer",
-      "description": "Betale for parkering på sykehus mens syk eller besøker syke slektninger"
+      "description": "Betale for parkering på sykehus mens man er syk eller besøker syke slektninger"
     },
     "Rent Increases": {
-      "name": "Leieøkninger",
-      "description": "Privat leie stiger langt over inflasjonen, trussel om oppsigelse uten skyld"
+      "name": "Leiøkninger",
+      "description": "Privat leie stiger langt over inflasjonen, trussel om oppsigelse uten grunn"
     },
     "Council Tax Rises": {
-      "name": "Kommuneskatteøkninger",
-      "description": "Årlige kommuneskatteøkninger mens lokale tjenester blir dårligere"
+      "name": "Økning i kommuneskatt",
+      "description": "Årlige kommuneskattøkninger mens lokale tjenester blir dårligere"
     },
     "Noisy Neighbours": {
       "name": "Støyende naboer",
-      "description": "Vedvarende støyforstyrrelser, kommuner er trege med å agere, påvirker mental helse"
+      "description": "Vedvarende støyforstyrrelse, kommuner trege til å handle, påvirker mental helse"
     },
     "Rubbish Collection Changes": {
-      "name": "Endringer i søppelinnsamling",
-      "description": "Reduserte søppelkasseutlevering, forvirrende gjenvinningsregler, fulle søppelkasser"
+      "name": "Endringer i søppeltømmingen",
+      "description": "Redusert søppeltømming, forvirrende resirkuleingsregler, fulle søppelbøtter"
     },
     "Planning Permission Abuse": {
       "name": "Misbruk av planleggingstillatelse",
-      "description": "Uønskede utbygginger godkjent, grøntområder under trussel, lokalsamfunnet ignorert"
+      "description": "Uønskede utbygginger godkjent, grønt område trues, lokalsamfunn ignorert"
     },
     "Damp and Mould in Housing": {
-      "name": "Fukt og mugg i boliger",
-      "description": "Utleiere og boligselskaper unnlater å fikse fukt og mugg"
+      "name": "Fukt og mugg i bolig",
+      "description": "Utleiere og boligselskaper som ikke fikser fukt og mugg"
     },
     "Delivery Problems": {
       "name": "Leveringsproblemer",
-      "description": "Pakker tapt, liggende i regn, merket som levert men ikke mottatt"
+      "description": "Pakker forsvunnet, stående i regn, markert levert men ikke mottatt"
     },
     "Shrinkflation": {
-      "name": "Krympflasjom",
-      "description": "Produkter blir mindre mens prisene forblir de samme eller øker"
+      "name": "Krympflasjon",
+      "description": "Produkter blir mindre mens prisene forblir den samme eller øker"
     },
     "Refund Difficulties": {
       "name": "Vanskeligheter med refusjoner",
-      "description": "Selskaper gjør retur og refusjon unødvendig vanskelig"
+      "description": "Selskaper som gjør returnering og refundering unødvendig vanskelig"
     },
     "Fake Reviews": {
       "name": "Falske anmeldelser",
-      "description": "Kan ikke stole på nettanmeldelser, falske positive anmeldelser misvisende forbrukere"
+      "description": "Kan ikke stole på nettanmeldelser, falske positive anmeldelser som villeder forbrukere"
     },
     "Subscription Traps": {
-      "name": "Abonnemangsfeller",
-      "description": "Gratis prøveversjoner blir betalt uten klar samtykke, vanskelig å si opp"
+      "name": "Abonnementsfeller",
+      "description": "Gratis prøveperioder som blir betalt uten klar samtykke, vanskelig å si opp"
     },
     "Food Quality Decline": {
-      "name": "Matens kvalitetsnedgang",
-      "description": "Ferdigretter dårligere kvalitet, mindre porsjoner, flere tilsetningsstoffer"
+      "name": "Nedgang i matkvalitet",
+      "description": "Ferdigretter med dårligere kvalitet, mindre porsjoner, flere tilsetningsstoffer"
     },
     "Self-Checkout Frustration": {
-      "name": "Selvbetjeningskasse frustrasjon",
-      "description": "Selvbetjente automater upålitelige, erstatter menneskelig personell"
+      "name": "Frustrasjon med selvbetjening",
+      "description": "Selvbetjeningsmaskiner upålitelige, erstatter menneskelig bemanning"
     },
     "Cost of Childcare": {
-      "name": "Kostnader for barnehageplass",
-      "description": "Barnehagekostnader forbudt dyre, begrenser muligheten til å arbeide"
+      "name": "Kostnad for barnehage",
+      "description": "Barnehagekostnader uoverkommelige, begrenser muligheten til å jobbe"
     },
     "Student Loan Repayment": {
       "name": "Tilbakebetaling av studielån",
-      "description": "Kandidater betaler tilbake i tiår, terskel- og renteendringer"
+      "description": "Kandidater som betaler tilbake i flere tiår, endringer i terskel og rente"
     },
     "Dog Fouling": {
-      "name": "Hundemøkk",
-      "description": "Hundemøkk på offentlige områder, parker og fortauer som ikke ryddes"
+      "name": "Hundekakemakking",
+      "description": "Hundeekskrementer på offentlige steder, parker og fortau blir ikke rengjort"
     },
     "AI Replacing Jobs": {
       "name": "AI erstatter jobber",
-      "description": "Angst for kunstig intelligens som automatiserer jobber uten overgangsstøtte"
+      "description": "Bekymring for kunstig intelligens som automatiserer jobber uten overgangssstøtte"
+    },
+    "Mobile Data Charges": {
+      "name": "Mobildata gebyrer",
+      "description": "Uventede eller overdrevne gebyrer for mobildata-bruk utover månedlige tildelinger"
+    },
+    "Fly Tipping": {
+      "name": "Ulovlig søppeltipping",
+      "description": "Ulovlig dumpning av avfall på offentlige steder som skader lokalsamfunn og koster kommuner millioner å rydde opp"
     }
   },
   "organisations": {
@@ -432,7 +440,12 @@
       "sent tog",
       "jernbaneforsinkelser"
     ],
-    "Train Ticket Prices": ["jernbanetariffer", "billettkostnader", "dyre tog", "togtariffer"],
+    "Train Ticket Prices": [
+      "jernbanetariffer",
+      "billettkostnader",
+      "dyre tog",
+      "togtariffer"
+    ],
     "Flight Delays": [
       "fly forsinket",
       "fly forsinket",
@@ -449,7 +462,11 @@
       "bagasje ikke på karusell",
       "veske tapt av flyselskap"
     ],
-    "Bus Route Cuts": ["busskutt", "rutereduksjoner", "nedleggelse av busstjeneste"],
+    "Bus Route Cuts": [
+      "busskutt",
+      "rutereduksjoner",
+      "nedleggelse av busstjeneste"
+    ],
     "Broadband Speed": [
       "treg internett",
       "treg wifi",
@@ -498,7 +515,11 @@
       "estimert avlesning feil",
       "overbelastet energi"
     ],
-    "Water Bill Increases": ["vannavgifter", "vannkostnader", "vannregning for høy"],
+    "Water Bill Increases": [
+      "vannavgifter",
+      "vannkostnader",
+      "vannregning for høy"
+    ],
     "Sewage in Rivers": [
       "kloakkdumping",
       "råkloakk",
@@ -520,8 +541,16 @@
       "push betalingssvindel",
       "autorisert svindel"
     ],
-    "Bank Branch Closures": ["filial nedleggelser", "lokal bank stenger", "ingen bank i nærheten"],
-    "Insurance Claim Rejections": ["krav avvist", "forsikring betaler ikke", "avvist krav"],
+    "Bank Branch Closures": [
+      "filial nedleggelser",
+      "lokal bank stenger",
+      "ingen bank i nærheten"
+    ],
+    "Insurance Claim Rejections": [
+      "krav avvist",
+      "forsikring betaler ikke",
+      "avvist krav"
+    ],
     "NHS Waiting Times": [
       "NHS venting",
       "venteliste",
@@ -537,14 +566,22 @@
       "kan ikke se lege",
       "kl 8 telefon kamp"
     ],
-    "Dentist Availability": ["NHS tannlege", "finner ikke tannlege", "tannlege venteliste"],
+    "Dentist Availability": [
+      "NHS tannlege",
+      "finner ikke tannlege",
+      "tannlege venteliste"
+    ],
     "Mental Health Service Waits": [
       "finansiering psykisk helse",
       "terapitilgang",
       "rådgivning venting",
       "CAMHS venting"
     ],
-    "Prescription Costs": ["medisinkostnader", "legemiddelpriser", "apotek kostnader"],
+    "Prescription Costs": [
+      "medisinkostnader",
+      "legemiddelpriser",
+      "apotek kostnader"
+    ],
     "Delivery Problems": [
       "pakke tapt",
       "pakke ikke levert",
@@ -571,24 +608,61 @@
       "pakke mindre",
       "krympende produkter"
     ],
-    "Pothole Damage": ["hull i veien", "veiskader", "hull i veien bilskade"],
-    "Council Tax Rises": ["kommuneskatt økning", "kommuneskatt for høy", "lokal skatt"],
-    "Damp and Mould in Housing": ["muggent hus", "fuktig leilighet", "svart mugg", "bolig forfall"],
-    "Student Loan Repayment": ["studielån", "studieavgifter", "utdanningsgjeld", "studentgjeld"],
-    "AI Replacing Jobs": ["jobbautomatisering", "AI tar jobber", "roboter erstatter arbeidere"],
+    "Pothole Damage": [
+      "hull i veien",
+      "veiskader",
+      "hull i veien bilskade"
+    ],
+    "Council Tax Rises": [
+      "kommuneskatt økning",
+      "kommuneskatt for høy",
+      "lokal skatt"
+    ],
+    "Damp and Mould in Housing": [
+      "muggent hus",
+      "fuktig leilighet",
+      "svart mugg",
+      "bolig forfall"
+    ],
+    "Student Loan Repayment": [
+      "studielån",
+      "studieavgifter",
+      "utdanningsgjeld",
+      "studentgjeld"
+    ],
+    "AI Replacing Jobs": [
+      "jobbautomatisering",
+      "AI tar jobber",
+      "roboter erstatter arbeidere"
+    ],
     "Roaming Charges": [
       "ferie telefonregning",
       "utlands datakostnader",
       "utenlands telefonkostnader"
     ],
-    "Smart Meter Problems": ["smart måler ødelagt", "måler virker ikke", "måler mistet signal"],
+    "Smart Meter Problems": [
+      "smart måler ødelagt",
+      "måler virker ikke",
+      "måler mistet signal"
+    ],
     "Subscription Traps": [
       "gratis prøveperiode felle",
       "automatisk fornyelse",
       "belastet etter prøveperiode"
     ],
-    "Fuel Prices": ["bensinpriser", "dieselpriser", "drivstoffkostnader", "bensin for dyrt"],
-    "Power Cuts": ["strømbrudd", "strømkutt", "blackout", "ingen strøm", "strømfeil"],
+    "Fuel Prices": [
+      "bensinpriser",
+      "dieselpriser",
+      "drivstoffkostnader",
+      "bensin for dyrt"
+    ],
+    "Power Cuts": [
+      "strømbrudd",
+      "strømkutt",
+      "blackout",
+      "ingen strøm",
+      "strømfeil"
+    ],
     "Mortgage Rate Shock": [
       "boliglån økning",
       "boliglånsrente",
@@ -601,8 +675,17 @@
       "remitteringsgebyrer",
       "bankoverføring kostnad"
     ],
-    "Hospital Parking Charges": ["sykehus parkering", "parkering på sykehus", "NHS parkering"],
-    "Noisy Neighbours": ["støyklage", "nabo støy", "høylytte naboer", "støyplage"],
+    "Hospital Parking Charges": [
+      "sykehus parkering",
+      "parkering på sykehus",
+      "NHS parkering"
+    ],
+    "Noisy Neighbours": [
+      "støyklage",
+      "nabo støy",
+      "høylytte naboer",
+      "støyplage"
+    ],
     "Rubbish Collection Changes": [
       "søppelinnsamling",
       "søppel ikke hentet",
@@ -627,7 +710,12 @@
       "trust pilot falsk",
       "falsk anmeldelse"
     ],
-    "Food Quality Decline": ["matkvalitet", "ferdigmat verre", "mattilsetninger", "porsjon mindre"],
+    "Food Quality Decline": [
+      "matkvalitet",
+      "ferdigmat verre",
+      "mattilsetninger",
+      "porsjon mindre"
+    ],
     "Self-Checkout Frustration": [
       "selvbetjening",
       "selvservice",
@@ -640,7 +728,12 @@
       "barnepass dyrt",
       "dagplass kostnad"
     ],
-    "Dog Fouling": ["hundesøppel", "hundebæsj", "hundeavfall", "søppel"]
+    "Dog Fouling": [
+      "hundesøppel",
+      "hundebæsj",
+      "hundeavfall",
+      "søppel"
+    ]
   },
   "category_assistants": {
     "transport": {

@@ -13,6 +13,12 @@ vi.mock('./translations', () => ({
   upsertTranslation: mockUpsertTranslation,
 }));
 
+// Mock the suggestions module
+const mockMarkTranslationsReady = vi.fn();
+vi.mock('./suggestions', () => ({
+  markTranslationsReady: mockMarkTranslationsReady,
+}));
+
 describe('generateAndStoreTranslations', () => {
   beforeEach(() => {
     mockGenerateEntityTranslations.mockReset();
@@ -130,5 +136,66 @@ describe('generateAndStoreTranslations', () => {
       'Bon',
       'machine',
     );
+  });
+});
+
+describe('triggerAutoTranslation', () => {
+  beforeEach(() => {
+    mockGenerateEntityTranslations.mockReset();
+    mockUpsertTranslation.mockReset();
+    mockMarkTranslationsReady.mockReset();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('generates translations and marks suggestion as translations_ready on success', async () => {
+    mockGenerateEntityTranslations.mockResolvedValueOnce({
+      fr: { name: 'Données mobiles', description: 'Frais excessifs' },
+      de: { name: 'Mobile Datengebühren', description: 'Unerwartete Gebühren' },
+    });
+    mockUpsertTranslation.mockResolvedValue(undefined);
+    mockMarkTranslationsReady.mockResolvedValue(null);
+
+    const { triggerAutoTranslation } = await import('./generate-translations');
+    const result = await triggerAutoTranslation('suggestion-123', 'issue', 'issue-456', {
+      name: 'Mobile Data Charges',
+      description: 'Unexpected charges',
+    });
+
+    expect(result.success).toBe(true);
+    expect(result.localeCount).toBe(2);
+    expect(mockMarkTranslationsReady).toHaveBeenCalledWith('suggestion-123');
+  });
+
+  it('does not mark translations_ready when generation fails', async () => {
+    mockGenerateEntityTranslations.mockResolvedValueOnce({});
+
+    const { triggerAutoTranslation } = await import('./generate-translations');
+    const result = await triggerAutoTranslation('suggestion-123', 'issue', 'issue-456', {
+      name: 'Test Issue',
+    });
+
+    expect(result.success).toBe(false);
+    expect(result.localeCount).toBe(0);
+    expect(mockMarkTranslationsReady).not.toHaveBeenCalled();
+  });
+
+  it('works for organisations', async () => {
+    mockGenerateEntityTranslations.mockResolvedValueOnce({
+      es: { name: 'Organización', description: 'Descripción' },
+    });
+    mockUpsertTranslation.mockResolvedValue(undefined);
+    mockMarkTranslationsReady.mockResolvedValue(null);
+
+    const { triggerAutoTranslation } = await import('./generate-translations');
+    const result = await triggerAutoTranslation('suggestion-789', 'organisation', 'org-100', {
+      name: 'Test Org',
+      description: 'A test org',
+    });
+
+    expect(result.success).toBe(true);
+    expect(mockMarkTranslationsReady).toHaveBeenCalledWith('suggestion-789');
   });
 });

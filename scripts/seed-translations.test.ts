@@ -56,7 +56,7 @@ describe('translations/ files', () => {
     expect(keys).toEqual(expected);
   });
 
-  it.each(nonEnLocales)('%s.json has all 49 issue keys with name+description', (locale) => {
+  it.each(nonEnLocales)('%s.json has all issue keys with name+description', (locale) => {
     const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
     const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     const keys = Object.keys(data.issues).sort();

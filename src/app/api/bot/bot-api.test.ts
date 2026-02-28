@@ -1,10 +1,17 @@
-import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, beforeEach, vi } from 'vitest';
 import { setupTestDb, teardownTestDb } from '@/test/setup-db';
 import { seedTestData } from '@/test/seed-test-data';
 import { createBotRequest } from '@/test/api-helpers';
 import { POST } from './route';
 import { _resetRateLimitStore } from '@/lib/rate-limit';
 import { markTranslationsReady } from '@/lib/queries/suggestions';
+
+// Mock after() — it throws synchronously outside Next.js request scope
+const { mockAfter } = vi.hoisted(() => ({ mockAfter: vi.fn() }));
+vi.mock('next/server', async () => {
+  const actual = await vi.importActual<typeof import('next/server')>('next/server');
+  return { ...actual, after: mockAfter };
+});
 
 beforeAll(async () => {
   await setupTestDb();
@@ -13,6 +20,7 @@ beforeAll(async () => {
 
 beforeEach(() => {
   _resetRateLimitStore();
+  mockAfter.mockClear();
 });
 
 afterAll(async () => {
@@ -1618,6 +1626,27 @@ describe('Bot API: review_suggestion', () => {
     expect(status).toBe(200);
     expect(body.data.decision).toBe('approved');
     expect(body.data.suggestion.status).toBe('approved');
+  });
+
+  it('schedules auto-translation via after() on approval', async () => {
+    // Create a fresh suggestion to approve (suggestion-mobile was already approved above)
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+5511999999999',
+      suggested_name: 'Test Auto Translate',
+      original_text: 'Testing auto translate',
+      category: 'Other',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    mockAfter.mockClear();
+    await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+      decision: 'approve',
+    });
+
+    // after() should have been called to schedule translation generation
+    expect(mockAfter).toHaveBeenCalled();
   });
 
   it('allows administrator to reject a suggestion', async () => {

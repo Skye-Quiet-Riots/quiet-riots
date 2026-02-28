@@ -20,200 +20,208 @@
   },
   "issues": {
     "Train Cancellations": {
-      "name": "列車のキャンセル",
-      "description": "列車がキャンセルされた、または深刻な遅延が生じており、不十分な予告または補償"
+      "name": "列車運休",
+      "description": "列車の運休または著しい遅延が十分な予告または補償なしに発生している"
     },
     "Train Ticket Prices": {
-      "name": "列車チケット価格",
-      "description": "鉄道運賃が高すぎる、インフレを上回る値上げ、価格設定の矛盾"
+      "name": "列車の乗車券料金",
+      "description": "鉄道運賃が高すぎる、インフレを上回る値上げ、一貫性のない価格設定"
     },
     "Flight Delays": {
-      "name": "フライト遅延",
-      "description": "飛行機の遅延またはキャンセル、不十分な連絡、補償請求の困難"
+      "name": "フライトの遅延",
+      "description": "フライトの遅延またはキャンセル、不十分な通知、補償請求の困難さ"
     },
     "Lost Luggage": {
-      "name": "紛失荷物",
-      "description": "目的地に到着しない荷物、追跡が遅い、補償が不十分"
+      "name": "荷物の紛失",
+      "description": "目的地に到着しない荷物、追跡が遅い、不十分な補償"
     },
     "Bus Route Cuts": {
-      "name": "バス路線の廃止",
-      "description": "路線のキャンセル、運行頻度の削減、地方のバスアクセス喪失"
+      "name": "バス路線の削減",
+      "description": "路線の廃止、運行頻度の削減、地方コミュニティがバスアクセスを失う"
     },
     "Pothole Damage": {
-      "name": "ポットホールによる損害",
-      "description": "ポットホールが車両に損害を与え、自転車利用者を危険にさらす、地方議会の修復が遅い"
+      "name": "ポットホールによる損傷",
+      "description": "ポットホールが車両を傷つけ、自転車利用者を危険にさらし、議会の修繕が遅い"
     },
     "Parking Fines": {
       "name": "駐車違反金",
-      "description": "不公正な民間駐車料金、積極的な取り立て、わかりにくい標識"
+      "description": "不公正な民間駐車料金、積極的な取り締まり、わかりにくい標識"
     },
     "Fuel Prices": {
       "name": "燃料価格",
-      "description": "ガソリンとディーゼルの価格が高すぎる、卸売価格低下時に下がるのが遅い"
+      "description": "ガソリンとディーゼル価格が高すぎる、卸売価格が下がっても低下が遅い"
     },
     "Broadband Speed": {
       "name": "ブロードバンド速度",
-      "description": "インターネット速度が広告と支払った内容よりはるかに遅い"
+      "description": "インターネット速度が広告された速度と支払った速度をはるかに下回っている"
     },
     "Mobile Signal Dead Zones": {
-      "name": "モバイルシグナルデッドゾーン",
-      "description": "自宅、職場、または輸送経路にモバイルシグナルがない"
+      "name": "携帯電話信号の不感地帯",
+      "description": "住宅、職場、または輸送ルート沿いで携帯電話信号がない"
     },
     "Price Rises Mid-Contract": {
-      "name": "契約期間中の価格引き上げ",
-      "description": "電話、ブロードバンド、テレビの請求が契約期間中に増加"
+      "name": "契約期間中の料金値上げ",
+      "description": "電話、ブロードバンド、テレビ料金が契約中に上昇"
     },
     "Customer Service Hold Times": {
       "name": "カスタマーサービスの保留時間",
-      "description": "人間と話すのに何時間も待機している"
+      "description": "人間と話すために何時間も保留に置かれる"
     },
     "Difficulty Cancelling Subscriptions": {
-      "name": "サブスクリプション解約の困難",
-      "description": "企業が意図的に解約またはサブスクリプション解除を困難にしている"
+      "name": "購読解除の困難さ",
+      "description": "企業が購読解除を意図的に困難にしている"
     },
     "Roaming Charges": {
       "name": "ローミング料金",
-      "description": "海外旅行時の予期しないモバイル料金、ブレグジット後の値上げ"
+      "description": "海外旅行時の予期しない携帯料金、ブレグジット後の料金値上げ"
     },
     "Energy Bill Costs": {
-      "name": "エネルギー請求コスト",
-      "description": "ガスと電気の請求が支払い不可能、価格上限が依然として高い"
+      "name": "エネルギー請求書の費用",
+      "description": "ガスと電気代が手の届かない価格、価格上限がまだ高い"
     },
     "Inaccurate Energy Bills": {
-      "name": "不正確なエネルギー請求",
-      "description": "推定読取値が間違っている、過剰請求、請求エラー"
+      "name": "不正確なエネルギー請求書",
+      "description": "推定読みが間違っている、過剰請求、請求エラー"
     },
     "Water Bill Increases": {
       "name": "水道料金の値上げ",
-      "description": "水道料金が急上昇しながら、サービス品質が低下"
+      "description": "水道料金が急上昇している一方で、サービス品質が低下している"
     },
     "Sewage in Rivers": {
-      "name": "河川への下水放出",
-      "description": "水道会社が生の下水を水路とビーチに放出"
+      "name": "河川への下水放流",
+      "description": "水道会社が水路とビーチに生下水を投棄している"
     },
     "Power Cuts": {
       "name": "停電",
-      "description": "電気供給の中断、復旧が遅い、補償が不十分"
+      "description": "電力供給の中断、復旧が遅い、不十分な補償"
     },
     "Smart Meter Problems": {
       "name": "スマートメーターの問題",
-      "description": "スマートメーターが機能しない、供給者切り替え後に機能喪失"
+      "description": "スマートメーターが機能しない、供給業者の切り替え後に機能を失う"
     },
     "Bank Branch Closures": {
-      "name": "銀行支店のクローズ",
-      "description": "地域の銀行支店が閉鎖され、コミュニティがアクセスできない"
+      "name": "銀行支店の閉鎖",
+      "description": "地元の銀行支店が閉鎖され、コミュニティがアクセスできなくなる"
     },
     "Hidden Bank Charges": {
       "name": "隠れた銀行手数料",
       "description": "当座貸越、海外取引、口座維持の予期しない手数料"
     },
     "Fraud and Scam Losses": {
-      "name": "詐欺とスキャム損失",
-      "description": "銀行が詐欺と認可された送金詐欺の被害者への払い戻しを拒否"
+      "name": "詐欺と詐欺による損失",
+      "description": "銀行が詐欺と認可された送金詐欺の被害者への払い戻しを拒否している"
     },
     "Insurance Claim Rejections": {
-      "name": "保険請求拒否",
-      "description": "数年のプレミアム支払い後、細則による請求拒否"
+      "name": "保険請求の却下",
+      "description": "保険料を支払った後、技術的な理由で請求が却下される"
     },
     "Mortgage Rate Shock": {
       "name": "住宅ローン金利ショック",
-      "description": "固定金利が終了し、より高い変動金利に移行"
+      "description": "固定レートが終了し、より高い変動レートに移行"
     },
     "Overseas Transfer Fees": {
       "name": "海外送金手数料",
-      "description": "国際送金の過度な手数料と悪い為替レート"
+      "description": "国際送金の過度な手数料と不利な為替レート"
     },
     "NHS Waiting Times": {
-      "name": "NHS待機時間",
-      "description": "手術と専門医の診察に何か月、何年も待機"
+      "name": "NHS待ち時間",
+      "description": "手術と専門医の予約で数ヶ月から数年の待機時間"
     },
     "GP Appointment Access": {
-      "name": "GP予約アクセス",
+      "name": "GP予約へのアクセス",
       "description": "GP予約を予約できない、数週間の待機時間"
     },
     "Dentist Availability": {
       "name": "歯科医の利用可能性",
-      "description": "NHS歯科医が新患を受け入れているのを見つけるのが不可能"
+      "description": "新規患者を受け入れるNHS歯科医を見つけることが不可能"
     },
     "Mental Health Service Waits": {
-      "name": "メンタルヘルスサービス待機",
-      "description": "セラピーとメンタルヘルスサポートに何か月も待機"
+      "name": "メンタルヘルスサービス待ち",
+      "description": "治療とメンタルヘルスサポートで数ヶ月の待機時間"
     },
     "Prescription Costs": {
-      "name": "処方箋コスト",
-      "description": "イングランドでのコストが1項目あたり高い、UK全域の矛盾"
+      "name": "処方箋の費用",
+      "description": "イングランドでは1品目あたりの費用が高い、UK全体での不一貫性"
     },
     "Hospital Parking Charges": {
       "name": "病院駐車料金",
-      "description": "病院での駐車、病気中または病気の親戚を訪問中に支払い"
+      "description": "病気の時または病気の親戚を訪問している間に病院に駐車するために支払う"
     },
     "Rent Increases": {
-      "name": "賃料値上げ",
-      "description": "民間家賃がインフレをはるかに上回る上昇、立ち退きの脅威"
+      "name": "家賃値上げ",
+      "description": "民間家賃がインフレをはるかに上回って上昇、無過失立ち退きの脅威"
     },
     "Council Tax Rises": {
-      "name": "評議会税引き上げ",
-      "description": "毎年の評議会税引き上げ、地域サービスは悪化"
+      "name": "評議会税の上昇",
+      "description": "評議会税が年間上昇する一方で、地域サービスが悪化"
     },
     "Noisy Neighbours": {
-      "name": "うるさい隣人",
-      "description": "持続的な騒音騒擾、評議会の対応が遅い、メンタルヘルスに影響"
+      "name": "騒がしい隣人",
+      "description": "持続的な騒音妨害、議会の対応が遅い、メンタルヘルスに影響"
     },
     "Rubbish Collection Changes": {
       "name": "ゴミ収集の変更",
-      "description": "ビン回収の削減、わかりにくいリサイクルルール、ビンの溢れ"
+      "description": "ゴミ箱の回数削減、わかりにくいリサイクルルール、ゴミ箱のあふれ"
     },
     "Planning Permission Abuse": {
-      "name": "計画許可の乱用",
-      "description": "不要な開発が承認、グリーンベルトが脅かされ、コミュニティが無視される"
+      "name": "計画許可の濫用",
+      "description": "望まない開発が承認される、グリーンベルトが脅かされている、コミュニティが無視される"
     },
     "Damp and Mould in Housing": {
-      "name": "住宅の湿度とカビ",
-      "description": "大家と住宅協会が湿度とカビの修正に失敗"
+      "name": "住宅の湿気とカビ",
+      "description": "家主と住宅協会が湿気とカビの修正に失敗している"
     },
     "Delivery Problems": {
       "name": "配送の問題",
-      "description": "紛失荷物、雨の中に放置、配送済みとマークされたが受け取られていない"
+      "description": "紛失した小包、雨に晒された、配達済みとマークされているが受け取られていない"
     },
     "Shrinkflation": {
       "name": "シュリンクフレーション",
-      "description": "製品がより小さくなり、価格は同じまたは増加"
+      "description": "製品が小さくなっている一方で、価格は同じまたは上昇している"
     },
     "Refund Difficulties": {
-      "name": "払い戻しの困難",
+      "name": "払い戻しの困難さ",
       "description": "企業が返品と払い戻しを不必要に困難にしている"
     },
     "Fake Reviews": {
       "name": "偽のレビュー",
-      "description": "オンラインレビューを信頼できない、偽の肯定的レビューが消費者を誤解させている"
+      "description": "オンラインレビューが信頼できない、偽のポジティブなレビューが消費者を誤解させている"
     },
     "Subscription Traps": {
-      "name": "サブスクリプションワナ",
-      "description": "無料トライアルが明確な同意なしに有料に変換、キャンセルが困難"
+      "name": "購読トラップ",
+      "description": "無料試用期間が明確な同意なしに有料に変換される、キャンセルが困難"
     },
     "Food Quality Decline": {
-      "name": "食品品質低下",
-      "description": "レディミールの品質が悪化、部分が小さくなり、より多くの添加物"
+      "name": "食品品質の低下",
+      "description": "調理済み食事の品質が悪くなり、小分けになり、より多くの添加物が含まれている"
     },
     "Self-Checkout Frustration": {
       "name": "セルフチェックアウトの不満",
-      "description": "セルフサービス機械が信頼性がない、人的スタッフに置き換わる"
+      "description": "セルフサービス機が信頼できず、人間のスタッフに置き換わっている"
     },
     "Cost of Childcare": {
-      "name": "保育コスト",
-      "description": "保育コストが高すぎて、仕事の能力を制限"
+      "name": "保育費用",
+      "description": "保育費用が法外に高く、仕事をする能力を制限している"
     },
     "Student Loan Repayment": {
-      "name": "学生ローン返済",
-      "description": "卒業生が数十年返済、閾値と利息の変更"
+      "name": "学生ローンの返済",
+      "description": "卒業生が数十年間返済している、閾値と利息の変更"
     },
     "Dog Fouling": {
-      "name": "犬の糞害",
-      "description": "公共の場所、公園、歩道の犬の糞がクリーンアップされていない"
+      "name": "犬の糞",
+      "description": "公共の場、公園、歩道の犬の糞が清掃されていない"
     },
     "AI Replacing Jobs": {
-      "name": "AIが職を奪う",
-      "description": "人工知能が移行サポートなしで職を自動化することへの不安"
+      "name": "AI による職業置換",
+      "description": "人工知能が移行支援なしに職業を自動化することへの不安"
+    },
+    "Mobile Data Charges": {
+      "name": "携帯データ料金",
+      "description": "月間容量を超える携帯データ使用量の予期しない、または過度な請求"
+    },
+    "Fly Tipping": {
+      "name": "不法投棄",
+      "description": "公共の場への違法な廃棄物投棄、コミュニティへの損害と議会の清掃に数百万ポンドの費用がかかる"
     }
   },
   "organisations": {
@@ -432,7 +440,12 @@
       "遅れた電車",
       "鉄道の遅延"
     ],
-    "Train Ticket Prices": ["鉄道料金", "チケット料金", "電車が高い", "電車の運賃"],
+    "Train Ticket Prices": [
+      "鉄道料金",
+      "チケット料金",
+      "電車が高い",
+      "電車の運賃"
+    ],
     "Flight Delays": [
       "フライトが遅延している",
       "飛行機が遅延している",
@@ -449,7 +462,11 @@
       "荷物がターンテーブルに乗っていない",
       "航空会社が荷物を紛失した"
     ],
-    "Bus Route Cuts": ["バスのカット", "路線削減", "バスサービスの廃止"],
+    "Bus Route Cuts": [
+      "バスのカット",
+      "路線削減",
+      "バスサービスの廃止"
+    ],
     "Broadband Speed": [
       "インターネットが遅い",
       "Wi-Fiが遅い",
@@ -466,7 +483,11 @@
       "携帯の不感地帯",
       "信号のデッドゾーン"
     ],
-    "Price Rises Mid-Contract": ["契約中の請求書の値上げ", "契約価格の上昇", "契約中の値上げ"],
+    "Price Rises Mid-Contract": [
+      "契約中の請求書の値上げ",
+      "契約価格の上昇",
+      "契約中の値上げ"
+    ],
     "Customer Service Hold Times": [
       "保留中",
       "電話で待機中",
@@ -494,7 +515,11 @@
       "推定値の読み取りが間違っている",
       "エネルギーの過剰請求"
     ],
-    "Water Bill Increases": ["水道料金", "水道料金", "水道代が高い"],
+    "Water Bill Increases": [
+      "水道料金",
+      "水道料金",
+      "水道代が高い"
+    ],
     "Sewage in Rivers": [
       "下水の放出",
       "生下水",
@@ -510,9 +535,22 @@
       "当座貸越手数料",
       "銀行手数料"
     ],
-    "Fraud and Scam Losses": ["詐欺被害", "銀行詐欺", "プッシュペイメント詐欺", "認可詐欺"],
-    "Bank Branch Closures": ["支店の閉鎖", "地元銀行が閉鎖中", "近くに銀行がない"],
-    "Insurance Claim Rejections": ["保険請求が却下された", "保険が支払わない", "請求が却下された"],
+    "Fraud and Scam Losses": [
+      "詐欺被害",
+      "銀行詐欺",
+      "プッシュペイメント詐欺",
+      "認可詐欺"
+    ],
+    "Bank Branch Closures": [
+      "支店の閉鎖",
+      "地元銀行が閉鎖中",
+      "近くに銀行がない"
+    ],
+    "Insurance Claim Rejections": [
+      "保険請求が却下された",
+      "保険が支払わない",
+      "請求が却下された"
+    ],
     "NHS Waiting Times": [
       "NHS待ち",
       "待機リスト",
@@ -528,14 +566,22 @@
       "医者に見てもらえない",
       "午前8時の電話争奪戦"
     ],
-    "Dentist Availability": ["NHS歯科医", "歯科医が見つからない", "歯科医の待機リスト"],
+    "Dentist Availability": [
+      "NHS歯科医",
+      "歯科医が見つからない",
+      "歯科医の待機リスト"
+    ],
     "Mental Health Service Waits": [
       "メンタルヘルス資金",
       "セラピーへのアクセス",
       "カウンセリングの待ち",
       "CAMHS待ち"
     ],
-    "Prescription Costs": ["医薬品コスト", "医薬品価格", "薬局料金"],
+    "Prescription Costs": [
+      "医薬品コスト",
+      "医薬品価格",
+      "薬局料金"
+    ],
     "Delivery Problems": [
       "小包が失われた",
       "小包が配達されなかった",
@@ -550,59 +596,144 @@
       "大家が家賃を上げている",
       "非過失立ち退き"
     ],
-    "Parking Fines": ["駐車違反切符", "駐車料金通知", "PCN", "不公正な駐車違反金"],
+    "Parking Fines": [
+      "駐車違反切符",
+      "駐車料金通知",
+      "PCN",
+      "不公正な駐車違反金"
+    ],
     "Shrinkflation": [
       "ポーション縮小",
       "同じ価格でより少ない",
       "パッケージが小さくなった",
       "製品が縮小している"
     ],
-    "Pothole Damage": ["ポットホール", "道路損傷", "ポットホールによる車の損傷"],
-    "Council Tax Rises": ["議会税の値上げ", "議会税が高い", "地方税"],
-    "Damp and Mould in Housing": ["カビの生えた家", "湿った部屋", "黒カビ", "住宅修理不足"],
-    "Student Loan Repayment": ["学生ローン", "授業料", "教育ローン", "学生債務"],
-    "AI Replacing Jobs": ["職の自動化", "AIが仕事を奪っている", "ロボットが労働者に取って代わる"],
-    "Roaming Charges": ["休暇中の携帯電話料金", "海外データ通信料金", "海外携帯電話料金"],
+    "Pothole Damage": [
+      "ポットホール",
+      "道路損傷",
+      "ポットホールによる車の損傷"
+    ],
+    "Council Tax Rises": [
+      "議会税の値上げ",
+      "議会税が高い",
+      "地方税"
+    ],
+    "Damp and Mould in Housing": [
+      "カビの生えた家",
+      "湿った部屋",
+      "黒カビ",
+      "住宅修理不足"
+    ],
+    "Student Loan Repayment": [
+      "学生ローン",
+      "授業料",
+      "教育ローン",
+      "学生債務"
+    ],
+    "AI Replacing Jobs": [
+      "職の自動化",
+      "AIが仕事を奪っている",
+      "ロボットが労働者に取って代わる"
+    ],
+    "Roaming Charges": [
+      "休暇中の携帯電話料金",
+      "海外データ通信料金",
+      "海外携帯電話料金"
+    ],
     "Smart Meter Problems": [
       "スマートメーターが壊れている",
       "メーターが機能していない",
       "メーターが信号を失った"
     ],
-    "Subscription Traps": ["無料トライアルの罠", "自動更新", "トライアル後に請求された"],
-    "Fuel Prices": ["ガソリン価格", "ディーゼル価格", "燃料コスト", "ガソリンが高い"],
-    "Power Cuts": ["停電", "電気の遮断", "ブラックアウト", "電力がない", "停電"],
+    "Subscription Traps": [
+      "無料トライアルの罠",
+      "自動更新",
+      "トライアル後に請求された"
+    ],
+    "Fuel Prices": [
+      "ガソリン価格",
+      "ディーゼル価格",
+      "燃料コスト",
+      "ガソリンが高い"
+    ],
+    "Power Cuts": [
+      "停電",
+      "電気の遮断",
+      "ブラックアウト",
+      "電力がない",
+      "停電"
+    ],
     "Mortgage Rate Shock": [
       "住宅ローン金利の上昇",
       "住宅ローン金利",
       "再ローン",
       "固定金利期間が終了"
     ],
-    "Overseas Transfer Fees": ["送金手数料", "海外への送金", "送金手数料", "海外送金コスト"],
-    "Hospital Parking Charges": ["病院駐車", "病院での駐車", "NHS駐車"],
-    "Noisy Neighbours": ["騒音苦情", "隣人の騒音", "うるさい隣人", "騒音公害"],
+    "Overseas Transfer Fees": [
+      "送金手数料",
+      "海外への送金",
+      "送金手数料",
+      "海外送金コスト"
+    ],
+    "Hospital Parking Charges": [
+      "病院駐車",
+      "病院での駐車",
+      "NHS駐車"
+    ],
+    "Noisy Neighbours": [
+      "騒音苦情",
+      "隣人の騒音",
+      "うるさい隣人",
+      "騒音公害"
+    ],
     "Rubbish Collection Changes": [
       "ゴミ収集",
       "ゴミが回収されていない",
       "リサイクル混乱",
       "ゴミ回収を逃した"
     ],
-    "Planning Permission Abuse": ["計画許可", "望まない開発", "グリーンベルト", "建築許可"],
+    "Planning Permission Abuse": [
+      "計画許可",
+      "望まない開発",
+      "グリーンベルト",
+      "建築許可"
+    ],
     "Refund Difficulties": [
       "払い戻しが受けられない",
       "払い戻しが拒否された",
       "返品が却下された",
       "お金を返す"
     ],
-    "Fake Reviews": ["レビュー操作", "有料レビュー", "Trustpilot偽レビュー", "偽のレビュー"],
-    "Food Quality Decline": ["食品の品質", "調理済み食事が悪化", "食品添加物", "ポーション縮小"],
+    "Fake Reviews": [
+      "レビュー操作",
+      "有料レビュー",
+      "Trustpilot偽レビュー",
+      "偽のレビュー"
+    ],
+    "Food Quality Decline": [
+      "食品の品質",
+      "調理済み食事が悪化",
+      "食品添加物",
+      "ポーション縮小"
+    ],
     "Self-Checkout Frustration": [
       "セルフチェックアウト",
       "セルフサービス",
       "スタッフのいるレジがない",
       "機械が機能していない"
     ],
-    "Cost of Childcare": ["保育料", "保育園の料金", "保育が高い", "デイケア料金"],
-    "Dog Fouling": ["犬の糞", "犬のうんち", "犬の排泄物", "汚染"]
+    "Cost of Childcare": [
+      "保育料",
+      "保育園の料金",
+      "保育が高い",
+      "デイケア料金"
+    ],
+    "Dog Fouling": [
+      "犬の糞",
+      "犬のうんち",
+      "犬の排泄物",
+      "汚染"
+    ]
   },
   "category_assistants": {
     "transport": {

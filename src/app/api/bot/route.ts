@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import { z } from 'zod';
 import { getAllIssues, getIssueById, getTrendingIssues, createIssue } from '@/lib/queries/issues';
 import {
@@ -109,6 +109,7 @@ import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
 import { sanitizeText } from '@/lib/sanitize';
 import { translateToEnglish } from '@/lib/ai';
+import { triggerAutoTranslation } from '@/lib/queries/generate-translations';
 import { getDb } from '@/lib/db';
 import { generateId } from '@/lib/uuid';
 import { isValidLocale } from '@/i18n/locales';
@@ -1495,12 +1496,29 @@ export async function POST(request: NextRequest) {
               cat,
               p.reviewer_notes as string | undefined,
             );
+
+            // Auto-generate translations after response (guaranteed by Vercel via after())
+            const entityType =
+              suggestion.suggested_type === 'issue' ? 'issue' : 'organisation';
+            const entityId = (suggestion.issue_id || suggestion.organisation_id) as
+              | string
+              | undefined;
+            if (entityId) {
+              const fields: Record<string, string> = { name: suggestion.suggested_name };
+              if (suggestion.description) fields.description = suggestion.description;
+              after(() =>
+                triggerAutoTranslation(suggestionId, entityType, entityId, fields).catch(
+                  () => {},
+                ),
+              );
+            }
+
             // Notify First Rioter
             notifyUser(
               suggestion.suggested_by,
               'suggestion_approved',
               `Thumbs Up 👍: ${suggestion.suggested_name}`,
-              `Great news — your Quiet Riot "${suggestion.suggested_name}" has been approved! It's now under review for translations.`,
+              `Great news — your Quiet Riot "${suggestion.suggested_name}" has been approved! Translations are being generated automatically.`,
               'issue_suggestion',
               suggestionId,
               user.name ?? 'Setup Guide',
