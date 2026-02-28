@@ -178,7 +178,7 @@ export default async function ProfilePage({ params }: Props) {
                 className="group flex items-center justify-between rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
               >
                 <div>
-                  <span className="font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                  <span className="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">
                     {item.issue_name}
                   </span>
                   <div className="mt-1.5 flex items-center gap-2">

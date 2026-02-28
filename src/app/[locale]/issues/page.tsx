@@ -76,7 +76,7 @@ export default async function IssuesPage({ params, searchParams }: Props) {
           {search && (
             <Link
               href={`/issues/suggest?q=${encodeURIComponent(search)}`}
-              className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-700"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
               ✊ {t('suggestNew')}
             </Link>

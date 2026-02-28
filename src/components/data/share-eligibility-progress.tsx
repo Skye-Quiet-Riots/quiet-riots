@@ -74,7 +74,7 @@ export function ShareEligibilityProgress({ eligibility }: ShareEligibilityProgre
           </div>
           <div className="h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
             <div
-              className="h-full rounded-full bg-purple-500 transition-all"
+              className="h-full rounded-full bg-blue-500 transition-all"
               style={{ width: `${riotPct}%` }}
             />
           </div>
@@ -101,7 +101,7 @@ export function ShareEligibilityProgress({ eligibility }: ShareEligibilityProgre
           </div>
           <div className="h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
             <div
-              className="h-full rounded-full bg-purple-500 transition-all"
+              className="h-full rounded-full bg-blue-500 transition-all"
               style={{ width: `${actionPct}%` }}
             />
           </div>

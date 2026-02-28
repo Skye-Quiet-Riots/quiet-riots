@@ -63,7 +63,7 @@ export default async function ShareStatusPage({ params }: Props) {
                 key={entry.id}
                 className="flex items-start gap-3 border-b border-zinc-100 pb-3 last:border-0 dark:border-zinc-800"
               >
-                <div className="mt-0.5 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" />
+                <div className="mt-0.5 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
                 <div className="flex-1">
                   <p className="text-sm">
                     <span className="font-medium">{entry.from_status}</span>

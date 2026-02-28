@@ -280,7 +280,7 @@ export function ShareInfoPage({ application, eligibility, walletBalance }: Share
               <p className="mb-2">{t('insufficientFunds')}</p>
               <Link
                 href="/wallet"
-                className="font-medium text-purple-600 hover:underline dark:text-purple-400"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
               >
                 {t('topUpFirst')}
               </Link>
@@ -381,7 +381,7 @@ export function ShareInfoPage({ application, eligibility, walletBalance }: Share
               <p className="mb-2">{t('insufficientFunds')}</p>
               <Link
                 href="/wallet"
-                className="font-medium text-purple-600 hover:underline dark:text-purple-400"
+                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
               >
                 {t('topUpFirst')}
               </Link>

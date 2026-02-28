@@ -193,7 +193,7 @@ export function SuggestionForm({ prefillText = '' }: SuggestionFormProps) {
       <button
         type="submit"
         disabled={loading || !suggestedName.trim() || !category}
-        className="w-full rounded-md bg-purple-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
+        className="w-full rounded-md bg-blue-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
       >
         {loading ? t('submitting') : t('submit')}
       </button>

@@ -55,7 +55,7 @@ export function ShareStatusTracker({ status }: ShareStatusTrackerProps) {
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
                   isComplete
                     ? isCurrent
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'bg-green-500 text-white'
                     : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500'
                 }`}

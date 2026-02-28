@@ -49,7 +49,7 @@ export function FirstRioterBadge({
                   className="rounded-full"
                 />
               ) : (
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
                   {userName?.charAt(0).toUpperCase() ?? '?'}
                 </span>
               )}

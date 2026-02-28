@@ -83,7 +83,7 @@ export default async function ActionInitiativeDetailPage({ params }: Props) {
           <CategoryBadge category={issue.category} label={tc(issue.category)} size="sm" />
           <Link
             href={`/issues/${issue.id}`}
-            className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
+            className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
           >
             {issue.name}
           </Link>
@@ -182,7 +182,7 @@ export default async function ActionInitiativeDetailPage({ params }: Props) {
               href={actionInitiative.recipient_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
+              className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
             >
               {actionInitiative.recipient}
             </a>

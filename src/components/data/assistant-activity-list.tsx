@@ -21,7 +21,7 @@ export async function AssistantActivityList({ activities }: Props) {
         >
           <span
             className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white ${
-              activity.assistant_type === 'agent' ? 'bg-purple-500' : 'bg-blue-500'
+              activity.assistant_type === 'agent' ? 'bg-blue-600' : 'bg-sky-500'
             }`}
           >
             {activity.assistant_type === 'agent' ? t('ai') : t('human')}

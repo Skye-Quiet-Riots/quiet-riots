@@ -51,7 +51,7 @@ export async function ActionInitiativeCard({
       className="group block rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
     >
       <div className="mb-2 flex items-start justify-between">
-        <h3 className="text-sm font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400">
+        <h3 className="text-sm font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">
           {actionInitiative.title}
         </h3>
         {badgeClassName && badgeLabel && (

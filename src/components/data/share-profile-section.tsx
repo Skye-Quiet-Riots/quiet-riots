@@ -90,7 +90,7 @@ export function ShareProfileSection({
 
         <Link
           href="/share"
-          className="mt-3 inline-block text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
+          className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
         >
           {t('profileLink')}
         </Link>
