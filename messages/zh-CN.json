@@ -106,7 +106,8 @@
     "createAccount": "创建账户",
     "completedMessage": "此项目已{status}。感谢所有 {count} 位参与者！",
     "recipient": "服务提供商",
-    "wantToSupport": "想委托此服务吗？"
+    "wantToSupport": "想委托此服务吗？",
+    "progressText": "{target}目标中已承诺{committed}({pct}%)"
   },
   "Assistants": {
     "title": "助手",
@@ -447,7 +448,8 @@
     "networkError": "网络错误，请重试。",
     "customAmount": "自定义金额（£）",
     "topUp": "充值",
-    "simulated": "模拟充值，仅供测试。真实支付即将上线。"
+    "simulated": "模拟充值，仅供测试。真实支付即将上线。",
+    "failed": "充值失败。请重试。"
   },
   "Pay": {
     "insufficientFunds": "余额不足。请先为钱包充值。",
@@ -464,7 +466,8 @@
     "topUp": "充值",
     "minPayment": "最低付款 10p",
     "supportProject": "委托此服务",
-    "toSupport": "以委托服务。"
+    "toSupport": "以委托服务。",
+    "failed": "支付失败。请重试。"
   },
   "Claim": {
     "success": "谢谢！我们已记录你对 {name} 角色的兴趣。我们会与你联系。",

@@ -106,7 +106,8 @@
     "createAccount": "Luo tili",
     "completedMessage": "Tämä projekti on {status}. Kiitos kaikille {count} osallistujaa!",
     "recipient": "Palveluntarjoaja",
-    "wantToSupport": "Haluatko tilata tämän palvelun?"
+    "wantToSupport": "Haluatko tilata tämän palvelun?",
+    "progressText": "{committed} sitoutunut {target} tavoitteesta ({pct}%)"
   },
   "Assistants": {
     "title": "Assistentit",
@@ -447,7 +448,8 @@
     "networkError": "Verkkovirhe. Yritä uudelleen.",
     "customAmount": "Vapaavalintainen summa (£)",
     "topUp": "Lataa",
-    "simulated": "Simuloitu lataus testausta varten. Oikeat maksut tulossa pian."
+    "simulated": "Simuloitu lataus testausta varten. Oikeat maksut tulossa pian.",
+    "failed": "Lataus epäonnistui. Yritä uudelleen."
   },
   "Pay": {
     "insufficientFunds": "Riittämätön saldo. Lataa lompakkoasi ensin.",
@@ -464,7 +466,8 @@
     "topUp": "Lataa",
     "minPayment": "Vähimmäismaksu on 10p",
     "supportProject": "Tilaa tämä palvelu",
-    "toSupport": "tilataksesi palveluita."
+    "toSupport": "tilataksesi palveluita.",
+    "failed": "Maksu epäonnistui. Yritä uudelleen."
   },
   "Claim": {
     "success": "Kiitos! Olemme merkinneet kiinnostuksesi rooliin {name}. Olemme yhteydessä.",

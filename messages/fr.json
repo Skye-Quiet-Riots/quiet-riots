@@ -106,7 +106,8 @@
     "createAccount": "Créer un compte",
     "completedMessage": "Ce projet a été {status}. Merci à tous les {count} participants !",
     "recipient": "Prestataire de services",
-    "wantToSupport": "Tu veux commander ce service ?"
+    "wantToSupport": "Tu veux commander ce service ?",
+    "progressText": "{committed} engagé sur {target} objectif ({pct}%)"
   },
   "Assistants": {
     "title": "Assistants",
@@ -447,7 +448,8 @@
     "networkError": "Erreur réseau. Réessaie s'il te plaît.",
     "customAmount": "Montant personnalisé (£)",
     "topUp": "Recharger",
-    "simulated": "Recharge simulée pour les tests. Paiements réels bientôt disponibles."
+    "simulated": "Recharge simulée pour les tests. Paiements réels bientôt disponibles.",
+    "failed": "Rechargement échoué. Veuillez réessayer."
   },
   "Pay": {
     "insufficientFunds": "Fonds insuffisants. Recharge d'abord ton portefeuille.",
@@ -464,7 +466,8 @@
     "topUp": "Recharger",
     "minPayment": "Le paiement minimum est de 10p",
     "supportProject": "Commander ce service",
-    "toSupport": "pour commander des services."
+    "toSupport": "pour commander des services.",
+    "failed": "Paiement échoué. Veuillez réessayer."
   },
   "Claim": {
     "success": "Merci ! Nous avons noté ton intérêt pour le rôle de {name}. Nous te recontacterons.",

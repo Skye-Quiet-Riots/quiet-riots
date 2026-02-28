@@ -106,7 +106,8 @@
     "createAccount": "Crear cuenta",
     "completedMessage": "Este proyecto ha sido {status}. ¡Gracias a los {count} participantes!",
     "recipient": "Proveedor de servicios",
-    "wantToSupport": "¿Quieres encargar este servicio?"
+    "wantToSupport": "¿Quieres encargar este servicio?",
+    "progressText": "{committed} comprometido de {target} objetivo ({pct}%)"
   },
   "Assistants": {
     "title": "Asistentes",
@@ -447,7 +448,8 @@
     "networkError": "Error de red. Por favor, inténtalo de nuevo.",
     "customAmount": "Cantidad personalizada (£)",
     "topUp": "Recargar",
-    "simulated": "Recarga simulada para pruebas. Pagos reales próximamente."
+    "simulated": "Recarga simulada para pruebas. Pagos reales próximamente.",
+    "failed": "Recarga fallida. Por favor, intente de nuevo."
   },
   "Pay": {
     "insufficientFunds": "Fondos insuficientes. Recarga tu cartera primero.",
@@ -464,7 +466,8 @@
     "topUp": "Recargar",
     "minPayment": "El pago mínimo es de 10p",
     "supportProject": "Encargar este servicio",
-    "toSupport": "para encargar servicios."
+    "toSupport": "para encargar servicios.",
+    "failed": "Pago fallido. Por favor, intente de nuevo."
   },
   "Claim": {
     "success": "¡Gracias! Hemos registrado tu interés en el rol de {name}. Nos pondremos en contacto.",

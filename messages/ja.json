@@ -106,7 +106,8 @@
     "createAccount": "アカウント作成",
     "completedMessage": "このサービスは{status}されました。{count} 人の参加者の皆さん、ありがとうございます！",
     "recipient": "サービス提供者",
-    "wantToSupport": "このサービスを委託しませんか？"
+    "wantToSupport": "このサービスを委託しませんか？",
+    "progressText": "{target}目標のうち{committed}がコミットされました({pct}%)"
   },
   "Assistants": {
     "title": "アシスタント",
@@ -447,7 +448,8 @@
     "networkError": "ネットワークエラーです。もう一度お試しください。",
     "customAmount": "カスタム金額（£）",
     "topUp": "チャージ",
-    "simulated": "テスト用のシミュレーションチャージです。実際の決済は近日公開予定。"
+    "simulated": "テスト用のシミュレーションチャージです。実際の決済は近日公開予定。",
+    "failed": "チャージが失敗しました。もう一度お試しください。"
   },
   "Pay": {
     "insufficientFunds": "残高不足です。まずウォレットにチャージしてください。",
@@ -464,7 +466,8 @@
     "topUp": "チャージ",
     "minPayment": "最低支払額は 10p です",
     "supportProject": "このサービスを委託する",
-    "toSupport": "してサービスを委託しましょう。"
+    "toSupport": "してサービスを委託しましょう。",
+    "failed": "お支払いが失敗しました。もう一度お試しください。"
   },
   "Claim": {
     "success": "ありがとうございます！{name} の役割への関心を承りました。追ってご連絡いたします。",

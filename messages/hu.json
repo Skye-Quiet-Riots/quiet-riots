@@ -106,7 +106,8 @@
     "createAccount": "Fiok letrehozasa",
     "completedMessage": "Ez a szolgaltatas {status}. Koszonet az osszes {count} resztvevonek!",
     "recipient": "Szolgaltato",
-    "wantToSupport": "Szeretned megrendelni ezt a szolgaltatast?"
+    "wantToSupport": "Szeretned megrendelni ezt a szolgaltatast?",
+    "progressText": "{committed} vállalt {target} célból ({pct}%)"
   },
   "Assistants": {
     "title": "Asszisztensek",
@@ -447,7 +448,8 @@
     "networkError": "Halozati hiba. Probald ujra.",
     "customAmount": "Egyedi osszeg (£)",
     "topUp": "Feltoltes",
-    "simulated": "Szimulalt feltoltes teszteleshez. A valos fizetesek hamarosan erkeznek."
+    "simulated": "Szimulalt feltoltes teszteleshez. A valos fizetesek hamarosan erkeznek.",
+    "failed": "A feltöltés sikertelen volt. Kérjük, próbálja újra."
   },
   "Pay": {
     "insufficientFunds": "Nem eleg fedezet. Eloszor toltsd fel a penztarcadat.",
@@ -464,7 +466,8 @@
     "topUp": "Feltoltes",
     "minPayment": "A minimalis fizetes 10p",
     "supportProject": "Rendeld meg ezt a szolgaltatast",
-    "toSupport": "szolgaltatasok megrendelesehez."
+    "toSupport": "szolgaltatasok megrendelesehez.",
+    "failed": "A fizetés sikertelen volt. Kérjük, próbálja újra."
   },
   "Claim": {
     "success": "Koszonjuk! Feljegyeztuk az erdeklodesedet a {name} szerepkor irant. Felkeresunk.",

@@ -159,8 +159,8 @@ function buildPrompt(section: string, englishJson: string, locale: string): stri
   let prompt = `Translate the following JSON values from English to ${localeName} (locale code: ${locale}).
 
 RULES — follow these exactly:
-1. Translate ONLY the string values. Keep ALL JSON keys exactly as they are in English.
-2. IMPORTANT: The "name" field values inside issues and organisations ARE user-facing display names — you MUST translate them into ${localeName}. They look the same as the JSON keys but they are NOT lookup keys — they are what users see on screen. For example, "Train Cancellations" as a name value should become the ${localeName} equivalent, NOT stay as "Train Cancellations".
+1. Translate ONLY the string values. Keep ALL JSON keys exactly as they are in English. This includes top-level object keys like issue names in issue_per_riot — these are lookup keys, NOT display values.
+2. IMPORTANT: The "name" field values inside issues and organisations ARE user-facing display names — you MUST translate them into ${localeName}. They look the same as the JSON keys but they are NOT lookup keys — they are what users see on screen. For example, "Train Cancellations" as a name value should become the ${localeName} equivalent, NOT stay as "Train Cancellations". But the JSON KEY "Train Cancellations" must stay in English.
 3. Keep these brand names in English: "Quiet Riot", "Quiet Rioters", "Quiet Riots"
 4. Keep character/assistant names as-is: Jett, Bex, Pulse, Jin, Spark, Dee, Flow, Nia, Chip, Roz, Cura, Kai, Nest, Liv, Scout, Pip, Link, Taz, Flex, Gem, Shield, Jas, Track, Eve, Sage, Drew, Fern, Ash, Forge, Sam, Glitch, Max
 5. Keep UK proper nouns as-is: Avanti, British Gas, Thames Water, Barclays, HSBC, NHS, Ofcom, Ofgem, Ofwat, ORR, FCA, EA, ICO, DPD, Evri, Aviva
