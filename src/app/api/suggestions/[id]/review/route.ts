@@ -15,6 +15,7 @@ import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { getBotMessage } from '@/app/api/bot/bot-messages';
 import { triggerAutoTranslation } from '@/lib/queries/generate-translations';
+import { logger } from '@/lib/logger';
 import type { Category, RejectionReason } from '@/types';
 
 const reviewSchema = z.object({
@@ -82,7 +83,14 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       if (entityId) {
         const fields: Record<string, string> = { name: suggestion.suggested_name };
         if (suggestion.description) fields.description = suggestion.description;
-        after(() => triggerAutoTranslation(id, entityType, entityId, fields).catch(() => {}));
+        after(() =>
+          triggerAutoTranslation(id, entityType, entityId, fields).catch((err) => {
+            logger.error(
+              { err, suggestionId: id, entityType, entityId },
+              'Auto-translation failed after approval',
+            );
+          }),
+        );
       }
 
       return apiOk({ suggestion: result, decision: 'approved' });

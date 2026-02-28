@@ -68,6 +68,8 @@ export function SetupDashboard({
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState(false);
   const [generatingId, setGeneratingId] = useState<string | null>(null);
+  const [generationSuccess, setGenerationSuccess] = useState<string | null>(null);
+  const [generationError, setGenerationError] = useState<string | null>(null);
   const [expandedSubmitter, setExpandedSubmitter] = useState<string | null>(null);
   const [translationReviewId, setTranslationReviewId] = useState<string | null>(null);
   const [translationData, setTranslationData] = useState<Record<
@@ -107,6 +109,8 @@ export function SetupDashboard({
 
   async function triggerTranslationGeneration(id: string) {
     setGeneratingId(id);
+    setGenerationSuccess(null);
+    setGenerationError(null);
     try {
       const res = await fetch(`/api/suggestions/${id}/generate-translations`, {
         method: 'POST',
@@ -114,7 +118,12 @@ export function SetupDashboard({
       if (res.ok) {
         const data = await res.json();
         setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
+        setGenerationSuccess(id);
+      } else {
+        setGenerationError(id);
       }
+    } catch {
+      setGenerationError(id);
     } finally {
       setGeneratingId(null);
     }
@@ -382,24 +391,32 @@ export function SetupDashboard({
                 </div>
               )}
               {s.status === 'approved' && (
-                <div className="mt-4 flex items-center gap-3">
-                  {generatingId === s.id ? (
-                    <span className="text-sm text-blue-600 dark:text-blue-400">
-                      {t('generatingTranslations')}
-                    </span>
-                  ) : (
-                    <>
-                      <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                        {t('translationsBeingGenerated')}
+                <div className="mt-4 space-y-2" role="status" aria-live="polite">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    {t('translationsBeingGenerated')}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => triggerTranslationGeneration(s.id)}
+                      disabled={generatingId === s.id}
+                      aria-busy={generatingId === s.id}
+                      className="text-sm font-medium text-blue-600 hover:text-blue-700 disabled:opacity-50 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      {generatingId === s.id
+                        ? t('generatingTranslations')
+                        : t('generateTranslations')}
+                    </button>
+                    {generationSuccess === s.id && (
+                      <span className="text-sm text-green-600 dark:text-green-400">
+                        {t('translationSuccess')}
                       </span>
-                      <button
-                        onClick={() => triggerTranslationGeneration(s.id)}
-                        className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                      >
-                        {t('generateTranslations')}
-                      </button>
-                    </>
-                  )}
+                    )}
+                    {generationError === s.id && (
+                      <span className="text-sm text-amber-600 dark:text-amber-400">
+                        {t('translationSlower')}
+                      </span>
+                    )}
+                  </div>
                 </div>
               )}
               {s.status === 'translations_ready' && (
