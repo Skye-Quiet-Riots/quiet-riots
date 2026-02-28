@@ -6,14 +6,14 @@
 
 ## Latest Session
 
-**Session 63** (2026-02-28) — Auto-Translate Issues on Approval
-→ [`session-logs/2026-02-session-63.md`](session-logs/2026-02-session-63.md)
+**Session 64** (2026-02-28) — Localise Suggestion Notifications + Translation Locale Guard
+→ [`session-logs/2026-02-session-64.md`](session-logs/2026-02-session-64.md)
 
 ## Current Priorities
 
-- **Apply translations to DB** — run `seed-translations.ts --apply` on staging + production for the 2 new issues
-- **Verify ANTHROPIC_API_KEY on Vercel** — required for runtime auto-translation via `after()`
-- **Verify Spanish issues page** — confirm "Mobile Data Charges" and "Fly Tipping" are translated
+- **Verify localised notifications live** — approve a suggestion from a non-English user, verify WhatsApp arrives in their language
+- **Click Retry on "Corruption & Extortion"** — translation generation should now work (ANTHROPIC_API_KEY deployed)
+- **Localise inbox subject/body** — currently still English (separate concern)
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 
@@ -21,6 +21,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 64  | 2026-02-28    | Localise suggestion notifications + locale guard      | [`session-64`](session-logs/2026-02-session-64.md)                                                             |
 | 63  | 2026-02-28    | Auto-translate issues on approval via after()         | [`session-63`](session-logs/2026-02-session-63.md)                                                             |
 | 62  | 2026-02-28    | i18n translation pipeline hardening (4-phase)         | [`session-62`](session-logs/2026-02-session-62.md)                                                             |
 | 61  | 2026-02-28    | Complete translation coverage: web + WhatsApp         | [`session-61`](session-logs/2026-02-session-61.md)                                                             |
