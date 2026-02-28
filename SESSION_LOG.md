@@ -6,12 +6,13 @@
 
 ## Latest Session
 
-**Session 60** (2026-02-27) — Generate Translations for 4 New DB Entity Sections
-→ [`session-logs/2026-02-session-60.md`](session-logs/2026-02-session-60.md)
+**Session 61** (2026-02-28) — Complete Translation Coverage: Web + WhatsApp
+→ [`session-logs/2026-02-session-61.md`](session-logs/2026-02-session-61.md)
 
 ## Current Priorities
 
-- **Verify non-English locales on production** — check actions, experts, reels, initiatives show translated content
+- **Verify non-English pages** — check Spanish/French/Arabic issue detail pages show translated per-riot copy
+- **Verify bot responses** — test WhatsApp bot with non-English user to confirm translated messages
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 
@@ -19,6 +20,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 61  | 2026-02-28    | Complete translation coverage: web + WhatsApp         | [`session-61`](session-logs/2026-02-session-61.md)                                                             |
 | 60  | 2026-02-27    | Generate translations for actions/experts/reels/initiatives | [`session-60`](session-logs/2026-02-session-60.md)                                                        |
 | 59  | 2026-02-27    | i18n Architecture (All 4 Phases) + Auto-Merge Policy  | [`session-59`](session-logs/2026-02-session-59.md)                                                             |
 | 58  | 2026-02-27    | Fix Untranslated Assistant UI + Zero Tolerance i18n   | [`session-58`](session-logs/2026-02-session-58.md)                                                             |
