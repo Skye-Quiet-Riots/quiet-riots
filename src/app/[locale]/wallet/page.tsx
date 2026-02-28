@@ -75,7 +75,7 @@ export default async function WalletPage({ params }: Props) {
             <h2 className="text-lg font-bold">{t('activeProjects')}</h2>
             <Link
               href="/action-initiatives"
-              className="text-sm font-medium text-purple-600 hover:underline dark:text-purple-400"
+              className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
             >
               {t('viewAll')}
             </Link>

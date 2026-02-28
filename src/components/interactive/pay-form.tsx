@@ -103,7 +103,7 @@ export function PayForm({
           <p className="mt-2 text-sm">
             <Link
               href="/wallet"
-              className="font-medium text-purple-600 hover:underline dark:text-purple-400"
+              className="font-medium text-blue-600 hover:underline dark:text-blue-400"
             >
               {t('topUpPrompt')}
             </Link>{' '}
@@ -164,7 +164,7 @@ export function PayForm({
             {t('walletEmpty')}{' '}
             <Link
               href="/wallet"
-              className="font-medium text-purple-600 hover:underline dark:text-purple-400"
+              className="font-medium text-blue-600 hover:underline dark:text-blue-400"
             >
               {t('topUp')}
             </Link>{' '}

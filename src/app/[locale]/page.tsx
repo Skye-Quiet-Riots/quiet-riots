@@ -62,7 +62,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
               <h2 className="text-2xl font-bold tracking-tight">{t('trendingIssues')}</h2>
               <Link
                 href="/issues"
-                className="text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400"
+                className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
               >
                 {t('viewAll')}
               </Link>
@@ -115,7 +115,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
                   {t('from')}{' '}
                   <Link
                     href={`/issues/${topReel.issue_id}`}
-                    className="text-purple-600 hover:text-purple-700 dark:text-purple-400"
+                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400"
                   >
                     {topReel.issue_name}
                   </Link>

@@ -22,7 +22,7 @@ export async function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
         {org.logo_emoji}
       </span>
       <div className="flex-1 min-w-0">
-        <h3 className="font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400">
+        <h3 className="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">
           {org.name}
         </h3>
         <div className="mt-1 flex items-center gap-2">

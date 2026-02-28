@@ -18,7 +18,7 @@ export async function IssueCard({ issue }: IssueCardProps) {
       className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
     >
       <div className="mb-2 flex items-start justify-between gap-2">
-        <h3 className="font-semibold leading-tight group-hover:text-purple-600 dark:group-hover:text-purple-400">
+        <h3 className="font-semibold leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400">
           {issue.name}
         </h3>
         <TrendingIndicator delta={issue.trending_delta} />

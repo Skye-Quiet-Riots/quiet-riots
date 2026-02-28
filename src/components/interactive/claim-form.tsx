@@ -60,12 +60,12 @@ export function ClaimForm({ category, humanName }: ClaimFormProps) {
           placeholder={t('placeholder', { name: humanName })}
           maxLength={1000}
           rows={3}
-          className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm placeholder-zinc-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder-zinc-500"
+          className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm placeholder-zinc-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder-zinc-500"
         />
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
+          className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
           {status === 'submitting' ? t('submitting') : t('expressInterest')}
         </button>

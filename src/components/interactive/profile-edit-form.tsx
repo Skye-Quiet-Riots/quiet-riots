@@ -74,7 +74,7 @@ export function ProfileEditForm({
     return (
       <button
         onClick={() => setEditing(true)}
-        className="text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
+        className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         {t('title')}
       </button>
@@ -109,7 +109,7 @@ export function ProfileEditForm({
               onClick={() => setTimeAvailable(opt.value)}
               className={`rounded-lg border px-3 py-2 text-center text-sm transition-colors ${
                 timeAvailable === opt.value
-                  ? 'border-purple-500 bg-purple-50 font-medium text-purple-700 dark:border-purple-600 dark:bg-purple-900/20 dark:text-purple-300'
+                  ? 'border-blue-500 bg-blue-50 font-medium text-blue-700 dark:border-blue-600 dark:bg-blue-900/20 dark:text-blue-300'
                   : 'border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600'
               }`}
             >

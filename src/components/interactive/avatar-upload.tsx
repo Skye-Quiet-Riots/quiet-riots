@@ -73,7 +73,7 @@ export function AvatarUpload({ currentUrl, userName }: AvatarUploadProps) {
         type="button"
         onClick={() => fileInputRef.current?.click()}
         disabled={uploading}
-        className="group relative h-14 w-14 overflow-hidden rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50"
+        className="group relative h-14 w-14 overflow-hidden rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
         aria-label={t('avatarUpload')}
       >
         {avatarUrl ? (
@@ -85,7 +85,7 @@ export function AvatarUpload({ currentUrl, userName }: AvatarUploadProps) {
             className="h-full w-full object-cover"
           />
         ) : (
-          <span className="flex h-full w-full items-center justify-center bg-purple-100 text-2xl font-bold text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+          <span className="flex h-full w-full items-center justify-center bg-blue-100 text-2xl font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
             {initial}
           </span>
         )}

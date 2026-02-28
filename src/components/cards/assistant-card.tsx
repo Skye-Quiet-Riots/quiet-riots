@@ -40,7 +40,7 @@ export async function AssistantCard({ assistant }: AssistantCardProps) {
           </span>
         </div>
         <div className="min-w-0">
-          <h3 className="font-semibold leading-tight group-hover:text-purple-600 dark:group-hover:text-purple-400">
+          <h3 className="font-semibold leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400">
             {assistant.agent_name} & {assistant.human_name}
           </h3>
           <p className="text-xs text-zinc-500 dark:text-zinc-400">{t('aiAndHuman')}</p>

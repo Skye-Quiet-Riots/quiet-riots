@@ -131,11 +131,11 @@ export default async function AssistantDetailPage({ params }: Props) {
       )}
 
       {/* Express Interest banner */}
-      <div className="rounded-xl border border-purple-200 bg-purple-50 p-5 dark:border-purple-800 dark:bg-purple-900/20">
-        <h2 className="mb-1 text-lg font-bold text-purple-800 dark:text-purple-300">
+      <div className="rounded-xl border border-blue-200 bg-blue-50 p-5 dark:border-blue-800 dark:bg-blue-900/20">
+        <h2 className="mb-1 text-lg font-bold text-blue-800 dark:text-blue-300">
           {t('wantToBe', { name: detail.human_name })}
         </h2>
-        <p className="mb-3 text-sm text-purple-700 dark:text-purple-400">{t('openRole')}</p>
+        <p className="mb-3 text-sm text-blue-700 dark:text-blue-400">{t('openRole')}</p>
         <ClaimForm category={detail.category} humanName={detail.human_name} />
       </div>
     </div>

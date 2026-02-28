@@ -132,7 +132,7 @@ export function AdminDashboard({ initialUsersWithRoles, stats }: AdminDashboardP
                     <button
                       onClick={() => handleRoleAction(user.id, 'administrator', 'assign')}
                       disabled={roleLoading !== null}
-                      className="rounded-md bg-purple-100 px-2 py-1 text-xs font-medium text-purple-700 hover:bg-purple-200 disabled:opacity-50 dark:bg-purple-900/30 dark:text-purple-300"
+                      className="rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200 disabled:opacity-50 dark:bg-blue-900/30 dark:text-blue-300"
                     >
                       {t('makeAdmin')}
                     </button>
@@ -165,7 +165,7 @@ export function AdminDashboard({ initialUsersWithRoles, stats }: AdminDashboardP
                         key={r.id}
                         className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                           r.role === 'administrator'
-                            ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'
+                            ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
                             : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
                         }`}
                       >

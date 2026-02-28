@@ -23,7 +23,7 @@ export async function AssistantDetailBanner({
   const effectiveFocus = focus ?? assistant.focus;
 
   return (
-    <div className="rounded-xl border border-purple-100 bg-gradient-to-r from-purple-50/80 to-indigo-50/80 p-4 dark:border-purple-900/40 dark:from-purple-950/20 dark:to-indigo-950/20 sm:p-5">
+    <div className="rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/80 to-sky-50/80 p-4 dark:border-blue-900/40 dark:from-blue-950/20 dark:to-sky-950/20 sm:p-5">
       {/* Header: icons + names */}
       <div className="mb-3 flex items-center gap-3">
         <div className="flex -space-x-2 flex-shrink-0">
@@ -47,14 +47,14 @@ export async function AssistantDetailBanner({
           </span>
         </div>
         <div className="min-w-0">
-          <h3 className="font-semibold text-purple-900 dark:text-purple-200">
+          <h3 className="font-semibold text-blue-900 dark:text-blue-200">
             {t('yourAssistants', { category: categoryLabel })}
           </h3>
-          <p className="text-sm text-purple-700 dark:text-purple-400">
+          <p className="text-sm text-blue-700 dark:text-blue-400">
             {assistant.agent_name}{' '}
-            <span className="text-purple-500 dark:text-purple-500">{t('aiAgentLabel')}</span> &{' '}
+            <span className="text-blue-500 dark:text-blue-500">{t('aiAgentLabel')}</span> &{' '}
             {assistant.human_name}{' '}
-            <span className="text-purple-500 dark:text-purple-500">{t('humanOrganiserLabel')}</span>
+            <span className="text-blue-500 dark:text-blue-500">{t('humanOrganiserLabel')}</span>
           </p>
         </div>
       </div>
@@ -76,7 +76,7 @@ export async function AssistantDetailBanner({
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {agentHelps && (
             <div className="rounded-lg bg-white/60 p-3 dark:bg-zinc-900/40">
-              <p className="mb-1 text-xs font-semibold text-purple-700 dark:text-purple-400">
+              <p className="mb-1 text-xs font-semibold text-blue-700 dark:text-blue-400">
                 {assistant.agent_icon} {t('helpsWith', { name: assistant.agent_name })}
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">{agentHelps}</p>
@@ -84,7 +84,7 @@ export async function AssistantDetailBanner({
           )}
           {humanHelps && (
             <div className="rounded-lg bg-white/60 p-3 dark:bg-zinc-900/40">
-              <p className="mb-1 text-xs font-semibold text-indigo-700 dark:text-indigo-400">
+              <p className="mb-1 text-xs font-semibold text-sky-700 dark:text-sky-400">
                 {assistant.human_icon} {t('helpsWith', { name: assistant.human_name })}
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">{humanHelps}</p>
@@ -97,7 +97,7 @@ export async function AssistantDetailBanner({
       <div className="mt-3">
         <Link
           href={`/assistants/${assistant.category.toLowerCase()}`}
-          className="text-sm font-medium text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
+          className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
         >
           {t('learnMore', { agentName: assistant.agent_name, humanName: assistant.human_name })}
         </Link>

@@ -13,7 +13,7 @@ export function ExpertCard({ expert }: ExpertCardProps) {
       <div>
         <div className="flex items-center gap-2">
           <span className="font-semibold">{expert.name}</span>
-          <span className="rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+          <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
             {expert.role}
           </span>
         </div>
