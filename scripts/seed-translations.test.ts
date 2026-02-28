@@ -301,4 +301,50 @@ describe('translations/ files', () => {
       }
     }
   });
+
+  // ─── Regression: non-English files must contain actual translations ───
+  // This prevents the bug where --generate overwrites locale files with English.
+
+  const sectionsToCheck = ['issues', 'organisations', 'category_assistants', 'actions'] as const;
+
+  it.each(nonEnLocales)('%s.json contains actual translations, not English placeholders', (locale) => {
+    // Romanised locales may legitimately share some values with English
+    if (locale.endsWith('-Latn')) return;
+
+    const enPath = path.join(TRANSLATIONS_DIR, 'en.json');
+    const enData: TranslationFile = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+    const filePath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
+    const data: TranslationFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    for (const section of sectionsToCheck) {
+      const enSection = enData[section] as Record<string, unknown>;
+      const localeSection = data[section] as Record<string, unknown>;
+      if (!enSection || !localeSection) continue;
+
+      let total = 0;
+      let englishCount = 0;
+
+      for (const [key, value] of Object.entries(localeSection)) {
+        if (typeof value === 'string') {
+          total++;
+          if (enSection[key] === value) englishCount++;
+        } else if (typeof value === 'object' && value !== null) {
+          for (const [field, fieldVal] of Object.entries(value as Record<string, unknown>)) {
+            if (typeof fieldVal === 'string') {
+              total++;
+              const enObj = enSection[key] as Record<string, unknown> | undefined;
+              if (enObj && enObj[field] === fieldVal) englishCount++;
+            }
+          }
+        }
+      }
+
+      // Allow up to 20% English (brand names, proper nouns etc.) but flag if everything is English
+      const englishPct = total > 0 ? (englishCount / total) * 100 : 0;
+      expect(
+        englishPct,
+        `${locale} ${section}: ${englishCount}/${total} values are identical to English (${englishPct.toFixed(0)}%). Translations may have been overwritten by --generate.`,
+      ).toBeLessThan(80);
+    }
+  });
 });
