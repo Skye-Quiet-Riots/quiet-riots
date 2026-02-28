@@ -159,3 +159,74 @@ export function validateTranslation(
 
   return errors;
 }
+
+/**
+ * Normalize translated keys to match the English baseline.
+ *
+ * For `issue_per_riot`, the AI translator sometimes uses translated issue names
+ * as keys (e.g. "Retrasos en Vuelos" instead of "Flight Delays"). This function
+ * remaps those keys back to English using a reverse lookup from the `issues` section.
+ *
+ * For other sections, keys should never change (they're video IDs, expert names, etc.),
+ * so we only warn about mismatches without auto-fixing.
+ *
+ * Returns the normalized result and a list of fixes/warnings applied.
+ */
+export function normalizeTranslatedKeys(
+  section: string,
+  englishBaseline: Record<string, unknown>,
+  translated: Record<string, unknown>,
+  fullLocaleData: Record<string, unknown>,
+): { normalized: Record<string, unknown>; fixes: string[] } {
+  const fixes: string[] = [];
+  const enKeys = new Set(Object.keys(englishBaseline));
+  const normalized: Record<string, unknown> = {};
+
+  // Build reverse lookup: translated issue name → English issue name
+  // Only useful for issue_per_riot section
+  const translatedNameToEnglish = new Map<string, string>();
+  if (section === 'issue_per_riot' && fullLocaleData.issues) {
+    const issuesSection = fullLocaleData.issues as Record<
+      string,
+      { name?: string }
+    >;
+    for (const [enName, entry] of Object.entries(issuesSection)) {
+      if (entry && entry.name) {
+        translatedNameToEnglish.set(entry.name, enName);
+      }
+    }
+  }
+
+  // Process each key in the translated output
+  for (const [key, value] of Object.entries(translated)) {
+    if (enKeys.has(key)) {
+      // Key matches English baseline — keep as-is
+      normalized[key] = value;
+    } else if (section === 'issue_per_riot') {
+      // Try reverse lookup from translated issue name
+      const englishKey = translatedNameToEnglish.get(key);
+      if (englishKey && enKeys.has(englishKey)) {
+        normalized[englishKey] = value;
+        fixes.push(`Remapped translated key "${key}" → "${englishKey}"`);
+      } else {
+        // Unknown key — keep it and warn
+        normalized[key] = value;
+        fixes.push(`Unknown key "${key}" (not in English baseline, no reverse match)`);
+      }
+    } else {
+      // Non-issue_per_riot section with wrong key — warn but keep
+      normalized[key] = value;
+      fixes.push(`Unknown key "${key}" in ${section} (not in English baseline)`);
+    }
+  }
+
+  // Fill missing English keys with baseline values as fallback
+  for (const enKey of enKeys) {
+    if (!(enKey in normalized)) {
+      normalized[enKey] = englishBaseline[enKey];
+      fixes.push(`Missing key "${enKey}" — filled with English baseline`);
+    }
+  }
+
+  return { normalized, fixes };
+}
