@@ -6,13 +6,14 @@
 
 ## Latest Session
 
-**Session 62** (2026-02-28) — i18n Translation Pipeline Hardening
-→ [`session-logs/2026-02-session-62.md`](session-logs/2026-02-session-62.md)
+**Session 63** (2026-02-28) — Auto-Translate Issues on Approval
+→ [`session-logs/2026-02-session-63.md`](session-logs/2026-02-session-63.md)
 
 ## Current Priorities
 
-- **Verify non-English pages** — check Spanish/French/Arabic issue detail pages show translated per-riot copy
-- **Verify bot responses** — test WhatsApp bot with non-English user to confirm translated messages
+- **Apply translations to DB** — run `seed-translations.ts --apply` on staging + production for the 2 new issues
+- **Verify ANTHROPIC_API_KEY on Vercel** — required for runtime auto-translation via `after()`
+- **Verify Spanish issues page** — confirm "Mobile Data Charges" and "Fly Tipping" are translated
 - **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
 - **Google/Facebook OAuth setup** — still pending from session 47
 
@@ -20,6 +21,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 63  | 2026-02-28    | Auto-translate issues on approval via after()         | [`session-63`](session-logs/2026-02-session-63.md)                                                             |
 | 62  | 2026-02-28    | i18n translation pipeline hardening (4-phase)         | [`session-62`](session-logs/2026-02-session-62.md)                                                             |
 | 61  | 2026-02-28    | Complete translation coverage: web + WhatsApp         | [`session-61`](session-logs/2026-02-session-61.md)                                                             |
 | 60  | 2026-02-27    | Generate translations for actions/experts/reels/initiatives | [`session-60`](session-logs/2026-02-session-60.md)                                                        |
