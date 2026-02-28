@@ -42,26 +42,43 @@ These are NOT standard Tailwind colours. We'll define custom CSS properties and 
 - **Inbox** icon with red badge count
 - **Profile avatar** — dropdown contains: Profile, Wallet (with balance), Assistants, Sign out
 
-### Mobile Nav:
-- Logo + logotype (blue)
-- Language (compact: "EN"), wallet balance, inbox badge, hamburger menu
-- **Search input always visible below** the nav row (full width)
-- Hamburger menu contains: Issues, Organisations, Assistants, Profile, Wallet, Sign out
+### Mobile Nav — Top Header Bar (fixed top):
+- Logo (transparent version — white parts removed) + logotype (blue)
+- Language (compact: "EN"), wallet balance, hamburger menu
+- No search in header — search is in the bottom bar
+- Hamburger menu: Issues, Organisations, Assistants, Profile, Wallet, Sign out
+- Component: `src/components/layout/mobile-header.tsx`
 
-### Mobile Footer Nav (Fixed Bottom Bar)
+### Mobile Page Content:
+- **"What are you Quiet Rioting about...?"** — AI-powered freeform text box
+  - User types freeform text about their complaint/issue
+  - AI returns suggested issue + organisation matches as tappable chips
+  - Example: typing "Ryanair cancelled my flight" → chips: "✈️ Cancelled Flights", "at Ryanair", "✈️ Flight Delays"
+- **Gather Evidence** — expanded card directly below AI search:
+  - Header: "📸 Gather Evidence" with context ("about Cancelled Flights at Ryanair")
+  - Comment box: "What happened? Describe your experience..."
+  - Attachment buttons: Photo | URL | Video | File
+  - Submit Evidence button
+- **More Actions** — below evidence, shown as user scrolls:
+  - Take an Action (browse action list)
+  - Deploy a Chicken (paid, shows price)
+  - Join This Quiet Riot
+
+### Mobile Nav — Bottom Footer Bar (fixed bottom):
 - Fixed bottom bar on mobile web — always visible, 5 icons
 - **Home** (house icon) — homepage with user's activity newsfeed
 - **Search** (magnifying glass) — opens search overlay for issues/orgs
-- **Take Action** (large central QR logo button) — primary CTA, activates action flow:
-  - User selects an issue and/or organisation
-  - Options: gather evidence (photo, web link, video), or choose from dropdown list of actions
-  - Evidence gathering uses camera/file upload
+- **Action** (large central QR logo button — circular, uses actual logo image) — opens Take Action flow
 - **Inbox** (envelope icon with red badge count) — messages/notifications
 - **Profile** (user avatar) — profile page
-- Central logo button is larger and raised (floating action button style)
+- Central logo is a circular button using transparent logo (`logo-transparent.png`), raised above bar with ring-4 white ring + shadow
 - Uses `safe-area-inset-bottom` for iOS notch devices
-- Hides on scroll down, shows on scroll up (optional UX improvement)
 - Component: `src/components/layout/mobile-footer-nav.tsx`
+
+### Logo Transparency
+- Created `public/logo-192-transparent.png` — white background removed (24,328 pixels → transparent)
+- Used in desktop nav bar, mobile header, and mobile footer button
+- Prevents bright white circle on the frosted glass (`bg-white/95 backdrop-blur-md`) nav bar background
 
 ### Wallet Balance Display
 - Uses `formatCurrency(balance_pence, currencyCode, locale)` from `src/lib/format.ts`
