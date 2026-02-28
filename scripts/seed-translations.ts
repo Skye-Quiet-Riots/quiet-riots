@@ -895,8 +895,28 @@ async function applyTranslations() {
   const { generateId } = await import('../src/lib/uuid');
   const { sanitizeTranslation } = await import('../src/lib/sanitize');
 
+  // Parse CLI flags for apply mode
+  const applyArgs = process.argv.slice(2);
+  const isStrict = applyArgs.includes('--strict');
+  const isVerbose = applyArgs.includes('--verbose');
+
+  // Track skips with full detail
+  interface SkipEntry {
+    locale: string;
+    section: string;
+    key: string;
+    reason: string;
+  }
+  const skipLog: SkipEntry[] = [];
+
+  function trackSkip(locale: string, section: string, key: string, reason: string) {
+    skipLog.push({ locale, section, key, reason });
+    if (isVerbose) {
+      console.log(`  ⚠️  SKIP ${locale}/${section}: "${key}" — ${reason}`);
+    }
+  }
+
   let inserted = 0;
-  let skipped = 0;
 
   for (const file of files) {
     const locale = file.replace('.json', '');
@@ -926,7 +946,7 @@ async function applyTranslations() {
     for (const [englishName, translation] of Object.entries(data.issues)) {
       const issueId = issueIdMap[englishName];
       if (!issueId) {
-        skipped++;
+        trackSkip(locale, 'issues', englishName, 'no matching issue in DB');
         continue;
       }
 
@@ -956,7 +976,7 @@ async function applyTranslations() {
     for (const [englishName, translation] of Object.entries(data.organisations)) {
       const orgId = orgIdMap[englishName];
       if (!orgId) {
-        skipped++;
+        trackSkip(locale, 'organisations', englishName, 'no matching organisation in DB');
         continue;
       }
 
@@ -987,7 +1007,7 @@ async function applyTranslations() {
       for (const [issueName, translatedTerms] of Object.entries(data.synonyms)) {
         const dbSynonyms = synonymsByIssue[issueName];
         if (!dbSynonyms) {
-          skipped++;
+          trackSkip(locale, 'synonyms', issueName, 'no synonyms found for issue in DB');
           continue;
         }
 
@@ -1023,7 +1043,7 @@ async function applyTranslations() {
       for (const [category, translation] of Object.entries(data.category_assistants)) {
         const assistantId = assistantIdMap[category];
         if (!assistantId) {
-          skipped++;
+          trackSkip(locale, 'category_assistants', category, 'no matching assistant in DB');
           continue;
         }
 
@@ -1049,7 +1069,7 @@ async function applyTranslations() {
       for (const [englishTitle, translation] of Object.entries(data.actions)) {
         const actionId = actionIdMap[englishTitle];
         if (!actionId) {
-          skipped++;
+          trackSkip(locale, 'actions', englishTitle, 'no matching action in DB');
           continue;
         }
 
@@ -1082,7 +1102,7 @@ async function applyTranslations() {
       for (const [expertName, translation] of Object.entries(data.expert_profiles)) {
         const expertId = expertIdMap[expertName];
         if (!expertId) {
-          skipped++;
+          trackSkip(locale, 'expert_profiles', expertName, 'no matching expert in DB');
           continue;
         }
 
@@ -1108,7 +1128,7 @@ async function applyTranslations() {
       for (const [videoId, translation] of Object.entries(data.riot_reels)) {
         const reelId = reelIdMap[videoId];
         if (!reelId) {
-          skipped++;
+          trackSkip(locale, 'riot_reels', videoId, 'no matching reel in DB');
           continue;
         }
 
@@ -1140,7 +1160,7 @@ async function applyTranslations() {
       for (const [englishTitle, translation] of Object.entries(data.action_initiatives)) {
         const aiId = aiIdMap[englishTitle];
         if (!aiId) {
-          skipped++;
+          trackSkip(locale, 'action_initiatives', englishTitle, 'no matching initiative in DB');
           continue;
         }
 
@@ -1206,7 +1226,7 @@ async function applyTranslations() {
         }
 
         if (matchedIssueIds.length === 0) {
-          skipped++;
+          trackSkip(locale, 'issue_per_riot', nameMatch, 'no matching issue in DB');
           continue;
         }
 
@@ -1237,9 +1257,43 @@ async function applyTranslations() {
     }
   }
 
+  // ─── Summary report ───
+  const totalSkipped = skipLog.length;
   console.log(
-    `\nDone: ${inserted} translations inserted/updated, ${skipped} skipped (not found in DB)`,
+    `\nDone: ${inserted} translations inserted/updated, ${totalSkipped} skipped`,
   );
+
+  if (totalSkipped > 0) {
+    // Group skips by section
+    const skipsBySection: Record<string, SkipEntry[]> = {};
+    for (const entry of skipLog) {
+      if (!skipsBySection[entry.section]) skipsBySection[entry.section] = [];
+      skipsBySection[entry.section].push(entry);
+    }
+
+    console.log('\n── Skip Summary ──');
+    for (const [section, entries] of Object.entries(skipsBySection)) {
+      const uniqueKeys = Array.from(new Set(entries.map((e) => e.key)));
+      const uniqueLocales = Array.from(new Set(entries.map((e) => e.locale)));
+      console.log(
+        `  ${section}: ${entries.length} skipped across ${uniqueLocales.length} locales`,
+      );
+      for (const key of uniqueKeys.slice(0, 5)) {
+        const reason = entries.find((e) => e.key === key)!.reason;
+        console.log(`    "${key}" — ${reason}`);
+      }
+      if (uniqueKeys.length > 5) {
+        console.log(`    ... and ${uniqueKeys.length - 5} more`);
+      }
+    }
+  }
+
+  if (isStrict && totalSkipped > 0) {
+    console.error(
+      `\n❌ --strict mode: ${totalSkipped} entries were skipped. Fix translation files and retry.`,
+    );
+    process.exit(1);
+  }
 
   if (env.isProduction || env.isStaging) {
     console.log('\n💡 Remember to redeploy Vercel to pick up the new data:');
@@ -1269,6 +1323,12 @@ async function main() {
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --apply             Apply translations to DB',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --apply --strict    Fail if any entries are skipped',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --apply --verbose   Print each skip as it happens',
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --generate --locales es,fr,de   Specific locales',
