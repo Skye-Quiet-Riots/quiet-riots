@@ -21,7 +21,7 @@ Quiet Riots needs a major visual upgrade, new features, and new page types. This
 |--------|-----|-----|-------|
 | **Logo Blue** | `#188BFF` | (24, 139, 255) | Primary brand accent — links, buttons, logotype, active states |
 | **Logo Red** | `#FB0202` | (251, 2, 2) | Secondary accent — notifications, alerts, logo dot |
-| **Pivot Teal** | `#0d9479` | (13, 148, 121) | Feature colour — pivot/Pareto tables (replaces purple) |
+| **Pivot Blue** | `#2563eb` | (37, 99, 235) | Feature colour — pivot/Pareto tables (replaces purple, same blue family as brand) |
 
 These are NOT standard Tailwind colours. We'll define custom CSS properties and use Tailwind's arbitrary value syntax or extend the theme.
 
@@ -48,6 +48,21 @@ These are NOT standard Tailwind colours. We'll define custom CSS properties and 
 - **Search input always visible below** the nav row (full width)
 - Hamburger menu contains: Issues, Organisations, Assistants, Profile, Wallet, Sign out
 
+### Mobile Footer Nav (Fixed Bottom Bar)
+- Fixed bottom bar on mobile web — always visible, 5 icons
+- **Home** (house icon) — homepage with user's activity newsfeed
+- **Search** (magnifying glass) — opens search overlay for issues/orgs
+- **Take Action** (large central QR logo button) — primary CTA, activates action flow:
+  - User selects an issue and/or organisation
+  - Options: gather evidence (photo, web link, video), or choose from dropdown list of actions
+  - Evidence gathering uses camera/file upload
+- **Inbox** (envelope icon with red badge count) — messages/notifications
+- **Profile** (user avatar) — profile page
+- Central logo button is larger and raised (floating action button style)
+- Uses `safe-area-inset-bottom` for iOS notch devices
+- Hides on scroll down, shows on scroll up (optional UX improvement)
+- Component: `src/components/layout/mobile-footer-nav.tsx`
+
 ### Wallet Balance Display
 - Uses `formatCurrency(balance_pence, currencyCode, locale)` from `src/lib/format.ts`
 - Currency determined by user's `country_code` → `countries.currency_code` lookup
@@ -55,9 +70,10 @@ These are NOT standard Tailwind colours. We'll define custom CSS properties and 
 - Handles zero-decimal currencies (JPY, KRW, VND) and three-decimal currencies (BHD, KWD, OMR)
 
 ### Pivot/Pareto Table Colour
-- **Replace purple with teal** across all pivot/Pareto components
-- Purple felt dated and clashed with blue brand; teal complements blue without competing
-- Teal shades: border `teal-200`, bg `teal-50/30`, heading text `teal-700`, progress bars `teal-500/teal-100`
+- **Replace purple with blue** across all pivot/Pareto components
+- Purple felt dated and clashed with blue brand; blue creates a cohesive single-brand-colour experience
+- Blue shades: border `blue-200`, bg `blue-50/30`, heading text `blue-700`, progress bars `blue-500/blue-100`
+- Uses slightly different blue shade (`blue-600` / `#2563eb`) from logo blue (`#188BFF`) so pivot tables have subtle distinction while staying in the same family
 - Files: `src/components/interactive/pivot-toggle.tsx`, `src/components/data/pivot-table.tsx`
 
 ---
@@ -266,7 +282,7 @@ Search input in nav bar. Desktop: expandable. Mobile: overlay. Searches issues +
 - **Wallet balance in nav** — clickable → wallet page, formatted per user's country currency
 - **Language selector in nav** — `<LanguageSelector />` (shows global reach)
 - **Search always expanded** on desktop, always visible at top on mobile
-- **Purple → Teal** for pivot/Pareto tables (`#0d9479` — fresh, complements blue without competing)
+- **Purple → Blue** for pivot/Pareto tables (`#2563eb` — cohesive single-brand-colour, same family as logo blue)
 - **Riot Reels in activity feed** — YouTube video preview with play button, duration badge, "🎬 Riot Reel" tag
 
 ---
@@ -301,3 +317,346 @@ Search input in nav bar. Desktop: expandable. Mobile: overlay. Searches issues +
 | `search_all` | Search issues + organisations |
 
 Enhanced: `join_issue` (auto-follows), `get_organisation` (evidence/community)
+
+---
+
+## New Feature: Deploy a Chicken 🐔
+
+### Concept
+
+A paid action where users pay ~$50 (in their local currency) from their Quiet Riots wallet for a human in a chicken costume to physically deliver a personal handwritten note to the CEO/chief executive of the organisation they are quiet rioting about. The chicken deployment is filmed and uploaded as a Riot Reel.
+
+**Example:** A chicken delivered a note to the chief executive of BT — see https://youtu.be/r1oZ_HZDOJ8
+
+This is a premium action initiative that works on both web and WhatsApp.
+
+### Database Schema
+
+#### New table: `chicken_deployments`
+
+```sql
+CREATE TABLE IF NOT EXISTS chicken_deployments (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+
+  -- Who ordered it
+  user_id TEXT NOT NULL REFERENCES users(id),
+  issue_id TEXT NOT NULL REFERENCES issues(id),
+  org_id TEXT NOT NULL REFERENCES organisations(id),
+
+  -- Payment
+  wallet_transaction_id TEXT REFERENCES wallet_transactions(id),
+  amount_pence INTEGER NOT NULL CHECK(amount_pence > 0),
+  currency_code TEXT NOT NULL DEFAULT 'GBP' CHECK(length(currency_code) = 3),
+  service_fee_pence INTEGER NOT NULL DEFAULT 0 CHECK(service_fee_pence >= 0),
+
+  -- The note
+  note_to_ceo TEXT NOT NULL CHECK(length(note_to_ceo) >= 10 AND length(note_to_ceo) <= 1000),
+  note_language TEXT NOT NULL DEFAULT 'en',
+
+  -- Delivery details
+  target_name TEXT CHECK(length(target_name) <= 200),
+  target_title TEXT CHECK(length(target_title) <= 200),
+  delivery_address TEXT CHECK(length(delivery_address) <= 500),
+  delivery_country_code TEXT CHECK(length(delivery_country_code) = 2),
+
+  -- Fulfilment status
+  status TEXT NOT NULL DEFAULT 'pending_payment' CHECK(status IN (
+    'pending_payment',
+    'paid',
+    'accepted',
+    'in_progress',
+    'delivered',
+    'delivery_failed',
+    'refunded',
+    'cancelled'
+  )),
+
+  -- Fulfilment tracking
+  accepted_at TEXT,
+  accepted_by TEXT REFERENCES users(id),
+  delivery_scheduled_at TEXT,
+  delivered_at TEXT,
+  delivery_notes TEXT CHECK(length(delivery_notes) <= 2000),
+  delivery_photo_urls TEXT DEFAULT '[]',
+  delivery_video_url TEXT,
+  reel_id TEXT REFERENCES riot_reels(id),
+
+  -- Failure/refund
+  failure_reason TEXT CHECK(length(failure_reason) <= 500),
+  refunded_at TEXT,
+  refund_transaction_id TEXT REFERENCES wallet_transactions(id),
+
+  -- Timestamps
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes for common queries
+CREATE INDEX idx_chicken_user ON chicken_deployments(user_id, created_at DESC);
+CREATE INDEX idx_chicken_issue ON chicken_deployments(issue_id, status);
+CREATE INDEX idx_chicken_org ON chicken_deployments(org_id, status);
+CREATE INDEX idx_chicken_status ON chicken_deployments(status, created_at DESC);
+CREATE INDEX idx_chicken_fulfilment ON chicken_deployments(status, delivery_country_code)
+  WHERE status IN ('paid', 'accepted', 'in_progress');
+```
+
+#### New table: `chicken_pricing`
+
+```sql
+CREATE TABLE IF NOT EXISTS chicken_pricing (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  country_code TEXT NOT NULL CHECK(length(country_code) = 2),
+  currency_code TEXT NOT NULL CHECK(length(currency_code) = 3),
+  price_pence INTEGER NOT NULL CHECK(price_pence > 0),
+  service_fee_pct INTEGER NOT NULL DEFAULT 15 CHECK(service_fee_pct >= 0 AND service_fee_pct <= 50),
+  is_available INTEGER NOT NULL DEFAULT 1,
+  min_lead_days INTEGER NOT NULL DEFAULT 7 CHECK(min_lead_days >= 1),
+  max_lead_days INTEGER NOT NULL DEFAULT 30 CHECK(max_lead_days >= min_lead_days),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(country_code)
+);
+
+CREATE INDEX idx_chicken_pricing_available ON chicken_pricing(is_available, country_code);
+```
+
+#### New table: `chicken_fulfillers`
+
+```sql
+CREATE TABLE IF NOT EXISTS chicken_fulfillers (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  user_id TEXT NOT NULL REFERENCES users(id),
+  country_code TEXT NOT NULL CHECK(length(country_code) = 2),
+  city TEXT CHECK(length(city) <= 100),
+  max_travel_km INTEGER NOT NULL DEFAULT 50 CHECK(max_travel_km > 0),
+  is_active INTEGER NOT NULL DEFAULT 1,
+  completed_count INTEGER NOT NULL DEFAULT 0 CHECK(completed_count >= 0),
+  rating_sum INTEGER NOT NULL DEFAULT 0,
+  rating_count INTEGER NOT NULL DEFAULT 0,
+  bio TEXT CHECK(length(bio) <= 500),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(user_id)
+);
+
+CREATE INDEX idx_chicken_fulfillers_active ON chicken_fulfillers(is_active, country_code);
+```
+
+### Pricing Architecture
+
+- **Base price:** ~$50 USD equivalent per country in local currency
+- **Stored in `chicken_pricing` table** — one row per country with local currency price
+- **Service fee:** 15% default (configurable per country via `service_fee_pct`)
+- **Seed all 249 countries** from `countries` table with appropriate local currency prices
+- **Price calculation:** Use `countries.currency_code` to look up `chicken_pricing.price_pence`
+- **Zero-decimal currencies** (JPY, KRW, VND): price stored as whole units (e.g., ¥7500)
+- **Three-decimal currencies** (BHD, KWD, OMR): price stored in millis (e.g., 19.000 BHD = 19000)
+- **Availability flag:** `is_available` — markets can be turned on/off as fulfillers are recruited
+- **Display:** Uses existing `formatCurrency(price_pence, currency_code, locale)` from `src/lib/format.ts`
+
+### Status Flow
+
+```
+pending_payment → paid → accepted → in_progress → delivered
+                    ↘ cancelled       ↘ delivery_failed → refunded
+                                       ↘ refunded
+```
+
+- **pending_payment** — Order created, awaiting wallet payment
+- **paid** — Payment taken from wallet, awaiting fulfiller acceptance
+- **accepted** — A fulfiller has claimed the order
+- **in_progress** — Fulfiller is preparing/en route to deliver
+- **delivered** — Note delivered, photo/video evidence uploaded
+- **delivery_failed** — Fulfiller couldn't deliver (CEO unavailable, security, etc.)
+- **refunded** — Payment returned to user's wallet (after failure or cancellation)
+- **cancelled** — User cancelled before acceptance
+
+### Refund Policy
+
+- **Before acceptance:** Full refund, instant (minus no fee)
+- **After acceptance, before delivery:** 85% refund (15% retained as admin fee)
+- **After delivery_failed:** Full refund
+- **After delivered:** No refund
+
+### API Endpoints
+
+#### `POST /api/chicken/order` — Create a chicken deployment order
+```typescript
+// Auth: session cookie (web) or bot auth (WhatsApp)
+// Body: { issue_id, org_id, note_to_ceo, target_name?, target_title? }
+// Returns: { order, pricing }
+// Rate limit: 1 per minute per user
+```
+
+#### `POST /api/chicken/order/[id]/pay` — Pay for the order
+```typescript
+// Auth: session cookie
+// Uses existing createPayment() wallet infrastructure
+// Atomically: debit wallet + record transaction + update order status to 'paid'
+// Returns: { order, transaction, wallet_balance_pence }
+```
+
+#### `GET /api/chicken/order/[id]` — Get order details
+```typescript
+// Auth: session cookie (must be order owner or admin)
+// Returns: { order, issue, org, pricing }
+```
+
+#### `GET /api/chicken/orders` — List user's chicken orders
+```typescript
+// Auth: session cookie
+// Query: ?status=paid&limit=20&offset=0
+// Returns: { orders[], total }
+```
+
+#### `POST /api/chicken/order/[id]/accept` — Fulfiller accepts order
+```typescript
+// Auth: session cookie (must be active fulfiller)
+// Body: { delivery_scheduled_at }
+// Returns: { order }
+```
+
+#### `POST /api/chicken/order/[id]/deliver` — Mark as delivered
+```typescript
+// Auth: session cookie (must be assigned fulfiller)
+// Body: { delivery_notes, delivery_photo_urls, delivery_video_url?, reel_id? }
+// Returns: { order }
+```
+
+#### `POST /api/chicken/order/[id]/cancel` — Cancel order
+```typescript
+// Auth: session cookie (order owner)
+// Only allowed in: pending_payment, paid (before acceptance)
+// Auto-refunds if paid
+```
+
+#### `GET /api/chicken/pricing` — Get pricing for user's country
+```typescript
+// Auth: none (public, cached)
+// Query: ?country_code=GB
+// Returns: { price_pence, currency_code, is_available, min_lead_days, max_lead_days }
+```
+
+### Web UI
+
+#### Issue Detail Page — New Action Card
+- Appears in the Actions section alongside existing actions
+- Card design:
+  ```
+  🐔 Deploy a Chicken
+  Have a message hand-delivered to [Org CEO] by someone in a chicken costume.
+  [Example video thumbnail with play button]
+  Price: £38.50 (or local currency)
+  [Deploy a Chicken →]
+  ```
+- Clicking opens a modal/page with:
+  1. Example video embed (YouTube: r1oZ_HZDOJ8)
+  2. "Write your note" textarea (10-1000 chars)
+  3. Optional: CEO name, title (pre-filled from org data if available)
+  4. Price display in user's currency
+  5. Wallet balance display
+  6. "Pay & Deploy 🐔" button
+  7. "Not enough funds? Top up your wallet →" link
+
+#### Wallet Transaction History
+- Shows chicken deployments as: "🐔 Deploy a Chicken — [Issue] at [Org]"
+
+#### New Page: `/[locale]/chicken/[id]` — Order Tracking
+- Status timeline (like a delivery tracker)
+- Note preview
+- Delivery photo/video when available
+- Link to Riot Reel once uploaded
+
+### WhatsApp Bot
+
+#### New action: `deploy_chicken`
+```json
+{
+  "action": "deploy_chicken",
+  "params": {
+    "phone": "+441234567890",
+    "issue_id": "...",
+    "org_id": "...",
+    "note_to_ceo": "Dear CEO, ..."
+  }
+}
+```
+- Response includes: order details, price in user's currency, payment confirmation
+- Sends chicken costume photo (from Vercel Blob) + example YouTube link
+- After delivery: sends delivery photo + video link via WhatsApp notification
+
+#### New action: `get_chicken_orders`
+- Lists user's chicken deployment orders with status
+
+#### New action: `get_chicken_pricing`
+- Returns price for user's country
+
+#### Enhanced: `pay` action
+- Can now pay for chicken deployments via `wallet_transaction_id` linking
+
+### Seed Data
+
+#### `chicken_pricing` — seed all countries
+```typescript
+// For each of the 249 countries in the countries table:
+// 1. Look up currency_code from countries table
+// 2. Convert $50 USD equivalent to local currency
+// 3. Round to a "nice" price point (e.g., £38.50, €45.00, ¥7,500)
+// 4. Set is_available = 1 for major markets (US, UK, EU, AU, etc.)
+// 5. Set is_available = 0 for markets without fulfillers yet
+// 6. Set min_lead_days based on market maturity
+```
+
+#### `chicken_deployments` — seed example orders
+- 5 example deployments across different countries/statuses for demo
+- 1 completed with delivery photo/video (the BT example)
+- 1 in_progress
+- 1 paid (awaiting acceptance)
+- 1 delivered with Riot Reel linked
+- 1 refunded (delivery_failed)
+
+### i18n
+
+All user-facing strings through `messages/*.json`:
+- "Deploy a Chicken"
+- "Have a message hand-delivered to the CEO by someone in a chicken costume"
+- "Write your note to the CEO"
+- "Pay & Deploy"
+- "Your chicken is on its way!"
+- "Delivery scheduled for {date}"
+- "Your note was delivered!"
+- Status labels: "Pending Payment", "Paid", "Accepted", "In Progress", "Delivered", etc.
+- Error messages: "Insufficient funds", "Not available in your country", etc.
+
+### Security
+
+- **Note content moderation:** Basic profanity/threat filter before submission
+- **Rate limiting:** 1 order per minute per user, 5 orders per day per user
+- **Payment validation:** Atomic wallet debit (existing `db.batch()` pattern)
+- **Fulfiller verification:** Only approved fulfillers can accept orders
+- **Photo/video validation:** Same upload pipeline as evidence (4MB limit, Vercel Blob)
+- **Privacy:** CEO name/address only visible to fulfiller after acceptance
+- **Refund atomicity:** Refund uses same `db.batch()` pattern (credit wallet + update order status)
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `migrations/030_chicken_deployments.sql` | Create tables + indexes |
+| `src/types/index.ts` | ChickenDeployment, ChickenPricing, ChickenFulfiller types |
+| `src/lib/queries/chicken.ts` | All chicken queries |
+| `src/lib/queries/chicken.test.ts` | Tests |
+| `src/app/api/chicken/order/route.ts` | Create order |
+| `src/app/api/chicken/order/[id]/route.ts` | Get order |
+| `src/app/api/chicken/order/[id]/pay/route.ts` | Pay for order |
+| `src/app/api/chicken/order/[id]/accept/route.ts` | Fulfiller accept |
+| `src/app/api/chicken/order/[id]/deliver/route.ts` | Mark delivered |
+| `src/app/api/chicken/order/[id]/cancel/route.ts` | Cancel/refund |
+| `src/app/api/chicken/orders/route.ts` | List user orders |
+| `src/app/api/chicken/pricing/route.ts` | Get pricing |
+| `src/app/[locale]/chicken/[id]/page.tsx` | Order tracking page |
+| `src/components/interactive/chicken-order-form.tsx` | Order form component |
+| `src/components/cards/chicken-order-card.tsx` | Order status card |
+| `src/components/cards/chicken-action-card.tsx` | Action card on issue page |
+| `src/lib/seed-chicken-pricing.ts` | Seed pricing for all countries |
+| `src/lib/seed.ts` | Add example deployments |
+| `scripts/seed-chicken-pricing.ts` | Pricing seed script |
