@@ -683,6 +683,48 @@ export interface TranslationFile {
   >;
 }
 
+// ─── Merge helper ─────────────────────────────────────────────────────────────
+
+/**
+ * Deep-merge baseline (English) into existing (translated) section.
+ * - New top-level keys from baseline are added with English values (placeholders).
+ * - Existing keys are preserved (their values are real translations).
+ * - Within an existing key, new nested fields from baseline are added.
+ * - Removed keys (in baseline but not in existing) are cleaned up? No — we add new, keep existing, ignore removed.
+ */
+function mergeSection<T extends Record<string, unknown>>(
+  baseline: T | undefined,
+  existing: T | undefined,
+): T {
+  if (!baseline) return (existing || {}) as T;
+  if (!existing) return JSON.parse(JSON.stringify(baseline));
+
+  const result = JSON.parse(JSON.stringify(existing)) as Record<string, unknown>;
+
+  for (const [key, baselineValue] of Object.entries(baseline)) {
+    if (!(key in result)) {
+      // New key — add the English placeholder
+      result[key] = JSON.parse(JSON.stringify(baselineValue));
+    } else if (
+      typeof baselineValue === 'object' &&
+      baselineValue !== null &&
+      typeof result[key] === 'object' &&
+      result[key] !== null
+    ) {
+      // Existing object key — merge nested fields (add new fields, keep existing)
+      const existingObj = result[key] as Record<string, unknown>;
+      for (const [field, fieldValue] of Object.entries(baselineValue as Record<string, unknown>)) {
+        if (!(field in existingObj)) {
+          existingObj[field] = fieldValue;
+        }
+      }
+    }
+    // Existing scalar key — keep the existing (translated) value
+  }
+
+  return result as T;
+}
+
 // ─── Generate mode ────────────────────────────────────────────────────────────
 
 function generateEnglishBaseline(): TranslationFile {
@@ -1257,32 +1299,39 @@ async function main() {
 
     for (const locale of targetLocales) {
       const outPath = path.join(TRANSLATIONS_DIR, `${locale}.json`);
-      if (skipExisting && fs.existsSync(outPath)) {
+
+      // IMPORTANT: Merge new keys into existing files — never overwrite translated values.
+      // Previously this created a full English placeholder, destroying any existing translations.
+      const existing: TranslationFile | null = fs.existsSync(outPath)
+        ? JSON.parse(fs.readFileSync(outPath, 'utf-8'))
+        : null;
+
+      if (skipExisting && existing) {
         skippedCount++;
         continue;
       }
 
-      // In --generate mode without an API, just create placeholder copies
-      // The actual translation is done by Claude sub-agents (see session 26 pattern)
-      const placeholder: TranslationFile = {
+      // Deep-merge: for each section, add keys from baseline that don't exist in the locale file.
+      // Never overwrite a value that already differs from English (it's a real translation).
+      const merged: TranslationFile = {
         locale,
-        categories: { ...baseline.categories },
-        issues: JSON.parse(JSON.stringify(baseline.issues)),
-        organisations: JSON.parse(JSON.stringify(baseline.organisations)),
-        synonyms: JSON.parse(JSON.stringify(baseline.synonyms)),
-        category_assistants: JSON.parse(JSON.stringify(baseline.category_assistants)),
-        actions: JSON.parse(JSON.stringify(baseline.actions)),
-        expert_profiles: JSON.parse(JSON.stringify(baseline.expert_profiles)),
-        riot_reels: JSON.parse(JSON.stringify(baseline.riot_reels)),
-        action_initiatives: JSON.parse(JSON.stringify(baseline.action_initiatives)),
-        issue_per_riot: JSON.parse(JSON.stringify(baseline.issue_per_riot)),
+        categories: mergeSection(baseline.categories, existing?.categories),
+        issues: mergeSection(baseline.issues, existing?.issues),
+        organisations: mergeSection(baseline.organisations, existing?.organisations),
+        synonyms: mergeSection(baseline.synonyms, existing?.synonyms),
+        category_assistants: mergeSection(baseline.category_assistants, existing?.category_assistants),
+        actions: mergeSection(baseline.actions, existing?.actions),
+        expert_profiles: mergeSection(baseline.expert_profiles, existing?.expert_profiles),
+        riot_reels: mergeSection(baseline.riot_reels, existing?.riot_reels),
+        action_initiatives: mergeSection(baseline.action_initiatives, existing?.action_initiatives),
+        issue_per_riot: mergeSection(baseline.issue_per_riot, existing?.issue_per_riot),
       };
-      fs.writeFileSync(outPath, JSON.stringify(placeholder, null, 2) + '\n');
+      fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + '\n');
       generated++;
     }
 
-    console.log(`\nGenerated: ${generated} placeholder files, ${skippedCount} skipped`);
-    console.log('💡 Replace placeholder files with real translations using Claude sub-agents.');
+    console.log(`\nGenerated: ${generated} files (merged with existing), ${skippedCount} skipped`);
+    console.log('💡 Run npm run translate to translate new/changed keys.');
   }
 
   if (isApply) {
