@@ -1732,6 +1732,45 @@ describe('Bot API: review_suggestion', () => {
     });
     expect(status).toBe(404);
   });
+
+  it('sends approval notification in the suggestion language', async () => {
+    // Create suggestion with explicit language_code
+    const { body: suggestBody } = await callBot('suggest_riot', {
+      phone: '+5511999999999',
+      suggested_name: 'Localised Notification Test',
+      original_text: 'Testing localised approval',
+      category: 'Other',
+    });
+    const sugId = suggestBody.data.suggestion.id;
+
+    // Set the suggestion's language_code to 'en' (so we can verify it uses BotMessages template)
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: "UPDATE issue_suggestions SET language_code = 'en' WHERE id = ?",
+      args: [sugId],
+    });
+
+    // Approve it
+    await callBot('review_suggestion', {
+      phone: '+447700900001',
+      suggestion_id: sugId,
+      decision: 'approve',
+    });
+
+    // Check the WhatsApp message uses the BotMessages template
+    const msgs = await db.execute({
+      sql: "SELECT whatsapp_message FROM messages WHERE entity_id = ? AND type = 'suggestion_approved' ORDER BY created_at DESC LIMIT 1",
+      args: [sugId],
+    });
+    const whatsappMsg = msgs.rows[0]?.whatsapp_message as string | null;
+    // Should match the BotMessages.suggestionApproved template (not the old "subject: body" format)
+    expect(whatsappMsg).toContain('Good news');
+    expect(whatsappMsg).toContain('Localised Notification Test');
+    expect(whatsappMsg).toContain('approved');
+    // Should NOT contain the old format "Thumbs Up:" prefix
+    expect(whatsappMsg).not.toContain('Thumbs Up');
+  });
 });
 
 describe('Bot API: respond_more_info', () => {

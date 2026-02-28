@@ -13,6 +13,7 @@ import { joinIssue } from '@/lib/queries/users';
 import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
+import { getBotMessage } from '@/app/api/bot/bot-messages';
 import type { Category, RejectionReason } from '@/types';
 
 const reviewSchema = z.object({
@@ -27,6 +28,12 @@ const reviewSchema = z.object({
   merge_into_org_id: z.string().optional(),
   reviewer_notes: z.string().max(2000).optional(),
 });
+
+const REJECTION_KEY_MAP: Record<string, string> = {
+  close_to_existing: 'rejectionCloseToExisting',
+  about_people: 'rejectionAboutPeople',
+  illegal_subject: 'rejectionIllegalSubject',
+};
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const userId = await getSession();
@@ -49,13 +56,15 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   if (!parsed.success) return apiValidationError(parsed.error.issues);
 
   const { decision } = parsed.data;
+  const locale = suggestion.language_code || 'en';
 
   switch (decision) {
     case 'approve': {
       const cat = (parsed.data.category as Category) || (suggestion.category as Category);
       const result = await approveSuggestion(id, userId, cat, parsed.data.reviewer_notes);
-      // Translations are generated asynchronously via POST /api/suggestions/[id]/generate-translations
-      // Dashboard triggers generation after approval returns
+      const whatsAppSummary = await getBotMessage(locale, 'suggestionApproved', {
+        name: suggestion.suggested_name,
+      });
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_approved',
@@ -63,7 +72,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         body: `Your Quiet Riot "${suggestion.suggested_name}" has been approved! We're preparing translations now — we'll let you know when it goes live.`,
         entityType: 'issue_suggestion',
         entityId: id,
-        whatsAppSummary: `Good news — your Quiet Riot "${suggestion.suggested_name}" has been approved! We'll let you know when it goes live.`,
+        whatsAppSummary,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'approved' });
     }
@@ -83,6 +92,14 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         illegal_subject: 'it involves illegal activity',
         other: parsed.data.rejection_detail || 'see details',
       };
+      const localReason =
+        reason === 'other'
+          ? parsed.data.rejection_detail || 'see details'
+          : await getBotMessage(locale, REJECTION_KEY_MAP[reason]);
+      const whatsAppSummary = await getBotMessage(locale, 'suggestionRejectedWithLink', {
+        name: suggestion.suggested_name,
+        reason: localReason,
+      });
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_rejected',
@@ -90,7 +107,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         body: `Your suggestion "${suggestion.suggested_name}" wasn't approved because ${reasonLabels[reason] || reason}. Learn more: /info/rejection-reasons`,
         entityType: 'issue_suggestion',
         entityId: id,
-        whatsAppSummary: `Your suggestion "${suggestion.suggested_name}" didn't get the 👍 because ${reasonLabels[reason] || reason}. Learn more: https://www.quietriots.com/info/rejection-reasons`,
+        whatsAppSummary,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'rejected' });
     }
@@ -108,6 +125,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         : mergeOrgId
           ? `/organisations/${mergeOrgId}`
           : '';
+      const whatsAppSummary = await getBotMessage(locale, 'suggestionMerged', {
+        name: suggestion.suggested_name,
+        link: `https://www.quietriots.com${mergeTargetPath}`,
+      });
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_merged',
@@ -115,7 +136,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         body: `Your suggestion is similar to an existing Quiet Riot. We've added you to that one so you can start taking action.`,
         entityType: 'issue_suggestion',
         entityId: id,
-        whatsAppSummary: `Your suggestion "${suggestion.suggested_name}" is similar to an existing Quiet Riot. We've added you — check it out: https://www.quietriots.com${mergeTargetPath}`,
+        whatsAppSummary,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'merged' });
     }
@@ -123,6 +144,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       const notes = parsed.data.reviewer_notes;
       if (!notes) return apiError('reviewer_notes required when requesting more info');
       const result = await requestMoreInfo(id, userId, notes);
+      const whatsAppSummary = await getBotMessage(locale, 'suggestionMoreInfo', {
+        name: suggestion.suggested_name,
+        notes,
+      });
       sendNotification({
         recipientId: suggestion.suggested_by,
         type: 'suggestion_more_info',
@@ -130,7 +155,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         body: `The Setup Guide has a question about your suggestion "${suggestion.suggested_name}": ${notes}`,
         entityType: 'issue_suggestion',
         entityId: id,
-        whatsAppSummary: `The Setup Guide has a question about "${suggestion.suggested_name}": ${notes}`,
+        whatsAppSummary,
       }).catch(() => {});
       return apiOk({ suggestion: result, decision: 'more_info' });
     }
