@@ -1,99 +1,262 @@
-# Plan: Localise suggestion review WhatsApp notifications
+# Plan: Website Redesign + Hero Images + Follow + Activity Feed + Issue:Org Pages + Nav Search
 
 ## Context
 
-When a user submits a Quiet Riot suggestion in their language (e.g. Banglish), the approval/rejection/merge/more_info WhatsApp notifications are sent in hardcoded English. The user should receive these in the language they submitted in (`suggestion.language_code`).
+Quiet Riots needs a major visual upgrade, new features, and new page types. This plan covers:
 
-**Scope:** WhatsApp messages only. Inbox subject/body stays English (separate concern).
+1. **Full website redesign** — logo-exact colour palette, hero images, sidebar layout
+2. **Follow feature** — users can follow issues without joining (lighter engagement)
+3. **Activity newsfeed** — personalised homepage feed of actions/evidence from followed/joined riots
+4. **Issue:Organisation intersection pages** — e.g. "Train Cancellations at Northern Rail"
+5. **Organisation page redesign** — same layout as issue pages
+6. **Global nav search** — search issues, orgs, synonyms from any page
+7. **OpenAI hero image pipeline** — DALL-E generation, guide review, backfill
+8. **WhatsApp bot integration** — all new features work on both surfaces
 
-## Design notes
+---
 
-- `getBotMessage(locale, key, params)` is async (loads from `messages/{locale}.json`)
-- Web review route uses `sendNotification({ whatsAppSummary })` — clean separation, just await the message first
-- Bot route uses `notifyUser(userId, type, subject, body)` which constructs `whatsappMessage` from `subject: body`. Need to add an optional `whatsappOverride` parameter to `notifyUser` so we can pass the localised message directly.
-- Freeform guide text (rejection_detail, more_info notes) stays English — we localise the chrome around it
-- `getBotMessage` lives in `src/app/api/bot/bot-messages.ts` — import path from web routes is fine for now
+## Logo Colours (EXACT — extracted from `public/logo-192.png`)
 
-## Steps
+| Colour | Hex | RGB | Usage |
+|--------|-----|-----|-------|
+| **Logo Blue** | `#188BFF` | (24, 139, 255) | Primary brand accent — links, buttons, active states |
+| **Logo Red** | `#FB0202` | (251, 2, 2) | Secondary accent — notifications, alerts, logo dot |
 
-### 1. Add BotMessages keys to `messages/en.json`
+These are NOT standard Tailwind colours. We'll define custom CSS properties and use Tailwind's arbitrary value syntax or extend the theme.
 
+**Use the actual logo file** — `public/logo-192.png` — in the nav bar. Do NOT recreate or approximate it.
+
+---
+
+## New Feature: Follow
+
+### Database
+
+New table `user_follows`:
+```sql
+CREATE TABLE IF NOT EXISTS user_follows (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  user_id TEXT NOT NULL REFERENCES users(id),
+  issue_id TEXT NOT NULL REFERENCES issues(id),
+  followed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(user_id, issue_id)
+);
 ```
-suggestionApproved: "Good news — your Quiet Riot \"{name}\" has been approved! We'll let you know when it goes live."
-suggestionRejected: "Your suggestion \"{name}\" didn't get the 👍 because {reason}."
-suggestionRejectedWithLink: "Your suggestion \"{name}\" didn't get the 👍 because {reason}. Learn more: https://www.quietriots.com/info/rejection-reasons"
-suggestionMerged: "Your suggestion \"{name}\" is similar to an existing Quiet Riot. We've added you — check it out: {link}"
-suggestionMoreInfo: "The Setup Guide has a question about \"{name}\": {notes}"
-suggestionGoLive: "Your Quiet Riot \"{name}\" is now live! Share it with friends who care about this issue."
-rejectionCloseToExisting: "too similar to an existing Quiet Riot"
-rejectionAboutPeople: "it targets people rather than issues"
-rejectionIllegalSubject: "it involves illegal activity"
+
+Add to `issues` table:
+```sql
+ALTER TABLE issues ADD COLUMN follower_count INTEGER NOT NULL DEFAULT 0 CHECK(follower_count >= 0);
 ```
 
-Note: `rejectionOther` is omitted — the guide's own words are used directly.
+### Behaviour
 
-### 2. Add `whatsappOverride` to `notifyUser` in bot route
+- **Follow** = lightweight — user gets the issue in their newsfeed but isn't counted as a rioter
+- **Join** = full commitment — user is counted as a rioter AND automatically followed
+- When a user **Joins**, the follow button animates to show "Following ✓" (auto-follow)
+- When a user **Unfollows**, they are NOT removed from joined — those are independent actions
+- When a user **Leaves** (un-joins), they stay as a follower unless they explicitly unfollow
+- Follower count shown separately from rioter count in stats
 
-Add optional param to `notifyUser` so the bot route can pass a pre-built localised WhatsApp message instead of deriving it from English subject+body.
+### UI (Issue Detail Page)
 
-```ts
-async function notifyUser(
-  userId, type, subject, body, entityType?, entityId?, senderName?,
-  whatsappOverride?: string,  // NEW — localised WhatsApp message
+Two buttons side by side:
+```
+[ ✊ Join This Quiet Riot ]  [ 👁 Follow ]
+```
+
+When user clicks **Join**:
+1. Join button changes to "✊ Joined ✓" (filled brand blue)
+2. Follow button animates: briefly shows "Auto-followed! ✓" then settles to "👁 Following ✓"
+3. Both stay in "active" state
+
+When user clicks **Follow** (without joining):
+1. Follow button changes to "👁 Following ✓"
+2. Join button stays as "Join This Quiet Riot" (unchanged)
+
+### API
+
+- `POST /api/issues/[id]/follow` — follow/unfollow toggle (session auth)
+- `POST /api/issues/[id]/join` — existing endpoint, now also auto-follows
+- New queries: `followIssue()`, `unfollowIssue()`, `hasFollowedIssue()`, `getUserFollowedIssues()`
+
+### WhatsApp Bot
+
+- New action: `follow_issue` — follow without joining
+- Modified `join_issue` — auto-follows when joining
+- New action: `get_followed_issues` — list followed issues
+- Activity feed accessible via `get_my_feed` action
+
+---
+
+## New Feature: Activity Newsfeed (Homepage)
+
+### Concept
+
+When a logged-in user visits the homepage, below the hero and trending section, they see a **personalised activity feed** of everything happening in their followed/joined riots.
+
+### Feed Items (from existing tables)
+
+Each feed item shows: **who** did **what** about **which issue** at **which org** (if applicable), **when**, with the actual content (text, photos, videos), and comment/like/share actions.
+
+Sources:
+1. **Evidence** — "James Smith gathered evidence about Cancelled Flights at American Airlines" + photos/videos/text
+2. **Feed posts** — "Sarah Jones posted in Cancelled Flights community" + content
+3. **Reel submissions** — "Tom Lee shared a riot reel about Mobile Data Charges"
+4. **Joins** — "12 people joined Cancelled Flights this week" (aggregated)
+
+### Database
+
+New table `activity_feed` (materialised view pattern):
+```sql
+CREATE TABLE IF NOT EXISTS activity_feed (
+  id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+  activity_type TEXT NOT NULL CHECK(activity_type IN ('evidence', 'feed_post', 'reel', 'join_milestone')),
+  issue_id TEXT NOT NULL REFERENCES issues(id),
+  org_id TEXT REFERENCES organisations(id),
+  user_id TEXT REFERENCES users(id),
+  source_id TEXT NOT NULL,
+  summary TEXT NOT NULL CHECK(length(summary) <= 500),
+  content TEXT CHECK(length(content) <= 5000),
+  media_type TEXT DEFAULT 'text' CHECK(media_type IN ('text','photo','video','link')),
+  photo_urls TEXT DEFAULT '[]',
+  video_url TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX idx_activity_feed_issue ON activity_feed(issue_id, created_at DESC);
+CREATE INDEX idx_activity_feed_created ON activity_feed(created_at DESC);
+```
+
+### Query Pattern
+
+```sql
+SELECT af.*, i.name as issue_name, i.category, o.name as org_name, u.name as user_name
+FROM activity_feed af
+JOIN issues i ON af.issue_id = i.id
+LEFT JOIN organisations o ON af.org_id = o.id
+LEFT JOIN users u ON af.user_id = u.id
+WHERE af.issue_id IN (
+  SELECT issue_id FROM user_issues WHERE user_id = ?
+  UNION
+  SELECT issue_id FROM user_follows WHERE user_id = ?
 )
+ORDER BY af.created_at DESC
+LIMIT ? OFFSET ?
 ```
 
-In the function body: `whatsappMessage: user?.phone ? (whatsappOverride || \`${subject}: ${body.slice(0, 500)}\`) : undefined`
+### Writing to Activity Feed
 
-### 3. Localise notifications in web review route
+When evidence/feed/reel is created, also INSERT into `activity_feed`.
 
-`src/app/api/suggestions/[id]/review/route.ts`:
+### UI Component
 
-For each decision, build localised whatsAppSummary before calling sendNotification:
+`src/components/interactive/activity-feed.tsx` — client component with:
+- Infinite scroll / "Load more" pagination
+- Each card: user avatar + name + action verb + issue link + org link + timestamp
+- Content (text, expandable), media (photos/video), engagement bar (like, comment, share)
+- 1 comment expanded, "View N more" for rest
 
-```ts
-// approve
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionApproved', { name: suggestion.suggested_name });
+### Seed Data
 
-// reject
-const localReason = reason === 'other' ? (detail || 'see details') : await getBotMessage(suggestion.language_code, rejectionKeyMap[reason]);
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionRejectedWithLink', { name: suggestion.suggested_name, reason: localReason });
+Seed 30+ activity feed entries across multiple issues and users for all 56 locales.
 
-// merge
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMerged', { name: suggestion.suggested_name, link: `https://www.quietriots.com${mergeTargetPath}` });
+### WhatsApp Bot
 
-// more_info
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMoreInfo', { name: suggestion.suggested_name, notes });
+- New action: `get_my_feed` — returns latest 5 activity items
+
+---
+
+## New Feature: Issue:Organisation Intersection Pages
+
+### Concept
+
+New page at `/[locale]/issues/[issueId]/at/[orgId]` — intersection of issue and org.
+Example: "Train Cancellations at Northern Rail"
+
+### Page Layout (same as Issue page)
+
+- Hero image (issue hero, org logo overlay)
+- Title: "{Issue Name} at {Org Name}"
+- Stats (filtered): intersection-specific rioter count
+- Section nav pills
+- Main content: only evidence/feed/actions related to this specific org+issue
+- Sidebar: org details, community health, experts
+
+### Database Changes
+
+Add optional `org_id` to feed table:
+```sql
+ALTER TABLE feed ADD COLUMN org_id TEXT REFERENCES organisations(id) DEFAULT NULL;
 ```
 
-### 4. Localise notifications in bot route
+### Navigation
 
-`src/app/api/bot/route.ts` — same pattern in `review_suggestion` handler. Use `getBotMessage(suggestion.language_code, ...)` and pass as `whatsappOverride` to `notifyUser`.
+- From issue pivot table: clicking org → intersection page
+- From org page: clicking issue → intersection page
+- Intersection page has links to both full issue and full org pages
 
-### 5. Localise go-live notifications
+### WhatsApp Bot
 
-Both `src/app/api/suggestions/[id]/go-live/route.ts` and bot `go_live_suggestion` handler — localise the First Rioter notification.
+- New action: `get_issue_at_org`
 
-### 6. Translate to all 55 locales
+---
 
-Use the UI Translation Protocol: single Task agent for translations, then apply via script.
+## Redesigned Organisation Page
 
-### 7. Tests
+Same layout as issue page: hero, sidebar, section nav. Issues list replaces pivot toggle (clickable → intersection pages). Evidence section (org-wide). Community section.
 
-- Test that approve/reject/merge/more_info pass localised whatsAppSummary
-- Test the `whatsappOverride` parameter on `notifyUser`
+---
 
-## Files to modify
+## Redesigned Pivot Table
 
-- `messages/en.json` — add BotMessages keys
-- `messages/*.json` (55 files) — translate new keys
-- `src/app/api/bot/route.ts` — add whatsappOverride to notifyUser, use getBotMessage for review_suggestion + go_live_suggestion notifications
-- `src/app/api/suggestions/[id]/review/route.ts` — use getBotMessage for whatsAppSummary
-- `src/app/api/suggestions/[id]/go-live/route.ts` — use getBotMessage for whatsAppSummary
-- `src/app/api/bot/bot-api.test.ts` — test localised notifications
+- **Issue pages:** Remove toggle. Show orgs only. Clickable rows → intersection pages.
+- **Org pages:** Remove toggle. Show issues only. Clickable rows → intersection pages.
+- Keep purple styling as feature identity.
 
-## Verification
+---
 
-1. `npm test` — all tests pass
-2. `npm run build` — builds cleanly
-3. After deploy: approve a suggestion from a non-English user, verify WhatsApp message is in their language
+## Global Nav Search
+
+Search input in nav bar. Desktop: expandable. Mobile: overlay. Searches issues + orgs + synonyms. Dropdown results panel. New `GET /api/search` endpoint.
+
+---
+
+## Other UI Changes
+
+- Use actual `logo-192.png` in nav (NOT a CSS approximation)
+- "First Rioter" → **"Founding Quiet Rioter"**
+- Community Health: clickable → Community section
+- Countries "View all" → Community section
+- Evidence feed at bottom of issue overview → "View more" → Evidence section
+
+---
+
+## Phase Plan
+
+### Phase 0: Database Migrations + Types
+### Phase 1: Colour Palette + Logo
+### Phase 2: Nav Bar + Footer + Global Search
+### Phase 3: Follow Feature
+### Phase 4: Activity Newsfeed
+### Phase 5: Hero Image Component + Issue Page Redesign
+### Phase 6: Issue:Org Intersection Pages
+### Phase 7: Organisation Page Redesign
+### Phase 8: OpenAI Image Generation Pipeline
+### Phase 9: Approval Flow Integration
+### Phase 10: Backfill Existing Entities
+### Phase 11: Browse Pages + Card Redesign
+### Phase 12: Homepage + All Remaining Pages
+### Phase 13: i18n for All New UI Text
+
+---
+
+## WhatsApp Bot New Actions
+
+| Action | Description |
+|--------|-------------|
+| `follow_issue` | Follow an issue |
+| `get_followed_issues` | List followed issues |
+| `get_my_feed` | Personalised activity feed |
+| `get_issue_at_org` | Intersection detail |
+| `search_all` | Search issues + organisations |
+
+Enhanced: `join_issue` (auto-follows), `get_organisation` (evidence/community)
