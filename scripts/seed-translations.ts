@@ -1299,6 +1299,73 @@ async function applyTranslations() {
     console.log('\n💡 Remember to redeploy Vercel to pick up the new data:');
     console.log('   cd /Users/skye/Projects/quiet-riots && npx vercel --prod');
   }
+
+  // Run coverage verification after apply
+  await verifyTranslationCoverage(db, isStrict);
+}
+
+// ─── Post-apply coverage verification ────────────────────────────────────────
+
+async function verifyTranslationCoverage(
+  db: { execute: (sql: string) => Promise<{ rows: Record<string, unknown>[] }> },
+  strict: boolean = false,
+) {
+  console.log('\n── Translation Coverage Report ──');
+
+  const result = await db.execute(
+    'SELECT entity_type, language_code, COUNT(*) as cnt FROM translations GROUP BY entity_type, language_code ORDER BY entity_type, language_code',
+  );
+
+  // Group by entity_type
+  const coverage: Record<string, Record<string, number>> = {};
+  for (const row of result.rows) {
+    const entityType = String(row.entity_type);
+    const langCode = String(row.language_code);
+    const count = Number(row.cnt);
+    if (!coverage[entityType]) coverage[entityType] = {};
+    coverage[entityType][langCode] = count;
+  }
+
+  const entityTypes = Object.keys(coverage).sort();
+  if (entityTypes.length === 0) {
+    console.log('  No translations found in DB.');
+    return;
+  }
+
+  // Print summary table
+  console.log(
+    `  ${'Entity Type'.padEnd(22)} ${'Locales'.padStart(7)} ${'Min'.padStart(5)} ${'Max'.padStart(5)} ${'Avg'.padStart(7)}`,
+  );
+  console.log(`  ${'─'.repeat(22)} ${'─'.repeat(7)} ${'─'.repeat(5)} ${'─'.repeat(5)} ${'─'.repeat(7)}`);
+
+  let hasGaps = false;
+
+  for (const entityType of entityTypes) {
+    const localeCounts = Object.values(coverage[entityType]);
+    const localeCount = localeCounts.length;
+    const min = Math.min(...localeCounts);
+    const max = Math.max(...localeCounts);
+    const avg = (localeCounts.reduce((a, b) => a + b, 0) / localeCount).toFixed(1);
+
+    const flag = min < max ? ' ⚠️' : '';
+    if (min < max) hasGaps = true;
+
+    console.log(
+      `  ${entityType.padEnd(22)} ${String(localeCount).padStart(7)} ${String(min).padStart(5)} ${String(max).padStart(5)} ${avg.padStart(7)}${flag}`,
+    );
+  }
+
+  if (hasGaps) {
+    console.log('\n  ⚠️  Some entity types have uneven coverage across locales.');
+    console.log('     Run with --verbose to investigate, or check skip summary above.');
+  } else {
+    console.log('\n  ✅ All entity types have consistent coverage across locales.');
+  }
+
+  if (strict && hasGaps) {
+    console.error('\n❌ --strict mode: translation coverage gaps detected.');
+    process.exit(1);
+  }
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -1307,6 +1374,7 @@ async function main() {
   const args = process.argv.slice(2);
   const isGenerate = args.includes('--generate');
   const isApply = args.includes('--apply');
+  const isVerify = args.includes('--verify');
   const skipExisting = args.includes('--skip-existing');
 
   // Parse --locales flag
@@ -1316,7 +1384,7 @@ async function main() {
       ? args[localesIdx + 1].split(',').filter((l) => ALL_LOCALES.includes(l))
       : ALL_LOCALES;
 
-  if (!isGenerate && !isApply) {
+  if (!isGenerate && !isApply && !isVerify) {
     console.log('Usage:');
     console.log(
       '  npx tsx scripts/seed-translations.ts --generate           Generate translation files',
@@ -1329,6 +1397,9 @@ async function main() {
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --apply --verbose   Print each skip as it happens',
+    );
+    console.log(
+      '  npx tsx scripts/seed-translations.ts --verify            Check DB translation coverage',
     );
     console.log(
       '  npx tsx scripts/seed-translations.ts --generate --locales es,fr,de   Specific locales',
@@ -1413,6 +1484,17 @@ async function main() {
 
   if (isApply) {
     await applyTranslations();
+  }
+
+  if (isVerify && !isApply) {
+    // Standalone verification (--apply already runs verification at the end)
+    const { requireRemoteDb, printDbBanner } = await import('./db-safety');
+    requireRemoteDb();
+    printDbBanner();
+    const { getDb } = await import('../src/lib/db');
+    const db = getDb();
+    const strict = args.includes('--strict');
+    await verifyTranslationCoverage(db, strict);
   }
 }
 
