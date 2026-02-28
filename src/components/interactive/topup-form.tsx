@@ -39,7 +39,7 @@ export function TopUpForm({ currency = 'GBP' }: TopUpFormProps) {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || 'Top-up failed');
+        setError(data.error || t('failed'));
         return;
       }
 

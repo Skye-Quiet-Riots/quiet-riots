@@ -57,7 +57,7 @@ export function PayForm({
 
       if (!res.ok) {
         const data = await res.json();
-        setError(data.error || 'Payment failed');
+        setError(data.error || t('failed'));
         return;
       }
 

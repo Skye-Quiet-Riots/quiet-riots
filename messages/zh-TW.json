@@ -106,7 +106,8 @@
     "createAccount": "建立帳戶",
     "completedMessage": "此專案已{status}。感謝所有 {count} 位參與者！",
     "recipient": "服務提供商",
-    "wantToSupport": "想委託此服務嗎？"
+    "wantToSupport": "想委託此服務嗎？",
+    "progressText": "{target}目標中已承諾{committed}({pct}%)"
   },
   "Assistants": {
     "title": "助手",
@@ -447,7 +448,8 @@
     "networkError": "網路錯誤，請重試。",
     "customAmount": "自訂金額（£）",
     "topUp": "儲值",
-    "simulated": "模擬儲值，僅供測試。真實付款即將上線。"
+    "simulated": "模擬儲值，僅供測試。真實付款即將上線。",
+    "failed": "儲值失敗。請重試。"
   },
   "Pay": {
     "insufficientFunds": "餘額不足。請先為錢包儲值。",
@@ -464,7 +466,8 @@
     "topUp": "儲值",
     "minPayment": "最低付款 10p",
     "supportProject": "委託此服務",
-    "toSupport": "以委託服務。"
+    "toSupport": "以委託服務。",
+    "failed": "支付失敗。請重試。"
   },
   "Claim": {
     "success": "謝謝！我們已記錄你對 {name} 角色的興趣。我們會與你聯繫。",

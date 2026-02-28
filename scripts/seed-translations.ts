@@ -1170,9 +1170,21 @@ async function applyTranslations() {
     // Per-riot assistant copy — uses name_match to find issue IDs
     // These are stored as entity_type='issue' with fields agent_helps, human_helps, agent_focus, human_focus
     if (data.issue_per_riot) {
+      // Build reverse lookup: translated issue name → English issue name
+      // This handles the case where the translate script produces translated keys
+      // (e.g. "Cancelaciones de Trenes" instead of "Train Cancellations")
+      const translatedNameToEnglish: Record<string, string> = {};
+      if (data.issues) {
+        for (const [englishName, translation] of Object.entries(data.issues)) {
+          if (translation.name && translation.name !== englishName) {
+            translatedNameToEnglish[translation.name] = englishName;
+          }
+        }
+      }
+
       const perRiotFields = ['agent_helps', 'human_helps', 'agent_focus', 'human_focus'] as const;
       for (const [nameMatch, translation] of Object.entries(data.issue_per_riot)) {
-        // name_match can be exact name or LIKE pattern (e.g. '%Bus%Cuts')
+        // name_match can be exact name, translated name, or LIKE pattern (e.g. '%Bus%Cuts')
         // For exact names, use direct lookup; for patterns, match against known issue names
         let matchedIssueIds: string[] = [];
         if (nameMatch.includes('%')) {
@@ -1184,7 +1196,12 @@ async function applyTranslations() {
             }
           }
         } else {
-          const issueId = issueIdMap[nameMatch];
+          // Try English name first, then translated name → English name fallback
+          let issueId = issueIdMap[nameMatch];
+          if (!issueId) {
+            const englishName = translatedNameToEnglish[nameMatch];
+            if (englishName) issueId = issueIdMap[englishName];
+          }
           if (issueId) matchedIssueIds = [issueId];
         }
 

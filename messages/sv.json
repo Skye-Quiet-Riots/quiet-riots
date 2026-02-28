@@ -106,7 +106,8 @@
     "createAccount": "Skapa konto",
     "completedMessage": "Detta projekt har {status}. Tack till alla {count} deltagare!",
     "recipient": "Tjänsteleverantör",
-    "wantToSupport": "Vill du beställa denna tjänst?"
+    "wantToSupport": "Vill du beställa denna tjänst?",
+    "progressText": "{committed} åtagen av {target} mål ({pct}%)"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -447,7 +448,8 @@
     "networkError": "Nätverksfel. Försök igen.",
     "customAmount": "Valfritt belopp (£)",
     "topUp": "Fyll på",
-    "simulated": "Simulerad påfyllning för testning. Riktiga betalningar kommer snart."
+    "simulated": "Simulerad påfyllning för testning. Riktiga betalningar kommer snart.",
+    "failed": "Uppladdning misslyckades. Försök igen."
   },
   "Pay": {
     "insufficientFunds": "Otillräckligt saldo. Fyll på din plånbok först.",
@@ -464,7 +466,8 @@
     "topUp": "Fyll på",
     "minPayment": "Minsta betalning är 10p",
     "supportProject": "Beställ denna tjänst",
-    "toSupport": "för att beställa tjänster."
+    "toSupport": "för att beställa tjänster.",
+    "failed": "Betalning misslyckades. Försök igen."
   },
   "Claim": {
     "success": "Tack! Vi har noterat ditt intresse för rollen som {name}. Vi hör av oss.",

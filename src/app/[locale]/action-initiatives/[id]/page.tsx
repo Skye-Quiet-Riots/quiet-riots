@@ -112,9 +112,11 @@ export default async function ActionInitiativeDetailPage({ params }: Props) {
         />
       </div>
       <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-        {formatCurrency(actionInitiative.committed_pence, actionInitiative.currency_code)} committed
-        of {formatCurrency(actionInitiative.target_pence, actionInitiative.currency_code)} target (
-        {pct}%)
+        {t('progressText', {
+          committed: formatCurrency(actionInitiative.committed_pence, actionInitiative.currency_code),
+          target: formatCurrency(actionInitiative.target_pence, actionInitiative.currency_code),
+          pct,
+        })}
       </p>
 
       {/* Stats */}

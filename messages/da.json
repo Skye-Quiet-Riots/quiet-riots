@@ -106,7 +106,8 @@
     "createAccount": "Opret konto",
     "completedMessage": "Dette projekt er blevet {status}. Tak til alle {count} deltagere!",
     "recipient": "Tjenesteudbyder",
-    "wantToSupport": "Vil du bestille denne tjeneste?"
+    "wantToSupport": "Vil du bestille denne tjeneste?",
+    "progressText": "{committed} forpligtet af {target} mål ({pct}%)"
   },
   "Assistants": {
     "title": "Assistenter",
@@ -447,7 +448,8 @@
     "networkError": "Netværksfejl. Prøv venligst igen.",
     "customAmount": "Valgfrit beløb (£)",
     "topUp": "Fyld op",
-    "simulated": "Simuleret opfyldning til test. Rigtige betalinger kommer snart."
+    "simulated": "Simuleret opfyldning til test. Rigtige betalinger kommer snart.",
+    "failed": "Opladning mislykkedes. Prøv venligst igen."
   },
   "Pay": {
     "insufficientFunds": "Utilstrækkelig saldo. Fyld op på din tegnebog først.",
@@ -464,7 +466,8 @@
     "topUp": "Fyld op",
     "minPayment": "Minimumsbetaling er 10p",
     "supportProject": "Bestil denne tjeneste",
-    "toSupport": "for at bestille tjenester."
+    "toSupport": "for at bestille tjenester.",
+    "failed": "Betaling mislykkedes. Prøv venligst igen."
   },
   "Claim": {
     "success": "Tak! Vi har noteret din interesse for rollen som {name}. Vi vender tilbage.",
