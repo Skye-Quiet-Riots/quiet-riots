@@ -6,21 +6,21 @@
 
 ## Latest Session
 
-**Session 65** (2026-02-28) — Website Redesign Mockup + Translation UX Plan
-→ [`session-logs/2026-02-session-65.md`](session-logs/2026-02-session-65.md)
+**Session 66** (2026-02-28) — Translation UX Fix Implementation
+→ [`session-logs/2026-02-session-66.md`](session-logs/2026-02-session-66.md)
 
 ## Current Priorities
 
-1. **Implement translation UX fix** — plan in PLAN.md on `claude/busy-hoover`. Branch `claude/fix-suggestion-translation-ux` ready (empty). Step 1 (after() in review route) already done. Need: error logging, success/error feedback on button, accessibility, i18n.
-2. **Website redesign phases** — plan at `.claude/plans/distributed-sauteeing-penguin.md`. PR order: 0→1→2→6→3→4→7→5→8→9.
-3. **Deploy a Chicken** — plan in git history of `claude/busy-hoover` (commits b8ece28, b9ca7f3). Build as separate PR.
-4. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
-5. **Google/Facebook OAuth setup** — still pending from session 47
+1. **Website redesign phases** — plan at `.claude/plans/distributed-sauteeing-penguin.md`. PR order: 0→1→2→6→3→4→7→5→8→9. Phase 0 is DB migration (hero_image_url columns). Phases 0, 1, 2, 6 can run in parallel.
+2. **Deploy a Chicken** — plan in git history of `claude/busy-hoover` (commits b8ece28, b9ca7f3). Build as separate PR.
+3. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+4. **Google/Facebook OAuth setup** — still pending from session 47
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 66  | 2026-02-28    | Translation UX fix implementation                     | [`session-66`](session-logs/2026-02-session-66.md)                                                             |
 | 65  | 2026-02-28    | Website redesign mockup + translation UX plan         | [`session-65`](session-logs/2026-02-session-65.md)                                                             |
 | 64  | 2026-02-28    | Localise suggestion notifications + locale guard      | [`session-64`](session-logs/2026-02-session-64.md)                                                             |
 | 63  | 2026-02-28    | Auto-translate issues on approval via after()         | [`session-63`](session-logs/2026-02-session-63.md)                                                             |
