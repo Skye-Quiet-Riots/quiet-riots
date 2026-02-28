@@ -1,99 +1,84 @@
-# Plan: Localise suggestion review WhatsApp notifications
+# Fix: Suggestion translation generation UX
 
 ## Context
 
-When a user submits a Quiet Riot suggestion in their language (e.g. Banglish), the approval/rejection/merge/more_info WhatsApp notifications are sent in hardcoded English. The user should receive these in the language they submitted in (`suggestion.language_code`).
+When a Setup Guide approves a suggestion on the web dashboard, translations are triggered client-side. If the Claude API call fails or times out (~15-30s for 55 locales), the dashboard shows a scary red "Translation generation failed." with a Retry button. This looks broken when things are actually fine — the translation may just need a retry, or `after()` may have handled it server-side already.
 
-**Scope:** WhatsApp messages only. Inbox subject/body stays English (separate concern).
+The bot route already handles this correctly using `after()` server-side. The web dashboard doesn't.
 
-## Design notes
+## Approach (Option B from review — simple, low-risk)
 
-- `getBotMessage(locale, key, params)` is async (loads from `messages/{locale}.json`)
-- Web review route uses `sendNotification({ whatsAppSummary })` — clean separation, just await the message first
-- Bot route uses `notifyUser(userId, type, subject, body)` which constructs `whatsappMessage` from `subject: body`. Need to add an optional `whatsappOverride` parameter to `notifyUser` so we can pass the localised message directly.
-- Freeform guide text (rejection_detail, more_info notes) stays English — we localise the chrome around it
-- `getBotMessage` lives in `src/app/api/bot/bot-messages.ts` — import path from web routes is fine for now
+Three changes:
+1. Add `after()` to the review route so translations are triggered server-side automatically (like the bot route)
+2. Stop auto-triggering translations from the client on approval
+3. Change the approved-status UI to show calm messaging with a manual "Generate translations" fallback button
 
-## Steps
+No polling. No migrations. No removal of working endpoints. The existing `/api/suggestions/[id]/generate-translations` endpoint stays as the manual fallback.
 
-### 1. Add BotMessages keys to `messages/en.json`
+## Changes
 
-```
-suggestionApproved: "Good news — your Quiet Riot \"{name}\" has been approved! We'll let you know when it goes live."
-suggestionRejected: "Your suggestion \"{name}\" didn't get the 👍 because {reason}."
-suggestionRejectedWithLink: "Your suggestion \"{name}\" didn't get the 👍 because {reason}. Learn more: https://www.quietriots.com/info/rejection-reasons"
-suggestionMerged: "Your suggestion \"{name}\" is similar to an existing Quiet Riot. We've added you — check it out: {link}"
-suggestionMoreInfo: "The Setup Guide has a question about \"{name}\": {notes}"
-suggestionGoLive: "Your Quiet Riot \"{name}\" is now live! Share it with friends who care about this issue."
-rejectionCloseToExisting: "too similar to an existing Quiet Riot"
-rejectionAboutPeople: "it targets people rather than issues"
-rejectionIllegalSubject: "it involves illegal activity"
-```
+### 1. Add `after()` to review route
 
-Note: `rejectionOther` is omitted — the guide's own words are used directly.
+**File:** `src/app/api/suggestions/[id]/review/route.ts`
 
-### 2. Add `whatsappOverride` to `notifyUser` in bot route
-
-Add optional param to `notifyUser` so the bot route can pass a pre-built localised WhatsApp message instead of deriving it from English subject+body.
+In the `approve` case (before the return on line 77), add:
 
 ```ts
-async function notifyUser(
-  userId, type, subject, body, entityType?, entityId?, senderName?,
-  whatsappOverride?: string,  // NEW — localised WhatsApp message
-)
+import { after } from 'next/server';
+import { triggerAutoTranslation } from '@/lib/queries/generate-translations';
+
+// After approval, trigger translation generation server-side
+const entityType = suggestion.suggested_type === 'issue' ? 'issue' : 'organisation';
+const entityId = (result.issue_id || result.organisation_id) as string | undefined;
+if (entityId) {
+  const fields: Record<string, string> = { name: suggestion.suggested_name };
+  if (suggestion.description) fields.description = suggestion.description;
+  after(() => triggerAutoTranslation(id, entityType, entityId, fields).catch(() => {}));
+}
 ```
 
-In the function body: `whatsappMessage: user?.phone ? (whatsappOverride || \`${subject}: ${body.slice(0, 500)}\`) : undefined`
+This is the exact same pattern as bot route line 1512.
 
-### 3. Localise notifications in web review route
+### 2. Simplify dashboard approved-state UI
 
-`src/app/api/suggestions/[id]/review/route.ts`:
+**File:** `src/components/interactive/setup-dashboard.tsx`
 
-For each decision, build localised whatsAppSummary before calling sendNotification:
+- Remove: `generatingId` state, `generationError` state, `triggerTranslationGeneration()` function
+- Remove: the auto-trigger call `triggerTranslationGeneration(id)` from `handleReview()` on approval
+- Replace the approved-status block (lines 395-419) with:
+  - Message: "Translations are being generated automatically — refresh in about 30 seconds."
+  - Below: a "Generate translations" button (using existing `/api/suggestions/{id}/generate-translations` endpoint) as fallback if auto-generation failed. This button shows spinner while working and success/error feedback.
 
-```ts
-// approve
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionApproved', { name: suggestion.suggested_name });
+The key difference: the initial state is calm ("being generated automatically") rather than immediately triggering a client-side call that shows a scary error on failure. If the guide needs to intervene, the manual button is there.
 
-// reject
-const localReason = reason === 'other' ? (detail || 'see details') : await getBotMessage(suggestion.language_code, rejectionKeyMap[reason]);
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionRejectedWithLink', { name: suggestion.suggested_name, reason: localReason });
+### 3. Update i18n keys
 
-// merge
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMerged', { name: suggestion.suggested_name, link: `https://www.quietriots.com${mergeTargetPath}` });
+**File:** `messages/en.json`
 
-// more_info
-const whatsAppSummary = await getBotMessage(suggestion.language_code, 'suggestionMoreInfo', { name: suggestion.suggested_name, notes });
-```
+- `generatingTranslations` → keep (used for button spinner state)
+- `translationFailed` → change value to "Translation took longer than expected."
+- `retryTranslations` → change value to "Generate translations"
+- `translationsPending` → change value to "Translations are being generated automatically — refresh in about 30 seconds."
 
-### 4. Localise notifications in bot route
+Translate changed values to all 55 locales via `scripts/apply-ui-translations.js`.
 
-`src/app/api/bot/route.ts` — same pattern in `review_suggestion` handler. Use `getBotMessage(suggestion.language_code, ...)` and pass as `whatsappOverride` to `notifyUser`.
+## What stays the same
 
-### 5. Localise go-live notifications
-
-Both `src/app/api/suggestions/[id]/go-live/route.ts` and bot `go_live_suggestion` handler — localise the First Rioter notification.
-
-### 6. Translate to all 55 locales
-
-Use the UI Translation Protocol: single Task agent for translations, then apply via script.
-
-### 7. Tests
-
-- Test that approve/reject/merge/more_info pass localised whatsAppSummary
-- Test the `whatsappOverride` parameter on `notifyUser`
+- `/api/suggestions/[id]/generate-translations` endpoint — kept as manual fallback
+- `triggerAutoTranslation()` function — used by both bot and web routes
+- `translations_ready` → "Review Translations" → "Go Live" flow — unchanged
+- Bot route's existing `after()` — unchanged
 
 ## Files to modify
 
-- `messages/en.json` — add BotMessages keys
-- `messages/*.json` (55 files) — translate new keys
-- `src/app/api/bot/route.ts` — add whatsappOverride to notifyUser, use getBotMessage for review_suggestion + go_live_suggestion notifications
-- `src/app/api/suggestions/[id]/review/route.ts` — use getBotMessage for whatsAppSummary
-- `src/app/api/suggestions/[id]/go-live/route.ts` — use getBotMessage for whatsAppSummary
-- `src/app/api/bot/bot-api.test.ts` — test localised notifications
+1. `src/app/api/suggestions/[id]/review/route.ts` — add `after()` (5 lines)
+2. `src/components/interactive/setup-dashboard.tsx` — simplify UI states
+3. `messages/en.json` — update 3-4 key values
+4. `messages/*.json` — translate via script (55 locales)
 
 ## Verification
 
-1. `npm test` — all tests pass
-2. `npm run build` — builds cleanly
-3. After deploy: approve a suggestion from a non-English user, verify WhatsApp message is in their language
+1. `npm test && npm run build`
+2. Approve a suggestion → see "being generated automatically" message (not an error)
+3. Refresh after ~30s → status should be `translations_ready`
+4. If not ready: click "Generate translations" → see spinner → see result

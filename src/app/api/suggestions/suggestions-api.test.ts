@@ -8,6 +8,13 @@ vi.mock('next/headers', () => ({
   cookies: vi.fn(),
 }));
 
+// Mock after() — it throws synchronously outside Next.js request scope
+const { mockAfter } = vi.hoisted(() => ({ mockAfter: vi.fn() }));
+vi.mock('next/server', async () => {
+  const actual = await vi.importActual<typeof import('next/server')>('next/server');
+  return { ...actual, after: mockAfter };
+});
+
 import { cookies } from 'next/headers';
 import { GET, POST } from './route';
 import { POST as reviewSuggestion } from './[id]/review/route';

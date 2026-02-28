@@ -68,7 +68,6 @@ export function SetupDashboard({
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState(false);
   const [generatingId, setGeneratingId] = useState<string | null>(null);
-  const [generationError, setGenerationError] = useState<string | null>(null);
   const [expandedSubmitter, setExpandedSubmitter] = useState<string | null>(null);
   const [translationReviewId, setTranslationReviewId] = useState<string | null>(null);
   const [translationData, setTranslationData] = useState<Record<
@@ -100,11 +99,6 @@ export function SetupDashboard({
         const data = await res.json();
         setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
         setReviewingId(null);
-
-        // If approved, trigger async translation generation
-        if (decision === 'approve') {
-          triggerTranslationGeneration(id);
-        }
       }
     } finally {
       setActionLoading(false);
@@ -113,7 +107,6 @@ export function SetupDashboard({
 
   async function triggerTranslationGeneration(id: string) {
     setGeneratingId(id);
-    setGenerationError(null);
     try {
       const res = await fetch(`/api/suggestions/${id}/generate-translations`, {
         method: 'POST',
@@ -121,11 +114,7 @@ export function SetupDashboard({
       if (res.ok) {
         const data = await res.json();
         setSuggestions((prev) => prev.map((s) => (s.id === id ? data.data.suggestion : s)));
-      } else {
-        setGenerationError(id);
       }
-    } catch {
-      setGenerationError(id);
     } finally {
       setGeneratingId(null);
     }
@@ -398,22 +387,18 @@ export function SetupDashboard({
                     <span className="text-sm text-blue-600 dark:text-blue-400">
                       {t('generatingTranslations')}
                     </span>
-                  ) : generationError === s.id ? (
+                  ) : (
                     <>
-                      <span className="text-sm text-red-600 dark:text-red-400">
-                        {t('translationFailed')}
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                        {t('translationsBeingGenerated')}
                       </span>
                       <button
                         onClick={() => triggerTranslationGeneration(s.id)}
-                        className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+                        className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                       >
-                        {t('retryTranslations')}
+                        {t('generateTranslations')}
                       </button>
                     </>
-                  ) : (
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                      {t('translationsPending')}
-                    </span>
                   )}
                 </div>
               )}
