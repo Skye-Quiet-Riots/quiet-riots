@@ -1113,299 +1113,293 @@
     }
   },
   "issue_per_riot": {
-    "Togkansellinger": {
+    "Train Cancellations": {
       "agent_helps": "Sporer kanselleringsmønstre etter rute og tid, hjelper deg med å sende inn refusjonskrav, og samler bevis for ORR-innleveringer",
       "human_helps": "Kobler sammen rioters på samme ruter, deler hvilke refusjonsmetoder som faktisk fungerer, og koordinerer gruppeklager",
       "agent_focus": "Analyserer Avanti West Coast kanselleringsdata — 340 rioter-rapporter denne måneden. Bygger et datasett over tider, ruter og årsaker til ORR.",
       "human_focus": "Kobler rioters på Manchester–London-korridoren. Tre gruppeklager pågår."
     },
-    "Togbillettpriser": {
+    "Train Ticket Prices": {
       "agent_helps": "Sammenligner billettpriser på tvers av bookingplattformer, finner splittbillettbesparelser, og sporer prisstigninger over inflasjonen etter operatør",
       "human_helps": "Deler bookingtrikk som faktisk sparer penger, og hjelper rioters med å skrive til sine parlamentsmedlemmer om farøkninger",
       "agent_focus": "Kartlegger gapet mellom regulerte og uregulerte billettpriser på tvers av 6 operatører. Gjennomsnittlig påslag på kjøpepriser: 340 %.",
       "human_focus": "Kjører en «fare shock»-bevissamling — rioters deler sine verste billettkvitteringer. 89 sendt inn så langt."
     },
-    "Flyforseninger": {
+    "Flight Delays": {
       "agent_helps": "Sjekker om din forsinkelse kvalifiserer for kompensasjon, hjelper deg med å utarbeide krav, og sporer flyselskapenes responsstider",
       "human_helps": "Deler hvilke flyselskaper som faktisk betaler, kobler rioters som har med samme flyselskap, og hjelper med å eskalere stoppede krav",
       "agent_focus": "Sporer Ryanairs kompensasjonsresponsstider — gjennomsnitt 47 dager. Bygger en sak for CAA-intervensjon.",
       "human_focus": "Hjelper rioters som har ventet 3+ måneder på kompensasjon med å eskalere til luftfartens ombudsman."
     },
-    "Tapt bagasje": {
+    "Lost Luggage": {
       "agent_helps": "Hjelper deg med å innlevere PIR-rapporter, sporer kravet ditt, og beregner hva du har rett til under Montrealkonvensjonen",
       "human_helps": "Deler hva som faktisk får flyselskaper til å reagere raskere, og kobler rioters som har vært gjennom det samme",
       "agent_focus": "Samler tapt bagasjdata etter flyselskap og flyplass. Heathrow Terminal 2 er verst — 3x høyere rate enn Terminal 5.",
       "human_focus": "Bygger en delt sjekkliste over hva man skal pakke i håndbagasje slik at du er dekket dersom det skjer. Praktiske ting som hjelper."
     },
-    "Busskutt": {
+    "%Bus%Cuts": {
       "agent_helps": "Kartlegger hvilke ruter som er kuttet eller redusert, sporer virkningen av data, og hjelper deg med å svare på høringer",
       "human_helps": "Kobler sammen lokalsamfunn som er påvirket av samme kutt, deler vellykkede metoder fra andre områder, og hjelper til å koordinere gruppesvar",
       "agent_focus": "Kartlegger rutekutt på tvers av North West — 34 ruter redusert i løpet av de siste 12 månedene. Bygger en innlevering til Transport Select Committee.",
       "human_focus": "Hjelper tre landsbysamfunn med å koordinere svarene sine på buskonsultasjoner. Styrke i tall."
     },
-    "Parkeringsgebyr": {
+    "Parking Fines": {
       "agent_helps": "Vurderer gebyret ditt, sjekker om skilting var i samsvar, utarbeider ankeskriv, og sporer suksessrater etter operatør",
       "human_helps": "Deler hvilke ankestrategier som fungerer best for hver parkeringsselskap, og hjelper rioters som er eskalert til inkassobyrå",
       "agent_focus": "Maler for ankeskriv har nå 72 % suksessrate på tvers av private parkeringsoperatører. Analyserer hvilke grunnlag som fungerer best.",
       "human_focus": "Hjelper rioters ved sykehuspaparkplasser — brutte maskiner, uklare skilt. 12 vellykkede anker denne måneden."
     },
-    "Drivstoffpriser": {
+    "Fuel Prices": {
       "agent_helps": "Sporer lokale drivstoffpriser, sammenligner med engrospriser, og identifiserer stasjoner som er langsomme med å senke prisene",
       "human_helps": "Deler tips om å finne billigere drivstoff lokalt, og hjelper rioters med å forstå når de skal fylle og når de skal vente",
       "agent_focus": "Overvåker gapet mellom engros- og pumpepriser. For øyeblikket 8p bredere enn 5-års gjennomsnitt. Bygger en rapport for CMA.",
       "human_focus": "Kjører en lokal drivstoffprispris — rioters rapporterer priser slik at alle kan finne de beste tilbudene i nærheten."
     },
-    "Bredbåndshastighet": {
+    "Broadband Speed": {
       "agent_helps": "Kjører hastighetstestanalyse, sammenligner resultatene dine med det du betaler for, og hjelper deg med å bygge en Ofcom-klage",
       "human_helps": "Deler hvilke leverandører som faktisk holder sine løfter, hjelper rioters med å koordinere bytter på gatenivå, og forhandler på dine vegne",
       "agent_focus": "Hastighetstestdata fra 200 rioters viser gjennomsnittshastigheter på 18 Mbps på planer annonsert som 65 Mbps. Samler for Ofcom.",
       "human_focus": "Organiserte en bytteaksjon for bredbånd på gatenivå i Hackney — 23 husstander flyttet sammen og fikk en gruppeavtale. Gjør det igjen i Brixton."
     },
-    "Mobilsignaldødssoner": {
+    "Mobile Signal Dead Zones": {
       "agent_helps": "Kartlegger signalsortflekker ved hjelp av rioter-rapporter, kryssreferanser med Ofcom-dekningsdata, og sender inn dekningskrav",
       "human_helps": "Kobler rioters på samme område for å bygge gruppebeviser, deler hvilke nettverk som faktisk fungerer hvor, og hjelper med bytte",
       "agent_focus": "Bygde et varmekart over døde soner fra 340 rioter-rapporter. 40 % ligger innenfor 5 miles fra en større by. Sender til Ofcoms Shared Rural Network-gjennomgang.",
       "human_focus": "Hjelper rioters på landsbygda i Wales og Skottland med å få signalproblemene sine på SRN-prioritetslisten. 3 lokalsamfunn har allerede sendt inn."
     },
-    "Prisstigning midt i kontrakten": {
+    "Price Rises Mid-Contract": {
       "agent_helps": "Beregner den faktiske økningen din, sjekker om det bryter Ofcom-veiledningen, og utarbeider klageskriv til leverandøren din",
       "human_helps": "Deler forhandlingsskript som gir resultater, kobler rioters på samme leverandør, og hjelper deg med å forstå mulighetene dine for å avslutte",
       "agent_focus": "CPI+-økninger rammet 890 rioters dette kvartalet. Gjennomsnittlig økning: £4.20/måned på kontrakter som lovet «fast» prising. Bygger Ofcom-bevismappe.",
       "human_focus": "Testet 4 ulike forhandlingsmetoder med BT. Den som fungerer: be om avdelingen for oppsigelser, nevn deretter Ofcom. Suksessrate: 60 %."
     },
-    "Roaminggebyr": {
+    "Roaming Charges": {
       "agent_helps": "Sjekker roamingpolicyen din, beregner hva du faktisk betaler i utlandet, og hjelper deg med å kreve tilbake uventede gebyr",
       "human_helps": "Deler hvilke leverandører som fortsatt tilbyr gratis roaming, og hjelper rioters med å unngå bilsjokk før de reiser",
       "agent_focus": "Roaminggebyrer etter Brexit varierer enormt — fra £0 til £6/dag avhengig av leverandør og plan. Bygde et sammenligningsverktøy for rioters.",
       "human_focus": "Opprettet en sjekkliste før reise slik at rioters vet nøyaktig hva telefonen vil koste før de drar. Sparede 3 rioters fra £200+-regninger forrige måned."
     },
-    "Energiregningskostnader": {
+    "Energy Bill Costs": {
       "agent_helps": "Analyserer tariffen din, finner ut om du overbetaler, sammenligner tilbud på tvers av leverandører, og hjelper deg med å bytte",
       "human_helps": "Deler hvilke byttestrategier som sparer mest, kobler rioters som har vellykket utfordret regninger, og hjelper med søknader om vanskeligheter",
       "agent_focus": "Analyserer tariffdata på tvers av 5 leverandører. Rioters på standard variable tariffer betaler gjennomsnitt £340/år mer enn de på fast avtale.",
       "human_focus": "Hjelper 40 rioters med å søke om Warm Home Discount og vanskelighetsfondet. 28 godkjent så langt — £4,200 sparti mellom dem."
     },
-    "Unøyaktige energiregninger": {
+    "Inaccurate Energy Bills": {
       "agent_helps": "Krysssjekker tellinglesningene dine mot regninger, identifiserer overbetalingsmønstre, og utarbeider tvisteskriv med bevis",
       "human_helps": "Deler hvordan man leser telleren riktig, hva man skal si til leverandøren, og når man skal eskalere til Energy Ombudsman",
       "agent_focus": "Fant systematiske estimerte billingsfeil hos British Gas — rioters overbetaler gjennomsnitt £28/måned. Bygger en Ofgem-innlevering.",
       "human_focus": "Kjører arbeidsverksteder for tellerleseneing over WhatsApp — lærer rioters hvordan de skal sende inn lesninger og oppdage når estimater er feil."
     },
-    "Straumavbrudd": {
+    "Power Cuts": {
       "agent_helps": "Logger straumsvikt-rapporter, sjekker om du har rett til kompensasjon (£75 for 12+ timer), og sporer mønstre etter distribusjonsnett",
       "human_helps": "Kobler rioters i berørte områder, deler hvordan man krever kompensasjon, og hjelper til å koordinere svar på gjentatte utfall",
       "agent_focus": "Sporer hyppigheten av straumavbrudd etter region. South West har 3x flere utfall per kunde enn London. Samler for Ofgem-pålidelighetsvurdering.",
       "human_focus": "Hjelper 3 landsbysamfunn med å dokumentere gjentatte avbrudd for Distribution Network Operator. To har allerede mottatt kompensasjon."
     },
-    "Smartmålerproblemer": {
+    "Smart Meter Problems": {
       "agent_helps": "Diagnostiserer vanlige smartmålerfeil, sjekker om måleren din mistet SMETS1-funksjonalitet etter bytte, og sender inn klager",
       "human_helps": "Deler workarounds for ødelagte displaypaneler i hjemmet, kobler rioters med samme målerproblemer, og hjelper til å eskalere til Ofgem",
       "agent_focus": "1 400 rioters rapporterer smartmålere som sluttet å fungere etter leverandørbytte. 80 % er SMETS1-modeller. Bygger bevis for Ofgem for å tvinge oppgraderinger.",
       "human_focus": "Hjelper rioters med å be om manuelle lesninger mens smartmåleren deres er ødelagt — slik at de ikke får estimerte regninger på toppen av en feil måler."
     },
-    "Vannregningsøkninger": {
+    "Water Bill Increases": {
       "agent_helps": "Analyserer regningen din mot Ofwat-prisfastsettelser, sjekker om du ville spare på en vannmåler, og utarbeider klageskriv",
       "human_helps": "Deler tips om å redusere vannforbruk, kobler rioters på samme vannselskap, og hjelper med WaterSure-søknader for kvalifiserte husstander",
       "agent_focus": "Vannregningsøkninger 2025-26 gjennomsnittlig 21 % på tvers av England. Sammenligner faktiske økninger mot det Ofwat godkjente — flere selskaper overskrider grenser.",
       "human_focus": "Hjelper 60 rioters med å søke om WaterSure (fastprisregninger for husstander med lav inntekt eller medisinsk behov). 44 godkjent — gjennomsnittlig sparing £180/år."
     },
-    "Avløpsvann i elver": {
-      "agent_helps": "Overvåker utslippsvarsler, kryssreferanser selskapets data med rioter-rapporter, og samler bevis for EA-håndhevelse",
-      "human_helps": "Kobler rioters nær samme vannveier, organiserer strand- og elvtestdager, og hjelper med å sende bevis til Environment Agency",
-      "agent_focus": "Kryssreferanserer Thames Waters selvrapporterte utslippsdata med 200 rioter-rapporter. Tre uttak ser ut til å underrapportere med 60 %+.",
-      "human_focus": "Organiserte testing ved 12 strender denne måneden. Resultater delt med Surfers Against Sewage og lokale medier. To strandadvarsler utstedt tidlig på grunn av dataene våre."
-    },
-    "Banksukkessteder": {
+    "Bank Branch Closures": {
       "agent_helps": "Sporer planlagte stenging, analyserer virkningsmålinger, og hjelper deg med å svare på høringer med bevis",
       "human_helps": "Kobler sammen berørte lokalsamfunn, deler vellykkede metoder som reverserte stenging, og hjelper til å organisere gruppesvar",
       "agent_focus": "12 HSBC-stenging annonsert dette kvartalet. Analyserer virkningsmålingene deres — 3 oppfyller ikke FCA-kravene. Bygger utfordringer.",
       "human_focus": "Hjelp Barclays med å reversere en stenging i Shrewsbury etter at 1 200 rioters møtte opp til høringen. Deler den spilleplanen med andre lokalsamfunn."
     },
-    "Skjulte bankgebyr": {
+    "Hidden Bank Charges": {
       "agent_helps": "Gjennomgår uttalelsene dine for uventede gebyr, beregner samlede gebyrer over tid, og utarbeider refusjonsforespørsler",
       "human_helps": "Deler hvilke gebyr som oftest refunderes, kobler rioters på samme bank, og hjelper til å eskalere til FOS",
       "agent_focus": "Analyserte 500 rioter-uttalelser. Gjennomsnittlige skjulte gebyr: £127/år. Mest vanlig: daglige gebyr for avtalt kassekreditt og utenlandske transaksjonsmarkuppriser.",
       "human_focus": "Kjører en «statement audit»-utfordring — rioters sjekker 3 måneder med uttalelser og flagg noe uventet. 89 rioters fant gebyr de ikke visste om."
     },
-    "Svindel- og svindeltap": {
+    "Fraud and Scam Losses": {
       "agent_helps": "Vurderer saken din mot CRM-koden, utarbeider klager til banken, og hjelper til å eskalere til FOS dersom de nektbar refusjon",
       "human_helps": "Deler hvilken strategi som fungerer med hver bank, kobler rioters i tilsvarende situasjoner, og gir emosjonell støtte — denne er vanskelig",
       "agent_focus": "65 % av APP-svindelofre blir innledningsvis nektet refusjon. Etter maler for klager, blir 48 % reversert ved anke. Bygger FCA-bevis.",
       "human_focus": "Kjører peerstøtte for svindelofre. Det handler ikke bare om pengene — skammen og angsten er reell. 30 rioters hjelper hverandre gjennom det."
     },
-    "Boliglånsrentesjokk": {
+    "Mortgage Rate Shock": {
       "agent_helps": "Beregner den nye betalingen, sammenligner gjennomfinansieringsalternativer, og hjelper deg med å forstå tidslinjen for bytte",
       "human_helps": "Deler tips fra rioters som har navigert byttet, kobler mennesker i tilsvarende situasjoner, og hjelper til å redusere panikken",
       "agent_focus": "Gjennomsnittlig betalingsøkning for rioters som kommer av 2-årige avtaler: £287/måned. Sammenligner omfinansieringsalternativer på tvers av 12 långivere for å finne de beste tilbudene.",
       "human_focus": "Kjører et «omfinansieringskamerat»-system — kobler rioters som nettopp har byttet med de som er i ferd med det, slik at de kan dele hva som fungerte."
     },
-    "Gebyrer for utenlandsoversendelser": {
+    "Overseas Transfer Fees": {
       "agent_helps": "Sammenligner overføringsgebyrer på tvers av banker og tjenester, beregner hva du faktisk betaler i skjulte FX-markuppriser, og foreslår alternativer",
       "human_helps": "Deler hvilke tjenester som faktisk gir de beste prisene, kobler rioters som sender penger til samme land, og hjelper med planlegging av masseoverføringer",
       "agent_focus": "Høystrøkbankene tar gjennomsnitt 3,5 % FX-markup på overføringer vs 0,4 % på spesialistjenester. Det er £310/år på en £750/måned-overføring.",
       "human_focus": "Bygde et sammenligningsark med reelle kostnader for de 10 øverste overføringskorriderene. Oppdatert månedlig av rioters som faktisk bruker tjenestene."
     },
-    "Forsikringskravavslag": {
+    "Insurance Claim Rejections": {
       "agent_helps": "Vurderer policyformuleringen din mot avslårsaken, identifiserer om assurandøren er urimelig, og utarbeider ankeskriv",
       "human_helps": "Deler vanlige avslag-smutthull, kobler rioters som har vellykket anket med samme assurandør, og hjelper til å eskalere til FOS",
       "agent_focus": "Analyserer avslagsmønstre hos Aviva, Admiral og Direct Line. «Slitasje» siteres i 40 % av avslag på huseiendelsystemforsikring — ofte feilaktig.",
       "human_focus": "Kobler rioters som har fått samme kravtype avslått. Når 5 mennesker har samme historie, er det et mønstre, ikke en engangsforeteelse."
     },
-    "Ventetider på NHS": {
+    "NHS Waiting Times": {
       "agent_helps": "Sjekker nåværende ventetider for prosedyren din, finner hvilke sykehus som har kortere lister, og hjelper deg med å forstå mulighetene dine",
       "human_helps": "Deler tips for å navigere systemet, kobler rioters som venter på samme prosedyre, og hjelper deg med å stille de riktige spørsmålene",
       "agent_focus": "Gjennomsnittlig ventetid for de 10 beste prosedyrene rioters trenger. Hofteleddersettelse: 47 uker. Starmoverking: 32 uker. Kartlegger hvilket sykehus som er raskest.",
       "human_focus": "Hjelper rioters forstå at de kan velge hvilket sykehus de skal henvises til. 12 rioters byttet til kortere lister denne måneden."
     },
-    "Legetimeadgang": {
+    "GP Appointment Access": {
       "agent_helps": "Logger tilgangsproblemer, samler data om ventetider for samtaler og bookingtilgjengelighet, og hjelper deg til å eskalere til ICB",
       "human_helps": "Deler hvilke bookingmetoder som fungerer (online ved midnatt, walk-in, etc.), og hjelper rioters med å skrive til praksisleder",
       "agent_focus": "Gjennomsnittlig rioter-ventetid for å se lege: 18 dager. 40 % klarer ikke komme gjennom i telefonen før linjene stenger. Bygger en rapport for lokale ICB.",
       "human_focus": "Kjører en «hva som faktisk fungerer»-tråd — rioters deler virkelige tips for å få avtaler ved den spesifikke praksisen deres."
     },
-    "Tannlegetilgjengelighet": {
+    "Dentist Availability": {
       "agent_helps": "Søker etter NHS-tannleger som aksepterer pasienter i ditt område, sporer tilgjengelighet, og hjelper deg med å registrere klager om tilgang",
       "human_helps": "Deler workarounds (tannlegerskoler, fellesskap-klinikker, nødsituasjonsplass), og kobler rioters på samme område for å dele etterretning",
       "agent_focus": "Bare 3 av 10 NHS-tannlegepraksiser aksepterer nye voksne pasienter nasjonalt. Bygde en live-tracker for rioter-områder — oppdatert ukentlig.",
       "human_focus": "Hjelper rioters finne alternativer når svaret er «ingen NHS-tannleger.» Tannlegerskoler, fellesskap-klinikker og nødsituasjonstannlegeservice."
     },
-    "Ventetider på psykisk helsestøtte": {
+    "Mental Health Service Waits": {
       "agent_helps": "Sjekker IAPT/samtaleterapi-ventetider i området ditt, finner hva som er tilgjengelig, og hjelper deg med å forstå henvisningsprosessen",
       "human_helps": "Deler hvilken støtte som er tilgjengelig mens du venter, kobler rioters til peerstøtte, og hjelper til å navigere systemet",
       "agent_focus": "Gjennomsnittlig IAPT-ventetid: 18 uker. Men det varierer enormt — noen områder er 6 uker, andre 40+. Kartlegger postnummerlotteriet.",
       "human_focus": "Bygger en «mens du venter»-ressurs — gratis apper, hjelpelinje, peergrupper og selvhenvisningsalternativer som rioters kan få tilgang til nå."
     },
-    "Reseptskostnader": {
+    "Prescription Costs": {
       "agent_helps": "Sjekker om du kvalifiserer for gratis resepter, beregner om et PPC ville spare deg penger, og sporer kostnadsendringer",
       "human_helps": "Deler tips om å spare (PPCs, pharmacy first, generiske alternativer), og kobler rioters som føler systemet er urettferdig",
       "agent_focus": "Hvis du trenger 12+ varer/år, sparer PPC penger. Men 40 % av rioters som ville dra nytte av det har ikke en. Kjører et kalkulatorverktøy.",
       "human_focus": "Hjelper rioters sjekke om de kvalifiserer for unntak — mange innser ikke at de er kvalifisert. 23 rioters fikk gratis resepter de ikke visste om."
     },
-    "Sykehusorkeringskostnader": {
+    "Hospital Parking Charges": {
       "agent_helps": "Sjekker parkeringspolicyen på sykehuset ditt, identifiserer om du kvalifiserer for gratis eller redusert parkering, og hjelper med å anke urettferdige kostnader",
       "human_helps": "Deler hvilke sykehus som har gratis parkeringavtaler, kobler rioters på samme sykehus, og hjelper med anker",
       "agent_focus": "67 % av engelske sykehustrust belaster fremdeles parkering. Kartlegger hvilke truster som tilbyr unntak for regelmessige besøkende og langsiktige pasienter.",
       "human_focus": "Hjelper rioters på hyppige-besøk-sykehus (kjemoterapi, dialyse, rehabilitering) med å søke om parkeringsunntak. 15 godkjent denne måneden."
     },
-    "Leieøkninger": {
+    "Rent Increases": {
       "agent_helps": "Sjekker om økningen din er lovlig, sammenligner den med lokale markedsrater, og hjelper deg med å utfordre den via riktige kanaler",
       "human_helps": "Deler forhandlingstips, kobler leietakere på samme område, og hjelper deg forstå mulighetene dine under Renters Reform Act",
       "agent_focus": "Gjennomsnittlig leieøkning rapportert av rioters: 11,2 % vs inflasjon på 3,4 %. Kartlegger økninger etter region for å finne de verste områdene.",
       "human_focus": "Hjelper rioters forstå hva Renters Reform Act faktisk endrer for dem. Kjører Q&A-sesjoner over WhatsApp."
     },
-    "Støyende naboer": {
+    "Noisy Neighbours": {
       "agent_helps": "Hjelper deg med å logge støyinsidenrer på riktig måte, utarbeider klageskriv til kommunen eller boligassosiasjonen, og sporer responsstider",
       "human_helps": "Deler hva som faktisk fungerer (og hva som ikke gjør det), kobler rioters med tilsvarende problemer, og hjelper til å navigere mekling-alternativer",
       "agent_focus": "Gjennomsnittlig kommunal responsetid til støyklagal: 23 dager. Men undersøkelser av lovpålagt ulempe tar 6+ måneder. Bygger en mal for raskere respons.",
       "human_focus": "Hjelper rioters dokumentere støy riktig — tidsstemplede logger, desibel-lesninger, videobeviser. Jo bedre beviser, jo raskere respons."
     },
-    "Fukt og mugg i boliger": {
+    "Damp and Mould in Housing": {
       "agent_helps": "Hjelper deg dokumentere fukt med bilder og fuktighetsmålinger, utarbeider formelle klager med Awaab's Law, og sporer utleiers respons",
       "human_helps": "Deler hvilke bevis som får utleiere til å handle, kobler rioters med boligorganisasjoner, og hjelper til å eskalere til boligombudsman",
       "agent_focus": "Siden Awaab's Law må utleiere svare på fukt innen 14 dager. Sporer samsvar — 60 % av rioters' utleiere bryter dette.",
       "human_focus": "Bygde en mål for bevissamlinger som har blitt brukt av 47 rioters. 38 fikk reparasjoner startet innen en måned."
     },
-    "Krympinflasjon": {
+    "Shrinkflation": {
       "agent_helps": "Sporer produktstørrelsesendringer, beregner reelle prisstyringsøkinger per enhet, og identifiserer de verste gjerningspersonene",
       "human_helps": "Deler oppdagede eksempler, hjelper rioters finne alternativer med bedre verdi, og koordinerer sosiale media-opprop",
       "agent_focus": "Sporet 120 produkter som krympet de siste 6 månedene. Gjennomsnittlig størrelsereduksjon: 12 %. Gjennomsnittlig prisstig samtidig: 8 %. Dobbel slag.",
       "human_focus": "Kjører en «krympiflasjonsfinnere»-gruppe — rioters fotograferer før/etter-emballasje. De beste deles på sosiale medier. Selskaper hater det."
     },
-    "Refusjonsvanskelighetene": {
+    "Refund Difficulties": {
       "agent_helps": "Sjekker forbrukerbeskyttelsesbegrepssamlingers dine, utarbeider refusjonsforespørsler, og hjelper til å eskalere til Trading Standards eller kortiutstykkeren din",
       "human_helps": "Deler hvilke forhandlere som er lettest og hardest å få refusjoner fra, og hjelper med tilbakebetaling og Section 75-krav",
       "agent_focus": "Gjennomsnittlig tid for å løse en refusjonsklage: 21 dager. Men Section 75-krav gjennom kredittkort tar bare gjennomsnitt 8 dager.",
       "human_focus": "Lærer rioters om Section 75 — hvis du betalte med kredittkort, har du mye sterkere beskyttelse. De fleste mennesker vet ikke dette."
     },
-    "Falske anmeldelser": {
+    "Fake Reviews": {
       "agent_helps": "Analyserer anmeldelsesmønstre, identifiserer sannsynlige falske, og hjelper deg med å rapportere dem til plattformer og Trading Standards",
       "human_helps": "Deler tips for å oppdage falske anmeldelser, anbefaler pålitelige anmeldelseskilder, og hjelper rioters med å rapportere problemseljere",
       "agent_focus": "Testet 500 Amazon-produkter — 34 % hadde påviselige mønster for falske anmeldelser. Bygger et nettleserverktøy for å flagge mistenkte oppføringer.",
       "human_focus": "Kjører en «pålitelig rioter-anmeldelser»-tråd hvor virkelige mennesker deler ærlige meninger. Ingen insentiver, ingen falske."
     },
-    "Matmaterialkvalitetsnedgang": {
+    "Food Quality Decline": {
       "agent_helps": "Sporer ingrediensendringer, sammenligner ernæringsetiketter over tid, og samler bevis for rekomposisjon av oppskrifter",
       "human_helps": "Deler smakstestsammenligninger, kobler rioters som har merket de samme endringene, og hjelper til å koordinere tilbakemeldinger til produsenter",
       "agent_focus": "Sammenligner ingredienslister på 50 populære kjøpeklar-måltider fra 2023 vs 2026. 60 % har redusert kjøtt eller byttet til billigere oljer.",
       "human_focus": "Kjører blindsmak-tester og deler resultater. Når 200 rioters sier noe smaker dårligere, er det data som en produsent ikke kan ignorere."
     },
-    "Selvutsjekking-frustrasjon": {
+    "Self-Checkout Frustration": {
       "agent_helps": "Sporer hvilke supermarkeder som fjerner personaliserte kasser, samler kundietilbakemeldinger, og hjelper med å sende inn formelle klager",
       "human_helps": "Deler hvilke butikker som fortsatt har personaliserte kasseapparater, kobler rioters som foretrekker menneskelig service, og koordinerer tilbakemeldinger til butikker",
       "agent_focus": "Kartla personalisert kasse-tilgjengelighet på 200 supermarkedlokasjoner. 40 % har redusert til 2 eller færre personaliserte kasser i toppetimer.",
       "human_focus": "Kjører et «personaliserte kasser betyr»-innsats — hjelper rioters gi tilbakemeldinger direkte til butikklederen lokal. 8 butikker har lagt kasser tilbake."
     },
-    "Abonnementstillukkinger": {
+    "Subscription Traps": {
       "agent_helps": "Identifiserer hvis gratis prøveperiode har automiering skjult i T&Cs, hjelper deg kansellere før gebyrer starter, og utarbeider refusjonsforespørsler",
       "human_helps": "Deler hvilke gratis prøveperioder som er ekte vs tillukkinger, hjelper rioters få refusjoner for uventede kostnader, og flagg de verste overtredelene",
       "agent_focus": "67 % av «gratis prøveperiode»-påmeldinger i dataene våre fornyer seg automatisk uten en klar påminnelse-e-post. Bygger en rapport for Trading Standards.",
       "human_focus": "Opprettet en «gratis prøveperiode-kalender» — rioters logger når prøveperiodene deres slutter slik at de får påminnelse om å kansellere. Ingen flere overraskelseskostnader."
     },
-    "Leveringsproblemer": {
+    "Delivery Problems": {
       "agent_helps": "Sporer leveringen din, hjelper deg med å sende inn klager, identifiserer mønstre etter kurerer, og utarbeider refusjonskrav",
       "human_helps": "Deler hvilke kuriere man skal unngå, hva man skal si for å få refusjoner raskere, og kobler rioters på samme område med samme kurir",
       "agent_focus": "Evri har 23 % klageantall blant rioters — 3x høyere enn DPD. Bygger en leverings-ligatabell med virkelige data.",
       "human_focus": "Opprettet et «hva man skal si»-skript for hver store kurirs klagelinjer. Rioters rapporterer 40 % raskere løsning ved bruk av skriptene."
     },
-    "Pottehal-skade": {
+    "Pothole Damage": {
       "agent_helps": "Logger potthullet ditt med plassering og bilder, sporer kommunal responsetid, og hjelper deg med å kreve betaling for kjøretøyskaden",
       "human_helps": "Deler hvilke kommuner som faktisk fikser ting og hvordan, kobler rioters på samme område, og hjelper til å koordinere grupperapporter",
       "agent_focus": "Gjennomsnittlig kommunal responsetid på pottehal-rapporter: 34 dager. Men 20 % blir aldri fikset. Bygde en sporpanel etter kommuneområde.",
       "human_focus": "Organiserte en «pottehal-safari» i dalene — 30 rioters kartla hvert eneste pottehal på daglige rutene sine på en helg. Kommune kunne ikke ignorere 847 rapporter."
     },
-    "Kommuneskattprisøkninger": {
+    "Council Tax Rises": {
       "agent_helps": "Sjekker kommuneskattebadet ditt, sammenligner det med tilsvarende eiendommer, og hjelper deg om båndet ditt er feil",
       "human_helps": "Deler hvilke kommuner som har best og verst tjenester for pengene, og hjelper rioters svare på budsjett-konsultasjoner",
       "agent_focus": "1 av 7 eiendommer kan være i feil kommuneskattebånd. Bygde et sammenligningsverktøy — 23 rioters har vellykket utfordret og fikk rabatter.",
       "human_focus": "Hjelper rioters forstå hvor kommuneskatten deres faktisk går. Når du vet tallene, skriver budsjett-konsultasjonsvaret seg selv."
     },
-    "Søppelsamlingsendringer": {
+    "Rubbish Collection Changes": {
       "agent_helps": "Sporer endringer i samlingskjema, logger missede samlinger, og hjelper deg sende inn klager med bevis",
       "human_helps": "Deler tips om å håndtere 14-dagers samling, kobler rioters på områder med verste service, og hjelper til å eskalere vedvarende problemer",
       "agent_focus": "Missede samlingsrapporter fra 200 rioters kartlagt etter område. Tre ward står for 60 % av alle klager. Bygger sak for granskningen av komiteen.",
       "human_focus": "Hjelper rioters på områder som bytter til 14-dagers samling, forberede seg. Opprettet en avfallsreduksjonsveiledning som faktisk fungerer for familier."
     },
-    "Planleggingstillatelse-abuse": {
+    "Planning Permission Abuse": {
       "agent_helps": "Sporer planleggingssøknader i området ditt, hjelper deg forstå prosessen, og utarbeider innvendelsesbrev med riktige begrunnelser",
       "human_helps": "Kobler berørte naboer, deler vellykkede innvendelses-strategier, og hjelper rioters møte og snakke på planleggingsmøter",
       "agent_focus": "Overvåker 340 aktive planleggingssøknader flagget av rioters. Opprettet maler for innvendelsesbrev som dekker de 8 mest vanlige gyldige begrunnelsene.",
       "human_focus": "Hjalp beboere i 4 områder koordinere planleggingsinnvendelser. To søknader ble nektet etter 50+ innvendelser hver."
     },
-    "Hundemøkk": {
+    "Dog Fouling": {
       "agent_helps": "Logger hotspot-lokasjoner, sporer kommunal håndhevelsesrespons, og hjelper deg rapportere vedvarende overtredere",
       "human_helps": "Kobler sammen bekymrede beboere, deler hva som har fungert på andre områder (gratis poseapper, skilting), og hjelper til å koordinere rensing",
       "agent_focus": "Kartla 89 hundemøkk-hotspots fra rioter-rapporter. Kryssreferanser med kommunale skappeplassering — 60 % av hotspots har ingen skapper innen 100m.",
       "human_focus": "Organiserte 3 fellesskap-rensedager. Enda viktigere, fikk kommunen til å installere 8 nye hundemøkkskapper på de verste hotspottene."
     },
-    "Kundeservice-ventetider": {
+    "Customer Service Hold Times": {
       "agent_helps": "Logger ventetiden din, sporer gjennomsnittlige selskapsresponser, og hjelper deg finne raskere måter å komme gjennom (e-post, chat, sosiale medier)",
       "human_helps": "Deler beste tider å ringe hvert selskap, hvilke kanaler som gir raskest respons, og kobler rioters som har med samme selskap",
       "agent_focus": "Gjennomsnittlig ventetid rapportert av rioters: 43 minutter. Men det varierer enormt — BT: 67 minutter, Octopus Energy: 4 minutter. Bygger en ligatabell.",
       "human_focus": "Opprettet «beste tid å ringe»-veiledninger for de 20 mest klaget-på selskapene. Rioters bidrar virkelig data. Tirsdag 10:00 ser ut til å være det gylne øyeblikket."
     },
-    "Vanskelighet med å kansellere abonnement": {
+    "Difficulty Cancelling Subscriptions": {
       "agent_helps": "Utarbeider kanselleringsforespørsler, identifiserer hvilke kanaler som faktisk fungerer for hvert selskap, og hjelper deg unngå oppbevarings-triks",
       "human_helps": "Deler steg-for-steg kanselleringsveiledninger for spesifikke selskaper, og hjelper rioters som fortsetter å få rundt",
       "agent_focus": "Kartla kanselleringsprosessen for 30 selskaper. Gjennomsnittssteg for å kansellere: 4,2. Verste gjerningsperson: 9 trinn inkl. en «lojalitetskall.»",
       "human_focus": "Bygde et «kanselleringsskript»-bibliotek — nøyaktige ord å si til hvert selskapets oppbevarings-team. Oppdatert ukentlig av rioters som nettopp gjorde det."
     },
-    "Barnepasse-kostnad": {
+    "Cost of Childcare": {
       "agent_helps": "Hjelper deg forstå berettigelsene dine (15/30 gratis timer, Tax-Free Childcare), beregner hva du skal betale, og sjekker leverandør-kostnader",
       "human_helps": "Kobler foreldre på samme område, deler tips om å få gratis timer, og hjelper til å navigere søknadsprosessen",
       "agent_focus": "Gjennomsnittlig rioter bruker £1 100/måned på barnepasse. Men 30 % krever ikke alle gratis timer de har rett til. Kjører en ytelseskontroll.",
       "human_focus": "Hjelper foreldre navigere 30 gratis timer-søknaden — det er forvirrende og kodene utløper. 40 rioters fikk timene sine på plass denne måneden."
     },
-    "Studentlånrefusjon": {
+    "Student Loan Repayment": {
       "agent_helps": "Beregner det reelle refusjonsbeløpet ditt, anslår når (hvis noen gang) du skal betale det av, og hjelper deg forstå terskelandringer",
       "human_helps": "Deler strategier for å håndtere refusjoner, kobler kandidater med tilsvarende saldi, og hjelper med overbetaling-refusjonskrav",
       "agent_focus": "For Plan 2-låntakere, gjennomsnittlig anslått refusjon: 38 år før avskriving. 83 % vil aldri fullt betale. Bygde en kalkulator slik rioters kan se sine egne tall.",
       "human_focus": "Hjelper rioters som har utilsiktet betalt for mye (tjent under terskel men fortsatt belastet) kreve refusjoner. 12 refusjoner behandlet — gjennomsnitt £340 hver."
     },
-    "AI erstatter jobber": {
-      "agent_helps": "Sporer hvilke sektorer som er mest berørt, kartlegger omskolerings-alternativer, og hjelper deg forstå hvilke beskyttelser som finnes",
-      "human_helps": "Kobler mennesker i berørte industrier, deler omskoleressurser, og hjelper til å koordinere svar på arbeidsplasse-AI-endringer",
-      "agent_focus": "Samlet data fra 300 rioters om AI-endringer på arbeidsplassen. 40 % sier at oppgaver har blitt automatisert uten samråd. Bygger en rapport.",
-      "human_focus": "Kjører peerstøtte for rioters hvis roller endres. Deler omskoleressurser og kobler mennesker i samme industri."
+    "AI Replacing Jobs": {
+      "agent_helps": "Overvåker utslippsvarsler, kryssreferanser selskapets data med rioter-rapporter, og samler bevis for EA-håndhevelse",
+      "human_helps": "Kobler rioters nær samme vannveier, organiserer strand- og elvtestdager, og hjelper med å sende bevis til Environment Agency",
+      "agent_focus": "Kryssreferanserer Thames Waters selvrapporterte utslippsdata med 200 rioter-rapporter. Tre uttak ser ut til å underrapportere med 60 %+.",
+      "human_focus": "Organiserte testing ved 12 strender denne måneden. Resultater delt med Surfers Against Sewage og lokale medier. To strandadvarsler utstedt tidlig på grunn av dataene våre."
     }
   }
 }
