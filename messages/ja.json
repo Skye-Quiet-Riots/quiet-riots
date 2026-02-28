@@ -682,9 +682,6 @@
     "statusRejected": "却下",
     "statusMerged": "統合済み",
     "generatingTranslations": "翻訳を生成中...",
-    "translationFailed": "翻訳の生成に失敗しました。",
-    "retryTranslations": "再試行",
-    "translationsPending": "翻訳待ち",
     "submittedIn": "{language}で送信",
     "originalSubmission": "元の送信内容",
     "viewSubmitter": "送信者を表示",
@@ -701,7 +698,9 @@
     "regenerateFlagged": "フラグ付きを再生成（{count}）",
     "regenerating": "再生成中...",
     "approveAndGoLive": "翻訳を承認して公開",
-    "noTranslationsYet": "まだ翻訳が生成されていません"
+    "noTranslationsYet": "まだ翻訳が生成されていません",
+    "translationsBeingGenerated": "翻訳は自動的に生成されています — 約30秒後にページを更新してください。",
+    "generateTranslations": "今すぐ生成"
   },
   "Inbox": {
     "title": "受信トレイ",

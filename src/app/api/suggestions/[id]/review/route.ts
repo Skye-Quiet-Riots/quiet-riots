@@ -1,4 +1,4 @@
-import { NextRequest } from 'next/server';
+import { after, NextRequest } from 'next/server';
 import { z } from 'zod';
 import {
   getSuggestionById,
@@ -14,6 +14,7 @@ import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError, apiValidationError } from '@/lib/api-response';
 import { getBotMessage } from '@/app/api/bot/bot-messages';
+import { triggerAutoTranslation } from '@/lib/queries/generate-translations';
 import type { Category, RejectionReason } from '@/types';
 
 const reviewSchema = z.object({
@@ -74,6 +75,16 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         entityId: id,
         whatsAppSummary,
       }).catch(() => {});
+
+      // Auto-generate translations after response (via after())
+      const entityType = suggestion.suggested_type === 'issue' ? 'issue' : 'organisation';
+      const entityId = (result?.issue_id || result?.organisation_id) as string | undefined;
+      if (entityId) {
+        const fields: Record<string, string> = { name: suggestion.suggested_name };
+        if (suggestion.description) fields.description = suggestion.description;
+        after(() => triggerAutoTranslation(id, entityType, entityId, fields).catch(() => {}));
+      }
+
       return apiOk({ suggestion: result, decision: 'approved' });
     }
     case 'reject': {
