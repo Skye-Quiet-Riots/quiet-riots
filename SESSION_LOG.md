@@ -6,21 +6,22 @@
 
 ## Latest Session
 
-**Session 64** (2026-02-28) — Localise Suggestion Notifications + Translation Locale Guard
-→ [`session-logs/2026-02-session-64.md`](session-logs/2026-02-session-64.md)
+**Session 65** (2026-02-28) — Website Redesign Mockup + Translation UX Plan
+→ [`session-logs/2026-02-session-65.md`](session-logs/2026-02-session-65.md)
 
 ## Current Priorities
 
-- **Verify localised notifications live** — approve a suggestion from a non-English user, verify WhatsApp arrives in their language
-- **Click Retry on "Corruption & Extortion"** — translation generation should now work (ANTHROPIC_API_KEY deployed)
-- **Localise inbox subject/body** — currently still English (separate concern)
-- **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md` when user is ready
-- **Google/Facebook OAuth setup** — still pending from session 47
+1. **Implement translation UX fix** — plan in PLAN.md on `claude/busy-hoover`. Branch `claude/fix-suggestion-translation-ux` ready (empty). Step 1 (after() in review route) already done. Need: error logging, success/error feedback on button, accessibility, i18n.
+2. **Website redesign phases** — plan at `.claude/plans/distributed-sauteeing-penguin.md`. PR order: 0→1→2→6→3→4→7→5→8→9.
+3. **Deploy a Chicken** — plan in git history of `claude/busy-hoover` (commits b8ece28, b9ca7f3). Build as separate PR.
+4. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+5. **Google/Facebook OAuth setup** — still pending from session 47
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 65  | 2026-02-28    | Website redesign mockup + translation UX plan         | [`session-65`](session-logs/2026-02-session-65.md)                                                             |
 | 64  | 2026-02-28    | Localise suggestion notifications + locale guard      | [`session-64`](session-logs/2026-02-session-64.md)                                                             |
 | 63  | 2026-02-28    | Auto-translate issues on approval via after()         | [`session-63`](session-logs/2026-02-session-63.md)                                                             |
 | 62  | 2026-02-28    | i18n translation pipeline hardening (4-phase)         | [`session-62`](session-logs/2026-02-session-62.md)                                                             |
