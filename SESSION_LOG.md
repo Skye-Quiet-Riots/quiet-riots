@@ -6,20 +6,22 @@
 
 ## Latest Session
 
-**Session 72** (2026-03-01) — Phase 8: Homepage Personal Activity Feed — FINAL PHASE (PR #189 merged). Website redesign complete!
-→ [`session-logs/2026-03-session-72.md`](session-logs/2026-03-session-72.md)
+**Session 73** (2026-03-01) — Website Redesign v2: Plan review + approval (3 rounds, 7 reviewers). Implementation pending.
+→ [`session-logs/2026-03-session-73.md`](session-logs/2026-03-session-73.md)
 
 ## Current Priorities
 
-1. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
-2. **Remaining hero image backfill** — 44 orgs + 2 issues still need hero images
-3. **Google/Facebook OAuth setup** — still pending from session 47
-4. **Password-auth test timeouts** — 3 tests timing out in CI, need investigation
+1. **Website redesign v2 implementation** — approved plan at `PLAN.md`, 3 phases (Mobile CTA, Hero, Feed Cards). Start with Phase 1.
+2. **Bug: issue detail page missing force-dynamic** — discovered in session 73, fix is Phase 1 step 1a
+3. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+4. **Remaining hero image backfill** — 44 orgs + 2 issues still need hero images
+5. **Google/Facebook OAuth setup** — still pending from session 47
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 73  | 2026-03-01    | Website Redesign v2: Plan review + approval (3 rounds) | [`session-73`](session-logs/2026-03-session-73.md)                                                            |
 | 72  | 2026-03-01    | Phase 8: Homepage Personal Feed — REDESIGN COMPLETE (PR #189) | [`session-72`](session-logs/2026-03-session-72.md)                                                       |
 | 71  | 2026-03-01    | Phase 7: Issue-Org Intersection Pages (PR #187)       | [`session-71`](session-logs/2026-03-session-71.md)                                                             |
 | 70  | 2026-03-01    | Phases 3, 6, 5 of Website Redesign (3 PRs merged)    | [`session-70`](session-logs/2026-03-session-70.md)                                                             |
