@@ -157,8 +157,22 @@ export interface FeedPost {
   issue_id: string;
   user_id: string;
   user_name?: string;
+  user_avatar?: string | null;
+  user_country_code?: string | null;
   content: string;
   likes: number;
+  photo_urls?: string;
+  comments_count?: number;
+  shares?: number;
+  created_at: string;
+}
+
+export interface FeedComment {
+  id: string;
+  feed_id: string;
+  user_id: string;
+  user_name?: string;
+  content: string;
   created_at: string;
 }
 

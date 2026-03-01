@@ -1,6 +1,6 @@
 import { getDb } from '../db';
 import { generateId } from '@/lib/uuid';
-import type { CommunityHealth, ExpertProfile, FeedPost, CountryBreakdown } from '@/types';
+import type { CommunityHealth, ExpertProfile, FeedPost, FeedComment, CountryBreakdown } from '@/types';
 
 export async function getCommunityHealth(issueId: string): Promise<CommunityHealth | null> {
   const db = getDb();
@@ -24,9 +24,10 @@ export async function getFeedPosts(issueId: string, limit: number = 20): Promise
   const db = getDb();
   const result = await db.execute({
     sql: `
-    SELECT f.*, u.name as user_name
+    SELECT f.*, COALESCE(u.display_name, u.name, 'Anonymous') as user_name,
+           u.avatar_url as user_avatar, u.country_code as user_country_code
     FROM feed f
-    JOIN users u ON f.user_id = u.id
+    LEFT JOIN users u ON f.user_id = u.id
     WHERE f.issue_id = ?
     ORDER BY f.created_at DESC
     LIMIT ?
@@ -40,19 +41,21 @@ export async function createFeedPost(
   issueId: string,
   userId: string,
   content: string,
+  photoUrls: string = '[]',
 ): Promise<FeedPost> {
   const db = getDb();
   const id = generateId();
   await db.execute({
-    sql: 'INSERT INTO feed (id, issue_id, user_id, content) VALUES (?, ?, ?, ?)',
-    args: [id, issueId, userId, content],
+    sql: 'INSERT INTO feed (id, issue_id, user_id, content, photo_urls) VALUES (?, ?, ?, ?, ?)',
+    args: [id, issueId, userId, content, photoUrls],
   });
 
   const result = await db.execute({
     sql: `
-    SELECT f.*, u.name as user_name
+    SELECT f.*, COALESCE(u.display_name, u.name, 'Anonymous') as user_name,
+           u.avatar_url as user_avatar, u.country_code as user_country_code
     FROM feed f
-    JOIN users u ON f.user_id = u.id
+    LEFT JOIN users u ON f.user_id = u.id
     WHERE f.id = ?
   `,
     args: [id],
@@ -81,6 +84,68 @@ export async function getUserTotalLikes(userId: string): Promise<number> {
     args: [userId],
   });
   return Number(result.rows[0]?.total ?? 0);
+}
+
+export async function shareFeedPost(postId: string): Promise<void> {
+  const db = getDb();
+  await db.execute({
+    sql: 'UPDATE feed SET shares = shares + 1 WHERE id = ?',
+    args: [postId],
+  });
+}
+
+export async function getFeedComments(
+  feedId: string,
+  limit: number = 20,
+): Promise<FeedComment[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `SELECT fc.*, u.name as user_name
+          FROM feed_comments fc
+          JOIN users u ON fc.user_id = u.id
+          WHERE fc.feed_id = ?
+          ORDER BY fc.created_at ASC
+          LIMIT ?`,
+    args: [feedId, limit],
+  });
+  return result.rows as unknown as FeedComment[];
+}
+
+export async function addFeedComment(
+  feedId: string,
+  userId: string,
+  content: string,
+): Promise<FeedComment> {
+  const db = getDb();
+  const id = generateId();
+
+  // Resolve user_name for the denormalized column
+  const userResult = await db.execute({
+    sql: 'SELECT COALESCE(display_name, name, ?) as resolved_name FROM users WHERE id = ?',
+    args: ['Anonymous', userId],
+  });
+  const userName = String(userResult.rows[0]?.resolved_name ?? 'Anonymous');
+
+  // Atomic: insert comment + increment counter
+  await db.batch([
+    {
+      sql: 'INSERT INTO feed_comments (id, feed_id, user_id, user_name, content) VALUES (?, ?, ?, ?, ?)',
+      args: [id, feedId, userId, userName, content],
+    },
+    {
+      sql: 'UPDATE feed SET comments_count = comments_count + 1 WHERE id = ?',
+      args: [feedId],
+    },
+  ]);
+
+  const result = await db.execute({
+    sql: `SELECT fc.*, u.name as user_name
+          FROM feed_comments fc
+          JOIN users u ON fc.user_id = u.id
+          WHERE fc.id = ?`,
+    args: [id],
+  });
+  return result.rows[0] as unknown as FeedComment;
 }
 
 export async function getCountryBreakdown(issueId: string): Promise<CountryBreakdown[]> {
@@ -152,9 +217,10 @@ export async function getFeedPostsForOrg(
   const db = getDb();
   const result = await db.execute({
     sql: `
-      SELECT f.*, u.name as user_name
+      SELECT f.*, COALESCE(u.display_name, u.name, 'Anonymous') as user_name,
+             u.avatar_url as user_avatar, u.country_code as user_country_code
       FROM feed f
-      JOIN users u ON f.user_id = u.id
+      LEFT JOIN users u ON f.user_id = u.id
       JOIN issue_organisation io ON io.issue_id = f.issue_id
       WHERE io.organisation_id = ?
       ORDER BY f.created_at DESC
