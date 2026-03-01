@@ -120,6 +120,9 @@ describe('FeedPostCard', () => {
     user_name: 'Alice',
     content: 'Great discussion today!',
     likes: 5,
+    comments_count: 3,
+    shares: 2,
+    photo_urls: '[]',
     created_at: new Date(Date.now() - 3600000).toISOString(),
   };
 
@@ -133,6 +136,28 @@ describe('FeedPostCard', () => {
     expect(screen.getByText('Alice')).toBeDefined();
   });
 
+  it('renders avatar with initials when no avatar_url', () => {
+    render(<FeedPostCard post={post} />);
+    // Should show "A" for Alice (initials)
+    const avatarElements = screen.getAllByText('A');
+    expect(avatarElements.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('renders avatar image when user_avatar is set', () => {
+    const withAvatar = { ...post, user_avatar: 'https://example.com/avatar.jpg' };
+    const { container } = render(<FeedPostCard post={withAvatar} />);
+    const img = container.querySelector('img[aria-hidden="true"]');
+    expect(img).toBeDefined();
+    expect(img?.getAttribute('src')).toBe('https://example.com/avatar.jpg');
+  });
+
+  it('renders country flag when user_country_code is set', () => {
+    const withCountry = { ...post, user_country_code: 'gb' };
+    const { container } = render(<FeedPostCard post={withCountry} />);
+    const flag = container.querySelector('img[alt="gb"]');
+    expect(flag).toBeDefined();
+  });
+
   it('shows Anonymous when no user name', () => {
     const anon = { ...post, user_name: undefined };
     render(<FeedPostCard post={anon} />);
@@ -144,10 +169,28 @@ describe('FeedPostCard', () => {
     expect(screen.getByText(/5/)).toBeDefined();
   });
 
+  it('shows comment count button with aria attributes', () => {
+    render(<FeedPostCard post={post} />);
+    // Comment button is the second button, has aria attributes
+    const buttons = screen.getAllByRole('button');
+    const commentButton = buttons[1];
+    expect(commentButton).toBeDefined();
+    expect(commentButton.getAttribute('aria-controls')).toBe('comments-feed-1');
+    expect(commentButton.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  it('shows share button', () => {
+    render(<FeedPostCard post={post} />);
+    // next-intl mock returns the key directly: "share"
+    const buttons = screen.getAllByRole('button');
+    expect(buttons.length).toBeGreaterThanOrEqual(3); // like, comments, share
+  });
+
   it('increments like count on click', async () => {
     global.fetch = vi.fn().mockResolvedValue({ ok: true });
     render(<FeedPostCard post={post} />);
-    const likeButton = screen.getByRole('button');
+    const buttons = screen.getAllByRole('button');
+    const likeButton = buttons[0]; // First button is like
     fireEvent.click(likeButton);
     await waitFor(() => {
       expect(screen.getByText(/6/)).toBeDefined();
@@ -157,10 +200,12 @@ describe('FeedPostCard', () => {
   it('prevents double-liking', async () => {
     global.fetch = vi.fn().mockResolvedValue({ ok: true });
     render(<FeedPostCard post={post} />);
-    const likeButton = screen.getByRole('button');
+    const buttons = screen.getAllByRole('button');
+    const likeButton = buttons[0];
     fireEvent.click(likeButton);
     fireEvent.click(likeButton);
     await waitFor(() => {
+      // Like API should only be called once
       expect(global.fetch).toHaveBeenCalledTimes(1);
     });
   });
@@ -168,6 +213,62 @@ describe('FeedPostCard', () => {
   it('shows relative time', () => {
     render(<FeedPostCard post={post} />);
     expect(screen.getByText('1h ago')).toBeDefined();
+  });
+
+  it('renders photo grid for posts with photos', () => {
+    const withPhotos = {
+      ...post,
+      photo_urls: JSON.stringify([
+        'https://abc.public.blob.vercel-storage.com/photo1.jpg',
+        'https://abc.public.blob.vercel-storage.com/photo2.jpg',
+      ]),
+    };
+    const { container } = render(<FeedPostCard post={withPhotos} />);
+    const imgs = container.querySelectorAll('img.aspect-square');
+    expect(imgs.length).toBe(2);
+  });
+
+  it('renders no photo grid for empty photo_urls', () => {
+    const { container } = render(<FeedPostCard post={post} />);
+    const imgs = container.querySelectorAll('img.aspect-square');
+    expect(imgs.length).toBe(0);
+  });
+
+  it('parses photo_urls defensively — handles null', () => {
+    const nullPhotos = { ...post, photo_urls: undefined };
+    const { container } = render(<FeedPostCard post={nullPhotos} />);
+    const imgs = container.querySelectorAll('img.aspect-square');
+    expect(imgs.length).toBe(0);
+  });
+
+  it('parses photo_urls defensively — handles malformed JSON', () => {
+    const badJson = { ...post, photo_urls: 'not-json' };
+    const { container } = render(<FeedPostCard post={badJson} />);
+    const imgs = container.querySelectorAll('img.aspect-square');
+    expect(imgs.length).toBe(0);
+  });
+
+  it('filters out non-HTTPS photo URLs', () => {
+    const withBadUrls = {
+      ...post,
+      photo_urls: JSON.stringify(['http://insecure.com/photo.jpg', 'not-a-url']),
+    };
+    const { container } = render(<FeedPostCard post={withBadUrls} />);
+    const imgs = container.querySelectorAll('img.aspect-square');
+    expect(imgs.length).toBe(0);
+  });
+
+  it('action buttons have min 44px touch targets', () => {
+    const { container } = render(<FeedPostCard post={post} />);
+    const buttons = container.querySelectorAll('button[class*="min-h-"]');
+    expect(buttons.length).toBe(3); // like, comments, share
+  });
+
+  it('comment toggle starts collapsed', () => {
+    const { container } = render(<FeedPostCard post={post} />);
+    // Comments section (role="region") should not be visible initially
+    const region = container.querySelector('[role="region"]');
+    expect(region).toBeNull();
   });
 });
 

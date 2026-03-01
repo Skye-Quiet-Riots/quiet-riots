@@ -130,7 +130,19 @@ export async function createTables() {
       user_id TEXT NOT NULL REFERENCES users(id),
       content TEXT NOT NULL CHECK(length(content) <= 5000),
       likes INTEGER NOT NULL DEFAULT 0 CHECK(likes >= 0),
+      photo_urls TEXT NOT NULL DEFAULT '[]',
+      comments_count INTEGER NOT NULL DEFAULT 0 CHECK(comments_count >= 0),
+      shares INTEGER NOT NULL DEFAULT 0 CHECK(shares >= 0),
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS feed_comments (
+      id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+      feed_id TEXT NOT NULL REFERENCES feed(id) ON DELETE CASCADE,
+      user_id TEXT NOT NULL REFERENCES users(id),
+      user_name TEXT NOT NULL,
+      content TEXT NOT NULL CHECK(length(content) > 0 AND length(content) <= 2000),
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
 
     CREATE TABLE IF NOT EXISTS community_health (
@@ -831,6 +843,7 @@ export async function dropTables() {
     DROP TABLE IF EXISTS country_breakdown;
     DROP TABLE IF EXISTS expert_profiles;
     DROP TABLE IF EXISTS community_health;
+    DROP TABLE IF EXISTS feed_comments;
     DROP TABLE IF EXISTS feed;
     DROP TABLE IF EXISTS actions;
     DROP TABLE IF EXISTS user_follows;

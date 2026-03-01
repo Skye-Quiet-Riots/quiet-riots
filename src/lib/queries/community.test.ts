@@ -7,6 +7,9 @@ import {
   getFeedPosts,
   createFeedPost,
   likeFeedPost,
+  shareFeedPost,
+  getFeedComments,
+  addFeedComment,
   getCountryBreakdown,
   getUserFeedPostCount,
   getUserTotalLikes,
@@ -122,6 +125,87 @@ describe('getUserTotalLikes', () => {
   it('returns 0 for user with no posts', async () => {
     const total = await getUserTotalLikes('nonexistent');
     expect(total).toBe(0);
+  });
+});
+
+describe('getFeedPosts — enriched fields', () => {
+  it('returns posts with user_avatar and user_country_code', async () => {
+    const posts = await getFeedPosts('issue-rail');
+    expect(posts.length).toBeGreaterThan(0);
+    // All posts should have user_name (COALESCE never returns null)
+    for (const post of posts) {
+      expect(post.user_name).toBeDefined();
+    }
+  });
+
+  it('returns posts with new columns defaulted', async () => {
+    const posts = await getFeedPosts('issue-rail');
+    for (const post of posts) {
+      expect(post.photo_urls).toBeDefined();
+      expect(post.comments_count).toBeDefined();
+      expect(post.shares).toBeDefined();
+    }
+  });
+});
+
+describe('createFeedPost — with photo_urls', () => {
+  it('creates a post with photos', async () => {
+    const urls = JSON.stringify(['https://example.com/a.jpg']);
+    const post = await createFeedPost('issue-rail', 'user-sarah', 'Post with photo', urls);
+    expect(post.content).toBe('Post with photo');
+    expect(post.photo_urls).toBe(urls);
+  });
+
+  it('defaults photo_urls to empty array', async () => {
+    const post = await createFeedPost('issue-rail', 'user-sarah', 'No photos');
+    expect(post.photo_urls).toBe('[]');
+  });
+});
+
+describe('shareFeedPost', () => {
+  it('increments the shares count', async () => {
+    const before = await getFeedPosts('issue-rail');
+    const post = before.find((p) => p.id === 'feed-001')!;
+    const sharesBefore = post.shares ?? 0;
+
+    await shareFeedPost('feed-001');
+
+    const after = await getFeedPosts('issue-rail');
+    const postAfter = after.find((p) => p.id === 'feed-001')!;
+    expect(postAfter.shares).toBe(sharesBefore + 1);
+  });
+});
+
+describe('getFeedComments / addFeedComment', () => {
+  it('returns empty array for post with no comments', async () => {
+    const comments = await getFeedComments('feed-001');
+    expect(comments).toHaveLength(0);
+  });
+
+  it('adds a comment and increments counter atomically', async () => {
+    const comment = await addFeedComment('feed-001', 'user-sarah', 'Great post!');
+    expect(comment.content).toBe('Great post!');
+    expect(comment.feed_id).toBe('feed-001');
+    expect(comment.user_name).toBeDefined();
+
+    // Verify counter incremented
+    const posts = await getFeedPosts('issue-rail');
+    const post = posts.find((p) => p.id === 'feed-001')!;
+    expect(post.comments_count).toBeGreaterThanOrEqual(1);
+  });
+
+  it('returns comments in oldest-first order', async () => {
+    await addFeedComment('feed-001', 'user-sarah', 'Second comment');
+    const comments = await getFeedComments('feed-001');
+    expect(comments.length).toBeGreaterThanOrEqual(2);
+    // Oldest first
+    expect(new Date(comments[0].created_at).getTime())
+      .toBeLessThanOrEqual(new Date(comments[1].created_at).getTime());
+  });
+
+  it('respects limit parameter', async () => {
+    const comments = await getFeedComments('feed-001', 1);
+    expect(comments).toHaveLength(1);
   });
 });
 

@@ -10,6 +10,8 @@ vi.mock('next/headers', () => ({
 import { cookies } from 'next/headers';
 import { GET, POST } from './[id]/feed/route';
 import { POST as likePOST } from './[id]/feed/[postId]/like/route';
+import { GET as commentsGET, POST as commentsPOST } from './[id]/feed/[postId]/comments/route';
+import { POST as sharePOST } from './[id]/feed/[postId]/share/route';
 
 beforeAll(async () => {
   await setupTestDb();
@@ -67,6 +69,36 @@ describe('POST /api/issues/[id]/feed', () => {
     expect(data.user_name).toBe('Sarah K.');
   });
 
+  it('accepts photo_urls when creating a post', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/issues/1/feed', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        content: 'Post with photos',
+        photo_urls: ['https://abc.public.blob.vercel-storage.com/photo1.jpg'],
+      }),
+    });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-rail' }) });
+    const { data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(data.content).toBe('Post with photos');
+  });
+
+  it('rejects non-Vercel-Blob photo URLs', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/issues/1/feed', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        content: 'Bad photo',
+        photo_urls: ['https://evil.com/bad.jpg'],
+      }),
+    });
+    const response = await POST(request, { params: Promise.resolve({ id: 'issue-rail' }) });
+    expect(response.status).toBe(400);
+  });
+
   it('returns 401 when not logged in', async () => {
     mockLoggedOut();
     const request = new Request('http://localhost:3000/api/issues/1/feed', {
@@ -101,5 +133,87 @@ describe('POST /api/issues/[id]/feed/[postId]/like', () => {
     const { data } = await response.json();
     expect(response.status).toBe(200);
     expect(data.liked).toBe(true);
+  });
+});
+
+describe('GET /api/issues/[id]/feed/[postId]/comments', () => {
+  it('returns comments for a post', async () => {
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/comments');
+    const response = await commentsGET(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    expect(response.status).toBe(200);
+    const body = await response.json();
+    expect(body.data).toBeDefined();
+    expect(Array.isArray(body.data)).toBe(true);
+  });
+
+  it('has cache headers', async () => {
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/comments');
+    const response = await commentsGET(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    expect(response.headers.get('cache-control')).toContain('public');
+  });
+});
+
+describe('POST /api/issues/[id]/feed/[postId]/comments', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('returns 401 without auth', async () => {
+    mockLoggedOut();
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/comments', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ content: 'Test comment' }),
+    });
+    const response = await commentsPOST(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    expect(response.status).toBe(401);
+  });
+
+  it('creates a comment when logged in', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/comments', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ content: 'Nice post!' }),
+    });
+    const response = await commentsPOST(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    const { data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(data.content).toBe('Nice post!');
+  });
+
+  it('returns 400 with empty content', async () => {
+    mockLoggedIn('user-sarah');
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/comments', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ content: '   ' }),
+    });
+    const response = await commentsPOST(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    expect(response.status).toBe(400);
+  });
+});
+
+describe('POST /api/issues/[id]/feed/[postId]/share', () => {
+  it('increments shares', async () => {
+    const request = new Request('http://localhost:3000/api/issues/1/feed/1/share', {
+      method: 'POST',
+    });
+    const response = await sharePOST(request, {
+      params: Promise.resolve({ id: 'issue-rail', postId: 'feed-001' }),
+    });
+    const { data } = await response.json();
+    expect(response.status).toBe(200);
+    expect(data.shared).toBe(true);
   });
 });

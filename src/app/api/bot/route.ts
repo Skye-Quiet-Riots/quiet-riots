@@ -17,6 +17,8 @@ import {
   getExpertProfiles,
   getFeedPosts,
   createFeedPost,
+  getFeedComments,
+  addFeedComment,
   getCountryBreakdown,
 } from '@/lib/queries/community';
 import {
@@ -187,6 +189,19 @@ const actionSchemas = {
       .string()
       .min(1)
       .max(5000)
+      .transform((s) => sanitizeText(s)),
+  }),
+  get_feed_comments: z.object({
+    feed_id: idField,
+    limit: z.number().int().min(1).max(50).optional(),
+  }),
+  add_feed_comment: z.object({
+    feed_id: idField,
+    phone: phoneField,
+    content: z
+      .string()
+      .min(1)
+      .max(2000)
       .transform((s) => sanitizeText(s)),
   }),
   get_org_pivot: z.object({
@@ -1086,6 +1101,23 @@ export async function POST(request: NextRequest) {
 
         const post = await createFeedPost(issueId, user.id, content);
         return ok({ post });
+      }
+
+      case 'get_feed_comments': {
+        const feedId = p.feed_id as string;
+        const limit = (p.limit as number) || 20;
+        const comments = await getFeedComments(feedId, limit);
+        return ok({ comments });
+      }
+
+      case 'add_feed_comment': {
+        const phone = p.phone as string;
+        const feedId = p.feed_id as string;
+        const content = p.content as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        const comment = await addFeedComment(feedId, user.id, content);
+        return ok({ comment });
       }
 
       // ─── Organisation Pivot ──────────────────────────────

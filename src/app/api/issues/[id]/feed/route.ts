@@ -5,12 +5,19 @@ import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
 import { sanitizeText } from '@/lib/sanitize';
 
+const VERCEL_BLOB_PATTERN = /^https:\/\/[a-z0-9-]+\.public\.blob\.vercel-storage\.com\//;
+
 const feedPostSchema = z.object({
   content: z
     .string()
     .min(1, 'Content required')
     .max(5000)
     .transform((s) => sanitizeText(s)),
+  photo_urls: z
+    .array(z.string().url().refine((url) => VERCEL_BLOB_PATTERN.test(url), 'Invalid photo URL'))
+    .max(4)
+    .optional()
+    .default([]),
 });
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
@@ -41,6 +48,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return apiError('Content required');
   }
 
-  const post = await createFeedPost(id, userId, parsed.data.content);
+  const photoUrls = JSON.stringify(parsed.data.photo_urls);
+  const post = await createFeedPost(id, userId, parsed.data.content, photoUrls);
   return apiOk(post);
 }
