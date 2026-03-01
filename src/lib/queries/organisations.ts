@@ -162,6 +162,50 @@ export async function getTotalRiotersForOrg(orgId: string): Promise<number> {
   return (result.rows[0]?.total as number) ?? 0;
 }
 
+// ─── Org community data (Phase 6) ─────────────────────────────
+
+import {
+  getCommunityHealthForOrg,
+  getFeedPostsForOrg,
+  getExpertsForOrg,
+  getCountryBreakdownForOrg,
+} from './community';
+import { getActionsForOrg } from './actions';
+import { getReelsForOrg } from './reels';
+import type {
+  CommunityHealth,
+  ExpertProfile,
+  FeedPost,
+  CountryBreakdown,
+  Action,
+  RiotReel,
+} from '@/types';
+
+export interface OrgCommunityData {
+  health: CommunityHealth | null;
+  feed: FeedPost[];
+  experts: ExpertProfile[];
+  countries: CountryBreakdown[];
+  actions: Action[];
+  reels: RiotReel[];
+}
+
+/**
+ * Convenience wrapper that loads all community data for an org in parallel.
+ * Never sequential — would create waterfall.
+ */
+export async function getOrgCommunityData(orgId: string): Promise<OrgCommunityData> {
+  const [health, feed, experts, countries, actions, reels] = await Promise.all([
+    getCommunityHealthForOrg(orgId),
+    getFeedPostsForOrg(orgId, 20),
+    getExpertsForOrg(orgId),
+    getCountryBreakdownForOrg(orgId),
+    getActionsForOrg(orgId, 20),
+    getReelsForOrg(orgId, 10),
+  ]);
+  return { health, feed, experts, countries, actions, reels };
+}
+
 // Create a new organisation
 export async function createOrganisation(data: {
   name: string;

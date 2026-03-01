@@ -91,3 +91,115 @@ export async function getCountryBreakdown(issueId: string): Promise<CountryBreak
   });
   return result.rows as unknown as CountryBreakdown[];
 }
+
+// ─── Org-scoped queries (Phase 6) ─────────────────────────────────
+
+/**
+ * Weighted average community health across all issues linked to an org.
+ * Returns a CommunityHealth-compatible object with all 4 metrics.
+ * Weighted by rioter_count in issue_organisation (larger issues have more influence).
+ * Falls back to simple average if all linked issues have rioter_count = 0.
+ */
+export async function getCommunityHealthForOrg(
+  orgId: string,
+): Promise<CommunityHealth | null> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT
+        CASE WHEN SUM(io.rioter_count) > 0
+          THEN CAST(SUM(ch.needs_met * io.rioter_count) AS REAL) / SUM(io.rioter_count)
+          ELSE AVG(ch.needs_met)
+        END as needs_met,
+        CASE WHEN SUM(io.rioter_count) > 0
+          THEN CAST(SUM(ch.membership * io.rioter_count) AS REAL) / SUM(io.rioter_count)
+          ELSE AVG(ch.membership)
+        END as membership,
+        CASE WHEN SUM(io.rioter_count) > 0
+          THEN CAST(SUM(ch.influence * io.rioter_count) AS REAL) / SUM(io.rioter_count)
+          ELSE AVG(ch.influence)
+        END as influence,
+        CASE WHEN SUM(io.rioter_count) > 0
+          THEN CAST(SUM(ch.connection * io.rioter_count) AS REAL) / SUM(io.rioter_count)
+          ELSE AVG(ch.connection)
+        END as connection,
+        COUNT(*) as issue_count
+      FROM issue_organisation io
+      JOIN community_health ch ON ch.issue_id = io.issue_id
+      WHERE io.organisation_id = ?
+    `,
+    args: [orgId],
+  });
+  const row = result.rows[0];
+  if (!row || Number(row.issue_count) === 0) return null;
+  return {
+    id: `org-health-${orgId}`,
+    issue_id: orgId,
+    needs_met: Math.round(Number(row.needs_met)),
+    membership: Math.round(Number(row.membership)),
+    influence: Math.round(Number(row.influence)),
+    connection: Math.round(Number(row.connection)),
+  } as CommunityHealth;
+}
+
+/**
+ * Feed posts from all issues linked to an org, ordered by recency.
+ */
+export async function getFeedPostsForOrg(
+  orgId: string,
+  limit: number = 20,
+): Promise<FeedPost[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT f.*, u.name as user_name
+      FROM feed f
+      JOIN users u ON f.user_id = u.id
+      JOIN issue_organisation io ON io.issue_id = f.issue_id
+      WHERE io.organisation_id = ?
+      ORDER BY f.created_at DESC
+      LIMIT ?
+    `,
+    args: [orgId, limit],
+  });
+  return result.rows as unknown as FeedPost[];
+}
+
+/**
+ * Expert profiles from all issues linked to an org.
+ */
+export async function getExpertsForOrg(orgId: string): Promise<ExpertProfile[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT ep.*
+      FROM expert_profiles ep
+      JOIN issue_organisation io ON io.issue_id = ep.issue_id
+      WHERE io.organisation_id = ?
+    `,
+    args: [orgId],
+  });
+  return result.rows as unknown as ExpertProfile[];
+}
+
+/**
+ * Aggregated country breakdown across all issues linked to an org.
+ * Sums rioter_count per country across all linked issues.
+ */
+export async function getCountryBreakdownForOrg(orgId: string): Promise<CountryBreakdown[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT cb.country_code, cb.country_name,
+        SUM(cb.rioter_count) as rioter_count,
+        MAX(cb.issue_id) as issue_id
+      FROM country_breakdown cb
+      JOIN issue_organisation io ON io.issue_id = cb.issue_id
+      WHERE io.organisation_id = ?
+      GROUP BY cb.country_code, cb.country_name
+      ORDER BY SUM(cb.rioter_count) DESC
+    `,
+    args: [orgId],
+  });
+  return result.rows as unknown as CountryBreakdown[];
+}

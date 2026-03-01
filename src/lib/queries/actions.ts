@@ -60,3 +60,22 @@ export async function getActionCountForIssue(issueId: string): Promise<number> {
   });
   return (result.rows[0]?.count as number) ?? 0;
 }
+
+/**
+ * Actions from all issues linked to an org, ordered by type + time.
+ */
+export async function getActionsForOrg(orgId: string, limit: number = 20): Promise<Action[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT a.*
+      FROM actions a
+      JOIN issue_organisation io ON io.issue_id = a.issue_id
+      WHERE io.organisation_id = ?
+      ORDER BY a.type, a.time_required
+      LIMIT ?
+    `,
+    args: [orgId, limit],
+  });
+  return result.rows as unknown as Action[];
+}
