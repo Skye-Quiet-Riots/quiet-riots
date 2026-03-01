@@ -132,3 +132,23 @@ export async function incrementReelViews(reelId: string): Promise<void> {
     args: [reelId],
   });
 }
+
+/**
+ * Riot reels from all issues linked to an org, ordered by upvotes.
+ */
+export async function getReelsForOrg(orgId: string, limit = 10): Promise<RiotReel[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `
+      SELECT r.*
+      FROM riot_reels r
+      JOIN issue_organisation io ON io.issue_id = r.issue_id
+      WHERE io.organisation_id = ?
+        AND r.status IN ('approved', 'featured')
+      ORDER BY r.upvotes DESC
+      LIMIT ?
+    `,
+    args: [orgId, limit],
+  });
+  return result.rows as unknown as RiotReel[];
+}

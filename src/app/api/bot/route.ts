@@ -8,6 +8,7 @@ import {
   getIssuesForOrg,
   getTotalRiotersForOrg,
   createOrganisation,
+  getOrgCommunityData,
 } from '@/lib/queries/organisations';
 import { getFilteredActions, getActionCountForIssue } from '@/lib/queries/actions';
 import {
@@ -80,6 +81,7 @@ import {
   translateSynonyms,
   translateCategoryAssistant,
   translateRiotReels,
+  translateCountryBreakdown,
 } from '@/lib/queries/translate';
 import { getUserMemories, saveMemory, deleteMemory } from '@/lib/queries/memory';
 import {
@@ -189,6 +191,10 @@ const actionSchemas = {
     org_id: idField,
     language_code: langField,
     phone: phoneField.optional(),
+  }),
+  get_org_community: z.object({
+    org_id: idField,
+    language_code: langField,
   }),
   get_orgs: z.object({
     category: z.string().max(50).optional(),
@@ -1074,15 +1080,48 @@ export async function POST(request: NextRequest) {
         const rawOrg = await getOrganisationById(orgId);
         if (!rawOrg) return err('Organisation not found', 404);
 
-        const [rawIssues, totalRioters] = await Promise.all([
+        const [rawIssues, totalRioters, communityData] = await Promise.all([
           getIssuesForOrg(rawOrg.id),
           getTotalRiotersForOrg(rawOrg.id),
+          getOrgCommunityData(rawOrg.id),
         ]);
-        const [org, issues] = await Promise.all([
+        const [org, issues, experts, countries] = await Promise.all([
           translateEntity(rawOrg, 'organisation', locale),
           translateOrgPivotRows(rawIssues, locale),
+          translateExpertProfiles(communityData.experts, locale),
+          Promise.resolve(translateCountryBreakdown(communityData.countries, locale)),
         ]);
-        return ok({ org, issues, totalRioters });
+        return ok({
+          org,
+          issues,
+          totalRioters,
+          health: communityData.health,
+          countries,
+          experts,
+        });
+      }
+
+      case 'get_org_community': {
+        const orgId = p.org_id as string;
+        const locale = await resolveLocale(p);
+        const rawOrg = await getOrganisationById(orgId);
+        if (!rawOrg) return err('Organisation not found', 404);
+
+        const communityData = await getOrgCommunityData(rawOrg.id);
+        const [actions, experts, reels, countries] = await Promise.all([
+          translateActions(communityData.actions, locale),
+          translateExpertProfiles(communityData.experts, locale),
+          translateRiotReels(communityData.reels, locale),
+          Promise.resolve(translateCountryBreakdown(communityData.countries, locale)),
+        ]);
+        return ok({
+          health: communityData.health,
+          feed: communityData.feed,
+          experts,
+          countries,
+          actions,
+          reels,
+        });
       }
 
       case 'get_orgs': {

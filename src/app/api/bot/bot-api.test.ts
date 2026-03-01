@@ -229,9 +229,50 @@ describe('Bot API: get_org_pivot', () => {
     expect(body.data.totalRioters).toBeDefined();
   });
 
+  it('returns enriched community data (health, countries, experts)', async () => {
+    const { status, body } = await callBot('get_org_pivot', { org_id: 'org-southern' });
+    expect(status).toBe(200);
+    expect(body.data).toHaveProperty('health');
+    expect(body.data).toHaveProperty('countries');
+    expect(body.data).toHaveProperty('experts');
+    // experts should be non-empty (org-southern links to issue-rail with experts)
+    expect(body.data.experts.length).toBeGreaterThanOrEqual(1);
+  });
+
   it('returns 404 for missing org', async () => {
     const { status } = await callBot('get_org_pivot', { org_id: 'nonexistent' });
     expect(status).toBe(404);
+  });
+});
+
+describe('Bot API: get_org_community', () => {
+  it('returns full community data for an org', async () => {
+    const { status, body } = await callBot('get_org_community', { org_id: 'org-southern' });
+    expect(status).toBe(200);
+    expect(body.data).toHaveProperty('health');
+    expect(body.data).toHaveProperty('feed');
+    expect(body.data).toHaveProperty('experts');
+    expect(body.data).toHaveProperty('countries');
+    expect(body.data).toHaveProperty('actions');
+    expect(body.data).toHaveProperty('reels');
+    // org-southern links to issue-rail which has data
+    expect(body.data.experts.length).toBeGreaterThanOrEqual(1);
+    expect(body.data.actions.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('returns 404 for non-existent org', async () => {
+    const { status } = await callBot('get_org_community', { org_id: 'nonexistent' });
+    expect(status).toBe(404);
+  });
+
+  it('translates response for non-English locale', async () => {
+    const { status, body } = await callBot('get_org_community', {
+      org_id: 'org-southern',
+      language_code: 'pl',
+    });
+    expect(status).toBe(200);
+    // Experts should be translated
+    expect(body.data.experts).toBeDefined();
   });
 });
 
@@ -1042,6 +1083,7 @@ describe('Bot API: translated issue data', () => {
     { action: 'get_actions', minParams: { issue_id: 'issue-rail' } },
     { action: 'get_community', minParams: { issue_id: 'issue-rail' } },
     { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
+    { action: 'get_org_community', minParams: { org_id: 'org-southern' } },
     { action: 'get_orgs', minParams: {} },
     { action: 'get_action_initiatives', minParams: {} },
   ];
