@@ -127,20 +127,42 @@ export async function getUserIssues(userId: string): Promise<(UserIssue & { issu
   return result.rows as unknown as (UserIssue & { issue: Issue })[];
 }
 
+/**
+ * Join an issue — atomically inserts into user_issues and auto-follows.
+ * Uses db.batch() so both statements succeed or fail together.
+ */
 export async function joinIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
-  await db.execute({
-    sql: 'INSERT OR IGNORE INTO user_issues (user_id, issue_id) VALUES (?, ?)',
-    args: [userId, issueId],
-  });
+  const id = generateId();
+  const followId = generateId();
+  await db.batch([
+    {
+      sql: 'INSERT OR IGNORE INTO user_issues (id, user_id, issue_id) VALUES (?, ?, ?)',
+      args: [id, userId, issueId],
+    },
+    {
+      sql: 'INSERT OR IGNORE INTO user_follows (id, user_id, issue_id, auto_followed) VALUES (?, ?, ?, 1)',
+      args: [followId, userId, issueId],
+    },
+  ]);
 }
 
+/**
+ * Leave an issue — atomically removes from user_issues and removes auto-follows only.
+ * Manual follows (auto_followed=0) survive leaving an issue.
+ */
 export async function leaveIssue(userId: string, issueId: string): Promise<void> {
   const db = getDb();
-  await db.execute({
-    sql: 'DELETE FROM user_issues WHERE user_id = ? AND issue_id = ?',
-    args: [userId, issueId],
-  });
+  await db.batch([
+    {
+      sql: 'DELETE FROM user_issues WHERE user_id = ? AND issue_id = ?',
+      args: [userId, issueId],
+    },
+    {
+      sql: 'DELETE FROM user_follows WHERE user_id = ? AND issue_id = ? AND auto_followed = 1',
+      args: [userId, issueId],
+    },
+  ]);
 }
 
 export async function hasJoinedIssue(userId: string, issueId: string): Promise<boolean> {
@@ -150,6 +172,106 @@ export async function hasJoinedIssue(userId: string, issueId: string): Promise<b
     args: [userId, issueId],
   });
   return result.rows.length > 0;
+}
+
+// ─── Follow System ────────────────────────────────────────────
+
+const MAX_FOLLOWS = 100;
+
+export type FollowResult = 'followed' | 'already_following' | 'not_found' | 'max_reached';
+
+/**
+ * Follow an issue. Verifies issue exists and is active before inserting.
+ * Uses count-and-insert in a single batch to prevent race conditions on the cap.
+ */
+export async function followIssue(
+  userId: string,
+  issueId: string,
+  autoFollowed: boolean = false,
+): Promise<FollowResult> {
+  const db = getDb();
+
+  // Verify issue exists and is active
+  const issueCheck = await db.execute({
+    sql: "SELECT 1 FROM issues WHERE id = ? AND status = 'active'",
+    args: [issueId],
+  });
+  if (issueCheck.rows.length === 0) return 'not_found';
+
+  // Check if already following
+  const existingCheck = await db.execute({
+    sql: 'SELECT 1 FROM user_follows WHERE user_id = ? AND issue_id = ?',
+    args: [userId, issueId],
+  });
+  if (existingCheck.rows.length > 0) return 'already_following';
+
+  // Check follow count (soft cap at 100)
+  const countCheck = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM user_follows WHERE user_id = ?',
+    args: [userId],
+  });
+  const count = Number((countCheck.rows[0] as unknown as { count: number }).count);
+  if (count >= MAX_FOLLOWS) return 'max_reached';
+
+  // Insert follow
+  const id = generateId();
+  await db.execute({
+    sql: 'INSERT OR IGNORE INTO user_follows (id, user_id, issue_id, auto_followed) VALUES (?, ?, ?, ?)',
+    args: [id, userId, issueId, autoFollowed ? 1 : 0],
+  });
+
+  return 'followed';
+}
+
+/**
+ * Unfollow an issue — removes regardless of auto_followed status.
+ */
+export async function unfollowIssue(userId: string, issueId: string): Promise<boolean> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'DELETE FROM user_follows WHERE user_id = ? AND issue_id = ?',
+    args: [userId, issueId],
+  });
+  return result.rowsAffected > 0;
+}
+
+export async function hasFollowedIssue(userId: string, issueId: string): Promise<boolean> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT 1 FROM user_follows WHERE user_id = ? AND issue_id = ?',
+    args: [userId, issueId],
+  });
+  return result.rows.length > 0;
+}
+
+export async function getFollowedIssues(userId: string): Promise<Issue[]> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `SELECT i.* FROM issues i
+          INNER JOIN user_follows uf ON uf.issue_id = i.id
+          WHERE uf.user_id = ? AND i.status = 'active'
+          ORDER BY uf.created_at DESC`,
+    args: [userId],
+  });
+  return result.rows as unknown as Issue[];
+}
+
+export async function getFollowerCount(issueId: string): Promise<number> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM user_follows WHERE issue_id = ?',
+    args: [issueId],
+  });
+  return Number((result.rows[0] as unknown as { count: number }).count);
+}
+
+export async function getFollowedIssueCount(userId: string): Promise<number> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as count FROM user_follows WHERE user_id = ?',
+    args: [userId],
+  });
+  return Number((result.rows[0] as unknown as { count: number }).count);
 }
 
 export async function getUserConnectedAccounts(

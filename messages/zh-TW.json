@@ -1058,7 +1058,11 @@
     "suggestionGoLive": "你的 Quiet Riot「{name}」現已上線！分享給關心這個議題的朋友。",
     "rejectionCloseToExisting": "與現有的 Quiet Riot 太相似",
     "rejectionAboutPeople": "針對的是人而不是問題",
-    "rejectionIllegalSubject": "涉及非法活動"
+    "rejectionIllegalSubject": "涉及非法活動",
+    "followed": "您現在追蹤了 {issue}。",
+    "unfollowed": "您已取消追蹤 {issue}。",
+    "alreadyFollowing": "您已經追蹤了這個 Quiet Riot。",
+    "maxFollowsBot": "您最多可以追蹤 100 個 Quiet Riots。"
   },
   "Chicken": {
     "title": "部署一隻雞",
@@ -1167,5 +1171,15 @@
     "cancelFailed": "取消失敗：{error}",
     "linkedIssue": "關聯議題",
     "linkedOrganisation": "關聯組織"
+  },
+  "Follow": {
+    "follow": "追蹤",
+    "following": "已追蹤",
+    "followingAuto": "已追蹤",
+    "unfollow": "取消追蹤",
+    "followers": "{count} 位追蹤者",
+    "followConfirm": "您現在追蹤了這個 Quiet Riot",
+    "unfollowConfirm": "您已取消追蹤這個 Quiet Riot",
+    "maxFollows": "您最多可以追蹤 100 個 Quiet Riots"
   }
 }

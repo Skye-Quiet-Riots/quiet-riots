@@ -2735,3 +2735,104 @@ describe('Bot API: identify excludes sensitive fields (SafeUserProfile)', () => 
     expect(user.session_version).toBeUndefined();
   });
 });
+
+// ─── Follow System ──────────────────────────────────
+describe('follow_issue', () => {
+  it('follows an active issue', async () => {
+    const { status, body } = await callBot('follow_issue', {
+      phone: '+5511999999999',
+      issue_id: 'issue-broadband',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.followed).toBe(true);
+    expect(body.data.user_id).toBe('user-marcio');
+    expect(body.data.issue_id).toBe('issue-broadband');
+  });
+
+  it('returns 404 for non-existent user', async () => {
+    const { status, body } = await callBot('follow_issue', {
+      phone: '+19999999999',
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+
+  it('returns 404 for non-existent issue', async () => {
+    const { status, body } = await callBot('follow_issue', {
+      phone: '+447700900001',
+      issue_id: 'issue-nonexistent',
+    });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+
+  it('returns success for duplicate follow (idempotent)', async () => {
+    await callBot('follow_issue', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+    });
+    const { status, body } = await callBot('follow_issue', {
+      phone: '+447700900001',
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.followed).toBe(true);
+  });
+});
+
+describe('unfollow_issue', () => {
+  it('unfollows a followed issue', async () => {
+    // Follow first
+    await callBot('follow_issue', {
+      phone: '+5511999999999',
+      issue_id: 'issue-flights',
+    });
+    // Then unfollow
+    const { status, body } = await callBot('unfollow_issue', {
+      phone: '+5511999999999',
+      issue_id: 'issue-flights',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.unfollowed).toBe(true);
+    expect(body.data.user_id).toBe('user-marcio');
+    expect(body.data.issue_id).toBe('issue-flights');
+  });
+
+  it('returns 404 for non-existent user', async () => {
+    const { status, body } = await callBot('unfollow_issue', {
+      phone: '+19999999999',
+      issue_id: 'issue-rail',
+    });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+});
+
+describe('get_followed_issues', () => {
+  it('returns followed issues', async () => {
+    // Follow an issue first
+    await callBot('follow_issue', {
+      phone: '+447700900001',
+      issue_id: 'issue-broadband',
+    });
+    const { status, body } = await callBot('get_followed_issues', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(Array.isArray(body.data.issues)).toBe(true);
+    expect(body.data.issues.some((i: { id: string }) => i.id === 'issue-broadband')).toBe(true);
+  });
+
+  it('returns 404 for non-existent user', async () => {
+    const { status, body } = await callBot('get_followed_issues', {
+      phone: '+19999999999',
+    });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+});

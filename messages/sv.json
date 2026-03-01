@@ -1058,7 +1058,11 @@
     "suggestionGoLive": "Ditt Quiet Riot \"{name}\" är nu live! Dela det med vänner som bryr sig om denna fråga.",
     "rejectionCloseToExisting": "för likt ett befintligt Quiet Riot",
     "rejectionAboutPeople": "det riktar sig mot personer istället för problem",
-    "rejectionIllegalSubject": "det involverar olaglig verksamhet"
+    "rejectionIllegalSubject": "det involverar olaglig verksamhet",
+    "followed": "Du följer nu {issue}.",
+    "unfollowed": "Du slutade följa {issue}.",
+    "alreadyFollowing": "Du följer redan denna Quiet Riot.",
+    "maxFollowsBot": "Du kan följa upp till 100 Quiet Riots."
   },
   "Chicken": {
     "title": "Driftsätt en kyckling",
@@ -1167,5 +1171,15 @@
     "cancelFailed": "Avbrytning misslyckades: {error}",
     "linkedIssue": "Länkad fråga",
     "linkedOrganisation": "Länkad organisation"
+  },
+  "Follow": {
+    "follow": "Följ",
+    "following": "Följer",
+    "followingAuto": "Följer",
+    "unfollow": "Sluta följa",
+    "followers": "{count} följare",
+    "followConfirm": "Du följer nu denna Quiet Riot",
+    "unfollowConfirm": "Du slutade följa denna Quiet Riot",
+    "maxFollows": "Du kan följa upp till 100 Quiet Riots"
   }
 }

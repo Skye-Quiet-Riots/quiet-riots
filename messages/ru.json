@@ -1058,7 +1058,11 @@
     "suggestionGoLive": "Твой Quiet Riot \"{name}\" теперь активен! Поделись им с друзьями, которым важна эта тема.",
     "rejectionCloseToExisting": "слишком похоже на существующий Quiet Riot",
     "rejectionAboutPeople": "направлено на людей, а не на проблемы",
-    "rejectionIllegalSubject": "связано с незаконной деятельностью"
+    "rejectionIllegalSubject": "связано с незаконной деятельностью",
+    "followed": "Вы теперь следите за {issue}.",
+    "unfollowed": "Вы перестали следить за {issue}.",
+    "alreadyFollowing": "Вы уже следите за этим Quiet Riot.",
+    "maxFollowsBot": "Вы можете следить до 100 Quiet Riots."
   },
   "Chicken": {
     "title": "Развернуть Курицу",
@@ -1167,5 +1171,15 @@
     "cancelFailed": "Отмена не удалась: {error}",
     "linkedIssue": "Связанная проблема",
     "linkedOrganisation": "Связанная организация"
+  },
+  "Follow": {
+    "follow": "Следить",
+    "following": "Следим",
+    "followingAuto": "Следим",
+    "unfollow": "Перестать следить",
+    "followers": "{count} подписчиков",
+    "followConfirm": "Вы теперь следите за этим Quiet Riot",
+    "unfollowConfirm": "Вы перестали следить за этим Quiet Riot",
+    "maxFollows": "Вы можете следить до 100 Quiet Riots"
   }
 }
