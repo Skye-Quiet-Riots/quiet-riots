@@ -314,6 +314,7 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **Phone/password login must set Auth.js JWT cookie:** `setSession()` sets BOTH the legacy `qr_user_id` cookie (server-side `getSession()`) AND the Auth.js JWT cookie (client-side `useSession()` from next-auth/react). Without the JWT cookie, the nav-bar and auth-gate show the user as logged out even though server-side auth works. The JWT is encoded using `encode()` from `next-auth/jwt` with `AUTH_SECRET`. Cookie name: `__Secure-authjs.session-token` (production) or `authjs.session-token` (dev). All callers of `setSession()` should pass `userInfo` (name, email, image) for the JWT payload.
 - **Unmerged session docs are invisible to the next session:** The next session reads session files from `origin/main`. If a session docs PR is left open (not merged), the next session cannot find it — it has to search remote branches manually (which it may not know to do). ALWAYS merge session docs PRs within the same session. This was the root cause of session 68 docs being lost.
 - **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
+- **Stale worktree branch hides session docs:** A new session in a worktree starts on whatever branch the previous session left. If the previous session merged docs to `origin/main` but didn't update the local branch, SESSION_LOG.md and session-logs/ are stale. Fix: **always `git fetch origin main` and create a new branch from `origin/main` BEFORE reading any session docs.** This is step 0 in the Start of Session Protocol.
 
 ## Database ID Convention
 
@@ -331,6 +332,12 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 
 At the start of every session (or when asked to "pick up where we left off"):
 
+0. **FIRST: Sync to latest main before reading anything.** The worktree branch may be stale — session docs merged by the previous session won't be visible until you update. Run:
+   ```bash
+   git fetch origin main
+   git checkout -b claude/<session-name> origin/main
+   ```
+   This ensures SESSION_LOG.md, session-logs/, CLAUDE.md, and PLAN.md all reflect the latest merged state. **Never read session docs from a stale branch** — this is the #1 cause of "session N docs were lost" false alarms.
 1. Read CLAUDE.md → SESSION_LOG.md (lightweight index) → latest session file linked from it
 2. Summarise where we left off and what the priorities are
 3. Run the test suite (`npm test`) and flag any issues
