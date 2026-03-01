@@ -292,6 +292,7 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 
 ## Critical Gotchas
 
+- **ExitPlanMode requires completed reviews:** NEVER call ExitPlanMode until all 3 review rounds (7 reviewers each) are documented in PLAN.md. Self-check: grep for "## Review Round 3" in PLAN.md — if missing, reviews are incomplete. Session 69 violated this and wasted user time approving a plan with 20+ critical/high issues.
 - **Bare domain breaks POST:** Always use `www.quietriots.com` for API URLs (307 redirect)
 - **Turso queries are async:** All db queries must be awaited
 - **OpenClaw BOOTSTRAP.md kills skills:** Must NOT exist in `~/.openclaw/workspace/`
@@ -380,9 +381,12 @@ At the start of every session (or when asked to "pick up where we left off"):
   - **What to include:** Problem statement, scope, all phases/steps, file list, deployment/rollback notes.
   - **When to update:** If the plan changes mid-execution (e.g. a step is added or removed), update PLAN.md and push before continuing.
 - **Never rely on uncommitted work surviving a session.** The previous session lost all 5 phases of work because nothing was committed. Another session lost its plan because it was only in the conversation, not in PLAN.md.
+- **MANDATORY: Complete 3-round plan reviews before seeking approval.** After writing PLAN.md, you MUST run the full 3-round, 7-reviewer protocol (see "Plan Review Protocol" below) BEFORE calling ExitPlanMode. Never present an unreviewed plan to the user — it wastes their time and produces plans with critical gaps.
 - Pattern for multi-phase work:
   ```
   1. Write PLAN.md → commit + push (BEFORE any implementation)
+  1b. Run 3-round review protocol → update PLAN.md with findings → commit + push
+  1c. Present reviewed plan to user via ExitPlanMode → get approval
   2. Phase 1 code + tests → commit + push
   3. Phase 2 code + tests → commit + push
   ... repeat for each phase
@@ -390,6 +394,11 @@ At the start of every session (or when asked to "pick up where we left off"):
   ```
 
 ### Plan Review Protocol (MANDATORY — 3 rounds, 7 reviewers, zero exceptions)
+
+> **BLOCKING REQUIREMENT — ExitPlanMode is FORBIDDEN until all 3 review rounds are complete.**
+> Before calling `ExitPlanMode`, you MUST have documented all 3 review rounds in PLAN.md with findings from all 7 reviewers.
+> Self-check: search PLAN.md for "## Review Round 3" — if it doesn't exist, you have NOT completed the reviews and MUST NOT call ExitPlanMode.
+> **This was violated in session 69** — the plan was presented to the user without any reviews, wasting the user's time approving an unreviewed plan that had 20+ critical/high issues. Never repeat this mistake.
 
 Every new implementation plan MUST go through 3 rounds of review by 7 senior specialists BEFORE being presented to the user for approval. A plan that has not completed all 3 review rounds is not ready for approval. No shortcuts. No "I'll review it later."
 
