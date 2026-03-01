@@ -323,6 +323,24 @@ describe('PivotTable', () => {
     render(<PivotTable mode="org" rows={orgRows} currentIssueId="issue-2" />);
     expect(screen.getByText('YOU')).toBeDefined();
   });
+
+  it('links to intersection pages when issueId provided', () => {
+    render(<PivotTable mode="issue" rows={issueRows} issueId="issue-rail" />);
+    const links = screen.getAllByRole('link');
+    expect(links[0].getAttribute('href')).toBe('/issues/issue-rail/organisations/org-1');
+    expect(links[1].getAttribute('href')).toBe('/issues/issue-rail/organisations/org-2');
+  });
+
+  it('shows chevron arrow when issueId provided', () => {
+    render(<PivotTable mode="issue" rows={issueRows} issueId="issue-rail" />);
+    const arrows = screen.getAllByText('→');
+    expect(arrows).toHaveLength(2);
+  });
+
+  it('does not show chevron without issueId', () => {
+    render(<PivotTable mode="issue" rows={issueRows} />);
+    expect(screen.queryByText('→')).toBeNull();
+  });
 });
 
 describe('StatBadge', () => {

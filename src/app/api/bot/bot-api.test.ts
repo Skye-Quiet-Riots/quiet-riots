@@ -276,6 +276,37 @@ describe('Bot API: get_org_community', () => {
   });
 });
 
+describe('Bot API: get_issue_org_intersection', () => {
+  it('returns intersection data for valid pair', async () => {
+    const { status, body } = await callBot('get_issue_org_intersection', {
+      issue_id: 'issue-rail',
+      org_id: 'org-southern',
+    });
+    expect(status).toBe(200);
+    expect(body.data.intersection.rioter_count).toBe(2847);
+    expect(body.data.intersection.rank).toBe(1);
+    expect(body.data.issue.name).toBe('Rail Cancellations');
+    expect(body.data.org.name).toBe('Southern Rail');
+    expect(body.data.evidence).toBeDefined();
+  });
+
+  it('returns 404 for non-existent pair', async () => {
+    const { status } = await callBot('get_issue_org_intersection', {
+      issue_id: 'issue-rail',
+      org_id: 'nonexistent',
+    });
+    expect(status).toBe(404);
+  });
+
+  it('returns 404 for non-existent issue', async () => {
+    const { status } = await callBot('get_issue_org_intersection', {
+      issue_id: 'nonexistent',
+      org_id: 'org-southern',
+    });
+    expect(status).toBe(404);
+  });
+});
+
 describe('Bot API: get_orgs', () => {
   it('returns organisations', async () => {
     const { status, body } = await callBot('get_orgs', {});
@@ -1084,6 +1115,10 @@ describe('Bot API: translated issue data', () => {
     { action: 'get_community', minParams: { issue_id: 'issue-rail' } },
     { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
     { action: 'get_org_community', minParams: { org_id: 'org-southern' } },
+    {
+      action: 'get_issue_org_intersection',
+      minParams: { issue_id: 'issue-rail', org_id: 'org-southern' },
+    },
     { action: 'get_orgs', minParams: {} },
     { action: 'get_action_initiatives', minParams: {} },
   ];
@@ -1216,6 +1251,10 @@ describe('Bot API: phone-based language fallback', () => {
     { action: 'get_trending', minParams: {} },
     { action: 'get_issue', minParams: { issue_id: 'issue-rail' } },
     { action: 'get_org_pivot', minParams: { org_id: 'org-southern' } },
+    {
+      action: 'get_issue_org_intersection',
+      minParams: { issue_id: 'issue-rail', org_id: 'org-southern' },
+    },
     { action: 'get_orgs', minParams: {} },
     { action: 'get_action_initiatives', minParams: {} },
   ];

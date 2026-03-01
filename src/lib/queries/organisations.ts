@@ -5,6 +5,7 @@ import type {
   Organisation,
   OrganisationStatus,
   Category,
+  IssueOrganisation,
   IssuePivotRow,
   OrgPivotRow,
 } from '@/types';
@@ -99,6 +100,20 @@ export async function getOrganisationById(id: string): Promise<Organisation | nu
     args: [id],
   });
   return (result.rows[0] as unknown as Organisation) ?? null;
+}
+
+// Issue-Organisation intersection: returns the pivot row for a specific issue+org pair
+export async function getIssueOrgIntersection(
+  issueId: string,
+  orgId: string,
+): Promise<IssueOrganisation | null> {
+  const db = getDb();
+  const result = await db.execute({
+    sql: `SELECT * FROM issue_organisation
+          WHERE issue_id = ? AND organisation_id = ?`,
+    args: [issueId, orgId],
+  });
+  return (result.rows[0] as unknown as IssueOrganisation) ?? null;
 }
 
 // Issue Pivot: given an issue, show all orgs where this issue exists

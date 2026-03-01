@@ -8,6 +8,7 @@ import {
   getIssuesForOrg,
   getIssueCountForOrg,
   getTotalRiotersForOrg,
+  getIssueOrgIntersection,
 } from './organisations';
 
 beforeAll(async () => {
@@ -201,5 +202,31 @@ describe('getAllOrganisations with translation search', () => {
     const orgs = await getAllOrganisations(undefined, '%', 'pl');
     const allOrgs = await getAllOrganisations();
     expect(orgs.length).toBeLessThan(allOrgs.length);
+  });
+});
+
+describe('getIssueOrgIntersection', () => {
+  it('returns intersection data for valid pair', async () => {
+    const result = await getIssueOrgIntersection('issue-rail', 'org-southern');
+    expect(result).not.toBeNull();
+    expect(result!.rioter_count).toBe(2847);
+    expect(result!.rank).toBe(1);
+  });
+
+  it('returns intersection for second org on same issue', async () => {
+    const result = await getIssueOrgIntersection('issue-rail', 'org-bt');
+    expect(result).not.toBeNull();
+    expect(result!.rioter_count).toBe(500);
+    expect(result!.rank).toBe(2);
+  });
+
+  it('returns null for non-existent pair', async () => {
+    const result = await getIssueOrgIntersection('issue-rail', 'nonexistent');
+    expect(result).toBeNull();
+  });
+
+  it('returns null for non-existent issue', async () => {
+    const result = await getIssueOrgIntersection('nonexistent', 'org-southern');
+    expect(result).toBeNull();
   });
 });

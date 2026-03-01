@@ -8,6 +8,7 @@ interface IssuePivotProps {
   mode: 'issue';
   rows: IssuePivotRow[];
   currentOrgId?: string;
+  issueId?: string;
 }
 
 interface OrgPivotProps {
@@ -26,10 +27,14 @@ export function PivotTable(props: PivotTableProps) {
       <div className="space-y-2">
         {props.rows.map((row) => {
           const isCurrent = row.organisation_id === props.currentOrgId;
+          // Link to intersection page if issueId is provided, else fall back to org detail
+          const href = props.issueId
+            ? `/issues/${props.issueId}/organisations/${row.organisation_id}`
+            : `/organisations/${row.organisation_id}`;
           return (
             <Link
               key={row.organisation_id}
-              href={`/organisations/${row.organisation_id}`}
+              href={href}
               className={`flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${
                 isCurrent
                   ? 'border-blue-300 bg-blue-50/50 dark:border-blue-500 dark:bg-blue-900/30'
@@ -51,6 +56,12 @@ export function PivotTable(props: PivotTableProps) {
                 </span>
               </div>
               <span className="text-sm font-medium text-zinc-400">#{row.rank}</span>
+              {/* Chevron indicating drill-down to intersection page */}
+              {props.issueId && (
+                <span className="text-zinc-400 dark:text-zinc-500" aria-hidden="true">
+                  →
+                </span>
+              )}
             </Link>
           );
         })}

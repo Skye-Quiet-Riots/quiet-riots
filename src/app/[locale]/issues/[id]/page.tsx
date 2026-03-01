@@ -215,6 +215,7 @@ export default async function IssueDetailPage({ params }: Props) {
               orgPivotRows={orgPivotRows}
               currentOrgId={firstOrg?.organisation_id}
               currentIssueId={issue.id}
+              issueId={issue.id}
               issueName={issue.name}
               orgName={firstOrg?.organisation_name}
             />
