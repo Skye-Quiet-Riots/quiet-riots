@@ -19,10 +19,7 @@ export async function Footer() {
                 height={28}
                 className="inline-block"
               />
-              <span
-                className="text-xl font-extrabold tracking-tight"
-                style={{ color: 'var(--brand-blue)' }}
-              >
+              <span className="text-xl font-extrabold tracking-tight text-brand-blue">
                 Quiet Riots
               </span>
             </div>
