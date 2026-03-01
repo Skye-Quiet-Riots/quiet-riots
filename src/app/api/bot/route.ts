@@ -9,6 +9,7 @@ import {
   getTotalRiotersForOrg,
   createOrganisation,
   getOrgCommunityData,
+  getIssueOrgIntersection,
 } from '@/lib/queries/organisations';
 import { getFilteredActions, getActionCountForIssue } from '@/lib/queries/actions';
 import {
@@ -193,6 +194,11 @@ const actionSchemas = {
     phone: phoneField.optional(),
   }),
   get_org_community: z.object({
+    org_id: idField,
+    language_code: langField,
+  }),
+  get_issue_org_intersection: z.object({
+    issue_id: idField,
     org_id: idField,
     language_code: langField,
   }),
@@ -1121,6 +1127,38 @@ export async function POST(request: NextRequest) {
           countries,
           actions,
           reels,
+        });
+      }
+
+      case 'get_issue_org_intersection': {
+        const issueId = p.issue_id as string;
+        const orgId = p.org_id as string;
+        const locale = await resolveLocale(p);
+
+        const [rawIssue, rawOrg, intersection] = await Promise.all([
+          getIssueById(issueId),
+          getOrganisationById(orgId),
+          getIssueOrgIntersection(issueId, orgId),
+        ]);
+
+        if (!rawIssue || !rawOrg || !intersection) {
+          return err('Issue-organisation intersection not found', 404);
+        }
+
+        const [issue, org, evidence] = await Promise.all([
+          translateEntity(rawIssue, 'issue', locale),
+          translateEntity(rawOrg, 'organisation', locale),
+          getEvidenceForIssue(issueId, orgId),
+        ]);
+
+        return ok({
+          intersection: {
+            rioter_count: intersection.rioter_count,
+            rank: intersection.rank,
+          },
+          issue: { id: issue.id, name: issue.name, category: issue.category },
+          org: { id: org.id, name: org.name, logo_emoji: org.logo_emoji },
+          evidence,
         });
       }
 

@@ -1,5 +1,15 @@
 # Quiet Riots
 
+> **MANDATORY FIRST ACTION — DO THIS BEFORE READING ANYTHING ELSE:**
+> This file may be stale (loaded from a worktree created before the latest merge). Run these commands IMMEDIATELY, before reading SESSION_LOG.md, session files, or PLAN.md:
+> ```bash
+> git fetch origin main
+> git log --oneline -1 origin/main   # note the commit hash
+> git log --oneline -1 HEAD          # compare — if different, you're stale
+> git merge origin/main --no-edit    # fast-forward to latest
+> ```
+> Then re-read this file (CLAUDE.md) from the updated worktree. If you skip this step, you WILL read stale session docs and miss the previous session's work. This has happened before (session 71 missed session 70 entirely).
+
 Quiet Riots is a web app for collective action around shared issues. Based on the 2014 book by Simon Darling.
 
 @ARCHITECTURE.md
@@ -314,7 +324,7 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 - **Phone/password login must set Auth.js JWT cookie:** `setSession()` sets BOTH the legacy `qr_user_id` cookie (server-side `getSession()`) AND the Auth.js JWT cookie (client-side `useSession()` from next-auth/react). Without the JWT cookie, the nav-bar and auth-gate show the user as logged out even though server-side auth works. The JWT is encoded using `encode()` from `next-auth/jwt` with `AUTH_SECRET`. Cookie name: `__Secure-authjs.session-token` (production) or `authjs.session-token` (dev). All callers of `setSession()` should pass `userInfo` (name, email, image) for the JWT payload.
 - **Unmerged session docs are invisible to the next session:** The next session reads session files from `origin/main`. If a session docs PR is left open (not merged), the next session cannot find it — it has to search remote branches manually (which it may not know to do). ALWAYS merge session docs PRs within the same session. This was the root cause of session 68 docs being lost.
 - **Worktree removal kills the shell:** If the worktree directory is removed (by `git worktree remove` or any other process) while a Claude Code session is running inside it, ALL Bash commands fail permanently — the persisted cwd no longer exists and cannot be recovered. This is why worktree cleanup must be the absolute last command of a session, using `nohup` with a delay so it runs after the session exits.
-- **Stale worktree branch hides session docs:** A new session in a worktree starts on whatever branch the previous session left. If the previous session merged docs to `origin/main` but didn't update the local branch, SESSION_LOG.md and session-logs/ are stale. Fix: **always `git fetch origin main` and create a new branch from `origin/main` BEFORE reading any session docs.** This is step 0 in the Start of Session Protocol.
+- **Stale worktree branch hides session docs (proven failure — session 71 missed session 70):** A new session in a worktree starts on whatever branch the previous session left. If the previous session merged docs to `origin/main` but didn't update the local branch, SESSION_LOG.md and session-logs/ are stale. The instruction to fix this can ALSO be stale (chicken-and-egg). Fix: there is a MANDATORY FIRST ACTION block at the very top of CLAUDE.md that says to run `git fetch origin main && git merge origin/main --no-edit` before reading anything. This is also step 0 in the Start of Session Protocol. If you skip it, you WILL pick up the wrong session and waste the user's time re-explaining what happened.
 
 ## Database ID Convention
 
@@ -332,13 +342,15 @@ Every feature must work on BOTH the web app and the WhatsApp bot. When fixing a 
 
 At the start of every session (or when asked to "pick up where we left off"):
 
-0. **FIRST: Sync to latest main before reading anything.** The worktree branch may be stale — session docs merged by the previous session won't be visible until you update. Run:
+0. **FIRST: Sync to latest main before reading anything.** (See also the MANDATORY FIRST ACTION block at the top of this file.) The worktree branch may be stale — session docs merged by the previous session won't be visible until you update. Run:
    ```bash
    git fetch origin main
-   git checkout -b claude/<session-name> origin/main
+   git log --oneline -1 origin/main   # note the latest commit
+   git log --oneline -1 HEAD          # compare — if different, you're stale
+   git merge origin/main --no-edit    # fast-forward to latest
    ```
-   This ensures SESSION_LOG.md, session-logs/, CLAUDE.md, and PLAN.md all reflect the latest merged state. **Never read session docs from a stale branch** — this is the #1 cause of "session N docs were lost" false alarms.
-1. Read CLAUDE.md → SESSION_LOG.md (lightweight index) → latest session file linked from it
+   **Verification:** After the merge, re-read `SESSION_LOG.md` and confirm the "Latest Session" pointer matches the most recent session number. If it doesn't, something went wrong — investigate before proceeding. This prevents the exact bug from session 71 where session 70 was missed entirely.
+1. Read CLAUDE.md (re-read it — it may have changed after step 0) → SESSION_LOG.md (lightweight index) → latest session file linked from it
 2. Summarise where we left off and what the priorities are
 3. Run the test suite (`npm test`) and flag any issues
 4. **OpenClaw health check — only if bot work is planned or user mentions bot issues:**

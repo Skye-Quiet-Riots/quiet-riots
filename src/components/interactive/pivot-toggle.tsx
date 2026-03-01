@@ -10,6 +10,7 @@ interface PivotToggleProps {
   orgPivotRows: OrgPivotRow[];
   currentOrgId?: string;
   currentIssueId?: string;
+  issueId?: string;
   issueName?: string;
   orgName?: string;
 }
@@ -19,6 +20,7 @@ export function PivotToggle({
   orgPivotRows,
   currentOrgId,
   currentIssueId,
+  issueId,
   issueName,
   orgName,
 }: PivotToggleProps) {
@@ -75,7 +77,7 @@ export function PivotToggle({
 
       {/* Pivot data */}
       {mode === 'issue' ? (
-        <PivotTable mode="issue" rows={issuePivotRows} currentOrgId={currentOrgId} />
+        <PivotTable mode="issue" rows={issuePivotRows} currentOrgId={currentOrgId} issueId={issueId} />
       ) : (
         <PivotTable mode="org" rows={orgPivotRows} currentIssueId={currentIssueId} />
       )}
