@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { NavBar } from '@/components/layout/nav-bar';
 import { Footer } from '@/components/layout/footer';
+import { MobileBottomNav } from '@/components/layout/mobile-bottom-nav';
 import { CookieConsent } from '@/components/interactive/cookie-consent';
 import { HtmlLangSync } from '@/components/layout/html-lang-sync';
 
@@ -28,8 +29,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     <NextIntlClientProvider>
       <HtmlLangSync />
       <NavBar />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen pb-16 sm:pb-0">{children}</main>
       <Footer />
+      <MobileBottomNav />
       <CookieConsent />
     </NextIntlClientProvider>
   );
