@@ -21,7 +21,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 | Command                   | Purpose                                     |
 | ------------------------- | ------------------------------------------- |
 | `npm run build`           | Build — ALWAYS run before committing        |
-| `npm test`                | Run 2169 tests (~13s)                       |
+| `npm test`                | Run 3146 tests (~23s)                       |
 | `npm run test:watch`      | Watch mode                                  |
 | `npm run test:coverage`   | With V8 coverage                            |
 | `npm run seed`            | Reset database (blocked on production)      |
@@ -39,7 +39,7 @@ Quiet Riots is a web app for collective action around shared issues. Based on th
 - IMPORTANT: Always run `npm run build` before committing
 - IMPORTANT: When fixing a bug, always add a regression test
 - Write tests for business logic, data handling, and API endpoints
-- Skip tests for one-off scripts, styling, and rapid prototypes unless asked
+- ALWAYS write tests for scripts, styling, and rapid prototypes — no exceptions
 - Environment variables go in `.env.local` (see `.env.example` for shape)
 - Use feature branches for new work; commit to `main` only when ready
 - IMPORTANT: Never merge to main directly — always push the feature branch, create a PR, wait for CI to pass, then merge immediately. Do not wait for user approval — merge as soon as CI is green and run the post-merge checklist. Vercel auto-deploys a preview for every PR.
