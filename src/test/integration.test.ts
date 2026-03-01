@@ -35,7 +35,8 @@ describe('Integration: New user flow', () => {
     // Step 1: Identify (creates new user)
     const identify = await callBot('identify', { phone, name: 'Integration User' });
     expect(identify.status).toBe(200);
-    expect(identify.body.data.user.phone).toBe(phone);
+    // SafeUserProfile: phone is stripped from identify response
+    expect(identify.body.data.user.phone).toBeUndefined();
     expect(identify.body.data.user.name).toBe('Integration User');
     expect(identify.body.data.issues).toHaveLength(0);
 

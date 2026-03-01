@@ -66,7 +66,8 @@ describe('Bot API: identify', () => {
     });
     expect(status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(body.data.user.phone).toBe('+447700900000');
+    // SafeUserProfile: phone is stripped from identify response
+    expect(body.data.user.phone).toBeUndefined();
     expect(body.data.user.name).toBe('Bot User');
     expect(body.data.issues).toBeDefined();
   });
@@ -2694,5 +2695,43 @@ describe('Deploy a Chicken bot actions', () => {
       sql: "UPDATE wallets SET balance_pence = 50000 WHERE user_id = 'user-sarah'",
       args: [],
     });
+  });
+});
+
+// ─── SafeUserProfile: identify must not leak PII ──────────────────────────
+
+describe('Bot API: identify excludes sensitive fields (SafeUserProfile)', () => {
+  it('does not return password_hash, email, phone, or session_version', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    const user = body.data.user;
+    expect(user).toBeDefined();
+    // Sensitive fields must not be present
+    expect(user.password_hash).toBeUndefined();
+    expect(user.email).toBeUndefined();
+    expect(user.phone).toBeUndefined();
+    expect(user.session_version).toBeUndefined();
+    expect(user.merged_into_user_id).toBeUndefined();
+    expect(user.password_changed_at).toBeUndefined();
+    // Safe fields should still be present
+    expect(user.id).toBeDefined();
+    expect(user.name).toBeDefined();
+    expect(user.language_code).toBeDefined();
+    expect(user.status).toBeDefined();
+  });
+
+  it('does not expose PII for newly created users either', async () => {
+    const { status, body } = await callBot('identify', {
+      phone: '+447700900555',
+      name: 'PII Test User',
+    });
+    expect(status).toBe(200);
+    const user = body.data.user;
+    expect(user.password_hash).toBeUndefined();
+    expect(user.email).toBeUndefined();
+    expect(user.phone).toBeUndefined();
+    expect(user.session_version).toBeUndefined();
   });
 });
