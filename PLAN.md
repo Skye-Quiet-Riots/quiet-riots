@@ -16,8 +16,30 @@ Full visual upgrade: purple→blue colour palette, hero images with DALL-E gener
 - [x] Phase 4: Browse pages + cards (PR #168)
 - [x] Phase 7: Approval flow + image generation (PR #169)
 - [x] Phase 5: Homepage + remaining pages (PR #170)
-- [ ] Phase 8: Backfill existing entities (requires running script with OPENAI_API_KEY, ~$13 cost)
+- [ ] Phase 8: Backfill existing entities — see details below
 - [x] Phase 9: i18n (all keys translated during each phase, no separate PR needed)
+
+### Phase 8: Hero Image Backfill (IN PROGRESS)
+
+**Problem:** Existing entities created before Phase 7 have no hero images — they show fallback placeholder styling.
+
+**Script:** `scripts/backfill-hero-images.ts`
+- Query `issues` and `organisations` where `hero_image_url IS NULL` and `status = 'active'`
+- For each entity, call `generateHeroImage()` from `src/lib/image-generation.ts`
+- Handle OpenAI rate limits with delays between requests
+- Support flags: `--dry-run`, `--limit N`, `--entity-type issue|organisation`, `--delay-ms N`
+- Use `printDbBanner()` from `scripts/db-safety.ts`
+- Log progress: entity name, success/fail, running totals
+- Print summary at end: total processed, succeeded, failed, skipped
+
+**Cost:** ~49 issues + ~18 orgs = ~67 entities × $0.19/image ≈ $13
+
+**Dependencies:** `OPENAI_API_KEY`, `BLOB_READ_WRITE_TOKEN`, `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`
+
+**Execution order:**
+1. Write script + tests → commit + push → PR → merge
+2. Run against staging (via `with-staging-env.sh`) — verify images appear
+3. Run against production — verify on production site
 
 ### Feature 2: Deploy a Chicken
 
