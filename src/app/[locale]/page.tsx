@@ -172,10 +172,9 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
           <h2 className="mt-4 text-xl font-bold italic text-zinc-700 dark:text-zinc-300">
             {t('missionQuote')}
           </h2>
-          <p
-            className="mt-4 text-sm text-zinc-500 dark:text-zinc-400"
-            dangerouslySetInnerHTML={{ __html: t('basedOn') }}
-          />
+          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+            {t.rich('basedOn', { em: (chunks) => <em>{chunks}</em> })}
+          </p>
           <Link
             href="/issues"
             className="mt-6 inline-block rounded-full bg-blue-600 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"

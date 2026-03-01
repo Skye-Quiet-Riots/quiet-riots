@@ -120,6 +120,7 @@ import type {
   RejectionReason,
   ChickenDeploymentStatus,
 } from '@/types';
+import { safeProfile } from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -889,7 +890,7 @@ export async function POST(request: NextRequest) {
           locale,
         );
         return ok({
-          user,
+          user: safeProfile(user),
           issues: translatedIssues,
           memories,
           language_code: user.language_code,

@@ -48,3 +48,27 @@ export function getCurrencyFractionDigits(currencyCode: string): number {
 export function formatPence(pence: number): string {
   return formatCurrency(pence, 'GBP', 'en-GB');
 }
+
+/**
+ * Format a date as a locale-aware relative time string (e.g., "5 minutes ago", "il y a 3 heures").
+ * Uses Intl.RelativeTimeFormat for proper i18n support.
+ *
+ * @param dateStr - ISO 8601 date string
+ * @param locale - BCP 47 locale string (e.g., 'en', 'fr', 'ja')
+ */
+export function formatRelativeTime(dateStr: string, locale: string = 'en'): string {
+  const now = new Date();
+  const date = new Date(dateStr);
+  const diffMs = now.getTime() - date.getTime();
+  const diffSecs = Math.floor(diffMs / 1000);
+
+  const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto', style: 'narrow' });
+
+  if (diffSecs < 60) return rtf.format(-diffSecs, 'second');
+  const diffMins = Math.floor(diffSecs / 60);
+  if (diffMins < 60) return rtf.format(-diffMins, 'minute');
+  const diffHours = Math.floor(diffMins / 60);
+  if (diffHours < 24) return rtf.format(-diffHours, 'hour');
+  const diffDays = Math.floor(diffHours / 24);
+  return rtf.format(-diffDays, 'day');
+}

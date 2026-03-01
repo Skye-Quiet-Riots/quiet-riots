@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { formatPence, formatCurrency, getCurrencyFractionDigits } from './format';
+import { describe, it, expect, vi } from 'vitest';
+import { formatPence, formatCurrency, getCurrencyFractionDigits, formatRelativeTime } from './format';
 
 describe('formatPence (legacy)', () => {
   it('formats pence under £1', () => {
@@ -71,5 +71,53 @@ describe('getCurrencyFractionDigits', () => {
 
   it('returns 3 for BHD (three-decimal currency)', () => {
     expect(getCurrencyFractionDigits('BHD')).toBe(3);
+  });
+});
+
+describe('formatRelativeTime', () => {
+  it('formats minutes ago in English', () => {
+    const fiveMinAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(fiveMinAgo, 'en');
+    expect(result).toMatch(/5/);
+    // Intl.RelativeTimeFormat narrow style uses "5m ago" or "5 min. ago"
+    expect(result).toMatch(/m/i);
+  });
+
+  it('formats hours ago in English', () => {
+    const threeHoursAgo = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(threeHoursAgo, 'en');
+    expect(result).toMatch(/3/);
+    // Narrow style: "3h ago" or "3 hr. ago"
+    expect(result).toMatch(/h/i);
+  });
+
+  it('formats days ago in English', () => {
+    const twoDaysAgo = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(twoDaysAgo, 'en');
+    expect(result).toMatch(/2/);
+    // Narrow style: "2d ago" or "2 days ago"
+    expect(result).toMatch(/d/i);
+  });
+
+  it('formats in French locale', () => {
+    const fiveMinAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(fiveMinAgo, 'fr');
+    // French uses "il y a" or "min" — just check it doesn't say "ago"
+    expect(result).not.toContain('ago');
+    expect(result).toMatch(/5/);
+  });
+
+  it('formats in Japanese locale', () => {
+    const threeHoursAgo = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(threeHoursAgo, 'ja');
+    expect(result).toMatch(/3/);
+    // Should contain Japanese time unit, not English
+    expect(result).not.toContain('ago');
+  });
+
+  it('defaults to English when no locale provided', () => {
+    const fiveMinAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    const result = formatRelativeTime(fiveMinAgo);
+    expect(result).toMatch(/5/);
   });
 });

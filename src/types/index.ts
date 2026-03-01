@@ -110,6 +110,29 @@ export interface User {
   merged_into_user_id: string | null;
 }
 
+/**
+ * Safe user profile projection — excludes PII and sensitive auth fields.
+ * Use this when returning user data to external consumers (bot API, public endpoints).
+ */
+export type SafeUserProfile = Omit<
+  User,
+  'email' | 'phone' | 'password_hash' | 'password_changed_at' | 'session_version' | 'merged_into_user_id'
+>;
+
+/** Strip sensitive fields from a User object for external consumption. */
+export function safeProfile(user: User): SafeUserProfile {
+  const {
+    email: _email,
+    phone: _phone,
+    password_hash: _hash,
+    password_changed_at: _pwChanged,
+    session_version: _sv,
+    merged_into_user_id: _merged,
+    ...safe
+  } = user;
+  return safe;
+}
+
 export interface UserIssue {
   id: string;
   user_id: string;

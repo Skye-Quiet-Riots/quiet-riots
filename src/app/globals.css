@@ -31,3 +31,8 @@ body {
 .text-brand-blue {
   color: var(--brand-blue);
 }
+
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
