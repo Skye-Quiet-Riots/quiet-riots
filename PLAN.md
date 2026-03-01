@@ -154,7 +154,7 @@ These fixes address review findings that affect ALL subsequent phases. Ship as f
 
 ---
 
-## Phase 4: Follow System
+## Phase 4: Follow System ✅ COMPLETE (PR #181)
 
 **Effort:** ~5-6 hours | **Migration:** `030_user_follows.sql` | **Dependencies:** None
 
