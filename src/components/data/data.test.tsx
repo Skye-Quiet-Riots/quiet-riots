@@ -6,6 +6,8 @@ import { ActionInitiativeProgress } from './action-initiative-progress';
 import { CountryList } from './country-list';
 import { HealthMeter } from './health-meter';
 import { PivotTable } from './pivot-table';
+import { OrgList } from './org-list';
+import { IssueList } from './issue-list';
 import { StatBadge } from './stat-badge';
 import { TrendingIndicator } from './trending-indicator';
 import { WalletBalance } from './wallet-balance';
@@ -728,5 +730,119 @@ describe('AssistantOverviewBanner', () => {
     render(el);
     expect(screen.getByText('🛩️')).toBeDefined();
     expect(screen.getByText('📡')).toBeDefined();
+  });
+});
+
+describe('OrgList', () => {
+  const rows = [
+    { organisation_id: 'org-1', organisation_name: 'British Airways', logo_emoji: '✈️', rioter_count: 892, rank: 1 },
+    { organisation_id: 'org-2', organisation_name: 'Ryanair', logo_emoji: '✈️', rioter_count: 734, rank: 2 },
+    { organisation_id: 'org-3', organisation_name: 'easyJet', logo_emoji: '✈️', rioter_count: 421, rank: 3 },
+  ];
+
+  it('renders organisation names', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    expect(screen.getByText('British Airways')).toBeDefined();
+    expect(screen.getByText('Ryanair')).toBeDefined();
+    expect(screen.getByText('easyJet')).toBeDefined();
+  });
+
+  it('renders rioter counts', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    expect(screen.getByText('892')).toBeDefined();
+    expect(screen.getByText('734')).toBeDefined();
+    expect(screen.getByText('421')).toBeDefined();
+  });
+
+  it('renders logo emoji', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    expect(screen.getAllByText('✈️').length).toBe(3);
+  });
+
+  it('links to intersection pages', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    const links = screen.getAllByRole('link');
+    expect(links.length).toBe(3);
+    expect(links[0].getAttribute('href')).toBe('/issues/issue-1/organisations/org-1');
+    expect(links[1].getAttribute('href')).toBe('/issues/issue-1/organisations/org-2');
+  });
+
+  it('renders proportional bars', () => {
+    const { container } = render(<OrgList rows={rows} issueId="issue-1" />);
+    const bars = container.querySelectorAll('.bg-blue-500');
+    expect(bars.length).toBe(3);
+    // First bar should be 100% (max), third should be smaller
+    expect(bars[0].getAttribute('style')).toContain('100%');
+    expect(bars[2].getAttribute('style')).not.toContain('100%');
+  });
+
+  it('renders nothing when rows is empty', () => {
+    const { container } = render(<OrgList rows={[]} issueId="issue-1" />);
+    expect(container.innerHTML).toBe('');
+  });
+
+  it('has ORGANISATIONS heading in blue', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    expect(screen.getByText('Organisations')).toBeDefined();
+  });
+
+  it('does not render pivot toggle or rankings', () => {
+    render(<OrgList rows={rows} issueId="issue-1" />);
+    expect(screen.queryByText('The Pivot')).toBeNull();
+    expect(screen.queryByText('#1')).toBeNull();
+    expect(screen.queryByText('#2')).toBeNull();
+    expect(screen.queryByText('Issue Pivot')).toBeNull();
+    expect(screen.queryByText('Org Pivot')).toBeNull();
+  });
+});
+
+describe('IssueList', () => {
+  const rows = [
+    { issue_id: 'issue-1', issue_name: 'Flight Delays', rioter_count: 4200, rank: 1 },
+    { issue_id: 'issue-2', issue_name: 'Baggage Lost', rioter_count: 3100, rank: 2 },
+  ];
+
+  it('renders issue names', () => {
+    render(<IssueList rows={rows} />);
+    expect(screen.getByText('Flight Delays')).toBeDefined();
+    expect(screen.getByText('Baggage Lost')).toBeDefined();
+  });
+
+  it('renders rioter counts', () => {
+    render(<IssueList rows={rows} />);
+    expect(screen.getByText('4,200')).toBeDefined();
+    expect(screen.getByText('3,100')).toBeDefined();
+  });
+
+  it('links to issue pages', () => {
+    render(<IssueList rows={rows} />);
+    const links = screen.getAllByRole('link');
+    expect(links.length).toBe(2);
+    expect(links[0].getAttribute('href')).toBe('/issues/issue-1');
+    expect(links[1].getAttribute('href')).toBe('/issues/issue-2');
+  });
+
+  it('renders proportional bars', () => {
+    const { container } = render(<IssueList rows={rows} />);
+    const bars = container.querySelectorAll('.bg-blue-500');
+    expect(bars.length).toBe(2);
+  });
+
+  it('renders nothing when rows is empty', () => {
+    const { container } = render(<IssueList rows={[]} />);
+    expect(container.innerHTML).toBe('');
+  });
+
+  it('has ISSUES heading', () => {
+    render(<IssueList rows={rows} />);
+    expect(screen.getByText('Issues')).toBeDefined();
+  });
+
+  it('does not render pivot toggle or rankings', () => {
+    render(<IssueList rows={rows} />);
+    expect(screen.queryByText('The Pivot')).toBeNull();
+    expect(screen.queryByText('#1')).toBeNull();
+    expect(screen.queryByText('Issue Pivot')).toBeNull();
+    expect(screen.queryByText('Org Pivot')).toBeNull();
   });
 });

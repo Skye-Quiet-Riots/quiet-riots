@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   getOrganisationById,
   getIssuesForOrg,
-  getOrgsForIssue,
   getTotalRiotersForOrg,
   getOrgCommunityData,
 } from '@/lib/queries/organisations';
@@ -11,7 +10,6 @@ import { getEvidenceForOrg } from '@/lib/queries/evidence';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
 import {
   translateEntity,
-  translateIssuePivotRows,
   translateOrgPivotRows,
   translateCategoryAssistant,
   translateActions,
@@ -26,7 +24,7 @@ import { HealthMeter } from '@/components/data/health-meter';
 import { CountryList } from '@/components/data/country-list';
 import { ExpertCard } from '@/components/cards/expert-card';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
-import { PivotToggle } from '@/components/interactive/pivot-toggle';
+import { IssueList } from '@/components/data/issue-list';
 import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
@@ -59,19 +57,16 @@ export default async function OrgDetailPage({ params }: Props) {
   ]);
 
   const firstIssue = rawOrgPivotRows[0];
-  const rawIssuePivotRows = firstIssue ? await getOrgsForIssue(firstIssue.issue_id) : [];
 
   // Translate everything in parallel
-  const [orgPivotRows, issuePivotRows, assistant, actions, experts, reels, countries] =
-    await Promise.all([
-      translateOrgPivotRows(rawOrgPivotRows, locale),
-      translateIssuePivotRows(rawIssuePivotRows, locale),
-      rawAssistant ? translateCategoryAssistant(rawAssistant, locale) : Promise.resolve(null),
-      translateActions(communityData.actions, locale),
-      translateExpertProfiles(communityData.experts, locale),
-      translateRiotReels(communityData.reels, locale),
-      Promise.resolve(translateCountryBreakdown(communityData.countries, locale)),
-    ]);
+  const [orgPivotRows, assistant, actions, experts, reels, countries] = await Promise.all([
+    translateOrgPivotRows(rawOrgPivotRows, locale),
+    rawAssistant ? translateCategoryAssistant(rawAssistant, locale) : Promise.resolve(null),
+    translateActions(communityData.actions, locale),
+    translateExpertProfiles(communityData.experts, locale),
+    translateRiotReels(communityData.reels, locale),
+    Promise.resolve(translateCountryBreakdown(communityData.countries, locale)),
+  ]);
 
   const sectionNavItems = [
     { id: 'overview', label: t('sectionOverview') },
@@ -125,22 +120,8 @@ export default async function OrgDetailPage({ params }: Props) {
               <p className="mb-6 text-zinc-600 dark:text-zinc-400">{org.description}</p>
             )}
 
-            {/* Pareto explanation */}
-            <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/10">
-              <p className="text-sm text-amber-800 dark:text-amber-300">
-                <strong>{t('paretoTitle')}</strong> {t('paretoDesc')}
-              </p>
-            </div>
-
-            {/* The Pivot */}
-            <PivotToggle
-              issuePivotRows={issuePivotRows}
-              orgPivotRows={orgPivotRows}
-              currentOrgId={org.id}
-              currentIssueId={firstIssue?.issue_id}
-              issueName={firstIssue?.issue_name}
-              orgName={org.name}
-            />
+            {/* Issues list */}
+            <IssueList rows={orgPivotRows} />
           </section>
 
           {/* Actions section */}

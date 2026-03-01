@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getIssueById } from '@/lib/queries/issues';
 import { getOrgsForIssue } from '@/lib/queries/organisations';
-import { getIssuesForOrg } from '@/lib/queries/organisations';
 import { getActionsForIssue } from '@/lib/queries/actions';
 import {
   getCommunityHealth,
@@ -24,7 +23,6 @@ import {
   translateActionInitiatives,
   translateCountryBreakdown,
   translateIssuePivotRows,
-  translateOrgPivotRows,
   translateSynonyms,
   translateCategoryAssistant,
 } from '@/lib/queries/translate';
@@ -42,7 +40,7 @@ import { HealthMeter } from '@/components/data/health-meter';
 import { CountryList } from '@/components/data/country-list';
 import { SynonymList } from '@/components/data/synonym-list';
 import { ExpertCard } from '@/components/cards/expert-card';
-import { PivotToggle } from '@/components/interactive/pivot-toggle';
+import { OrgList } from '@/components/data/org-list';
 import { JoinButton } from '@/components/interactive/join-button';
 import { FollowButton } from '@/components/interactive/follow-button';
 import { ActionsSection } from '@/components/interactive/actions-section';
@@ -113,12 +111,7 @@ export default async function IssueDetailPage({ params }: Props) {
 
   // Load all data in parallel
   const rawIssuePivotRows = await getOrgsForIssue(issue.id);
-  const firstOrg = rawIssuePivotRows[0];
-  const rawOrgPivotRows = firstOrg ? await getIssuesForOrg(firstOrg.organisation_id) : [];
-  const [issuePivotRows, orgPivotRows] = await Promise.all([
-    translateIssuePivotRows(rawIssuePivotRows, locale),
-    translateOrgPivotRows(rawOrgPivotRows, locale),
-  ]);
+  const issuePivotRows = await translateIssuePivotRows(rawIssuePivotRows, locale);
   const rawActions = await getActionsForIssue(issue.id);
   const actions = await translateActions(rawActions, locale);
   const actionCount = await getActionCountForIssue(issue.id);
@@ -222,16 +215,8 @@ export default async function IssueDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* The Pivot — THE killer feature */}
-            <PivotToggle
-              issuePivotRows={issuePivotRows}
-              orgPivotRows={orgPivotRows}
-              currentOrgId={firstOrg?.organisation_id}
-              currentIssueId={issue.id}
-              issueId={issue.id}
-              issueName={issue.name}
-              orgName={firstOrg?.organisation_name}
-            />
+            {/* Organisations list */}
+            <OrgList rows={issuePivotRows} issueId={issue.id} />
           </section>
 
           {/* Actions section */}
