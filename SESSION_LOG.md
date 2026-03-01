@@ -6,20 +6,21 @@
 
 ## Latest Session
 
-**Session 71** (2026-03-01) — Phase 7: Issue-Organisation Intersection Pages (PR #187 merged)
-→ [`session-logs/2026-03-session-71.md`](session-logs/2026-03-session-71.md)
+**Session 72** (2026-03-01) — Phase 8: Homepage Personal Activity Feed — FINAL PHASE (PR #189 merged). Website redesign complete!
+→ [`session-logs/2026-03-session-72.md`](session-logs/2026-03-session-72.md)
 
 ## Current Priorities
 
-1. **Website redesign Phase 8** — Homepage Personal Activity Feed. This is the FINAL phase. Plan at `PLAN.md`. Phases 0–7 all complete. Full order: ~~0~~→~~1+2~~→~~4~~→~~3~~→~~6~~→~~5~~→~~7~~→**8**.
-2. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
-3. **Remaining hero image backfill** — 44 orgs + 2 issues still need hero images
-4. **Google/Facebook OAuth setup** — still pending from session 47
+1. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+2. **Remaining hero image backfill** — 44 orgs + 2 issues still need hero images
+3. **Google/Facebook OAuth setup** — still pending from session 47
+4. **Password-auth test timeouts** — 3 tests timing out in CI, need investigation
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 72  | 2026-03-01    | Phase 8: Homepage Personal Feed — REDESIGN COMPLETE (PR #189) | [`session-72`](session-logs/2026-03-session-72.md)                                                       |
 | 71  | 2026-03-01    | Phase 7: Issue-Org Intersection Pages (PR #187)       | [`session-71`](session-logs/2026-03-session-71.md)                                                             |
 | 70  | 2026-03-01    | Phases 3, 6, 5 of Website Redesign (3 PRs merged)    | [`session-70`](session-logs/2026-03-session-70.md)                                                             |
 | 69b | 2026-03-01    | Phase 1+2 + Plan Review + Phase 4 Follow System       | [`session-69b`](session-logs/2026-03-session-69b.md)                                                           |
