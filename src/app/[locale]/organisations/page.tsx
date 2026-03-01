@@ -71,7 +71,7 @@ export default async function OrganisationsPage({ params, searchParams }: Props)
       )}
 
       {orgData.length > 0 ? (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {orgData.map(({ org, issueCount, totalRioters }) => (
             <OrgCard key={org.id} org={org} issueCount={issueCount} totalRioters={totalRioters} />
           ))}

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { CategoryBadge } from '@/components/data/category-badge';
@@ -16,16 +17,30 @@ export async function OrgCard({ org, issueCount, totalRioters }: OrgCardProps) {
   return (
     <Link
       href={`/organisations/${org.id}`}
-      className="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
+      className="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
     >
-      <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 text-2xl dark:bg-zinc-800">
-        {org.logo_emoji}
-      </span>
-      <div className="flex-1 min-w-0">
-        <h3 className="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">
+      {/* Thumbnail or logo emoji fallback */}
+      <div className="relative h-32 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+        {org.hero_thumb_url ? (
+          <Image
+            src={org.hero_thumb_url}
+            alt={org.name}
+            fill
+            className="object-cover transition-transform group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-3xl opacity-30">
+            {org.logo_emoji}
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="font-semibold leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400">
           {org.name}
         </h3>
-        <div className="mt-1 flex items-center gap-2">
+        <div className="mt-2 flex items-center gap-2">
           <CategoryBadge category={org.category} label={tc(org.category)} showEmoji={false} />
           {issueCount !== undefined && (
             <span className="text-xs text-zinc-500 dark:text-zinc-400">
