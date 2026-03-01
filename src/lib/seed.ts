@@ -3150,6 +3150,32 @@ export async function seed() {
     await insertRow(assistantSql, a);
   }
 
+  // =============================
+  // CHICKEN DEPLOYMENT — PRICING & FULFILLERS
+  // =============================
+  const chickenPricingSql = `INSERT INTO chicken_pricing (id, country_code, currency, base_price_pence, distance_surcharge_pence, express_surcharge_pence, description) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const chickenPricing: [string, string, string, number, number, number, string][] = [
+    ['chicken-price-gb', 'GB', 'GBP', 5000, 1000, 2500, 'UK chicken deployment — standard'],
+    ['chicken-price-us', 'US', 'USD', 6500, 1500, 3000, 'US chicken deployment — standard'],
+    ['chicken-price-eu', 'DE', 'EUR', 5500, 1200, 2800, 'EU chicken deployment — standard'],
+    ['chicken-price-au', 'AU', 'AUD', 8000, 2000, 4000, 'AU chicken deployment — standard'],
+  ];
+  for (const cp of chickenPricing) {
+    await insertRow(chickenPricingSql, cp);
+  }
+
+  const chickenFulfillerSql = `INSERT INTO chicken_fulfillers (id, name, email, phone, city, country_code, radius_km, rating, deployments_completed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const chickenFulfillers: [string, string, string, string, string, string, number, number, number][] = [
+    ['fulfiller-london', 'Clucky McChickenface', 'clucky@quietriots.com', '+447700100001', 'London', 'GB', 30, 4.8, 42],
+    ['fulfiller-manchester', 'The Bawk Express', 'bawk@quietriots.com', '+447700100002', 'Manchester', 'GB', 25, 4.6, 28],
+    ['fulfiller-nyc', 'Manhattan Chicken', 'nyc.chicken@quietriots.com', '+12125551001', 'New York', 'US', 20, 4.9, 67],
+    ['fulfiller-berlin', 'Das Huhn', 'huhn@quietriots.com', '+4930551001', 'Berlin', 'DE', 35, 4.7, 19],
+    ['fulfiller-sydney', 'Chook Runner', 'chook@quietriots.com', '+61291001001', 'Sydney', 'AU', 40, 4.5, 11],
+  ];
+  for (const cf of chickenFulfillers) {
+    await insertRow(chickenFulfillerSql, cf);
+  }
+
   console.log('Database seeded successfully!');
   console.log(`   ${issues.length} issues`);
   console.log(`   ${orgs.length} organisations`);
@@ -3157,6 +3183,8 @@ export async function seed() {
   console.log(`   ${reelCount} riot reels`);
   console.log(`   ${actionInitiativeCount} action initiatives`);
   console.log(`   ${seedAssistants.length} category assistants`);
+  console.log(`   ${chickenPricing.length} chicken pricing tiers`);
+  console.log(`   ${chickenFulfillers.length} chicken fulfillers`);
   console.log('   10 evidence posts + 4 comments');
   console.log(
     '   150+ pivot links, 80+ synonyms, 35+ actions, seasonal patterns, issue relations — all populated',
