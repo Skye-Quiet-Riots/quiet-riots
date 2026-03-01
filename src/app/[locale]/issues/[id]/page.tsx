@@ -34,8 +34,8 @@ import { getUserById } from '@/lib/queries/users';
 import { hasRole } from '@/lib/queries/roles';
 import { toAssistantCategory } from '@/types';
 
-import { PageHeader } from '@/components/layout/page-header';
-import { CategoryBadge } from '@/components/data/category-badge';
+import { HeroImage } from '@/components/layout/hero-image';
+import { SectionNav } from '@/components/layout/section-nav';
 import { StatBadge } from '@/components/data/stat-badge';
 import { TrendingIndicator } from '@/components/data/trending-indicator';
 import { HealthMeter } from '@/components/data/health-meter';
@@ -129,22 +129,45 @@ export default async function IssueDetailPage({ params }: Props) {
   const rawAssistant = await getAssistantByCategory(toAssistantCategory(issue.category));
   const assistant = rawAssistant ? await translateCategoryAssistant(rawAssistant, locale) : null;
 
+  const sectionNavItems = [
+    { id: 'overview', label: t('sectionOverview') },
+    { id: 'actions', label: t('sectionActions') },
+    { id: 'evidence', label: t('sectionEvidence') },
+    { id: 'community', label: t('sectionCommunity') },
+    { id: 'experts', label: t('sectionExperts') },
+  ];
+
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
-      <PageHeader
+    <div className="mx-auto max-w-6xl px-4 py-6">
+      {/* Hero Image */}
+      <HeroImage
+        imageUrl={issue.hero_image_url}
+        category={issue.category}
+        categoryLabel={tc(issue.category)}
         title={issue.name}
         breadcrumbs={[
           { label: t('breadcrumb'), href: '/issues' },
           { label: tc(issue.category), href: `/issues?category=${issue.category}` },
           { label: issue.name },
         ]}
-      />
-
-      {/* Category + Trending */}
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <CategoryBadge category={issue.category} label={tc(issue.category)} size="md" />
-        <TrendingIndicator delta={issue.trending_delta} size="md" />
-      </div>
+      >
+        {/* Floating stats bar */}
+        <div className="flex flex-wrap items-center gap-4">
+          <StatBadge value={issue.rioter_count} label={t('rioters')} emoji="📊" />
+          <StatBadge
+            value={issue.country_count}
+            label={t('country', { count: issue.country_count })}
+            emoji="🌍"
+          />
+          <StatBadge
+            value={`+${issue.trending_delta.toLocaleString()}`}
+            label={t('thisWeek')}
+            emoji="📈"
+          />
+          <StatBadge value={actionCount} label={t('actions')} emoji="⚡" />
+          <TrendingIndicator delta={issue.trending_delta} size="md" />
+        </div>
+      </HeroImage>
 
       {/* Pending review banner */}
       {issue.status === 'pending_review' && (
@@ -155,157 +178,149 @@ export default async function IssueDetailPage({ params }: Props) {
         </div>
       )}
 
-      {/* First Rioter badge */}
-      {firstRioterUser && issue.status === 'active' && (
-        <div className="mb-4">
-          <FirstRioterBadge
-            userId={firstRioterUser.id}
-            userName={firstRioterUser.name}
-            userImage={firstRioterUser.image}
-            isPublic={isPublicRecognition}
-            approvedAt={issue.approved_at}
-            locale={locale}
-            labels={{
-              imageAlt: tFr('imageAlt'),
-              fallbackName: tFr('fallbackName'),
-              badge: tFr('badge'),
-              anonymous: tFr('anonymous'),
-            }}
-          />
-        </div>
-      )}
+      {/* Section navigation */}
+      <SectionNav sections={sectionNavItems} />
 
-      {/* Assistants */}
-      {assistant && (
-        <div className="mb-6">
-          <AssistantDetailBanner
-            assistant={assistant}
-            agentHelps={issue.agent_helps}
-            humanHelps={issue.human_helps}
-            focus={issue.agent_focus ?? assistant.focus}
-          />
-        </div>
-      )}
+      {/* Main content — 3 col on desktop */}
+      <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+        {/* Main column (2/3) */}
+        <div className="lg:col-span-2">
+          {/* Overview section */}
+          <section id="overview" className="mb-8">
+            <p className="mb-4 text-zinc-600 dark:text-zinc-400">{issue.description}</p>
 
-      {/* Description */}
-      <p className="mb-6 text-zinc-600 dark:text-zinc-400">{issue.description}</p>
+            {synonyms.length > 0 && (
+              <div className="mb-4">
+                <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                  {t('alsoKnownAs')}
+                </p>
+                <SynonymList synonyms={synonyms} issueId={issue.id} />
+              </div>
+            )}
 
-      {/* Synonyms */}
-      {synonyms.length > 0 && (
-        <div className="mb-6">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            {t('alsoKnownAs')}
-          </p>
-          <SynonymList synonyms={synonyms} issueId={issue.id} />
-        </div>
-      )}
-
-      {/* Stats row */}
-      <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatBadge value={issue.rioter_count} label={t('rioters')} emoji="📊" />
-        <StatBadge
-          value={issue.country_count}
-          label={t('country', { count: issue.country_count })}
-          emoji="🌍"
-        />
-        <StatBadge
-          value={`+${issue.trending_delta.toLocaleString()}`}
-          label={t('thisWeek')}
-          emoji="📈"
-        />
-        <StatBadge value={actionCount} label={t('actions')} emoji="⚡" />
-      </div>
-
-      {/* Join button */}
-      <div className="mb-8">
-        <JoinButton issueId={issue.id} initialJoined={joined} />
-      </div>
-
-      {/* The Pivot — THE killer feature */}
-      <section className="mb-8">
-        <PivotToggle
-          issuePivotRows={issuePivotRows}
-          orgPivotRows={orgPivotRows}
-          currentOrgId={firstOrg?.organisation_id}
-          currentIssueId={issue.id}
-          issueName={issue.name}
-          orgName={firstOrg?.organisation_name}
-        />
-      </section>
-
-      {/* Actions */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-lg font-bold">{t('actionsTitle')}</h2>
-        <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">{t('actionsDesc')}</p>
-        <ActionsSection issueId={issue.id} initialActions={actions} />
-      </section>
-
-      {/* Action Initiatives */}
-      {actionInitiatives.length > 0 && (
-        <section className="mb-8">
-          <ActionInitiativeProgress actionInitiatives={actionInitiatives} />
-        </section>
-      )}
-
-      {/* Gather Evidence */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-lg font-bold">{t('gatherEvidence')}</h2>
-        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">{t('gatherEvidenceDesc')}</p>
-        <EvidenceSection
-          issueId={issue.id}
-          initialEvidence={evidence}
-          organisations={issuePivotRows.map((r) => ({
-            id: r.organisation_id,
-            name: r.organisation_name,
-          }))}
-        />
-      </section>
-
-      {/* Riot Reels */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-lg font-bold">{t('riotReels')}</h2>
-        <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">{t('riotReelsDesc')}</p>
-        <ReelsSection issueId={issue.id} initialReels={reels} />
-      </section>
-
-      {/* Two-column layout for sidebar content */}
-      <div className="mb-8 grid gap-6 lg:grid-cols-2">
-        {/* Community Health */}
-        {health && (
-          <section>
-            <HealthMeter health={health} />
+            {/* The Pivot — THE killer feature */}
+            <PivotToggle
+              issuePivotRows={issuePivotRows}
+              orgPivotRows={orgPivotRows}
+              currentOrgId={firstOrg?.organisation_id}
+              currentIssueId={issue.id}
+              issueName={issue.name}
+              orgName={firstOrg?.organisation_name}
+            />
           </section>
-        )}
 
-        {/* Countries */}
-        {countries.length > 0 && (
-          <section>
-            <CountryList countries={countries} />
+          {/* Actions section */}
+          <section id="actions" className="mb-8">
+            <h2 className="mb-4 text-lg font-bold">{t('actionsTitle')}</h2>
+            <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">{t('actionsDesc')}</p>
+            <ActionsSection issueId={issue.id} initialActions={actions} />
+
+            {actionInitiatives.length > 0 && (
+              <div className="mt-6">
+                <ActionInitiativeProgress actionInitiatives={actionInitiatives} />
+              </div>
+            )}
           </section>
-        )}
-      </div>
 
-      {/* Experts */}
-      {experts.length > 0 && (
-        <section className="mb-8">
-          <h2 className="mb-4 text-lg font-bold">{t('experts')}</h2>
-          <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">{t('expertsDesc')}</p>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {experts.map((expert) => (
-              <ExpertCard key={expert.id} expert={expert} />
-            ))}
+          {/* Evidence section */}
+          <section id="evidence" className="mb-8">
+            <h2 className="mb-4 text-lg font-bold">{t('gatherEvidence')}</h2>
+            <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+              {t('gatherEvidenceDesc')}
+            </p>
+            <EvidenceSection
+              issueId={issue.id}
+              initialEvidence={evidence}
+              organisations={issuePivotRows.map((r) => ({
+                id: r.organisation_id,
+                name: r.organisation_name,
+              }))}
+            />
+          </section>
+
+          {/* Riot Reels */}
+          <section className="mb-8">
+            <h2 className="mb-4 text-lg font-bold">{t('riotReels')}</h2>
+            <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">{t('riotReelsDesc')}</p>
+            <ReelsSection issueId={issue.id} initialReels={reels} />
+          </section>
+
+          {/* Community Feed */}
+          <section id="community" className="mb-8">
+            <h2 className="mb-4 text-lg font-bold">{t('communityFeed')}</h2>
+            <FeedSection issueId={issue.id} initialPosts={feedPosts} />
+          </section>
+        </div>
+
+        {/* Sidebar (1/3) */}
+        <div className="space-y-6 lg:col-span-1">
+          {/* Join button */}
+          <div>
+            <JoinButton issueId={issue.id} initialJoined={joined} />
           </div>
-        </section>
-      )}
 
-      {/* Community Feed */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-lg font-bold">{t('communityFeed')}</h2>
-        <FeedSection issueId={issue.id} initialPosts={feedPosts} />
-      </section>
+          {/* Community Health */}
+          {health && (
+            <section>
+              <HealthMeter health={health} />
+            </section>
+          )}
 
-      {/* Share eligibility banner */}
-      {userId && <ShareEligibilityBanner />}
+          {/* Countries */}
+          {countries.length > 0 && (
+            <section>
+              <CountryList countries={countries} />
+            </section>
+          )}
+
+          {/* Experts */}
+          <section id="experts">
+            {experts.length > 0 && (
+              <>
+                <h3 className="mb-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                  {t('experts')}
+                </h3>
+                <div className="space-y-3">
+                  {experts.map((expert) => (
+                    <ExpertCard key={expert.id} expert={expert} />
+                  ))}
+                </div>
+              </>
+            )}
+          </section>
+
+          {/* First Rioter badge */}
+          {firstRioterUser && issue.status === 'active' && (
+            <FirstRioterBadge
+              userId={firstRioterUser.id}
+              userName={firstRioterUser.name}
+              userImage={firstRioterUser.image}
+              isPublic={isPublicRecognition}
+              approvedAt={issue.approved_at}
+              locale={locale}
+              labels={{
+                imageAlt: tFr('imageAlt'),
+                fallbackName: tFr('fallbackName'),
+                badge: tFr('badge'),
+                anonymous: tFr('anonymous'),
+              }}
+            />
+          )}
+
+          {/* Assistant banner — at bottom of sidebar per user request */}
+          {assistant && (
+            <AssistantDetailBanner
+              assistant={assistant}
+              agentHelps={issue.agent_helps}
+              humanHelps={issue.human_helps}
+              focus={issue.agent_focus ?? assistant.focus}
+            />
+          )}
+
+          {/* Share eligibility banner */}
+          {userId && <ShareEligibilityBanner />}
+        </div>
+      </div>
     </div>
   );
 }

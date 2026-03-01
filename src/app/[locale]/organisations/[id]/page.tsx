@@ -14,8 +14,7 @@ import {
   translateOrgPivotRows,
   translateCategoryAssistant,
 } from '@/lib/queries/translate';
-import { PageHeader } from '@/components/layout/page-header';
-import { CategoryBadge } from '@/components/data/category-badge';
+import { HeroImage } from '@/components/layout/hero-image';
 import { StatBadge } from '@/components/data/stat-badge';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { PivotToggle } from '@/components/interactive/pivot-toggle';
@@ -49,79 +48,85 @@ export default async function OrgDetailPage({ params }: Props) {
   const assistant = rawAssistant ? await translateCategoryAssistant(rawAssistant, locale) : null;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
-      <PageHeader
+    <div className="mx-auto max-w-6xl px-4 py-6">
+      {/* Hero Image */}
+      <HeroImage
+        imageUrl={org.hero_image_url}
+        category={org.category}
+        categoryLabel={tc(org.category)}
         title={`${org.logo_emoji} ${org.name}`}
         breadcrumbs={[
           { label: t('breadcrumb'), href: '/organisations' },
           { label: tc(org.category), href: `/organisations?category=${org.category}` },
           { label: org.name },
         ]}
-      />
-
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <CategoryBadge category={org.category} label={tc(org.category)} size="md" />
-      </div>
-
-      {/* Assistants */}
-      {assistant && (
-        <div className="mb-6">
-          <AssistantDetailBanner assistant={assistant} />
-        </div>
-      )}
-
-      {org.description && (
-        <p className="mb-6 text-zinc-600 dark:text-zinc-400">{org.description}</p>
-      )}
-
-      <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <StatBadge value={totalRioters} label={t('totalRioters')} emoji="📊" />
-        <StatBadge value={orgPivotRows.length} label={t('issues')} emoji="📋" />
-        <StatBadge
-          value={
-            orgPivotRows.length > 0
-              ? Math.round((orgPivotRows[0].rioter_count / totalRioters) * 100) + '%'
-              : '0%'
-          }
-          label={t('topIssueShare')}
-          emoji="📈"
-        />
-      </div>
-
-      {/* Pareto explanation */}
-      <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/10">
-        <p className="text-sm text-amber-800 dark:text-amber-300">
-          <strong>{t('paretoTitle')}</strong> {t('paretoDesc')}
-        </p>
-      </div>
-
-      {/* The Pivot */}
-      <section className="mb-8">
-        <PivotToggle
-          issuePivotRows={issuePivotRows}
-          orgPivotRows={orgPivotRows}
-          currentOrgId={org.id}
-          currentIssueId={firstIssue?.issue_id}
-          issueName={firstIssue?.issue_name}
-          orgName={org.name}
-        />
-      </section>
-
-      {/* Gather Evidence */}
-      {firstIssue && (
-        <section className="mb-8">
-          <h2 className="mb-4 text-lg font-bold">{t('gatherEvidence')}</h2>
-          <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-            {t('gatherEvidenceDesc', { orgName: org.name })}
-          </p>
-          <EvidenceSection
-            issueId={firstIssue.issue_id}
-            initialEvidence={evidence}
-            organisations={[{ id: org.id, name: org.name }]}
-            preselectedOrgId={org.id}
+      >
+        {/* Floating stats bar */}
+        <div className="flex flex-wrap items-center gap-4">
+          <StatBadge value={totalRioters} label={t('totalRioters')} emoji="📊" />
+          <StatBadge value={orgPivotRows.length} label={t('issues')} emoji="📋" />
+          <StatBadge
+            value={
+              orgPivotRows.length > 0
+                ? Math.round((orgPivotRows[0].rioter_count / totalRioters) * 100) + '%'
+                : '0%'
+            }
+            label={t('topIssueShare')}
+            emoji="📈"
           />
-        </section>
-      )}
+        </div>
+      </HeroImage>
+
+      {/* Main content — 3 col on desktop */}
+      <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+        {/* Main column (2/3) */}
+        <div className="lg:col-span-2">
+          {org.description && (
+            <p className="mb-6 text-zinc-600 dark:text-zinc-400">{org.description}</p>
+          )}
+
+          {/* Pareto explanation */}
+          <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/10">
+            <p className="text-sm text-amber-800 dark:text-amber-300">
+              <strong>{t('paretoTitle')}</strong> {t('paretoDesc')}
+            </p>
+          </div>
+
+          {/* The Pivot */}
+          <section className="mb-8">
+            <PivotToggle
+              issuePivotRows={issuePivotRows}
+              orgPivotRows={orgPivotRows}
+              currentOrgId={org.id}
+              currentIssueId={firstIssue?.issue_id}
+              issueName={firstIssue?.issue_name}
+              orgName={org.name}
+            />
+          </section>
+
+          {/* Gather Evidence */}
+          {firstIssue && (
+            <section className="mb-8">
+              <h2 className="mb-4 text-lg font-bold">{t('gatherEvidence')}</h2>
+              <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                {t('gatherEvidenceDesc', { orgName: org.name })}
+              </p>
+              <EvidenceSection
+                issueId={firstIssue.issue_id}
+                initialEvidence={evidence}
+                organisations={[{ id: org.id, name: org.name }]}
+                preselectedOrgId={org.id}
+              />
+            </section>
+          )}
+        </div>
+
+        {/* Sidebar (1/3) */}
+        <div className="space-y-6 lg:col-span-1">
+          {/* Assistant banner */}
+          {assistant && <AssistantDetailBanner assistant={assistant} />}
+        </div>
+      </div>
     </div>
   );
 }
