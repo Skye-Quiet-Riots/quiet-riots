@@ -5,7 +5,10 @@ import { getTrendingIssues } from '@/lib/queries/issues';
 import { getTrendingReels } from '@/lib/queries/reels';
 import { translateEntities } from '@/lib/queries/translate';
 import { getTranslation } from '@/lib/queries/translations';
+import { getSession } from '@/lib/session';
+import { getPersonalFeed } from '@/lib/queries/personal-feed';
 import { IssueCard } from '@/components/cards/issue-card';
+import { PersonalFeed } from '@/components/interactive/personal-feed';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,10 +17,33 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
   setRequestLocale(locale);
 
   const t = await getTranslations('Home');
+  const tFeed = await getTranslations('PersonalFeed');
   const rawTrending = await getTrendingIssues(6);
   const trending = await translateEntities(rawTrending, 'issue', locale);
   const topReels = await getTrendingReels(1);
   const topReel = topReels[0];
+
+  // Check if user is authenticated — show personal feed if so
+  const userId = await getSession();
+  let feedResult: Awaited<ReturnType<typeof getPersonalFeed>> | null = null;
+  if (userId) {
+    feedResult = await getPersonalFeed(userId, undefined, 20);
+    // Translate issue names in feed activities
+    const activities = feedResult.activities;
+    if (locale !== 'en' && activities.length > 0) {
+      const issueIds = [...new Set(activities.map((a) => a.issue_id))];
+      const issueEntities = issueIds.map((id) => ({
+        id,
+        name: activities.find((a) => a.issue_id === id)!.issue_name,
+      }));
+      const translated = await translateEntities(issueEntities, 'issue', locale);
+      const nameMap = new Map(translated.map((ti) => [ti.id, ti.name]));
+      for (const activity of activities) {
+        const translatedName = nameMap.get(activity.issue_id);
+        if (translatedName) activity.issue_name = translatedName;
+      }
+    }
+  }
 
   // Translate the issue name shown alongside the top reel
   if (topReel && locale !== 'en') {
@@ -56,6 +82,19 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
           </div>
         </div>
       </section>
+
+      {/* Personal Activity Feed (authenticated users only) */}
+      {feedResult && (
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-2xl font-bold tracking-tight">{tFeed('title')}</h2>
+            <PersonalFeed
+              initialActivities={feedResult.activities}
+              initialCursor={feedResult.next_cursor}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Trending Issues */}
       {trending.length > 0 && (

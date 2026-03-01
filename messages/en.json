@@ -1097,7 +1097,9 @@
     "followed": "You are now following {issue}.",
     "unfollowed": "You have unfollowed {issue}.",
     "alreadyFollowing": "You are already following this Quiet Riot.",
-    "maxFollowsBot": "You can follow up to 100 Quiet Riots."
+    "maxFollowsBot": "You can follow up to 100 Quiet Riots.",
+    "personalFeedEmpty": "You haven't joined or followed any Quiet Riots yet. Search for one to get started.",
+    "personalFeedSummary": "Here are your latest updates from {count} Quiet Riots:"
   },
   "Chicken": {
     "title": "Deploy a Chicken",
@@ -1231,5 +1233,20 @@
     "partialResults": "Some results may be missing",
     "minChars": "Type at least {count} characters",
     "close": "Close search"
+  },
+  "PersonalFeed": {
+    "title": "Your Feed",
+    "emptyTitle": "No activity yet",
+    "emptyDesc": "Follow or join issues to see activity here.",
+    "browseIssues": "Browse issues",
+    "loadMore": "Load more",
+    "loading": "Loading...",
+    "evidenceLabel": "New evidence",
+    "feedPostLabel": "Community post",
+    "reelLabel": "Riot reel",
+    "likesCount": "{count} likes",
+    "commentsCount": "{count} comments",
+    "viewAllComments": "View {count} more comments",
+    "shareLabel": "Share"
   }
 }

@@ -2917,3 +2917,52 @@ describe('get_followed_issues', () => {
     expect(body.ok).toBe(false);
   });
 });
+
+describe('Bot API — get_personal_feed', () => {
+  it('returns personal feed for user with joined issues', async () => {
+    const { status, body } = await callBot('get_personal_feed', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data).toHaveProperty('activities');
+    expect(body.data).toHaveProperty('next_cursor');
+    expect(body.data).toHaveProperty('formatted_text');
+    expect(Array.isArray(body.data.activities)).toBe(true);
+    expect(body.data.activities.length).toBeGreaterThan(0);
+  });
+
+  it('returns empty feed for user with no issues', async () => {
+    // user-marcio has issue-rail joined, but create a user with no issues
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: "INSERT INTO users (id, name, email, phone) VALUES (?, ?, ?, ?)",
+      args: ['user-empty-feed', 'Empty Feed', 'empty@example.com', '+14155550100'],
+    });
+    const { status, body } = await callBot('get_personal_feed', {
+      phone: '+14155550100',
+    });
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.data.activities).toEqual([]);
+    expect(typeof body.data.formatted_text).toBe('string');
+  });
+
+  it('returns 404 for non-existent user', async () => {
+    const { status, body } = await callBot('get_personal_feed', {
+      phone: '+19876543210',
+    });
+    expect(status).toBe(404);
+    expect(body.ok).toBe(false);
+  });
+
+  it('supports limit parameter', async () => {
+    const { status, body } = await callBot('get_personal_feed', {
+      phone: '+447700900001',
+      limit: 2,
+    });
+    expect(status).toBe(200);
+    expect(body.data.activities.length).toBeLessThanOrEqual(2);
+  });
+});

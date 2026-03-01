@@ -983,3 +983,27 @@ export interface ChickenDeploymentWithDetails extends ChickenDeployment {
   organisation_name?: string;
   fulfiller_name?: string;
 }
+
+// Personal Activity Feed
+export type ActivityType = 'feed_post' | 'evidence' | 'riot_reel';
+
+export interface ActivityItem {
+  activity_type: ActivityType;
+  activity_id: string;
+  issue_id: string;
+  issue_name: string;
+  user_name: string;
+  content_snippet: string;
+  created_at: string;
+  likes: number;
+  comments_count: number;
+  shares: number;
+  media_url: string | null;
+  media_type: 'image' | 'video' | null;
+  detail_url: string;
+}
+
+export interface PersonalFeedResult {
+  activities: ActivityItem[];
+  next_cursor: string | null;
+}
