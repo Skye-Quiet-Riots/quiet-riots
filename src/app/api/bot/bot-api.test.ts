@@ -2527,3 +2527,172 @@ describe('Bot API: locale validation (security)', () => {
     expect(body.data.assistant).toBeDefined();
   });
 });
+
+// ─── Deploy a Chicken ──────────────────────────────────────
+
+describe('Deploy a Chicken bot actions', () => {
+  // Seed chicken data before chicken tests
+  beforeAll(async () => {
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO chicken_pricing (id, country_code, currency, base_price_pence, distance_surcharge_pence, express_surcharge_pence, description)
+            VALUES ('bot-pricing-gb', 'GB', 'GBP', 5000, 1000, 2500, 'UK chicken deployment')`,
+      args: [],
+    });
+    await db.execute({
+      sql: `INSERT OR IGNORE INTO chicken_fulfillers (id, name, city, country_code, radius_km)
+            VALUES ('bot-fulfiller-1', 'Test Chicken', 'London', 'GB', 30)`,
+      args: [],
+    });
+    // Give sarah enough funds for chicken deployments
+    await db.execute({
+      sql: "UPDATE wallets SET balance_pence = 50000 WHERE user_id = 'user-sarah'",
+      args: [],
+    });
+  });
+
+  it('get_chicken_pricing returns pricing', async () => {
+    const { status, body } = await callBot('get_chicken_pricing', {});
+    expect(status).toBe(200);
+    expect(body.data.pricing).toBeDefined();
+  });
+
+  it('get_chicken_pricing by country', async () => {
+    const { status, body } = await callBot('get_chicken_pricing', {
+      country_code: 'GB',
+    });
+    expect(status).toBe(200);
+    expect(body.data.pricing.country_code).toBe('GB');
+  });
+
+  it('deploy_chicken creates deployment', async () => {
+    const { status, body } = await callBot('deploy_chicken', {
+      phone: '+447700900001',
+      target_name: 'Bot CEO Target',
+      target_address: '123 Bot Street',
+      target_city: 'London',
+      target_country: 'GB',
+      message_text: 'Fix the trains!',
+    });
+    expect(status).toBe(200);
+    expect(body.data.deployment.status).toBe('paid');
+    expect(body.data.deployment.target_name).toBe('Bot CEO Target');
+    expect(body.data.amount_charged_pence).toBe(5000);
+  });
+
+  it('deploy_chicken with express delivery', async () => {
+    const { status, body } = await callBot('deploy_chicken', {
+      phone: '+447700900001',
+      target_name: 'Express Target',
+      target_address: '456 Fast Lane',
+      target_city: 'London',
+      target_country: 'GB',
+      message_text: 'Urgent message!',
+      express_delivery: true,
+    });
+    expect(status).toBe(200);
+    expect(body.data.amount_charged_pence).toBe(7500); // 5000 + 2500
+  });
+
+  it('get_chicken_deployments returns user deployments', async () => {
+    const { status, body } = await callBot('get_chicken_deployments', {
+      phone: '+447700900001',
+    });
+    expect(status).toBe(200);
+    expect(body.data.deployments.length).toBeGreaterThan(0);
+  });
+
+  it('get_chicken_deployment returns specific deployment', async () => {
+    const listRes = await callBot('get_chicken_deployments', {
+      phone: '+447700900001',
+    });
+    const deploymentId = listRes.body.data.deployments[0].id;
+
+    const { status, body } = await callBot('get_chicken_deployment', {
+      phone: '+447700900001',
+      deployment_id: deploymentId,
+    });
+    expect(status).toBe(200);
+    expect(body.data.deployment.id).toBe(deploymentId);
+  });
+
+  it('cancel_chicken cancels a paid deployment', async () => {
+    // Create a deployment to cancel
+    const createRes = await callBot('deploy_chicken', {
+      phone: '+447700900001',
+      target_name: 'Cancel Bot Target',
+      target_address: '789 Cancel Ave',
+      target_city: 'London',
+      target_country: 'GB',
+      message_text: 'Will be cancelled',
+    });
+    const deploymentId = createRes.body.data.deployment.id;
+
+    const { status, body } = await callBot('cancel_chicken', {
+      phone: '+447700900001',
+      deployment_id: deploymentId,
+    });
+    expect(status).toBe(200);
+    expect(body.data.cancelled).toBe(true);
+  });
+
+  it('update_chicken_status updates status', async () => {
+    const listRes = await callBot('get_chicken_deployments', {
+      phone: '+447700900001',
+    });
+    const paidDeployment = listRes.body.data.deployments.find(
+      (d: { status: string }) => d.status === 'paid',
+    );
+    if (!paidDeployment) return; // Skip if no paid deployment available
+
+    const { status, body } = await callBot('update_chicken_status', {
+      deployment_id: paidDeployment.id,
+      status: 'accepted',
+      fulfiller_id: 'bot-fulfiller-1',
+    });
+    expect(status).toBe(200);
+    expect(body.data.deployment.status).toBe('accepted');
+  });
+
+  it('get_chicken_fulfillers returns fulfillers', async () => {
+    const { status, body } = await callBot('get_chicken_fulfillers', {});
+    expect(status).toBe(200);
+    expect(body.data.fulfillers.length).toBeGreaterThan(0);
+  });
+
+  it('get_chicken_fulfillers filters by country', async () => {
+    const { status, body } = await callBot('get_chicken_fulfillers', {
+      country_code: 'GB',
+    });
+    expect(status).toBe(200);
+    expect(body.data.fulfillers.length).toBeGreaterThan(0);
+  });
+
+  it('deploy_chicken fails with insufficient funds', async () => {
+    // Drain the wallet first
+    const { getDb } = await import('@/lib/db');
+    const db = getDb();
+    await db.execute({
+      sql: "UPDATE wallets SET balance_pence = 10 WHERE user_id = 'user-sarah'",
+      args: [],
+    });
+
+    const { status, body } = await callBot('deploy_chicken', {
+      phone: '+447700900001',
+      target_name: 'No Funds Target',
+      target_address: '000 Broke St',
+      target_city: 'London',
+      target_country: 'GB',
+      message_text: 'Cannot afford',
+    });
+    expect(status).toBe(400);
+    expect(body.error).toContain('Insufficient funds');
+
+    // Restore wallet balance for other tests
+    await db.execute({
+      sql: "UPDATE wallets SET balance_pence = 50000 WHERE user_id = 'user-sarah'",
+      args: [],
+    });
+  });
+});

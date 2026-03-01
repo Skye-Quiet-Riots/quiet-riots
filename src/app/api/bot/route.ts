@@ -55,6 +55,16 @@ import {
 } from '@/lib/queries/assistants';
 import { createEvidence, getEvidenceForIssue } from '@/lib/queries/evidence';
 import {
+  getChickenPricing,
+  getAllChickenPricing,
+  createChickenDeployment,
+  getUserChickenDeployments,
+  getChickenDeployment,
+  cancelChickenDeployment,
+  updateChickenDeploymentStatus,
+  getActiveFulfillers,
+} from '@/lib/queries/chicken';
+import {
   translateEntities,
   translateEntity,
   translateActions,
@@ -103,7 +113,13 @@ import {
   reapplyForShare,
   createShareMessage,
 } from '@/lib/queries/shares';
-import type { MemoryCategory, Category, SuggestedType, RejectionReason } from '@/types';
+import type {
+  MemoryCategory,
+  Category,
+  SuggestedType,
+  RejectionReason,
+  ChickenDeploymentStatus,
+} from '@/types';
 import { rateLimit } from '@/lib/rate-limit';
 import { createRequestLogger } from '@/lib/logger';
 import { trackBotEvent } from '@/lib/queries/bot-events';
@@ -485,6 +501,41 @@ const actionSchemas = {
   // ─── Message Delivery (for local polling script) ──────
   get_undelivered_messages: z.object({}),
   mark_message_delivered: z.object({ message_id: idField }),
+
+  // ─── Deploy a Chicken ─────────────────────────────────
+  get_chicken_pricing: z.object({
+    country_code: z.string().min(2).max(2).optional(),
+  }),
+  deploy_chicken: z.object({
+    phone: phoneField,
+    target_name: z.string().min(1, 'Target name required').max(200),
+    target_role: z.string().max(200).optional(),
+    target_address: z.string().min(1, 'Address required').max(500),
+    target_city: z.string().min(1, 'City required').max(200),
+    target_country: z.string().min(2).max(2),
+    message_text: z.string().min(1, 'Message required').max(500),
+    issue_id: idField.optional(),
+    express_delivery: z.boolean().optional().default(false),
+  }),
+  get_chicken_deployments: phoneParam,
+  get_chicken_deployment: z.object({
+    phone: phoneField,
+    deployment_id: idField,
+  }),
+  cancel_chicken: z.object({
+    phone: phoneField,
+    deployment_id: idField,
+  }),
+  update_chicken_status: z.object({
+    deployment_id: idField,
+    status: z.enum(['accepted', 'in_progress', 'delivered', 'cancelled', 'refunded', 'disputed']),
+    fulfiller_id: idField.optional(),
+    fulfiller_notes: z.string().max(1000).optional(),
+    proof_photo_url: z.string().url().max(2000).optional(),
+  }),
+  get_chicken_fulfillers: z.object({
+    country_code: z.string().min(2).max(2).optional(),
+  }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -2068,6 +2119,107 @@ export async function POST(request: NextRequest) {
         const messageId = p.message_id as string;
         const delivered = await markMessageDelivered(messageId);
         return ok({ delivered });
+      }
+
+      // ─── Deploy a Chicken ─────────────────────────────────
+      case 'get_chicken_pricing': {
+        const countryCode = p.country_code as string | undefined;
+        if (countryCode) {
+          const pricing = await getChickenPricing(countryCode);
+          return ok({ pricing });
+        }
+        const allPricing = await getAllChickenPricing();
+        return ok({ pricing: allPricing });
+      }
+
+      case 'deploy_chicken': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        // Get pricing for the target country
+        const pricing = await getChickenPricing(p.target_country as string);
+        if (!pricing) return err('No pricing available for this country');
+
+        const totalCost =
+          pricing.base_price_pence +
+          (p.express_delivery ? pricing.express_surcharge_pence : 0);
+
+        try {
+          const deployment = await createChickenDeployment({
+            userId: user.id,
+            issueId: p.issue_id as string | undefined,
+            targetName: p.target_name as string,
+            targetRole: p.target_role as string | undefined,
+            targetAddress: p.target_address as string,
+            targetCity: p.target_city as string,
+            targetCountry: p.target_country as string,
+            messageText: p.message_text as string,
+            pricingId: pricing.id,
+            amountPaidPence: totalCost,
+            currency: pricing.currency,
+            expressDelivery: p.express_delivery as boolean,
+          });
+          return ok({ deployment, amount_charged_pence: totalCost });
+        } catch (e) {
+          const message = e instanceof Error ? e.message : 'Deployment failed';
+          if (message === 'Insufficient funds') return err(message);
+          if (message === 'Wallet not found') return err(message, 404);
+          throw e;
+        }
+      }
+
+      case 'get_chicken_deployments': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const deployments = await getUserChickenDeployments(user.id);
+        return ok({ deployments });
+      }
+
+      case 'get_chicken_deployment': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const deployment = await getChickenDeployment(p.deployment_id as string);
+        if (!deployment) return err('Deployment not found', 404);
+        if (deployment.user_id !== user.id) return err('Not your deployment', 403);
+        return ok({ deployment });
+      }
+
+      case 'cancel_chicken': {
+        const phone = p.phone as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+        trackedUserId = user.id;
+
+        const result = await cancelChickenDeployment(p.deployment_id as string, user.id);
+        if (!result.success) return err(result.error || 'Cancellation failed');
+        return ok({ cancelled: true });
+      }
+
+      case 'update_chicken_status': {
+        const updated = await updateChickenDeploymentStatus(
+          p.deployment_id as string,
+          p.status as ChickenDeploymentStatus,
+          {
+            fulfillerId: p.fulfiller_id as string | undefined,
+            fulfillerNotes: p.fulfiller_notes as string | undefined,
+            proofPhotoUrl: p.proof_photo_url as string | undefined,
+          },
+        );
+        if (!updated) return err('Deployment not found', 404);
+        return ok({ deployment: updated });
+      }
+
+      case 'get_chicken_fulfillers': {
+        const fulfillers = await getActiveFulfillers(p.country_code as string | undefined);
+        return ok({ fulfillers });
       }
 
       default:
