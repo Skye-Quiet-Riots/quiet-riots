@@ -67,7 +67,7 @@ These fixes address review findings that affect ALL subsequent phases. Ship as f
 
 ---
 
-## Phase 1+2: Pivot Blue + Wallet in Nav + Nav Context API (combined PR) ✅ COMPLETE (PR #TBD)
+## Phase 1+2: Pivot Blue + Wallet in Nav + Nav Context API (combined PR) ✅ COMPLETE (PR #179)
 
 **Effort:** ~2 hours | **Migration:** None | **Dependencies:** Phase 0
 
