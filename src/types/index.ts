@@ -891,3 +891,72 @@ export interface ShareStatusHistory {
   notes: string | null;
   created_at: string;
 }
+
+// Deploy a Chicken
+export type ChickenDeploymentStatus =
+  | 'paid'
+  | 'accepted'
+  | 'in_progress'
+  | 'delivered'
+  | 'cancelled'
+  | 'refunded'
+  | 'disputed';
+
+export interface ChickenPricing {
+  id: string;
+  country_code: string;
+  currency: string;
+  base_price_pence: number;
+  distance_surcharge_pence: number;
+  express_surcharge_pence: number;
+  description: string | null;
+  active: number;
+  created_at: string;
+}
+
+export interface ChickenFulfiller {
+  id: string;
+  name: string;
+  email: string | null;
+  phone: string | null;
+  city: string;
+  country_code: string;
+  radius_km: number;
+  active: number;
+  rating: number;
+  deployments_completed: number;
+  created_at: string;
+}
+
+export interface ChickenDeployment {
+  id: string;
+  user_id: string;
+  issue_id: string | null;
+  organisation_id: string | null;
+  target_name: string;
+  target_role: string | null;
+  target_address: string;
+  target_city: string;
+  target_country: string;
+  message_text: string;
+  status: ChickenDeploymentStatus;
+  pricing_id: string | null;
+  amount_paid_pence: number;
+  currency: string;
+  express_delivery: number;
+  estimated_delivery_date: string | null;
+  fulfiller_id: string | null;
+  fulfiller_notes: string | null;
+  proof_photo_url: string | null;
+  wallet_transaction_id: string | null;
+  created_at: string;
+  updated_at: string;
+  delivered_at: string | null;
+  cancelled_at: string | null;
+}
+
+export interface ChickenDeploymentWithDetails extends ChickenDeployment {
+  issue_name?: string;
+  organisation_name?: string;
+  fulfiller_name?: string;
+}
