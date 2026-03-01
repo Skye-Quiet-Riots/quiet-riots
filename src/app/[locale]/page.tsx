@@ -27,44 +27,47 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
 
   return (
     <div className="flex flex-col">
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center px-6 py-20 text-center sm:py-28">
-        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-zinc-500">
-          {t('tagline')}
-        </p>
-        <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-          {t('headline')}
-        </h1>
-        <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          {t('description')}
-        </p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/issues"
-            className="rounded-full bg-black px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-white dark:text-black"
-          >
-            {t('browseIssues')}
-          </Link>
-          <a
-            href="#how"
-            className="rounded-full border border-zinc-300 px-8 py-3 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
-          >
-            {t('howItWorks')}
-          </a>
+      {/* Hero — full-width gradient banner */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 px-6 py-24 text-center text-white sm:py-32">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent_50%)]" />
+        <div className="relative mx-auto max-w-3xl">
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-200">
+            {t('tagline')}
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+            {t('headline')}
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-blue-100">
+            {t('description')}
+          </p>
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link
+              href="/issues"
+              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-blue-700 shadow-lg transition-all hover:bg-blue-50 hover:shadow-xl"
+            >
+              {t('browseIssues')}
+            </Link>
+            <a
+              href="#how"
+              className="rounded-full border border-white/40 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-white/10"
+            >
+              {t('howItWorks')}
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Trending Issues */}
       {trending.length > 0 && (
-        <section className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
-          <div className="mx-auto max-w-5xl">
+        <section className="bg-zinc-50 px-6 py-16 dark:bg-zinc-900/50">
+          <div className="mx-auto max-w-6xl">
             <div className="mb-8 flex items-center justify-between">
               <h2 className="text-2xl font-bold tracking-tight">{t('trendingIssues')}</h2>
               <Link
                 href="/issues"
                 className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
               >
-                {t('viewAll')}
+                {t('viewAll')} &rarr;
               </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,31 +81,31 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
 
       {/* Riot Reel of the Day */}
       {topReel && (
-        <section className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="mb-6 text-center text-2xl font-bold tracking-tight">
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-2xl font-bold tracking-tight">
               {t('reelOfTheDay')}
             </h2>
-            <div className="mx-auto max-w-lg">
+            <div className="mx-auto max-w-2xl overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
               <a
                 href={topReel.youtube_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block overflow-hidden rounded-lg"
+                className="relative block overflow-hidden"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element -- external YouTube thumbnail URL */}
                 <img
                   src={topReel.thumbnail_url}
                   alt={topReel.title}
-                  className="aspect-video w-full object-cover transition-opacity hover:opacity-90"
+                  className="aspect-video w-full object-cover transition-transform hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/60 text-xl text-white">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600/90 text-xl text-white shadow-lg backdrop-blur-sm">
                     ▶
                   </div>
                 </div>
               </a>
-              <div className="mt-3 text-center">
+              <div className="p-4 text-center">
                 <p className="font-semibold">{topReel.title}</p>
                 {topReel.caption && (
                   <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
@@ -110,7 +113,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
                   </p>
                 )}
                 <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-500">
-                  😂 {t('riotersFunny', { count: topReel.upvotes.toLocaleString() })}
+                  {t('riotersFunny', { count: topReel.upvotes.toLocaleString() })}
                   {' · '}
                   {t('from')}{' '}
                   <Link
@@ -127,14 +130,14 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
       )}
 
       {/* How It Works */}
-      <section id="how" className="px-6 py-16">
+      <section id="how" className="bg-zinc-50 px-6 py-16 dark:bg-zinc-900/50">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
             {t('howItWorks')}
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 text-2xl dark:bg-zinc-800">
+            <div className="rounded-xl bg-white p-6 text-center shadow-sm dark:bg-zinc-800">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-2xl dark:bg-blue-900/50">
                 🔍
               </div>
               <h3 className="mt-4 font-semibold">{t('findYourIssue')}</h3>
@@ -142,8 +145,8 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
                 {t('findYourIssueDesc')}
               </p>
             </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 text-2xl dark:bg-zinc-800">
+            <div className="rounded-xl bg-white p-6 text-center shadow-sm dark:bg-zinc-800">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-2xl dark:bg-blue-900/50">
                 🔀
               </div>
               <h3 className="mt-4 font-semibold">{t('useThePivot')}</h3>
@@ -151,8 +154,8 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
                 {t('useThePivotDesc')}
               </p>
             </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 text-2xl dark:bg-zinc-800">
+            <div className="rounded-xl bg-white p-6 text-center shadow-sm dark:bg-zinc-800">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-2xl dark:bg-blue-900/50">
                 ⚡
               </div>
               <h3 className="mt-4 font-semibold">{t('takeAction')}</h3>
@@ -163,7 +166,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
       </section>
 
       {/* Mission */}
-      <section className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
+      <section className="px-6 py-16">
         <div className="mx-auto max-w-2xl text-center">
           <Image src="/logo-192.png" alt="Quiet Riots" width={48} height={48} />
           <h2 className="mt-4 text-xl font-bold italic text-zinc-700 dark:text-zinc-300">
@@ -175,7 +178,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
           />
           <Link
             href="/issues"
-            className="mt-6 inline-block rounded-full bg-black px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-white dark:text-black"
+            className="mt-6 inline-block rounded-full bg-blue-600 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
           >
             {t('joinMovement')}
           </Link>

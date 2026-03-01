@@ -37,7 +37,7 @@ export default async function AssistantDetailPage({ params }: Props) {
   const displayCategory = (category.charAt(0).toUpperCase() + category.slice(1)) as Category;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8">
       <PageHeader
         title={`${detail.agent_name} & ${detail.human_name}`}
         subtitle={detail.goal || undefined}
