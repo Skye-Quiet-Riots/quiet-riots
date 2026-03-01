@@ -41,10 +41,10 @@ describe('Footer', () => {
     expect(screen.getByText(/change more for the better/i)).toBeDefined();
   });
 
-  it('renders powered by text', async () => {
+  it('renders brand name and powered text', async () => {
     const el = await Footer();
     render(el);
-    expect(screen.getByText(/Quiet Riots/)).toBeDefined();
+    expect(screen.getAllByText(/Quiet Riots/).length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders logo image', async () => {

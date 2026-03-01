@@ -7,12 +7,10 @@ import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { LanguageSelector } from '@/components/interactive/language-selector';
 
-const linkKeys = ['issues', 'assistants', 'organisations', 'wallet'] as const;
+const linkKeys = ['issues', 'organisations'] as const;
 const linkHrefs: Record<(typeof linkKeys)[number], string> = {
   issues: '/issues',
-  assistants: '/assistants',
   organisations: '/organisations',
-  wallet: '/wallet',
 };
 
 export function NavBar() {
@@ -84,27 +82,36 @@ export function NavBar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-          <Image src="/logo-192.png" alt="Quiet Riots logo" width={28} height={28} />
-          <span>Quiet Riots</span>
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        {/* Logo + logotype */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo-192.png" alt="Quiet Riots logo" width={32} height={32} />
+          <span className="text-xl font-extrabold tracking-tight text-blue-600 dark:text-blue-400">
+            Quiet Riots
+          </span>
         </Link>
 
         {/* Desktop links */}
         <div className="hidden items-center gap-6 sm:flex">
-          {linkKeys.map((key) => (
-            <Link
-              key={key}
-              href={linkHrefs[key]}
-              className={`text-sm font-medium transition-colors ${
-                pathname.startsWith(linkHrefs[key])
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
-              }`}
-            >
-              {t(key)}
-            </Link>
-          ))}
+          {linkKeys.map((key) => {
+            const isActive = pathname.startsWith(linkHrefs[key]);
+            return (
+              <Link
+                key={key}
+                href={linkHrefs[key]}
+                className={`relative text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+                }`}
+              >
+                {t(key)}
+                {isActive && (
+                  <span className="absolute -bottom-3.5 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400" />
+                )}
+              </Link>
+            );
+          })}
           <LanguageSelector />
 
           {/* Inbox icon (visible when logged in) */}
@@ -158,13 +165,27 @@ export function NavBar() {
                 )}
               </button>
               {avatarOpen && (
-                <div className="absolute right-0 mt-2 w-40 rounded-md border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+                <div className="absolute right-0 mt-2 w-44 rounded-md border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
                   <Link
                     href="/profile"
                     onClick={() => setAvatarOpen(false)}
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >
                     {t('profile')}
+                  </Link>
+                  <Link
+                    href="/wallet"
+                    onClick={() => setAvatarOpen(false)}
+                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  >
+                    {t('wallet')}
+                  </Link>
+                  <Link
+                    href="/assistants"
+                    onClick={() => setAvatarOpen(false)}
+                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  >
+                    {t('assistants')}
                   </Link>
                   <Link
                     href="/inbox"
@@ -221,6 +242,7 @@ export function NavBar() {
                       {t('treasury')}
                     </Link>
                   )}
+                  <div className="my-1 border-t border-zinc-100 dark:border-zinc-800" />
                   <button
                     onClick={() => signOut({ callbackUrl: '/' })}
                     className="block w-full px-4 py-2 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
@@ -233,7 +255,7 @@ export function NavBar() {
           ) : (
             <Link
               href="/auth/signin"
-              className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+              className="rounded-md bg-blue-600 px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
               {t('signIn')}
             </Link>
@@ -268,7 +290,7 @@ export function NavBar() {
               onClick={() => setMenuOpen(false)}
               className={`block py-2 text-sm font-medium ${
                 pathname.startsWith(linkHrefs[key])
-                  ? 'text-zinc-900 dark:text-white'
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-zinc-500 dark:text-zinc-400'
               }`}
             >
@@ -280,11 +302,33 @@ export function NavBar() {
           {session?.user ? (
             <>
               <Link
+                href="/wallet"
+                onClick={() => setMenuOpen(false)}
+                className={`block py-2 text-sm font-medium ${
+                  pathname.startsWith('/wallet')
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-zinc-500 dark:text-zinc-400'
+                }`}
+              >
+                {t('wallet')}
+              </Link>
+              <Link
+                href="/assistants"
+                onClick={() => setMenuOpen(false)}
+                className={`block py-2 text-sm font-medium ${
+                  pathname.startsWith('/assistants')
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-zinc-500 dark:text-zinc-400'
+                }`}
+              >
+                {t('assistants')}
+              </Link>
+              <Link
                 href="/inbox"
                 onClick={() => setMenuOpen(false)}
                 className={`flex items-center gap-2 py-2 text-sm font-medium ${
                   pathname.startsWith('/inbox')
-                    ? 'text-zinc-900 dark:text-white'
+                    ? 'text-blue-600 dark:text-blue-400'
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
@@ -300,7 +344,7 @@ export function NavBar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block py-2 text-sm font-medium ${
                   pathname.startsWith('/profile')
-                    ? 'text-zinc-900 dark:text-white'
+                    ? 'text-blue-600 dark:text-blue-400'
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
@@ -311,7 +355,7 @@ export function NavBar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block py-2 text-sm font-medium ${
                   pathname.startsWith('/share')
-                    ? 'text-zinc-900 dark:text-white'
+                    ? 'text-blue-600 dark:text-blue-400'
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
@@ -331,7 +375,7 @@ export function NavBar() {
             <Link
               href="/auth/signin"
               onClick={() => setMenuOpen(false)}
-              className="block py-2 text-sm font-medium text-zinc-500 dark:text-zinc-400"
+              className="block py-2 text-sm font-medium text-blue-600 dark:text-blue-400"
             >
               {t('signIn')}
             </Link>
