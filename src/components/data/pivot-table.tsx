@@ -32,7 +32,7 @@ export function PivotTable(props: PivotTableProps) {
               href={`/organisations/${row.organisation_id}`}
               className={`flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${
                 isCurrent
-                  ? 'border-purple-300 bg-purple-50/50 dark:border-purple-700 dark:bg-purple-900/20'
+                  ? 'border-blue-300 bg-blue-50/50 dark:border-blue-500 dark:bg-blue-900/30'
                   : 'border-zinc-200 dark:border-zinc-700'
               }`}
             >
@@ -41,7 +41,7 @@ export function PivotTable(props: PivotTableProps) {
                 <div className="flex items-center gap-2">
                   <span className="font-semibold">{row.organisation_name}</span>
                   {isCurrent && (
-                    <span className="rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+                    <span className="rounded bg-blue-100 px-1.5 py-0.5 text-xs font-bold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
                       {t('you')}
                     </span>
                   )}
@@ -69,7 +69,7 @@ export function PivotTable(props: PivotTableProps) {
             href={`/issues/${row.issue_id}`}
             className={`flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${
               isCurrent
-                ? 'border-purple-300 bg-purple-50/50 dark:border-purple-700 dark:bg-purple-900/20'
+                ? 'border-blue-300 bg-blue-50/50 dark:border-blue-500 dark:bg-blue-900/30'
                 : 'border-zinc-200 dark:border-zinc-700'
             }`}
           >
@@ -77,7 +77,7 @@ export function PivotTable(props: PivotTableProps) {
               <div className="flex items-center gap-2">
                 <span className="font-semibold">{row.issue_name}</span>
                 {isCurrent && (
-                  <span className="rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+                  <span className="rounded bg-blue-100 px-1.5 py-0.5 text-xs font-bold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
                     {t('you')}
                   </span>
                 )}

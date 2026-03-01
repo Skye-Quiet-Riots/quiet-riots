@@ -3,9 +3,10 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { LanguageSelector } from '@/components/interactive/language-selector';
+import { formatCurrency } from '@/lib/format';
 
 const linkKeys = ['issues', 'organisations'] as const;
 const linkHrefs: Record<(typeof linkKeys)[number], string> = {
@@ -15,6 +16,7 @@ const linkHrefs: Record<(typeof linkKeys)[number], string> = {
 
 export function NavBar() {
   const pathname = usePathname();
+  const locale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
@@ -22,35 +24,28 @@ export function NavBar() {
   const [hasShareGuideRole, setHasShareGuideRole] = useState(false);
   const [hasComplianceRole, setHasComplianceRole] = useState(false);
   const [hasTreasuryRole, setHasTreasuryRole] = useState(false);
+  const [walletBalance, setWalletBalance] = useState<number | null>(null);
+  const [walletCurrency, setWalletCurrency] = useState<string | null>(null);
   const { data: session, status } = useSession();
   const t = useTranslations('Nav');
   const avatarRef = useRef<HTMLDivElement>(null);
 
-  // Fetch unread message count when logged in
+  // Consolidated nav context fetch — replaces 3 separate API calls
   useEffect(() => {
     if (status !== 'authenticated') return;
     let cancelled = false;
-    async function fetchUnread() {
+
+    async function fetchNavContext() {
       try {
-        const res = await fetch('/api/messages?unread_only=true&limit=1');
+        const res = await fetch('/api/users/me/nav-context');
         if (res.ok && !cancelled) {
           const data = await res.json();
-          setUnreadCount(data.data?.unread_count ?? 0);
-        }
-      } catch {
-        // Silently ignore — badge is optional
-      }
-    }
-    fetchUnread();
-    // Poll every 60s for new messages
-    const interval = setInterval(fetchUnread, 60000);
-    // Check if user has setup guide or admin role
-    async function fetchRoles() {
-      try {
-        const res = await fetch('/api/roles/me');
-        if (res.ok && !cancelled) {
-          const data = await res.json();
-          const roles = data.data?.roles ?? [];
+          const ctx = data.data;
+          setUnreadCount(ctx?.unreadCount ?? 0);
+          setWalletBalance(ctx?.walletBalance ?? null);
+          setWalletCurrency(ctx?.walletCurrency ?? null);
+
+          const roles: string[] = ctx?.roles ?? [];
           const isAdmin = roles.includes('administrator');
           setHasSetupRole(roles.includes('setup_guide') || isAdmin);
           setHasShareGuideRole(roles.includes('share_guide') || isAdmin);
@@ -58,10 +53,13 @@ export function NavBar() {
           setHasTreasuryRole(roles.includes('treasury_guide') || isAdmin);
         }
       } catch {
-        // ignore
+        // Silently ignore — nav context is progressive enhancement
       }
     }
-    fetchRoles();
+
+    fetchNavContext();
+    // Poll every 60s for unread count / wallet balance changes
+    const interval = setInterval(fetchNavContext, 60000);
     return () => {
       cancelled = true;
       clearInterval(interval);
@@ -79,6 +77,11 @@ export function NavBar() {
   }, []);
 
   const userInitial = session?.user?.name?.charAt(0).toUpperCase() ?? '?';
+
+  const formattedBalance =
+    walletBalance !== null && walletCurrency
+      ? formatCurrency(walletBalance, walletCurrency, locale)
+      : null;
 
   return (
     <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
@@ -107,7 +110,7 @@ export function NavBar() {
               >
                 {t(key)}
                 {isActive && (
-                  <span className="absolute -bottom-3.5 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400" />
+                  <span className="absolute -bottom-3.5 inset-inline-start-0 inset-inline-end-0 h-0.5 bg-blue-600 dark:bg-blue-400" />
                 )}
               </Link>
             );
@@ -135,10 +138,34 @@ export function NavBar() {
                 <polyline points="22,6 12,13 2,6" />
               </svg>
               {unreadCount > 0 && (
-                <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+                <span className="absolute -end-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
                   {unreadCount > 99 ? '99+' : unreadCount}
                 </span>
               )}
+            </Link>
+          )}
+
+          {/* Wallet balance chip (visible when logged in and wallet exists) */}
+          {session?.user && formattedBalance && (
+            <Link
+              href="/wallet"
+              className="flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-900/50"
+              aria-label={t('walletBalance')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-3.5 w-3.5"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+              {formattedBalance}
             </Link>
           )}
 
@@ -165,7 +192,7 @@ export function NavBar() {
                 )}
               </button>
               {avatarOpen && (
-                <div className="absolute right-0 mt-2 w-44 rounded-md border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+                <div className="absolute end-0 mt-2 w-44 rounded-md border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
                   <Link
                     href="/profile"
                     onClick={() => setAvatarOpen(false)}
@@ -252,7 +279,7 @@ export function NavBar() {
                   <div className="my-1 border-t border-zinc-100 dark:border-zinc-800" />
                   <button
                     onClick={() => signOut({ callbackUrl: '/' })}
-                    className="block w-full px-4 py-2 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    className="block w-full px-4 py-2 text-start text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >
                     {t('signOut')}
                   </button>
@@ -311,13 +338,18 @@ export function NavBar() {
               <Link
                 href="/wallet"
                 onClick={() => setMenuOpen(false)}
-                className={`block py-2 text-sm font-medium ${
+                className={`flex items-center gap-2 py-2 text-sm font-medium ${
                   pathname.startsWith('/wallet')
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-zinc-500 dark:text-zinc-400'
                 }`}
               >
                 {t('wallet')}
+                {formattedBalance && (
+                  <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                    {formattedBalance}
+                  </span>
+                )}
               </Link>
               <Link
                 href="/chicken"

@@ -16,7 +16,7 @@ A full mockup was created in session 65 (`http://localhost:8777/qr-full-mockup.h
 
 ---
 
-## Phase 0: Foundational Fixes (prerequisite PR)
+## Phase 0: Foundational Fixes (prerequisite PR) ✅ COMPLETE (PR #178)
 
 **Effort:** ~1.5 hours | **Migration:** None | **Dependencies:** None
 
@@ -67,7 +67,7 @@ These fixes address review findings that affect ALL subsequent phases. Ship as f
 
 ---
 
-## Phase 1+2: Pivot Blue + Wallet in Nav + Nav Context API (combined PR)
+## Phase 1+2: Pivot Blue + Wallet in Nav + Nav Context API (combined PR) ✅ COMPLETE (PR #179)
 
 **Effort:** ~2 hours | **Migration:** None | **Dependencies:** Phase 0
 
