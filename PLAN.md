@@ -33,9 +33,9 @@ Paid action: ~$50 for a chicken-costumed person to deliver a handwritten note to
 
 ## Current Progress
 
-- [ ] Phase 0: DB migration + types
-- [ ] Phase 1: Colour palette
-- [ ] Phase 2: Nav + footer
+- [x] Phase 0: DB migration + types (PR #163)
+- [x] Phase 1: Colour palette (PR #164)
+- [x] Phase 2: Nav + footer (PR #165)
 - [ ] Phase 6: OpenAI pipeline
 - [ ] Phase 3: Hero component + detail pages
 - [ ] Phase 4: Browse pages + cards
