@@ -17,6 +17,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "translate": "tsx scripts/translate.ts",
+    "backfill:heroes": "tsx scripts/backfill-hero-images.ts",
     "prepare": "husky"
   },
   "dependencies": {
