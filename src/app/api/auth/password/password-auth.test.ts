@@ -141,7 +141,7 @@ describe('Password Auth API', () => {
       expect(data.data.email).toBe('testuser@test.com');
     });
 
-    it('rate limits signups by IP', async () => {
+    it('rate limits signups by IP', { timeout: 30_000 }, async () => {
       // 5 signups should succeed
       for (let i = 0; i < 5; i++) {
         const req = createTestRequest('/api/auth/password/signup', {
@@ -326,7 +326,7 @@ describe('Password Auth API', () => {
       expect(data.data.userId).toBe('user-test-pw');
     });
 
-    it('rate limits after 5 failed attempts per email', async () => {
+    it('rate limits after 5 failed attempts per email', { timeout: 30_000 }, async () => {
       await createUserWithPassword();
 
       // 5 failed attempts

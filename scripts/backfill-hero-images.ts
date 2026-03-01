@@ -21,13 +21,13 @@ import { printDbBanner } from './db-safety';
 import { getDb, withTimeout } from '../src/lib/db';
 import { generateHeroImage } from '../src/lib/image-generation';
 
-interface Entity {
+export interface Entity {
   id: string;
   name: string;
   type: 'issue' | 'organisation';
 }
 
-function parseArgs() {
+export function parseArgs() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
   const limitIdx = args.indexOf('--limit');
@@ -55,7 +55,7 @@ function parseArgs() {
   return { dryRun, limit, entityType, delayMs };
 }
 
-async function getEntitiesWithoutHero(entityType: 'issue' | 'organisation'): Promise<Entity[]> {
+export async function getEntitiesWithoutHero(entityType: 'issue' | 'organisation'): Promise<Entity[]> {
   const db = getDb();
   const table = entityType === 'issue' ? 'issues' : 'organisations';
   const result = await withTimeout(() =>
@@ -171,7 +171,17 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+// Only run when executed directly (not when imported for testing)
+const isDirectExecution =
+  typeof import.meta.url === 'string' &&
+  process.argv[1] &&
+  import.meta.url.endsWith(process.argv[1].replace(/.*[/\\]/, ''));
+
+if (isDirectExecution) {
+  main().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}
+
+export { main };
