@@ -86,7 +86,10 @@ export function NavBar() {
         {/* Logo + logotype */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo-192.png" alt="Quiet Riots logo" width={32} height={32} />
-          <span className="text-xl font-extrabold tracking-tight text-blue-600 dark:text-blue-400">
+          <span
+            className="text-2xl font-extrabold tracking-tight"
+            style={{ color: 'var(--brand-blue)' }}
+          >
             Quiet Riots
           </span>
         </Link>
