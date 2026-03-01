@@ -12,6 +12,7 @@ import { PayForm } from './pay-form';
 import { StatusFilter } from './status-filter';
 import { EvidenceComposer } from './evidence-composer';
 import { ShareEligibilityBanner } from './share-eligibility-banner';
+import { FollowButton } from './follow-button';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -93,6 +94,20 @@ describe('JoinButton', () => {
     await waitFor(() => {
       expect(screen.getByText(/Join this Quiet Riot/)).toBeDefined();
     });
+  });
+
+  it('has blue-700 background when not joined', () => {
+    render(<JoinButton issueId={'issue-1'} initialJoined={false} />);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('bg-blue-700');
+    expect(button.className).not.toContain('bg-zinc-900');
+  });
+
+  it('keeps green styling when joined', () => {
+    render(<JoinButton issueId={'issue-1'} initialJoined={true} />);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('bg-green-50');
+    expect(button.className).not.toContain('bg-blue-700');
   });
 });
 
@@ -748,5 +763,102 @@ describe('ShareEligibilityBanner', () => {
     ).toBeDefined();
     // Button should be gone
     expect(screen.queryByText('Request it now')).toBeNull();
+  });
+});
+
+describe('FollowButton', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('shows follow text when not followed', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    expect(screen.getByText('Follow')).toBeDefined();
+  });
+
+  it('shows following text when already followed', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={true} />);
+    expect(screen.getByText('Following')).toBeDefined();
+  });
+
+  it('toggles to followed on click', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.getByText('Following')).toBeDefined();
+    });
+    expect(global.fetch).toHaveBeenCalledWith('/api/issues/issue-1/follow', { method: 'POST' });
+  });
+
+  it('toggles to unfollowed on click', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<FollowButton issueId={'issue-1'} initialFollowed={true} />);
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.getByText('Follow')).toBeDefined();
+    });
+    expect(global.fetch).toHaveBeenCalledWith('/api/issues/issue-1/follow', { method: 'DELETE' });
+  });
+
+  it('shows loading state while toggling', async () => {
+    let resolvePromise: () => void;
+    const pending = new Promise<{ ok: boolean }>((resolve) => {
+      resolvePromise = () => resolve({ ok: true });
+    });
+    global.fetch = vi.fn().mockReturnValue(pending);
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.getByText('...')).toBeDefined();
+    resolvePromise!();
+    await waitFor(() => {
+      expect(screen.queryByText('...')).toBeNull();
+    });
+  });
+
+  it('stays unchanged if fetch fails', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: false, json: () => Promise.resolve({}) });
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.getByText('Follow')).toBeDefined();
+    });
+  });
+
+  it('has aria-pressed attribute', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={true} />);
+    const button = screen.getByRole('button');
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+  });
+
+  it('has aria-pressed false when not followed', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    const button = screen.getByRole('button');
+    expect(button.getAttribute('aria-pressed')).toBe('false');
+  });
+
+  it('shows status message after successful follow', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true });
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.getByText("You're now following this Quiet Riot")).toBeDefined();
+    });
+  });
+
+  it('has full-width and rounded-xl styling', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('w-full');
+    expect(button.className).toContain('rounded-xl');
+    expect(button.className).toContain('py-3');
+  });
+
+  it('has outline style when not followed', () => {
+    render(<FollowButton issueId={'issue-1'} initialFollowed={false} />);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('border');
+    expect(button.className).toContain('border-zinc-300');
+    expect(button.className).toContain('bg-transparent');
   });
 });

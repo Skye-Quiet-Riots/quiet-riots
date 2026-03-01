@@ -53,29 +53,28 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
 
   return (
     <div className="flex flex-col">
-      {/* Hero — full-width gradient banner */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 px-6 py-24 text-center text-white sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent_50%)]" />
-        <div className="relative mx-auto max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-200">
+      {/* Hero — full-width light banner */}
+      <section className="bg-gradient-to-b from-blue-50 to-white px-6 py-16 text-center text-zinc-900 sm:py-24 dark:from-zinc-900 dark:to-zinc-950 dark:text-white">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600 dark:text-blue-400">
             {t('tagline')}
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
             {t('headline')}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-blue-100">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
             {t('description')}
           </p>
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/issues"
-              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-blue-700 shadow-lg transition-all hover:bg-blue-50 hover:shadow-xl"
+              className="rounded-full bg-blue-700 px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:shadow-xl"
             >
               {t('browseIssues')}
             </Link>
             <a
               href="#how"
-              className="rounded-full border border-white/40 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-white/10"
+              className="rounded-full border border-zinc-300 px-8 py-3 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:bg-zinc-800"
             >
               {t('howItWorks')}
             </a>

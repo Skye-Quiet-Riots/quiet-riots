@@ -53,7 +53,10 @@ import { EvidenceSection } from '@/components/interactive/evidence-section';
 import { AssistantDetailBanner } from '@/components/data/assistant-detail-banner';
 import { FirstRioterBadge } from '@/components/data/first-rioter-badge';
 import { ShareEligibilityBanner } from '@/components/interactive/share-eligibility-banner';
+import { MobileCTABar } from '@/components/interactive/mobile-cta-bar';
 import { getActionCountForIssue } from '@/lib/queries/actions';
+
+export const dynamic = 'force-dynamic';
 
 interface Props {
   params: Promise<{ locale: string; id: string }>;
@@ -144,7 +147,7 @@ export default async function IssueDetailPage({ params }: Props) {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:pb-24 lg:pb-0">
       {/* Hero Image */}
       <HeroImage
         imageUrl={issue.hero_image_url}
@@ -191,6 +194,16 @@ export default async function IssueDetailPage({ params }: Props) {
 
       {/* Section navigation */}
       <SectionNav sections={sectionNavItems} />
+
+      {/* Inline CTA for small screens (<640px) — in document flow, not fixed */}
+      <div className="mb-4 flex gap-3 sm:hidden">
+        <div className="flex-1">
+          <JoinButton issueId={issue.id} initialJoined={joined} />
+        </div>
+        <div className="flex-1">
+          <FollowButton issueId={issue.id} initialFollowed={followed} />
+        </div>
+      </div>
 
       {/* Main content — 3 col on desktop */}
       <div className="lg:grid lg:grid-cols-3 lg:gap-8">
@@ -266,8 +279,8 @@ export default async function IssueDetailPage({ params }: Props) {
 
         {/* Sidebar (1/3) */}
         <div className="space-y-6 lg:col-span-1">
-          {/* Join + Follow buttons */}
-          <div className="space-y-2">
+          {/* Join + Follow buttons — desktop sidebar only */}
+          <div className="hidden space-y-2 lg:block">
             <JoinButton issueId={issue.id} initialJoined={joined} />
             <FollowButton issueId={issue.id} initialFollowed={followed} />
           </div>
@@ -334,6 +347,8 @@ export default async function IssueDetailPage({ params }: Props) {
           {userId && <ShareEligibilityBanner />}
         </div>
       </div>
+      {/* Fixed CTA bar for tablet screens (sm → lg) */}
+      <MobileCTABar issueId={issue.id} initialJoined={joined} initialFollowed={followed} />
     </div>
   );
 }

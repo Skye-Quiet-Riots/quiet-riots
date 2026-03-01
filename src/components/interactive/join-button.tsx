@@ -38,7 +38,7 @@ export function JoinButton({ issueId, initialJoined }: JoinButtonProps) {
         className={`w-full rounded-xl py-3 text-center text-sm font-bold transition-all ${
           joined
             ? 'border-2 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:border-green-600 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/30'
-            : 'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200'
+            : 'bg-blue-700 text-white hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700'
         }`}
       >
         {loading ? '...' : joined ? t('joined') : t('join')}
