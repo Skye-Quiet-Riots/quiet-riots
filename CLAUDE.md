@@ -370,6 +370,84 @@ At the start of every session (or when asked to "pick up where we left off"):
   N. Create PR after final phase
   ```
 
+### Plan Review Protocol (MANDATORY — 3 rounds, 7 reviewers, zero exceptions)
+
+Every new implementation plan MUST go through 3 rounds of review by 7 senior specialists BEFORE being presented to the user for approval. A plan that has not completed all 3 review rounds is not ready for approval. No shortcuts. No "I'll review it later."
+
+**Review panel (7 specialists — each is a Task agent with a specific persona):**
+
+1. **Senior Engineer** — code quality, error handling, edge cases, performance, existing pattern adherence
+2. **Senior Architect** — system design, API contracts, data flow, scalability, separation of concerns
+3. **Senior Security Specialist** — auth, input validation, injection, PII exposure, CSRF, rate limiting, CSP
+4. **Senior Designer** — UX, accessibility (WCAG AA), responsive design, dark mode, RTL, visual hierarchy
+5. **Senior Test/QA Engineer** — test coverage, test strategy, edge cases, regression risk, integration points
+6. **Senior Database Engineer** — schema design, migrations, indexes, query performance, constraints, atomicity
+7. **Senior Internationalisation Manager** — i18n completeness, locale handling, translation pipeline, hardcoded strings, RTL, pluralisation
+
+**Process (3 rounds):**
+
+```
+Round 1 (Draft → Revision 1):
+  1. Write the draft plan in PLAN.md
+  2. Launch all 7 reviewer agents (in parallel where possible)
+  3. Each reviewer returns numbered findings: CRITICAL / HIGH / MEDIUM / LOW
+  4. Incorporate ALL critical and high findings into the plan
+  5. Address medium findings where feasible, document deferrals
+  6. Document all findings and responses in "Review Round 1" section of PLAN.md
+  7. Result: Revision 1
+
+Round 2 (Revision 1 → Revision 2):
+  8. Launch the same 7 reviewers against Revision 1
+  9. Reviewers focus on: (a) were Round 1 findings addressed? (b) new issues in added content
+  10. Incorporate findings, document in "Review Round 2" section
+  11. Result: Revision 2
+
+Round 3 (Revision 2 → Revision 3):
+  12. Launch the same 7 reviewers against Revision 2 (final pass)
+  13. Reviewers confirm all critical/high findings are resolved
+  14. Document in "Review Round 3" section
+  15. Result: Revision 3 (final)
+
+Only after Revision 3 is complete → present to user for approval via ExitPlanMode
+```
+
+**PLAN.md structure for reviewed plans:**
+
+```markdown
+# [Feature Name] — Implementation Plan
+
+## Context
+...
+
+## [Phase sections]
+...
+
+---
+
+## Review Round 1
+
+### Senior Engineer
+- CRITICAL #1: ...
+- HIGH #1: ...
+Response: [how it was addressed]
+
+### Senior Architect
+...
+[repeat for all 7 reviewers]
+
+## Review Round 2
+[same structure — findings against Revision 1]
+
+## Review Round 3
+[same structure — findings against Revision 2, confirming resolution]
+```
+
+**Why 3 rounds are mandatory:**
+- Round 1 catches fundamental design issues (the website redesign plan's Round 1 found 20+ critical/high issues)
+- Round 2 catches issues introduced BY the fixes from Round 1 (the fix for one finding often creates a new gap)
+- Round 3 is the final confirmation pass — ensures nothing was missed and all critical/high findings are resolved
+- Session 68 proved this: 3 review rounds transformed a plan with security holes, accessibility gaps, and missing bot coverage into a production-ready blueprint
+
 ### Branching & PRs
 
 - Follow the Branching Workflow exactly — fresh branch from `origin/main` for every piece of work
