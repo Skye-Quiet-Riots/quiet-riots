@@ -1058,7 +1058,11 @@
     "suggestionGoLive": "あなたのQuiet Riot「{name}」が公開されました！この問題に関心のある友人とシェアしましょう。",
     "rejectionCloseToExisting": "既存のQuiet Riotに類似しすぎている",
     "rejectionAboutPeople": "問題ではなく人を対象にしている",
-    "rejectionIllegalSubject": "違法な活動に関連している"
+    "rejectionIllegalSubject": "違法な活動に関連している",
+    "followed": "{issue}をフォローしています。",
+    "unfollowed": "{issue}のフォローを解除しました。",
+    "alreadyFollowing": "既にこのQuiet Riotをフォローしています。",
+    "maxFollowsBot": "最大100個のQuiet Riotsをフォローできます。"
   },
   "Chicken": {
     "title": "ニワトリを配置する",
@@ -1167,5 +1171,15 @@
     "cancelFailed": "キャンセルに失敗しました：{error}",
     "linkedIssue": "リンク済み問題",
     "linkedOrganisation": "リンク済み組織"
+  },
+  "Follow": {
+    "follow": "フォロー",
+    "following": "フォロー中",
+    "followingAuto": "フォロー中",
+    "unfollow": "フォロー解除",
+    "followers": "{count}人のフォロワー",
+    "followConfirm": "このQuiet Riotをフォローしています",
+    "unfollowConfirm": "このQuiet Riotのフォローを解除しました",
+    "maxFollows": "最大100個のQuiet Riotsをフォローできます"
   }
 }

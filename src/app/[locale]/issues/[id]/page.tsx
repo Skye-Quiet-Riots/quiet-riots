@@ -13,7 +13,7 @@ import {
 import { getSynonymsForIssue } from '@/lib/queries/synonyms';
 import { getReelsForIssue } from '@/lib/queries/reels';
 import { getActionInitiativesForIssue } from '@/lib/queries/action-initiatives';
-import { hasJoinedIssue } from '@/lib/queries/users';
+import { hasJoinedIssue, hasFollowedIssue, getFollowerCount } from '@/lib/queries/users';
 import { getAssistantByCategory } from '@/lib/queries/assistants';
 import { getEvidenceForIssue } from '@/lib/queries/evidence';
 import {
@@ -44,6 +44,7 @@ import { SynonymList } from '@/components/data/synonym-list';
 import { ExpertCard } from '@/components/cards/expert-card';
 import { PivotToggle } from '@/components/interactive/pivot-toggle';
 import { JoinButton } from '@/components/interactive/join-button';
+import { FollowButton } from '@/components/interactive/follow-button';
 import { ActionsSection } from '@/components/interactive/actions-section';
 import { FeedSection } from '@/components/interactive/feed-section';
 import { ReelsSection } from '@/components/interactive/reels-section';
@@ -64,6 +65,7 @@ export default async function IssueDetailPage({ params }: Props) {
   const t = await getTranslations('IssueDetail');
   const tc = await getTranslations('Categories');
   const tFr = await getTranslations('FirstRioter');
+  const tF = await getTranslations('Follow');
 
   const rawIssue = await getIssueById(id);
   if (!rawIssue) notFound();
@@ -80,7 +82,11 @@ export default async function IssueDetailPage({ params }: Props) {
   if (rawIssue.status === 'rejected') notFound();
 
   const issue = await translateEntity(rawIssue, 'issue', locale);
-  const joined = userId ? await hasJoinedIssue(userId, issue.id) : false;
+  const [joined, followed, followerCount] = await Promise.all([
+    userId ? hasJoinedIssue(userId, issue.id) : Promise.resolve(false),
+    userId ? hasFollowedIssue(userId, issue.id) : Promise.resolve(false),
+    getFollowerCount(issue.id),
+  ]);
 
   // First Rioter data
   let firstRioterUser: { id: string; name: string | null; image: string | null } | null = null;
@@ -165,6 +171,11 @@ export default async function IssueDetailPage({ params }: Props) {
             emoji="📈"
           />
           <StatBadge value={actionCount} label={t('actions')} emoji="⚡" />
+          <StatBadge
+            value={followerCount}
+            label={tF('followers', { count: followerCount })}
+            emoji="👁️"
+          />
           <TrendingIndicator delta={issue.trending_delta} size="md" />
         </div>
       </HeroImage>
@@ -254,9 +265,10 @@ export default async function IssueDetailPage({ params }: Props) {
 
         {/* Sidebar (1/3) */}
         <div className="space-y-6 lg:col-span-1">
-          {/* Join button */}
-          <div>
+          {/* Join + Follow buttons */}
+          <div className="space-y-2">
             <JoinButton issueId={issue.id} initialJoined={joined} />
+            <FollowButton issueId={issue.id} initialFollowed={followed} />
           </div>
 
           {/* Community Health */}

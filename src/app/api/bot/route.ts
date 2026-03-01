@@ -26,6 +26,11 @@ import {
   joinIssue,
   leaveIssue,
   getUserIssues,
+  followIssue,
+  unfollowIssue,
+  getFollowedIssues,
+  getFollowerCount,
+  getFollowedIssueCount,
 } from '@/lib/queries/users';
 import { getSynonymsForIssue, addSynonym } from '@/lib/queries/synonyms';
 import { getSeasonalPattern } from '@/lib/queries/seasonal-patterns';
@@ -537,6 +542,14 @@ const actionSchemas = {
   get_chicken_fulfillers: z.object({
     country_code: z.string().min(2).max(2).optional(),
   }),
+
+  // ─── Follow / Unfollow ─────────────────────────────
+  follow_issue: phoneAndIssue,
+  unfollow_issue: phoneAndIssue,
+  get_followed_issues: z.object({
+    phone: phoneField,
+    language_code: langField,
+  }),
 } as const;
 
 type ActionName = keyof typeof actionSchemas;
@@ -881,9 +894,10 @@ export async function POST(request: NextRequest) {
           trackedUserId = user.id;
         }
         const locale = user.language_code || 'en';
-        const [issues, memories] = await Promise.all([
+        const [issues, memories, followedIssueCount] = await Promise.all([
           getUserIssues(user.id),
           getUserMemories(user.id),
+          getFollowedIssueCount(user.id),
         ]);
         const translatedIssues = await translateOrgPivotRows(
           issues as unknown as { issue_id: string; issue_name: string }[],
@@ -894,6 +908,7 @@ export async function POST(request: NextRequest) {
           issues: translatedIssues,
           memories,
           language_code: user.language_code,
+          followed_issue_count: followedIssueCount,
         });
       }
 
@@ -927,6 +942,7 @@ export async function POST(request: NextRequest) {
           synonyms,
           seasonalPattern,
           rawRelatedIssues,
+          followerCount,
         ] = await Promise.all([
           getCommunityHealth(rawIssue.id),
           getCountryBreakdown(rawIssue.id),
@@ -935,6 +951,7 @@ export async function POST(request: NextRequest) {
           getSynonymsForIssue(rawIssue.id),
           getSeasonalPattern(rawIssue.id),
           getRelatedIssues(rawIssue.id),
+          getFollowerCount(rawIssue.id),
         ]);
         const [issue, pivotOrgs, relatedIssues, translatedSynonyms] = await Promise.all([
           translateEntity(rawIssue, 'issue', locale),
@@ -951,6 +968,7 @@ export async function POST(request: NextRequest) {
           synonyms: translatedSynonyms,
           seasonalPattern,
           relatedIssues,
+          followerCount,
         });
       }
 
@@ -1000,6 +1018,41 @@ export async function POST(request: NextRequest) {
 
         await leaveIssue(user.id, issueId);
         return ok({ left: true, user_id: user.id, issue_id: issueId });
+      }
+
+      // ─── Follow / Unfollow ─────────────────────────────
+      case 'follow_issue': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const result = await followIssue(user.id, issueId, false);
+        if (result === 'not_found') return err('Issue not found', 404);
+        if (result === 'max_reached')
+          return err('You can follow up to 100 Quiet Riots', 400);
+        return ok({ followed: true, user_id: user.id, issue_id: issueId });
+      }
+
+      case 'unfollow_issue': {
+        const phone = p.phone as string;
+        const issueId = p.issue_id as string;
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found', 404);
+
+        await unfollowIssue(user.id, issueId);
+        return ok({ unfollowed: true, user_id: user.id, issue_id: issueId });
+      }
+
+      case 'get_followed_issues': {
+        const phone = p.phone as string;
+        const locale = await resolveLocale(p);
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found', 404);
+
+        let issues = await getFollowedIssues(user.id);
+        issues = await translateEntities(issues, 'issue', locale);
+        return ok({ issues });
       }
 
       // ─── Feed ────────────────────────────────────────────

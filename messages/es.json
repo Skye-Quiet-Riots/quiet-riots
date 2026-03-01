@@ -1058,7 +1058,11 @@
     "suggestionGoLive": "¡Tu Quiet Riot \"{name}\" ya está activo! Compártelo con amigos que se preocupen por este tema.",
     "rejectionCloseToExisting": "demasiado similar a un Quiet Riot existente",
     "rejectionAboutPeople": "se dirige a personas en lugar de problemas",
-    "rejectionIllegalSubject": "involucra actividad ilegal"
+    "rejectionIllegalSubject": "involucra actividad ilegal",
+    "followed": "Ahora estás siguiendo {issue}.",
+    "unfollowed": "Has dejado de seguir {issue}.",
+    "alreadyFollowing": "Ya estás siguiendo este Quiet Riot.",
+    "maxFollowsBot": "Puedes seguir hasta 100 Quiet Riots."
   },
   "Chicken": {
     "title": "Desplegar un Pollo",
@@ -1167,5 +1171,15 @@
     "cancelFailed": "Cancelación fallida: {error}",
     "linkedIssue": "Problema Vinculado",
     "linkedOrganisation": "Organización Vinculada"
+  },
+  "Follow": {
+    "follow": "Seguir",
+    "following": "Siguiendo",
+    "followingAuto": "Siguiendo",
+    "unfollow": "Dejar de seguir",
+    "followers": "{count} seguidores",
+    "followConfirm": "Ahora estás siguiendo este Quiet Riot",
+    "unfollowConfirm": "Has dejado de seguir este Quiet Riot",
+    "maxFollows": "Puedes seguir hasta 100 Quiet Riots"
   }
 }
