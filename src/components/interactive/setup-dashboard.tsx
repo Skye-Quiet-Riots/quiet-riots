@@ -83,6 +83,9 @@ export function SetupDashboard({
   const [translationLoading, setTranslationLoading] = useState(false);
   const [flaggedLocales, setFlaggedLocales] = useState<Set<string>>(new Set());
   const [regenerating, setRegenerating] = useState(false);
+  const [imageGeneratingId, setImageGeneratingId] = useState<string | null>(null);
+  const [imageSuccess, setImageSuccess] = useState<string | null>(null);
+  const [imageError, setImageError] = useState<string | null>(null);
 
   const filtered =
     activeTab === 'all' ? suggestions : suggestions.filter((s) => s.status === activeTab);
@@ -126,6 +129,26 @@ export function SetupDashboard({
       setGenerationError(id);
     } finally {
       setGeneratingId(null);
+    }
+  }
+
+  async function handleGenerateImage(id: string) {
+    setImageGeneratingId(id);
+    setImageSuccess(null);
+    setImageError(null);
+    try {
+      const res = await fetch(`/api/suggestions/${id}/generate-image`, {
+        method: 'POST',
+      });
+      if (res.ok) {
+        setImageSuccess(id);
+      } else {
+        setImageError(id);
+      }
+    } catch {
+      setImageError(id);
+    } finally {
+      setImageGeneratingId(null);
     }
   }
 
@@ -437,6 +460,25 @@ export function SetupDashboard({
                     >
                       {t('approveAndGoLive')}
                     </button>
+                    <button
+                      onClick={() => handleGenerateImage(s.id)}
+                      disabled={imageGeneratingId === s.id}
+                      className="rounded-md bg-amber-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+                    >
+                      {imageGeneratingId === s.id
+                        ? t('generatingImage')
+                        : t('generateImage')}
+                    </button>
+                    {imageSuccess === s.id && (
+                      <span className="self-center text-sm text-green-600 dark:text-green-400">
+                        {t('imageGenerated')}
+                      </span>
+                    )}
+                    {imageError === s.id && (
+                      <span className="self-center text-sm text-red-600 dark:text-red-400">
+                        {t('imageGenerationFailed')}
+                      </span>
+                    )}
                   </div>
 
                   {/* Translation review panel */}
@@ -506,6 +548,29 @@ export function SetupDashboard({
                         </p>
                       )}
                     </div>
+                  )}
+                </div>
+              )}
+              {s.status === 'live' && (
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <button
+                    onClick={() => handleGenerateImage(s.id)}
+                    disabled={imageGeneratingId === s.id}
+                    className="rounded-md bg-amber-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+                  >
+                    {imageGeneratingId === s.id
+                      ? t('generatingImage')
+                      : t('generateImage')}
+                  </button>
+                  {imageSuccess === s.id && (
+                    <span className="text-sm text-green-600 dark:text-green-400">
+                      {t('imageGenerated')}
+                    </span>
+                  )}
+                  {imageError === s.id && (
+                    <span className="text-sm text-red-600 dark:text-red-400">
+                      {t('imageGenerationFailed')}
+                    </span>
                   )}
                 </div>
               )}

@@ -1,4 +1,4 @@
-import { NextRequest } from 'next/server';
+import { after, NextRequest } from 'next/server';
 import { getSuggestionById, goLiveSuggestion } from '@/lib/queries/suggestions';
 import { sendNotification } from '@/lib/queries/messages';
 import { hasRole, getUsersByRole } from '@/lib/queries/roles';
@@ -7,6 +7,8 @@ import { getSession } from '@/lib/session';
 import { rateLimit } from '@/lib/rate-limit';
 import { apiOk, apiError } from '@/lib/api-response';
 import { getBotMessage } from '@/app/api/bot/bot-messages';
+import { generateHeroImage } from '@/lib/image-generation';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const userId = await getSession();
@@ -82,6 +84,34 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         whatsAppSummary: `"${suggestion.suggested_name}" approved by ${guideName} and is now live: https://www.quietriots.com${entityPath}`,
       }).catch(() => {});
     }
+  }
+
+  // Auto-generate hero image after response (fire-and-forget via after())
+  const entityType = suggestion.suggested_type === 'issue' ? 'issue' : 'organisation';
+  const entityId = suggestion.issue_id || suggestion.organisation_id;
+  if (entityId) {
+    after(() =>
+      generateHeroImage(entityType as 'issue' | 'organisation', entityId, suggestion.suggested_name)
+        .then((imgResult) => {
+          if (imgResult.success) {
+            logger.info(
+              { suggestionId: id, entityType, entityId, heroUrl: imgResult.heroUrl },
+              'Hero image auto-generated on go-live',
+            );
+          } else {
+            logger.warn(
+              { suggestionId: id, entityType, entityId, error: imgResult.error },
+              'Hero image auto-generation failed on go-live',
+            );
+          }
+        })
+        .catch((err) => {
+          logger.error(
+            { err, suggestionId: id, entityType, entityId },
+            'Hero image auto-generation threw on go-live',
+          );
+        }),
+    );
   }
 
   return apiOk({ suggestion: result });
