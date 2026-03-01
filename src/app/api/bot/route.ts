@@ -138,6 +138,7 @@ import { triggerAutoTranslation } from '@/lib/queries/generate-translations';
 import { getDb } from '@/lib/db';
 import { generateId } from '@/lib/uuid';
 import { isValidLocale } from '@/i18n/locales';
+import { getPersonalFeed } from '@/lib/queries/personal-feed';
 import { getBotMessage } from './bot-messages';
 
 const DEV_FALLBACK_KEY = 'qr-bot-dev-key-2026';
@@ -560,6 +561,14 @@ const actionSchemas = {
   unfollow_issue: phoneAndIssue,
   get_followed_issues: z.object({
     phone: phoneField,
+    language_code: langField,
+  }),
+
+  // ─── Personal Feed ──────────────────────────────────
+  get_personal_feed: z.object({
+    phone: phoneField,
+    cursor: z.string().max(100).optional(),
+    limit: z.number().int().min(1).max(20).optional(),
     language_code: langField,
   }),
 } as const;
@@ -2351,6 +2360,48 @@ export async function POST(request: NextRequest) {
       case 'get_chicken_fulfillers': {
         const fulfillers = await getActiveFulfillers(p.country_code as string | undefined);
         return ok({ fulfillers });
+      }
+
+      // ─── Personal Feed ──────────────────────────────────
+      case 'get_personal_feed': {
+        const phone = p.phone as string;
+        const locale = await resolveLocale(p);
+        const user = await resolveUser(phone);
+        if (!user) return err('User not found — call identify first', 404);
+
+        const cursor = p.cursor as string | undefined;
+        const limit = (p.limit as number) || 20;
+        const result = await getPersonalFeed(user.id, cursor, limit);
+
+        // Translate issue names
+        if (locale !== 'en' && result.activities.length > 0) {
+          const issueIds = [...new Set(result.activities.map((a) => a.issue_id))];
+          const issueEntities = issueIds.map((id) => ({
+            id,
+            name: result.activities.find((a) => a.issue_id === id)!.issue_name,
+          }));
+          const translated = await translateEntities(issueEntities, 'issue', locale);
+          const nameMap = new Map(translated.map((ti) => [ti.id, ti.name]));
+          for (const activity of result.activities) {
+            const translatedName = nameMap.get(activity.issue_id);
+            if (translatedName) activity.issue_name = translatedName;
+          }
+        }
+
+        // Build formatted text for WhatsApp display
+        const lines = result.activities.map((a) => {
+          const icon = a.activity_type === 'evidence' ? '\u{1F4F8}' : a.activity_type === 'riot_reel' ? '\u{1F3AC}' : '\u{1F4AC}';
+          return `${icon} *${a.issue_name}*: ${a.content_snippet.slice(0, 100)}${a.content_snippet.length > 100 ? '...' : ''}`;
+        });
+        const formattedText = lines.length > 0
+          ? lines.join('\n')
+          : await getBotMessage(locale, 'personalFeedEmpty');
+
+        return ok({
+          activities: result.activities,
+          next_cursor: result.next_cursor,
+          formatted_text: formattedText,
+        });
       }
 
       default:
