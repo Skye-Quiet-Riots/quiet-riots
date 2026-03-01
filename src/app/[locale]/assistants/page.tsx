@@ -19,7 +19,7 @@ export default async function AssistantsPage({ params }: Props) {
   const assistants = await translateCategoryAssistants(rawAssistants, locale);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8">
       <PageHeader title={t('title')} subtitle={t('subtitle', { count: assistants.length })} />
 
       {assistants.length > 0 ? (

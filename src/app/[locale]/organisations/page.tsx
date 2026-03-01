@@ -48,7 +48,7 @@ export default async function OrganisationsPage({ params, searchParams }: Props)
   );
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8">
       <PageHeader title={t('title')} subtitle={t('subtitle')} />
 
       <div className="mb-6 space-y-4">
