@@ -6,12 +6,12 @@
 
 ## Latest Session
 
-**Session 69b** (2026-03-01) — Phase 1+2, Plan Review Protocol, Phase 4 Follow System
-→ [`session-logs/2026-03-session-69b.md`](session-logs/2026-03-session-69b.md)
+**Session 70** (2026-03-01) — Phases 3, 6, 5 of Website Redesign (3 PRs merged)
+→ [`session-logs/2026-03-session-70.md`](session-logs/2026-03-session-70.md)
 
 ## Current Priorities
 
-1. **Website redesign phases** — plan at `PLAN.md`. Phase 0 ✅ (PR #178), Phase 1+2 ✅ (PR #179), Phase 4 ✅ (PR #181). Next: Phase 3 (Unified Nav Search). Full order: ~~0~~→~~1+2~~→~~4~~→3→6→5→7→8.
+1. **Website redesign phases** — plan at `PLAN.md`. Phases 0 ✅, 1+2 ✅, 4 ✅, 3 ✅ (PR #183), 6 ✅ (PR #184), 5 ✅ (PR #185). Next: **Phase 7** (Issue-Organisation Intersection Pages). Full order: ~~0~~→~~1+2~~→~~4~~→~~3~~→~~6~~→~~5~~→**7**→8.
 2. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
 3. **Remaining hero image backfill** — 44 orgs + 2 issues still need hero images
 4. **Google/Facebook OAuth setup** — still pending from session 47
@@ -20,6 +20,7 @@
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 70  | 2026-03-01    | Phases 3, 6, 5 of Website Redesign (3 PRs merged)    | [`session-70`](session-logs/2026-03-session-70.md)                                                             |
 | 69b | 2026-03-01    | Phase 1+2 + Plan Review + Phase 4 Follow System       | [`session-69b`](session-logs/2026-03-session-69b.md)                                                           |
 | 69  | 2026-03-01    | Phase 0 foundational fixes (PR #178)                  | [`session-69`](session-logs/2026-03-session-69.md)                                                             |
 | 68  | 2026-03-01    | Website redesign plan (3 rounds of senior review)     | [`session-68`](session-logs/2026-03-session-68.md)                                                             |
