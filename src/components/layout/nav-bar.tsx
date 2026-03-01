@@ -181,6 +181,13 @@ export function NavBar() {
                     {t('wallet')}
                   </Link>
                   <Link
+                    href="/chicken"
+                    onClick={() => setAvatarOpen(false)}
+                    className="block px-4 py-2 text-sm text-amber-600 hover:bg-zinc-100 dark:text-amber-400 dark:hover:bg-zinc-800"
+                  >
+                    🐔 {t('deployChicken')}
+                  </Link>
+                  <Link
                     href="/assistants"
                     onClick={() => setAvatarOpen(false)}
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
@@ -311,6 +318,17 @@ export function NavBar() {
                 }`}
               >
                 {t('wallet')}
+              </Link>
+              <Link
+                href="/chicken"
+                onClick={() => setMenuOpen(false)}
+                className={`block py-2 text-sm font-medium ${
+                  pathname.startsWith('/chicken')
+                    ? 'text-amber-600 dark:text-amber-400'
+                    : 'text-amber-500 dark:text-amber-400'
+                }`}
+              >
+                🐔 {t('deployChicken')}
               </Link>
               <Link
                 href="/assistants"
