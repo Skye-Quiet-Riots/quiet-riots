@@ -6,6 +6,7 @@ import { useSession, signOut } from 'next-auth/react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { LanguageSelector } from '@/components/interactive/language-selector';
+import { NavSearch } from '@/components/interactive/nav-search';
 import { formatCurrency } from '@/lib/format';
 
 const linkKeys = ['issues', 'organisations'] as const;
@@ -19,6 +20,7 @@ export function NavBar() {
   const locale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const [hasSetupRole, setHasSetupRole] = useState(false);
   const [hasShareGuideRole, setHasShareGuideRole] = useState(false);
@@ -115,6 +117,7 @@ export function NavBar() {
               </Link>
             );
           })}
+          <NavSearch />
           <LanguageSelector />
 
           {/* Inbox icon (visible when logged in) */}
@@ -296,23 +299,49 @@ export function NavBar() {
           )}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="flex flex-col gap-1 p-2 sm:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={t('toggleMenu')}
-        >
-          <span
-            className={`block h-0.5 w-5 bg-zinc-600 transition-transform dark:bg-zinc-300 ${menuOpen ? 'translate-y-1.5 rotate-45' : ''}`}
-          />
-          <span
-            className={`block h-0.5 w-5 bg-zinc-600 transition-opacity dark:bg-zinc-300 ${menuOpen ? 'opacity-0' : ''}`}
-          />
-          <span
-            className={`block h-0.5 w-5 bg-zinc-600 transition-transform dark:bg-zinc-300 ${menuOpen ? '-translate-y-1.5 -rotate-45' : ''}`}
-          />
-        </button>
+        {/* Mobile: search + hamburger */}
+        <div className="flex items-center gap-1 sm:hidden">
+          <button
+            className="p-2 text-zinc-600 dark:text-zinc-300"
+            onClick={() => setMobileSearchOpen(true)}
+            aria-label={t('search')}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <button
+            className="flex flex-col gap-1 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={t('toggleMenu')}
+          >
+            <span
+              className={`block h-0.5 w-5 bg-zinc-600 transition-transform dark:bg-zinc-300 ${menuOpen ? 'translate-y-1.5 rotate-45' : ''}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-zinc-600 transition-opacity dark:bg-zinc-300 ${menuOpen ? 'opacity-0' : ''}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-zinc-600 transition-transform dark:bg-zinc-300 ${menuOpen ? '-translate-y-1.5 -rotate-45' : ''}`}
+            />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile search overlay */}
+      {mobileSearchOpen && (
+        <NavSearch mobile onClose={() => setMobileSearchOpen(false)} />
+      )}
 
       {/* Mobile menu */}
       {menuOpen && (
