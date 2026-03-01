@@ -49,10 +49,10 @@ export function FollowButton({ issueId, initialFollowed }: FollowButtonProps) {
           disabled={loading}
           aria-pressed={followed}
           aria-busy={loading}
-          className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all ${
+          className={`flex w-full items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-medium transition-all ${
             followed
               ? 'border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/30'
-              : 'border border-zinc-200 text-zinc-600 hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-white'
+              : 'border border-zinc-300 bg-transparent text-zinc-700 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800'
           }`}
         >
           {loading ? (
