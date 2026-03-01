@@ -6,20 +6,21 @@
 
 ## Latest Session
 
-**Session 66** (2026-02-28) — Translation UX Fix Implementation
-→ [`session-logs/2026-02-session-66.md`](session-logs/2026-02-session-66.md)
+**Session 67** (2026-03-01) — Deploy a Chicken (Full Feature Implementation)
+→ [`session-logs/2026-03-session-67.md`](session-logs/2026-03-session-67.md)
 
 ## Current Priorities
 
 1. **Website redesign phases** — plan at `.claude/plans/distributed-sauteeing-penguin.md`. PR order: 0→1→2→6→3→4→7→5→8→9. Phase 0 is DB migration (hero_image_url columns). Phases 0, 1, 2, 6 can run in parallel.
-2. **Deploy a Chicken** — plan in git history of `claude/busy-hoover` (commits b8ece28, b9ca7f3). Build as separate PR.
-3. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+2. **Stripe integration** — plan ready at `.claude/plans/serene-hugging-scroll.md`
+3. **Hero image backfill** — use OPENAI_API_KEY to generate hero images for existing entities (~$13 cost)
 4. **Google/Facebook OAuth setup** — still pending from session 47
 
 ## All Sessions
 
 | #   | Date          | Summary                                               | File                                                                                                           |
 | --- | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 67  | 2026-03-01    | Deploy a Chicken (full feature implementation)        | [`session-67`](session-logs/2026-03-session-67.md)                                                             |
 | 66  | 2026-02-28    | Translation UX fix implementation                     | [`session-66`](session-logs/2026-02-session-66.md)                                                             |
 | 65  | 2026-02-28    | Website redesign mockup + translation UX plan         | [`session-65`](session-logs/2026-02-session-65.md)                                                             |
 | 64  | 2026-02-28    | Localise suggestion notifications + locale guard      | [`session-64`](session-logs/2026-02-session-64.md)                                                             |
